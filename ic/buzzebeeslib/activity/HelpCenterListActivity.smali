@@ -2908,7 +2908,7 @@
 
     move-result-object v11
 
-    sget-object v12, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v12, "GT-I5700"
 
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
