@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
-    .line 270
+    .line 272
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
     .registers 2
 
     .prologue
-    .line 270
+    .line 272
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     return-object v0
@@ -57,7 +57,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 281
+    .line 283
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCampaignViews:Ljava/util/ArrayList;
@@ -80,10 +80,10 @@
 
     if-lez v5, :cond_7b
 
-    .line 282
+    .line 284
     add-int v2, p2, p3
 
-    .line 283
+    .line 285
     .local v2, "lastInScreen":I
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
@@ -114,7 +114,7 @@
 
     if-eqz v5, :cond_4c
 
-    .line 285
+    .line 287
     :try_start_31
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
@@ -124,7 +124,7 @@
 
     invoke-static {v5, v6}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$23(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;Ljava/lang/Runnable;)V
 
-    .line 292
+    .line 294
     new-instance v3, Ljava/lang/Thread;
 
     const/4 v5, 0x0
@@ -140,13 +140,13 @@
 
     invoke-direct {v3, v5, v6, v7}, Ljava/lang/Thread;-><init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;)V
 
-    .line 293
+    .line 295
     .local v3, "thread":Ljava/lang/Thread;
     invoke-virtual {v3}, Ljava/lang/Thread;->start()V
     :try_end_4c
     .catch Ljava/lang/Exception; {:try_start_31 .. :try_end_4c} :catch_7c
 
-    .line 300
+    .line 302
     .end local v3    # "thread":Ljava/lang/Thread;
     :cond_4c
     :goto_4c
@@ -165,7 +165,7 @@
 
     invoke-static {v5, v6}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$25(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;Landroid/os/Parcelable;)V
 
-    .line 302
+    .line 304
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
@@ -181,7 +181,7 @@
 
     invoke-static {v5, v6}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$26(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;I)V
 
-    .line 304
+    .line 306
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gListAward:Lcom/samsung/privilege/control/PullToRefreshListView;
@@ -193,7 +193,7 @@
 
     move-result-object v1
 
-    .line 305
+    .line 307
     .local v1, "itemView":Landroid/view/View;
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
@@ -202,18 +202,18 @@
     :goto_78
     invoke-static {v5, v4}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$27(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;I)V
 
-    .line 307
+    .line 309
     .end local v1    # "itemView":Landroid/view/View;
     .end local v2    # "lastInScreen":I
     :cond_7b
     return-void
 
-    .line 294
+    .line 296
     .restart local v2    # "lastInScreen":I
     :catch_7c
     move-exception v0
 
-    .line 295
+    .line 297
     .local v0, "ex":Ljava/lang/Exception;
     const-string v5, "buzzebees.marketlist.fragment"
 
@@ -239,7 +239,7 @@
 
     goto :goto_4c
 
-    .line 305
+    .line 307
     .end local v0    # "ex":Ljava/lang/Exception;
     .restart local v1    # "itemView":Landroid/view/View;
     :cond_96
@@ -256,12 +256,12 @@
     .param p2, "scrollState"    # I
 
     .prologue
-    .line 273
+    .line 275
     const/4 v0, 0x2
 
     if-ne p2, v0, :cond_e
 
-    .line 274
+    .line 276
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
@@ -273,11 +273,11 @@
 
     invoke-virtual {v0, v1}, Lcom/bitmapfun/util/ImageFetcher;->setPauseWork(Z)V
 
-    .line 278
+    .line 280
     :goto_d
     return-void
 
-    .line 276
+    .line 278
     :cond_e
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 

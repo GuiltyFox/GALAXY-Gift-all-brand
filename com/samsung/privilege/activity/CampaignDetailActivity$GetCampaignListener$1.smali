@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;
 
-    .line 3689
+    .line 3864
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 3
 
     .prologue
-    .line 3691
+    .line 3866
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
@@ -54,6 +54,6 @@
     # invokes: Lcom/samsung/privilege/activity/CampaignDetailActivity;->initialLayout(Z)V
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$29(Lcom/samsung/privilege/activity/CampaignDetailActivity;Z)V
 
-    .line 3692
+    .line 3867
     return-void
 .end method

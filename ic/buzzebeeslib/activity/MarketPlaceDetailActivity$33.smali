@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .registers 7
+    .registers 8
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
@@ -148,11 +148,11 @@
 
     invoke-virtual {v1}, Ljava/io/File;->length()J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v4, 0x0
 
-    cmp-long v1, v1, v3
+    cmp-long v1, v2, v4
 
     if-lez v1, :cond_c3
 
@@ -165,11 +165,11 @@
 
     invoke-virtual {v1}, Ljava/io/File;->length()J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    iget-wide v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetailActivity$33;->val$lgFileSize:J
+    iget-wide v4, p0, Lic/buzzebeeslib/activity/MarketPlaceDetailActivity$33;->val$lgFileSize:J
 
-    cmp-long v1, v1, v3
+    cmp-long v1, v2, v4
 
     if-nez v1, :cond_c3
 
@@ -309,9 +309,9 @@
 
     const/4 v2, 0x0
 
-    const-wide/16 v3, 0x64
+    const-wide/16 v4, 0x64
 
-    invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     goto/16 :goto_30
 .end method

@@ -82,7 +82,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignPostActivity$PostReviewListener;->this$0:Lcom/samsung/privilege/activity/CampaignPostActivity;
 
-    const v4, 0x7f0a0105
+    const v4, 0x7f090105
 
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/CampaignPostActivity;->getString(I)Ljava/lang/String;
 
@@ -158,7 +158,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignPostActivity$PostReviewListener;->this$0:Lcom/samsung/privilege/activity/CampaignPostActivity;
 
-    const v4, 0x7f0a00f4
+    const v4, 0x7f0900f4
 
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/CampaignPostActivity;->getString(I)Ljava/lang/String;
 
@@ -210,7 +210,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignPostActivity$PostReviewListener;->this$0:Lcom/samsung/privilege/activity/CampaignPostActivity;
 
-    const v2, 0x7f0a00f4
+    const v2, 0x7f0900f4
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/CampaignPostActivity;->getString(I)Ljava/lang/String;
 
@@ -280,7 +280,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignPostActivity$PostReviewListener;->this$0:Lcom/samsung/privilege/activity/CampaignPostActivity;
 
-    const v2, 0x7f0a00f4
+    const v2, 0x7f0900f4
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/CampaignPostActivity;->getString(I)Ljava/lang/String;
 
@@ -350,7 +350,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignPostActivity$PostReviewListener;->this$0:Lcom/samsung/privilege/activity/CampaignPostActivity;
 
-    const v2, 0x7f0a00f4
+    const v2, 0x7f0900f4
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/CampaignPostActivity;->getString(I)Ljava/lang/String;
 

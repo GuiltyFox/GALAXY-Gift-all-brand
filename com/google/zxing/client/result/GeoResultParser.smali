@@ -39,11 +39,11 @@
 
 # virtual methods
 .method public parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/GeoParsedResult;
-    .registers 15
+    .registers 16
     .param p1, "result"    # Lcom/google/zxing/Result;
 
     .prologue
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     .line 39
     invoke-static {p1}, Lcom/google/zxing/client/result/GeoResultParser;->getMassagedText(Lcom/google/zxing/Result;)Ljava/lang/String;
@@ -69,7 +69,7 @@
     .line 70
     :cond_11
     :goto_11
-    return-object v0
+    return-object v1
 
     .line 45
     :cond_12
@@ -77,10 +77,10 @@
 
     invoke-virtual {v9, v11}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v8
 
     .line 51
-    .local v7, "query":Ljava/lang/String;
+    .local v8, "query":Ljava/lang/String;
     const/4 v11, 0x1
 
     :try_start_18
@@ -90,19 +90,19 @@
 
     invoke-static {v11}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 52
-    .local v1, "latitude":D
-    const-wide v11, 0x4056800000000000L
+    .local v2, "latitude":D
+    const-wide v12, 0x4056800000000000L
 
-    cmpl-double v11, v1, v11
+    cmpl-double v11, v2, v12
 
     if-gtz v11, :cond_11
 
-    const-wide v11, -0x3fa9800000000000L
+    const-wide v12, -0x3fa9800000000000L
 
-    cmpg-double v11, v1, v11
+    cmpg-double v11, v2, v12
 
     if-ltz v11, :cond_11
 
@@ -115,19 +115,19 @@
 
     invoke-static {v11}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
-    move-result-wide v3
+    move-result-wide v4
 
     .line 56
-    .local v3, "longitude":D
-    const-wide v11, 0x4066800000000000L
+    .local v4, "longitude":D
+    const-wide v12, 0x4066800000000000L
 
-    cmpl-double v11, v3, v11
+    cmpl-double v11, v4, v12
 
     if-gtz v11, :cond_11
 
-    const-wide v11, -0x3f99800000000000L
+    const-wide v12, -0x3f99800000000000L
 
-    cmpg-double v11, v3, v11
+    cmpg-double v11, v4, v12
 
     if-ltz v11, :cond_11
 
@@ -143,19 +143,19 @@
     if-nez v11, :cond_5c
 
     .line 60
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
     .line 70
-    .local v5, "altitude":D
+    .local v6, "altitude":D
     :cond_56
-    new-instance v0, Lcom/google/zxing/client/result/GeoParsedResult;
+    new-instance v1, Lcom/google/zxing/client/result/GeoParsedResult;
 
-    invoke-direct/range {v0 .. v7}, Lcom/google/zxing/client/result/GeoParsedResult;-><init>(DDDLjava/lang/String;)V
+    invoke-direct/range {v1 .. v8}, Lcom/google/zxing/client/result/GeoParsedResult;-><init>(DDDLjava/lang/String;)V
 
     goto :goto_11
 
     .line 62
-    .end local v5    # "altitude":D
+    .end local v6    # "altitude":D
     :cond_5c
     const/4 v11, 0x3
 
@@ -168,27 +168,27 @@
     :try_end_64
     .catch Ljava/lang/NumberFormatException; {:try_start_5d .. :try_end_64} :catch_6c
 
-    move-result-wide v5
+    move-result-wide v6
 
     .line 63
-    .restart local v5    # "altitude":D
-    const-wide/16 v11, 0x0
+    .restart local v6    # "altitude":D
+    const-wide/16 v12, 0x0
 
-    cmpg-double v11, v5, v11
+    cmpg-double v11, v6, v12
 
     if-gez v11, :cond_56
 
     goto :goto_11
 
     .line 67
-    .end local v1    # "latitude":D
-    .end local v3    # "longitude":D
-    .end local v5    # "altitude":D
+    .end local v2    # "latitude":D
+    .end local v4    # "longitude":D
+    .end local v6    # "altitude":D
     :catch_6c
-    move-exception v8
+    move-exception v0
 
     .line 68
-    .local v8, "ignored":Ljava/lang/NumberFormatException;
+    .local v0, "ignored":Ljava/lang/NumberFormatException;
     goto :goto_11
 .end method
 

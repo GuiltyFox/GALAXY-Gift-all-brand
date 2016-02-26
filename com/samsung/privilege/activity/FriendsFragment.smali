@@ -886,7 +886,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0a0324
+    const v7, 0x7f09032b
 
     invoke-virtual {v6, v7}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
     :try_end_1d
@@ -1144,7 +1144,7 @@
     .line 109
     iget-object v5, p0, Lcom/samsung/privilege/activity/FriendsFragment;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
-    const v6, 0x7f02039f
+    const v6, 0x7f0203a7
 
     invoke-virtual {v5, v6}, Lcom/bitmapfun/util/ImageFetcher;->setLoadingImage(I)V
 
@@ -1195,7 +1195,7 @@
 
     .prologue
     .line 125
-    const v1, 0x7f0300eb
+    const v1, 0x7f0300ed
 
     const/4 v2, 0x0
 
@@ -1205,7 +1205,7 @@
 
     .line 127
     .local v0, "view":Landroid/view/View;
-    const v1, 0x7f07032a
+    const v1, 0x7f0c0337
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1224,7 +1224,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f030122
+    const v2, 0x7f030124
 
     const/4 v3, 0x0
 

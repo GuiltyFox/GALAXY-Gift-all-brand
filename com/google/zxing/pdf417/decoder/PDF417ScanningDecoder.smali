@@ -1527,7 +1527,7 @@
 .end method
 
 .method private static detectCodeword(Lcom/google/zxing/common/BitMatrix;IIZIIII)Lcom/google/zxing/pdf417/decoder/Codeword;
-    .registers 19
+    .registers 20
     .param p0, "image"    # Lcom/google/zxing/common/BitMatrix;
     .param p1, "minColumn"    # I
     .param p2, "maxColumn"    # I
@@ -1583,7 +1583,7 @@
 
     move-result v9
 
-    if-nez v9, :cond_3d
+    if-nez v9, :cond_3e
 
     .line 443
     const/4 v9, 0x0
@@ -1635,7 +1635,7 @@
     .line 423
     .end local v8    # "tmpCount":I
     :cond_39
-    move v5, p4
+    move/from16 v5, p4
 
     .line 424
     .restart local v5    # "endColumn":I
@@ -1645,16 +1645,16 @@
 
     .line 446
     .end local v6    # "i":I
-    :cond_3d
+    :cond_3e
     invoke-static {v7}, Lcom/google/zxing/pdf417/decoder/PDF417CodewordDecoder;->getDecodedValue([I)I
 
     move-result v4
 
     .line 447
     .local v4, "decodedValue":I
-    int-to-long v9, v4
+    int-to-long v10, v4
 
-    invoke-static {v9, v10}, Lcom/google/zxing/pdf417/PDF417Common;->getCodeword(J)I
+    invoke-static {v10, v11}, Lcom/google/zxing/pdf417/PDF417Common;->getCodeword(J)I
 
     move-result v2
 
@@ -1662,7 +1662,7 @@
     .local v2, "codeword":I
     const/4 v9, -0x1
 
-    if-ne v2, v9, :cond_4b
+    if-ne v2, v9, :cond_4c
 
     .line 449
     const/4 v9, 0x0
@@ -1670,14 +1670,16 @@
     goto :goto_b
 
     .line 451
-    :cond_4b
+    :cond_4c
     new-instance v9, Lcom/google/zxing/pdf417/decoder/Codeword;
 
     invoke-static {v4}, Lcom/google/zxing/pdf417/decoder/PDF417ScanningDecoder;->getCodewordBucketNumber(I)I
 
     move-result v10
 
-    invoke-direct {v9, p4, v5, v10, v2}, Lcom/google/zxing/pdf417/decoder/Codeword;-><init>(IIII)V
+    move/from16 v0, p4
+
+    invoke-direct {v9, v0, v5, v10, v2}, Lcom/google/zxing/pdf417/decoder/Codeword;-><init>(IIII)V
 
     goto :goto_b
 .end method

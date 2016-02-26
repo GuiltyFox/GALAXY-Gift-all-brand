@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener$1;->val$response_text:Ljava/lang/String;
 
-    .line 1558
+    .line 1583
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,10 +45,10 @@
     .registers 7
 
     .prologue
-    .line 1560
+    .line 1585
     const/4 v1, 0x0
 
-    .line 1562
+    .line 1587
     .local v1, "needRefresh":Z
     const-string v3, "category_buzzebees_lib"
 
@@ -67,11 +67,11 @@
 
     move-result-object v0
 
-    .line 1563
+    .line 1588
     .local v0, "catch_category":Ljava/lang/String;
     if-eqz v0, :cond_67
 
-    .line 1564
+    .line 1589
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener$1;->val$response_text:Ljava/lang/String;
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -80,14 +80,14 @@
 
     if-eqz v3, :cond_65
 
-    .line 1565
+    .line 1590
     const/4 v1, 0x0
 
-    .line 1573
+    .line 1598
     :goto_1c
     if-eqz v1, :cond_64
 
-    .line 1574
+    .line 1599
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener$1;->this$1:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
@@ -98,9 +98,9 @@
     iget-object v4, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener$1;->val$response_text:Ljava/lang/String;
 
     # invokes: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->ProcessJsonCampaignCategory(Ljava/lang/String;)V
-    invoke-static {v3, v4}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$9(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$10(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;Ljava/lang/String;)V
 
-    .line 1576
+    .line 1601
     const-string v3, "category_buzzebees_lib"
 
     iget-object v4, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener$1;->val$response_text:Ljava/lang/String;
@@ -118,14 +118,14 @@
 
     invoke-static {v3, v4, v5}, Lic/buzzebeeslib/util/LocalFileHelper;->saveCatchToSD(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 1578
+    .line 1603
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener$1;->this$1:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener;
 
     iget-boolean v3, v3, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener;->gIsFilterCat:Z
 
     if-eqz v3, :cond_64
 
-    .line 1579
+    .line 1604
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener$1;->this$1:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
@@ -143,7 +143,7 @@
 
     move-result-object v2
 
-    .line 1580
+    .line 1605
     .local v2, "param_cat":Ljava/lang/String;
     if-eqz v2, :cond_64
 
@@ -155,7 +155,7 @@
 
     if-nez v3, :cond_64
 
-    .line 1581
+    .line 1606
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener$1;->this$1:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
@@ -167,19 +167,19 @@
 
     invoke-virtual {v3, v2, v4}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->doFilterCat(Ljava/lang/String;Z)V
 
-    .line 1585
+    .line 1610
     .end local v2    # "param_cat":Ljava/lang/String;
     :cond_64
     return-void
 
-    .line 1567
+    .line 1592
     :cond_65
     const/4 v1, 0x1
 
-    .line 1569
+    .line 1594
     goto :goto_1c
 
-    .line 1570
+    .line 1595
     :cond_67
     const/4 v1, 0x1
 

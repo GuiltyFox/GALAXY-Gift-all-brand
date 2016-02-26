@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforePurchasingListener$1$1;->this$2:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforePurchasingListener$1;
 
-    .line 3489
+    .line 3495
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,10 +43,10 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 3491
+    .line 3497
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 3493
+    .line 3499
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforePurchasingListener$1$1;->this$2:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforePurchasingListener$1;
@@ -69,7 +69,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 3494
+    .line 3500
     .local v0, "intent":Landroid/content/Intent;
     iget-object v1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforePurchasingListener$1$1;->this$2:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforePurchasingListener$1;
 
@@ -85,6 +85,6 @@
 
     invoke-virtual {v1, v0}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 3495
+    .line 3501
     return-void
 .end method

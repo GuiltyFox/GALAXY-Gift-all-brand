@@ -958,17 +958,17 @@
     .prologue
     .line 301
     .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase<TT;>;"
-    const/4 v1, 0x5
+    sget v1, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrShowIndicator:I
 
     invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->isPullToRefreshOverScrollEnabled()Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_10
 
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_9
     invoke-virtual {p1, v1, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v0
@@ -979,10 +979,10 @@
     return-void
 
     .line 301
-    :cond_f
+    :cond_10
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_9
 .end method
 
 .method protected isReadyForPullEnd()Z

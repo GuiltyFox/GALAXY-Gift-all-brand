@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener$1;->val$response_text:Ljava/lang/String;
 
-    .line 2074
+    .line 2089
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,24 +45,24 @@
     .registers 12
 
     .prologue
-    .line 2077
+    .line 2092
     :try_start_0
     new-instance v5, Lcom/samsung/privilege/bean/MainMenuItemModel;
 
     invoke-direct {v5}, Lcom/samsung/privilege/bean/MainMenuItemModel;-><init>()V
 
-    .line 2078
+    .line 2093
     .local v5, "itemHeader":Lcom/samsung/privilege/bean/MainMenuItemModel;
     const/4 v8, 0x0
 
     iput v8, v5, Lcom/samsung/privilege/bean/MainMenuItemModel;->type:I
 
-    .line 2079
+    .line 2094
     const-string v8, "Notification"
 
     iput-object v8, v5, Lcom/samsung/privilege/bean/MainMenuItemModel;->header:Ljava/lang/String;
 
-    .line 2080
+    .line 2095
     iget-object v8, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -77,18 +77,18 @@
 
     invoke-virtual {v8, v5}, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->addItem(Lcom/samsung/privilege/bean/MainMenuItemModel;)V
 
-    .line 2082
+    .line 2097
     new-instance v7, Lorg/json/JSONArray;
 
     iget-object v8, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener$1;->val$response_text:Ljava/lang/String;
 
     invoke-direct {v7, v8}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
 
-    .line 2083
+    .line 2098
     .local v7, "jsonRoot":Lorg/json/JSONArray;
     const/4 v3, 0x0
 
-    .line 2084
+    .line 2099
     .local v3, "isFoundNoti":Z
     const/4 v2, 0x0
 
@@ -100,31 +100,31 @@
 
     if-lt v2, v8, :cond_5e
 
-    .line 2112
+    .line 2127
     if-nez v3, :cond_47
 
-    .line 2113
+    .line 2128
     new-instance v4, Lcom/samsung/privilege/bean/MainMenuItemModel;
 
     invoke-direct {v4}, Lcom/samsung/privilege/bean/MainMenuItemModel;-><init>()V
 
-    .line 2114
+    .line 2129
     .local v4, "item":Lcom/samsung/privilege/bean/MainMenuItemModel;
     const/4 v8, 0x2
 
     iput v8, v4, Lcom/samsung/privilege/bean/MainMenuItemModel;->type:I
 
-    .line 2115
+    .line 2130
     const-string v8, ""
 
     iput-object v8, v4, Lcom/samsung/privilege/bean/MainMenuItemModel;->noti_id:Ljava/lang/String;
 
-    .line 2116
+    .line 2131
     const-string v8, "No new campaign!"
 
     iput-object v8, v4, Lcom/samsung/privilege/bean/MainMenuItemModel;->noti_detail:Ljava/lang/String;
 
-    .line 2117
+    .line 2132
     iget-object v8, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -139,7 +139,7 @@
 
     invoke-virtual {v8, v4}, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->addItem(Lcom/samsung/privilege/bean/MainMenuItemModel;)V
 
-    .line 2120
+    .line 2135
     .end local v4    # "item":Lcom/samsung/privilege/bean/MainMenuItemModel;
     :cond_47
     iget-object v8, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener;
@@ -156,7 +156,7 @@
 
     invoke-virtual {v8}, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->notifyDataSetChanged()V
 
-    .line 2121
+    .line 2136
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -166,7 +166,7 @@
 
     invoke-static {v8, v9}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2125
+    .line 2140
     .end local v2    # "i":I
     .end local v3    # "isFoundNoti":Z
     .end local v5    # "itemHeader":Lcom/samsung/privilege/bean/MainMenuItemModel;
@@ -174,7 +174,7 @@
     :goto_5d
     return-void
 
-    .line 2085
+    .line 2100
     .restart local v2    # "i":I
     .restart local v3    # "isFoundNoti":Z
     .restart local v5    # "itemHeader":Lcom/samsung/privilege/bean/MainMenuItemModel;
@@ -184,13 +184,13 @@
 
     move-result-object v6
 
-    .line 2086
+    .line 2101
     .local v6, "jsonNoti":Lorg/json/JSONObject;
     new-instance v0, Lcom/samsung/privilege/bean/BuzzebeesNotification;
 
     invoke-direct {v0, v6}, Lcom/samsung/privilege/bean/BuzzebeesNotification;-><init>(Lorg/json/JSONObject;)V
 
-    .line 2088
+    .line 2103
     .local v0, "bNoti":Lcom/samsung/privilege/bean/BuzzebeesNotification;
     iget-object v8, v0, Lcom/samsung/privilege/bean/BuzzebeesNotification;->ObjectType:Ljava/lang/String;
 
@@ -212,45 +212,45 @@
 
     if-eqz v8, :cond_ab
 
-    .line 2089
+    .line 2104
     :cond_7b
     iget-object v8, v0, Lcom/samsung/privilege/bean/BuzzebeesNotification;->campaignObject:Lcom/samsung/privilege/bean/CampaignView;
 
     if-eqz v8, :cond_a7
 
-    .line 2090
+    .line 2105
     new-instance v4, Lcom/samsung/privilege/bean/MainMenuItemModel;
 
     invoke-direct {v4}, Lcom/samsung/privilege/bean/MainMenuItemModel;-><init>()V
 
-    .line 2091
+    .line 2106
     .restart local v4    # "item":Lcom/samsung/privilege/bean/MainMenuItemModel;
     const/4 v8, 0x2
 
     iput v8, v4, Lcom/samsung/privilege/bean/MainMenuItemModel;->type:I
 
-    .line 2092
+    .line 2107
     iget-object v8, v0, Lcom/samsung/privilege/bean/BuzzebeesNotification;->campaignObject:Lcom/samsung/privilege/bean/CampaignView;
 
     iget-object v8, v8, Lcom/samsung/privilege/bean/CampaignView;->ID:Ljava/lang/String;
 
     iput-object v8, v4, Lcom/samsung/privilege/bean/MainMenuItemModel;->noti_id:Ljava/lang/String;
 
-    .line 2093
+    .line 2108
     iget-object v8, v0, Lcom/samsung/privilege/bean/BuzzebeesNotification;->campaignObject:Lcom/samsung/privilege/bean/CampaignView;
 
     iget-object v8, v8, Lcom/samsung/privilege/bean/CampaignView;->CategoryID:Ljava/lang/String;
 
     iput-object v8, v4, Lcom/samsung/privilege/bean/MainMenuItemModel;->noti_id:Ljava/lang/String;
 
-    .line 2094
+    .line 2109
     iget-object v8, v0, Lcom/samsung/privilege/bean/BuzzebeesNotification;->campaignObject:Lcom/samsung/privilege/bean/CampaignView;
 
     iget-object v8, v8, Lcom/samsung/privilege/bean/CampaignView;->Name:Ljava/lang/String;
 
     iput-object v8, v4, Lcom/samsung/privilege/bean/MainMenuItemModel;->noti_detail:Ljava/lang/String;
 
-    .line 2095
+    .line 2110
     iget-object v8, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -265,10 +265,10 @@
 
     invoke-virtual {v8, v4}, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->addItem(Lcom/samsung/privilege/bean/MainMenuItemModel;)V
 
-    .line 2096
+    .line 2111
     const/4 v3, 0x1
 
-    .line 2084
+    .line 2099
     .end local v4    # "item":Lcom/samsung/privilege/bean/MainMenuItemModel;
     :cond_a7
     :goto_a7
@@ -276,7 +276,7 @@
 
     goto/16 :goto_22
 
-    .line 2098
+    .line 2113
     :cond_ab
     iget-object v8, v0, Lcom/samsung/privilege/bean/BuzzebeesNotification;->ObjectType:Ljava/lang/String;
 
@@ -288,7 +288,7 @@
 
     if-nez v8, :cond_a7
 
-    .line 2100
+    .line 2115
     iget-object v8, v0, Lcom/samsung/privilege/bean/BuzzebeesNotification;->ObjectType:Ljava/lang/String;
 
     const-string v9, "message"
@@ -299,35 +299,35 @@
 
     if-eqz v8, :cond_a7
 
-    .line 2101
+    .line 2116
     iget-object v8, v0, Lcom/samsung/privilege/bean/BuzzebeesNotification;->messageObject:Lcom/samsung/privilege/bean/MessageNotification;
 
     if-eqz v8, :cond_a7
 
-    .line 2102
+    .line 2117
     new-instance v4, Lcom/samsung/privilege/bean/MainMenuItemModel;
 
     invoke-direct {v4}, Lcom/samsung/privilege/bean/MainMenuItemModel;-><init>()V
 
-    .line 2103
+    .line 2118
     .restart local v4    # "item":Lcom/samsung/privilege/bean/MainMenuItemModel;
     const/4 v8, 0x2
 
     iput v8, v4, Lcom/samsung/privilege/bean/MainMenuItemModel;->type:I
 
-    .line 2104
+    .line 2119
     const-string v8, ""
 
     iput-object v8, v4, Lcom/samsung/privilege/bean/MainMenuItemModel;->noti_id:Ljava/lang/String;
 
-    .line 2105
+    .line 2120
     iget-object v8, v0, Lcom/samsung/privilege/bean/BuzzebeesNotification;->messageObject:Lcom/samsung/privilege/bean/MessageNotification;
 
     iget-object v8, v8, Lcom/samsung/privilege/bean/MessageNotification;->message:Ljava/lang/String;
 
     iput-object v8, v4, Lcom/samsung/privilege/bean/MainMenuItemModel;->noti_detail:Ljava/lang/String;
 
-    .line 2106
+    .line 2121
     iget-object v8, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -344,12 +344,12 @@
     :try_end_e2
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_e2} :catch_e4
 
-    .line 2107
+    .line 2122
     const/4 v3, 0x1
 
     goto :goto_a7
 
-    .line 2122
+    .line 2137
     .end local v0    # "bNoti":Lcom/samsung/privilege/bean/BuzzebeesNotification;
     .end local v2    # "i":I
     .end local v3    # "isFoundNoti":Z
@@ -360,7 +360,7 @@
     :catch_e4
     move-exception v1
 
-    .line 2123
+    .line 2138
     .local v1, "e":Lorg/json/JSONException;
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;

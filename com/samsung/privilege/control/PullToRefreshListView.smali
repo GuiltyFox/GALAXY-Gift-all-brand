@@ -48,6 +48,8 @@
 
 .field private image:Landroid/widget/ImageView;
 
+.field private lastUpdate:Ljava/lang/String;
+
 .field private lockScrollWhileRefreshing:Z
 
 .field public mIsPremium:Z
@@ -166,7 +168,7 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 108
+    .line 109
     invoke-direct {p0, p1}, Landroid/widget/ListView;-><init>(Landroid/content/Context;)V
 
     .line 57
@@ -179,15 +181,15 @@
 
     iput v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->previousY:F
 
-    .line 105
+    .line 106
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->mIsPremium:Z
 
-    .line 109
-    invoke-direct {p0}, Lcom/samsung/privilege/control/PullToRefreshListView;->init()V
-
     .line 110
+    invoke-direct {p0, p1}, Lcom/samsung/privilege/control/PullToRefreshListView;->init(Landroid/content/Context;)V
+
+    .line 111
     return-void
 .end method
 
@@ -197,7 +199,7 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 113
+    .line 114
     invoke-direct {p0, p1, p2}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 57
@@ -210,15 +212,15 @@
 
     iput v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->previousY:F
 
-    .line 105
+    .line 106
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->mIsPremium:Z
 
-    .line 114
-    invoke-direct {p0}, Lcom/samsung/privilege/control/PullToRefreshListView;->init()V
-
     .line 115
+    invoke-direct {p0, p1}, Lcom/samsung/privilege/control/PullToRefreshListView;->init(Landroid/content/Context;)V
+
+    .line 116
     return-void
 .end method
 
@@ -229,7 +231,7 @@
     .param p3, "defStyle"    # I
 
     .prologue
-    .line 118
+    .line 119
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 57
@@ -242,15 +244,15 @@
 
     iput v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->previousY:F
 
-    .line 105
+    .line 106
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->mIsPremium:Z
 
-    .line 119
-    invoke-direct {p0}, Lcom/samsung/privilege/control/PullToRefreshListView;->init()V
-
     .line 120
+    invoke-direct {p0, p1}, Lcom/samsung/privilege/control/PullToRefreshListView;->init(Landroid/content/Context;)V
+
+    .line 121
     return-void
 .end method
 
@@ -258,7 +260,7 @@
     .registers 2
 
     .prologue
-    .line 93
+    .line 94
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->state:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     return-object v0
@@ -268,7 +270,7 @@
     .registers 2
 
     .prologue
-    .line 94
+    .line 95
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->headerContainer:Landroid/widget/LinearLayout;
 
     return-object v0
@@ -298,7 +300,7 @@
     .registers 2
 
     .prologue
-    .line 102
+    .line 103
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->onItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
 
     return-object v0
@@ -318,7 +320,7 @@
     .registers 2
 
     .prologue
-    .line 95
+    .line 96
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->header:Landroid/widget/RelativeLayout;
 
     return-object v0
@@ -328,7 +330,7 @@
     .registers 2
 
     .prologue
-    .line 267
+    .line 269
     invoke-direct {p0, p1}, Lcom/samsung/privilege/control/PullToRefreshListView;->setHeaderPadding(I)V
 
     return-void
@@ -358,7 +360,7 @@
     .registers 1
 
     .prologue
-    .line 345
+    .line 347
     invoke-direct {p0}, Lcom/samsung/privilege/control/PullToRefreshListView;->bounceBackHeader()V
 
     return-void
@@ -368,7 +370,7 @@
     .registers 2
 
     .prologue
-    .line 383
+    .line 385
     invoke-direct {p0, p1}, Lcom/samsung/privilege/control/PullToRefreshListView;->setState(Lcom/samsung/privilege/control/PullToRefreshListView$State;)V
 
     return-void
@@ -394,7 +396,7 @@
 
     const/4 v1, 0x0
 
-    .line 346
+    .line 348
     iget-object v3, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->state:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     sget-object v4, Lcom/samsung/privilege/control/PullToRefreshListView$State;->REFRESHING:Lcom/samsung/privilege/control/PullToRefreshListView$State;
@@ -417,7 +419,7 @@
 
     neg-int v9, v3
 
-    .line 348
+    .line 350
     .local v9, "yTranslate":I
     :goto_17
     new-instance v0, Landroid/view/animation/TranslateAnimation;
@@ -436,22 +438,22 @@
 
     invoke-direct/range {v0 .. v8}, Landroid/view/animation/TranslateAnimation;-><init>(IFIFIFIF)V
 
-    .line 350
+    .line 352
     .local v0, "bounceAnimation":Landroid/view/animation/TranslateAnimation;
     const-wide/16 v2, 0x2bc
 
     invoke-virtual {v0, v2, v3}, Landroid/view/animation/TranslateAnimation;->setDuration(J)V
 
-    .line 351
+    .line 353
     invoke-virtual {v0, v10}, Landroid/view/animation/TranslateAnimation;->setFillEnabled(Z)V
 
-    .line 352
+    .line 354
     invoke-virtual {v0, v1}, Landroid/view/animation/TranslateAnimation;->setFillAfter(Z)V
 
-    .line 353
+    .line 355
     invoke-virtual {v0, v10}, Landroid/view/animation/TranslateAnimation;->setFillBefore(Z)V
 
-    .line 354
+    .line 356
     new-instance v1, Landroid/view/animation/OvershootInterpolator;
 
     const v2, 0x3fb33333
@@ -460,7 +462,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/animation/TranslateAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 355
+    .line 357
     new-instance v1, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;
 
     const/4 v2, 0x0
@@ -469,13 +471,13 @@
 
     invoke-virtual {v0, v1}, Landroid/view/animation/TranslateAnimation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 357
+    .line 359
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/control/PullToRefreshListView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 358
+    .line 360
     return-void
 
-    .line 346
+    .line 348
     .end local v0    # "bounceAnimation":Landroid/view/animation/TranslateAnimation;
     .end local v9    # "yTranslate":I
     :cond_48
@@ -490,8 +492,9 @@
     goto :goto_17
 .end method
 
-.method private init()V
-    .registers 15
+.method private init(Landroid/content/Context;)V
+    .registers 16
+    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     const/4 v1, 0x0
@@ -504,12 +507,12 @@
 
     const/4 v3, 0x1
 
-    .line 232
+    .line 233
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/control/PullToRefreshListView;->setVerticalFadingEdgeEnabled(Z)V
 
-    .line 234
+    .line 235
     invoke-virtual {p0}, Lcom/samsung/privilege/control/PullToRefreshListView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -518,7 +521,7 @@
 
     move-result-object v0
 
-    const v5, 0x7f03010e
+    const v5, 0x7f030110
 
     invoke-virtual {v0, v5, v13}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -528,10 +531,10 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->headerContainer:Landroid/widget/LinearLayout;
 
-    .line 235
+    .line 236
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->headerContainer:Landroid/widget/LinearLayout;
 
-    const v5, 0x7f07022f
+    const v5, 0x7f0c022f
 
     invoke-virtual {v0, v5}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -541,10 +544,10 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->header:Landroid/widget/RelativeLayout;
 
-    .line 236
+    .line 237
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->header:Landroid/widget/RelativeLayout;
 
-    const v5, 0x7f070233
+    const v5, 0x7f0c0233
 
     invoke-virtual {v0, v5}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
@@ -554,10 +557,10 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->text:Landroid/widget/TextView;
 
-    .line 237
+    .line 238
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->header:Landroid/widget/RelativeLayout;
 
-    const v5, 0x7f070073
+    const v5, 0x7f0c0073
 
     invoke-virtual {v0, v5}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
@@ -567,10 +570,10 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->image:Landroid/widget/ImageView;
 
-    .line 238
+    .line 239
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->header:Landroid/widget/RelativeLayout;
 
-    const v5, 0x7f070232
+    const v5, 0x7f0c0232
 
     invoke-virtual {v0, v5}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
@@ -580,10 +583,10 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->spinner:Landroid/widget/ProgressBar;
 
-    .line 239
+    .line 240
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->header:Landroid/widget/RelativeLayout;
 
-    const v5, 0x7f070234
+    const v5, 0x7f0c0234
 
     invoke-virtual {v0, v5}, Landroid/widget/RelativeLayout;->findViewById(I)Landroid/view/View;
 
@@ -593,22 +596,43 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->update:Landroid/widget/TextView;
 
-    .line 241
-    const-string v0, "Pull down to refresh..."
+    .line 242
+    const v0, 0x7f09034d
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
 
     iput-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->pullToRefreshText:Ljava/lang/String;
 
-    .line 242
-    const-string v0, "Release to refresh..."
+    .line 243
+    const v0, 0x7f09034e
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
 
     iput-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->releaseToRefreshText:Ljava/lang/String;
 
-    .line 243
-    const-string v0, "Loading..."
+    .line 244
+    const v0, 0x7f09034c
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
 
     iput-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->refreshingText:Ljava/lang/String;
 
     .line 245
+    const v0, 0x7f09034f
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->lastUpdate:Ljava/lang/String;
+
+    .line 247
     new-instance v0, Landroid/view/animation/RotateAnimation;
 
     move v5, v3
@@ -619,7 +643,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->flipAnimation:Landroid/view/animation/RotateAnimation;
 
-    .line 246
+    .line 248
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->flipAnimation:Landroid/view/animation/RotateAnimation;
 
     new-instance v5, Landroid/view/animation/LinearInterpolator;
@@ -628,19 +652,19 @@
 
     invoke-virtual {v0, v5}, Landroid/view/animation/RotateAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 247
+    .line 249
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->flipAnimation:Landroid/view/animation/RotateAnimation;
 
-    const-wide/16 v5, 0xfa
+    const-wide/16 v6, 0xfa
 
-    invoke-virtual {v0, v5, v6}, Landroid/view/animation/RotateAnimation;->setDuration(J)V
+    invoke-virtual {v0, v6, v7}, Landroid/view/animation/RotateAnimation;->setDuration(J)V
 
-    .line 248
+    .line 250
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->flipAnimation:Landroid/view/animation/RotateAnimation;
 
     invoke-virtual {v0, v3}, Landroid/view/animation/RotateAnimation;->setFillAfter(Z)V
 
-    .line 250
+    .line 252
     new-instance v5, Landroid/view/animation/RotateAnimation;
 
     move v6, v2
@@ -659,7 +683,7 @@
 
     iput-object v5, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->reverseFlipAnimation:Landroid/view/animation/RotateAnimation;
 
-    .line 251
+    .line 253
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->reverseFlipAnimation:Landroid/view/animation/RotateAnimation;
 
     new-instance v1, Landroid/view/animation/LinearInterpolator;
@@ -668,43 +692,43 @@
 
     invoke-virtual {v0, v1}, Landroid/view/animation/RotateAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 252
+    .line 254
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->reverseFlipAnimation:Landroid/view/animation/RotateAnimation;
 
-    const-wide/16 v1, 0xfa
+    const-wide/16 v4, 0xfa
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/RotateAnimation;->setDuration(J)V
+    invoke-virtual {v0, v4, v5}, Landroid/view/animation/RotateAnimation;->setDuration(J)V
 
-    .line 253
+    .line 255
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->reverseFlipAnimation:Landroid/view/animation/RotateAnimation;
 
     invoke-virtual {v0, v3}, Landroid/view/animation/RotateAnimation;->setFillAfter(Z)V
 
-    .line 255
+    .line 257
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->headerContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/control/PullToRefreshListView;->addHeaderView(Landroid/view/View;)V
 
-    .line 256
+    .line 258
     sget-object v0, Lcom/samsung/privilege/control/PullToRefreshListView$State;->PULL_TO_REFRESH:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     invoke-direct {p0, v0}, Lcom/samsung/privilege/control/PullToRefreshListView;->setState(Lcom/samsung/privilege/control/PullToRefreshListView$State;)V
 
-    .line 257
+    .line 259
     invoke-virtual {p0}, Lcom/samsung/privilege/control/PullToRefreshListView;->isVerticalScrollBarEnabled()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->scrollbarEnabled:Z
 
-    .line 259
+    .line 261
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->header:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0}, Landroid/widget/RelativeLayout;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v12
 
-    .line 260
+    .line 262
     .local v12, "vto":Landroid/view/ViewTreeObserver;
     new-instance v0, Lcom/samsung/privilege/control/PullToRefreshListView$PTROnGlobalLayoutListener;
 
@@ -712,17 +736,17 @@
 
     invoke-virtual {v12, v0}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 262
+    .line 264
     new-instance v0, Lcom/samsung/privilege/control/PullToRefreshListView$PTROnItemClickListener;
 
     invoke-direct {v0, p0, v13}, Lcom/samsung/privilege/control/PullToRefreshListView$PTROnItemClickListener;-><init>(Lcom/samsung/privilege/control/PullToRefreshListView;Lcom/samsung/privilege/control/PullToRefreshListView$PTROnItemClickListener;)V
 
     invoke-super {p0, v0}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 264
+    .line 266
     invoke-virtual {p0}, Lcom/samsung/privilege/control/PullToRefreshListView;->setUpdateTime()V
 
-    .line 265
+    .line 267
     return-void
 .end method
 
@@ -730,7 +754,7 @@
     .registers 3
 
     .prologue
-    .line 361
+    .line 363
     iget v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->headerPadding:I
 
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->header:Landroid/widget/RelativeLayout;
@@ -749,17 +773,17 @@
 
     if-lez v0, :cond_17
 
-    .line 362
+    .line 364
     :cond_11
     sget-object v0, Lcom/samsung/privilege/control/PullToRefreshListView$State;->PULL_TO_REFRESH:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     invoke-direct {p0, v0}, Lcom/samsung/privilege/control/PullToRefreshListView;->setState(Lcom/samsung/privilege/control/PullToRefreshListView$State;)V
 
-    .line 371
+    .line 373
     :goto_16
     return-void
 
-    .line 366
+    .line 368
     :cond_17
     invoke-virtual {p0}, Lcom/samsung/privilege/control/PullToRefreshListView;->getAnimation()Landroid/view/animation/Animation;
 
@@ -777,14 +801,14 @@
 
     if-nez v0, :cond_2b
 
-    .line 367
+    .line 369
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->bounceBackHeader:Z
 
     goto :goto_16
 
-    .line 369
+    .line 371
     :cond_2b
     invoke-direct {p0}, Lcom/samsung/privilege/control/PullToRefreshListView;->bounceBackHeader()V
 
@@ -800,10 +824,10 @@
 
     const/16 v3, 0xff
 
-    .line 268
+    .line 270
     iput p1, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->headerPadding:I
 
-    .line 270
+    .line 272
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->header:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v1}, Landroid/widget/RelativeLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -812,21 +836,21 @@
 
     check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 271
+    .line 273
     .local v0, "mlp":Landroid/view/ViewGroup$MarginLayoutParams;
     invoke-virtual {v0, v2, p1, v2, v2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 272
+    .line 274
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->header:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v1, v0}, Landroid/widget/RelativeLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 273
+    .line 275
     iget-boolean v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->mIsPremium:Z
 
     if-eqz v1, :cond_2b
 
-    .line 274
+    .line 276
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->text:Landroid/widget/TextView;
 
     invoke-static {v3, v3, v3}, Landroid/graphics/Color;->rgb(III)I
@@ -835,7 +859,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 275
+    .line 277
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->update:Landroid/widget/TextView;
 
     invoke-static {v3, v3, v3}, Landroid/graphics/Color;->rgb(III)I
@@ -844,7 +868,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 277
+    .line 279
     :cond_2b
     return-void
 .end method
@@ -854,10 +878,10 @@
     .param p1, "state"    # Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     .prologue
-    .line 384
+    .line 386
     iput-object p1, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->state:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
-    .line 385
+    .line 387
     invoke-static {}, Lcom/samsung/privilege/control/PullToRefreshListView;->$SWITCH_TABLE$com$samsung$privilege$control$PullToRefreshListView$State()[I
 
     move-result-object v0
@@ -870,11 +894,11 @@
 
     packed-switch v0, :pswitch_data_42
 
-    .line 411
+    .line 413
     :goto_f
     return-void
 
-    .line 389
+    .line 391
     :pswitch_10
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->text:Landroid/widget/TextView;
 
@@ -882,7 +906,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 390
+    .line 392
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->update:Landroid/widget/TextView;
 
     sget-object v1, Lcom/samsung/privilege/AppSetting;->gLastUpdate:Ljava/lang/String;
@@ -891,7 +915,7 @@
 
     goto :goto_f
 
-    .line 396
+    .line 398
     :pswitch_1f
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->text:Landroid/widget/TextView;
 
@@ -899,7 +923,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 397
+    .line 399
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->update:Landroid/widget/TextView;
 
     sget-object v1, Lcom/samsung/privilege/AppSetting;->gLastUpdate:Ljava/lang/String;
@@ -908,23 +932,23 @@
 
     goto :goto_f
 
-    .line 401
+    .line 403
     :pswitch_2e
     invoke-direct {p0}, Lcom/samsung/privilege/control/PullToRefreshListView;->setUiRefreshing()V
 
-    .line 403
+    .line 405
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->onRefreshListener:Lcom/samsung/privilege/control/PullToRefreshListView$OnRefreshListener;
 
     if-nez v0, :cond_3b
 
-    .line 404
+    .line 406
     sget-object v0, Lcom/samsung/privilege/control/PullToRefreshListView$State;->PULL_TO_REFRESH:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     invoke-direct {p0, v0}, Lcom/samsung/privilege/control/PullToRefreshListView;->setState(Lcom/samsung/privilege/control/PullToRefreshListView$State;)V
 
     goto :goto_f
 
-    .line 406
+    .line 408
     :cond_3b
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->onRefreshListener:Lcom/samsung/privilege/control/PullToRefreshListView$OnRefreshListener;
 
@@ -932,7 +956,7 @@
 
     goto :goto_f
 
-    .line 385
+    .line 387
     nop
 
     :pswitch_data_42
@@ -947,36 +971,36 @@
     .registers 3
 
     .prologue
-    .line 374
+    .line 376
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->spinner:Landroid/widget/ProgressBar;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 375
+    .line 377
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->image:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->clearAnimation()V
 
-    .line 378
+    .line 380
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->text:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->refreshingText:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 379
+    .line 381
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->update:Landroid/widget/TextView;
 
     sget-object v1, Lcom/samsung/privilege/AppSetting;->gLastUpdate:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 380
+    .line 382
     invoke-virtual {p0}, Lcom/samsung/privilege/control/PullToRefreshListView;->setUpdateTime()V
 
-    .line 381
+    .line 383
     return-void
 .end method
 
@@ -986,7 +1010,7 @@
     .registers 3
 
     .prologue
-    .line 142
+    .line 143
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->state:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     sget-object v1, Lcom/samsung/privilege/control/PullToRefreshListView$State;->REFRESHING:Lcom/samsung/privilege/control/PullToRefreshListView$State;
@@ -1008,15 +1032,15 @@
     .registers 2
 
     .prologue
-    .line 176
+    .line 177
     sget-object v0, Lcom/samsung/privilege/control/PullToRefreshListView$State;->PULL_TO_REFRESH:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     iput-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->state:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
-    .line 177
+    .line 178
     invoke-direct {p0}, Lcom/samsung/privilege/control/PullToRefreshListView;->resetHeader()V
 
-    .line 178
+    .line 179
     return-void
 .end method
 
@@ -1028,15 +1052,15 @@
     .param p4, "oldt"    # I
 
     .prologue
-    .line 415
+    .line 417
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/ListView;->onScrollChanged(IIII)V
 
-    .line 417
+    .line 419
     iget-boolean v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->hasResetHeader:Z
 
     if-nez v0, :cond_1a
 
-    .line 418
+    .line 420
     sget v0, Lcom/samsung/privilege/control/PullToRefreshListView;->measuredHeaderHeight:I
 
     if-lez v0, :cond_17
@@ -1047,20 +1071,20 @@
 
     if-eq v0, v1, :cond_17
 
-    .line 419
+    .line 421
     sget v0, Lcom/samsung/privilege/control/PullToRefreshListView;->measuredHeaderHeight:I
 
     neg-int v0, v0
 
     invoke-direct {p0, v0}, Lcom/samsung/privilege/control/PullToRefreshListView;->setHeaderPadding(I)V
 
-    .line 422
+    .line 424
     :cond_17
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->hasResetHeader:Z
 
-    .line 424
+    .line 426
     :cond_1a
     return-void
 .end method
@@ -1072,7 +1096,7 @@
     .prologue
     const/high16 v6, -0x40800000
 
-    .line 281
+    .line 283
     iget-boolean v4, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->lockScrollWhileRefreshing:Z
 
     if-eqz v4, :cond_e
@@ -1083,20 +1107,20 @@
 
     if-ne v4, v5, :cond_e
 
-    .line 282
+    .line 284
     const/4 v4, 0x1
 
-    .line 342
+    .line 344
     :goto_d
     return v4
 
-    .line 285
+    .line 287
     :cond_e
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v1
 
-    .line 286
+    .line 288
     .local v1, "eventAction":I
     const/4 v4, 0x2
 
@@ -1108,14 +1132,14 @@
 
     if-nez v4, :cond_1c
 
-    .line 287
+    .line 289
     const/4 v1, 0x0
 
-    .line 290
+    .line 292
     :cond_1c
     packed-switch v1, :pswitch_data_d8
 
-    .line 342
+    .line 344
     :cond_1f
     :goto_1f
     invoke-super {p0, p1}, Landroid/widget/ListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
@@ -1124,7 +1148,7 @@
 
     goto :goto_d
 
-    .line 292
+    .line 294
     :pswitch_24
     invoke-virtual {p0}, Lcom/samsung/privilege/control/PullToRefreshListView;->getFirstVisiblePosition()I
 
@@ -1132,7 +1156,7 @@
 
     if-nez v4, :cond_31
 
-    .line 293
+    .line 295
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v4
@@ -1141,13 +1165,13 @@
 
     goto :goto_1f
 
-    .line 295
+    .line 297
     :cond_31
     iput v6, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->previousY:F
 
     goto :goto_1f
 
-    .line 300
+    .line 302
     :pswitch_34
     iget v4, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->previousY:F
 
@@ -1167,7 +1191,7 @@
 
     if-nez v4, :cond_1f
 
-    .line 301
+    .line 303
     :cond_46
     invoke-static {}, Lcom/samsung/privilege/control/PullToRefreshListView;->$SWITCH_TABLE$com$samsung$privilege$control$PullToRefreshListView$State()[I
 
@@ -1185,24 +1209,24 @@
 
     goto :goto_1f
 
-    .line 307
+    .line 309
     :pswitch_56
     invoke-direct {p0}, Lcom/samsung/privilege/control/PullToRefreshListView;->resetHeader()V
 
     goto :goto_1f
 
-    .line 303
+    .line 305
     :pswitch_5a
     sget-object v4, Lcom/samsung/privilege/control/PullToRefreshListView$State;->REFRESHING:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     invoke-direct {p0, v4}, Lcom/samsung/privilege/control/PullToRefreshListView;->setState(Lcom/samsung/privilege/control/PullToRefreshListView$State;)V
 
-    .line 304
+    .line 306
     invoke-direct {p0}, Lcom/samsung/privilege/control/PullToRefreshListView;->bounceBackHeader()V
 
     goto :goto_1f
 
-    .line 314
+    .line 316
     :pswitch_63
     iget v4, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->previousY:F
 
@@ -1210,18 +1234,18 @@
 
     if-eqz v4, :cond_1f
 
-    .line 315
+    .line 317
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v3
 
-    .line 316
+    .line 318
     .local v3, "y":F
     iget v4, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->previousY:F
 
     sub-float v0, v3, v4
 
-    .line 318
+    .line 320
     .local v0, "diff":F
     const/4 v4, 0x0
 
@@ -1229,16 +1253,16 @@
 
     if-lez v4, :cond_7a
 
-    .line 319
+    .line 321
     const v4, 0x3fd9999a
 
     div-float/2addr v0, v4
 
-    .line 320
+    .line 322
     :cond_7a
     iput v3, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->previousY:F
 
-    .line 322
+    .line 324
     iget v4, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->headerPadding:I
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
@@ -1259,7 +1283,7 @@
 
     move-result v2
 
-    .line 323
+    .line 325
     .local v2, "newHeaderPadding":I
     iget-boolean v4, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->lockScrollWhileRefreshing:Z
 
@@ -1273,14 +1297,14 @@
 
     if-lez v2, :cond_9b
 
-    .line 324
+    .line 326
     const/4 v2, 0x0
 
-    .line 327
+    .line 329
     :cond_9b
     invoke-direct {p0, v2}, Lcom/samsung/privilege/control/PullToRefreshListView;->setHeaderPadding(I)V
 
-    .line 329
+    .line 331
     iget-object v4, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->state:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     sget-object v5, Lcom/samsung/privilege/control/PullToRefreshListView$State;->PULL_TO_REFRESH:Lcom/samsung/privilege/control/PullToRefreshListView$State;
@@ -1291,17 +1315,17 @@
 
     if-lez v4, :cond_bb
 
-    .line 330
+    .line 332
     sget-object v4, Lcom/samsung/privilege/control/PullToRefreshListView$State;->RELEASE_TO_REFRESH:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     invoke-direct {p0, v4}, Lcom/samsung/privilege/control/PullToRefreshListView;->setState(Lcom/samsung/privilege/control/PullToRefreshListView$State;)V
 
-    .line 331
+    .line 333
     iget-object v4, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->image:Landroid/widget/ImageView;
 
     invoke-virtual {v4}, Landroid/widget/ImageView;->clearAnimation()V
 
-    .line 332
+    .line 334
     iget-object v4, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->image:Landroid/widget/ImageView;
 
     iget-object v5, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->flipAnimation:Landroid/view/animation/RotateAnimation;
@@ -1310,7 +1334,7 @@
 
     goto/16 :goto_1f
 
-    .line 333
+    .line 335
     :cond_bb
     iget-object v4, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->state:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
@@ -1322,17 +1346,17 @@
 
     if-gez v4, :cond_1f
 
-    .line 334
+    .line 336
     sget-object v4, Lcom/samsung/privilege/control/PullToRefreshListView$State;->PULL_TO_REFRESH:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     invoke-direct {p0, v4}, Lcom/samsung/privilege/control/PullToRefreshListView;->setState(Lcom/samsung/privilege/control/PullToRefreshListView$State;)V
 
-    .line 335
+    .line 337
     iget-object v4, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->image:Landroid/widget/ImageView;
 
     invoke-virtual {v4}, Landroid/widget/ImageView;->clearAnimation()V
 
-    .line 336
+    .line 338
     iget-object v4, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->image:Landroid/widget/ImageView;
 
     iget-object v5, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->reverseFlipAnimation:Landroid/view/animation/RotateAnimation;
@@ -1341,7 +1365,7 @@
 
     goto/16 :goto_1f
 
-    .line 290
+    .line 292
     :pswitch_data_d8
     .packed-switch 0x0
         :pswitch_24
@@ -1349,7 +1373,7 @@
         :pswitch_63
     .end packed-switch
 
-    .line 301
+    .line 303
     :pswitch_data_e2
     .packed-switch 0x1
         :pswitch_56
@@ -1362,15 +1386,15 @@
     .param p1, "lastUpdated"    # Ljava/lang/CharSequence;
 
     .prologue
-    .line 427
+    .line 429
     if-eqz p1, :cond_7
 
-    .line 431
+    .line 433
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->update:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 435
+    .line 437
     :cond_7
     return-void
 .end method
@@ -1380,10 +1404,10 @@
     .param p1, "lockScrollWhileRefreshing"    # Z
 
     .prologue
-    .line 152
+    .line 153
     iput-boolean p1, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->lockScrollWhileRefreshing:Z
 
-    .line 153
+    .line 154
     return-void
 .end method
 
@@ -1391,11 +1415,11 @@
     .registers 2
 
     .prologue
-    .line 124
+    .line 125
     .local p1, "onItemClickListener":Landroid/widget/AdapterView$OnItemClickListener;, "Landroid/widget/AdapterView$OnItemClickListener;"
     iput-object p1, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->onItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
 
-    .line 125
+    .line 126
     return-void
 .end method
 
@@ -1404,10 +1428,10 @@
     .param p1, "onRefreshListener"    # Lcom/samsung/privilege/control/PullToRefreshListView$OnRefreshListener;
 
     .prologue
-    .line 135
+    .line 136
     iput-object p1, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->onRefreshListener:Lcom/samsung/privilege/control/PullToRefreshListView$OnRefreshListener;
 
-    .line 136
+    .line 137
     return-void
 .end method
 
@@ -1419,26 +1443,26 @@
 
     const/16 v2, 0xff
 
-    .line 161
+    .line 162
     sget-object v0, Lcom/samsung/privilege/control/PullToRefreshListView$State;->REFRESHING:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     iput-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->state:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
-    .line 162
+    .line 163
     invoke-virtual {p0, v1, v1}, Lcom/samsung/privilege/control/PullToRefreshListView;->scrollTo(II)V
 
-    .line 163
+    .line 164
     invoke-direct {p0}, Lcom/samsung/privilege/control/PullToRefreshListView;->setUiRefreshing()V
 
-    .line 164
+    .line 165
     invoke-direct {p0, v1}, Lcom/samsung/privilege/control/PullToRefreshListView;->setHeaderPadding(I)V
 
-    .line 165
+    .line 166
     iget-boolean v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->mIsPremium:Z
 
     if-eqz v0, :cond_26
 
-    .line 166
+    .line 167
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->text:Landroid/widget/TextView;
 
     invoke-static {v2, v2, v2}, Landroid/graphics/Color;->rgb(III)I
@@ -1447,7 +1471,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 167
+    .line 168
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->update:Landroid/widget/TextView;
 
     invoke-static {v2, v2, v2}, Landroid/graphics/Color;->rgb(III)I
@@ -1456,7 +1480,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 169
+    .line 170
     :cond_26
     return-void
 .end method
@@ -1468,28 +1492,28 @@
     .prologue
     const/16 v2, 0xff
 
-    .line 187
+    .line 188
     iput-object p1, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->pullToRefreshText:Ljava/lang/String;
 
-    .line 188
+    .line 189
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->state:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     sget-object v1, Lcom/samsung/privilege/control/PullToRefreshListView$State;->PULL_TO_REFRESH:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     if-ne v0, v1, :cond_f
 
-    .line 189
+    .line 190
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->text:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 191
+    .line 192
     :cond_f
     iget-boolean v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->mIsPremium:Z
 
     if-eqz v0, :cond_25
 
-    .line 192
+    .line 193
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->text:Landroid/widget/TextView;
 
     invoke-static {v2, v2, v2}, Landroid/graphics/Color;->rgb(III)I
@@ -1498,7 +1522,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 193
+    .line 194
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->update:Landroid/widget/TextView;
 
     invoke-static {v2, v2, v2}, Landroid/graphics/Color;->rgb(III)I
@@ -1507,7 +1531,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 195
+    .line 196
     :cond_25
     return-void
 .end method
@@ -1519,28 +1543,28 @@
     .prologue
     const/16 v2, 0xff
 
-    .line 221
+    .line 222
     iput-object p1, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->refreshingText:Ljava/lang/String;
 
-    .line 222
+    .line 223
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->state:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     sget-object v1, Lcom/samsung/privilege/control/PullToRefreshListView$State;->REFRESHING:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     if-ne v0, v1, :cond_f
 
-    .line 223
+    .line 224
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->text:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 225
+    .line 226
     :cond_f
     iget-boolean v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->mIsPremium:Z
 
     if-eqz v0, :cond_25
 
-    .line 226
+    .line 227
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->text:Landroid/widget/TextView;
 
     invoke-static {v2, v2, v2}, Landroid/graphics/Color;->rgb(III)I
@@ -1549,7 +1573,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 227
+    .line 228
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->update:Landroid/widget/TextView;
 
     invoke-static {v2, v2, v2}, Landroid/graphics/Color;->rgb(III)I
@@ -1558,7 +1582,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 229
+    .line 230
     :cond_25
     return-void
 .end method
@@ -1570,28 +1594,28 @@
     .prologue
     const/16 v2, 0xff
 
-    .line 204
+    .line 205
     iput-object p1, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->releaseToRefreshText:Ljava/lang/String;
 
-    .line 205
+    .line 206
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->state:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     sget-object v1, Lcom/samsung/privilege/control/PullToRefreshListView$State;->RELEASE_TO_REFRESH:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
     if-ne v0, v1, :cond_f
 
-    .line 206
+    .line 207
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->text:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 208
+    .line 209
     :cond_f
     iget-boolean v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->mIsPremium:Z
 
     if-eqz v0, :cond_25
 
-    .line 209
+    .line 210
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->text:Landroid/widget/TextView;
 
     invoke-static {v2, v2, v2}, Landroid/graphics/Color;->rgb(III)I
@@ -1600,7 +1624,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 210
+    .line 211
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->update:Landroid/widget/TextView;
 
     invoke-static {v2, v2, v2}, Landroid/graphics/Color;->rgb(III)I
@@ -1609,7 +1633,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 212
+    .line 213
     :cond_25
     return-void
 .end method
@@ -1618,12 +1642,12 @@
     .registers 6
 
     .prologue
-    .line 438
+    .line 440
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 441
+    .line 443
     .local v0, "c":Ljava/util/Calendar;
     new-instance v1, Ljava/text/SimpleDateFormat;
 
@@ -1631,7 +1655,7 @@
 
     invoke-direct {v1, v3}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 442
+    .line 444
     .local v1, "df":Ljava/text/SimpleDateFormat;
     invoke-virtual {v0}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
 
@@ -1641,13 +1665,23 @@
 
     move-result-object v2
 
-    .line 445
+    .line 447
     .local v2, "formattedDate":Ljava/lang/String;
     new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v4, "Last Update: "
+    iget-object v4, p0, Lcom/samsung/privilege/control/PullToRefreshListView;->lastUpdate:Ljava/lang/String;
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v4, ": "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1659,6 +1693,6 @@
 
     sput-object v3, Lcom/samsung/privilege/AppSetting;->gLastUpdate:Ljava/lang/String;
 
-    .line 446
+    .line 448
     return-void
 .end method

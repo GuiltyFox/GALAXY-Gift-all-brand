@@ -825,11 +825,11 @@
 .end method
 
 .method public onRestoreInstanceState(Landroid/os/Parcelable;)V
-    .registers 8
+    .registers 9
     .param p1, "state"    # Landroid/os/Parcelable;
 
     .prologue
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
     .line 434
     move-object v0, p1
@@ -845,24 +845,24 @@
     invoke-super {p0, v1}, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     .line 438
-    iget-wide v1, v0, Lcom/actionbarsherlock/internal/widget/IcsAbsSpinner$SavedState;->selectedId:J
+    iget-wide v2, v0, Lcom/actionbarsherlock/internal/widget/IcsAbsSpinner$SavedState;->selectedId:J
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v4, 0x0
 
-    cmp-long v1, v1, v3
+    cmp-long v1, v2, v4
 
     if-ltz v1, :cond_25
 
     .line 439
-    iput-boolean v5, p0, Lcom/actionbarsherlock/internal/widget/IcsAbsSpinner;->mDataChanged:Z
+    iput-boolean v6, p0, Lcom/actionbarsherlock/internal/widget/IcsAbsSpinner;->mDataChanged:Z
 
     .line 440
-    iput-boolean v5, p0, Lcom/actionbarsherlock/internal/widget/IcsAbsSpinner;->mNeedSync:Z
+    iput-boolean v6, p0, Lcom/actionbarsherlock/internal/widget/IcsAbsSpinner;->mNeedSync:Z
 
     .line 441
-    iget-wide v1, v0, Lcom/actionbarsherlock/internal/widget/IcsAbsSpinner$SavedState;->selectedId:J
+    iget-wide v2, v0, Lcom/actionbarsherlock/internal/widget/IcsAbsSpinner$SavedState;->selectedId:J
 
-    iput-wide v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAbsSpinner;->mSyncRowId:J
+    iput-wide v2, p0, Lcom/actionbarsherlock/internal/widget/IcsAbsSpinner;->mSyncRowId:J
 
     .line 442
     iget v1, v0, Lcom/actionbarsherlock/internal/widget/IcsAbsSpinner$SavedState;->position:I
@@ -1131,7 +1131,7 @@
 .end method
 
 .method public setAdapter(Landroid/widget/SpinnerAdapter;)V
-    .registers 5
+    .registers 6
     .param p1, "adapter"    # Landroid/widget/SpinnerAdapter;
 
     .prologue
@@ -1160,9 +1160,9 @@
     iput v0, p0, Lcom/actionbarsherlock/internal/widget/IcsAbsSpinner;->mOldSelectedPosition:I
 
     .line 112
-    const-wide/high16 v1, -0x8000000000000000L
+    const-wide/high16 v2, -0x8000000000000000L
 
-    iput-wide v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAbsSpinner;->mOldSelectedRowId:J
+    iput-wide v2, p0, Lcom/actionbarsherlock/internal/widget/IcsAbsSpinner;->mOldSelectedRowId:J
 
     .line 114
     iget-object v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;

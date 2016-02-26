@@ -46,7 +46,7 @@
     iget-object v1, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;
 
     # invokes: Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gotoAllListView()V
-    invoke-static {v1}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->access$10(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)V
+    invoke-static {v1}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->access$9(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)V
 
     .line 345
     iget-object v1, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;

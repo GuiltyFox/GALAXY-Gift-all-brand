@@ -37,7 +37,7 @@
 
     iput-object p3, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$AddPremiumUserListener$1;->val$response_text:Ljava/lang/String;
 
-    .line 1160
+    .line 1166
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,7 +49,7 @@
     .registers 21
 
     .prologue
-    .line 1163
+    .line 1169
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$AddPremiumUserListener$1;->val$response_code:I
@@ -64,7 +64,7 @@
 
     if-ne v0, v1, :cond_12b
 
-    .line 1165
+    .line 1171
     :try_start_e
     new-instance v7, Lorg/json/JSONObject;
 
@@ -78,7 +78,7 @@
 
     invoke-direct {v7, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1166
+    .line 1172
     .local v7, "jsonRoot":Lorg/json/JSONObject;
     const-string v17, "token"
 
@@ -88,7 +88,7 @@
 
     move-result-object v16
 
-    .line 1168
+    .line 1174
     .local v16, "token":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -111,7 +111,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/UserLogin;->SetTokenBuzzeBees(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 1170
+    .line 1176
     const-string v17, "isPremiumUser"
 
     move-object/from16 v0, v17
@@ -124,11 +124,11 @@
 
     move-result v5
 
-    .line 1171
+    .line 1177
     .local v5, "isPremiumUser":Z
     if-eqz v5, :cond_d5
 
-    .line 1172
+    .line 1178
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$AddPremiumUserListener$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$AddPremiumUserListener;
@@ -150,25 +150,25 @@
     :try_end_59
     .catch Ljava/lang/Exception; {:try_start_e .. :try_end_59} :catch_f1
 
-    .line 1175
+    .line 1181
     :try_start_59
     sget-object v17, Lcom/samsung/privilege/AppSetting;->gCampaignListActivity:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     if-eqz v17, :cond_67
 
-    .line 1176
+    .line 1182
     sget-object v17, Lcom/samsung/privilege/AppSetting;->gCampaignListActivity:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     invoke-virtual/range {v17 .. v17}, Lcom/samsung/privilege/activity/CampaignListActivity;->updateAppIcon()V
 
-    .line 1177
+    .line 1183
     sget-object v17, Lcom/samsung/privilege/AppSetting;->gCampaignListActivity:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     invoke-virtual/range {v17 .. v17}, Lcom/samsung/privilege/activity/CampaignListActivity;->getPoints()V
     :try_end_67
     .catch Ljava/lang/Exception; {:try_start_59 .. :try_end_67} :catch_17f
 
-    .line 1183
+    .line 1189
     :cond_67
     :goto_67
     :try_start_67
@@ -190,7 +190,7 @@
     :try_end_76
     .catch Ljava/lang/Exception; {:try_start_67 .. :try_end_76} :catch_f1
 
-    .line 1193
+    .line 1199
     .end local v5    # "isPremiumUser":Z
     .end local v7    # "jsonRoot":Lorg/json/JSONObject;
     .end local v16    # "token":Ljava/lang/String;
@@ -208,7 +208,7 @@
 
     invoke-direct {v7, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1194
+    .line 1200
     .restart local v7    # "jsonRoot":Lorg/json/JSONObject;
     const-string v17, "buzzebees"
 
@@ -218,7 +218,7 @@
 
     move-result-object v10
 
-    .line 1196
+    .line 1202
     .local v10, "json_buzzebees":Lorg/json/JSONObject;
     const-string v17, "points"
 
@@ -228,14 +228,14 @@
 
     move-result v14
 
-    .line 1198
+    .line 1204
     .local v14, "points_add":I
     if-lez v14, :cond_ba
 
-    .line 1199
+    .line 1205
     const-string v15, ""
 
-    .line 1200
+    .line 1206
     .local v15, "strFrom":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -274,7 +274,7 @@
 
     invoke-static {v14, v15, v0, v1}, Lic/buzzebeeslib/util/AnimationPoint;->showToastPointsGift(ILjava/lang/String;Landroid/os/Handler;Landroid/app/Activity;)V
 
-    .line 1203
+    .line 1209
     .end local v15    # "strFrom":Ljava/lang/String;
     :cond_ba
     const-string v17, "badges"
@@ -285,7 +285,7 @@
 
     move-result-object v9
 
-    .line 1204
+    .line 1210
     .local v9, "json_badges":Lorg/json/JSONArray;
     const/4 v4, 0x0
 
@@ -301,7 +301,7 @@
 
     if-lt v4, v0, :cond_f3
 
-    .line 1219
+    .line 1225
     .end local v4    # "i":I
     .end local v7    # "jsonRoot":Lorg/json/JSONObject;
     .end local v9    # "json_badges":Lorg/json/JSONArray;
@@ -313,19 +313,19 @@
 
     if-eqz v17, :cond_d4
 
-    .line 1220
+    .line 1226
     sget-object v17, Lcom/samsung/privilege/AppSetting;->gCampaignListActivity:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     invoke-virtual/range {v17 .. v17}, Lcom/samsung/privilege/activity/CampaignListActivity;->checkAndShowDialogMessagePopup()V
     :try_end_d4
     .catch Ljava/lang/Exception; {:try_start_cb .. :try_end_d4} :catch_17c
 
-    .line 1239
+    .line 1245
     :cond_d4
     :goto_d4
     return-void
 
-    .line 1185
+    .line 1191
     .restart local v5    # "isPremiumUser":Z
     .restart local v7    # "jsonRoot":Lorg/json/JSONObject;
     .restart local v16    # "token":Ljava/lang/String;
@@ -339,7 +339,7 @@
 
     move-result-object v11
 
-    .line 1186
+    .line 1192
     .local v11, "message":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -364,7 +364,7 @@
 
     goto :goto_76
 
-    .line 1188
+    .line 1194
     .end local v5    # "isPremiumUser":Z
     .end local v7    # "jsonRoot":Lorg/json/JSONObject;
     .end local v11    # "message":Ljava/lang/String;
@@ -374,7 +374,7 @@
 
     goto :goto_76
 
-    .line 1205
+    .line 1211
     .restart local v4    # "i":I
     .restart local v7    # "jsonRoot":Lorg/json/JSONObject;
     .restart local v9    # "json_badges":Lorg/json/JSONArray;
@@ -386,13 +386,13 @@
 
     move-result-object v8
 
-    .line 1206
+    .line 1212
     .local v8, "json_badge":Lorg/json/JSONObject;
     new-instance v13, Lcom/samsung/privilege/bean/BadgeAlert;
 
     invoke-direct {v13, v8}, Lcom/samsung/privilege/bean/BadgeAlert;-><init>(Lorg/json/JSONObject;)V
 
-    .line 1209
+    .line 1215
     .local v13, "objBadgeAlert":Lcom/samsung/privilege/bean/BadgeAlert;
     new-instance v12, Lcom/samsung/privilege/bean/MessagePopup;
 
@@ -402,11 +402,11 @@
 
     invoke-direct {v12, v0}, Lcom/samsung/privilege/bean/MessagePopup;-><init>(Ljava/lang/String;)V
 
-    .line 1210
+    .line 1216
     .local v12, "messagePopup":Lcom/samsung/privilege/bean/MessagePopup;
     iput-object v13, v12, Lcom/samsung/privilege/bean/MessagePopup;->badgeAlert:Lcom/samsung/privilege/bean/BadgeAlert;
 
-    .line 1212
+    .line 1218
     sget-object v17, Lcom/samsung/privilege/AppSetting;->QUEUE_MESSAGEPOPUPS:Ljava/util/Queue;
 
     move-object/from16 v0, v17
@@ -415,12 +415,12 @@
     :try_end_10e
     .catch Ljava/lang/Exception; {:try_start_f3 .. :try_end_10e} :catch_111
 
-    .line 1204
+    .line 1210
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_c3
 
-    .line 1214
+    .line 1220
     .end local v4    # "i":I
     .end local v7    # "jsonRoot":Lorg/json/JSONObject;
     .end local v8    # "json_badge":Lorg/json/JSONObject;
@@ -432,7 +432,7 @@
     :catch_111
     move-exception v3
 
-    .line 1215
+    .line 1221
     .local v3, "e":Ljava/lang/Exception;
     const-string v17, "gift.dashboard"
 
@@ -458,16 +458,16 @@
 
     goto :goto_cb
 
-    .line 1226
+    .line 1232
     .end local v3    # "e":Ljava/lang/Exception;
     :cond_12b
     const-string v2, ""
 
-    .line 1227
+    .line 1233
     .local v2, "code":Ljava/lang/String;
     const-string v11, ""
 
-    .line 1229
+    .line 1235
     .restart local v11    # "message":Ljava/lang/String;
     :try_start_12f
     new-instance v7, Lorg/json/JSONObject;
@@ -482,7 +482,7 @@
 
     invoke-direct {v7, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1230
+    .line 1236
     .restart local v7    # "jsonRoot":Lorg/json/JSONObject;
     const-string v17, "error"
 
@@ -492,7 +492,7 @@
 
     move-result-object v6
 
-    .line 1231
+    .line 1237
     .local v6, "jsonError":Lorg/json/JSONObject;
     const-string v17, "message"
 
@@ -502,7 +502,7 @@
 
     move-result-object v11
 
-    .line 1232
+    .line 1238
     const-string v17, "code"
 
     move-object/from16 v0, v17
@@ -513,7 +513,7 @@
 
     move-result-object v2
 
-    .line 1237
+    .line 1243
     .end local v6    # "jsonError":Lorg/json/JSONObject;
     .end local v7    # "jsonRoot":Lorg/json/JSONObject;
     :goto_154
@@ -538,11 +538,11 @@
 
     goto/16 :goto_d4
 
-    .line 1233
+    .line 1239
     :catch_169
     move-exception v3
 
-    .line 1234
+    .line 1240
     .restart local v3    # "e":Ljava/lang/Exception;
     move-object/from16 v0, p0
 
@@ -555,7 +555,7 @@
 
     move-result-object v17
 
-    const v18, 0x7f0a02b1
+    const v18, 0x7f0902b1
 
     invoke-virtual/range {v17 .. v18}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getString(I)Ljava/lang/String;
 
@@ -563,7 +563,7 @@
 
     goto :goto_154
 
-    .line 1222
+    .line 1228
     .end local v2    # "code":Ljava/lang/String;
     .end local v3    # "e":Ljava/lang/Exception;
     .end local v11    # "message":Ljava/lang/String;
@@ -572,7 +572,7 @@
 
     goto/16 :goto_d4
 
-    .line 1179
+    .line 1185
     .restart local v5    # "isPremiumUser":Z
     .restart local v7    # "jsonRoot":Lorg/json/JSONObject;
     .restart local v16    # "token":Ljava/lang/String;

@@ -229,7 +229,7 @@
 
 # virtual methods
 .method protected draw(Landroid/graphics/Canvas;)V
-    .registers 34
+    .registers 36
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
@@ -238,9 +238,9 @@
 
     iget-boolean v0, v0, Lcom/control/imagecropper/HighlightView;->mHidden:Z
 
-    move/from16 v26, v0
+    move/from16 v27, v0
 
-    if-eqz v26, :cond_9
+    if-eqz v27, :cond_9
 
     .line 203
     :cond_8
@@ -249,47 +249,47 @@
 
     .line 88
     :cond_9
-    new-instance v13, Landroid/graphics/Path;
+    new-instance v14, Landroid/graphics/Path;
 
-    invoke-direct {v13}, Landroid/graphics/Path;-><init>()V
+    invoke-direct {v14}, Landroid/graphics/Path;-><init>()V
 
     .line 89
-    .local v13, "path":Landroid/graphics/Path;
+    .local v14, "path":Landroid/graphics/Path;
     invoke-virtual/range {p0 .. p0}, Lcom/control/imagecropper/HighlightView;->hasFocus()Z
 
-    move-result v26
+    move-result v27
 
-    if-nez v26, :cond_35
+    if-nez v27, :cond_35
 
     .line 90
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mOutlinePaint:Landroid/graphics/Paint;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    const/high16 v27, -0x1000000
+    const/high16 v28, -0x1000000
 
-    invoke-virtual/range {v26 .. v27}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual/range {v27 .. v28}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 91
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mOutlinePaint:Landroid/graphics/Paint;
 
-    move-object/from16 v27, v0
+    move-object/from16 v28, v0
 
     move-object/from16 v0, p1
 
-    move-object/from16 v1, v26
+    move-object/from16 v1, v27
 
-    move-object/from16 v2, v27
+    move-object/from16 v2, v28
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
@@ -297,21 +297,21 @@
 
     .line 93
     :cond_35
-    new-instance v18, Landroid/graphics/Rect;
+    new-instance v19, Landroid/graphics/Rect;
 
-    invoke-direct/range {v18 .. v18}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct/range {v19 .. v19}, Landroid/graphics/Rect;-><init>()V
 
     .line 94
-    .local v18, "viewDrawingRect":Landroid/graphics/Rect;
+    .local v19, "viewDrawingRect":Landroid/graphics/Rect;
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mContext:Landroid/view/View;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move-object/from16 v1, v18
+    move-object/from16 v1, v19
 
     invoke-virtual {v0, v1}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
 
@@ -320,9 +320,9 @@
 
     iget-boolean v0, v0, Lcom/control/imagecropper/HighlightView;->mCircle:Z
 
-    move/from16 v26, v0
+    move/from16 v27, v0
 
-    if-eqz v26, :cond_1b8
+    if-eqz v27, :cond_1b8
 
     .line 97
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
@@ -332,61 +332,293 @@
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    invoke-virtual/range {v26 .. v26}, Landroid/graphics/Rect;->width()I
+    invoke-virtual/range {v27 .. v27}, Landroid/graphics/Rect;->width()I
 
-    move-result v26
+    move-result v27
 
-    move/from16 v0, v26
+    move/from16 v0, v27
 
     int-to-float v0, v0
 
-    move/from16 v19, v0
+    move/from16 v20, v0
 
     .line 100
-    .local v19, "width":F
+    .local v20, "width":F
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    invoke-virtual/range {v26 .. v26}, Landroid/graphics/Rect;->height()I
+    invoke-virtual/range {v27 .. v27}, Landroid/graphics/Rect;->height()I
 
-    move-result v26
+    move-result v27
 
-    move/from16 v0, v26
+    move/from16 v0, v27
 
-    int-to-float v8, v0
+    int-to-float v9, v0
 
     .line 101
-    .local v8, "height":F
+    .local v9, "height":F
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     iget v0, v0, Landroid/graphics/Rect;->left:I
 
-    move/from16 v26, v0
+    move/from16 v27, v0
 
-    move/from16 v0, v26
+    move/from16 v0, v27
 
     int-to-float v0, v0
 
-    move/from16 v26, v0
+    move/from16 v27, v0
 
-    const/high16 v27, 0x40000000
+    const/high16 v28, 0x40000000
 
-    div-float v27, v19, v27
+    div-float v28, v20, v28
 
-    add-float v26, v26, v27
+    add-float v27, v27, v28
 
     .line 102
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v28, v0
+
+    move-object/from16 v0, v28
+
+    iget v0, v0, Landroid/graphics/Rect;->top:I
+
+    move/from16 v28, v0
+
+    move/from16 v0, v28
+
+    int-to-float v0, v0
+
+    move/from16 v28, v0
+
+    const/high16 v29, 0x40000000
+
+    div-float v29, v9, v29
+
+    add-float v28, v28, v29
+
+    .line 103
+    const/high16 v29, 0x40000000
+
+    div-float v29, v20, v29
+
+    .line 104
+    sget-object v30, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
+
+    .line 101
+    move/from16 v0, v27
+
+    move/from16 v1, v28
+
+    move/from16 v2, v29
+
+    move-object/from16 v3, v30
+
+    invoke-virtual {v14, v0, v1, v2, v3}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
+
+    .line 105
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mOutlinePaint:Landroid/graphics/Paint;
+
+    move-object/from16 v27, v0
+
+    const v28, -0x10fb2a
+
+    invoke-virtual/range {v27 .. v28}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 107
+    sget-object v27, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v27
+
+    invoke-virtual {v0, v14, v1}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;Landroid/graphics/Region$Op;)Z
+
+    .line 109
+    invoke-virtual/range {p0 .. p0}, Lcom/control/imagecropper/HighlightView;->hasFocus()Z
+
+    move-result v27
+
+    if-eqz v27, :cond_1b0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mFocusPaint:Landroid/graphics/Paint;
+
+    move-object/from16 v27, v0
+
+    .line 108
+    :goto_ce
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v19
+
+    move-object/from16 v2, v27
+
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+
+    .line 111
+    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
+
+    .line 140
+    .end local v9    # "height":F
+    .end local v20    # "width":F
+    :goto_da
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mOutlinePaint:Landroid/graphics/Paint;
+
+    move-object/from16 v27, v0
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v27
+
+    invoke-virtual {v0, v14, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+
+    .line 142
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mMode:Lcom/control/imagecropper/HighlightView$ModifyMode;
+
+    move-object/from16 v27, v0
+
+    sget-object v28, Lcom/control/imagecropper/HighlightView$ModifyMode;->Grow:Lcom/control/imagecropper/HighlightView$ModifyMode;
+
+    move-object/from16 v0, v27
+
+    move-object/from16 v1, v28
+
+    if-ne v0, v1, :cond_8
+
+    .line 143
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/control/imagecropper/HighlightView;->mCircle:Z
+
+    move/from16 v27, v0
+
+    if-eqz v27, :cond_324
+
+    .line 144
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableDiagonal:Landroid/graphics/drawable/Drawable;
+
+    move-object/from16 v27, v0
+
+    invoke-virtual/range {v27 .. v27}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v20
+
+    .line 145
+    .local v20, "width":I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableDiagonal:Landroid/graphics/drawable/Drawable;
+
+    move-object/from16 v27, v0
+
+    invoke-virtual/range {v27 .. v27}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v9
+
+    .line 147
+    .local v9, "height":I
+    const-wide v28, 0x3fe921fb54442d18L
+
+    invoke-static/range {v28 .. v29}, Ljava/lang/Math;->cos(D)D
+
+    move-result-wide v28
+
+    .line 148
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v27, v0
+
+    invoke-virtual/range {v27 .. v27}, Landroid/graphics/Rect;->width()I
+
+    move-result v27
+
+    move/from16 v0, v27
+
+    int-to-double v0, v0
+
+    move-wide/from16 v30, v0
+
+    const-wide/high16 v32, 0x4000000000000000L
+
+    div-double v30, v30, v32
+
+    .line 147
+    mul-double v28, v28, v30
+
+    invoke-static/range {v28 .. v29}, Ljava/lang/Math;->round(D)J
+
+    move-result-wide v28
+
+    move-wide/from16 v0, v28
+
+    long-to-int v8, v0
+
+    .line 149
+    .local v8, "d":I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v27, v0
+
+    move-object/from16 v0, v27
+
+    iget v0, v0, Landroid/graphics/Rect;->left:I
+
+    move/from16 v27, v0
+
+    .line 150
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v28, v0
+
+    invoke-virtual/range {v28 .. v28}, Landroid/graphics/Rect;->width()I
+
+    move-result v28
+
+    div-int/lit8 v28, v28, 0x2
+
+    .line 149
+    add-int v27, v27, v28
+
+    add-int v27, v27, v8
+
+    .line 150
+    div-int/lit8 v28, v20, 0x2
+
+    .line 149
+    sub-int v23, v27, v28
+
+    .line 151
+    .local v23, "x":I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
@@ -399,306 +631,74 @@
 
     move/from16 v27, v0
 
-    move/from16 v0, v27
-
-    int-to-float v0, v0
-
-    move/from16 v27, v0
-
-    const/high16 v28, 0x40000000
-
-    div-float v28, v8, v28
-
-    add-float v27, v27, v28
-
-    .line 103
-    const/high16 v28, 0x40000000
-
-    div-float v28, v19, v28
-
-    .line 104
-    sget-object v29, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
-
-    .line 101
-    move/from16 v0, v26
-
-    move/from16 v1, v27
-
-    move/from16 v2, v28
-
-    move-object/from16 v3, v29
-
-    invoke-virtual {v13, v0, v1, v2, v3}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
-
-    .line 105
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mOutlinePaint:Landroid/graphics/Paint;
-
-    move-object/from16 v26, v0
-
-    const v27, -0x10fb2a
-
-    invoke-virtual/range {v26 .. v27}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 107
-    sget-object v26, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
-
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, v26
-
-    invoke-virtual {v0, v13, v1}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;Landroid/graphics/Region$Op;)Z
-
-    .line 109
-    invoke-virtual/range {p0 .. p0}, Lcom/control/imagecropper/HighlightView;->hasFocus()Z
-
-    move-result v26
-
-    if-eqz v26, :cond_1b0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mFocusPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v26, v0
-
-    .line 108
-    :goto_ce
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, v18
-
-    move-object/from16 v2, v26
-
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
-
-    .line 111
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
-
-    .line 140
-    .end local v8    # "height":F
-    .end local v19    # "width":F
-    :goto_da
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mOutlinePaint:Landroid/graphics/Paint;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, v26
-
-    invoke-virtual {v0, v13, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
-
-    .line 142
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mMode:Lcom/control/imagecropper/HighlightView$ModifyMode;
-
-    move-object/from16 v26, v0
-
-    sget-object v27, Lcom/control/imagecropper/HighlightView$ModifyMode;->Grow:Lcom/control/imagecropper/HighlightView$ModifyMode;
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v27
-
-    if-ne v0, v1, :cond_8
-
-    .line 143
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/control/imagecropper/HighlightView;->mCircle:Z
-
-    move/from16 v26, v0
-
-    if-eqz v26, :cond_320
-
-    .line 144
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableDiagonal:Landroid/graphics/drawable/Drawable;
-
-    move-object/from16 v26, v0
-
-    invoke-virtual/range {v26 .. v26}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v19
-
-    .line 145
-    .local v19, "width":I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableDiagonal:Landroid/graphics/drawable/Drawable;
-
-    move-object/from16 v26, v0
-
-    invoke-virtual/range {v26 .. v26}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
-    move-result v8
-
-    .line 147
-    .local v8, "height":I
-    const-wide v26, 0x3fe921fb54442d18L
-
-    invoke-static/range {v26 .. v27}, Ljava/lang/Math;->cos(D)D
-
-    move-result-wide v26
-
-    .line 148
+    .line 152
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
 
     move-object/from16 v28, v0
 
-    invoke-virtual/range {v28 .. v28}, Landroid/graphics/Rect;->width()I
+    invoke-virtual/range {v28 .. v28}, Landroid/graphics/Rect;->height()I
 
     move-result v28
 
-    move/from16 v0, v28
-
-    int-to-double v0, v0
-
-    move-wide/from16 v28, v0
-
-    const-wide/high16 v30, 0x4000000000000000L
-
-    div-double v28, v28, v30
-
-    .line 147
-    mul-double v26, v26, v28
-
-    invoke-static/range {v26 .. v27}, Ljava/lang/Math;->round(D)J
-
-    move-result-wide v26
-
-    move-wide/from16 v0, v26
-
-    long-to-int v7, v0
-
-    .line 149
-    .local v7, "d":I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    iget v0, v0, Landroid/graphics/Rect;->left:I
-
-    move/from16 v26, v0
-
-    .line 150
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v27, v0
-
-    invoke-virtual/range {v27 .. v27}, Landroid/graphics/Rect;->width()I
-
-    move-result v27
-
-    div-int/lit8 v27, v27, 0x2
-
-    .line 149
-    add-int v26, v26, v27
-
-    add-int v26, v26, v7
-
-    .line 150
-    div-int/lit8 v27, v19, 0x2
-
-    .line 149
-    sub-int v22, v26, v27
+    div-int/lit8 v28, v28, 0x2
 
     .line 151
-    .local v22, "x":I
-    move-object/from16 v0, p0
+    add-int v27, v27, v28
 
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    iget v0, v0, Landroid/graphics/Rect;->top:I
-
-    move/from16 v26, v0
+    sub-int v27, v27, v8
 
     .line 152
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v27, v0
-
-    invoke-virtual/range {v27 .. v27}, Landroid/graphics/Rect;->height()I
-
-    move-result v27
-
-    div-int/lit8 v27, v27, 0x2
+    div-int/lit8 v28, v9, 0x2
 
     .line 151
-    add-int v26, v26, v27
-
-    sub-int v26, v26, v7
-
-    .line 152
-    div-int/lit8 v27, v8, 0x2
-
-    .line 151
-    sub-int v24, v26, v27
+    sub-int v25, v27, v28
 
     .line 153
-    .local v24, "y":I
+    .local v25, "y":I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableDiagonal:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
     .line 154
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableDiagonal:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v27, v0
+    move-object/from16 v28, v0
 
-    invoke-virtual/range {v27 .. v27}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+    invoke-virtual/range {v28 .. v28}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
-    move-result v27
+    move-result v28
 
-    add-int v27, v27, v22
+    add-int v28, v28, v23
 
     .line 155
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableDiagonal:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v28, v0
+    move-object/from16 v29, v0
 
-    invoke-virtual/range {v28 .. v28}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    invoke-virtual/range {v29 .. v29}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
-    move-result v28
+    move-result v29
 
-    add-int v28, v28, v24
+    add-int v29, v29, v25
 
     .line 153
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move/from16 v1, v22
+    move/from16 v1, v23
 
-    move/from16 v2, v24
+    move/from16 v2, v25
 
-    move/from16 v3, v27
+    move/from16 v3, v28
 
-    move/from16 v4, v28
+    move/from16 v4, v29
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
@@ -707,9 +707,9 @@
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableDiagonal:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     move-object/from16 v1, p1
 
@@ -718,41 +718,611 @@
     goto/16 :goto_8
 
     .line 109
-    .end local v7    # "d":I
-    .end local v22    # "x":I
-    .end local v24    # "y":I
-    .local v8, "height":F
-    .local v19, "width":F
+    .end local v8    # "d":I
+    .end local v23    # "x":I
+    .end local v25    # "y":I
+    .local v9, "height":F
+    .local v20, "width":F
     :cond_1b0
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mNoFocusPaint:Landroid/graphics/Paint;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
     goto/16 :goto_ce
 
     .line 116
-    .end local v8    # "height":F
-    .end local v19    # "width":F
+    .end local v9    # "height":F
+    .end local v20    # "width":F
     :cond_1b8
-    new-instance v17, Landroid/graphics/Rect;
+    new-instance v18, Landroid/graphics/Rect;
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     iget v0, v0, Landroid/graphics/Rect;->left:I
 
-    move/from16 v26, v0
+    move/from16 v27, v0
+
+    move-object/from16 v0, v19
+
+    iget v0, v0, Landroid/graphics/Rect;->top:I
+
+    move/from16 v28, v0
+
+    move-object/from16 v0, v19
+
+    iget v0, v0, Landroid/graphics/Rect;->right:I
+
+    move/from16 v29, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v30, v0
+
+    move-object/from16 v0, v30
+
+    iget v0, v0, Landroid/graphics/Rect;->top:I
+
+    move/from16 v30, v0
 
     move-object/from16 v0, v18
 
-    iget v0, v0, Landroid/graphics/Rect;->top:I
+    move/from16 v1, v27
+
+    move/from16 v2, v28
+
+    move/from16 v3, v29
+
+    move/from16 v4, v30
+
+    invoke-direct {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    .line 117
+    .local v18, "topRect":Landroid/graphics/Rect;
+    invoke-virtual/range {v18 .. v18}, Landroid/graphics/Rect;->width()I
+
+    move-result v27
+
+    if-lez v27, :cond_206
+
+    invoke-virtual/range {v18 .. v18}, Landroid/graphics/Rect;->height()I
+
+    move-result v27
+
+    if-lez v27, :cond_206
+
+    .line 118
+    invoke-virtual/range {p0 .. p0}, Lcom/control/imagecropper/HighlightView;->hasFocus()Z
+
+    move-result v27
+
+    if-eqz v27, :cond_305
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mFocusPaint:Landroid/graphics/Paint;
+
+    move-object/from16 v27, v0
+
+    :goto_1fd
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v18
+
+    move-object/from16 v2, v27
+
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+
+    .line 120
+    :cond_206
+    new-instance v7, Landroid/graphics/Rect;
+
+    move-object/from16 v0, v19
+
+    iget v0, v0, Landroid/graphics/Rect;->left:I
+
+    move/from16 v27, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v28, v0
+
+    move-object/from16 v0, v28
+
+    iget v0, v0, Landroid/graphics/Rect;->bottom:I
+
+    move/from16 v28, v0
+
+    move-object/from16 v0, v19
+
+    iget v0, v0, Landroid/graphics/Rect;->right:I
+
+    move/from16 v29, v0
+
+    move-object/from16 v0, v19
+
+    iget v0, v0, Landroid/graphics/Rect;->bottom:I
+
+    move/from16 v30, v0
+
+    move/from16 v0, v27
+
+    move/from16 v1, v28
+
+    move/from16 v2, v29
+
+    move/from16 v3, v30
+
+    invoke-direct {v7, v0, v1, v2, v3}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    .line 121
+    .local v7, "bottomRect":Landroid/graphics/Rect;
+    invoke-virtual {v7}, Landroid/graphics/Rect;->width()I
+
+    move-result v27
+
+    if-lez v27, :cond_250
+
+    invoke-virtual {v7}, Landroid/graphics/Rect;->height()I
+
+    move-result v27
+
+    if-lez v27, :cond_250
+
+    .line 122
+    invoke-virtual/range {p0 .. p0}, Lcom/control/imagecropper/HighlightView;->hasFocus()Z
+
+    move-result v27
+
+    if-eqz v27, :cond_30d
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mFocusPaint:Landroid/graphics/Paint;
+
+    move-object/from16 v27, v0
+
+    :goto_249
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v27
+
+    invoke-virtual {v0, v7, v1}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+
+    .line 124
+    :cond_250
+    new-instance v13, Landroid/graphics/Rect;
+
+    move-object/from16 v0, v19
+
+    iget v0, v0, Landroid/graphics/Rect;->left:I
 
     move/from16 v27, v0
 
     move-object/from16 v0, v18
 
+    iget v0, v0, Landroid/graphics/Rect;->bottom:I
+
+    move/from16 v28, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v29, v0
+
+    move-object/from16 v0, v29
+
+    iget v0, v0, Landroid/graphics/Rect;->left:I
+
+    move/from16 v29, v0
+
+    iget v0, v7, Landroid/graphics/Rect;->top:I
+
+    move/from16 v30, v0
+
+    move/from16 v0, v27
+
+    move/from16 v1, v28
+
+    move/from16 v2, v29
+
+    move/from16 v3, v30
+
+    invoke-direct {v13, v0, v1, v2, v3}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    .line 125
+    .local v13, "leftRect":Landroid/graphics/Rect;
+    invoke-virtual {v13}, Landroid/graphics/Rect;->width()I
+
+    move-result v27
+
+    if-lez v27, :cond_298
+
+    invoke-virtual {v13}, Landroid/graphics/Rect;->height()I
+
+    move-result v27
+
+    if-lez v27, :cond_298
+
+    .line 126
+    invoke-virtual/range {p0 .. p0}, Lcom/control/imagecropper/HighlightView;->hasFocus()Z
+
+    move-result v27
+
+    if-eqz v27, :cond_315
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mFocusPaint:Landroid/graphics/Paint;
+
+    move-object/from16 v27, v0
+
+    :goto_291
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v27
+
+    invoke-virtual {v0, v13, v1}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+
+    .line 128
+    :cond_298
+    new-instance v16, Landroid/graphics/Rect;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v27, v0
+
+    move-object/from16 v0, v27
+
     iget v0, v0, Landroid/graphics/Rect;->right:I
+
+    move/from16 v27, v0
+
+    move-object/from16 v0, v18
+
+    iget v0, v0, Landroid/graphics/Rect;->bottom:I
+
+    move/from16 v28, v0
+
+    move-object/from16 v0, v19
+
+    iget v0, v0, Landroid/graphics/Rect;->right:I
+
+    move/from16 v29, v0
+
+    iget v0, v7, Landroid/graphics/Rect;->top:I
+
+    move/from16 v30, v0
+
+    move-object/from16 v0, v16
+
+    move/from16 v1, v27
+
+    move/from16 v2, v28
+
+    move/from16 v3, v29
+
+    move/from16 v4, v30
+
+    invoke-direct {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    .line 129
+    .local v16, "rightRect":Landroid/graphics/Rect;
+    invoke-virtual/range {v16 .. v16}, Landroid/graphics/Rect;->width()I
+
+    move-result v27
+
+    if-lez v27, :cond_2e4
+
+    invoke-virtual/range {v16 .. v16}, Landroid/graphics/Rect;->height()I
+
+    move-result v27
+
+    if-lez v27, :cond_2e4
+
+    .line 130
+    invoke-virtual/range {p0 .. p0}, Lcom/control/imagecropper/HighlightView;->hasFocus()Z
+
+    move-result v27
+
+    if-eqz v27, :cond_31d
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mFocusPaint:Landroid/graphics/Paint;
+
+    move-object/from16 v27, v0
+
+    :goto_2db
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v16
+
+    move-object/from16 v2, v27
+
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+
+    .line 133
+    :cond_2e4
+    new-instance v27, Landroid/graphics/RectF;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v28, v0
+
+    invoke-direct/range {v27 .. v28}, Landroid/graphics/RectF;-><init>(Landroid/graphics/Rect;)V
+
+    sget-object v28, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
+
+    move-object/from16 v0, v27
+
+    move-object/from16 v1, v28
+
+    invoke-virtual {v14, v0, v1}, Landroid/graphics/Path;->addRect(Landroid/graphics/RectF;Landroid/graphics/Path$Direction;)V
+
+    .line 135
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mOutlinePaint:Landroid/graphics/Paint;
+
+    move-object/from16 v27, v0
+
+    const/16 v28, -0x7600
+
+    invoke-virtual/range {v27 .. v28}, Landroid/graphics/Paint;->setColor(I)V
+
+    goto/16 :goto_da
+
+    .line 118
+    .end local v7    # "bottomRect":Landroid/graphics/Rect;
+    .end local v13    # "leftRect":Landroid/graphics/Rect;
+    .end local v16    # "rightRect":Landroid/graphics/Rect;
+    :cond_305
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mNoFocusPaint:Landroid/graphics/Paint;
+
+    move-object/from16 v27, v0
+
+    goto/16 :goto_1fd
+
+    .line 122
+    .restart local v7    # "bottomRect":Landroid/graphics/Rect;
+    :cond_30d
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mNoFocusPaint:Landroid/graphics/Paint;
+
+    move-object/from16 v27, v0
+
+    goto/16 :goto_249
+
+    .line 126
+    .restart local v13    # "leftRect":Landroid/graphics/Rect;
+    :cond_315
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mNoFocusPaint:Landroid/graphics/Paint;
+
+    move-object/from16 v27, v0
+
+    goto/16 :goto_291
+
+    .line 130
+    .restart local v16    # "rightRect":Landroid/graphics/Rect;
+    :cond_31d
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mNoFocusPaint:Landroid/graphics/Paint;
+
+    move-object/from16 v27, v0
+
+    goto :goto_2db
+
+    .line 158
+    .end local v7    # "bottomRect":Landroid/graphics/Rect;
+    .end local v13    # "leftRect":Landroid/graphics/Rect;
+    .end local v16    # "rightRect":Landroid/graphics/Rect;
+    .end local v18    # "topRect":Landroid/graphics/Rect;
+    :cond_324
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v27, v0
+
+    move-object/from16 v0, v27
+
+    iget v0, v0, Landroid/graphics/Rect;->left:I
+
+    move/from16 v27, v0
+
+    add-int/lit8 v12, v27, 0x1
+
+    .line 159
+    .local v12, "left":I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v27, v0
+
+    move-object/from16 v0, v27
+
+    iget v0, v0, Landroid/graphics/Rect;->right:I
+
+    move/from16 v27, v0
+
+    add-int/lit8 v15, v27, 0x1
+
+    .line 160
+    .local v15, "right":I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v27, v0
+
+    move-object/from16 v0, v27
+
+    iget v0, v0, Landroid/graphics/Rect;->top:I
+
+    move/from16 v27, v0
+
+    add-int/lit8 v17, v27, 0x4
+
+    .line 161
+    .local v17, "top":I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v27, v0
+
+    move-object/from16 v0, v27
+
+    iget v0, v0, Landroid/graphics/Rect;->bottom:I
+
+    move/from16 v27, v0
+
+    add-int/lit8 v6, v27, 0x3
+
+    .line 164
+    .local v6, "bottom":I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableWidth:Landroid/graphics/drawable/Drawable;
+
+    move-object/from16 v27, v0
+
+    invoke-virtual/range {v27 .. v27}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v27
+
+    div-int/lit8 v22, v27, 0x2
+
+    .line 166
+    .local v22, "widthWidth":I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableWidth:Landroid/graphics/drawable/Drawable;
+
+    move-object/from16 v27, v0
+
+    invoke-virtual/range {v27 .. v27}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v27
+
+    div-int/lit8 v21, v27, 0x2
+
+    .line 168
+    .local v21, "widthHeight":I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableHeight:Landroid/graphics/drawable/Drawable;
+
+    move-object/from16 v27, v0
+
+    invoke-virtual/range {v27 .. v27}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v27
+
+    div-int/lit8 v10, v27, 0x2
+
+    .line 170
+    .local v10, "heightHeight":I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableHeight:Landroid/graphics/drawable/Drawable;
+
+    move-object/from16 v27, v0
+
+    invoke-virtual/range {v27 .. v27}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v27
+
+    div-int/lit8 v11, v27, 0x2
+
+    .line 172
+    .local v11, "heightWidth":I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v27, v0
+
+    move-object/from16 v0, v27
+
+    iget v0, v0, Landroid/graphics/Rect;->left:I
+
+    move/from16 v27, v0
+
+    .line 173
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v28, v0
+
+    move-object/from16 v0, v28
+
+    iget v0, v0, Landroid/graphics/Rect;->right:I
+
+    move/from16 v28, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v29, v0
+
+    move-object/from16 v0, v29
+
+    iget v0, v0, Landroid/graphics/Rect;->left:I
+
+    move/from16 v29, v0
+
+    sub-int v28, v28, v29
+
+    div-int/lit8 v28, v28, 0x2
+
+    .line 172
+    add-int v24, v27, v28
+
+    .line 174
+    .local v24, "xMiddle":I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v27, v0
+
+    move-object/from16 v0, v27
+
+    iget v0, v0, Landroid/graphics/Rect;->top:I
+
+    move/from16 v27, v0
+
+    .line 175
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
+
+    move-object/from16 v28, v0
+
+    move-object/from16 v0, v28
+
+    iget v0, v0, Landroid/graphics/Rect;->bottom:I
 
     move/from16 v28, v0
 
@@ -768,609 +1338,43 @@
 
     move/from16 v29, v0
 
-    move-object/from16 v0, v17
+    sub-int v28, v28, v29
 
-    move/from16 v1, v26
-
-    move/from16 v2, v27
-
-    move/from16 v3, v28
-
-    move/from16 v4, v29
-
-    invoke-direct {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    .line 117
-    .local v17, "topRect":Landroid/graphics/Rect;
-    invoke-virtual/range {v17 .. v17}, Landroid/graphics/Rect;->width()I
-
-    move-result v26
-
-    if-lez v26, :cond_206
-
-    invoke-virtual/range {v17 .. v17}, Landroid/graphics/Rect;->height()I
-
-    move-result v26
-
-    if-lez v26, :cond_206
-
-    .line 118
-    invoke-virtual/range {p0 .. p0}, Lcom/control/imagecropper/HighlightView;->hasFocus()Z
-
-    move-result v26
-
-    if-eqz v26, :cond_301
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mFocusPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v26, v0
-
-    :goto_1fd
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, v17
-
-    move-object/from16 v2, v26
-
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
-
-    .line 120
-    :cond_206
-    new-instance v6, Landroid/graphics/Rect;
-
-    move-object/from16 v0, v18
-
-    iget v0, v0, Landroid/graphics/Rect;->left:I
-
-    move/from16 v26, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v27, v0
-
-    move-object/from16 v0, v27
-
-    iget v0, v0, Landroid/graphics/Rect;->bottom:I
-
-    move/from16 v27, v0
-
-    move-object/from16 v0, v18
-
-    iget v0, v0, Landroid/graphics/Rect;->right:I
-
-    move/from16 v28, v0
-
-    move-object/from16 v0, v18
-
-    iget v0, v0, Landroid/graphics/Rect;->bottom:I
-
-    move/from16 v29, v0
-
-    move/from16 v0, v26
-
-    move/from16 v1, v27
-
-    move/from16 v2, v28
-
-    move/from16 v3, v29
-
-    invoke-direct {v6, v0, v1, v2, v3}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    .line 121
-    .local v6, "bottomRect":Landroid/graphics/Rect;
-    invoke-virtual {v6}, Landroid/graphics/Rect;->width()I
-
-    move-result v26
-
-    if-lez v26, :cond_250
-
-    invoke-virtual {v6}, Landroid/graphics/Rect;->height()I
-
-    move-result v26
-
-    if-lez v26, :cond_250
-
-    .line 122
-    invoke-virtual/range {p0 .. p0}, Lcom/control/imagecropper/HighlightView;->hasFocus()Z
-
-    move-result v26
-
-    if-eqz v26, :cond_309
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mFocusPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v26, v0
-
-    :goto_249
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, v26
-
-    invoke-virtual {v0, v6, v1}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
-
-    .line 124
-    :cond_250
-    new-instance v12, Landroid/graphics/Rect;
-
-    move-object/from16 v0, v18
-
-    iget v0, v0, Landroid/graphics/Rect;->left:I
-
-    move/from16 v26, v0
-
-    move-object/from16 v0, v17
-
-    iget v0, v0, Landroid/graphics/Rect;->bottom:I
-
-    move/from16 v27, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v28, v0
-
-    move-object/from16 v0, v28
-
-    iget v0, v0, Landroid/graphics/Rect;->left:I
-
-    move/from16 v28, v0
-
-    iget v0, v6, Landroid/graphics/Rect;->top:I
-
-    move/from16 v29, v0
-
-    move/from16 v0, v26
-
-    move/from16 v1, v27
-
-    move/from16 v2, v28
-
-    move/from16 v3, v29
-
-    invoke-direct {v12, v0, v1, v2, v3}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    .line 125
-    .local v12, "leftRect":Landroid/graphics/Rect;
-    invoke-virtual {v12}, Landroid/graphics/Rect;->width()I
-
-    move-result v26
-
-    if-lez v26, :cond_298
-
-    invoke-virtual {v12}, Landroid/graphics/Rect;->height()I
-
-    move-result v26
-
-    if-lez v26, :cond_298
-
-    .line 126
-    invoke-virtual/range {p0 .. p0}, Lcom/control/imagecropper/HighlightView;->hasFocus()Z
-
-    move-result v26
-
-    if-eqz v26, :cond_311
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mFocusPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v26, v0
-
-    :goto_291
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, v26
-
-    invoke-virtual {v0, v12, v1}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
-
-    .line 128
-    :cond_298
-    new-instance v15, Landroid/graphics/Rect;
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    iget v0, v0, Landroid/graphics/Rect;->right:I
-
-    move/from16 v26, v0
-
-    move-object/from16 v0, v17
-
-    iget v0, v0, Landroid/graphics/Rect;->bottom:I
-
-    move/from16 v27, v0
-
-    move-object/from16 v0, v18
-
-    iget v0, v0, Landroid/graphics/Rect;->right:I
-
-    move/from16 v28, v0
-
-    iget v0, v6, Landroid/graphics/Rect;->top:I
-
-    move/from16 v29, v0
-
-    move/from16 v0, v26
-
-    move/from16 v1, v27
-
-    move/from16 v2, v28
-
-    move/from16 v3, v29
-
-    invoke-direct {v15, v0, v1, v2, v3}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    .line 129
-    .local v15, "rightRect":Landroid/graphics/Rect;
-    invoke-virtual {v15}, Landroid/graphics/Rect;->width()I
-
-    move-result v26
-
-    if-lez v26, :cond_2e0
-
-    invoke-virtual {v15}, Landroid/graphics/Rect;->height()I
-
-    move-result v26
-
-    if-lez v26, :cond_2e0
-
-    .line 130
-    invoke-virtual/range {p0 .. p0}, Lcom/control/imagecropper/HighlightView;->hasFocus()Z
-
-    move-result v26
-
-    if-eqz v26, :cond_319
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mFocusPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v26, v0
-
-    :goto_2d9
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, v26
-
-    invoke-virtual {v0, v15, v1}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
-
-    .line 133
-    :cond_2e0
-    new-instance v26, Landroid/graphics/RectF;
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v27, v0
-
-    invoke-direct/range {v26 .. v27}, Landroid/graphics/RectF;-><init>(Landroid/graphics/Rect;)V
-
-    sget-object v27, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v27
-
-    invoke-virtual {v13, v0, v1}, Landroid/graphics/Path;->addRect(Landroid/graphics/RectF;Landroid/graphics/Path$Direction;)V
-
-    .line 135
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mOutlinePaint:Landroid/graphics/Paint;
-
-    move-object/from16 v26, v0
-
-    const/16 v27, -0x7600
-
-    invoke-virtual/range {v26 .. v27}, Landroid/graphics/Paint;->setColor(I)V
-
-    goto/16 :goto_da
-
-    .line 118
-    .end local v6    # "bottomRect":Landroid/graphics/Rect;
-    .end local v12    # "leftRect":Landroid/graphics/Rect;
-    .end local v15    # "rightRect":Landroid/graphics/Rect;
-    :cond_301
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mNoFocusPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v26, v0
-
-    goto/16 :goto_1fd
-
-    .line 122
-    .restart local v6    # "bottomRect":Landroid/graphics/Rect;
-    :cond_309
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mNoFocusPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v26, v0
-
-    goto/16 :goto_249
-
-    .line 126
-    .restart local v12    # "leftRect":Landroid/graphics/Rect;
-    :cond_311
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mNoFocusPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v26, v0
-
-    goto/16 :goto_291
-
-    .line 130
-    .restart local v15    # "rightRect":Landroid/graphics/Rect;
-    :cond_319
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mNoFocusPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v26, v0
-
-    goto :goto_2d9
-
-    .line 158
-    .end local v6    # "bottomRect":Landroid/graphics/Rect;
-    .end local v12    # "leftRect":Landroid/graphics/Rect;
-    .end local v15    # "rightRect":Landroid/graphics/Rect;
-    .end local v17    # "topRect":Landroid/graphics/Rect;
-    :cond_320
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    iget v0, v0, Landroid/graphics/Rect;->left:I
-
-    move/from16 v26, v0
-
-    add-int/lit8 v11, v26, 0x1
-
-    .line 159
-    .local v11, "left":I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    iget v0, v0, Landroid/graphics/Rect;->right:I
-
-    move/from16 v26, v0
-
-    add-int/lit8 v14, v26, 0x1
-
-    .line 160
-    .local v14, "right":I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    iget v0, v0, Landroid/graphics/Rect;->top:I
-
-    move/from16 v26, v0
-
-    add-int/lit8 v16, v26, 0x4
-
-    .line 161
-    .local v16, "top":I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    iget v0, v0, Landroid/graphics/Rect;->bottom:I
-
-    move/from16 v26, v0
-
-    add-int/lit8 v5, v26, 0x3
-
-    .line 164
-    .local v5, "bottom":I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableWidth:Landroid/graphics/drawable/Drawable;
-
-    move-object/from16 v26, v0
-
-    invoke-virtual/range {v26 .. v26}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v26
-
-    div-int/lit8 v21, v26, 0x2
-
-    .line 166
-    .local v21, "widthWidth":I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableWidth:Landroid/graphics/drawable/Drawable;
-
-    move-object/from16 v26, v0
-
-    invoke-virtual/range {v26 .. v26}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
-    move-result v26
-
-    div-int/lit8 v20, v26, 0x2
-
-    .line 168
-    .local v20, "widthHeight":I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableHeight:Landroid/graphics/drawable/Drawable;
-
-    move-object/from16 v26, v0
-
-    invoke-virtual/range {v26 .. v26}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
-    move-result v26
-
-    div-int/lit8 v9, v26, 0x2
-
-    .line 170
-    .local v9, "heightHeight":I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableHeight:Landroid/graphics/drawable/Drawable;
-
-    move-object/from16 v26, v0
-
-    invoke-virtual/range {v26 .. v26}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v26
-
-    div-int/lit8 v10, v26, 0x2
-
-    .line 172
-    .local v10, "heightWidth":I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    iget v0, v0, Landroid/graphics/Rect;->left:I
-
-    move/from16 v26, v0
-
-    .line 173
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v27, v0
-
-    move-object/from16 v0, v27
-
-    iget v0, v0, Landroid/graphics/Rect;->right:I
-
-    move/from16 v27, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v28, v0
-
-    move-object/from16 v0, v28
-
-    iget v0, v0, Landroid/graphics/Rect;->left:I
-
-    move/from16 v28, v0
-
-    sub-int v27, v27, v28
-
-    div-int/lit8 v27, v27, 0x2
-
-    .line 172
-    add-int v23, v26, v27
+    div-int/lit8 v28, v28, 0x2
 
     .line 174
-    .local v23, "xMiddle":I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v26, v0
-
-    move-object/from16 v0, v26
-
-    iget v0, v0, Landroid/graphics/Rect;->top:I
-
-    move/from16 v26, v0
-
-    .line 175
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v27, v0
-
-    move-object/from16 v0, v27
-
-    iget v0, v0, Landroid/graphics/Rect;->bottom:I
-
-    move/from16 v27, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mDrawRect:Landroid/graphics/Rect;
-
-    move-object/from16 v28, v0
-
-    move-object/from16 v0, v28
-
-    iget v0, v0, Landroid/graphics/Rect;->top:I
-
-    move/from16 v28, v0
-
-    sub-int v27, v27, v28
-
-    div-int/lit8 v27, v27, 0x2
-
-    .line 174
-    add-int v25, v26, v27
+    add-int v26, v27, v28
 
     .line 177
-    .local v25, "yMiddle":I
+    .local v26, "yMiddle":I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableWidth:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    sub-int v27, v11, v21
+    sub-int v28, v12, v22
 
     .line 178
-    sub-int v28, v25, v20
+    sub-int v29, v26, v21
 
     .line 179
-    add-int v29, v11, v21
+    add-int v30, v12, v22
 
     .line 180
-    add-int v30, v25, v20
+    add-int v31, v26, v21
 
     .line 177
-    invoke-virtual/range {v26 .. v30}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual/range {v27 .. v31}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 181
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableWidth:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     move-object/from16 v1, p1
 
@@ -1381,30 +1385,30 @@
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableWidth:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    sub-int v27, v14, v21
+    sub-int v28, v15, v22
 
     .line 184
-    sub-int v28, v25, v20
+    sub-int v29, v26, v21
 
     .line 185
-    add-int v29, v14, v21
+    add-int v30, v15, v22
 
     .line 186
-    add-int v30, v25, v20
+    add-int v31, v26, v21
 
     .line 183
-    invoke-virtual/range {v26 .. v30}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual/range {v27 .. v31}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 187
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableWidth:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     move-object/from16 v1, p1
 
@@ -1415,30 +1419,30 @@
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableHeight:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    sub-int v27, v23, v10
+    sub-int v28, v24, v11
 
     .line 190
-    sub-int v28, v16, v9
+    sub-int v29, v17, v10
 
     .line 191
-    add-int v29, v23, v10
+    add-int v30, v24, v11
 
     .line 192
-    add-int v30, v16, v9
+    add-int v31, v17, v10
 
     .line 189
-    invoke-virtual/range {v26 .. v30}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual/range {v27 .. v31}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 193
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableHeight:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     move-object/from16 v1, p1
 
@@ -1449,30 +1453,30 @@
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableHeight:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    sub-int v27, v23, v10
+    sub-int v28, v24, v11
 
     .line 196
-    sub-int v28, v5, v9
+    sub-int v29, v6, v10
 
     .line 197
-    add-int v29, v23, v10
+    add-int v30, v24, v11
 
     .line 198
-    add-int v30, v5, v9
+    add-int v31, v6, v10
 
     .line 195
-    invoke-virtual/range {v26 .. v30}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual/range {v27 .. v31}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 199
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/control/imagecropper/HighlightView;->mResizeDrawableHeight:Landroid/graphics/drawable/Drawable;
 
-    move-object/from16 v26, v0
+    move-object/from16 v27, v0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
     move-object/from16 v1, p1
 

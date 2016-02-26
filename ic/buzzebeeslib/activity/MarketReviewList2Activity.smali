@@ -1547,9 +1547,9 @@
 
     .line 2875
     .local v0, "inFromRight":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 2876
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
@@ -2264,9 +2264,9 @@
 
     .line 2882
     .local v0, "outtoLeft":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 2883
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
@@ -5257,7 +5257,7 @@
 .end method
 
 .method public openImage(Landroid/view/View;)V
-    .registers 7
+    .registers 8
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
@@ -5290,17 +5290,17 @@
     invoke-direct {v2, p0}, Lic/buzzebeeslib/activity/MarketReviewList2Activity$17;-><init>(Lic/buzzebeeslib/activity/MarketReviewList2Activity;)V
 
     .line 2386
-    const-wide/16 v3, 0x32
+    const-wide/16 v4, 0x32
 
     .line 2379
-    invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 2387
     return-void
 .end method
 
 .method public openSticker(Landroid/view/View;)V
-    .registers 7
+    .registers 8
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
@@ -5333,10 +5333,10 @@
     invoke-direct {v2, p0}, Lic/buzzebeeslib/activity/MarketReviewList2Activity$16;-><init>(Lic/buzzebeeslib/activity/MarketReviewList2Activity;)V
 
     .line 2371
-    const-wide/16 v3, 0x32
+    const-wide/16 v4, 0x32
 
     .line 2364
-    invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 2373
     return-void

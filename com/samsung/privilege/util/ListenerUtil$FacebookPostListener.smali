@@ -116,7 +116,7 @@
     :try_start_31
     iget-object v8, p0, Lcom/samsung/privilege/util/ListenerUtil$FacebookPostListener;->gActivityContext:Landroid/content/Context;
 
-    const v9, 0x7f0a0344
+    const v9, 0x7f090351
 
     invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
     :try_end_39
@@ -203,7 +203,7 @@
     :try_start_72
     iget-object v8, p0, Lcom/samsung/privilege/util/ListenerUtil$FacebookPostListener;->gActivityContext:Landroid/content/Context;
 
-    const v9, 0x7f0a0345
+    const v9, 0x7f090352
 
     invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
     :try_end_7a

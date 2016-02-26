@@ -1999,9 +1999,9 @@
 
     invoke-virtual {p0}, Ljava/io/File;->length()J
 
-    move-result-wide v7
+    move-result-wide v8
 
-    long-to-int v7, v7
+    long-to-int v7, v8
 
     invoke-virtual {v5, v0, v6, v7}, Ljava/io/BufferedReader;->read([CII)I
 
@@ -2322,9 +2322,9 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v13
+    move-result-wide v14
 
-    invoke-direct {v11, v9, v12, v13, v14}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
+    invoke-direct {v11, v9, v12, v14, v15}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
 
     .line 1068
     .local v11, "notification":Landroid/app/Notification;
@@ -2532,7 +2532,7 @@
 .end method
 
 .method private static notificationSuccess(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/app/NotificationManager;Ljava/lang/String;)V
-    .registers 19
+    .registers 20
     .param p0, "appContext"    # Landroid/content/Context;
     .param p1, "pStrPageHeader"    # Ljava/lang/String;
     .param p2, "pStrMessage"    # Ljava/lang/String;
@@ -2541,9 +2541,9 @@
 
     .prologue
     .line 1020
-    const-string v11, "notification"
+    const-string v12, "notification"
 
-    invoke-virtual {p0, v11}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v12}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p3
 
@@ -2552,245 +2552,245 @@
 
     .line 1022
     .restart local p3    # "pNotificationManager":Landroid/app/NotificationManager;
-    new-instance v11, Ljava/lang/StringBuilder;
+    new-instance v12, Ljava/lang/StringBuilder;
 
-    sget v12, Lic/buzzebeeslib/R$string;->app_name:I
+    sget v13, Lic/buzzebeeslib/R$string;->app_name:I
 
-    invoke-virtual {p0, v12}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v12}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v12, ":successfully"
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    .line 1024
-    .local v10, "tickerText":Ljava/lang/String;
-    sget v7, Lic/buzzebeeslib/R$drawable;->bz_icon_noti:I
-
-    .line 1026
-    .local v7, "icon":I
-    new-instance v9, Landroid/app/Notification;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v11
-
-    invoke-direct {v9, v7, v10, v11, v12}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
-
-    .line 1027
-    .local v9, "notification":Landroid/app/Notification;
-    iget v11, v9, Landroid/app/Notification;->flags:I
-
-    or-int/lit8 v11, v11, 0x10
-
-    iput v11, v9, Landroid/app/Notification;->flags:I
-
-    .line 1028
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    const-string v12, "create Notification:"
-
-    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v11, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    const/4 v12, 0x1
-
-    invoke-static {p0, v11, v12}, Lic/buzzebeeslib/util/PostAsyncUtil;->LOGCONSOLE(Landroid/content/Context;Ljava/lang/String;Z)V
-
-    .line 1030
-    new-instance v8, Landroid/content/Intent;
-
-    const-class v11, Lic/buzzebeeslib/activity/MarketPlaceActivity;
-
-    invoke-direct {v8, p0, v11}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 1031
-    .local v8, "intent":Landroid/content/Intent;
-    const/high16 v11, 0x14000000
-
-    invoke-virtual {v8, v11}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    .line 1033
-    sget v11, Lic/buzzebeeslib/util/PostAsyncUtil;->gIntRequestID:I
-
-    const/4 v12, 0x0
-
-    invoke-static {p0, v11, v8, v12}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object v2
-
-    .line 1034
-    .local v2, "activity":Landroid/app/PendingIntent;
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    sget v12, Lic/buzzebeeslib/R$string;->app_name:I
-
-    invoke-virtual {p0, v12}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v12}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v12, ":successfully"
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 1035
-    .local v4, "contentTitle":Ljava/lang/String;
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v12, ":"
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v11, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 1036
-    .local v3, "contentText":Ljava/lang/String;
-    invoke-virtual {v9, p0, v4, v3, v2}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
-
-    .line 1037
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    const-string v12, "setLatestEventInfo:title="
-
-    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v11, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    const-string v12, ",text="
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    const/4 v12, 0x1
-
-    invoke-static {p0, v11, v12}, Lic/buzzebeeslib/util/PostAsyncUtil;->LOGCONSOLE(Landroid/content/Context;Ljava/lang/String;Z)V
-
-    .line 1039
-    iget v11, v9, Landroid/app/Notification;->number:I
-
-    add-int/lit8 v11, v11, 0x1
-
-    iput v11, v9, Landroid/app/Notification;->number:I
-
-    .line 1043
-    new-instance v6, Ljava/io/File;
-
-    move-object/from16 v0, p4
-
-    invoke-direct {v6, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    .line 1044
-    .local v6, "file":Ljava/io/File;
-    invoke-virtual {v6}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object v11
-
-    const/4 v12, 0x4
-
-    invoke-virtual {v6}, Ljava/io/File;->getName()Ljava/lang/String;
+    invoke-virtual {p0, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v13
 
-    invoke-virtual {v13}, Ljava/lang/String;->length()I
+    invoke-static {v13}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result v13
+    move-result-object v13
 
-    invoke-virtual {v11, v12, v13}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v13, ":successfully"
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v11
 
-    invoke-static {v11}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    .line 1024
+    .local v11, "tickerText":Ljava/lang/String;
+    sget v8, Lic/buzzebeeslib/R$drawable;->bz_icon_noti:I
 
-    move-result-object v11
+    .line 1026
+    .local v8, "icon":I
+    new-instance v10, Landroid/app/Notification;
 
-    invoke-virtual {v11}, Ljava/lang/Integer;->intValue()I
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result v1
+    move-result-wide v12
+
+    invoke-direct {v10, v8, v11, v12, v13}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
+
+    .line 1027
+    .local v10, "notification":Landroid/app/Notification;
+    iget v12, v10, Landroid/app/Notification;->flags:I
+
+    or-int/lit8 v12, v12, 0x10
+
+    iput v12, v10, Landroid/app/Notification;->flags:I
+
+    .line 1028
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    const-string v13, "create Notification:"
+
+    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v12, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    const/4 v13, 0x1
+
+    invoke-static {p0, v12, v13}, Lic/buzzebeeslib/util/PostAsyncUtil;->LOGCONSOLE(Landroid/content/Context;Ljava/lang/String;Z)V
+
+    .line 1030
+    new-instance v9, Landroid/content/Intent;
+
+    const-class v12, Lic/buzzebeeslib/activity/MarketPlaceActivity;
+
+    invoke-direct {v9, p0, v12}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 1031
+    .local v9, "intent":Landroid/content/Intent;
+    const/high16 v12, 0x14000000
+
+    invoke-virtual {v9, v12}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    .line 1033
+    sget v12, Lic/buzzebeeslib/util/PostAsyncUtil;->gIntRequestID:I
+
+    const/4 v13, 0x0
+
+    invoke-static {p0, v12, v9, v13}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v3
+
+    .line 1034
+    .local v3, "activity":Landroid/app/PendingIntent;
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    sget v13, Lic/buzzebeeslib/R$string;->app_name:I
+
+    invoke-virtual {p0, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v13}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v13, ":successfully"
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 1035
+    .local v5, "contentTitle":Ljava/lang/String;
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    invoke-static/range {p1 .. p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v13, ":"
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 1036
+    .local v4, "contentText":Ljava/lang/String;
+    invoke-virtual {v10, p0, v5, v4, v3}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
+
+    .line 1037
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    const-string v13, "setLatestEventInfo:title="
+
+    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v12, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    const-string v13, ",text="
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    const/4 v13, 0x1
+
+    invoke-static {p0, v12, v13}, Lic/buzzebeeslib/util/PostAsyncUtil;->LOGCONSOLE(Landroid/content/Context;Ljava/lang/String;Z)V
+
+    .line 1039
+    iget v12, v10, Landroid/app/Notification;->number:I
+
+    add-int/lit8 v12, v12, 0x1
+
+    iput v12, v10, Landroid/app/Notification;->number:I
+
+    .line 1043
+    new-instance v7, Ljava/io/File;
+
+    move-object/from16 v0, p4
+
+    invoke-direct {v7, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 1044
+    .local v7, "file":Ljava/io/File;
+    invoke-virtual {v7}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v12
+
+    const/4 v13, 0x4
+
+    invoke-virtual {v7}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Ljava/lang/String;->length()I
+
+    move-result v14
+
+    invoke-virtual {v12, v13, v14}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
 
     .line 1046
-    .local v1, "IntNotification_posting_number":I
+    .local v2, "IntNotification_posting_number":I
     :try_start_d0
     move-object/from16 v0, p3
 
-    invoke-virtual {v0, v1, v9}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
+    invoke-virtual {v0, v2, v10}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
 
     .line 1047
-    new-instance v11, Ljava/lang/StringBuilder;
+    new-instance v12, Ljava/lang/StringBuilder;
 
-    const-string v12, "notify Notification number="
+    const-string v13, "notify Notification number="
 
-    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v11, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v12, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v11
+    move-result-object v12
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v12
 
-    const/4 v12, 0x1
+    const/4 v13, 0x1
 
-    invoke-static {p0, v11, v12}, Lic/buzzebeeslib/util/PostAsyncUtil;->LOGCONSOLE(Landroid/content/Context;Ljava/lang/String;Z)V
+    invoke-static {p0, v12, v13}, Lic/buzzebeeslib/util/PostAsyncUtil;->LOGCONSOLE(Landroid/content/Context;Ljava/lang/String;Z)V
     :try_end_e8
     .catch Ljava/lang/Exception; {:try_start_d0 .. :try_end_e8} :catch_e9
 
@@ -2800,21 +2800,21 @@
 
     .line 1048
     :catch_e9
-    move-exception v5
+    move-exception v6
 
     .line 1049
-    .local v5, "ex":Ljava/lang/Exception;
-    const-string v11, "error:pNotificationManager.notify(IntNotification_posting_number, notification);"
+    .local v6, "ex":Ljava/lang/Exception;
+    const-string v12, "error:pNotificationManager.notify(IntNotification_posting_number, notification);"
 
-    const/4 v12, 0x1
+    const/4 v13, 0x1
 
-    invoke-static {p0, v11, v12}, Lic/buzzebeeslib/util/PostAsyncUtil;->LOGCONSOLE(Landroid/content/Context;Ljava/lang/String;Z)V
+    invoke-static {p0, v12, v13}, Lic/buzzebeeslib/util/PostAsyncUtil;->LOGCONSOLE(Landroid/content/Context;Ljava/lang/String;Z)V
 
     goto :goto_e8
 .end method
 
 .method private static posting(Landroid/content/Context;Ljava/lang/String;)V
-    .registers 37
+    .registers 38
     .param p0, "appContext"    # Landroid/content/Context;
     .param p1, "filepath"    # Ljava/lang/String;
 
@@ -2974,13 +2974,13 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v33
+    move-result-wide v34
 
     move-object/from16 v0, v22
 
     move/from16 v1, v19
 
-    move-wide/from16 v2, v33
+    move-wide/from16 v2, v34
 
     invoke-direct {v0, v1, v4, v2, v3}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
 

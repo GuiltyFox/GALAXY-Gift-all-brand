@@ -270,7 +270,7 @@
 .end method
 
 .method public expired(J)Z
-    .registers 11
+    .registers 12
     .param p1, "expire"    # J
 
     .prologue

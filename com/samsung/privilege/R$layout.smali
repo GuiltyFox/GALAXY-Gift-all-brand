@@ -469,139 +469,143 @@
 
 .field public static final dialog_nfc:I = 0x7f0300e2
 
-.field public static final dialog_point_transfer:I = 0x7f0300e3
+.field public static final dialog_otp:I = 0x7f0300e3
 
-.field public static final dialog_serial:I = 0x7f0300e4
+.field public static final dialog_point_transfer:I = 0x7f0300e4
 
-.field public static final dialog_serial_3_type_code:I = 0x7f0300e5
+.field public static final dialog_serial:I = 0x7f0300e5
 
-.field public static final dialog_serial_barcode:I = 0x7f0300e6
+.field public static final dialog_serial_3_type_code:I = 0x7f0300e6
 
-.field public static final dialog_term:I = 0x7f0300e7
+.field public static final dialog_serial_barcode:I = 0x7f0300e7
 
-.field public static final encode:I = 0x7f0300e8
+.field public static final dialog_serial_version2:I = 0x7f0300e8
 
-.field public static final form_loginmenu:I = 0x7f0300e9
+.field public static final dialog_term:I = 0x7f0300e9
 
-.field public static final fragment_mainmenu:I = 0x7f0300ea
+.field public static final encode:I = 0x7f0300ea
 
-.field public static final friend_list:I = 0x7f0300eb
+.field public static final form_loginmenu:I = 0x7f0300eb
 
-.field public static final friend_list_row:I = 0x7f0300ec
+.field public static final fragment_mainmenu:I = 0x7f0300ec
 
-.field public static final header_no_review:I = 0x7f0300ed
+.field public static final friend_list:I = 0x7f0300ed
 
-.field public static final help:I = 0x7f0300ee
+.field public static final friend_list_row:I = 0x7f0300ee
 
-.field public static final history_list_item:I = 0x7f0300ef
+.field public static final header_no_review:I = 0x7f0300ef
 
-.field public static final image_campaign:I = 0x7f0300f0
+.field public static final help:I = 0x7f0300f0
 
-.field public static final image_campaign_detail:I = 0x7f0300f1
+.field public static final history_list_item:I = 0x7f0300f1
 
-.field public static final inapps:I = 0x7f0300f2
+.field public static final image_campaign:I = 0x7f0300f2
 
-.field public static final inapps_row:I = 0x7f0300f3
+.field public static final image_campaign_detail:I = 0x7f0300f3
 
-.field public static final keyboard_sticker_row:I = 0x7f0300f4
+.field public static final inapps:I = 0x7f0300f4
 
-.field public static final keyboard_stickerset_row:I = 0x7f0300f5
+.field public static final inapps_row:I = 0x7f0300f5
 
-.field public static final listitem_mainmenu:I = 0x7f0300f6
+.field public static final keyboard_sticker_row:I = 0x7f0300f6
 
-.field public static final main:I = 0x7f0300f7
+.field public static final keyboard_stickerset_row:I = 0x7f0300f7
 
-.field public static final market_bzbs_popup:I = 0x7f0300f8
+.field public static final listitem_mainmenu:I = 0x7f0300f8
 
-.field public static final market_place_3_fragment_tab_title:I = 0x7f0300f9
+.field public static final main:I = 0x7f0300f9
 
-.field public static final market_place_4_fragment:I = 0x7f0300fa
+.field public static final market_bzbs_popup:I = 0x7f0300fa
 
-.field public static final market_place_4_menu_frame:I = 0x7f0300fb
+.field public static final market_place_3_fragment_tab_title:I = 0x7f0300fb
 
-.field public static final market_review_list:I = 0x7f0300fc
+.field public static final market_place_4_fragment:I = 0x7f0300fc
 
-.field public static final market_review_of_review_list:I = 0x7f0300fd
+.field public static final market_place_4_menu_frame:I = 0x7f0300fd
 
-.field public static final market_review_of_review_post:I = 0x7f0300fe
+.field public static final market_review_list:I = 0x7f0300fe
 
-.field public static final market_review_of_review_previous:I = 0x7f0300ff
+.field public static final market_review_of_review_list:I = 0x7f0300ff
 
-.field public static final market_review_of_review_row:I = 0x7f030100
+.field public static final market_review_of_review_post:I = 0x7f030100
 
-.field public static final market_review_row:I = 0x7f030101
+.field public static final market_review_of_review_previous:I = 0x7f030101
 
-.field public static final menu_admin:I = 0x7f030102
+.field public static final market_review_of_review_row:I = 0x7f030102
 
-.field public static final menu_setting:I = 0x7f030103
+.field public static final market_review_row:I = 0x7f030103
 
-.field public static final message_dialog:I = 0x7f030104
+.field public static final menu_admin:I = 0x7f030104
 
-.field public static final misc_fragment:I = 0x7f030105
+.field public static final menu_setting:I = 0x7f030105
 
-.field public static final notification_post_async_dialogbox:I = 0x7f030106
+.field public static final message_dialog:I = 0x7f030106
 
-.field public static final permissions:I = 0x7f030107
+.field public static final misc_fragment:I = 0x7f030107
 
-.field public static final permissions_notification:I = 0x7f030108
+.field public static final notification_post_async_dialogbox:I = 0x7f030108
 
-.field public static final photo_viewer:I = 0x7f030109
+.field public static final permissions:I = 0x7f030109
 
-.field public static final point_statement:I = 0x7f03010a
+.field public static final permissions_notification:I = 0x7f03010a
 
-.field public static final popup_welcome:I = 0x7f03010b
+.field public static final photo_viewer:I = 0x7f03010b
 
-.field public static final post_async_notification:I = 0x7f03010c
+.field public static final point_statement:I = 0x7f03010c
 
-.field public static final profile_setting:I = 0x7f03010d
+.field public static final popup_welcome:I = 0x7f03010d
 
-.field public static final pull_to_refresh_header:I = 0x7f03010e
+.field public static final post_async_notification:I = 0x7f03010e
 
-.field public static final qr_landing:I = 0x7f03010f
+.field public static final profile_setting:I = 0x7f03010f
 
-.field public static final qt_content:I = 0x7f030110
+.field public static final pull_to_refresh_header:I = 0x7f030110
 
-.field public static final register_activity:I = 0x7f030111
+.field public static final qr_landing:I = 0x7f030111
 
-.field public static final requesthelp_list:I = 0x7f030112
+.field public static final qt_content:I = 0x7f030112
 
-.field public static final requesthelp_post:I = 0x7f030113
+.field public static final register_activity:I = 0x7f030113
 
-.field public static final requesthelp_row:I = 0x7f030114
+.field public static final requesthelp_list:I = 0x7f030114
 
-.field public static final search_book_contents:I = 0x7f030115
+.field public static final requesthelp_post:I = 0x7f030115
 
-.field public static final search_book_contents_header:I = 0x7f030116
+.field public static final requesthelp_row:I = 0x7f030116
 
-.field public static final search_book_contents_list_item:I = 0x7f030117
+.field public static final search_book_contents:I = 0x7f030117
 
-.field public static final share:I = 0x7f030118
+.field public static final search_book_contents_header:I = 0x7f030118
 
-.field public static final sherlock_spinner_dropdown_item:I = 0x7f030119
+.field public static final search_book_contents_list_item:I = 0x7f030119
 
-.field public static final sherlock_spinner_item:I = 0x7f03011a
+.field public static final share:I = 0x7f03011a
 
-.field public static final slidingmenumain:I = 0x7f03011b
+.field public static final sherlock_spinner_dropdown_item:I = 0x7f03011b
 
-.field public static final splash:I = 0x7f03011c
+.field public static final sherlock_spinner_item:I = 0x7f03011c
 
-.field public static final splash_scroll:I = 0x7f03011d
+.field public static final slidingmenumain:I = 0x7f03011d
 
-.field public static final terms_apache:I = 0x7f03011e
+.field public static final splash:I = 0x7f03011e
 
-.field public static final toast_badge:I = 0x7f03011f
+.field public static final splash_scroll:I = 0x7f03011f
 
-.field public static final toast_badge_gift:I = 0x7f030120
+.field public static final terms_apache:I = 0x7f030120
 
-.field public static final user_terms_condition:I = 0x7f030121
+.field public static final toast_badge:I = 0x7f030121
 
-.field public static final wall_list_footer:I = 0x7f030122
+.field public static final toast_badge_gift:I = 0x7f030122
 
-.field public static final webview_booking:I = 0x7f030123
+.field public static final user_terms_condition:I = 0x7f030123
 
-.field public static final webview_notification:I = 0x7f030124
+.field public static final wall_list_footer:I = 0x7f030124
 
-.field public static final webview_redeem:I = 0x7f030125
+.field public static final webview_booking:I = 0x7f030125
+
+.field public static final webview_notification:I = 0x7f030126
+
+.field public static final webview_redeem:I = 0x7f030127
 
 
 # direct methods
@@ -609,7 +613,7 @@
     .registers 1
 
     .prologue
-    .line 4814
+    .line 4837
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

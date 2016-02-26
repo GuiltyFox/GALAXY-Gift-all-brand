@@ -1152,7 +1152,7 @@
 .end method
 
 .method public offer(Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Z
-    .registers 6
+    .registers 7
     .param p2, "timeout"    # J
     .param p4, "unit"    # Ljava/util/concurrent/TimeUnit;
     .annotation system Ldalvik/annotation/Signature;
@@ -1271,18 +1271,18 @@
 
     .line 378
     :cond_8
-    new-instance v3, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node;
+    new-instance v1, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node;
 
-    invoke-direct {v3, p1}, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p1}, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node;-><init>(Ljava/lang/Object;)V
 
     .line 379
-    .local v3, "node":Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node;, "Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node<TE;>;"
+    .local v1, "node":Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node;, "Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node<TE;>;"
     invoke-virtual {p4, p2, p3}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 380
-    .local v1, "nanos":J
+    .local v2, "nanos":J
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque;->lock:Ljava/util/concurrent/locks/ReentrantLock;
 
     .line 381
@@ -1292,7 +1292,7 @@
     .line 383
     :goto_16
     :try_start_16
-    invoke-direct {p0, v3}, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque;->linkFirst(Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node;)Z
+    invoke-direct {p0, v1}, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque;->linkFirst(Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node;)Z
     :try_end_19
     .catchall {:try_start_16 .. :try_end_19} :catchall_33
 
@@ -1313,7 +1313,7 @@
     :cond_21
     const-wide/16 v4, 0x0
 
-    cmp-long v4, v1, v4
+    cmp-long v4, v2, v4
 
     if-gtz v4, :cond_2c
 
@@ -1330,11 +1330,11 @@
     :try_start_2c
     iget-object v4, p0, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque;->notFull:Ljava/util/concurrent/locks/Condition;
 
-    invoke-interface {v4, v1, v2}, Ljava/util/concurrent/locks/Condition;->awaitNanos(J)J
+    invoke-interface {v4, v2, v3}, Ljava/util/concurrent/locks/Condition;->awaitNanos(J)J
     :try_end_31
     .catchall {:try_start_2c .. :try_end_31} :catchall_33
 
-    move-result-wide v1
+    move-result-wide v2
 
     goto :goto_16
 
@@ -1440,18 +1440,18 @@
 
     .line 401
     :cond_8
-    new-instance v3, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node;
+    new-instance v1, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node;
 
-    invoke-direct {v3, p1}, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p1}, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node;-><init>(Ljava/lang/Object;)V
 
     .line 402
-    .local v3, "node":Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node;, "Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node<TE;>;"
+    .local v1, "node":Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node;, "Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node<TE;>;"
     invoke-virtual {p4, p2, p3}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 403
-    .local v1, "nanos":J
+    .local v2, "nanos":J
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque;->lock:Ljava/util/concurrent/locks/ReentrantLock;
 
     .line 404
@@ -1461,7 +1461,7 @@
     .line 406
     :goto_16
     :try_start_16
-    invoke-direct {p0, v3}, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque;->linkLast(Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node;)Z
+    invoke-direct {p0, v1}, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque;->linkLast(Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque$Node;)Z
     :try_end_19
     .catchall {:try_start_16 .. :try_end_19} :catchall_33
 
@@ -1482,7 +1482,7 @@
     :cond_21
     const-wide/16 v4, 0x0
 
-    cmp-long v4, v1, v4
+    cmp-long v4, v2, v4
 
     if-gtz v4, :cond_2c
 
@@ -1499,11 +1499,11 @@
     :try_start_2c
     iget-object v4, p0, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque;->notFull:Ljava/util/concurrent/locks/Condition;
 
-    invoke-interface {v4, v1, v2}, Ljava/util/concurrent/locks/Condition;->awaitNanos(J)J
+    invoke-interface {v4, v2, v3}, Ljava/util/concurrent/locks/Condition;->awaitNanos(J)J
     :try_end_31
     .catchall {:try_start_2c .. :try_end_31} :catchall_33
 
-    move-result-wide v1
+    move-result-wide v2
 
     goto :goto_16
 
@@ -1735,7 +1735,7 @@
 .end method
 
 .method public pollFirst(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-    .registers 10
+    .registers 11
     .param p1, "timeout"    # J
     .param p3, "unit"    # Ljava/util/concurrent/TimeUnit;
     .annotation system Ldalvik/annotation/Signature;
@@ -1757,10 +1757,10 @@
     .local p0, "this":Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque;, "Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque<TE;>;"
     invoke-virtual {p3, p1, p2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 484
-    .local v1, "nanos":J
+    .local v2, "nanos":J
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque;->lock:Ljava/util/concurrent/locks/ReentrantLock;
 
     .line 485
@@ -1774,25 +1774,25 @@
     :try_end_c
     .catchall {:try_start_9 .. :try_end_c} :catchall_25
 
-    move-result-object v3
+    move-result-object v1
 
-    .local v3, "x":Ljava/lang/Object;, "TE;"
-    if-eqz v3, :cond_13
+    .local v1, "x":Ljava/lang/Object;, "TE;"
+    if-eqz v1, :cond_13
 
     .line 495
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 493
-    .end local v3    # "x":Ljava/lang/Object;, "TE;"
+    .end local v1    # "x":Ljava/lang/Object;, "TE;"
     :goto_12
-    return-object v3
+    return-object v1
 
     .line 489
-    .restart local v3    # "x":Ljava/lang/Object;, "TE;"
+    .restart local v1    # "x":Ljava/lang/Object;, "TE;"
     :cond_13
     const-wide/16 v4, 0x0
 
-    cmp-long v4, v1, v4
+    cmp-long v4, v2, v4
 
     if-gtz v4, :cond_1e
 
@@ -1800,7 +1800,7 @@
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 490
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     goto :goto_12
 
@@ -1809,16 +1809,16 @@
     :try_start_1e
     iget-object v4, p0, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque;->notEmpty:Ljava/util/concurrent/locks/Condition;
 
-    invoke-interface {v4, v1, v2}, Ljava/util/concurrent/locks/Condition;->awaitNanos(J)J
+    invoke-interface {v4, v2, v3}, Ljava/util/concurrent/locks/Condition;->awaitNanos(J)J
     :try_end_23
     .catchall {:try_start_1e .. :try_end_23} :catchall_25
 
-    move-result-wide v1
+    move-result-wide v2
 
     goto :goto_9
 
     .line 494
-    .end local v3    # "x":Ljava/lang/Object;, "TE;"
+    .end local v1    # "x":Ljava/lang/Object;, "TE;"
     :catchall_25
     move-exception v4
 
@@ -1872,7 +1872,7 @@
 .end method
 
 .method public pollLast(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-    .registers 10
+    .registers 11
     .param p1, "timeout"    # J
     .param p3, "unit"    # Ljava/util/concurrent/TimeUnit;
     .annotation system Ldalvik/annotation/Signature;
@@ -1894,10 +1894,10 @@
     .local p0, "this":Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque;, "Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque<TE;>;"
     invoke-virtual {p3, p1, p2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 502
-    .local v1, "nanos":J
+    .local v2, "nanos":J
     iget-object v0, p0, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque;->lock:Ljava/util/concurrent/locks/ReentrantLock;
 
     .line 503
@@ -1911,25 +1911,25 @@
     :try_end_c
     .catchall {:try_start_9 .. :try_end_c} :catchall_25
 
-    move-result-object v3
+    move-result-object v1
 
-    .local v3, "x":Ljava/lang/Object;, "TE;"
-    if-eqz v3, :cond_13
+    .local v1, "x":Ljava/lang/Object;, "TE;"
+    if-eqz v1, :cond_13
 
     .line 513
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 511
-    .end local v3    # "x":Ljava/lang/Object;, "TE;"
+    .end local v1    # "x":Ljava/lang/Object;, "TE;"
     :goto_12
-    return-object v3
+    return-object v1
 
     .line 507
-    .restart local v3    # "x":Ljava/lang/Object;, "TE;"
+    .restart local v1    # "x":Ljava/lang/Object;, "TE;"
     :cond_13
     const-wide/16 v4, 0x0
 
-    cmp-long v4, v1, v4
+    cmp-long v4, v2, v4
 
     if-gtz v4, :cond_1e
 
@@ -1937,7 +1937,7 @@
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 508
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     goto :goto_12
 
@@ -1946,16 +1946,16 @@
     :try_start_1e
     iget-object v4, p0, Lcom/nostra13/universalimageloader/core/assist/deque/LinkedBlockingDeque;->notEmpty:Ljava/util/concurrent/locks/Condition;
 
-    invoke-interface {v4, v1, v2}, Ljava/util/concurrent/locks/Condition;->awaitNanos(J)J
+    invoke-interface {v4, v2, v3}, Ljava/util/concurrent/locks/Condition;->awaitNanos(J)J
     :try_end_23
     .catchall {:try_start_1e .. :try_end_23} :catchall_25
 
-    move-result-wide v1
+    move-result-wide v2
 
     goto :goto_9
 
     .line 512
-    .end local v3    # "x":Ljava/lang/Object;, "TE;"
+    .end local v1    # "x":Ljava/lang/Object;, "TE;"
     :catchall_25
     move-exception v4
 

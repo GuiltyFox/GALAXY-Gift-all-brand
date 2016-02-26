@@ -33,7 +33,7 @@
 
 # direct methods
 .method constructor <init>(JJJI)V
-    .registers 8
+    .registers 9
     .param p1, "lastResumeTime"    # J
     .param p3, "lastSuspendTime"    # J
     .param p5, "millisecondsSpentInSession"    # J
@@ -60,28 +60,28 @@
 .end method
 
 .method private readResolve()Ljava/lang/Object;
-    .registers 10
+    .registers 11
 
     .prologue
     .line 83
-    new-instance v0, Lcom/facebook/FacebookTimeSpentData;
+    new-instance v1, Lcom/facebook/FacebookTimeSpentData;
 
     .line 84
-    iget-wide v1, p0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV1;->lastResumeTime:J
+    iget-wide v2, p0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV1;->lastResumeTime:J
 
     .line 85
-    iget-wide v3, p0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV1;->lastSuspendTime:J
+    iget-wide v4, p0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV1;->lastSuspendTime:J
 
     .line 86
-    iget-wide v5, p0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV1;->millisecondsSpentInSession:J
+    iget-wide v6, p0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV1;->millisecondsSpentInSession:J
 
     .line 87
-    iget v7, p0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV1;->interruptionCount:I
+    iget v8, p0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV1;->interruptionCount:I
 
     .line 83
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
-    invoke-direct/range {v0 .. v8}, Lcom/facebook/FacebookTimeSpentData;-><init>(JJJILcom/facebook/FacebookTimeSpentData;)V
+    invoke-direct/range {v1 .. v9}, Lcom/facebook/FacebookTimeSpentData;-><init>(JJJILcom/facebook/FacebookTimeSpentData;)V
 
-    return-object v0
+    return-object v1
 .end method

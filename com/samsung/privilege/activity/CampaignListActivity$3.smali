@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$3;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
-    .line 923
+    .line 937
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 4
 
     .prologue
-    .line 926
+    .line 940
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$3;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
@@ -54,12 +54,12 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 927
+    .line 941
     .local v0, "intent":Landroid/content/Intent;
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$3;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 928
+    .line 942
     return-void
 .end method

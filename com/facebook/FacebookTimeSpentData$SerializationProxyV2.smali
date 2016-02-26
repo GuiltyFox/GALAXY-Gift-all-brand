@@ -35,7 +35,7 @@
 
 # direct methods
 .method constructor <init>(JJJILjava/lang/String;)V
-    .registers 9
+    .registers 10
     .param p1, "lastResumeTime"    # J
     .param p3, "lastSuspendTime"    # J
     .param p5, "millisecondsSpentInSession"    # J
@@ -66,31 +66,31 @@
 .end method
 
 .method private readResolve()Ljava/lang/Object;
-    .registers 11
+    .registers 12
 
     .prologue
     .line 140
-    new-instance v0, Lcom/facebook/FacebookTimeSpentData;
+    new-instance v1, Lcom/facebook/FacebookTimeSpentData;
 
     .line 141
-    iget-wide v1, p0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV2;->lastResumeTime:J
+    iget-wide v2, p0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV2;->lastResumeTime:J
 
     .line 142
-    iget-wide v3, p0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV2;->lastSuspendTime:J
+    iget-wide v4, p0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV2;->lastSuspendTime:J
 
     .line 143
-    iget-wide v5, p0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV2;->millisecondsSpentInSession:J
+    iget-wide v6, p0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV2;->millisecondsSpentInSession:J
 
     .line 144
-    iget v7, p0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV2;->interruptionCount:I
+    iget v8, p0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV2;->interruptionCount:I
 
     .line 145
-    iget-object v8, p0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV2;->firstOpenSourceApplication:Ljava/lang/String;
+    iget-object v9, p0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV2;->firstOpenSourceApplication:Ljava/lang/String;
 
     .line 140
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
-    invoke-direct/range {v0 .. v9}, Lcom/facebook/FacebookTimeSpentData;-><init>(JJJILjava/lang/String;Lcom/facebook/FacebookTimeSpentData;)V
+    invoke-direct/range {v1 .. v10}, Lcom/facebook/FacebookTimeSpentData;-><init>(JJJILjava/lang/String;Lcom/facebook/FacebookTimeSpentData;)V
 
-    return-object v0
+    return-object v1
 .end method

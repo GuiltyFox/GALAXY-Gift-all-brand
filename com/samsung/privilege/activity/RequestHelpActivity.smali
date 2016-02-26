@@ -844,7 +844,7 @@
     const/high16 v8, 0x40800000
 
     .line 293
-    const v6, 0x7f07005b
+    const v6, 0x7f0c005b
 
     invoke-virtual {p0, v6}, Lcom/samsung/privilege/activity/RequestHelpActivity;->findViewById(I)Landroid/view/View;
 
@@ -895,7 +895,7 @@
     .end local v0    # "font":Landroid/graphics/Typeface;
     :cond_2c
     :goto_2c
-    const v6, 0x7f070361
+    const v6, 0x7f0c0370
 
     invoke-virtual {p0, v6}, Lcom/samsung/privilege/activity/RequestHelpActivity;->findViewById(I)Landroid/view/View;
 
@@ -910,7 +910,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0300ed
+    const v7, 0x7f0300ef
 
     invoke-virtual {v6, v7, v9}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -963,7 +963,7 @@
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setTextSize(F)V
 
     .line 317
-    const v6, 0x7f07035f
+    const v6, 0x7f0c036e
 
     invoke-virtual {p0, v6}, Lcom/samsung/privilege/activity/RequestHelpActivity;->findViewById(I)Landroid/view/View;
 
@@ -989,7 +989,7 @@
     invoke-virtual {v3, v6}, Landroid/widget/TextView;->setTextSize(F)V
 
     .line 321
-    const v6, 0x7f070360
+    const v6, 0x7f0c036f
 
     invoke-virtual {p0, v6}, Lcom/samsung/privilege/activity/RequestHelpActivity;->findViewById(I)Landroid/view/View;
 
@@ -1019,7 +1019,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f030122
+    const v7, 0x7f030124
 
     invoke-virtual {v6, v7, v9}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -1786,7 +1786,7 @@
     .end local v0    # "isLike":Z
     .end local v3    # "tagLike":Lcom/samsung/privilege/bean/TagLikeMarketReview;
     :cond_51
-    const v4, 0x7f0a0302
+    const v4, 0x7f090309
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/RequestHelpActivity;->getString(I)Ljava/lang/String;
 
@@ -1844,7 +1844,7 @@
 
     .line 699
     :cond_21
-    const v1, 0x7f0a0302
+    const v1, 0x7f090309
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/RequestHelpActivity;->getString(I)Ljava/lang/String;
 
@@ -2496,7 +2496,7 @@
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/RequestHelpActivity;->requestWindowFeature(I)Z
 
     .line 101
-    const v8, 0x7f030112
+    const v8, 0x7f030114
 
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/RequestHelpActivity;->setContentView(I)V
 
@@ -2515,7 +2515,7 @@
     iput-object v8, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->gHandler:Landroid/os/Handler;
 
     .line 106
-    const v8, 0x7f070031
+    const v8, 0x7f0c0031
 
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/RequestHelpActivity;->findViewById(I)Landroid/view/View;
 
@@ -2542,13 +2542,13 @@
     if-eqz v8, :cond_d7
 
     .line 108
-    const v8, 0x7f0202b6
+    const v8, 0x7f0202b8
 
     invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 117
     :goto_43
-    const v8, 0x7f07005a
+    const v8, 0x7f0c005a
 
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/RequestHelpActivity;->findViewById(I)Landroid/view/View;
 
@@ -2569,7 +2569,7 @@
     if-eqz v8, :cond_10f
 
     .line 119
-    const v8, 0x7f0202ba
+    const v8, 0x7f0202bc
 
     invoke-virtual {v4, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2669,7 +2669,7 @@
     .line 140
     iget-object v8, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
-    const v9, 0x7f02039f
+    const v9, 0x7f0203a7
 
     invoke-virtual {v8, v9}, Lcom/bitmapfun/util/ImageFetcher;->setLoadingImage(I)V
 
@@ -2742,7 +2742,7 @@
     if-eqz v8, :cond_ef
 
     .line 110
-    const v8, 0x7f0202b5
+    const v8, 0x7f0202b7
 
     invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2767,7 +2767,7 @@
     if-eqz v8, :cond_107
 
     .line 112
-    const v8, 0x7f0202b7
+    const v8, 0x7f0202b9
 
     invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2775,7 +2775,7 @@
 
     .line 114
     :cond_107
-    const v8, 0x7f0202b8
+    const v8, 0x7f0202ba
 
     invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2784,7 +2784,7 @@
     .line 121
     .restart local v4    # "imgLogo":Landroid/widget/ImageView;
     :cond_10f
-    const v8, 0x7f0202b9
+    const v8, 0x7f0202bb
 
     invoke-virtual {v4, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 

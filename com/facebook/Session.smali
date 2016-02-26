@@ -518,7 +518,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;Lcom/facebook/SessionState;Lcom/facebook/AccessToken;Ljava/util/Date;ZLcom/facebook/Session$AuthorizationRequest;)V
-    .registers 11
+    .registers 12
     .param p1, "applicationId"    # Ljava/lang/String;
     .param p2, "state"    # Lcom/facebook/SessionState;
     .param p3, "tokenInfo"    # Lcom/facebook/AccessToken;
@@ -527,7 +527,7 @@
     .param p6, "pendingAuthorizationRequest"    # Lcom/facebook/Session$AuthorizationRequest;
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     .line 228
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -535,9 +535,9 @@
     .line 141
     new-instance v0, Ljava/util/Date;
 
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    invoke-direct {v0, v1, v2}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v0, v2, v3}, Ljava/util/Date;-><init>(J)V
 
     iput-object v0, p0, Lcom/facebook/Session;->lastAttemptedTokenExtendDate:Ljava/util/Date;
 
@@ -575,10 +575,10 @@
     iput-object v0, p0, Lcom/facebook/Session;->handler:Landroid/os/Handler;
 
     .line 237
-    iput-object v3, p0, Lcom/facebook/Session;->currentTokenRefreshRequest:Lcom/facebook/Session$TokenRefreshRequest;
+    iput-object v4, p0, Lcom/facebook/Session;->currentTokenRefreshRequest:Lcom/facebook/Session$TokenRefreshRequest;
 
     .line 238
-    iput-object v3, p0, Lcom/facebook/Session;->tokenCachingStrategy:Lcom/facebook/TokenCachingStrategy;
+    iput-object v4, p0, Lcom/facebook/Session;->tokenCachingStrategy:Lcom/facebook/TokenCachingStrategy;
 
     .line 239
     new-instance v0, Ljava/util/ArrayList;
@@ -602,7 +602,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;Lcom/facebook/SessionState;Lcom/facebook/AccessToken;Ljava/util/Date;ZLcom/facebook/Session$AuthorizationRequest;Ljava/util/Set;)V
-    .registers 12
+    .registers 13
     .param p1, "applicationId"    # Ljava/lang/String;
     .param p2, "state"    # Lcom/facebook/SessionState;
     .param p3, "tokenInfo"    # Lcom/facebook/AccessToken;
@@ -627,7 +627,7 @@
 
     .prologue
     .local p7, "requestedPermissions":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     .line 245
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -635,9 +635,9 @@
     .line 141
     new-instance v0, Ljava/util/Date;
 
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    invoke-direct {v0, v1, v2}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v0, v2, v3}, Ljava/util/Date;-><init>(J)V
 
     iput-object v0, p0, Lcom/facebook/Session;->lastAttemptedTokenExtendDate:Ljava/util/Date;
 
@@ -675,10 +675,10 @@
     iput-object v0, p0, Lcom/facebook/Session;->handler:Landroid/os/Handler;
 
     .line 255
-    iput-object v3, p0, Lcom/facebook/Session;->currentTokenRefreshRequest:Lcom/facebook/Session$TokenRefreshRequest;
+    iput-object v4, p0, Lcom/facebook/Session;->currentTokenRefreshRequest:Lcom/facebook/Session$TokenRefreshRequest;
 
     .line 256
-    iput-object v3, p0, Lcom/facebook/Session;->tokenCachingStrategy:Lcom/facebook/TokenCachingStrategy;
+    iput-object v4, p0, Lcom/facebook/Session;->tokenCachingStrategy:Lcom/facebook/TokenCachingStrategy;
 
     .line 257
     new-instance v0, Ljava/util/ArrayList;
@@ -1569,7 +1569,7 @@
 .end method
 
 .method private logAuthorizationComplete(Lcom/facebook/AuthorizationClient$Result$Code;Ljava/util/Map;Ljava/lang/Exception;)V
-    .registers 11
+    .registers 12
     .param p1, "result"    # Lcom/facebook/AuthorizationClient$Result$Code;
     .param p3, "exception"    # Ljava/lang/Exception;
     .annotation system Ldalvik/annotation/Signature;
@@ -1633,9 +1633,9 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    invoke-virtual {v0, v4, v5, v6}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    invoke-virtual {v0, v4, v6, v7}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 1397
     invoke-direct {p0}, Lcom/facebook/Session;->getAppEventsLogger()Lcom/facebook/AppEventsLogger;

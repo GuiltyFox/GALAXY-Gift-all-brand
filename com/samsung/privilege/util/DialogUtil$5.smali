@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogUtil$5;->val$activityContext:Landroid/content/Context;
 
-    .line 186
+    .line 217
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,12 +46,12 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 188
+    .line 219
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogUtil$5;->val$dialogPoint:Landroid/app/Dialog;
 
     invoke-virtual {v1}, Landroid/app/Dialog;->dismiss()V
 
-    .line 190
+    .line 221
     new-instance v1, Ljava/lang/StringBuilder;
 
     sget-object v2, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
@@ -62,7 +62,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "api/auth/transfer?isTransfer=false&token="
+    const-string v2, "api/auth/transfer?isTransfer=true&token="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -82,7 +82,7 @@
 
     move-result-object v0
 
-    .line 191
+    .line 222
     .local v0, "url":Ljava/lang/String;
     # getter for: Lcom/samsung/privilege/util/DialogUtil;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/util/DialogUtil;->access$0()Ljava/lang/String;
@@ -91,7 +91,7 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v3, "trasfer_no="
+    const-string v3, "trasfer_yes="
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -105,17 +105,17 @@
 
     invoke-static {v1, v2}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 192
+    .line 223
     const/4 v1, 0x0
 
-    new-instance v2, Lcom/samsung/privilege/util/DialogUtil$NotTransferListener;
+    new-instance v2, Lcom/samsung/privilege/util/DialogUtil$TransferListener;
 
     iget-object v3, p0, Lcom/samsung/privilege/util/DialogUtil$5;->val$activityContext:Landroid/content/Context;
 
-    invoke-direct {v2, v3}, Lcom/samsung/privilege/util/DialogUtil$NotTransferListener;-><init>(Landroid/content/Context;)V
+    invoke-direct {v2, v3}, Lcom/samsung/privilege/util/DialogUtil$TransferListener;-><init>(Landroid/content/Context;)V
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/http/BuzzbeesRestClient;->post(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
 
-    .line 193
+    .line 224
     return-void
 .end method

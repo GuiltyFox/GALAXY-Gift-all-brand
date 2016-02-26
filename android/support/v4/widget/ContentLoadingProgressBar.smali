@@ -94,7 +94,7 @@
 .end method
 
 .method static synthetic access$102(Landroid/support/v4/widget/ContentLoadingProgressBar;J)J
-    .registers 3
+    .registers 4
     .param p0, "x0"    # Landroid/support/v4/widget/ContentLoadingProgressBar;
     .param p1, "x1"    # J
 
@@ -149,10 +149,10 @@
 
 # virtual methods
 .method public hide()V
-    .registers 10
+    .registers 11
 
     .prologue
-    const-wide/16 v7, 0x1f4
+    const-wide/16 v8, 0x1f4
 
     const/4 v6, 0x1
 
@@ -175,7 +175,7 @@
 
     .line 98
     .local v0, "diff":J
-    cmp-long v2, v0, v7
+    cmp-long v2, v0, v8
 
     if-gez v2, :cond_1e
 
@@ -207,9 +207,9 @@
     .line 108
     iget-object v2, p0, Landroid/support/v4/widget/ContentLoadingProgressBar;->mDelayedHide:Ljava/lang/Runnable;
 
-    sub-long v3, v7, v0
+    sub-long v4, v8, v0
 
-    invoke-virtual {p0, v2, v3, v4}, Landroid/support/v4/widget/ContentLoadingProgressBar;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {p0, v2, v4, v5}, Landroid/support/v4/widget/ContentLoadingProgressBar;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 109
     iput-boolean v6, p0, Landroid/support/v4/widget/ContentLoadingProgressBar;->mPostedHide:Z
@@ -246,7 +246,7 @@
 .end method
 
 .method public show()V
-    .registers 4
+    .registers 5
 
     .prologue
     .line 120
@@ -272,9 +272,9 @@
     .line 124
     iget-object v0, p0, Landroid/support/v4/widget/ContentLoadingProgressBar;->mDelayedShow:Ljava/lang/Runnable;
 
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {p0, v0, v1, v2}, Landroid/support/v4/widget/ContentLoadingProgressBar;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {p0, v0, v2, v3}, Landroid/support/v4/widget/ContentLoadingProgressBar;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 125
     const/4 v0, 0x1

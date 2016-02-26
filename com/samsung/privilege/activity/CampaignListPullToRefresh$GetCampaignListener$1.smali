@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$GetCampaignListener$1;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$GetCampaignListener;
 
-    .line 699
+    .line 702
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 2
 
     .prologue
-    .line 702
+    .line 705
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$GetCampaignListener$1;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$GetCampaignListener;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh$GetCampaignListener;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
@@ -56,6 +56,6 @@
 
     invoke-virtual {v0}, Lcom/samsung/privilege/control/PullToRefreshListView;->onRefreshComplete()V
 
-    .line 703
+    .line 706
     return-void
 .end method

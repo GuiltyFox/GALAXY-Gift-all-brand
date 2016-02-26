@@ -598,7 +598,7 @@
 .end method
 
 .method private displayNux(Ljava/lang/String;)V
-    .registers 5
+    .registers 6
     .param p1, "nuxString"    # Ljava/lang/String;
 
     .prologue
@@ -619,9 +619,9 @@
     .line 664
     iget-object v0, p0, Lcom/facebook/widget/LoginButton;->nuxPopup:Lcom/facebook/widget/ToolTipPopup;
 
-    iget-wide v1, p0, Lcom/facebook/widget/LoginButton;->nuxDisplayTime:J
+    iget-wide v2, p0, Lcom/facebook/widget/LoginButton;->nuxDisplayTime:J
 
-    invoke-virtual {v0, v1, v2}, Lcom/facebook/widget/ToolTipPopup;->setNuxDisplayTime(J)V
+    invoke-virtual {v0, v2, v3}, Lcom/facebook/widget/ToolTipPopup;->setNuxDisplayTime(J)V
 
     .line 665
     iget-object v0, p0, Lcom/facebook/widget/LoginButton;->nuxPopup:Lcom/facebook/widget/ToolTipPopup;
@@ -832,7 +832,7 @@
 
     .line 725
     .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v1, 0x0
+    sget v1, Lcom/facebook/android/R$styleable;->com_facebook_login_view_confirm_logout:I
 
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
@@ -841,14 +841,16 @@
     iput-boolean v1, p0, Lcom/facebook/widget/LoginButton;->confirmLogout:Z
 
     .line 726
-    invoke-virtual {v0, v3, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    sget v1, Lcom/facebook/android/R$styleable;->com_facebook_login_view_fetch_user_info:I
+
+    invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lcom/facebook/widget/LoginButton;->fetchUserInfo:Z
 
     .line 727
-    const/4 v1, 0x2
+    sget v1, Lcom/facebook/android/R$styleable;->com_facebook_login_view_login_text:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -857,7 +859,7 @@
     iput-object v1, p0, Lcom/facebook/widget/LoginButton;->loginText:Ljava/lang/String;
 
     .line 728
-    const/4 v1, 0x3
+    sget v1, Lcom/facebook/android/R$styleable;->com_facebook_login_view_logout_text:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -1600,7 +1602,7 @@
 .end method
 
 .method public setToolTipDisplayTime(J)V
-    .registers 3
+    .registers 4
     .param p1, "displayTime"    # J
 
     .prologue

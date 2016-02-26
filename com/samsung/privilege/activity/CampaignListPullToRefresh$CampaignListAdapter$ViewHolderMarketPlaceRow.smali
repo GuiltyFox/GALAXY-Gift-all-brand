@@ -33,7 +33,7 @@
     .registers 2
 
     .prologue
-    .line 845
+    .line 848
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

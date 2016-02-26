@@ -15,44 +15,44 @@
 
 
 # instance fields
-.field private gLongExpireIn:J
+.field private gLongExpireIn:Ljava/lang/Long;
 
 .field final synthetic this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
 
 # direct methods
-.method public constructor <init>(Lcom/samsung/privilege/activity/MainMenuFragment;J)V
-    .registers 4
-    .param p2, "longExpireIn"    # J
+.method public constructor <init>(Lcom/samsung/privilege/activity/MainMenuFragment;Ljava/lang/Long;)V
+    .registers 3
+    .param p2, "longExpireIn"    # Ljava/lang/Long;
 
     .prologue
-    .line 1380
+    .line 1394
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-direct {p0}, Lcom/samsung/privilege/util/http/HttpRQListener;-><init>()V
 
-    .line 1381
-    iput-wide p2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->gLongExpireIn:J
+    .line 1395
+    iput-object p2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->gLongExpireIn:Ljava/lang/Long;
 
-    .line 1382
+    .line 1396
     return-void
 .end method
 
-.method static synthetic access$0(Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;)J
-    .registers 3
+.method static synthetic access$0(Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;)Ljava/lang/Long;
+    .registers 2
 
     .prologue
-    .line 1378
-    iget-wide v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->gLongExpireIn:J
+    .line 1392
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->gLongExpireIn:Ljava/lang/Long;
 
-    return-wide v0
+    return-object v0
 .end method
 
 .method static synthetic access$1(Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;)Lcom/samsung/privilege/activity/MainMenuFragment;
     .registers 2
 
     .prologue
-    .line 1376
+    .line 1390
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     return-object v0
@@ -67,7 +67,7 @@
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 1386
+    .line 1400
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -99,7 +99,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1387
+    .line 1401
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -108,7 +108,7 @@
 
     if-eqz v0, :cond_36
 
-    .line 1388
+    .line 1402
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -121,7 +121,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1448
+    .line 1463
     :cond_36
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
@@ -129,7 +129,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$7(Lcom/samsung/privilege/activity/MainMenuFragment;Z)V
 
-    .line 1449
+    .line 1464
     return-void
 .end method
 
@@ -139,10 +139,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 1453
+    .line 1468
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onFileNotFoundException(Ljava/io/FileNotFoundException;Ljava/lang/Object;)V
 
-    .line 1454
+    .line 1469
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -168,14 +168,14 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1455
+    .line 1470
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$7(Lcom/samsung/privilege/activity/MainMenuFragment;Z)V
 
-    .line 1456
+    .line 1471
     return-void
 .end method
 
@@ -185,10 +185,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 1460
+    .line 1475
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onIOException(Ljava/io/IOException;Ljava/lang/Object;)V
 
-    .line 1461
+    .line 1476
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -214,14 +214,14 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1462
+    .line 1477
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$7(Lcom/samsung/privilege/activity/MainMenuFragment;Z)V
 
-    .line 1463
+    .line 1478
     return-void
 .end method
 
@@ -231,10 +231,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 1467
+    .line 1482
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onMalformedURLException(Ljava/net/MalformedURLException;Ljava/lang/Object;)V
 
-    .line 1468
+    .line 1483
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -260,13 +260,13 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1469
+    .line 1484
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$7(Lcom/samsung/privilege/activity/MainMenuFragment;Z)V
 
-    .line 1470
+    .line 1485
     return-void
 .end method

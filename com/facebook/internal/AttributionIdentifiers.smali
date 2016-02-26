@@ -313,13 +313,13 @@
 
     sget-object v3, Lcom/facebook/internal/AttributionIdentifiers;->recentlyFetchedIdentifiers:Lcom/facebook/internal/AttributionIdentifiers;
 
-    iget-wide v3, v3, Lcom/facebook/internal/AttributionIdentifiers;->fetchTime:J
+    iget-wide v4, v3, Lcom/facebook/internal/AttributionIdentifiers;->fetchTime:J
 
-    sub-long/2addr v0, v3
+    sub-long/2addr v0, v4
 
-    const-wide/32 v3, 0x36ee80
+    const-wide/32 v4, 0x36ee80
 
-    cmp-long v0, v0, v3
+    cmp-long v0, v0, v4
 
     if-gez v0, :cond_18
 

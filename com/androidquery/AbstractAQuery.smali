@@ -845,7 +845,7 @@
 .end method
 
 .method public ajax(Ljava/lang/String;Ljava/lang/Class;JLcom/androidquery/callback/AjaxCallback;)Lcom/androidquery/AbstractAQuery;
-    .registers 8
+    .registers 9
     .param p1, "url"    # Ljava/lang/String;
     .param p3, "expire"    # J
     .annotation system Ldalvik/annotation/Signature;
@@ -1346,7 +1346,7 @@
 .end method
 
 .method public cache(Ljava/lang/String;J)Lcom/androidquery/AbstractAQuery;
-    .registers 11
+    .registers 12
     .param p1, "url"    # Ljava/lang/String;
     .param p2, "expire"    # J
     .annotation system Ldalvik/annotation/Signature;
@@ -1359,20 +1359,20 @@
 
     .prologue
     .local p0, "this":Lcom/androidquery/AbstractAQuery;, "Lcom/androidquery/AbstractAQuery<TT;>;"
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
     .line 2027
-    const-class v2, [B
+    const-class v3, [B
 
-    move-object v0, p0
+    move-object v1, p0
 
-    move-object v1, p1
+    move-object v2, p1
 
-    move-wide v3, p2
+    move-wide v4, p2
 
-    move-object v6, v5
+    move-object v7, v6
 
-    invoke-virtual/range {v0 .. v6}, Lcom/androidquery/AbstractAQuery;->ajax(Ljava/lang/String;Ljava/lang/Class;JLjava/lang/Object;Ljava/lang/String;)Lcom/androidquery/AbstractAQuery;
+    invoke-virtual/range {v1 .. v7}, Lcom/androidquery/AbstractAQuery;->ajax(Ljava/lang/String;Ljava/lang/Class;JLjava/lang/Object;Ljava/lang/String;)Lcom/androidquery/AbstractAQuery;
 
     move-result-object v0
 
@@ -4175,11 +4175,11 @@
     :try_start_1
     invoke-virtual {p0, p1}, Lcom/androidquery/AbstractAQuery;->getCachedFile(Ljava/lang/String;)Ljava/io/File;
 
-    move-result-object v6
+    move-result-object v0
 
     .line 2277
-    .local v6, "cached":Ljava/io/File;
-    if-eqz v6, :cond_3b
+    .local v0, "cached":Ljava/io/File;
+    if-eqz v0, :cond_3b
 
     .line 2279
     invoke-static {}, Lcom/androidquery/util/AQUtility;->getTempDir()Ljava/io/File;
@@ -4204,57 +4204,57 @@
     invoke-virtual {v9}, Ljava/io/File;->createNewFile()Z
 
     .line 2286
-    new-instance v1, Ljava/io/FileInputStream;
+    new-instance v2, Ljava/io/FileInputStream;
 
-    invoke-direct {v1, v6}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {v2, v0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    invoke-virtual {v1}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
+    invoke-virtual {v2}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 2287
-    .local v0, "ic":Ljava/nio/channels/FileChannel;
-    new-instance v1, Ljava/io/FileOutputStream;
+    .local v1, "ic":Ljava/nio/channels/FileChannel;
+    new-instance v2, Ljava/io/FileOutputStream;
 
-    invoke-direct {v1, v9}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {v2, v9}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    invoke-virtual {v1}, Ljava/io/FileOutputStream;->getChannel()Ljava/nio/channels/FileChannel;
+    invoke-virtual {v2}, Ljava/io/FileOutputStream;->getChannel()Ljava/nio/channels/FileChannel;
     :try_end_26
     .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_26} :catch_48
 
-    move-result-object v5
+    move-result-object v6
 
     .line 2289
-    .local v5, "oc":Ljava/nio/channels/FileChannel;
-    const-wide/16 v1, 0x0
+    .local v6, "oc":Ljava/nio/channels/FileChannel;
+    const-wide/16 v2, 0x0
 
     :try_start_29
-    invoke-virtual {v0}, Ljava/nio/channels/FileChannel;->size()J
+    invoke-virtual {v1}, Ljava/nio/channels/FileChannel;->size()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    invoke-virtual/range {v0 .. v5}, Ljava/nio/channels/FileChannel;->transferTo(JJLjava/nio/channels/WritableByteChannel;)J
+    invoke-virtual/range {v1 .. v6}, Ljava/nio/channels/FileChannel;->transferTo(JJLjava/nio/channels/WritableByteChannel;)J
     :try_end_30
     .catchall {:try_start_29 .. :try_end_30} :catchall_3c
 
     .line 2291
-    if-eqz v0, :cond_35
+    if-eqz v1, :cond_35
 
     :try_start_32
-    invoke-virtual {v0}, Ljava/nio/channels/FileChannel;->close()V
+    invoke-virtual {v1}, Ljava/nio/channels/FileChannel;->close()V
 
     .line 2292
     :cond_35
-    if-eqz v5, :cond_50
+    if-eqz v6, :cond_50
 
-    invoke-virtual {v5}, Ljava/nio/channels/FileChannel;->close()V
+    invoke-virtual {v6}, Ljava/nio/channels/FileChannel;->close()V
 
     move-object v8, v9
 
     .line 2302
-    .end local v0    # "ic":Ljava/nio/channels/FileChannel;
-    .end local v5    # "oc":Ljava/nio/channels/FileChannel;
-    .end local v6    # "cached":Ljava/io/File;
+    .end local v0    # "cached":Ljava/io/File;
+    .end local v1    # "ic":Ljava/nio/channels/FileChannel;
+    .end local v6    # "oc":Ljava/nio/channels/FileChannel;
     .end local v9    # "file":Ljava/io/File;
     .end local v10    # "temp":Ljava/io/File;
     .restart local v8    # "file":Ljava/io/File;
@@ -4264,41 +4264,41 @@
 
     .line 2290
     .end local v8    # "file":Ljava/io/File;
-    .restart local v0    # "ic":Ljava/nio/channels/FileChannel;
-    .restart local v5    # "oc":Ljava/nio/channels/FileChannel;
-    .restart local v6    # "cached":Ljava/io/File;
+    .restart local v0    # "cached":Ljava/io/File;
+    .restart local v1    # "ic":Ljava/nio/channels/FileChannel;
+    .restart local v6    # "oc":Ljava/nio/channels/FileChannel;
     .restart local v9    # "file":Ljava/io/File;
     .restart local v10    # "temp":Ljava/io/File;
     :catchall_3c
-    move-exception v1
+    move-exception v2
 
     .line 2291
-    if-eqz v0, :cond_42
+    if-eqz v1, :cond_42
 
-    invoke-virtual {v0}, Ljava/nio/channels/FileChannel;->close()V
+    invoke-virtual {v1}, Ljava/nio/channels/FileChannel;->close()V
 
     .line 2292
     :cond_42
-    if-eqz v5, :cond_47
+    if-eqz v6, :cond_47
 
-    invoke-virtual {v5}, Ljava/nio/channels/FileChannel;->close()V
+    invoke-virtual {v6}, Ljava/nio/channels/FileChannel;->close()V
 
     .line 2293
     :cond_47
-    throw v1
+    throw v2
     :try_end_48
     .catch Ljava/lang/Exception; {:try_start_32 .. :try_end_48} :catch_48
 
     .line 2298
-    .end local v0    # "ic":Ljava/nio/channels/FileChannel;
-    .end local v5    # "oc":Ljava/nio/channels/FileChannel;
+    .end local v1    # "ic":Ljava/nio/channels/FileChannel;
+    .end local v6    # "oc":Ljava/nio/channels/FileChannel;
     :catch_48
     move-exception v7
 
     move-object v8, v9
 
     .line 2299
-    .end local v6    # "cached":Ljava/io/File;
+    .end local v0    # "cached":Ljava/io/File;
     .end local v9    # "file":Ljava/io/File;
     .end local v10    # "temp":Ljava/io/File;
     .local v7, "e":Ljava/lang/Exception;
@@ -4316,9 +4316,9 @@
     goto :goto_4a
 
     .end local v8    # "file":Ljava/io/File;
-    .restart local v0    # "ic":Ljava/nio/channels/FileChannel;
-    .restart local v5    # "oc":Ljava/nio/channels/FileChannel;
-    .restart local v6    # "cached":Ljava/io/File;
+    .restart local v0    # "cached":Ljava/io/File;
+    .restart local v1    # "ic":Ljava/nio/channels/FileChannel;
+    .restart local v6    # "oc":Ljava/nio/channels/FileChannel;
     .restart local v9    # "file":Ljava/io/File;
     .restart local v10    # "temp":Ljava/io/File;
     :cond_50

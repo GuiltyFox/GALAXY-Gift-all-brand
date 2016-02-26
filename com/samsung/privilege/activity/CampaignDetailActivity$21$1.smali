@@ -3,7 +3,7 @@
 .source "CampaignDetailActivity.java"
 
 # interfaces
-.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # annotations
@@ -20,65 +20,100 @@
 # instance fields
 .field final synthetic this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$21;
 
-.field private final synthetic val$imgGallery01:Landroid/widget/ImageView;
+.field private final synthetic val$layoutMap:Landroid/widget/RelativeLayout;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailActivity$21;Landroid/widget/ImageView;)V
+.method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailActivity$21;Landroid/widget/RelativeLayout;)V
     .registers 3
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$21$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$21;
 
-    iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$21$1;->val$imgGallery01:Landroid/widget/ImageView;
+    iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$21$1;->val$layoutMap:Landroid/widget/RelativeLayout;
 
-    .line 2794
+    .line 2886
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public onGlobalLayout()V
-    .registers 5
+.method static synthetic access$0(Lcom/samsung/privilege/activity/CampaignDetailActivity$21$1;)Lcom/samsung/privilege/activity/CampaignDetailActivity$21;
+    .registers 2
 
     .prologue
-    .line 2798
-    iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$21$1;->val$imgGallery01:Landroid/widget/ImageView;
+    .line 2886
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$21$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$21;
 
-    invoke-virtual {v3}, Landroid/widget/ImageView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    return-object v0
+.end method
 
-    move-result-object v3
 
-    invoke-virtual {v3, p0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+# virtual methods
+.method public onAnimationEnd(Landroid/view/animation/Animation;)V
+    .registers 5
+    .param p1, "arg0"    # Landroid/view/animation/Animation;
 
-    .line 2800
-    iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$21$1;->val$imgGallery01:Landroid/widget/ImageView;
+    .prologue
+    .line 2889
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$21$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$21;
 
-    invoke-virtual {v3}, Landroid/widget/ImageView;->getMeasuredWidth()I
+    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity$21;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailActivity$21;->access$0(Lcom/samsung/privilege/activity/CampaignDetailActivity$21;)Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
-    move-result v1
+    move-result-object v0
 
-    .line 2801
-    .local v1, "gLayoutImageWidth":I
-    mul-int/lit8 v3, v1, 0x2
+    const-string v1, "GONE"
 
-    div-int/lit8 v0, v3, 0x3
+    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$44(Lcom/samsung/privilege/activity/CampaignDetailActivity;Ljava/lang/String;)V
 
-    .line 2802
-    .local v0, "gLayoutImageHeight":I
-    new-instance v2, Landroid/widget/LinearLayout$LayoutParams;
+    .line 2891
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$21$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$21;
 
-    invoke-direct {v2, v1, v0}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity$21;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailActivity$21;->access$0(Lcom/samsung/privilege/activity/CampaignDetailActivity$21;)Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
-    .line 2803
-    .local v2, "params":Landroid/widget/LinearLayout$LayoutParams;
-    iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$21$1;->val$imgGallery01:Landroid/widget/ImageView;
+    move-result-object v0
 
-    invoke-virtual {v3, v2}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailActivity$21$1$1;
 
-    .line 2804
+    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$21$1;->val$layoutMap:Landroid/widget/RelativeLayout;
+
+    invoke-direct {v1, p0, v2}, Lcom/samsung/privilege/activity/CampaignDetailActivity$21$1$1;-><init>(Lcom/samsung/privilege/activity/CampaignDetailActivity$21$1;Landroid/widget/RelativeLayout;)V
+
+    invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->runOnUiThread(Ljava/lang/Runnable;)V
+
+    .line 2907
+    return-void
+.end method
+
+.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
+    .registers 2
+    .param p1, "arg0"    # Landroid/view/animation/Animation;
+
+    .prologue
+    .line 2912
+    return-void
+.end method
+
+.method public onAnimationStart(Landroid/view/animation/Animation;)V
+    .registers 4
+    .param p1, "arg0"    # Landroid/view/animation/Animation;
+
+    .prologue
+    .line 2916
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$21$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$21;
+
+    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity$21;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailActivity$21;->access$0(Lcom/samsung/privilege/activity/CampaignDetailActivity$21;)Lcom/samsung/privilege/activity/CampaignDetailActivity;
+
+    move-result-object v0
+
+    const-string v1, "HIDING"
+
+    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$44(Lcom/samsung/privilege/activity/CampaignDetailActivity;Ljava/lang/String;)V
+
+    .line 2917
     return-void
 .end method

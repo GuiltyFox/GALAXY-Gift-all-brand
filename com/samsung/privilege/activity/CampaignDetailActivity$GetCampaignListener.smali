@@ -32,21 +32,21 @@
     .param p4, "startTime"    # J
 
     .prologue
-    .line 3619
+    .line 3794
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     invoke-direct {p0}, Lcom/samsung/privilege/util/http/HttpRQListener;-><init>()V
 
-    .line 3620
+    .line 3795
     iput p2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->gID:I
 
-    .line 3621
+    .line 3796
     iput-object p3, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->gNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    .line 3622
+    .line 3797
     iput-wide p4, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->gStartTime:J
 
-    .line 3623
+    .line 3798
     return-void
 .end method
 
@@ -54,7 +54,7 @@
     .registers 2
 
     .prologue
-    .line 3616
+    .line 3791
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->gNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
     return-object v0
@@ -64,7 +64,7 @@
     .registers 2
 
     .prologue
-    .line 3614
+    .line 3789
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     return-object v0
@@ -79,7 +79,7 @@
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 3627
+    .line 3802
     const-string v0, "campaign.detail"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -108,7 +108,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3630
+    .line 3805
     :try_start_1e
     new-instance v0, Ljava/util/Date;
 
@@ -116,15 +116,15 @@
 
     invoke-virtual {v0}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v7
+    move-result-wide v8
 
-    .line 3631
-    .local v7, "endTime":J
+    .line 3806
+    .local v8, "endTime":J
     iget-wide v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->gStartTime:J
 
-    sub-long v2, v7, v0
+    sub-long v2, v8, v0
 
-    .line 3632
+    .line 3807
     .local v2, "spentTime":J
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
@@ -169,13 +169,13 @@
     :try_end_55
     .catch Ljava/lang/Exception; {:try_start_1e .. :try_end_55} :catch_15f
 
-    .line 3637
+    .line 3812
     .end local v2    # "spentTime":J
-    .end local v7    # "endTime":J
+    .end local v8    # "endTime":J
     :goto_55
     const/4 v10, 0x0
 
-    .line 3638
+    .line 3813
     .local v10, "isSameWithCache":Z
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
@@ -201,7 +201,7 @@
 
     if-nez v0, :cond_79
 
-    .line 3639
+    .line 3814
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->gCacheCampaign:Ljava/lang/String;
@@ -215,37 +215,37 @@
 
     if-eqz v0, :cond_79
 
-    .line 3640
+    .line 3815
     const/4 v10, 0x1
 
-    .line 3644
+    .line 3819
     :cond_79
     if-nez v10, :cond_12c
 
-    .line 3645
+    .line 3820
     const/16 v0, 0xc8
 
     if-ne p1, v0, :cond_137
 
-    .line 3647
+    .line 3822
     :try_start_7f
     new-instance v11, Lorg/json/JSONObject;
 
     invoke-direct {v11, p2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 3648
+    .line 3823
     .local v11, "jsonRoot":Lorg/json/JSONObject;
     new-instance v6, Lcom/samsung/privilege/bean/CampaignView;
 
     invoke-direct {v6, v11}, Lcom/samsung/privilege/bean/CampaignView;-><init>(Lorg/json/JSONObject;)V
 
-    .line 3650
+    .line 3825
     .local v6, "campaign":Lcom/samsung/privilege/bean/CampaignView;
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     invoke-static {v0, v6}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$28(Lcom/samsung/privilege/activity/CampaignDetailActivity;Lcom/samsung/privilege/bean/CampaignView;)V
 
-    .line 3673
+    .line 3848
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->paramCampaign:Lcom/samsung/privilege/bean/CampaignView;
@@ -267,8 +267,8 @@
 
     if-eqz v0, :cond_da
 
-    .line 3674
-    new-instance v9, Landroid/content/Intent;
+    .line 3849
+    new-instance v7, Landroid/content/Intent;
 
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
@@ -278,10 +278,10 @@
 
     const-class v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
-    invoke-direct {v9, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-direct {v7, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 3675
-    .local v9, "intent":Landroid/content/Intent;
+    .line 3850
+    .local v7, "intent":Landroid/content/Intent;
     const-string v0, "campaign_id"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -311,26 +311,26 @@
 
     move-result-object v1
 
-    invoke-virtual {v9, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+    invoke-virtual {v7, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 3676
+    .line 3851
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
-    invoke-virtual {v0, v9}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {v0, v7}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 3678
+    .line 3853
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->finish()V
 
-    .line 3730
+    .line 3905
     .end local v6    # "campaign":Lcom/samsung/privilege/bean/CampaignView;
-    .end local v9    # "intent":Landroid/content/Intent;
+    .end local v7    # "intent":Landroid/content/Intent;
     .end local v11    # "jsonRoot":Lorg/json/JSONObject;
     :goto_d9
     return-void
 
-    .line 3689
+    .line 3864
     .restart local v6    # "campaign":Lcom/samsung/privilege/bean/CampaignView;
     .restart local v11    # "jsonRoot":Lorg/json/JSONObject;
     :cond_da
@@ -342,7 +342,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 3695
+    .line 3870
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->paramCampaign:Lcom/samsung/privilege/bean/CampaignView;
@@ -352,7 +352,7 @@
 
     if-eqz v0, :cond_12c
 
-    .line 3696
+    .line 3871
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "campaign_detail-"
@@ -384,7 +384,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/helper/LocalFileHelper;->clearCatchInSD(Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 3697
+    .line 3872
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "campaign_detail-"
@@ -418,7 +418,7 @@
     :try_end_12c
     .catch Ljava/lang/Exception; {:try_start_7f .. :try_end_12c} :catch_15d
 
-    .line 3719
+    .line 3894
     .end local v6    # "campaign":Lcom/samsung/privilege/bean/CampaignView;
     .end local v11    # "jsonRoot":Lorg/json/JSONObject;
     :cond_12c
@@ -433,7 +433,7 @@
 
     goto :goto_d9
 
-    .line 3705
+    .line 3880
     :cond_137
     :try_start_137
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
@@ -463,7 +463,7 @@
     :try_end_150
     .catch Ljava/lang/Exception; {:try_start_137 .. :try_end_150} :catch_15b
 
-    .line 3710
+    .line 3885
     :goto_150
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetCampaignListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
@@ -475,19 +475,19 @@
 
     goto :goto_12c
 
-    .line 3706
+    .line 3881
     :catch_15b
     move-exception v0
 
     goto :goto_150
 
-    .line 3699
+    .line 3874
     :catch_15d
     move-exception v0
 
     goto :goto_12c
 
-    .line 3633
+    .line 3808
     .end local v10    # "isSameWithCache":Z
     :catch_15f
     move-exception v0

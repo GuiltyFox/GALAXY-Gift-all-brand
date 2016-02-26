@@ -41,7 +41,7 @@
 
     iput-object p4, p0, Lcom/samsung/privilege/activity/CampaignListActivity$25;->val$layoutButton:Landroid/widget/LinearLayout;
 
-    .line 2212
+    .line 2230
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -54,7 +54,7 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 2215
+    .line 2233
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$25;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     new-instance v1, Lcom/samsung/privilege/activity/CampaignListActivity$25$1;
@@ -67,7 +67,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 2221
+    .line 2239
     return-void
 .end method
 
@@ -76,7 +76,7 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 2226
+    .line 2244
     return-void
 .end method
 
@@ -85,7 +85,7 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 2230
+    .line 2248
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$25;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     new-instance v1, Lcom/samsung/privilege/activity/CampaignListActivity$25$2;
@@ -96,6 +96,6 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 2235
+    .line 2253
     return-void
 .end method

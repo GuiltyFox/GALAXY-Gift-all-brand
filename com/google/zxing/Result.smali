@@ -29,7 +29,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
-    .registers 12
+    .registers 13
     .param p1, "text"    # Ljava/lang/String;
     .param p2, "rawBytes"    # [B
     .param p3, "resultPoints"    # [Lcom/google/zxing/ResultPoint;
@@ -39,19 +39,19 @@
     .line 40
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    move-object v0, p0
+    move-object v1, p0
 
-    move-object v1, p1
+    move-object v2, p1
 
-    move-object v2, p2
+    move-object v3, p2
 
-    move-object v3, p3
+    move-object v4, p3
 
-    move-object v4, p4
+    move-object v5, p4
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;J)V
+    invoke-direct/range {v1 .. v7}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;J)V
 
     .line 41
     return-void

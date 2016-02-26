@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/MainActivity$1;->this$0:Lcom/samsung/privilege/MainActivity;
 
-    .line 74
+    .line 86
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,12 +44,12 @@
     .param p3, "exception"    # Ljava/lang/Exception;
 
     .prologue
-    .line 77
+    .line 89
     iget-object v0, p0, Lcom/samsung/privilege/MainActivity$1;->this$0:Lcom/samsung/privilege/MainActivity;
 
     # invokes: Lcom/samsung/privilege/MainActivity;->onSessionStateChange(Lcom/facebook/Session;Lcom/facebook/SessionState;Ljava/lang/Exception;)V
     invoke-static {v0, p1, p2, p3}, Lcom/samsung/privilege/MainActivity;->access$0(Lcom/samsung/privilege/MainActivity;Lcom/facebook/Session;Lcom/facebook/SessionState;Ljava/lang/Exception;)V
 
-    .line 78
+    .line 90
     return-void
 .end method

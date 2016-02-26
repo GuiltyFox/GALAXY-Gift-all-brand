@@ -559,9 +559,9 @@
 
     .line 413
     .local v0, "inFromRight":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 414
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
@@ -601,9 +601,9 @@
 
     .line 420
     .local v0, "outtoLeft":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 421
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;

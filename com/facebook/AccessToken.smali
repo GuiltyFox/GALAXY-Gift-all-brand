@@ -69,24 +69,24 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .registers 4
 
     .prologue
     .line 46
     new-instance v0, Ljava/util/Date;
 
-    const-wide/high16 v1, -0x8000000000000000L
+    const-wide/high16 v2, -0x8000000000000000L
 
-    invoke-direct {v0, v1, v2}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v0, v2, v3}, Ljava/util/Date;-><init>(J)V
 
     sput-object v0, Lcom/facebook/AccessToken;->MIN_DATE:Ljava/util/Date;
 
     .line 47
     new-instance v0, Ljava/util/Date;
 
-    const-wide v1, 0x7fffffffffffffffL
+    const-wide v2, 0x7fffffffffffffffL
 
-    invoke-direct {v0, v1, v2}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v0, v2, v3}, Ljava/util/Date;-><init>(J)V
 
     sput-object v0, Lcom/facebook/AccessToken;->MAX_DATE:Ljava/util/Date;
 
@@ -503,7 +503,7 @@
 .end method
 
 .method static createFromNativeLogin(Landroid/os/Bundle;Lcom/facebook/AccessTokenSource;)Lcom/facebook/AccessToken;
-    .registers 9
+    .registers 10
     .param p0, "bundle"    # Landroid/os/Bundle;
     .param p1, "source"    # Lcom/facebook/AccessTokenSource;
 
@@ -513,9 +513,9 @@
 
     new-instance v4, Ljava/util/Date;
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
-    invoke-direct {v4, v5, v6}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v4, v6, v7}, Ljava/util/Date;-><init>(J)V
 
     .line 209
     invoke-static {p0, v3, v4}, Lcom/facebook/AccessToken;->getBundleLongAsDate(Landroid/os/Bundle;Ljava/lang/String;Ljava/util/Date;)Ljava/util/Date;
@@ -914,7 +914,7 @@
 .end method
 
 .method private static getBundleLongAsDate(Landroid/os/Bundle;Ljava/lang/String;Ljava/util/Date;)Ljava/util/Date;
-    .registers 12
+    .registers 13
     .param p0, "bundle"    # Landroid/os/Bundle;
     .param p1, "key"    # Ljava/lang/String;
     .param p2, "dateBase"    # Ljava/util/Date;
@@ -932,62 +932,62 @@
 
     .line 405
     :cond_4
-    const-wide/high16 v1, -0x8000000000000000L
+    const-wide/high16 v2, -0x8000000000000000L
 
     .line 407
-    .local v1, "secondsFromBase":J
+    .local v2, "secondsFromBase":J
     invoke-virtual {p0, p1}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v1
 
     .line 408
-    .local v3, "secondsObject":Ljava/lang/Object;
-    instance-of v5, v3, Ljava/lang/Long;
+    .local v1, "secondsObject":Ljava/lang/Object;
+    instance-of v5, v1, Ljava/lang/Long;
 
     if-eqz v5, :cond_25
 
     .line 409
-    check-cast v3, Ljava/lang/Long;
+    check-cast v1, Ljava/lang/Long;
 
-    .end local v3    # "secondsObject":Ljava/lang/Object;
-    invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
+    .end local v1    # "secondsObject":Ljava/lang/Object;
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 420
     :goto_14
     const-wide/16 v4, 0x0
 
-    cmp-long v4, v1, v4
+    cmp-long v4, v2, v4
 
     if-nez v4, :cond_32
 
     .line 421
     new-instance v4, Ljava/util/Date;
 
-    const-wide v5, 0x7fffffffffffffffL
+    const-wide v6, 0x7fffffffffffffffL
 
-    invoke-direct {v4, v5, v6}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v4, v6, v7}, Ljava/util/Date;-><init>(J)V
 
     goto :goto_3
 
     .line 410
-    .restart local v3    # "secondsObject":Ljava/lang/Object;
+    .restart local v1    # "secondsObject":Ljava/lang/Object;
     :cond_25
-    instance-of v5, v3, Ljava/lang/String;
+    instance-of v5, v1, Ljava/lang/String;
 
     if-eqz v5, :cond_3
 
     .line 412
     :try_start_29
-    check-cast v3, Ljava/lang/String;
+    check-cast v1, Ljava/lang/String;
 
-    .end local v3    # "secondsObject":Ljava/lang/Object;
-    invoke-static {v3}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+    .end local v1    # "secondsObject":Ljava/lang/Object;
+    invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
     :try_end_2e
     .catch Ljava/lang/NumberFormatException; {:try_start_29 .. :try_end_2e} :catch_30
 
-    move-result-wide v1
+    move-result-wide v2
 
     goto :goto_14
 
@@ -1006,15 +1006,15 @@
 
     invoke-virtual {p2}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    const-wide/16 v7, 0x3e8
+    const-wide/16 v8, 0x3e8
 
-    mul-long/2addr v7, v1
+    mul-long/2addr v8, v2
 
-    add-long/2addr v5, v7
+    add-long/2addr v6, v8
 
-    invoke-direct {v4, v5, v6}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v4, v6, v7}, Ljava/util/Date;-><init>(J)V
 
     goto :goto_3
 .end method

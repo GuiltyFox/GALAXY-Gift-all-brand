@@ -28,27 +28,27 @@
     .param p2, "prev_local"    # Ljava/lang/String;
 
     .prologue
-    .line 3002
+    .line 3017
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AuthBuzzeBeesListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-direct {p0}, Lcom/samsung/privilege/util/http/HttpRQListener;-><init>()V
 
-    .line 2999
+    .line 3014
     invoke-static {}, Lcom/facebook/Session;->getActiveSession()Lcom/facebook/Session;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AuthBuzzeBeesListener;->session:Lcom/facebook/Session;
 
-    .line 3000
+    .line 3015
     const-string v0, ""
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AuthBuzzeBeesListener;->gPrevLocal:Ljava/lang/String;
 
-    .line 3003
+    .line 3018
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AuthBuzzeBeesListener;->gPrevLocal:Ljava/lang/String;
 
-    .line 3004
+    .line 3019
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .registers 2
 
     .prologue
-    .line 3000
+    .line 3015
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AuthBuzzeBeesListener;->gPrevLocal:Ljava/lang/String;
 
     return-object v0
@@ -66,7 +66,7 @@
     .registers 2
 
     .prologue
-    .line 2998
+    .line 3013
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AuthBuzzeBeesListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     return-object v0
@@ -81,7 +81,7 @@
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 3008
+    .line 3023
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AuthBuzzeBeesListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -90,7 +90,7 @@
 
     if-eqz v0, :cond_87
 
-    .line 3009
+    .line 3024
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCATAUTH:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$20()Ljava/lang/String;
 
@@ -122,7 +122,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3010
+    .line 3025
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCATAUTH:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$20()Ljava/lang/String;
 
@@ -132,7 +132,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3011
+    .line 3026
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AuthBuzzeBeesListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -145,12 +145,12 @@
 
     if-eqz v0, :cond_6b
 
-    .line 3012
+    .line 3027
     const/16 v0, 0xc8
 
     if-ne p1, v0, :cond_88
 
-    .line 3013
+    .line 3028
     const-string v0, "APP"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -191,7 +191,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/AppSetting;->LOG(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 3019
+    .line 3034
     :cond_6b
     :goto_6b
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AuthBuzzeBeesListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -207,7 +207,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 3281
+    .line 3212
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AuthBuzzeBeesListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->gHandler:Landroid/os/Handler;
@@ -221,11 +221,11 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 3288
+    .line 3219
     :cond_87
     return-void
 
-    .line 3015
+    .line 3030
     :cond_88
     const-string v0, "APP"
 

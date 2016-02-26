@@ -123,7 +123,7 @@
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity$8;->this$0:Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;
 
-    const v3, 0x7f0a010b
+    const v3, 0x7f09010b
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->getString(I)Ljava/lang/String;
 

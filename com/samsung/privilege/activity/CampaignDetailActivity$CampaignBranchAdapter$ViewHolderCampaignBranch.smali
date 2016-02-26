@@ -33,7 +33,7 @@
     .registers 2
 
     .prologue
-    .line 3420
+    .line 3595
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$CampaignBranchAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

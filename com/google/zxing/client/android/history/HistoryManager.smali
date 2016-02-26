@@ -524,12 +524,12 @@
 
 # virtual methods
 .method public addHistoryItem(Lcom/google/zxing/Result;Lcom/google/zxing/client/android/result/ResultHandler;)V
-    .registers 11
+    .registers 12
     .param p1, "result"    # Lcom/google/zxing/Result;
     .param p2, "handler"    # Lcom/google/zxing/client/android/result/ResultHandler;
 
     .prologue
-    const/4 v7, 0x0
+    const/4 v8, 0x0
 
     .line 156
     iget-object v4, p0, Lcom/google/zxing/client/android/history/HistoryManager;->activity:Landroid/app/Activity;
@@ -634,9 +634,9 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
 
@@ -670,7 +670,7 @@
     .catchall {:try_start_6a .. :try_end_75} :catchall_79
 
     .line 179
-    invoke-static {v7, v0}, Lcom/google/zxing/client/android/history/HistoryManager;->close(Landroid/database/Cursor;Landroid/database/sqlite/SQLiteDatabase;)V
+    invoke-static {v8, v0}, Lcom/google/zxing/client/android/history/HistoryManager;->close(Landroid/database/Cursor;Landroid/database/sqlite/SQLiteDatabase;)V
 
     goto :goto_16
 
@@ -679,7 +679,7 @@
     move-exception v4
 
     .line 179
-    invoke-static {v7, v0}, Lcom/google/zxing/client/android/history/HistoryManager;->close(Landroid/database/Cursor;Landroid/database/sqlite/SQLiteDatabase;)V
+    invoke-static {v8, v0}, Lcom/google/zxing/client/android/history/HistoryManager;->close(Landroid/database/Cursor;Landroid/database/sqlite/SQLiteDatabase;)V
 
     .line 180
     throw v4
@@ -896,7 +896,7 @@
 .end method
 
 .method buildHistory()Ljava/lang/CharSequence;
-    .registers 14
+    .registers 15
 
     .prologue
     .line 279
@@ -1075,10 +1075,10 @@
 
     invoke-interface {v8, v1}, Landroid/database/Cursor;->getLong(I)J
 
-    move-result-wide v11
+    move-result-wide v12
 
     .line 299
-    .local v11, "timestamp":J
+    .local v12, "timestamp":J
     const/16 v1, 0x22
 
     invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -1090,7 +1090,7 @@
 
     new-instance v3, Ljava/util/Date;
 
-    invoke-direct {v3, v11, v12}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v3, v12, v13}, Ljava/util/Date;-><init>(J)V
 
     invoke-virtual {v2, v3}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
@@ -1141,7 +1141,7 @@
 
     .line 307
     .end local v10    # "historyText":Ljava/lang/StringBuilder;
-    .end local v11    # "timestamp":J
+    .end local v12    # "timestamp":J
     :catchall_c9
     move-exception v1
 

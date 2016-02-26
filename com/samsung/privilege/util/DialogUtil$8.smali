@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogUtil;->showDialogError(Landroid/content/Context;Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/util/DialogUtil;->showDialogConfirmLoginFacebook(Landroid/content/Context;Ljava/lang/String;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field private final synthetic val$dialogError:Landroid/app/Dialog;
+.field private final synthetic val$dialogConfirm:Landroid/app/Dialog;
 
 
 # direct methods
@@ -27,9 +27,9 @@
 
     .prologue
     .line 1
-    iput-object p1, p0, Lcom/samsung/privilege/util/DialogUtil$8;->val$dialogError:Landroid/app/Dialog;
+    iput-object p1, p0, Lcom/samsung/privilege/util/DialogUtil$8;->val$dialogConfirm:Landroid/app/Dialog;
 
-    .line 374
+    .line 384
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,11 +42,11 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 376
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$8;->val$dialogError:Landroid/app/Dialog;
+    .line 386
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$8;->val$dialogConfirm:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 377
+    .line 387
     return-void
 .end method

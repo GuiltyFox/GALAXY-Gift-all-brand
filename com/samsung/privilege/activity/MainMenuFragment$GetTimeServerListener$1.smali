@@ -37,7 +37,7 @@
 
     iput-object p3, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetTimeServerListener$1;->val$response_text:Ljava/lang/String;
 
-    .line 1075
+    .line 1078
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,16 +49,16 @@
     .registers 12
 
     .prologue
-    const v10, 0x7f0a018c
+    const v10, 0x7f09018c
 
-    .line 1077
+    .line 1080
     iget v6, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetTimeServerListener$1;->val$response_code:I
 
     const/16 v7, 0xc8
 
     if-ne v6, v7, :cond_a5
 
-    .line 1079
+    .line 1082
     :try_start_9
     iget-object v6, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetTimeServerListener$1;->val$response_text:Ljava/lang/String;
 
@@ -66,13 +66,13 @@
 
     move-result-wide v4
 
-    .line 1080
+    .line 1083
     .local v4, "server_time":J
     new-instance v1, Ljava/util/Date;
 
     invoke-direct {v1}, Ljava/util/Date;-><init>()V
 
-    .line 1081
+    .line 1084
     .local v1, "dateNow":Ljava/util/Date;
     invoke-virtual {v1}, Ljava/util/Date;->getTime()J
 
@@ -84,18 +84,18 @@
     :try_end_1b
     .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_1b} :catch_1c
 
-    .line 1107
+    .line 1110
     .end local v1    # "dateNow":Ljava/util/Date;
     .end local v4    # "server_time":J
     :cond_1b
     :goto_1b
     return-void
 
-    .line 1083
+    .line 1086
     :catch_1c
     move-exception v3
 
-    .line 1084
+    .line 1087
     .local v3, "ex":Ljava/lang/Exception;
     iget-object v6, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetTimeServerListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetTimeServerListener;
 
@@ -110,10 +110,10 @@
 
     if-eqz v6, :cond_1b
 
-    .line 1086
+    .line 1089
     const/4 v0, 0x0
 
-    .line 1088
+    .line 1091
     .local v0, "blnIsAdmin":Z
     :try_start_2a
     iget-object v6, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetTimeServerListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetTimeServerListener;
@@ -135,15 +135,15 @@
 
     if-eqz v6, :cond_3b
 
-    .line 1089
+    .line 1092
     const/4 v0, 0x1
 
-    .line 1094
+    .line 1097
     :cond_3b
     :goto_3b
     if-eqz v0, :cond_8c
 
-    .line 1095
+    .line 1098
     iget-object v6, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetTimeServerListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetTimeServerListener;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$GetTimeServerListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -191,11 +191,11 @@
 
     goto :goto_1b
 
-    .line 1091
+    .line 1094
     :catch_6a
     move-exception v2
 
-    .line 1092
+    .line 1095
     .local v2, "e2":Ljava/lang/Exception;
     iget-object v6, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetTimeServerListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetTimeServerListener;
 
@@ -231,7 +231,7 @@
 
     goto :goto_3b
 
-    .line 1097
+    .line 1100
     .end local v2    # "e2":Ljava/lang/Exception;
     :cond_8c
     iget-object v6, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetTimeServerListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetTimeServerListener;
@@ -261,7 +261,7 @@
 
     goto/16 :goto_1b
 
-    .line 1103
+    .line 1106
     .end local v0    # "blnIsAdmin":Z
     .end local v3    # "ex":Ljava/lang/Exception;
     :cond_a5
@@ -278,7 +278,7 @@
 
     if-eqz v6, :cond_1b
 
-    .line 1104
+    .line 1107
     iget-object v6, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetTimeServerListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetTimeServerListener;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$GetTimeServerListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -297,7 +297,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0a018b
+    const v8, 0x7f09018b
 
     invoke-virtual {v7, v8}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 

@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$19;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
-    .line 2380
+    .line 2381
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 2383
+    .line 2384
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$19;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->gTvLoadingMap:Landroid/widget/TextView;
@@ -59,7 +59,7 @@
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$19;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
-    const v3, 0x7f0a031b
+    const v3, 0x7f090322
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getString(I)Ljava/lang/String;
 
@@ -81,7 +81,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2384
+    .line 2385
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$19;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->gTvLoadingMap:Landroid/widget/TextView;
@@ -91,7 +91,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 2385
+    .line 2386
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$19;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->gPbLoadingMap:Landroid/widget/ProgressBar;
@@ -101,6 +101,6 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 2386
+    .line 2387
     return-void
 .end method

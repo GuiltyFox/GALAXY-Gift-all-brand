@@ -363,29 +363,29 @@
 
 .field public static final com_facebook_usersettingsfragment:I = 0x7f0300c8
 
-.field public static final encode:I = 0x7f0300e8
+.field public static final encode:I = 0x7f0300ea
 
-.field public static final help:I = 0x7f0300ee
+.field public static final help:I = 0x7f0300f0
 
-.field public static final history_list_item:I = 0x7f0300ef
+.field public static final history_list_item:I = 0x7f0300f1
 
-.field public static final market_bzbs_popup:I = 0x7f0300f8
+.field public static final market_bzbs_popup:I = 0x7f0300fa
 
-.field public static final qt_content:I = 0x7f030110
+.field public static final qt_content:I = 0x7f030112
 
-.field public static final search_book_contents:I = 0x7f030115
+.field public static final search_book_contents:I = 0x7f030117
 
-.field public static final search_book_contents_header:I = 0x7f030116
+.field public static final search_book_contents_header:I = 0x7f030118
 
-.field public static final search_book_contents_list_item:I = 0x7f030117
+.field public static final search_book_contents_list_item:I = 0x7f030119
 
-.field public static final share:I = 0x7f030118
+.field public static final share:I = 0x7f03011a
 
-.field public static final sherlock_spinner_dropdown_item:I = 0x7f030119
+.field public static final sherlock_spinner_dropdown_item:I = 0x7f03011b
 
-.field public static final sherlock_spinner_item:I = 0x7f03011a
+.field public static final sherlock_spinner_item:I = 0x7f03011c
 
-.field public static final slidingmenumain:I = 0x7f03011b
+.field public static final slidingmenumain:I = 0x7f03011d
 
 
 # direct methods

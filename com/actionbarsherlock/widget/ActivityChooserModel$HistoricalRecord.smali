@@ -47,7 +47,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;JF)V
-    .registers 6
+    .registers 7
     .param p1, "activityName"    # Ljava/lang/String;
     .param p2, "time"    # J
     .param p4, "weight"    # F
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .registers 10
     .param p1, "obj"    # Ljava/lang/Object;
 
     .prologue
@@ -150,11 +150,11 @@
 
     .line 799
     :cond_2e
-    iget-wide v3, p0, Lcom/actionbarsherlock/widget/ActivityChooserModel$HistoricalRecord;->time:J
+    iget-wide v4, p0, Lcom/actionbarsherlock/widget/ActivityChooserModel$HistoricalRecord;->time:J
 
-    iget-wide v5, v0, Lcom/actionbarsherlock/widget/ActivityChooserModel$HistoricalRecord;->time:J
+    iget-wide v6, v0, Lcom/actionbarsherlock/widget/ActivityChooserModel$HistoricalRecord;->time:J
 
-    cmp-long v3, v3, v5
+    cmp-long v3, v4, v6
 
     if-eqz v3, :cond_38
 
@@ -210,17 +210,17 @@
     .line 775
     mul-int/lit8 v2, v1, 0x1f
 
-    iget-wide v3, p0, Lcom/actionbarsherlock/widget/ActivityChooserModel$HistoricalRecord;->time:J
+    iget-wide v4, p0, Lcom/actionbarsherlock/widget/ActivityChooserModel$HistoricalRecord;->time:J
 
-    iget-wide v5, p0, Lcom/actionbarsherlock/widget/ActivityChooserModel$HistoricalRecord;->time:J
+    iget-wide v6, p0, Lcom/actionbarsherlock/widget/ActivityChooserModel$HistoricalRecord;->time:J
 
-    const/16 v7, 0x20
+    const/16 v3, 0x20
 
-    ushr-long/2addr v5, v7
+    ushr-long/2addr v6, v3
 
-    xor-long/2addr v3, v5
+    xor-long/2addr v4, v6
 
-    long-to-int v3, v3
+    long-to-int v3, v4
 
     add-int v1, v2, v3
 
@@ -250,7 +250,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 6
+    .registers 7
 
     .prologue
     .line 810
@@ -297,9 +297,9 @@
 
     iget v3, p0, Lcom/actionbarsherlock/widget/ActivityChooserModel$HistoricalRecord;->weight:F
 
-    float-to-double v3, v3
+    float-to-double v4, v3
 
-    invoke-direct {v2, v3, v4}, Ljava/math/BigDecimal;-><init>(D)V
+    invoke-direct {v2, v4, v5}, Ljava/math/BigDecimal;-><init>(D)V
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;
 
-    .line 2139
+    .line 2140
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 2142
+    .line 2143
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -69,7 +69,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a0316
+    const v3, 0x7f09031d
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getString(I)Ljava/lang/String;
 
@@ -91,7 +91,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2143
+    .line 2144
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -106,7 +106,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 2144
+    .line 2145
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -121,6 +121,6 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 2145
+    .line 2146
     return-void
 .end method

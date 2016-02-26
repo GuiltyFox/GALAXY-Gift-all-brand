@@ -21,19 +21,19 @@
 
 .field public static final capture:I = 0x7f0300b7
 
-.field public static final encode:I = 0x7f0300e8
+.field public static final encode:I = 0x7f0300ea
 
-.field public static final help:I = 0x7f0300ee
+.field public static final help:I = 0x7f0300f0
 
-.field public static final history_list_item:I = 0x7f0300ef
+.field public static final history_list_item:I = 0x7f0300f1
 
-.field public static final search_book_contents:I = 0x7f030115
+.field public static final search_book_contents:I = 0x7f030117
 
-.field public static final search_book_contents_header:I = 0x7f030116
+.field public static final search_book_contents_header:I = 0x7f030118
 
-.field public static final search_book_contents_list_item:I = 0x7f030117
+.field public static final search_book_contents_list_item:I = 0x7f030119
 
-.field public static final share:I = 0x7f030118
+.field public static final share:I = 0x7f03011a
 
 
 # direct methods

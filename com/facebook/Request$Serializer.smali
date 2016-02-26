@@ -348,7 +348,7 @@
 .end method
 
 .method public writeFile(Ljava/lang/String;Landroid/os/ParcelFileDescriptor;Ljava/lang/String;)V
-    .registers 18
+    .registers 21
     .param p1, "key"    # Ljava/lang/String;
     .param p2, "descriptor"    # Landroid/os/ParcelFileDescriptor;
     .param p3, "mimeType"    # Ljava/lang/String;
@@ -367,230 +367,250 @@
 
     .line 2266
     :cond_4
-    move-object/from16 v0, p3
+    move-object/from16 v0, p0
 
-    invoke-virtual {p0, p1, p1, v0}, Lcom/facebook/Request$Serializer;->writeContentDisposition(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    move-object/from16 v1, p1
+
+    move-object/from16 v2, p1
+
+    move-object/from16 v3, p3
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/facebook/Request$Serializer;->writeContentDisposition(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 2268
-    const/4 v7, 0x0
+    const/4 v10, 0x0
 
     .line 2270
-    .local v7, "totalBytes":I
-    iget-object v8, p0, Lcom/facebook/Request$Serializer;->outputStream:Ljava/io/OutputStream;
+    .local v10, "totalBytes":I
+    move-object/from16 v0, p0
 
-    instance-of v8, v8, Lcom/facebook/ProgressNoopOutputStream;
+    iget-object v11, v0, Lcom/facebook/Request$Serializer;->outputStream:Ljava/io/OutputStream;
 
-    if-eqz v8, :cond_4f
+    instance-of v11, v11, Lcom/facebook/ProgressNoopOutputStream;
+
+    if-eqz v11, :cond_61
 
     .line 2272
-    iget-object v8, p0, Lcom/facebook/Request$Serializer;->outputStream:Ljava/io/OutputStream;
+    move-object/from16 v0, p0
 
-    check-cast v8, Lcom/facebook/ProgressNoopOutputStream;
+    iget-object v11, v0, Lcom/facebook/Request$Serializer;->outputStream:Ljava/io/OutputStream;
+
+    check-cast v11, Lcom/facebook/ProgressNoopOutputStream;
 
     invoke-virtual/range {p2 .. p2}, Landroid/os/ParcelFileDescriptor;->getStatSize()J
 
-    move-result-wide v9
+    move-result-wide v12
 
-    invoke-virtual {v8, v9, v10}, Lcom/facebook/ProgressNoopOutputStream;->addProgress(J)V
+    invoke-virtual {v11, v12, v13}, Lcom/facebook/ProgressNoopOutputStream;->addProgress(J)V
 
     .line 2296
-    :cond_1b
-    :goto_1b
-    const-string v8, ""
-
-    const/4 v9, 0x0
-
-    new-array v9, v9, [Ljava/lang/Object;
-
-    invoke-virtual {p0, v8, v9}, Lcom/facebook/Request$Serializer;->writeLine(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 2297
-    invoke-virtual {p0}, Lcom/facebook/Request$Serializer;->writeRecordBoundary()V
-
-    .line 2298
-    iget-object v8, p0, Lcom/facebook/Request$Serializer;->logger:Lcom/facebook/internal/Logger;
-
-    if-eqz v8, :cond_4e
-
-    .line 2299
-    iget-object v8, p0, Lcom/facebook/Request$Serializer;->logger:Lcom/facebook/internal/Logger;
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    const-string v10, "    "
-
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v9, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    const-string v10, "<Data: %d>"
-
-    const/4 v11, 0x1
-
-    new-array v11, v11, [Ljava/lang/Object;
+    :cond_25
+    :goto_25
+    const-string v11, ""
 
     const/4 v12, 0x0
 
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    new-array v12, v12, [Ljava/lang/Object;
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v11, v12}, Lcom/facebook/Request$Serializer;->writeLine(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 2297
+    invoke-virtual/range {p0 .. p0}, Lcom/facebook/Request$Serializer;->writeRecordBoundary()V
+
+    .line 2298
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcom/facebook/Request$Serializer;->logger:Lcom/facebook/internal/Logger;
+
+    if-eqz v11, :cond_60
+
+    .line 2299
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcom/facebook/Request$Serializer;->logger:Lcom/facebook/internal/Logger;
+
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    const-string v13, "    "
+
+    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    const-string v13, "<Data: %d>"
+
+    const/4 v14, 0x1
+
+    new-array v14, v14, [Ljava/lang/Object;
+
+    const/4 v15, 0x0
+
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v16
+
+    aput-object v16, v14, v15
+
+    invoke-static {v13, v14}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v13
 
-    aput-object v13, v11, v12
-
-    invoke-static {v10, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-virtual {v8, v9, v10}, Lcom/facebook/internal/Logger;->appendKeyValue(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v11, v12, v13}, Lcom/facebook/internal/Logger;->appendKeyValue(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 2301
-    :cond_4e
+    :cond_60
     return-void
 
     .line 2275
-    :cond_4f
-    const/4 v5, 0x0
+    :cond_61
+    const/4 v8, 0x0
 
     .line 2276
-    .local v5, "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
-    const/4 v2, 0x0
+    .local v8, "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
+    const/4 v5, 0x0
 
     .line 2278
-    .local v2, "bufferedInputStream":Ljava/io/BufferedInputStream;
-    :try_start_51
-    new-instance v6, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
+    .local v5, "bufferedInputStream":Ljava/io/BufferedInputStream;
+    :try_start_63
+    new-instance v9, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
 
     move-object/from16 v0, p2
 
-    invoke-direct {v6, v0}, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;-><init>(Landroid/os/ParcelFileDescriptor;)V
-    :try_end_58
-    .catchall {:try_start_51 .. :try_end_58} :catchall_7b
+    invoke-direct {v9, v0}, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;-><init>(Landroid/os/ParcelFileDescriptor;)V
+    :try_end_6a
+    .catchall {:try_start_63 .. :try_end_6a} :catchall_8f
 
     .line 2279
-    .end local v5    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
-    .local v6, "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
-    :try_start_58
-    new-instance v3, Ljava/io/BufferedInputStream;
+    .end local v8    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
+    .local v9, "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
+    :try_start_6a
+    new-instance v6, Ljava/io/BufferedInputStream;
 
-    invoke-direct {v3, v6}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;)V
-    :try_end_5d
-    .catchall {:try_start_58 .. :try_end_5d} :catchall_87
+    invoke-direct {v6, v9}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;)V
+    :try_end_6f
+    .catchall {:try_start_6a .. :try_end_6f} :catchall_9b
 
     .line 2281
-    .end local v2    # "bufferedInputStream":Ljava/io/BufferedInputStream;
-    .local v3, "bufferedInputStream":Ljava/io/BufferedInputStream;
-    const/16 v8, 0x2000
+    .end local v5    # "bufferedInputStream":Ljava/io/BufferedInputStream;
+    .local v6, "bufferedInputStream":Ljava/io/BufferedInputStream;
+    const/16 v11, 0x2000
 
-    :try_start_5f
-    new-array v1, v8, [B
+    :try_start_71
+    new-array v4, v11, [B
 
     .line 2283
-    .local v1, "buffer":[B
-    :goto_61
-    invoke-virtual {v3, v1}, Ljava/io/BufferedInputStream;->read([B)I
-    :try_end_64
-    .catchall {:try_start_5f .. :try_end_64} :catchall_8a
+    .local v4, "buffer":[B
+    :goto_73
+    invoke-virtual {v6, v4}, Ljava/io/BufferedInputStream;->read([B)I
+    :try_end_76
+    .catchall {:try_start_71 .. :try_end_76} :catchall_9e
 
-    move-result v4
+    move-result v7
 
-    .local v4, "bytesRead":I
-    const/4 v8, -0x1
+    .local v7, "bytesRead":I
+    const/4 v11, -0x1
 
-    if-ne v4, v8, :cond_73
+    if-ne v7, v11, :cond_85
 
     .line 2288
-    if-eqz v3, :cond_6d
+    if-eqz v6, :cond_7f
 
     .line 2289
-    invoke-virtual {v3}, Ljava/io/BufferedInputStream;->close()V
+    invoke-virtual {v6}, Ljava/io/BufferedInputStream;->close()V
 
     .line 2291
-    :cond_6d
-    if-eqz v6, :cond_1b
+    :cond_7f
+    if-eqz v9, :cond_25
 
     .line 2292
-    invoke-virtual {v6}, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;->close()V
+    invoke-virtual {v9}, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;->close()V
 
-    goto :goto_1b
+    goto :goto_25
 
     .line 2284
-    :cond_73
-    :try_start_73
-    iget-object v8, p0, Lcom/facebook/Request$Serializer;->outputStream:Ljava/io/OutputStream;
+    :cond_85
+    :try_start_85
+    move-object/from16 v0, p0
 
-    const/4 v9, 0x0
+    iget-object v11, v0, Lcom/facebook/Request$Serializer;->outputStream:Ljava/io/OutputStream;
 
-    invoke-virtual {v8, v1, v9, v4}, Ljava/io/OutputStream;->write([BII)V
-    :try_end_79
-    .catchall {:try_start_73 .. :try_end_79} :catchall_8a
+    const/4 v12, 0x0
+
+    invoke-virtual {v11, v4, v12, v7}, Ljava/io/OutputStream;->write([BII)V
+    :try_end_8d
+    .catchall {:try_start_85 .. :try_end_8d} :catchall_9e
 
     .line 2285
-    add-int/2addr v7, v4
+    add-int/2addr v10, v7
 
-    goto :goto_61
+    goto :goto_73
 
     .line 2287
-    .end local v1    # "buffer":[B
-    .end local v3    # "bufferedInputStream":Ljava/io/BufferedInputStream;
-    .end local v4    # "bytesRead":I
-    .end local v6    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
-    .restart local v2    # "bufferedInputStream":Ljava/io/BufferedInputStream;
-    .restart local v5    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
-    :catchall_7b
-    move-exception v8
+    .end local v4    # "buffer":[B
+    .end local v6    # "bufferedInputStream":Ljava/io/BufferedInputStream;
+    .end local v7    # "bytesRead":I
+    .end local v9    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
+    .restart local v5    # "bufferedInputStream":Ljava/io/BufferedInputStream;
+    .restart local v8    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
+    :catchall_8f
+    move-exception v11
 
     .line 2288
-    :goto_7c
-    if-eqz v2, :cond_81
+    :goto_90
+    if-eqz v5, :cond_95
 
     .line 2289
-    invoke-virtual {v2}, Ljava/io/BufferedInputStream;->close()V
+    invoke-virtual {v5}, Ljava/io/BufferedInputStream;->close()V
 
     .line 2291
-    :cond_81
-    if-eqz v5, :cond_86
+    :cond_95
+    if-eqz v8, :cond_9a
 
     .line 2292
-    invoke-virtual {v5}, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;->close()V
+    invoke-virtual {v8}, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;->close()V
 
     .line 2294
-    :cond_86
-    throw v8
+    :cond_9a
+    throw v11
 
     .line 2287
-    .end local v5    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
-    .restart local v6    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
-    :catchall_87
-    move-exception v8
+    .end local v8    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
+    .restart local v9    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
+    :catchall_9b
+    move-exception v11
+
+    move-object v8, v9
+
+    .end local v9    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
+    .restart local v8    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
+    goto :goto_90
+
+    .end local v5    # "bufferedInputStream":Ljava/io/BufferedInputStream;
+    .end local v8    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
+    .restart local v6    # "bufferedInputStream":Ljava/io/BufferedInputStream;
+    .restart local v9    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
+    :catchall_9e
+    move-exception v11
 
     move-object v5, v6
 
-    .end local v6    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
-    .restart local v5    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
-    goto :goto_7c
+    .end local v6    # "bufferedInputStream":Ljava/io/BufferedInputStream;
+    .restart local v5    # "bufferedInputStream":Ljava/io/BufferedInputStream;
+    move-object v8, v9
 
-    .end local v2    # "bufferedInputStream":Ljava/io/BufferedInputStream;
-    .end local v5    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
-    .restart local v3    # "bufferedInputStream":Ljava/io/BufferedInputStream;
-    .restart local v6    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
-    :catchall_8a
-    move-exception v8
-
-    move-object v2, v3
-
-    .end local v3    # "bufferedInputStream":Ljava/io/BufferedInputStream;
-    .restart local v2    # "bufferedInputStream":Ljava/io/BufferedInputStream;
-    move-object v5, v6
-
-    .end local v6    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
-    .restart local v5    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
-    goto :goto_7c
+    .end local v9    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
+    .restart local v8    # "inputStream":Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
+    goto :goto_90
 .end method
 
 .method public writeFile(Ljava/lang/String;Lcom/facebook/Request$ParcelFileDescriptorWithMimeType;)V

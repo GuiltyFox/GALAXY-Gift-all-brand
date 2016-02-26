@@ -29,7 +29,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .registers 4
 
     .prologue
     .line 62
@@ -52,9 +52,9 @@
     .line 71
     sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    const-wide/16 v1, 0xe10
+    const-wide/16 v2, 0xe10
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+    invoke-virtual {v0, v2, v3}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
 
     move-result-wide v0
 
@@ -217,7 +217,7 @@
 .end method
 
 .method private handleRegistration(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 20
+    .registers 21
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
@@ -372,7 +372,7 @@
 
     move-result v12
 
-    if-eqz v12, :cond_107
+    if-eqz v12, :cond_10a
 
     .line 314
     move-object/from16 v0, p0
@@ -385,7 +385,7 @@
 
     .line 315
     .local v8, "retry":Z
-    if-eqz v8, :cond_fe
+    if-eqz v8, :cond_101
 
     .line 316
     invoke-static/range {p1 .. p1}, Lcom/google/android/gcm/GCMRegistrar;->getBackoff(Landroid/content/Context;)I
@@ -488,13 +488,15 @@
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v13
+    move-result-wide v14
 
-    int-to-long v15, v5
+    int-to-long v0, v5
 
-    add-long/2addr v13, v15
+    move-wide/from16 v16, v0
 
-    invoke-virtual {v2, v12, v13, v14, v10}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
+    add-long v14, v14, v16
+
+    invoke-virtual {v2, v12, v14, v15, v10}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
 
     .line 332
     sget v12, Lcom/google/android/gcm/GCMBaseIntentService;->MAX_BACKOFF_MS:I
@@ -516,7 +518,7 @@
     .end local v5    # "nextAttempt":I
     .end local v9    # "retryIntent":Landroid/content/Intent;
     .end local v10    # "retryPendingIntent":Landroid/app/PendingIntent;
-    :cond_fe
+    :cond_101
     const-string v12, "GCMBaseIntentService"
 
     const-string v13, "Not retrying failed operation"
@@ -527,7 +529,7 @@
 
     .line 340
     .end local v8    # "retry":Z
-    :cond_107
+    :cond_10a
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1

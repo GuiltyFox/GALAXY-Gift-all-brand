@@ -323,16 +323,6 @@
     return-object v0
 .end method
 
-.method static synthetic access$10(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)V
-    .registers 1
-
-    .prologue
-    .line 824
-    invoke-direct {p0}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gotoAllListView()V
-
-    return-void
-.end method
-
 .method static synthetic access$2(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)Landroid/widget/RelativeLayout;
     .registers 2
 
@@ -353,17 +343,7 @@
     return-void
 .end method
 
-.method static synthetic access$4(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)Lcom/google/analytics/tracking/android/Tracker;
-    .registers 2
-
-    .prologue
-    .line 96
-    iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    return-object v0
-.end method
-
-.method static synthetic access$5(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)Landroid/widget/RelativeLayout;
+.method static synthetic access$4(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)Landroid/widget/RelativeLayout;
     .registers 2
 
     .prologue
@@ -373,7 +353,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$6(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)V
+.method static synthetic access$5(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)V
     .registers 1
 
     .prologue
@@ -383,7 +363,7 @@
     return-void
 .end method
 
-.method static synthetic access$7(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)Landroid/widget/RelativeLayout;
+.method static synthetic access$6(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)Landroid/widget/RelativeLayout;
     .registers 2
 
     .prologue
@@ -393,7 +373,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$8(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)V
+.method static synthetic access$7(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)V
     .registers 1
 
     .prologue
@@ -403,7 +383,7 @@
     return-void
 .end method
 
-.method static synthetic access$9(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)Landroid/widget/RelativeLayout;
+.method static synthetic access$8(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)Landroid/widget/RelativeLayout;
     .registers 2
 
     .prologue
@@ -411,6 +391,16 @@
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->tabAll1:Landroid/widget/RelativeLayout;
 
     return-object v0
+.end method
+
+.method static synthetic access$9(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)V
+    .registers 1
+
+    .prologue
+    .line 824
+    invoke-direct {p0}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gotoAllListView()V
+
+    return-void
 .end method
 
 .method private getPointFromServer()V
@@ -3124,10 +3114,10 @@
 .end method
 
 .method public onStart()V
-    .registers 10
+    .registers 11
 
     .prologue
-    const-wide/16 v3, -0x1
+    const-wide/16 v4, -0x1
 
     .line 376
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onStart()V
@@ -3229,21 +3219,21 @@
     invoke-direct {p0}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->resetTab()V
 
     .line 399
-    iget-object v1, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterCategory:Ljava/lang/String;
+    iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterCategory:Ljava/lang/String;
 
-    iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentCategoryName:Ljava/lang/String;
+    iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentCategoryName:Ljava/lang/String;
 
-    iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterCenter:Ljava/lang/String;
+    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterCenter:Ljava/lang/String;
 
-    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterMode:Ljava/lang/String;
+    iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterMode:Ljava/lang/String;
 
-    iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterSponsor:Ljava/lang/String;
+    iget-object v8, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterSponsor:Ljava/lang/String;
 
-    iget-object v8, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterPlace:Ljava/lang/String;
+    iget-object v9, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterPlace:Ljava/lang/String;
 
-    move-object v0, p0
+    move-object v1, p0
 
-    invoke-direct/range {v0 .. v8}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gotoLoadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v9}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gotoLoadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_35
 
@@ -3288,21 +3278,21 @@
     invoke-direct {p0}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gotoNearByListView()V
 
     .line 403
-    iget-object v1, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterCategory:Ljava/lang/String;
+    iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterCategory:Ljava/lang/String;
 
-    const-string v2, ""
+    const-string v3, ""
 
-    iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterCenter:Ljava/lang/String;
+    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterCenter:Ljava/lang/String;
 
-    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterMode:Ljava/lang/String;
+    iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterMode:Ljava/lang/String;
 
-    iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterSponsor:Ljava/lang/String;
+    iget-object v8, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterSponsor:Ljava/lang/String;
 
-    iget-object v8, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterPlace:Ljava/lang/String;
+    iget-object v9, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterPlace:Ljava/lang/String;
 
-    move-object v0, p0
+    move-object v1, p0
 
-    invoke-direct/range {v0 .. v8}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gotoLoadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v9}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gotoLoadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_35
 
@@ -3326,21 +3316,21 @@
     invoke-direct {p0}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gotoSponsorListView()V
 
     .line 406
-    iget-object v1, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterCategory:Ljava/lang/String;
+    iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterCategory:Ljava/lang/String;
 
-    const-string v2, ""
+    const-string v3, ""
 
-    iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterCenter:Ljava/lang/String;
+    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterCenter:Ljava/lang/String;
 
-    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterMode:Ljava/lang/String;
+    iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterMode:Ljava/lang/String;
 
-    iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterSponsor:Ljava/lang/String;
+    iget-object v8, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterSponsor:Ljava/lang/String;
 
-    iget-object v8, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterPlace:Ljava/lang/String;
+    iget-object v9, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterPlace:Ljava/lang/String;
 
-    move-object v0, p0
+    move-object v1, p0
 
-    invoke-direct/range {v0 .. v8}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gotoLoadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v9}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gotoLoadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_35
 
@@ -3517,21 +3507,21 @@
     invoke-direct {p0}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->resetTab()V
 
     .line 427
-    iget-object v1, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterCategory:Ljava/lang/String;
+    iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterCategory:Ljava/lang/String;
 
-    const-string v2, ""
+    const-string v3, ""
 
-    iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterCenter:Ljava/lang/String;
+    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterCenter:Ljava/lang/String;
 
-    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterMode:Ljava/lang/String;
+    iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterMode:Ljava/lang/String;
 
-    iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterSponsor:Ljava/lang/String;
+    iget-object v8, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterSponsor:Ljava/lang/String;
 
-    iget-object v8, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterPlace:Ljava/lang/String;
+    iget-object v9, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gCurrentFilterPlace:Ljava/lang/String;
 
-    move-object v0, p0
+    move-object v1, p0
 
-    invoke-direct/range {v0 .. v8}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gotoLoadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v9}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gotoLoadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_35
 

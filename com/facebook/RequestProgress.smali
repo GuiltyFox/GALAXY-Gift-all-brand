@@ -47,7 +47,7 @@
 
 # virtual methods
 .method addProgress(J)V
-    .registers 9
+    .registers 10
     .param p1, "size"    # J
 
     .prologue
@@ -89,7 +89,7 @@
 .end method
 
 .method addToMax(J)V
-    .registers 5
+    .registers 6
     .param p1, "size"    # J
 
     .prologue
@@ -125,90 +125,90 @@
 .end method
 
 .method reportProgress()V
-    .registers 11
+    .registers 13
 
     .prologue
     .line 56
-    iget-wide v0, p0, Lcom/facebook/RequestProgress;->progress:J
+    iget-wide v8, p0, Lcom/facebook/RequestProgress;->progress:J
 
-    iget-wide v8, p0, Lcom/facebook/RequestProgress;->lastReportedProgress:J
+    iget-wide v10, p0, Lcom/facebook/RequestProgress;->lastReportedProgress:J
 
-    cmp-long v0, v0, v8
+    cmp-long v1, v8, v10
 
-    if-lez v0, :cond_2c
+    if-lez v1, :cond_2c
 
     .line 57
-    iget-object v0, p0, Lcom/facebook/RequestProgress;->request:Lcom/facebook/Request;
+    iget-object v1, p0, Lcom/facebook/RequestProgress;->request:Lcom/facebook/Request;
 
-    invoke-virtual {v0}, Lcom/facebook/Request;->getCallback()Lcom/facebook/Request$Callback;
+    invoke-virtual {v1}, Lcom/facebook/Request;->getCallback()Lcom/facebook/Request$Callback;
 
-    move-result-object v7
+    move-result-object v0
 
     .line 58
-    .local v7, "callback":Lcom/facebook/Request$Callback;
-    iget-wide v0, p0, Lcom/facebook/RequestProgress;->maxProgress:J
+    .local v0, "callback":Lcom/facebook/Request$Callback;
+    iget-wide v8, p0, Lcom/facebook/RequestProgress;->maxProgress:J
 
-    const-wide/16 v8, 0x0
+    const-wide/16 v10, 0x0
 
-    cmp-long v0, v0, v8
+    cmp-long v1, v8, v10
 
-    if-lez v0, :cond_2c
+    if-lez v1, :cond_2c
 
-    instance-of v0, v7, Lcom/facebook/Request$OnProgressCallback;
+    instance-of v1, v0, Lcom/facebook/Request$OnProgressCallback;
 
-    if-eqz v0, :cond_2c
+    if-eqz v1, :cond_2c
 
     .line 60
-    iget-wide v3, p0, Lcom/facebook/RequestProgress;->progress:J
+    iget-wide v4, p0, Lcom/facebook/RequestProgress;->progress:J
 
     .line 61
-    .local v3, "currentCopy":J
-    iget-wide v5, p0, Lcom/facebook/RequestProgress;->maxProgress:J
+    .local v4, "currentCopy":J
+    iget-wide v6, p0, Lcom/facebook/RequestProgress;->maxProgress:J
 
-    .local v5, "maxProgressCopy":J
-    move-object v2, v7
+    .local v6, "maxProgressCopy":J
+    move-object v3, v0
 
     .line 62
-    check-cast v2, Lcom/facebook/Request$OnProgressCallback;
+    check-cast v3, Lcom/facebook/Request$OnProgressCallback;
 
     .line 63
-    .local v2, "callbackCopy":Lcom/facebook/Request$OnProgressCallback;
-    iget-object v0, p0, Lcom/facebook/RequestProgress;->callbackHandler:Landroid/os/Handler;
+    .local v3, "callbackCopy":Lcom/facebook/Request$OnProgressCallback;
+    iget-object v1, p0, Lcom/facebook/RequestProgress;->callbackHandler:Landroid/os/Handler;
 
-    if-nez v0, :cond_2d
+    if-nez v1, :cond_2d
 
     .line 64
-    invoke-interface {v2, v3, v4, v5, v6}, Lcom/facebook/Request$OnProgressCallback;->onProgress(JJ)V
+    invoke-interface {v3, v4, v5, v6, v7}, Lcom/facebook/Request$OnProgressCallback;->onProgress(JJ)V
 
     .line 74
     :goto_28
-    iget-wide v0, p0, Lcom/facebook/RequestProgress;->progress:J
+    iget-wide v8, p0, Lcom/facebook/RequestProgress;->progress:J
 
-    iput-wide v0, p0, Lcom/facebook/RequestProgress;->lastReportedProgress:J
+    iput-wide v8, p0, Lcom/facebook/RequestProgress;->lastReportedProgress:J
 
     .line 77
-    .end local v2    # "callbackCopy":Lcom/facebook/Request$OnProgressCallback;
-    .end local v3    # "currentCopy":J
-    .end local v5    # "maxProgressCopy":J
-    .end local v7    # "callback":Lcom/facebook/Request$Callback;
+    .end local v0    # "callback":Lcom/facebook/Request$Callback;
+    .end local v3    # "callbackCopy":Lcom/facebook/Request$OnProgressCallback;
+    .end local v4    # "currentCopy":J
+    .end local v6    # "maxProgressCopy":J
     :cond_2c
     return-void
 
     .line 67
-    .restart local v2    # "callbackCopy":Lcom/facebook/Request$OnProgressCallback;
-    .restart local v3    # "currentCopy":J
-    .restart local v5    # "maxProgressCopy":J
-    .restart local v7    # "callback":Lcom/facebook/Request$Callback;
+    .restart local v0    # "callback":Lcom/facebook/Request$Callback;
+    .restart local v3    # "callbackCopy":Lcom/facebook/Request$OnProgressCallback;
+    .restart local v4    # "currentCopy":J
+    .restart local v6    # "maxProgressCopy":J
     :cond_2d
     iget-object v8, p0, Lcom/facebook/RequestProgress;->callbackHandler:Landroid/os/Handler;
 
-    new-instance v0, Lcom/facebook/RequestProgress$1;
+    new-instance v1, Lcom/facebook/RequestProgress$1;
 
-    move-object v1, p0
+    move-object v2, p0
 
-    invoke-direct/range {v0 .. v6}, Lcom/facebook/RequestProgress$1;-><init>(Lcom/facebook/RequestProgress;Lcom/facebook/Request$OnProgressCallback;JJ)V
+    invoke-direct/range {v1 .. v7}, Lcom/facebook/RequestProgress$1;-><init>(Lcom/facebook/RequestProgress;Lcom/facebook/Request$OnProgressCallback;JJ)V
 
-    invoke-virtual {v8, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v8, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     goto :goto_28
 .end method

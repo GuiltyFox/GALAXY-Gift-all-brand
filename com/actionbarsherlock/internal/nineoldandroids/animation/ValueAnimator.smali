@@ -467,7 +467,7 @@
 .end method
 
 .method private delayedAnimationFrame(J)Z
-    .registers 8
+    .registers 10
     .param p1, "currentTime"    # J
 
     .prologue
@@ -493,26 +493,26 @@
 
     .line 1076
     :cond_b
-    iget-wide v3, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mDelayStartTime:J
+    iget-wide v4, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mDelayStartTime:J
 
-    sub-long v0, p1, v3
+    sub-long v0, p1, v4
 
     .line 1077
     .local v0, "deltaTime":J
-    iget-wide v3, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mStartDelay:J
+    iget-wide v4, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mStartDelay:J
 
-    cmp-long v3, v0, v3
+    cmp-long v3, v0, v4
 
     if-lez v3, :cond_9
 
     .line 1080
-    iget-wide v3, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mStartDelay:J
+    iget-wide v4, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mStartDelay:J
 
-    sub-long v3, v0, v3
+    sub-long v4, v0, v4
 
-    sub-long v3, p1, v3
+    sub-long v4, p1, v4
 
-    iput-wide v3, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mStartTime:J
+    iput-wide v4, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mStartTime:J
 
     .line 1081
     iput v2, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mPlayingState:I
@@ -905,7 +905,7 @@
 .end method
 
 .method private startAnimation()V
-    .registers 8
+    .registers 9
 
     .prologue
     .line 1047
@@ -923,11 +923,11 @@
     invoke-virtual {v3, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 1049
-    iget-wide v3, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mStartDelay:J
+    iget-wide v4, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mStartDelay:J
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
-    cmp-long v3, v3, v5
+    cmp-long v3, v4, v6
 
     if-lez v3, :cond_29
 
@@ -1098,11 +1098,11 @@
 .end method
 
 .method animationFrame(J)Z
-    .registers 14
+    .registers 16
     .param p1, "currentTime"    # J
 
     .prologue
-    const-wide/16 v9, 0x0
+    const-wide/16 v10, 0x0
 
     const/4 v5, 0x1
 
@@ -1121,9 +1121,9 @@
     iput v5, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mPlayingState:I
 
     .line 1105
-    iget-wide v7, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mSeekTime:J
+    iget-wide v8, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mSeekTime:J
 
-    cmp-long v4, v7, v9
+    cmp-long v4, v8, v10
 
     if-gez v4, :cond_1a
 
@@ -1143,36 +1143,36 @@
 
     .line 1108
     :cond_1a
-    iget-wide v7, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mSeekTime:J
+    iget-wide v8, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mSeekTime:J
 
-    sub-long v7, p1, v7
+    sub-long v8, p1, v8
 
-    iput-wide v7, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mStartTime:J
+    iput-wide v8, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mStartTime:J
 
     .line 1110
-    const-wide/16 v7, -0x1
+    const-wide/16 v8, -0x1
 
-    iput-wide v7, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mSeekTime:J
+    iput-wide v8, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mSeekTime:J
 
     goto :goto_14
 
     .line 1116
     :pswitch_25
-    iget-wide v7, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mDuration:J
+    iget-wide v8, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mDuration:J
 
-    cmp-long v4, v7, v9
+    cmp-long v4, v8, v10
 
     if-lez v4, :cond_75
 
-    iget-wide v7, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mStartTime:J
+    iget-wide v8, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mStartTime:J
 
-    sub-long v7, p1, v7
+    sub-long v8, p1, v8
 
-    long-to-float v4, v7
+    long-to-float v4, v8
 
-    iget-wide v7, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mDuration:J
+    iget-wide v8, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mDuration:J
 
-    long-to-float v7, v7
+    long-to-float v7, v8
 
     div-float v1, v4, v7
 
@@ -1253,9 +1253,9 @@
     .line 1131
     iget-wide v4, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mStartTime:J
 
-    iget-wide v7, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mDuration:J
+    iget-wide v8, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mDuration:J
 
-    add-long/2addr v4, v7
+    add-long/2addr v4, v8
 
     iput-wide v4, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mStartTime:J
 
@@ -1439,10 +1439,10 @@
 .end method
 
 .method public clone()Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;
-    .registers 11
+    .registers 12
 
     .prologue
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
     .line 1186
     invoke-super {p0}, Lcom/actionbarsherlock/internal/nineoldandroids/animation/Animator;->clone()Lcom/actionbarsherlock/internal/nineoldandroids/animation/Animator;
@@ -1486,24 +1486,24 @@
     .end local v3    # "numListeners":I
     .end local v5    # "oldListeners":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator$AnimatorUpdateListener;>;"
     :cond_1b
-    const-wide/16 v7, -0x1
+    const-wide/16 v8, -0x1
 
-    iput-wide v7, v0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mSeekTime:J
+    iput-wide v8, v0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mSeekTime:J
 
     .line 1196
-    iput-boolean v9, v0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mPlayingBackwards:Z
+    iput-boolean v10, v0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mPlayingBackwards:Z
 
     .line 1197
-    iput v9, v0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mCurrentIteration:I
+    iput v10, v0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mCurrentIteration:I
 
     .line 1198
-    iput-boolean v9, v0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mInitialized:Z
+    iput-boolean v10, v0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mInitialized:Z
 
     .line 1199
-    iput v9, v0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mPlayingState:I
+    iput v10, v0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mPlayingState:I
 
     .line 1200
-    iput-boolean v9, v0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mStartedDelay:Z
+    iput-boolean v10, v0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mStartedDelay:Z
 
     .line 1201
     iget-object v6, p0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mValues:[Lcom/actionbarsherlock/internal/nineoldandroids/animation/PropertyValuesHolder;
@@ -2065,7 +2065,7 @@
 .end method
 
 .method public setCurrentPlayTime(J)V
-    .registers 7
+    .registers 8
     .param p1, "playTime"    # J
 
     .prologue
@@ -2446,7 +2446,7 @@
 .end method
 
 .method public setStartDelay(J)V
-    .registers 3
+    .registers 4
     .param p1, "startDelay"    # J
 
     .prologue

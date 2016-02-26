@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public format(Ljava/lang/String;)Ljava/lang/String;
-    .registers 5
+    .registers 6
     .param p1, "rawValue"    # Ljava/lang/String;
 
     .prologue
@@ -53,9 +53,9 @@
 
     invoke-static {p1}, Lcom/google/analytics/tracking/android/Utils;->safeParseDouble(Ljava/lang/String;)D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-virtual {v0, v1, v2}, Ljava/text/DecimalFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v0, v2, v3}, Ljava/text/DecimalFormat;->format(D)Ljava/lang/String;
 
     move-result-object v0
 

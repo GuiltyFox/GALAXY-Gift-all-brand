@@ -489,7 +489,7 @@
 .end method
 
 .method public onNavigationItemSelected(IJ)Z
-    .registers 5
+    .registers 6
     .param p1, "itemPosition"    # I
     .param p2, "itemId"    # J
 

@@ -86,7 +86,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->paramsData:Ljava/lang/String;
 
-    .line 341
+    .line 377
     new-instance v0, Lcom/samsung/privilege/activity/RegisterActivity$1;
 
     invoke-direct {v0, p0}, Lcom/samsung/privilege/activity/RegisterActivity$1;-><init>(Lcom/samsung/privilege/activity/RegisterActivity;)V
@@ -158,263 +158,185 @@
 .end method
 
 .method private initialLayout()V
-    .registers 4
+    .registers 3
 
     .prologue
-    .line 97
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getAssets()Landroid/content/res/AssetManager;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gFontDefault:Landroid/graphics/Typeface;
-
     .line 98
-    const v1, 0x7f070353
-
-    invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/ImageView;
-
-    iput-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->btnMen:Landroid/widget/ImageView;
-
-    .line 99
-    const v1, 0x7f070354
-
-    invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/ImageView;
-
-    iput-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->btnWomen:Landroid/widget/ImageView;
-
-    .line 100
-    const v1, 0x7f070355
-
-    invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->tvFName:Landroid/widget/TextView;
-
-    .line 101
-    const v1, 0x7f070357
-
-    invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->tvLName:Landroid/widget/TextView;
-
-    .line 102
-    const v1, 0x7f070359
-
-    invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->tvBD:Landroid/widget/TextView;
-
-    .line 103
-    const v1, 0x7f070356
-
-    invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/EditText;
-
-    iput-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtFName:Landroid/widget/EditText;
-
-    .line 104
-    const v1, 0x7f070358
-
-    invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/EditText;
-
-    iput-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtLName:Landroid/widget/EditText;
-
-    .line 105
-    const v1, 0x7f07035a
-
-    invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtBD:Landroid/widget/TextView;
-
-    .line 106
-    const v1, 0x7f07035b
-
-    invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getAssets()Landroid/content/res/AssetManager;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/Button;
-
-    .line 107
-    .local v0, "btnRegister":Landroid/widget/Button;
-    const v1, 0x7f07035c
-
-    invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
 
-    check-cast v1, Landroid/widget/ProgressBar;
+    invoke-static {v1}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT(Landroid/content/Context;)Ljava/lang/String;
 
-    iput-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->pbLoadingProfile:Landroid/widget/ProgressBar;
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gFontDefault:Landroid/graphics/Typeface;
+
+    .line 99
+    const v0, 0x7f0c0361
+
+    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    iput-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->btnMen:Landroid/widget/ImageView;
+
+    .line 100
+    const v0, 0x7f0c0362
+
+    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    iput-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->btnWomen:Landroid/widget/ImageView;
+
+    .line 101
+    const v0, 0x7f0c0363
+
+    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->tvFName:Landroid/widget/TextView;
+
+    .line 102
+    const v0, 0x7f0c0365
+
+    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->tvLName:Landroid/widget/TextView;
+
+    .line 103
+    const v0, 0x7f0c0367
+
+    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->tvBD:Landroid/widget/TextView;
+
+    .line 104
+    const v0, 0x7f0c0364
+
+    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/EditText;
+
+    iput-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtFName:Landroid/widget/EditText;
+
+    .line 105
+    const v0, 0x7f0c0366
+
+    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/EditText;
+
+    iput-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtLName:Landroid/widget/EditText;
+
+    .line 106
+    const v0, 0x7f0c0368
+
+    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtBD:Landroid/widget/TextView;
+
+    .line 107
+    const v0, 0x7f0c036b
+
+    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ProgressBar;
+
+    iput-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->pbLoadingProfile:Landroid/widget/ProgressBar;
 
     .line 109
-    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->tvFName:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->tvFName:Landroid/widget/TextView;
 
-    iget-object v2, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gFontDefault:Landroid/graphics/Typeface;
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 110
-    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->tvLName:Landroid/widget/TextView;
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gFontDefault:Landroid/graphics/Typeface;
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 111
-    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->tvBD:Landroid/widget/TextView;
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gFontDefault:Landroid/graphics/Typeface;
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 112
-    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtFName:Landroid/widget/EditText;
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gFontDefault:Landroid/graphics/Typeface;
-
-    invoke-virtual {v1, v2}, Landroid/widget/EditText;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 113
-    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtLName:Landroid/widget/EditText;
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gFontDefault:Landroid/graphics/Typeface;
-
-    invoke-virtual {v1, v2}, Landroid/widget/EditText;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 114
-    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtBD:Landroid/widget/TextView;
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gFontDefault:Landroid/graphics/Typeface;
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 115
     iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gFontDefault:Landroid/graphics/Typeface;
 
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 110
+    iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->tvLName:Landroid/widget/TextView;
+
+    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gFontDefault:Landroid/graphics/Typeface;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 111
+    iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->tvBD:Landroid/widget/TextView;
+
+    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gFontDefault:Landroid/graphics/Typeface;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 112
+    iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtFName:Landroid/widget/EditText;
+
+    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gFontDefault:Landroid/graphics/Typeface;
+
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 113
+    iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtLName:Landroid/widget/EditText;
+
+    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gFontDefault:Landroid/graphics/Typeface;
+
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 114
+    iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtBD:Landroid/widget/TextView;
+
+    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gFontDefault:Landroid/graphics/Typeface;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 115
+    const v0, 0x7f0c036a
+
+    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RegisterActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gFontDefault:Landroid/graphics/Typeface;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 117
-    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->tvFName:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->tvFName:Landroid/widget/TextView;
 
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextSize(F)V
-
-    .line 118
-    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->tvLName:Landroid/widget/TextView;
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextSize(F)V
-
-    .line 119
-    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->tvBD:Landroid/widget/TextView;
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextSize(F)V
-
-    .line 120
-    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtFName:Landroid/widget/EditText;
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/EditText;->setTextSize(F)V
-
-    .line 121
-    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtLName:Landroid/widget/EditText;
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/EditText;->setTextSize(F)V
-
-    .line 122
-    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtBD:Landroid/widget/TextView;
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextSize(F)V
-
-    .line 123
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -423,28 +345,87 @@
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setTextSize(F)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextSize(F)V
+
+    .line 118
+    iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->tvLName:Landroid/widget/TextView;
+
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextSize(F)V
+
+    .line 119
+    iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->tvBD:Landroid/widget/TextView;
+
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextSize(F)V
+
+    .line 120
+    iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtFName:Landroid/widget/EditText;
+
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setTextSize(F)V
+
+    .line 121
+    iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtLName:Landroid/widget/EditText;
+
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setTextSize(F)V
+
+    .line 122
+    iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtBD:Landroid/widget/TextView;
+
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextSize(F)V
+
+    .line 124
+    iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->btnMen:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, p0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 125
-    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->btnMen:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->btnWomen:Landroid/widget/ImageView;
 
-    invoke-virtual {v1, p0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, p0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 126
-    iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->btnWomen:Landroid/widget/ImageView;
-
-    invoke-virtual {v1, p0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 127
-    invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 129
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->setCurrentDateOnView()V
-
-    .line 130
+    .line 128
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->addListenerOnButton()V
 
-    .line 132
+    .line 130
     return-void
 .end method
 
@@ -452,12 +433,12 @@
     .registers 3
 
     .prologue
-    .line 92
+    .line 93
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 93
+    .line 94
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "msg_newbie"
 
@@ -467,7 +448,7 @@
 
     iput-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->paramsData:Ljava/lang/String;
 
-    .line 94
+    .line 95
     return-void
 .end method
 
@@ -477,7 +458,7 @@
     .registers 3
 
     .prologue
-    .line 321
+    .line 353
     iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtBD:Landroid/widget/TextView;
 
     new-instance v1, Lcom/samsung/privilege/activity/RegisterActivity$2;
@@ -486,7 +467,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 328
+    .line 360
     return-void
 .end method
 
@@ -497,7 +478,7 @@
     .prologue
     const-wide/16 v12, 0x3e8
 
-    .line 186
+    .line 218
     new-instance v0, Lcom/samsung/privilege/newconcepts/utils/ConnectionDetector;
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getApplicationContext()Landroid/content/Context;
@@ -506,7 +487,7 @@
 
     invoke-direct {v0, v8}, Lcom/samsung/privilege/newconcepts/utils/ConnectionDetector;-><init>(Landroid/content/Context;)V
 
-    .line 187
+    .line 219
     .local v0, "cd":Lcom/samsung/privilege/newconcepts/utils/ConnectionDetector;
     invoke-virtual {v0}, Lcom/samsung/privilege/newconcepts/utils/ConnectionDetector;->isConnectingToInternet()Z
 
@@ -514,12 +495,12 @@
 
     if-nez v8, :cond_20
 
-    .line 188
+    .line 220
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v8
 
-    const v9, 0x7f0a00c1
+    const v9, 0x7f0900c1
 
     invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -527,11 +508,11 @@
 
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/RegisterActivity;->showToast(Ljava/lang/String;)V
 
-    .line 242
+    .line 274
     :goto_1f
     return-void
 
-    .line 191
+    .line 223
     :cond_20
     iget-object v8, p0, Lcom/samsung/privilege/activity/RegisterActivity;->pbLoadingProfile:Landroid/widget/ProgressBar;
 
@@ -539,7 +520,7 @@
 
     invoke-virtual {v8, v9}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 192
+    .line 224
     new-instance v8, Ljava/lang/StringBuilder;
 
     sget-object v9, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
@@ -572,7 +553,7 @@
 
     move-result-object v7
 
-    .line 194
+    .line 226
     .local v7, "url":Ljava/lang/String;
     const-string v8, "OAT"
 
@@ -592,12 +573,12 @@
 
     invoke-static {v8, v9}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 195
+    .line 227
     new-instance v5, Lcom/loopj/android/http/RequestParams;
 
     invoke-direct {v5}, Lcom/loopj/android/http/RequestParams;-><init>()V
 
-    .line 196
+    .line 228
     .local v5, "paramsRequestParams":Lcom/loopj/android/http/RequestParams;
     iget v8, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gender:I
 
@@ -605,26 +586,26 @@
 
     if-ne v8, v9, :cond_193
 
-    .line 197
+    .line 229
     const-string v8, "gender"
 
     const-string v9, "female"
 
     invoke-virtual {v5, v8, v9}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 198
+    .line 230
     const-string v8, "female"
 
     iput-object v8, p0, Lcom/samsung/privilege/activity/RegisterActivity;->strGender:Ljava/lang/String;
 
-    .line 199
+    .line 231
     const-string v8, "Register"
 
     const-string v9, "gender female"
 
     invoke-static {v8, v9}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 206
+    .line 238
     :cond_77
     :goto_77
     iget-object v8, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtBD:Landroid/widget/TextView;
@@ -645,7 +626,7 @@
 
     if-nez v8, :cond_ca
 
-    .line 207
+    .line 239
     iget-object v8, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtBD:Landroid/widget/TextView;
 
     invoke-virtual {v8}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -656,13 +637,13 @@
 
     move-result-object v6
 
-    .line 209
+    .line 241
     .local v6, "str_date":Ljava/lang/String;
     new-instance v1, Ljava/util/Date;
 
     invoke-direct {v1}, Ljava/util/Date;-><init>()V
 
-    .line 210
+    .line 242
     .local v1, "date":Ljava/util/Date;
     new-instance v3, Ljava/text/SimpleDateFormat;
 
@@ -670,7 +651,7 @@
 
     invoke-direct {v3, v8}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 212
+    .line 244
     .local v3, "formatter":Ljava/text/SimpleDateFormat;
     :try_start_9f
     invoke-virtual {v3, v6}, Ljava/text/SimpleDateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
@@ -679,23 +660,23 @@
 
     move-result-object v1
 
-    .line 217
+    .line 249
     :goto_a3
     const-string v8, "birthdate"
 
     invoke-virtual {v1}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v9
+    move-result-wide v10
 
-    div-long/2addr v9, v12
+    div-long/2addr v10, v12
 
-    invoke-static {v9, v10}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    invoke-static {v10, v11}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v9
 
     invoke-virtual {v5, v8, v9}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 218
+    .line 250
     const-string v8, "Register"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -720,7 +701,7 @@
 
     invoke-static {v8, v9}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 225
+    .line 257
     .end local v1    # "date":Ljava/util/Date;
     .end local v3    # "formatter":Ljava/text/SimpleDateFormat;
     .end local v6    # "str_date":Ljava/lang/String;
@@ -739,7 +720,7 @@
 
     invoke-virtual {v5, v8, v9}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 226
+    .line 258
     const-string v8, "Register"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -768,7 +749,7 @@
 
     invoke-static {v8, v9}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 227
+    .line 259
     const-string v8, "lastname"
 
     iget-object v9, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtLName:Landroid/widget/EditText;
@@ -783,7 +764,7 @@
 
     invoke-virtual {v5, v8, v9}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 228
+    .line 260
     const-string v8, "Register"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -812,7 +793,7 @@
 
     invoke-static {v8, v9}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 230
+    .line 262
     const-string v8, "ShippingFirstName"
 
     iget-object v9, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtFName:Landroid/widget/EditText;
@@ -827,7 +808,7 @@
 
     invoke-virtual {v5, v8, v9}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 231
+    .line 263
     const-string v8, "Register"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -856,7 +837,7 @@
 
     invoke-static {v8, v9}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 232
+    .line 264
     const-string v8, "ShippingLastName"
 
     iget-object v9, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtLName:Landroid/widget/EditText;
@@ -871,7 +852,7 @@
 
     invoke-virtual {v5, v8, v9}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 233
+    .line 265
     const-string v8, "Register"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -900,18 +881,18 @@
 
     invoke-static {v8, v9}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 238
+    .line 270
     new-instance v4, Lcom/loopj/android/http/AsyncHttpClient;
 
     invoke-direct {v4}, Lcom/loopj/android/http/AsyncHttpClient;-><init>()V
 
-    .line 239
+    .line 271
     .local v4, "myClient":Lcom/loopj/android/http/AsyncHttpClient;
     const v8, 0x1d4c0
 
     invoke-virtual {v4, v8}, Lcom/loopj/android/http/AsyncHttpClient;->setTimeout(I)V
 
-    .line 240
+    .line 272
     new-instance v8, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;
 
     invoke-direct {v8, p0}, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;-><init>(Lcom/samsung/privilege/activity/RegisterActivity;)V
@@ -920,7 +901,7 @@
 
     goto/16 :goto_1f
 
-    .line 200
+    .line 232
     .end local v4    # "myClient":Lcom/loopj/android/http/AsyncHttpClient;
     :cond_193
     iget v8, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gender:I
@@ -929,19 +910,19 @@
 
     if-ne v8, v9, :cond_77
 
-    .line 201
+    .line 233
     const-string v8, "gender"
 
     const-string v9, "male"
 
     invoke-virtual {v5, v8, v9}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 202
+    .line 234
     const-string v8, "male"
 
     iput-object v8, p0, Lcom/samsung/privilege/activity/RegisterActivity;->strGender:Ljava/lang/String;
 
-    .line 203
+    .line 235
     const-string v8, "Register"
 
     const-string v9, "gender male"
@@ -950,37 +931,26 @@
 
     goto/16 :goto_77
 
-    .line 213
+    .line 245
     .restart local v1    # "date":Ljava/util/Date;
     .restart local v3    # "formatter":Ljava/text/SimpleDateFormat;
     .restart local v6    # "str_date":Ljava/lang/String;
     :catch_1ac
     move-exception v2
 
-    .line 214
+    .line 246
     .local v2, "e":Ljava/text/ParseException;
     invoke-virtual {v2}, Ljava/text/ParseException;->printStackTrace()V
 
     goto/16 :goto_a3
 .end method
 
-.method public onClick(Landroid/view/View;)V
-    .registers 8
+.method public doRegister(Landroid/view/View;)V
+    .registers 6
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    const/4 v5, 0x0
-
-    const/4 v4, 0x1
-
-    .line 136
-    invoke-virtual {p1}, Landroid/view/View;->getId()I
-
-    move-result v3
-
-    packed-switch v3, :pswitch_data_8c
-
-    .line 148
+    .line 183
     iget-object v3, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtFName:Landroid/widget/EditText;
 
     invoke-virtual {v3}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -995,7 +965,7 @@
 
     move-result-object v1
 
-    .line 149
+    .line 184
     .local v1, "text_edtFName":Ljava/lang/String;
     iget-object v3, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtLName:Landroid/widget/EditText;
 
@@ -1011,7 +981,7 @@
 
     move-result-object v2
 
-    .line 150
+    .line 185
     .local v2, "text_edtLName":Ljava/lang/String;
     iget-object v3, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtBD:Landroid/widget/TextView;
 
@@ -1027,59 +997,204 @@
 
     move-result-object v0
 
-    .line 152
+    .line 187
+    .local v0, "text_edtBD":Ljava/lang/String;
+    iget v3, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gender:I
+
+    if-nez v3, :cond_34
+
+    .line 188
+    const-string v3, "Please select gender"
+
+    invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/RegisterActivity;->showToast(Ljava/lang/String;)V
+
+    .line 214
+    :goto_33
+    return-void
+
+    .line 192
+    :cond_34
+    if-eqz v1, :cond_3e
+
+    const-string v3, ""
+
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_44
+
+    .line 195
+    :cond_3e
+    const-string v3, "Please input First Name"
+
+    invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/RegisterActivity;->showToast(Ljava/lang/String;)V
+
+    goto :goto_33
+
+    .line 199
+    :cond_44
+    if-eqz v2, :cond_4e
+
+    const-string v3, ""
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_54
+
+    .line 202
+    :cond_4e
+    const-string v3, "Please input Last Name"
+
+    invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/RegisterActivity;->showToast(Ljava/lang/String;)V
+
+    goto :goto_33
+
+    .line 206
+    :cond_54
+    if-eqz v0, :cond_5e
+
+    const-string v3, ""
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_64
+
+    .line 209
+    :cond_5e
+    const-string v3, "Please input Birthday"
+
+    invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/RegisterActivity;->showToast(Ljava/lang/String;)V
+
+    goto :goto_33
+
+    .line 213
+    :cond_64
+    invoke-virtual {p0, p1}, Lcom/samsung/privilege/activity/RegisterActivity;->doGoToUpdate(Landroid/view/View;)V
+
+    goto :goto_33
+.end method
+
+.method public onClick(Landroid/view/View;)V
+    .registers 8
+    .param p1, "v"    # Landroid/view/View;
+
+    .prologue
+    const/4 v5, 0x0
+
+    const/4 v4, 0x1
+
+    .line 134
+    invoke-virtual {p1}, Landroid/view/View;->getId()I
+
+    move-result v3
+
+    packed-switch v3, :pswitch_data_8c
+
+    .line 146
+    iget-object v3, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtFName:Landroid/widget/EditText;
+
+    invoke-virtual {v3}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Landroid/text/Editable;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 147
+    .local v1, "text_edtFName":Ljava/lang/String;
+    iget-object v3, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtLName:Landroid/widget/EditText;
+
+    invoke-virtual {v3}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Landroid/text/Editable;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 148
+    .local v2, "text_edtLName":Ljava/lang/String;
+    iget-object v3, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtBD:Landroid/widget/TextView;
+
+    invoke-virtual {v3}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 150
     .local v0, "text_edtBD":Ljava/lang/String;
     iget v3, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gender:I
 
     if-nez v3, :cond_58
 
-    .line 153
+    .line 151
     const-string v3, "Please select gender"
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/RegisterActivity;->showToast(Ljava/lang/String;)V
 
-    .line 182
+    .line 180
     .end local v0    # "text_edtBD":Ljava/lang/String;
     .end local v1    # "text_edtFName":Ljava/lang/String;
     .end local v2    # "text_edtLName":Ljava/lang/String;
     :goto_3c
     return-void
 
-    .line 138
+    .line 136
     :pswitch_3d
     iget-object v3, p0, Lcom/samsung/privilege/activity/RegisterActivity;->btnMen:Landroid/widget/ImageView;
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setSelected(Z)V
 
-    .line 139
+    .line 137
     iget-object v3, p0, Lcom/samsung/privilege/activity/RegisterActivity;->btnWomen:Landroid/widget/ImageView;
 
     invoke-virtual {v3, v5}, Landroid/widget/ImageView;->setSelected(Z)V
 
-    .line 140
+    .line 138
     iput v4, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gender:I
 
     goto :goto_3c
 
-    .line 143
+    .line 141
     :pswitch_4a
     iget-object v3, p0, Lcom/samsung/privilege/activity/RegisterActivity;->btnMen:Landroid/widget/ImageView;
 
     invoke-virtual {v3, v5}, Landroid/widget/ImageView;->setSelected(Z)V
 
-    .line 144
+    .line 142
     iget-object v3, p0, Lcom/samsung/privilege/activity/RegisterActivity;->btnWomen:Landroid/widget/ImageView;
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setSelected(Z)V
 
-    .line 145
+    .line 143
     const/4 v3, 0x2
 
     iput v3, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gender:I
 
     goto :goto_3c
 
-    .line 157
+    .line 155
     .restart local v0    # "text_edtBD":Ljava/lang/String;
     .restart local v1    # "text_edtFName":Ljava/lang/String;
     .restart local v2    # "text_edtLName":Ljava/lang/String;
@@ -1094,7 +1209,7 @@
 
     if-eqz v3, :cond_68
 
-    .line 160
+    .line 158
     :cond_62
     const-string v3, "Please input First Name"
 
@@ -1102,7 +1217,7 @@
 
     goto :goto_3c
 
-    .line 164
+    .line 162
     :cond_68
     if-eqz v2, :cond_72
 
@@ -1114,7 +1229,7 @@
 
     if-eqz v3, :cond_78
 
-    .line 167
+    .line 165
     :cond_72
     const-string v3, "Please input Last Name"
 
@@ -1122,7 +1237,7 @@
 
     goto :goto_3c
 
-    .line 171
+    .line 169
     :cond_78
     if-eqz v0, :cond_82
 
@@ -1134,7 +1249,7 @@
 
     if-eqz v3, :cond_88
 
-    .line 174
+    .line 172
     :cond_82
     const-string v3, "Please input Birthday"
 
@@ -1142,15 +1257,15 @@
 
     goto :goto_3c
 
-    .line 178
+    .line 176
     :cond_88
     invoke-virtual {p0, p1}, Lcom/samsung/privilege/activity/RegisterActivity;->doGoToUpdate(Landroid/view/View;)V
 
     goto :goto_3c
 
-    .line 136
+    .line 134
     :pswitch_data_8c
-    .packed-switch 0x7f070353
+    .packed-switch 0x7f0c0361
         :pswitch_3d
         :pswitch_4a
     .end packed-switch
@@ -1165,7 +1280,7 @@
     invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 71
-    const v0, 0x7f030111
+    const v0, 0x7f030113
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RegisterActivity;->setContentView(I)V
 
@@ -1198,17 +1313,92 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 332
-    packed-switch p1, :pswitch_data_14
+    .line 364
+    packed-switch p1, :pswitch_data_58
 
-    .line 338
+    .line 374
     const/4 v0, 0x0
 
     :goto_4
     return-object v0
 
-    .line 335
+    .line 367
     :pswitch_5
+    const-string v1, "Register"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "year="
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget v3, p0, Lcom/samsung/privilege/activity/RegisterActivity;->year:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ",month="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget v3, p0, Lcom/samsung/privilege/activity/RegisterActivity;->month:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ",day="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget v3, p0, Lcom/samsung/privilege/activity/RegisterActivity;->day:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 368
+    iget v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->year:I
+
+    if-nez v1, :cond_3b
+
+    const/16 v1, 0x7b2
+
+    iput v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->year:I
+
+    .line 369
+    :cond_3b
+    iget v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->month:I
+
+    if-nez v1, :cond_42
+
+    const/4 v1, 0x0
+
+    iput v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->month:I
+
+    .line 370
+    :cond_42
+    iget v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->day:I
+
+    if-nez v1, :cond_49
+
+    const/4 v1, 0x1
+
+    iput v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->day:I
+
+    .line 371
+    :cond_49
     new-instance v0, Landroid/app/DatePickerDialog;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/RegisterActivity;->datePickerListener:Landroid/app/DatePickerDialog$OnDateSetListener;
@@ -1223,12 +1413,12 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/app/DatePickerDialog;-><init>(Landroid/content/Context;Landroid/app/DatePickerDialog$OnDateSetListener;III)V
 
-    .line 336
+    .line 372
     .local v0, "dialog":Landroid/app/DatePickerDialog;
     goto :goto_4
 
-    .line 332
-    :pswitch_data_14
+    .line 364
+    :pswitch_data_58
     .packed-switch 0x3e7
         :pswitch_5
     .end packed-switch
@@ -1243,7 +1433,7 @@
     .line 83
     const/4 v0, 0x4
 
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_c
 
     .line 84
     const/4 v0, 0x0
@@ -1251,30 +1441,33 @@
     invoke-static {p0, v0}, Lcom/samsung/privilege/UserLogin;->Logout(Landroid/content/Context;Z)V
 
     .line 85
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/RegisterActivity;->finish()V
+
+    .line 86
     const/4 v0, 0x1
 
-    .line 87
-    :goto_8
+    .line 88
+    :goto_b
     return v0
 
-    :cond_9
+    :cond_c
     invoke-super {p0, p1, p2}, Landroid/support/v4/app/FragmentActivity;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
     move-result v0
 
-    goto :goto_8
+    goto :goto_b
 .end method
 
 .method public setCurrentDateOnView()V
     .registers 5
 
     .prologue
-    .line 308
+    .line 340
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 309
+    .line 341
     .local v0, "c":Ljava/util/Calendar;
     const/4 v1, 0x1
 
@@ -1284,7 +1477,7 @@
 
     iput v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->year:I
 
-    .line 310
+    .line 342
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
@@ -1293,7 +1486,7 @@
 
     iput v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->month:I
 
-    .line 311
+    .line 343
     const/4 v1, 0x5
 
     invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
@@ -1302,14 +1495,14 @@
 
     iput v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->day:I
 
-    .line 314
+    .line 346
     iget-object v1, p0, Lcom/samsung/privilege/activity/RegisterActivity;->edtBD:Landroid/widget/TextView;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 316
+    .line 348
     iget v3, p0, Lcom/samsung/privilege/activity/RegisterActivity;->day:I
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
@@ -1348,10 +1541,10 @@
 
     move-result-object v2
 
-    .line 314
+    .line 346
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 318
+    .line 350
     return-void
 .end method
 
@@ -1360,7 +1553,7 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 348
+    .line 384
     iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity;->gHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/samsung/privilege/activity/RegisterActivity$3;
@@ -1369,6 +1562,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 355
+    .line 391
     return-void
 .end method

@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$23;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
-    .line 2922
+    .line 2928
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
     .registers 2
 
     .prologue
-    .line 2922
+    .line 2928
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$23;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     return-object v0
@@ -48,119 +48,119 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
-    .registers 9
+    .registers 10
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    const-wide/32 v5, 0xea60
+    const-wide/32 v6, 0xea60
 
-    const-wide/16 v3, 0x1f4
+    const-wide/16 v4, 0x1f4
 
     const/4 v2, 0x1
 
-    .line 2928
+    .line 2934
     iget-object v1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$23;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->myZoomOutAnimation:Landroid/view/animation/Animation;
-    invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$58(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/view/animation/Animation;
+    invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$59(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/view/animation/Animation;
 
     move-result-object v1
 
     invoke-virtual {v1, v2}, Landroid/view/animation/Animation;->setFillEnabled(Z)V
 
-    .line 2929
+    .line 2935
     iget-object v1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$23;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->myZoomOutAnimation:Landroid/view/animation/Animation;
-    invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$58(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/view/animation/Animation;
+    invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$59(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/view/animation/Animation;
 
     move-result-object v1
 
     invoke-virtual {v1, v2}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
-    .line 2930
+    .line 2936
     iget-object v1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$23;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->myZoomOutAnimation:Landroid/view/animation/Animation;
-    invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$58(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/view/animation/Animation;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v3, v4}, Landroid/view/animation/Animation;->setDuration(J)V
-
-    .line 2931
-    iget-object v1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$23;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
-
-    # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->myZoomOutAnimation:Landroid/view/animation/Animation;
-    invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$58(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/view/animation/Animation;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v5, v6}, Landroid/view/animation/Animation;->setStartOffset(J)V
-
-    .line 2933
-    iget-object v1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$23;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
-
-    # invokes: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->outToLeftAnimation()Landroid/view/animation/Animation;
     invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$59(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/view/animation/Animation;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 2934
-    .local v0, "slideOut":Landroid/view/animation/Animation;
-    invoke-virtual {v0, v2}, Landroid/view/animation/Animation;->setFillEnabled(Z)V
-
-    .line 2935
-    invoke-virtual {v0, v2}, Landroid/view/animation/Animation;->setFillAfter(Z)V
-
-    .line 2936
-    invoke-virtual {v0, v3, v4}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v1, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 2937
-    invoke-virtual {v0, v5, v6}, Landroid/view/animation/Animation;->setStartOffset(J)V
+    iget-object v1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$23;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
+
+    # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->myZoomOutAnimation:Landroid/view/animation/Animation;
+    invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$59(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/view/animation/Animation;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v6, v7}, Landroid/view/animation/Animation;->setStartOffset(J)V
 
     .line 2939
     iget-object v1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$23;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
+    # invokes: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->outToLeftAnimation()Landroid/view/animation/Animation;
+    invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$60(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/view/animation/Animation;
+
+    move-result-object v0
+
+    .line 2940
+    .local v0, "slideOut":Landroid/view/animation/Animation;
+    invoke-virtual {v0, v2}, Landroid/view/animation/Animation;->setFillEnabled(Z)V
+
+    .line 2941
+    invoke-virtual {v0, v2}, Landroid/view/animation/Animation;->setFillAfter(Z)V
+
+    .line 2942
+    invoke-virtual {v0, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
+
+    .line 2943
+    invoke-virtual {v0, v6, v7}, Landroid/view/animation/Animation;->setStartOffset(J)V
+
+    .line 2945
+    iget-object v1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$23;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
+
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gImgBadge:Landroid/widget/ImageView;
-    invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$48(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/widget/ImageView;
+    invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$49(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/widget/ImageView;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/widget/ImageView;->clearAnimation()V
 
-    .line 2940
+    .line 2946
     iget-object v1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$23;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gImgBadge:Landroid/widget/ImageView;
-    invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$48(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/widget/ImageView;
+    invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$49(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/widget/ImageView;
 
     move-result-object v1
 
     iget-object v2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$23;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->myZoomOutAnimation:Landroid/view/animation/Animation;
-    invoke-static {v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$58(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/view/animation/Animation;
+    invoke-static {v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$59(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/view/animation/Animation;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setAnimation(Landroid/view/animation/Animation;)V
 
-    .line 2942
+    .line 2948
     iget-object v1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$23;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gLayoutBadge:Landroid/widget/RelativeLayout;
-    invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$55(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/widget/RelativeLayout;
+    invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$56(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/widget/RelativeLayout;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Landroid/widget/RelativeLayout;->setAnimation(Landroid/view/animation/Animation;)V
 
-    .line 2944
+    .line 2950
     iget-object v1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$23;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gImgBadge:Landroid/widget/ImageView;
-    invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$48(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/widget/ImageView;
+    invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$49(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/widget/ImageView;
 
     move-result-object v1
 
@@ -170,11 +170,11 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2954
+    .line 2960
     iget-object v1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$23;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gLayoutBadge:Landroid/widget/RelativeLayout;
-    invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$55(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/widget/RelativeLayout;
+    invoke-static {v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$56(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/widget/RelativeLayout;
 
     move-result-object v1
 
@@ -184,7 +184,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2969
+    .line 2975
     return-void
 .end method
 
@@ -193,7 +193,7 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 2974
+    .line 2980
     return-void
 .end method
 
@@ -204,26 +204,26 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2978
+    .line 2984
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$23;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gImgBadge:Landroid/widget/ImageView;
-    invoke-static {v0}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$48(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$49(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/widget/ImageView;
 
     move-result-object v0
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2979
+    .line 2985
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$23;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gLayoutBadge:Landroid/widget/RelativeLayout;
-    invoke-static {v0}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$55(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/widget/RelativeLayout;
+    invoke-static {v0}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$56(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/widget/RelativeLayout;
 
     move-result-object v0
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 2980
+    .line 2986
     return-void
 .end method

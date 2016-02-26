@@ -306,7 +306,7 @@
 .end method
 
 .method private declared-synchronized connectToService()V
-    .registers 6
+    .registers 7
 
     .prologue
     .line 271
@@ -361,9 +361,9 @@
 
     invoke-direct {v2, p0, v3}, Lcom/google/analytics/tracking/android/GAServiceProxy$FailedConnectTask;-><init>(Lcom/google/analytics/tracking/android/GAServiceProxy;Lcom/google/analytics/tracking/android/GAServiceProxy$1;)V
 
-    const-wide/16 v3, 0xbb8
+    const-wide/16 v4, 0xbb8
 
-    invoke-virtual {v1, v2, v3, v4}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
+    invoke-virtual {v1, v2, v4, v5}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
 
     .line 278
     const-string v1, "connecting to Analytics service"
@@ -863,10 +863,10 @@
 
 # virtual methods
 .method public clearHits()V
-    .registers 5
+    .registers 6
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     .line 117
     const-string v0, "clearHits called"
@@ -904,12 +904,12 @@
     :pswitch_1c
     iget-object v0, p0, Lcom/google/analytics/tracking/android/GAServiceProxy;->store:Lcom/google/analytics/tracking/android/AnalyticsStore;
 
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    invoke-interface {v0, v1, v2}, Lcom/google/analytics/tracking/android/AnalyticsStore;->clearHits(J)V
+    invoke-interface {v0, v2, v3}, Lcom/google/analytics/tracking/android/AnalyticsStore;->clearHits(J)V
 
     .line 122
-    iput-boolean v3, p0, Lcom/google/analytics/tracking/android/GAServiceProxy;->pendingClearHits:Z
+    iput-boolean v4, p0, Lcom/google/analytics/tracking/android/GAServiceProxy;->pendingClearHits:Z
 
     goto :goto_1b
 
@@ -920,7 +920,7 @@
     invoke-interface {v0}, Lcom/google/analytics/tracking/android/AnalyticsClient;->clearHits()V
 
     .line 126
-    iput-boolean v3, p0, Lcom/google/analytics/tracking/android/GAServiceProxy;->pendingClearHits:Z
+    iput-boolean v4, p0, Lcom/google/analytics/tracking/android/GAServiceProxy;->pendingClearHits:Z
 
     goto :goto_1b
 
@@ -1293,7 +1293,7 @@
 .end method
 
 .method public putHit(Ljava/util/Map;JLjava/lang/String;Ljava/util/List;)V
-    .registers 13
+    .registers 14
     .param p2, "hitTimeInMilliseconds"    # J
     .param p4, "path"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
@@ -1357,7 +1357,7 @@
 .end method
 
 .method public setIdleTimeout(J)V
-    .registers 3
+    .registers 4
     .param p1, "idleTimeout"    # J
 
     .prologue

@@ -29,23 +29,23 @@
     .param p3, "pCacheName"    # Ljava/lang/String;
 
     .prologue
-    .line 3267
+    .line 3442
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     invoke-direct {p0}, Lcom/samsung/privilege/util/http/HttpRQListener;-><init>()V
 
-    .line 3265
+    .line 3440
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;->gCacheName:Ljava/lang/String;
 
-    .line 3268
+    .line 3443
     iput-boolean p2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;->gLoadMore:Z
 
-    .line 3269
+    .line 3444
     iput-object p3, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;->gCacheName:Ljava/lang/String;
 
-    .line 3270
+    .line 3445
     return-void
 .end method
 
@@ -53,7 +53,7 @@
     .registers 2
 
     .prologue
-    .line 3264
+    .line 3439
     iget-boolean v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;->gLoadMore:Z
 
     return v0
@@ -63,7 +63,7 @@
     .registers 2
 
     .prologue
-    .line 3262
+    .line 3437
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     return-object v0
@@ -72,13 +72,13 @@
 
 # virtual methods
 .method public onComplete(ILjava/lang/String;Ljava/lang/Object;)V
-    .registers 9
+    .registers 10
     .param p1, "response_code"    # I
     .param p2, "response_text"    # Ljava/lang/String;
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 3274
+    .line 3449
     const-string v1, "campaign.detail"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -107,12 +107,12 @@
 
     invoke-static {v1, v2}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3276
+    .line 3451
     const/16 v1, 0xc8
 
     if-ne p1, v1, :cond_55
 
-    .line 3277
+    .line 3452
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->gHandler:Landroid/os/Handler;
@@ -126,7 +126,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 3297
+    .line 3472
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->gHandler:Landroid/os/Handler;
@@ -140,7 +140,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 3305
+    .line 3480
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->gListBranch:Lcom/samsung/privilege/control/PullToRefreshListView;
@@ -152,28 +152,28 @@
 
     invoke-direct {v2, p0}, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener$3;-><init>(Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;)V
 
-    .line 3310
-    const-wide/16 v3, 0x3e8
+    .line 3485
+    const-wide/16 v4, 0x3e8
 
-    .line 3305
-    invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/privilege/control/PullToRefreshListView;->postDelayed(Ljava/lang/Runnable;J)Z
+    .line 3480
+    invoke-virtual {v1, v2, v4, v5}, Lcom/samsung/privilege/control/PullToRefreshListView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 3312
+    .line 3487
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     const/4 v2, 0x0
 
     invoke-static {v1, v2}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$25(Lcom/samsung/privilege/activity/CampaignDetailActivity;Z)V
 
-    .line 3313
+    .line 3488
     :goto_54
     return-void
 
-    .line 3289
+    .line 3464
     :cond_55
     const-string v0, "Error: nearby places could not be fetched"
 
-    .line 3290
+    .line 3465
     .local v0, "err_message":Ljava/lang/String;
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
@@ -187,7 +187,7 @@
 
     if-eqz v1, :cond_7a
 
-    .line 3291
+    .line 3466
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -210,7 +210,7 @@
 
     move-result-object v0
 
-    .line 3293
+    .line 3468
     :cond_7a
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 

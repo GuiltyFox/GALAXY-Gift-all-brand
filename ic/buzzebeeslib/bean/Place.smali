@@ -205,9 +205,9 @@
 
     invoke-static {v1, v2}, Lic/buzzebeeslib/util/JsonUtil;->getDouble(Lorg/json/JSONObject;Ljava/lang/String;)D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v1, v2}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
+    invoke-static {v2, v3}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
 
     move-result-object v1
 
@@ -232,9 +232,9 @@
 
     invoke-static {v1, v2}, Lic/buzzebeeslib/util/JsonUtil;->getDouble(Lorg/json/JSONObject;Ljava/lang/String;)D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v1, v2}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
+    invoke-static {v2, v3}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
 
     move-result-object v1
 
@@ -252,27 +252,27 @@
 
     invoke-static {p1, v1}, Lic/buzzebeeslib/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    iput-wide v1, p0, Lic/buzzebeeslib/bean/Place;->checkins:J
+    iput-wide v2, p0, Lic/buzzebeeslib/bean/Place;->checkins:J
 
     .line 91
     const-string v1, "were_here_count"
 
     invoke-static {p1, v1}, Lic/buzzebeeslib/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    iput-wide v1, p0, Lic/buzzebeeslib/bean/Place;->were_here_count:J
+    iput-wide v2, p0, Lic/buzzebeeslib/bean/Place;->were_here_count:J
 
     .line 92
     const-string v1, "talking_about_count"
 
     invoke-static {p1, v1}, Lic/buzzebeeslib/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    iput-wide v1, p0, Lic/buzzebeeslib/bean/Place;->talking_about_count:J
+    iput-wide v2, p0, Lic/buzzebeeslib/bean/Place;->talking_about_count:J
 
     .line 94
     const-string v1, "isBuzzeBeesPlace"
@@ -301,9 +301,9 @@
 
     invoke-static {p1, v1}, Lic/buzzebeeslib/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    long-to-float v1, v1
+    long-to-float v1, v2
 
     iput v1, p0, Lic/buzzebeeslib/bean/Place;->distance:F
 

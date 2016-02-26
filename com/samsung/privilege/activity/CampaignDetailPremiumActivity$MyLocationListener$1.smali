@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$MyLocationListener$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$MyLocationListener;
 
-    .line 2293
+    .line 2294
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 5
 
     .prologue
-    .line 2296
+    .line 2297
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$MyLocationListener$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$MyLocationListener;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$MyLocationListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -67,7 +67,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a031a
+    const v3, 0x7f090321
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getString(I)Ljava/lang/String;
 
@@ -89,6 +89,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2297
+    .line 2298
     return-void
 .end method

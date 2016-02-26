@@ -180,7 +180,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 6
+    .registers 7
 
     .prologue
     .line 873
@@ -220,9 +220,9 @@
 
     iget v3, p0, Lcom/actionbarsherlock/widget/ActivityChooserModel$ActivityResolveInfo;->weight:F
 
-    float-to-double v3, v3
+    float-to-double v4, v3
 
-    invoke-direct {v2, v3, v4}, Ljava/math/BigDecimal;-><init>(D)V
+    invoke-direct {v2, v4, v5}, Ljava/math/BigDecimal;-><init>(D)V
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

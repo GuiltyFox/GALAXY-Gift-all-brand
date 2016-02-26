@@ -123,7 +123,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 45
-    const v8, 0x7f030125
+    const v8, 0x7f030127
 
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->setContentView(I)V
 
@@ -131,7 +131,7 @@
     invoke-direct {p0}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->initialParam()V
 
     .line 48
-    const v8, 0x7f070031
+    const v8, 0x7f0c0031
 
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->findViewById(I)Landroid/view/View;
 
@@ -158,13 +158,13 @@
     if-eqz v8, :cond_fb
 
     .line 50
-    const v8, 0x7f0202b6
+    const v8, 0x7f0202b8
 
     invoke-virtual {v2, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 59
     :goto_2f
-    const v8, 0x7f07005a
+    const v8, 0x7f0c005a
 
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->findViewById(I)Landroid/view/View;
 
@@ -185,13 +185,13 @@
     if-eqz v8, :cond_133
 
     .line 61
-    const v8, 0x7f0202ba
+    const v8, 0x7f0202bc
 
     invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 66
     :goto_48
-    const v8, 0x7f070299
+    const v8, 0x7f0c0299
 
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->findViewById(I)Landroid/view/View;
 
@@ -201,7 +201,7 @@
 
     .line 67
     .local v5, "tvSerial":Landroid/widget/TextView;
-    const v8, 0x7f07029a
+    const v8, 0x7f0c029a
 
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->findViewById(I)Landroid/view/View;
 
@@ -280,7 +280,7 @@
     if-eqz v8, :cond_a7
 
     .line 81
-    const v8, 0x7f070298
+    const v8, 0x7f0c0298
 
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->findViewById(I)Landroid/view/View;
 
@@ -297,7 +297,7 @@
     .line 85
     .end local v4    # "layoutSerial":Landroid/widget/LinearLayout;
     :cond_a7
-    const v8, 0x7f070296
+    const v8, 0x7f0c0296
 
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->findViewById(I)Landroid/view/View;
 
@@ -409,7 +409,7 @@
     if-eqz v8, :cond_113
 
     .line 52
-    const v8, 0x7f0202b5
+    const v8, 0x7f0202b7
 
     invoke-virtual {v2, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -434,7 +434,7 @@
     if-eqz v8, :cond_12b
 
     .line 54
-    const v8, 0x7f0202b7
+    const v8, 0x7f0202b9
 
     invoke-virtual {v2, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -442,7 +442,7 @@
 
     .line 56
     :cond_12b
-    const v8, 0x7f0202b8
+    const v8, 0x7f0202ba
 
     invoke-virtual {v2, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -451,7 +451,7 @@
     .line 63
     .restart local v3    # "imgLogo":Landroid/widget/ImageView;
     :cond_133
-    const v8, 0x7f0202b9
+    const v8, 0x7f0202bb
 
     invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -638,7 +638,7 @@
 
     .line 179
     :pswitch_1b
-    const v2, 0x7f070296
+    const v2, 0x7f0c0296
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->findViewById(I)Landroid/view/View;
 

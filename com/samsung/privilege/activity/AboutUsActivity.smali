@@ -868,7 +868,7 @@
     .line 159
     :cond_310
     :goto_310
-    const v30, 0x7f0a02eb
+    const v30, 0x7f0902f2
 
     move-object/from16 v0, p0
 
@@ -946,7 +946,7 @@
     .line 165
     new-instance v30, Ljava/lang/StringBuilder;
 
-    const v31, 0x7f0a02ea
+    const v31, 0x7f0902f1
 
     move-object/from16 v0, p0
 
@@ -1075,7 +1075,7 @@
     .line 182
     :cond_3d1
     :goto_3d1
-    const v30, 0x7f0a02ef
+    const v30, 0x7f0902f6
 
     move-object/from16 v0, p0
 
@@ -1093,7 +1093,7 @@
     .restart local v2    # "body":Ljava/lang/String;
     new-instance v30, Ljava/lang/StringBuilder;
 
-    const v31, 0x7f0a02ee
+    const v31, 0x7f0902f5
 
     move-object/from16 v0, p0
 
@@ -1371,7 +1371,7 @@
 
     .line 145
     .local v3, "e":Ljava/lang/Exception;
-    const v30, 0x7f0a02e7
+    const v30, 0x7f0902ee
 
     move-object/from16 v0, p0
 
@@ -2320,7 +2320,7 @@
     iput-object v2, p0, Lcom/samsung/privilege/activity/AboutUsActivity;->gFont:Landroid/graphics/Typeface;
 
     .line 48
-    const v2, 0x7f070031
+    const v2, 0x7f0c0031
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/AboutUsActivity;->findViewById(I)Landroid/view/View;
 
@@ -2347,7 +2347,7 @@
     if-eqz v2, :cond_76
 
     .line 50
-    const v2, 0x7f0202b6
+    const v2, 0x7f0202b8
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2374,7 +2374,7 @@
     if-eqz v2, :cond_ab
 
     .line 61
-    const v2, 0x7f0202ba
+    const v2, 0x7f0202bc
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2417,7 +2417,7 @@
     if-eqz v2, :cond_8d
 
     .line 52
-    const v2, 0x7f0202b5
+    const v2, 0x7f0202b7
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2442,7 +2442,7 @@
     if-eqz v2, :cond_a4
 
     .line 54
-    const v2, 0x7f0202b7
+    const v2, 0x7f0202b9
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2450,7 +2450,7 @@
 
     .line 56
     :cond_a4
-    const v2, 0x7f0202b8
+    const v2, 0x7f0202ba
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2459,7 +2459,7 @@
     .line 63
     .restart local v1    # "imgLogo":Landroid/widget/ImageView;
     :cond_ab
-    const v2, 0x7f0202b9
+    const v2, 0x7f0202bb
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 

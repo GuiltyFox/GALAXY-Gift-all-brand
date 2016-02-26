@@ -1248,7 +1248,7 @@
 .end method
 
 .method public setDefaultActivity(I)V
-    .registers 9
+    .registers 10
     .param p1, "index"    # I
 
     .prologue
@@ -1319,10 +1319,10 @@
     .line 536
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v5
+    move-result-wide v6
 
     .line 535
-    invoke-direct {v1, v0, v5, v6, v4}, Lcom/actionbarsherlock/widget/ActivityChooserModel$HistoricalRecord;-><init>(Landroid/content/ComponentName;JF)V
+    invoke-direct {v1, v0, v6, v7, v4}, Lcom/actionbarsherlock/widget/ActivityChooserModel$HistoricalRecord;-><init>(Landroid/content/ComponentName;JF)V
 
     .line 537
     .local v1, "historicalRecord":Lcom/actionbarsherlock/widget/ActivityChooserModel$HistoricalRecord;

@@ -122,7 +122,7 @@
     invoke-virtual {v1, v0}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
     .line 165
-    const v1, 0x7f030105
+    const v1, 0x7f030107
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/MiscFragmentActivity;->setContentView(I)V
 
@@ -265,7 +265,7 @@
 
     .line 62
     :cond_42
-    const v10, 0x7f070031
+    const v10, 0x7f0c0031
 
     invoke-virtual {p0, v10}, Lcom/samsung/privilege/activity/MiscFragmentActivity;->findViewById(I)Landroid/view/View;
 
@@ -292,7 +292,7 @@
     if-eqz v10, :cond_12b
 
     .line 64
-    const v10, 0x7f0202b6
+    const v10, 0x7f0202b8
 
     invoke-virtual {v3, v10}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -319,7 +319,7 @@
     if-eqz v10, :cond_163
 
     .line 75
-    const v10, 0x7f0202ba
+    const v10, 0x7f0202bc
 
     invoke-virtual {v4, v10}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -336,7 +336,7 @@
     iput-object v10, p0, Lcom/samsung/privilege/activity/MiscFragmentActivity;->mAdapter:Lcom/samsung/privilege/activity/pager/MiscFragmentAdapter;
 
     .line 82
-    const v10, 0x7f070055
+    const v10, 0x7f0c0055
 
     invoke-virtual {p0, v10}, Lcom/samsung/privilege/activity/MiscFragmentActivity;->findViewById(I)Landroid/view/View;
 
@@ -383,7 +383,7 @@
 
     .line 87
     .local v9, "tf":Landroid/graphics/Typeface;
-    const v10, 0x7f070056
+    const v10, 0x7f0c0056
 
     invoke-virtual {p0, v10}, Lcom/samsung/privilege/activity/MiscFragmentActivity;->findViewById(I)Landroid/view/View;
 
@@ -476,7 +476,7 @@
     invoke-virtual {v1, v10}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 100
-    const v10, 0x7f02009f
+    const v10, 0x7f0200a1
 
     invoke-virtual {v1, v10}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
@@ -550,7 +550,7 @@
     if-eqz v10, :cond_143
 
     .line 66
-    const v10, 0x7f0202b5
+    const v10, 0x7f0202b7
 
     invoke-virtual {v3, v10}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -575,7 +575,7 @@
     if-eqz v10, :cond_15b
 
     .line 68
-    const v10, 0x7f0202b7
+    const v10, 0x7f0202b9
 
     invoke-virtual {v3, v10}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -583,7 +583,7 @@
 
     .line 70
     :cond_15b
-    const v10, 0x7f0202b8
+    const v10, 0x7f0202ba
 
     invoke-virtual {v3, v10}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -592,7 +592,7 @@
     .line 77
     .restart local v4    # "imgLogo":Landroid/widget/ImageView;
     :cond_163
-    const v10, 0x7f0202b9
+    const v10, 0x7f0202bb
 
     invoke-virtual {v4, v10}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -667,7 +667,7 @@
 .end method
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
-    .registers 5
+    .registers 6
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
@@ -691,9 +691,9 @@
     .line 133
     const-string v0, "gLastResumeTime"
 
-    iget-wide v1, p0, Lcom/samsung/privilege/activity/MiscFragmentActivity;->gLastResumeTime:J
+    iget-wide v2, p0, Lcom/samsung/privilege/activity/MiscFragmentActivity;->gLastResumeTime:J
 
-    invoke-virtual {p1, v0, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    invoke-virtual {p1, v0, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 134
     return-void

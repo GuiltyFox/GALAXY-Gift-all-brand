@@ -33,7 +33,7 @@
 
     .prologue
     .line 56
-    const v1, 0x7f07005b
+    const v1, 0x7f0c005b
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->findViewById(I)Landroid/view/View;
 
@@ -225,7 +225,7 @@
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->requestWindowFeature(I)Z
 
     .line 40
-    const v1, 0x7f030121
+    const v1, 0x7f030123
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->setContentView(I)V
 
@@ -256,7 +256,7 @@
     iput-object v1, p0, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->gFont:Landroid/graphics/Typeface;
 
     .line 45
-    const v1, 0x7f07005a
+    const v1, 0x7f0c005a
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->findViewById(I)Landroid/view/View;
 
@@ -277,7 +277,7 @@
     if-eqz v1, :cond_54
 
     .line 47
-    const v1, 0x7f0202ba
+    const v1, 0x7f0202bc
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -302,7 +302,7 @@
     .line 49
     .restart local v0    # "imgLogo":Landroid/widget/ImageView;
     :cond_54
-    const v1, 0x7f0202b9
+    const v1, 0x7f0202bb
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 

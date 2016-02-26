@@ -26,7 +26,7 @@
     .registers 2
 
     .prologue
-    .line 1093
+    .line 1097
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
     .registers 2
 
     .prologue
-    .line 1093
+    .line 1097
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     return-object v0
@@ -47,46 +47,46 @@
 
 # virtual methods
 .method public onLocationChanged(Landroid/location/Location;)V
-    .registers 6
+    .registers 7
     .param p1, "loc"    # Landroid/location/Location;
 
     .prologue
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    .line 1097
+    .line 1101
     const-string v0, "buzzebees.places"
 
     const-string v1, "public void onLocationChanged(Location loc) {"
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1105
+    .line 1109
     if-eqz p1, :cond_43
 
-    .line 1106
+    .line 1110
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
-    invoke-static {v0, v3}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$10(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;Z)V
+    invoke-static {v0, v4}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$10(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;Z)V
 
-    .line 1107
+    .line 1111
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$11(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;D)V
+    invoke-static {v0, v2, v3}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$11(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;D)V
 
-    .line 1108
+    .line 1112
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$12(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;D)V
+    invoke-static {v0, v2, v3}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$12(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;D)V
 
-    .line 1110
+    .line 1114
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gHandler:Landroid/os/Handler;
@@ -100,29 +100,29 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1120
+    .line 1124
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->lm:Landroid/location/LocationManager;
 
     invoke-virtual {v0, p0}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
 
-    .line 1122
+    .line 1126
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$6(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;Z)V
 
-    .line 1123
+    .line 1127
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     const-string v1, "nearby"
 
     # invokes: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->loadCampaign(ZLjava/lang/String;)V
-    invoke-static {v0, v3, v1}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$16(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;ZLjava/lang/String;)V
+    invoke-static {v0, v4, v1}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$16(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;ZLjava/lang/String;)V
 
-    .line 1125
+    .line 1129
     :cond_43
     return-void
 .end method
@@ -132,14 +132,14 @@
     .param p1, "provider"    # Ljava/lang/String;
 
     .prologue
-    .line 1129
+    .line 1133
     const-string v0, "buzzebees.marketlist.fragment"
 
     const-string v1, "public void onProviderDisabled(String provider) {"
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1130
+    .line 1134
     return-void
 .end method
 
@@ -148,14 +148,14 @@
     .param p1, "provider"    # Ljava/lang/String;
 
     .prologue
-    .line 1134
+    .line 1138
     const-string v0, "buzzebees.marketlist.fragment"
 
     const-string v1, "public void onProviderEnabled(String provider) {"
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1135
+    .line 1139
     return-void
 .end method
 
@@ -166,13 +166,13 @@
     .param p3, "extras"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1139
+    .line 1143
     const-string v0, "buzzebees.marketlist.fragment"
 
     const-string v1, "public void onStatusChanged(String provider, int status, Bundle extras) {"
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1140
+    .line 1144
     return-void
 .end method

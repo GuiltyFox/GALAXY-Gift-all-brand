@@ -92,7 +92,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 36
-    const v5, 0x7f03010a
+    const v5, 0x7f03010c
 
     invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/PointStatementActivity;->setContentView(I)V
 
@@ -118,7 +118,7 @@
 
     .line 40
     .local v0, "font":Landroid/graphics/Typeface;
-    const v5, 0x7f07005b
+    const v5, 0x7f0c005b
 
     invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/PointStatementActivity;->findViewById(I)Landroid/view/View;
 
@@ -131,7 +131,7 @@
     invoke-virtual {v3, v0}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 43
-    const v5, 0x7f070296
+    const v5, 0x7f0c0296
 
     invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/PointStatementActivity;->findViewById(I)Landroid/view/View;
 
@@ -217,7 +217,7 @@
 
     .line 110
     :goto_7d
-    const v5, 0x7f070031
+    const v5, 0x7f0c0031
 
     invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/PointStatementActivity;->findViewById(I)Landroid/view/View;
 
@@ -244,13 +244,13 @@
     if-eqz v5, :cond_d4
 
     .line 112
-    const v5, 0x7f0202b6
+    const v5, 0x7f0202b8
 
     invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 121
     :goto_9c
-    const v5, 0x7f07005a
+    const v5, 0x7f0c005a
 
     invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/PointStatementActivity;->findViewById(I)Landroid/view/View;
 
@@ -271,7 +271,7 @@
     if-eqz v5, :cond_109
 
     .line 123
-    const v5, 0x7f0202ba
+    const v5, 0x7f0202bc
 
     invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -332,7 +332,7 @@
     if-eqz v5, :cond_eb
 
     .line 114
-    const v5, 0x7f0202b5
+    const v5, 0x7f0202b7
 
     invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -357,7 +357,7 @@
     if-eqz v5, :cond_102
 
     .line 116
-    const v5, 0x7f0202b7
+    const v5, 0x7f0202b9
 
     invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -365,7 +365,7 @@
 
     .line 118
     :cond_102
-    const v5, 0x7f0202b8
+    const v5, 0x7f0202ba
 
     invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -374,7 +374,7 @@
     .line 125
     .restart local v2    # "imgLogo":Landroid/widget/ImageView;
     :cond_109
-    const v5, 0x7f0202b9
+    const v5, 0x7f0202bb
 
     invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -427,7 +427,7 @@
 
     .line 140
     :pswitch_1b
-    const v2, 0x7f070296
+    const v2, 0x7f0c0296
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/PointStatementActivity;->findViewById(I)Landroid/view/View;
 

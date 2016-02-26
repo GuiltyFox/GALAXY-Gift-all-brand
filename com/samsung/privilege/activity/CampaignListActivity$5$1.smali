@@ -37,7 +37,7 @@
 
     iput-boolean p3, p0, Lcom/samsung/privilege/activity/CampaignListActivity$5$1;->val$is_auto_login_fb:Z
 
-    .line 1089
+    .line 1103
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,13 +49,13 @@
     .registers 3
 
     .prologue
-    .line 1092
+    .line 1106
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$5$1;->val$activityContext:Landroid/content/Context;
 
     iget-boolean v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$5$1;->val$is_auto_login_fb:Z
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/UserLogin;->Logout(Landroid/content/Context;Z)V
 
-    .line 1093
+    .line 1107
     return-void
 .end method

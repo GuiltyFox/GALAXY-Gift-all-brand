@@ -29,7 +29,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/bitmapfun/util/DiskLruCache;Ljava/lang/String;J[Ljava/io/InputStream;)V
-    .registers 6
+    .registers 7
     .param p2, "key"    # Ljava/lang/String;
     .param p3, "sequenceNumber"    # J
     .param p5, "ins"    # [Ljava/io/InputStream;
@@ -54,7 +54,7 @@
 .end method
 
 .method synthetic constructor <init>(Lcom/bitmapfun/util/DiskLruCache;Ljava/lang/String;J[Ljava/io/InputStream;Lcom/bitmapfun/util/DiskLruCache$Snapshot;)V
-    .registers 7
+    .registers 8
 
     .prologue
     .line 735

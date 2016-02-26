@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(JJ)V
-    .registers 5
+    .registers 6
     .param p1, "millisInFuture"    # J
     .param p3, "countDownInterval"    # J
 

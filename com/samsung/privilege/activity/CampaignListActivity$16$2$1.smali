@@ -45,7 +45,7 @@
 
     iput-object p5, p0, Lcom/samsung/privilege/activity/CampaignListActivity$16$2$1;->val$layoutButton:Landroid/widget/LinearLayout;
 
-    .line 1613
+    .line 1631
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -55,7 +55,7 @@
     .registers 2
 
     .prologue
-    .line 1613
+    .line 1631
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$16$2$1;->this$2:Lcom/samsung/privilege/activity/CampaignListActivity$16$2;
 
     return-object v0
@@ -67,7 +67,7 @@
     .registers 8
 
     .prologue
-    .line 1616
+    .line 1634
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$16$2$1;->this$2:Lcom/samsung/privilege/activity/CampaignListActivity$16$2;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity$16$2;->this$1:Lcom/samsung/privilege/activity/CampaignListActivity$16;
@@ -96,6 +96,6 @@
 
     invoke-virtual {v6, v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1652
+    .line 1670
     return-void
 .end method

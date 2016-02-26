@@ -450,7 +450,7 @@
 .end method
 
 .method public sendHit(Ljava/util/Map;JLjava/lang/String;Ljava/util/List;)V
-    .registers 13
+    .registers 14
     .param p2, "hitTimeInMilliseconds"    # J
     .param p4, "path"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;

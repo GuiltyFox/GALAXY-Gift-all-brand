@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener$1;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener;
 
-    .line 1110
+    .line 1114
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
     .prologue
     const/16 v4, 0x8
 
-    .line 1113
+    .line 1117
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener$1;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
@@ -69,7 +69,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a031a
+    const v3, 0x7f090321
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getString(I)Ljava/lang/String;
 
@@ -91,7 +91,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1115
+    .line 1119
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener$1;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
@@ -106,7 +106,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1116
+    .line 1120
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener$1;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
@@ -121,6 +121,6 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 1117
+    .line 1121
     return-void
 .end method

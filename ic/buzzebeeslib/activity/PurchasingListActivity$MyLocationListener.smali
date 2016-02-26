@@ -52,88 +52,88 @@
 
     .prologue
     .line 1293
-    iget-object v5, p0, Lic/buzzebeeslib/activity/PurchasingListActivity$MyLocationListener;->this$0:Lic/buzzebeeslib/activity/PurchasingListActivity;
+    iget-object v1, p0, Lic/buzzebeeslib/activity/PurchasingListActivity$MyLocationListener;->this$0:Lic/buzzebeeslib/activity/PurchasingListActivity;
 
     # getter for: Lic/buzzebeeslib/activity/PurchasingListActivity;->gDialog:Landroid/app/ProgressDialog;
-    invoke-static {v5}, Lic/buzzebeeslib/activity/PurchasingListActivity;->access$22(Lic/buzzebeeslib/activity/PurchasingListActivity;)Landroid/app/ProgressDialog;
+    invoke-static {v1}, Lic/buzzebeeslib/activity/PurchasingListActivity;->access$22(Lic/buzzebeeslib/activity/PurchasingListActivity;)Landroid/app/ProgressDialog;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Landroid/app/ProgressDialog;->dismiss()V
+    invoke-virtual {v1}, Landroid/app/ProgressDialog;->dismiss()V
 
     .line 1294
     if-eqz p1, :cond_47
 
     .line 1296
     :try_start_b
-    new-instance v5, Ljava/lang/Double;
+    new-instance v1, Ljava/lang/Double;
 
     invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
 
     move-result-wide v6
 
-    invoke-direct {v5, v6, v7}, Ljava/lang/Double;-><init>(D)V
+    invoke-direct {v1, v6, v7}, Ljava/lang/Double;-><init>(D)V
 
-    invoke-virtual {v5}, Ljava/lang/Double;->doubleValue()D
+    invoke-virtual {v1}, Ljava/lang/Double;->doubleValue()D
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 1297
-    .local v1, "lat":D
-    new-instance v5, Ljava/lang/Double;
+    .local v2, "lat":D
+    new-instance v1, Ljava/lang/Double;
 
     invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
 
     move-result-wide v6
 
-    invoke-direct {v5, v6, v7}, Ljava/lang/Double;-><init>(D)V
+    invoke-direct {v1, v6, v7}, Ljava/lang/Double;-><init>(D)V
 
-    invoke-virtual {v5}, Ljava/lang/Double;->doubleValue()D
+    invoke-virtual {v1}, Ljava/lang/Double;->doubleValue()D
 
-    move-result-wide v3
+    move-result-wide v4
 
     .line 1299
-    .local v3, "lon":D
-    iget-object v5, p0, Lic/buzzebeeslib/activity/PurchasingListActivity$MyLocationListener;->this$0:Lic/buzzebeeslib/activity/PurchasingListActivity;
+    .local v4, "lon":D
+    iget-object v1, p0, Lic/buzzebeeslib/activity/PurchasingListActivity$MyLocationListener;->this$0:Lic/buzzebeeslib/activity/PurchasingListActivity;
 
     # getter for: Lic/buzzebeeslib/activity/PurchasingListActivity;->location:Lorg/json/JSONObject;
-    invoke-static {v5}, Lic/buzzebeeslib/activity/PurchasingListActivity;->access$23(Lic/buzzebeeslib/activity/PurchasingListActivity;)Lorg/json/JSONObject;
+    invoke-static {v1}, Lic/buzzebeeslib/activity/PurchasingListActivity;->access$23(Lic/buzzebeeslib/activity/PurchasingListActivity;)Lorg/json/JSONObject;
 
-    move-result-object v5
+    move-result-object v1
 
     const-string v6, "latitude"
 
-    invoke-virtual {v5, v6, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;D)Lorg/json/JSONObject;
+    invoke-virtual {v1, v6, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;D)Lorg/json/JSONObject;
 
     .line 1300
-    iget-object v5, p0, Lic/buzzebeeslib/activity/PurchasingListActivity$MyLocationListener;->this$0:Lic/buzzebeeslib/activity/PurchasingListActivity;
+    iget-object v1, p0, Lic/buzzebeeslib/activity/PurchasingListActivity$MyLocationListener;->this$0:Lic/buzzebeeslib/activity/PurchasingListActivity;
 
     # getter for: Lic/buzzebeeslib/activity/PurchasingListActivity;->location:Lorg/json/JSONObject;
-    invoke-static {v5}, Lic/buzzebeeslib/activity/PurchasingListActivity;->access$23(Lic/buzzebeeslib/activity/PurchasingListActivity;)Lorg/json/JSONObject;
+    invoke-static {v1}, Lic/buzzebeeslib/activity/PurchasingListActivity;->access$23(Lic/buzzebeeslib/activity/PurchasingListActivity;)Lorg/json/JSONObject;
 
-    move-result-object v5
+    move-result-object v1
 
     const-string v6, "longitude"
 
-    invoke-virtual {v5, v6, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;D)Lorg/json/JSONObject;
+    invoke-virtual {v1, v6, v4, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;D)Lorg/json/JSONObject;
 
     .line 1302
-    iget-object v5, p0, Lic/buzzebeeslib/activity/PurchasingListActivity$MyLocationListener;->this$0:Lic/buzzebeeslib/activity/PurchasingListActivity;
+    iget-object v1, p0, Lic/buzzebeeslib/activity/PurchasingListActivity$MyLocationListener;->this$0:Lic/buzzebeeslib/activity/PurchasingListActivity;
 
     # invokes: Lic/buzzebeeslib/activity/PurchasingListActivity;->doFilterByLatLon(DD)V
-    invoke-static {v5, v1, v2, v3, v4}, Lic/buzzebeeslib/activity/PurchasingListActivity;->access$24(Lic/buzzebeeslib/activity/PurchasingListActivity;DD)V
+    invoke-static {v1, v2, v3, v4, v5}, Lic/buzzebeeslib/activity/PurchasingListActivity;->access$24(Lic/buzzebeeslib/activity/PurchasingListActivity;DD)V
     :try_end_40
     .catch Lorg/json/JSONException; {:try_start_b .. :try_end_40} :catch_48
 
     .line 1309
-    .end local v1    # "lat":D
-    .end local v3    # "lon":D
+    .end local v2    # "lat":D
+    .end local v4    # "lon":D
     :goto_40
-    iget-object v5, p0, Lic/buzzebeeslib/activity/PurchasingListActivity$MyLocationListener;->this$0:Lic/buzzebeeslib/activity/PurchasingListActivity;
+    iget-object v1, p0, Lic/buzzebeeslib/activity/PurchasingListActivity$MyLocationListener;->this$0:Lic/buzzebeeslib/activity/PurchasingListActivity;
 
-    iget-object v5, v5, Lic/buzzebeeslib/activity/PurchasingListActivity;->lm:Landroid/location/LocationManager;
+    iget-object v1, v1, Lic/buzzebeeslib/activity/PurchasingListActivity;->lm:Landroid/location/LocationManager;
 
-    invoke-virtual {v5, p0}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
+    invoke-virtual {v1, p0}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
 
     .line 1312
     :cond_47
@@ -145,7 +145,7 @@
 
     .line 1304
     .local v0, "e":Lorg/json/JSONException;
-    iget-object v5, p0, Lic/buzzebeeslib/activity/PurchasingListActivity$MyLocationListener;->this$0:Lic/buzzebeeslib/activity/PurchasingListActivity;
+    iget-object v1, p0, Lic/buzzebeeslib/activity/PurchasingListActivity$MyLocationListener;->this$0:Lic/buzzebeeslib/activity/PurchasingListActivity;
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -166,7 +166,7 @@
     move-result-object v6
 
     # invokes: Lic/buzzebeeslib/activity/PurchasingListActivity;->showToast(Ljava/lang/String;)V
-    invoke-static {v5, v6}, Lic/buzzebeeslib/activity/PurchasingListActivity;->access$3(Lic/buzzebeeslib/activity/PurchasingListActivity;Ljava/lang/String;)V
+    invoke-static {v1, v6}, Lic/buzzebeeslib/activity/PurchasingListActivity;->access$3(Lic/buzzebeeslib/activity/PurchasingListActivity;Ljava/lang/String;)V
 
     goto :goto_40
 .end method

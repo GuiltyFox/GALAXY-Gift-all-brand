@@ -37,7 +37,7 @@
 
     iput-object p3, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->val$response_text_final:Ljava/lang/String;
 
-    .line 2017
+    .line 2192
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,10 +46,10 @@
 
 # virtual methods
 .method public run()V
-    .registers 36
+    .registers 35
 
     .prologue
-    .line 2020
+    .line 2195
     :try_start_0
     move-object/from16 v0, p0
 
@@ -57,9 +57,9 @@
 
     const/16 v3, 0xc8
 
-    if-ne v2, v3, :cond_3fa
+    if-ne v2, v3, :cond_3f8
 
-    .line 2021
+    .line 2196
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -71,48 +71,48 @@
 
     if-eqz v2, :cond_21d
 
-    .line 2023
-    new-instance v26, Lorg/json/JSONObject;
+    .line 2198
+    new-instance v25, Lorg/json/JSONObject;
 
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->val$response_text_final:Ljava/lang/String;
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v25
 
     invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 2024
-    .local v26, "jsonRoot":Lorg/json/JSONObject;
+    .line 2199
+    .local v25, "jsonRoot":Lorg/json/JSONObject;
     const-string v2, "Serial"
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v25
 
     invoke-static {v0, v2}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v10
 
-    .line 2025
-    .local v11, "serial":Ljava/lang/String;
+    .line 2200
+    .local v10, "serial":Ljava/lang/String;
     const-string v2, "PrivilegeMessage"
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v25
 
     invoke-static {v0, v2}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v12
 
-    .line 2026
-    .local v13, "strPrivilegeMessage":Ljava/lang/String;
+    .line 2201
+    .local v12, "strPrivilegeMessage":Ljava/lang/String;
     const-string v2, "CurrentDate"
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v25
 
     invoke-static {v0, v2}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
     move-result-wide v4
 
-    .line 2027
+    .line 2202
     .local v4, "currentDate":J
     move-object/from16 v0, p0
 
@@ -129,7 +129,7 @@
 
     const-string v3, "Points"
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v25
 
     invoke-static {v0, v3}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
@@ -137,17 +137,17 @@
 
     invoke-static {v2, v6, v7}, Lcom/samsung/privilege/UserLogin;->SetPoints(Landroid/content/Context;J)Z
 
-    .line 2028
+    .line 2203
     const-string v2, "ExpireIn"
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v25
 
-    invoke-static {v0, v2}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
+    invoke-static {v0, v2}, Lcom/samsung/privilege/util/JsonUtil;->getLongNullable(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Long;
 
-    move-result-wide v9
+    move-result-object v9
 
-    .line 2030
-    .local v9, "longExpireIn":J
+    .line 2205
+    .local v9, "longExpireIn":Ljava/lang/Long;
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -167,26 +167,26 @@
 
     if-eqz v2, :cond_162
 
-    .line 2031
-    if-eqz v13, :cond_70
+    .line 2206
+    if-eqz v12, :cond_70
 
     const-string v2, ""
 
-    invoke-virtual {v13, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_162
 
-    .line 2034
+    .line 2209
     :cond_70
-    const-string v31, ""
+    const-string v30, ""
 
-    .line 2035
-    .local v31, "privilegeMessage":Ljava/lang/String;
+    .line 2210
+    .local v30, "privilegeMessage":Ljava/lang/String;
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v31 .. v31}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v30 .. v30}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -200,12 +200,12 @@
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v31
+    move-result-object v30
 
-    .line 2037
+    .line 2212
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v31 .. v31}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v30 .. v30}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -220,7 +220,7 @@
 
     move-result-object v3
 
-    const v6, 0x7f0a0172
+    const v6, 0x7f090172
 
     invoke-virtual {v3, v6}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->getString(I)Ljava/lang/String;
 
@@ -238,12 +238,12 @@
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v31
+    move-result-object v30
 
-    .line 2038
+    .line 2213
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v31 .. v31}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v30 .. v30}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -258,7 +258,7 @@
 
     move-result-object v3
 
-    const v6, 0x7f0a0173
+    const v6, 0x7f090173
 
     invoke-virtual {v3, v6}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->getString(I)Ljava/lang/String;
 
@@ -276,12 +276,12 @@
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v31
+    move-result-object v30
 
-    .line 2039
+    .line 2214
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v31 .. v31}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v30 .. v30}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -296,7 +296,7 @@
 
     move-result-object v3
 
-    const v6, 0x7f0a0174
+    const v6, 0x7f090174
 
     invoke-virtual {v3, v6}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->getString(I)Ljava/lang/String;
 
@@ -314,12 +314,12 @@
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v31
+    move-result-object v30
 
-    .line 2040
+    .line 2215
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v31 .. v31}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v30 .. v30}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -334,7 +334,7 @@
 
     move-result-object v3
 
-    const v6, 0x7f0a0175
+    const v6, 0x7f090175
 
     invoke-virtual {v3, v6}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->getString(I)Ljava/lang/String;
 
@@ -352,9 +352,9 @@
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v31
+    move-result-object v30
 
-    .line 2042
+    .line 2217
     new-instance v2, Ljava/text/SimpleDateFormat;
 
     const-string v3, "dd MMM yyyy"
@@ -382,19 +382,19 @@
 
     invoke-virtual {v2, v3}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v18
 
-    .line 2043
-    .local v19, "dateVoucherExpire":Ljava/lang/String;
+    .line 2218
+    .local v18, "dateVoucherExpire":Ljava/lang/String;
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v31 .. v31}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v30 .. v30}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v18
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -402,12 +402,12 @@
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v31
+    move-result-object v30
 
-    .line 2044
+    .line 2219
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v31 .. v31}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v30 .. v30}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -421,30 +421,30 @@
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v31
+    move-result-object v30
 
-    .line 2046
-    move-object/from16 v13, v31
+    .line 2221
+    move-object/from16 v12, v30
 
-    .line 2050
-    .end local v19    # "dateVoucherExpire":Ljava/lang/String;
-    .end local v31    # "privilegeMessage":Ljava/lang/String;
+    .line 2225
+    .end local v18    # "dateVoucherExpire":Ljava/lang/String;
+    .end local v30    # "privilegeMessage":Ljava/lang/String;
     :cond_162
     const-string v2, "NFCWriteBack"
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v25
 
     invoke-static {v0, v2}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v32
+    move-result-object v31
 
-    .line 2051
-    .local v32, "strNFCWriteBack":Ljava/lang/String;
-    if-eqz v32, :cond_2c2
+    .line 2226
+    .local v31, "strNFCWriteBack":Ljava/lang/String;
+    if-eqz v31, :cond_2c2
 
     const-string v2, ""
 
-    move-object/from16 v0, v32
+    move-object/from16 v0, v31
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -452,8 +452,8 @@
 
     if-nez v2, :cond_2c2
 
-    .line 2052
-    new-instance v20, Lcom/samsung/privilege/util/DeviceHelper;
+    .line 2227
+    new-instance v19, Lcom/samsung/privilege/util/DeviceHelper;
 
     move-object/from16 v0, p0
 
@@ -468,41 +468,41 @@
 
     move-result-object v2
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v19
 
     invoke-direct {v0, v2}, Lcom/samsung/privilege/util/DeviceHelper;-><init>(Landroid/content/Context;)V
 
-    .line 2053
-    .local v20, "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
-    invoke-virtual/range {v20 .. v20}, Lcom/samsung/privilege/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
+    .line 2228
+    .local v19, "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
+    invoke-virtual/range {v19 .. v19}, Lcom/samsung/privilege/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
 
-    move-result-object v21
+    move-result-object v20
 
-    .line 2055
-    .local v21, "device_id":Ljava/lang/String;
-    const-string v32, "IMEI=<imei>;SERIAL=<serial>;PRICE=<price>;"
+    .line 2230
+    .local v20, "device_id":Ljava/lang/String;
+    const-string v31, "IMEI=<imei>;SERIAL=<serial>;PRICE=<price>;"
 
-    .line 2056
+    .line 2231
     const-string v2, "<imei>"
 
-    move-object/from16 v0, v32
+    move-object/from16 v0, v31
 
-    move-object/from16 v1, v21
+    move-object/from16 v1, v20
 
     invoke-virtual {v0, v2, v1}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v32
+    move-result-object v31
 
-    .line 2057
+    .line 2232
     const-string v2, "<serial>"
 
-    move-object/from16 v0, v32
+    move-object/from16 v0, v31
 
-    invoke-virtual {v0, v2, v11}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v2, v10}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v32
+    move-result-object v31
 
-    .line 2058
+    .line 2233
     const-string v2, "<price>"
 
     move-object/from16 v0, p0
@@ -516,18 +516,18 @@
 
     iget-object v3, v3, Lcom/samsung/privilege/bean/CampaignView;->PricePerUnit:Ljava/lang/String;
 
-    move-object/from16 v0, v32
+    move-object/from16 v0, v31
 
     invoke-virtual {v0, v2, v3}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v32
+    move-result-object v31
 
-    .line 2060
-    move-object/from16 v33, v32
+    .line 2235
+    move-object/from16 v32, v31
 
-    .line 2069
-    .local v33, "strNFCWriteBackEncrypt":Ljava/lang/String;
-    new-instance v25, Landroid/content/Intent;
+    .line 2244
+    .local v32, "strNFCWriteBackEncrypt":Ljava/lang/String;
+    new-instance v24, Landroid/content/Intent;
 
     move-object/from16 v0, p0
 
@@ -544,12 +544,12 @@
 
     const-class v3, Lcom/samsung/privilege/activity/BeamCampaign;
 
-    move-object/from16 v0, v25
+    move-object/from16 v0, v24
 
     invoke-direct {v0, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2070
-    .local v25, "intent":Landroid/content/Intent;
+    .line 2245
+    .local v24, "intent":Landroid/content/Intent;
     const-string v2, "paramNFCTag"
 
     move-object/from16 v0, p0
@@ -566,23 +566,23 @@
 
     move-result-object v3
 
-    move-object/from16 v0, v25
+    move-object/from16 v0, v24
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 2071
+    .line 2246
     const-string v2, "Serial"
 
-    move-object/from16 v0, v25
+    move-object/from16 v0, v24
 
-    invoke-virtual {v0, v2, v11}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v2, v10}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2072
+    .line 2247
     const-string v2, "&lt;"
 
     const-string v3, "<"
 
-    invoke-virtual {v13, v2, v3}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v12, v2, v3}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -592,25 +592,25 @@
 
     invoke-virtual {v2, v3, v6}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v12
 
-    .line 2073
+    .line 2248
     const-string v2, "PrivilegeMessage"
 
-    move-object/from16 v0, v25
+    move-object/from16 v0, v24
 
-    invoke-virtual {v0, v2, v13}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v2, v12}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2074
+    .line 2249
     const-string v2, "NFCWriteBack"
 
-    move-object/from16 v0, v25
+    move-object/from16 v0, v24
 
-    move-object/from16 v1, v33
+    move-object/from16 v1, v32
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2076
+    .line 2251
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -634,21 +634,21 @@
 
     move-result v3
 
-    move-object/from16 v0, v25
+    move-object/from16 v0, v24
 
     invoke-virtual {v2, v0, v3}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 2095
+    .line 2270
     .end local v4    # "currentDate":J
-    .end local v9    # "longExpireIn":J
-    .end local v11    # "serial":Ljava/lang/String;
-    .end local v13    # "strPrivilegeMessage":Ljava/lang/String;
-    .end local v20    # "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
-    .end local v21    # "device_id":Ljava/lang/String;
-    .end local v25    # "intent":Landroid/content/Intent;
-    .end local v26    # "jsonRoot":Lorg/json/JSONObject;
-    .end local v32    # "strNFCWriteBack":Ljava/lang/String;
-    .end local v33    # "strNFCWriteBackEncrypt":Ljava/lang/String;
+    .end local v9    # "longExpireIn":Ljava/lang/Long;
+    .end local v10    # "serial":Ljava/lang/String;
+    .end local v12    # "strPrivilegeMessage":Ljava/lang/String;
+    .end local v19    # "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
+    .end local v20    # "device_id":Ljava/lang/String;
+    .end local v24    # "intent":Landroid/content/Intent;
+    .end local v25    # "jsonRoot":Lorg/json/JSONObject;
+    .end local v31    # "strNFCWriteBack":Ljava/lang/String;
+    .end local v32    # "strNFCWriteBackEncrypt":Ljava/lang/String;
     :cond_21d
     :goto_21d
     move-object/from16 v0, p0
@@ -662,7 +662,7 @@
 
     if-eqz v2, :cond_2c1
 
-    .line 2096
+    .line 2271
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -682,13 +682,13 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
     :try_end_23a
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_23a} :catch_342
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_23a} :catch_340
 
     move-result v2
 
     if-nez v2, :cond_2c1
 
-    .line 2098
+    .line 2273
     :try_start_23d
     move-object/from16 v0, p0
 
@@ -703,13 +703,13 @@
 
     invoke-static {v2}, Lcom/samsung/privilege/util/BBUtil;->CtypeString(Ljava/lang/Object;)Ljava/lang/String;
     :try_end_24a
-    .catch Ljava/lang/Exception; {:try_start_23d .. :try_end_24a} :catch_38e
-    .catch Lorg/json/JSONException; {:try_start_23d .. :try_end_24a} :catch_342
+    .catch Ljava/lang/Exception; {:try_start_23d .. :try_end_24a} :catch_38c
+    .catch Lorg/json/JSONException; {:try_start_23d .. :try_end_24a} :catch_340
 
-    move-result-object v34
+    move-result-object v33
 
-    .line 2101
-    .local v34, "url":Ljava/lang/String;
+    .line 2276
+    .local v33, "url":Ljava/lang/String;
     :try_start_24b
     const-string v2, "<uid>"
 
@@ -730,14 +730,14 @@
 
     move-result-object v3
 
-    move-object/from16 v0, v34
+    move-object/from16 v0, v33
 
     invoke-virtual {v0, v2, v3}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v34
+    move-result-object v33
 
-    .line 2102
-    new-instance v20, Lcom/samsung/privilege/util/DeviceHelper;
+    .line 2277
+    new-instance v19, Lcom/samsung/privilege/util/DeviceHelper;
 
     move-object/from16 v0, p0
 
@@ -752,34 +752,34 @@
 
     move-result-object v2
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v19
 
     invoke-direct {v0, v2}, Lcom/samsung/privilege/util/DeviceHelper;-><init>(Landroid/content/Context;)V
 
-    .line 2103
-    .restart local v20    # "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
+    .line 2278
+    .restart local v19    # "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
     const-string v2, "<deviceId>"
 
-    invoke-virtual/range {v20 .. v20}, Lcom/samsung/privilege/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
+    invoke-virtual/range {v19 .. v19}, Lcom/samsung/privilege/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
 
     move-result-object v3
 
-    move-object/from16 v0, v34
+    move-object/from16 v0, v33
 
     invoke-virtual {v0, v2, v3}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     :try_end_281
-    .catch Ljava/lang/Exception; {:try_start_24b .. :try_end_281} :catch_499
-    .catch Lorg/json/JSONException; {:try_start_24b .. :try_end_281} :catch_342
+    .catch Ljava/lang/Exception; {:try_start_24b .. :try_end_281} :catch_497
+    .catch Lorg/json/JSONException; {:try_start_24b .. :try_end_281} :catch_340
 
-    move-result-object v34
+    move-result-object v33
 
-    .line 2108
-    .end local v20    # "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
+    .line 2283
+    .end local v19    # "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
     :goto_282
     :try_start_282
     const-string v2, "https://"
 
-    move-object/from16 v0, v34
+    move-object/from16 v0, v33
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -789,7 +789,7 @@
 
     const-string v2, "http://"
 
-    move-object/from16 v0, v34
+    move-object/from16 v0, v33
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -797,14 +797,14 @@
 
     if-nez v2, :cond_2a7
 
-    .line 2109
+    .line 2284
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v3, "http://"
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-object/from16 v0, v34
+    move-object/from16 v0, v33
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -812,24 +812,24 @@
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v34
+    move-result-object v33
 
-    .line 2111
+    .line 2286
     :cond_2a7
-    new-instance v30, Landroid/content/Intent;
+    new-instance v29, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.VIEW"
 
-    invoke-static/range {v34 .. v34}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static/range {v33 .. v33}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v3
 
-    move-object/from16 v0, v30
+    move-object/from16 v0, v29
 
     invoke-direct {v0, v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 2112
-    .local v30, "openUrlIntent":Landroid/content/Intent;
+    .line 2287
+    .local v29, "openUrlIntent":Landroid/content/Intent;
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -839,34 +839,34 @@
 
     move-result-object v2
 
-    move-object/from16 v0, v30
+    move-object/from16 v0, v29
 
     invoke-virtual {v2, v0}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->startActivity(Landroid/content/Intent;)V
     :try_end_2c1
-    .catch Ljava/lang/Exception; {:try_start_282 .. :try_end_2c1} :catch_38e
-    .catch Lorg/json/JSONException; {:try_start_282 .. :try_end_2c1} :catch_342
+    .catch Ljava/lang/Exception; {:try_start_282 .. :try_end_2c1} :catch_38c
+    .catch Lorg/json/JSONException; {:try_start_282 .. :try_end_2c1} :catch_340
 
-    .line 2165
-    .end local v30    # "openUrlIntent":Landroid/content/Intent;
-    .end local v34    # "url":Ljava/lang/String;
+    .line 2340
+    .end local v29    # "openUrlIntent":Landroid/content/Intent;
+    .end local v33    # "url":Ljava/lang/String;
     :cond_2c1
     :goto_2c1
     return-void
 
-    .line 2090
+    .line 2265
     .restart local v4    # "currentDate":J
-    .restart local v9    # "longExpireIn":J
-    .restart local v11    # "serial":Ljava/lang/String;
-    .restart local v13    # "strPrivilegeMessage":Ljava/lang/String;
-    .restart local v26    # "jsonRoot":Lorg/json/JSONObject;
-    .restart local v32    # "strNFCWriteBack":Ljava/lang/String;
+    .restart local v9    # "longExpireIn":Ljava/lang/Long;
+    .restart local v10    # "serial":Ljava/lang/String;
+    .restart local v12    # "strPrivilegeMessage":Ljava/lang/String;
+    .restart local v25    # "jsonRoot":Lorg/json/JSONObject;
+    .restart local v31    # "strNFCWriteBack":Ljava/lang/String;
     :cond_2c2
     :try_start_2c2
     const-string v2, "&lt;"
 
     const-string v3, "<"
 
-    invoke-virtual {v13, v2, v3}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v12, v2, v3}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -876,9 +876,9 @@
 
     invoke-virtual {v2, v3, v6}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v12
 
-    .line 2091
+    .line 2266
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -933,39 +933,53 @@
 
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
+    iget-object v11, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->gCampaign:Lcom/samsung/privilege/bean/CampaignView;
-    invoke-static {v12}, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->access$1(Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;)Lcom/samsung/privilege/bean/CampaignView;
+    invoke-static {v11}, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->access$1(Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;)Lcom/samsung/privilege/bean/CampaignView;
 
-    move-result-object v12
+    move-result-object v11
 
-    iget-object v12, v12, Lcom/samsung/privilege/bean/CampaignView;->Barcode:Ljava/lang/String;
+    iget-object v11, v11, Lcom/samsung/privilege/bean/CampaignView;->Barcode:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
+
+    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
+    invoke-static {v13}, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->access$3(Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;)Lcom/samsung/privilege/activity/CampaignDetailActivity;
+
+    move-result-object v13
+
+    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
+    invoke-static {v13}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$5(Lcom/samsung/privilege/activity/CampaignDetailActivity;)Lcom/bitmapfun/util/ImageFetcher;
+
+    move-result-object v13
 
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
 
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
-    invoke-static {v14}, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->access$3(Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;)Lcom/samsung/privilege/activity/CampaignDetailActivity;
+    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->gCampaign:Lcom/samsung/privilege/bean/CampaignView;
+    invoke-static {v14}, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->access$1(Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;)Lcom/samsung/privilege/bean/CampaignView;
 
     move-result-object v14
 
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
-    invoke-static {v14}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$5(Lcom/samsung/privilege/activity/CampaignDetailActivity;)Lcom/bitmapfun/util/ImageFetcher;
-
-    move-result-object v14
+    iget-object v14, v14, Lcom/samsung/privilege/bean/CampaignView;->Type:Ljava/lang/String;
 
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
 
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->gCampaign:Lcom/samsung/privilege/bean/CampaignView;
-    invoke-static {v15}, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->access$1(Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;)Lcom/samsung/privilege/bean/CampaignView;
+    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
+    invoke-static {v15}, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->access$3(Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;)Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     move-result-object v15
 
-    iget-object v15, v15, Lcom/samsung/privilege/bean/CampaignView;->Type:Ljava/lang/String;
+    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->gHandler:Landroid/os/Handler;
+    invoke-static {v15}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$6(Lcom/samsung/privilege/activity/CampaignDetailActivity;)Landroid/os/Handler;
+
+    move-result-object v15
 
     move-object/from16 v0, p0
 
@@ -978,45 +992,29 @@
 
     move-result-object v16
 
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->gHandler:Landroid/os/Handler;
-    invoke-static/range {v16 .. v16}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$6(Lcom/samsung/privilege/activity/CampaignDetailActivity;)Landroid/os/Handler;
+    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
+    invoke-static/range {v16 .. v16}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$3(Lcom/samsung/privilege/activity/CampaignDetailActivity;)Lcom/samsung/privilege/bean/NFCTag;
 
     move-result-object v16
 
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
-
-    move-object/from16 v17, v0
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
-    invoke-static/range {v17 .. v17}, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->access$3(Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;)Lcom/samsung/privilege/activity/CampaignDetailActivity;
-
-    move-result-object v17
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
-    invoke-static/range {v17 .. v17}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$3(Lcom/samsung/privilege/activity/CampaignDetailActivity;)Lcom/samsung/privilege/bean/NFCTag;
-
-    move-result-object v17
-
-    invoke-static/range {v2 .. v17}, Lcom/samsung/privilege/util/DialogUtil;->showDialogSerial3TypeCode(Landroid/app/Activity;Lcom/samsung/privilege/bean/Purchasing;JILjava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/bitmapfun/util/ImageFetcher;Ljava/lang/String;Landroid/os/Handler;Lcom/samsung/privilege/bean/NFCTag;)V
-    :try_end_340
-    .catch Lorg/json/JSONException; {:try_start_2c2 .. :try_end_340} :catch_342
+    invoke-static/range {v2 .. v16}, Lcom/samsung/privilege/util/DialogSerialVersion2;->showDialogSerial(Landroid/app/Activity;Lcom/samsung/privilege/bean/Purchasing;JILjava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/bitmapfun/util/ImageFetcher;Ljava/lang/String;Landroid/os/Handler;Lcom/samsung/privilege/bean/NFCTag;)V
+    :try_end_33e
+    .catch Lorg/json/JSONException; {:try_start_2c2 .. :try_end_33e} :catch_340
 
     goto/16 :goto_21d
 
-    .line 2157
+    .line 2332
     .end local v4    # "currentDate":J
-    .end local v9    # "longExpireIn":J
-    .end local v11    # "serial":Ljava/lang/String;
-    .end local v13    # "strPrivilegeMessage":Ljava/lang/String;
-    .end local v26    # "jsonRoot":Lorg/json/JSONObject;
-    .end local v32    # "strNFCWriteBack":Ljava/lang/String;
-    :catch_342
-    move-exception v22
+    .end local v9    # "longExpireIn":Ljava/lang/Long;
+    .end local v10    # "serial":Ljava/lang/String;
+    .end local v12    # "strPrivilegeMessage":Ljava/lang/String;
+    .end local v25    # "jsonRoot":Lorg/json/JSONObject;
+    .end local v31    # "strNFCWriteBack":Ljava/lang/String;
+    :catch_340
+    move-exception v21
 
-    .line 2158
-    .local v22, "e":Lorg/json/JSONException;
+    .line 2333
+    .local v21, "e":Lorg/json/JSONException;
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -1026,14 +1024,14 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a0301
+    const v3, 0x7f090308
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->getString(I)Ljava/lang/String;
 
-    move-result-object v29
+    move-result-object v28
 
-    .line 2159
-    .local v29, "message":Ljava/lang/String;
+    .line 2334
+    .local v28, "message":Ljava/lang/String;
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -1051,12 +1049,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_37f
+    if-eqz v2, :cond_37d
 
-    .line 2160
+    .line 2335
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v29 .. v29}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v28 .. v28}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -1068,7 +1066,7 @@
 
     move-result-object v2
 
-    invoke-virtual/range {v22 .. v22}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
+    invoke-virtual/range {v21 .. v21}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
 
     move-result-object v3
 
@@ -1078,10 +1076,10 @@
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v29
+    move-result-object v28
 
-    .line 2162
-    :cond_37f
+    .line 2337
+    :cond_37d
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -1091,25 +1089,25 @@
 
     move-result-object v2
 
-    move-object/from16 v0, v29
+    move-object/from16 v0, v28
 
     invoke-static {v2, v0}, Lcom/samsung/privilege/util/DialogUtil;->showDialogError(Landroid/content/Context;Ljava/lang/String;)V
 
     goto/16 :goto_2c1
 
-    .line 2113
-    .end local v22    # "e":Lorg/json/JSONException;
-    .end local v29    # "message":Ljava/lang/String;
-    :catch_38e
-    move-exception v22
+    .line 2288
+    .end local v21    # "e":Lorg/json/JSONException;
+    .end local v28    # "message":Ljava/lang/String;
+    :catch_38c
+    move-exception v21
 
-    .line 2114
-    .local v22, "e":Ljava/lang/Exception;
-    const/16 v18, 0x0
+    .line 2289
+    .local v21, "e":Ljava/lang/Exception;
+    const/16 v17, 0x0
 
-    .line 2116
-    .local v18, "blnIsAdmin":Z
-    :try_start_391
+    .line 2291
+    .local v17, "blnIsAdmin":Z
+    :try_start_38f
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -1124,24 +1122,24 @@
     move-result-object v2
 
     invoke-static {v2}, Lcom/samsung/privilege/UserLogin;->IS_ADMIN(Landroid/content/Context;)Z
-    :try_end_3a0
-    .catch Ljava/lang/Exception; {:try_start_391 .. :try_end_3a0} :catch_3c7
-    .catch Lorg/json/JSONException; {:try_start_391 .. :try_end_3a0} :catch_342
+    :try_end_39e
+    .catch Ljava/lang/Exception; {:try_start_38f .. :try_end_39e} :catch_3c5
+    .catch Lorg/json/JSONException; {:try_start_38f .. :try_end_39e} :catch_340
 
     move-result v2
 
-    if-eqz v2, :cond_3a5
+    if-eqz v2, :cond_3a3
 
-    .line 2117
-    const/16 v18, 0x1
+    .line 2292
+    const/16 v17, 0x1
 
-    .line 2122
-    :cond_3a5
-    :goto_3a5
-    if-eqz v18, :cond_3eb
+    .line 2297
+    :cond_3a3
+    :goto_3a3
+    if-eqz v17, :cond_3e9
 
-    .line 2123
-    :try_start_3a7
+    .line 2298
+    :try_start_3a5
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -1157,7 +1155,7 @@
 
     invoke-direct {v3, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual/range {v22 .. v22}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual/range {v21 .. v21}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
     move-result-object v6
 
@@ -1174,12 +1172,12 @@
 
     goto/16 :goto_2c1
 
-    .line 2119
-    :catch_3c7
-    move-exception v23
+    .line 2294
+    :catch_3c5
+    move-exception v22
 
-    .line 2120
-    .local v23, "e2":Ljava/lang/Exception;
+    .line 2295
+    .local v22, "e2":Ljava/lang/Exception;
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -1200,7 +1198,7 @@
 
     invoke-direct {v3, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual/range {v23 .. v23}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual/range {v22 .. v22}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
     move-result-object v6
 
@@ -1214,11 +1212,11 @@
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_3a5
+    goto :goto_3a3
 
-    .line 2125
-    .end local v23    # "e2":Ljava/lang/Exception;
-    :cond_3eb
+    .line 2300
+    .end local v22    # "e2":Ljava/lang/Exception;
+    :cond_3e9
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -1232,69 +1230,69 @@
 
     # invokes: Lcom/samsung/privilege/activity/CampaignDetailActivity;->showToast(Ljava/lang/String;)V
     invoke-static {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$8(Lcom/samsung/privilege/activity/CampaignDetailActivity;Ljava/lang/String;)V
-    :try_end_3f8
-    .catch Lorg/json/JSONException; {:try_start_3a7 .. :try_end_3f8} :catch_342
+    :try_end_3f6
+    .catch Lorg/json/JSONException; {:try_start_3a5 .. :try_end_3f6} :catch_340
 
     goto/16 :goto_2c1
 
-    .line 2139
-    .end local v18    # "blnIsAdmin":Z
-    .end local v22    # "e":Ljava/lang/Exception;
-    :cond_3fa
-    :try_start_3fa
-    new-instance v28, Lorg/json/JSONObject;
+    .line 2314
+    .end local v17    # "blnIsAdmin":Z
+    .end local v21    # "e":Ljava/lang/Exception;
+    :cond_3f8
+    :try_start_3f8
+    new-instance v27, Lorg/json/JSONObject;
 
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->val$response_text_final:Ljava/lang/String;
 
-    move-object/from16 v0, v28
+    move-object/from16 v0, v27
 
     invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 2140
-    .local v28, "json_result":Lorg/json/JSONObject;
+    .line 2315
+    .local v27, "json_result":Lorg/json/JSONObject;
     const-string v2, "error"
 
-    move-object/from16 v0, v28
+    move-object/from16 v0, v27
 
     invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
-    move-result-object v27
+    move-result-object v26
 
-    .line 2141
-    .local v27, "json_error":Lorg/json/JSONObject;
+    .line 2316
+    .local v26, "json_error":Lorg/json/JSONObject;
     const-string v2, "id"
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v26
 
     invoke-static {v0, v2}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v24
+    move-result-object v23
 
-    .line 2142
-    .local v24, "id":Ljava/lang/String;
+    .line 2317
+    .local v23, "id":Ljava/lang/String;
     const-string v2, "message"
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v26
 
     invoke-static {v0, v2}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v29
+    move-result-object v28
 
-    .line 2143
-    .restart local v29    # "message":Ljava/lang/String;
+    .line 2318
+    .restart local v28    # "message":Ljava/lang/String;
     const-string v2, "1411"
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v23
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_48a
+    if-eqz v2, :cond_488
 
-    .line 2144
+    .line 2319
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -1318,9 +1316,9 @@
 
     move-result v2
 
-    if-eqz v2, :cond_47b
+    if-eqz v2, :cond_479
 
-    .line 2145
+    .line 2320
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -1339,7 +1337,7 @@
 
     move-result-object v3
 
-    const v6, 0x7f0a0333
+    const v6, 0x7f09033a
 
     invoke-virtual {v3, v6}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->getString(I)Ljava/lang/String;
 
@@ -1348,23 +1346,23 @@
     const/4 v6, 0x0
 
     invoke-static {v2, v3, v6}, Lcom/samsung/privilege/util/DialogUtil;->showDialogConfirmLoginFacebook(Landroid/content/Context;Ljava/lang/String;Z)V
-    :try_end_45a
-    .catch Ljava/lang/Exception; {:try_start_3fa .. :try_end_45a} :catch_45c
-    .catch Lorg/json/JSONException; {:try_start_3fa .. :try_end_45a} :catch_342
+    :try_end_458
+    .catch Ljava/lang/Exception; {:try_start_3f8 .. :try_end_458} :catch_45a
+    .catch Lorg/json/JSONException; {:try_start_3f8 .. :try_end_458} :catch_340
 
     goto/16 :goto_2c1
 
-    .line 2152
-    .end local v24    # "id":Ljava/lang/String;
-    .end local v27    # "json_error":Lorg/json/JSONObject;
-    .end local v28    # "json_result":Lorg/json/JSONObject;
-    .end local v29    # "message":Ljava/lang/String;
-    :catch_45c
-    move-exception v22
+    .line 2327
+    .end local v23    # "id":Ljava/lang/String;
+    .end local v26    # "json_error":Lorg/json/JSONObject;
+    .end local v27    # "json_result":Lorg/json/JSONObject;
+    .end local v28    # "message":Ljava/lang/String;
+    :catch_45a
+    move-exception v21
 
-    .line 2153
-    .restart local v22    # "e":Ljava/lang/Exception;
-    :try_start_45d
+    .line 2328
+    .restart local v21    # "e":Ljava/lang/Exception;
+    :try_start_45b
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -1374,14 +1372,14 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a0301
+    const v3, 0x7f090308
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->getString(I)Ljava/lang/String;
 
-    move-result-object v29
+    move-result-object v28
 
-    .line 2154
-    .restart local v29    # "message":Ljava/lang/String;
+    .line 2329
+    .restart local v28    # "message":Ljava/lang/String;
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -1391,21 +1389,21 @@
 
     move-result-object v2
 
-    move-object/from16 v0, v29
+    move-object/from16 v0, v28
 
     invoke-static {v2, v0}, Lcom/samsung/privilege/util/DialogUtil;->showDialogError(Landroid/content/Context;Ljava/lang/String;)V
-    :try_end_479
-    .catch Lorg/json/JSONException; {:try_start_45d .. :try_end_479} :catch_342
+    :try_end_477
+    .catch Lorg/json/JSONException; {:try_start_45b .. :try_end_477} :catch_340
 
     goto/16 :goto_2c1
 
-    .line 2147
-    .end local v22    # "e":Ljava/lang/Exception;
-    .restart local v24    # "id":Ljava/lang/String;
-    .restart local v27    # "json_error":Lorg/json/JSONObject;
-    .restart local v28    # "json_result":Lorg/json/JSONObject;
-    :cond_47b
-    :try_start_47b
+    .line 2322
+    .end local v21    # "e":Ljava/lang/Exception;
+    .restart local v23    # "id":Ljava/lang/String;
+    .restart local v26    # "json_error":Lorg/json/JSONObject;
+    .restart local v27    # "json_result":Lorg/json/JSONObject;
+    :cond_479
+    :try_start_479
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -1415,14 +1413,14 @@
 
     move-result-object v2
 
-    move-object/from16 v0, v29
+    move-object/from16 v0, v28
 
     invoke-static {v2, v0}, Lcom/samsung/privilege/util/DialogUtil;->showDialogError(Landroid/content/Context;Ljava/lang/String;)V
 
     goto/16 :goto_2c1
 
-    .line 2150
-    :cond_48a
+    .line 2325
+    :cond_488
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;
@@ -1432,22 +1430,22 @@
 
     move-result-object v2
 
-    move-object/from16 v0, v29
+    move-object/from16 v0, v28
 
     invoke-static {v2, v0}, Lcom/samsung/privilege/util/DialogUtil;->showDialogError(Landroid/content/Context;Ljava/lang/String;)V
-    :try_end_497
-    .catch Ljava/lang/Exception; {:try_start_47b .. :try_end_497} :catch_45c
-    .catch Lorg/json/JSONException; {:try_start_47b .. :try_end_497} :catch_342
+    :try_end_495
+    .catch Ljava/lang/Exception; {:try_start_479 .. :try_end_495} :catch_45a
+    .catch Lorg/json/JSONException; {:try_start_479 .. :try_end_495} :catch_340
 
     goto/16 :goto_2c1
 
-    .line 2104
-    .end local v24    # "id":Ljava/lang/String;
-    .end local v27    # "json_error":Lorg/json/JSONObject;
-    .end local v28    # "json_result":Lorg/json/JSONObject;
-    .end local v29    # "message":Ljava/lang/String;
-    .restart local v34    # "url":Ljava/lang/String;
-    :catch_499
+    .line 2279
+    .end local v23    # "id":Ljava/lang/String;
+    .end local v26    # "json_error":Lorg/json/JSONObject;
+    .end local v27    # "json_result":Lorg/json/JSONObject;
+    .end local v28    # "message":Ljava/lang/String;
+    .restart local v33    # "url":Ljava/lang/String;
+    :catch_497
     move-exception v2
 
     goto/16 :goto_282

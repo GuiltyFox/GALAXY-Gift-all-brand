@@ -432,9 +432,9 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v19
+    move-result-wide v20
 
-    move-wide/from16 v0, v19
+    move-wide/from16 v0, v20
 
     iput-wide v0, v9, Lcom/samsung/privilege/bean/Friend;->score:J
 
@@ -1392,7 +1392,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0a0324
+    const v8, 0x7f09032b
 
     invoke-virtual {v7, v8}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
     :try_end_1d
@@ -1654,7 +1654,7 @@
     .line 120
     iget-object v5, p0, Lcom/samsung/privilege/activity/FriendsRankingFragment;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
-    const v6, 0x7f02039f
+    const v6, 0x7f0203a7
 
     invoke-virtual {v5, v6}, Lcom/bitmapfun/util/ImageFetcher;->setLoadingImage(I)V
 
@@ -1705,7 +1705,7 @@
 
     .prologue
     .line 136
-    const v1, 0x7f0300eb
+    const v1, 0x7f0300ed
 
     const/4 v2, 0x0
 
@@ -1715,7 +1715,7 @@
 
     .line 138
     .local v0, "view":Landroid/view/View;
-    const v1, 0x7f07032a
+    const v1, 0x7f0c0337
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1734,7 +1734,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f030122
+    const v2, 0x7f030124
 
     const/4 v3, 0x0
 

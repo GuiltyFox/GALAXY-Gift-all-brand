@@ -188,7 +188,7 @@
     .line 329
     iget-object v4, p0, Lcom/samsung/privilege/activity/QRLandingActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/QRLandingActivity;
 
-    const v5, 0x7f0a0343
+    const v5, 0x7f090350
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/QRLandingActivity;->getString(I)Ljava/lang/String;
 

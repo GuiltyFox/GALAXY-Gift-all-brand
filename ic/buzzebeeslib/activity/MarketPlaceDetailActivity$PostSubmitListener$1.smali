@@ -90,9 +90,9 @@
     .end local v1    # "jsonBuzzebees":Lorg/json/JSONObject;
     .end local v2    # "jsonRoot":Lorg/json/JSONObject;
     :goto_1b
-    const-wide/16 v9, 0x0
+    const-wide/16 v10, 0x0
 
-    cmp-long v9, v6, v9
+    cmp-long v9, v6, v10
 
     if-lez v9, :cond_37
 

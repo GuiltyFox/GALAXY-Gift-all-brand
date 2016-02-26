@@ -418,9 +418,9 @@
 
     invoke-static {v7}, Lic/buzzebeeslib/LibUserLogin;->GetPoints(Landroid/content/Context;)J
 
-    move-result-wide v7
+    move-result-wide v8
 
-    invoke-virtual {v2, v7, v8}, Ljava/text/NumberFormat;->format(J)Ljava/lang/String;
+    invoke-virtual {v2, v8, v9}, Ljava/text/NumberFormat;->format(J)Ljava/lang/String;
 
     move-result-object v7
 

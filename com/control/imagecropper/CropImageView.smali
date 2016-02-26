@@ -56,7 +56,7 @@
 .end method
 
 .method private centerBasedOnHighlightView(Lcom/control/imagecropper/HighlightView;)V
-    .registers 15
+    .registers 16
     .param p1, "hv"    # Lcom/control/imagecropper/HighlightView;
 
     .prologue
@@ -145,11 +145,11 @@
 
     div-float/2addr v9, v8
 
-    float-to-double v9, v9
+    float-to-double v10, v9
 
-    const-wide v11, 0x3fb999999999999aL
+    const-wide v12, 0x3fb999999999999aL
 
-    cmpl-double v9, v9, v11
+    cmpl-double v9, v10, v12
 
     if-lez v9, :cond_6f
 

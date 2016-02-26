@@ -30,7 +30,7 @@
     .registers 2
 
     .prologue
-    .line 448
+    .line 450
     iput-object p1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .registers 3
 
     .prologue
-    .line 448
+    .line 450
     invoke-direct {p0, p1}, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;-><init>(Lcom/samsung/privilege/control/PullToRefreshListView;)V
 
     return-void
@@ -52,7 +52,7 @@
     .registers 2
 
     .prologue
-    .line 448
+    .line 450
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     return-object v0
@@ -61,13 +61,13 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
-    .registers 7
+    .registers 8
     .param p1, "animation"    # Landroid/view/animation/Animation;
 
     .prologue
     const/4 v2, 0x0
 
-    .line 469
+    .line 471
     iget-object v3, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->stateAtAnimationStart:Lcom/samsung/privilege/control/PullToRefreshListView$State;
@@ -82,25 +82,25 @@
     # invokes: Lcom/samsung/privilege/control/PullToRefreshListView;->setHeaderPadding(I)V
     invoke-static {v3, v1}, Lcom/samsung/privilege/control/PullToRefreshListView;->access$4(Lcom/samsung/privilege/control/PullToRefreshListView;I)V
 
-    .line 471
+    .line 473
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     invoke-virtual {v1}, Lcom/samsung/privilege/control/PullToRefreshListView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 472
+    .line 474
     .local v0, "lp":Landroid/view/ViewGroup$LayoutParams;
     iget v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->height:I
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 473
+    .line 475
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/control/PullToRefreshListView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 475
+    .line 477
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     # getter for: Lcom/samsung/privilege/control/PullToRefreshListView;->scrollbarEnabled:Z
@@ -110,14 +110,14 @@
 
     if-eqz v1, :cond_2a
 
-    .line 476
+    .line 478
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     const/4 v3, 0x1
 
     invoke-virtual {v1, v3}, Lcom/samsung/privilege/control/PullToRefreshListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 479
+    .line 481
     :cond_2a
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
@@ -128,30 +128,30 @@
 
     if-eqz v1, :cond_50
 
-    .line 480
+    .line 482
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     invoke-static {v1, v2}, Lcom/samsung/privilege/control/PullToRefreshListView;->access$6(Lcom/samsung/privilege/control/PullToRefreshListView;Z)V
 
-    .line 482
+    .line 484
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     new-instance v2, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener$1;
 
     invoke-direct {v2, p0}, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener$1;-><init>(Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;)V
 
-    .line 489
-    const-wide/16 v3, 0x64
+    .line 491
+    const-wide/16 v4, 0x64
 
-    .line 482
-    invoke-virtual {v1, v2, v3, v4}, Lcom/samsung/privilege/control/PullToRefreshListView;->postDelayed(Ljava/lang/Runnable;J)Z
+    .line 484
+    invoke-virtual {v1, v2, v4, v5}, Lcom/samsung/privilege/control/PullToRefreshListView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 493
+    .line 495
     :cond_43
     :goto_43
     return-void
 
-    .line 469
+    .line 471
     .end local v0    # "lp":Landroid/view/ViewGroup$LayoutParams;
     :cond_44
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
@@ -169,7 +169,7 @@
 
     goto :goto_a
 
-    .line 490
+    .line 492
     .restart local v0    # "lp":Landroid/view/ViewGroup$LayoutParams;
     :cond_50
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->stateAtAnimationStart:Lcom/samsung/privilege/control/PullToRefreshListView$State;
@@ -178,7 +178,7 @@
 
     if-eq v1, v2, :cond_43
 
-    .line 491
+    .line 493
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     sget-object v2, Lcom/samsung/privilege/control/PullToRefreshListView$State;->PULL_TO_REFRESH:Lcom/samsung/privilege/control/PullToRefreshListView$State;
@@ -194,7 +194,7 @@
     .param p1, "animation"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 497
+    .line 499
     return-void
 .end method
 
@@ -203,7 +203,7 @@
     .param p1, "animation"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 455
+    .line 457
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     # getter for: Lcom/samsung/privilege/control/PullToRefreshListView;->state:Lcom/samsung/privilege/control/PullToRefreshListView$State;
@@ -213,20 +213,20 @@
 
     iput-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->stateAtAnimationStart:Lcom/samsung/privilege/control/PullToRefreshListView$State;
 
-    .line 457
+    .line 459
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     invoke-virtual {v1}, Lcom/samsung/privilege/control/PullToRefreshListView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 458
+    .line 460
     .local v0, "lp":Landroid/view/ViewGroup$LayoutParams;
     iget v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     iput v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->height:I
 
-    .line 459
+    .line 461
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     invoke-virtual {v1}, Lcom/samsung/privilege/control/PullToRefreshListView;->getHeight()I
@@ -248,12 +248,12 @@
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 460
+    .line 462
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/control/PullToRefreshListView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 462
+    .line 464
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     # getter for: Lcom/samsung/privilege/control/PullToRefreshListView;->scrollbarEnabled:Z
@@ -263,14 +263,14 @@
 
     if-eqz v1, :cond_38
 
-    .line 463
+    .line 465
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/control/PullToRefreshListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 465
+    .line 467
     :cond_38
     return-void
 .end method

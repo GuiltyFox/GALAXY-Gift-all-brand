@@ -106,7 +106,7 @@
 .end method
 
 .method private constructor <init>(Ljava/io/File;IIJ)V
-    .registers 13
+    .registers 14
     .param p1, "directory"    # Ljava/io/File;
     .param p2, "appVersion"    # I
     .param p3, "valueCount"    # I
@@ -115,9 +115,9 @@
     .prologue
     const-wide/16 v4, 0x0
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     .line 288
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -128,9 +128,9 @@
     .line 163
     new-instance v0, Ljava/util/LinkedHashMap;
 
-    const/high16 v3, 0x3f400000
+    const/high16 v1, 0x3f400000
 
-    invoke-direct {v0, v1, v3, v2}, Ljava/util/LinkedHashMap;-><init>(IFZ)V
+    invoke-direct {v0, v2, v1, v3}, Ljava/util/LinkedHashMap;-><init>(IFZ)V
 
     iput-object v0, p0, Lcom/bitmapfun/util/DiskLruCache;->lruEntries:Ljava/util/LinkedHashMap;
 
@@ -138,20 +138,20 @@
     iput-wide v4, p0, Lcom/bitmapfun/util/DiskLruCache;->nextSequenceNumber:J
 
     .line 270
-    new-instance v0, Ljava/util/concurrent/ThreadPoolExecutor;
+    new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
 
     .line 271
-    const-wide/16 v3, 0x3c
+    const-wide/16 v4, 0x3c
 
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    new-instance v6, Ljava/util/concurrent/LinkedBlockingQueue;
+    new-instance v7, Ljava/util/concurrent/LinkedBlockingQueue;
 
-    invoke-direct {v6}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
+    invoke-direct {v7}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
 
-    invoke-direct/range {v0 .. v6}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;)V
+    invoke-direct/range {v1 .. v7}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;)V
 
-    iput-object v0, p0, Lcom/bitmapfun/util/DiskLruCache;->executorService:Ljava/util/concurrent/ExecutorService;
+    iput-object v1, p0, Lcom/bitmapfun/util/DiskLruCache;->executorService:Ljava/util/concurrent/ExecutorService;
 
     .line 272
     new-instance v0, Lcom/bitmapfun/util/DiskLruCache$1;
@@ -267,7 +267,7 @@
 .end method
 
 .method static synthetic access$5(Lcom/bitmapfun/util/DiskLruCache;Ljava/lang/String;J)Lcom/bitmapfun/util/DiskLruCache$Editor;
-    .registers 5
+    .registers 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -970,7 +970,7 @@
 .end method
 
 .method private declared-synchronized edit(Ljava/lang/String;J)Lcom/bitmapfun/util/DiskLruCache$Editor;
-    .registers 9
+    .registers 10
     .param p1, "key"    # Ljava/lang/String;
     .param p2, "expectedSequenceNumber"    # J
     .annotation system Ldalvik/annotation/Throws;
@@ -1183,7 +1183,7 @@
 .end method
 
 .method public static open(Ljava/io/File;IIJ)Lcom/bitmapfun/util/DiskLruCache;
-    .registers 13
+    .registers 14
     .param p0, "directory"    # Ljava/io/File;
     .param p1, "appVersion"    # I
     .param p2, "valueCount"    # I
@@ -1196,9 +1196,9 @@
 
     .prologue
     .line 309
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    cmp-long v1, p3, v1
+    cmp-long v1, p3, v2
 
     if-gtz v1, :cond_e
 
@@ -1325,7 +1325,7 @@
 .end method
 
 .method private processJournal()V
-    .registers 8
+    .registers 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1388,18 +1388,18 @@
     if-ge v2, v3, :cond_f
 
     .line 409
-    iget-wide v3, p0, Lcom/bitmapfun/util/DiskLruCache;->size:J
+    iget-wide v4, p0, Lcom/bitmapfun/util/DiskLruCache;->size:J
 
     # getter for: Lcom/bitmapfun/util/DiskLruCache$Entry;->lengths:[J
     invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache$Entry;->access$7(Lcom/bitmapfun/util/DiskLruCache$Entry;)[J
 
-    move-result-object v5
+    move-result-object v3
 
-    aget-wide v5, v5, v2
+    aget-wide v6, v3, v2
 
-    add-long/2addr v3, v5
+    add-long/2addr v4, v6
 
-    iput-wide v3, p0, Lcom/bitmapfun/util/DiskLruCache;->size:J
+    iput-wide v4, p0, Lcom/bitmapfun/util/DiskLruCache;->size:J
 
     .line 408
     add-int/lit8 v2, v2, 0x1
@@ -2280,7 +2280,7 @@
 .end method
 
 .method private trimToSize()V
-    .registers 6
+    .registers 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2290,11 +2290,11 @@
     .prologue
     .line 699
     :goto_0
-    iget-wide v1, p0, Lcom/bitmapfun/util/DiskLruCache;->size:J
+    iget-wide v2, p0, Lcom/bitmapfun/util/DiskLruCache;->size:J
 
-    iget-wide v3, p0, Lcom/bitmapfun/util/DiskLruCache;->maxSize:J
+    iget-wide v4, p0, Lcom/bitmapfun/util/DiskLruCache;->maxSize:J
 
-    cmp-long v1, v1, v3
+    cmp-long v1, v2, v4
 
     if-gtz v1, :cond_9
 
@@ -2595,7 +2595,7 @@
     .end annotation
 
     .prologue
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     .line 474
     monitor-enter p0
@@ -2607,9 +2607,9 @@
     invoke-direct {p0, p1}, Lcom/bitmapfun/util/DiskLruCache;->validateKey(Ljava/lang/String;)V
 
     .line 476
-    iget-object v1, p0, Lcom/bitmapfun/util/DiskLruCache;->lruEntries:Ljava/util/LinkedHashMap;
+    iget-object v2, p0, Lcom/bitmapfun/util/DiskLruCache;->lruEntries:Ljava/util/LinkedHashMap;
 
-    invoke-virtual {v1, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v8
 
@@ -2626,7 +2626,7 @@
     :goto_12
     monitor-exit p0
 
-    return-object v0
+    return-object v1
 
     .line 481
     :cond_14
@@ -2634,125 +2634,125 @@
     # getter for: Lcom/bitmapfun/util/DiskLruCache$Entry;->readable:Z
     invoke-static {v8}, Lcom/bitmapfun/util/DiskLruCache$Entry;->access$1(Lcom/bitmapfun/util/DiskLruCache$Entry;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_12
+    if-eqz v2, :cond_12
 
     .line 490
-    iget v1, p0, Lcom/bitmapfun/util/DiskLruCache;->valueCount:I
+    iget v2, p0, Lcom/bitmapfun/util/DiskLruCache;->valueCount:I
 
-    new-array v5, v1, [Ljava/io/InputStream;
+    new-array v6, v2, [Ljava/io/InputStream;
     :try_end_1e
     .catchall {:try_start_14 .. :try_end_1e} :catchall_5d
 
     .line 492
-    .local v5, "ins":[Ljava/io/InputStream;
+    .local v6, "ins":[Ljava/io/InputStream;
     const/4 v9, 0x0
 
     .local v9, "i":I
     :goto_1f
     :try_start_1f
-    iget v1, p0, Lcom/bitmapfun/util/DiskLruCache;->valueCount:I
+    iget v2, p0, Lcom/bitmapfun/util/DiskLruCache;->valueCount:I
     :try_end_21
     .catch Ljava/io/FileNotFoundException; {:try_start_1f .. :try_end_21} :catch_6e
     .catchall {:try_start_1f .. :try_end_21} :catchall_5d
 
-    if-lt v9, v1, :cond_60
+    if-lt v9, v2, :cond_60
 
     .line 500
     :try_start_23
-    iget v0, p0, Lcom/bitmapfun/util/DiskLruCache;->redundantOpCount:I
+    iget v1, p0, Lcom/bitmapfun/util/DiskLruCache;->redundantOpCount:I
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    iput v0, p0, Lcom/bitmapfun/util/DiskLruCache;->redundantOpCount:I
+    iput v1, p0, Lcom/bitmapfun/util/DiskLruCache;->redundantOpCount:I
 
     .line 501
-    iget-object v0, p0, Lcom/bitmapfun/util/DiskLruCache;->journalWriter:Ljava/io/Writer;
+    iget-object v1, p0, Lcom/bitmapfun/util/DiskLruCache;->journalWriter:Ljava/io/Writer;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v2, "READ "
+    const-string v3, "READ "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/16 v2, 0xa
+    const/16 v3, 0xa
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Ljava/io/Writer;->append(Ljava/lang/CharSequence;)Ljava/io/Writer;
+    invoke-virtual {v1, v2}, Ljava/io/Writer;->append(Ljava/lang/CharSequence;)Ljava/io/Writer;
 
     .line 502
     invoke-direct {p0}, Lcom/bitmapfun/util/DiskLruCache;->journalRebuildRequired()Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_50
+    if-eqz v1, :cond_50
 
     .line 503
-    iget-object v0, p0, Lcom/bitmapfun/util/DiskLruCache;->executorService:Ljava/util/concurrent/ExecutorService;
+    iget-object v1, p0, Lcom/bitmapfun/util/DiskLruCache;->executorService:Ljava/util/concurrent/ExecutorService;
 
-    iget-object v1, p0, Lcom/bitmapfun/util/DiskLruCache;->cleanupCallable:Ljava/util/concurrent/Callable;
+    iget-object v2, p0, Lcom/bitmapfun/util/DiskLruCache;->cleanupCallable:Ljava/util/concurrent/Callable;
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+    invoke-interface {v1, v2}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
 
     .line 506
     :cond_50
-    new-instance v0, Lcom/bitmapfun/util/DiskLruCache$Snapshot;
+    new-instance v1, Lcom/bitmapfun/util/DiskLruCache$Snapshot;
 
     # getter for: Lcom/bitmapfun/util/DiskLruCache$Entry;->sequenceNumber:J
     invoke-static {v8}, Lcom/bitmapfun/util/DiskLruCache$Entry;->access$8(Lcom/bitmapfun/util/DiskLruCache$Entry;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    move-object v1, p0
+    move-object v2, p0
 
-    move-object v2, p1
+    move-object v3, p1
 
-    invoke-direct/range {v0 .. v6}, Lcom/bitmapfun/util/DiskLruCache$Snapshot;-><init>(Lcom/bitmapfun/util/DiskLruCache;Ljava/lang/String;J[Ljava/io/InputStream;Lcom/bitmapfun/util/DiskLruCache$Snapshot;)V
+    invoke-direct/range {v1 .. v7}, Lcom/bitmapfun/util/DiskLruCache$Snapshot;-><init>(Lcom/bitmapfun/util/DiskLruCache;Ljava/lang/String;J[Ljava/io/InputStream;Lcom/bitmapfun/util/DiskLruCache$Snapshot;)V
     :try_end_5c
     .catchall {:try_start_23 .. :try_end_5c} :catchall_5d
 
     goto :goto_12
 
     .line 474
-    .end local v5    # "ins":[Ljava/io/InputStream;
+    .end local v6    # "ins":[Ljava/io/InputStream;
     .end local v8    # "entry":Lcom/bitmapfun/util/DiskLruCache$Entry;
     .end local v9    # "i":I
     :catchall_5d
-    move-exception v0
+    move-exception v1
 
     monitor-exit p0
 
-    throw v0
+    throw v1
 
     .line 493
-    .restart local v5    # "ins":[Ljava/io/InputStream;
+    .restart local v6    # "ins":[Ljava/io/InputStream;
     .restart local v8    # "entry":Lcom/bitmapfun/util/DiskLruCache$Entry;
     .restart local v9    # "i":I
     :cond_60
     :try_start_60
-    new-instance v1, Ljava/io/FileInputStream;
+    new-instance v2, Ljava/io/FileInputStream;
 
     invoke-virtual {v8, v9}, Lcom/bitmapfun/util/DiskLruCache$Entry;->getCleanFile(I)Ljava/io/File;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-direct {v1, v2}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {v2, v3}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    aput-object v1, v5, v9
+    aput-object v2, v6, v9
     :try_end_6b
     .catch Ljava/io/FileNotFoundException; {:try_start_60 .. :try_end_6b} :catch_6e
     .catchall {:try_start_60 .. :try_end_6b} :catchall_5d
@@ -2764,10 +2764,10 @@
 
     .line 495
     :catch_6e
-    move-exception v7
+    move-exception v0
 
     .line 497
-    .local v7, "e":Ljava/io/FileNotFoundException;
+    .local v0, "e":Ljava/io/FileNotFoundException;
     goto :goto_12
 .end method
 
@@ -2812,7 +2812,7 @@
 .end method
 
 .method public declared-synchronized remove(Ljava/lang/String;)Z
-    .registers 9
+    .registers 10
     .param p1, "key"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -2984,18 +2984,18 @@
     .restart local v2    # "i":I
     :cond_75
     :try_start_75
-    iget-wide v3, p0, Lcom/bitmapfun/util/DiskLruCache;->size:J
+    iget-wide v4, p0, Lcom/bitmapfun/util/DiskLruCache;->size:J
 
     # getter for: Lcom/bitmapfun/util/DiskLruCache$Entry;->lengths:[J
     invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache$Entry;->access$7(Lcom/bitmapfun/util/DiskLruCache$Entry;)[J
 
-    move-result-object v5
+    move-result-object v3
 
-    aget-wide v5, v5, v2
+    aget-wide v6, v3, v2
 
-    sub-long/2addr v3, v5
+    sub-long/2addr v4, v6
 
-    iput-wide v3, p0, Lcom/bitmapfun/util/DiskLruCache;->size:J
+    iput-wide v4, p0, Lcom/bitmapfun/util/DiskLruCache;->size:J
 
     .line 645
     # getter for: Lcom/bitmapfun/util/DiskLruCache$Entry;->lengths:[J

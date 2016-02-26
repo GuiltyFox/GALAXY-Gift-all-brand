@@ -324,11 +324,11 @@
     # getter for: Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->mStartDelay:J
     invoke-static {v4}, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->access$5(Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;)J
 
-    move-result-wide v19
+    move-result-wide v20
 
-    const-wide/16 v21, 0x0
+    const-wide/16 v22, 0x0
 
-    cmp-long v19, v19, v21
+    cmp-long v19, v20, v22
 
     if-nez v19, :cond_d5
 

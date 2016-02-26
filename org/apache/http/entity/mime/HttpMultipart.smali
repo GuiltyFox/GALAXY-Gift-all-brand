@@ -688,10 +688,10 @@
     const-wide/16 v10, -0x1
 
     .line 241
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
     .line 242
-    .local v1, "contentLen":J
+    .local v2, "contentLen":J
     iget-object v12, p0, Lorg/apache/http/entity/mime/HttpMultipart;->parts:Ljava/util/List;
 
     invoke-interface {v12}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -733,7 +733,7 @@
     if-ltz v12, :cond_38
 
     .line 246
-    add-long/2addr v1, v6
+    add-long/2addr v2, v6
 
     goto :goto_a
 
@@ -768,7 +768,7 @@
 
     int-to-long v10, v10
 
-    add-long/2addr v10, v1
+    add-long/2addr v10, v2
 
     .line 258
     .end local v4    # "extra":[B
@@ -780,10 +780,10 @@
     .line 256
     .restart local v8    # "out":Ljava/io/ByteArrayOutputStream;
     :catch_39
-    move-exception v3
+    move-exception v1
 
     .line 258
-    .local v3, "ex":Ljava/io/IOException;
+    .local v1, "ex":Ljava/io/IOException;
     goto :goto_38
 .end method
 

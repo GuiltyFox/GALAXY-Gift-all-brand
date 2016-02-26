@@ -864,17 +864,17 @@
     .line 1132
     iget-object v2, v9, Lic/buzzebeeslib/activity/MarketPlaceReviewListActivity$MarketReviewAdapter$ViewHolderMarketReviewRow;->tvCreateTimePhoto:Landroid/widget/TextView;
 
-    iget-wide v3, v13, Lic/buzzebeeslib/bean/CampaignReview;->CreatedTime:J
+    iget-wide v4, v13, Lic/buzzebeeslib/bean/CampaignReview;->CreatedTime:J
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lic/buzzebeeslib/activity/MarketPlaceReviewListActivity$MarketReviewAdapter;->this$0:Lic/buzzebeeslib/activity/MarketPlaceReviewListActivity;
+    iget-object v3, v0, Lic/buzzebeeslib/activity/MarketPlaceReviewListActivity$MarketReviewAdapter;->this$0:Lic/buzzebeeslib/activity/MarketPlaceReviewListActivity;
 
-    invoke-virtual {v5}, Lic/buzzebeeslib/activity/MarketPlaceReviewListActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {v3}, Lic/buzzebeeslib/activity/MarketPlaceReviewListActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-static {v3, v4, v5}, Lic/buzzebeeslib/util/BBUtil;->CDateToTime(JLandroid/content/Context;)Ljava/lang/String;
+    invoke-static {v4, v5, v3}, Lic/buzzebeeslib/util/BBUtil;->CDateToTime(JLandroid/content/Context;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -1214,17 +1214,17 @@
     :cond_369
     iget-object v2, v9, Lic/buzzebeeslib/activity/MarketPlaceReviewListActivity$MarketReviewAdapter$ViewHolderMarketReviewRow;->tvCreateTime:Landroid/widget/TextView;
 
-    iget-wide v3, v13, Lic/buzzebeeslib/bean/CampaignReview;->CreatedTime:J
+    iget-wide v4, v13, Lic/buzzebeeslib/bean/CampaignReview;->CreatedTime:J
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lic/buzzebeeslib/activity/MarketPlaceReviewListActivity$MarketReviewAdapter;->this$0:Lic/buzzebeeslib/activity/MarketPlaceReviewListActivity;
+    iget-object v3, v0, Lic/buzzebeeslib/activity/MarketPlaceReviewListActivity$MarketReviewAdapter;->this$0:Lic/buzzebeeslib/activity/MarketPlaceReviewListActivity;
 
-    invoke-virtual {v5}, Lic/buzzebeeslib/activity/MarketPlaceReviewListActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {v3}, Lic/buzzebeeslib/activity/MarketPlaceReviewListActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-static {v3, v4, v5}, Lic/buzzebeeslib/util/BBUtil;->CDateToTime(JLandroid/content/Context;)Ljava/lang/String;
+    invoke-static {v4, v5, v3}, Lic/buzzebeeslib/util/BBUtil;->CDateToTime(JLandroid/content/Context;)Ljava/lang/String;
 
     move-result-object v3
 

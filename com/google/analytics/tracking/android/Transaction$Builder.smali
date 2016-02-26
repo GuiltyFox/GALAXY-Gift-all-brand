@@ -30,12 +30,12 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;J)V
-    .registers 7
+    .registers 8
     .param p1, "transactionId"    # Ljava/lang/String;
     .param p2, "totalCostInMicros"    # J
 
     .prologue
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
     const/4 v0, 0x0
 
@@ -46,10 +46,10 @@
     iput-object v0, p0, Lcom/google/analytics/tracking/android/Transaction$Builder;->mAffiliation:Ljava/lang/String;
 
     .line 110
-    iput-wide v1, p0, Lcom/google/analytics/tracking/android/Transaction$Builder;->mTotalTaxInMicros:J
+    iput-wide v2, p0, Lcom/google/analytics/tracking/android/Transaction$Builder;->mTotalTaxInMicros:J
 
     .line 111
-    iput-wide v1, p0, Lcom/google/analytics/tracking/android/Transaction$Builder;->mShippingCostInMicros:J
+    iput-wide v2, p0, Lcom/google/analytics/tracking/android/Transaction$Builder;->mShippingCostInMicros:J
 
     .line 112
     iput-object v0, p0, Lcom/google/analytics/tracking/android/Transaction$Builder;->mCurrencyCode:Ljava/lang/String;
@@ -188,7 +188,7 @@
 .end method
 
 .method public setShippingCostInMicros(J)Lcom/google/analytics/tracking/android/Transaction$Builder;
-    .registers 3
+    .registers 4
     .param p1, "shippingCostInMicros"    # J
 
     .prologue
@@ -200,7 +200,7 @@
 .end method
 
 .method public setTotalTaxInMicros(J)Lcom/google/analytics/tracking/android/Transaction$Builder;
-    .registers 3
+    .registers 4
     .param p1, "totalTaxInMicros"    # J
 
     .prologue

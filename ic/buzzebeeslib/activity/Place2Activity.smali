@@ -518,7 +518,7 @@
 .end method
 
 .method static synthetic access$10(Lic/buzzebeeslib/activity/Place2Activity;D)V
-    .registers 3
+    .registers 4
 
     .prologue
     .line 96
@@ -848,7 +848,7 @@
 .end method
 
 .method static synthetic access$40(Lic/buzzebeeslib/activity/Place2Activity;J)V
-    .registers 3
+    .registers 4
 
     .prologue
     .line 98
@@ -918,7 +918,7 @@
 .end method
 
 .method static synthetic access$9(Lic/buzzebeeslib/activity/Place2Activity;D)V
-    .registers 3
+    .registers 4
 
     .prologue
     .line 95
@@ -1988,7 +1988,7 @@
 .end method
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
-    .registers 7
+    .registers 8
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
@@ -2035,9 +2035,9 @@
     .line 432
     const-string v2, "gLastRank"
 
-    iget-wide v3, p0, Lic/buzzebeeslib/activity/Place2Activity;->gLastRank:J
+    iget-wide v4, p0, Lic/buzzebeeslib/activity/Place2Activity;->gLastRank:J
 
-    invoke-virtual {p1, v2, v3, v4}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    invoke-virtual {p1, v2, v4, v5}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 433
     const-string v2, "gListPerPage"
@@ -2056,16 +2056,16 @@
     .line 435
     const-string v2, "gCurrentLat"
 
-    iget-wide v3, p0, Lic/buzzebeeslib/activity/Place2Activity;->gCurrentLat:D
+    iget-wide v4, p0, Lic/buzzebeeslib/activity/Place2Activity;->gCurrentLat:D
 
-    invoke-virtual {p1, v2, v3, v4}, Landroid/os/Bundle;->putDouble(Ljava/lang/String;D)V
+    invoke-virtual {p1, v2, v4, v5}, Landroid/os/Bundle;->putDouble(Ljava/lang/String;D)V
 
     .line 436
     const-string v2, "gCurrentLon"
 
-    iget-wide v3, p0, Lic/buzzebeeslib/activity/Place2Activity;->gCurrentLon:D
+    iget-wide v4, p0, Lic/buzzebeeslib/activity/Place2Activity;->gCurrentLon:D
 
-    invoke-virtual {p1, v2, v3, v4}, Landroid/os/Bundle;->putDouble(Ljava/lang/String;D)V
+    invoke-virtual {p1, v2, v4, v5}, Landroid/os/Bundle;->putDouble(Ljava/lang/String;D)V
 
     .line 441
     :try_start_49

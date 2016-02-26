@@ -114,7 +114,7 @@
 .end method
 
 .method public static formatDuration(JJLjava/io/PrintWriter;)V
-    .registers 8
+    .registers 9
     .param p0, "time"    # J
     .param p2, "now"    # J
     .param p4, "pw"    # Ljava/io/PrintWriter;
@@ -148,7 +148,7 @@
 .end method
 
 .method public static formatDuration(JLjava/io/PrintWriter;)V
-    .registers 4
+    .registers 5
     .param p0, "duration"    # J
     .param p2, "pw"    # Ljava/io/PrintWriter;
 
@@ -163,7 +163,7 @@
 .end method
 
 .method public static formatDuration(JLjava/io/PrintWriter;I)V
-    .registers 9
+    .registers 10
     .param p0, "duration"    # J
     .param p2, "pw"    # Ljava/io/PrintWriter;
     .param p3, "fieldLen"    # I

@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$29;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    .line 3447
+    .line 3378
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,26 +43,26 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 3449
+    .line 3380
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 3450
+    .line 3381
     const/4 v1, 0x0
 
-    invoke-static {v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$35(Z)V
+    invoke-static {v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$32(Z)V
 
-    .line 3452
+    .line 3383
     invoke-static {}, Lcom/facebook/Session;->getActiveSession()Lcom/facebook/Session;
 
     move-result-object v0
 
-    .line 3453
+    .line 3384
     .local v0, "session":Lcom/facebook/Session;
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$29;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     # invokes: Lcom/samsung/privilege/activity/MainMenuFragment;->updateViewForUser(Lcom/facebook/Session;)V
-    invoke-static {v1, v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$24(Lcom/samsung/privilege/activity/MainMenuFragment;Lcom/facebook/Session;)V
+    invoke-static {v1, v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$21(Lcom/samsung/privilege/activity/MainMenuFragment;Lcom/facebook/Session;)V
 
-    .line 3454
+    .line 3385
     return-void
 .end method

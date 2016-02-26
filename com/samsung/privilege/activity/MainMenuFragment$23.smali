@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$23;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    .line 2769
+    .line 2784
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,12 +43,12 @@
     .param p2, "i"    # I
 
     .prologue
-    .line 2772
+    .line 2787
     invoke-static {}, Lcom/facebook/Session;->getActiveSession()Lcom/facebook/Session;
 
     move-result-object v0
 
-    .line 2773
+    .line 2788
     .local v0, "session":Lcom/facebook/Session;
     if-eqz v0, :cond_f
 
@@ -58,10 +58,10 @@
 
     if-nez v1, :cond_f
 
-    .line 2774
+    .line 2789
     invoke-virtual {v0}, Lcom/facebook/Session;->closeAndClearTokenInformation()V
 
-    .line 2776
+    .line 2791
     :cond_f
     return-void
 .end method

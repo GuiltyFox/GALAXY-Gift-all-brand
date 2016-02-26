@@ -98,6 +98,8 @@
 
 .field public static IS_SERVER_PRODUCTION:Z
 
+.field public static LOGIN_OTP:Z
+
 .field public static MODE_DEBUG_MEM:Z
 
 .field public static MODE_IMAGE_ROUNDED:Z
@@ -497,113 +499,116 @@
     sput-object v0, Lcom/samsung/privilege/AppSetting;->INAPP_KEY:Ljava/lang/String;
 
     .line 338
+    sput-boolean v2, Lcom/samsung/privilege/AppSetting;->LOGIN_OTP:Z
+
+    .line 339
     sput-boolean v2, Lcom/samsung/privilege/AppSetting;->SHOW_MENU_MARKET_BZBS:Z
 
-    .line 446
+    .line 448
     const-string v0, "com.samsung.privilege"
 
     sput-object v0, Lcom/samsung/privilege/AppSetting;->UriPlayStore:Ljava/lang/String;
 
-    .line 449
+    .line 451
     sput v3, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_CACHE_MEMORY:I
 
-    .line 450
+    .line 452
     sput v3, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_RETRY_NUMBER:I
 
-    .line 451
+    .line 453
     const/16 v0, 0x1388
 
     sput v0, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_CONNECT_TIMEOUT:I
 
-    .line 452
+    .line 454
     const/16 v0, 0x2710
 
     sput v0, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_READ_TIMEOUT:I
 
-    .line 453
+    .line 455
     sput v2, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_SAMPLE_SIZE:I
 
-    .line 454
+    .line 456
     const/16 v0, 0x200
 
     sput v0, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_TEMP_STORAGE:I
 
-    .line 455
+    .line 457
     const/16 v0, 0x3c
 
     sput v0, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_SAVE_QUALITY:I
 
-    .line 457
+    .line 459
     sput v3, Lcom/samsung/privilege/AppSetting;->WALL_QUERY_OLD:I
 
-    .line 458
+    .line 460
     sput v3, Lcom/samsung/privilege/AppSetting;->WALL_IMAGE_FADEIN:I
 
-    .line 459
+    .line 461
     const/16 v0, 0x19
 
     sput v0, Lcom/samsung/privilege/AppSetting;->WALL_MEM_CACHE_SIZE:I
 
-    .line 460
+    .line 462
     const/16 v0, 0x32
 
     sput v0, Lcom/samsung/privilege/AppSetting;->WALL_DISK_CACHE_SIZE:I
 
-    .line 462
+    .line 464
     const-wide/16 v0, 0x0
 
     sput-wide v0, Lcom/samsung/privilege/AppSetting;->wall_last_created_time:J
 
-    .line 466
+    .line 468
     sput-boolean v3, Lcom/samsung/privilege/AppSetting;->MODE_DEBUG_MEM:Z
 
-    .line 467
+    .line 469
     sput-boolean v2, Lcom/samsung/privilege/AppSetting;->MODE_IMAGE_ROUNDED:Z
 
-    .line 469
+    .line 471
     sput-boolean v3, Lcom/samsung/privilege/AppSetting;->WALL_DATA_CHANGED:Z
 
-    .line 471
+    .line 473
     const/16 v0, 0x1e
 
     sput v0, Lcom/samsung/privilege/AppSetting;->gIntDifferenceInXMoreThanInY:I
 
-    .line 480
+    .line 482
     sput-boolean v3, Lcom/samsung/privilege/AppSetting;->gIsAnimatingPoints:Z
 
-    .line 481
+    .line 483
     sput-boolean v3, Lcom/samsung/privilege/AppSetting;->gIsShowNotification:Z
 
-    .line 482
-    sput-boolean v3, Lcom/samsung/privilege/AppSetting;->gIsAnimatingBadgeAlert:Z
-
     .line 484
-    new-instance v0, Ljava/util/LinkedList;
-
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
-
-    sput-object v0, Lcom/samsung/privilege/AppSetting;->QUEUE_POINTS:Ljava/util/Queue;
-
-    .line 485
-    new-instance v0, Ljava/util/LinkedList;
-
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
-
-    sput-object v0, Lcom/samsung/privilege/AppSetting;->QUEUE_BADGEALERTS:Ljava/util/Queue;
+    sput-boolean v3, Lcom/samsung/privilege/AppSetting;->gIsAnimatingBadgeAlert:Z
 
     .line 486
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    sput-object v0, Lcom/samsung/privilege/AppSetting;->QUEUE_MESSAGEPOPUPS:Ljava/util/Queue;
+    sput-object v0, Lcom/samsung/privilege/AppSetting;->QUEUE_POINTS:Ljava/util/Queue;
+
+    .line 487
+    new-instance v0, Ljava/util/LinkedList;
+
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+
+    sput-object v0, Lcom/samsung/privilege/AppSetting;->QUEUE_BADGEALERTS:Ljava/util/Queue;
 
     .line 488
+    new-instance v0, Ljava/util/LinkedList;
+
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+
+    sput-object v0, Lcom/samsung/privilege/AppSetting;->QUEUE_MESSAGEPOPUPS:Ljava/util/Queue;
+
+    .line 490
     const-string v0, ""
 
     sput-object v0, Lcom/samsung/privilege/AppSetting;->gLastUpdate:Ljava/lang/String;
 
-    .line 640
+    .line 642
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/String;
@@ -624,7 +629,7 @@
 
     sput-object v0, Lcom/samsung/privilege/AppSetting;->Permissons_BzBs_Read:[Ljava/lang/String;
 
-    .line 666
+    .line 668
     sget-object v0, Lcom/samsung/privilege/AppSetting;->Permissons_BzBs_Read:[Ljava/lang/String;
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -633,13 +638,13 @@
 
     sput-object v0, Lcom/samsung/privilege/AppSetting;->Permissons_BzBs_Read_List:Ljava/util/List;
 
-    .line 669
+    .line 671
     sput v3, Lcom/samsung/privilege/AppSetting;->screenWidth:I
 
-    .line 670
+    .line 672
     sput v3, Lcom/samsung/privilege/AppSetting;->screenHeight:I
 
-    .line 672
+    .line 674
     sput v3, Lcom/samsung/privilege/AppSetting;->dpi:I
 
     return-void
@@ -660,7 +665,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 407
+    .line 409
     const-string v1, "mounted"
 
     invoke-static {}, Landroid/os/Environment;->getExternalStorageState()Ljava/lang/String;
@@ -688,12 +693,12 @@
 
     move-result-object v0
 
-    .line 408
+    .line 410
     .local v0, "androidPath":Ljava/lang/String;
     :goto_1a
     return-object v0
 
-    .line 407
+    .line 409
     .end local v0    # "androidPath":Ljava/lang/String;
     :cond_1b
     invoke-virtual {p0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
@@ -1393,7 +1398,7 @@
     .param p1, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 568
+    .line 570
     :try_start_0
     new-instance v2, Ljava/io/File;
 
@@ -1421,7 +1426,7 @@
 
     invoke-direct {v2, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 569
+    .line 571
     .local v2, "root":Ljava/io/File;
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
@@ -1429,10 +1434,10 @@
 
     if-nez v4, :cond_25
 
-    .line 570
+    .line 572
     invoke-virtual {v2}, Ljava/io/File;->mkdirs()Z
 
-    .line 572
+    .line 574
     :cond_25
     new-instance v1, Ljava/io/File;
 
@@ -1456,39 +1461,39 @@
 
     invoke-direct {v1, v2, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 573
+    .line 575
     .local v1, "gpxfile":Ljava/io/File;
     new-instance v3, Ljava/io/FileWriter;
 
     invoke-direct {v3, v1}, Ljava/io/FileWriter;-><init>(Ljava/io/File;)V
 
-    .line 574
+    .line 576
     .local v3, "writer":Ljava/io/FileWriter;
     const-string v4, ""
 
     invoke-virtual {v3, v4}, Ljava/io/FileWriter;->write(Ljava/lang/String;)V
 
-    .line 575
+    .line 577
     invoke-virtual {v3}, Ljava/io/FileWriter;->flush()V
 
-    .line 576
+    .line 578
     invoke-virtual {v3}, Ljava/io/FileWriter;->close()V
     :try_end_4d
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_4d} :catch_4e
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_4d} :catch_68
 
-    .line 582
+    .line 584
     .end local v1    # "gpxfile":Ljava/io/File;
     .end local v2    # "root":Ljava/io/File;
     .end local v3    # "writer":Ljava/io/FileWriter;
     :goto_4d
     return-void
 
-    .line 577
+    .line 579
     :catch_4e
     move-exception v0
 
-    .line 578
+    .line 580
     .local v0, "e":Ljava/io/IOException;
     const-string v4, "MyLog"
 
@@ -1514,12 +1519,12 @@
 
     goto :goto_4d
 
-    .line 579
+    .line 581
     .end local v0    # "e":Ljava/io/IOException;
     :catch_68
     move-exception v0
 
-    .line 580
+    .line 582
     .local v0, "e":Ljava/lang/Exception;
     const-string v4, "MyLog"
 
@@ -2199,107 +2204,107 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 494
+    .line 496
     sget-object v0, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
 
     sput-object v0, Lic/buzzebeeslib/LibConst;->API_URL_BUZZEBEES:Ljava/lang/String;
 
-    .line 495
+    .line 497
     sget-object v0, Lcom/samsung/privilege/AppSetting;->API_URL_BZBS_BLOB:Ljava/lang/String;
 
     sput-object v0, Lic/buzzebeeslib/LibConst;->API_URL_BZBS_BLOB:Ljava/lang/String;
 
-    .line 497
+    .line 499
     invoke-static {p0}, Lcom/samsung/privilege/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lic/buzzebeeslib/LibUserLogin;->SetAppId(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 498
+    .line 500
     invoke-static {p0}, Lcom/samsung/privilege/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lic/buzzebeeslib/LibUserLogin;->SetTokenBuzzeBees(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 499
+    .line 501
     invoke-static {p0}, Lcom/samsung/privilege/UserLogin;->GetTokenFacebook(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lic/buzzebeeslib/LibUserLogin;->SetTokenFacebook(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 500
+    .line 502
     invoke-static {p0}, Lcom/samsung/privilege/UserLogin;->GetUserId(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lic/buzzebeeslib/LibUserLogin;->SetUserId(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 501
+    .line 503
     invoke-static {p0}, Lcom/samsung/privilege/UserLogin;->GetFacebookUID(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lic/buzzebeeslib/LibUserLogin;->SetFacebookUID(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 502
+    .line 504
     invoke-static {p0}, Lcom/samsung/privilege/UserLogin;->GetFacebookName(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lic/buzzebeeslib/LibUserLogin;->SetFacebookName(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 503
+    .line 505
     invoke-static {p0}, Lcom/samsung/privilege/UserLogin;->GetFirstName(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lic/buzzebeeslib/LibUserLogin;->SetFirstName(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 504
+    .line 506
     invoke-static {p0}, Lcom/samsung/privilege/UserLogin;->GetLastName(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lic/buzzebeeslib/LibUserLogin;->SetLastName(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 505
+    .line 507
     invoke-static {p0}, Lcom/samsung/privilege/UserLogin;->GetPoints(Landroid/content/Context;)J
 
     move-result-wide v0
 
     invoke-static {p0, v0, v1}, Lic/buzzebeeslib/LibUserLogin;->SetPoints(Landroid/content/Context;J)Z
 
-    .line 506
+    .line 508
     invoke-static {p0}, Lcom/samsung/privilege/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lic/buzzebeeslib/LibUserLogin;->SetLocale(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 507
+    .line 509
     invoke-static {p0}, Lcom/samsung/privilege/UserLogin;->GetModeLogin(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lic/buzzebeeslib/LibUserLogin;->SetModeLogin(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 508
+    .line 510
     invoke-static {p0, v2}, Lic/buzzebeeslib/LibUserLogin;->SetIsShowConditionInMarket(Landroid/content/Context;Z)Z
 
-    .line 509
+    .line 511
     invoke-static {p0, v2}, Lic/buzzebeeslib/LibUserLogin;->SetIsShowUseDialogInMarket(Landroid/content/Context;Z)Z
 
-    .line 510
+    .line 512
     invoke-static {p0}, Lcom/samsung/privilege/UserLogin;->GetIsShowShoppingBasket(Landroid/content/Context;)Z
 
     move-result v0
 
     invoke-static {p0, v0}, Lic/buzzebeeslib/LibUserLogin;->SetIsShowShoppingBasket(Landroid/content/Context;Z)Z
 
-    .line 511
+    .line 513
     return-void
 .end method
 
@@ -2310,7 +2315,7 @@
     .param p2, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 514
+    .line 516
     const-string v0, "APP"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2319,15 +2324,15 @@
 
     if-eqz v0, :cond_c
 
-    .line 515
+    .line 517
     invoke-static {p0, p1, p2}, Lcom/samsung/privilege/AppSetting;->SaveLogOnSD(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 525
+    .line 527
     :cond_b
     :goto_b
     return-void
 
-    .line 516
+    .line 518
     :cond_c
     const-string v0, "POINTS"
 
@@ -2337,12 +2342,12 @@
 
     if-eqz v0, :cond_18
 
-    .line 517
+    .line 519
     invoke-static {p0, p1, p2}, Lcom/samsung/privilege/AppSetting;->SaveLogOnSD(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
     goto :goto_b
 
-    .line 518
+    .line 520
     :cond_18
     const-string v0, "REDEEM"
 
@@ -2352,12 +2357,12 @@
 
     if-eqz v0, :cond_24
 
-    .line 519
+    .line 521
     invoke-static {p0, p1, p2}, Lcom/samsung/privilege/AppSetting;->SaveLogOnSD(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
     goto :goto_b
 
-    .line 520
+    .line 522
     :cond_24
     const-string v0, "WALL"
 
@@ -2367,7 +2372,7 @@
 
     if-nez v0, :cond_b
 
-    .line 523
+    .line 525
     invoke-static {p0, p1, p2}, Lcom/samsung/privilege/AppSetting;->SaveLogOnSD(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
     goto :goto_b
@@ -2449,7 +2454,7 @@
     .param p1, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 591
+    .line 593
     new-instance v1, Ljava/io/File;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2486,13 +2491,13 @@
 
     invoke-direct {v1, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 594
+    .line 596
     .local v1, "file":Ljava/io/File;
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 597
+    .line 599
     .local v3, "text":Ljava/lang/StringBuilder;
     :try_start_2b
     new-instance v0, Ljava/io/BufferedReader;
@@ -2503,7 +2508,7 @@
 
     invoke-direct {v0, v4}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
-    .line 600
+    .line 602
     .local v0, "br":Ljava/io/BufferedReader;
     :goto_35
     invoke-virtual {v0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
@@ -2515,7 +2520,7 @@
     .local v2, "line":Ljava/lang/String;
     if-nez v2, :cond_40
 
-    .line 608
+    .line 610
     .end local v0    # "br":Ljava/io/BufferedReader;
     .end local v2    # "line":Ljava/lang/String;
     :goto_3b
@@ -2525,14 +2530,14 @@
 
     return-object v4
 
-    .line 601
+    .line 603
     .restart local v0    # "br":Ljava/io/BufferedReader;
     .restart local v2    # "line":Ljava/lang/String;
     :cond_40
     :try_start_40
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 602
+    .line 604
     const/16 v4, 0xa
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -2541,7 +2546,7 @@
 
     goto :goto_35
 
-    .line 604
+    .line 606
     .end local v0    # "br":Ljava/io/BufferedReader;
     .end local v2    # "line":Ljava/lang/String;
     :catch_49
@@ -2627,7 +2632,7 @@
     .param p2, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 530
+    .line 532
     :try_start_0
     new-instance v2, Ljava/io/File;
 
@@ -2655,7 +2660,7 @@
 
     invoke-direct {v2, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 531
+    .line 533
     .local v2, "root":Ljava/io/File;
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
@@ -2663,10 +2668,10 @@
 
     if-nez v4, :cond_25
 
-    .line 532
+    .line 534
     invoke-virtual {v2}, Ljava/io/File;->mkdirs()Z
 
-    .line 534
+    .line 536
     :cond_25
     new-instance v1, Ljava/io/File;
 
@@ -2690,7 +2695,7 @@
 
     invoke-direct {v1, v2, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 535
+    .line 537
     .local v1, "gpxfile":Ljava/io/File;
     new-instance v3, Ljava/io/FileWriter;
 
@@ -2698,7 +2703,7 @@
 
     invoke-direct {v3, v1, v4}, Ljava/io/FileWriter;-><init>(Ljava/io/File;Z)V
 
-    .line 536
+    .line 538
     .local v3, "writer":Ljava/io/FileWriter;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -2720,27 +2725,27 @@
 
     invoke-virtual {v3, v4}, Ljava/io/FileWriter;->append(Ljava/lang/CharSequence;)Ljava/io/Writer;
 
-    .line 537
+    .line 539
     invoke-virtual {v3}, Ljava/io/FileWriter;->flush()V
 
-    .line 538
+    .line 540
     invoke-virtual {v3}, Ljava/io/FileWriter;->close()V
     :try_end_5f
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_5f} :catch_60
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_5f} :catch_7a
 
-    .line 544
+    .line 546
     .end local v1    # "gpxfile":Ljava/io/File;
     .end local v2    # "root":Ljava/io/File;
     .end local v3    # "writer":Ljava/io/FileWriter;
     :goto_5f
     return-void
 
-    .line 539
+    .line 541
     :catch_60
     move-exception v0
 
-    .line 540
+    .line 542
     .local v0, "e":Ljava/io/IOException;
     const-string v4, "MyLog"
 
@@ -2766,12 +2771,12 @@
 
     goto :goto_5f
 
-    .line 541
+    .line 543
     .end local v0    # "e":Ljava/io/IOException;
     :catch_7a
     move-exception v0
 
-    .line 542
+    .line 544
     .local v0, "e":Ljava/lang/Exception;
     const-string v4, "MyLog"
 
@@ -2805,7 +2810,7 @@
     .param p2, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 549
+    .line 551
     :try_start_0
     new-instance v2, Ljava/io/File;
 
@@ -2833,7 +2838,7 @@
 
     invoke-direct {v2, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 550
+    .line 552
     .local v2, "root":Ljava/io/File;
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
@@ -2841,10 +2846,10 @@
 
     if-nez v4, :cond_25
 
-    .line 551
+    .line 553
     invoke-virtual {v2}, Ljava/io/File;->mkdirs()Z
 
-    .line 553
+    .line 555
     :cond_25
     new-instance v1, Ljava/io/File;
 
@@ -2868,7 +2873,7 @@
 
     invoke-direct {v1, v2, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 554
+    .line 556
     .local v1, "gpxfile":Ljava/io/File;
     new-instance v3, Ljava/io/FileWriter;
 
@@ -2876,31 +2881,31 @@
 
     invoke-direct {v3, v1, v4}, Ljava/io/FileWriter;-><init>(Ljava/io/File;Z)V
 
-    .line 555
+    .line 557
     .local v3, "writer":Ljava/io/FileWriter;
     invoke-virtual {v3, p1}, Ljava/io/FileWriter;->append(Ljava/lang/CharSequence;)Ljava/io/Writer;
 
-    .line 556
+    .line 558
     invoke-virtual {v3}, Ljava/io/FileWriter;->flush()V
 
-    .line 557
+    .line 559
     invoke-virtual {v3}, Ljava/io/FileWriter;->close()V
     :try_end_4c
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_4c} :catch_4d
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_4c} :catch_67
 
-    .line 563
+    .line 565
     .end local v1    # "gpxfile":Ljava/io/File;
     .end local v2    # "root":Ljava/io/File;
     .end local v3    # "writer":Ljava/io/FileWriter;
     :goto_4c
     return-void
 
-    .line 558
+    .line 560
     :catch_4d
     move-exception v0
 
-    .line 559
+    .line 561
     .local v0, "e":Ljava/io/IOException;
     const-string v4, "MyLog"
 
@@ -2926,12 +2931,12 @@
 
     goto :goto_4c
 
-    .line 560
+    .line 562
     .end local v0    # "e":Ljava/io/IOException;
     :catch_67
     move-exception v0
 
-    .line 561
+    .line 563
     .local v0, "e":Ljava/lang/Exception;
     const-string v4, "MyLog"
 
@@ -2999,23 +3004,23 @@
     .end annotation
 
     .prologue
-    .line 433
+    .line 435
     invoke-static {}, Lcom/bitmapfun/util/Utils;->hasFroyo()Z
 
     move-result v1
 
     if-eqz v1, :cond_b
 
-    .line 434
+    .line 436
     invoke-virtual {p0}, Landroid/content/Context;->getExternalCacheDir()Ljava/io/File;
 
     move-result-object v1
 
-    .line 439
+    .line 441
     :goto_a
     return-object v1
 
-    .line 438
+    .line 440
     :cond_b
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -3041,7 +3046,7 @@
 
     move-result-object v0
 
-    .line 439
+    .line 441
     .local v0, "cacheDir":Ljava/lang/String;
     new-instance v1, Ljava/io/File;
 
@@ -3081,19 +3086,19 @@
     .end annotation
 
     .prologue
-    .line 419
+    .line 421
     invoke-static {}, Lcom/bitmapfun/util/Utils;->hasGingerbread()Z
 
     move-result v0
 
     if-eqz v0, :cond_b
 
-    .line 420
+    .line 422
     invoke-static {}, Landroid/os/Environment;->isExternalStorageRemovable()Z
 
     move-result v0
 
-    .line 422
+    .line 424
     :goto_a
     return v0
 

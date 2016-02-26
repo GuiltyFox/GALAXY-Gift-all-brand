@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$23;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
-    .line 2722
+    .line 2723
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,12 +41,12 @@
     .registers 4
 
     .prologue
-    .line 2724
+    .line 2725
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$23;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$23;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
-    const v2, 0x7f0700e6
+    const v2, 0x7f0c00e6
 
     invoke-virtual {v0, v2}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->findViewById(I)Landroid/view/View;
 
@@ -56,7 +56,7 @@
 
     invoke-static {v1, v0}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->access$39(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;Landroid/widget/ProgressBar;)V
 
-    .line 2725
+    .line 2726
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$23;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->gPbLoadingCampaign:Landroid/widget/ProgressBar;
@@ -68,6 +68,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 2726
+    .line 2727
     return-void
 .end method

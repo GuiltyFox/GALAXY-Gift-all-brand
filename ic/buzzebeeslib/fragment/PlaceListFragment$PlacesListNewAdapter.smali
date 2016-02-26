@@ -102,26 +102,11 @@
 
 # virtual methods
 .method public doGotoMap(Landroid/view/View;)V
-    .registers 19
+    .registers 20
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 1082
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
-
-    invoke-virtual {v11}, Lic/buzzebeeslib/fragment/PlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v11
-
-    if-eqz v11, :cond_ce
-
-    .line 1084
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
-
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
@@ -130,254 +115,269 @@
 
     move-result-object v12
 
-    const-string v13, ""
+    if-eqz v12, :cond_cf
+
+    .line 1084
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
+    iget-object v13, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
 
-    sget v15, Lic/buzzebeeslib/R$string;->please_wait:I
+    invoke-virtual {v13}, Lic/buzzebeeslib/fragment/PlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    invoke-virtual {v14, v15}, Lic/buzzebeeslib/fragment/PlaceListFragment;->getString(I)Ljava/lang/String;
+    move-result-object v13
 
-    move-result-object v14
+    const-string v14, ""
 
-    const/4 v15, 0x1
+    move-object/from16 v0, p0
+
+    iget-object v15, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
+
+    sget v16, Lic/buzzebeeslib/R$string;->please_wait:I
+
+    invoke-virtual/range {v15 .. v16}, Lic/buzzebeeslib/fragment/PlaceListFragment;->getString(I)Ljava/lang/String;
+
+    move-result-object v15
 
     const/16 v16, 0x1
 
-    invoke-static/range {v12 .. v16}, Landroid/app/ProgressDialog;->show(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;
+    const/16 v17, 0x1
 
-    move-result-object v12
+    invoke-static/range {v13 .. v17}, Landroid/app/ProgressDialog;->show(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;
 
-    invoke-static {v11, v12}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$17(Lic/buzzebeeslib/fragment/PlaceListFragment;Landroid/app/ProgressDialog;)V
+    move-result-object v13
+
+    invoke-static {v12, v13}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$17(Lic/buzzebeeslib/fragment/PlaceListFragment;Landroid/app/ProgressDialog;)V
 
     .line 1086
     invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v3
 
-    check-cast v10, Lic/buzzebeeslib/bean/Place;
+    check-cast v3, Lic/buzzebeeslib/bean/Place;
 
     .line 1092
-    .local v10, "place":Lic/buzzebeeslib/bean/Place;
+    .local v3, "place":Lic/buzzebeeslib/bean/Place;
     move-object/from16 v0, p0
 
-    iget-object v11, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
+    iget-object v12, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
 
     # getter for: Lic/buzzebeeslib/fragment/PlaceListFragment;->gCurrentLat:D
-    invoke-static {v11}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$11(Lic/buzzebeeslib/fragment/PlaceListFragment;)D
+    invoke-static {v12}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$11(Lic/buzzebeeslib/fragment/PlaceListFragment;)D
 
-    move-result-wide v4
+    move-result-wide v6
 
     .line 1093
-    .local v4, "latitude_saddr":D
+    .local v6, "latitude_saddr":D
     move-object/from16 v0, p0
 
-    iget-object v11, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
+    iget-object v12, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
 
     # getter for: Lic/buzzebeeslib/fragment/PlaceListFragment;->gCurrentLon:D
-    invoke-static {v11}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$12(Lic/buzzebeeslib/fragment/PlaceListFragment;)D
+    invoke-static {v12}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$12(Lic/buzzebeeslib/fragment/PlaceListFragment;)D
 
-    move-result-wide v8
+    move-result-wide v10
 
     .line 1094
-    .local v8, "longitude_saddr":D
-    iget v11, v10, Lic/buzzebeeslib/bean/Place;->latitude:F
+    .local v10, "longitude_saddr":D
+    iget v12, v3, Lic/buzzebeeslib/bean/Place;->latitude:F
 
-    float-to-double v2, v11
+    float-to-double v4, v12
 
     .line 1095
-    .local v2, "latitude_daddr":D
-    iget v11, v10, Lic/buzzebeeslib/bean/Place;->longitude:F
+    .local v4, "latitude_daddr":D
+    iget v12, v3, Lic/buzzebeeslib/bean/Place;->longitude:F
 
-    float-to-double v6, v11
+    float-to-double v8, v12
 
     .line 1097
-    .local v6, "longitude_daddr":D
-    const-wide/16 v11, 0x0
+    .local v8, "longitude_daddr":D
+    const-wide/16 v12, 0x0
 
-    cmpl-double v11, v4, v11
+    cmpl-double v12, v6, v12
 
-    if-nez v11, :cond_54
+    if-nez v12, :cond_55
 
-    const-wide/16 v11, 0x0
+    const-wide/16 v12, 0x0
 
-    cmpl-double v11, v8, v11
+    cmpl-double v12, v10, v12
 
-    if-eqz v11, :cond_bc
+    if-eqz v12, :cond_bd
 
-    :cond_54
-    const-wide/16 v11, 0x0
+    :cond_55
+    const-wide/16 v12, 0x0
 
-    cmpl-double v11, v2, v11
+    cmpl-double v12, v4, v12
 
-    if-nez v11, :cond_60
+    if-nez v12, :cond_61
 
-    const-wide/16 v11, 0x0
+    const-wide/16 v12, 0x0
 
-    cmpl-double v11, v6, v11
+    cmpl-double v12, v8, v12
 
-    if-eqz v11, :cond_bc
+    if-eqz v12, :cond_bd
 
     .line 1098
-    :cond_60
-    new-instance v1, Landroid/content/Intent;
+    :cond_61
+    new-instance v2, Landroid/content/Intent;
 
-    const-string v11, "android.intent.action.VIEW"
+    const-string v12, "android.intent.action.VIEW"
 
-    new-instance v12, Ljava/lang/StringBuilder;
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    const-string v13, "http://maps.google.com/maps?saddr="
+    const-string v14, "http://maps.google.com/maps?saddr="
 
-    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v12, v4, v5}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v6, v7}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v13
 
-    const-string v13, ","
+    const-string v14, ","
 
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-virtual {v12, v8, v9}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v10, v11}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v13
 
-    const-string v13, "&daddr="
+    const-string v14, "&daddr="
 
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-virtual {v12, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v4, v5}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v13
 
-    const-string v13, ","
+    const-string v14, ","
 
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-virtual {v12, v6, v7}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v8, v9}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-static {v12}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v13}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-direct {v1, v11, v12}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+    invoke-direct {v2, v12, v13}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
     .line 1099
-    .local v1, "intent":Landroid/content/Intent;
-    const-string v11, "com.google.android.apps.maps"
+    .local v2, "intent":Landroid/content/Intent;
+    const-string v12, "com.google.android.apps.maps"
 
-    const-string v12, "com.google.android.maps.MapsActivity"
+    const-string v13, "com.google.android.maps.MapsActivity"
 
-    invoke-virtual {v1, v11, v12}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v2, v12, v13}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 1100
     move-object/from16 v0, p0
 
-    iget-object v11, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
+    iget-object v12, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
 
-    invoke-virtual {v11, v1}, Lic/buzzebeeslib/fragment/PlaceListFragment;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {v12, v2}, Lic/buzzebeeslib/fragment/PlaceListFragment;->startActivity(Landroid/content/Intent;)V
 
     .line 1107
-    .end local v1    # "intent":Landroid/content/Intent;
-    :goto_a6
+    .end local v2    # "intent":Landroid/content/Intent;
+    :goto_a7
     move-object/from16 v0, p0
 
-    iget-object v11, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
+    iget-object v12, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
 
     # getter for: Lic/buzzebeeslib/fragment/PlaceListFragment;->gDialog:Landroid/app/ProgressDialog;
-    invoke-static {v11}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$18(Lic/buzzebeeslib/fragment/PlaceListFragment;)Landroid/app/ProgressDialog;
+    invoke-static {v12}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$18(Lic/buzzebeeslib/fragment/PlaceListFragment;)Landroid/app/ProgressDialog;
 
-    move-result-object v11
+    move-result-object v12
 
-    if-eqz v11, :cond_bb
+    if-eqz v12, :cond_bc
 
     .line 1108
     move-object/from16 v0, p0
 
-    iget-object v11, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
+    iget-object v12, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
 
     # getter for: Lic/buzzebeeslib/fragment/PlaceListFragment;->gDialog:Landroid/app/ProgressDialog;
-    invoke-static {v11}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$18(Lic/buzzebeeslib/fragment/PlaceListFragment;)Landroid/app/ProgressDialog;
+    invoke-static {v12}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$18(Lic/buzzebeeslib/fragment/PlaceListFragment;)Landroid/app/ProgressDialog;
 
-    move-result-object v11
+    move-result-object v12
 
-    invoke-virtual {v11}, Landroid/app/ProgressDialog;->dismiss()V
+    invoke-virtual {v12}, Landroid/app/ProgressDialog;->dismiss()V
 
     .line 1114
-    .end local v2    # "latitude_daddr":D
-    .end local v4    # "latitude_saddr":D
-    .end local v6    # "longitude_daddr":D
-    .end local v8    # "longitude_saddr":D
-    .end local v10    # "place":Lic/buzzebeeslib/bean/Place;
-    :cond_bb
-    :goto_bb
+    .end local v3    # "place":Lic/buzzebeeslib/bean/Place;
+    .end local v4    # "latitude_daddr":D
+    .end local v6    # "latitude_saddr":D
+    .end local v8    # "longitude_daddr":D
+    .end local v10    # "longitude_saddr":D
+    :cond_bc
+    :goto_bc
     return-void
 
     .line 1103
-    .restart local v2    # "latitude_daddr":D
-    .restart local v4    # "latitude_saddr":D
-    .restart local v6    # "longitude_daddr":D
-    .restart local v8    # "longitude_saddr":D
-    .restart local v10    # "place":Lic/buzzebeeslib/bean/Place;
-    :cond_bc
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
-
+    .restart local v3    # "place":Lic/buzzebeeslib/bean/Place;
+    .restart local v4    # "latitude_daddr":D
+    .restart local v6    # "latitude_saddr":D
+    .restart local v8    # "longitude_daddr":D
+    .restart local v10    # "longitude_saddr":D
+    :cond_bd
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
 
-    sget v13, Lic/buzzebeeslib/R$string;->place_message_show_map_error1:I
+    move-object/from16 v0, p0
 
-    invoke-virtual {v12, v13}, Lic/buzzebeeslib/fragment/PlaceListFragment;->getString(I)Ljava/lang/String;
+    iget-object v13, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
 
-    move-result-object v12
+    sget v14, Lic/buzzebeeslib/R$string;->place_message_show_map_error1:I
+
+    invoke-virtual {v13, v14}, Lic/buzzebeeslib/fragment/PlaceListFragment;->getString(I)Ljava/lang/String;
+
+    move-result-object v13
 
     # invokes: Lic/buzzebeeslib/fragment/PlaceListFragment;->showToast(Ljava/lang/String;)V
-    invoke-static {v11, v12}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$2(Lic/buzzebeeslib/fragment/PlaceListFragment;Ljava/lang/String;)V
+    invoke-static {v12, v13}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$2(Lic/buzzebeeslib/fragment/PlaceListFragment;Ljava/lang/String;)V
 
-    goto :goto_a6
+    goto :goto_a7
 
     .line 1112
-    .end local v2    # "latitude_daddr":D
-    .end local v4    # "latitude_saddr":D
-    .end local v6    # "longitude_daddr":D
-    .end local v8    # "longitude_saddr":D
-    .end local v10    # "place":Lic/buzzebeeslib/bean/Place;
-    :cond_ce
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
-
+    .end local v3    # "place":Lic/buzzebeeslib/bean/Place;
+    .end local v4    # "latitude_daddr":D
+    .end local v6    # "latitude_saddr":D
+    .end local v8    # "longitude_daddr":D
+    .end local v10    # "longitude_saddr":D
+    :cond_cf
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
 
-    sget v13, Lic/buzzebeeslib/R$string;->place_message_show_map_error1:I
+    move-object/from16 v0, p0
 
-    invoke-virtual {v12, v13}, Lic/buzzebeeslib/fragment/PlaceListFragment;->getString(I)Ljava/lang/String;
+    iget-object v13, v0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
 
-    move-result-object v12
+    sget v14, Lic/buzzebeeslib/R$string;->place_message_show_map_error1:I
+
+    invoke-virtual {v13, v14}, Lic/buzzebeeslib/fragment/PlaceListFragment;->getString(I)Ljava/lang/String;
+
+    move-result-object v13
 
     # invokes: Lic/buzzebeeslib/fragment/PlaceListFragment;->showToast(Ljava/lang/String;)V
-    invoke-static {v11, v12}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$2(Lic/buzzebeeslib/fragment/PlaceListFragment;Ljava/lang/String;)V
+    invoke-static {v12, v13}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$2(Lic/buzzebeeslib/fragment/PlaceListFragment;Ljava/lang/String;)V
 
-    goto :goto_bb
+    goto :goto_bc
 .end method
 
 .method public doPlaceReview(Landroid/view/View;)V
@@ -484,616 +484,616 @@
 .end method
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 17
+    .registers 18
     .param p1, "position"    # I
     .param p2, "convertView"    # Landroid/view/View;
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
     .line 969
-    const/4 v11, 0x0
+    const/4 v12, 0x0
 
     .line 971
-    .local v11, "place":Lic/buzzebeeslib/bean/Place;
+    .local v12, "place":Lic/buzzebeeslib/bean/Place;
     :try_start_1
-    iget-object v1, p0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->data:Ljava/util/ArrayList;
+    iget-object v2, p0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->data:Ljava/util/ArrayList;
 
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lic/buzzebeeslib/bean/Place;
-
-    invoke-virtual {v1}, Lic/buzzebeeslib/bean/Place;->clone()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v0, v1
-
-    check-cast v0, Lic/buzzebeeslib/bean/Place;
-
-    move-object v11, v0
-    :try_end_11
-    .catch Ljava/lang/CloneNotSupportedException; {:try_start_1 .. :try_end_11} :catch_1bf
-
-    .line 976
-    :goto_11
-    const/4 v10, 0x0
-
-    .line 977
-    .local v10, "holder":Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;
-    move-object v12, p2
-
-    .line 979
-    .local v12, "view":Landroid/view/View;
-    if-eqz p2, :cond_1b
-
-    invoke-virtual {v12}, Landroid/view/View;->getTag()Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-nez v1, :cond_1c5
-
-    .line 980
-    :cond_1b
-    iget-object v1, p0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->gInflater:Landroid/view/LayoutInflater;
-
-    sget v3, Lic/buzzebeeslib/R$layout;->bz_place_fragment_row:I
-
-    const/4 v4, 0x0
-
-    move-object/from16 v0, p3
-
-    invoke-virtual {v1, v3, v0, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object v12
-
-    .line 981
-    new-instance v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;
-
-    .end local v10    # "holder":Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;
-    invoke-direct {v10, p0}, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;-><init>(Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;)V
-
-    .line 982
-    .restart local v10    # "holder":Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;
-    sget v1, Lic/buzzebeeslib/R$id;->imgPlace:I
-
-    invoke-virtual {v12, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/ImageView;
-
-    iput-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->imgPlace:Landroid/widget/ImageView;
-
-    .line 983
-    sget v1, Lic/buzzebeeslib/R$id;->tvPlaceName:I
-
-    invoke-virtual {v12, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvPlaceName:Landroid/widget/TextView;
-
-    .line 984
-    sget v1, Lic/buzzebeeslib/R$id;->tvPlaceWereHere:I
-
-    invoke-virtual {v12, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvPlaceWereHere:Landroid/widget/TextView;
-
-    .line 985
-    sget v1, Lic/buzzebeeslib/R$id;->tvDistance:I
-
-    invoke-virtual {v12, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvDistance:Landroid/widget/TextView;
-
-    .line 986
-    sget v1, Lic/buzzebeeslib/R$id;->tvCountReview:I
-
-    invoke-virtual {v12, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvCountReview:Landroid/widget/TextView;
-
-    .line 988
-    sget v1, Lic/buzzebeeslib/R$id;->tvLabelReview:I
-
-    invoke-virtual {v12, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelReview:Landroid/widget/TextView;
-
-    .line 989
-    sget v1, Lic/buzzebeeslib/R$id;->tvLabelMap:I
-
-    invoke-virtual {v12, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelMap:Landroid/widget/TextView;
-
-    .line 990
-    sget v1, Lic/buzzebeeslib/R$id;->tvLabelMarketPlace:I
-
-    invoke-virtual {v12, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelMarketPlace:Landroid/widget/TextView;
-
-    .line 992
-    sget v1, Lic/buzzebeeslib/R$id;->tvLabelPlaceWereHere:I
-
-    invoke-virtual {v12, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelPlaceWereHere:Landroid/widget/TextView;
-
-    .line 993
-    sget v1, Lic/buzzebeeslib/R$id;->tvLabelDistance:I
-
-    invoke-virtual {v12, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelDistance:Landroid/widget/TextView;
-
-    .line 995
-    sget v1, Lic/buzzebeeslib/R$id;->layoutMain:I
-
-    invoke-virtual {v12, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/RelativeLayout;
-
-    iput-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->layoutMain:Landroid/widget/RelativeLayout;
-
-    .line 996
-    sget v1, Lic/buzzebeeslib/R$id;->LayoutReview:I
-
-    invoke-virtual {v12, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/RelativeLayout;
-
-    iput-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutReview:Landroid/widget/RelativeLayout;
-
-    .line 997
-    sget v1, Lic/buzzebeeslib/R$id;->LayoutMap:I
-
-    invoke-virtual {v12, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/RelativeLayout;
-
-    iput-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutMap:Landroid/widget/RelativeLayout;
-
-    .line 998
-    sget v1, Lic/buzzebeeslib/R$id;->LayoutMarketPlace:I
-
-    invoke-virtual {v12, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/RelativeLayout;
-
-    iput-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutMarketPlace:Landroid/widget/RelativeLayout;
-
-    .line 999
-    invoke-virtual {v12, v10}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
-
-    .line 1006
-    :goto_ba
-    :try_start_ba
-    iget-object v1, p0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
-
-    invoke-virtual {v1}, Lic/buzzebeeslib/fragment/PlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
-
-    move-result-object v1
-
-    const-string v3, "fonts/kit55p.ttf"
-
-    invoke-static {v1, v3}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
-
-    move-result-object v9
-
-    .line 1008
-    .local v9, "font":Landroid/graphics/Typeface;
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvPlaceName:Landroid/widget/TextView;
-
-    invoke-virtual {v1, v9}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 1009
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvPlaceWereHere:Landroid/widget/TextView;
-
-    invoke-virtual {v1, v9}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 1010
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvDistance:Landroid/widget/TextView;
-
-    invoke-virtual {v1, v9}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 1011
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvCountReview:Landroid/widget/TextView;
-
-    invoke-virtual {v1, v9}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 1012
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelReview:Landroid/widget/TextView;
-
-    invoke-virtual {v1, v9}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 1013
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelMap:Landroid/widget/TextView;
-
-    invoke-virtual {v1, v9}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 1014
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelMarketPlace:Landroid/widget/TextView;
-
-    invoke-virtual {v1, v9}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 1015
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelPlaceWereHere:Landroid/widget/TextView;
-
-    invoke-virtual {v1, v9}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 1016
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelDistance:Landroid/widget/TextView;
-
-    invoke-virtual {v1, v9}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-    :try_end_f7
-    .catch Ljava/lang/Exception; {:try_start_ba .. :try_end_f7} :catch_1fa
-
-    .line 1022
-    .end local v9    # "font":Landroid/graphics/Typeface;
-    :goto_f7
-    :try_start_f7
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v3, "https://graph.facebook.com/"
-
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v3, v11, Lic/buzzebeeslib/bean/Place;->id:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v3, "/picture?width=200&height=200"
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
+    check-cast v2, Lic/buzzebeeslib/bean/Place;
+
+    invoke-virtual {v2}, Lic/buzzebeeslib/bean/Place;->clone()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v0, v2
+
+    check-cast v0, Lic/buzzebeeslib/bean/Place;
+
+    move-object v12, v0
+    :try_end_11
+    .catch Ljava/lang/CloneNotSupportedException; {:try_start_1 .. :try_end_11} :catch_1c0
+
+    .line 976
+    :goto_11
+    const/4 v11, 0x0
+
+    .line 977
+    .local v11, "holder":Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;
+    move-object/from16 v13, p2
+
+    .line 979
+    .local v13, "view":Landroid/view/View;
+    if-eqz p2, :cond_1c
+
+    invoke-virtual {v13}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v2
+
+    if-nez v2, :cond_1c6
+
+    .line 980
+    :cond_1c
+    iget-object v2, p0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->gInflater:Landroid/view/LayoutInflater;
+
+    sget v4, Lic/buzzebeeslib/R$layout;->bz_place_fragment_row:I
+
+    const/4 v5, 0x0
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v2, v4, v0, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v13
+
+    .line 981
+    new-instance v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;
+
+    .end local v11    # "holder":Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;
+    invoke-direct {v11, p0}, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;-><init>(Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;)V
+
+    .line 982
+    .restart local v11    # "holder":Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;
+    sget v2, Lic/buzzebeeslib/R$id;->imgPlace:I
+
+    invoke-virtual {v13, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/ImageView;
+
+    iput-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->imgPlace:Landroid/widget/ImageView;
+
+    .line 983
+    sget v2, Lic/buzzebeeslib/R$id;->tvPlaceName:I
+
+    invoke-virtual {v13, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvPlaceName:Landroid/widget/TextView;
+
+    .line 984
+    sget v2, Lic/buzzebeeslib/R$id;->tvPlaceWereHere:I
+
+    invoke-virtual {v13, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvPlaceWereHere:Landroid/widget/TextView;
+
+    .line 985
+    sget v2, Lic/buzzebeeslib/R$id;->tvDistance:I
+
+    invoke-virtual {v13, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvDistance:Landroid/widget/TextView;
+
+    .line 986
+    sget v2, Lic/buzzebeeslib/R$id;->tvCountReview:I
+
+    invoke-virtual {v13, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvCountReview:Landroid/widget/TextView;
+
+    .line 988
+    sget v2, Lic/buzzebeeslib/R$id;->tvLabelReview:I
+
+    invoke-virtual {v13, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelReview:Landroid/widget/TextView;
+
+    .line 989
+    sget v2, Lic/buzzebeeslib/R$id;->tvLabelMap:I
+
+    invoke-virtual {v13, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelMap:Landroid/widget/TextView;
+
+    .line 990
+    sget v2, Lic/buzzebeeslib/R$id;->tvLabelMarketPlace:I
+
+    invoke-virtual {v13, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelMarketPlace:Landroid/widget/TextView;
+
+    .line 992
+    sget v2, Lic/buzzebeeslib/R$id;->tvLabelPlaceWereHere:I
+
+    invoke-virtual {v13, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelPlaceWereHere:Landroid/widget/TextView;
+
+    .line 993
+    sget v2, Lic/buzzebeeslib/R$id;->tvLabelDistance:I
+
+    invoke-virtual {v13, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelDistance:Landroid/widget/TextView;
+
+    .line 995
+    sget v2, Lic/buzzebeeslib/R$id;->layoutMain:I
+
+    invoke-virtual {v13, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/RelativeLayout;
+
+    iput-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->layoutMain:Landroid/widget/RelativeLayout;
+
+    .line 996
+    sget v2, Lic/buzzebeeslib/R$id;->LayoutReview:I
+
+    invoke-virtual {v13, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/RelativeLayout;
+
+    iput-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutReview:Landroid/widget/RelativeLayout;
+
+    .line 997
+    sget v2, Lic/buzzebeeslib/R$id;->LayoutMap:I
+
+    invoke-virtual {v13, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/RelativeLayout;
+
+    iput-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutMap:Landroid/widget/RelativeLayout;
+
+    .line 998
+    sget v2, Lic/buzzebeeslib/R$id;->LayoutMarketPlace:I
+
+    invoke-virtual {v13, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/RelativeLayout;
+
+    iput-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutMarketPlace:Landroid/widget/RelativeLayout;
+
+    .line 999
+    invoke-virtual {v13, v11}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    .line 1006
+    :goto_bb
+    :try_start_bb
+    iget-object v2, p0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
+
+    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/PlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
+
+    move-result-object v2
+
+    const-string v4, "fonts/kit55p.ttf"
+
+    invoke-static {v2, v4}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
+
+    move-result-object v10
+
+    .line 1008
+    .local v10, "font":Landroid/graphics/Typeface;
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvPlaceName:Landroid/widget/TextView;
+
+    invoke-virtual {v2, v10}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 1009
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvPlaceWereHere:Landroid/widget/TextView;
+
+    invoke-virtual {v2, v10}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 1010
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvDistance:Landroid/widget/TextView;
+
+    invoke-virtual {v2, v10}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 1011
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvCountReview:Landroid/widget/TextView;
+
+    invoke-virtual {v2, v10}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 1012
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelReview:Landroid/widget/TextView;
+
+    invoke-virtual {v2, v10}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 1013
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelMap:Landroid/widget/TextView;
+
+    invoke-virtual {v2, v10}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 1014
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelMarketPlace:Landroid/widget/TextView;
+
+    invoke-virtual {v2, v10}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 1015
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelPlaceWereHere:Landroid/widget/TextView;
+
+    invoke-virtual {v2, v10}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 1016
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvLabelDistance:Landroid/widget/TextView;
+
+    invoke-virtual {v2, v10}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    :try_end_f8
+    .catch Ljava/lang/Exception; {:try_start_bb .. :try_end_f8} :catch_1fb
+
+    .line 1022
+    .end local v10    # "font":Landroid/graphics/Typeface;
+    :goto_f8
+    :try_start_f8
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v4, "https://graph.facebook.com/"
+
+    invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v4, v12, Lic/buzzebeeslib/bean/Place;->id:Ljava/lang/String;
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v4, "/picture?width=200&height=200"
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
     .line 1023
-    .local v2, "photo_src":Ljava/lang/String;
+    .local v3, "photo_src":Ljava/lang/String;
     # getter for: Lic/buzzebeeslib/fragment/PlaceListFragment;->TAG:Ljava/lang/String;
     invoke-static {}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$15()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v4, "photo_src "
+    const-string v5, "photo_src "
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1026
-    iget-object v1, p0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
-
-    # getter for: Lic/buzzebeeslib/fragment/PlaceListFragment;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
-    invoke-static {v1}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$16(Lic/buzzebeeslib/fragment/PlaceListFragment;)Lcom/bitmapfun/util/ImageFetcher;
-
-    move-result-object v1
-
-    iget-object v3, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->imgPlace:Landroid/widget/ImageView;
-
-    const/4 v4, 0x0
-
-    sget v5, Lic/buzzebeeslib/R$drawable;->t1_1:I
-
-    const/4 v6, 0x0
-
-    invoke-virtual/range {v1 .. v6}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
-    :try_end_133
-    .catch Ljava/lang/Exception; {:try_start_f7 .. :try_end_133} :catch_1cd
-
-    .line 1034
-    .end local v2    # "photo_src":Ljava/lang/String;
-    :cond_133
-    :goto_133
-    :try_start_133
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvPlaceName:Landroid/widget/TextView;
-
-    iget-object v3, v11, Lic/buzzebeeslib/bean/Place;->name:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-    :try_end_13a
-    .catch Ljava/lang/Exception; {:try_start_133 .. :try_end_13a} :catch_1e9
-
-    .line 1039
-    :goto_13a
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvPlaceWereHere:Landroid/widget/TextView;
-
-    iget-object v3, p0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->formatter:Ljava/text/NumberFormat;
-
-    iget-wide v4, v11, Lic/buzzebeeslib/bean/Place;->were_here_count:J
-
-    invoke-virtual {v3, v4, v5}, Ljava/text/NumberFormat;->format(J)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lic/buzzebeeslib/util/BBUtil;->CtypeString(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 1040
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvDistance:Landroid/widget/TextView;
-
-    iget-object v3, p0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->formatterHasDigi:Ljava/text/NumberFormat;
-
-    iget v4, v11, Lic/buzzebeeslib/bean/Place;->distance:F
-
-    invoke-static {v4}, Lic/buzzebeeslib/util/BBUtil;->getKMFromM(F)D
-
-    move-result-wide v4
-
-    invoke-virtual {v3, v4, v5}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lic/buzzebeeslib/util/BBUtil;->CtypeString(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 1041
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvCountReview:Landroid/widget/TextView;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "("
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v4, v11, Lic/buzzebeeslib/bean/Place;->buzz:I
-
-    invoke-static {v4}, Lic/buzzebeeslib/util/BBUtil;->formatK(I)Ljava/lang/String;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    const-string v4, ")"
+    invoke-static {v2, v4}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 1026
+    iget-object v2, p0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
 
-    move-result-object v3
+    # getter for: Lic/buzzebeeslib/fragment/PlaceListFragment;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
+    invoke-static {v2}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$16(Lic/buzzebeeslib/fragment/PlaceListFragment;)Lcom/bitmapfun/util/ImageFetcher;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v3
+    iget-object v4, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->imgPlace:Landroid/widget/ImageView;
 
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    const/4 v5, 0x0
+
+    sget v6, Lic/buzzebeeslib/R$drawable;->t1_1:I
+
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v2 .. v7}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
+    :try_end_134
+    .catch Ljava/lang/Exception; {:try_start_f8 .. :try_end_134} :catch_1ce
+
+    .line 1034
+    .end local v3    # "photo_src":Ljava/lang/String;
+    :cond_134
+    :goto_134
+    :try_start_134
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvPlaceName:Landroid/widget/TextView;
+
+    iget-object v4, v12, Lic/buzzebeeslib/bean/Place;->name:Ljava/lang/String;
+
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    :try_end_13b
+    .catch Ljava/lang/Exception; {:try_start_134 .. :try_end_13b} :catch_1ea
+
+    .line 1039
+    :goto_13b
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvPlaceWereHere:Landroid/widget/TextView;
+
+    iget-object v4, p0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->formatter:Ljava/text/NumberFormat;
+
+    iget-wide v6, v12, Lic/buzzebeeslib/bean/Place;->were_here_count:J
+
+    invoke-virtual {v4, v6, v7}, Ljava/text/NumberFormat;->format(J)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lic/buzzebeeslib/util/BBUtil;->CtypeString(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 1040
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvDistance:Landroid/widget/TextView;
+
+    iget-object v4, p0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->formatterHasDigi:Ljava/text/NumberFormat;
+
+    iget v5, v12, Lic/buzzebeeslib/bean/Place;->distance:F
+
+    invoke-static {v5}, Lic/buzzebeeslib/util/BBUtil;->getKMFromM(F)D
+
+    move-result-wide v6
+
+    invoke-virtual {v4, v6, v7}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lic/buzzebeeslib/util/BBUtil;->CtypeString(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 1041
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvCountReview:Landroid/widget/TextView;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v5, "("
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget v5, v12, Lic/buzzebeeslib/bean/Place;->buzz:I
+
+    invoke-static {v5}, Lic/buzzebeeslib/util/BBUtil;->formatK(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, ")"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1046
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutReview:Landroid/widget/RelativeLayout;
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutReview:Landroid/widget/RelativeLayout;
 
-    invoke-virtual {v1, v11}, Landroid/widget/RelativeLayout;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v2, v12}, Landroid/widget/RelativeLayout;->setTag(Ljava/lang/Object;)V
 
     .line 1047
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutMap:Landroid/widget/RelativeLayout;
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutMap:Landroid/widget/RelativeLayout;
 
-    invoke-virtual {v1, v11}, Landroid/widget/RelativeLayout;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v2, v12}, Landroid/widget/RelativeLayout;->setTag(Ljava/lang/Object;)V
 
     .line 1050
-    if-eqz v11, :cond_196
+    if-eqz v12, :cond_197
 
     .line 1051
-    iget-boolean v1, v11, Lic/buzzebeeslib/bean/Place;->isBuzzeBeesPlace:Z
+    iget-boolean v2, v12, Lic/buzzebeeslib/bean/Place;->isBuzzeBeesPlace:Z
 
-    if-eqz v1, :cond_1f3
+    if-eqz v2, :cond_1f4
 
     .line 1052
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutMarketPlace:Landroid/widget/RelativeLayout;
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutMarketPlace:Landroid/widget/RelativeLayout;
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    invoke-virtual {v2, v4}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
     .line 1058
-    :cond_196
-    :goto_196
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutMarketPlace:Landroid/widget/RelativeLayout;
+    :cond_197
+    :goto_197
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutMarketPlace:Landroid/widget/RelativeLayout;
 
-    const/4 v3, 0x4
+    const/4 v4, 0x4
 
-    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    invoke-virtual {v2, v4}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
     .line 1059
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutReview:Landroid/widget/RelativeLayout;
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutReview:Landroid/widget/RelativeLayout;
 
-    const/4 v3, 0x4
+    const/4 v4, 0x4
 
-    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    invoke-virtual {v2, v4}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
     .line 1061
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutReview:Landroid/widget/RelativeLayout;
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutReview:Landroid/widget/RelativeLayout;
 
-    if-eqz v1, :cond_1b0
+    if-eqz v2, :cond_1b1
 
     .line 1062
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutReview:Landroid/widget/RelativeLayout;
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutReview:Landroid/widget/RelativeLayout;
 
-    new-instance v3, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$1;
+    new-instance v4, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$1;
 
-    invoke-direct {v3, p0}, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$1;-><init>(Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;)V
+    invoke-direct {v4, p0}, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$1;-><init>(Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;)V
 
-    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v2, v4}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 1070
-    :cond_1b0
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutMap:Landroid/widget/RelativeLayout;
+    :cond_1b1
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutMap:Landroid/widget/RelativeLayout;
 
-    if-eqz v1, :cond_1be
+    if-eqz v2, :cond_1bf
 
     .line 1071
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutMap:Landroid/widget/RelativeLayout;
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutMap:Landroid/widget/RelativeLayout;
 
-    new-instance v3, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$2;
+    new-instance v4, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$2;
 
-    invoke-direct {v3, p0}, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$2;-><init>(Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;)V
+    invoke-direct {v4, p0}, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$2;-><init>(Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;)V
 
-    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v2, v4}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 1078
-    :cond_1be
-    return-object v12
+    :cond_1bf
+    return-object v13
 
     .line 972
-    .end local v10    # "holder":Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;
-    .end local v12    # "view":Landroid/view/View;
-    :catch_1bf
-    move-exception v8
+    .end local v11    # "holder":Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;
+    .end local v13    # "view":Landroid/view/View;
+    :catch_1c0
+    move-exception v9
 
     .line 973
-    .local v8, "e1":Ljava/lang/CloneNotSupportedException;
-    invoke-virtual {v8}, Ljava/lang/CloneNotSupportedException;->printStackTrace()V
+    .local v9, "e1":Ljava/lang/CloneNotSupportedException;
+    invoke-virtual {v9}, Ljava/lang/CloneNotSupportedException;->printStackTrace()V
 
     goto/16 :goto_11
 
     .line 1001
-    .end local v8    # "e1":Ljava/lang/CloneNotSupportedException;
-    .restart local v10    # "holder":Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;
-    .restart local v12    # "view":Landroid/view/View;
-    :cond_1c5
-    invoke-virtual {v12}, Landroid/view/View;->getTag()Ljava/lang/Object;
+    .end local v9    # "e1":Ljava/lang/CloneNotSupportedException;
+    .restart local v11    # "holder":Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;
+    .restart local v13    # "view":Landroid/view/View;
+    :cond_1c6
+    invoke-virtual {v13}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v11
 
-    .end local v10    # "holder":Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;
-    check-cast v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;
+    .end local v11    # "holder":Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;
+    check-cast v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;
 
-    .restart local v10    # "holder":Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;
-    goto/16 :goto_ba
+    .restart local v11    # "holder":Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;
+    goto/16 :goto_bb
 
     .line 1027
-    :catch_1cd
-    move-exception v7
+    :catch_1ce
+    move-exception v8
 
     .line 1028
-    .local v7, "e":Ljava/lang/Exception;
-    iget-object v1, p0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
+    .local v8, "e":Ljava/lang/Exception;
+    iget-object v2, p0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
 
-    invoke-virtual {v1}, Lic/buzzebeeslib/fragment/PlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/PlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-eqz v1, :cond_133
+    if-eqz v2, :cond_134
 
     .line 1029
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->imgPlace:Landroid/widget/ImageView;
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->imgPlace:Landroid/widget/ImageView;
 
-    sget v3, Lic/buzzebeeslib/R$drawable;->bz_place_unknow:I
+    sget v4, Lic/buzzebeeslib/R$drawable;->bz_place_unknow:I
 
-    iget-object v4, p0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
+    iget-object v5, p0, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter;->this$0:Lic/buzzebeeslib/fragment/PlaceListFragment;
 
-    invoke-virtual {v4}, Lic/buzzebeeslib/fragment/PlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v5}, Lic/buzzebeeslib/fragment/PlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {v5}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-static {v1, v3, v4}, Lic/buzzebeeslib/util/BBUtil;->setImageResource(Landroid/widget/ImageView;ILandroid/content/Context;)V
+    invoke-static {v2, v4, v5}, Lic/buzzebeeslib/util/BBUtil;->setImageResource(Landroid/widget/ImageView;ILandroid/content/Context;)V
 
-    goto/16 :goto_133
+    goto/16 :goto_134
 
     .line 1035
-    .end local v7    # "e":Ljava/lang/Exception;
-    :catch_1e9
-    move-exception v7
+    .end local v8    # "e":Ljava/lang/Exception;
+    :catch_1ea
+    move-exception v8
 
     .line 1036
-    .restart local v7    # "e":Ljava/lang/Exception;
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvPlaceName:Landroid/widget/TextView;
+    .restart local v8    # "e":Ljava/lang/Exception;
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->tvPlaceName:Landroid/widget/TextView;
 
-    const-string v3, ""
+    const-string v4, ""
 
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_13a
+    goto/16 :goto_13b
 
     .line 1054
-    .end local v7    # "e":Ljava/lang/Exception;
-    :cond_1f3
-    iget-object v1, v10, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutMarketPlace:Landroid/widget/RelativeLayout;
+    .end local v8    # "e":Ljava/lang/Exception;
+    :cond_1f4
+    iget-object v2, v11, Lic/buzzebeeslib/fragment/PlaceListFragment$PlacesListNewAdapter$ViewHolderPlaceItem;->LayoutMarketPlace:Landroid/widget/RelativeLayout;
 
-    const/4 v3, 0x4
+    const/4 v4, 0x4
 
-    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    invoke-virtual {v2, v4}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    goto :goto_196
+    goto :goto_197
 
     .line 1017
-    :catch_1fa
-    move-exception v1
+    :catch_1fb
+    move-exception v2
 
-    goto/16 :goto_f7
+    goto/16 :goto_f8
 .end method

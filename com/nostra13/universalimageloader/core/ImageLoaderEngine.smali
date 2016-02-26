@@ -116,66 +116,66 @@
 
     .prologue
     .line 98
-    iget-object v0, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderEngine;->configuration:Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;
-
-    iget-object v0, v0, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->tasksProcessingType:Lcom/nostra13/universalimageloader/core/assist/QueueProcessingType;
-
-    sget-object v1, Lcom/nostra13/universalimageloader/core/assist/QueueProcessingType;->LIFO:Lcom/nostra13/universalimageloader/core/assist/QueueProcessingType;
-
-    if-ne v0, v1, :cond_26
-
-    const/4 v8, 0x1
-
-    .line 99
-    .local v8, "lifo":Z
-    :goto_9
-    if-eqz v8, :cond_28
-
-    new-instance v6, Lcom/nostra13/universalimageloader/core/assist/deque/LIFOLinkedBlockingDeque;
-
-    invoke-direct {v6}, Lcom/nostra13/universalimageloader/core/assist/deque/LIFOLinkedBlockingDeque;-><init>()V
-
-    .line 100
-    .local v6, "taskQueue":Ljava/util/concurrent/BlockingQueue;, "Ljava/util/concurrent/BlockingQueue<Ljava/lang/Runnable;>;"
-    :goto_10
-    new-instance v0, Ljava/util/concurrent/ThreadPoolExecutor;
-
     iget-object v1, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderEngine;->configuration:Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;
 
-    iget v1, v1, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->threadPoolSize:I
+    iget-object v1, v1, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->tasksProcessingType:Lcom/nostra13/universalimageloader/core/assist/QueueProcessingType;
+
+    sget-object v2, Lcom/nostra13/universalimageloader/core/assist/QueueProcessingType;->LIFO:Lcom/nostra13/universalimageloader/core/assist/QueueProcessingType;
+
+    if-ne v1, v2, :cond_26
+
+    const/4 v0, 0x1
+
+    .line 99
+    .local v0, "lifo":Z
+    :goto_9
+    if-eqz v0, :cond_28
+
+    new-instance v7, Lcom/nostra13/universalimageloader/core/assist/deque/LIFOLinkedBlockingDeque;
+
+    invoke-direct {v7}, Lcom/nostra13/universalimageloader/core/assist/deque/LIFOLinkedBlockingDeque;-><init>()V
+
+    .line 100
+    .local v7, "taskQueue":Ljava/util/concurrent/BlockingQueue;, "Ljava/util/concurrent/BlockingQueue<Ljava/lang/Runnable;>;"
+    :goto_10
+    new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
 
     iget-object v2, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderEngine;->configuration:Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;
 
     iget v2, v2, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->threadPoolSize:I
 
-    const-wide/16 v3, 0x0
+    iget-object v3, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderEngine;->configuration:Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;
 
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    iget v3, v3, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->threadPoolSize:I
+
+    const-wide/16 v4, 0x0
+
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
     .line 101
-    iget-object v7, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderEngine;->configuration:Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;
+    iget-object v8, p0, Lcom/nostra13/universalimageloader/core/ImageLoaderEngine;->configuration:Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;
 
-    iget-object v7, v7, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->displayImageThreadFactory:Ljava/util/concurrent/ThreadFactory;
+    iget-object v8, v8, Lcom/nostra13/universalimageloader/core/ImageLoaderConfiguration;->displayImageThreadFactory:Ljava/util/concurrent/ThreadFactory;
 
     .line 100
-    invoke-direct/range {v0 .. v7}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
+    invoke-direct/range {v1 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
 
-    return-object v0
+    return-object v1
 
     .line 98
-    .end local v6    # "taskQueue":Ljava/util/concurrent/BlockingQueue;, "Ljava/util/concurrent/BlockingQueue<Ljava/lang/Runnable;>;"
-    .end local v8    # "lifo":Z
+    .end local v0    # "lifo":Z
+    .end local v7    # "taskQueue":Ljava/util/concurrent/BlockingQueue;, "Ljava/util/concurrent/BlockingQueue<Ljava/lang/Runnable;>;"
     :cond_26
-    const/4 v8, 0x0
+    const/4 v0, 0x0
 
     goto :goto_9
 
     .line 99
-    .restart local v8    # "lifo":Z
+    .restart local v0    # "lifo":Z
     :cond_28
-    new-instance v6, Ljava/util/concurrent/LinkedBlockingQueue;
+    new-instance v7, Ljava/util/concurrent/LinkedBlockingQueue;
 
-    invoke-direct {v6}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
+    invoke-direct {v7}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
 
     goto :goto_10
 .end method

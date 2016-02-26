@@ -436,7 +436,7 @@
 
     .line 300
     .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v7, 0x3
+    sget v7, Lcom/actionbarsherlock/R$styleable;->SherlockSearchView_iconifiedByDefault:I
 
     invoke-virtual {v0, v7, v11}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
@@ -445,20 +445,22 @@
     invoke-virtual {p0, v7}, Lcom/actionbarsherlock/widget/SearchView;->setIconifiedByDefault(Z)V
 
     .line 301
-    invoke-virtual {v0, v10, v9}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    sget v7, Lcom/actionbarsherlock/R$styleable;->SherlockSearchView_android_maxWidth:I
+
+    invoke-virtual {v0, v7, v9}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result v5
 
     .line 302
     .local v5, "maxWidth":I
-    if-eq v5, v9, :cond_123
+    if-eq v5, v9, :cond_126
 
     .line 303
     invoke-virtual {p0, v5}, Lcom/actionbarsherlock/widget/SearchView;->setMaxWidth(I)V
 
     .line 305
-    :cond_123
-    const/4 v7, 0x4
+    :cond_126
+    sget v7, Lcom/actionbarsherlock/R$styleable;->SherlockSearchView_queryHint:I
 
     invoke-virtual {v0, v7}, Landroid/content/res/TypedArray;->getText(I)Ljava/lang/CharSequence;
 
@@ -470,14 +472,14 @@
 
     move-result v7
 
-    if-nez v7, :cond_131
+    if-nez v7, :cond_135
 
     .line 307
     invoke-virtual {p0, v6}, Lcom/actionbarsherlock/widget/SearchView;->setQueryHint(Ljava/lang/CharSequence;)V
 
     .line 309
-    :cond_131
-    const/4 v7, 0x2
+    :cond_135
+    sget v7, Lcom/actionbarsherlock/R$styleable;->SherlockSearchView_android_imeOptions:I
 
     invoke-virtual {v0, v7, v9}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -485,26 +487,28 @@
 
     .line 310
     .local v2, "imeOptions":I
-    if-eq v2, v9, :cond_13b
+    if-eq v2, v9, :cond_140
 
     .line 311
     invoke-virtual {p0, v2}, Lcom/actionbarsherlock/widget/SearchView;->setImeOptions(I)V
 
     .line 313
-    :cond_13b
-    invoke-virtual {v0, v11, v9}, Landroid/content/res/TypedArray;->getInt(II)I
+    :cond_140
+    sget v7, Lcom/actionbarsherlock/R$styleable;->SherlockSearchView_android_inputType:I
+
+    invoke-virtual {v0, v7, v9}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v4
 
     .line 314
     .local v4, "inputType":I
-    if-eq v4, v9, :cond_144
+    if-eq v4, v9, :cond_14b
 
     .line 315
     invoke-virtual {p0, v4}, Lcom/actionbarsherlock/widget/SearchView;->setInputType(I)V
 
     .line 318
-    :cond_144
+    :cond_14b
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 320
@@ -519,7 +523,9 @@
     move-result-object v0
 
     .line 323
-    invoke-virtual {v0, v10, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    sget v7, Lcom/actionbarsherlock/R$styleable;->SherlockView_android_focusable:I
+
+    invoke-virtual {v0, v7, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v1
 
@@ -584,14 +590,14 @@
     .line 337
     iget-object v7, p0, Lcom/actionbarsherlock/widget/SearchView;->mDropDownAnchor:Landroid/view/View;
 
-    if-eqz v7, :cond_19d
+    if-eqz v7, :cond_1a6
 
     .line 338
     sget v7, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v8, 0xb
 
-    if-lt v7, v8, :cond_1a6
+    if-lt v7, v8, :cond_1af
 
     .line 339
     iget-object v7, p0, Lcom/actionbarsherlock/widget/SearchView;->mDropDownAnchor:Landroid/view/View;
@@ -603,8 +609,8 @@
     invoke-virtual {v7, v8}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
     .line 355
-    :cond_19d
-    :goto_19d
+    :cond_1a6
+    :goto_1a6
     iget-boolean v7, p0, Lcom/actionbarsherlock/widget/SearchView;->mIconifiedByDefault:Z
 
     invoke-direct {p0, v7}, Lcom/actionbarsherlock/widget/SearchView;->updateViewsVisibility(Z)V
@@ -616,7 +622,7 @@
     return-void
 
     .line 347
-    :cond_1a6
+    :cond_1af
     iget-object v7, p0, Lcom/actionbarsherlock/widget/SearchView;->mDropDownAnchor:Landroid/view/View;
 
     invoke-virtual {v7}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -629,7 +635,7 @@
 
     invoke-virtual {v7, v8}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    goto :goto_19d
+    goto :goto_1a6
 .end method
 
 .method static synthetic access$0(Landroid/view/View;Landroid/view/inputmethod/InputMethodManager;I)V
@@ -1684,11 +1690,11 @@
 .end method
 
 .method private getDecoratedHint(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-    .registers 10
+    .registers 11
     .param p1, "hintText"    # Ljava/lang/CharSequence;
 
     .prologue
-    const/4 v7, 0x0
+    const/4 v8, 0x0
 
     .line 1072
     iget-boolean v3, p0, Lcom/actionbarsherlock/widget/SearchView;->mIconifiedByDefault:Z
@@ -1738,17 +1744,17 @@
 
     move-result v3
 
-    float-to-double v3, v3
+    float-to-double v4, v3
 
-    const-wide/high16 v5, 0x3ff4000000000000L
+    const-wide/high16 v6, 0x3ff4000000000000L
 
-    mul-double/2addr v3, v5
+    mul-double/2addr v4, v6
 
-    double-to-int v2, v3
+    double-to-int v2, v4
 
     .line 1078
     .local v2, "textSize":I
-    invoke-virtual {v0, v7, v7, v2, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {v0, v8, v8, v2, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 1079
     new-instance v3, Landroid/text/style/ImageSpan;

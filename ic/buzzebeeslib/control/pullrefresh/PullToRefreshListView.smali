@@ -369,7 +369,7 @@
     invoke-super {p0, p1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->handleStyledAttributes(Landroid/content/res/TypedArray;)V
 
     .line 232
-    const/16 v2, 0xe
+    sget v2, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrListViewExtrasEnabled:I
 
     invoke-virtual {p1, v2, v5}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
@@ -475,7 +475,7 @@
     invoke-virtual {v2, v3, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 254
-    const/16 v2, 0xd
+    sget v2, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrScrollingWhileRefreshingEnabled:I
 
     invoke-virtual {p1, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 

@@ -3,7 +3,7 @@
 .source "CampaignDetailActivity.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # annotations
@@ -20,30 +20,43 @@
 # instance fields
 .field final synthetic this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$23;
 
+.field private final synthetic val$layoutGallery:Landroid/widget/RelativeLayout;
+
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailActivity$23;)V
-    .registers 2
+.method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailActivity$23;Landroid/widget/RelativeLayout;)V
+    .registers 3
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$23$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$23;
 
-    .line 2986
+    iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$23$1;->val$layoutGallery:Landroid/widget/RelativeLayout;
+
+    .line 3026
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public run()V
-    .registers 6
+.method static synthetic access$0(Lcom/samsung/privilege/activity/CampaignDetailActivity$23$1;)Lcom/samsung/privilege/activity/CampaignDetailActivity$23;
+    .registers 2
 
     .prologue
-    const/4 v4, 0x0
+    .line 3026
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$23$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$23;
 
-    .line 2989
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public onAnimationEnd(Landroid/view/animation/Animation;)V
+    .registers 5
+    .param p1, "arg0"    # Landroid/view/animation/Animation;
+
+    .prologue
+    .line 3029
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$23$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$23;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity$23;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
@@ -51,47 +64,11 @@
 
     move-result-object v0
 
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->gTvLoadingMap:Landroid/widget/TextView;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$18(Lcom/samsung/privilege/activity/CampaignDetailActivity;)Landroid/widget/TextView;
+    const-string v1, "GONE"
 
-    move-result-object v0
+    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$46(Lcom/samsung/privilege/activity/CampaignDetailActivity;Ljava/lang/String;)V
 
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, " "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$23$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$23;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity$23;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
-    invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignDetailActivity$23;->access$0(Lcom/samsung/privilege/activity/CampaignDetailActivity$23;)Lcom/samsung/privilege/activity/CampaignDetailActivity;
-
-    move-result-object v2
-
-    const v3, 0x7f0a0316
-
-    invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 2990
+    .line 3031
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$23$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$23;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity$23;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
@@ -99,14 +76,33 @@
 
     move-result-object v0
 
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->gTvLoadingMap:Landroid/widget/TextView;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$18(Lcom/samsung/privilege/activity/CampaignDetailActivity;)Landroid/widget/TextView;
+    new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailActivity$23$1$1;
 
-    move-result-object v0
+    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$23$1;->val$layoutGallery:Landroid/widget/RelativeLayout;
 
-    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-direct {v1, p0, v2}, Lcom/samsung/privilege/activity/CampaignDetailActivity$23$1$1;-><init>(Lcom/samsung/privilege/activity/CampaignDetailActivity$23$1;Landroid/widget/RelativeLayout;)V
 
-    .line 2991
+    invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->runOnUiThread(Ljava/lang/Runnable;)V
+
+    .line 3051
+    return-void
+.end method
+
+.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
+    .registers 2
+    .param p1, "arg0"    # Landroid/view/animation/Animation;
+
+    .prologue
+    .line 3056
+    return-void
+.end method
+
+.method public onAnimationStart(Landroid/view/animation/Animation;)V
+    .registers 4
+    .param p1, "arg0"    # Landroid/view/animation/Animation;
+
+    .prologue
+    .line 3060
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$23$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$23;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity$23;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
@@ -114,13 +110,10 @@
 
     move-result-object v0
 
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->gPbLoadingMap:Landroid/widget/ProgressBar;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$24(Lcom/samsung/privilege/activity/CampaignDetailActivity;)Landroid/widget/ProgressBar;
+    const-string v1, "HIDING"
 
-    move-result-object v0
+    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$46(Lcom/samsung/privilege/activity/CampaignDetailActivity;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v4}, Landroid/widget/ProgressBar;->setVisibility(I)V
-
-    .line 2992
+    .line 3061
     return-void
 .end method

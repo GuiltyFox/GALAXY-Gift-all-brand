@@ -236,13 +236,13 @@
 
     move-result v3
 
-    int-to-double v3, v3
+    int-to-double v4, v3
 
-    const-wide v5, 0x3fed99999999999aL
+    const-wide v6, 0x3fed99999999999aL
 
-    mul-double/2addr v3, v5
+    mul-double/2addr v4, v6
 
-    double-to-int v3, v3
+    double-to-int v3, v4
 
     const/16 v4, 0x14
 

@@ -35,12 +35,12 @@
 .end method
 
 .method static getDate(Landroid/os/Bundle;Ljava/lang/String;)Ljava/util/Date;
-    .registers 7
+    .registers 8
     .param p0, "bundle"    # Landroid/os/Bundle;
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    const-wide/high16 v3, -0x8000000000000000L
+    const-wide/high16 v4, -0x8000000000000000L
 
     const/4 v2, 0x0
 
@@ -54,13 +54,13 @@
 
     .line 398
     :cond_6
-    invoke-virtual {p0, p1, v3, v4}, Landroid/os/Bundle;->getLong(Ljava/lang/String;J)J
+    invoke-virtual {p0, p1, v4, v5}, Landroid/os/Bundle;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v0
 
     .line 399
     .local v0, "n":J
-    cmp-long v3, v0, v3
+    cmp-long v3, v0, v4
 
     if-eqz v3, :cond_5
 
@@ -258,11 +258,11 @@
 .end method
 
 .method public static hasTokenInformation(Landroid/os/Bundle;)Z
-    .registers 8
+    .registers 9
     .param p0, "bundle"    # Landroid/os/Bundle;
 
     .prologue
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
     const/4 v3, 0x0
 
@@ -295,13 +295,13 @@
     .line 138
     const-string v4, "com.facebook.TokenCachingStrategy.ExpirationDate"
 
-    invoke-virtual {p0, v4, v5, v6}, Landroid/os/Bundle;->getLong(Ljava/lang/String;J)J
+    invoke-virtual {p0, v4, v6, v7}, Landroid/os/Bundle;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v0
 
     .line 139
     .local v0, "expiresMilliseconds":J
-    cmp-long v4, v0, v5
+    cmp-long v4, v0, v6
 
     if-eqz v4, :cond_5
 

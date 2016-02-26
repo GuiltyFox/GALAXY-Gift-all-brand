@@ -589,7 +589,7 @@
 .end method
 
 .method public requestWindowFeature(J)V
-    .registers 5
+    .registers 6
     .param p1, "featureId"    # J
 
     .prologue

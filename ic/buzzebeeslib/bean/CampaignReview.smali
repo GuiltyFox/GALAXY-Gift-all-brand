@@ -409,7 +409,7 @@
 .end method
 
 .method public getTimestamp_timeHuman()Ljava/lang/String;
-    .registers 8
+    .registers 9
 
     .prologue
     .line 53
@@ -421,13 +421,13 @@
 
     new-instance v2, Ljava/util/Date;
 
-    iget-wide v3, p0, Lic/buzzebeeslib/bean/CampaignReview;->Timestamp:J
+    iget-wide v4, p0, Lic/buzzebeeslib/bean/CampaignReview;->Timestamp:J
 
-    const-wide/16 v5, 0x3e8
+    const-wide/16 v6, 0x3e8
 
-    mul-long/2addr v3, v5
+    mul-long/2addr v4, v6
 
-    invoke-direct {v2, v3, v4}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v2, v4, v5}, Ljava/util/Date;-><init>(J)V
 
     invoke-virtual {v1, v2}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 

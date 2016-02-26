@@ -26,15 +26,15 @@
     .param p2, "pPagerPhoto"    # Landroid/support/v4/view/ViewPager;
 
     .prologue
-    .line 1518
+    .line 1564
     iput-object p1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
 
-    .line 1519
+    .line 1565
     iput-object p2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;->gPagerPhoto:Landroid/support/v4/view/ViewPager;
 
-    .line 1520
+    .line 1566
     return-void
 .end method
 
@@ -44,7 +44,7 @@
     .registers 3
 
     .prologue
-    .line 1523
+    .line 1569
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -53,7 +53,7 @@
 
     if-eqz v0, :cond_16
 
-    .line 1524
+    .line 1570
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -66,7 +66,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1540
+    .line 1586
     :cond_16
     return-void
 .end method

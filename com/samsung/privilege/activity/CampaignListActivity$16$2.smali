@@ -53,7 +53,7 @@
 
     iput-object p7, p0, Lcom/samsung/privilege/activity/CampaignListActivity$16$2;->val$imagePopupWelcome2:Landroid/widget/ImageView;
 
-    .line 1610
+    .line 1628
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -63,7 +63,7 @@
     .registers 2
 
     .prologue
-    .line 1610
+    .line 1628
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$16$2;->this$1:Lcom/samsung/privilege/activity/CampaignListActivity$16;
 
     return-object v0
@@ -76,7 +76,7 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 1613
+    .line 1631
     iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignListActivity$16$2;->val$layoutPopupWelcome:Landroid/widget/RelativeLayout;
 
     new-instance v0, Lcom/samsung/privilege/activity/CampaignListActivity$16$2$1;
@@ -93,13 +93,13 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/samsung/privilege/activity/CampaignListActivity$16$2$1;-><init>(Lcom/samsung/privilege/activity/CampaignListActivity$16$2;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/RelativeLayout;Landroid/widget/LinearLayout;)V
 
-    .line 1653
-    const-wide/16 v1, 0x64
+    .line 1671
+    const-wide/16 v2, 0x64
 
-    .line 1613
-    invoke-virtual {v6, v0, v1, v2}, Landroid/widget/RelativeLayout;->postDelayed(Ljava/lang/Runnable;J)Z
+    .line 1631
+    invoke-virtual {v6, v0, v2, v3}, Landroid/widget/RelativeLayout;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1654
+    .line 1672
     return-void
 .end method
 
@@ -108,7 +108,7 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 1659
+    .line 1677
     return-void
 .end method
 
@@ -117,7 +117,7 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 1663
+    .line 1681
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$16$2;->this$1:Lcom/samsung/privilege/activity/CampaignListActivity$16;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity$16;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
@@ -135,6 +135,6 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1669
+    .line 1687
     return-void
 .end method

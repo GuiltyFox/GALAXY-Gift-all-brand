@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetVerifyListener$1;->val$response_text:Ljava/lang/String;
 
-    .line 2190
+    .line 2205
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 22
 
     .prologue
-    .line 2198
+    .line 2213
     :try_start_0
     new-instance v9, Lorg/json/JSONArray;
 
@@ -59,7 +59,7 @@
 
     invoke-direct {v9, v0}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
 
-    .line 2199
+    .line 2214
     .local v9, "jsonRoot":Lorg/json/JSONArray;
     const/4 v8, 0x0
 
@@ -73,13 +73,13 @@
 
     if-lt v8, v0, :cond_17
 
-    .line 2258
+    .line 2273
     .end local v8    # "i":I
     .end local v9    # "jsonRoot":Lorg/json/JSONArray;
     :goto_16
     return-void
 
-    .line 2200
+    .line 2215
     .restart local v8    # "i":I
     .restart local v9    # "jsonRoot":Lorg/json/JSONArray;
     :cond_17
@@ -87,13 +87,13 @@
 
     move-result-object v10
 
-    .line 2201
+    .line 2216
     .local v10, "json_history":Lorg/json/JSONObject;
     new-instance v12, Lcom/samsung/privilege/bean/Purchasing;
 
     invoke-direct {v12, v10}, Lcom/samsung/privilege/bean/Purchasing;-><init>(Lorg/json/JSONObject;)V
 
-    .line 2202
+    .line 2217
     .local v12, "purchasing":Lcom/samsung/privilege/bean/Purchasing;
     iget-boolean v0, v12, Lcom/samsung/privilege/bean/Purchasing;->IsInstalledApp:Z
 
@@ -101,10 +101,10 @@
 
     if-nez v17, :cond_af
 
-    .line 2203
+    .line 2218
     const/4 v7, 0x0
 
-    .line 2204
+    .line 2219
     .local v7, "hasApp":Z
     iget-object v0, v12, Lcom/samsung/privilege/bean/Purchasing;->InstallPackageName:Ljava/lang/String;
 
@@ -124,7 +124,7 @@
 
     if-nez v17, :cond_c2
 
-    .line 2205
+    .line 2220
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/MainMenuFragment$GetVerifyListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetVerifyListener;
@@ -145,20 +145,20 @@
 
     move-result v7
 
-    .line 2210
+    .line 2225
     :goto_4b
     if-eqz v7, :cond_af
 
-    .line 2212
+    .line 2227
     new-instance v11, Lcom/loopj/android/http/RequestParams;
 
     invoke-direct {v11}, Lcom/loopj/android/http/RequestParams;-><init>()V
 
-    .line 2213
+    .line 2228
     .local v11, "params":Lcom/loopj/android/http/RequestParams;
     const-string v15, ""
 
-    .line 2214
+    .line 2229
     .local v15, "url":Ljava/lang/String;
     iget-object v0, v12, Lcom/samsung/privilege/bean/Purchasing;->VerifyTypeAndroid:Ljava/lang/String;
 
@@ -172,7 +172,7 @@
 
     if-eqz v17, :cond_c4
 
-    .line 2215
+    .line 2230
     new-instance v17, Ljava/lang/StringBuilder;
 
     sget-object v18, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
@@ -230,7 +230,7 @@
 
     move-result-object v15
 
-    .line 2248
+    .line 2263
     :goto_99
     new-instance v17, Lcom/samsung/privilege/activity/MainMenuFragment$VerifySubmitListener;
 
@@ -253,7 +253,7 @@
 
     invoke-static {v15, v11, v0}, Lcom/samsung/privilege/util/http/BuzzbeesRestClient;->post(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
 
-    .line 2252
+    .line 2267
     .end local v7    # "hasApp":Z
     .end local v11    # "params":Lcom/loopj/android/http/RequestParams;
     .end local v15    # "url":Ljava/lang/String;
@@ -273,19 +273,19 @@
 
     invoke-static/range {v17 .. v18}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$17(Lcom/samsung/privilege/activity/MainMenuFragment;Z)V
 
-    .line 2199
+    .line 2214
     add-int/lit8 v8, v8, 0x1
 
     goto/16 :goto_e
 
-    .line 2207
+    .line 2222
     .restart local v7    # "hasApp":Z
     :cond_c2
     const/4 v7, 0x0
 
     goto :goto_4b
 
-    .line 2217
+    .line 2232
     .restart local v11    # "params":Lcom/loopj/android/http/RequestParams;
     .restart local v15    # "url":Ljava/lang/String;
     :cond_c4
@@ -342,13 +342,13 @@
 
     move-result-object v16
 
-    .line 2227
+    .line 2242
     .local v16, "valueJson":Ljava/lang/String;
     const-string v2, ""
     :try_end_fb
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_fb} :catch_190
 
-    .line 2229
+    .line 2244
     .local v2, "base64":Ljava/lang/String;
     :try_start_fb
     invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->toString()Ljava/lang/String;
@@ -365,7 +365,7 @@
 
     move-result-object v3
 
-    .line 2230
+    .line 2245
     .local v3, "data":[B
     const/16 v17, 0x0
 
@@ -378,7 +378,7 @@
 
     move-result-object v2
 
-    .line 2235
+    .line 2250
     .end local v3    # "data":[B
     :goto_111
     :try_start_111
@@ -400,7 +400,7 @@
 
     move-result-object v13
 
-    .line 2236
+    .line 2251
     .local v13, "token_5_digit_last":Ljava/lang/String;
     const/16 v17, 0x0
 
@@ -418,11 +418,11 @@
 
     move-result-object v14
 
-    .line 2238
+    .line 2253
     .local v14, "token_cut_1_digit_and_5_digit_last":Ljava/lang/String;
     const-string v6, ""
 
-    .line 2239
+    .line 2254
     .local v6, "encryptValue":Ljava/lang/String;
     new-instance v17, Ljava/lang/StringBuilder;
 
@@ -442,7 +442,7 @@
 
     move-result-object v6
 
-    .line 2241
+    .line 2256
     new-instance v17, Ljava/lang/StringBuilder;
 
     sget-object v18, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
@@ -463,7 +463,7 @@
 
     move-result-object v15
 
-    .line 2243
+    .line 2258
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -487,7 +487,7 @@
 
     invoke-static/range {v17 .. v18}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2245
+    .line 2260
     const-string v17, "encrypt"
 
     invoke-virtual {v6}, Ljava/lang/String;->toString()Ljava/lang/String;
@@ -516,7 +516,7 @@
 
     goto/16 :goto_99
 
-    .line 2255
+    .line 2270
     .end local v2    # "base64":Ljava/lang/String;
     .end local v6    # "encryptValue":Ljava/lang/String;
     .end local v7    # "hasApp":Z
@@ -532,7 +532,7 @@
     :catch_190
     move-exception v4
 
-    .line 2256
+    .line 2271
     .local v4, "e":Lorg/json/JSONException;
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
@@ -561,7 +561,7 @@
 
     goto/16 :goto_16
 
-    .line 2231
+    .line 2246
     .end local v4    # "e":Lorg/json/JSONException;
     .restart local v2    # "base64":Ljava/lang/String;
     .restart local v7    # "hasApp":Z
@@ -575,7 +575,7 @@
     :catch_1ad
     move-exception v5
 
-    .line 2232
+    .line 2247
     .local v5, "e1":Ljava/io/UnsupportedEncodingException;
     :try_start_1ae
     invoke-virtual {v5}, Ljava/io/UnsupportedEncodingException;->printStackTrace()V

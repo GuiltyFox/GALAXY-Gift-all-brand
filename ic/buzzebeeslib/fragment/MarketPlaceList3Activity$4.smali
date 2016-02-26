@@ -36,7 +36,7 @@
     .line 1
     iput-object p1, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$4;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
-    .line 385
+    .line 388
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 15
+    .registers 16
     .param p2, "arg1"    # Landroid/view/View;
     .param p3, "position"    # I
     .param p4, "arg3"    # J
@@ -60,13 +60,13 @@
     .end annotation
 
     .prologue
-    .line 389
+    .line 392
     .local p1, "arg0":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     :try_start_0
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$4;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->gAdapter:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketPlace3Adapter;
-    invoke-static {v3}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$28(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketPlace3Adapter;
+    invoke-static {v3}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$29(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketPlace3Adapter;
 
     move-result-object v3
 
@@ -74,7 +74,7 @@
 
     move-result-object v0
 
-    .line 391
+    .line 394
     .local v0, "campaign":Lic/buzzebeeslib/bean/Campaign;
     iget-object v3, v0, Lic/buzzebeeslib/bean/Campaign;->Type:Ljava/lang/String;
 
@@ -94,9 +94,9 @@
 
     move-result v3
 
-    if-eqz v3, :cond_51
+    if-eqz v3, :cond_78
 
-    .line 392
+    .line 395
     :cond_1e
     new-instance v2, Landroid/content/Intent;
 
@@ -110,62 +110,102 @@
 
     invoke-direct {v2, v3, v4}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 393
+    .line 396
     .local v2, "intent":Landroid/content/Intent;
     const-string v3, "campaign"
 
     invoke-virtual {v2, v3, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 394
+    .line 397
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$4;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     iget-object v4, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$4;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->RC_MARKET_DETAIL:I
-    invoke-static {v4}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$29(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)I
+    invoke-static {v4}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$30(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)I
 
     move-result v4
 
     invoke-virtual {v3, v2, v4}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->startActivityForResult(Landroid/content/Intent;I)V
     :try_end_3b
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_3b} :catch_6f
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_3b} :catch_96
 
-    .line 402
+    .line 406
     :goto_3b
     :try_start_3b
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$4;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
-    # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-    invoke-static {v3}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$8(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Lcom/google/analytics/tracking/android/Tracker;
+    # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->gCurrentFilterCatName:Ljava/lang/String;
+    invoke-static {v3}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$8(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Ljava/lang/String;
 
     move-result-object v3
 
-    const-string v4, "Marketplace"
+    const-string v4, "All"
 
-    const-string v5, "View SKU Detail"
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    iget-object v6, v0, Lic/buzzebeeslib/bean/Campaign;->Name:Ljava/lang/String;
+    move-result v3
 
-    const-wide/16 v7, 0x1
+    if-eqz v3, :cond_b0
 
-    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    .line 407
+    iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$4;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
+
+    # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+    invoke-static {v3}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$9(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Lcom/google/analytics/tracking/android/Tracker;
+
+    move-result-object v3
+
+    const-string v4, "BZB Marketplace"
+
+    const-string v5, "Click BZB Campaign Banner"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    iget-object v7, v0, Lic/buzzebeeslib/bean/Campaign;->ID:Ljava/lang/String;
+
+    invoke-static {v7}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v7, "|"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    iget-object v7, v0, Lic/buzzebeeslib/bean/Campaign;->Name:Ljava/lang/String;
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    const-wide/16 v8, 0x1
+
+    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v7
 
     invoke-virtual {v3, v4, v5, v6, v7}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-    :try_end_50
-    .catch Ljava/lang/Exception; {:try_start_3b .. :try_end_50} :catch_89
+    :try_end_77
+    .catch Ljava/lang/Exception; {:try_start_3b .. :try_end_77} :catch_f2
 
-    .line 409
+    .line 417
     .end local v0    # "campaign":Lic/buzzebeeslib/bean/Campaign;
     .end local v2    # "intent":Landroid/content/Intent;
-    :goto_50
+    :goto_77
     return-void
 
-    .line 396
+    .line 399
     .restart local v0    # "campaign":Lic/buzzebeeslib/bean/Campaign;
-    :cond_51
-    :try_start_51
+    :cond_78
+    :try_start_78
     new-instance v2, Landroid/content/Intent;
 
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$4;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
@@ -178,35 +218,35 @@
 
     invoke-direct {v2, v3, v4}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 397
+    .line 400
     .restart local v2    # "intent":Landroid/content/Intent;
     const-string v3, "campaign"
 
     invoke-virtual {v2, v3, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 398
+    .line 401
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$4;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     iget-object v4, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$4;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->RC_MARKET_DETAIL:I
-    invoke-static {v4}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$29(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)I
+    invoke-static {v4}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$30(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)I
 
     move-result v4
 
     invoke-virtual {v3, v2, v4}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->startActivityForResult(Landroid/content/Intent;I)V
-    :try_end_6e
-    .catch Ljava/lang/Exception; {:try_start_51 .. :try_end_6e} :catch_6f
+    :try_end_95
+    .catch Ljava/lang/Exception; {:try_start_78 .. :try_end_95} :catch_96
 
     goto :goto_3b
 
-    .line 406
+    .line 414
     .end local v0    # "campaign":Lic/buzzebeeslib/bean/Campaign;
     .end local v2    # "intent":Landroid/content/Intent;
-    :catch_6f
+    :catch_96
     move-exception v1
 
-    .line 407
+    .line 415
     .local v1, "ex":Ljava/lang/Exception;
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$4;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
@@ -230,14 +270,85 @@
 
     invoke-virtual {v3, v4}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->showToast(Ljava/lang/String;)V
 
-    goto :goto_50
+    goto :goto_77
 
-    .line 403
+    .line 409
     .end local v1    # "ex":Ljava/lang/Exception;
     .restart local v0    # "campaign":Lic/buzzebeeslib/bean/Campaign;
     .restart local v2    # "intent":Landroid/content/Intent;
-    :catch_89
+    :cond_b0
+    :try_start_b0
+    iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$4;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
+
+    # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+    invoke-static {v3}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$9(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Lcom/google/analytics/tracking/android/Tracker;
+
+    move-result-object v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v5, "BZB Category-"
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$4;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
+
+    # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->gCurrentFilterCatName:Ljava/lang/String;
+    invoke-static {v5}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$8(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, "Click BZB Campaign Banner"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    iget-object v7, v0, Lic/buzzebeeslib/bean/Campaign;->ID:Ljava/lang/String;
+
+    invoke-static {v7}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v7, "|"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    iget-object v7, v0, Lic/buzzebeeslib/bean/Campaign;->Name:Ljava/lang/String;
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    const-wide/16 v8, 0x1
+
+    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v7
+
+    invoke-virtual {v3, v4, v5, v6, v7}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
+    :try_end_f1
+    .catch Ljava/lang/Exception; {:try_start_b0 .. :try_end_f1} :catch_f2
+
+    goto :goto_77
+
+    .line 411
+    :catch_f2
     move-exception v3
 
-    goto :goto_50
+    goto :goto_77
 .end method

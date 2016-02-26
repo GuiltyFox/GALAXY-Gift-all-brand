@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$2;->val$msg:Ljava/lang/String;
 
-    .line 591
+    .line 597
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 5
 
     .prologue
-    .line 594
+    .line 600
     iget-object v1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$2;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     invoke-virtual {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -64,10 +64,10 @@
 
     move-result-object v0
 
-    .line 595
+    .line 601
     .local v0, "toast":Landroid/widget/Toast;
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 596
+    .line 602
     return-void
 .end method

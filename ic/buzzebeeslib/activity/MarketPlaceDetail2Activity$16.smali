@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$16;->val$dialogSerial:Landroid/app/Dialog;
 
-    .line 2222
+    .line 2224
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -48,12 +48,12 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 2224
+    .line 2226
     iget-object v2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$16;->val$dialogSerial:Landroid/app/Dialog;
 
     invoke-virtual {v2}, Landroid/app/Dialog;->dismiss()V
 
-    .line 2226
+    .line 2228
     iget-object v2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$16;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$16;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -74,7 +74,7 @@
 
     invoke-static {v2, v3}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$20(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Landroid/app/ProgressDialog;)V
 
-    .line 2229
+    .line 2231
     new-instance v2, Ljava/lang/StringBuilder;
 
     sget-object v3, Lic/buzzebeeslib/LibConst;->API_URL_BUZZEBEES:Ljava/lang/String;
@@ -128,7 +128,7 @@
 
     move-result-object v1
 
-    .line 2230
+    .line 2232
     .local v1, "url":Ljava/lang/String;
     iget-object v2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$16;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
@@ -153,12 +153,12 @@
 
     invoke-static {v2, v3}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2231
+    .line 2233
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2232
+    .line 2234
     .local v0, "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lic/buzzebeeslib/bean/InputItem;>;"
     new-instance v2, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostUsedListener;
 
@@ -170,6 +170,6 @@
 
     invoke-static {v1, v0, v2, v3}, Lic/buzzebeeslib/util/http/HttpCall;->RQ_POST(Ljava/lang/String;Ljava/util/ArrayList;Lic/buzzebeeslib/util/http/RQListener;Ljava/lang/Object;)V
 
-    .line 2234
+    .line 2236
     return-void
 .end method

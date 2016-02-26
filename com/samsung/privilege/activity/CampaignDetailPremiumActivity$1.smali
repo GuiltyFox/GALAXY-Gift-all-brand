@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$1;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
-    .line 846
+    .line 847
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,12 +42,12 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 849
+    .line 850
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$1;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->finish()V
 
-    .line 850
+    .line 851
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 855
+    .line 856
     return-void
 .end method
 
@@ -65,6 +65,6 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 860
+    .line 861
     return-void
 .end method

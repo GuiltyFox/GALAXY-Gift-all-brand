@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$5;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
-    .line 1051
+    .line 1053
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,18 +41,18 @@
     .registers 8
 
     .prologue
-    .line 1054
+    .line 1056
     const/4 v1, 0x0
 
-    .line 1055
+    .line 1057
     .local v1, "isGetPoints":Z
     :goto_1
     if-eqz v1, :cond_4
 
-    .line 1075
+    .line 1077
     return-void
 
-    .line 1057
+    .line 1059
     :cond_4
     :try_start_4
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$5;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
@@ -65,7 +65,7 @@
 
     move-result-object v2
 
-    .line 1058
+    .line 1060
     .local v2, "strTokenBuzzeBees":Ljava/lang/String;
     if-eqz v2, :cond_51
 
@@ -77,7 +77,7 @@
 
     if-nez v4, :cond_51
 
-    .line 1059
+    .line 1061
     new-instance v4, Ljava/lang/StringBuilder;
 
     sget-object v5, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
@@ -102,7 +102,7 @@
 
     move-result-object v3
 
-    .line 1060
+    .line 1062
     .local v3, "url":Ljava/lang/String;
     const-string v4, "campaign.detail"
 
@@ -122,7 +122,7 @@
 
     invoke-static {v4, v5}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1061
+    .line 1063
     new-instance v4, Lcom/samsung/privilege/activity/CampaignDetailActivity$GetPointsListener;
 
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$5;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
@@ -135,10 +135,10 @@
     :try_end_50
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_50} :catch_71
 
-    .line 1062
+    .line 1064
     const/4 v1, 0x1
 
-    .line 1069
+    .line 1071
     .end local v2    # "strTokenBuzzeBees":Ljava/lang/String;
     .end local v3    # "url":Ljava/lang/String;
     :cond_51
@@ -152,11 +152,11 @@
 
     goto :goto_1
 
-    .line 1070
+    .line 1072
     :catch_57
     move-exception v0
 
-    .line 1071
+    .line 1073
     .local v0, "e":Ljava/lang/InterruptedException;
     const-string v4, "campaign.detail"
 
@@ -182,12 +182,12 @@
 
     goto :goto_1
 
-    .line 1064
+    .line 1066
     .end local v0    # "e":Ljava/lang/InterruptedException;
     :catch_71
     move-exception v0
 
-    .line 1065
+    .line 1067
     .local v0, "e":Ljava/lang/Exception;
     const-string v4, "campaign.detail"
 

@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$8;->val$pagerPhoto:Landroid/support/v4/view/ViewPager;
 
-    .line 1473
+    .line 1519
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -48,13 +48,13 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1477
+    .line 1523
     :try_start_1
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$8;->val$pagerPhoto:Landroid/support/v4/view/ViewPager;
 
     if-eqz v0, :cond_27
 
-    .line 1478
+    .line 1524
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$8;->val$pagerPhoto:Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->getAdapter()Landroid/support/v4/view/PagerAdapter;
@@ -67,7 +67,7 @@
 
     if-le v0, v1, :cond_27
 
-    .line 1479
+    .line 1525
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$8;->val$pagerPhoto:Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->getCurrentItem()I
@@ -76,7 +76,7 @@
 
     if-lez v0, :cond_27
 
-    .line 1480
+    .line 1526
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$8;->val$pagerPhoto:Landroid/support/v4/view/ViewPager;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$8;->val$pagerPhoto:Landroid/support/v4/view/ViewPager;
@@ -93,12 +93,12 @@
     :try_end_27
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_27} :catch_28
 
-    .line 1487
+    .line 1533
     :cond_27
     :goto_27
     return-void
 
-    .line 1484
+    .line 1530
     :catch_28
     move-exception v0
 

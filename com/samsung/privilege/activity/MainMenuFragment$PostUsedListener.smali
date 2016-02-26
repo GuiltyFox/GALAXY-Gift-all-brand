@@ -26,20 +26,20 @@
     .param p2, "menuItem"    # Lcom/samsung/privilege/bean/MainMenuItemModel;
 
     .prologue
-    .line 942
+    .line 945
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$PostUsedListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-direct {p0}, Lcom/samsung/privilege/util/http/HttpRQListener;-><init>()V
 
-    .line 940
+    .line 943
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$PostUsedListener;->gMenuItem:Lcom/samsung/privilege/bean/MainMenuItemModel;
 
-    .line 943
+    .line 946
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$PostUsedListener;->gMenuItem:Lcom/samsung/privilege/bean/MainMenuItemModel;
 
-    .line 944
+    .line 947
     return-void
 .end method
 
@@ -47,7 +47,7 @@
     .registers 2
 
     .prologue
-    .line 938
+    .line 941
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$PostUsedListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     return-object v0
@@ -62,7 +62,7 @@
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 948
+    .line 951
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -94,7 +94,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 950
+    .line 953
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$PostUsedListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -103,7 +103,7 @@
 
     if-eqz v0, :cond_47
 
-    .line 952
+    .line 955
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$PostUsedListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->gDialog:Landroid/app/ProgressDialog;
@@ -113,7 +113,7 @@
 
     if-eqz v0, :cond_39
 
-    .line 953
+    .line 956
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$PostUsedListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->gDialog:Landroid/app/ProgressDialog;
@@ -123,7 +123,7 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 956
+    .line 959
     :cond_39
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$PostUsedListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
@@ -137,7 +137,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1032
+    .line 1035
     :cond_47
     return-void
 .end method

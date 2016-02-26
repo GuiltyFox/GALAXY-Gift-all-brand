@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 30
+    .registers 31
 
     .prologue
     .line 796
@@ -103,15 +103,15 @@
 
     iget-wide v0, v0, Lic/buzzebeeslib/util/DialogUtil$9;->val$server_time:J
 
-    move-wide/from16 v25, v0
+    move-wide/from16 v26, v0
 
     move-object/from16 v0, p0
 
     iget-wide v0, v0, Lic/buzzebeeslib/util/DialogUtil$9;->val$pLngExpireIn:J
 
-    move-wide/from16 v27, v0
+    move-wide/from16 v28, v0
 
-    add-long v8, v25, v27
+    add-long v8, v26, v28
 
     .line 805
     .local v8, "expire_time":J
@@ -123,19 +123,19 @@
     .local v6, "dateNow":Ljava/util/Date;
     invoke-virtual {v6}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v25
+    move-result-wide v26
 
-    const-wide/16 v27, 0x3e8
+    const-wide/16 v28, 0x3e8
 
-    div-long v25, v25, v27
+    div-long v26, v26, v28
 
     move-object/from16 v0, p0
 
     iget-wide v0, v0, Lic/buzzebeeslib/util/DialogUtil$9;->val$local_time:J
 
-    move-wide/from16 v27, v0
+    move-wide/from16 v28, v0
 
-    sub-long v4, v25, v27
+    sub-long v4, v26, v28
 
     .line 807
     .local v4, "add_time":J
@@ -143,9 +143,9 @@
 
     iget-wide v0, v0, Lic/buzzebeeslib/util/DialogUtil$9;->val$server_time:J
 
-    move-wide/from16 v25, v0
+    move-wide/from16 v26, v0
 
-    add-long v18, v25, v4
+    add-long v18, v26, v4
 
     .line 808
     .local v18, "server_time_running":J
@@ -232,10 +232,10 @@
     .end local v22    # "strText":Ljava/lang/String;
     .end local v23    # "strTextFinal":Ljava/lang/String;
     :goto_84
-    const-wide/16 v25, 0x3e8
+    const-wide/16 v26, 0x3e8
 
     :try_start_86
-    invoke-static/range {v25 .. v26}, Ljava/lang/Thread;->sleep(J)V
+    invoke-static/range {v26 .. v27}, Ljava/lang/Thread;->sleep(J)V
     :try_end_89
     .catch Ljava/lang/InterruptedException; {:try_start_86 .. :try_end_89} :catch_8b
 
@@ -283,26 +283,26 @@
 
     .line 822
     .local v14, "remain_time":J
-    const-wide/16 v25, 0xe10
+    const-wide/16 v26, 0xe10
 
     :try_start_aa
-    div-long v10, v14, v25
+    div-long v10, v14, v26
 
     .line 823
     .local v10, "hours":J
-    const-wide/16 v25, 0xe10
+    const-wide/16 v26, 0xe10
 
-    rem-long v25, v14, v25
+    rem-long v26, v14, v26
 
-    const-wide/16 v27, 0x3c
+    const-wide/16 v28, 0x3c
 
-    div-long v12, v25, v27
+    div-long v12, v26, v28
 
     .line 824
     .local v12, "minutes":J
-    const-wide/16 v25, 0x3c
+    const-wide/16 v26, 0x3c
 
-    rem-long v16, v14, v25
+    rem-long v16, v14, v26
 
     .line 826
     .local v16, "seconds":J
@@ -314,9 +314,9 @@
 
     .line 828
     .local v21, "strSecond":Ljava/lang/String;
-    const-wide/16 v25, 0xa
+    const-wide/16 v26, 0xa
 
-    cmp-long v25, v12, v25
+    cmp-long v25, v12, v26
 
     if-gez v25, :cond_138
 
@@ -339,9 +339,9 @@
 
     .line 833
     :goto_d3
-    const-wide/16 v25, 0xa
+    const-wide/16 v26, 0xa
 
-    cmp-long v25, v16, v25
+    cmp-long v25, v16, v26
 
     if-gez v25, :cond_148
 

@@ -481,7 +481,7 @@
 .end method
 
 .method public dispatchHits(Ljava/util/List;)I
-    .registers 18
+    .registers 19
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -495,255 +495,234 @@
     .prologue
     .line 83
     .local p1, "hits":Ljava/util/List;, "Ljava/util/List<Lcom/google/analytics/tracking/android/Hit;>;"
-    const/4 v4, 0x0
-
-    .line 85
-    .local v4, "hitsDispatched":I
-    invoke-interface/range {p1 .. p1}, Ljava/util/List;->size()I
-
-    move-result v13
-
-    const/16 v14, 0x28
-
-    invoke-static {v13, v14}, Ljava/lang/Math;->min(II)I
-
-    move-result v6
-
-    .line 86
-    .local v6, "maxHits":I
     const/4 v5, 0x0
 
-    .local v5, "i":I
+    .line 85
+    .local v5, "hitsDispatched":I
+    invoke-interface/range {p1 .. p1}, Ljava/util/List;->size()I
+
+    move-result v14
+
+    const/16 v15, 0x28
+
+    invoke-static {v14, v15}, Ljava/lang/Math;->min(II)I
+
+    move-result v7
+
+    .line 86
+    .local v7, "maxHits":I
+    const/4 v6, 0x0
+
+    .local v6, "i":I
     :goto_c
-    if-ge v5, v6, :cond_d6
+    if-ge v6, v7, :cond_d8
 
     .line 87
     move-object/from16 v0, p0
 
-    iget-object v13, v0, Lcom/google/analytics/tracking/android/SimpleNetworkDispatcher;->httpClientFactory:Lcom/google/analytics/tracking/android/HttpClientFactory;
+    iget-object v14, v0, Lcom/google/analytics/tracking/android/SimpleNetworkDispatcher;->httpClientFactory:Lcom/google/analytics/tracking/android/HttpClientFactory;
 
-    invoke-interface {v13}, Lcom/google/analytics/tracking/android/HttpClientFactory;->newInstance()Lorg/apache/http/client/HttpClient;
+    invoke-interface {v14}, Lcom/google/analytics/tracking/android/HttpClientFactory;->newInstance()Lorg/apache/http/client/HttpClient;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 88
-    .local v1, "client":Lorg/apache/http/client/HttpClient;
+    .local v2, "client":Lorg/apache/http/client/HttpClient;
     move-object/from16 v0, p1
 
-    invoke-interface {v0, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    check-cast v3, Lcom/google/analytics/tracking/android/Hit;
+    check-cast v4, Lcom/google/analytics/tracking/android/Hit;
 
     .line 89
-    .local v3, "hit":Lcom/google/analytics/tracking/android/Hit;
+    .local v4, "hit":Lcom/google/analytics/tracking/android/Hit;
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v3}, Lcom/google/analytics/tracking/android/SimpleNetworkDispatcher;->getUrl(Lcom/google/analytics/tracking/android/Hit;)Ljava/net/URL;
+    invoke-direct {v0, v4}, Lcom/google/analytics/tracking/android/SimpleNetworkDispatcher;->getUrl(Lcom/google/analytics/tracking/android/Hit;)Ljava/net/URL;
 
-    move-result-object v12
+    move-result-object v13
 
     .line 91
-    .local v12, "url":Ljava/net/URL;
-    if-nez v12, :cond_51
+    .local v13, "url":Ljava/net/URL;
+    if-nez v13, :cond_51
 
     .line 92
     invoke-static {}, Lcom/google/analytics/tracking/android/Log;->isDebugEnabled()Z
 
-    move-result v13
+    move-result v14
 
-    if-eqz v13, :cond_4b
+    if-eqz v14, :cond_4b
 
     .line 93
-    new-instance v13, Ljava/lang/StringBuilder;
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v14, "No destination: discarding hit: "
+    const-string v15, "No destination: discarding hit: "
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v3}, Lcom/google/analytics/tracking/android/Hit;->getHitParams()Ljava/lang/String;
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v14
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4}, Lcom/google/analytics/tracking/android/Hit;->getHitParams()Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v15
 
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-static {v13}, Lcom/google/analytics/tracking/android/Log;->w(Ljava/lang/String;)I
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-static {v14}, Lcom/google/analytics/tracking/android/Log;->w(Ljava/lang/String;)I
 
     .line 97
     :goto_46
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     .line 86
     :goto_48
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_c
 
     .line 95
     :cond_4b
-    const-string v13, "No destination: discarding hit."
+    const-string v14, "No destination: discarding hit."
 
-    invoke-static {v13}, Lcom/google/analytics/tracking/android/Log;->w(Ljava/lang/String;)I
+    invoke-static {v14}, Lcom/google/analytics/tracking/android/Log;->w(Ljava/lang/String;)I
 
     goto :goto_46
 
     .line 101
     :cond_51
-    new-instance v11, Lorg/apache/http/HttpHost;
+    new-instance v12, Lorg/apache/http/HttpHost;
 
-    invoke-virtual {v12}, Ljava/net/URL;->getHost()Ljava/lang/String;
+    invoke-virtual {v13}, Ljava/net/URL;->getHost()Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-virtual {v12}, Ljava/net/URL;->getPort()I
+    invoke-virtual {v13}, Ljava/net/URL;->getPort()I
 
-    move-result v14
+    move-result v15
 
-    invoke-virtual {v12}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
+    invoke-virtual {v13}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v16
 
-    invoke-direct {v11, v13, v14, v15}, Lorg/apache/http/HttpHost;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    move-object/from16 v0, v16
+
+    invoke-direct {v12, v14, v15, v0}, Lorg/apache/http/HttpHost;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     .line 103
-    .local v11, "targetHost":Lorg/apache/http/HttpHost;
-    invoke-virtual {v12}, Ljava/net/URL;->getPath()Ljava/lang/String;
-
-    move-result-object v8
-
-    .line 111
-    .local v8, "path":Ljava/lang/String;
-    invoke-virtual {v3}, Lcom/google/analytics/tracking/android/Hit;->getHitParams()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-static {v13}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v13
-
-    if-eqz v13, :cond_7d
-
-    const-string v7, ""
-
-    .line 114
-    .local v7, "params":Ljava/lang/String;
-    :goto_72
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v7, v8}, Lcom/google/analytics/tracking/android/SimpleNetworkDispatcher;->buildRequest(Ljava/lang/String;Ljava/lang/String;)Lorg/apache/http/HttpEntityEnclosingRequest;
+    .local v12, "targetHost":Lorg/apache/http/HttpHost;
+    invoke-virtual {v13}, Ljava/net/URL;->getPath()Ljava/lang/String;
 
     move-result-object v9
 
+    .line 111
+    .local v9, "path":Ljava/lang/String;
+    invoke-virtual {v4}, Lcom/google/analytics/tracking/android/Hit;->getHitParams()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-static {v14}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v14
+
+    if-eqz v14, :cond_7f
+
+    const-string v8, ""
+
+    .line 114
+    .local v8, "params":Ljava/lang/String;
+    :goto_74
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v8, v9}, Lcom/google/analytics/tracking/android/SimpleNetworkDispatcher;->buildRequest(Ljava/lang/String;Ljava/lang/String;)Lorg/apache/http/HttpEntityEnclosingRequest;
+
+    move-result-object v10
+
     .line 115
-    .local v9, "request":Lorg/apache/http/HttpEntityEnclosingRequest;
-    if-nez v9, :cond_86
+    .local v10, "request":Lorg/apache/http/HttpEntityEnclosingRequest;
+    if-nez v10, :cond_88
 
     .line 116
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     .line 117
     goto :goto_48
 
     .line 111
-    .end local v7    # "params":Ljava/lang/String;
-    .end local v9    # "request":Lorg/apache/http/HttpEntityEnclosingRequest;
-    :cond_7d
+    .end local v8    # "params":Ljava/lang/String;
+    .end local v10    # "request":Lorg/apache/http/HttpEntityEnclosingRequest;
+    :cond_7f
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v13
+    move-result-wide v14
 
-    invoke-static {v3, v13, v14}, Lcom/google/analytics/tracking/android/HitBuilder;->postProcessHit(Lcom/google/analytics/tracking/android/Hit;J)Ljava/lang/String;
+    invoke-static {v4, v14, v15}, Lcom/google/analytics/tracking/android/HitBuilder;->postProcessHit(Lcom/google/analytics/tracking/android/Hit;J)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v8
 
-    goto :goto_72
+    goto :goto_74
 
     .line 119
-    .restart local v7    # "params":Ljava/lang/String;
-    .restart local v9    # "request":Lorg/apache/http/HttpEntityEnclosingRequest;
-    :cond_86
-    const-string v13, "Host"
+    .restart local v8    # "params":Ljava/lang/String;
+    .restart local v10    # "request":Lorg/apache/http/HttpEntityEnclosingRequest;
+    :cond_88
+    const-string v14, "Host"
 
-    invoke-virtual {v11}, Lorg/apache/http/HttpHost;->toHostString()Ljava/lang/String;
+    invoke-virtual {v12}, Lorg/apache/http/HttpHost;->toHostString()Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v15
 
-    invoke-interface {v9, v13, v14}, Lorg/apache/http/HttpEntityEnclosingRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v10, v14, v15}, Lorg/apache/http/HttpEntityEnclosingRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 120
     invoke-static {}, Lcom/google/analytics/tracking/android/Log;->isDebugEnabled()Z
 
-    move-result v13
+    move-result v14
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v13, v9}, Lcom/google/analytics/tracking/android/SimpleNetworkDispatcher;->logDebugInformation(ZLorg/apache/http/HttpEntityEnclosingRequest;)V
+    invoke-direct {v0, v14, v10}, Lcom/google/analytics/tracking/android/SimpleNetworkDispatcher;->logDebugInformation(ZLorg/apache/http/HttpEntityEnclosingRequest;)V
 
     .line 121
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
+    invoke-virtual {v8}, Ljava/lang/String;->length()I
 
-    move-result v13
+    move-result v14
 
-    const/16 v14, 0x2000
+    const/16 v15, 0x2000
 
-    if-le v13, v14, :cond_a8
+    if-le v14, v15, :cond_aa
 
     .line 122
-    const-string v13, "Hit too long (> 8192 bytes)--not sent"
+    const-string v14, "Hit too long (> 8192 bytes)--not sent"
 
-    invoke-static {v13}, Lcom/google/analytics/tracking/android/Log;->w(Ljava/lang/String;)I
+    invoke-static {v14}, Lcom/google/analytics/tracking/android/Log;->w(Ljava/lang/String;)I
 
     .line 141
-    :cond_a5
-    :goto_a5
-    add-int/lit8 v4, v4, 0x1
+    :cond_a7
+    :goto_a7
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_48
 
     .line 126
-    :cond_a8
-    :try_start_a8
-    invoke-interface {v1, v11, v9}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;)Lorg/apache/http/HttpResponse;
+    :cond_aa
+    :try_start_aa
+    invoke-interface {v2, v12, v10}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;)Lorg/apache/http/HttpResponse;
 
-    move-result-object v10
+    move-result-object v11
 
     .line 127
-    .local v10, "response":Lorg/apache/http/HttpResponse;
-    invoke-interface {v10}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
-
-    move-result-object v13
-
-    invoke-interface {v13}, Lorg/apache/http/StatusLine;->getStatusCode()I
-
-    move-result v13
-
-    const/16 v14, 0xc8
-
-    if-eq v13, v14, :cond_a5
-
-    .line 128
-    new-instance v13, Ljava/lang/StringBuilder;
-
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v14, "Bad response: "
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-interface {v10}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
+    .local v11, "response":Lorg/apache/http/HttpResponse;
+    invoke-interface {v11}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
 
     move-result-object v14
 
@@ -751,94 +730,117 @@
 
     move-result v14
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const/16 v15, 0xc8
 
-    move-result-object v13
+    if-eq v14, v15, :cond_a7
 
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 128
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    move-result-object v13
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v13}, Lcom/google/analytics/tracking/android/Log;->w(Ljava/lang/String;)I
-    :try_end_d6
-    .catch Lorg/apache/http/client/ClientProtocolException; {:try_start_a8 .. :try_end_d6} :catch_d7
-    .catch Ljava/io/IOException; {:try_start_a8 .. :try_end_d6} :catch_de
+    const-string v15, "Bad response: "
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-interface {v11}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
+
+    move-result-object v15
+
+    invoke-interface {v15}, Lorg/apache/http/StatusLine;->getStatusCode()I
+
+    move-result v15
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-static {v14}, Lcom/google/analytics/tracking/android/Log;->w(Ljava/lang/String;)I
+    :try_end_d8
+    .catch Lorg/apache/http/client/ClientProtocolException; {:try_start_aa .. :try_end_d8} :catch_d9
+    .catch Ljava/io/IOException; {:try_start_aa .. :try_end_d8} :catch_e0
 
     .line 143
-    .end local v1    # "client":Lorg/apache/http/client/HttpClient;
-    .end local v3    # "hit":Lcom/google/analytics/tracking/android/Hit;
-    .end local v7    # "params":Ljava/lang/String;
-    .end local v8    # "path":Ljava/lang/String;
-    .end local v9    # "request":Lorg/apache/http/HttpEntityEnclosingRequest;
-    .end local v10    # "response":Lorg/apache/http/HttpResponse;
-    .end local v11    # "targetHost":Lorg/apache/http/HttpHost;
-    .end local v12    # "url":Ljava/net/URL;
-    :cond_d6
-    :goto_d6
-    return v4
+    .end local v2    # "client":Lorg/apache/http/client/HttpClient;
+    .end local v4    # "hit":Lcom/google/analytics/tracking/android/Hit;
+    .end local v8    # "params":Ljava/lang/String;
+    .end local v9    # "path":Ljava/lang/String;
+    .end local v10    # "request":Lorg/apache/http/HttpEntityEnclosingRequest;
+    .end local v11    # "response":Lorg/apache/http/HttpResponse;
+    .end local v12    # "targetHost":Lorg/apache/http/HttpHost;
+    .end local v13    # "url":Ljava/net/URL;
+    :cond_d8
+    :goto_d8
+    return v5
 
     .line 131
-    .restart local v1    # "client":Lorg/apache/http/client/HttpClient;
-    .restart local v3    # "hit":Lcom/google/analytics/tracking/android/Hit;
-    .restart local v7    # "params":Ljava/lang/String;
-    .restart local v8    # "path":Ljava/lang/String;
-    .restart local v9    # "request":Lorg/apache/http/HttpEntityEnclosingRequest;
-    .restart local v11    # "targetHost":Lorg/apache/http/HttpHost;
-    .restart local v12    # "url":Ljava/net/URL;
-    :catch_d7
-    move-exception v2
+    .restart local v2    # "client":Lorg/apache/http/client/HttpClient;
+    .restart local v4    # "hit":Lcom/google/analytics/tracking/android/Hit;
+    .restart local v8    # "params":Ljava/lang/String;
+    .restart local v9    # "path":Ljava/lang/String;
+    .restart local v10    # "request":Lorg/apache/http/HttpEntityEnclosingRequest;
+    .restart local v12    # "targetHost":Lorg/apache/http/HttpHost;
+    .restart local v13    # "url":Ljava/net/URL;
+    :catch_d9
+    move-exception v3
 
     .line 134
-    .local v2, "e":Lorg/apache/http/client/ClientProtocolException;
-    const-string v13, "ClientProtocolException sending hit; discarding hit..."
+    .local v3, "e":Lorg/apache/http/client/ClientProtocolException;
+    const-string v14, "ClientProtocolException sending hit; discarding hit..."
 
-    invoke-static {v13}, Lcom/google/analytics/tracking/android/Log;->w(Ljava/lang/String;)I
+    invoke-static {v14}, Lcom/google/analytics/tracking/android/Log;->w(Ljava/lang/String;)I
 
-    goto :goto_a5
+    goto :goto_a7
 
     .line 135
-    .end local v2    # "e":Lorg/apache/http/client/ClientProtocolException;
-    :catch_de
-    move-exception v2
+    .end local v3    # "e":Lorg/apache/http/client/ClientProtocolException;
+    :catch_e0
+    move-exception v3
 
     .line 136
-    .local v2, "e":Ljava/io/IOException;
-    new-instance v13, Ljava/lang/StringBuilder;
+    .local v3, "e":Ljava/io/IOException;
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v14, "Exception sending hit: "
+    const-string v15, "Exception sending hit: "
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v14
 
-    invoke-virtual {v14}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v15
+
+    invoke-virtual {v15}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v14
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-static {v13}, Lcom/google/analytics/tracking/android/Log;->w(Ljava/lang/String;)I
+    invoke-static {v14}, Lcom/google/analytics/tracking/android/Log;->w(Ljava/lang/String;)I
 
     .line 137
-    invoke-virtual {v2}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-static {v13}, Lcom/google/analytics/tracking/android/Log;->w(Ljava/lang/String;)I
+    invoke-static {v14}, Lcom/google/analytics/tracking/android/Log;->w(Ljava/lang/String;)I
 
-    goto :goto_d6
+    goto :goto_d8
 .end method
 
 .method public okToDispatch()Z

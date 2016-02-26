@@ -486,7 +486,7 @@
 .end method
 
 .method public declared-synchronized dump()V
-    .registers 8
+    .registers 9
 
     .prologue
     .line 190
@@ -561,9 +561,9 @@
 
     invoke-virtual {v2}, Ljava/lang/Thread;->getId()J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    invoke-virtual {v4, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v2
 

@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$ImageAdapter$1;->val$imageView:Landroid/widget/ImageView;
 
-    .line 4381
+    .line 4389
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 6
 
     .prologue
-    .line 4384
+    .line 4392
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$ImageAdapter$1;->val$imageView:Landroid/widget/ImageView;
 
     invoke-virtual {v3}, Landroid/widget/ImageView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -54,26 +54,26 @@
 
     invoke-virtual {v3, p0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 4386
+    .line 4394
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$ImageAdapter$1;->val$imageView:Landroid/widget/ImageView;
 
     invoke-virtual {v3}, Landroid/widget/ImageView;->getMeasuredWidth()I
 
     move-result v1
 
-    .line 4387
+    .line 4395
     .local v1, "gLayoutImageWidth":I
     mul-int/lit8 v3, v1, 0x2
 
     div-int/lit8 v0, v3, 0x3
 
-    .line 4388
+    .line 4396
     .local v0, "gLayoutImageHeight":I
     new-instance v2, Landroid/widget/RelativeLayout$LayoutParams;
 
     invoke-direct {v2, v1, v0}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
 
-    .line 4389
+    .line 4397
     .local v2, "params":Landroid/widget/RelativeLayout$LayoutParams;
     const/16 v3, 0xe
 
@@ -81,11 +81,11 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 4390
+    .line 4398
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$ImageAdapter$1;->val$imageView:Landroid/widget/ImageView;
 
     invoke-virtual {v3, v2}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4391
+    .line 4399
     return-void
 .end method

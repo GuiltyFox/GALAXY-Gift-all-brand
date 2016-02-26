@@ -37,7 +37,7 @@
 
     iput-object p3, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->val$activityContext:Landroid/content/Context;
 
-    .line 1012
+    .line 1026
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -51,7 +51,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1015
+    .line 1029
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->val$messagePopup:Lcom/samsung/privilege/bean/MessagePopup;
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/MessagePopup;->message_type:Ljava/lang/String;
@@ -64,7 +64,7 @@
 
     if-eqz v0, :cond_68
 
-    .line 1016
+    .line 1030
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->val$messagePopup:Lcom/samsung/privilege/bean/MessagePopup;
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/MessagePopup;->message_id:Ljava/lang/String;
@@ -83,7 +83,7 @@
 
     if-nez v0, :cond_5c
 
-    .line 1017
+    .line 1031
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->val$messagePopup:Lcom/samsung/privilege/bean/MessagePopup;
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/MessagePopup;->message_id:Ljava/lang/String;
@@ -96,7 +96,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 1018
+    .line 1032
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->val$activityContext:Landroid/content/Context;
@@ -109,11 +109,11 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/samsung/privilege/activity/CampaignListActivity;->showDialogConfirmLoginFacebook(Landroid/content/Context;Ljava/lang/String;Z)V
 
-    .line 1049
+    .line 1063
     :goto_37
     return-void
 
-    .line 1019
+    .line 1033
     :cond_38
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->val$messagePopup:Lcom/samsung/privilege/bean/MessagePopup;
 
@@ -127,7 +127,7 @@
 
     if-eqz v0, :cond_50
 
-    .line 1020
+    .line 1034
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->val$activityContext:Landroid/content/Context;
@@ -140,7 +140,7 @@
 
     goto :goto_37
 
-    .line 1022
+    .line 1036
     :cond_50
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
@@ -154,7 +154,7 @@
 
     goto :goto_37
 
-    .line 1025
+    .line 1039
     :cond_5c
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
@@ -168,7 +168,7 @@
 
     goto :goto_37
 
-    .line 1027
+    .line 1041
     :cond_68
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->val$messagePopup:Lcom/samsung/privilege/bean/MessagePopup;
 
@@ -182,7 +182,7 @@
 
     if-eqz v0, :cond_c9
 
-    .line 1028
+    .line 1042
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->val$messagePopup:Lcom/samsung/privilege/bean/MessagePopup;
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/MessagePopup;->badgeAlert:Lcom/samsung/privilege/bean/BadgeAlert;
@@ -197,7 +197,7 @@
 
     if-eqz v0, :cond_96
 
-    .line 1032
+    .line 1046
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->val$messagePopup:Lcom/samsung/privilege/bean/MessagePopup;
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/MessagePopup;->badgeAlert:Lcom/samsung/privilege/bean/BadgeAlert;
@@ -205,7 +205,7 @@
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->gHandler:Landroid/os/Handler;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$9(Lcom/samsung/privilege/activity/CampaignListActivity;)Landroid/os/Handler;
+    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$8(Lcom/samsung/privilege/activity/CampaignListActivity;)Landroid/os/Handler;
 
     move-result-object v1
 
@@ -219,7 +219,7 @@
 
     goto :goto_37
 
-    .line 1033
+    .line 1047
     :cond_96
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->val$messagePopup:Lcom/samsung/privilege/bean/MessagePopup;
 
@@ -235,7 +235,7 @@
 
     if-eqz v0, :cond_b8
 
-    .line 1035
+    .line 1049
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->val$messagePopup:Lcom/samsung/privilege/bean/MessagePopup;
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/MessagePopup;->badgeAlert:Lcom/samsung/privilege/bean/BadgeAlert;
@@ -243,7 +243,7 @@
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->gHandler:Landroid/os/Handler;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$9(Lcom/samsung/privilege/activity/CampaignListActivity;)Landroid/os/Handler;
+    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$8(Lcom/samsung/privilege/activity/CampaignListActivity;)Landroid/os/Handler;
 
     move-result-object v1
 
@@ -257,7 +257,7 @@
 
     goto :goto_37
 
-    .line 1037
+    .line 1051
     :cond_b8
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->val$messagePopup:Lcom/samsung/privilege/bean/MessagePopup;
 
@@ -266,7 +266,7 @@
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->gHandler:Landroid/os/Handler;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$9(Lcom/samsung/privilege/activity/CampaignListActivity;)Landroid/os/Handler;
+    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$8(Lcom/samsung/privilege/activity/CampaignListActivity;)Landroid/os/Handler;
 
     move-result-object v1
 
@@ -276,7 +276,7 @@
 
     goto/16 :goto_37
 
-    .line 1039
+    .line 1053
     :cond_c9
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->val$messagePopup:Lcom/samsung/privilege/bean/MessagePopup;
 
@@ -290,21 +290,21 @@
 
     if-eqz v0, :cond_e9
 
-    .line 1041
+    .line 1055
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->contentQT:Landroid/widget/LinearLayout;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$10(Lcom/samsung/privilege/activity/CampaignListActivity;)Landroid/widget/LinearLayout;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$9(Lcom/samsung/privilege/activity/CampaignListActivity;)Landroid/widget/LinearLayout;
 
     move-result-object v0
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 1042
+    .line 1056
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->viewTopShadow:Landroid/view/View;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$11(Lcom/samsung/privilege/activity/CampaignListActivity;)Landroid/view/View;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$10(Lcom/samsung/privilege/activity/CampaignListActivity;)Landroid/view/View;
 
     move-result-object v0
 
@@ -312,7 +312,7 @@
 
     goto/16 :goto_37
 
-    .line 1043
+    .line 1057
     :cond_e9
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->val$messagePopup:Lcom/samsung/privilege/bean/MessagePopup;
 
@@ -326,7 +326,7 @@
 
     if-eqz v0, :cond_fe
 
-    .line 1044
+    .line 1058
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->val$activityContext:Landroid/content/Context;
@@ -335,7 +335,7 @@
 
     goto/16 :goto_37
 
-    .line 1047
+    .line 1061
     :cond_fe
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$4;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 

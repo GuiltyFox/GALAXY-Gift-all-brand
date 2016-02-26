@@ -24,23 +24,23 @@
 
 # direct methods
 .method public constructor <init>(Lcom/samsung/privilege/activity/MainMenuFragment;Lcom/samsung/privilege/bean/MainMenuItemModel;J)V
-    .registers 5
+    .registers 6
     .param p2, "menuItem"    # Lcom/samsung/privilege/bean/MainMenuItemModel;
     .param p3, "startTime"    # J
 
     .prologue
-    .line 1189
+    .line 1197
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetRedeemDataListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-direct {p0}, Lcom/samsung/privilege/util/http/HttpRQListener;-><init>()V
 
-    .line 1190
+    .line 1198
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetRedeemDataListener;->gMenuItem:Lcom/samsung/privilege/bean/MainMenuItemModel;
 
-    .line 1191
+    .line 1199
     iput-wide p3, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetRedeemDataListener;->gStartTime:J
 
-    .line 1192
+    .line 1200
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .registers 2
 
     .prologue
-    .line 1186
+    .line 1194
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetRedeemDataListener;->gMenuItem:Lcom/samsung/privilege/bean/MainMenuItemModel;
 
     return-object v0
@@ -58,7 +58,7 @@
     .registers 2
 
     .prologue
-    .line 1185
+    .line 1193
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetRedeemDataListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     return-object v0
@@ -73,7 +73,7 @@
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 1196
+    .line 1204
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -105,7 +105,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1199
+    .line 1207
     :try_start_20
     new-instance v0, Ljava/util/Date;
 
@@ -115,13 +115,13 @@
 
     move-result-wide v6
 
-    .line 1200
+    .line 1208
     .local v6, "endTime":J
     iget-wide v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetRedeemDataListener;->gStartTime:J
 
     sub-long v2, v6, v0
 
-    .line 1201
+    .line 1209
     .local v2, "spentTime":J
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetRedeemDataListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
@@ -164,7 +164,7 @@
     :try_end_55
     .catch Ljava/lang/Exception; {:try_start_20 .. :try_end_55} :catch_7b
 
-    .line 1206
+    .line 1214
     .end local v2    # "spentTime":J
     .end local v6    # "endTime":J
     :goto_55
@@ -176,7 +176,7 @@
 
     if-eqz v0, :cond_74
 
-    .line 1207
+    .line 1215
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetRedeemDataListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->gDialog:Landroid/app/ProgressDialog;
@@ -186,7 +186,7 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 1209
+    .line 1217
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetRedeemDataListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -199,7 +199,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1276
+    .line 1290
     :cond_74
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetRedeemDataListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
@@ -207,10 +207,10 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$7(Lcom/samsung/privilege/activity/MainMenuFragment;Z)V
 
-    .line 1277
+    .line 1291
     return-void
 
-    .line 1202
+    .line 1210
     :catch_7b
     move-exception v0
 
@@ -223,10 +223,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 1281
+    .line 1295
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onFileNotFoundException(Ljava/io/FileNotFoundException;Ljava/lang/Object;)V
 
-    .line 1282
+    .line 1296
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -252,7 +252,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1283
+    .line 1297
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetRedeemDataListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->gDialog:Landroid/app/ProgressDialog;
@@ -262,14 +262,14 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 1284
+    .line 1298
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetRedeemDataListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$7(Lcom/samsung/privilege/activity/MainMenuFragment;Z)V
 
-    .line 1285
+    .line 1299
     return-void
 .end method
 
@@ -279,10 +279,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 1289
+    .line 1303
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onIOException(Ljava/io/IOException;Ljava/lang/Object;)V
 
-    .line 1290
+    .line 1304
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -308,7 +308,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1291
+    .line 1305
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetRedeemDataListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->gDialog:Landroid/app/ProgressDialog;
@@ -318,14 +318,14 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 1292
+    .line 1306
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetRedeemDataListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$7(Lcom/samsung/privilege/activity/MainMenuFragment;Z)V
 
-    .line 1293
+    .line 1307
     return-void
 .end method
 
@@ -335,10 +335,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 1297
+    .line 1311
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onMalformedURLException(Ljava/net/MalformedURLException;Ljava/lang/Object;)V
 
-    .line 1298
+    .line 1312
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -364,7 +364,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1299
+    .line 1313
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetRedeemDataListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->gDialog:Landroid/app/ProgressDialog;
@@ -374,13 +374,13 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 1300
+    .line 1314
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetRedeemDataListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$7(Lcom/samsung/privilege/activity/MainMenuFragment;Z)V
 
-    .line 1301
+    .line 1315
     return-void
 .end method

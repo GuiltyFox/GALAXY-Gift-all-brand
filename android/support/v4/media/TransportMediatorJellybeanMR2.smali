@@ -397,7 +397,7 @@
 .end method
 
 .method public refreshState(ZJI)V
-    .registers 8
+    .registers 9
     .param p1, "playing"    # Z
     .param p2, "position"    # J
     .param p4, "transportControls"    # I

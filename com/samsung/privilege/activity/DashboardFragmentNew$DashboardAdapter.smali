@@ -49,16 +49,16 @@
     .end annotation
 
     .prologue
-    .line 2665
+    .line 2729
     .local p2, "d":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     iput-object p1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 2666
+    .line 2730
     iput-object p2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter;->data:Ljava/util/ArrayList;
 
-    .line 2667
+    .line 2731
     return-void
 .end method
 
@@ -68,7 +68,7 @@
     .registers 2
 
     .prologue
-    .line 2670
+    .line 2734
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter;->data:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -95,7 +95,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 2675
+    .line 2739
     :try_start_0
     iget-object v1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter;->data:Ljava/util/ArrayList;
 
@@ -107,15 +107,15 @@
     :try_end_8
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_8} :catch_9
 
-    .line 2677
+    .line 2741
     :goto_8
     return-object v1
 
-    .line 2676
+    .line 2740
     :catch_9
     move-exception v0
 
-    .line 2677
+    .line 2741
     .local v0, "e":Ljava/lang/Exception;
     const/4 v1, 0x0
 
@@ -127,7 +127,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 2682
+    .line 2746
     int-to-long v0, p1
 
     return-wide v0
@@ -140,7 +140,7 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 2691
+    .line 2755
     iget-object v4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter;->data:Ljava/util/ArrayList;
 
     invoke-virtual {v4, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -149,15 +149,15 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 2693
+    .line 2757
     .local v2, "strItem":Ljava/lang/String;
     const/4 v0, 0x0
 
-    .line 2694
+    .line 2758
     .local v0, "holder":Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter$ViewHolderDashboardRow;
     move-object v3, p2
 
-    .line 2696
+    .line 2760
     .local v3, "view":Landroid/view/View;
     if-eqz p2, :cond_12
 
@@ -167,7 +167,7 @@
 
     if-nez v4, :cond_43
 
-    .line 2697
+    .line 2761
     :cond_12
     iget-object v4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
@@ -179,7 +179,7 @@
 
     move-result-object v1
 
-    .line 2698
+    .line 2762
     .local v1, "inflater":Landroid/view/LayoutInflater;
     const v4, 0x7f0300d7
 
@@ -189,7 +189,7 @@
 
     move-result-object v3
 
-    .line 2699
+    .line 2763
     new-instance v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter$ViewHolderDashboardRow;
 
     .end local v0    # "holder":Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter$ViewHolderDashboardRow;
@@ -197,7 +197,7 @@
 
     invoke-direct {v0, p0, v4}, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter$ViewHolderDashboardRow;-><init>(Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter;Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter$ViewHolderDashboardRow;)V
 
-    .line 2700
+    .line 2764
     .restart local v0    # "holder":Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter$ViewHolderDashboardRow;
     const/high16 v4, 0x7f1d0000
 
@@ -209,7 +209,7 @@
 
     iput-object v4, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter$ViewHolderDashboardRow;->imgLoading:Landroid/widget/ImageView;
 
-    .line 2701
+    .line 2765
     const v4, 0x7f1d0001
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -220,15 +220,15 @@
 
     iput-object v4, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter$ViewHolderDashboardRow;->layoutDashboardItem:Landroid/widget/LinearLayout;
 
-    .line 2703
+    .line 2767
     invoke-virtual {v3, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 2708
+    .line 2772
     .end local v1    # "inflater":Landroid/view/LayoutInflater;
     :goto_42
     return-object v3
 
-    .line 2705
+    .line 2769
     :cond_43
     invoke-virtual {v3}, Landroid/view/View;->getTag()Ljava/lang/Object;
 

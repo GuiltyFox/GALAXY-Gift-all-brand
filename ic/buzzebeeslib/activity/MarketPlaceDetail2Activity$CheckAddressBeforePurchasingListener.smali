@@ -26,15 +26,15 @@
     .param p2, "pCampaign"    # Lic/buzzebeeslib/bean/Campaign;
 
     .prologue
-    .line 3454
+    .line 3460
     iput-object p1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforePurchasingListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     invoke-direct {p0}, Lic/buzzebeeslib/util/http/HttpRQListener;-><init>()V
 
-    .line 3455
+    .line 3461
     iput-object p2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforePurchasingListener;->gCampaign:Lic/buzzebeeslib/bean/Campaign;
 
-    .line 3456
+    .line 3462
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .registers 2
 
     .prologue
-    .line 3452
+    .line 3458
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforePurchasingListener;->gCampaign:Lic/buzzebeeslib/bean/Campaign;
 
     return-object v0
@@ -52,7 +52,7 @@
     .registers 2
 
     .prologue
-    .line 3450
+    .line 3456
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforePurchasingListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     return-object v0
@@ -67,7 +67,7 @@
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 3460
+    .line 3466
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforePurchasingListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->TAG:Ljava/lang/String;
@@ -101,7 +101,7 @@
 
     invoke-static {v0, v1}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3461
+    .line 3467
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforePurchasingListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     invoke-virtual {v0}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->isFinishing()Z
@@ -110,7 +110,7 @@
 
     if-nez v0, :cond_4d
 
-    .line 3463
+    .line 3469
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforePurchasingListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gDialog:Landroid/app/ProgressDialog;
@@ -120,7 +120,7 @@
 
     if-eqz v0, :cond_3b
 
-    .line 3464
+    .line 3470
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforePurchasingListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gDialog:Landroid/app/ProgressDialog;
@@ -130,13 +130,13 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 3467
+    .line 3473
     :cond_3b
     const/16 v0, 0xc8
 
     if-ne p1, v0, :cond_4e
 
-    .line 3468
+    .line 3474
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforePurchasingListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->mHandler:Landroid/os/Handler;
@@ -150,12 +150,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 3513
+    .line 3519
     :cond_4d
     :goto_4d
     return-void
 
-    .line 3510
+    .line 3516
     :cond_4e
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforePurchasingListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 

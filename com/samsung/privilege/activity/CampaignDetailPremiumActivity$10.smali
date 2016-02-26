@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$10;->val$layoutLike:Landroid/widget/LinearLayout;
 
-    .line 1915
+    .line 1916
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -48,20 +48,20 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 1918
+    .line 1919
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$10;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     # invokes: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->processLikeAction()V
     invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->access$13(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;)V
 
-    .line 1919
+    .line 1920
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$10;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->doLike(Landroid/view/View;)V
 
-    .line 1921
+    .line 1922
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$10;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     invoke-virtual {v1}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getApplicationContext()Landroid/content/Context;
@@ -74,24 +74,24 @@
 
     move-result-object v0
 
-    .line 1922
+    .line 1923
     .local v0, "likeClickAnimation2":Landroid/view/animation/Animation;
     invoke-virtual {v0, v3}, Landroid/view/animation/Animation;->setFillEnabled(Z)V
 
-    .line 1923
+    .line 1924
     invoke-virtual {v0, v3}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
-    .line 1924
-    const-wide/16 v1, 0xc8
+    .line 1925
+    const-wide/16 v2, 0xc8
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 1926
+    .line 1927
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$10;->val$layoutLike:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v0}, Landroid/widget/LinearLayout;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 1927
+    .line 1928
     new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$10$1;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$10;->val$layoutLike:Landroid/widget/LinearLayout;
@@ -100,7 +100,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 1943
+    .line 1944
     return-void
 .end method
 
@@ -109,7 +109,7 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 1948
+    .line 1949
     return-void
 .end method
 
@@ -118,13 +118,13 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 1952
+    .line 1953
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$10;->val$layoutLike:Landroid/widget/LinearLayout;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setEnabled(Z)V
 
-    .line 1953
+    .line 1954
     return-void
 .end method

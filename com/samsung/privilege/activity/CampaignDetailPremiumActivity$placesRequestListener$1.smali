@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener$1;->val$response_text:Ljava/lang/String;
 
-    .line 2428
+    .line 2429
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
     .registers 2
 
     .prologue
-    .line 2428
+    .line 2429
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener;
 
     return-object v0
@@ -55,7 +55,7 @@
     .registers 4
 
     .prologue
-    .line 2431
+    .line 2432
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -76,6 +76,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 2437
+    .line 2438
     return-void
 .end method

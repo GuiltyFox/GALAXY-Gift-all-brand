@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public onItemSelected(Lcom/actionbarsherlock/internal/widget/IcsAdapterView;Landroid/view/View;IJ)V
-    .registers 7
+    .registers 8
     .param p1, "parent"    # Lcom/actionbarsherlock/internal/widget/IcsAdapterView;
     .param p2, "view"    # Landroid/view/View;
     .param p3, "position"    # I

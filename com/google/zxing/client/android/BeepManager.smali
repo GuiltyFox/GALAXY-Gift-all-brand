@@ -198,7 +198,7 @@
 
 # virtual methods
 .method playBeepSoundAndVibrate()V
-    .registers 4
+    .registers 5
 
     .prologue
     .line 65
@@ -234,9 +234,9 @@
 
     .line 70
     .local v0, "vibrator":Landroid/os/Vibrator;
-    const-wide/16 v1, 0xc8
+    const-wide/16 v2, 0xc8
 
-    invoke-virtual {v0, v1, v2}, Landroid/os/Vibrator;->vibrate(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/os/Vibrator;->vibrate(J)V
 
     .line 72
     .end local v0    # "vibrator":Landroid/os/Vibrator;

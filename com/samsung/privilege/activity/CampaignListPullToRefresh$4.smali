@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$4;->val$savedInstanceState:Landroid/os/Bundle;
 
-    .line 362
+    .line 365
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -47,7 +47,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 365
+    .line 368
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$4;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -56,29 +56,29 @@
 
     if-eqz v0, :cond_33
 
-    .line 366
+    .line 369
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$4;->val$savedInstanceState:Landroid/os/Bundle;
 
     if-nez v0, :cond_34
 
-    .line 367
+    .line 370
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$4;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$17(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;I)V
 
-    .line 368
+    .line 371
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$4;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     invoke-static {v0, v2}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$1(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;Ljava/util/ArrayList;)V
 
-    .line 369
+    .line 372
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$4;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     invoke-static {v0, v2}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$18(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;)V
 
-    .line 395
+    .line 398
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$4;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$4;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
@@ -90,7 +90,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$31(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;Ljava/lang/String;)V
 
-    .line 396
+    .line 399
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$4;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$4;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
@@ -103,12 +103,12 @@
     # invokes: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->loadCampaignByCatch(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$32(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;Ljava/lang/String;)V
 
-    .line 401
+    .line 404
     :cond_33
     :goto_33
     return-void
 
-    .line 398
+    .line 401
     :cond_34
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$4;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 

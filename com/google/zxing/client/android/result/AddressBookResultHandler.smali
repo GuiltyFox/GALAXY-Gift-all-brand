@@ -442,7 +442,7 @@
 .end method
 
 .method public getDisplayContents()Ljava/lang/CharSequence;
-    .registers 14
+    .registers 15
 
     .prologue
     const/4 v10, 0x0
@@ -591,9 +591,9 @@
 
     invoke-virtual {v2}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v11
+    move-result-wide v12
 
-    invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v11
 

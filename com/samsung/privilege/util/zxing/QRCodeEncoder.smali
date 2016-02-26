@@ -270,7 +270,7 @@
     :try_start_52
     iget-object v5, p0, Lcom/samsung/privilege/util/zxing/QRCodeEncoder;->activity:Landroid/app/Activity;
 
-    const v6, 0x7f0a003f
+    const v6, 0x7f09003f
 
     invoke-virtual {v5, v6}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -684,7 +684,7 @@
     :try_start_5c
     iget-object v3, p0, Lcom/samsung/privilege/util/zxing/QRCodeEncoder;->activity:Landroid/app/Activity;
 
-    const v4, 0x7f0a003f
+    const v4, 0x7f09003f
 
     invoke-virtual {v3, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -810,7 +810,7 @@
 
     iget-object v2, v0, Lcom/samsung/privilege/util/zxing/QRCodeEncoder;->activity:Landroid/app/Activity;
 
-    const v4, 0x7f0a003f
+    const v4, 0x7f09003f
 
     invoke-virtual {v2, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -924,7 +924,7 @@
 
     iget-object v2, v0, Lcom/samsung/privilege/util/zxing/QRCodeEncoder;->activity:Landroid/app/Activity;
 
-    const v4, 0x7f0a003b
+    const v4, 0x7f09003b
 
     invoke-virtual {v2, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1037,7 +1037,7 @@
 
     iget-object v2, v0, Lcom/samsung/privilege/util/zxing/QRCodeEncoder;->activity:Landroid/app/Activity;
 
-    const v4, 0x7f0a003d
+    const v4, 0x7f09003d
 
     invoke-virtual {v2, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1150,7 +1150,7 @@
 
     iget-object v2, v0, Lcom/samsung/privilege/util/zxing/QRCodeEncoder;->activity:Landroid/app/Activity;
 
-    const v4, 0x7f0a003e
+    const v4, 0x7f09003e
 
     invoke-virtual {v2, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1379,7 +1379,7 @@
 
     iget-object v2, v0, Lcom/samsung/privilege/util/zxing/QRCodeEncoder;->activity:Landroid/app/Activity;
 
-    const v4, 0x7f0a003a
+    const v4, 0x7f09003a
 
     invoke-virtual {v2, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1618,7 +1618,7 @@
 
     iget-object v2, v0, Lcom/samsung/privilege/util/zxing/QRCodeEncoder;->activity:Landroid/app/Activity;
 
-    const v4, 0x7f0a003c
+    const v4, 0x7f09003c
 
     invoke-virtual {v2, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1756,7 +1756,7 @@
     :try_start_45
     iget-object v1, p0, Lcom/samsung/privilege/util/zxing/QRCodeEncoder;->activity:Landroid/app/Activity;
 
-    const v2, 0x7f0a003a
+    const v2, 0x7f09003a
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 

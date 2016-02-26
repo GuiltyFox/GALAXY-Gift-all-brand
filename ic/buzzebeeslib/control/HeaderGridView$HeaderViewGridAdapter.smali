@@ -382,7 +382,7 @@
 .end method
 
 .method public getItemId(I)J
-    .registers 7
+    .registers 8
     .param p1, "position"    # I
 
     .prologue
@@ -423,16 +423,16 @@
 
     invoke-interface {v3, v1}, Landroid/widget/ListAdapter;->getItemId(I)J
 
-    move-result-wide v3
+    move-result-wide v4
 
     .line 339
     .end local v0    # "adapterCount":I
     .end local v1    # "adjPosition":I
     :goto_1e
-    return-wide v3
+    return-wide v4
 
     :cond_1f
-    const-wide/16 v3, -0x1
+    const-wide/16 v4, -0x1
 
     goto :goto_1e
 .end method

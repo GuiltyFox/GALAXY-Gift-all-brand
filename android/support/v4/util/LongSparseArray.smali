@@ -561,7 +561,7 @@
 .end method
 
 .method public indexOfKey(J)I
-    .registers 5
+    .registers 6
     .param p1, "key"    # J
 
     .prologue
@@ -666,7 +666,7 @@
 .end method
 
 .method public put(JLjava/lang/Object;)V
-    .registers 12
+    .registers 13
     .param p1, "key"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -869,7 +869,7 @@
 .end method
 
 .method public remove(J)V
-    .registers 3
+    .registers 4
     .param p1, "key"    # J
 
     .prologue

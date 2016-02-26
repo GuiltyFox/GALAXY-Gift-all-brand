@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$15;->val$msg:Ljava/lang/String;
 
-    .line 1959
+    .line 1974
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 5
 
     .prologue
-    .line 1963
+    .line 1978
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$15;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v2}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -54,12 +54,12 @@
 
     if-nez v2, :cond_9
 
-    .line 1972
+    .line 1987
     :cond_8
     :goto_8
     return-void
 
-    .line 1966
+    .line 1981
     :cond_9
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$15;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
@@ -71,7 +71,7 @@
 
     if-eqz v2, :cond_8
 
-    .line 1967
+    .line 1982
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$15;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v2}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -80,7 +80,7 @@
 
     check-cast v0, Lcom/samsung/privilege/activity/CampaignListActivity;
 
-    .line 1968
+    .line 1983
     .local v0, "ca":Lcom/samsung/privilege/activity/CampaignListActivity;
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$15;->val$msg:Ljava/lang/String;
 
@@ -90,7 +90,7 @@
 
     move-result-object v1
 
-    .line 1969
+    .line 1984
     .local v1, "toast":Landroid/widget/Toast;
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 

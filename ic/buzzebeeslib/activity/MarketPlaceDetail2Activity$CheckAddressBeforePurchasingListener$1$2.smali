@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforePurchasingListener$1$2;->this$2:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforePurchasingListener$1;
 
-    .line 3496
+    .line 3502
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,9 +43,9 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 3498
+    .line 3504
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 3499
+    .line 3505
     return-void
 .end method

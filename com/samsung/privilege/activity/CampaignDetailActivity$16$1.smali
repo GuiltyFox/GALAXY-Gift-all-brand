@@ -20,24 +20,20 @@
 # instance fields
 .field final synthetic this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$16;
 
-.field private final synthetic val$imagePopupMyPoint:Landroid/widget/ImageView;
-
-.field private final synthetic val$layoutPopupMyPoint:Landroid/widget/RelativeLayout;
+.field private final synthetic val$layoutButton:Landroid/widget/LinearLayout;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailActivity$16;Landroid/widget/RelativeLayout;Landroid/widget/ImageView;)V
-    .registers 4
+.method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailActivity$16;Landroid/widget/LinearLayout;)V
+    .registers 3
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$16$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$16;
 
-    iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$16$1;->val$layoutPopupMyPoint:Landroid/widget/RelativeLayout;
+    iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$16$1;->val$layoutButton:Landroid/widget/LinearLayout;
 
-    iput-object p3, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$16$1;->val$imagePopupMyPoint:Landroid/widget/ImageView;
-
-    .line 2425
+    .line 2563
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,18 +45,13 @@
     .registers 3
 
     .prologue
-    const/16 v1, 0x8
+    .line 2565
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$16$1;->val$layoutButton:Landroid/widget/LinearLayout;
 
-    .line 2427
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$16$1;->val$layoutPopupMyPoint:Landroid/widget/RelativeLayout;
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 2428
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$16$1;->val$imagePopupMyPoint:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 2429
+    .line 2566
     return-void
 .end method

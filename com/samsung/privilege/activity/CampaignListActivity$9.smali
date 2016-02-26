@@ -37,7 +37,7 @@
 
     iput-object p3, p0, Lcom/samsung/privilege/activity/CampaignListActivity$9;->val$activityContext:Landroid/content/Context;
 
-    .line 1199
+    .line 1213
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,12 +50,12 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 1201
+    .line 1215
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$9;->val$dialogPoint:Landroid/app/Dialog;
 
     invoke-virtual {v1}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1203
+    .line 1217
     new-instance v1, Ljava/lang/StringBuilder;
 
     sget-object v2, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
@@ -86,7 +86,7 @@
 
     move-result-object v0
 
-    .line 1204
+    .line 1218
     .local v0, "url":Ljava/lang/String;
     const-string v1, "CampaignListActivity"
 
@@ -106,7 +106,7 @@
 
     invoke-static {v1, v2}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1205
+    .line 1219
     const/4 v1, 0x0
 
     new-instance v2, Lcom/samsung/privilege/util/DialogUtil$TransferListener;
@@ -117,18 +117,18 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/http/BuzzbeesRestClient;->post(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
 
-    .line 1207
+    .line 1221
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$9;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     const/4 v2, 0x0
 
     iput-boolean v2, v1, Lcom/samsung/privilege/activity/CampaignListActivity;->gIsShowingMessage:Z
 
-    .line 1208
+    .line 1222
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$9;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     invoke-virtual {v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->checkAndShowDialogMessagePopup()V
 
-    .line 1209
+    .line 1223
     return-void
 .end method

@@ -151,7 +151,7 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    const v4, 0x7f02039f
+    const v4, 0x7f0203a7
 
     const/4 v3, 0x0
 
@@ -190,7 +190,7 @@
     :cond_19
     iget-object v0, p0, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter;->gInflater:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f0300ec
+    const v2, 0x7f0300ee
 
     invoke-virtual {v0, v2, p3, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -204,7 +204,7 @@
 
     .line 562
     .restart local v7    # "holder":Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;
-    const v0, 0x7f07032b
+    const v0, 0x7f0c0338
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -215,7 +215,7 @@
     iput-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->layoutCaption:Landroid/widget/RelativeLayout;
 
     .line 563
-    const v0, 0x7f07011f
+    const v0, 0x7f0c011f
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -226,7 +226,7 @@
     iput-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->tvCaption:Landroid/widget/TextView;
 
     .line 564
-    const v0, 0x7f07032d
+    const v0, 0x7f0c033a
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -237,7 +237,7 @@
     iput-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->imageGalaxyGift:Landroid/widget/ImageView;
 
     .line 565
-    const v0, 0x7f07032c
+    const v0, 0x7f0c0339
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -248,7 +248,7 @@
     iput-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->imageGift:Landroid/widget/ImageView;
 
     .line 567
-    const v0, 0x7f07032e
+    const v0, 0x7f0c033b
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -259,7 +259,7 @@
     iput-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->layoutFriend:Landroid/widget/RelativeLayout;
 
     .line 568
-    const v0, 0x7f07032f
+    const v0, 0x7f0c033c
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -270,7 +270,7 @@
     iput-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->layoutFriendShadow:Landroid/widget/RelativeLayout;
 
     .line 569
-    const v0, 0x7f070330
+    const v0, 0x7f0c033d
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -281,7 +281,7 @@
     iput-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->imageProfileMe:Landroid/widget/ImageView;
 
     .line 570
-    const v0, 0x7f070331
+    const v0, 0x7f0c033e
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -292,7 +292,7 @@
     iput-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->imageProfile:Landroid/widget/ImageView;
 
     .line 571
-    const v0, 0x7f070332
+    const v0, 0x7f0c033f
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -303,7 +303,7 @@
     iput-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->tvFriendName:Landroid/widget/TextView;
 
     .line 572
-    const v0, 0x7f070333
+    const v0, 0x7f0c0340
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -314,7 +314,7 @@
     iput-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->layoutInvite:Landroid/widget/RelativeLayout;
 
     .line 573
-    const v0, 0x7f070334
+    const v0, 0x7f0c0341
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -325,7 +325,7 @@
     iput-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->imgInvite:Landroid/widget/ImageView;
 
     .line 574
-    const v0, 0x7f070335
+    const v0, 0x7f0c0342
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -336,7 +336,7 @@
     iput-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->tvInvite:Landroid/widget/TextView;
 
     .line 576
-    const v0, 0x7f070336
+    const v0, 0x7f0c0343
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -347,7 +347,7 @@
     iput-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->layoutScore:Landroid/widget/RelativeLayout;
 
     .line 577
-    const v0, 0x7f070337
+    const v0, 0x7f0c0344
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -358,7 +358,7 @@
     iput-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->tvScore:Landroid/widget/TextView;
 
     .line 578
-    const v0, 0x7f070338
+    const v0, 0x7f0c0345
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -432,7 +432,7 @@
     .line 598
     iget-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->imageGift:Landroid/widget/ImageView;
 
-    const v2, 0x7f0202ba
+    const v2, 0x7f0202bc
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -459,7 +459,7 @@
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter;->this$0:Lcom/samsung/privilege/activity/FriendsRankingFragment;
 
-    const v3, 0x7f0a0321
+    const v3, 0x7f090328
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/FriendsRankingFragment;->getString(I)Ljava/lang/String;
 
@@ -537,7 +537,7 @@
     :cond_15d
     iget-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->imageGift:Landroid/widget/ImageView;
 
-    const v2, 0x7f0202b9
+    const v2, 0x7f0202bb
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -566,7 +566,7 @@
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter;->this$0:Lcom/samsung/privilege/activity/FriendsRankingFragment;
 
-    const v3, 0x7f0a0322
+    const v3, 0x7f090329
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/FriendsRankingFragment;->getString(I)Ljava/lang/String;
 
@@ -681,9 +681,9 @@
     # getter for: Lcom/samsung/privilege/activity/FriendsRankingFragment;->gMyScore:J
     invoke-static {v3}, Lcom/samsung/privilege/activity/FriendsRankingFragment;->access$9(Lcom/samsung/privilege/activity/FriendsRankingFragment;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -733,7 +733,7 @@
     .line 634
     iget-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->layoutFriendShadow:Landroid/widget/RelativeLayout;
 
-    const v2, 0x7f02008b
+    const v2, 0x7f02008d
 
     invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout;->setBackgroundResource(I)V
 
@@ -830,9 +830,9 @@
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-wide v3, v6, Lcom/samsung/privilege/bean/Friend;->score:J
+    iget-wide v4, v6, Lcom/samsung/privilege/bean/Friend;->score:J
 
-    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -877,7 +877,7 @@
     .line 652
     iget-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->layoutFriendShadow:Landroid/widget/RelativeLayout;
 
-    const v2, 0x7f020089
+    const v2, 0x7f02008b
 
     invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout;->setBackgroundResource(I)V
 
@@ -974,7 +974,7 @@
     :goto_300
     iget-object v0, v7, Lcom/samsung/privilege/activity/FriendsRankingFragment$FriendsAdapter$ViewHolderInAppRow;->layoutFriendShadow:Landroid/widget/RelativeLayout;
 
-    const v2, 0x7f02008a
+    const v2, 0x7f02008c
 
     invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout;->setBackgroundResource(I)V
 

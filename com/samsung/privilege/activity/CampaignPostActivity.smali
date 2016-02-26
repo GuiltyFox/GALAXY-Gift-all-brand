@@ -687,7 +687,7 @@
 
     const/4 v4, 0x0
 
-    const v5, 0x7f02039f
+    const v5, 0x7f0203a7
 
     const/4 v6, 0x0
 
@@ -1489,7 +1489,7 @@
     if-nez v11, :cond_42
 
     .line 530
-    const v11, 0x7f0a0106
+    const v11, 0x7f090106
 
     invoke-virtual {p0, v11}, Lcom/samsung/privilege/activity/CampaignPostActivity;->getString(I)Ljava/lang/String;
 
@@ -1641,7 +1641,7 @@
     :cond_af
     const-string v11, ""
 
-    const v12, 0x7f0a018d
+    const v12, 0x7f09018d
 
     invoke-virtual {p0, v12}, Lcom/samsung/privilege/activity/CampaignPostActivity;->getString(I)Ljava/lang/String;
 
@@ -1749,7 +1749,7 @@
     .end local v2    # "intent":Landroid/content/Intent;
     .end local v10    # "uri":Landroid/net/Uri;
     :cond_107
-    const v11, 0x7f0a0107
+    const v11, 0x7f090107
 
     invoke-virtual {p0, v11}, Lcom/samsung/privilege/activity/CampaignPostActivity;->getString(I)Ljava/lang/String;
 
@@ -1870,7 +1870,7 @@
     if-nez v7, :cond_4f
 
     .line 455
-    const v0, 0x7f0a031d
+    const v0, 0x7f090324
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CampaignPostActivity;->getString(I)Ljava/lang/String;
 
@@ -2277,7 +2277,7 @@
     if-eqz v1, :cond_e
 
     .line 392
-    const v3, 0x7f0202cf
+    const v3, 0x7f0202d1
 
     invoke-virtual {v1, v3}, Lcom/loopj/android/image/SmartImageView;->setImageResource(I)V
 
@@ -2418,7 +2418,7 @@
     .line 119
     iget-object v9, p0, Lcom/samsung/privilege/activity/CampaignPostActivity;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
-    const v10, 0x7f02039f
+    const v10, 0x7f0203a7
 
     invoke-virtual {v9, v10}, Lcom/bitmapfun/util/ImageFetcher;->setLoadingImage(I)V
 
@@ -2444,7 +2444,7 @@
     invoke-virtual {p0, v9}, Lcom/samsung/privilege/activity/CampaignPostActivity;->setContentView(I)V
 
     .line 126
-    const v9, 0x7f070031
+    const v9, 0x7f0c0031
 
     invoke-virtual {p0, v9}, Lcom/samsung/privilege/activity/CampaignPostActivity;->findViewById(I)Landroid/view/View;
 
@@ -2471,7 +2471,7 @@
     if-eqz v9, :cond_10e
 
     .line 128
-    const v9, 0x7f0202b6
+    const v9, 0x7f0202b8
 
     invoke-virtual {v3, v9}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2498,7 +2498,7 @@
     if-eqz v9, :cond_146
 
     .line 139
-    const v9, 0x7f0202ba
+    const v9, 0x7f0202bc
 
     invoke-virtual {v4, v9}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2634,7 +2634,7 @@
     if-eqz v9, :cond_126
 
     .line 130
-    const v9, 0x7f0202b5
+    const v9, 0x7f0202b7
 
     invoke-virtual {v3, v9}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2659,7 +2659,7 @@
     if-eqz v9, :cond_13e
 
     .line 132
-    const v9, 0x7f0202b7
+    const v9, 0x7f0202b9
 
     invoke-virtual {v3, v9}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2667,7 +2667,7 @@
 
     .line 134
     :cond_13e
-    const v9, 0x7f0202b8
+    const v9, 0x7f0202ba
 
     invoke-virtual {v3, v9}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2676,7 +2676,7 @@
     .line 141
     .restart local v4    # "imgLogo":Landroid/widget/ImageView;
     :cond_146
-    const v9, 0x7f0202b9
+    const v9, 0x7f0202bb
 
     invoke-virtual {v4, v9}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2709,7 +2709,7 @@
     invoke-interface {p1}, Landroid/view/ContextMenu;->clear()V
 
     .line 333
-    const v0, 0x7f0a031c
+    const v0, 0x7f090323
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CampaignPostActivity;->getString(I)Ljava/lang/String;
 
@@ -2718,7 +2718,7 @@
     invoke-interface {p1, v0}, Landroid/view/ContextMenu;->setHeaderTitle(Ljava/lang/CharSequence;)Landroid/view/ContextMenu;
 
     .line 334
-    const v0, 0x7f0a0102
+    const v0, 0x7f090102
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CampaignPostActivity;->getString(I)Ljava/lang/String;
 
@@ -2727,7 +2727,7 @@
     invoke-interface {p1, v1, v2, v1, v0}, Landroid/view/ContextMenu;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
 
     .line 335
-    const v0, 0x7f0a0103
+    const v0, 0x7f090103
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CampaignPostActivity;->getString(I)Ljava/lang/String;
 
@@ -2747,7 +2747,7 @@
     if-eqz v0, :cond_3a
 
     .line 338
-    const v0, 0x7f0a0104
+    const v0, 0x7f090104
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CampaignPostActivity;->getString(I)Ljava/lang/String;
 

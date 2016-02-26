@@ -64,7 +64,7 @@
 
     .line 62
     .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v6, 0x2
+    sget v6, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_background:I
 
     invoke-virtual {v0, v6}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -73,7 +73,7 @@
     iput-object v6, p0, Lcom/actionbarsherlock/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
 
     .line 64
-    const/16 v6, 0xc
+    sget v6, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_backgroundStacked:I
 
     .line 63
     invoke-virtual {v0, v6}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -87,13 +87,13 @@
 
     instance-of v6, v6, Landroid/graphics/drawable/ColorDrawable;
 
-    if-eqz v6, :cond_48
+    if-eqz v6, :cond_49
 
     sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v7, 0xb
 
-    if-ge v6, v7, :cond_48
+    if-ge v6, v7, :cond_49
 
     .line 68
     sget-object v6, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
@@ -134,20 +134,20 @@
     .end local v1    # "bitmap":Landroid/graphics/Bitmap;
     .end local v2    # "c":Landroid/graphics/Canvas;
     .end local v3    # "color":I
-    :cond_48
+    :cond_49
     invoke-virtual {p0}, Lcom/actionbarsherlock/internal/widget/ActionBarContainer;->getId()I
 
     move-result v6
 
     sget v7, Lcom/actionbarsherlock/R$id;->abs__split_action_bar:I
 
-    if-ne v6, v7, :cond_59
+    if-ne v6, v7, :cond_5b
 
     .line 77
     iput-boolean v4, p0, Lcom/actionbarsherlock/internal/widget/ActionBarContainer;->mIsSplit:Z
 
     .line 79
-    const/4 v6, 0x3
+    sget v6, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_backgroundSplit:I
 
     .line 78
     invoke-virtual {v0, v6}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -157,45 +157,45 @@
     iput-object v6, p0, Lcom/actionbarsherlock/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
 
     .line 81
-    :cond_59
+    :cond_5b
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 83
     iget-boolean v6, p0, Lcom/actionbarsherlock/internal/widget/ActionBarContainer;->mIsSplit:Z
 
-    if-eqz v6, :cond_6a
+    if-eqz v6, :cond_6c
 
     iget-object v6, p0, Lcom/actionbarsherlock/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
 
-    if-nez v6, :cond_68
+    if-nez v6, :cond_6a
 
-    :cond_64
-    :goto_64
+    :cond_66
+    :goto_66
     invoke-virtual {p0, v4}, Lcom/actionbarsherlock/internal/widget/ActionBarContainer;->setWillNotDraw(Z)V
 
     .line 85
     return-void
 
-    :cond_68
+    :cond_6a
     move v4, v5
 
     .line 83
-    goto :goto_64
+    goto :goto_66
 
     .line 84
-    :cond_6a
+    :cond_6c
     iget-object v6, p0, Lcom/actionbarsherlock/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
 
-    if-nez v6, :cond_72
+    if-nez v6, :cond_74
 
     iget-object v6, p0, Lcom/actionbarsherlock/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v6, :cond_64
+    if-eqz v6, :cond_66
 
-    :cond_72
+    :cond_74
     move v4, v5
 
-    goto :goto_64
+    goto :goto_66
 .end method
 
 

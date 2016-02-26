@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$16;->val$dialogSerial:Landroid/app/Dialog;
 
-    .line 2032
+    .line 2047
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,12 +46,12 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 2034
+    .line 2049
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$16;->val$dialogSerial:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 2036
+    .line 2051
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$16;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -62,19 +62,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/UserLogin;->Logout(Landroid/content/Context;Z)V
 
-    .line 2037
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$16;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$8(Lcom/samsung/privilege/activity/MainMenuFragment;)Lcom/google/analytics/tracking/android/Tracker;
-
-    move-result-object v0
-
-    const-string v1, "MENU_LOGOUT"
-
-    invoke-virtual {v0, v1}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-
-    .line 2039
+    .line 2054
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$16;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -83,6 +71,6 @@
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->finish()V
 
-    .line 2040
+    .line 2055
     return-void
 .end method

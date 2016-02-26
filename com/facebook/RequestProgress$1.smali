@@ -29,7 +29,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/facebook/RequestProgress;Lcom/facebook/Request$OnProgressCallback;JJ)V
-    .registers 7
+    .registers 8
 
     .prologue
     .line 1
@@ -50,17 +50,17 @@
 
 # virtual methods
 .method public run()V
-    .registers 6
+    .registers 7
 
     .prologue
     .line 70
     iget-object v0, p0, Lcom/facebook/RequestProgress$1;->val$callbackCopy:Lcom/facebook/Request$OnProgressCallback;
 
-    iget-wide v1, p0, Lcom/facebook/RequestProgress$1;->val$currentCopy:J
+    iget-wide v2, p0, Lcom/facebook/RequestProgress$1;->val$currentCopy:J
 
-    iget-wide v3, p0, Lcom/facebook/RequestProgress$1;->val$maxProgressCopy:J
+    iget-wide v4, p0, Lcom/facebook/RequestProgress$1;->val$maxProgressCopy:J
 
-    invoke-interface {v0, v1, v2, v3, v4}, Lcom/facebook/Request$OnProgressCallback;->onProgress(JJ)V
+    invoke-interface {v0, v2, v3, v4, v5}, Lcom/facebook/Request$OnProgressCallback;->onProgress(JJ)V
 
     .line 71
     return-void

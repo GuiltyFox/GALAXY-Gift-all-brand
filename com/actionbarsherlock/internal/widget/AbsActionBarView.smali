@@ -547,7 +547,7 @@
 
     const/16 v2, 0x8
 
-    if-lt v1, v2, :cond_3d
+    if-lt v1, v2, :cond_3e
 
     .line 75
     invoke-super {p0, p1}, Lcom/actionbarsherlock/internal/nineoldandroids/view/NineViewGroup;->onConfigurationChanged(Landroid/content/res/Configuration;)V
@@ -573,7 +573,7 @@
 
     .line 84
     .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v1, 0x4
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_height:I
 
     invoke-virtual {v0, v1, v5}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
 
@@ -587,7 +587,7 @@
     .line 86
     iget-boolean v1, p0, Lcom/actionbarsherlock/internal/widget/AbsActionBarView;->mSplitWhenNarrow:Z
 
-    if-eqz v1, :cond_33
+    if-eqz v1, :cond_34
 
     .line 87
     invoke-virtual {p0}, Lcom/actionbarsherlock/internal/widget/AbsActionBarView;->getContext()Landroid/content/Context;
@@ -605,10 +605,10 @@
     invoke-virtual {p0, v1}, Lcom/actionbarsherlock/internal/widget/AbsActionBarView;->setSplitActionBar(Z)V
 
     .line 90
-    :cond_33
+    :cond_34
     iget-object v1, p0, Lcom/actionbarsherlock/internal/widget/AbsActionBarView;->mActionMenuPresenter:Lcom/actionbarsherlock/internal/view/menu/ActionMenuPresenter;
 
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_3d
 
     .line 91
     iget-object v1, p0, Lcom/actionbarsherlock/internal/widget/AbsActionBarView;->mActionMenuPresenter:Lcom/actionbarsherlock/internal/view/menu/ActionMenuPresenter;
@@ -616,12 +616,12 @@
     invoke-virtual {v1, p1}, Lcom/actionbarsherlock/internal/view/menu/ActionMenuPresenter;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
     .line 93
-    :cond_3c
+    :cond_3d
     return-void
 
     .line 76
     .end local v0    # "a":Landroid/content/res/TypedArray;
-    :cond_3d
+    :cond_3e
     iget-object v1, p0, Lcom/actionbarsherlock/internal/widget/AbsActionBarView;->mMenuView:Lcom/actionbarsherlock/internal/view/menu/ActionMenuView;
 
     if-eqz v1, :cond_a

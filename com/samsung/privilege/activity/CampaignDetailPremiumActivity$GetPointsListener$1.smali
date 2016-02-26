@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetPointsListener$1;->val$strPoints:Ljava/lang/String;
 
-    .line 914
+    .line 915
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 3
 
     .prologue
-    .line 916
+    .line 917
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetPointsListener$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetPointsListener;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetPointsListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -62,6 +62,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 917
+    .line 918
     return-void
 .end method

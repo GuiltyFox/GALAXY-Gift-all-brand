@@ -17,7 +17,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Runnable;J)V
-    .registers 5
+    .registers 6
     .param p1, "r"    # Ljava/lang/Runnable;
     .param p2, "millisec"    # J
 
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public setInterval(J)V
-    .registers 5
+    .registers 6
     .param p1, "millisec"    # J
 
     .prologue

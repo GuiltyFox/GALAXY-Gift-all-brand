@@ -415,9 +415,9 @@
 
     invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    return-wide v1
+    return-wide v2
 .end method
 
 .method public static GetLocale(Landroid/content/Context;)Ljava/lang/String;
@@ -496,9 +496,9 @@
 
     invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    return-wide v1
+    return-wide v2
 .end method
 
 .method public static GetProfileImage(Landroid/content/Context;)Ljava/lang/String;

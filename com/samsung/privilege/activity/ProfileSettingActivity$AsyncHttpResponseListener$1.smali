@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener$1;->val$response:Ljava/lang/String;
 
-    .line 991
+    .line 1020
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 8
 
     .prologue
-    .line 994
+    .line 1023
     :try_start_0
     new-instance v3, Lorg/json/JSONObject;
 
@@ -53,7 +53,7 @@
 
     invoke-direct {v3, v4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 996
+    .line 1025
     .local v3, "jsonRoot":Lorg/json/JSONObject;
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;
 
@@ -82,7 +82,7 @@
 
     if-nez v4, :cond_11d
 
-    .line 998
+    .line 1027
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
@@ -104,7 +104,7 @@
     :try_end_34
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_34} :catch_15e
 
-    .line 1001
+    .line 1030
     const-wide/16 v4, 0x3e8
 
     :try_start_36
@@ -112,7 +112,7 @@
     :try_end_39
     .catch Ljava/lang/Exception; {:try_start_36 .. :try_end_39} :catch_1aa
 
-    .line 1006
+    .line 1035
     :goto_39
     :try_start_39
     const-string v4, "profile.setting"
@@ -121,7 +121,7 @@
 
     invoke-static {v4, v5}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1007
+    .line 1036
     const-string v4, "profile.setting"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -146,7 +146,7 @@
 
     invoke-static {v4, v5}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1008
+    .line 1037
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
@@ -166,7 +166,7 @@
 
     invoke-static {v4, v5}, Lcom/samsung/privilege/UserLogin;->SetLocale(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 1009
+    .line 1038
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
@@ -180,7 +180,7 @@
 
     invoke-static {v4}, Lcom/samsung/privilege/util/LanguageSetting;->SetLanguage(Landroid/content/Context;)V
 
-    .line 1011
+    .line 1040
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
@@ -214,7 +214,7 @@
 
     invoke-static {v4, v5}, Lcom/samsung/privilege/UserLogin;->SetFirstName(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 1012
+    .line 1041
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
@@ -248,7 +248,7 @@
 
     invoke-static {v4, v5}, Lcom/samsung/privilege/UserLogin;->SetLastName(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 1013
+    .line 1042
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
@@ -267,22 +267,22 @@
 
     move-result-object v5
 
-    # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity;->gTvSex:Landroid/widget/EditText;
-    invoke-static {v5}, Lcom/samsung/privilege/activity/ProfileSettingActivity;->access$9(Lcom/samsung/privilege/activity/ProfileSettingActivity;)Landroid/widget/EditText;
+    # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity;->gTvSex:Landroid/widget/TextView;
+    invoke-static {v5}, Lcom/samsung/privilege/activity/ProfileSettingActivity;->access$9(Lcom/samsung/privilege/activity/ProfileSettingActivity;)Landroid/widget/TextView;
 
     move-result-object v5
 
-    invoke-virtual {v5}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+    invoke-virtual {v5}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v5
 
-    invoke-interface {v5}, Landroid/text/Editable;->toString()Ljava/lang/String;
+    invoke-interface {v5}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v5
 
     invoke-static {v4, v5}, Lcom/samsung/privilege/UserLogin;->SetGender(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 1015
+    .line 1044
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
@@ -316,7 +316,7 @@
 
     invoke-static {v4, v5}, Lcom/samsung/privilege/UserLogin;->SetAddress(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 1017
+    .line 1046
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
@@ -324,11 +324,11 @@
 
     move-result-object v4
 
-    const v5, 0x7f03010d
+    const v5, 0x7f03010f
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/ProfileSettingActivity;->setContentView(I)V
 
-    .line 1018
+    .line 1047
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
@@ -339,7 +339,7 @@
     # invokes: Lcom/samsung/privilege/activity/ProfileSettingActivity;->initialLayout()V
     invoke-static {v4}, Lcom/samsung/privilege/activity/ProfileSettingActivity;->access$11(Lcom/samsung/privilege/activity/ProfileSettingActivity;)V
 
-    .line 1019
+    .line 1048
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
@@ -350,7 +350,7 @@
     # invokes: Lcom/samsung/privilege/activity/ProfileSettingActivity;->getProfilePicture()V
     invoke-static {v4}, Lcom/samsung/privilege/activity/ProfileSettingActivity;->access$12(Lcom/samsung/privilege/activity/ProfileSettingActivity;)V
 
-    .line 1020
+    .line 1049
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
@@ -361,7 +361,7 @@
     # invokes: Lcom/samsung/privilege/activity/ProfileSettingActivity;->getProfileData()V
     invoke-static {v4}, Lcom/samsung/privilege/activity/ProfileSettingActivity;->access$13(Lcom/samsung/privilege/activity/ProfileSettingActivity;)V
 
-    .line 1024
+    .line 1053
     :cond_11d
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;
 
@@ -377,7 +377,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0a00e3
+    const v6, 0x7f0900e3
 
     invoke-virtual {v5, v6}, Lcom/samsung/privilege/activity/ProfileSettingActivity;->getString(I)Ljava/lang/String;
 
@@ -386,7 +386,7 @@
     # invokes: Lcom/samsung/privilege/activity/ProfileSettingActivity;->showToast(Ljava/lang/String;)V
     invoke-static {v4, v5}, Lcom/samsung/privilege/activity/ProfileSettingActivity;->access$5(Lcom/samsung/privilege/activity/ProfileSettingActivity;Ljava/lang/String;)V
 
-    .line 1026
+    .line 1055
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
@@ -411,7 +411,7 @@
     :try_end_147
     .catch Ljava/lang/Exception; {:try_start_39 .. :try_end_147} :catch_15e
 
-    .line 1042
+    .line 1071
     .end local v3    # "jsonRoot":Lorg/json/JSONObject;
     :cond_147
     :goto_147
@@ -431,25 +431,25 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 1043
+    .line 1072
     const-string v4, "profile.setting"
 
     const-string v5, "(AsyncHttpResponseHandler):gPbLoadingProfile.setVisibility(View.GONE);"
 
     invoke-static {v4, v5}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1044
+    .line 1073
     return-void
 
-    .line 1027
+    .line 1056
     :catch_15e
     move-exception v1
 
-    .line 1029
+    .line 1058
     .local v1, "e":Ljava/lang/Exception;
     const/4 v0, 0x0
 
-    .line 1031
+    .line 1060
     .local v0, "blnIsAdmin":Z
     :try_start_160
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;
@@ -471,15 +471,15 @@
 
     if-eqz v4, :cond_171
 
-    .line 1032
+    .line 1061
     const/4 v0, 0x1
 
-    .line 1037
+    .line 1066
     :cond_171
     :goto_171
     if-eqz v0, :cond_147
 
-    .line 1038
+    .line 1067
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
@@ -510,11 +510,11 @@
 
     goto :goto_147
 
-    .line 1034
+    .line 1063
     :catch_190
     move-exception v2
 
-    .line 1035
+    .line 1064
     .local v2, "e2":Ljava/lang/Exception;
     const-string v4, "profile.setting"
 
@@ -540,7 +540,7 @@
 
     goto :goto_171
 
-    .line 1002
+    .line 1031
     .end local v0    # "blnIsAdmin":Z
     .end local v1    # "e":Ljava/lang/Exception;
     .end local v2    # "e2":Ljava/lang/Exception;

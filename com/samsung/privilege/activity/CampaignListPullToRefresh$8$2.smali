@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$2;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;
 
-    .line 993
+    .line 997
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
     .registers 2
 
     .prologue
-    .line 993
+    .line 997
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$2;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;
 
     return-object v0
@@ -51,7 +51,7 @@
     .registers 6
 
     .prologue
-    .line 997
+    .line 1001
     const-wide/16 v2, 0x2710
 
     :try_start_2
@@ -59,7 +59,7 @@
     :try_end_5
     .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_5} :catch_24
 
-    .line 1003
+    .line 1007
     :goto_5
     :try_start_5
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$2;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;
@@ -76,7 +76,7 @@
 
     if-nez v2, :cond_23
 
-    .line 1004
+    .line 1008
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$2;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
@@ -97,16 +97,16 @@
     :try_end_23
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_23} :catch_3e
 
-    .line 1018
+    .line 1022
     :cond_23
     :goto_23
     return-void
 
-    .line 998
+    .line 1002
     :catch_24
     move-exception v0
 
-    .line 999
+    .line 1003
     .local v0, "e":Ljava/lang/InterruptedException;
     const-string v2, "buzzebees.marketlist.fragment"
 
@@ -132,12 +132,12 @@
 
     goto :goto_5
 
-    .line 1011
+    .line 1015
     .end local v0    # "e":Ljava/lang/InterruptedException;
     :catch_3e
     move-exception v0
 
-    .line 1012
+    .line 1016
     .local v0, "e":Ljava/lang/Exception;
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$2;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;
 
@@ -146,13 +146,13 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a0318
+    const v3, 0x7f09031f
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1013
+    .line 1017
     .local v1, "error":Ljava/lang/String;
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$2;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;
 
@@ -175,7 +175,7 @@
 
     if-eqz v2, :cond_7f
 
-    .line 1014
+    .line 1018
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -206,7 +206,7 @@
 
     move-result-object v1
 
-    .line 1016
+    .line 1020
     :cond_7f
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$2;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;
 

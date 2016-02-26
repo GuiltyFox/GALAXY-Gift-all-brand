@@ -46,19 +46,19 @@
     .line 46
     invoke-virtual {p0}, Landroid/widget/Button;->getTextSize()F
 
-    move-result v3
+    move-result v1
 
     .line 47
-    .local v3, "fontSize":F
+    .local v1, "fontSize":F
     invoke-static {p1}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SCALE(Landroid/content/Context;)D
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 48
-    .local v1, "fontScale":D
-    float-to-double v4, v3
+    .local v2, "fontScale":D
+    float-to-double v4, v1
 
-    mul-double/2addr v4, v1
+    mul-double/2addr v4, v2
 
     double-to-float v4, v4
 
@@ -75,8 +75,8 @@
 
     .line 52
     .end local v0    # "fontDefault":Landroid/graphics/Typeface;
-    .end local v1    # "fontScale":D
-    .end local v3    # "fontSize":F
+    .end local v1    # "fontSize":F
+    .end local v2    # "fontScale":D
     :cond_29
     return-void
 .end method
@@ -113,19 +113,19 @@
     .line 33
     invoke-virtual {p0}, Landroid/widget/EditText;->getTextSize()F
 
-    move-result v3
+    move-result v1
 
     .line 34
-    .local v3, "fontSize":F
+    .local v1, "fontSize":F
     invoke-static {p1}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SCALE(Landroid/content/Context;)D
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 35
-    .local v1, "fontScale":D
-    float-to-double v4, v3
+    .local v2, "fontScale":D
+    float-to-double v4, v1
 
-    mul-double/2addr v4, v1
+    mul-double/2addr v4, v2
 
     double-to-float v4, v4
 
@@ -142,8 +142,8 @@
 
     .line 39
     .end local v0    # "fontDefault":Landroid/graphics/Typeface;
-    .end local v1    # "fontScale":D
-    .end local v3    # "fontSize":F
+    .end local v1    # "fontSize":F
+    .end local v2    # "fontScale":D
     :cond_29
     return-void
 .end method
@@ -180,19 +180,19 @@
     .line 19
     invoke-virtual {p0}, Landroid/widget/TextView;->getTextSize()F
 
-    move-result v3
+    move-result v1
 
     .line 20
-    .local v3, "fontSize":F
+    .local v1, "fontSize":F
     invoke-static {p1}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SCALE(Landroid/content/Context;)D
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 21
-    .local v1, "fontScale":D
-    float-to-double v4, v3
+    .local v2, "fontScale":D
+    float-to-double v4, v1
 
-    mul-double/2addr v4, v1
+    mul-double/2addr v4, v2
 
     double-to-float v4, v4
 
@@ -216,8 +216,8 @@
 
     .line 26
     .end local v0    # "fontDefault":Landroid/graphics/Typeface;
-    .end local v1    # "fontScale":D
-    .end local v3    # "fontSize":F
+    .end local v1    # "fontSize":F
+    .end local v2    # "fontScale":D
     :cond_2f
     return-void
 .end method

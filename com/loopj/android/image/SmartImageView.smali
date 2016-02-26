@@ -253,7 +253,7 @@
     .line 82
     new-instance v0, Lcom/loopj/android/image/WebImage;
 
-    const v3, 0x7f02039f
+    const v3, 0x7f0203a7
 
     move-object v1, p1
 
@@ -435,7 +435,7 @@
     .line 66
     new-instance v0, Lcom/loopj/android/image/WebImage;
 
-    const v3, 0x7f02039f
+    const v3, 0x7f0203a7
 
     move-object v1, p1
 

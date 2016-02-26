@@ -15,11 +15,11 @@
 
 
 # static fields
-.field public static final country_codes:I = 0x7f0c0000
+.field public static final country_codes:I = 0x7f0b0000
 
-.field public static final preferences_front_light_options:I = 0x7f0c0002
+.field public static final preferences_front_light_options:I = 0x7f0b0002
 
-.field public static final preferences_front_light_values:I = 0x7f0c0001
+.field public static final preferences_front_light_values:I = 0x7f0b0001
 
 
 # direct methods

@@ -276,7 +276,7 @@
 
     aget v5, v5, v6
 
-    packed-switch v5, :pswitch_data_196
+    packed-switch v5, :pswitch_data_1a0
 
     .line 77
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -372,12 +372,12 @@
 
     aget v5, v5, v6
 
-    packed-switch v5, :pswitch_data_19c
+    packed-switch v5, :pswitch_data_1a6
 
     .line 101
     sget-object v5, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->VERTICAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
-    if-ne p3, v5, :cond_157
+    if-ne p3, v5, :cond_161
 
     const/16 v5, 0x50
 
@@ -413,16 +413,16 @@
 
     .line 110
     :goto_8c
-    const/4 v5, 0x1
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrHeaderBackground:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_9d
+    if-eqz v5, :cond_9f
 
     .line 111
-    const/4 v5, 0x1
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrHeaderBackground:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -430,21 +430,21 @@
 
     .line 112
     .local v0, "background":Landroid/graphics/drawable/Drawable;
-    if-eqz v0, :cond_9d
+    if-eqz v0, :cond_9f
 
     .line 113
     invoke-static {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/ViewCompat;->setBackground(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
 
     .line 117
     .end local v0    # "background":Landroid/graphics/drawable/Drawable;
-    :cond_9d
-    const/16 v5, 0xa
+    :cond_9f
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrHeaderTextAppearance:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_b4
+    if-eqz v5, :cond_b6
 
     .line 118
     new-instance v4, Landroid/util/TypedValue;
@@ -453,7 +453,7 @@
 
     .line 119
     .local v4, "styleID":Landroid/util/TypedValue;
-    const/16 v5, 0xa
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrHeaderTextAppearance:I
 
     invoke-virtual {p4, v5, v4}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
 
@@ -464,14 +464,14 @@
 
     .line 122
     .end local v4    # "styleID":Landroid/util/TypedValue;
-    :cond_b4
-    const/16 v5, 0xb
+    :cond_b6
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrSubHeaderTextAppearance:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_cb
+    if-eqz v5, :cond_cd
 
     .line 123
     new-instance v4, Landroid/util/TypedValue;
@@ -480,7 +480,7 @@
 
     .line 124
     .restart local v4    # "styleID":Landroid/util/TypedValue;
-    const/16 v5, 0xb
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrSubHeaderTextAppearance:I
 
     invoke-virtual {p4, v5, v4}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
 
@@ -491,17 +491,17 @@
 
     .line 129
     .end local v4    # "styleID":Landroid/util/TypedValue;
-    :cond_cb
-    const/4 v5, 0x2
+    :cond_cd
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrHeaderTextColor:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_dc
+    if-eqz v5, :cond_e0
 
     .line 130
-    const/4 v5, 0x2
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrHeaderTextColor:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
@@ -509,24 +509,24 @@
 
     .line 131
     .local v1, "colors":Landroid/content/res/ColorStateList;
-    if-eqz v1, :cond_dc
+    if-eqz v1, :cond_e0
 
     .line 132
     invoke-direct {p0, v1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setTextColor(Landroid/content/res/ColorStateList;)V
 
     .line 135
     .end local v1    # "colors":Landroid/content/res/ColorStateList;
-    :cond_dc
-    const/4 v5, 0x3
+    :cond_e0
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrHeaderSubTextColor:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_ed
+    if-eqz v5, :cond_f3
 
     .line 136
-    const/4 v5, 0x3
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrHeaderSubTextColor:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
@@ -534,35 +534,35 @@
 
     .line 137
     .restart local v1    # "colors":Landroid/content/res/ColorStateList;
-    if-eqz v1, :cond_ed
+    if-eqz v1, :cond_f3
 
     .line 138
     invoke-direct {p0, v1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setSubTextColor(Landroid/content/res/ColorStateList;)V
 
     .line 143
     .end local v1    # "colors":Landroid/content/res/ColorStateList;
-    :cond_ed
+    :cond_f3
     const/4 v2, 0x0
 
     .line 144
     .local v2, "imageDrawable":Landroid/graphics/drawable/Drawable;
-    const/4 v5, 0x6
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawable:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_fa
+    if-eqz v5, :cond_102
 
     .line 145
-    const/4 v5, 0x6
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawable:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     .line 150
-    :cond_fa
+    :cond_102
     invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->$SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode()[I
 
     move-result-object v5
@@ -573,28 +573,28 @@
 
     aget v5, v5, v6
 
-    packed-switch v5, :pswitch_data_1a2
+    packed-switch v5, :pswitch_data_1ac
 
     .line 153
-    const/4 v5, 0x7
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawableStart:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_15a
+    if-eqz v5, :cond_164
 
     .line 154
-    const/4 v5, 0x7
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawableStart:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     .line 172
-    :cond_113
-    :goto_113
-    if-nez v2, :cond_121
+    :cond_11d
+    :goto_11d
+    if-nez v2, :cond_12b
 
     .line 173
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -610,7 +610,7 @@
     move-result-object v2
 
     .line 177
-    :cond_121
+    :cond_12b
     invoke-virtual {p0, v2}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setLoadingDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 179
@@ -622,7 +622,7 @@
     .line 73
     .end local v2    # "imageDrawable":Landroid/graphics/drawable/Drawable;
     .end local v3    # "lp":Landroid/widget/FrameLayout$LayoutParams;
-    :pswitch_128
+    :pswitch_132
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v5
@@ -635,14 +635,14 @@
 
     .line 91
     .restart local v3    # "lp":Landroid/widget/FrameLayout$LayoutParams;
-    :pswitch_133
+    :pswitch_13d
     sget-object v5, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->VERTICAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
-    if-ne p3, v5, :cond_155
+    if-ne p3, v5, :cond_15f
 
     const/16 v5, 0x30
 
-    :goto_139
+    :goto_143
     iput v5, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     .line 94
@@ -675,27 +675,27 @@
     goto/16 :goto_8c
 
     .line 91
-    :cond_155
+    :cond_15f
     const/4 v5, 0x3
 
-    goto :goto_139
+    goto :goto_143
 
     .line 101
-    :cond_157
+    :cond_161
     const/4 v5, 0x5
 
     goto/16 :goto_72
 
     .line 155
     .restart local v2    # "imageDrawable":Landroid/graphics/drawable/Drawable;
-    :cond_15a
-    const/16 v5, 0x11
+    :cond_164
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawableTop:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_113
+    if-eqz v5, :cond_11d
 
     .line 156
     const-string v5, "ptrDrawableTop"
@@ -705,43 +705,43 @@
     invoke-static {v5, v6}, Lcom/handmark/pulltorefresh/library/internal/Utils;->warnDeprecation(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 157
-    const/16 v5, 0x11
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawableTop:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     .line 159
-    goto :goto_113
+    goto :goto_11d
 
     .line 162
-    :pswitch_170
-    const/16 v5, 0x8
+    :pswitch_17a
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawableEnd:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_17f
+    if-eqz v5, :cond_189
 
     .line 163
-    const/16 v5, 0x8
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawableEnd:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     .line 164
-    goto :goto_113
+    goto :goto_11d
 
-    :cond_17f
-    const/16 v5, 0x12
+    :cond_189
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawableBottom:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_113
+    if-eqz v5, :cond_11d
 
     .line 165
     const-string v5, "ptrDrawableBottom"
@@ -751,30 +751,30 @@
     invoke-static {v5, v6}, Lcom/handmark/pulltorefresh/library/internal/Utils;->warnDeprecation(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 166
-    const/16 v5, 0x12
+    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawableBottom:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    goto/16 :goto_113
+    goto/16 :goto_11d
 
     .line 71
-    :pswitch_data_196
+    :pswitch_data_1a0
     .packed-switch 0x2
-        :pswitch_128
+        :pswitch_132
     .end packed-switch
 
     .line 89
-    :pswitch_data_19c
+    :pswitch_data_1a6
     .packed-switch 0x3
-        :pswitch_133
+        :pswitch_13d
     .end packed-switch
 
     .line 150
-    :pswitch_data_1a2
+    :pswitch_data_1ac
     .packed-switch 0x3
-        :pswitch_170
+        :pswitch_17a
     .end packed-switch
 .end method
 

@@ -23,7 +23,7 @@
     .registers 2
 
     .prologue
-    .line 1149
+    .line 1155
     iput-object p1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$AddPremiumUserListener;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     invoke-direct {p0}, Lcom/samsung/privilege/util/http/HttpRQListener;-><init>()V
@@ -35,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 1149
+    .line 1155
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$AddPremiumUserListener;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     return-object v0
@@ -50,7 +50,7 @@
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 1152
+    .line 1158
     const-string v0, "gift.dashboard"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -79,7 +79,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1154
+    .line 1160
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$AddPremiumUserListener;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -88,11 +88,11 @@
 
     if-nez v0, :cond_27
 
-    .line 1241
+    .line 1247
     :goto_26
     return-void
 
-    .line 1158
+    .line 1164
     :cond_27
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$AddPremiumUserListener;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
@@ -103,7 +103,7 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 1160
+    .line 1166
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$AddPremiumUserListener;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew;->gHandler:Landroid/os/Handler;

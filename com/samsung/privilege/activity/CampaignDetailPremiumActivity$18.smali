@@ -33,7 +33,7 @@
 
     iput-boolean p2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$18;->val$pLoadMore:Z
 
-    .line 2350
+    .line 2351
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 7
 
     .prologue
-    .line 2353
+    .line 2354
     new-instance v2, Ljava/lang/StringBuilder;
 
     sget-object v3, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
@@ -119,7 +119,7 @@
 
     move-result-object v1
 
-    .line 2355
+    .line 2356
     .local v1, "url":Ljava/lang/String;
     iget-boolean v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$18;->val$pLoadMore:Z
 
@@ -138,14 +138,14 @@
 
     if-eqz v2, :cond_c0
 
-    .line 2356
+    .line 2357
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$18;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     iget-boolean v3, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$18;->val$pLoadMore:Z
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->access$31(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;Z)V
 
-    .line 2357
+    .line 2358
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$18;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$18;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -180,7 +180,7 @@
 
     invoke-static {v3, v4, v5}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->access$32(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;J)V
 
-    .line 2358
+    .line 2359
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -200,9 +200,9 @@
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->gLastRank:J
     invoke-static {v3}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->access$33(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -210,11 +210,11 @@
 
     move-result-object v1
 
-    .line 2364
+    .line 2365
     :goto_9d
     const/4 v0, 0x0
 
-    .line 2365
+    .line 2366
     .local v0, "cache_name":Ljava/lang/String;
     const-string v2, "campaign.detail"
 
@@ -234,7 +234,7 @@
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2366
+    .line 2367
     new-instance v2, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener;
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$18;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -247,10 +247,10 @@
 
     invoke-static {v1, v2, v3}, Lcom/samsung/privilege/util/http/HttpCall;->RQ_GET(Ljava/lang/String;Lcom/samsung/privilege/util/http/RQListener;Ljava/lang/Object;)V
 
-    .line 2367
+    .line 2368
     return-void
 
-    .line 2360
+    .line 2361
     .end local v0    # "cache_name":Ljava/lang/String;
     :cond_c0
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$18;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -259,7 +259,7 @@
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->access$31(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;Z)V
 
-    .line 2361
+    .line 2362
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$18;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     new-instance v3, Ljava/util/ArrayList;

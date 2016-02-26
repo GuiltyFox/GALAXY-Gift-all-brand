@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$38;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
-    .line 4270
+    .line 4278
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
     .param p2, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 4273
+    .line 4281
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
@@ -52,7 +52,7 @@
 
     invoke-interface {v2, v3}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 4275
+    .line 4283
     iget-object v2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$38;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gPagerImageCampaign:Landroid/support/v4/view/ViewPager;
@@ -64,11 +64,11 @@
 
     move-result v0
 
-    .line 4276
+    .line 4284
     .local v0, "IntCurrentPage":I
     const/4 v1, 0x0
 
-    .line 4277
+    .line 4285
     .local v1, "intLast":I
     iget-object v2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$38;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
@@ -90,7 +90,7 @@
 
     if-eqz v2, :cond_33
 
-    .line 4278
+    .line 4286
     iget-object v2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$38;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->paramCampaign:Lic/buzzebeeslib/bean/Campaign;
@@ -106,7 +106,7 @@
 
     add-int/lit8 v1, v2, -0x1
 
-    .line 4284
+    .line 4292
     :cond_33
     const/4 v2, 0x0
 

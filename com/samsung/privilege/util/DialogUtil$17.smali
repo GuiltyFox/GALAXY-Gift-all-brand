@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogUtil;->showDialogContinueUrl(Landroid/app/Activity;Landroid/os/Handler;Lcom/samsung/privilege/bean/CampaignView;Lcom/bitmapfun/util/ImageFetcher;Lcom/samsung/privilege/bean/NFCTag;)V
+    value = Lcom/samsung/privilege/util/DialogUtil;->showDialogSerialBarcode(Landroid/app/Activity;Landroid/os/Handler;Lcom/samsung/privilege/bean/Purchasing;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JILjava/lang/String;JJLcom/bitmapfun/util/ImageFetcher;Lcom/samsung/privilege/bean/NFCTag;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,24 +20,28 @@
 # instance fields
 .field private final synthetic val$activityContext:Landroid/app/Activity;
 
-.field private final synthetic val$campaign:Lcom/samsung/privilege/bean/CampaignView;
-
 .field private final synthetic val$dialogSerial:Landroid/app/Dialog;
+
+.field private final synthetic val$objHandler:Landroid/os/Handler;
+
+.field private final synthetic val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
 
 # direct methods
-.method constructor <init>(Landroid/app/Dialog;Lcom/samsung/privilege/bean/CampaignView;Landroid/app/Activity;)V
-    .registers 4
+.method constructor <init>(Lcom/samsung/privilege/bean/NFCTag;Landroid/app/Activity;Landroid/os/Handler;Landroid/app/Dialog;)V
+    .registers 5
 
     .prologue
     .line 1
-    iput-object p1, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$dialogSerial:Landroid/app/Dialog;
+    iput-object p1, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    iput-object p2, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$campaign:Lcom/samsung/privilege/bean/CampaignView;
+    iput-object p2, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
 
-    iput-object p3, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
+    iput-object p3, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$objHandler:Landroid/os/Handler;
 
-    .line 1902
+    iput-object p4, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$dialogSerial:Landroid/app/Dialog;
+
+    .line 1873
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,906 +50,179 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 11
+    .registers 6
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 1904
-    iget-object v5, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$dialogSerial:Landroid/app/Dialog;
+    .line 1876
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    invoke-virtual {v5}, Landroid/app/Dialog;->dismiss()V
+    if-eqz v0, :cond_2b
 
-    .line 1905
-    const/4 v5, 0x1
+    .line 1877
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    sput-boolean v5, Lcom/samsung/privilege/util/DialogUtil;->gIsFinish:Z
+    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    .line 1907
-    iget-object v5, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$campaign:Lcom/samsung/privilege/bean/CampaignView;
+    if-eqz v0, :cond_2b
 
-    iget-object v4, v5, Lcom/samsung/privilege/bean/CampaignView;->CustomInput:Ljava/lang/String;
+    .line 1878
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    .line 1910
-    .local v4, "url":Ljava/lang/String;
-    :try_start_c
-    const-string v5, "{campaign_id}"
+    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    iget-object v6, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$campaign:Lcom/samsung/privilege/bean/CampaignView;
+    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->ActionName:Ljava/lang/String;
 
-    iget-object v6, v6, Lcom/samsung/privilege/bean/CampaignView;->ID:Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    invoke-static {v6}, Lic/buzzebeeslib/util/BBUtil;->CtypeString(Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v6
+    const-string v1, "Status"
 
-    const-string v7, "UTF-8"
+    invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    invoke-static {v6, v7}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v6
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    move-result v0
 
-    move-result-object v4
+    if-eqz v0, :cond_34
 
-    .line 1911
-    const-string v5, "{token}"
+    .line 1879
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    iget-object v6, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
+    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    invoke-static {v6}, Lcom/samsung/privilege/UserLogin;->GetTokenBuzzeBeesForBuyPoint(Landroid/content/Context;)Ljava/lang/String;
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
 
-    move-result-object v6
+    iget-object v2, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$objHandler:Landroid/os/Handler;
 
-    const-string v7, "UTF-8"
+    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/NfcUtils;->Action_Status(Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;Landroid/os/Handler;)V
 
-    invoke-static {v6, v7}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 1890
+    :cond_2b
+    :goto_2b
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$dialogSerial:Landroid/app/Dialog;
 
-    move-result-object v6
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    .line 1891
+    const/4 v0, 0x1
 
-    move-result-object v4
+    sput-boolean v0, Lcom/samsung/privilege/util/DialogUtil;->gIsFinish:Z
 
-    .line 1912
-    const-string v5, "{return_url}"
-
-    const-string v6, "bzbs_return_url"
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 1913
-    const-string v5, "{cancel_url}"
-
-    const-string v6, "bzbs_cancel_url"
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 1914
-    const-string v5, "{locale}"
-
-    iget-object v6, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
-
-    invoke-static {v6}, Lcom/samsung/privilege/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v7, "UTF-8"
-
-    invoke-static {v6, v7}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 1915
-    const-string v5, "{user_id}"
-
-    iget-object v6, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
-
-    invoke-static {v6}, Lcom/samsung/privilege/UserLogin;->GetUserId(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v7, "UTF-8"
-
-    invoke-static {v6, v7}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-    :try_end_65
-    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_65} :catch_1a6
-
-    move-result-object v4
-
-    .line 1920
-    :goto_66
-    new-instance v1, Lcom/samsung/privilege/util/DeviceHelper;
-
-    iget-object v5, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
-
-    invoke-direct {v1, v5}, Lcom/samsung/privilege/util/DeviceHelper;-><init>(Landroid/content/Context;)V
-
-    .line 1923
-    .local v1, "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
-    :try_start_6d
-    const-string v5, "{version}"
-
-    invoke-virtual {v1}, Lcom/samsung/privilege/util/DeviceHelper;->getAppVersionName()Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v7, "UTF-8"
-
-    invoke-static {v6, v7}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-    :try_end_7c
-    .catch Ljava/lang/Exception; {:try_start_6d .. :try_end_7c} :catch_1c3
-
-    move-result-object v4
-
-    .line 1930
-    :goto_7d
-    :try_start_7d
-    const-string v5, "{imie}"
-
-    invoke-virtual {v1}, Lcom/samsung/privilege/util/DeviceHelper;->getRealDeviceId()Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v7, "UTF-8"
-
-    invoke-static {v6, v7}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-    :try_end_8c
-    .catch Ljava/lang/Exception; {:try_start_7d .. :try_end_8c} :catch_1e8
-
-    move-result-object v4
-
-    .line 1937
-    :goto_8d
-    :try_start_8d
-    const-string v5, "{model}"
-
-    invoke-virtual {v1}, Lcom/samsung/privilege/util/DeviceHelper;->getDeviceModel()Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v7, "UTF-8"
-
-    invoke-static {v6, v7}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-    :try_end_9c
-    .catch Ljava/lang/Exception; {:try_start_8d .. :try_end_9c} :catch_20d
-
-    move-result-object v4
-
-    .line 1944
-    :goto_9d
-    :try_start_9d
-    const-string v5, "{manufacturer}"
-
-    invoke-virtual {v1}, Lcom/samsung/privilege/util/DeviceHelper;->getDeviceManufacturer()Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v7, "UTF-8"
-
-    invoke-static {v6, v7}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-    :try_end_ac
-    .catch Ljava/lang/Exception; {:try_start_9d .. :try_end_ac} :catch_232
-
-    move-result-object v4
-
-    .line 1951
-    :goto_ad
-    :try_start_ad
-    const-string v5, "{androidid}"
-
-    invoke-virtual {v1}, Lcom/samsung/privilege/util/DeviceHelper;->getAndroidID()Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v7, "UTF-8"
-
-    invoke-static {v6, v7}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-    :try_end_bc
-    .catch Ljava/lang/Exception; {:try_start_ad .. :try_end_bc} :catch_257
-
-    move-result-object v4
-
-    .line 1958
-    :goto_bd
-    :try_start_bd
-    const-string v5, "{macaddress}"
-
-    invoke-virtual {v1}, Lcom/samsung/privilege/util/DeviceHelper;->getWifiAddress()Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v7, "UTF-8"
-
-    invoke-static {v6, v7}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-    :try_end_cc
-    .catch Ljava/lang/Exception; {:try_start_bd .. :try_end_cc} :catch_27c
-
-    move-result-object v4
-
-    .line 1972
-    :goto_cd
-    :try_start_cd
-    const-string v5, "{serialno}"
-
-    invoke-virtual {v1}, Lcom/samsung/privilege/util/DeviceHelper;->getSerialNumber()Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v7, "UTF-8"
-
-    invoke-static {v6, v7}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-    :try_end_dc
-    .catch Ljava/lang/Exception; {:try_start_cd .. :try_end_dc} :catch_2a1
-
-    move-result-object v4
-
-    .line 1979
-    :goto_dd
-    :try_start_dd
-    const-string v5, "{fbid}"
-
-    iget-object v6, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
-
-    invoke-static {v6}, Lcom/samsung/privilege/UserLogin;->GetFacebookUID(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v7, "UTF-8"
-
-    invoke-static {v6, v7}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 1980
-    const-string v5, "{fbname}"
-
-    iget-object v6, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
-
-    invoke-static {v6}, Lcom/samsung/privilege/UserLogin;->GetFacebookName(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v7, "UTF-8"
-
-    invoke-static {v6, v7}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 1981
-    const-string v5, "{fbtoken}"
-
-    iget-object v6, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
-
-    invoke-static {v6}, Lcom/samsung/privilege/UserLogin;->GetTokenFacebook(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v7, "UTF-8"
-
-    invoke-static {v6, v7}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 1982
-    const-string v5, "{bztoken}"
-
-    iget-object v6, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
-
-    invoke-static {v6}, Lcom/samsung/privilege/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v7, "UTF-8"
-
-    invoke-static {v6, v7}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 1983
-    const-string v5, "{bztoken2}"
-
-    iget-object v6, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
-
-    invoke-static {v6}, Lcom/samsung/privilege/UserLogin;->GetTokenBuzzeBeesForBuyPoint(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v7, "UTF-8"
-
-    invoke-static {v6, v7}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 1985
-    new-instance v0, Ljava/util/Date;
-
-    invoke-direct {v0}, Ljava/util/Date;-><init>()V
-
-    .line 1986
-    .local v0, "date":Ljava/util/Date;
-    const-string v5, "{times}"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v7
-
-    invoke-virtual {v6, v7, v8}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-    :try_end_152
-    .catch Ljava/lang/Exception; {:try_start_dd .. :try_end_152} :catch_2c6
-
-    move-result-object v4
-
-    .line 1991
-    .end local v0    # "date":Ljava/util/Date;
-    :goto_153
-    new-instance v3, Landroid/content/Intent;
-
-    iget-object v5, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
-
-    const-class v6, Lic/buzzebeeslib/activity/WebViewCustomInputActivity;
-
-    invoke-direct {v3, v5, v6}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 1993
-    .local v3, "intent":Landroid/content/Intent;
-    :try_start_15c
-    const-string v5, "https://"
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_17b
-
-    const-string v5, "http://"
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_17b
-
-    .line 1994
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    const-string v6, "http://"
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    :try_end_17a
-    .catch Ljava/lang/Exception; {:try_start_15c .. :try_end_17a} :catch_2e3
-
-    move-result-object v4
-
-    .line 2005
-    :cond_17b
-    :goto_17b
-    iget-object v5, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
-
-    invoke-static {v5}, Lcom/samsung/privilege/UserLogin;->IS_ADMIN(Landroid/content/Context;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_199
-
-    .line 2006
-    const-string v5, "FW_URL"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    const-string v7, "url="
-
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    iget-object v7, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
-
-    invoke-static {v5, v6, v7}, Lcom/samsung/privilege/AppSetting;->LOG(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
-
-    .line 2009
-    :cond_199
-    const-string v5, "url"
-
-    invoke-virtual {v3, v5, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 2010
-    iget-object v5, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
-
-    const/16 v6, 0x14
-
-    invoke-virtual {v5, v3, v6}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
-
-    .line 2011
+    .line 1893
     return-void
 
-    .line 1916
-    .end local v1    # "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
-    .end local v3    # "intent":Landroid/content/Intent;
-    :catch_1a6
-    move-exception v2
+    .line 1880
+    :cond_34
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    .line 1917
-    .local v2, "e":Ljava/lang/Exception;
-    # getter for: Lcom/samsung/privilege/util/DialogUtil;->TAG:Ljava/lang/String;
-    invoke-static {}, Lcom/samsung/privilege/util/DialogUtil;->access$0()Ljava/lang/String;
+    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    move-result-object v5
+    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->ActionName:Ljava/lang/String;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    const-string v7, "Exception|replaceurl|1 := "
+    move-result-object v0
 
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v1, "Share"
 
-    invoke-virtual {v2}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v6
+    move-result v0
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-eqz v0, :cond_57
 
-    move-result-object v6
+    .line 1881
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    invoke-static {v5, v6}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    goto/16 :goto_66
+    const/4 v1, 0x0
 
-    .line 1924
-    .end local v2    # "e":Ljava/lang/Exception;
-    .restart local v1    # "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
-    :catch_1c3
-    move-exception v2
+    iget-object v2, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
 
-    .line 1925
-    .restart local v2    # "e":Ljava/lang/Exception;
-    const-string v5, "{version}"
+    iget-object v3, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$objHandler:Landroid/os/Handler;
 
-    const-string v6, ""
+    invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/util/NfcUtils;->Action_Share(Lcom/samsung/privilege/bean/NFCTag;Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;Landroid/os/Handler;)V
 
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    goto :goto_2b
 
-    move-result-object v4
+    .line 1882
+    :cond_57
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    .line 1926
-    # getter for: Lcom/samsung/privilege/util/DialogUtil;->TAG:Ljava/lang/String;
-    invoke-static {}, Lcom/samsung/privilege/util/DialogUtil;->access$0()Ljava/lang/String;
+    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    move-result-object v5
+    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->ActionName:Ljava/lang/String;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    const-string v7, "Exception|version := "
+    move-result-object v0
 
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v1, "CheckIn"
 
-    invoke-virtual {v2}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v6
+    move-result v0
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-eqz v0, :cond_79
 
-    move-result-object v6
+    .line 1883
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    invoke-static {v5, v6}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    goto/16 :goto_7d
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
 
-    .line 1931
-    .end local v2    # "e":Ljava/lang/Exception;
-    :catch_1e8
-    move-exception v2
+    iget-object v2, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$objHandler:Landroid/os/Handler;
 
-    .line 1932
-    .restart local v2    # "e":Ljava/lang/Exception;
-    const-string v5, "{imie}"
+    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/NfcUtils;->Action_CheckIn(Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;Landroid/os/Handler;)V
 
-    const-string v6, ""
+    goto :goto_2b
 
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    .line 1884
+    :cond_79
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    move-result-object v4
+    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    .line 1933
-    # getter for: Lcom/samsung/privilege/util/DialogUtil;->TAG:Ljava/lang/String;
-    invoke-static {}, Lcom/samsung/privilege/util/DialogUtil;->access$0()Ljava/lang/String;
+    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->ActionName:Ljava/lang/String;
 
-    move-result-object v5
+    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    const-string v7, "Exception|imie := "
+    const-string v1, "ReDeem"
 
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    invoke-virtual {v2}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v7
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
-    move-result-object v6
+    if-eqz v0, :cond_2b
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 1885
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    move-result-object v6
+    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
 
-    invoke-static {v5, v6}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogUtil$17;->val$activityContext:Landroid/app/Activity;
 
-    goto/16 :goto_8d
+    invoke-static {v0, v1}, Lcom/samsung/privilege/util/NfcUtils;->Action_ReDeem(Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;)V
 
-    .line 1938
-    .end local v2    # "e":Ljava/lang/Exception;
-    :catch_20d
-    move-exception v2
-
-    .line 1939
-    .restart local v2    # "e":Ljava/lang/Exception;
-    const-string v5, "{model}"
-
-    const-string v6, ""
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 1940
-    # getter for: Lcom/samsung/privilege/util/DialogUtil;->TAG:Ljava/lang/String;
-    invoke-static {}, Lcom/samsung/privilege/util/DialogUtil;->access$0()Ljava/lang/String;
-
-    move-result-object v5
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    const-string v7, "Exception|model := "
-
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_9d
-
-    .line 1945
-    .end local v2    # "e":Ljava/lang/Exception;
-    :catch_232
-    move-exception v2
-
-    .line 1946
-    .restart local v2    # "e":Ljava/lang/Exception;
-    const-string v5, "{manufacturer}"
-
-    const-string v6, ""
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 1947
-    # getter for: Lcom/samsung/privilege/util/DialogUtil;->TAG:Ljava/lang/String;
-    invoke-static {}, Lcom/samsung/privilege/util/DialogUtil;->access$0()Ljava/lang/String;
-
-    move-result-object v5
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    const-string v7, "Exception|manufacturer := "
-
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_ad
-
-    .line 1952
-    .end local v2    # "e":Ljava/lang/Exception;
-    :catch_257
-    move-exception v2
-
-    .line 1953
-    .restart local v2    # "e":Ljava/lang/Exception;
-    const-string v5, "{androidid}"
-
-    const-string v6, ""
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 1954
-    # getter for: Lcom/samsung/privilege/util/DialogUtil;->TAG:Ljava/lang/String;
-    invoke-static {}, Lcom/samsung/privilege/util/DialogUtil;->access$0()Ljava/lang/String;
-
-    move-result-object v5
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    const-string v7, "Exception|androidid := "
-
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_bd
-
-    .line 1959
-    .end local v2    # "e":Ljava/lang/Exception;
-    :catch_27c
-    move-exception v2
-
-    .line 1960
-    .restart local v2    # "e":Ljava/lang/Exception;
-    const-string v5, "{macaddress}"
-
-    const-string v6, ""
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 1961
-    # getter for: Lcom/samsung/privilege/util/DialogUtil;->TAG:Ljava/lang/String;
-    invoke-static {}, Lcom/samsung/privilege/util/DialogUtil;->access$0()Ljava/lang/String;
-
-    move-result-object v5
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    const-string v7, "Exception|macaddress := "
-
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_cd
-
-    .line 1973
-    .end local v2    # "e":Ljava/lang/Exception;
-    :catch_2a1
-    move-exception v2
-
-    .line 1974
-    .restart local v2    # "e":Ljava/lang/Exception;
-    const-string v5, "{serialno}"
-
-    const-string v6, ""
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 1975
-    # getter for: Lcom/samsung/privilege/util/DialogUtil;->TAG:Ljava/lang/String;
-    invoke-static {}, Lcom/samsung/privilege/util/DialogUtil;->access$0()Ljava/lang/String;
-
-    move-result-object v5
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    const-string v7, "Exception|serialno := "
-
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_dd
-
-    .line 1987
-    .end local v2    # "e":Ljava/lang/Exception;
-    :catch_2c6
-    move-exception v2
-
-    .line 1988
-    .restart local v2    # "e":Ljava/lang/Exception;
-    # getter for: Lcom/samsung/privilege/util/DialogUtil;->TAG:Ljava/lang/String;
-    invoke-static {}, Lcom/samsung/privilege/util/DialogUtil;->access$0()Ljava/lang/String;
-
-    move-result-object v5
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    const-string v7, "Exception|xxx := "
-
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_153
-
-    .line 2001
-    .end local v2    # "e":Ljava/lang/Exception;
-    .restart local v3    # "intent":Landroid/content/Intent;
-    :catch_2e3
-    move-exception v2
-
-    .line 2002
-    .restart local v2    # "e":Ljava/lang/Exception;
-    # getter for: Lcom/samsung/privilege/util/DialogUtil;->TAG:Ljava/lang/String;
-    invoke-static {}, Lcom/samsung/privilege/util/DialogUtil;->access$0()Ljava/lang/String;
-
-    move-result-object v5
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    const-string v7, "Exception|showRedeem := "
-
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_17b
+    goto :goto_2b
 .end method

@@ -305,7 +305,7 @@
 
     .prologue
     .line 111
-    const v2, 0x7f07005e
+    const v2, 0x7f0c005e
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/AdminCampaignActivity;->findViewById(I)Landroid/view/View;
 
@@ -459,7 +459,7 @@
     .line 80
     iget-object v7, p0, Lcom/samsung/privilege/activity/AdminCampaignActivity;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
-    const v8, 0x7f02039f
+    const v8, 0x7f0203a7
 
     invoke-virtual {v7, v8}, Lcom/bitmapfun/util/ImageFetcher;->setLoadingImage(I)V
 
@@ -480,7 +480,7 @@
     invoke-virtual {v7, v8}, Lcom/bitmapfun/util/ImageFetcher;->setImageFadeIn(Z)V
 
     .line 85
-    const v7, 0x7f07005f
+    const v7, 0x7f0c005f
 
     invoke-virtual {p0, v7}, Lcom/samsung/privilege/activity/AdminCampaignActivity;->findViewById(I)Landroid/view/View;
 

@@ -123,7 +123,7 @@
 .end method
 
 .method public getDoubleFromString(Ljava/lang/String;)Ljava/lang/Double;
-    .registers 7
+    .registers 8
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
@@ -151,9 +151,9 @@
     :try_start_c
     invoke-static {v1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
-    move-result-wide v3
+    move-result-wide v4
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v4, v5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
     :try_end_13
     .catch Ljava/lang/NumberFormatException; {:try_start_c .. :try_end_13} :catch_15
 

@@ -476,9 +476,9 @@
 
     mul-int/lit16 v3, v3, 0x3e8
 
-    int-to-long v3, v3
+    int-to-long v4, v3
 
-    iput-wide v3, p0, Lcom/google/analytics/tracking/android/EasyTracker;->mSessionTimeout:J
+    iput-wide v4, p0, Lcom/google/analytics/tracking/android/EasyTracker;->mSessionTimeout:J
 
     .line 254
     iget-object v3, p0, Lcom/google/analytics/tracking/android/EasyTracker;->mParameterFetcher:Lcom/google/analytics/tracking/android/ParameterLoader;
@@ -605,9 +605,9 @@
 
     invoke-virtual {v3}, Ljava/lang/Double;->doubleValue()D
 
-    move-result-wide v3
+    move-result-wide v4
 
-    invoke-virtual {v2, v3, v4}, Lcom/google/analytics/tracking/android/Tracker;->setSampleRate(D)V
+    invoke-virtual {v2, v4, v5}, Lcom/google/analytics/tracking/android/Tracker;->setSampleRate(D)V
 
     .line 274
     iget-object v2, p0, Lcom/google/analytics/tracking/android/EasyTracker;->mAnalyticsInstance:Lcom/google/analytics/tracking/android/GoogleAnalytics;

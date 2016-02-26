@@ -391,7 +391,7 @@
 .end method
 
 .method public isRepeatable()Z
-    .registers 8
+    .registers 9
 
     .prologue
     .line 136
@@ -429,11 +429,11 @@
     .local v0, "body":Lorg/apache/http/entity/mime/content/ContentBody;
     invoke-interface {v0}, Lorg/apache/http/entity/mime/content/ContentBody;->getContentLength()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
-    cmp-long v3, v3, v5
+    cmp-long v3, v4, v6
 
     if-gez v3, :cond_a
 

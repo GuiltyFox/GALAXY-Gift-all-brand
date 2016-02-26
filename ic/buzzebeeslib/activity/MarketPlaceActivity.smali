@@ -81,7 +81,7 @@
     .prologue
     .line 198
     :try_start_0
-    new-instance v5, Ljava/io/File;
+    new-instance v3, Ljava/io/File;
 
     invoke-virtual {p0}, Lic/buzzebeeslib/activity/MarketPlaceActivity;->getApplicationContext()Landroid/content/Context;
 
@@ -91,16 +91,16 @@
 
     move-result-object v6
 
-    invoke-direct {v5, v6}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v6}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     .line 199
-    .local v5, "root":Ljava/io/File;
-    invoke-static {v5}, Lic/buzzebeeslib/util/BBUtil;->getFolderSize(Ljava/io/File;)J
+    .local v3, "root":Ljava/io/File;
+    invoke-static {v3}, Lic/buzzebeeslib/util/BBUtil;->getFolderSize(Ljava/io/File;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
     .line 200
-    .local v3, "lngFileSize":J
+    .local v4, "lngFileSize":J
     const-string v6, "MarketPlaceActivity"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -109,7 +109,7 @@
 
     invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v7, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
@@ -122,7 +122,7 @@
     .line 201
     const/4 v6, 0x4
 
-    invoke-static {v3, v4, v6}, Lic/buzzebeeslib/util/BBUtil;->getUnitFileSize(JI)D
+    invoke-static {v4, v5, v6}, Lic/buzzebeeslib/util/BBUtil;->getUnitFileSize(JI)D
 
     move-result-wide v0
 
@@ -168,7 +168,7 @@
 
     const/4 v7, 0x0
 
-    aput-object v5, v6, v7
+    aput-object v3, v6, v7
 
     invoke-virtual {v2, v6}, Lic/buzzebeeslib/activity/MarketPlaceActivity$DeleteFileTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
     :try_end_53
@@ -177,8 +177,8 @@
     .line 211
     .end local v0    # "dblSumFolderSize":D
     .end local v2    # "deleteFileTask":Lic/buzzebeeslib/activity/MarketPlaceActivity$DeleteFileTask;
-    .end local v3    # "lngFileSize":J
-    .end local v5    # "root":Ljava/io/File;
+    .end local v3    # "root":Ljava/io/File;
+    .end local v4    # "lngFileSize":J
     :cond_53
     :goto_53
     return-void
@@ -687,7 +687,7 @@
     invoke-virtual {p0, v3}, Lic/buzzebeeslib/activity/MarketPlaceActivity;->setContentView(I)V
 
     .line 70
-    if-eqz p1, :cond_61
+    if-eqz p1, :cond_5a
 
     .line 71
     invoke-virtual {p0}, Lic/buzzebeeslib/activity/MarketPlaceActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
@@ -765,19 +765,12 @@
 
     invoke-virtual {v3, v4}, Lcom/google/analytics/tracking/android/GAServiceManager;->setDispatchPeriod(I)V
 
-    .line 106
-    iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceActivity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    const-string v4, "MARKETPLACE_BZBS_LIST"
-
-    invoke-virtual {v3, v4}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-
     .line 107
     return-void
 
     .line 74
     .end local v2    # "transaction":Landroid/support/v4/app/FragmentTransaction;
-    :cond_61
+    :cond_5a
     new-instance v3, Lic/buzzebeeslib/fragment/MarketPlaceMainFragment;
 
     invoke-direct {v3}, Lic/buzzebeeslib/fragment/MarketPlaceMainFragment;-><init>()V

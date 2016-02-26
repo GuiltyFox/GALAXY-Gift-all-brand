@@ -37,7 +37,7 @@
 
     iput-object p3, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener$1;->val$response_text:Ljava/lang/String;
 
-    .line 485
+    .line 487
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,14 +49,14 @@
     .registers 6
 
     .prologue
-    .line 488
+    .line 490
     iget v3, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener$1;->val$response_code:I
 
     const/16 v4, 0xc8
 
     if-ne v3, v4, :cond_96
 
-    .line 490
+    .line 492
     :try_start_6
     new-instance v1, Lorg/json/JSONObject;
 
@@ -64,7 +64,7 @@
 
     invoke-direct {v1, v3}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 491
+    .line 493
     .local v1, "jsonRoot":Lorg/json/JSONObject;
     const-string v3, "Address"
 
@@ -72,7 +72,7 @@
 
     move-result-object v2
 
-    .line 492
+    .line 494
     .local v2, "strAddress":Ljava/lang/String;
     if-eqz v2, :cond_2a
 
@@ -84,7 +84,7 @@
 
     if-nez v3, :cond_2a
 
-    .line 493
+    .line 495
     iget-object v3, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener;
 
     # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
@@ -98,7 +98,7 @@
 
     invoke-static {v3, v2}, Lcom/samsung/privilege/UserLogin;->SetAddress(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 496
+    .line 498
     :cond_2a
     iget-object v3, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener;
 
@@ -119,7 +119,7 @@
 
     invoke-static {v3, v4}, Lcom/samsung/privilege/UserLogin;->SetFirstName(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 497
+    .line 499
     iget-object v3, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener;
 
     # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
@@ -139,7 +139,7 @@
 
     invoke-static {v3, v4}, Lcom/samsung/privilege/UserLogin;->SetLastName(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 498
+    .line 500
     iget-object v3, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener;
 
     # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
@@ -159,7 +159,7 @@
 
     invoke-static {v3, v4}, Lcom/samsung/privilege/UserLogin;->SetGender(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 499
+    .line 501
     iget-object v3, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener;
 
     # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
@@ -181,7 +181,7 @@
     :try_end_76
     .catch Lorg/json/JSONException; {:try_start_6 .. :try_end_76} :catch_91
 
-    .line 504
+    .line 506
     .end local v1    # "jsonRoot":Lorg/json/JSONObject;
     .end local v2    # "strAddress":Ljava/lang/String;
     :goto_76
@@ -197,7 +197,7 @@
     # invokes: Lcom/samsung/privilege/activity/ProfileSettingActivity;->ProcessJsonProfileAndGenUI(Ljava/lang/String;)V
     invoke-static {v3, v4}, Lcom/samsung/privilege/activity/ProfileSettingActivity;->access$4(Lcom/samsung/privilege/activity/ProfileSettingActivity;Ljava/lang/String;)V
 
-    .line 509
+    .line 511
     :goto_81
     iget-object v3, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener;
 
@@ -215,20 +215,20 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 510
+    .line 512
     return-void
 
-    .line 500
+    .line 502
     :catch_91
     move-exception v0
 
-    .line 501
+    .line 503
     .local v0, "e":Lorg/json/JSONException;
     invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
 
     goto :goto_76
 
-    .line 506
+    .line 508
     .end local v0    # "e":Lorg/json/JSONException;
     :cond_96
     iget-object v3, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener$1;->this$1:Lcom/samsung/privilege/activity/ProfileSettingActivity$GetProfileDataListener;

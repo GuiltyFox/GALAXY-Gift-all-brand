@@ -1742,7 +1742,7 @@
 .end method
 
 .method private hideRightMenu()V
-    .registers 4
+    .registers 5
 
     .prologue
     const/4 v1, 0x0
@@ -1763,9 +1763,9 @@
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
     .line 428
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 429
     iget-object v1, p0, Lic/buzzebeeslib/fragment/MarketPlaceMainFragment;->gLayoutMenuDynamic:Landroid/widget/RelativeLayout;
@@ -1810,9 +1810,9 @@
 
     .line 1135
     .local v0, "inFromRight":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 1136
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
@@ -1968,9 +1968,9 @@
 
     .line 1142
     .local v0, "outtoLeft":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 1143
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
@@ -2010,9 +2010,9 @@
 
     .line 1149
     .local v0, "outtoRight":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 1150
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
@@ -2237,7 +2237,7 @@
 .end method
 
 .method private showRightMenu()V
-    .registers 4
+    .registers 5
 
     .prologue
     const/4 v2, 0x0
@@ -2260,9 +2260,9 @@
     invoke-virtual {v0, v2}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
     .line 397
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 399
     iget-object v1, p0, Lic/buzzebeeslib/fragment/MarketPlaceMainFragment;->gLayoutMenuDynamic:Landroid/widget/RelativeLayout;

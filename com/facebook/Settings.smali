@@ -85,10 +85,10 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .registers 5
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     .line 56
     const-class v0, Lcom/facebook/Settings;
@@ -108,7 +108,7 @@
 
     sget-object v2, Lcom/facebook/LoggingBehavior;->DEVELOPER_ERRORS:Lcom/facebook/LoggingBehavior;
 
-    aput-object v2, v1, v3
+    aput-object v2, v1, v4
 
     invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
@@ -120,7 +120,7 @@
     sput-object v0, Lcom/facebook/Settings;->loggingBehaviors:Ljava/util/HashSet;
 
     .line 64
-    sput-boolean v3, Lcom/facebook/Settings;->defaultsLoaded:Z
+    sput-boolean v4, Lcom/facebook/Settings;->defaultsLoaded:Z
 
     .line 66
     const-string v0, "facebook.com"
@@ -130,14 +130,14 @@
     .line 67
     new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    const-wide/32 v1, 0x10000
+    const-wide/32 v2, 0x10000
 
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
+    invoke-direct {v0, v2, v3}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
 
     sput-object v0, Lcom/facebook/Settings;->onProgressThreshold:Ljava/util/concurrent/atomic/AtomicLong;
 
     .line 69
-    sput-boolean v3, Lcom/facebook/Settings;->isDebugEnabled:Z
+    sput-boolean v4, Lcom/facebook/Settings;->isDebugEnabled:Z
 
     .line 74
     new-instance v0, Ljava/lang/Object;
@@ -173,7 +173,7 @@
     sput-object v0, Lcom/facebook/Settings;->DEFAULT_THREAD_FACTORY:Ljava/util/concurrent/ThreadFactory;
 
     .line 109
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
@@ -635,76 +635,76 @@
 .end method
 
 .method public static getExecutor()Ljava/util/concurrent/Executor;
-    .registers 9
+    .registers 10
 
     .prologue
     .line 242
-    sget-object v8, Lcom/facebook/Settings;->LOCK:Ljava/lang/Object;
+    sget-object v9, Lcom/facebook/Settings;->LOCK:Ljava/lang/Object;
 
-    monitor-enter v8
+    monitor-enter v9
 
     .line 243
     :try_start_3
-    sget-object v1, Lcom/facebook/Settings;->executor:Ljava/util/concurrent/Executor;
+    sget-object v0, Lcom/facebook/Settings;->executor:Ljava/util/concurrent/Executor;
 
-    if-nez v1, :cond_1f
+    if-nez v0, :cond_1f
 
     .line 244
     invoke-static {}, Lcom/facebook/Settings;->getAsyncTaskExecutor()Ljava/util/concurrent/Executor;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 245
-    .local v0, "executor":Ljava/util/concurrent/Executor;
-    if-nez v0, :cond_1d
+    .local v1, "executor":Ljava/util/concurrent/Executor;
+    if-nez v1, :cond_1d
 
     .line 246
-    new-instance v0, Ljava/util/concurrent/ThreadPoolExecutor;
+    new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
 
-    .end local v0    # "executor":Ljava/util/concurrent/Executor;
-    const/4 v1, 0x5
+    .end local v1    # "executor":Ljava/util/concurrent/Executor;
+    const/4 v2, 0x5
 
-    const/16 v2, 0x80
+    const/16 v3, 0x80
 
     .line 247
-    const-wide/16 v3, 0x1
+    const-wide/16 v4, 0x1
 
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    sget-object v6, Lcom/facebook/Settings;->DEFAULT_WORK_QUEUE:Ljava/util/concurrent/BlockingQueue;
+    sget-object v7, Lcom/facebook/Settings;->DEFAULT_WORK_QUEUE:Ljava/util/concurrent/BlockingQueue;
 
-    sget-object v7, Lcom/facebook/Settings;->DEFAULT_THREAD_FACTORY:Ljava/util/concurrent/ThreadFactory;
+    sget-object v8, Lcom/facebook/Settings;->DEFAULT_THREAD_FACTORY:Ljava/util/concurrent/ThreadFactory;
 
     .line 246
-    invoke-direct/range {v0 .. v7}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
+    invoke-direct/range {v1 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
 
     .line 249
-    .restart local v0    # "executor":Ljava/util/concurrent/Executor;
+    .restart local v1    # "executor":Ljava/util/concurrent/Executor;
     :cond_1d
-    sput-object v0, Lcom/facebook/Settings;->executor:Ljava/util/concurrent/Executor;
+    sput-object v1, Lcom/facebook/Settings;->executor:Ljava/util/concurrent/Executor;
 
     .line 242
     :cond_1f
-    monitor-exit v8
+    monitor-exit v9
     :try_end_20
     .catchall {:try_start_3 .. :try_end_20} :catchall_23
 
     .line 252
-    sget-object v1, Lcom/facebook/Settings;->executor:Ljava/util/concurrent/Executor;
+    sget-object v0, Lcom/facebook/Settings;->executor:Ljava/util/concurrent/Executor;
 
-    return-object v1
+    return-object v0
 
     .line 242
-    .end local v0    # "executor":Ljava/util/concurrent/Executor;
+    .end local v1    # "executor":Ljava/util/concurrent/Executor;
     :catchall_23
-    move-exception v1
+    move-exception v0
 
     :try_start_24
-    monitor-exit v8
+    monitor-exit v9
     :try_end_25
     .catchall {:try_start_24 .. :try_end_25} :catchall_23
 
-    throw v1
+    throw v0
 .end method
 
 .method public static getFacebookDomain()Ljava/lang/String;
@@ -1736,7 +1736,7 @@
 .end method
 
 .method public static setOnProgressThreshold(J)V
-    .registers 3
+    .registers 4
     .param p0, "threshold"    # J
 
     .prologue

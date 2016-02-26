@@ -123,68 +123,68 @@
 
     .prologue
     .line 75
-    new-instance v0, Ljava/util/concurrent/ThreadPoolExecutor;
+    new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
 
-    sget v1, Lbolts/AndroidExecutors;->CORE_POOL_SIZE:I
+    sget v2, Lbolts/AndroidExecutors;->CORE_POOL_SIZE:I
 
-    sget v2, Lbolts/AndroidExecutors;->MAX_POOL_SIZE:I
+    sget v3, Lbolts/AndroidExecutors;->MAX_POOL_SIZE:I
 
-    const-wide/16 v3, 0x1
+    const-wide/16 v4, 0x1
 
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    new-instance v6, Ljava/util/concurrent/LinkedBlockingQueue;
+    new-instance v7, Ljava/util/concurrent/LinkedBlockingQueue;
 
-    const/16 v7, 0x80
+    const/16 v0, 0x80
 
-    invoke-direct {v6, v7}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>(I)V
+    invoke-direct {v7, v0}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>(I)V
 
-    invoke-direct/range {v0 .. v6}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;)V
+    invoke-direct/range {v1 .. v7}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;)V
 
     .line 81
-    .local v0, "executor":Ljava/util/concurrent/ThreadPoolExecutor;
-    const/4 v1, 0x1
+    .local v1, "executor":Ljava/util/concurrent/ThreadPoolExecutor;
+    const/4 v0, 0x1
 
-    invoke-static {v0, v1}, Lbolts/AndroidExecutors;->allowCoreThreadTimeout(Ljava/util/concurrent/ThreadPoolExecutor;Z)V
+    invoke-static {v1, v0}, Lbolts/AndroidExecutors;->allowCoreThreadTimeout(Ljava/util/concurrent/ThreadPoolExecutor;Z)V
 
     .line 83
-    return-object v0
+    return-object v1
 .end method
 
 .method public static newCachedThreadPool(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
-    .registers 9
+    .registers 10
     .param p0, "threadFactory"    # Ljava/util/concurrent/ThreadFactory;
 
     .prologue
     .line 98
-    new-instance v0, Ljava/util/concurrent/ThreadPoolExecutor;
+    new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
 
-    sget v1, Lbolts/AndroidExecutors;->CORE_POOL_SIZE:I
+    sget v2, Lbolts/AndroidExecutors;->CORE_POOL_SIZE:I
 
-    sget v2, Lbolts/AndroidExecutors;->MAX_POOL_SIZE:I
+    sget v3, Lbolts/AndroidExecutors;->MAX_POOL_SIZE:I
 
-    const-wide/16 v3, 0x1
+    const-wide/16 v4, 0x1
 
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    new-instance v6, Ljava/util/concurrent/LinkedBlockingQueue;
+    new-instance v7, Ljava/util/concurrent/LinkedBlockingQueue;
 
-    const/16 v7, 0x80
+    const/16 v0, 0x80
 
-    invoke-direct {v6, v7}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>(I)V
+    invoke-direct {v7, v0}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>(I)V
 
-    move-object v7, p0
+    move-object v8, p0
 
-    invoke-direct/range {v0 .. v7}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
+    invoke-direct/range {v1 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
 
     .line 105
-    .local v0, "executor":Ljava/util/concurrent/ThreadPoolExecutor;
-    const/4 v1, 0x1
+    .local v1, "executor":Ljava/util/concurrent/ThreadPoolExecutor;
+    const/4 v0, 0x1
 
-    invoke-static {v0, v1}, Lbolts/AndroidExecutors;->allowCoreThreadTimeout(Ljava/util/concurrent/ThreadPoolExecutor;Z)V
+    invoke-static {v1, v0}, Lbolts/AndroidExecutors;->allowCoreThreadTimeout(Ljava/util/concurrent/ThreadPoolExecutor;Z)V
 
     .line 107
-    return-object v0
+    return-object v1
 .end method
 
 .method public static uiThread()Ljava/util/concurrent/Executor;

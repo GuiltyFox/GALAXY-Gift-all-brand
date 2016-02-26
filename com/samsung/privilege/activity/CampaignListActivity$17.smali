@@ -53,7 +53,7 @@
 
     iput-object p7, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->val$layoutButton:Landroid/widget/LinearLayout;
 
-    .line 1675
+    .line 1693
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -63,7 +63,7 @@
     .registers 2
 
     .prologue
-    .line 1675
+    .line 1693
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     return-object v0
@@ -86,17 +86,17 @@
 
     const/4 v2, 0x1
 
-    .line 1678
+    .line 1696
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->gCurrentPopupWelcome:I
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$14(Lcom/samsung/privilege/activity/CampaignListActivity;)I
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$13(Lcom/samsung/privilege/activity/CampaignListActivity;)I
 
     move-result v0
 
     if-ne v0, v5, :cond_1b
 
-    .line 1679
+    .line 1697
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     new-instance v1, Lcom/samsung/privilege/activity/CampaignListActivity$17$1;
@@ -107,102 +107,102 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1804
+    .line 1822
     :goto_1a
     return-void
 
-    .line 1689
+    .line 1707
     :cond_1b
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     # invokes: Lcom/samsung/privilege/activity/CampaignListActivity;->outToLeftAnimation()Landroid/view/animation/Animation;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$18(Lcom/samsung/privilege/activity/CampaignListActivity;)Landroid/view/animation/Animation;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$17(Lcom/samsung/privilege/activity/CampaignListActivity;)Landroid/view/animation/Animation;
 
     move-result-object v9
 
-    .line 1690
+    .line 1708
     .local v9, "outToLeft":Landroid/view/animation/Animation;
     invoke-virtual {v9, v2}, Landroid/view/animation/Animation;->setFillEnabled(Z)V
 
-    .line 1691
+    .line 1709
     const/4 v0, 0x0
 
     invoke-virtual {v9, v0}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
-    .line 1692
+    .line 1710
     invoke-virtual {v9, v6, v7}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 1693
+    .line 1711
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->val$imagePopupWelcome1:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v9}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 1695
+    .line 1713
     new-instance v0, Lcom/samsung/privilege/activity/CampaignListActivity$17$2;
 
     invoke-direct {v0, p0}, Lcom/samsung/privilege/activity/CampaignListActivity$17$2;-><init>(Lcom/samsung/privilege/activity/CampaignListActivity$17;)V
 
     invoke-virtual {v9, v0}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 1713
+    .line 1731
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->gCurrentPopupWelcome:I
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$14(Lcom/samsung/privilege/activity/CampaignListActivity;)I
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$13(Lcom/samsung/privilege/activity/CampaignListActivity;)I
 
     move-result v0
 
     if-ne v0, v2, :cond_88
 
-    .line 1714
+    .line 1732
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->gIsUseSmallWelcome:Z
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$15(Lcom/samsung/privilege/activity/CampaignListActivity;)Z
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$14(Lcom/samsung/privilege/activity/CampaignListActivity;)Z
 
     move-result v0
 
     if-eqz v0, :cond_7f
 
-    .line 1715
+    .line 1733
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->val$imagePopupWelcome2:Landroid/widget/ImageView;
 
-    const v1, 0x7f020359
+    const v1, 0x7f02035b
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1719
+    .line 1737
     :goto_50
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
-    invoke-static {v0, v3}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$16(Lcom/samsung/privilege/activity/CampaignListActivity;I)V
+    invoke-static {v0, v3}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$15(Lcom/samsung/privilege/activity/CampaignListActivity;I)V
 
-    .line 1736
+    .line 1754
     :cond_55
     :goto_55
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     # invokes: Lcom/samsung/privilege/activity/CampaignListActivity;->inFromRightAnimation()Landroid/view/animation/Animation;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$19(Lcom/samsung/privilege/activity/CampaignListActivity;)Landroid/view/animation/Animation;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$18(Lcom/samsung/privilege/activity/CampaignListActivity;)Landroid/view/animation/Animation;
 
     move-result-object v8
 
-    .line 1737
+    .line 1755
     .local v8, "inFromRight":Landroid/view/animation/Animation;
     invoke-virtual {v8, v2}, Landroid/view/animation/Animation;->setFillEnabled(Z)V
 
-    .line 1738
+    .line 1756
     invoke-virtual {v8, v2}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
-    .line 1739
+    .line 1757
     invoke-virtual {v8, v6, v7}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 1740
+    .line 1758
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->val$imagePopupWelcome2:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v8}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 1742
+    .line 1760
     new-instance v0, Lcom/samsung/privilege/activity/CampaignListActivity$17$3;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->val$layoutPopupWelcome:Landroid/widget/RelativeLayout;
@@ -225,104 +225,104 @@
 
     goto :goto_1a
 
-    .line 1717
+    .line 1735
     .end local v8    # "inFromRight":Landroid/view/animation/Animation;
     :cond_7f
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->val$imagePopupWelcome2:Landroid/widget/ImageView;
-
-    const v1, 0x7f020358
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    goto :goto_50
-
-    .line 1720
-    :cond_88
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->gCurrentPopupWelcome:I
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$14(Lcom/samsung/privilege/activity/CampaignListActivity;)I
-
-    move-result v0
-
-    if-ne v0, v3, :cond_af
-
-    .line 1721
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->gIsUseSmallWelcome:Z
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$15(Lcom/samsung/privilege/activity/CampaignListActivity;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_a6
-
-    .line 1722
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->val$imagePopupWelcome2:Landroid/widget/ImageView;
-
-    const v1, 0x7f02035b
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    .line 1726
-    :goto_a0
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
-
-    invoke-static {v0, v4}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$16(Lcom/samsung/privilege/activity/CampaignListActivity;I)V
-
-    goto :goto_55
-
-    .line 1724
-    :cond_a6
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->val$imagePopupWelcome2:Landroid/widget/ImageView;
 
     const v1, 0x7f02035a
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    goto :goto_a0
+    goto :goto_50
 
-    .line 1727
-    :cond_af
+    .line 1738
+    :cond_88
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->gCurrentPopupWelcome:I
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$14(Lcom/samsung/privilege/activity/CampaignListActivity;)I
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$13(Lcom/samsung/privilege/activity/CampaignListActivity;)I
 
     move-result v0
 
-    if-ne v0, v4, :cond_55
+    if-ne v0, v3, :cond_af
 
-    .line 1728
+    .line 1739
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->gIsUseSmallWelcome:Z
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$15(Lcom/samsung/privilege/activity/CampaignListActivity;)Z
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$14(Lcom/samsung/privilege/activity/CampaignListActivity;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_cd
+    if-eqz v0, :cond_a6
 
-    .line 1729
+    .line 1740
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->val$imagePopupWelcome2:Landroid/widget/ImageView;
 
     const v1, 0x7f02035d
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1733
-    :goto_c7
+    .line 1744
+    :goto_a0
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
-    invoke-static {v0, v5}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$16(Lcom/samsung/privilege/activity/CampaignListActivity;I)V
+    invoke-static {v0, v4}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$15(Lcom/samsung/privilege/activity/CampaignListActivity;I)V
 
     goto :goto_55
 
-    .line 1731
-    :cond_cd
+    .line 1742
+    :cond_a6
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->val$imagePopupWelcome2:Landroid/widget/ImageView;
 
     const v1, 0x7f02035c
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    goto :goto_a0
+
+    .line 1745
+    :cond_af
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
+
+    # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->gCurrentPopupWelcome:I
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$13(Lcom/samsung/privilege/activity/CampaignListActivity;)I
+
+    move-result v0
+
+    if-ne v0, v4, :cond_55
+
+    .line 1746
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
+
+    # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->gIsUseSmallWelcome:Z
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$14(Lcom/samsung/privilege/activity/CampaignListActivity;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_cd
+
+    .line 1747
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->val$imagePopupWelcome2:Landroid/widget/ImageView;
+
+    const v1, 0x7f02035f
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    .line 1751
+    :goto_c7
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
+
+    invoke-static {v0, v5}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$15(Lcom/samsung/privilege/activity/CampaignListActivity;I)V
+
+    goto :goto_55
+
+    .line 1749
+    :cond_cd
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17;->val$imagePopupWelcome2:Landroid/widget/ImageView;
+
+    const v1, 0x7f02035e
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 

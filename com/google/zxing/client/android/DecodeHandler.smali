@@ -154,7 +154,7 @@
 .end method
 
 .method private decode([BII)V
-    .registers 21
+    .registers 22
     .param p1, "data"    # [B
     .param p2, "width"    # I
     .param p3, "height"    # I
@@ -163,21 +163,21 @@
     .line 88
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v11
+    move-result-wide v12
 
     .line 89
-    .local v11, "start":J
-    const/4 v9, 0x0
+    .local v12, "start":J
+    const/4 v10, 0x0
 
     .line 90
-    .local v9, "rawResult":Lcom/google/zxing/Result;
+    .local v10, "rawResult":Lcom/google/zxing/Result;
     move-object/from16 v0, p0
 
-    iget-object v13, v0, Lcom/google/zxing/client/android/DecodeHandler;->activity:Lcom/google/zxing/client/android/CaptureActivity;
+    iget-object v14, v0, Lcom/google/zxing/client/android/DecodeHandler;->activity:Lcom/google/zxing/client/android/CaptureActivity;
 
-    invoke-virtual {v13}, Lcom/google/zxing/client/android/CaptureActivity;->getCameraManager()Lcom/google/zxing/client/android/camera/CameraManager;
+    invoke-virtual {v14}, Lcom/google/zxing/client/android/CaptureActivity;->getCameraManager()Lcom/google/zxing/client/android/camera/CameraManager;
 
-    move-result-object v13
+    move-result-object v14
 
     move-object/from16 v0, p1
 
@@ -185,145 +185,36 @@
 
     move/from16 v2, p3
 
-    invoke-virtual {v13, v0, v1, v2}, Lcom/google/zxing/client/android/camera/CameraManager;->buildLuminanceSource([BII)Lcom/google/zxing/PlanarYUVLuminanceSource;
+    invoke-virtual {v14, v0, v1, v2}, Lcom/google/zxing/client/android/camera/CameraManager;->buildLuminanceSource([BII)Lcom/google/zxing/PlanarYUVLuminanceSource;
 
-    move-result-object v10
+    move-result-object v11
 
     .line 91
-    .local v10, "source":Lcom/google/zxing/PlanarYUVLuminanceSource;
-    if-eqz v10, :cond_32
+    .local v11, "source":Lcom/google/zxing/PlanarYUVLuminanceSource;
+    if-eqz v11, :cond_32
 
     .line 92
-    new-instance v3, Lcom/google/zxing/BinaryBitmap;
+    new-instance v4, Lcom/google/zxing/BinaryBitmap;
 
-    new-instance v13, Lcom/google/zxing/common/HybridBinarizer;
+    new-instance v14, Lcom/google/zxing/common/HybridBinarizer;
 
-    invoke-direct {v13, v10}, Lcom/google/zxing/common/HybridBinarizer;-><init>(Lcom/google/zxing/LuminanceSource;)V
+    invoke-direct {v14, v11}, Lcom/google/zxing/common/HybridBinarizer;-><init>(Lcom/google/zxing/LuminanceSource;)V
 
-    invoke-direct {v3, v13}, Lcom/google/zxing/BinaryBitmap;-><init>(Lcom/google/zxing/Binarizer;)V
+    invoke-direct {v4, v14}, Lcom/google/zxing/BinaryBitmap;-><init>(Lcom/google/zxing/Binarizer;)V
 
     .line 94
-    .local v3, "bitmap":Lcom/google/zxing/BinaryBitmap;
+    .local v4, "bitmap":Lcom/google/zxing/BinaryBitmap;
     :try_start_23
     move-object/from16 v0, p0
 
-    iget-object v13, v0, Lcom/google/zxing/client/android/DecodeHandler;->multiFormatReader:Lcom/google/zxing/MultiFormatReader;
+    iget-object v14, v0, Lcom/google/zxing/client/android/DecodeHandler;->multiFormatReader:Lcom/google/zxing/MultiFormatReader;
 
-    invoke-virtual {v13, v3}, Lcom/google/zxing/MultiFormatReader;->decodeWithState(Lcom/google/zxing/BinaryBitmap;)Lcom/google/zxing/Result;
+    invoke-virtual {v14, v4}, Lcom/google/zxing/MultiFormatReader;->decodeWithState(Lcom/google/zxing/BinaryBitmap;)Lcom/google/zxing/Result;
     :try_end_2a
     .catch Lcom/google/zxing/ReaderException; {:try_start_23 .. :try_end_2a} :catch_73
     .catchall {:try_start_23 .. :try_end_2a} :catchall_7c
 
-    move-result-object v9
-
-    .line 98
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/google/zxing/client/android/DecodeHandler;->multiFormatReader:Lcom/google/zxing/MultiFormatReader;
-
-    invoke-virtual {v13}, Lcom/google/zxing/MultiFormatReader;->reset()V
-
-    .line 102
-    .end local v3    # "bitmap":Lcom/google/zxing/BinaryBitmap;
-    :cond_32
-    :goto_32
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/google/zxing/client/android/DecodeHandler;->activity:Lcom/google/zxing/client/android/CaptureActivity;
-
-    invoke-virtual {v13}, Lcom/google/zxing/client/android/CaptureActivity;->getHandler()Landroid/os/Handler;
-
-    move-result-object v7
-
-    .line 103
-    .local v7, "handler":Landroid/os/Handler;
-    if-eqz v9, :cond_85
-
-    .line 105
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v5
-
-    .line 106
-    .local v5, "end":J
-    sget-object v13, Lcom/google/zxing/client/android/DecodeHandler;->TAG:Ljava/lang/String;
-
-    new-instance v14, Ljava/lang/StringBuilder;
-
-    const-string v15, "Found barcode in "
-
-    invoke-direct {v14, v15}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    sub-long v15, v5, v11
-
-    invoke-virtual/range {v14 .. v16}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    const-string v15, " ms"
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-static {v13, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 107
-    if-eqz v7, :cond_72
-
-    .line 108
-    sget v13, Lcom/google/zxing/client/android/R$id;->decode_succeeded:I
-
-    invoke-static {v7, v13, v9}, Landroid/os/Message;->obtain(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v8
-
-    .line 109
-    .local v8, "message":Landroid/os/Message;
-    new-instance v4, Landroid/os/Bundle;
-
-    invoke-direct {v4}, Landroid/os/Bundle;-><init>()V
-
-    .line 110
-    .local v4, "bundle":Landroid/os/Bundle;
-    invoke-static {v10, v4}, Lcom/google/zxing/client/android/DecodeHandler;->bundleThumbnail(Lcom/google/zxing/PlanarYUVLuminanceSource;Landroid/os/Bundle;)V
-
-    .line 111
-    invoke-virtual {v8, v4}, Landroid/os/Message;->setData(Landroid/os/Bundle;)V
-
-    .line 112
-    invoke-virtual {v8}, Landroid/os/Message;->sendToTarget()V
-
-    .line 120
-    .end local v4    # "bundle":Landroid/os/Bundle;
-    .end local v5    # "end":J
-    .end local v8    # "message":Landroid/os/Message;
-    :cond_72
-    :goto_72
-    return-void
-
-    .line 95
-    .end local v7    # "handler":Landroid/os/Handler;
-    .restart local v3    # "bitmap":Lcom/google/zxing/BinaryBitmap;
-    :catch_73
-    move-exception v13
-
-    .line 98
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/google/zxing/client/android/DecodeHandler;->multiFormatReader:Lcom/google/zxing/MultiFormatReader;
-
-    invoke-virtual {v13}, Lcom/google/zxing/MultiFormatReader;->reset()V
-
-    goto :goto_32
-
-    .line 97
-    :catchall_7c
-    move-exception v13
+    move-result-object v10
 
     .line 98
     move-object/from16 v0, p0
@@ -332,25 +223,134 @@
 
     invoke-virtual {v14}, Lcom/google/zxing/MultiFormatReader;->reset()V
 
-    .line 99
-    throw v13
+    .line 102
+    .end local v4    # "bitmap":Lcom/google/zxing/BinaryBitmap;
+    :cond_32
+    :goto_32
+    move-object/from16 v0, p0
 
-    .line 115
-    .end local v3    # "bitmap":Lcom/google/zxing/BinaryBitmap;
-    .restart local v7    # "handler":Landroid/os/Handler;
-    :cond_85
-    if-eqz v7, :cond_72
+    iget-object v14, v0, Lcom/google/zxing/client/android/DecodeHandler;->activity:Lcom/google/zxing/client/android/CaptureActivity;
 
-    .line 116
-    sget v13, Lcom/google/zxing/client/android/R$id;->decode_failed:I
-
-    invoke-static {v7, v13}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
+    invoke-virtual {v14}, Lcom/google/zxing/client/android/CaptureActivity;->getHandler()Landroid/os/Handler;
 
     move-result-object v8
 
+    .line 103
+    .local v8, "handler":Landroid/os/Handler;
+    if-eqz v10, :cond_85
+
+    .line 105
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v6
+
+    .line 106
+    .local v6, "end":J
+    sget-object v14, Lcom/google/zxing/client/android/DecodeHandler;->TAG:Ljava/lang/String;
+
+    new-instance v15, Ljava/lang/StringBuilder;
+
+    const-string v16, "Found barcode in "
+
+    invoke-direct/range {v15 .. v16}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    sub-long v16, v6, v12
+
+    invoke-virtual/range {v15 .. v17}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    const-string v16, " ms"
+
+    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 107
+    if-eqz v8, :cond_72
+
+    .line 108
+    sget v14, Lcom/google/zxing/client/android/R$id;->decode_succeeded:I
+
+    invoke-static {v8, v14, v10}, Landroid/os/Message;->obtain(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v9
+
+    .line 109
+    .local v9, "message":Landroid/os/Message;
+    new-instance v5, Landroid/os/Bundle;
+
+    invoke-direct {v5}, Landroid/os/Bundle;-><init>()V
+
+    .line 110
+    .local v5, "bundle":Landroid/os/Bundle;
+    invoke-static {v11, v5}, Lcom/google/zxing/client/android/DecodeHandler;->bundleThumbnail(Lcom/google/zxing/PlanarYUVLuminanceSource;Landroid/os/Bundle;)V
+
+    .line 111
+    invoke-virtual {v9, v5}, Landroid/os/Message;->setData(Landroid/os/Bundle;)V
+
+    .line 112
+    invoke-virtual {v9}, Landroid/os/Message;->sendToTarget()V
+
+    .line 120
+    .end local v5    # "bundle":Landroid/os/Bundle;
+    .end local v6    # "end":J
+    .end local v9    # "message":Landroid/os/Message;
+    :cond_72
+    :goto_72
+    return-void
+
+    .line 95
+    .end local v8    # "handler":Landroid/os/Handler;
+    .restart local v4    # "bitmap":Lcom/google/zxing/BinaryBitmap;
+    :catch_73
+    move-exception v14
+
+    .line 98
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcom/google/zxing/client/android/DecodeHandler;->multiFormatReader:Lcom/google/zxing/MultiFormatReader;
+
+    invoke-virtual {v14}, Lcom/google/zxing/MultiFormatReader;->reset()V
+
+    goto :goto_32
+
+    .line 97
+    :catchall_7c
+    move-exception v14
+
+    .line 98
+    move-object/from16 v0, p0
+
+    iget-object v15, v0, Lcom/google/zxing/client/android/DecodeHandler;->multiFormatReader:Lcom/google/zxing/MultiFormatReader;
+
+    invoke-virtual {v15}, Lcom/google/zxing/MultiFormatReader;->reset()V
+
+    .line 99
+    throw v14
+
+    .line 115
+    .end local v4    # "bitmap":Lcom/google/zxing/BinaryBitmap;
+    .restart local v8    # "handler":Landroid/os/Handler;
+    :cond_85
+    if-eqz v8, :cond_72
+
+    .line 116
+    sget v14, Lcom/google/zxing/client/android/R$id;->decode_failed:I
+
+    invoke-static {v8, v14}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
+
+    move-result-object v9
+
     .line 117
-    .restart local v8    # "message":Landroid/os/Message;
-    invoke-virtual {v8}, Landroid/os/Message;->sendToTarget()V
+    .restart local v9    # "message":Landroid/os/Message;
+    invoke-virtual {v9}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_72
 .end method

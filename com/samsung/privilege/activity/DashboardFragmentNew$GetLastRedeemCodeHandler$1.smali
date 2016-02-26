@@ -37,7 +37,7 @@
 
     iput-object p3, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->val$response_text:Ljava/lang/String;
 
-    .line 2592
+    .line 2656
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,273 +46,178 @@
 
 # virtual methods
 .method public run()V
-    .registers 23
+    .registers 25
 
     .prologue
-    .line 2595
+    .line 2659
     :try_start_0
     move-object/from16 v0, p0
 
-    iget v1, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->val$response_code:I
+    iget v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->val$response_code:I
 
-    const/16 v2, 0xc8
+    const/16 v3, 0xc8
 
-    if-ne v1, v2, :cond_1ae
+    if-ne v2, v3, :cond_1b2
 
-    .line 2596
+    .line 2660
     new-instance v21, Lorg/json/JSONArray;
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->val$response_text:Ljava/lang/String;
+    iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->val$response_text:Ljava/lang/String;
 
     move-object/from16 v0, v21
 
-    invoke-direct {v0, v1}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v2}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
 
-    .line 2597
+    .line 2661
     .local v21, "jsonRoot":Lorg/json/JSONArray;
     invoke-virtual/range {v21 .. v21}, Lorg/json/JSONArray;->length()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    if-lt v1, v2, :cond_195
+    if-lt v2, v3, :cond_199
 
-    .line 2598
-    const/4 v1, 0x0
+    .line 2662
+    const/4 v2, 0x0
 
     move-object/from16 v0, v21
 
-    invoke-virtual {v0, v1}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
+    invoke-virtual {v0, v2}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v20
 
-    .line 2599
+    .line 2663
     .local v20, "jsonItem":Lorg/json/JSONObject;
-    const-string v1, "Serial"
+    const-string v2, "Serial"
 
     move-object/from16 v0, v20
 
-    invoke-static {v0, v1}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v10
 
-    .line 2600
+    .line 2664
     .local v10, "strSerial":Ljava/lang/String;
-    const-string v1, "PrivilegeMessage"
+    const-string v2, "PrivilegeMessage"
 
     move-object/from16 v0, v20
 
-    invoke-static {v0, v1}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v12
 
-    .line 2601
+    .line 2665
     .local v12, "strPrivilegeMessage":Ljava/lang/String;
-    const-string v1, "CurrentDate"
+    const-string v2, "CurrentDate"
 
     move-object/from16 v0, v20
 
-    invoke-static {v0, v1}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
+    invoke-static {v0, v2}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    .line 2602
-    .local v3, "currentDate":J
-    const-string v1, "ExpireIn"
+    .line 2666
+    .local v4, "currentDate":J
+    const-string v2, "ExpireIn"
 
     move-object/from16 v0, v20
 
-    invoke-static {v0, v1}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
+    invoke-static {v0, v2}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v8
+    move-result-wide v22
 
-    .line 2604
-    .local v8, "longExpireIn":J
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
-
-    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v1
-
+    .line 2668
+    .local v22, "longExpireIn":J
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
 
-    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gDashboardItem:Lcom/samsung/privilege/bean/DashboardItem;
-    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$0(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/bean/DashboardItem;
+    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     move-result-object v2
 
-    iget v2, v2, Lcom/samsung/privilege/bean/DashboardItem;->id:I
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
 
-    invoke-static {v1, v2, v10}, Lcom/samsung/privilege/UserLogin;->SetLastReDeemCode(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
-
-    .line 2605
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
+    iget-object v3, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
 
-    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
+    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gDashboardItem:Lcom/samsung/privilege/bean/DashboardItem;
+    invoke-static {v3}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$0(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/bean/DashboardItem;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-virtual {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    iget v3, v3, Lcom/samsung/privilege/bean/DashboardItem;->id:I
 
-    move-result-object v1
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
+    move-result-object v3
+
+    invoke-static {v2, v3, v10}, Lcom/samsung/privilege/UserLogin;->SetLastReDeemCode(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
+
+    .line 2669
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
 
-    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gDashboardItem:Lcom/samsung/privilege/bean/DashboardItem;
-    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$0(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/bean/DashboardItem;
+    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     move-result-object v2
 
-    iget v2, v2, Lcom/samsung/privilege/bean/DashboardItem;->id:I
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
 
-    invoke-static {v1, v2, v12}, Lcom/samsung/privilege/UserLogin;->SetLastReDeemPrivilegeMessage(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
-
-    .line 2607
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
+    iget-object v3, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
+
+    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gDashboardItem:Lcom/samsung/privilege/bean/DashboardItem;
+    invoke-static {v3}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$0(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/bean/DashboardItem;
+
+    move-result-object v3
+
+    iget v3, v3, Lcom/samsung/privilege/bean/DashboardItem;->id:I
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3, v12}, Lcom/samsung/privilege/UserLogin;->SetLastReDeemPrivilegeMessage(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
+
+    .line 2671
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
 
     # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
-    move-result-object v1
+    move-result-object v2
 
     # invokes: Lcom/samsung/privilege/activity/DashboardFragmentNew;->loadDashboardFromCatch()V
-    invoke-static {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->access$9(Lcom/samsung/privilege/activity/DashboardFragmentNew;)V
+    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->access$9(Lcom/samsung/privilege/activity/DashboardFragmentNew;)V
 
-    .line 2609
+    .line 2673
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
+    iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
 
     # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gDashboardItem:Lcom/samsung/privilege/bean/DashboardItem;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$0(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/bean/DashboardItem;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$0(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/bean/DashboardItem;
 
-    move-result-object v1
+    move-result-object v2
 
-    iget-object v1, v1, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_url:Ljava/lang/String;
+    iget-object v2, v2, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_url:Ljava/lang/String;
 
-    if-eqz v1, :cond_11f
-
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
-
-    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gDashboardItem:Lcom/samsung/privilege/bean/DashboardItem;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$0(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/bean/DashboardItem;
-
-    move-result-object v1
-
-    iget-object v1, v1, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_url:Ljava/lang/String;
-
-    const-string v2, ""
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-    :try_end_a1
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_a1} :catch_17c
-
-    move-result v1
-
-    if-nez v1, :cond_11f
-
-    .line 2611
-    :try_start_a4
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
-
-    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v1
-
-    const-string v2, "clipboard"
-
-    invoke-virtual {v1, v2}, Landroid/support/v4/app/FragmentActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v17
-
-    check-cast v17, Landroid/content/ClipboardManager;
-
-    .line 2612
-    .local v17, "clipboard":Landroid/content/ClipboardManager;
-    move-object/from16 v0, v17
-
-    invoke-virtual {v0, v10}, Landroid/content/ClipboardManager;->setText(Ljava/lang/CharSequence;)V
-
-    .line 2614
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
-
-    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
-
-    move-result-object v1
-
-    const-string v2, "Your discount code is already in clipboard."
-
-    invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->showToast(Ljava/lang/String;)V
-    :try_end_ca
-    .catch Ljava/lang/Exception; {:try_start_a4 .. :try_end_ca} :catch_1c7
-
-    .line 2619
-    .end local v17    # "clipboard":Landroid/content/ClipboardManager;
-    :goto_ca
-    :try_start_ca
-    new-instance v19, Landroid/content/Intent;
-
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
-
-    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v1
-
-    const-class v2, Lcom/samsung/privilege/activity/WebViewRedeemActivity;
-
-    move-object/from16 v0, v19
-
-    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 2620
-    .local v19, "intent":Landroid/content/Intent;
-    const-string v1, "url"
+    if-eqz v2, :cond_11f
 
     move-object/from16 v0, p0
 
@@ -325,104 +230,188 @@
 
     iget-object v2, v2, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_url:Ljava/lang/String;
 
-    move-object/from16 v0, v19
+    const-string v3, ""
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :try_end_a1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_a1} :catch_180
 
-    .line 2621
-    const-string v1, "serial"
+    move-result v2
 
-    move-object/from16 v0, v19
+    if-nez v2, :cond_11f
 
-    invoke-virtual {v0, v1, v10}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    .line 2675
+    :try_start_a4
+    move-object/from16 v0, p0
 
-    .line 2622
-    const-string v1, "enable_webview_back"
+    iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
 
-    const/4 v2, 0x1
+    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
-    move-object/from16 v0, v19
+    move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    invoke-virtual {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    .line 2623
-    const-string v1, "hide_serial"
+    move-result-object v2
+
+    const-string v3, "clipboard"
+
+    invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v17
+
+    check-cast v17, Landroid/content/ClipboardManager;
+
+    .line 2676
+    .local v17, "clipboard":Landroid/content/ClipboardManager;
+    move-object/from16 v0, v17
+
+    invoke-virtual {v0, v10}, Landroid/content/ClipboardManager;->setText(Ljava/lang/CharSequence;)V
+
+    .line 2678
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
+
+    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
+
+    move-result-object v2
+
+    const-string v3, "Your discount code is already in clipboard."
+
+    invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->showToast(Ljava/lang/String;)V
+    :try_end_ca
+    .catch Ljava/lang/Exception; {:try_start_a4 .. :try_end_ca} :catch_1cb
+
+    .line 2683
+    .end local v17    # "clipboard":Landroid/content/ClipboardManager;
+    :goto_ca
+    :try_start_ca
+    new-instance v19, Landroid/content/Intent;
 
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
 
-    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gDashboardItem:Lcom/samsung/privilege/bean/DashboardItem;
-    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$0(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/bean/DashboardItem;
+    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     move-result-object v2
 
-    iget-boolean v2, v2, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_hideserial:Z
+    invoke-virtual {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v2
+
+    const-class v3, Lcom/samsung/privilege/activity/WebViewRedeemActivity;
 
     move-object/from16 v0, v19
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    invoke-direct {v0, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2624
+    .line 2684
+    .local v19, "intent":Landroid/content/Intent;
+    const-string v2, "url"
+
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
+    iget-object v3, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
 
-    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
+    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gDashboardItem:Lcom/samsung/privilege/bean/DashboardItem;
+    invoke-static {v3}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$0(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/bean/DashboardItem;
 
-    move-result-object v1
+    move-result-object v3
 
-    const/4 v2, 0x0
+    iget-object v3, v3, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_url:Ljava/lang/String;
 
     move-object/from16 v0, v19
 
-    invoke-virtual {v1, v0, v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->startActivityForResult(Landroid/content/Intent;I)V
+    invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2637
-    .end local v3    # "currentDate":J
-    .end local v8    # "longExpireIn":J
+    .line 2685
+    const-string v2, "serial"
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v0, v2, v10}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 2686
+    const-string v2, "enable_webview_back"
+
+    const/4 v3, 0x1
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    .line 2687
+    const-string v2, "hide_serial"
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
+
+    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gDashboardItem:Lcom/samsung/privilege/bean/DashboardItem;
+    invoke-static {v3}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$0(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/bean/DashboardItem;
+
+    move-result-object v3
+
+    iget-boolean v3, v3, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_hideserial:Z
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    .line 2688
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
+
+    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v2, v0, v3}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->startActivityForResult(Landroid/content/Intent;I)V
+
+    .line 2701
+    .end local v4    # "currentDate":J
     .end local v10    # "strSerial":Ljava/lang/String;
     .end local v12    # "strPrivilegeMessage":Ljava/lang/String;
     .end local v19    # "intent":Landroid/content/Intent;
     .end local v20    # "jsonItem":Lorg/json/JSONObject;
     .end local v21    # "jsonRoot":Lorg/json/JSONArray;
+    .end local v22    # "longExpireIn":J
     :goto_11e
     return-void
 
-    .line 2626
-    .restart local v3    # "currentDate":J
-    .restart local v8    # "longExpireIn":J
+    .line 2690
+    .restart local v4    # "currentDate":J
     .restart local v10    # "strSerial":Ljava/lang/String;
     .restart local v12    # "strPrivilegeMessage":Ljava/lang/String;
     .restart local v20    # "jsonItem":Lorg/json/JSONObject;
     .restart local v21    # "jsonRoot":Lorg/json/JSONArray;
+    .restart local v22    # "longExpireIn":J
     :cond_11f
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
+    iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
 
     # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x0
-
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
-
-    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gDashboardItem:Lcom/samsung/privilege/bean/DashboardItem;
-    invoke-static {v5}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$0(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/bean/DashboardItem;
-
-    move-result-object v5
-
-    iget v5, v5, Lcom/samsung/privilege/bean/DashboardItem;->id:I
+    const/4 v3, 0x0
 
     move-object/from16 v0, p0
 
@@ -433,7 +422,7 @@
 
     move-result-object v6
 
-    iget-object v6, v6, Lcom/samsung/privilege/bean/DashboardItem;->line2:Ljava/lang/String;
+    iget v6, v6, Lcom/samsung/privilege/bean/DashboardItem;->id:I
 
     move-object/from16 v0, p0
 
@@ -444,7 +433,22 @@
 
     move-result-object v7
 
-    iget-object v7, v7, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
+    iget-object v7, v7, Lcom/samsung/privilege/bean/DashboardItem;->line2:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iget-object v8, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
+
+    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gDashboardItem:Lcom/samsung/privilege/bean/DashboardItem;
+    invoke-static {v8}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$0(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/bean/DashboardItem;
+
+    move-result-object v8
+
+    iget-object v8, v8, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
+
+    invoke-static/range {v22 .. v23}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v9
 
     move-object/from16 v0, p0
 
@@ -498,121 +502,121 @@
 
     const/16 v16, 0x0
 
-    invoke-static/range {v1 .. v16}, Lcom/samsung/privilege/util/DialogUtil;->showDialogSerial3TypeCode(Landroid/app/Activity;Lcom/samsung/privilege/bean/Purchasing;JILjava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/bitmapfun/util/ImageFetcher;Ljava/lang/String;Landroid/os/Handler;Lcom/samsung/privilege/bean/NFCTag;)V
-    :try_end_17b
-    .catch Ljava/lang/Exception; {:try_start_ca .. :try_end_17b} :catch_17c
+    invoke-static/range {v2 .. v16}, Lcom/samsung/privilege/util/DialogSerialVersion2;->showDialogSerial(Landroid/app/Activity;Lcom/samsung/privilege/bean/Purchasing;JILjava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/bitmapfun/util/ImageFetcher;Ljava/lang/String;Landroid/os/Handler;Lcom/samsung/privilege/bean/NFCTag;)V
+    :try_end_17f
+    .catch Ljava/lang/Exception; {:try_start_ca .. :try_end_17f} :catch_180
 
     goto :goto_11e
 
-    .line 2634
-    .end local v3    # "currentDate":J
-    .end local v8    # "longExpireIn":J
+    .line 2698
+    .end local v4    # "currentDate":J
     .end local v10    # "strSerial":Ljava/lang/String;
     .end local v12    # "strPrivilegeMessage":Ljava/lang/String;
     .end local v20    # "jsonItem":Lorg/json/JSONObject;
     .end local v21    # "jsonRoot":Lorg/json/JSONArray;
-    :catch_17c
+    .end local v22    # "longExpireIn":J
+    :catch_180
     move-exception v18
 
-    .line 2635
+    .line 2699
     .local v18, "e":Ljava/lang/Exception;
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
-
-    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v1
-
-    move-object/from16 v0, p0
-
     iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
 
-    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gErrorMessage:Ljava/lang/String;
-    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$1(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Ljava/lang/String;
+    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Lcom/samsung/privilege/util/DialogUtil;->showDialogError(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-virtual {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
+
+    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gErrorMessage:Ljava/lang/String;
+    invoke-static {v3}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$1(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcom/samsung/privilege/util/DialogUtil;->showDialogError(Landroid/content/Context;Ljava/lang/String;)V
 
     goto :goto_11e
 
-    .line 2629
+    .line 2693
     .end local v18    # "e":Ljava/lang/Exception;
     .restart local v21    # "jsonRoot":Lorg/json/JSONArray;
-    :cond_195
-    :try_start_195
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
-
-    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v1
-
+    :cond_199
+    :try_start_199
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
 
-    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gErrorMessage:Ljava/lang/String;
-    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$1(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Ljava/lang/String;
+    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Lcom/samsung/privilege/util/DialogUtil;->showDialogError(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-virtual {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
+
+    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gErrorMessage:Ljava/lang/String;
+    invoke-static {v3}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$1(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcom/samsung/privilege/util/DialogUtil;->showDialogError(Landroid/content/Context;Ljava/lang/String;)V
 
     goto/16 :goto_11e
 
-    .line 2632
+    .line 2696
     .end local v21    # "jsonRoot":Lorg/json/JSONArray;
-    :cond_1ae
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
-
-    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v1
-
+    :cond_1b2
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
 
-    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gErrorMessage:Ljava/lang/String;
-    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$1(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Ljava/lang/String;
+    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$2(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Lcom/samsung/privilege/util/DialogUtil;->showDialogError(Landroid/content/Context;Ljava/lang/String;)V
-    :try_end_1c5
-    .catch Ljava/lang/Exception; {:try_start_195 .. :try_end_1c5} :catch_17c
+    invoke-virtual {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
+
+    # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gErrorMessage:Ljava/lang/String;
+    invoke-static {v3}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->access$1(Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcom/samsung/privilege/util/DialogUtil;->showDialogError(Landroid/content/Context;Ljava/lang/String;)V
+    :try_end_1c9
+    .catch Ljava/lang/Exception; {:try_start_199 .. :try_end_1c9} :catch_180
 
     goto/16 :goto_11e
 
-    .line 2615
-    .restart local v3    # "currentDate":J
-    .restart local v8    # "longExpireIn":J
+    .line 2679
+    .restart local v4    # "currentDate":J
     .restart local v10    # "strSerial":Ljava/lang/String;
     .restart local v12    # "strPrivilegeMessage":Ljava/lang/String;
     .restart local v20    # "jsonItem":Lorg/json/JSONObject;
     .restart local v21    # "jsonRoot":Lorg/json/JSONArray;
-    :catch_1c7
-    move-exception v1
+    .restart local v22    # "longExpireIn":J
+    :catch_1cb
+    move-exception v2
 
     goto/16 :goto_ca
 .end method

@@ -98,25 +98,25 @@
 
     .prologue
     .line 48
-    iget-object v3, p0, Lic/buzzebeeslib/control/download/DatabaseHelper;->mOpenHelper:Lic/buzzebeeslib/control/download/DatabaseHelper$MyOpenHelper;
+    iget-object v1, p0, Lic/buzzebeeslib/control/download/DatabaseHelper;->mOpenHelper:Lic/buzzebeeslib/control/download/DatabaseHelper$MyOpenHelper;
 
-    invoke-virtual {v3}, Lic/buzzebeeslib/control/download/DatabaseHelper$MyOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    invoke-virtual {v1}, Lic/buzzebeeslib/control/download/DatabaseHelper$MyOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
     .line 49
     .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
-    const-string v3, "downloads"
+    const-string v1, "downloads"
 
-    invoke-virtual {v0, v3, p1, p2}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+    invoke-virtual {v0, v1, p1, p2}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
-    move-result v3
+    move-result v1
 
-    int-to-long v1, v3
+    int-to-long v2, v1
 
     .line 50
-    .local v1, "id":J
-    const-string v3, "DatabaseHelper"
+    .local v2, "id":J
+    const-string v1, "DatabaseHelper"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -124,7 +124,7 @@
 
     invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v4, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -132,13 +132,13 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Lic/buzzebeeslib/util/LogUtil;->LogV(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lic/buzzebeeslib/util/LogUtil;->LogV(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 51
     invoke-virtual {p0}, Lic/buzzebeeslib/control/download/DatabaseHelper;->notifyContentChange()V
 
     .line 52
-    return-wide v1
+    return-wide v2
 .end method
 
 .method public insert(Landroid/content/ContentValues;)J
@@ -147,25 +147,25 @@
 
     .prologue
     .line 32
-    iget-object v3, p0, Lic/buzzebeeslib/control/download/DatabaseHelper;->mOpenHelper:Lic/buzzebeeslib/control/download/DatabaseHelper$MyOpenHelper;
+    iget-object v1, p0, Lic/buzzebeeslib/control/download/DatabaseHelper;->mOpenHelper:Lic/buzzebeeslib/control/download/DatabaseHelper$MyOpenHelper;
 
-    invoke-virtual {v3}, Lic/buzzebeeslib/control/download/DatabaseHelper$MyOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    invoke-virtual {v1}, Lic/buzzebeeslib/control/download/DatabaseHelper$MyOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
     .line 33
     .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
-    const-string v3, "downloads"
+    const-string v1, "downloads"
 
     const/4 v4, 0x0
 
-    invoke-virtual {v0, v3, v4, p1}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
+    invoke-virtual {v0, v1, v4, p1}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 34
-    .local v1, "id":J
-    const-string v3, "DatabaseHelper"
+    .local v2, "id":J
+    const-string v1, "DatabaseHelper"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -173,7 +173,7 @@
 
     invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v4, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -181,13 +181,13 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Lic/buzzebeeslib/util/LogUtil;->LogV(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lic/buzzebeeslib/util/LogUtil;->LogV(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 35
     invoke-virtual {p0}, Lic/buzzebeeslib/control/download/DatabaseHelper;->notifyContentChange()V
 
     .line 36
-    return-wide v1
+    return-wide v2
 .end method
 
 .method public notifyContentChange()V
@@ -571,25 +571,25 @@
 
     .prologue
     .line 40
-    iget-object v3, p0, Lic/buzzebeeslib/control/download/DatabaseHelper;->mOpenHelper:Lic/buzzebeeslib/control/download/DatabaseHelper$MyOpenHelper;
+    iget-object v1, p0, Lic/buzzebeeslib/control/download/DatabaseHelper;->mOpenHelper:Lic/buzzebeeslib/control/download/DatabaseHelper$MyOpenHelper;
 
-    invoke-virtual {v3}, Lic/buzzebeeslib/control/download/DatabaseHelper$MyOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    invoke-virtual {v1}, Lic/buzzebeeslib/control/download/DatabaseHelper$MyOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
     .line 41
     .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
-    const-string v3, "downloads"
+    const-string v1, "downloads"
 
-    invoke-virtual {v0, v3, p1, p2, p3}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+    invoke-virtual {v0, v1, p1, p2, p3}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    move-result v3
+    move-result v1
 
-    int-to-long v1, v3
+    int-to-long v2, v1
 
     .line 42
-    .local v1, "id":J
-    const-string v3, "DatabaseHelper"
+    .local v2, "id":J
+    const-string v1, "DatabaseHelper"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -597,7 +597,7 @@
 
     invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v4, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -605,11 +605,11 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Lic/buzzebeeslib/util/LogUtil;->LogV(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lic/buzzebeeslib/util/LogUtil;->LogV(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 43
     invoke-virtual {p0}, Lic/buzzebeeslib/control/download/DatabaseHelper;->notifyContentChange()V
 
     .line 44
-    return-wide v1
+    return-wide v2
 .end method

@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener$1;->val$response_text:Ljava/lang/String;
 
-    .line 769
+    .line 775
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 3
 
     .prologue
-    .line 771
+    .line 777
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener;
 
     # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
@@ -58,6 +58,6 @@
     # invokes: Lcom/samsung/privilege/activity/DashboardFragmentNew;->processJsonDashboard(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->access$3(Lcom/samsung/privilege/activity/DashboardFragmentNew;Ljava/lang/String;)V
 
-    .line 772
+    .line 778
     return-void
 .end method

@@ -107,7 +107,7 @@
 .end method
 
 .method private addProgress(J)V
-    .registers 9
+    .registers 10
     .param p1, "size"    # J
 
     .prologue
@@ -164,11 +164,11 @@
 
     .prologue
     .line 56
-    iget-wide v1, p0, Lcom/facebook/ProgressOutputStream;->batchProgress:J
+    iget-wide v2, p0, Lcom/facebook/ProgressOutputStream;->batchProgress:J
 
-    iget-wide v3, p0, Lcom/facebook/ProgressOutputStream;->lastReportedProgress:J
+    iget-wide v4, p0, Lcom/facebook/ProgressOutputStream;->lastReportedProgress:J
 
-    cmp-long v1, v1, v3
+    cmp-long v1, v2, v4
 
     if-lez v1, :cond_1c
 
@@ -192,9 +192,9 @@
     if-nez v1, :cond_1d
 
     .line 77
-    iget-wide v1, p0, Lcom/facebook/ProgressOutputStream;->batchProgress:J
+    iget-wide v2, p0, Lcom/facebook/ProgressOutputStream;->batchProgress:J
 
-    iput-wide v1, p0, Lcom/facebook/ProgressOutputStream;->lastReportedProgress:J
+    iput-wide v2, p0, Lcom/facebook/ProgressOutputStream;->lastReportedProgress:J
 
     .line 79
     :cond_1c

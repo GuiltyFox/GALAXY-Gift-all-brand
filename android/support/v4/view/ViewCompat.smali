@@ -692,7 +692,7 @@
 .end method
 
 .method public static postOnAnimationDelayed(Landroid/view/View;Ljava/lang/Runnable;J)V
-    .registers 5
+    .registers 6
     .param p0, "view"    # Landroid/view/View;
     .param p1, "action"    # Ljava/lang/Runnable;
     .param p2, "delayMillis"    # J

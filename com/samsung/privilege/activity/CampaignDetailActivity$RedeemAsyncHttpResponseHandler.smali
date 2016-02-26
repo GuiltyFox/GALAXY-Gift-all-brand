@@ -37,30 +37,30 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1976
+    .line 2151
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
 
-    .line 1972
+    .line 2147
     iput-boolean v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->gIsShowSerial:Z
 
-    .line 1973
+    .line 2148
     iput-boolean v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->gIsGotoWebsite:Z
 
-    .line 1977
+    .line 2152
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->gCampaign:Lcom/samsung/privilege/bean/CampaignView;
 
-    .line 1978
+    .line 2153
     iput-boolean p3, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->gIsShowSerial:Z
 
-    .line 1979
+    .line 2154
     iput-boolean p4, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->gIsGotoWebsite:Z
 
-    .line 1980
+    .line 2155
     iput-wide p5, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->gStartTime:J
 
-    .line 1981
+    .line 2156
     return-void
 .end method
 
@@ -68,7 +68,7 @@
     .registers 2
 
     .prologue
-    .line 1972
+    .line 2147
     iget-boolean v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->gIsShowSerial:Z
 
     return v0
@@ -78,7 +78,7 @@
     .registers 2
 
     .prologue
-    .line 1971
+    .line 2146
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->gCampaign:Lcom/samsung/privilege/bean/CampaignView;
 
     return-object v0
@@ -88,7 +88,7 @@
     .registers 2
 
     .prologue
-    .line 1973
+    .line 2148
     iget-boolean v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->gIsGotoWebsite:Z
 
     return v0
@@ -98,7 +98,7 @@
     .registers 2
 
     .prologue
-    .line 1970
+    .line 2145
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     return-object v0
@@ -112,12 +112,12 @@
     .param p2, "response"    # Ljava/lang/String;
 
     .prologue
-    .line 2177
+    .line 2352
     const/16 v0, -0x1f4
 
     invoke-virtual {p0, v0, p2}, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->onSuccess(ILjava/lang/String;)V
 
-    .line 2178
+    .line 2353
     return-void
 .end method
 
@@ -125,7 +125,7 @@
     .registers 1
 
     .prologue
-    .line 2183
+    .line 2358
     return-void
 .end method
 
@@ -133,7 +133,7 @@
     .registers 1
 
     .prologue
-    .line 1986
+    .line 2161
     return-void
 .end method
 
@@ -143,7 +143,7 @@
     .param p2, "response_text"    # Ljava/lang/String;
 
     .prologue
-    .line 1990
+    .line 2165
     const-string v0, "campaign.detail"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -172,7 +172,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1993
+    .line 2168
     :try_start_1e
     new-instance v0, Ljava/util/Date;
 
@@ -180,15 +180,15 @@
 
     invoke-virtual {v0}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v7
+    move-result-wide v8
 
-    .line 1994
-    .local v7, "endTime":J
+    .line 2169
+    .local v8, "endTime":J
     iget-wide v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->gStartTime:J
 
-    sub-long v2, v7, v0
+    sub-long v2, v8, v0
 
-    .line 1995
+    .line 2170
     .local v2, "spentTime":J
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
@@ -231,9 +231,9 @@
     :try_end_53
     .catch Ljava/lang/Exception; {:try_start_1e .. :try_end_53} :catch_15b
 
-    .line 2000
+    .line 2175
     .end local v2    # "spentTime":J
-    .end local v7    # "endTime":J
+    .end local v8    # "endTime":J
     :goto_53
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
@@ -247,18 +247,18 @@
 
     if-eqz v0, :cond_bc
 
-    .line 2001
+    .line 2176
     new-instance v6, Ljava/util/Date;
 
     invoke-direct {v6}, Ljava/util/Date;-><init>()V
 
-    .line 2002
+    .line 2177
     .local v6, "date":Ljava/util/Date;
     const/16 v0, 0xc8
 
     if-ne p1, v0, :cond_105
 
-    .line 2003
+    .line 2178
     const-string v0, "REDEEM"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -341,7 +341,7 @@
 
     invoke-static {v0, v1, v4}, Lcom/samsung/privilege/AppSetting;->LOG(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 2009
+    .line 2184
     .end local v6    # "date":Ljava/util/Date;
     :cond_bc
     :goto_bc
@@ -354,13 +354,13 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 2011
+    .line 2186
     if-nez p2, :cond_c9
 
-    .line 2012
+    .line 2187
     const-string p2, ""
 
-    .line 2015
+    .line 2190
     :cond_c9
     const-string v0, "<"
 
@@ -376,25 +376,25 @@
 
     invoke-virtual {v0, v1, v4}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v7
 
-    .line 2017
-    .local v9, "response_text_final":Ljava/lang/String;
+    .line 2192
+    .local v7, "response_text_final":Ljava/lang/String;
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;
 
-    invoke-direct {v1, p0, p1, v9}, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;-><init>(Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;ILjava/lang/String;)V
+    invoke-direct {v1, p0, p1, v7}, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler$1;-><init>(Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;ILjava/lang/String;)V
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 2169
+    .line 2344
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     # invokes: Lcom/samsung/privilege/activity/CampaignDetailActivity;->getPoints()V
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$9(Lcom/samsung/privilege/activity/CampaignDetailActivity;)V
 
-    .line 2170
+    .line 2345
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
@@ -419,18 +419,18 @@
     # invokes: Lcom/samsung/privilege/activity/CampaignDetailActivity;->getCampaign(ILcom/samsung/privilege/bean/NFCTag;)V
     invoke-static {v0, v1, v4}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$11(Lcom/samsung/privilege/activity/CampaignDetailActivity;ILcom/samsung/privilege/bean/NFCTag;)V
 
-    .line 2172
+    .line 2347
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$RedeemAsyncHttpResponseHandler;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$12(Lcom/samsung/privilege/activity/CampaignDetailActivity;Z)V
 
-    .line 2173
+    .line 2348
     return-void
 
-    .line 2005
-    .end local v9    # "response_text_final":Ljava/lang/String;
+    .line 2180
+    .end local v7    # "response_text_final":Ljava/lang/String;
     .restart local v6    # "date":Ljava/util/Date;
     :cond_105
     const-string v0, "REDEEM"
@@ -517,7 +517,7 @@
 
     goto/16 :goto_bc
 
-    .line 1996
+    .line 2171
     .end local v6    # "date":Ljava/util/Date;
     :catch_15b
     move-exception v0

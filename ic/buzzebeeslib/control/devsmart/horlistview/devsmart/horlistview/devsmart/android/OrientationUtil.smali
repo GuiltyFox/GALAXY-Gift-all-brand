@@ -248,9 +248,9 @@
 
     .line 113
     .restart local v0    # "retval":Landroid/view/animation/RotateAnimation;
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v4, 0x1f4
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/RotateAnimation;->setDuration(J)V
+    invoke-virtual {v0, v4, v5}, Landroid/view/animation/RotateAnimation;->setDuration(J)V
 
     .line 114
     invoke-virtual {v0, v3}, Landroid/view/animation/RotateAnimation;->setFillEnabled(Z)V

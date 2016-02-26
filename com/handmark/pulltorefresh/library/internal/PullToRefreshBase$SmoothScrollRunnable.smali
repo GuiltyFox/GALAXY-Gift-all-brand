@@ -93,43 +93,43 @@
 
 # virtual methods
 .method public run()V
-    .registers 10
+    .registers 11
 
     .prologue
-    const-wide/16 v7, 0x3e8
+    const-wide/16 v8, 0x3e8
 
     .line 1612
-    iget-wide v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mStartTime:J
+    iget-wide v4, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mStartTime:J
 
-    const-wide/16 v5, -0x1
+    const-wide/16 v6, -0x1
 
-    cmp-long v3, v3, v5
+    cmp-long v1, v4, v6
 
-    if-nez v3, :cond_20
+    if-nez v1, :cond_20
 
     .line 1613
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mStartTime:J
+    iput-wide v4, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mStartTime:J
 
     .line 1631
     :goto_10
-    iget-boolean v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mContinueRunning:Z
+    iget-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mContinueRunning:Z
 
-    if-eqz v3, :cond_58
+    if-eqz v1, :cond_58
 
-    iget v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mScrollToY:I
+    iget v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mScrollToY:I
 
     iget v4, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mCurrentY:I
 
-    if-eq v3, v4, :cond_58
+    if-eq v1, v4, :cond_58
 
     .line 1632
-    iget-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->this$0:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->this$0:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
 
-    invoke-static {v3, p0}, Lcom/handmark/pulltorefresh/library/internal/ViewCompat;->postOnAnimation(Landroid/view/View;Ljava/lang/Runnable;)V
+    invoke-static {v1, p0}, Lcom/handmark/pulltorefresh/library/internal/ViewCompat;->postOnAnimation(Landroid/view/View;Ljava/lang/Runnable;)V
 
     .line 1638
     :cond_1f
@@ -140,43 +140,43 @@
     :cond_20
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iget-wide v5, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mStartTime:J
+    iget-wide v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mStartTime:J
 
-    sub-long/2addr v3, v5
+    sub-long/2addr v4, v6
 
-    mul-long/2addr v3, v7
+    mul-long/2addr v4, v8
 
-    iget-wide v5, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mDuration:J
+    iget-wide v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mDuration:J
 
-    div-long v1, v3, v5
+    div-long v2, v4, v6
 
     .line 1622
-    .local v1, "normalizedTime":J
-    invoke-static {v1, v2, v7, v8}, Ljava/lang/Math;->min(JJ)J
+    .local v2, "normalizedTime":J
+    invoke-static {v2, v3, v8, v9}, Ljava/lang/Math;->min(JJ)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
-    invoke-static {v3, v4, v5, v6}, Ljava/lang/Math;->max(JJ)J
+    invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->max(JJ)J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 1624
-    iget v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mScrollFromY:I
+    iget v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mScrollFromY:I
 
     iget v4, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mScrollToY:I
 
-    sub-int/2addr v3, v4
+    sub-int/2addr v1, v4
 
-    int-to-float v3, v3
+    int-to-float v1, v1
 
     .line 1625
     iget-object v4, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mInterpolator:Landroid/view/animation/Interpolator;
 
-    long-to-float v5, v1
+    long-to-float v5, v2
 
     const/high16 v6, 0x447a0000
 
@@ -187,41 +187,41 @@
     move-result v4
 
     .line 1624
-    mul-float/2addr v3, v4
+    mul-float/2addr v1, v4
 
-    invoke-static {v3}, Ljava/lang/Math;->round(F)I
+    invoke-static {v1}, Ljava/lang/Math;->round(F)I
 
     move-result v0
 
     .line 1626
     .local v0, "deltaY":I
-    iget v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mScrollFromY:I
+    iget v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mScrollFromY:I
 
-    sub-int/2addr v3, v0
+    sub-int/2addr v1, v0
 
-    iput v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mCurrentY:I
+    iput v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mCurrentY:I
 
     .line 1627
-    iget-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->this$0:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->this$0:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
 
     iget v4, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mCurrentY:I
 
-    invoke-virtual {v3, v4}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setHeaderScroll(I)V
+    invoke-virtual {v1, v4}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setHeaderScroll(I)V
 
     goto :goto_10
 
     .line 1634
     .end local v0    # "deltaY":I
-    .end local v1    # "normalizedTime":J
+    .end local v2    # "normalizedTime":J
     :cond_58
-    iget-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mListener:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mListener:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;
 
-    if-eqz v3, :cond_1f
+    if-eqz v1, :cond_1f
 
     .line 1635
-    iget-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mListener:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mListener:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;
 
-    invoke-interface {v3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;->onSmoothScrollFinished()V
+    invoke-interface {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;->onSmoothScrollFinished()V
 
     goto :goto_1f
 .end method

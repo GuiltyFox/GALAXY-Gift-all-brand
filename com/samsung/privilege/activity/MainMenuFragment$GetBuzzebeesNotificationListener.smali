@@ -23,7 +23,7 @@
     .registers 2
 
     .prologue
-    .line 2069
+    .line 2084
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-direct {p0}, Lcom/samsung/privilege/util/http/HttpRQListener;-><init>()V
@@ -35,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 2069
+    .line 2084
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     return-object v0
@@ -50,7 +50,7 @@
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 2072
+    .line 2087
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -82,7 +82,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2073
+    .line 2088
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -91,7 +91,7 @@
 
     if-eqz v0, :cond_36
 
-    .line 2074
+    .line 2089
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetBuzzebeesNotificationListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -104,7 +104,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 2128
+    .line 2143
     :cond_36
     return-void
 .end method
@@ -115,10 +115,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 2132
+    .line 2147
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onFileNotFoundException(Ljava/io/FileNotFoundException;Ljava/lang/Object;)V
 
-    .line 2133
+    .line 2148
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -144,7 +144,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2135
+    .line 2150
     return-void
 .end method
 
@@ -154,10 +154,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 2139
+    .line 2154
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onIOException(Ljava/io/IOException;Ljava/lang/Object;)V
 
-    .line 2140
+    .line 2155
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -183,7 +183,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2142
+    .line 2157
     return-void
 .end method
 
@@ -193,10 +193,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 2146
+    .line 2161
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onMalformedURLException(Ljava/net/MalformedURLException;Ljava/lang/Object;)V
 
-    .line 2147
+    .line 2162
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -222,6 +222,6 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2149
+    .line 2164
     return-void
 .end method

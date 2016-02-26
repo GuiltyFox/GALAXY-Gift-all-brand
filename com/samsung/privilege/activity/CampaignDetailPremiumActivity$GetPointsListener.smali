@@ -23,7 +23,7 @@
     .registers 2
 
     .prologue
-    .line 898
+    .line 899
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetPointsListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     invoke-direct {p0}, Lcom/samsung/privilege/util/http/HttpRQListener;-><init>()V
@@ -35,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 898
+    .line 899
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetPointsListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     return-object v0
@@ -50,7 +50,7 @@
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 901
+    .line 902
     const-string v4, "campaign.detail"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -79,42 +79,42 @@
 
     invoke-static {v4, v5}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 902
+    .line 903
     const/16 v4, 0xc8
 
     if-ne p1, v4, :cond_5c
 
-    .line 904
+    .line 905
     :try_start_22
     invoke-static {p2}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    .line 905
-    .local v1, "points":J
+    .line 906
+    .local v2, "points":J
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetPointsListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     invoke-virtual {v4}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v4
 
-    invoke-static {v4, v1, v2}, Lcom/samsung/privilege/UserLogin;->SetPoints(Landroid/content/Context;J)Z
+    invoke-static {v4, v2, v3}, Lcom/samsung/privilege/UserLogin;->SetPoints(Landroid/content/Context;J)Z
 
-    .line 907
+    .line 908
     new-instance v0, Ljava/text/DecimalFormat;
 
     const-string v4, "#,###,###"
 
     invoke-direct {v0, v4}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;)V
 
-    .line 908
+    .line 909
     .local v0, "formatter":Ljava/text/DecimalFormat;
-    invoke-virtual {v0, v1, v2}, Ljava/text/DecimalFormat;->format(J)Ljava/lang/String;
+    invoke-virtual {v0, v2, v3}, Ljava/text/DecimalFormat;->format(J)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    .line 910
-    .local v3, "strPoints":Ljava/lang/String;
+    .line 911
+    .local v1, "strPoints":Ljava/lang/String;
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetPointsListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->gTvPoint:Landroid/widget/TextView;
@@ -124,12 +124,12 @@
 
     if-nez v4, :cond_52
 
-    .line 911
+    .line 912
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetPointsListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetPointsListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
-    const v6, 0x7f07012a
+    const v6, 0x7f0c012a
 
     invoke-virtual {v4, v6}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->findViewById(I)Landroid/view/View;
 
@@ -139,27 +139,27 @@
 
     invoke-static {v5, v4}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->access$1(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;Landroid/widget/TextView;)V
 
-    .line 914
+    .line 915
     :cond_52
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetPointsListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     new-instance v5, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetPointsListener$1;
 
-    invoke-direct {v5, p0, v3}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetPointsListener$1;-><init>(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetPointsListener;Ljava/lang/String;)V
+    invoke-direct {v5, p0, v1}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetPointsListener$1;-><init>(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetPointsListener;Ljava/lang/String;)V
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->runOnUiThread(Ljava/lang/Runnable;)V
     :try_end_5c
     .catch Ljava/lang/Exception; {:try_start_22 .. :try_end_5c} :catch_5d
 
-    .line 923
+    .line 924
     .end local v0    # "formatter":Ljava/text/DecimalFormat;
-    .end local v1    # "points":J
-    .end local v3    # "strPoints":Ljava/lang/String;
+    .end local v1    # "strPoints":Ljava/lang/String;
+    .end local v2    # "points":J
     :cond_5c
     :goto_5c
     return-void
 
-    .line 919
+    .line 920
     :catch_5d
     move-exception v4
 
@@ -172,10 +172,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 927
+    .line 928
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onFileNotFoundException(Ljava/io/FileNotFoundException;Ljava/lang/Object;)V
 
-    .line 928
+    .line 929
     const-string v0, "campaign.detail"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -198,7 +198,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 930
+    .line 931
     return-void
 .end method
 
@@ -208,10 +208,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 934
+    .line 935
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onIOException(Ljava/io/IOException;Ljava/lang/Object;)V
 
-    .line 935
+    .line 936
     const-string v0, "campaign.detail"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -234,7 +234,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 937
+    .line 938
     return-void
 .end method
 
@@ -244,10 +244,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 941
+    .line 942
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onMalformedURLException(Ljava/net/MalformedURLException;Ljava/lang/Object;)V
 
-    .line 942
+    .line 943
     const-string v0, "campaign.detail"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -270,6 +270,6 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 944
+    .line 945
     return-void
 .end method

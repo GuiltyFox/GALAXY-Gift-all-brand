@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$13$2;->val$layoutButton:Landroid/widget/LinearLayout;
 
-    .line 2076
+    .line 2077
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,13 +45,13 @@
     .registers 3
 
     .prologue
-    .line 2078
+    .line 2079
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$13$2;->val$layoutButton:Landroid/widget/LinearLayout;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 2079
+    .line 2080
     return-void
 .end method

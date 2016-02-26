@@ -6,6 +6,8 @@
 # instance fields
 .field public header:Ljava/lang/String;
 
+.field public history_VoucherExpireDate:J
+
 .field public history_agencyid:Ljava/lang/String;
 
 .field public history_agencyname:Ljava/lang/String;
@@ -68,7 +70,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 38
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 7
@@ -182,7 +184,12 @@
     .line 36
     iput-boolean v1, p0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_play_animation:Z
 
-    .line 40
+    .line 37
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_VoucherExpireDate:J
+
+    .line 41
     return-void
 .end method
 
@@ -193,12 +200,12 @@
     .param p3, "title2"    # Ljava/lang/String;
 
     .prologue
-    .line 43
+    .line 44
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/samsung/privilege/bean/MainMenuItemModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 44
+    .line 45
     return-void
 .end method
 
@@ -212,7 +219,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 46
+    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 7
@@ -326,24 +333,29 @@
     .line 36
     iput-boolean v1, p0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_play_animation:Z
 
-    .line 47
+    .line 37
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_VoucherExpireDate:J
+
+    .line 48
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/samsung/privilege/bean/MainMenuItemModel;->type:I
 
-    .line 48
+    .line 49
     iput-object p1, p0, Lcom/samsung/privilege/bean/MainMenuItemModel;->name:Ljava/lang/String;
 
-    .line 49
+    .line 50
     iput-object p2, p0, Lcom/samsung/privilege/bean/MainMenuItemModel;->title:Ljava/lang/String;
 
-    .line 50
+    .line 51
     iput-object p3, p0, Lcom/samsung/privilege/bean/MainMenuItemModel;->title2:Ljava/lang/String;
 
-    .line 51
+    .line 52
     iput p4, p0, Lcom/samsung/privilege/bean/MainMenuItemModel;->newCount:I
 
-    .line 52
+    .line 53
     return-void
 .end method
 
@@ -354,9 +366,9 @@
     .param p1, "newCount"    # I
 
     .prologue
-    .line 55
+    .line 56
     iput p1, p0, Lcom/samsung/privilege/bean/MainMenuItemModel;->newCount:I
 
-    .line 56
+    .line 57
     return-void
 .end method

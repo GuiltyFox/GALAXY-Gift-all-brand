@@ -280,7 +280,7 @@
 .end method
 
 .method static synthetic access$3(Lcom/facebook/AppEventsLogger;JLjava/lang/String;)V
-    .registers 4
+    .registers 5
 
     .prologue
     .line 339
@@ -290,7 +290,7 @@
 .end method
 
 .method static synthetic access$4(Lcom/facebook/AppEventsLogger;J)V
-    .registers 3
+    .registers 4
 
     .prologue
     .line 343
@@ -1789,30 +1789,30 @@
 .end method
 
 .method private logAppSessionResumeEvent(JLjava/lang/String;)V
-    .registers 10
+    .registers 11
     .param p1, "eventTime"    # J
     .param p3, "sourceApplicationInfo"    # Ljava/lang/String;
 
     .prologue
     .line 340
-    sget-object v0, Lcom/facebook/AppEventsLogger;->applicationContext:Landroid/content/Context;
+    sget-object v1, Lcom/facebook/AppEventsLogger;->applicationContext:Landroid/content/Context;
 
-    iget-object v1, p0, Lcom/facebook/AppEventsLogger;->accessTokenAppId:Lcom/facebook/AppEventsLogger$AccessTokenAppIdPair;
+    iget-object v2, p0, Lcom/facebook/AppEventsLogger;->accessTokenAppId:Lcom/facebook/AppEventsLogger$AccessTokenAppIdPair;
 
-    move-object v2, p0
+    move-object v3, p0
 
-    move-wide v3, p1
+    move-wide v4, p1
 
-    move-object v5, p3
+    move-object v6, p3
 
-    invoke-static/range {v0 .. v5}, Lcom/facebook/AppEventsLogger$PersistedAppSessionInfo;->onResume(Landroid/content/Context;Lcom/facebook/AppEventsLogger$AccessTokenAppIdPair;Lcom/facebook/AppEventsLogger;JLjava/lang/String;)V
+    invoke-static/range {v1 .. v6}, Lcom/facebook/AppEventsLogger$PersistedAppSessionInfo;->onResume(Landroid/content/Context;Lcom/facebook/AppEventsLogger$AccessTokenAppIdPair;Lcom/facebook/AppEventsLogger;JLjava/lang/String;)V
 
     .line 341
     return-void
 .end method
 
 .method private logAppSessionSuspendEvent(J)V
-    .registers 5
+    .registers 6
     .param p1, "eventTime"    # J
 
     .prologue
@@ -2252,7 +2252,7 @@
 .end method
 
 .method public logEvent(Ljava/lang/String;D)V
-    .registers 5
+    .registers 6
     .param p1, "eventName"    # Ljava/lang/String;
     .param p2, "valueToSum"    # D
 
@@ -2319,7 +2319,7 @@
 .end method
 
 .method public logPurchase(Ljava/math/BigDecimal;Ljava/util/Currency;Landroid/os/Bundle;)V
-    .registers 7
+    .registers 8
     .param p1, "purchaseAmount"    # Ljava/math/BigDecimal;
     .param p2, "currency"    # Ljava/util/Currency;
     .param p3, "parameters"    # Landroid/os/Bundle;
@@ -2374,9 +2374,9 @@
 
     invoke-virtual {p1}, Ljava/math/BigDecimal;->doubleValue()D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-virtual {p0, v0, v1, v2, p3}, Lcom/facebook/AppEventsLogger;->logEvent(Ljava/lang/String;DLandroid/os/Bundle;)V
+    invoke-virtual {p0, v0, v2, v3, p3}, Lcom/facebook/AppEventsLogger;->logEvent(Ljava/lang/String;DLandroid/os/Bundle;)V
 
     .line 545
     invoke-static {}, Lcom/facebook/AppEventsLogger;->eagerFlush()V

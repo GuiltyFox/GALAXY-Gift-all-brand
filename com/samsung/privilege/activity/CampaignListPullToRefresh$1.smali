@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$1;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
-    .line 255
+    .line 257
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
 
     const-wide/16 v2, 0x0
 
-    .line 258
+    .line 260
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$1;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->TAG:Ljava/lang/String;
@@ -57,34 +57,34 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 259
+    .line 261
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$1;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$17(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;I)V
 
-    .line 260
+    .line 262
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$1;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     invoke-static {v0, v4}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$1(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;Ljava/util/ArrayList;)V
 
-    .line 261
+    .line 263
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$1;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     invoke-static {v0, v4}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$18(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;)V
 
-    .line 263
+    .line 265
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$1;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$11(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;D)V
 
-    .line 264
+    .line 266
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$1;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$12(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;D)V
 
-    .line 266
+    .line 268
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$1;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     const/4 v1, 0x1
@@ -99,6 +99,6 @@
     # invokes: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->loadCampaign(ZLjava/lang/String;)V
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$16(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;ZLjava/lang/String;)V
 
-    .line 267
+    .line 269
     return-void
 .end method

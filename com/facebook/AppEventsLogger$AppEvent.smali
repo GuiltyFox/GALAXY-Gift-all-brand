@@ -62,7 +62,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Double;Landroid/os/Bundle;Z)V
-    .registers 18
+    .registers 20
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "eventName"    # Ljava/lang/String;
     .param p3, "valueToSum"    # Ljava/lang/Double;
@@ -75,10 +75,14 @@
 
     .line 1204
     :try_start_3
-    invoke-direct {p0, p2}, Lcom/facebook/AppEventsLogger$AppEvent;->validateIdentifier(Ljava/lang/String;)V
+    move-object/from16 v0, p2
+
+    invoke-direct {p0, v0}, Lcom/facebook/AppEventsLogger$AppEvent;->validateIdentifier(Ljava/lang/String;)V
 
     .line 1206
-    iput-object p2, p0, Lcom/facebook/AppEventsLogger$AppEvent;->name:Ljava/lang/String;
+    move-object/from16 v0, p2
+
+    iput-object v0, p0, Lcom/facebook/AppEventsLogger$AppEvent;->name:Ljava/lang/String;
 
     .line 1207
     move/from16 v0, p5
@@ -86,306 +90,308 @@
     iput-boolean v0, p0, Lcom/facebook/AppEventsLogger$AppEvent;->isImplicit:Z
 
     .line 1208
-    new-instance v6, Lorg/json/JSONObject;
+    new-instance v7, Lorg/json/JSONObject;
 
-    invoke-direct {v6}, Lorg/json/JSONObject;-><init>()V
+    invoke-direct {v7}, Lorg/json/JSONObject;-><init>()V
 
-    iput-object v6, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
+    iput-object v7, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
 
     .line 1210
-    iget-object v6, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
+    iget-object v7, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
 
-    const-string v7, "_eventName"
+    const-string v8, "_eventName"
 
-    invoke-virtual {v6, v7, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    move-object/from16 v0, p2
+
+    invoke-virtual {v7, v8, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     .line 1211
-    iget-object v6, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
+    iget-object v7, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
 
-    const-string v7, "_logTime"
+    const-string v8, "_logTime"
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v8
+    move-result-wide v10
 
-    const-wide/16 v10, 0x3e8
+    const-wide/16 v12, 0x3e8
 
-    div-long/2addr v8, v10
+    div-long/2addr v10, v12
 
-    invoke-virtual {v6, v7, v8, v9}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
+    invoke-virtual {v7, v8, v10, v11}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
 
     .line 1212
-    iget-object v6, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
+    iget-object v7, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
 
-    const-string v7, "_ui"
+    const-string v8, "_ui"
 
     invoke-static {p1}, Lcom/facebook/internal/Utility;->getActivityName(Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v6, v7, v8}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    invoke-virtual {v7, v8, v9}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     .line 1214
-    if-eqz p3, :cond_40
+    if-eqz p3, :cond_46
 
     .line 1215
-    iget-object v6, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
+    iget-object v7, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
 
-    const-string v7, "_valueToSum"
+    const-string v8, "_valueToSum"
 
-    invoke-virtual {p3}, Ljava/lang/Double;->doubleValue()D
+    invoke-virtual/range {p3 .. p3}, Ljava/lang/Double;->doubleValue()D
 
-    move-result-wide v8
+    move-result-wide v10
 
-    invoke-virtual {v6, v7, v8, v9}, Lorg/json/JSONObject;->put(Ljava/lang/String;D)Lorg/json/JSONObject;
+    invoke-virtual {v7, v8, v10, v11}, Lorg/json/JSONObject;->put(Ljava/lang/String;D)Lorg/json/JSONObject;
 
     .line 1218
-    :cond_40
-    iget-boolean v6, p0, Lcom/facebook/AppEventsLogger$AppEvent;->isImplicit:Z
+    :cond_46
+    iget-boolean v7, p0, Lcom/facebook/AppEventsLogger$AppEvent;->isImplicit:Z
 
-    if-eqz v6, :cond_4d
+    if-eqz v7, :cond_53
 
     .line 1219
-    iget-object v6, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
+    iget-object v7, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
 
-    const-string v7, "_implicitlyLogged"
+    const-string v8, "_implicitlyLogged"
 
-    const-string v8, "1"
+    const-string v9, "1"
 
-    invoke-virtual {v6, v7, v8}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    invoke-virtual {v7, v8, v9}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     .line 1222
-    :cond_4d
+    :cond_53
     invoke-static {}, Lcom/facebook/Settings;->getAppVersion()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 1223
-    .local v1, "appVersion":Ljava/lang/String;
-    if-eqz v1, :cond_5a
+    .local v2, "appVersion":Ljava/lang/String;
+    if-eqz v2, :cond_60
 
     .line 1224
-    iget-object v6, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
+    iget-object v7, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
 
-    const-string v7, "_appVersion"
+    const-string v8, "_appVersion"
 
-    invoke-virtual {v6, v7, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    invoke-virtual {v7, v8, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     .line 1227
-    :cond_5a
-    if-eqz p4, :cond_6a
+    :cond_60
+    if-eqz p4, :cond_70
 
     .line 1228
     invoke-virtual/range {p4 .. p4}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-interface {v6}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v7}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v6
+    move-result-object v7
 
-    :goto_64
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+    :goto_6a
+    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v7
+    move-result v8
 
-    if-nez v7, :cond_84
+    if-nez v8, :cond_8a
 
     .line 1246
-    :cond_6a
-    iget-boolean v6, p0, Lcom/facebook/AppEventsLogger$AppEvent;->isImplicit:Z
+    :cond_70
+    iget-boolean v7, p0, Lcom/facebook/AppEventsLogger$AppEvent;->isImplicit:Z
 
-    if-nez v6, :cond_83
+    if-nez v7, :cond_89
 
     .line 1247
-    sget-object v6, Lcom/facebook/LoggingBehavior;->APP_EVENTS:Lcom/facebook/LoggingBehavior;
+    sget-object v7, Lcom/facebook/LoggingBehavior;->APP_EVENTS:Lcom/facebook/LoggingBehavior;
 
-    const-string v7, "AppEvents"
+    const-string v8, "AppEvents"
 
     .line 1248
-    const-string v8, "Created app event \'%s\'"
+    const-string v9, "Created app event \'%s\'"
 
-    const/4 v9, 0x1
+    const/4 v10, 0x1
 
-    new-array v9, v9, [Ljava/lang/Object;
+    new-array v10, v10, [Ljava/lang/Object;
 
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
-    iget-object v11, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
+    iget-object v12, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
 
-    invoke-virtual {v11}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+    invoke-virtual {v12}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v12
 
-    aput-object v11, v9, v10
+    aput-object v12, v10, v11
 
     .line 1247
-    invoke-static {v6, v7, v8, v9}, Lcom/facebook/internal/Logger;->log(Lcom/facebook/LoggingBehavior;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v7, v8, v9, v10}, Lcom/facebook/internal/Logger;->log(Lcom/facebook/LoggingBehavior;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 1263
-    .end local v1    # "appVersion":Ljava/lang/String;
-    :cond_83
-    :goto_83
+    .end local v2    # "appVersion":Ljava/lang/String;
+    :cond_89
+    :goto_89
     return-void
 
     .line 1228
-    .restart local v1    # "appVersion":Ljava/lang/String;
-    :cond_84
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .restart local v2    # "appVersion":Ljava/lang/String;
+    :cond_8a
+    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v5
 
-    check-cast v4, Ljava/lang/String;
+    check-cast v5, Ljava/lang/String;
 
     .line 1230
-    .local v4, "key":Ljava/lang/String;
-    invoke-direct {p0, v4}, Lcom/facebook/AppEventsLogger$AppEvent;->validateIdentifier(Ljava/lang/String;)V
+    .local v5, "key":Ljava/lang/String;
+    invoke-direct {p0, v5}, Lcom/facebook/AppEventsLogger$AppEvent;->validateIdentifier(Ljava/lang/String;)V
 
     .line 1232
     move-object/from16 v0, p4
 
-    invoke-virtual {v0, v4}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v5}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v6
 
     .line 1233
-    .local v5, "value":Ljava/lang/Object;
-    instance-of v7, v5, Ljava/lang/String;
+    .local v6, "value":Ljava/lang/Object;
+    instance-of v8, v6, Ljava/lang/String;
 
-    if-nez v7, :cond_c8
+    if-nez v8, :cond_ce
 
-    instance-of v7, v5, Ljava/lang/Number;
+    instance-of v8, v6, Ljava/lang/Number;
 
-    if-nez v7, :cond_c8
+    if-nez v8, :cond_ce
 
     .line 1234
-    new-instance v6, Lcom/facebook/FacebookException;
+    new-instance v7, Lcom/facebook/FacebookException;
 
     .line 1236
-    const-string v7, "Parameter value \'%s\' for key \'%s\' should be a string or a numeric type."
+    const-string v8, "Parameter value \'%s\' for key \'%s\' should be a string or a numeric type."
 
-    const/4 v8, 0x2
-
-    new-array v8, v8, [Ljava/lang/Object;
-
-    const/4 v9, 0x0
-
-    .line 1237
-    aput-object v5, v8, v9
-
-    const/4 v9, 0x1
-
-    .line 1238
-    aput-object v4, v8, v9
-
-    .line 1235
-    invoke-static {v7, v8}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v7
-
-    .line 1234
-    invoke-direct {v6, v7}, Lcom/facebook/FacebookException;-><init>(Ljava/lang/String;)V
-
-    throw v6
-    :try_end_b0
-    .catch Lorg/json/JSONException; {:try_start_3 .. :try_end_b0} :catch_b0
-    .catch Lcom/facebook/FacebookException; {:try_start_3 .. :try_end_b0} :catch_d2
-
-    .line 1250
-    .end local v1    # "appVersion":Ljava/lang/String;
-    .end local v4    # "key":Ljava/lang/String;
-    .end local v5    # "value":Ljava/lang/Object;
-    :catch_b0
-    move-exception v3
-
-    .line 1253
-    .local v3, "jsonException":Lorg/json/JSONException;
-    sget-object v6, Lcom/facebook/LoggingBehavior;->APP_EVENTS:Lcom/facebook/LoggingBehavior;
-
-    const-string v7, "AppEvents"
-
-    .line 1254
-    const-string v8, "JSON encoding for app event failed: \'%s\'"
-
-    const/4 v9, 0x1
+    const/4 v9, 0x2
 
     new-array v9, v9, [Ljava/lang/Object;
 
     const/4 v10, 0x0
 
-    invoke-virtual {v3}, Lorg/json/JSONException;->toString()Ljava/lang/String;
+    .line 1237
+    aput-object v6, v9, v10
 
-    move-result-object v11
+    const/4 v10, 0x1
 
-    aput-object v11, v9, v10
+    .line 1238
+    aput-object v5, v9, v10
 
-    .line 1253
-    invoke-static {v6, v7, v8, v9}, Lcom/facebook/internal/Logger;->log(Lcom/facebook/LoggingBehavior;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 1255
-    const/4 v6, 0x0
-
-    iput-object v6, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
-
-    goto :goto_83
-
-    .line 1242
-    .end local v3    # "jsonException":Lorg/json/JSONException;
-    .restart local v1    # "appVersion":Ljava/lang/String;
-    .restart local v4    # "key":Ljava/lang/String;
-    .restart local v5    # "value":Ljava/lang/Object;
-    :cond_c8
-    :try_start_c8
-    iget-object v7, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
-
-    invoke-virtual {v5}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    .line 1235
+    invoke-static {v8, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v8
 
-    invoke-virtual {v7, v4, v8}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-    :try_end_d1
-    .catch Lorg/json/JSONException; {:try_start_c8 .. :try_end_d1} :catch_b0
-    .catch Lcom/facebook/FacebookException; {:try_start_c8 .. :try_end_d1} :catch_d2
+    .line 1234
+    invoke-direct {v7, v8}, Lcom/facebook/FacebookException;-><init>(Ljava/lang/String;)V
 
-    goto :goto_64
+    throw v7
+    :try_end_b6
+    .catch Lorg/json/JSONException; {:try_start_3 .. :try_end_b6} :catch_b6
+    .catch Lcom/facebook/FacebookException; {:try_start_3 .. :try_end_b6} :catch_d8
+
+    .line 1250
+    .end local v2    # "appVersion":Ljava/lang/String;
+    .end local v5    # "key":Ljava/lang/String;
+    .end local v6    # "value":Ljava/lang/Object;
+    :catch_b6
+    move-exception v4
+
+    .line 1253
+    .local v4, "jsonException":Lorg/json/JSONException;
+    sget-object v7, Lcom/facebook/LoggingBehavior;->APP_EVENTS:Lcom/facebook/LoggingBehavior;
+
+    const-string v8, "AppEvents"
+
+    .line 1254
+    const-string v9, "JSON encoding for app event failed: \'%s\'"
+
+    const/4 v10, 0x1
+
+    new-array v10, v10, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    invoke-virtual {v4}, Lorg/json/JSONException;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    aput-object v12, v10, v11
+
+    .line 1253
+    invoke-static {v7, v8, v9, v10}, Lcom/facebook/internal/Logger;->log(Lcom/facebook/LoggingBehavior;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 1255
+    const/4 v7, 0x0
+
+    iput-object v7, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
+
+    goto :goto_89
+
+    .line 1242
+    .end local v4    # "jsonException":Lorg/json/JSONException;
+    .restart local v2    # "appVersion":Ljava/lang/String;
+    .restart local v5    # "key":Ljava/lang/String;
+    .restart local v6    # "value":Ljava/lang/Object;
+    :cond_ce
+    :try_start_ce
+    iget-object v8, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
+
+    invoke-virtual {v6}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v5, v9}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    :try_end_d7
+    .catch Lorg/json/JSONException; {:try_start_ce .. :try_end_d7} :catch_b6
+    .catch Lcom/facebook/FacebookException; {:try_start_ce .. :try_end_d7} :catch_d8
+
+    goto :goto_6a
 
     .line 1257
-    .end local v1    # "appVersion":Ljava/lang/String;
-    .end local v4    # "key":Ljava/lang/String;
-    .end local v5    # "value":Ljava/lang/Object;
-    :catch_d2
-    move-exception v2
+    .end local v2    # "appVersion":Ljava/lang/String;
+    .end local v5    # "key":Ljava/lang/String;
+    .end local v6    # "value":Ljava/lang/Object;
+    :catch_d8
+    move-exception v3
 
     .line 1259
-    .local v2, "e":Lcom/facebook/FacebookException;
-    sget-object v6, Lcom/facebook/LoggingBehavior;->APP_EVENTS:Lcom/facebook/LoggingBehavior;
+    .local v3, "e":Lcom/facebook/FacebookException;
+    sget-object v7, Lcom/facebook/LoggingBehavior;->APP_EVENTS:Lcom/facebook/LoggingBehavior;
 
-    const-string v7, "AppEvents"
+    const-string v8, "AppEvents"
 
     .line 1260
-    const-string v8, "Invalid app event name or parameter:"
+    const-string v9, "Invalid app event name or parameter:"
 
-    const/4 v9, 0x1
+    const/4 v10, 0x1
 
-    new-array v9, v9, [Ljava/lang/Object;
+    new-array v10, v10, [Ljava/lang/Object;
 
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
-    invoke-virtual {v2}, Lcom/facebook/FacebookException;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/facebook/FacebookException;->toString()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v12
 
-    aput-object v11, v9, v10
+    aput-object v12, v10, v11
 
     .line 1259
-    invoke-static {v6, v7, v8, v9}, Lcom/facebook/internal/Logger;->log(Lcom/facebook/LoggingBehavior;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v7, v8, v9, v10}, Lcom/facebook/internal/Logger;->log(Lcom/facebook/LoggingBehavior;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 1261
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    iput-object v6, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
+    iput-object v7, p0, Lcom/facebook/AppEventsLogger$AppEvent;->jsonObject:Lorg/json/JSONObject;
 
-    goto :goto_83
+    goto :goto_89
 .end method
 
 .method private constructor <init>(Ljava/lang/String;Z)V

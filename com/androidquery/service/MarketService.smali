@@ -1072,7 +1072,7 @@
 .end method
 
 .method public checkVersion()V
-    .registers 6
+    .registers 7
 
     .prologue
     .line 254
@@ -1125,9 +1125,9 @@
 
     check-cast v2, Lcom/androidquery/callback/AjaxCallback;
 
-    iget-wide v3, p0, Lcom/androidquery/service/MarketService;->expire:J
+    iget-wide v4, p0, Lcom/androidquery/service/MarketService;->expire:J
 
-    invoke-virtual {v2, v3, v4}, Lcom/androidquery/callback/AjaxCallback;->expire(J)Ljava/lang/Object;
+    invoke-virtual {v2, v4, v5}, Lcom/androidquery/callback/AjaxCallback;->expire(J)Ljava/lang/Object;
 
     .line 259
     iget-object v2, p0, Lcom/androidquery/service/MarketService;->aq:Lcom/androidquery/AQuery;
@@ -1153,7 +1153,7 @@
 .end method
 
 .method public expire(J)Lcom/androidquery/service/MarketService;
-    .registers 3
+    .registers 4
     .param p1, "expire"    # J
 
     .prologue

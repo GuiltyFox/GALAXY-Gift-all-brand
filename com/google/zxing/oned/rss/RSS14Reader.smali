@@ -909,23 +909,23 @@
 
     .prologue
     .line 116
-    const-wide/32 v9, 0x453af5
+    const-wide/32 v10, 0x453af5
 
     invoke-virtual {p0}, Lcom/google/zxing/oned/rss/Pair;->getValue()I
 
-    move-result v11
+    move-result v9
 
-    int-to-long v11, v11
+    int-to-long v12, v9
 
-    mul-long/2addr v9, v11
+    mul-long/2addr v10, v12
 
     invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/oned/rss/Pair;->getValue()I
 
-    move-result v11
+    move-result v9
 
-    int-to-long v11, v11
+    int-to-long v12, v9
 
-    add-long v6, v9, v11
+    add-long v6, v10, v12
 
     .line 117
     .local v6, "symbolValue":J

@@ -15,7 +15,7 @@
 .end method
 
 .method public static initialPointUI(JLandroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;)V
-    .registers 28
+    .registers 29
     .param p0, "points"    # J
     .param p2, "imgCash1"    # Landroid/widget/ImageView;
     .param p3, "imgCash2"    # Landroid/widget/ImageView;

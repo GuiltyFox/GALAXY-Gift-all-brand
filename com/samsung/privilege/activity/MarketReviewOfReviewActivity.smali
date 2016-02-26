@@ -591,7 +591,7 @@
 
     move-result-object v2
 
-    const v5, 0x7f030100
+    const v5, 0x7f030102
 
     const/4 v6, 0x0
 
@@ -1093,7 +1093,7 @@
 
     const/4 v5, 0x0
 
-    const v6, 0x7f020315
+    const v6, 0x7f020317
 
     const/4 v7, 0x0
 
@@ -1138,7 +1138,7 @@
 
     const/4 v8, 0x0
 
-    const v9, 0x7f02039f
+    const v9, 0x7f0203a7
 
     const/4 v10, 0x0
 
@@ -1241,13 +1241,13 @@
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->paramMarketReview:Lcom/samsung/privilege/bean/MarketReview;
 
-    iget-wide v5, v2, Lcom/samsung/privilege/bean/MarketReview;->CreatedTime:J
+    iget-wide v6, v2, Lcom/samsung/privilege/bean/MarketReview;->CreatedTime:J
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v2
 
-    invoke-static {v5, v6, v2}, Lic/buzzebeeslib/util/BBUtil;->CDateToTime(JLandroid/content/Context;)Ljava/lang/String;
+    invoke-static {v6, v7, v2}, Lic/buzzebeeslib/util/BBUtil;->CDateToTime(JLandroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -1407,7 +1407,7 @@
     invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout;->setEnabled(Z)V
 
     .line 603
-    const v2, 0x7f0202e2
+    const v2, 0x7f0202e4
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->getApplicationContext()Landroid/content/Context;
 
@@ -1503,7 +1503,7 @@
 
     move-result-object v2
 
-    const v5, 0x7f0300ff
+    const v5, 0x7f030101
 
     const/4 v6, 0x0
 
@@ -1513,7 +1513,7 @@
 
     .line 624
     .local v13, "headerViewPrevious":Landroid/view/View;
-    const v2, 0x7f0701ff
+    const v2, 0x7f0c01ff
 
     invoke-virtual {v13, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1526,7 +1526,7 @@
     iput-object v2, v0, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->gLayoutRootPrevious:Landroid/widget/RelativeLayout;
 
     .line 625
-    const v2, 0x7f070200
+    const v2, 0x7f0c0200
 
     invoke-virtual {v13, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1539,7 +1539,7 @@
     iput-object v2, v0, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->gIvLoadingPrevious:Landroid/widget/ImageView;
 
     .line 626
-    const v2, 0x7f070201
+    const v2, 0x7f0c0201
 
     invoke-virtual {v13, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1552,7 +1552,7 @@
     iput-object v2, v0, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->gPbLoadingPrevious:Landroid/widget/ProgressBar;
 
     .line 627
-    const v2, 0x7f070202
+    const v2, 0x7f0c0202
 
     invoke-virtual {v13, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1601,7 +1601,7 @@
 
     invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const v6, 0x7f0a010a
+    const v6, 0x7f09010a
 
     move-object/from16 v0, p0
 
@@ -1652,7 +1652,7 @@
 
     move-result-object v2
 
-    const v5, 0x7f0300fe
+    const v5, 0x7f030100
 
     const/4 v6, 0x0
 
@@ -1662,7 +1662,7 @@
 
     .line 649
     .local v11, "footerViewReview":Landroid/view/View;
-    const v2, 0x7f0701fd
+    const v2, 0x7f0c01fd
 
     invoke-virtual {v11, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1675,7 +1675,7 @@
     iput-object v2, v0, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->gTxtPostComment:Landroid/widget/TextView;
 
     .line 650
-    const v2, 0x7f0701fe
+    const v2, 0x7f0c01fe
 
     invoke-virtual {v11, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1753,7 +1753,7 @@
     invoke-virtual {v2, v5}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 679
-    const v2, 0x7f0701fb
+    const v2, 0x7f0c01fb
 
     move-object/from16 v0, p0
 
@@ -1861,7 +1861,7 @@
 
     const/4 v5, 0x0
 
-    const v6, 0x7f020315
+    const v6, 0x7f020317
 
     const/4 v7, 0x0
 
@@ -1945,13 +1945,13 @@
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->paramMarketReview:Lcom/samsung/privilege/bean/MarketReview;
 
-    iget-wide v5, v2, Lcom/samsung/privilege/bean/MarketReview;->CreatedTime:J
+    iget-wide v6, v2, Lcom/samsung/privilege/bean/MarketReview;->CreatedTime:J
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v2
 
-    invoke-static {v5, v6, v2}, Lic/buzzebeeslib/util/BBUtil;->CDateToTime(JLandroid/content/Context;)Ljava/lang/String;
+    invoke-static {v6, v7, v2}, Lic/buzzebeeslib/util/BBUtil;->CDateToTime(JLandroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -2058,7 +2058,7 @@
     invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout;->setEnabled(Z)V
 
     .line 607
-    const v2, 0x7f0202e1
+    const v2, 0x7f0202e3
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->getApplicationContext()Landroid/content/Context;
 
@@ -2140,7 +2140,7 @@
     const/4 v5, 0x0
 
     .line 394
-    const v3, 0x7f07009b
+    const v3, 0x7f0c009b
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->findViewById(I)Landroid/view/View;
 
@@ -2183,7 +2183,7 @@
     iput-object v3, p0, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->gListMarketReview:Landroid/widget/ListView;
 
     .line 400
-    const v3, 0x7f070058
+    const v3, 0x7f0c0058
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->findViewById(I)Landroid/view/View;
 
@@ -2286,7 +2286,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0300ed
+    const v4, 0x7f0300ef
 
     invoke-virtual {v3, v4, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -2299,7 +2299,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f030122
+    const v4, 0x7f030124
 
     invoke-virtual {v3, v4, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -3751,7 +3751,7 @@
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->requestWindowFeature(I)Z
 
     .line 132
-    const v8, 0x7f0300fd
+    const v8, 0x7f0300ff
 
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->setContentView(I)V
 
@@ -3807,7 +3807,7 @@
     iput-object v8, p0, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->gFontDefault:Landroid/graphics/Typeface;
 
     .line 147
-    const v8, 0x7f070031
+    const v8, 0x7f0c0031
 
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->findViewById(I)Landroid/view/View;
 
@@ -3834,7 +3834,7 @@
     if-eqz v8, :cond_f6
 
     .line 149
-    const v8, 0x7f0202b6
+    const v8, 0x7f0202b8
 
     invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -3934,7 +3934,7 @@
     .line 174
     iget-object v8, p0, Lcom/samsung/privilege/activity/MarketReviewOfReviewActivity;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
-    const v9, 0x7f02039f
+    const v9, 0x7f0203a7
 
     invoke-virtual {v8, v9}, Lcom/bitmapfun/util/ImageFetcher;->setLoadingImage(I)V
 
@@ -4030,7 +4030,7 @@
     if-eqz v8, :cond_10e
 
     .line 151
-    const v8, 0x7f0202b5
+    const v8, 0x7f0202b7
 
     invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -4055,7 +4055,7 @@
     if-eqz v8, :cond_126
 
     .line 153
-    const v8, 0x7f0202b7
+    const v8, 0x7f0202b9
 
     invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -4063,7 +4063,7 @@
 
     .line 155
     :cond_126
-    const v8, 0x7f0202b8
+    const v8, 0x7f0202ba
 
     invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -4135,7 +4135,7 @@
     invoke-virtual {v0}, Lcom/bitmapfun/util/ImageFetcher;->closeCache()V
 
     .line 299
-    const v0, 0x7f07007c
+    const v0, 0x7f0c007c
 
     invoke-static {p0, v0}, Lic/buzzebeeslib/util/OnDestroyView;->unbindReferences(Landroid/app/Activity;I)V
 
@@ -4591,7 +4591,7 @@
 
     iget-object v1, v6, Lic/buzzebeeslib/bean/Sticker;->PictureUrl:Ljava/lang/String;
 
-    const v4, 0x7f02039f
+    const v4, 0x7f0203a7
 
     move-object v2, p3
 

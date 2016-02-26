@@ -270,7 +270,7 @@
 .end method
 
 .method public setDuration(J)Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;
-    .registers 3
+    .registers 4
     .param p1, "duration"    # J
 
     .prologue

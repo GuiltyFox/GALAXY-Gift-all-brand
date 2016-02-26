@@ -165,7 +165,7 @@
 .end method
 
 .method getDownloadRequest(J)Lic/buzzebeeslib/control/download/DownloadRequest;
-    .registers 7
+    .registers 8
     .param p1, "id"    # J
 
     .prologue

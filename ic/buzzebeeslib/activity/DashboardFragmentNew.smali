@@ -2015,66 +2015,66 @@
 .end method
 
 .method private loadDashboardFromCatch()V
-    .registers 6
+    .registers 7
 
     .prologue
     .line 612
-    iget-object v3, p0, Lic/buzzebeeslib/activity/DashboardFragmentNew;->gViewHolder:Lic/buzzebeeslib/holder/DashboardNewHolder;
+    iget-object v1, p0, Lic/buzzebeeslib/activity/DashboardFragmentNew;->gViewHolder:Lic/buzzebeeslib/holder/DashboardNewHolder;
 
-    iget-object v3, v3, Lic/buzzebeeslib/holder/DashboardNewHolder;->imgLoading:Landroid/widget/ImageView;
+    iget-object v1, v1, Lic/buzzebeeslib/holder/DashboardNewHolder;->imgLoading:Landroid/widget/ImageView;
 
     const/4 v4, 0x0
 
-    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 614
-    const-string v3, "bzbs_dashboard_items_402705486466922"
+    const-string v1, "bzbs_dashboard_items_402705486466922"
 
     invoke-virtual {p0}, Lic/buzzebeeslib/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Lic/buzzebeeslib/util/LocalFileHelper;->readCatchFromSD(Ljava/lang/String;Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1, v4}, Lic/buzzebeeslib/util/LocalFileHelper;->readCatchFromSD(Ljava/lang/String;Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     .line 615
     .local v0, "catch_dashboard_items":Ljava/lang/String;
-    const-string v3, ""
+    const-string v1, ""
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v1
 
-    if-nez v3, :cond_31
+    if-nez v1, :cond_31
 
     .line 616
     invoke-direct {p0, v0}, Lic/buzzebeeslib/activity/DashboardFragmentNew;->processJsonDashboard(Ljava/lang/String;)V
 
     .line 618
-    const-string v3, "bzbs_dashboard_items_402705486466922"
+    const-string v1, "bzbs_dashboard_items_402705486466922"
 
     invoke-virtual {p0}, Lic/buzzebeeslib/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Lic/buzzebeeslib/util/LocalFileHelper;->getCatchFileAge(Ljava/lang/String;Landroid/content/Context;)J
+    invoke-static {v1, v4}, Lic/buzzebeeslib/util/LocalFileHelper;->getCatchFileAge(Ljava/lang/String;Landroid/content/Context;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 619
-    .local v1, "times_sec":J
-    const-wide/16 v3, 0xe10
+    .local v2, "times_sec":J
+    const-wide/16 v4, 0xe10
 
-    cmp-long v3, v1, v3
+    cmp-long v1, v2, v4
 
-    if-lez v3, :cond_30
+    if-lez v1, :cond_30
 
     .line 620
     invoke-direct {p0}, Lic/buzzebeeslib/activity/DashboardFragmentNew;->loadDashboard()V
 
     .line 625
-    .end local v1    # "times_sec":J
+    .end local v2    # "times_sec":J
     :cond_30
     :goto_30
     return-void
@@ -2666,18 +2666,7 @@
 
     invoke-virtual {v6, v7}, Lcom/google/analytics/tracking/android/GAServiceManager;->setDispatchPeriod(I)V
 
-    .line 130
-    :try_start_46
-    iget-object v6, p0, Lic/buzzebeeslib/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    const-string v7, "DASHBOARD - BZBS"
-
-    invoke-virtual {v6, v7}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-    :try_end_4d
-    .catch Ljava/lang/Exception; {:try_start_46 .. :try_end_4d} :catch_d8
-
     .line 135
-    :goto_4d
     new-instance v6, Landroid/os/Handler;
 
     invoke-direct {v6}, Landroid/os/Handler;-><init>()V
@@ -2774,10 +2763,10 @@
 
     .line 151
     .local v2, "height":I
-    if-le v2, v5, :cond_d6
+    if-le v2, v5, :cond_cf
 
     .end local v2    # "height":I
-    :goto_a6
+    :goto_9f
     div-int/lit8 v3, v2, 0x2
 
     .line 152
@@ -2833,22 +2822,11 @@
 
     .end local v3    # "longest":I
     .restart local v2    # "height":I
-    :cond_d6
+    :cond_cf
     move v2, v5
 
     .line 151
-    goto :goto_a6
-
-    .line 131
-    .end local v0    # "cacheParams":Lcom/bitmapfun/util/ImageCache$ImageCacheParams;
-    .end local v1    # "displayMetrics":Landroid/util/DisplayMetrics;
-    .end local v2    # "height":I
-    .end local v4    # "metrics":Landroid/util/DisplayMetrics;
-    .end local v5    # "width":I
-    :catch_d8
-    move-exception v6
-
-    goto/16 :goto_4d
+    goto :goto_9f
 .end method
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;

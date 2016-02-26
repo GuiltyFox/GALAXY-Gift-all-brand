@@ -175,9 +175,9 @@
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getLong(I)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    iput-wide v1, p0, Lic/buzzebeeslib/control/download/DownloadRequest;->mTotalSize:J
+    iput-wide v2, p0, Lic/buzzebeeslib/control/download/DownloadRequest;->mTotalSize:J
 
     .line 56
     const-string v1, "download_size"
@@ -188,9 +188,9 @@
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getLong(I)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    iput-wide v1, p0, Lic/buzzebeeslib/control/download/DownloadRequest;->mDownloadSize:J
+    iput-wide v2, p0, Lic/buzzebeeslib/control/download/DownloadRequest;->mDownloadSize:J
 
     .line 57
     const-string v1, "status"
@@ -896,7 +896,7 @@
 .end method
 
 .method public declared-synchronized toContentValues()Landroid/content/ContentValues;
-    .registers 6
+    .registers 7
 
     .prologue
     .line 68
@@ -909,11 +909,11 @@
 
     .line 69
     .local v0, "value":Landroid/content/ContentValues;
-    iget-wide v1, p0, Lic/buzzebeeslib/control/download/DownloadRequest;->mId:J
+    iget-wide v2, p0, Lic/buzzebeeslib/control/download/DownloadRequest;->mId:J
 
-    const-wide/16 v3, -0x1
+    const-wide/16 v4, -0x1
 
-    cmp-long v1, v1, v3
+    cmp-long v1, v2, v4
 
     if-eqz v1, :cond_19
 

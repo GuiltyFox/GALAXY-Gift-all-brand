@@ -26,20 +26,20 @@
     .param p2, "is_filter_cat"    # Z
 
     .prologue
-    .line 1549
+    .line 1574
     iput-object p1, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
 
-    .line 1547
+    .line 1572
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener;->gIsFilterCat:Z
 
-    .line 1550
+    .line 1575
     iput-boolean p2, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener;->gIsFilterCat:Z
 
-    .line 1551
+    .line 1576
     return-void
 .end method
 
@@ -47,7 +47,7 @@
     .registers 2
 
     .prologue
-    .line 1545
+    .line 1570
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     return-object v0
@@ -61,15 +61,15 @@
     .param p2, "content"    # Ljava/lang/String;
 
     .prologue
-    .line 1592
+    .line 1617
     invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 1593
+    .line 1618
     const/16 v0, -0x1f4
 
     invoke-virtual {p0, v0, p2}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener;->onSuccess(ILjava/lang/String;)V
 
-    .line 1594
+    .line 1619
     return-void
 .end method
 
@@ -79,7 +79,7 @@
     .param p2, "response_text"    # Ljava/lang/String;
 
     .prologue
-    .line 1555
+    .line 1580
     const-string v0, "buzzebees.marketlist.fragment"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -108,12 +108,12 @@
 
     invoke-static {v0, v1}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1557
+    .line 1582
     const/16 v0, 0xc8
 
     if-ne p1, v0, :cond_2c
 
-    .line 1558
+    .line 1583
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     new-instance v1, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignCategoryListener$1;
@@ -122,7 +122,7 @@
 
     invoke-virtual {v0, v1}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1588
+    .line 1613
     :cond_2c
     return-void
 .end method

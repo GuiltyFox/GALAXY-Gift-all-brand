@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .registers 15
+    .registers 16
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
@@ -78,12 +78,12 @@
 
     invoke-virtual {v9}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v3
 
-    check-cast v5, Lcom/facebook/android/Facebook;
+    check-cast v3, Lcom/facebook/android/Facebook;
 
     .line 584
-    .local v5, "facebook":Lcom/facebook/android/Facebook;
+    .local v3, "facebook":Lcom/facebook/android/Facebook;
     iget-object v9, p0, Lcom/facebook/android/Facebook$TokenRefreshConnectionHandler;->connectionWeakReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v9}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -94,7 +94,7 @@
 
     .line 585
     .local v0, "connection":Lcom/facebook/android/Facebook$TokenRefreshServiceConnection;
-    if-eqz v5, :cond_14
+    if-eqz v3, :cond_14
 
     if-nez v0, :cond_15
 
@@ -125,25 +125,25 @@
 
     invoke-virtual {v9, v10}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
 
-    move-result-wide v9
+    move-result-wide v10
 
-    const-wide/16 v11, 0x3e8
+    const-wide/16 v12, 0x3e8
 
-    mul-long v3, v9, v11
+    mul-long v4, v10, v12
 
     .line 594
-    .local v3, "expiresAtMsecFromEpoch":J
+    .local v4, "expiresAtMsecFromEpoch":J
     if-eqz v8, :cond_60
 
     .line 595
-    invoke-virtual {v5, v8}, Lcom/facebook/android/Facebook;->setAccessToken(Ljava/lang/String;)V
+    invoke-virtual {v3, v8}, Lcom/facebook/android/Facebook;->setAccessToken(Ljava/lang/String;)V
 
     .line 596
-    invoke-virtual {v5, v3, v4}, Lcom/facebook/android/Facebook;->setAccessExpires(J)V
+    invoke-virtual {v3, v4, v5}, Lcom/facebook/android/Facebook;->setAccessExpires(J)V
 
     .line 598
     # getter for: Lcom/facebook/android/Facebook;->session:Lcom/facebook/Session;
-    invoke-static {v5}, Lcom/facebook/android/Facebook;->access$1(Lcom/facebook/android/Facebook;)Lcom/facebook/Session;
+    invoke-static {v3}, Lcom/facebook/android/Facebook;->access$1(Lcom/facebook/android/Facebook;)Lcom/facebook/Session;
 
     move-result-object v6
 
@@ -179,7 +179,7 @@
     .local v7, "resultBundle":Landroid/os/Bundle;
     const-string v9, "expires_in"
 
-    invoke-virtual {v7, v9, v3, v4}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    invoke-virtual {v7, v9, v4, v5}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 612
     iget-object v9, v0, Lcom/facebook/android/Facebook$TokenRefreshServiceConnection;->serviceListener:Lcom/facebook/android/Facebook$ServiceListener;

@@ -204,9 +204,9 @@
 
     invoke-static {v1, v2}, Lcom/samsung/privilege/util/JsonUtil;->getDouble(Lorg/json/JSONObject;Ljava/lang/String;)D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v1, v2}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
+    invoke-static {v2, v3}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
 
     move-result-object v1
 
@@ -231,9 +231,9 @@
 
     invoke-static {v1, v2}, Lcom/samsung/privilege/util/JsonUtil;->getDouble(Lorg/json/JSONObject;Ljava/lang/String;)D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v1, v2}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
+    invoke-static {v2, v3}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
 
     move-result-object v1
 
@@ -251,27 +251,27 @@
 
     invoke-static {p1, v1}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    iput-wide v1, p0, Lcom/samsung/privilege/bean/PlaceNewDetail;->checkins:J
+    iput-wide v2, p0, Lcom/samsung/privilege/bean/PlaceNewDetail;->checkins:J
 
     .line 88
     const-string v1, "were_here_count"
 
     invoke-static {p1, v1}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    iput-wide v1, p0, Lcom/samsung/privilege/bean/PlaceNewDetail;->were_here_count:J
+    iput-wide v2, p0, Lcom/samsung/privilege/bean/PlaceNewDetail;->were_here_count:J
 
     .line 89
     const-string v1, "talking_about_count"
 
     invoke-static {p1, v1}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    iput-wide v1, p0, Lcom/samsung/privilege/bean/PlaceNewDetail;->talking_about_count:J
+    iput-wide v2, p0, Lcom/samsung/privilege/bean/PlaceNewDetail;->talking_about_count:J
 
     .line 91
     const-string v1, "isBuzzeBeesPlace"
@@ -300,9 +300,9 @@
 
     invoke-static {p1, v1}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    long-to-float v1, v1
+    long-to-float v1, v2
 
     iput v1, p0, Lcom/samsung/privilege/bean/PlaceNewDetail;->distance:F
 
@@ -320,9 +320,9 @@
 
     invoke-static {p1, v1}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    iput-wide v1, p0, Lcom/samsung/privilege/bean/PlaceNewDetail;->buzz:J
+    iput-wide v2, p0, Lcom/samsung/privilege/bean/PlaceNewDetail;->buzz:J
 
     .line 97
     return-void

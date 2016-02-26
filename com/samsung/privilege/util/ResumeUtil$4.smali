@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/util/ResumeUtil$4;->val$activity:Landroid/app/Activity;
 
-    .line 459
+    .line 471
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,16 +43,16 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 461
-    invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
+    .line 474
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 462
+    .line 475
     iget-object v0, p0, Lcom/samsung/privilege/util/ResumeUtil$4;->val$activity:Landroid/app/Activity;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/UserLogin;->Logout(Landroid/content/Context;Z)V
 
-    .line 463
+    .line 476
     return-void
 .end method

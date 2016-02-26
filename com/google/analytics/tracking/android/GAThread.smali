@@ -1137,7 +1137,7 @@
 .end method
 
 .method private isSampledOut(Ljava/util/Map;)Z
-    .registers 11
+    .registers 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1153,56 +1153,56 @@
     .local p1, "hit":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     const/4 v4, 0x1
 
-    const-wide/high16 v7, 0x4059000000000000L
+    const-wide/high16 v8, 0x4059000000000000L
 
     .line 192
-    const-string v3, "sampleRate"
+    const-string v1, "sampleRate"
 
-    invoke-interface {p1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v1
 
-    if-eqz v3, :cond_3f
+    if-eqz v1, :cond_3f
 
     .line 193
-    const-string v3, "sampleRate"
+    const-string v1, "sampleRate"
 
-    invoke-interface {p1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v1
 
-    check-cast v3, Ljava/lang/String;
+    check-cast v1, Ljava/lang/String;
 
-    invoke-static {v3}, Lcom/google/analytics/tracking/android/Utils;->safeParseDouble(Ljava/lang/String;)D
+    invoke-static {v1}, Lcom/google/analytics/tracking/android/Utils;->safeParseDouble(Ljava/lang/String;)D
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 194
-    .local v1, "sampleRate":D
-    const-wide/16 v5, 0x0
+    .local v2, "sampleRate":D
+    const-wide/16 v6, 0x0
 
-    cmpg-double v3, v1, v5
+    cmpg-double v1, v2, v6
 
-    if-gtz v3, :cond_1f
+    if-gtz v1, :cond_1f
 
-    move v3, v4
+    move v1, v4
 
     .line 205
-    .end local v1    # "sampleRate":D
+    .end local v2    # "sampleRate":D
     :goto_1e
-    return v3
+    return v1
 
     .line 197
-    .restart local v1    # "sampleRate":D
+    .restart local v2    # "sampleRate":D
     :cond_1f
-    cmpg-double v3, v1, v7
+    cmpg-double v1, v2, v8
 
-    if-gez v3, :cond_3f
+    if-gez v1, :cond_3f
 
     .line 198
-    const-string v3, "clientId"
+    const-string v1, "clientId"
 
-    invoke-interface {p1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1214,32 +1214,32 @@
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
-    move-result v3
+    move-result v1
 
-    invoke-static {v3}, Ljava/lang/Math;->abs(I)I
+    invoke-static {v1}, Ljava/lang/Math;->abs(I)I
 
-    move-result v3
+    move-result v1
 
-    rem-int/lit16 v3, v3, 0x2710
+    rem-int/lit16 v1, v1, 0x2710
 
-    int-to-double v5, v3
+    int-to-double v6, v1
 
-    mul-double/2addr v7, v1
+    mul-double/2addr v8, v2
 
-    cmpl-double v3, v5, v7
+    cmpl-double v1, v6, v8
 
-    if-ltz v3, :cond_3f
+    if-ltz v1, :cond_3f
 
-    move v3, v4
+    move v1, v4
 
     .line 201
     goto :goto_1e
 
     .line 205
     .end local v0    # "clientId":Ljava/lang/String;
-    .end local v1    # "sampleRate":D
+    .end local v2    # "sampleRate":D
     :cond_3f
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     goto :goto_1e
 .end method
@@ -1748,16 +1748,16 @@
 .end method
 
 .method public run()V
-    .registers 7
+    .registers 8
 
     .prologue
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
     .line 482
-    const-wide/16 v3, 0x1388
+    const-wide/16 v4, 0x1388
 
     :try_start_3
-    invoke-static {v3, v4}, Ljava/lang/Thread;->sleep(J)V
+    invoke-static {v4, v5}, Ljava/lang/Thread;->sleep(J)V
     :try_end_6
     .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_6} :catch_6a
 
@@ -1892,7 +1892,7 @@
     invoke-static {v3}, Lcom/google/analytics/tracking/android/Log;->e(Ljava/lang/String;)I
 
     .line 530
-    iput-boolean v5, p0, Lcom/google/analytics/tracking/android/GAThread;->mDisabled:Z
+    iput-boolean v6, p0, Lcom/google/analytics/tracking/android/GAThread;->mDisabled:Z
 
     goto :goto_2a
 
@@ -1946,7 +1946,7 @@
     invoke-static {v3}, Lcom/google/analytics/tracking/android/Log;->e(Ljava/lang/String;)I
 
     .line 510
-    iput-boolean v5, p0, Lcom/google/analytics/tracking/android/GAThread;->mDisabled:Z
+    iput-boolean v6, p0, Lcom/google/analytics/tracking/android/GAThread;->mDisabled:Z
 
     goto :goto_2a
 
@@ -1980,24 +1980,24 @@
     .local v0, "hitCopy":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 108
-    .local v1, "hitTime":J
-    const-string v3, "hitTime"
+    .local v2, "hitTime":J
+    const-string v1, "hitTime"
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+    invoke-static {v2, v3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-interface {v0, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 109
-    new-instance v3, Lcom/google/analytics/tracking/android/GAThread$1;
+    new-instance v1, Lcom/google/analytics/tracking/android/GAThread$1;
 
-    invoke-direct {v3, p0, v0, v1, v2}, Lcom/google/analytics/tracking/android/GAThread$1;-><init>(Lcom/google/analytics/tracking/android/GAThread;Ljava/util/Map;J)V
+    invoke-direct {v1, p0, v0, v2, v3}, Lcom/google/analytics/tracking/android/GAThread$1;-><init>(Lcom/google/analytics/tracking/android/GAThread;Ljava/util/Map;J)V
 
-    invoke-direct {p0, v3}, Lcom/google/analytics/tracking/android/GAThread;->queueToThread(Ljava/lang/Runnable;)V
+    invoke-direct {p0, v1}, Lcom/google/analytics/tracking/android/GAThread;->queueToThread(Ljava/lang/Runnable;)V
 
     .line 135
     return-void

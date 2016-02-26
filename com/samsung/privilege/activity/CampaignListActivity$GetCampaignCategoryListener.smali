@@ -23,7 +23,7 @@
     .registers 2
 
     .prologue
-    .line 252
+    .line 266
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$GetCampaignCategoryListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
@@ -35,7 +35,7 @@
     .registers 3
 
     .prologue
-    .line 252
+    .line 266
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/CampaignListActivity$GetCampaignCategoryListener;-><init>(Lcom/samsung/privilege/activity/CampaignListActivity;)V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 2
 
     .prologue
-    .line 252
+    .line 266
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$GetCampaignCategoryListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     return-object v0
@@ -59,15 +59,15 @@
     .param p2, "content"    # Ljava/lang/String;
 
     .prologue
-    .line 275
+    .line 289
     invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 276
+    .line 290
     const/16 v0, -0x1f4
 
     invoke-virtual {p0, v0, p2}, Lcom/samsung/privilege/activity/CampaignListActivity$GetCampaignCategoryListener;->onSuccess(ILjava/lang/String;)V
 
-    .line 277
+    .line 291
     return-void
 .end method
 
@@ -77,7 +77,7 @@
     .param p2, "response_text"    # Ljava/lang/String;
 
     .prologue
-    .line 255
+    .line 269
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$GetCampaignCategoryListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->TAG:Ljava/lang/String;
@@ -111,12 +111,12 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 257
+    .line 271
     const/16 v0, 0xc8
 
     if-ne p1, v0, :cond_30
 
-    .line 258
+    .line 272
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$GetCampaignCategoryListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     new-instance v1, Lcom/samsung/privilege/activity/CampaignListActivity$GetCampaignCategoryListener$1;
@@ -125,7 +125,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 271
+    .line 285
     :cond_30
     return-void
 .end method

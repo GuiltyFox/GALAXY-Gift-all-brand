@@ -262,7 +262,7 @@
 
     iget-object v7, p0, Lcom/samsung/privilege/activity/InAppsFragment$1;->this$0:Lcom/samsung/privilege/activity/InAppsFragment;
 
-    const v8, 0x7f0a0341
+    const v8, 0x7f090348
 
     invoke-virtual {v7, v8}, Lcom/samsung/privilege/activity/InAppsFragment;->getString(I)Ljava/lang/String;
 

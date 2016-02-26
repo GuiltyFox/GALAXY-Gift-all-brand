@@ -73,11 +73,11 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 6
+    .registers 7
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     .line 676
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,7 +90,7 @@
     iput-object v0, p0, Landroid/support/v4/app/NotificationCompat$Builder;->mActions:Ljava/util/ArrayList;
 
     .line 660
-    iput-boolean v3, p0, Landroid/support/v4/app/NotificationCompat$Builder;->mLocalOnly:Z
+    iput-boolean v4, p0, Landroid/support/v4/app/NotificationCompat$Builder;->mLocalOnly:Z
 
     .line 663
     new-instance v0, Landroid/app/Notification;
@@ -107,9 +107,9 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    iput-wide v1, v0, Landroid/app/Notification;->when:J
+    iput-wide v2, v0, Landroid/app/Notification;->when:J
 
     .line 681
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
@@ -119,7 +119,7 @@
     iput v1, v0, Landroid/app/Notification;->audioStreamType:I
 
     .line 682
-    iput v3, p0, Landroid/support/v4/app/NotificationCompat$Builder;->mPriority:I
+    iput v4, p0, Landroid/support/v4/app/NotificationCompat$Builder;->mPriority:I
 
     .line 683
     return-void

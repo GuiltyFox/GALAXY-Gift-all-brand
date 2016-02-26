@@ -26,7 +26,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
-    .line 965
+    .line 969
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
     return-void
@@ -36,7 +36,7 @@
     .registers 2
 
     .prologue
-    .line 965
+    .line 969
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     return-object v0
@@ -48,12 +48,12 @@
     .registers 11
 
     .prologue
-    const v4, 0x7f0a0315
+    const v4, 0x7f09031c
 
-    .line 968
+    .line 972
     invoke-static {}, Landroid/os/Looper;->prepare()V
 
-    .line 970
+    .line 974
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gHandler:Landroid/os/Handler;
@@ -67,14 +67,14 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 979
+    .line 983
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->lm:Landroid/location/LocationManager;
 
     if-nez v0, :cond_2c
 
-    .line 980
+    .line 984
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
@@ -93,7 +93,7 @@
 
     iput-object v0, v2, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->lm:Landroid/location/LocationManager;
 
-    .line 983
+    .line 987
     :cond_2c
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
@@ -101,7 +101,7 @@
 
     if-nez v0, :cond_3d
 
-    .line 984
+    .line 988
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     new-instance v2, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener;
@@ -112,19 +112,19 @@
 
     iput-object v2, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->locationListener:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$MyLocationListener;
 
-    .line 987
+    .line 991
     :cond_3d
     new-instance v7, Landroid/location/Criteria;
 
     invoke-direct {v7}, Landroid/location/Criteria;-><init>()V
 
-    .line 988
+    .line 992
     .local v7, "criteria":Landroid/location/Criteria;
     const/4 v0, 0x2
 
     invoke-virtual {v7, v0}, Landroid/location/Criteria;->setAccuracy(I)V
 
-    .line 990
+    .line 994
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->lm:Landroid/location/LocationManager;
@@ -135,7 +135,7 @@
 
     move-result-object v1
 
-    .line 991
+    .line 995
     .local v1, "provider":Ljava/lang/String;
     if-eqz v1, :cond_82
 
@@ -149,7 +149,7 @@
 
     if-eqz v0, :cond_82
 
-    .line 992
+    .line 996
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->lm:Landroid/location/LocationManager;
@@ -168,12 +168,12 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;Landroid/os/Looper;)V
 
-    .line 993
+    .line 997
     new-instance v8, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$2;
 
     invoke-direct {v8, p0}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$2;-><init>(Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;)V
 
-    .line 1020
+    .line 1024
     .local v8, "runnable":Ljava/lang/Runnable;
     new-instance v9, Ljava/lang/Thread;
 
@@ -183,20 +183,20 @@
 
     invoke-direct {v9, v0, v8, v2}, Ljava/lang/Thread;-><init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;)V
 
-    .line 1021
+    .line 1025
     .local v9, "thread":Ljava/lang/Thread;
     invoke-virtual {v9}, Ljava/lang/Thread;->start()V
 
-    .line 1037
+    .line 1041
     .end local v8    # "runnable":Ljava/lang/Runnable;
     .end local v9    # "thread":Ljava/lang/Thread;
     :goto_7e
     invoke-static {}, Landroid/os/Looper;->loop()V
 
-    .line 1038
+    .line 1042
     return-void
 
-    .line 1023
+    .line 1027
     :cond_82
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
@@ -208,7 +208,7 @@
 
     invoke-virtual {v0, v2}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->showToast(Ljava/lang/String;)V
 
-    .line 1024
+    .line 1028
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
@@ -219,7 +219,7 @@
 
     invoke-direct {v0, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f0a0314
+    const v2, 0x7f09031b
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -235,7 +235,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0a00c0
+    const v2, 0x7f0900c0
 
     new-instance v3, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$3;
 
@@ -245,8 +245,8 @@
 
     move-result-object v0
 
-    .line 1029
-    const v2, 0x7f0a00b1
+    .line 1033
+    const v2, 0x7f0900b1
 
     new-instance v3, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$4;
 
@@ -256,7 +256,7 @@
 
     move-result-object v0
 
-    .line 1035
+    .line 1039
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
     goto :goto_7e

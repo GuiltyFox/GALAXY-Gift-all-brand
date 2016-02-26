@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$2$1;->this$2:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$2;
 
-    .line 1004
+    .line 1008
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 2
 
     .prologue
-    .line 1007
+    .line 1011
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$2$1;->this$2:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$2;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$2;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;
@@ -56,6 +56,6 @@
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getLocationByGPS()V
 
-    .line 1008
+    .line 1012
     return-void
 .end method

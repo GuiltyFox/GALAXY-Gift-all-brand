@@ -284,7 +284,7 @@
 .end method
 
 .method private getJSONValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 13
+    .registers 14
     .param p1, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -304,12 +304,12 @@
     .end local p1    # "value":Ljava/lang/Object;
     invoke-direct {p0, p1}, Lbolts/AppLinkNavigation;->getJSONForBundle(Landroid/os/Bundle;)Lorg/json/JSONObject;
 
-    move-result-object v3
+    move-result-object v1
 
     .line 248
     :cond_a
     :goto_a
-    return-object v3
+    return-object v1
 
     .line 168
     .restart local p1    # "value":Ljava/lang/Object;
@@ -321,7 +321,7 @@
     .line 169
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
     goto :goto_a
 
@@ -332,12 +332,12 @@
     if-eqz v9, :cond_35
 
     .line 171
-    new-instance v3, Lorg/json/JSONArray;
+    new-instance v1, Lorg/json/JSONArray;
 
-    invoke-direct {v3}, Lorg/json/JSONArray;-><init>()V
+    invoke-direct {v1}, Lorg/json/JSONArray;-><init>()V
 
     .line 172
-    .local v3, "array":Lorg/json/JSONArray;
+    .local v1, "array":Lorg/json/JSONArray;
     check-cast p1, Ljava/util/List;
 
     .end local p1    # "value":Ljava/lang/Object;
@@ -363,12 +363,12 @@
 
     move-result-object v9
 
-    invoke-virtual {v3, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+    invoke-virtual {v1, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
     goto :goto_23
 
     .line 176
-    .end local v3    # "array":Lorg/json/JSONArray;
+    .end local v1    # "array":Lorg/json/JSONArray;
     .end local v5    # "i$":Ljava/util/Iterator;
     .end local v7    # "listValue":Ljava/lang/Object;
     .restart local p1    # "value":Ljava/lang/Object;
@@ -378,11 +378,11 @@
     if-eqz v9, :cond_5a
 
     .line 177
-    new-instance v3, Lorg/json/JSONArray;
+    new-instance v1, Lorg/json/JSONArray;
 
-    invoke-direct {v3}, Lorg/json/JSONArray;-><init>()V
+    invoke-direct {v1}, Lorg/json/JSONArray;-><init>()V
 
-    .restart local v3    # "array":Lorg/json/JSONArray;
+    .restart local v1    # "array":Lorg/json/JSONArray;
     move-object v8, p1
 
     .line 178
@@ -413,7 +413,7 @@
 
     move-result-object v10
 
-    invoke-virtual {v3, v9, v10}, Lorg/json/JSONArray;->put(ILjava/lang/Object;)Lorg/json/JSONArray;
+    invoke-virtual {v1, v9, v10}, Lorg/json/JSONArray;->put(ILjava/lang/Object;)Lorg/json/JSONArray;
 
     .line 179
     add-int/lit8 v4, v4, 0x1
@@ -421,7 +421,7 @@
     goto :goto_42
 
     .line 183
-    .end local v3    # "array":Lorg/json/JSONArray;
+    .end local v1    # "array":Lorg/json/JSONArray;
     .end local v4    # "i":I
     .end local v8    # "sparseValue":Landroid/util/SparseArray;, "Landroid/util/SparseArray<*>;"
     :cond_5a
@@ -432,7 +432,7 @@
     .line 184
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
     goto :goto_a
 
@@ -442,7 +442,7 @@
 
     if-eqz v9, :cond_69
 
-    move-object v3, p1
+    move-object v1, p1
 
     .line 186
     goto :goto_a
@@ -469,11 +469,11 @@
     .end local p1    # "value":Ljava/lang/Object;
     invoke-virtual {p1}, Ljava/lang/Number;->doubleValue()D
 
-    move-result-wide v9
+    move-result-wide v10
 
-    invoke-static {v9, v10}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v10, v11}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v3
+    move-result-object v1
 
     goto :goto_a
 
@@ -485,11 +485,11 @@
     .end local p1    # "value":Ljava/lang/Object;
     invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
 
-    move-result-wide v9
+    move-result-wide v10
 
-    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v10, v11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v3
+    move-result-object v1
 
     goto :goto_a
 
@@ -501,12 +501,12 @@
     if-eqz v9, :cond_ad
 
     .line 194
-    new-instance v3, Lorg/json/JSONArray;
+    new-instance v1, Lorg/json/JSONArray;
 
-    invoke-direct {v3}, Lorg/json/JSONArray;-><init>()V
+    invoke-direct {v1}, Lorg/json/JSONArray;-><init>()V
 
     .line 195
-    .restart local v3    # "array":Lorg/json/JSONArray;
+    .restart local v1    # "array":Lorg/json/JSONArray;
     check-cast p1, [Z
 
     .end local p1    # "value":Ljava/lang/Object;
@@ -524,11 +524,11 @@
     :goto_9b
     if-ge v5, v6, :cond_a
 
-    aget-boolean v1, v0, v5
+    aget-boolean v2, v0, v5
 
     .line 196
-    .local v1, "arrValue":Z
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    .local v2, "arrValue":Z
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v9
 
@@ -536,7 +536,7 @@
 
     move-result-object v9
 
-    invoke-virtual {v3, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+    invoke-virtual {v1, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
     .line 195
     add-int/lit8 v5, v5, 0x1
@@ -545,8 +545,8 @@
 
     .line 199
     .end local v0    # "arr$":[Z
-    .end local v1    # "arrValue":Z
-    .end local v3    # "array":Lorg/json/JSONArray;
+    .end local v1    # "array":Lorg/json/JSONArray;
+    .end local v2    # "arrValue":Z
     .end local v5    # "i$":I
     .end local v6    # "len$":I
     .restart local p1    # "value":Ljava/lang/Object;
@@ -556,12 +556,12 @@
     if-eqz v9, :cond_cf
 
     .line 200
-    new-instance v3, Lorg/json/JSONArray;
+    new-instance v1, Lorg/json/JSONArray;
 
-    invoke-direct {v3}, Lorg/json/JSONArray;-><init>()V
+    invoke-direct {v1}, Lorg/json/JSONArray;-><init>()V
 
     .line 201
-    .restart local v3    # "array":Lorg/json/JSONArray;
+    .restart local v1    # "array":Lorg/json/JSONArray;
     check-cast p1, [C
 
     .end local p1    # "value":Ljava/lang/Object;
@@ -579,11 +579,11 @@
     :goto_bd
     if-ge v5, v6, :cond_a
 
-    aget-char v1, v0, v5
+    aget-char v2, v0, v5
 
     .line 202
-    .local v1, "arrValue":C
-    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    .local v2, "arrValue":C
+    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v9
 
@@ -591,7 +591,7 @@
 
     move-result-object v9
 
-    invoke-virtual {v3, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+    invoke-virtual {v1, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
     .line 201
     add-int/lit8 v5, v5, 0x1
@@ -600,8 +600,8 @@
 
     .line 205
     .end local v0    # "arr$":[C
-    .end local v1    # "arrValue":C
-    .end local v3    # "array":Lorg/json/JSONArray;
+    .end local v1    # "array":Lorg/json/JSONArray;
+    .end local v2    # "arrValue":C
     .end local v5    # "i$":I
     .end local v6    # "len$":I
     .restart local p1    # "value":Ljava/lang/Object;
@@ -611,12 +611,12 @@
     if-eqz v9, :cond_ed
 
     .line 206
-    new-instance v3, Lorg/json/JSONArray;
+    new-instance v1, Lorg/json/JSONArray;
 
-    invoke-direct {v3}, Lorg/json/JSONArray;-><init>()V
+    invoke-direct {v1}, Lorg/json/JSONArray;-><init>()V
 
     .line 207
-    .restart local v3    # "array":Lorg/json/JSONArray;
+    .restart local v1    # "array":Lorg/json/JSONArray;
     check-cast p1, [Ljava/lang/CharSequence;
 
     .end local p1    # "value":Ljava/lang/Object;
@@ -634,15 +634,15 @@
     :goto_df
     if-ge v5, v6, :cond_a
 
-    aget-object v1, v0, v5
+    aget-object v2, v0, v5
 
     .line 208
-    .local v1, "arrValue":Ljava/lang/CharSequence;
-    invoke-direct {p0, v1}, Lbolts/AppLinkNavigation;->getJSONValue(Ljava/lang/Object;)Ljava/lang/Object;
+    .local v2, "arrValue":Ljava/lang/CharSequence;
+    invoke-direct {p0, v2}, Lbolts/AppLinkNavigation;->getJSONValue(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v9
 
-    invoke-virtual {v3, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+    invoke-virtual {v1, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
     .line 207
     add-int/lit8 v5, v5, 0x1
@@ -651,8 +651,8 @@
 
     .line 211
     .end local v0    # "arr$":[Ljava/lang/CharSequence;
-    .end local v1    # "arrValue":Ljava/lang/CharSequence;
-    .end local v3    # "array":Lorg/json/JSONArray;
+    .end local v1    # "array":Lorg/json/JSONArray;
+    .end local v2    # "arrValue":Ljava/lang/CharSequence;
     .end local v5    # "i$":I
     .end local v6    # "len$":I
     .restart local p1    # "value":Ljava/lang/Object;
@@ -662,12 +662,12 @@
     if-eqz v9, :cond_10f
 
     .line 212
-    new-instance v3, Lorg/json/JSONArray;
+    new-instance v1, Lorg/json/JSONArray;
 
-    invoke-direct {v3}, Lorg/json/JSONArray;-><init>()V
+    invoke-direct {v1}, Lorg/json/JSONArray;-><init>()V
 
     .line 213
-    .restart local v3    # "array":Lorg/json/JSONArray;
+    .restart local v1    # "array":Lorg/json/JSONArray;
     check-cast p1, [D
 
     .end local p1    # "value":Ljava/lang/Object;
@@ -685,11 +685,11 @@
     :goto_fd
     if-ge v5, v6, :cond_a
 
-    aget-wide v1, v0, v5
+    aget-wide v2, v0, v5
 
     .line 214
-    .local v1, "arrValue":D
-    invoke-static {v1, v2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    .local v2, "arrValue":D
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v9
 
@@ -697,7 +697,7 @@
 
     move-result-object v9
 
-    invoke-virtual {v3, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+    invoke-virtual {v1, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
     .line 213
     add-int/lit8 v5, v5, 0x1
@@ -706,8 +706,8 @@
 
     .line 217
     .end local v0    # "arr$":[D
-    .end local v1    # "arrValue":D
-    .end local v3    # "array":Lorg/json/JSONArray;
+    .end local v1    # "array":Lorg/json/JSONArray;
+    .end local v2    # "arrValue":D
     .end local v5    # "i$":I
     .end local v6    # "len$":I
     .restart local p1    # "value":Ljava/lang/Object;
@@ -717,12 +717,12 @@
     if-eqz v9, :cond_131
 
     .line 218
-    new-instance v3, Lorg/json/JSONArray;
+    new-instance v1, Lorg/json/JSONArray;
 
-    invoke-direct {v3}, Lorg/json/JSONArray;-><init>()V
+    invoke-direct {v1}, Lorg/json/JSONArray;-><init>()V
 
     .line 219
-    .restart local v3    # "array":Lorg/json/JSONArray;
+    .restart local v1    # "array":Lorg/json/JSONArray;
     check-cast p1, [F
 
     .end local p1    # "value":Ljava/lang/Object;
@@ -740,11 +740,11 @@
     :goto_11f
     if-ge v5, v6, :cond_a
 
-    aget v1, v0, v5
+    aget v2, v0, v5
 
     .line 220
-    .local v1, "arrValue":F
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    .local v2, "arrValue":F
+    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v9
 
@@ -752,7 +752,7 @@
 
     move-result-object v9
 
-    invoke-virtual {v3, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+    invoke-virtual {v1, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
     .line 219
     add-int/lit8 v5, v5, 0x1
@@ -761,8 +761,8 @@
 
     .line 223
     .end local v0    # "arr$":[F
-    .end local v1    # "arrValue":F
-    .end local v3    # "array":Lorg/json/JSONArray;
+    .end local v1    # "array":Lorg/json/JSONArray;
+    .end local v2    # "arrValue":F
     .end local v5    # "i$":I
     .end local v6    # "len$":I
     .restart local p1    # "value":Ljava/lang/Object;
@@ -772,12 +772,12 @@
     if-eqz v9, :cond_153
 
     .line 224
-    new-instance v3, Lorg/json/JSONArray;
+    new-instance v1, Lorg/json/JSONArray;
 
-    invoke-direct {v3}, Lorg/json/JSONArray;-><init>()V
+    invoke-direct {v1}, Lorg/json/JSONArray;-><init>()V
 
     .line 225
-    .restart local v3    # "array":Lorg/json/JSONArray;
+    .restart local v1    # "array":Lorg/json/JSONArray;
     check-cast p1, [I
 
     .end local p1    # "value":Ljava/lang/Object;
@@ -795,11 +795,11 @@
     :goto_141
     if-ge v5, v6, :cond_a
 
-    aget v1, v0, v5
+    aget v2, v0, v5
 
     .line 226
-    .local v1, "arrValue":I
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .local v2, "arrValue":I
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v9
 
@@ -807,7 +807,7 @@
 
     move-result-object v9
 
-    invoke-virtual {v3, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+    invoke-virtual {v1, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
     .line 225
     add-int/lit8 v5, v5, 0x1
@@ -816,8 +816,8 @@
 
     .line 229
     .end local v0    # "arr$":[I
-    .end local v1    # "arrValue":I
-    .end local v3    # "array":Lorg/json/JSONArray;
+    .end local v1    # "array":Lorg/json/JSONArray;
+    .end local v2    # "arrValue":I
     .end local v5    # "i$":I
     .end local v6    # "len$":I
     .restart local p1    # "value":Ljava/lang/Object;
@@ -827,12 +827,12 @@
     if-eqz v9, :cond_175
 
     .line 230
-    new-instance v3, Lorg/json/JSONArray;
+    new-instance v1, Lorg/json/JSONArray;
 
-    invoke-direct {v3}, Lorg/json/JSONArray;-><init>()V
+    invoke-direct {v1}, Lorg/json/JSONArray;-><init>()V
 
     .line 231
-    .restart local v3    # "array":Lorg/json/JSONArray;
+    .restart local v1    # "array":Lorg/json/JSONArray;
     check-cast p1, [J
 
     .end local p1    # "value":Ljava/lang/Object;
@@ -850,11 +850,11 @@
     :goto_163
     if-ge v5, v6, :cond_a
 
-    aget-wide v1, v0, v5
+    aget-wide v2, v0, v5
 
     .line 232
-    .local v1, "arrValue":J
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    .local v2, "arrValue":J
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v9
 
@@ -862,7 +862,7 @@
 
     move-result-object v9
 
-    invoke-virtual {v3, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+    invoke-virtual {v1, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
     .line 231
     add-int/lit8 v5, v5, 0x1
@@ -871,8 +871,8 @@
 
     .line 235
     .end local v0    # "arr$":[J
-    .end local v1    # "arrValue":J
-    .end local v3    # "array":Lorg/json/JSONArray;
+    .end local v1    # "array":Lorg/json/JSONArray;
+    .end local v2    # "arrValue":J
     .end local v5    # "i$":I
     .end local v6    # "len$":I
     .restart local p1    # "value":Ljava/lang/Object;
@@ -882,12 +882,12 @@
     if-eqz v9, :cond_197
 
     .line 236
-    new-instance v3, Lorg/json/JSONArray;
+    new-instance v1, Lorg/json/JSONArray;
 
-    invoke-direct {v3}, Lorg/json/JSONArray;-><init>()V
+    invoke-direct {v1}, Lorg/json/JSONArray;-><init>()V
 
     .line 237
-    .restart local v3    # "array":Lorg/json/JSONArray;
+    .restart local v1    # "array":Lorg/json/JSONArray;
     check-cast p1, [S
 
     .end local p1    # "value":Ljava/lang/Object;
@@ -905,11 +905,11 @@
     :goto_185
     if-ge v5, v6, :cond_a
 
-    aget-short v1, v0, v5
+    aget-short v2, v0, v5
 
     .line 238
-    .local v1, "arrValue":S
-    invoke-static {v1}, Ljava/lang/Short;->valueOf(S)Ljava/lang/Short;
+    .local v2, "arrValue":S
+    invoke-static {v2}, Ljava/lang/Short;->valueOf(S)Ljava/lang/Short;
 
     move-result-object v9
 
@@ -917,7 +917,7 @@
 
     move-result-object v9
 
-    invoke-virtual {v3, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+    invoke-virtual {v1, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
     .line 237
     add-int/lit8 v5, v5, 0x1
@@ -926,8 +926,8 @@
 
     .line 241
     .end local v0    # "arr$":[S
-    .end local v1    # "arrValue":S
-    .end local v3    # "array":Lorg/json/JSONArray;
+    .end local v1    # "array":Lorg/json/JSONArray;
+    .end local v2    # "arrValue":S
     .end local v5    # "i$":I
     .end local v6    # "len$":I
     .restart local p1    # "value":Ljava/lang/Object;
@@ -937,12 +937,12 @@
     if-eqz v9, :cond_1b5
 
     .line 242
-    new-instance v3, Lorg/json/JSONArray;
+    new-instance v1, Lorg/json/JSONArray;
 
-    invoke-direct {v3}, Lorg/json/JSONArray;-><init>()V
+    invoke-direct {v1}, Lorg/json/JSONArray;-><init>()V
 
     .line 243
-    .restart local v3    # "array":Lorg/json/JSONArray;
+    .restart local v1    # "array":Lorg/json/JSONArray;
     check-cast p1, [Ljava/lang/String;
 
     .end local p1    # "value":Ljava/lang/Object;
@@ -960,15 +960,15 @@
     :goto_1a7
     if-ge v5, v6, :cond_a
 
-    aget-object v1, v0, v5
+    aget-object v2, v0, v5
 
     .line 244
-    .local v1, "arrValue":Ljava/lang/String;
-    invoke-direct {p0, v1}, Lbolts/AppLinkNavigation;->getJSONValue(Ljava/lang/Object;)Ljava/lang/Object;
+    .local v2, "arrValue":Ljava/lang/String;
+    invoke-direct {p0, v2}, Lbolts/AppLinkNavigation;->getJSONValue(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v9
 
-    invoke-virtual {v3, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+    invoke-virtual {v1, v9}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
     .line 243
     add-int/lit8 v5, v5, 0x1
@@ -977,13 +977,13 @@
 
     .line 248
     .end local v0    # "arr$":[Ljava/lang/String;
-    .end local v1    # "arrValue":Ljava/lang/String;
-    .end local v3    # "array":Lorg/json/JSONArray;
+    .end local v1    # "array":Lorg/json/JSONArray;
+    .end local v2    # "arrValue":Ljava/lang/String;
     .end local v5    # "i$":I
     .end local v6    # "len$":I
     .restart local p1    # "value":Ljava/lang/Object;
     :cond_1b5
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     goto/16 :goto_a
 .end method

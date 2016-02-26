@@ -37,7 +37,7 @@
 
     iput-object p3, p0, Lcom/samsung/privilege/activity/CampaignListActivity$12;->val$activityContext:Landroid/content/Context;
 
-    .line 1313
+    .line 1327
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,23 +50,23 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 1315
+    .line 1329
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$12;->val$dialogTerm:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1317
+    .line 1331
     sget-object v0, Lcom/samsung/privilege/AppSetting;->QUEUE_MESSAGEPOPUPS:Ljava/util/Queue;
 
     invoke-interface {v0}, Ljava/util/Queue;->clear()V
 
-    .line 1318
+    .line 1332
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$12;->val$activityContext:Landroid/content/Context;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/UserLogin;->Logout(Landroid/content/Context;Z)V
 
-    .line 1319
+    .line 1333
     return-void
 .end method

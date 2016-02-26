@@ -72,13 +72,13 @@
 
     move/from16 v1, v20
 
-    if-ne v0, v1, :cond_3ab
+    if-ne v0, v1, :cond_3ac
 
     .line 1858
-    const-wide/16 v13, 0x0
+    const-wide/16 v14, 0x0
 
     .line 1860
-    .local v13, "points":J
+    .local v14, "points":J
     :try_start_10
     new-instance v9, Lorg/json/JSONObject;
 
@@ -110,18 +110,18 @@
 
     invoke-static {v8, v0}, Lic/buzzebeeslib/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
     :try_end_2c
-    .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_2c} :catch_be
+    .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_2c} :catch_bf
 
-    move-result-wide v13
+    move-result-wide v14
 
     .line 1867
     .end local v8    # "jsonBuzzebees":Lorg/json/JSONObject;
     .end local v9    # "jsonRoot":Lorg/json/JSONObject;
     :goto_2d
-    const-string v17, ""
+    const-string v13, ""
 
     .line 1869
-    .local v17, "strAdsMessage":Ljava/lang/String;
+    .local v13, "strAdsMessage":Ljava/lang/String;
     :try_start_2f
     new-instance v9, Lorg/json/JSONObject;
 
@@ -143,9 +143,9 @@
 
     invoke-static {v9, v0}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
     :try_end_43
-    .catch Ljava/lang/Exception; {:try_start_2f .. :try_end_43} :catch_c3
+    .catch Ljava/lang/Exception; {:try_start_2f .. :try_end_43} :catch_c4
 
-    move-result-object v17
+    move-result-object v13
 
     .line 1875
     .end local v9    # "jsonRoot":Lorg/json/JSONObject;
@@ -195,10 +195,10 @@
 
     .line 1922
     .local v7, "formatter":Ljava/text/NumberFormat;
-    move-wide v15, v13
+    move-wide/from16 v16, v14
 
     .line 1923
-    .local v15, "points_final":J
+    .local v16, "points_final":J
     const-string v18, ""
 
     .line 1924
@@ -231,10 +231,10 @@
 
     move-result v19
 
-    if-eqz v19, :cond_c8
+    if-eqz v19, :cond_c9
 
     .line 1925
-    move-object/from16 v18, v17
+    move-object/from16 v18, v13
 
     .line 1926
     sget v19, Lic/buzzebeeslib/R$string;->survey_dialog_congrats_title:I
@@ -278,7 +278,7 @@
     invoke-virtual {v0, v1, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     .line 1951
-    :goto_b6
+    :goto_b7
     invoke-virtual {v5}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v2
@@ -293,33 +293,33 @@
     .end local v4    # "btnYes":Landroid/content/DialogInterface$OnClickListener;
     .end local v5    # "builder":Landroid/app/AlertDialog$Builder;
     .end local v7    # "formatter":Ljava/text/NumberFormat;
-    .end local v13    # "points":J
-    .end local v15    # "points_final":J
-    .end local v17    # "strAdsMessage":Ljava/lang/String;
+    .end local v13    # "strAdsMessage":Ljava/lang/String;
+    .end local v14    # "points":J
+    .end local v16    # "points_final":J
     .end local v18    # "strDialog":Ljava/lang/String;
-    :goto_bd
+    :goto_be
     return-void
 
     .line 1863
-    .restart local v13    # "points":J
-    :catch_be
+    .restart local v14    # "points":J
+    :catch_bf
     move-exception v6
 
     .line 1864
     .local v6, "e":Ljava/lang/Exception;
-    const-wide/16 v13, 0x0
+    const-wide/16 v14, 0x0
 
     goto/16 :goto_2d
 
     .line 1871
     .end local v6    # "e":Ljava/lang/Exception;
-    .restart local v17    # "strAdsMessage":Ljava/lang/String;
-    :catch_c3
+    .restart local v13    # "strAdsMessage":Ljava/lang/String;
+    :catch_c4
     move-exception v6
 
     .line 1872
     .restart local v6    # "e":Ljava/lang/Exception;
-    const-string v17, ""
+    const-string v13, ""
 
     goto/16 :goto_44
 
@@ -329,9 +329,9 @@
     .restart local v4    # "btnYes":Landroid/content/DialogInterface$OnClickListener;
     .restart local v5    # "builder":Landroid/app/AlertDialog$Builder;
     .restart local v7    # "formatter":Ljava/text/NumberFormat;
-    .restart local v15    # "points_final":J
+    .restart local v16    # "points_final":J
     .restart local v18    # "strDialog":Ljava/lang/String;
-    :cond_c8
+    :cond_c9
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lic/buzzebeeslib/activity/CampaignDetailAdBuzzActivity$PostSubmitListener$1;->this$1:Lic/buzzebeeslib/activity/CampaignDetailAdBuzzActivity$PostSubmitListener;
@@ -360,10 +360,10 @@
 
     move-result v19
 
-    if-eqz v19, :cond_25d
+    if-eqz v19, :cond_25e
 
     .line 1928
-    move-object/from16 v18, v17
+    move-object/from16 v18, v13
 
     .line 1929
     const-string v19, ""
@@ -372,7 +372,7 @@
 
     move-result v19
 
-    if-eqz v19, :cond_23c
+    if-eqz v19, :cond_23d
 
     .line 1930
     move-object/from16 v0, p0
@@ -415,7 +415,7 @@
 
     move-result v19
 
-    if-eqz v19, :cond_18f
+    if-eqz v19, :cond_190
 
     .line 1931
     new-instance v19, Ljava/lang/StringBuilder;
@@ -451,7 +451,7 @@
 
     new-instance v20, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v15 .. v16}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    invoke-static/range {v16 .. v17}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v21
 
@@ -537,10 +537,10 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    goto/16 :goto_b6
+    goto/16 :goto_b7
 
     .line 1934
-    :cond_18f
+    :cond_190
     new-instance v19, Ljava/lang/StringBuilder;
 
     move-object/from16 v0, p0
@@ -574,7 +574,7 @@
 
     new-instance v20, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v15 .. v16}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    invoke-static/range {v16 .. v17}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v21
 
@@ -714,10 +714,10 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    goto/16 :goto_b6
+    goto/16 :goto_b7
 
     .line 1938
-    :cond_23c
+    :cond_23d
     sget v19, Lic/buzzebeeslib/R$string;->survey_dialog_congrats_title:I
 
     move/from16 v0, v19
@@ -748,10 +748,10 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    goto/16 :goto_b6
+    goto/16 :goto_b7
 
     .line 1942
-    :cond_25d
+    :cond_25e
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lic/buzzebeeslib/activity/CampaignDetailAdBuzzActivity$PostSubmitListener$1;->this$1:Lic/buzzebeeslib/activity/CampaignDetailAdBuzzActivity$PostSubmitListener;
@@ -792,7 +792,7 @@
 
     move-result v19
 
-    if-eqz v19, :cond_2fe
+    if-eqz v19, :cond_2ff
 
     .line 1943
     new-instance v19, Ljava/lang/StringBuilder;
@@ -828,7 +828,7 @@
 
     new-instance v20, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v15 .. v16}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    invoke-static/range {v16 .. v17}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v21
 
@@ -914,10 +914,10 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    goto/16 :goto_b6
+    goto/16 :goto_b7
 
     .line 1946
-    :cond_2fe
+    :cond_2ff
     new-instance v19, Ljava/lang/StringBuilder;
 
     move-object/from16 v0, p0
@@ -951,7 +951,7 @@
 
     new-instance v20, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v15 .. v16}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    invoke-static/range {v16 .. v17}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v21
 
@@ -1091,23 +1091,23 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    goto/16 :goto_b6
+    goto/16 :goto_b7
 
     .line 1955
     .end local v3    # "btnNo":Landroid/content/DialogInterface$OnClickListener;
     .end local v4    # "btnYes":Landroid/content/DialogInterface$OnClickListener;
     .end local v5    # "builder":Landroid/app/AlertDialog$Builder;
     .end local v7    # "formatter":Ljava/text/NumberFormat;
-    .end local v13    # "points":J
-    .end local v15    # "points_final":J
-    .end local v17    # "strAdsMessage":Ljava/lang/String;
+    .end local v13    # "strAdsMessage":Ljava/lang/String;
+    .end local v14    # "points":J
+    .end local v16    # "points_final":J
     .end local v18    # "strDialog":Ljava/lang/String;
-    :cond_3ab
+    :cond_3ac
     const-string v12, ""
 
     .line 1958
     .local v12, "message":Ljava/lang/String;
-    :try_start_3ad
+    :try_start_3ae
     new-instance v11, Lorg/json/JSONObject;
 
     move-object/from16 v0, p0
@@ -1137,15 +1137,15 @@
     move-object/from16 v0, v19
 
     invoke-static {v10, v0}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
-    :try_end_3c9
-    .catch Ljava/lang/Exception; {:try_start_3ad .. :try_end_3c9} :catch_402
+    :try_end_3ca
+    .catch Ljava/lang/Exception; {:try_start_3ae .. :try_end_3ca} :catch_403
 
     move-result-object v12
 
     .line 1965
     .end local v10    # "json_error":Lorg/json/JSONObject;
     .end local v11    # "json_result":Lorg/json/JSONObject;
-    :goto_3ca
+    :goto_3cb
     const-string v19, ""
 
     move-object/from16 v0, v19
@@ -1154,7 +1154,7 @@
 
     move-result v19
 
-    if-eqz v19, :cond_3e4
+    if-eqz v19, :cond_3e5
 
     .line 1966
     move-object/from16 v0, p0
@@ -1175,7 +1175,7 @@
     move-result-object v12
 
     .line 1969
-    :cond_3e4
+    :cond_3e5
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lic/buzzebeeslib/activity/CampaignDetailAdBuzzActivity$PostSubmitListener$1;->this$1:Lic/buzzebeeslib/activity/CampaignDetailAdBuzzActivity$PostSubmitListener;
@@ -1206,10 +1206,10 @@
 
     invoke-virtual/range {v19 .. v19}, Lic/buzzebeeslib/activity/CampaignDetailAdBuzzActivity;->finish()V
 
-    goto/16 :goto_bd
+    goto/16 :goto_be
 
     .line 1961
-    :catch_402
+    :catch_403
     move-exception v6
 
     .line 1962
@@ -1231,5 +1231,5 @@
 
     move-result-object v12
 
-    goto :goto_3ca
+    goto :goto_3cb
 .end method

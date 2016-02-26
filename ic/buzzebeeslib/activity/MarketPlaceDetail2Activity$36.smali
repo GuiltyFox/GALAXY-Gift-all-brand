@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$36;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
-    .line 4244
+    .line 4252
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 6
 
     .prologue
-    .line 4247
+    .line 4255
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$36;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gPagerImageCampaign:Landroid/support/v4/view/ViewPager;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v3, p0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 4249
+    .line 4257
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$36;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gPagerImageCampaign:Landroid/support/v4/view/ViewPager;
@@ -67,19 +67,19 @@
 
     move-result v1
 
-    .line 4250
+    .line 4258
     .local v1, "gLayoutImageWidth":I
     mul-int/lit8 v3, v1, 0x2
 
     div-int/lit8 v0, v3, 0x3
 
-    .line 4251
+    .line 4259
     .local v0, "gLayoutImageHeight":I
     new-instance v2, Landroid/widget/RelativeLayout$LayoutParams;
 
     invoke-direct {v2, v1, v0}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
 
-    .line 4252
+    .line 4260
     .local v2, "params":Landroid/widget/RelativeLayout$LayoutParams;
     const/16 v3, 0xe
 
@@ -87,7 +87,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 4253
+    .line 4261
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$36;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gPagerImageCampaign:Landroid/support/v4/view/ViewPager;
@@ -97,6 +97,6 @@
 
     invoke-virtual {v3, v2}, Landroid/support/v4/view/ViewPager;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4254
+    .line 4262
     return-void
 .end method

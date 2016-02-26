@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17$2;->this$1:Lcom/samsung/privilege/activity/CampaignListActivity$17;
 
-    .line 1695
+    .line 1713
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,7 +42,7 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 1699
+    .line 1717
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 1704
+    .line 1722
     return-void
 .end method
 
@@ -60,6 +60,6 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 1709
+    .line 1727
     return-void
 .end method

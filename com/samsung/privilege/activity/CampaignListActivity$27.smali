@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignListActivity$27;->val$cat:Ljava/lang/String;
 
-    .line 2278
+    .line 2296
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 5
 
     .prologue
-    .line 2281
+    .line 2299
     :try_start_0
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListActivity$27;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
@@ -59,7 +59,7 @@
 
     if-eqz v2, :cond_17
 
-    .line 2282
+    .line 2300
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -76,13 +76,13 @@
 
     if-lt v0, v2, :cond_18
 
-    .line 2297
+    .line 2315
     .end local v0    # "i":I
     :cond_17
     :goto_17
     return-void
 
-    .line 2284
+    .line 2302
     .restart local v0    # "i":I
     :cond_18
     :try_start_18
@@ -98,7 +98,7 @@
 
     check-cast v1, Lcom/samsung/privilege/bean/CampaignCategoryDynamic;
 
-    .line 2285
+    .line 2303
     .local v1, "objCat":Lcom/samsung/privilege/bean/CampaignCategoryDynamic;
     iget v2, v1, Lcom/samsung/privilege/bean/CampaignCategoryDynamic;->cat:I
 
@@ -114,7 +114,7 @@
 
     if-ne v2, v3, :cond_3b
 
-    .line 2286
+    .line 2304
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListActivity$27;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     iget-object v2, v2, Lcom/samsung/privilege/activity/CampaignListActivity;->mPager:Landroid/support/v4/view/ViewPager;
@@ -125,18 +125,18 @@
 
     goto :goto_17
 
-    .line 2289
+    .line 2307
     .end local v1    # "objCat":Lcom/samsung/privilege/bean/CampaignCategoryDynamic;
     :catch_3a
     move-exception v2
 
-    .line 2282
+    .line 2300
     :cond_3b
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_d
 
-    .line 2294
+    .line 2312
     .end local v0    # "i":I
     :catch_3e
     move-exception v2

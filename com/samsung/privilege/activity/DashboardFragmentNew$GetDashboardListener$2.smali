@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener$2;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener;
 
-    .line 795
+    .line 801
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 3
 
     .prologue
-    .line 797
+    .line 803
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener$2;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener;
 
     # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
@@ -56,7 +56,7 @@
 
     if-eqz v0, :cond_48
 
-    .line 798
+    .line 804
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener$2;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener;
 
     # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
@@ -73,7 +73,7 @@
 
     if-eqz v0, :cond_2b
 
-    .line 799
+    .line 805
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener$2;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener;
 
     # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
@@ -92,7 +92,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 801
+    .line 807
     :cond_2b
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener$2;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener;
 
@@ -110,7 +110,7 @@
 
     if-eqz v0, :cond_48
 
-    .line 802
+    .line 808
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener$2;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener;
 
     # getter for: Lcom/samsung/privilege/activity/DashboardFragmentNew$GetDashboardListener;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
@@ -127,7 +127,7 @@
 
     invoke-virtual {v0}, Lcom/samsung/privilege/control/PullToRefreshListView;->onRefreshComplete()V
 
-    .line 805
+    .line 811
     :cond_48
     return-void
 .end method

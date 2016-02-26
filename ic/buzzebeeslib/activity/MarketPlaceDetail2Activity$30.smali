@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$30;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
-    .line 3862
+    .line 3868
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,11 +45,11 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 3865
+    .line 3871
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$30;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->cd:Lic/buzzebeeslib/util/ConnectionDetector;
-    invoke-static {v0}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$71(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Lic/buzzebeeslib/util/ConnectionDetector;
+    invoke-static {v0}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$72(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Lic/buzzebeeslib/util/ConnectionDetector;
 
     move-result-object v0
 
@@ -59,7 +59,7 @@
 
     if-eqz v0, :cond_5a
 
-    .line 3866
+    .line 3872
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$30;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->paramCampaign:Lic/buzzebeeslib/bean/Campaign;
@@ -81,7 +81,7 @@
 
     if-eqz v0, :cond_52
 
-    .line 3867
+    .line 3873
     iget-object v1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$30;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$30;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -106,50 +106,50 @@
     iget-object v0, v0, Lic/buzzebeeslib/bean/CampaignExtraAdItem;->Src:Ljava/lang/String;
 
     # invokes: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->initFileLoader(Ljava/lang/String;)V
-    invoke-static {v1, v0}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$74(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$75(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Ljava/lang/String;)V
 
-    .line 3871
+    .line 3877
     :goto_3a
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$30;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     invoke-virtual {v0, v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->showDialog(I)V
 
-    .line 3872
+    .line 3878
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$30;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->_progressDialogDownload:Landroid/app/ProgressDialog;
-    invoke-static {v0}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$61(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/app/ProgressDialog;
+    invoke-static {v0}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$62(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     invoke-virtual {v0, v2}, Landroid/app/ProgressDialog;->setProgress(I)V
 
-    .line 3873
+    .line 3879
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$30;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->_progressHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$65(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/os/Handler;
+    invoke-static {v0}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$66(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/os/Handler;
 
     move-result-object v0
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 3878
+    .line 3884
     :goto_51
     return-void
 
-    .line 3869
+    .line 3875
     :cond_52
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$30;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     const-string v1, ""
 
     # invokes: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->initFileLoader(Ljava/lang/String;)V
-    invoke-static {v0, v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$74(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$75(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Ljava/lang/String;)V
 
     goto :goto_3a
 
-    .line 3875
+    .line 3881
     :cond_5a
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$30;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 

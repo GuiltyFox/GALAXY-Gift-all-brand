@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$23;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
-    .line 2161
+    .line 2179
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
     .param p2, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 2164
+    .line 2182
     const/4 v0, 0x1
 
     return v0

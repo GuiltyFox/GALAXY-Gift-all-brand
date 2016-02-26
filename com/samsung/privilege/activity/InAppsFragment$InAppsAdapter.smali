@@ -174,7 +174,7 @@
     :cond_13
     iget-object v0, p0, Lcom/samsung/privilege/activity/InAppsFragment$InAppsAdapter;->gInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0300f3
+    const v1, 0x7f0300f5
 
     invoke-virtual {v0, v1, p3, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -188,7 +188,7 @@
 
     .line 363
     .restart local v8    # "holder":Lcom/samsung/privilege/activity/InAppsFragment$InAppsAdapter$ViewHolderInAppRow;
-    const v0, 0x7f07033e
+    const v0, 0x7f0c034b
 
     invoke-virtual {v10, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -199,7 +199,7 @@
     iput-object v0, v8, Lcom/samsung/privilege/activity/InAppsFragment$InAppsAdapter$ViewHolderInAppRow;->imageInApp:Lcom/loopj/android/image/SmartImageView;
 
     .line 364
-    const v0, 0x7f07033f
+    const v0, 0x7f0c034c
 
     invoke-virtual {v10, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -253,7 +253,7 @@
 
     const/4 v4, 0x1
 
-    const v5, 0x7f020310
+    const v5, 0x7f020312
 
     move v3, v2
 

@@ -124,16 +124,16 @@
 .end method
 
 .method static decode([BI)Lcom/google/zxing/common/DecoderResult;
-    .registers 13
+    .registers 14
     .param p0, "bytes"    # [B
     .param p1, "mode"    # I
 
     .prologue
     const/4 v7, 0x1
 
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
-    const/16 v9, 0x1d
+    const/16 v10, 0x1d
 
     .line 64
     new-instance v4, Ljava/lang/StringBuilder;
@@ -185,7 +185,7 @@
 
     move-result v7
 
-    invoke-virtual {v6, v10, v7}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v6, v11, v7}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v6
 
@@ -210,9 +210,9 @@
 
     move-result v7
 
-    int-to-long v7, v7
+    int-to-long v8, v7
 
-    invoke-virtual {v6, v7, v8}, Ljava/text/NumberFormat;->format(J)Ljava/lang/String;
+    invoke-virtual {v6, v8, v9}, Ljava/text/NumberFormat;->format(J)Ljava/lang/String;
 
     move-result-object v0
 
@@ -224,9 +224,9 @@
 
     move-result v7
 
-    int-to-long v7, v7
+    int-to-long v8, v7
 
-    invoke-virtual {v6, v7, v8}, Ljava/text/NumberFormat;->format(J)Ljava/lang/String;
+    invoke-virtual {v6, v8, v9}, Ljava/text/NumberFormat;->format(J)Ljava/lang/String;
 
     move-result-object v5
 
@@ -266,7 +266,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
@@ -274,7 +274,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
@@ -282,7 +282,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
@@ -318,7 +318,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v10}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v6
 
@@ -326,7 +326,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v10}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v6
 
@@ -334,7 +334,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v10}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v6
 
@@ -342,7 +342,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v4, v10, v6}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v11, v6}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     goto/16 :goto_e
 
@@ -497,7 +497,7 @@
 .end method
 
 .method private static getMessage([BII)Ljava/lang/String;
-    .registers 14
+    .registers 15
     .param p0, "bytes"    # [B
     .param p1, "start"    # I
     .param p2, "len"    # I
@@ -703,9 +703,9 @@
     .local v3, "nsval":I
     sget-object v8, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->NINE_DIGITS:Ljava/text/NumberFormat;
 
-    int-to-long v9, v3
+    int-to-long v10, v3
 
-    invoke-virtual {v8, v9, v10}, Ljava/text/NumberFormat;->format(J)Ljava/lang/String;
+    invoke-virtual {v8, v10, v11}, Ljava/text/NumberFormat;->format(J)Ljava/lang/String;
 
     move-result-object v8
 

@@ -391,7 +391,7 @@
 .end method
 
 .method private startLoading(Lcom/facebook/Request;ZJ)V
-    .registers 10
+    .registers 12
     .param p1, "request"    # Lcom/facebook/Request;
     .param p2, "skipRoundtripIfCached"    # Z
     .param p3, "afterDelay"    # J
@@ -441,9 +441,9 @@
 
     .line 148
     .local v2, "r":Ljava/lang/Runnable;
-    const-wide/16 v3, 0x0
+    const-wide/16 v4, 0x0
 
-    cmp-long v3, p3, v3
+    cmp-long v3, p3, v4
 
     if-nez v3, :cond_2a
 
@@ -668,7 +668,7 @@
 .end method
 
 .method public refreshOriginalRequest(J)V
-    .registers 5
+    .registers 6
     .param p1, "afterDelay"    # J
 
     .prologue

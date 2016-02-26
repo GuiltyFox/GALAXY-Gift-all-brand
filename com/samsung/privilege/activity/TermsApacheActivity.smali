@@ -124,7 +124,7 @@
 
     .line 88
     .local v1, "e":Ljava/lang/Exception;
-    const v6, 0x7f0a02e8
+    const v6, 0x7f0902ef
 
     invoke-virtual {p0, v6}, Lcom/samsung/privilege/activity/TermsApacheActivity;->getString(I)Ljava/lang/String;
 
@@ -201,7 +201,7 @@
     invoke-static {v1}, Lcom/samsung/privilege/util/LanguageSetting;->SetLanguage(Landroid/content/Context;)V
 
     .line 39
-    const v1, 0x7f03011e
+    const v1, 0x7f030120
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/TermsApacheActivity;->setContentView(I)V
 
@@ -253,7 +253,7 @@
     if-eqz v1, :cond_57
 
     .line 46
-    const v1, 0x7f0202ba
+    const v1, 0x7f0202bc
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -278,7 +278,7 @@
     .line 48
     .restart local v0    # "imgLogo":Landroid/widget/ImageView;
     :cond_57
-    const v1, 0x7f0202b9
+    const v1, 0x7f0202bb
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 

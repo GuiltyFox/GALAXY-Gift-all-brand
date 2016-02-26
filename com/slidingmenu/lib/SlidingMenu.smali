@@ -270,7 +270,7 @@
 
     .line 231
     .local v14, "ta":Landroid/content/res/TypedArray;
-    const/16 v20, 0x0
+    sget v20, Lcom/slidingmenu/lib/R$styleable;->SlidingMenu_mode:I
 
     const/16 v21, 0x0
 
@@ -289,7 +289,7 @@
     invoke-virtual {v0, v7}, Lcom/slidingmenu/lib/SlidingMenu;->setMode(I)V
 
     .line 233
-    const/16 v20, 0x1
+    sget v20, Lcom/slidingmenu/lib/R$styleable;->SlidingMenu_viewAbove:I
 
     const/16 v21, -0x1
 
@@ -320,7 +320,7 @@
 
     .line 239
     :goto_cc
-    const/16 v20, 0x2
+    sget v20, Lcom/slidingmenu/lib/R$styleable;->SlidingMenu_viewBehind:I
 
     const/16 v21, -0x1
 
@@ -351,7 +351,7 @@
 
     .line 245
     :goto_e7
-    const/16 v20, 0x6
+    sget v20, Lcom/slidingmenu/lib/R$styleable;->SlidingMenu_touchModeAbove:I
 
     const/16 v21, 0x0
 
@@ -370,7 +370,7 @@
     invoke-virtual {v0, v15}, Lcom/slidingmenu/lib/SlidingMenu;->setTouchModeAbove(I)V
 
     .line 247
-    const/16 v20, 0x7
+    sget v20, Lcom/slidingmenu/lib/R$styleable;->SlidingMenu_touchModeBehind:I
 
     const/16 v21, 0x0
 
@@ -391,7 +391,7 @@
     invoke-virtual {v0, v1}, Lcom/slidingmenu/lib/SlidingMenu;->setTouchModeBehind(I)V
 
     .line 250
-    const/16 v20, 0x3
+    sget v20, Lcom/slidingmenu/lib/R$styleable;->SlidingMenu_behindOffset:I
 
     const/high16 v21, -0x40800000
 
@@ -409,7 +409,7 @@
 
     .line 251
     .local v8, "offsetBehind":I
-    const/16 v20, 0x4
+    sget v20, Lcom/slidingmenu/lib/R$styleable;->SlidingMenu_behindWidth:I
 
     const/high16 v21, -0x40800000
 
@@ -513,7 +513,7 @@
 
     .line 260
     :goto_16f
-    const/16 v20, 0x5
+    sget v20, Lcom/slidingmenu/lib/R$styleable;->SlidingMenu_behindScrollScale:I
 
     const v21, 0x3ea8f5c3
 
@@ -532,7 +532,7 @@
     invoke-virtual {v0, v9}, Lcom/slidingmenu/lib/SlidingMenu;->setBehindScrollScale(F)V
 
     .line 262
-    const/16 v20, 0x8
+    sget v20, Lcom/slidingmenu/lib/R$styleable;->SlidingMenu_shadowDrawable:I
 
     const/16 v21, -0x1
 
@@ -559,7 +559,7 @@
 
     .line 266
     :cond_198
-    const/16 v20, 0x9
+    sget v20, Lcom/slidingmenu/lib/R$styleable;->SlidingMenu_shadowWidth:I
 
     const/16 v21, 0x0
 
@@ -582,7 +582,7 @@
     invoke-virtual {v0, v13}, Lcom/slidingmenu/lib/SlidingMenu;->setShadowWidth(I)V
 
     .line 268
-    const/16 v20, 0xa
+    sget v20, Lcom/slidingmenu/lib/R$styleable;->SlidingMenu_fadeEnabled:I
 
     const/16 v21, 0x1
 
@@ -601,7 +601,7 @@
     invoke-virtual {v0, v6}, Lcom/slidingmenu/lib/SlidingMenu;->setFadeEnabled(Z)V
 
     .line 270
-    const/16 v20, 0xb
+    sget v20, Lcom/slidingmenu/lib/R$styleable;->SlidingMenu_fadeDegree:I
 
     const v21, 0x3ea8f5c3
 
@@ -620,7 +620,7 @@
     invoke-virtual {v0, v5}, Lcom/slidingmenu/lib/SlidingMenu;->setFadeDegree(F)V
 
     .line 272
-    const/16 v20, 0xc
+    sget v20, Lcom/slidingmenu/lib/R$styleable;->SlidingMenu_selectorEnabled:I
 
     const/16 v21, 0x0
 
@@ -639,7 +639,7 @@
     invoke-virtual {v0, v10}, Lcom/slidingmenu/lib/SlidingMenu;->setSelectorEnabled(Z)V
 
     .line 274
-    const/16 v20, 0xd
+    sget v20, Lcom/slidingmenu/lib/R$styleable;->SlidingMenu_selectorDrawable:I
 
     const/16 v21, -0x1
 

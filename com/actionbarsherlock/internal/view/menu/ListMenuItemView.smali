@@ -51,13 +51,13 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 7
+    .registers 8
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
     .param p3, "defStyle"    # I
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     .line 61
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -69,13 +69,13 @@
     sget-object v1, Lcom/actionbarsherlock/R$styleable;->SherlockMenuView:[I
 
     .line 65
-    invoke-virtual {p1, p2, v1, p3, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v1, p3, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
     .line 68
     .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v1, 0x4
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockMenuView_itemBackground:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -84,20 +84,22 @@
     iput-object v1, p0, Lcom/actionbarsherlock/internal/view/menu/ListMenuItemView;->mBackground:Landroid/graphics/drawable/Drawable;
 
     .line 70
-    const/4 v1, -0x1
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockMenuView_itemTextAppearance:I
+
+    const/4 v2, -0x1
 
     .line 69
-    invoke-virtual {v0, v2, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v1
 
     iput v1, p0, Lcom/actionbarsherlock/internal/view/menu/ListMenuItemView;->mTextAppearance:I
 
     .line 72
-    const/4 v1, 0x7
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockMenuView_preserveIconSpacing:I
 
     .line 71
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v1
 

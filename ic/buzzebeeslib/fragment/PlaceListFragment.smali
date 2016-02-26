@@ -621,7 +621,7 @@
 .end method
 
 .method static synthetic access$10(Lic/buzzebeeslib/fragment/PlaceListFragment;D)V
-    .registers 3
+    .registers 4
 
     .prologue
     .line 92
@@ -931,7 +931,7 @@
 .end method
 
 .method static synthetic access$39(Lic/buzzebeeslib/fragment/PlaceListFragment;J)V
-    .registers 3
+    .registers 4
 
     .prologue
     .line 94
@@ -1011,7 +1011,7 @@
 .end method
 
 .method static synthetic access$9(Lic/buzzebeeslib/fragment/PlaceListFragment;D)V
-    .registers 3
+    .registers 4
 
     .prologue
     .line 91
@@ -2110,7 +2110,7 @@
 .end method
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
-    .registers 7
+    .registers 8
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
@@ -2157,9 +2157,9 @@
     .line 424
     const-string v2, "gLastRank"
 
-    iget-wide v3, p0, Lic/buzzebeeslib/fragment/PlaceListFragment;->gLastRank:J
+    iget-wide v4, p0, Lic/buzzebeeslib/fragment/PlaceListFragment;->gLastRank:J
 
-    invoke-virtual {p1, v2, v3, v4}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    invoke-virtual {p1, v2, v4, v5}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 425
     const-string v2, "gListPerPage"
@@ -2178,16 +2178,16 @@
     .line 427
     const-string v2, "gCurrentLat"
 
-    iget-wide v3, p0, Lic/buzzebeeslib/fragment/PlaceListFragment;->gCurrentLat:D
+    iget-wide v4, p0, Lic/buzzebeeslib/fragment/PlaceListFragment;->gCurrentLat:D
 
-    invoke-virtual {p1, v2, v3, v4}, Landroid/os/Bundle;->putDouble(Ljava/lang/String;D)V
+    invoke-virtual {p1, v2, v4, v5}, Landroid/os/Bundle;->putDouble(Ljava/lang/String;D)V
 
     .line 428
     const-string v2, "gCurrentLon"
 
-    iget-wide v3, p0, Lic/buzzebeeslib/fragment/PlaceListFragment;->gCurrentLon:D
+    iget-wide v4, p0, Lic/buzzebeeslib/fragment/PlaceListFragment;->gCurrentLon:D
 
-    invoke-virtual {p1, v2, v3, v4}, Landroid/os/Bundle;->putDouble(Ljava/lang/String;D)V
+    invoke-virtual {p1, v2, v4, v5}, Landroid/os/Bundle;->putDouble(Ljava/lang/String;D)V
 
     .line 433
     :try_start_49

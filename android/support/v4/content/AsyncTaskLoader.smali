@@ -563,7 +563,7 @@
 .end method
 
 .method public setUpdateThrottle(J)V
-    .registers 5
+    .registers 6
     .param p1, "delayMS"    # J
 
     .prologue

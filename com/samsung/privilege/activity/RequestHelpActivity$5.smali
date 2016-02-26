@@ -123,7 +123,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/TagLikeMarketReview;->imgLike:Landroid/widget/ImageView;
 
-    const v1, 0x7f02031a
+    const v1, 0x7f02031c
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -169,7 +169,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/TagLikeMarketReview;->imgLike:Landroid/widget/ImageView;
 
-    const v1, 0x7f02031b
+    const v1, 0x7f02031d
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 

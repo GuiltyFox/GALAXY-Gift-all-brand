@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$4;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
 
-    .line 737
+    .line 739
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,16 +42,16 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 740
+    .line 742
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$4;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
 
     invoke-virtual {v0, p1}, Lcom/samsung/privilege/activity/ProfileSettingActivity;->registerForContextMenu(Landroid/view/View;)V
 
-    .line 741
+    .line 743
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$4;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
 
     invoke-virtual {v0, p1}, Lcom/samsung/privilege/activity/ProfileSettingActivity;->openContextMenu(Landroid/view/View;)V
 
-    .line 742
+    .line 744
     return-void
 .end method

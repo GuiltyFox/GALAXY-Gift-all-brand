@@ -660,7 +660,7 @@
 .end method
 
 .method private static setAlpha(Landroid/view/View;F)V
-    .registers 5
+    .registers 6
     .param p0, "view"    # Landroid/view/View;
     .param p1, "alpha"    # F
 
@@ -672,9 +672,9 @@
 
     .line 609
     .local v0, "alphaAnimation":Landroid/view/animation/AlphaAnimation;
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
 
     .line 610
     const/4 v1, 0x1
@@ -1525,7 +1525,7 @@
 
     .line 136
     .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v3, 0x0
+    sget v3, Lcom/facebook/android/R$styleable;->com_facebook_picker_fragment_show_pictures:I
 
     iget-boolean v4, p0, Lcom/facebook/widget/PickerFragment;->showPictures:Z
 
@@ -1536,7 +1536,7 @@
     invoke-virtual {p0, v3}, Lcom/facebook/widget/PickerFragment;->setShowPictures(Z)V
 
     .line 137
-    const/4 v3, 0x1
+    sget v3, Lcom/facebook/android/R$styleable;->com_facebook_picker_fragment_extra_fields:I
 
     invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -1544,7 +1544,7 @@
 
     .line 138
     .local v1, "extraFieldsString":Ljava/lang/String;
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_29
 
     .line 139
     const-string v3, ","
@@ -1563,8 +1563,8 @@
 
     .line 143
     .end local v2    # "strings":[Ljava/lang/String;
-    :cond_27
-    const/4 v3, 0x2
+    :cond_29
+    sget v3, Lcom/facebook/android/R$styleable;->com_facebook_picker_fragment_show_title_bar:I
 
     iget-boolean v4, p0, Lcom/facebook/widget/PickerFragment;->showTitleBar:Z
 
@@ -1575,7 +1575,7 @@
     iput-boolean v3, p0, Lcom/facebook/widget/PickerFragment;->showTitleBar:Z
 
     .line 144
-    const/4 v3, 0x3
+    sget v3, Lcom/facebook/android/R$styleable;->com_facebook_picker_fragment_title_text:I
 
     invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -1584,7 +1584,7 @@
     iput-object v3, p0, Lcom/facebook/widget/PickerFragment;->titleText:Ljava/lang/String;
 
     .line 145
-    const/4 v3, 0x4
+    sget v3, Lcom/facebook/android/R$styleable;->com_facebook_picker_fragment_done_button_text:I
 
     invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -1593,7 +1593,7 @@
     iput-object v3, p0, Lcom/facebook/widget/PickerFragment;->doneButtonText:Ljava/lang/String;
 
     .line 146
-    const/4 v3, 0x5
+    sget v3, Lcom/facebook/android/R$styleable;->com_facebook_picker_fragment_title_bar_background:I
 
     invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1602,7 +1602,7 @@
     iput-object v3, p0, Lcom/facebook/widget/PickerFragment;->titleBarBackground:Landroid/graphics/drawable/Drawable;
 
     .line 147
-    const/4 v3, 0x6
+    sget v3, Lcom/facebook/android/R$styleable;->com_facebook_picker_fragment_done_button_background:I
 
     invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

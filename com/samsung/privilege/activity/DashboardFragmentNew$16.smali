@@ -37,7 +37,7 @@
 
     iput-object p3, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$16;->val$dashboardItemA:Lcom/samsung/privilege/bean/DashboardItem;
 
-    .line 1804
+    .line 1854
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,7 +49,7 @@
     .registers 6
 
     .prologue
-    .line 1807
+    .line 1857
     iget-object v3, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$16;->val$imgPhotoA:Landroid/widget/ImageView;
 
     invoke-virtual {v3}, Landroid/widget/ImageView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -58,18 +58,18 @@
 
     invoke-virtual {v3, p0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 1809
+    .line 1859
     iget-object v3, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$16;->val$imgPhotoA:Landroid/widget/ImageView;
 
     invoke-virtual {v3}, Landroid/widget/ImageView;->getMeasuredWidth()I
 
     move-result v1
 
-    .line 1810
+    .line 1860
     .local v1, "gLayoutImageWidth":I
     const/4 v0, 0x0
 
-    .line 1811
+    .line 1861
     .local v0, "gLayoutImageHeight":I
     iget-object v3, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$16;->val$dashboardItemA:Lcom/samsung/privilege/bean/DashboardItem;
 
@@ -87,27 +87,27 @@
 
     if-eqz v3, :cond_2f
 
-    .line 1812
+    .line 1862
     mul-int/lit8 v3, v1, 0x1
 
     div-int/lit8 v0, v3, 0x1
 
-    .line 1817
+    .line 1867
     :goto_24
     new-instance v2, Landroid/widget/RelativeLayout$LayoutParams;
 
     invoke-direct {v2, v1, v0}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
 
-    .line 1819
+    .line 1869
     .local v2, "params":Landroid/widget/RelativeLayout$LayoutParams;
     iget-object v3, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$16;->val$imgPhotoA:Landroid/widget/ImageView;
 
     invoke-virtual {v3, v2}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1821
+    .line 1871
     return-void
 
-    .line 1814
+    .line 1864
     .end local v2    # "params":Landroid/widget/RelativeLayout$LayoutParams;
     :cond_2f
     mul-int/lit8 v3, v1, 0x2

@@ -22,7 +22,7 @@
     .registers 1
 
     .prologue
-    .line 417
+    .line 411
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -37,9 +37,9 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 419
-    invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
+    .line 414
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 420
+    .line 415
     return-void
 .end method

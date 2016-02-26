@@ -49,23 +49,23 @@
     .end annotation
 
     .prologue
-    .line 1694
+    .line 1721
     .local p2, "d":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lic/buzzebeeslib/bean/CampaignCategory;>;"
     iput-object p1, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 1692
+    .line 1719
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;->data:Ljava/util/ArrayList;
 
-    .line 1695
+    .line 1722
     iput-object p2, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;->data:Ljava/util/ArrayList;
 
-    .line 1696
+    .line 1723
     return-void
 .end method
 
@@ -73,7 +73,7 @@
     .registers 2
 
     .prologue
-    .line 1692
+    .line 1719
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;->data:Ljava/util/ArrayList;
 
     return-object v0
@@ -85,7 +85,7 @@
     .registers 2
 
     .prologue
-    .line 1699
+    .line 1726
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;->data:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -100,7 +100,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 1703
+    .line 1730
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;->data:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -115,7 +115,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 1707
+    .line 1734
     int-to-long v0, p1
 
     return-wide v0
@@ -136,7 +136,7 @@
 
     const/4 v10, 0x0
 
-    .line 1716
+    .line 1743
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;->data:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -145,15 +145,15 @@
 
     check-cast v8, Lic/buzzebeeslib/bean/CampaignCategory;
 
-    .line 1723
+    .line 1750
     .local v8, "objCampaignCategory":Lic/buzzebeeslib/bean/CampaignCategory;
     const/4 v6, 0x0
 
-    .line 1724
+    .line 1751
     .local v6, "holder":Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;
     move-object v9, p2
 
-    .line 1726
+    .line 1753
     .local v9, "view":Landroid/view/View;
     if-eqz p2, :cond_17
 
@@ -161,9 +161,9 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_b9
+    if-nez v0, :cond_d2
 
-    .line 1727
+    .line 1754
     :cond_17
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
@@ -171,7 +171,7 @@
 
     move-result-object v7
 
-    .line 1728
+    .line 1755
     .local v7, "inflater":Landroid/view/LayoutInflater;
     sget v0, Lic/buzzebeeslib/R$layout;->bz_market_filter_row:I
 
@@ -179,13 +179,13 @@
 
     move-result-object v9
 
-    .line 1729
+    .line 1756
     new-instance v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;
 
     .end local v6    # "holder":Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;
     invoke-direct {v6, p0}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;-><init>(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;)V
 
-    .line 1730
+    .line 1757
     .restart local v6    # "holder":Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;
     sget v0, Lic/buzzebeeslib/R$id;->ivFilterImage:I
 
@@ -197,7 +197,7 @@
 
     iput-object v0, v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;->ivFilterImage:Landroid/widget/ImageView;
 
-    .line 1731
+    .line 1758
     sget v0, Lic/buzzebeeslib/R$id;->tvFilterName:I
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -208,10 +208,10 @@
 
     iput-object v0, v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;->tvFilterName:Landroid/widget/TextView;
 
-    .line 1732
+    .line 1759
     invoke-virtual {v9, v6}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 1748
+    .line 1775
     .end local v7    # "inflater":Landroid/view/LayoutInflater;
     :goto_3f
     iget-object v0, v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;->tvFilterName:Landroid/widget/TextView;
@@ -226,7 +226,7 @@
 
     invoke-static {v0, v2, v4, v10}, Lic/buzzebeeslib/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;II)V
 
-    .line 1750
+    .line 1777
     iget-object v0, v8, Lic/buzzebeeslib/bean/CampaignCategory;->Mode:Ljava/lang/String;
 
     const-string v2, "type"
@@ -235,9 +235,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10f
+    if-eqz v0, :cond_12b
 
-    .line 1751
+    .line 1778
     iget-object v0, v8, Lic/buzzebeeslib/bean/CampaignCategory;->Name:Ljava/lang/String;
 
     const-string v2, "All"
@@ -246,21 +246,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c8
+    if-eqz v0, :cond_e2
 
-    .line 1752
+    .line 1779
     iget-boolean v0, v8, Lic/buzzebeeslib/bean/CampaignCategory;->IsSelected:Z
 
-    if-eqz v0, :cond_c0
+    if-eqz v0, :cond_da
 
-    .line 1753
+    .line 1780
     iget-object v0, v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;->ivFilterImage:Landroid/widget/ImageView;
 
     sget v2, Lic/buzzebeeslib/R$drawable;->bz_down_all_icon_orange:I
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1782
+    .line 1809
     :goto_6a
     iget-object v0, v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;->tvFilterName:Landroid/widget/TextView;
 
@@ -268,7 +268,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1783
+    .line 1810
     iget-object v0, v8, Lic/buzzebeeslib/bean/CampaignCategory;->Name:Ljava/lang/String;
 
     const-string v2, "All"
@@ -277,9 +277,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_173
+    if-eqz v0, :cond_18f
 
-    .line 1784
+    .line 1811
     iget-object v0, v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;->tvFilterName:Landroid/widget/TextView;
 
     iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
@@ -292,14 +292,14 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1791
+    .line 1818
     :cond_88
     :goto_88
     iget-boolean v0, v8, Lic/buzzebeeslib/bean/CampaignCategory;->IsSelected:Z
 
-    if-eqz v0, :cond_1b6
+    if-eqz v0, :cond_1d2
 
-    .line 1792
+    .line 1819
     sget-object v0, Lic/buzzebeeslib/LibConst;->PACKAGE_PARENT:Ljava/lang/String;
 
     const-string v2, "com.samsung.privilege"
@@ -308,9 +308,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a5
+    if-eqz v0, :cond_1c1
 
-    .line 1793
+    .line 1820
     iget-object v0, v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;->tvFilterName:Landroid/widget/TextView;
 
     const/16 v2, 0xbc
@@ -323,21 +323,45 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1802
+    .line 1830
     :goto_a3
     :try_start_a3
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-    invoke-static {v0}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$8(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Lcom/google/analytics/tracking/android/Tracker;
+    invoke-static {v0}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$9(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Lcom/google/analytics/tracking/android/Tracker;
 
     move-result-object v0
 
-    const-string v2, "Marketplace Category"
+    const-string v2, "BZB Marketplace"
 
-    const-string v3, "View"
+    const-string v3, "View BZB Category"
 
-    iget-object v4, v8, Lic/buzzebeeslib/bean/CampaignCategory;->Name_En:Ljava/lang/String;
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    iget-object v5, v8, Lic/buzzebeeslib/bean/CampaignCategory;->Cat:Ljava/lang/String;
+
+    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v5, "|"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    iget-object v5, v8, Lic/buzzebeeslib/bean/CampaignCategory;->Name_En:Ljava/lang/String;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
 
     const-wide/16 v10, 0x1
 
@@ -346,15 +370,15 @@
     move-result-object v5
 
     invoke-virtual {v0, v2, v3, v4, v5}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-    :try_end_b8
-    .catch Ljava/lang/Exception; {:try_start_a3 .. :try_end_b8} :catch_1c1
+    :try_end_d1
+    .catch Ljava/lang/Exception; {:try_start_a3 .. :try_end_d1} :catch_1dd
 
-    .line 1807
-    :goto_b8
+    .line 1835
+    :goto_d1
     return-object v9
 
-    .line 1734
-    :cond_b9
+    .line 1761
+    :cond_d2
     invoke-virtual {v9}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v6
@@ -363,10 +387,10 @@
     check-cast v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;
 
     .restart local v6    # "holder":Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;
-    goto :goto_3f
+    goto/16 :goto_3f
 
-    .line 1755
-    :cond_c0
+    .line 1782
+    :cond_da
     iget-object v0, v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;->ivFilterImage:Landroid/widget/ImageView;
 
     sget v2, Lic/buzzebeeslib/R$drawable;->bz_down_all_icon:I
@@ -375,8 +399,8 @@
 
     goto :goto_6a
 
-    .line 1757
-    :cond_c8
+    .line 1784
+    :cond_e2
     iget-object v0, v8, Lic/buzzebeeslib/bean/CampaignCategory;->Name:Ljava/lang/String;
 
     const-string v2, "Free"
@@ -385,34 +409,34 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e6
+    if-eqz v0, :cond_102
 
-    .line 1758
+    .line 1785
     iget-boolean v0, v8, Lic/buzzebeeslib/bean/CampaignCategory;->IsSelected:Z
 
-    if-eqz v0, :cond_de
+    if-eqz v0, :cond_f9
 
-    .line 1759
+    .line 1786
     iget-object v0, v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;->ivFilterImage:Landroid/widget/ImageView;
 
     sget v2, Lic/buzzebeeslib/R$drawable;->bz_down_free_icon_orange:I
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    goto :goto_6a
+    goto/16 :goto_6a
 
-    .line 1761
-    :cond_de
+    .line 1788
+    :cond_f9
     iget-object v0, v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;->ivFilterImage:Landroid/widget/ImageView;
 
     sget v2, Lic/buzzebeeslib/R$drawable;->bz_down_free_icon:I
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    goto :goto_6a
+    goto/16 :goto_6a
 
-    .line 1763
-    :cond_e6
+    .line 1790
+    :cond_102
     iget-object v0, v8, Lic/buzzebeeslib/bean/CampaignCategory;->Name:Ljava/lang/String;
 
     const-string v2, "Deal"
@@ -421,14 +445,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_106
+    if-eqz v0, :cond_122
 
-    .line 1764
+    .line 1791
     iget-boolean v0, v8, Lic/buzzebeeslib/bean/CampaignCategory;->IsSelected:Z
 
-    if-eqz v0, :cond_fd
+    if-eqz v0, :cond_119
 
-    .line 1765
+    .line 1792
     iget-object v0, v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;->ivFilterImage:Landroid/widget/ImageView;
 
     sget v2, Lic/buzzebeeslib/R$drawable;->bz_down_deal_icon_orange:I
@@ -437,8 +461,8 @@
 
     goto/16 :goto_6a
 
-    .line 1767
-    :cond_fd
+    .line 1794
+    :cond_119
     iget-object v0, v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;->ivFilterImage:Landroid/widget/ImageView;
 
     sget v2, Lic/buzzebeeslib/R$drawable;->bz_down_deal_icon:I
@@ -447,8 +471,8 @@
 
     goto/16 :goto_6a
 
-    .line 1770
-    :cond_106
+    .line 1797
+    :cond_122
     iget-object v0, v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;->ivFilterImage:Landroid/widget/ImageView;
 
     sget v2, Lic/buzzebeeslib/R$drawable;->t1_1:I
@@ -457,13 +481,13 @@
 
     goto/16 :goto_6a
 
-    .line 1773
-    :cond_10f
+    .line 1800
+    :cond_12b
     iget-boolean v0, v8, Lic/buzzebeeslib/bean/CampaignCategory;->IsSelected:Z
 
-    if-eqz v0, :cond_143
+    if-eqz v0, :cond_15f
 
-    .line 1774
+    .line 1801
     new-instance v0, Ljava/lang/StringBuilder;
 
     sget-object v2, Lic/buzzebeeslib/LibConst;->API_URL_BUZZEBEES:Ljava/lang/String;
@@ -496,7 +520,7 @@
 
     move-result-object v1
 
-    .line 1775
+    .line 1802
     .local v1, "cat_img_url":Ljava/lang/String;
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
@@ -513,9 +537,9 @@
 
     goto/16 :goto_6a
 
-    .line 1777
+    .line 1804
     .end local v1    # "cat_img_url":Ljava/lang/String;
-    :cond_143
+    :cond_15f
     new-instance v0, Ljava/lang/StringBuilder;
 
     sget-object v2, Lic/buzzebeeslib/LibConst;->API_URL_BUZZEBEES:Ljava/lang/String;
@@ -548,7 +572,7 @@
 
     move-result-object v1
 
-    .line 1778
+    .line 1805
     .restart local v1    # "cat_img_url":Ljava/lang/String;
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
@@ -565,9 +589,9 @@
 
     goto/16 :goto_6a
 
-    .line 1785
+    .line 1812
     .end local v1    # "cat_img_url":Ljava/lang/String;
-    :cond_173
+    :cond_18f
     iget-object v0, v8, Lic/buzzebeeslib/bean/CampaignCategory;->Name:Ljava/lang/String;
 
     const-string v2, "Free"
@@ -576,9 +600,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18c
+    if-eqz v0, :cond_1a8
 
-    .line 1786
+    .line 1813
     iget-object v0, v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;->tvFilterName:Landroid/widget/TextView;
 
     iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
@@ -593,8 +617,8 @@
 
     goto/16 :goto_88
 
-    .line 1787
-    :cond_18c
+    .line 1814
+    :cond_1a8
     iget-object v0, v8, Lic/buzzebeeslib/bean/CampaignCategory;->Name:Ljava/lang/String;
 
     const-string v2, "Deal"
@@ -605,7 +629,7 @@
 
     if-eqz v0, :cond_88
 
-    .line 1788
+    .line 1815
     iget-object v0, v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;->tvFilterName:Landroid/widget/TextView;
 
     iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
@@ -620,8 +644,8 @@
 
     goto/16 :goto_88
 
-    .line 1795
-    :cond_1a5
+    .line 1822
+    :cond_1c1
     iget-object v0, v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;->tvFilterName:Landroid/widget/TextView;
 
     const/16 v2, 0xfd
@@ -638,8 +662,8 @@
 
     goto/16 :goto_a3
 
-    .line 1798
-    :cond_1b6
+    .line 1825
+    :cond_1d2
     iget-object v0, v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;->tvFilterName:Landroid/widget/TextView;
 
     invoke-static {v11, v11, v11}, Landroid/graphics/Color;->rgb(III)I
@@ -650,9 +674,9 @@
 
     goto/16 :goto_a3
 
-    .line 1803
-    :catch_1c1
+    .line 1831
+    :catch_1dd
     move-exception v0
 
-    goto/16 :goto_b8
+    goto/16 :goto_d1
 .end method

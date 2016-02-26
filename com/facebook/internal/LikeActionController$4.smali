@@ -29,7 +29,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 10
+    .registers 11
     .param p1, "receiverContext"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
@@ -96,10 +96,10 @@
     invoke-direct {v4, p0, v2, v1}, Lcom/facebook/internal/LikeActionController$4$1;-><init>(Lcom/facebook/internal/LikeActionController$4;ZLandroid/content/Context;)V
 
     .line 317
-    const-wide/16 v5, 0x64
+    const-wide/16 v6, 0x64
 
     .line 292
-    invoke-virtual {v3, v4, v5, v6}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v3, v4, v6, v7}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     goto :goto_7
 

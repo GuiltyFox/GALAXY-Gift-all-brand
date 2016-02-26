@@ -1170,7 +1170,7 @@
 .end method
 
 .method final getDirections(DD)V
-    .registers 9
+    .registers 10
     .param p1, "latitude"    # D
     .param p3, "longitude"    # D
 

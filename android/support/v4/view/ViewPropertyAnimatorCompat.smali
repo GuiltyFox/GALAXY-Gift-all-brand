@@ -202,7 +202,7 @@
 .end method
 
 .method public getDuration()J
-    .registers 4
+    .registers 5
 
     .prologue
     .line 606
@@ -222,14 +222,14 @@
 
     invoke-interface {v1, v0}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;->getDuration(Landroid/view/View;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 609
     :goto_10
-    return-wide v1
+    return-wide v2
 
     :cond_11
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
     goto :goto_10
 .end method
@@ -268,7 +268,7 @@
 .end method
 
 .method public getStartDelay()J
-    .registers 4
+    .registers 5
 
     .prologue
     .line 677
@@ -288,14 +288,14 @@
 
     invoke-interface {v1, v0}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;->getStartDelay(Landroid/view/View;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 680
     :goto_10
-    return-wide v1
+    return-wide v2
 
     :cond_11
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
     goto :goto_10
 .end method
@@ -571,7 +571,7 @@
 .end method
 
 .method public setDuration(J)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
-    .registers 5
+    .registers 6
     .param p1, "value"    # J
 
     .prologue
@@ -652,7 +652,7 @@
 .end method
 
 .method public setStartDelay(J)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
-    .registers 5
+    .registers 6
     .param p1, "value"    # J
 
     .prologue

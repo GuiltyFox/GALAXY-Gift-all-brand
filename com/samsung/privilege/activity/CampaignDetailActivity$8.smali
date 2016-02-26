@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$8;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
-    .line 1392
+    .line 1396
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1394
+    .line 1398
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$8;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->paramCampaign:Lcom/samsung/privilege/bean/CampaignView;
@@ -55,7 +55,7 @@
 
     if-eqz v2, :cond_6d
 
-    .line 1395
+    .line 1399
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$8;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->paramCampaign:Lcom/samsung/privilege/bean/CampaignView;
@@ -69,7 +69,7 @@
 
     iput v3, v2, Lcom/samsung/privilege/bean/CampaignView;->PeopleLike:I
 
-    .line 1396
+    .line 1400
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$8;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->paramCampaign:Lcom/samsung/privilege/bean/CampaignView;
@@ -79,7 +79,7 @@
 
     iput-boolean v4, v2, Lcom/samsung/privilege/bean/CampaignView;->IsLike:Z
 
-    .line 1402
+    .line 1406
     :goto_1f
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$8;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
@@ -92,7 +92,7 @@
 
     if-gez v2, :cond_31
 
-    .line 1403
+    .line 1407
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$8;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->paramCampaign:Lcom/samsung/privilege/bean/CampaignView;
@@ -102,7 +102,7 @@
 
     iput v4, v2, Lcom/samsung/privilege/bean/CampaignView;->PeopleLike:I
 
-    .line 1406
+    .line 1410
     :cond_31
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$8;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
@@ -114,7 +114,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 1412
+    .line 1416
     .local v1, "tvLike":Landroid/widget/TextView;
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$8;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
@@ -131,7 +131,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1414
+    .line 1418
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$8;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     const v3, 0x7f3c0016
@@ -142,7 +142,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 1415
+    .line 1419
     .local v0, "imgLike":Landroid/widget/ImageView;
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$8;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
@@ -155,21 +155,21 @@
 
     if-eqz v2, :cond_83
 
-    .line 1416
-    const v2, 0x7f02031a
+    .line 1420
+    const v2, 0x7f02031c
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1417
+    .line 1421
     const v2, 0x7f02007b
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
-    .line 1422
+    .line 1426
     :goto_6c
     return-void
 
-    .line 1398
+    .line 1402
     .end local v0    # "imgLike":Landroid/widget/ImageView;
     .end local v1    # "tvLike":Landroid/widget/TextView;
     :cond_6d
@@ -186,7 +186,7 @@
 
     iput v3, v2, Lcom/samsung/privilege/bean/CampaignView;->PeopleLike:I
 
-    .line 1399
+    .line 1403
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$8;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->paramCampaign:Lcom/samsung/privilege/bean/CampaignView;
@@ -200,15 +200,15 @@
 
     goto :goto_1f
 
-    .line 1419
+    .line 1423
     .restart local v0    # "imgLike":Landroid/widget/ImageView;
     .restart local v1    # "tvLike":Landroid/widget/TextView;
     :cond_83
-    const v2, 0x7f02031b
+    const v2, 0x7f02031d
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1420
+    .line 1424
     const v2, 0x7f02007c
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setBackgroundResource(I)V

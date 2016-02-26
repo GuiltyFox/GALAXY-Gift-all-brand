@@ -66,12 +66,12 @@
 
 # virtual methods
 .method public run()V
-    .registers 12
+    .registers 13
 
     .prologue
-    const/4 v10, 0x1
+    const/4 v11, 0x1
 
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
     .line 353
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -82,11 +82,11 @@
     .local v2, "now":J
     iget v6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->val$durationMs:F
 
-    iget-wide v7, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->val$startTime:J
+    iget-wide v8, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->val$startTime:J
 
-    sub-long v7, v2, v7
+    sub-long v8, v2, v8
 
-    long-to-float v7, v7
+    long-to-float v7, v8
 
     invoke-static {v6, v7}, Ljava/lang/Math;->min(FF)F
 
@@ -98,7 +98,7 @@
 
     iget v7, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->val$durationMs:F
 
-    invoke-static {v1, v9, v6, v7}, Lit/sephiroth/android/library/imagezoom/Cubic;->easeOut(FFFF)F
+    invoke-static {v1, v10, v6, v7}, Lit/sephiroth/android/library/imagezoom/Cubic;->easeOut(FFFF)F
 
     move-result v4
 
@@ -108,7 +108,7 @@
 
     iget v7, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->val$durationMs:F
 
-    invoke-static {v1, v9, v6, v7}, Lit/sephiroth/android/library/imagezoom/Cubic;->easeOut(FFFF)F
+    invoke-static {v1, v10, v6, v7}, Lit/sephiroth/android/library/imagezoom/Cubic;->easeOut(FFFF)F
 
     move-result v5
 
@@ -155,7 +155,7 @@
     :cond_40
     iget-object v6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
-    invoke-virtual {v6, v10, v10}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->getCenter(ZZ)Landroid/graphics/RectF;
+    invoke-virtual {v6, v11, v11}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->getCenter(ZZ)Landroid/graphics/RectF;
 
     move-result-object v0
 
@@ -163,13 +163,13 @@
     .local v0, "centerRect":Landroid/graphics/RectF;
     iget v6, v0, Landroid/graphics/RectF;->left:F
 
-    cmpl-float v6, v6, v9
+    cmpl-float v6, v6, v10
 
     if-nez v6, :cond_52
 
     iget v6, v0, Landroid/graphics/RectF;->top:F
 
-    cmpl-float v6, v6, v9
+    cmpl-float v6, v6, v10
 
     if-eqz v6, :cond_3f
 

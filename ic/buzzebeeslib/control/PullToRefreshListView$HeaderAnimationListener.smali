@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
-    .registers 7
+    .registers 8
     .param p1, "animation"    # Landroid/view/animation/Animation;
 
     .prologue
@@ -141,10 +141,10 @@
     invoke-direct {v2, p0}, Lic/buzzebeeslib/control/PullToRefreshListView$HeaderAnimationListener$1;-><init>(Lic/buzzebeeslib/control/PullToRefreshListView$HeaderAnimationListener;)V
 
     .line 475
-    const-wide/16 v3, 0x64
+    const-wide/16 v4, 0x64
 
     .line 468
-    invoke-virtual {v1, v2, v3, v4}, Lic/buzzebeeslib/control/PullToRefreshListView;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v1, v2, v4, v5}, Lic/buzzebeeslib/control/PullToRefreshListView;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 479
     :cond_43

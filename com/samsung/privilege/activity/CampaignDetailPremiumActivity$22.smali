@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$22;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
-    .line 2706
+    .line 2707
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 3
 
     .prologue
-    .line 2708
+    .line 2709
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$22;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     const/4 v1, 0x1
@@ -49,6 +49,6 @@
     # invokes: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->initialLayout(Z)V
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->access$27(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;Z)V
 
-    .line 2709
+    .line 2710
     return-void
 .end method

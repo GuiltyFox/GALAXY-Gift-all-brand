@@ -629,9 +629,9 @@
     .line 229
     iget-object v0, p0, Lic/buzzebeeslib/control/PullToRefreshListView;->flipAnimation:Landroid/view/animation/RotateAnimation;
 
-    const-wide/16 v5, 0xfa
+    const-wide/16 v6, 0xfa
 
-    invoke-virtual {v0, v5, v6}, Landroid/view/animation/RotateAnimation;->setDuration(J)V
+    invoke-virtual {v0, v6, v7}, Landroid/view/animation/RotateAnimation;->setDuration(J)V
 
     .line 230
     iget-object v0, p0, Lic/buzzebeeslib/control/PullToRefreshListView;->flipAnimation:Landroid/view/animation/RotateAnimation;
@@ -669,9 +669,9 @@
     .line 234
     iget-object v0, p0, Lic/buzzebeeslib/control/PullToRefreshListView;->reverseFlipAnimation:Landroid/view/animation/RotateAnimation;
 
-    const-wide/16 v1, 0xfa
+    const-wide/16 v4, 0xfa
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/RotateAnimation;->setDuration(J)V
+    invoke-virtual {v0, v4, v5}, Landroid/view/animation/RotateAnimation;->setDuration(J)V
 
     .line 235
     iget-object v0, p0, Lic/buzzebeeslib/control/PullToRefreshListView;->reverseFlipAnimation:Landroid/view/animation/RotateAnimation;

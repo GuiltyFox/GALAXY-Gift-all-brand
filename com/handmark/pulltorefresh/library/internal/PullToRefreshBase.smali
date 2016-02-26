@@ -971,18 +971,12 @@
 .end method
 
 .method private init(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 13
+    .registers 10
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    const/16 v9, 0xc
-
-    const/16 v8, 0x9
-
-    const/4 v7, 0x4
-
     const/4 v6, 0x1
 
     const/4 v5, 0x0
@@ -1002,13 +996,13 @@
 
     aget v3, v3, v4
 
-    packed-switch v3, :pswitch_data_c4
+    packed-switch v3, :pswitch_data_d0
 
     .line 1078
     invoke-virtual {p0, v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setOrientation(I)V
 
     .line 1082
-    :goto_1b
+    :goto_16
     const/16 v3, 0x11
 
     invoke-virtual {p0, v3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setGravity(I)V
@@ -1035,14 +1029,18 @@
 
     .line 1090
     .local v0, "a":Landroid/content/res/TypedArray;
-    invoke-virtual {v0, v7}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    sget v3, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrMode:I
+
+    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_40
+    if-eqz v3, :cond_3f
 
     .line 1091
-    invoke-virtual {v0, v7, v5}, Landroid/content/res/TypedArray;->getInteger(II)I
+    sget v3, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrMode:I
+
+    invoke-virtual {v0, v3, v5}, Landroid/content/res/TypedArray;->getInteger(II)I
 
     move-result v3
 
@@ -1053,15 +1051,20 @@
     iput-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .line 1094
-    :cond_40
-    invoke-virtual {v0, v9}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    :cond_3f
+    sget v3, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrAnimationStyle:I
+
+    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_50
+    if-eqz v3, :cond_53
+
+    .line 1096
+    sget v3, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrAnimationStyle:I
 
     .line 1095
-    invoke-virtual {v0, v9, v5}, Landroid/content/res/TypedArray;->getInteger(II)I
+    invoke-virtual {v0, v3, v5}, Landroid/content/res/TypedArray;->getInteger(II)I
 
     move-result v3
 
@@ -1072,7 +1075,7 @@
     iput-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLoadingAnimationStyle:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     .line 1101
-    :cond_50
+    :cond_53
     invoke-virtual {p0, p1, p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->createRefreshableView(Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
 
     move-result-object v3
@@ -1103,20 +1106,24 @@
     iput-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFooterLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
     .line 1111
-    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    sget v3, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrRefreshableViewBackground:I
+
+    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_a7
+    if-eqz v3, :cond_b2
 
     .line 1112
-    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    sget v3, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrRefreshableViewBackground:I
+
+    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     .line 1113
     .local v1, "background":Landroid/graphics/drawable/Drawable;
-    if-eqz v1, :cond_7c
+    if-eqz v1, :cond_83
 
     .line 1114
     iget-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mRefreshableView:Landroid/view/View;
@@ -1125,33 +1132,37 @@
 
     .line 1124
     .end local v1    # "background":Landroid/graphics/drawable/Drawable;
-    :cond_7c
-    :goto_7c
-    invoke-virtual {v0, v8}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    :cond_83
+    :goto_83
+    sget v3, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrOverScroll:I
+
+    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_88
+    if-eqz v3, :cond_93
 
     .line 1125
-    invoke-virtual {v0, v8, v6}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    sget v3, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrOverScroll:I
+
+    invoke-virtual {v0, v3, v6}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v3
 
     iput-boolean v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOverScrollEnabled:Z
 
     .line 1128
-    :cond_88
-    const/16 v3, 0xd
+    :cond_93
+    sget v3, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrScrollingWhileRefreshingEnabled:I
 
     invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_98
+    if-eqz v3, :cond_a3
 
     .line 1130
-    const/16 v3, 0xd
+    sget v3, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrScrollingWhileRefreshingEnabled:I
 
     .line 1129
     invoke-virtual {v0, v3, v5}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
@@ -1161,7 +1172,7 @@
     iput-boolean v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mScrollingWhileRefreshingEnabled:Z
 
     .line 1135
-    :cond_98
+    :cond_a3
     invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->handleStyledAttributes(Landroid/content/res/TypedArray;)V
 
     .line 1136
@@ -1176,22 +1187,22 @@
     .line 1074
     .end local v0    # "a":Landroid/content/res/TypedArray;
     .end local v2    # "config":Landroid/view/ViewConfiguration;
-    :pswitch_a2
+    :pswitch_ad
     invoke-virtual {p0, v5}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setOrientation(I)V
 
-    goto/16 :goto_1b
+    goto/16 :goto_16
 
     .line 1116
     .restart local v0    # "a":Landroid/content/res/TypedArray;
     .restart local v2    # "config":Landroid/view/ViewConfiguration;
-    :cond_a7
-    const/16 v3, 0x10
+    :cond_b2
+    sget v3, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrAdapterViewBackground:I
 
     invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_7c
+    if-eqz v3, :cond_83
 
     .line 1117
     const-string v3, "ptrAdapterViewBackground"
@@ -1201,7 +1212,7 @@
     invoke-static {v3, v4}, Lcom/handmark/pulltorefresh/library/internal/Utils;->warnDeprecation(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1118
-    const/16 v3, 0x10
+    sget v3, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrAdapterViewBackground:I
 
     invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1209,19 +1220,21 @@
 
     .line 1119
     .restart local v1    # "background":Landroid/graphics/drawable/Drawable;
-    if-eqz v1, :cond_7c
+    if-eqz v1, :cond_83
 
     .line 1120
     iget-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mRefreshableView:Landroid/view/View;
 
     invoke-virtual {v3, v1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    goto :goto_7c
+    goto :goto_83
 
     .line 1072
-    :pswitch_data_c4
+    nop
+
+    :pswitch_data_d0
     .packed-switch 0x2
-        :pswitch_a2
+        :pswitch_ad
     .end packed-switch
 .end method
 
@@ -1537,7 +1550,7 @@
 .end method
 
 .method private final smoothScrollTo(IJ)V
-    .registers 11
+    .registers 12
     .param p1, "scrollValue"    # I
     .param p2, "duration"    # J
 
@@ -1561,7 +1574,7 @@
 .end method
 
 .method private final smoothScrollTo(IJJLcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
-    .registers 14
+    .registers 15
     .param p1, "newScrollValue"    # I
     .param p2, "duration"    # J
     .param p4, "delayMillis"    # J

@@ -40,13 +40,13 @@
     .registers 5
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     .line 56
     iget-object v0, p0, Landroid/support/v4/widget/ContentLoadingProgressBar$2;->this$0:Landroid/support/v4/widget/ContentLoadingProgressBar;
 
     # setter for: Landroid/support/v4/widget/ContentLoadingProgressBar;->mPostedShow:Z
-    invoke-static {v0, v3}, Landroid/support/v4/widget/ContentLoadingProgressBar;->access$202(Landroid/support/v4/widget/ContentLoadingProgressBar;Z)Z
+    invoke-static {v0, v1}, Landroid/support/v4/widget/ContentLoadingProgressBar;->access$202(Landroid/support/v4/widget/ContentLoadingProgressBar;Z)Z
 
     .line 57
     iget-object v0, p0, Landroid/support/v4/widget/ContentLoadingProgressBar$2;->this$0:Landroid/support/v4/widget/ContentLoadingProgressBar;
@@ -63,15 +63,15 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v1
+    move-result-wide v2
 
     # setter for: Landroid/support/v4/widget/ContentLoadingProgressBar;->mStartTime:J
-    invoke-static {v0, v1, v2}, Landroid/support/v4/widget/ContentLoadingProgressBar;->access$102(Landroid/support/v4/widget/ContentLoadingProgressBar;J)J
+    invoke-static {v0, v2, v3}, Landroid/support/v4/widget/ContentLoadingProgressBar;->access$102(Landroid/support/v4/widget/ContentLoadingProgressBar;J)J
 
     .line 59
     iget-object v0, p0, Landroid/support/v4/widget/ContentLoadingProgressBar$2;->this$0:Landroid/support/v4/widget/ContentLoadingProgressBar;
 
-    invoke-virtual {v0, v3}, Landroid/support/v4/widget/ContentLoadingProgressBar;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/support/v4/widget/ContentLoadingProgressBar;->setVisibility(I)V
 
     .line 61
     :cond_1c

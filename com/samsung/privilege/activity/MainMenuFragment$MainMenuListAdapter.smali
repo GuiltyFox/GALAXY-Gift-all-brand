@@ -37,22 +37,22 @@
     .param p2, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 1485
+    .line 1500
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 1486
+    .line 1501
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mContext:Landroid/content/Context;
 
-    .line 1488
+    .line 1503
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mItems:Ljava/util/ArrayList;
 
-    .line 1489
+    .line 1504
     return-void
 .end method
 
@@ -64,7 +64,7 @@
 
     const/4 v1, 0x2
 
-    .line 1950
+    .line 1965
     new-instance v0, Landroid/view/animation/TranslateAnimation;
 
     const/high16 v2, 0x3f800000
@@ -81,20 +81,20 @@
 
     invoke-direct/range {v0 .. v8}, Landroid/view/animation/TranslateAnimation;-><init>(IFIFIFIF)V
 
-    .line 1951
+    .line 1966
     .local v0, "inFromRight":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x3e8
+    const-wide/16 v2, 0x3e8
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 1952
+    .line 1967
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
 
     invoke-direct {v1}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 1953
+    .line 1968
     return-object v0
 .end method
 
@@ -106,12 +106,12 @@
     .param p2, "item"    # Lcom/samsung/privilege/bean/MainMenuItemModel;
 
     .prologue
-    .line 1524
+    .line 1539
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 1525
+    .line 1540
     return-void
 .end method
 
@@ -120,12 +120,12 @@
     .param p1, "item"    # Lcom/samsung/privilege/bean/MainMenuItemModel;
 
     .prologue
-    .line 1516
+    .line 1531
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1517
+    .line 1532
     return-void
 .end method
 
@@ -142,13 +142,13 @@
     .end annotation
 
     .prologue
-    .line 1520
+    .line 1535
     .local p1, "items":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/MainMenuItemModel;>;"
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 1521
+    .line 1536
     return-void
 .end method
 
@@ -156,7 +156,7 @@
     .registers 4
 
     .prologue
-    .line 1492
+    .line 1507
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -170,10 +170,10 @@
 
     if-nez v2, :cond_d
 
-    .line 1495
+    .line 1510
     return-void
 
-    .line 1492
+    .line 1507
     :cond_d
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -181,7 +181,7 @@
 
     check-cast v0, Lcom/samsung/privilege/bean/MainMenuItemModel;
 
-    .line 1493
+    .line 1508
     .local v0, "model":Lcom/samsung/privilege/bean/MainMenuItemModel;
     const/4 v2, 0x0
 
@@ -194,7 +194,7 @@
     .registers 5
 
     .prologue
-    .line 1507
+    .line 1522
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -207,10 +207,10 @@
     :goto_8
     if-gez v0, :cond_b
 
-    .line 1513
+    .line 1528
     return-void
 
-    .line 1508
+    .line 1523
     :cond_b
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mItems:Ljava/util/ArrayList;
 
@@ -220,7 +220,7 @@
 
     check-cast v1, Lcom/samsung/privilege/bean/MainMenuItemModel;
 
-    .line 1509
+    .line 1524
     .local v1, "item":Lcom/samsung/privilege/bean/MainMenuItemModel;
     iget v2, v1, Lcom/samsung/privilege/bean/MainMenuItemModel;->type:I
 
@@ -228,12 +228,12 @@
 
     if-ne v2, v3, :cond_1d
 
-    .line 1510
+    .line 1525
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 1507
+    .line 1522
     :cond_1d
     add-int/lit8 v0, v0, -0x1
 
@@ -244,7 +244,7 @@
     .registers 5
 
     .prologue
-    .line 1498
+    .line 1513
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -257,10 +257,10 @@
     :goto_8
     if-gez v0, :cond_b
 
-    .line 1504
+    .line 1519
     return-void
 
-    .line 1499
+    .line 1514
     :cond_b
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mItems:Ljava/util/ArrayList;
 
@@ -270,7 +270,7 @@
 
     check-cast v1, Lcom/samsung/privilege/bean/MainMenuItemModel;
 
-    .line 1500
+    .line 1515
     .local v1, "item":Lcom/samsung/privilege/bean/MainMenuItemModel;
     iget v2, v1, Lcom/samsung/privilege/bean/MainMenuItemModel;->type:I
 
@@ -278,12 +278,12 @@
 
     if-ne v2, v3, :cond_1d
 
-    .line 1501
+    .line 1516
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 1498
+    .line 1513
     :cond_1d
     add-int/lit8 v0, v0, -0x1
 
@@ -294,7 +294,7 @@
     .registers 2
 
     .prologue
-    .line 1538
+    .line 1553
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -309,7 +309,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 1543
+    .line 1558
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -324,7 +324,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 1552
+    .line 1567
     int-to-long v0, p1
 
     return-wide v0
@@ -337,10 +337,10 @@
     .param p3, "container"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 1558
+    .line 1573
     if-nez p2, :cond_19
 
-    .line 1559
+    .line 1574
     invoke-virtual/range {p3 .. p3}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -353,9 +353,9 @@
 
     check-cast v17, Landroid/view/LayoutInflater;
 
-    .line 1560
+    .line 1575
     .local v17, "inflater":Landroid/view/LayoutInflater;
-    const v2, 0x7f0300f6
+    const v2, 0x7f0300f8
 
     const/4 v4, 0x0
 
@@ -367,7 +367,7 @@
 
     move-result-object p2
 
-    .line 1563
+    .line 1578
     .end local v17    # "inflater":Landroid/view/LayoutInflater;
     :cond_19
     invoke-virtual/range {p0 .. p1}, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->getItem(I)Ljava/lang/Object;
@@ -376,7 +376,7 @@
 
     check-cast v18, Lcom/samsung/privilege/bean/MainMenuItemModel;
 
-    .line 1564
+    .line 1579
     .local v18, "model":Lcom/samsung/privilege/bean/MainMenuItemModel;
     move-object/from16 v0, p0
 
@@ -402,7 +402,7 @@
 
     move-result-object v23
 
-    .line 1565
+    .line 1580
     .local v23, "tf":Landroid/graphics/Typeface;
     move-object/from16 v0, p0
 
@@ -428,7 +428,7 @@
 
     move-result-object v24
 
-    .line 1566
+    .line 1581
     .local v24, "tf2":Landroid/graphics/Typeface;
     move-object/from16 v0, p0
 
@@ -446,7 +446,7 @@
 
     if-eqz v2, :cond_7d
 
-    .line 1567
+    .line 1582
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mContext:Landroid/content/Context;
@@ -463,7 +463,7 @@
 
     if-eqz v2, :cond_7d
 
-    .line 1568
+    .line 1583
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mContext:Landroid/content/Context;
@@ -478,7 +478,7 @@
 
     move-result-object v24
 
-    .line 1571
+    .line 1586
     :cond_7d
     move-object/from16 v0, p0
 
@@ -496,7 +496,7 @@
 
     if-eqz v2, :cond_ab
 
-    .line 1572
+    .line 1587
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mContext:Landroid/content/Context;
@@ -513,7 +513,7 @@
 
     if-eqz v2, :cond_ab
 
-    .line 1573
+    .line 1588
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mContext:Landroid/content/Context;
@@ -528,7 +528,7 @@
 
     move-result-object v24
 
-    .line 1576
+    .line 1591
     :cond_ab
     new-instance v8, Lcom/androidquery/AQuery;
 
@@ -536,9 +536,9 @@
 
     invoke-direct {v8, v0}, Lcom/androidquery/AQuery;-><init>(Landroid/view/View;)V
 
-    .line 1578
+    .line 1593
     .local v8, "aq":Lcom/androidquery/AQuery;
-    const v2, 0x7f070348
+    const v2, 0x7f0c0355
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -548,8 +548,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->gone()Lcom/androidquery/AbstractAQuery;
 
-    .line 1579
-    const v2, 0x7f070349
+    .line 1594
+    const v2, 0x7f0c0356
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -559,8 +559,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->gone()Lcom/androidquery/AbstractAQuery;
 
-    .line 1580
-    const v2, 0x7f07034a
+    .line 1595
+    const v2, 0x7f0c0357
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -570,8 +570,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->gone()Lcom/androidquery/AbstractAQuery;
 
-    .line 1581
-    const v2, 0x7f07009e
+    .line 1596
+    const v2, 0x7f0c009e
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -581,15 +581,15 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->gone()Lcom/androidquery/AbstractAQuery;
 
-    .line 1583
+    .line 1598
     move-object/from16 v0, v18
 
     iget v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->type:I
 
     if-nez v2, :cond_18f
 
-    .line 1584
-    const v2, 0x7f070341
+    .line 1599
+    const v2, 0x7f0c034e
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -599,8 +599,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->gone()Lcom/androidquery/AbstractAQuery;
 
-    .line 1585
-    const v2, 0x7f070342
+    .line 1600
+    const v2, 0x7f0c034f
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -610,8 +610,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->gone()Lcom/androidquery/AbstractAQuery;
 
-    .line 1586
-    const v2, 0x7f070343
+    .line 1601
+    const v2, 0x7f0c0350
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -621,8 +621,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->visible()Lcom/androidquery/AbstractAQuery;
 
-    .line 1587
-    const v2, 0x7f070344
+    .line 1602
+    const v2, 0x7f0c0351
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -632,8 +632,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->gone()Lcom/androidquery/AbstractAQuery;
 
-    .line 1588
-    const v2, 0x7f070345
+    .line 1603
+    const v2, 0x7f0c0352
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -643,8 +643,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->gone()Lcom/androidquery/AbstractAQuery;
 
-    .line 1589
-    const v2, 0x7f070346
+    .line 1604
+    const v2, 0x7f0c0353
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -654,8 +654,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->gone()Lcom/androidquery/AbstractAQuery;
 
-    .line 1590
-    const v2, 0x7f070343
+    .line 1605
+    const v2, 0x7f0c0350
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -695,8 +695,8 @@
 
     invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
 
-    .line 1591
-    const v2, 0x7f070347
+    .line 1606
+    const v2, 0x7f0c0354
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -706,7 +706,7 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->invisible()Lcom/androidquery/AbstractAQuery;
 
-    .line 1593
+    .line 1608
     move-object/from16 v0, v18
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->header:Ljava/lang/String;
@@ -719,12 +719,12 @@
 
     if-eqz v2, :cond_186
 
-    .line 1594
+    .line 1609
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v2, 0x7f07009e
+    const v2, 0x7f0c009e
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -738,20 +738,20 @@
 
     invoke-static {v4, v2}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$12(Lcom/samsung/privilege/activity/MainMenuFragment;Landroid/widget/ProgressBar;)V
 
-    .line 1597
+    .line 1612
     :cond_186
-    const v2, 0x7f02032e
+    const v2, 0x7f020330
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setBackgroundResource(I)V
 
-    .line 1946
+    .line 1961
     :cond_18e
     :goto_18e
     return-object p2
 
-    .line 1598
+    .line 1613
     :cond_18f
     move-object/from16 v0, v18
 
@@ -761,8 +761,8 @@
 
     if-ne v2, v4, :cond_a32
 
-    .line 1599
-    const v2, 0x7f070341
+    .line 1614
+    const v2, 0x7f0c034e
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -772,8 +772,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->visible()Lcom/androidquery/AbstractAQuery;
 
-    .line 1600
-    const v2, 0x7f070342
+    .line 1615
+    const v2, 0x7f0c034f
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -783,8 +783,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->gone()Lcom/androidquery/AbstractAQuery;
 
-    .line 1601
-    const v2, 0x7f070343
+    .line 1616
+    const v2, 0x7f0c0350
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -794,8 +794,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->visible()Lcom/androidquery/AbstractAQuery;
 
-    .line 1602
-    const v2, 0x7f070344
+    .line 1617
+    const v2, 0x7f0c0351
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -805,8 +805,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->visible()Lcom/androidquery/AbstractAQuery;
 
-    .line 1603
-    const v2, 0x7f070345
+    .line 1618
+    const v2, 0x7f0c0352
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -816,8 +816,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->gone()Lcom/androidquery/AbstractAQuery;
 
-    .line 1604
-    const v2, 0x7f070346
+    .line 1619
+    const v2, 0x7f0c0353
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -827,8 +827,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->gone()Lcom/androidquery/AbstractAQuery;
 
-    .line 1605
-    const v2, 0x7f070347
+    .line 1620
+    const v2, 0x7f0c0354
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -858,8 +858,8 @@
 
     invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
 
-    .line 1606
-    const v2, 0x7f070343
+    .line 1621
+    const v2, 0x7f0c0350
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -899,8 +899,8 @@
 
     invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
 
-    .line 1607
-    const v2, 0x7f070344
+    .line 1622
+    const v2, 0x7f0c0351
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -940,7 +940,7 @@
 
     invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
 
-    .line 1609
+    .line 1624
     const-string v2, "buzzebees"
 
     move-object/from16 v0, v18
@@ -953,8 +953,8 @@
 
     if-eqz v2, :cond_26a
 
-    .line 1610
-    const v2, 0x7f070348
+    .line 1625
+    const v2, 0x7f0c0355
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -964,19 +964,19 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->visible()Lcom/androidquery/AbstractAQuery;
 
-    .line 1613
+    .line 1628
     :cond_26a
     const/16 v19, 0x0
 
-    .line 1614
+    .line 1629
     .local v19, "resBackgroundId":I
     const/16 v20, 0x0
 
-    .line 1615
+    .line 1630
     .local v20, "resIconId":I
     const/16 v21, 0x0
 
-    .line 1617
+    .line 1632
     .local v21, "resUnreadBackgroundId":I
     const-string v2, "news"
 
@@ -990,19 +990,19 @@
 
     if-eqz v2, :cond_2c4
 
-    .line 1618
-    const v19, 0x7f020327
+    .line 1633
+    const v19, 0x7f020329
 
-    .line 1619
-    const v20, 0x7f0202ef
+    .line 1634
+    const v20, 0x7f0202f1
 
-    .line 1620
-    const v21, 0x7f0203af
+    .line 1635
+    const v21, 0x7f0203b7
 
-    .line 1741
+    .line 1756
     :cond_285
     :goto_285
-    const v2, 0x7f070341
+    const v2, 0x7f0c034e
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -1010,7 +1010,7 @@
 
     check-cast v15, Lcom/androidquery/AQuery;
 
-    .line 1742
+    .line 1757
     .local v15, "icon":Lcom/androidquery/AQuery;
     move-object/from16 v0, p2
 
@@ -1018,20 +1018,20 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundResource(I)V
 
-    .line 1743
+    .line 1758
     move/from16 v0, v20
 
     invoke-virtual {v15, v0}, Lcom/androidquery/AQuery;->image(I)Lcom/androidquery/AbstractAQuery;
 
-    .line 1745
+    .line 1760
     move-object/from16 v0, v18
 
     iget v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->newCount:I
 
     if-lez v2, :cond_a24
 
-    .line 1746
-    const v2, 0x7f070347
+    .line 1761
+    const v2, 0x7f0c0354
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -1065,7 +1065,7 @@
 
     goto/16 :goto_18e
 
-    .line 1621
+    .line 1636
     .end local v15    # "icon":Lcom/androidquery/AQuery;
     :cond_2c4
     const-string v2, "restuarant"
@@ -1080,16 +1080,16 @@
 
     if-eqz v2, :cond_2da
 
-    .line 1622
-    const v19, 0x7f020328
+    .line 1637
+    const v19, 0x7f02032a
 
-    .line 1623
-    const v20, 0x7f020307
+    .line 1638
+    const v20, 0x7f020309
 
-    .line 1624
-    const v21, 0x7f0203b0
+    .line 1639
+    const v21, 0x7f0203b8
 
-    .line 1625
+    .line 1640
     goto :goto_285
 
     :cond_2da
@@ -1105,16 +1105,16 @@
 
     if-eqz v2, :cond_2f0
 
-    .line 1626
-    const v19, 0x7f020329
+    .line 1641
+    const v19, 0x7f02032b
 
-    .line 1627
-    const v20, 0x7f0202d3
+    .line 1642
+    const v20, 0x7f0202d5
 
-    .line 1628
-    const v21, 0x7f0203b1
+    .line 1643
+    const v21, 0x7f0203b9
 
-    .line 1629
+    .line 1644
     goto :goto_285
 
     :cond_2f0
@@ -1130,16 +1130,16 @@
 
     if-eqz v2, :cond_306
 
-    .line 1630
-    const v19, 0x7f02032a
+    .line 1645
+    const v19, 0x7f02032c
 
-    .line 1631
-    const v20, 0x7f0202cb
+    .line 1646
+    const v20, 0x7f0202cd
 
-    .line 1632
-    const v21, 0x7f0203b2
+    .line 1647
+    const v21, 0x7f0203ba
 
-    .line 1633
+    .line 1648
     goto :goto_285
 
     :cond_306
@@ -1155,16 +1155,16 @@
 
     if-eqz v2, :cond_31d
 
-    .line 1634
-    const v19, 0x7f02032b
+    .line 1649
+    const v19, 0x7f02032d
 
-    .line 1635
-    const v20, 0x7f0202ec
+    .line 1650
+    const v20, 0x7f0202ee
 
-    .line 1636
-    const v21, 0x7f0203b3
+    .line 1651
+    const v21, 0x7f0203bb
 
-    .line 1637
+    .line 1652
     goto/16 :goto_285
 
     :cond_31d
@@ -1180,16 +1180,16 @@
 
     if-eqz v2, :cond_334
 
-    .line 1638
-    const v19, 0x7f02032d
+    .line 1653
+    const v19, 0x7f02032f
 
-    .line 1639
-    const v20, 0x7f0202c3
+    .line 1654
+    const v20, 0x7f0202c5
 
-    .line 1640
-    const v21, 0x7f0203b5
+    .line 1655
+    const v21, 0x7f0203bd
 
-    .line 1641
+    .line 1656
     goto/16 :goto_285
 
     :cond_334
@@ -1205,16 +1205,16 @@
 
     if-eqz v2, :cond_34b
 
-    .line 1642
-    const v19, 0x7f020327
+    .line 1657
+    const v19, 0x7f020329
 
-    .line 1643
-    const v20, 0x7f0202ed
+    .line 1658
+    const v20, 0x7f0202ef
 
-    .line 1644
-    const v21, 0x7f0203af
+    .line 1659
+    const v21, 0x7f0203b7
 
-    .line 1645
+    .line 1660
     goto/16 :goto_285
 
     :cond_34b
@@ -1230,13 +1230,13 @@
 
     if-eqz v2, :cond_572
 
-    .line 1646
-    const v19, 0x7f020327
+    .line 1661
+    const v19, 0x7f020329
 
-    .line 1647
-    const v21, 0x7f0203af
+    .line 1662
+    const v21, 0x7f0203b7
 
-    .line 1648
+    .line 1663
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -1257,12 +1257,12 @@
 
     if-eqz v2, :cond_400
 
-    .line 1649
-    const v20, 0x7f0202da
+    .line 1664
+    const v20, 0x7f0202dc
 
-    .line 1657
+    .line 1672
     :goto_374
-    const v2, 0x7f070343
+    const v2, 0x7f0c0350
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -1282,7 +1282,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a02c5
+    const v5, 0x7f0902c5
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -1308,7 +1308,7 @@
 
     invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
 
-    .line 1659
+    .line 1674
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -1329,7 +1329,7 @@
 
     if-eqz v2, :cond_46a
 
-    .line 1660
+    .line 1675
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -1350,8 +1350,8 @@
 
     if-eqz v2, :cond_437
 
-    .line 1661
-    const v2, 0x7f070344
+    .line 1676
+    const v2, 0x7f0c0351
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -1371,118 +1371,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a02dc
-
-    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
-
-    goto/16 :goto_285
-
-    .line 1650
-    :cond_400
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    invoke-virtual {v2}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/samsung/privilege/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v4, "1108"
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_419
-
-    .line 1651
-    const v20, 0x7f0202b6
-
-    .line 1652
-    goto/16 :goto_374
-
-    :cond_419
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    invoke-virtual {v2}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/samsung/privilege/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v4, "1109"
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_432
-
-    .line 1653
-    const v20, 0x7f0202b7
-
-    .line 1654
-    goto/16 :goto_374
-
-    .line 1655
-    :cond_432
-    const v20, 0x7f0202db
-
-    goto/16 :goto_374
-
-    .line 1663
-    :cond_437
-    const v2, 0x7f070344
-
-    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, v24
-
-    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    const v5, 0x7f0a02da
+    const v5, 0x7f0902dc
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -1511,6 +1400,117 @@
     goto/16 :goto_285
 
     .line 1665
+    :cond_400
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    invoke-virtual {v2}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/samsung/privilege/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v4, "1108"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_419
+
+    .line 1666
+    const v20, 0x7f0202b8
+
+    .line 1667
+    goto/16 :goto_374
+
+    :cond_419
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    invoke-virtual {v2}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/samsung/privilege/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v4, "1109"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_432
+
+    .line 1668
+    const v20, 0x7f0202b9
+
+    .line 1669
+    goto/16 :goto_374
+
+    .line 1670
+    :cond_432
+    const v20, 0x7f0202dd
+
+    goto/16 :goto_374
+
+    .line 1678
+    :cond_437
+    const v2, 0x7f0c0351
+
+    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    const v5, 0x7f0902da
+
+    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
+
+    move-result v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
+
+    goto/16 :goto_285
+
+    .line 1680
     :cond_46a
     move-object/from16 v0, p0
 
@@ -1532,7 +1532,7 @@
 
     if-eqz v2, :cond_4f8
 
-    .line 1666
+    .line 1681
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -1553,8 +1553,8 @@
 
     if-eqz v2, :cond_4c5
 
-    .line 1667
-    const v2, 0x7f070344
+    .line 1682
+    const v2, 0x7f0c0351
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -1574,7 +1574,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a02dd
+    const v5, 0x7f0902dd
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -1602,9 +1602,9 @@
 
     goto/16 :goto_285
 
-    .line 1669
+    .line 1684
     :cond_4c5
-    const v2, 0x7f070344
+    const v2, 0x7f0c0351
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -1624,7 +1624,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a02da
+    const v5, 0x7f0902da
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -1652,7 +1652,7 @@
 
     goto/16 :goto_285
 
-    .line 1672
+    .line 1687
     :cond_4f8
     move-object/from16 v0, p0
 
@@ -1674,269 +1674,8 @@
 
     if-eqz v2, :cond_53f
 
-    .line 1673
-    const v2, 0x7f070344
-
-    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, v24
-
-    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    const v5, 0x7f0a02db
-
-    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
-
-    goto/16 :goto_285
-
-    .line 1675
-    :cond_53f
-    const v2, 0x7f070344
-
-    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, v24
-
-    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    const v5, 0x7f0a02da
-
-    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
-
-    goto/16 :goto_285
-
-    .line 1678
-    :cond_572
-    const-string v2, "setting"
-
-    move-object/from16 v0, v18
-
-    iget-object v4, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->name:Ljava/lang/String;
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_74e
-
-    .line 1679
-    const v19, 0x7f02032c
-
-    .line 1680
-    const v20, 0x7f020308
-
-    .line 1681
-    const v21, 0x7f0203b4
-
-    .line 1682
-    const v2, 0x7f070343
-
-    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, v23
-
-    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    const v5, 0x7f0a02bf
-
-    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
-
-    .line 1684
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    invoke-virtual {v2}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/samsung/privilege/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v4, "768830479847872"
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_646
-
-    .line 1685
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    invoke-virtual {v2}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/samsung/privilege/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v4, "1033"
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_613
-
-    .line 1686
-    const v2, 0x7f070344
-
-    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, v24
-
-    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    const v5, 0x7f0a02d3
-
-    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
-
-    goto/16 :goto_285
-
     .line 1688
-    :cond_613
-    const v2, 0x7f070344
+    const v2, 0x7f0c0351
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -1956,7 +1695,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a02d1
+    const v5, 0x7f0902db
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -1985,7 +1724,126 @@
     goto/16 :goto_285
 
     .line 1690
-    :cond_646
+    :cond_53f
+    const v2, 0x7f0c0351
+
+    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    const v5, 0x7f0902da
+
+    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
+
+    move-result v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
+
+    goto/16 :goto_285
+
+    .line 1693
+    :cond_572
+    const-string v2, "setting"
+
+    move-object/from16 v0, v18
+
+    iget-object v4, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->name:Ljava/lang/String;
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_74e
+
+    .line 1694
+    const v19, 0x7f02032e
+
+    .line 1695
+    const v20, 0x7f02030a
+
+    .line 1696
+    const v21, 0x7f0203bc
+
+    .line 1697
+    const v2, 0x7f0c0350
+
+    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, v23
+
+    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    const v5, 0x7f0902bf
+
+    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
+
+    move-result v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
+
+    .line 1699
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -1998,208 +1856,37 @@
 
     move-result-object v2
 
-    const-string v4, "517155661760483"
+    const-string v4, "768830479847872"
 
     invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_6d4
-
-    .line 1691
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    invoke-virtual {v2}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/samsung/privilege/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v4, "1033"
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_6a1
-
-    .line 1692
-    const v2, 0x7f070344
-
-    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, v24
-
-    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    const v5, 0x7f0a02d4
-
-    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
-
-    goto/16 :goto_285
-
-    .line 1694
-    :cond_6a1
-    const v2, 0x7f070344
-
-    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, v24
-
-    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    const v5, 0x7f0a02d1
-
-    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
-
-    goto/16 :goto_285
-
-    .line 1697
-    :cond_6d4
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    invoke-virtual {v2}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/samsung/privilege/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v4, "1033"
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_71b
-
-    .line 1698
-    const v2, 0x7f070344
-
-    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, v24
-
-    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    const v5, 0x7f0a02d2
-
-    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
-
-    goto/16 :goto_285
+    if-eqz v2, :cond_646
 
     .line 1700
-    :cond_71b
-    const v2, 0x7f070344
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    invoke-virtual {v2}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/samsung/privilege/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v4, "1033"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_613
+
+    .line 1701
+    const v2, 0x7f0c0351
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -2219,7 +1906,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a02d1
+    const v5, 0x7f0902d3
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -2248,30 +1935,8 @@
     goto/16 :goto_285
 
     .line 1703
-    :cond_74e
-    const-string v2, "aboutus"
-
-    move-object/from16 v0, v18
-
-    iget-object v4, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->name:Ljava/lang/String;
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_7c7
-
-    .line 1704
-    const v19, 0x7f02032d
-
-    .line 1705
-    const v20, 0x7f0202c1
-
-    .line 1706
-    const v21, 0x7f0203b5
-
-    .line 1707
-    const v2, 0x7f070343
+    :cond_613
+    const v2, 0x7f0c0351
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -2279,7 +1944,7 @@
 
     check-cast v2, Lcom/androidquery/AQuery;
 
-    move-object/from16 v0, v23
+    move-object/from16 v0, v24
 
     invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
 
@@ -2291,7 +1956,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a02c0
+    const v5, 0x7f0902d1
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -2317,8 +1982,53 @@
 
     invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
 
-    .line 1708
-    const v2, 0x7f070344
+    goto/16 :goto_285
+
+    .line 1705
+    :cond_646
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    invoke-virtual {v2}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/samsung/privilege/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v4, "517155661760483"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_6d4
+
+    .line 1706
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    invoke-virtual {v2}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/samsung/privilege/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v4, "1033"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_6a1
+
+    .line 1707
+    const v2, 0x7f0c0351
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -2338,7 +2048,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a02d5
+    const v5, 0x7f0902d4
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -2367,30 +2077,8 @@
     goto/16 :goto_285
 
     .line 1709
-    :cond_7c7
-    const-string v2, "friends"
-
-    move-object/from16 v0, v18
-
-    iget-object v4, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->name:Ljava/lang/String;
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_840
-
-    .line 1710
-    const v19, 0x7f020328
-
-    .line 1711
-    const v20, 0x7f0202dc
-
-    .line 1712
-    const v21, 0x7f0203b0
-
-    .line 1713
-    const v2, 0x7f070343
+    :cond_6a1
+    const v2, 0x7f0c0351
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -2398,7 +2086,7 @@
 
     check-cast v2, Lcom/androidquery/AQuery;
 
-    move-object/from16 v0, v23
+    move-object/from16 v0, v24
 
     invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
 
@@ -2410,7 +2098,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a02c1
+    const v5, 0x7f0902d1
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -2436,8 +2124,32 @@
 
     invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
 
-    .line 1714
-    const v2, 0x7f070344
+    goto/16 :goto_285
+
+    .line 1712
+    :cond_6d4
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    invoke-virtual {v2}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/samsung/privilege/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v4, "1033"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_71b
+
+    .line 1713
+    const v2, 0x7f0c0351
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -2457,7 +2169,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a02d6
+    const v5, 0x7f0902d2
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -2486,6 +2198,294 @@
     goto/16 :goto_285
 
     .line 1715
+    :cond_71b
+    const v2, 0x7f0c0351
+
+    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    const v5, 0x7f0902d1
+
+    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
+
+    move-result v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
+
+    goto/16 :goto_285
+
+    .line 1718
+    :cond_74e
+    const-string v2, "aboutus"
+
+    move-object/from16 v0, v18
+
+    iget-object v4, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->name:Ljava/lang/String;
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_7c7
+
+    .line 1719
+    const v19, 0x7f02032f
+
+    .line 1720
+    const v20, 0x7f0202c3
+
+    .line 1721
+    const v21, 0x7f0203bd
+
+    .line 1722
+    const v2, 0x7f0c0350
+
+    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, v23
+
+    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    const v5, 0x7f0902c0
+
+    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
+
+    move-result v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
+
+    .line 1723
+    const v2, 0x7f0c0351
+
+    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    const v5, 0x7f0902d5
+
+    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
+
+    move-result v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
+
+    goto/16 :goto_285
+
+    .line 1724
+    :cond_7c7
+    const-string v2, "friends"
+
+    move-object/from16 v0, v18
+
+    iget-object v4, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->name:Ljava/lang/String;
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_840
+
+    .line 1725
+    const v19, 0x7f02032a
+
+    .line 1726
+    const v20, 0x7f0202de
+
+    .line 1727
+    const v21, 0x7f0203b8
+
+    .line 1728
+    const v2, 0x7f0c0350
+
+    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, v23
+
+    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    const v5, 0x7f0902c1
+
+    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
+
+    move-result v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
+
+    .line 1729
+    const v2, 0x7f0c0351
+
+    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    const v5, 0x7f0902d6
+
+    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
+
+    move-result v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
+
+    goto/16 :goto_285
+
+    .line 1730
     :cond_840
     const-string v2, "buzzebees"
 
@@ -2499,17 +2499,17 @@
 
     if-eqz v2, :cond_8b9
 
-    .line 1716
-    const v19, 0x7f020329
+    .line 1731
+    const v19, 0x7f02032b
 
-    .line 1717
-    const v20, 0x7f0202ce
+    .line 1732
+    const v20, 0x7f0202d0
 
-    .line 1718
-    const v21, 0x7f0203b1
+    .line 1733
+    const v21, 0x7f0203b9
 
-    .line 1719
-    const v2, 0x7f070343
+    .line 1734
+    const v2, 0x7f0c0350
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -2529,7 +2529,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a02c2
+    const v5, 0x7f0902c2
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -2555,8 +2555,8 @@
 
     invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
 
-    .line 1720
-    const v2, 0x7f070344
+    .line 1735
+    const v2, 0x7f0c0351
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -2576,7 +2576,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a02d7
+    const v5, 0x7f0902d7
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -2604,7 +2604,7 @@
 
     goto/16 :goto_285
 
-    .line 1721
+    .line 1736
     :cond_8b9
     const-string v2, "inapps"
 
@@ -2618,17 +2618,17 @@
 
     if-eqz v2, :cond_932
 
-    .line 1722
-    const v19, 0x7f02032a
+    .line 1737
+    const v19, 0x7f02032c
 
-    .line 1723
-    const v20, 0x7f0202dd
+    .line 1738
+    const v20, 0x7f0202df
 
-    .line 1724
-    const v21, 0x7f0203b2
+    .line 1739
+    const v21, 0x7f0203ba
 
-    .line 1725
-    const v2, 0x7f070343
+    .line 1740
+    const v2, 0x7f0c0350
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -2648,7 +2648,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a02c3
+    const v5, 0x7f0902c3
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -2674,8 +2674,8 @@
 
     invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
 
-    .line 1726
-    const v2, 0x7f070344
+    .line 1741
+    const v2, 0x7f0c0351
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -2695,7 +2695,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a02d8
+    const v5, 0x7f0902d8
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -2723,7 +2723,7 @@
 
     goto/16 :goto_285
 
-    .line 1727
+    .line 1742
     :cond_932
     const-string v2, "sign_out"
 
@@ -2737,136 +2737,17 @@
 
     if-eqz v2, :cond_9ab
 
-    .line 1728
-    const v19, 0x7f02032b
+    .line 1743
+    const v19, 0x7f02032d
 
-    .line 1729
-    const v20, 0x7f0202ea
+    .line 1744
+    const v20, 0x7f0202ec
 
-    .line 1730
-    const v21, 0x7f0203b3
+    .line 1745
+    const v21, 0x7f0203bb
 
-    .line 1731
-    const v2, 0x7f070343
-
-    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, v23
-
-    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    const v5, 0x7f0a02c4
-
-    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
-
-    .line 1732
-    const v2, 0x7f070344
-
-    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, v24
-
-    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    const v5, 0x7f0a02d9
-
-    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/androidquery/AQuery;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-
-    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v4
-
-    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
-
-    goto/16 :goto_285
-
-    .line 1733
-    :cond_9ab
-    const-string v2, "qrcode"
-
-    move-object/from16 v0, v18
-
-    iget-object v4, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->name:Ljava/lang/String;
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_285
-
-    .line 1734
-    const v19, 0x7f02032b
-
-    .line 1735
-    const v20, 0x7f020303
-
-    .line 1736
-    const v21, 0x7f0203b3
-
-    .line 1737
-    const v2, 0x7f070343
+    .line 1746
+    const v2, 0x7f0c0350
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -2886,7 +2767,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a02c6
+    const v5, 0x7f0902c4
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -2912,8 +2793,8 @@
 
     invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
 
-    .line 1738
-    const v2, 0x7f070344
+    .line 1747
+    const v2, 0x7f0c0351
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -2933,7 +2814,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a02de
+    const v5, 0x7f0902d9
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -2962,9 +2843,128 @@
     goto/16 :goto_285
 
     .line 1748
+    :cond_9ab
+    const-string v2, "qrcode"
+
+    move-object/from16 v0, v18
+
+    iget-object v4, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->name:Ljava/lang/String;
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_285
+
+    .line 1749
+    const v19, 0x7f02032d
+
+    .line 1750
+    const v20, 0x7f020305
+
+    .line 1751
+    const v21, 0x7f0203bb
+
+    .line 1752
+    const v2, 0x7f0c0350
+
+    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, v23
+
+    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    const v5, 0x7f0902c6
+
+    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
+
+    move-result v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
+
+    .line 1753
+    const v2, 0x7f0c0351
+
+    invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, v24
+
+    invoke-virtual {v2, v0}, Lcom/androidquery/AQuery;->typeface(Landroid/graphics/Typeface;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    const v5, 0x7f0902de
+
+    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->text(Ljava/lang/CharSequence;)Lcom/androidquery/AbstractAQuery;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/androidquery/AQuery;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
+
+    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
+
+    move-result v4
+
+    invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
+
+    goto/16 :goto_285
+
+    .line 1763
     .restart local v15    # "icon":Lcom/androidquery/AQuery;
     :cond_a24
-    const v2, 0x7f070347
+    const v2, 0x7f0c0354
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -2976,7 +2976,7 @@
 
     goto/16 :goto_18e
 
-    .line 1750
+    .line 1765
     .end local v15    # "icon":Lcom/androidquery/AQuery;
     .end local v19    # "resBackgroundId":I
     .end local v20    # "resIconId":I
@@ -2990,7 +2990,7 @@
 
     if-ne v2, v4, :cond_baa
 
-    .line 1751
+    .line 1766
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -3003,7 +3003,7 @@
 
     invoke-static {v2, v4}, Lcom/samsung/privilege/UserLogin;->SetNotificationUnReadCount(Landroid/content/Context;I)Z
 
-    .line 1752
+    .line 1767
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -3016,7 +3016,7 @@
 
     if-eqz v2, :cond_a5f
 
-    .line 1753
+    .line 1768
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -3027,16 +3027,16 @@
 
     check-cast v9, Lcom/samsung/privilege/activity/CampaignListActivity;
 
-    .line 1754
+    .line 1769
     .local v9, "ca":Lcom/samsung/privilege/activity/CampaignListActivity;
     const/4 v2, 0x0
 
     invoke-virtual {v9, v2}, Lcom/samsung/privilege/activity/CampaignListActivity;->setNotiUnread(I)V
 
-    .line 1757
+    .line 1772
     .end local v9    # "ca":Lcom/samsung/privilege/activity/CampaignListActivity;
     :cond_a5f
-    const v2, 0x7f070341
+    const v2, 0x7f0c034e
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3046,7 +3046,7 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->visible()Lcom/androidquery/AbstractAQuery;
 
-    .line 1758
+    .line 1773
     move-object/from16 v0, v18
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->noti_cat_id:Ljava/lang/String;
@@ -3071,9 +3071,9 @@
 
     if-eqz v2, :cond_b95
 
-    .line 1759
+    .line 1774
     :cond_a83
-    const v2, 0x7f070342
+    const v2, 0x7f0c034f
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3083,9 +3083,9 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->visible()Lcom/androidquery/AbstractAQuery;
 
-    .line 1763
+    .line 1778
     :goto_a8f
-    const v2, 0x7f070343
+    const v2, 0x7f0c0350
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3095,8 +3095,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->gone()Lcom/androidquery/AbstractAQuery;
 
-    .line 1764
-    const v2, 0x7f070344
+    .line 1779
+    const v2, 0x7f0c0351
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3106,8 +3106,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->gone()Lcom/androidquery/AbstractAQuery;
 
-    .line 1765
-    const v2, 0x7f070345
+    .line 1780
+    const v2, 0x7f0c0352
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3117,8 +3117,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->gone()Lcom/androidquery/AbstractAQuery;
 
-    .line 1766
-    const v2, 0x7f070346
+    .line 1781
+    const v2, 0x7f0c0353
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3128,8 +3128,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->visible()Lcom/androidquery/AbstractAQuery;
 
-    .line 1767
-    const v2, 0x7f070346
+    .line 1782
+    const v2, 0x7f0c0353
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3169,8 +3169,8 @@
 
     invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
 
-    .line 1768
-    const v2, 0x7f070347
+    .line 1783
+    const v2, 0x7f0c0354
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3180,8 +3180,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->invisible()Lcom/androidquery/AbstractAQuery;
 
-    .line 1769
-    const v2, 0x7f070341
+    .line 1784
+    const v2, 0x7f0c034e
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3189,7 +3189,7 @@
 
     check-cast v15, Lcom/androidquery/AQuery;
 
-    .line 1771
+    .line 1786
     .restart local v15    # "icon":Lcom/androidquery/AQuery;
     move-object/from16 v0, v18
 
@@ -3215,13 +3215,13 @@
 
     if-eqz v2, :cond_ba3
 
-    .line 1772
+    .line 1787
     :cond_b16
-    const v2, 0x7f020346
+    const v2, 0x7f020348
 
     invoke-virtual {v15, v2}, Lcom/androidquery/AQuery;->image(I)Lcom/androidquery/AbstractAQuery;
 
-    .line 1773
+    .line 1788
     new-instance v2, Ljava/lang/StringBuilder;
 
     sget-object v4, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
@@ -3256,7 +3256,7 @@
 
     move-result-object v3
 
-    .line 1774
+    .line 1789
     .local v3, "img_url":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -3273,34 +3273,34 @@
 
     const/4 v5, 0x0
 
-    const v6, 0x7f02039f
+    const v6, 0x7f0203a7
 
     const/4 v7, 0x0
 
     invoke-virtual/range {v2 .. v7}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
 
-    .line 1779
+    .line 1794
     .end local v3    # "img_url":Ljava/lang/String;
     :goto_b53
-    const v2, 0x7f020326
+    const v2, 0x7f020328
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setBackgroundResource(I)V
 
-    .line 1781
+    .line 1796
     move-object/from16 v0, v18
 
     iget-boolean v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->noti_play_animation:Z
 
     if-eqz v2, :cond_18e
 
-    .line 1782
+    .line 1797
     invoke-direct/range {p0 .. p0}, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->inFromRightAnimation()Landroid/view/animation/Animation;
 
     move-result-object v16
 
-    .line 1783
+    .line 1798
     .local v16, "inFromRight":Landroid/view/animation/Animation;
     const/4 v2, 0x1
 
@@ -3308,35 +3308,35 @@
 
     invoke-virtual {v0, v2}, Landroid/view/animation/Animation;->setFillEnabled(Z)V
 
-    .line 1784
+    .line 1799
     const/4 v2, 0x1
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
-    .line 1785
+    .line 1800
     const-wide/16 v4, 0x1f4
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 1787
+    .line 1802
     move-object/from16 v0, p2
 
     move-object/from16 v1, v16
 
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 1788
+    .line 1803
     const/4 v2, 0x0
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1790
+    .line 1805
     new-instance v2, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter$1;
 
     move-object/from16 v0, p0
@@ -3351,11 +3351,11 @@
 
     goto/16 :goto_18e
 
-    .line 1761
+    .line 1776
     .end local v15    # "icon":Lcom/androidquery/AQuery;
     .end local v16    # "inFromRight":Landroid/view/animation/Animation;
     :cond_b95
-    const v2, 0x7f070342
+    const v2, 0x7f0c034f
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3367,16 +3367,16 @@
 
     goto/16 :goto_a8f
 
-    .line 1776
+    .line 1791
     .restart local v15    # "icon":Lcom/androidquery/AQuery;
     :cond_ba3
-    const v2, 0x7f0202eb
+    const v2, 0x7f0202ed
 
     invoke-virtual {v15, v2}, Lcom/androidquery/AQuery;->image(I)Lcom/androidquery/AbstractAQuery;
 
     goto :goto_b53
 
-    .line 1807
+    .line 1822
     .end local v15    # "icon":Lcom/androidquery/AQuery;
     :cond_baa
     move-object/from16 v0, v18
@@ -3387,8 +3387,8 @@
 
     if-ne v2, v4, :cond_18e
 
-    .line 1808
-    const v2, 0x7f070341
+    .line 1823
+    const v2, 0x7f0c034e
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3398,8 +3398,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->visible()Lcom/androidquery/AbstractAQuery;
 
-    .line 1809
-    const v2, 0x7f070342
+    .line 1824
+    const v2, 0x7f0c034f
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3409,8 +3409,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->gone()Lcom/androidquery/AbstractAQuery;
 
-    .line 1810
-    const v2, 0x7f070343
+    .line 1825
+    const v2, 0x7f0c0350
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3420,8 +3420,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->gone()Lcom/androidquery/AbstractAQuery;
 
-    .line 1811
-    const v2, 0x7f070344
+    .line 1826
+    const v2, 0x7f0c0351
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3431,8 +3431,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->gone()Lcom/androidquery/AbstractAQuery;
 
-    .line 1812
-    const v2, 0x7f070345
+    .line 1827
+    const v2, 0x7f0c0352
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3442,8 +3442,8 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->visible()Lcom/androidquery/AbstractAQuery;
 
-    .line 1813
-    const v2, 0x7f070346
+    .line 1828
+    const v2, 0x7f0c0353
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3453,7 +3453,7 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->visible()Lcom/androidquery/AbstractAQuery;
 
-    .line 1815
+    .line 1830
     new-instance v12, Ljava/util/Date;
 
     move-object/from16 v0, v18
@@ -3466,7 +3466,7 @@
 
     invoke-direct {v12, v4, v5}, Ljava/util/Date;-><init>(J)V
 
-    .line 1819
+    .line 1834
     .local v12, "date":Ljava/util/Date;
     new-instance v2, Ljava/text/SimpleDateFormat;
 
@@ -3490,7 +3490,7 @@
 
     move-result-object v22
 
-    .line 1823
+    .line 1838
     .local v22, "strDate":Ljava/lang/String;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -3546,8 +3546,8 @@
 
     move-result-object v22
 
-    .line 1825
-    const v2, 0x7f070345
+    .line 1840
+    const v2, 0x7f0c0352
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3587,7 +3587,7 @@
 
     invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
 
-    .line 1826
+    .line 1841
     move-object/from16 v0, v18
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_purchasing:Lcom/samsung/privilege/bean/Purchasing;
@@ -3602,7 +3602,7 @@
 
     if-eqz v2, :cond_e70
 
-    .line 1827
+    .line 1842
     move-object/from16 v0, v18
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_purchasing:Lcom/samsung/privilege/bean/Purchasing;
@@ -3625,8 +3625,8 @@
 
     if-nez v2, :cond_dc8
 
-    .line 1828
-    const v2, 0x7f070346
+    .line 1843
+    const v2, 0x7f0c0353
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3668,9 +3668,9 @@
 
     invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
 
-    .line 1875
+    .line 1890
     :goto_ccd
-    const v2, 0x7f070347
+    const v2, 0x7f0c0354
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3680,7 +3680,7 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->invisible()Lcom/androidquery/AbstractAQuery;
 
-    .line 1877
+    .line 1892
     move-object/from16 v0, v18
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_purchasing:Lcom/samsung/privilege/bean/Purchasing;
@@ -3695,7 +3695,7 @@
 
     if-eqz v2, :cond_cfb
 
-    .line 1878
+    .line 1893
     move-object/from16 v0, v18
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_purchasing:Lcom/samsung/privilege/bean/Purchasing;
@@ -3704,8 +3704,8 @@
 
     if-eqz v2, :cond_1136
 
-    .line 1879
-    const v2, 0x7f07034a
+    .line 1894
+    const v2, 0x7f0c0357
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3715,10 +3715,10 @@
 
     invoke-virtual {v2}, Lcom/androidquery/AQuery;->visible()Lcom/androidquery/AbstractAQuery;
 
-    .line 1885
+    .line 1900
     :cond_cfb
     :goto_cfb
-    const v2, 0x7f070341
+    const v2, 0x7f0c034e
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3726,7 +3726,7 @@
 
     check-cast v15, Lcom/androidquery/AQuery;
 
-    .line 1887
+    .line 1902
     .restart local v15    # "icon":Lcom/androidquery/AQuery;
     move-object/from16 v0, p0
 
@@ -3736,13 +3736,13 @@
 
     move-result-object v2
 
-    const v4, 0x7f090045
+    const v4, 0x7f080045
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getColor(I)I
 
     move-result v10
 
-    .line 1888
+    .line 1903
     .local v10, "color":I
     move-object/from16 v0, v18
 
@@ -3762,7 +3762,7 @@
 
     if-nez v2, :cond_11ac
 
-    .line 1889
+    .line 1904
     move-object/from16 v0, v18
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_cat_id:Ljava/lang/String;
@@ -3787,12 +3787,12 @@
 
     if-eqz v2, :cond_1144
 
-    .line 1890
-    const v2, 0x7f020347
+    .line 1905
+    const v2, 0x7f020349
 
     invoke-virtual {v15, v2}, Lcom/androidquery/AQuery;->image(I)Lcom/androidquery/AbstractAQuery;
 
-    .line 1911
+    .line 1926
     :goto_d43
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -3828,7 +3828,7 @@
 
     move-result-object v3
 
-    .line 1912
+    .line 1927
     .restart local v3    # "img_url":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -3845,14 +3845,14 @@
 
     const/4 v5, 0x0
 
-    const v6, 0x7f02039f
+    const v6, 0x7f0203a7
 
     const/4 v7, 0x0
 
     invoke-virtual/range {v2 .. v7}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
 
-    .line 1914
-    const v2, 0x7f070345
+    .line 1929
+    const v2, 0x7f0c0352
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -3862,26 +3862,26 @@
 
     invoke-virtual {v2, v10}, Lcom/androidquery/AQuery;->textColor(I)Lcom/androidquery/AbstractAQuery;
 
-    .line 1916
-    const v2, 0x7f020326
+    .line 1931
+    const v2, 0x7f020328
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setBackgroundResource(I)V
 
-    .line 1918
+    .line 1933
     move-object/from16 v0, v18
 
     iget-boolean v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_play_animation:Z
 
     if-eqz v2, :cond_18e
 
-    .line 1919
+    .line 1934
     invoke-direct/range {p0 .. p0}, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->inFromRightAnimation()Landroid/view/animation/Animation;
 
     move-result-object v16
 
-    .line 1920
+    .line 1935
     .restart local v16    # "inFromRight":Landroid/view/animation/Animation;
     const/4 v2, 0x1
 
@@ -3889,35 +3889,35 @@
 
     invoke-virtual {v0, v2}, Landroid/view/animation/Animation;->setFillEnabled(Z)V
 
-    .line 1921
+    .line 1936
     const/4 v2, 0x1
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
-    .line 1922
+    .line 1937
     const-wide/16 v4, 0x1f4
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 1924
+    .line 1939
     move-object/from16 v0, p2
 
     move-object/from16 v1, v16
 
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 1925
+    .line 1940
     const/4 v2, 0x0
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1927
+    .line 1942
     new-instance v2, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter$2;
 
     move-object/from16 v0, p0
@@ -3932,7 +3932,7 @@
 
     goto/16 :goto_18e
 
-    .line 1830
+    .line 1845
     .end local v3    # "img_url":Ljava/lang/String;
     .end local v10    # "color":I
     .end local v15    # "icon":Lcom/androidquery/AQuery;
@@ -3944,7 +3944,7 @@
 
     invoke-direct {v13, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 1831
+    .line 1846
     .local v13, "dateformatMMDDYYYY":Ljava/text/SimpleDateFormat;
     new-instance v11, Ljava/util/Date;
 
@@ -3972,7 +3972,7 @@
 
     invoke-direct {v11, v4, v5}, Ljava/util/Date;-><init>(J)V
 
-    .line 1832
+    .line 1847
     .local v11, "d":Ljava/util/Date;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -3980,7 +3980,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a0348
+    const v5, 0x7f090355
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -4018,7 +4018,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a0349
+    const v5, 0x7f090356
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -4038,7 +4038,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a034a
+    const v5, 0x7f090357
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -4066,9 +4066,9 @@
 
     move-result-object v14
 
-    .line 1833
+    .line 1848
     .local v14, "detail":Ljava/lang/String;
-    const v2, 0x7f070346
+    const v2, 0x7f0c0353
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -4106,7 +4106,7 @@
 
     goto/16 :goto_ccd
 
-    .line 1835
+    .line 1850
     .end local v11    # "d":Ljava/util/Date;
     .end local v13    # "dateformatMMDDYYYY":Ljava/text/SimpleDateFormat;
     .end local v14    # "detail":Ljava/lang/String;
@@ -4139,7 +4139,7 @@
 
     if-eqz v2, :cond_f78
 
-    .line 1836
+    .line 1851
     move-object/from16 v0, v18
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_purchasing:Lcom/samsung/privilege/bean/Purchasing;
@@ -4162,8 +4162,8 @@
 
     if-nez v2, :cond_ed0
 
-    .line 1837
-    const v2, 0x7f070346
+    .line 1852
+    const v2, 0x7f0c0353
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -4207,7 +4207,7 @@
 
     goto/16 :goto_ccd
 
-    .line 1839
+    .line 1854
     :cond_ed0
     new-instance v13, Ljava/text/SimpleDateFormat;
 
@@ -4215,7 +4215,7 @@
 
     invoke-direct {v13, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 1840
+    .line 1855
     .restart local v13    # "dateformatMMDDYYYY":Ljava/text/SimpleDateFormat;
     new-instance v11, Ljava/util/Date;
 
@@ -4243,7 +4243,7 @@
 
     invoke-direct {v11, v4, v5}, Ljava/util/Date;-><init>(J)V
 
-    .line 1841
+    .line 1856
     .restart local v11    # "d":Ljava/util/Date;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -4251,7 +4251,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a0348
+    const v5, 0x7f090355
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -4289,7 +4289,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a0349
+    const v5, 0x7f090356
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -4309,7 +4309,7 @@
 
     iget-object v4, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    const v5, 0x7f0a034a
+    const v5, 0x7f090357
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/MainMenuFragment;->getString(I)Ljava/lang/String;
 
@@ -4337,9 +4337,9 @@
 
     move-result-object v14
 
-    .line 1842
+    .line 1857
     .restart local v14    # "detail":Ljava/lang/String;
-    const v2, 0x7f070346
+    const v2, 0x7f0c0353
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -4377,7 +4377,7 @@
 
     goto/16 :goto_ccd
 
-    .line 1844
+    .line 1859
     .end local v11    # "d":Ljava/util/Date;
     .end local v13    # "dateformatMMDDYYYY":Ljava/text/SimpleDateFormat;
     .end local v14    # "detail":Ljava/lang/String;
@@ -4396,8 +4396,8 @@
 
     if-eqz v2, :cond_110a
 
-    .line 1845
-    const v2, 0x7f070346
+    .line 1860
+    const v2, 0x7f0c0353
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -4439,7 +4439,7 @@
 
     invoke-virtual {v2, v4}, Lcom/androidquery/AQuery;->textSize(F)Lcom/androidquery/AbstractAQuery;
 
-    .line 1847
+    .line 1862
     move-object/from16 v0, v18
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_purchasing:Lcom/samsung/privilege/bean/Purchasing;
@@ -4448,7 +4448,7 @@
 
     if-nez v2, :cond_10dc
 
-    .line 1849
+    .line 1864
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -4457,7 +4457,7 @@
 
     invoke-static {v2, v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$13(Lcom/samsung/privilege/activity/MainMenuFragment;Z)V
 
-    .line 1851
+    .line 1866
     move-object/from16 v0, v18
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_purchasing:Lcom/samsung/privilege/bean/Purchasing;
@@ -4476,8 +4476,8 @@
 
     if-eqz v2, :cond_1002
 
-    .line 1852
-    const v2, 0x7f070346
+    .line 1867
+    const v2, 0x7f0c0353
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -4521,7 +4521,7 @@
 
     goto/16 :goto_ccd
 
-    .line 1853
+    .line 1868
     :cond_1002
     move-object/from16 v0, v18
 
@@ -4541,7 +4541,7 @@
 
     if-eqz v2, :cond_10ae
 
-    .line 1854
+    .line 1869
     move-object/from16 v0, v18
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_purchasing:Lcom/samsung/privilege/bean/Purchasing;
@@ -4564,7 +4564,7 @@
 
     if-nez v2, :cond_1077
 
-    .line 1855
+    .line 1870
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -4586,7 +4586,7 @@
 
     invoke-static {v2, v4}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$13(Lcom/samsung/privilege/activity/MainMenuFragment;Z)V
 
-    .line 1860
+    .line 1875
     :goto_103f
     move-object/from16 v0, p0
 
@@ -4599,8 +4599,8 @@
 
     if-eqz v2, :cond_1080
 
-    .line 1861
-    const v2, 0x7f070346
+    .line 1876
+    const v2, 0x7f0c0353
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -4644,7 +4644,7 @@
 
     goto/16 :goto_ccd
 
-    .line 1857
+    .line 1872
     :cond_1077
     move-object/from16 v0, p0
 
@@ -4656,9 +4656,9 @@
 
     goto :goto_103f
 
-    .line 1863
+    .line 1878
     :cond_1080
-    const v2, 0x7f070346
+    const v2, 0x7f0c0353
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -4702,9 +4702,9 @@
 
     goto/16 :goto_ccd
 
-    .line 1866
+    .line 1881
     :cond_10ae
-    const v2, 0x7f070346
+    const v2, 0x7f0c0353
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -4748,9 +4748,9 @@
 
     goto/16 :goto_ccd
 
-    .line 1869
+    .line 1884
     :cond_10dc
-    const v2, 0x7f070346
+    const v2, 0x7f0c0353
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -4794,9 +4794,9 @@
 
     goto/16 :goto_ccd
 
-    .line 1872
+    .line 1887
     :cond_110a
-    const v2, 0x7f070346
+    const v2, 0x7f0c0353
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -4838,9 +4838,9 @@
 
     goto/16 :goto_ccd
 
-    .line 1881
+    .line 1896
     :cond_1136
-    const v2, 0x7f070349
+    const v2, 0x7f0c0356
 
     invoke-virtual {v8, v2}, Lcom/androidquery/AQuery;->id(I)Lcom/androidquery/AbstractAQuery;
 
@@ -4852,7 +4852,7 @@
 
     goto/16 :goto_cfb
 
-    .line 1893
+    .line 1908
     .restart local v10    # "color":I
     .restart local v15    # "icon":Lcom/androidquery/AQuery;
     :cond_1144
@@ -4880,14 +4880,14 @@
 
     if-eqz v2, :cond_1164
 
-    .line 1894
-    const v2, 0x7f020349
+    .line 1909
+    const v2, 0x7f02034b
 
     invoke-virtual {v15, v2}, Lcom/androidquery/AQuery;->image(I)Lcom/androidquery/AbstractAQuery;
 
     goto/16 :goto_d43
 
-    .line 1897
+    .line 1912
     :cond_1164
     move-object/from16 v0, v18
 
@@ -4913,14 +4913,14 @@
 
     if-eqz v2, :cond_1184
 
-    .line 1898
-    const v2, 0x7f02034b
+    .line 1913
+    const v2, 0x7f02034d
 
     invoke-virtual {v15, v2}, Lcom/androidquery/AQuery;->image(I)Lcom/androidquery/AbstractAQuery;
 
     goto/16 :goto_d43
 
-    .line 1900
+    .line 1915
     :cond_1184
     move-object/from16 v0, v18
 
@@ -4946,24 +4946,24 @@
 
     if-eqz v2, :cond_11a4
 
-    .line 1901
-    const v2, 0x7f02034a
+    .line 1916
+    const v2, 0x7f02034c
 
     invoke-virtual {v15, v2}, Lcom/androidquery/AQuery;->image(I)Lcom/androidquery/AbstractAQuery;
 
     goto/16 :goto_d43
 
-    .line 1904
+    .line 1919
     :cond_11a4
-    const v2, 0x7f020345
+    const v2, 0x7f020347
 
     invoke-virtual {v15, v2}, Lcom/androidquery/AQuery;->image(I)Lcom/androidquery/AbstractAQuery;
 
     goto/16 :goto_d43
 
-    .line 1908
+    .line 1923
     :cond_11ac
-    const v2, 0x7f0202eb
+    const v2, 0x7f0202ed
 
     invoke-virtual {v15, v2}, Lcom/androidquery/AQuery;->image(I)Lcom/androidquery/AbstractAQuery;
 
@@ -4975,7 +4975,7 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 1547
+    .line 1562
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
@@ -4991,7 +4991,7 @@
     .param p2, "itemCount"    # I
 
     .prologue
-    .line 1528
+    .line 1543
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -5005,11 +5005,11 @@
 
     if-nez v2, :cond_d
 
-    .line 1534
+    .line 1549
     :goto_c
     return-void
 
-    .line 1528
+    .line 1543
     :cond_d
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -5017,7 +5017,7 @@
 
     check-cast v0, Lcom/samsung/privilege/bean/MainMenuItemModel;
 
-    .line 1529
+    .line 1544
     .local v0, "model":Lcom/samsung/privilege/bean/MainMenuItemModel;
     iget-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->name:Ljava/lang/String;
 
@@ -5027,7 +5027,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 1530
+    .line 1545
     invoke-virtual {v0, p2}, Lcom/samsung/privilege/bean/MainMenuItemModel;->setCount(I)V
 
     goto :goto_c

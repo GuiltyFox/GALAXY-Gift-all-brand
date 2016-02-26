@@ -69,21 +69,21 @@
 .end method
 
 .method public static CDateToTime(J)Ljava/lang/String;
-    .registers 13
+    .registers 14
     .param p0, "epochTime"    # J
 
     .prologue
     .line 436
-    new-instance v3, Ljava/util/Date;
+    new-instance v1, Ljava/util/Date;
 
-    const-wide/16 v9, 0x3e8
+    const-wide/16 v10, 0x3e8
 
-    mul-long/2addr v9, p0
+    mul-long/2addr v10, p0
 
-    invoke-direct {v3, v9, v10}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v1, v10, v11}, Ljava/util/Date;-><init>(J)V
 
     .line 438
-    .local v3, "nTime":Ljava/util/Date;
+    .local v1, "nTime":Ljava/util/Date;
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
@@ -92,53 +92,53 @@
     .local v0, "calendar":Ljava/util/Calendar;
     invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 440
-    .local v1, "current":J
-    invoke-virtual {v3}, Ljava/util/Date;->getTime()J
+    .local v2, "current":J
+    invoke-virtual {v1}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v7
+    move-result-wide v8
 
     .line 441
-    .local v7, "update":J
-    sub-long v9, v1, v7
+    .local v8, "update":J
+    sub-long v10, v2, v8
 
-    invoke-static {v9, v10}, Ljava/lang/Math;->abs(J)J
+    invoke-static {v10, v11}, Ljava/lang/Math;->abs(J)J
 
-    move-result-wide v5
+    move-result-wide v6
 
     .line 443
-    .local v5, "timeago":J
-    const-wide/32 v9, 0xea60
+    .local v6, "timeago":J
+    const-wide/32 v10, 0xea60
 
-    cmp-long v9, v5, v9
+    cmp-long v5, v6, v10
 
-    if-gtz v9, :cond_44
+    if-gtz v5, :cond_44
 
     .line 444
-    const-wide/16 v9, 0x3e8
+    const-wide/16 v10, 0x3e8
 
-    div-long v9, v5, v9
+    div-long v10, v6, v10
 
-    long-to-int v4, v9
+    long-to-int v4, v10
 
     .line 445
     .local v4, "time":I
-    const/4 v9, 0x1
+    const/4 v5, 0x1
 
-    if-ne v4, v9, :cond_2c
+    if-ne v4, v5, :cond_2c
 
     .line 446
-    const-string v9, "a second ago"
+    const-string v5, "a second ago"
 
     .line 469
     :goto_2b
-    return-object v9
+    return-object v5
 
     .line 448
     :cond_2c
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-static {v4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -148,56 +148,56 @@
 
     move-result-object v10
 
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const-string v10, " seconds ago"
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v5
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v5
 
     goto :goto_2b
 
     .line 450
     .end local v4    # "time":I
     :cond_44
-    const-wide/32 v9, 0x36ee80
+    const-wide/32 v10, 0x36ee80
 
-    cmp-long v9, v5, v9
+    cmp-long v5, v6, v10
 
-    if-gtz v9, :cond_76
+    if-gtz v5, :cond_76
 
-    const-wide/32 v9, 0xea60
+    const-wide/32 v10, 0xea60
 
-    cmp-long v9, v5, v9
+    cmp-long v5, v6, v10
 
-    if-ltz v9, :cond_76
+    if-ltz v5, :cond_76
 
     .line 451
-    const-wide/32 v9, 0xea60
+    const-wide/32 v10, 0xea60
 
-    div-long v9, v5, v9
+    div-long v10, v6, v10
 
-    long-to-int v4, v9
+    long-to-int v4, v10
 
     .line 452
     .restart local v4    # "time":I
-    const/4 v9, 0x1
+    const/4 v5, 0x1
 
-    if-ne v4, v9, :cond_5e
+    if-ne v4, v5, :cond_5e
 
     .line 453
-    const-string v9, "about a minute ago"
+    const-string v5, "about a minute ago"
 
     goto :goto_2b
 
     .line 455
     :cond_5e
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-static {v4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -207,56 +207,56 @@
 
     move-result-object v10
 
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const-string v10, " minutes ago"
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v5
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v5
 
     goto :goto_2b
 
     .line 457
     .end local v4    # "time":I
     :cond_76
-    const-wide/32 v9, 0x5265c00
+    const-wide/32 v10, 0x5265c00
 
-    cmp-long v9, v5, v9
+    cmp-long v5, v6, v10
 
-    if-gtz v9, :cond_a8
+    if-gtz v5, :cond_a8
 
-    const-wide/32 v9, 0x36ee80
+    const-wide/32 v10, 0x36ee80
 
-    cmp-long v9, v5, v9
+    cmp-long v5, v6, v10
 
-    if-ltz v9, :cond_a8
+    if-ltz v5, :cond_a8
 
     .line 458
-    const-wide/32 v9, 0x36ee80
+    const-wide/32 v10, 0x36ee80
 
-    div-long v9, v5, v9
+    div-long v10, v6, v10
 
-    long-to-int v4, v9
+    long-to-int v4, v10
 
     .line 459
     .restart local v4    # "time":I
-    const/4 v9, 0x1
+    const/4 v5, 0x1
 
-    if-ne v4, v9, :cond_90
+    if-ne v4, v5, :cond_90
 
     .line 460
-    const-string v9, "about an hour ago"
+    const-string v5, "about an hour ago"
 
     goto :goto_2b
 
     .line 462
     :cond_90
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-static {v4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -266,43 +266,43 @@
 
     move-result-object v10
 
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const-string v10, " hours ago"
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v5
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v5
 
     goto :goto_2b
 
     .line 465
     .end local v4    # "time":I
     :cond_a8
-    const-wide/32 v9, 0x5265c00
+    const-wide/32 v10, 0x5265c00
 
-    div-long v9, v5, v9
+    div-long v10, v6, v10
 
-    long-to-int v4, v9
+    long-to-int v4, v10
 
     .line 466
     .restart local v4    # "time":I
-    const/4 v9, 0x1
+    const/4 v5, 0x1
 
-    if-ne v4, v9, :cond_b5
+    if-ne v4, v5, :cond_b5
 
     .line 467
-    const-string v9, "yesterday"
+    const-string v5, "yesterday"
 
     goto/16 :goto_2b
 
     .line 469
     :cond_b5
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-static {v4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -312,23 +312,23 @@
 
     move-result-object v10
 
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const-string v10, " days ago"
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v5
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v5
 
     goto/16 :goto_2b
 .end method
 
 .method public static CTypeDouble(Ljava/lang/String;)Ljava/lang/Double;
-    .registers 4
+    .registers 5
     .param p0, "value"    # Ljava/lang/String;
 
     .prologue
@@ -350,9 +350,9 @@
 
     invoke-static {v1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v1, v2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
     :try_end_16
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_16} :catch_18
 
@@ -368,9 +368,9 @@
 
     .line 54
     .local v0, "e":Ljava/lang/Exception;
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    invoke-static {v1, v2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v1
 
@@ -470,7 +470,7 @@
 .end method
 
 .method public static CTypeLong(Ljava/lang/String;)Ljava/lang/Long;
-    .registers 4
+    .registers 5
     .param p0, "value"    # Ljava/lang/String;
 
     .prologue
@@ -492,9 +492,9 @@
 
     invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
     :try_end_16
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_16} :catch_18
 
@@ -510,9 +510,9 @@
 
     .line 70
     .local v0, "e":Ljava/lang/Exception;
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
 
@@ -1955,259 +1955,44 @@
 .end method
 
 .method public static callResumeXXX(Landroid/content/Context;JZ)J
-    .registers 27
+    .registers 29
     .param p0, "appContext"    # Landroid/content/Context;
     .param p1, "pLastResumeTime"    # J
     .param p3, "isForceCall"    # Z
 
     .prologue
     .line 529
-    new-instance v6, Ljava/util/Date;
+    new-instance v7, Ljava/util/Date;
 
-    invoke-direct {v6}, Ljava/util/Date;-><init>()V
+    invoke-direct {v7}, Ljava/util/Date;-><init>()V
 
     .line 530
-    .local v6, "date":Ljava/util/Date;
-    invoke-virtual {v6}, Ljava/util/Date;->getTime()J
+    .local v7, "date":Ljava/util/Date;
+    invoke-virtual {v7}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v19
+    move-result-wide v20
 
-    sub-long v19, v19, p1
+    sub-long v20, v20, p1
 
-    const-wide/16 v21, 0x3e8
+    const-wide/16 v22, 0x3e8
 
-    div-long v9, v19, v21
+    div-long v10, v20, v22
 
     .line 532
-    .local v9, "difftime":J
-    const-string v19, "gift.resume"
-
-    new-instance v20, Ljava/lang/StringBuilder;
-
-    const-string v21, "isForceCall="
-
-    invoke-direct/range {v20 .. v21}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v20
-
-    move/from16 v1, p3
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v20
-
-    invoke-static/range {v19 .. v20}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 533
-    const-string v19, "gift.resume"
-
-    new-instance v20, Ljava/lang/StringBuilder;
-
-    invoke-static/range {p1 .. p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
-
-    move-result-object v21
-
-    invoke-direct/range {v20 .. v21}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v21, " - "
-
-    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    invoke-virtual {v6}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v21
-
-    invoke-virtual/range {v20 .. v22}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    const-string v21, " = "
-
-    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    move-object/from16 v0, v20
-
-    invoke-virtual {v0, v9, v10}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v20
-
-    invoke-static/range {v19 .. v20}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 535
-    const-wide/16 v19, 0x3840
-
-    cmp-long v19, v9, v19
-
-    if-gtz v19, :cond_61
-
-    const-wide/16 v19, 0x0
-
-    cmp-long v19, p1, v19
-
-    if-eqz v19, :cond_61
-
-    if-eqz p3, :cond_225
-
-    .line 536
-    :cond_61
-    invoke-static/range {p0 .. p0}, Lcom/samsung/privilege/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v16
-
-    .line 537
-    .local v16, "strTokenBuzzeBees":Ljava/lang/String;
-    if-eqz v16, :cond_1ca
-
-    const-string v19, ""
-
-    move-object/from16 v0, v16
-
-    move-object/from16 v1, v19
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v19
-
-    if-nez v19, :cond_1ca
-
-    .line 538
-    new-instance v19, Ljava/lang/StringBuilder;
-
-    sget-object v20, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
-
-    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v20
-
-    invoke-direct/range {v19 .. v20}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v20, "api/auth/device_resume?token="
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    move-object/from16 v0, v19
-
-    move-object/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v17
-
-    .line 540
-    .local v17, "url":Ljava/lang/String;
-    new-instance v14, Ljava/util/ArrayList;
-
-    invoke-direct {v14}, Ljava/util/ArrayList;-><init>()V
-
-    .line 542
-    .local v14, "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/InputItem;>;"
-    new-instance v7, Lcom/samsung/privilege/util/DeviceHelper;
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v7, v0}, Lcom/samsung/privilege/util/DeviceHelper;-><init>(Landroid/content/Context;)V
-
-    .line 543
-    .local v7, "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
-    invoke-virtual {v7}, Lcom/samsung/privilege/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
-
-    move-result-object v8
-
-    .line 544
-    .local v8, "device_id":Ljava/lang/String;
-    new-instance v19, Lcom/samsung/privilege/bean/InputItem;
-
-    const-string v20, "uuid"
-
-    move-object/from16 v0, v19
-
-    move-object/from16 v1, v20
-
-    invoke-direct {v0, v1, v8}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v14, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 547
-    new-instance v19, Ljava/lang/StringBuilder;
-
-    sget-object v20, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
-
-    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v20
-
-    invoke-direct/range {v19 .. v20}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v20, " "
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    sget-object v20, Landroid/os/Build;->MODEL:Ljava/lang/String;
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v15
-
-    .line 548
-    .local v15, "platform":Ljava/lang/String;
-    new-instance v19, Lcom/samsung/privilege/bean/InputItem;
-
-    const-string v20, "platform"
-
-    move-object/from16 v0, v19
-
-    move-object/from16 v1, v20
-
-    invoke-direct {v0, v1, v15}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v14, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 551
-    sget-object v3, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
-
-    .line 552
-    .local v3, "AndroidVersion":Ljava/lang/String;
-    new-instance v19, Lcom/samsung/privilege/bean/InputItem;
-
-    const-string v20, "os"
+    .local v10, "difftime":J
+    const-string v20, "gift.resume"
 
     new-instance v21, Ljava/lang/StringBuilder;
 
-    const-string v22, "android "
+    const-string v22, "isForceCall="
 
     invoke-direct/range {v21 .. v22}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     move-object/from16 v0, v21
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move/from16 v1, p3
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v21
 
@@ -2215,55 +2000,392 @@
 
     move-result-object v21
 
-    invoke-direct/range {v19 .. v21}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static/range {v20 .. v21}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object/from16 v0, v19
-
-    invoke-virtual {v14, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 555
-    const-string v18, ""
-
-    .line 557
-    .local v18, "versionName":Ljava/lang/String;
-    :try_start_fc
-    invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v19
-
-    invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v20
-
-    const/16 v21, 0x0
-
-    invoke-virtual/range {v19 .. v21}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-
-    move-result-object v19
-
-    move-object/from16 v0, v19
-
-    iget-object v0, v0, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
-
-    move-object/from16 v18, v0
-    :try_end_110
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_fc .. :try_end_110} :catch_1cb
-
-    .line 561
-    :goto_110
-    new-instance v19, Lcom/samsung/privilege/bean/InputItem;
-
-    const-string v20, "client_version"
+    .line 533
+    const-string v20, "gift.resume"
 
     new-instance v21, Ljava/lang/StringBuilder;
 
+    invoke-static/range {p1 .. p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object v22
+
+    invoke-direct/range {v21 .. v22}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v22, " - "
+
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v21
+
+    invoke-virtual {v7}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v22
+
+    invoke-virtual/range {v21 .. v23}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v21
+
+    const-string v22, " = "
+
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v21
+
+    move-object/from16 v0, v21
+
+    invoke-virtual {v0, v10, v11}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v21
+
+    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v21
+
+    invoke-static/range {v20 .. v21}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 535
+    const-wide/16 v20, 0x3840
+
+    cmp-long v20, v10, v20
+
+    if-gtz v20, :cond_61
+
+    const-wide/16 v20, 0x0
+
+    cmp-long v20, p1, v20
+
+    if-eqz v20, :cond_61
+
+    if-eqz p3, :cond_227
+
+    .line 536
+    :cond_61
+    invoke-static/range {p0 .. p0}, Lcom/samsung/privilege/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v17
+
+    .line 537
+    .local v17, "strTokenBuzzeBees":Ljava/lang/String;
+    if-eqz v17, :cond_1cc
+
+    const-string v20, ""
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v20
+
+    if-nez v20, :cond_1cc
+
+    .line 538
+    new-instance v20, Ljava/lang/StringBuilder;
+
+    sget-object v21, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
+
+    invoke-static/range {v21 .. v21}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v21
+
+    invoke-direct/range {v20 .. v21}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v21, "api/auth/device_resume?token="
+
+    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v20
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v20
+
+    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v18
+
+    .line 540
+    .local v18, "url":Ljava/lang/String;
+    new-instance v15, Ljava/util/ArrayList;
+
+    invoke-direct {v15}, Ljava/util/ArrayList;-><init>()V
+
+    .line 542
+    .local v15, "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/InputItem;>;"
+    new-instance v8, Lcom/samsung/privilege/util/DeviceHelper;
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v8, v0}, Lcom/samsung/privilege/util/DeviceHelper;-><init>(Landroid/content/Context;)V
+
+    .line 543
+    .local v8, "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
+    invoke-virtual {v8}, Lcom/samsung/privilege/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
+
+    move-result-object v9
+
+    .line 544
+    .local v9, "device_id":Ljava/lang/String;
+    new-instance v20, Lcom/samsung/privilege/bean/InputItem;
+
+    const-string v21, "uuid"
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v1, v21
+
+    invoke-direct {v0, v1, v9}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v0, v20
+
+    invoke-virtual {v15, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 547
+    new-instance v20, Ljava/lang/StringBuilder;
+
+    sget-object v21, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+
+    invoke-static/range {v21 .. v21}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v21
+
+    invoke-direct/range {v20 .. v21}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v21, " "
+
+    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v20
+
+    sget-object v21, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v20
+
+    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v16
+
+    .line 548
+    .local v16, "platform":Ljava/lang/String;
+    new-instance v20, Lcom/samsung/privilege/bean/InputItem;
+
+    const-string v21, "platform"
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v1, v21
+
+    move-object/from16 v2, v16
+
+    invoke-direct {v0, v1, v2}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v0, v20
+
+    invoke-virtual {v15, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 551
+    sget-object v4, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
+
+    .line 552
+    .local v4, "AndroidVersion":Ljava/lang/String;
+    new-instance v20, Lcom/samsung/privilege/bean/InputItem;
+
+    const-string v21, "os"
+
+    new-instance v22, Ljava/lang/StringBuilder;
+
+    const-string v23, "android "
+
+    invoke-direct/range {v22 .. v23}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, v22
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v22
+
+    invoke-virtual/range {v22 .. v22}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v22
+
+    invoke-direct/range {v20 .. v22}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v0, v20
+
+    invoke-virtual {v15, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 555
+    const-string v19, ""
+
+    .line 557
+    .local v19, "versionName":Ljava/lang/String;
+    :try_start_fe
+    invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v20
+
+    invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v21
+
+    const/16 v22, 0x0
+
+    invoke-virtual/range {v20 .. v22}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+
+    move-result-object v20
+
+    move-object/from16 v0, v20
+
+    iget-object v0, v0, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
+
+    move-object/from16 v19, v0
+    :try_end_112
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_fe .. :try_end_112} :catch_1cd
+
+    .line 561
+    :goto_112
+    new-instance v20, Lcom/samsung/privilege/bean/InputItem;
+
+    const-string v21, "client_version"
+
+    new-instance v22, Ljava/lang/StringBuilder;
+
     invoke-static/range {p0 .. p0}, Lcom/samsung/privilege/AppSetting;->AUTH_BUZZEBEES_PREFIX(Landroid/content/Context;)Ljava/lang/String;
 
+    move-result-object v23
+
+    invoke-static/range {v23 .. v23}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v23
+
+    invoke-direct/range {v22 .. v23}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, v22
+
+    move-object/from16 v1, v19
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     move-result-object v22
 
-    invoke-static/range {v22 .. v22}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual/range {v22 .. v22}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v22
+
+    invoke-direct/range {v20 .. v22}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v0, v20
+
+    invoke-virtual {v15, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 564
+    new-instance v20, Lcom/samsung/privilege/bean/InputItem;
+
+    const-string v21, "device_token"
+
+    invoke-static/range {p0 .. p0}, Lcom/samsung/privilege/UserLogin;->GetGCM_ID(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v22
+
+    invoke-direct/range {v20 .. v22}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v0, v20
+
+    invoke-virtual {v15, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 567
+    invoke-static/range {p0 .. p0}, Lcom/samsung/privilege/UserLogin;->GetIsNotificationOn(Landroid/content/Context;)Z
+
+    move-result v20
+
+    if-eqz v20, :cond_1e8
+
+    .line 568
+    new-instance v20, Lcom/samsung/privilege/bean/InputItem;
+
+    const-string v21, "device_noti_enable"
+
+    const-string v22, "true"
+
+    invoke-direct/range {v20 .. v22}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v0, v20
+
+    invoke-virtual {v15, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 575
+    :goto_15b
+    invoke-virtual {v8}, Lcom/samsung/privilege/util/DeviceHelper;->getAndroidID()Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 576
+    .local v5, "android_id":Ljava/lang/String;
+    new-instance v20, Lcom/samsung/privilege/bean/InputItem;
+
+    const-string v21, "mac_address"
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v1, v21
+
+    invoke-direct {v0, v1, v5}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v0, v20
+
+    invoke-virtual {v15, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 579
+    new-instance v20, Lcom/samsung/privilege/bean/InputItem;
+
+    const-string v21, "sponsorId"
+
+    invoke-static/range {p0 .. p0}, Lcom/samsung/privilege/AppSetting;->SPONSOR_ID(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v22
+
+    invoke-direct/range {v20 .. v22}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v0, v20
+
+    invoke-virtual {v15, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 582
+    invoke-static/range {p0 .. p0}, Lcom/samsung/privilege/util/PhoneManagerUtil;->GetSimOperatorDual(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 583
+    .local v6, "carrier":Ljava/lang/String;
+    new-instance v20, Lcom/samsung/privilege/bean/InputItem;
+
+    const-string v21, "carrier"
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v1, v21
+
+    invoke-direct {v0, v1, v6}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v0, v20
+
+    invoke-virtual {v15, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 586
+    const-string v20, "gift.resume"
+
+    new-instance v21, Ljava/lang/StringBuilder;
+
+    const-string v22, "resume="
 
     invoke-direct/range {v21 .. v22}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -2279,313 +2401,193 @@
 
     move-result-object v21
 
-    invoke-direct/range {v19 .. v21}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v14, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 564
-    new-instance v19, Lcom/samsung/privilege/bean/InputItem;
-
-    const-string v20, "device_token"
-
-    invoke-static/range {p0 .. p0}, Lcom/samsung/privilege/UserLogin;->GetGCM_ID(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v21
-
-    invoke-direct/range {v19 .. v21}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v14, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 567
-    invoke-static/range {p0 .. p0}, Lcom/samsung/privilege/UserLogin;->GetIsNotificationOn(Landroid/content/Context;)Z
-
-    move-result v19
-
-    if-eqz v19, :cond_1e6
-
-    .line 568
-    new-instance v19, Lcom/samsung/privilege/bean/InputItem;
-
-    const-string v20, "device_noti_enable"
-
-    const-string v21, "true"
-
-    invoke-direct/range {v19 .. v21}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v14, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 575
-    :goto_159
-    invoke-virtual {v7}, Lcom/samsung/privilege/util/DeviceHelper;->getAndroidID()Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 576
-    .local v4, "android_id":Ljava/lang/String;
-    new-instance v19, Lcom/samsung/privilege/bean/InputItem;
-
-    const-string v20, "mac_address"
-
-    move-object/from16 v0, v19
-
-    move-object/from16 v1, v20
-
-    invoke-direct {v0, v1, v4}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v14, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 579
-    new-instance v19, Lcom/samsung/privilege/bean/InputItem;
-
-    const-string v20, "sponsorId"
-
-    invoke-static/range {p0 .. p0}, Lcom/samsung/privilege/AppSetting;->SPONSOR_ID(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v21
-
-    invoke-direct/range {v19 .. v21}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v14, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 582
-    invoke-static/range {p0 .. p0}, Lcom/samsung/privilege/util/PhoneManagerUtil;->GetSimOperatorDual(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v5
-
-    .line 583
-    .local v5, "carrier":Ljava/lang/String;
-    new-instance v19, Lcom/samsung/privilege/bean/InputItem;
-
-    const-string v20, "carrier"
-
-    move-object/from16 v0, v19
-
-    move-object/from16 v1, v20
-
-    invoke-direct {v0, v1, v5}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v14, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 586
-    const-string v19, "gift.resume"
-
-    new-instance v20, Ljava/lang/StringBuilder;
-
-    const-string v21, "resume="
-
-    invoke-direct/range {v20 .. v21}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v20
-
-    move-object/from16 v1, v17
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v20
-
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v20
-
-    invoke-static/range {v19 .. v20}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static/range {v20 .. v21}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 587
-    const/4 v12, 0x0
+    const/4 v13, 0x0
 
-    .local v12, "i":I
-    :goto_1aa
-    invoke-virtual {v14}, Ljava/util/ArrayList;->size()I
+    .local v13, "i":I
+    :goto_1ac
+    invoke-virtual {v15}, Ljava/util/ArrayList;->size()I
 
-    move-result v19
+    move-result v20
 
-    move/from16 v0, v19
+    move/from16 v0, v20
 
-    if-lt v12, v0, :cond_1f6
+    if-lt v13, v0, :cond_1f8
 
     .line 591
-    new-instance v19, Lcom/samsung/privilege/util/BBUtil$GetResumeListener;
+    new-instance v20, Lcom/samsung/privilege/util/BBUtil$GetResumeListener;
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
     invoke-direct {v0, v1}, Lcom/samsung/privilege/util/BBUtil$GetResumeListener;-><init>(Landroid/content/Context;)V
 
-    const/16 v20, 0x0
+    const/16 v21, 0x0
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
-    move-object/from16 v1, v19
+    move-object/from16 v1, v20
 
-    move-object/from16 v2, v20
+    move-object/from16 v2, v21
 
-    invoke-static {v0, v14, v1, v2}, Lcom/samsung/privilege/util/http/HttpCall;->RQ_POST(Ljava/lang/String;Ljava/util/ArrayList;Lcom/samsung/privilege/util/http/RQListener;Ljava/lang/Object;)V
+    invoke-static {v0, v15, v1, v2}, Lcom/samsung/privilege/util/http/HttpCall;->RQ_POST(Ljava/lang/String;Ljava/util/ArrayList;Lcom/samsung/privilege/util/http/RQListener;Ljava/lang/Object;)V
 
     .line 593
-    invoke-virtual {v6}, Ljava/util/Date;->getTime()J
+    invoke-virtual {v7}, Ljava/util/Date;->getTime()J
 
     move-result-wide p1
 
     .line 599
-    .end local v3    # "AndroidVersion":Ljava/lang/String;
-    .end local v4    # "android_id":Ljava/lang/String;
-    .end local v5    # "carrier":Ljava/lang/String;
-    .end local v7    # "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
-    .end local v8    # "device_id":Ljava/lang/String;
-    .end local v12    # "i":I
-    .end local v14    # "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/InputItem;>;"
-    .end local v15    # "platform":Ljava/lang/String;
-    .end local v16    # "strTokenBuzzeBees":Ljava/lang/String;
-    .end local v17    # "url":Ljava/lang/String;
-    .end local v18    # "versionName":Ljava/lang/String;
+    .end local v4    # "AndroidVersion":Ljava/lang/String;
+    .end local v5    # "android_id":Ljava/lang/String;
+    .end local v6    # "carrier":Ljava/lang/String;
+    .end local v8    # "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
+    .end local v9    # "device_id":Ljava/lang/String;
+    .end local v13    # "i":I
+    .end local v15    # "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/InputItem;>;"
+    .end local v16    # "platform":Ljava/lang/String;
+    .end local v17    # "strTokenBuzzeBees":Ljava/lang/String;
+    .end local v18    # "url":Ljava/lang/String;
+    .end local v19    # "versionName":Ljava/lang/String;
     .end local p1    # "pLastResumeTime":J
-    :cond_1ca
-    :goto_1ca
+    :cond_1cc
+    :goto_1cc
     return-wide p1
 
     .line 558
-    .restart local v3    # "AndroidVersion":Ljava/lang/String;
-    .restart local v7    # "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
-    .restart local v8    # "device_id":Ljava/lang/String;
-    .restart local v14    # "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/InputItem;>;"
-    .restart local v15    # "platform":Ljava/lang/String;
-    .restart local v16    # "strTokenBuzzeBees":Ljava/lang/String;
-    .restart local v17    # "url":Ljava/lang/String;
-    .restart local v18    # "versionName":Ljava/lang/String;
+    .restart local v4    # "AndroidVersion":Ljava/lang/String;
+    .restart local v8    # "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
+    .restart local v9    # "device_id":Ljava/lang/String;
+    .restart local v15    # "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/InputItem;>;"
+    .restart local v16    # "platform":Ljava/lang/String;
+    .restart local v17    # "strTokenBuzzeBees":Ljava/lang/String;
+    .restart local v18    # "url":Ljava/lang/String;
+    .restart local v19    # "versionName":Ljava/lang/String;
     .restart local p1    # "pLastResumeTime":J
-    :catch_1cb
-    move-exception v11
+    :catch_1cd
+    move-exception v12
 
     .line 559
-    .local v11, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
-    const-string v19, "gift.resume"
+    .local v12, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
+    const-string v20, "gift.resume"
 
-    new-instance v20, Ljava/lang/StringBuilder;
+    new-instance v21, Ljava/lang/StringBuilder;
 
-    const-string v21, "Can\'t get versionName:"
+    const-string v22, "Can\'t get versionName:"
 
-    invoke-direct/range {v20 .. v21}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct/range {v21 .. v22}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v11}, Landroid/content/pm/PackageManager$NameNotFoundException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v12}, Landroid/content/pm/PackageManager$NameNotFoundException;->getMessage()Ljava/lang/String;
+
+    move-result-object v22
+
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v21
 
-    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v20
+    move-result-object v21
 
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static/range {v20 .. v21}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v20
-
-    invoke-static/range {v19 .. v20}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_110
+    goto/16 :goto_112
 
     .line 571
-    .end local v11    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
-    :cond_1e6
-    new-instance v19, Lcom/samsung/privilege/bean/InputItem;
+    .end local v12    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
+    :cond_1e8
+    new-instance v20, Lcom/samsung/privilege/bean/InputItem;
 
-    const-string v20, "device_noti_enable"
+    const-string v21, "device_noti_enable"
 
-    const-string v21, "false"
+    const-string v22, "false"
 
-    invoke-direct/range {v19 .. v21}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v20 .. v22}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
-    invoke-virtual {v14, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v15, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_159
+    goto/16 :goto_15b
 
     .line 588
-    .restart local v4    # "android_id":Ljava/lang/String;
-    .restart local v5    # "carrier":Ljava/lang/String;
-    .restart local v12    # "i":I
-    :cond_1f6
-    invoke-virtual {v14, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .restart local v5    # "android_id":Ljava/lang/String;
+    .restart local v6    # "carrier":Ljava/lang/String;
+    .restart local v13    # "i":I
+    :cond_1f8
+    invoke-virtual {v15, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v13
+    move-result-object v14
 
-    check-cast v13, Lcom/samsung/privilege/bean/InputItem;
+    check-cast v14, Lcom/samsung/privilege/bean/InputItem;
 
     .line 589
-    .local v13, "item":Lcom/samsung/privilege/bean/InputItem;
-    const-string v19, "gift.resume"
+    .local v14, "item":Lcom/samsung/privilege/bean/InputItem;
+    const-string v20, "gift.resume"
 
-    new-instance v20, Ljava/lang/StringBuilder;
+    new-instance v21, Ljava/lang/StringBuilder;
 
-    const-string v21, "  key="
+    const-string v22, "  key="
 
-    invoke-direct/range {v20 .. v21}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct/range {v21 .. v22}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v0, v13, Lcom/samsung/privilege/bean/InputItem;->key:Ljava/lang/String;
+    iget-object v0, v14, Lcom/samsung/privilege/bean/InputItem;->key:Ljava/lang/String;
 
-    move-object/from16 v21, v0
+    move-object/from16 v22, v0
 
-    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v20
+    move-result-object v21
 
-    const-string v21, ", value="
+    const-string v22, ", value="
 
-    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v20
+    move-result-object v21
 
-    iget-object v0, v13, Lcom/samsung/privilege/bean/InputItem;->value:Ljava/lang/String;
+    iget-object v0, v14, Lcom/samsung/privilege/bean/InputItem;->value:Ljava/lang/String;
 
-    move-object/from16 v21, v0
+    move-object/from16 v22, v0
 
-    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v20
+    move-result-object v21
 
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v20
+    move-result-object v21
 
-    invoke-static/range {v19 .. v20}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static/range {v20 .. v21}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 587
-    add-int/lit8 v12, v12, 0x1
+    add-int/lit8 v13, v13, 0x1
 
-    goto :goto_1aa
+    goto :goto_1ac
 
     .line 596
-    .end local v3    # "AndroidVersion":Ljava/lang/String;
-    .end local v4    # "android_id":Ljava/lang/String;
-    .end local v5    # "carrier":Ljava/lang/String;
-    .end local v7    # "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
-    .end local v8    # "device_id":Ljava/lang/String;
-    .end local v12    # "i":I
-    .end local v13    # "item":Lcom/samsung/privilege/bean/InputItem;
-    .end local v14    # "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/InputItem;>;"
-    .end local v15    # "platform":Ljava/lang/String;
-    .end local v16    # "strTokenBuzzeBees":Ljava/lang/String;
-    .end local v17    # "url":Ljava/lang/String;
-    .end local v18    # "versionName":Ljava/lang/String;
-    :cond_225
-    const-string v19, "gift.resume"
+    .end local v4    # "AndroidVersion":Ljava/lang/String;
+    .end local v5    # "android_id":Ljava/lang/String;
+    .end local v6    # "carrier":Ljava/lang/String;
+    .end local v8    # "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
+    .end local v9    # "device_id":Ljava/lang/String;
+    .end local v13    # "i":I
+    .end local v14    # "item":Lcom/samsung/privilege/bean/InputItem;
+    .end local v15    # "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/InputItem;>;"
+    .end local v16    # "platform":Ljava/lang/String;
+    .end local v17    # "strTokenBuzzeBees":Ljava/lang/String;
+    .end local v18    # "url":Ljava/lang/String;
+    .end local v19    # "versionName":Ljava/lang/String;
+    :cond_227
+    const-string v20, "gift.resume"
 
-    const-string v20, "Not call resume, time is less than 4 hours..."
+    const-string v21, "Not call resume, time is less than 4 hours..."
 
-    invoke-static/range {v19 .. v20}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static/range {v20 .. v21}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_1ca
+    goto :goto_1cc
 .end method
 
 .method public static callUpdateDeviceNoti(Landroid/content/Context;)V
@@ -2885,7 +2887,7 @@
 .end method
 
 .method public static daysBetweenDates(Ljava/lang/String;Ljava/lang/String;)I
-    .registers 9
+    .registers 10
     .param p0, "pD1"    # Ljava/lang/String;
     .param p1, "pD2"    # Ljava/lang/String;
 
@@ -2905,19 +2907,19 @@
     .local v1, "d2":Ljava/util/Date;
     invoke-virtual {v0}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v3
+    move-result-wide v4
 
     invoke-virtual {v1}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    sub-long/2addr v3, v5
+    sub-long/2addr v4, v6
 
-    const-wide/32 v5, 0x5265c00
+    const-wide/32 v6, 0x5265c00
 
-    div-long/2addr v3, v5
+    div-long/2addr v4, v6
 
-    long-to-int v2, v3
+    long-to-int v2, v4
 
     .line 175
     .local v2, "days":I
@@ -2925,7 +2927,7 @@
 .end method
 
 .method public static daysBetweenDates(Ljava/util/Date;Ljava/util/Date;)I
-    .registers 7
+    .registers 8
     .param p0, "d1"    # Ljava/util/Date;
     .param p1, "d2"    # Ljava/util/Date;
 
@@ -2933,19 +2935,19 @@
     .line 164
     invoke-virtual {p0}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v1
+    move-result-wide v2
 
     invoke-virtual {p1}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    sub-long/2addr v1, v3
+    sub-long/2addr v2, v4
 
-    const-wide/32 v3, 0x5265c00
+    const-wide/32 v4, 0x5265c00
 
-    div-long/2addr v1, v3
+    div-long/2addr v2, v4
 
-    long-to-int v0, v1
+    long-to-int v0, v2
 
     .line 166
     .local v0, "days":I
@@ -3160,7 +3162,7 @@
 .end method
 
 .method public static dp_to_px(DLandroid/content/Context;)I
-    .registers 8
+    .registers 9
     .param p0, "dp"    # D
     .param p2, "appContext"    # Landroid/content/Context;
 
@@ -3178,21 +3180,21 @@
     .local v0, "displayMetrics":Landroid/util/DisplayMetrics;
     iget v1, v0, Landroid/util/DisplayMetrics;->density:F
 
-    float-to-double v1, v1
+    float-to-double v2, v1
 
-    mul-double/2addr v1, p0
+    mul-double/2addr v2, p0
 
-    const-wide/high16 v3, 0x3fe0000000000000L
+    const-wide/high16 v4, 0x3fe0000000000000L
 
-    add-double/2addr v1, v3
+    add-double/2addr v2, v4
 
-    double-to-int v1, v1
+    double-to-int v1, v2
 
     return v1
 .end method
 
 .method public static findDistFrom(DDDD)D
-    .registers 27
+    .registers 28
     .param p0, "lat1"    # D
     .param p2, "lng1"    # D
     .param p4, "lat2"    # D
@@ -3204,101 +3206,101 @@
 
     .line 406
     .local v10, "earthRadius":D
-    sub-double v13, p4, p0
+    sub-double v14, p4, p0
 
-    invoke-static {v13, v14}, Ljava/lang/Math;->toRadians(D)D
+    invoke-static {v14, v15}, Ljava/lang/Math;->toRadians(D)D
 
     move-result-wide v4
 
     .line 407
     .local v4, "dLat":D
-    sub-double v13, p6, p2
+    sub-double v14, p6, p2
 
-    invoke-static {v13, v14}, Ljava/lang/Math;->toRadians(D)D
+    invoke-static {v14, v15}, Ljava/lang/Math;->toRadians(D)D
 
     move-result-wide v6
 
     .line 408
     .local v6, "dLng":D
-    const-wide/high16 v13, 0x4000000000000000L
+    const-wide/high16 v14, 0x4000000000000000L
 
-    div-double v13, v4, v13
+    div-double v14, v4, v14
 
-    invoke-static {v13, v14}, Ljava/lang/Math;->sin(D)D
+    invoke-static {v14, v15}, Ljava/lang/Math;->sin(D)D
 
-    move-result-wide v13
+    move-result-wide v14
 
-    const-wide/high16 v15, 0x4000000000000000L
+    const-wide/high16 v16, 0x4000000000000000L
 
-    div-double v15, v4, v15
+    div-double v16, v4, v16
 
-    invoke-static/range {v15 .. v16}, Ljava/lang/Math;->sin(D)D
+    invoke-static/range {v16 .. v17}, Ljava/lang/Math;->sin(D)D
 
-    move-result-wide v15
+    move-result-wide v16
 
-    mul-double/2addr v13, v15
+    mul-double v14, v14, v16
 
     invoke-static/range {p0 .. p1}, Ljava/lang/Math;->toRadians(D)D
 
-    move-result-wide v15
+    move-result-wide v16
 
-    invoke-static/range {v15 .. v16}, Ljava/lang/Math;->cos(D)D
+    invoke-static/range {v16 .. v17}, Ljava/lang/Math;->cos(D)D
 
-    move-result-wide v15
+    move-result-wide v16
 
     invoke-static/range {p4 .. p5}, Ljava/lang/Math;->toRadians(D)D
 
-    move-result-wide v17
+    move-result-wide v18
 
-    invoke-static/range {v17 .. v18}, Ljava/lang/Math;->cos(D)D
+    invoke-static/range {v18 .. v19}, Ljava/lang/Math;->cos(D)D
 
-    move-result-wide v17
+    move-result-wide v18
 
-    mul-double v15, v15, v17
+    mul-double v16, v16, v18
 
-    const-wide/high16 v17, 0x4000000000000000L
+    const-wide/high16 v18, 0x4000000000000000L
 
-    div-double v17, v6, v17
+    div-double v18, v6, v18
 
-    invoke-static/range {v17 .. v18}, Ljava/lang/Math;->sin(D)D
+    invoke-static/range {v18 .. v19}, Ljava/lang/Math;->sin(D)D
 
-    move-result-wide v17
+    move-result-wide v18
 
-    mul-double v15, v15, v17
+    mul-double v16, v16, v18
 
-    const-wide/high16 v17, 0x4000000000000000L
+    const-wide/high16 v18, 0x4000000000000000L
 
-    div-double v17, v6, v17
+    div-double v18, v6, v18
 
-    invoke-static/range {v17 .. v18}, Ljava/lang/Math;->sin(D)D
+    invoke-static/range {v18 .. v19}, Ljava/lang/Math;->sin(D)D
 
-    move-result-wide v17
+    move-result-wide v18
 
-    mul-double v15, v15, v17
+    mul-double v16, v16, v18
 
-    add-double v0, v13, v15
+    add-double v0, v14, v16
 
     .line 409
     .local v0, "a":D
-    const-wide/high16 v13, 0x4000000000000000L
+    const-wide/high16 v14, 0x4000000000000000L
 
     invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
 
-    move-result-wide v15
+    move-result-wide v16
 
-    const-wide/high16 v17, 0x3ff0000000000000L
+    const-wide/high16 v18, 0x3ff0000000000000L
 
-    sub-double v17, v17, v0
+    sub-double v18, v18, v0
 
-    invoke-static/range {v17 .. v18}, Ljava/lang/Math;->sqrt(D)D
+    invoke-static/range {v18 .. v19}, Ljava/lang/Math;->sqrt(D)D
 
-    move-result-wide v17
+    move-result-wide v18
 
-    invoke-static/range {v15 .. v18}, Ljava/lang/Math;->atan2(DD)D
+    invoke-static/range {v16 .. v19}, Ljava/lang/Math;->atan2(DD)D
 
-    move-result-wide v15
+    move-result-wide v16
 
-    mul-double v2, v13, v15
+    mul-double v2, v14, v16
 
     .line 410
     .local v2, "c":D
@@ -3322,9 +3324,9 @@
 
     move-result v13
 
-    float-to-double v13, v13
+    float-to-double v14, v13
 
-    return-wide v13
+    return-wide v14
 .end method
 
 .method public static formatK(I)Ljava/lang/String;
@@ -3721,44 +3723,44 @@
 
     .prologue
     .line 385
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
     .line 388
-    .local v1, "km":D
+    .local v2, "km":D
     :try_start_2
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v4, "0"
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const/high16 v4, 0x447a0000
 
     div-float v4, p0, v4
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-static {v3}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+    invoke-static {v1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
-    move-result-wide v3
+    move-result-wide v4
 
-    const/4 v5, 0x2
+    const/4 v1, 0x2
 
-    invoke-static {v3, v4, v5}, Lcom/samsung/privilege/util/BBUtil;->roundMyData(DI)D
+    invoke-static {v4, v5, v1}, Lcom/samsung/privilege/util/BBUtil;->roundMyData(DI)D
     :try_end_1d
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_1d} :catch_1f
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 393
     :goto_1e
-    return-wide v1
+    return-wide v2
 
     .line 389
     :catch_1f
@@ -3766,13 +3768,13 @@
 
     .line 390
     .local v0, "e":Ljava/lang/Exception;
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
     goto :goto_1e
 .end method
 
 .method public static px_to_dp(ILandroid/content/Context;)I
-    .registers 7
+    .registers 8
     .param p0, "px"    # I
     .param p1, "appContext"    # Landroid/content/Context;
 
@@ -3794,13 +3796,13 @@
 
     div-float/2addr v1, v2
 
-    float-to-double v1, v1
+    float-to-double v2, v1
 
-    const-wide/high16 v3, 0x3fe0000000000000L
+    const-wide/high16 v4, 0x3fe0000000000000L
 
-    add-double/2addr v1, v3
+    add-double/2addr v2, v4
 
-    double-to-int v1, v1
+    double-to-int v1, v2
 
     return v1
 .end method

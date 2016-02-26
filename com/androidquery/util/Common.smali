@@ -157,7 +157,7 @@
 .end method
 
 .method private varargs invoke([Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 11
+    .registers 12
     .param p1, "args"    # [Ljava/lang/Object;
 
     .prologue
@@ -245,21 +245,21 @@
 
     invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v3
+    move-result-wide v8
 
     iget-object v2, p0, Lcom/androidquery/util/Common;->params:[Ljava/lang/Object;
 
-    const/4 v7, 0x2
+    const/4 v3, 0x2
 
-    aget-object v2, v2, v7
+    aget-object v2, v2, v3
 
     check-cast v2, Ljava/lang/Long;
 
     invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v7
+    move-result-wide v2
 
-    invoke-static {v1, v3, v4, v7, v8}, Lcom/androidquery/util/AQUtility;->cleanCache(Ljava/io/File;JJ)V
+    invoke-static {v1, v8, v9, v2, v3}, Lcom/androidquery/util/AQUtility;->cleanCache(Ljava/io/File;JJ)V
 
     goto :goto_26
 
@@ -292,21 +292,21 @@
 .end method
 
 .method private onScrollStateChanged(Landroid/widget/ExpandableListView;I)V
-    .registers 19
+    .registers 21
     .param p1, "elv"    # Landroid/widget/ExpandableListView;
     .param p2, "scrollState"    # I
 
     .prologue
     .line 218
-    const v4, 0x40ff0004
+    const v5, 0x40ff0004
 
     invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v6
+    move-result-object v7
 
     move-object/from16 v0, p1
 
-    invoke-virtual {v0, v4, v6}, Landroid/widget/ExpandableListView;->setTag(ILjava/lang/Object;)V
+    invoke-virtual {v0, v5, v7}, Landroid/widget/ExpandableListView;->setTag(ILjava/lang/Object;)V
 
     .line 220
     if-nez p2, :cond_1f
@@ -314,156 +314,156 @@
     .line 222
     invoke-virtual/range {p1 .. p1}, Landroid/widget/ExpandableListView;->getFirstVisiblePosition()I
 
-    move-result v8
+    move-result v9
 
     .line 223
-    .local v8, "first":I
+    .local v9, "first":I
     invoke-virtual/range {p1 .. p1}, Landroid/widget/ExpandableListView;->getLastVisiblePosition()I
 
-    move-result v10
+    move-result v11
 
     .line 225
-    .local v10, "last":I
-    sub-int v7, v10, v8
+    .local v11, "last":I
+    sub-int v8, v11, v9
 
     .line 227
-    .local v7, "count":I
+    .local v8, "count":I
     invoke-virtual/range {p1 .. p1}, Landroid/widget/ExpandableListView;->getExpandableListAdapter()Landroid/widget/ExpandableListAdapter;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 229
-    .local v1, "ela":Landroid/widget/ExpandableListAdapter;
-    const/4 v9, 0x0
+    .local v2, "ela":Landroid/widget/ExpandableListAdapter;
+    const/4 v10, 0x0
 
-    .local v9, "i":I
+    .local v10, "i":I
     :goto_1d
-    if-le v9, v7, :cond_20
+    if-le v10, v8, :cond_20
 
     .line 265
-    .end local v1    # "ela":Landroid/widget/ExpandableListAdapter;
-    .end local v7    # "count":I
-    .end local v8    # "first":I
-    .end local v9    # "i":I
-    .end local v10    # "last":I
+    .end local v2    # "ela":Landroid/widget/ExpandableListAdapter;
+    .end local v8    # "count":I
+    .end local v9    # "first":I
+    .end local v10    # "i":I
+    .end local v11    # "last":I
     :cond_1f
     return-void
 
     .line 231
-    .restart local v1    # "ela":Landroid/widget/ExpandableListAdapter;
-    .restart local v7    # "count":I
-    .restart local v8    # "first":I
-    .restart local v9    # "i":I
-    .restart local v10    # "last":I
+    .restart local v2    # "ela":Landroid/widget/ExpandableListAdapter;
+    .restart local v8    # "count":I
+    .restart local v9    # "first":I
+    .restart local v10    # "i":I
+    .restart local v11    # "last":I
     :cond_20
-    add-int v4, v9, v8
+    add-int v5, v10, v9
 
     move-object/from16 v0, p1
 
-    invoke-virtual {v0, v4}, Landroid/widget/ExpandableListView;->getExpandableListPosition(I)J
+    invoke-virtual {v0, v5}, Landroid/widget/ExpandableListView;->getExpandableListPosition(I)J
 
-    move-result-wide v11
+    move-result-wide v12
 
     .line 233
-    .local v11, "packed":J
-    invoke-static {v11, v12}, Landroid/widget/ExpandableListView;->getPackedPositionGroup(J)I
-
-    move-result v2
-
-    .line 234
-    .local v2, "group":I
-    invoke-static {v11, v12}, Landroid/widget/ExpandableListView;->getPackedPositionChild(J)I
+    .local v12, "packed":J
+    invoke-static {v12, v13}, Landroid/widget/ExpandableListView;->getPackedPositionGroup(J)I
 
     move-result v3
 
+    .line 234
+    .local v3, "group":I
+    invoke-static {v12, v13}, Landroid/widget/ExpandableListView;->getPackedPositionChild(J)I
+
+    move-result v4
+
     .line 236
-    .local v3, "child":I
-    if-ltz v2, :cond_60
+    .local v4, "child":I
+    if-ltz v3, :cond_60
 
     .line 238
     move-object/from16 v0, p1
 
-    invoke-virtual {v0, v9}, Landroid/widget/ExpandableListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v10}, Landroid/widget/ExpandableListView;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v5
+    move-result-object v6
 
     .line 239
-    .local v5, "convertView":Landroid/view/View;
-    const v4, 0x40ff0004
+    .local v6, "convertView":Landroid/view/View;
+    const v5, 0x40ff0004
 
-    invoke-virtual {v5, v4}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+    invoke-virtual {v6, v5}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
-    move-result-object v13
+    move-result-object v14
 
-    check-cast v13, Ljava/lang/Long;
+    check-cast v14, Ljava/lang/Long;
 
     .line 241
-    .local v13, "targetPacked":Ljava/lang/Long;
-    if-eqz v13, :cond_60
+    .local v14, "targetPacked":Ljava/lang/Long;
+    if-eqz v14, :cond_60
 
-    invoke-virtual {v13}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {v14}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v14
+    move-result-wide v16
 
-    cmp-long v4, v14, v11
+    cmp-long v5, v16, v12
 
-    if-nez v4, :cond_60
+    if-nez v5, :cond_60
 
     .line 243
-    const/4 v4, -0x1
+    const/4 v5, -0x1
 
-    if-ne v3, v4, :cond_63
+    if-ne v4, v5, :cond_63
 
     .line 245
     move-object/from16 v0, p1
 
-    invoke-virtual {v0, v2}, Landroid/widget/ExpandableListView;->isGroupExpanded(I)Z
+    invoke-virtual {v0, v3}, Landroid/widget/ExpandableListView;->isGroupExpanded(I)Z
 
-    move-result v4
+    move-result v5
 
     move-object/from16 v0, p1
 
-    invoke-interface {v1, v2, v4, v5, v0}, Landroid/widget/ExpandableListAdapter;->getGroupView(IZLandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    invoke-interface {v2, v3, v5, v6, v0}, Landroid/widget/ExpandableListAdapter;->getGroupView(IZLandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     .line 252
     :goto_59
-    const v4, 0x40ff0004
+    const v5, 0x40ff0004
 
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    invoke-virtual {v5, v4, v6}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+    invoke-virtual {v6, v5, v7}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     .line 229
-    .end local v5    # "convertView":Landroid/view/View;
-    .end local v13    # "targetPacked":Ljava/lang/Long;
+    .end local v6    # "convertView":Landroid/view/View;
+    .end local v14    # "targetPacked":Ljava/lang/Long;
     :cond_60
-    add-int/lit8 v9, v9, 0x1
+    add-int/lit8 v10, v10, 0x1
 
     goto :goto_1d
 
     .line 249
-    .restart local v5    # "convertView":Landroid/view/View;
-    .restart local v13    # "targetPacked":Ljava/lang/Long;
+    .restart local v6    # "convertView":Landroid/view/View;
+    .restart local v14    # "targetPacked":Ljava/lang/Long;
     :cond_63
-    invoke-interface {v1, v2}, Landroid/widget/ExpandableListAdapter;->getChildrenCount(I)I
+    invoke-interface {v2, v3}, Landroid/widget/ExpandableListAdapter;->getChildrenCount(I)I
 
-    move-result v4
+    move-result v5
 
-    add-int/lit8 v4, v4, -0x1
+    add-int/lit8 v5, v5, -0x1
 
-    if-ne v3, v4, :cond_72
+    if-ne v4, v5, :cond_72
 
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
     :goto_6c
-    move-object/from16 v6, p1
+    move-object/from16 v7, p1
 
-    invoke-interface/range {v1 .. v6}, Landroid/widget/ExpandableListAdapter;->getChildView(IIZLandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    invoke-interface/range {v2 .. v7}, Landroid/widget/ExpandableListAdapter;->getChildView(IIZLandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     goto :goto_59
 
     :cond_72
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     goto :goto_6c
 .end method
@@ -640,21 +640,21 @@
     :cond_28
     invoke-virtual {v0, v9}, Landroid/widget/AbsListView;->getTag(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v1
 
-    check-cast v3, Ljava/lang/Integer;
+    check-cast v1, Ljava/lang/Integer;
 
     .line 320
-    .local v3, "scrollState":Ljava/lang/Integer;
-    if-eqz v3, :cond_3c
+    .local v1, "scrollState":Ljava/lang/Integer;
+    if-eqz v1, :cond_3c
 
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v7
 
     if-eqz v7, :cond_3c
 
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v7
 
@@ -668,10 +668,10 @@
 
     .line 324
     :cond_3e
-    int-to-long v1, p1
+    int-to-long v2, p1
 
     .line 325
-    .local v1, "packed":J
+    .local v2, "packed":J
     instance-of v6, p3, Landroid/widget/ExpandableListView;
 
     if-eqz v6, :cond_47
@@ -679,11 +679,11 @@
     .line 326
     invoke-static {p0, p1}, Landroid/widget/ExpandableListView;->getPackedPositionForChild(II)J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 328
     :cond_47
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v6
 
@@ -1268,7 +1268,7 @@
 .end method
 
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 9
+    .registers 10
     .param p2, "v"    # Landroid/view/View;
     .param p3, "pos"    # I
     .param p4, "id"    # J
@@ -1320,7 +1320,7 @@
 .end method
 
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 21
+    .registers 22
     .param p2, "v"    # Landroid/view/View;
     .param p3, "pos"    # I
     .param p4, "id"    # J
@@ -1337,174 +1337,182 @@
     .prologue
     .line 435
     .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
-    const/4 v1, 0x4
+    const/4 v2, 0x4
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v2, v2, [Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    aput-object p1, v1, v2
+    aput-object p1, v2, v3
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    aput-object p2, v1, v2
+    aput-object p2, v2, v3
 
-    const/4 v2, 0x2
+    const/4 v3, 0x2
+
+    invoke-static/range {p3 .. p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x3
+
+    invoke-static/range {p4 .. p5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    aput-object v4, v2, v3
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v2}, Lcom/androidquery/util/Common;->invoke([Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 437
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/androidquery/util/Common;->galleryListener:Landroid/widget/AdapterView$OnItemSelectedListener;
+
+    if-eqz v2, :cond_31
+
+    .line 438
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/androidquery/util/Common;->galleryListener:Landroid/widget/AdapterView$OnItemSelectedListener;
+
+    move-object/from16 v3, p1
+
+    move-object/from16 v4, p2
+
+    move/from16 v5, p3
+
+    move-wide/from16 v6, p4
+
+    invoke-interface/range {v2 .. v7}, Landroid/widget/AdapterView$OnItemSelectedListener;->onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+
+    .line 441
+    :cond_31
+    move-object/from16 v0, p0
+
+    iget-boolean v2, v0, Lcom/androidquery/util/Common;->galleryListen:Z
+
+    if-eqz v2, :cond_65
+
+    .line 443
+    const v2, 0x40ff0004
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v2}, Landroid/widget/AdapterView;->getTag(I)Ljava/lang/Object;
+
+    move-result-object v15
+
+    check-cast v15, Ljava/lang/Integer;
+
+    .line 445
+    .local v15, "selected":Ljava/lang/Integer;
+    invoke-virtual {v15}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    move/from16 v0, p3
+
+    if-eq v2, v0, :cond_65
+
+    .line 447
+    invoke-virtual/range {p1 .. p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
+
+    move-result-object v8
+
+    .line 448
+    .local v8, "adapter":Landroid/widget/Adapter;
+    const v2, 0x40ff0004
 
     invoke-static/range {p3 .. p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x3
-
-    invoke-static/range {p4 .. p5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-direct {p0, v1}, Lcom/androidquery/util/Common;->invoke([Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 437
-    iget-object v1, p0, Lcom/androidquery/util/Common;->galleryListener:Landroid/widget/AdapterView$OnItemSelectedListener;
-
-    if-eqz v1, :cond_2b
-
-    .line 438
-    iget-object v1, p0, Lcom/androidquery/util/Common;->galleryListener:Landroid/widget/AdapterView$OnItemSelectedListener;
-
-    move-object/from16 v2, p1
-
-    move-object/from16 v3, p2
-
-    move/from16 v4, p3
-
-    move-wide/from16 v5, p4
-
-    invoke-interface/range {v1 .. v6}, Landroid/widget/AdapterView$OnItemSelectedListener;->onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-
-    .line 441
-    :cond_2b
-    iget-boolean v1, p0, Lcom/androidquery/util/Common;->galleryListen:Z
-
-    if-eqz v1, :cond_5d
-
-    .line 443
-    const v1, 0x40ff0004
-
     move-object/from16 v0, p1
 
-    invoke-virtual {v0, v1}, Landroid/widget/AdapterView;->getTag(I)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v3}, Landroid/widget/AdapterView;->setTag(ILjava/lang/Object;)V
+
+    .line 450
+    invoke-virtual/range {p1 .. p1}, Landroid/widget/AdapterView;->getChildCount()I
+
+    move-result v10
+
+    .line 454
+    .local v10, "count":I
+    invoke-virtual/range {p1 .. p1}, Landroid/widget/AdapterView;->getFirstVisiblePosition()I
+
+    move-result v12
+
+    .line 456
+    .local v12, "first":I
+    const/4 v13, 0x0
+
+    .local v13, "i":I
+    :goto_63
+    if-lt v13, v10, :cond_66
+
+    .line 475
+    .end local v8    # "adapter":Landroid/widget/Adapter;
+    .end local v10    # "count":I
+    .end local v12    # "first":I
+    .end local v13    # "i":I
+    .end local v15    # "selected":Ljava/lang/Integer;
+    :cond_65
+    return-void
+
+    .line 457
+    .restart local v8    # "adapter":Landroid/widget/Adapter;
+    .restart local v10    # "count":I
+    .restart local v12    # "first":I
+    .restart local v13    # "i":I
+    .restart local v15    # "selected":Ljava/lang/Integer;
+    :cond_66
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v13}, Landroid/widget/AdapterView;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v9
+
+    .line 459
+    .local v9, "convertView":Landroid/view/View;
+    add-int v11, v12, v13
+
+    .line 461
+    .local v11, "drawPos":I
+    const v2, 0x40ff0004
+
+    invoke-virtual {v9, v2}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
     move-result-object v14
 
     check-cast v14, Ljava/lang/Integer;
 
-    .line 445
-    .local v14, "selected":Ljava/lang/Integer;
+    .line 463
+    .local v14, "lastDrawn":Ljava/lang/Integer;
+    if-eqz v14, :cond_7f
+
     invoke-virtual {v14}, Ljava/lang/Integer;->intValue()I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v0, p3
-
-    if-eq v1, v0, :cond_5d
-
-    .line 447
-    invoke-virtual/range {p1 .. p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
-
-    move-result-object v7
-
-    .line 448
-    .local v7, "adapter":Landroid/widget/Adapter;
-    const v1, 0x40ff0004
-
-    invoke-static/range {p3 .. p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v1, v2}, Landroid/widget/AdapterView;->setTag(ILjava/lang/Object;)V
-
-    .line 450
-    invoke-virtual/range {p1 .. p1}, Landroid/widget/AdapterView;->getChildCount()I
-
-    move-result v9
-
-    .line 454
-    .local v9, "count":I
-    invoke-virtual/range {p1 .. p1}, Landroid/widget/AdapterView;->getFirstVisiblePosition()I
-
-    move-result v11
-
-    .line 456
-    .local v11, "first":I
-    const/4 v12, 0x0
-
-    .local v12, "i":I
-    :goto_5b
-    if-lt v12, v9, :cond_5e
-
-    .line 475
-    .end local v7    # "adapter":Landroid/widget/Adapter;
-    .end local v9    # "count":I
-    .end local v11    # "first":I
-    .end local v12    # "i":I
-    .end local v14    # "selected":Ljava/lang/Integer;
-    :cond_5d
-    return-void
-
-    .line 457
-    .restart local v7    # "adapter":Landroid/widget/Adapter;
-    .restart local v9    # "count":I
-    .restart local v11    # "first":I
-    .restart local v12    # "i":I
-    .restart local v14    # "selected":Ljava/lang/Integer;
-    :cond_5e
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v12}, Landroid/widget/AdapterView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v8
-
-    .line 459
-    .local v8, "convertView":Landroid/view/View;
-    add-int v10, v11, v12
-
-    .line 461
-    .local v10, "drawPos":I
-    const v1, 0x40ff0004
-
-    invoke-virtual {v8, v1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
-
-    move-result-object v13
-
-    check-cast v13, Ljava/lang/Integer;
-
-    .line 463
-    .local v13, "lastDrawn":Ljava/lang/Integer;
-    if-eqz v13, :cond_77
-
-    invoke-virtual {v13}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    if-eq v1, v10, :cond_7c
+    if-eq v2, v11, :cond_84
 
     .line 467
-    :cond_77
+    :cond_7f
     move-object/from16 v0, p1
 
-    invoke-interface {v7, v10, v8, v0}, Landroid/widget/Adapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    invoke-interface {v8, v11, v9, v0}, Landroid/widget/Adapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     .line 456
-    :cond_7c
-    add-int/lit8 v12, v12, 0x1
+    :cond_84
+    add-int/lit8 v13, v13, 0x1
 
-    goto :goto_5b
+    goto :goto_63
 .end method
 
 .method public onLongClick(Landroid/view/View;)Z

@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$1;->val$savedInstanceState:Landroid/os/Bundle;
 
-    .line 256
+    .line 259
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,20 +45,20 @@
     .registers 3
 
     .prologue
-    .line 259
+    .line 262
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$1;->val$savedInstanceState:Landroid/os/Bundle;
 
     if-eqz v0, :cond_b
 
-    .line 262
+    .line 265
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$1;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$1;->val$savedInstanceState:Landroid/os/Bundle;
 
     # invokes: Lcom/samsung/privilege/activity/MainMenuFragment;->restoreInstanceState(Landroid/os/Bundle;)V
-    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$26(Lcom/samsung/privilege/activity/MainMenuFragment;Landroid/os/Bundle;)V
+    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$23(Lcom/samsung/privilege/activity/MainMenuFragment;Landroid/os/Bundle;)V
 
-    .line 264
+    .line 267
     :cond_b
     return-void
 .end method

@@ -1309,7 +1309,7 @@
     invoke-virtual {v1, p1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     .line 216
-    const v3, 0x7f0202b9
+    const v3, 0x7f0202bb
 
     invoke-virtual {v1, v3}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
@@ -1406,7 +1406,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 38
-    const v0, 0x7f030106
+    const v0, 0x7f030108
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/NotificationPostAsyncDialogBoxActivity;->setContentView(I)V
 

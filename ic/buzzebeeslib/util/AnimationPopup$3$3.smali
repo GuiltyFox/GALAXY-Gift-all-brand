@@ -102,10 +102,10 @@
     invoke-direct/range {v0 .. v8}, Lic/buzzebeeslib/util/AnimationPopup$3$3$1;-><init>(Lic/buzzebeeslib/util/AnimationPopup$3$3;Landroid/app/Activity;Landroid/widget/ImageView;IZLandroid/widget/TextView;Landroid/widget/RelativeLayout;Landroid/widget/LinearLayout;)V
 
     .line 328
-    const-wide/16 v1, 0x64
+    const-wide/16 v2, 0x64
 
     .line 298
-    invoke-virtual {v9, v0, v1, v2}, Landroid/widget/RelativeLayout;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v9, v0, v2, v3}, Landroid/widget/RelativeLayout;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 329
     return-void

@@ -729,7 +729,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0300ed
+    const v5, 0x7f0300ef
 
     invoke-virtual {v4, v5, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -786,7 +786,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f030122
+    const v5, 0x7f030124
 
     invoke-virtual {v4, v5, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -1618,7 +1618,7 @@
     .end local v0    # "isLike":Z
     .end local v3    # "tagLike":Lcom/samsung/privilege/bean/TagLikeMarketReview;
     :cond_51
-    const v4, 0x7f0a0302
+    const v4, 0x7f090309
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/MarketReviewList2Activity;->getString(I)Ljava/lang/String;
 
@@ -1683,7 +1683,7 @@
 
     .line 614
     :cond_28
-    const v1, 0x7f0a0302
+    const v1, 0x7f090309
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/MarketReviewList2Activity;->getString(I)Ljava/lang/String;
 
@@ -2047,12 +2047,12 @@
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/MarketReviewList2Activity;->requestWindowFeature(I)Z
 
     .line 100
-    const v8, 0x7f0300fc
+    const v8, 0x7f0300fe
 
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/MarketReviewList2Activity;->setContentView(I)V
 
     .line 102
-    const v8, 0x7f070031
+    const v8, 0x7f0c0031
 
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/MarketReviewList2Activity;->findViewById(I)Landroid/view/View;
 
@@ -2079,7 +2079,7 @@
     if-eqz v8, :cond_db
 
     .line 104
-    const v8, 0x7f0202b6
+    const v8, 0x7f0202b8
 
     invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2106,7 +2106,7 @@
     if-eqz v8, :cond_113
 
     .line 115
-    const v8, 0x7f0202ba
+    const v8, 0x7f0202bc
 
     invoke-virtual {v4, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2220,7 +2220,7 @@
     .line 139
     iget-object v8, p0, Lcom/samsung/privilege/activity/MarketReviewList2Activity;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
-    const v9, 0x7f02039f
+    const v9, 0x7f0203a7
 
     invoke-virtual {v8, v9}, Lcom/bitmapfun/util/ImageFetcher;->setLoadingImage(I)V
 
@@ -2298,7 +2298,7 @@
     if-eqz v8, :cond_f3
 
     .line 106
-    const v8, 0x7f0202b5
+    const v8, 0x7f0202b7
 
     invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2323,7 +2323,7 @@
     if-eqz v8, :cond_10b
 
     .line 108
-    const v8, 0x7f0202b7
+    const v8, 0x7f0202b9
 
     invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2331,7 +2331,7 @@
 
     .line 110
     :cond_10b
-    const v8, 0x7f0202b8
+    const v8, 0x7f0202ba
 
     invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2340,7 +2340,7 @@
     .line 117
     .restart local v4    # "imgLogo":Landroid/widget/ImageView;
     :cond_113
-    const v8, 0x7f0202b9
+    const v8, 0x7f0202bb
 
     invoke-virtual {v4, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 

@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener$1;->val$response:Ljava/lang/String;
 
-    .line 1309
+    .line 1323
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 7
 
     .prologue
-    .line 1312
+    .line 1326
     :try_start_0
     new-instance v2, Lorg/json/JSONObject;
 
@@ -53,7 +53,7 @@
 
     invoke-direct {v2, v3}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1314
+    .line 1328
     .local v2, "jsonRoot":Lorg/json/JSONObject;
     iget-object v3, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener;
 
@@ -74,7 +74,7 @@
 
     invoke-static {v3, v4}, Lcom/samsung/privilege/UserLogin;->SetTokenBuzzeBees(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 1316
+    .line 1330
     iget-object v3, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -88,7 +88,7 @@
 
     invoke-static {v3}, Lcom/samsung/privilege/helper/LocalFileHelper;->clearCatchFile(Landroid/content/Context;)V
 
-    .line 1318
+    .line 1332
     iget-object v3, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -105,7 +105,7 @@
 
     invoke-static {v3, v4}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1320
+    .line 1334
     iget-object v3, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -119,7 +119,7 @@
 
     invoke-static {v3}, Lcom/samsung/privilege/util/LanguageSetting;->SetLanguage(Landroid/content/Context;)V
 
-    .line 1321
+    .line 1335
     iget-object v3, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -133,13 +133,13 @@
 
     check-cast v0, Lcom/samsung/privilege/activity/CampaignListActivity;
 
-    .line 1322
+    .line 1336
     .local v0, "activity":Lcom/samsung/privilege/activity/CampaignListActivity;
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->restartActivity()V
     :try_end_52
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_52} :catch_5f
 
-    .line 1331
+    .line 1345
     .end local v0    # "activity":Lcom/samsung/privilege/activity/CampaignListActivity;
     .end local v2    # "jsonRoot":Lorg/json/JSONObject;
     :goto_52
@@ -156,15 +156,15 @@
 
     if-nez v3, :cond_5e
 
-    .line 1334
+    .line 1348
     :cond_5e
     return-void
 
-    .line 1323
+    .line 1337
     :catch_5f
     move-exception v1
 
-    .line 1324
+    .line 1338
     .local v1, "e":Ljava/lang/Exception;
     iget-object v3, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener;
 

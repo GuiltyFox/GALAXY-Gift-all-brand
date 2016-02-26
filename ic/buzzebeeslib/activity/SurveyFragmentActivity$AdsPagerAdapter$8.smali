@@ -138,9 +138,9 @@
 
     invoke-virtual {v1}, Lic/buzzebeeslib/util/GPSTracker;->getLatitude()D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    iput-wide v1, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->lat:D
+    iput-wide v2, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->lat:D
 
     .line 770
     iget-object v0, p0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter$8;->this$1:Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;
@@ -164,9 +164,9 @@
 
     invoke-virtual {v1}, Lic/buzzebeeslib/util/GPSTracker;->getLongitude()D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    iput-wide v1, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->lng:D
+    iput-wide v2, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->lng:D
 
     .line 771
     return-void

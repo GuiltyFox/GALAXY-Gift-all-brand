@@ -27,7 +27,7 @@
     .registers 2
 
     .prologue
-    .line 2685
+    .line 2749
     iput-object p1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter$ViewHolderDashboardRow;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
     .registers 3
 
     .prologue
-    .line 2685
+    .line 2749
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter$ViewHolderDashboardRow;-><init>(Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter;)V
 
     return-void

@@ -240,7 +240,7 @@
 
     .line 789
     .local v12, "inflater":Landroid/view/LayoutInflater;
-    const v2, 0x7f030101
+    const v2, 0x7f030103
 
     const/4 v4, 0x0
 
@@ -865,7 +865,7 @@
 
     const/4 v5, 0x0
 
-    const v6, 0x7f020315
+    const v6, 0x7f020317
 
     const/4 v7, 0x0
 
@@ -929,7 +929,7 @@
 
     iget-object v7, v11, Lcom/samsung/privilege/activity/MarketReviewList2Activity$MarketReviewAdapter$ViewHolderMarketReviewRow;->pbLoadingPhotoSmart:Landroid/widget/ProgressBar;
 
-    const v8, 0x7f02039f
+    const v8, 0x7f0203a7
 
     const/4 v9, 0x0
 
@@ -1144,7 +1144,7 @@
     .line 944
     iget-object v2, v11, Lcom/samsung/privilege/activity/MarketReviewList2Activity$MarketReviewAdapter$ViewHolderMarketReviewRow;->imgLike:Landroid/widget/ImageView;
 
-    const v4, 0x7f02031a
+    const v4, 0x7f02031c
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1169,7 +1169,7 @@
     .line 979
     iget-object v2, v11, Lcom/samsung/privilege/activity/MarketReviewList2Activity$MarketReviewAdapter$ViewHolderMarketReviewRow;->imgBarLike:Landroid/widget/ImageView;
 
-    const v4, 0x7f0202e3
+    const v4, 0x7f0202e5
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1394,7 +1394,7 @@
     :cond_447
     iget-object v2, v11, Lcom/samsung/privilege/activity/MarketReviewList2Activity$MarketReviewAdapter$ViewHolderMarketReviewRow;->imgLike:Landroid/widget/ImageView;
 
-    const v4, 0x7f02031b
+    const v4, 0x7f02031d
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1412,7 +1412,7 @@
     :pswitch_459
     iget-object v2, v11, Lcom/samsung/privilege/activity/MarketReviewList2Activity$MarketReviewAdapter$ViewHolderMarketReviewRow;->imgBarLike:Landroid/widget/ImageView;
 
-    const v4, 0x7f0202e3
+    const v4, 0x7f0202e5
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1422,7 +1422,7 @@
     :pswitch_463
     iget-object v2, v11, Lcom/samsung/privilege/activity/MarketReviewList2Activity$MarketReviewAdapter$ViewHolderMarketReviewRow;->imgBarLike:Landroid/widget/ImageView;
 
-    const v4, 0x7f0202e4
+    const v4, 0x7f0202e6
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1432,7 +1432,7 @@
     :pswitch_46d
     iget-object v2, v11, Lcom/samsung/privilege/activity/MarketReviewList2Activity$MarketReviewAdapter$ViewHolderMarketReviewRow;->imgBarLike:Landroid/widget/ImageView;
 
-    const v4, 0x7f0202e5
+    const v4, 0x7f0202e7
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1442,7 +1442,7 @@
     :pswitch_477
     iget-object v2, v11, Lcom/samsung/privilege/activity/MarketReviewList2Activity$MarketReviewAdapter$ViewHolderMarketReviewRow;->imgBarLike:Landroid/widget/ImageView;
 
-    const v4, 0x7f0202e6
+    const v4, 0x7f0202e8
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1452,7 +1452,7 @@
     :pswitch_481
     iget-object v2, v11, Lcom/samsung/privilege/activity/MarketReviewList2Activity$MarketReviewAdapter$ViewHolderMarketReviewRow;->imgBarLike:Landroid/widget/ImageView;
 
-    const v4, 0x7f0202e7
+    const v4, 0x7f0202e9
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1462,7 +1462,7 @@
     :pswitch_48b
     iget-object v2, v11, Lcom/samsung/privilege/activity/MarketReviewList2Activity$MarketReviewAdapter$ViewHolderMarketReviewRow;->imgBarLike:Landroid/widget/ImageView;
 
-    const v4, 0x7f0202e8
+    const v4, 0x7f0202ea
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1473,7 +1473,7 @@
     :cond_495
     iget-object v2, v11, Lcom/samsung/privilege/activity/MarketReviewList2Activity$MarketReviewAdapter$ViewHolderMarketReviewRow;->imgBarLike:Landroid/widget/ImageView;
 
-    const v4, 0x7f0202e3
+    const v4, 0x7f0202e5
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1549,7 +1549,7 @@
 
     iget-object v1, v6, Lcom/samsung/privilege/bean/Sticker;->PictureUrl:Ljava/lang/String;
 
-    const v4, 0x7f02039f
+    const v4, 0x7f0203a7
 
     move-object v2, p3
 

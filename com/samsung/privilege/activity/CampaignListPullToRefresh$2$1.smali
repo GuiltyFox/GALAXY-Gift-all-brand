@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2$1;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2;
 
-    .line 285
+    .line 287
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 4
 
     .prologue
-    .line 288
+    .line 290
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2$1;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
@@ -58,7 +58,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 289
+    .line 291
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2$1;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
@@ -83,6 +83,6 @@
     # invokes: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->loadCampaign(ZLjava/lang/String;)V
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$16(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;ZLjava/lang/String;)V
 
-    .line 290
+    .line 292
     return-void
 .end method

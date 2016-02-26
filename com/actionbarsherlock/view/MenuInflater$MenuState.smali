@@ -581,14 +581,16 @@
 
     .line 328
     .local v0, "a":Landroid/content/res/TypedArray;
-    invoke-virtual {v0, v4, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockMenuGroup_android_id:I
+
+    invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v1
 
     iput v1, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->groupId:I
 
     .line 329
-    const/4 v1, 0x3
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockMenuGroup_android_menuCategory:I
 
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -597,7 +599,7 @@
     iput v1, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->groupCategory:I
 
     .line 330
-    const/4 v1, 0x4
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockMenuGroup_android_orderInCategory:I
 
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -606,7 +608,7 @@
     iput v1, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->groupOrder:I
 
     .line 331
-    const/4 v1, 0x5
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockMenuGroup_android_checkableBehavior:I
 
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -615,7 +617,7 @@
     iput v1, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->groupCheckable:I
 
     .line 332
-    const/4 v1, 0x2
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockMenuGroup_android_visible:I
 
     invoke-virtual {v0, v1, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
@@ -624,7 +626,9 @@
     iput-boolean v1, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->groupVisible:Z
 
     .line 333
-    invoke-virtual {v0, v3, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockMenuGroup_android_enabled:I
+
+    invoke-virtual {v0, v1, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v1
 
@@ -638,17 +642,15 @@
 .end method
 
 .method public readItem(Landroid/util/AttributeSet;)V
-    .registers 14
+    .registers 13
     .param p1, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    const/16 v11, 0xb
-
-    const/4 v8, 0x0
-
     const/4 v10, 0x3
 
     const/4 v6, 0x1
+
+    const/4 v8, 0x0
 
     const/4 v7, 0x0
 
@@ -670,7 +672,7 @@
 
     .line 346
     .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v5, 0x2
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockMenuItem_android_id:I
 
     invoke-virtual {v0, v5, v7}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -679,7 +681,7 @@
     iput v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemId:I
 
     .line 347
-    const/4 v5, 0x5
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockMenuItem_android_menuCategory:I
 
     iget v9, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->groupCategory:I
 
@@ -689,7 +691,7 @@
 
     .line 348
     .local v1, "category":I
-    const/4 v5, 0x6
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockMenuItem_android_orderInCategory:I
 
     iget v9, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->groupOrder:I
 
@@ -712,7 +714,7 @@
     iput v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemCategoryOrder:I
 
     .line 350
-    const/4 v5, 0x7
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockMenuItem_android_title:I
 
     invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->getText(I)Ljava/lang/CharSequence;
 
@@ -721,7 +723,7 @@
     iput-object v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemTitle:Ljava/lang/CharSequence;
 
     .line 351
-    const/16 v5, 0x8
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockMenuItem_android_titleCondensed:I
 
     invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->getText(I)Ljava/lang/CharSequence;
 
@@ -730,14 +732,16 @@
     iput-object v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemTitleCondensed:Ljava/lang/CharSequence;
 
     .line 352
-    invoke-virtual {v0, v7, v7}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockMenuItem_android_icon:I
+
+    invoke-virtual {v0, v5, v7}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v5
 
     iput v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemIconResId:I
 
     .line 354
-    const/16 v5, 0x9
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockMenuItem_android_alphabeticShortcut:I
 
     invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -751,7 +755,7 @@
     iput-char v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemAlphabeticShortcut:C
 
     .line 356
-    const/16 v5, 0xa
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockMenuItem_android_numericShortcut:I
 
     invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -765,34 +769,40 @@
     iput-char v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemNumericShortcut:C
 
     .line 357
-    invoke-virtual {v0, v11}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockMenuItem_android_checkable:I
+
+    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_100
+    if-eqz v5, :cond_10d
 
     .line 359
-    invoke-virtual {v0, v11, v7}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockMenuItem_android_checkable:I
+
+    invoke-virtual {v0, v5, v7}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v5
 
-    if-eqz v5, :cond_fd
+    if-eqz v5, :cond_10a
 
     move v5, v6
 
-    :goto_6b
+    :goto_73
     iput v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemCheckable:I
 
     .line 366
-    :goto_6d
-    invoke-virtual {v0, v10, v7}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    :goto_75
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockMenuItem_android_checked:I
+
+    invoke-virtual {v0, v5, v7}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v5
 
     iput-boolean v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemChecked:Z
 
     .line 367
-    const/4 v5, 0x4
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockMenuItem_android_visible:I
 
     iget-boolean v9, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->groupVisible:Z
 
@@ -803,9 +813,11 @@
     iput-boolean v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemVisible:Z
 
     .line 368
-    iget-boolean v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->groupEnabled:Z
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockMenuItem_android_enabled:I
 
-    invoke-virtual {v0, v6, v5}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    iget-boolean v9, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->groupEnabled:Z
+
+    invoke-virtual {v0, v5, v9}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v5
 
@@ -818,7 +830,7 @@
 
     .line 371
     .local v4, "value":Landroid/util/TypedValue;
-    const/16 v5, 0xd
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockMenuItem_android_showAsAction:I
 
     invoke-virtual {v0, v5, v4}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
 
@@ -827,15 +839,15 @@
 
     const/16 v9, 0x11
 
-    if-ne v5, v9, :cond_106
+    if-ne v5, v9, :cond_113
 
     iget v5, v4, Landroid/util/TypedValue;->data:I
 
-    :goto_96
+    :goto_a3
     iput v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemShowAsAction:I
 
     .line 374
-    const/16 v5, 0xc
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockMenuItem_android_onClick:I
 
     invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -844,7 +856,7 @@
     iput-object v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemListenerMethodName:Ljava/lang/String;
 
     .line 375
-    const/16 v5, 0xe
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockMenuItem_android_actionLayout:I
 
     invoke-virtual {v0, v5, v7}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -860,14 +872,14 @@
 
     .line 379
     .restart local v4    # "value":Landroid/util/TypedValue;
-    const/16 v5, 0xf
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockMenuItem_android_actionViewClass:I
 
     invoke-virtual {v0, v5, v4}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
 
     .line 380
     iget v5, v4, Landroid/util/TypedValue;->type:I
 
-    if-ne v5, v10, :cond_108
+    if-ne v5, v10, :cond_115
 
     iget-object v5, v4, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
 
@@ -875,7 +887,7 @@
 
     move-result-object v5
 
-    :goto_bc
+    :goto_c9
     iput-object v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemActionViewClassName:Ljava/lang/String;
 
     .line 383
@@ -886,14 +898,14 @@
 
     .line 384
     .restart local v4    # "value":Landroid/util/TypedValue;
-    const/16 v5, 0x10
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockMenuItem_android_actionProviderClass:I
 
     invoke-virtual {v0, v5, v4}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
 
     .line 385
     iget v5, v4, Landroid/util/TypedValue;->type:I
 
-    if-ne v5, v10, :cond_10a
+    if-ne v5, v10, :cond_117
 
     iget-object v5, v4, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
 
@@ -901,28 +913,28 @@
 
     move-result-object v5
 
-    :goto_d2
+    :goto_df
     iput-object v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemActionProviderClassName:Ljava/lang/String;
 
     .line 387
     iget-object v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemActionProviderClassName:Ljava/lang/String;
 
-    if-eqz v5, :cond_10c
+    if-eqz v5, :cond_119
 
     move v2, v6
 
     .line 388
     .local v2, "hasActionProvider":Z
-    :goto_d9
-    if-eqz v2, :cond_10e
+    :goto_e6
+    if-eqz v2, :cond_11b
 
     iget v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemActionViewLayout:I
 
-    if-nez v5, :cond_10e
+    if-nez v5, :cond_11b
 
     iget-object v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemActionViewClassName:Ljava/lang/String;
 
-    if-nez v5, :cond_10e
+    if-nez v5, :cond_11b
 
     .line 389
     iget-object v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemActionProviderClassName:Ljava/lang/String;
@@ -951,7 +963,7 @@
     iput-object v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemActionProvider:Lcom/actionbarsherlock/view/ActionProvider;
 
     .line 400
-    :goto_f7
+    :goto_104
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 402
@@ -962,49 +974,49 @@
 
     .end local v2    # "hasActionProvider":Z
     .end local v4    # "value":Landroid/util/TypedValue;
-    :cond_fd
+    :cond_10a
     move v5, v7
 
     .line 359
-    goto/16 :goto_6b
+    goto/16 :goto_73
 
     .line 363
-    :cond_100
+    :cond_10d
     iget v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->groupCheckable:I
 
     iput v5, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemCheckable:I
 
-    goto/16 :goto_6d
+    goto/16 :goto_75
 
     .line 372
     .restart local v4    # "value":Landroid/util/TypedValue;
-    :cond_106
+    :cond_113
     const/4 v5, -0x1
 
-    goto :goto_96
+    goto :goto_a3
 
-    :cond_108
+    :cond_115
     move-object v5, v8
 
     .line 380
-    goto :goto_bc
+    goto :goto_c9
 
-    :cond_10a
+    :cond_117
     move-object v5, v8
 
     .line 385
-    goto :goto_d2
+    goto :goto_df
 
-    :cond_10c
+    :cond_119
     move v2, v7
 
     .line 387
-    goto :goto_d9
+    goto :goto_e6
 
     .line 393
     .restart local v2    # "hasActionProvider":Z
-    :cond_10e
-    if-eqz v2, :cond_117
+    :cond_11b
+    if-eqz v2, :cond_124
 
     .line 394
     const-string v5, "MenuInflater"
@@ -1014,10 +1026,10 @@
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 397
-    :cond_117
+    :cond_124
     iput-object v8, p0, Lcom/actionbarsherlock/view/MenuInflater$MenuState;->itemActionProvider:Lcom/actionbarsherlock/view/ActionProvider;
 
-    goto :goto_f7
+    goto :goto_104
 .end method
 
 .method public resetGroup()V

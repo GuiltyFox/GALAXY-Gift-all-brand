@@ -249,9 +249,9 @@
     invoke-virtual {v2, v7}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
     .line 386
-    const-wide/16 v7, 0x1f4
+    const-wide/16 v8, 0x1f4
 
-    invoke-virtual {v2, v7, v8}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v2, v8, v9}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 388
     iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceList2Fragment$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList2Fragment;
@@ -335,9 +335,9 @@
     invoke-virtual {v5, v7}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
     .line 417
-    const-wide/16 v7, 0x1f4
+    const-wide/16 v8, 0x1f4
 
-    invoke-virtual {v5, v7, v8}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v5, v8, v9}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 419
     iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceList2Fragment$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList2Fragment;

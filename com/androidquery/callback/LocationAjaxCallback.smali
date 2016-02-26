@@ -332,7 +332,7 @@
 .end method
 
 .method private static distFrom(DDDD)F
-    .registers 27
+    .registers 28
     .param p0, "lat1"    # D
     .param p2, "lng1"    # D
     .param p4, "lat2"    # D
@@ -344,107 +344,107 @@
 
     .line 268
     .local v10, "earthRadius":D
-    sub-double v13, p4, p0
+    sub-double v14, p4, p0
 
-    invoke-static {v13, v14}, Ljava/lang/Math;->toRadians(D)D
+    invoke-static {v14, v15}, Ljava/lang/Math;->toRadians(D)D
 
     move-result-wide v4
 
     .line 269
     .local v4, "dLat":D
-    sub-double v13, p6, p2
+    sub-double v14, p6, p2
 
-    invoke-static {v13, v14}, Ljava/lang/Math;->toRadians(D)D
+    invoke-static {v14, v15}, Ljava/lang/Math;->toRadians(D)D
 
     move-result-wide v6
 
     .line 270
     .local v6, "dLng":D
-    const-wide/high16 v13, 0x4000000000000000L
+    const-wide/high16 v14, 0x4000000000000000L
 
-    div-double v13, v4, v13
+    div-double v14, v4, v14
 
-    invoke-static {v13, v14}, Ljava/lang/Math;->sin(D)D
+    invoke-static {v14, v15}, Ljava/lang/Math;->sin(D)D
 
-    move-result-wide v13
+    move-result-wide v14
 
-    const-wide/high16 v15, 0x4000000000000000L
+    const-wide/high16 v16, 0x4000000000000000L
 
-    div-double v15, v4, v15
+    div-double v16, v4, v16
 
-    invoke-static/range {v15 .. v16}, Ljava/lang/Math;->sin(D)D
+    invoke-static/range {v16 .. v17}, Ljava/lang/Math;->sin(D)D
 
-    move-result-wide v15
+    move-result-wide v16
 
-    mul-double/2addr v13, v15
+    mul-double v14, v14, v16
 
     .line 271
     invoke-static/range {p0 .. p1}, Ljava/lang/Math;->toRadians(D)D
 
-    move-result-wide v15
+    move-result-wide v16
 
-    invoke-static/range {v15 .. v16}, Ljava/lang/Math;->cos(D)D
+    invoke-static/range {v16 .. v17}, Ljava/lang/Math;->cos(D)D
 
-    move-result-wide v15
+    move-result-wide v16
 
     invoke-static/range {p4 .. p5}, Ljava/lang/Math;->toRadians(D)D
 
-    move-result-wide v17
+    move-result-wide v18
 
-    invoke-static/range {v17 .. v18}, Ljava/lang/Math;->cos(D)D
+    invoke-static/range {v18 .. v19}, Ljava/lang/Math;->cos(D)D
 
-    move-result-wide v17
+    move-result-wide v18
 
-    mul-double v15, v15, v17
-
-    .line 272
-    const-wide/high16 v17, 0x4000000000000000L
-
-    div-double v17, v6, v17
-
-    invoke-static/range {v17 .. v18}, Ljava/lang/Math;->sin(D)D
-
-    move-result-wide v17
-
-    .line 271
-    mul-double v15, v15, v17
+    mul-double v16, v16, v18
 
     .line 272
-    const-wide/high16 v17, 0x4000000000000000L
+    const-wide/high16 v18, 0x4000000000000000L
 
-    div-double v17, v6, v17
+    div-double v18, v6, v18
 
-    invoke-static/range {v17 .. v18}, Ljava/lang/Math;->sin(D)D
+    invoke-static/range {v18 .. v19}, Ljava/lang/Math;->sin(D)D
 
-    move-result-wide v17
+    move-result-wide v18
 
     .line 271
-    mul-double v15, v15, v17
+    mul-double v16, v16, v18
+
+    .line 272
+    const-wide/high16 v18, 0x4000000000000000L
+
+    div-double v18, v6, v18
+
+    invoke-static/range {v18 .. v19}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide v18
+
+    .line 271
+    mul-double v16, v16, v18
 
     .line 270
-    add-double v0, v13, v15
+    add-double v0, v14, v16
 
     .line 273
     .local v0, "a":D
-    const-wide/high16 v13, 0x4000000000000000L
+    const-wide/high16 v14, 0x4000000000000000L
 
     invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
 
-    move-result-wide v15
+    move-result-wide v16
 
-    const-wide/high16 v17, 0x3ff0000000000000L
+    const-wide/high16 v18, 0x3ff0000000000000L
 
-    sub-double v17, v17, v0
+    sub-double v18, v18, v0
 
-    invoke-static/range {v17 .. v18}, Ljava/lang/Math;->sqrt(D)D
+    invoke-static/range {v18 .. v19}, Ljava/lang/Math;->sqrt(D)D
 
-    move-result-wide v17
+    move-result-wide v18
 
-    invoke-static/range {v15 .. v18}, Ljava/lang/Math;->atan2(DD)D
+    invoke-static/range {v16 .. v19}, Ljava/lang/Math;->atan2(DD)D
 
-    move-result-wide v15
+    move-result-wide v16
 
-    mul-double v2, v13, v15
+    mul-double v2, v14, v16
 
     .line 274
     .local v2, "c":D
@@ -860,9 +860,9 @@
     .line 227
     iget-object v0, p0, Lcom/androidquery/callback/LocationAjaxCallback;->networkListener:Lcom/androidquery/callback/LocationAjaxCallback$Listener;
 
-    iget-wide v1, p0, Lcom/androidquery/callback/LocationAjaxCallback;->timeout:J
+    iget-wide v2, p0, Lcom/androidquery/callback/LocationAjaxCallback;->timeout:J
 
-    invoke-virtual {v8, v0, v1, v2}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
+    invoke-virtual {v8, v0, v2, v3}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
 
     .line 231
     :cond_32
@@ -900,9 +900,9 @@
     .line 235
     iget-object v0, p0, Lcom/androidquery/callback/LocationAjaxCallback;->gpsListener:Lcom/androidquery/callback/LocationAjaxCallback$Listener;
 
-    iget-wide v1, p0, Lcom/androidquery/callback/LocationAjaxCallback;->timeout:J
+    iget-wide v2, p0, Lcom/androidquery/callback/LocationAjaxCallback;->timeout:J
 
-    invoke-virtual {v8, v0, v1, v2}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
+    invoke-virtual {v8, v0, v2, v3}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
 
     .line 238
     :cond_58
@@ -1061,7 +1061,7 @@
 .end method
 
 .method public timeout(J)Lcom/androidquery/callback/LocationAjaxCallback;
-    .registers 3
+    .registers 4
     .param p1, "timeout"    # J
 
     .prologue

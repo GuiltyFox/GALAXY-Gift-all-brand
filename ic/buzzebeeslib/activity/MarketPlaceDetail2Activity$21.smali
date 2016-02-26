@@ -33,7 +33,7 @@
 
     iput p2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$21;->val$points:I
 
-    .line 2840
+    .line 2846
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 7
 
     .prologue
-    .line 2842
+    .line 2848
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$21;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     iget-object v2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$21;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -58,19 +58,19 @@
 
     check-cast v2, Landroid/widget/RelativeLayout;
 
-    invoke-static {v3, v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$40(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Landroid/widget/RelativeLayout;)V
+    invoke-static {v3, v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$41(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Landroid/widget/RelativeLayout;)V
 
-    .line 2843
+    .line 2849
     iget-object v2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$21;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gLayoutPoints:Landroid/widget/RelativeLayout;
-    invoke-static {v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$41(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/widget/RelativeLayout;
+    invoke-static {v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$42(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/widget/RelativeLayout;
 
     move-result-object v2
 
     invoke-virtual {v2}, Landroid/widget/RelativeLayout;->removeAllViews()V
 
-    .line 2845
+    .line 2851
     iget-object v2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$21;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     const-string v3, "layout_inflater"
@@ -81,7 +81,7 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    .line 2846
+    .line 2852
     .local v0, "inflater":Landroid/view/LayoutInflater;
     sget v2, Lic/buzzebeeslib/R$layout;->bz_point_alert:I
 
@@ -91,7 +91,7 @@
 
     move-result-object v1
 
-    .line 2847
+    .line 2853
     .local v1, "viewPoints":Landroid/view/View;
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$21;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
@@ -103,9 +103,9 @@
 
     check-cast v2, Landroid/widget/RelativeLayout;
 
-    invoke-static {v3, v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$42(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Landroid/widget/RelativeLayout;)V
+    invoke-static {v3, v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$43(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Landroid/widget/RelativeLayout;)V
 
-    .line 2848
+    .line 2854
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$21;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     sget v2, Lic/buzzebeeslib/R$idPoints;->imgCash1:I
@@ -116,9 +116,9 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    invoke-static {v3, v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$43(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Landroid/widget/ImageView;)V
+    invoke-static {v3, v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$44(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Landroid/widget/ImageView;)V
 
-    .line 2849
+    .line 2855
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$21;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     sget v2, Lic/buzzebeeslib/R$idPoints;->imgCash2:I
@@ -129,9 +129,9 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    invoke-static {v3, v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$44(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Landroid/widget/ImageView;)V
+    invoke-static {v3, v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$45(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Landroid/widget/ImageView;)V
 
-    .line 2850
+    .line 2856
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$21;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     sget v2, Lic/buzzebeeslib/R$idPoints;->imgCash3:I
@@ -142,9 +142,9 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    invoke-static {v3, v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$45(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Landroid/widget/ImageView;)V
+    invoke-static {v3, v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$46(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Landroid/widget/ImageView;)V
 
-    .line 2851
+    .line 2857
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$21;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     sget v2, Lic/buzzebeeslib/R$idPoints;->imgCash4:I
@@ -155,9 +155,9 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    invoke-static {v3, v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$46(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Landroid/widget/ImageView;)V
+    invoke-static {v3, v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$47(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Landroid/widget/ImageView;)V
 
-    .line 2852
+    .line 2858
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$21;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     sget v2, Lic/buzzebeeslib/R$idPoints;->imgComma1:I
@@ -168,19 +168,19 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    invoke-static {v3, v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$47(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Landroid/widget/ImageView;)V
+    invoke-static {v3, v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$48(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Landroid/widget/ImageView;)V
 
-    .line 2854
+    .line 2860
     iget-object v2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$21;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gLayoutPoints:Landroid/widget/RelativeLayout;
-    invoke-static {v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$41(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/widget/RelativeLayout;
+    invoke-static {v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$42(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/widget/RelativeLayout;
 
     move-result-object v2
 
     invoke-virtual {v2, v1}, Landroid/widget/RelativeLayout;->addView(Landroid/view/View;)V
 
-    .line 2859
+    .line 2865
     iget v2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$21;->val$points:I
 
     const-string v3, ""
@@ -196,6 +196,6 @@
 
     invoke-static {v2, v3, v4, v5}, Lic/buzzebeeslib/util/AnimationPoint;->showToastPointsGift(ILjava/lang/String;Landroid/os/Handler;Landroid/app/Activity;)V
 
-    .line 2860
+    .line 2866
     return-void
 .end method

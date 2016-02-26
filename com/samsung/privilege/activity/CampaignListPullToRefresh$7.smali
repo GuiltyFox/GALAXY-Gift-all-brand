@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$7;->val$msg:Ljava/lang/String;
 
-    .line 809
+    .line 812
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 5
 
     .prologue
-    .line 812
+    .line 815
     # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gContext:Landroid/content/Context;
     invoke-static {}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$29()Landroid/content/Context;
 
@@ -59,10 +59,10 @@
 
     move-result-object v0
 
-    .line 813
+    .line 816
     .local v0, "toast":Landroid/widget/Toast;
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 814
+    .line 817
     return-void
 .end method

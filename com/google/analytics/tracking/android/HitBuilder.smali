@@ -198,12 +198,12 @@
 .end method
 
 .method static postProcessHit(Lcom/google/analytics/tracking/android/Hit;J)Ljava/lang/String;
-    .registers 10
+    .registers 12
     .param p0, "hit"    # Lcom/google/analytics/tracking/android/Hit;
     .param p1, "currentTimeMillis"    # J
 
     .prologue
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
     .line 59
     new-instance v0, Ljava/lang/StringBuilder;
@@ -214,84 +214,84 @@
     .local v0, "builder":Ljava/lang/StringBuilder;
     invoke-virtual {p0}, Lcom/google/analytics/tracking/android/Hit;->getHitParams()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 63
     invoke-virtual {p0}, Lcom/google/analytics/tracking/android/Hit;->getHitTime()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    cmp-long v3, v3, v5
+    cmp-long v1, v4, v6
 
-    if-lez v3, :cond_35
+    if-lez v1, :cond_35
 
     .line 64
     invoke-virtual {p0}, Lcom/google/analytics/tracking/android/Hit;->getHitTime()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    sub-long v1, p1, v3
+    sub-long v2, p1, v4
 
     .line 65
-    .local v1, "queueTime":J
-    cmp-long v3, v1, v5
+    .local v2, "queueTime":J
+    cmp-long v1, v2, v6
 
-    if-ltz v3, :cond_35
+    if-ltz v1, :cond_35
 
     .line 66
-    const-string v3, "&"
+    const-string v1, "&"
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
     const-string v4, "qt"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
     const-string v4, "="
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     .line 74
-    .end local v1    # "queueTime":J
+    .end local v2    # "queueTime":J
     :cond_35
-    const-string v3, "&"
+    const-string v1, "&"
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
     const-string v4, "z"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
     const-string v4, "="
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
     invoke-virtual {p0}, Lcom/google/analytics/tracking/android/Hit;->getHitId()J
 
     move-result-wide v4
 
-    invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     .line 76
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    return-object v3
+    return-object v1
 .end method

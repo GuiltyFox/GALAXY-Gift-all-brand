@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$5;->val$dashboardItem:Lcom/samsung/privilege/bean/DashboardItem;
 
-    .line 1344
+    .line 1386
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,7 +46,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 1347
+    .line 1389
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$5;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$5;->val$dashboardItem:Lcom/samsung/privilege/bean/DashboardItem;
@@ -54,6 +54,6 @@
     # invokes: Lcom/samsung/privilege/activity/DashboardFragmentNew;->handleDashboardItem(Lcom/samsung/privilege/bean/DashboardItem;)V
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->access$18(Lcom/samsung/privilege/activity/DashboardFragmentNew;Lcom/samsung/privilege/bean/DashboardItem;)V
 
-    .line 1348
+    .line 1390
     return-void
 .end method

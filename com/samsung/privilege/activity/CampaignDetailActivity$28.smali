@@ -20,20 +20,16 @@
 # instance fields
 .field final synthetic this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
-.field private final synthetic val$pLoadMore:Z
-
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailActivity;Z)V
-    .registers 3
+.method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailActivity;)V
+    .registers 2
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
-    iput-boolean p2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->val$pLoadMore:Z
-
-    .line 3199
+    .line 3363
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,231 +38,21 @@
 
 # virtual methods
 .method public run()V
-    .registers 7
+    .registers 3
 
     .prologue
-    .line 3202
-    new-instance v2, Ljava/lang/StringBuilder;
+    .line 3369
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
-    sget-object v3, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
+    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->gPbLoadingMap:Landroid/widget/ProgressBar;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$24(Lcom/samsung/privilege/activity/CampaignDetailActivity;)Landroid/widget/ProgressBar;
 
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v3
+    const/4 v1, 0x0
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    const-string v3, "api/campaign/"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->paramCampaign:Lcom/samsung/privilege/bean/CampaignView;
-    invoke-static {v3}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$10(Lcom/samsung/privilege/activity/CampaignDetailActivity;)Lcom/samsung/privilege/bean/CampaignView;
-
-    move-result-object v3
-
-    iget-object v3, v3, Lcom/samsung/privilege/bean/CampaignView;->ID:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "/places?token="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
-
-    invoke-virtual {v3}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/samsung/privilege/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "&access_token="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
-
-    invoke-virtual {v3}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/samsung/privilege/UserLogin;->GetTokenFacebook(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 3204
-    .local v1, "url":Ljava/lang/String;
-    iget-boolean v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->val$pLoadMore:Z
-
-    if-eqz v2, :cond_c0
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->gCampaignBranches:Ljava/util/ArrayList;
-    invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$48(Lcom/samsung/privilege/activity/CampaignDetailActivity;)Ljava/util/ArrayList;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    if-eqz v2, :cond_c0
-
-    .line 3205
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
-
-    iget-boolean v3, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->val$pLoadMore:Z
-
-    invoke-static {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$49(Lcom/samsung/privilege/activity/CampaignDetailActivity;Z)V
-
-    .line 3206
-    iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->gCampaignBranches:Ljava/util/ArrayList;
-    invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$48(Lcom/samsung/privilege/activity/CampaignDetailActivity;)Ljava/util/ArrayList;
-
-    move-result-object v2
-
-    iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->gCampaignBranches:Ljava/util/ArrayList;
-    invoke-static {v4}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$48(Lcom/samsung/privilege/activity/CampaignDetailActivity;)Ljava/util/ArrayList;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
-
-    move-result v4
-
-    add-int/lit8 v4, v4, -0x1
-
-    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/samsung/privilege/bean/PlaceNewDetail;
-
-    iget v2, v2, Lcom/samsung/privilege/bean/PlaceNewDetail;->rank:I
-
-    int-to-long v4, v2
-
-    invoke-static {v3, v4, v5}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$50(Lcom/samsung/privilege/activity/CampaignDetailActivity;J)V
-
-    .line 3207
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v3, "&lastRank="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->gLastRank:J
-    invoke-static {v3}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$51(Lcom/samsung/privilege/activity/CampaignDetailActivity;)J
-
-    move-result-wide v3
-
-    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 3213
-    :goto_9d
-    const/4 v0, 0x0
-
-    .line 3214
-    .local v0, "cache_name":Ljava/lang/String;
-    const-string v2, "campaign.detail"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "url="
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 3215
-    new-instance v2, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;
-
-    iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
-
-    iget-boolean v4, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->val$pLoadMore:Z
-
-    invoke-direct {v2, v3, v4, v0}, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;-><init>(Lcom/samsung/privilege/activity/CampaignDetailActivity;ZLjava/lang/String;)V
-
-    const/4 v3, 0x0
-
-    invoke-static {v1, v2, v3}, Lcom/samsung/privilege/util/http/HttpCall;->RQ_GET(Ljava/lang/String;Lcom/samsung/privilege/util/http/RQListener;Ljava/lang/Object;)V
-
-    .line 3216
+    .line 3370
     return-void
-
-    .line 3209
-    .end local v0    # "cache_name":Ljava/lang/String;
-    :cond_c0
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
-
-    iget-boolean v3, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->val$pLoadMore:Z
-
-    invoke-static {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$49(Lcom/samsung/privilege/activity/CampaignDetailActivity;Z)V
-
-    .line 3210
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
-
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-static {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$52(Lcom/samsung/privilege/activity/CampaignDetailActivity;Ljava/util/ArrayList;)V
-
-    goto :goto_9d
 .end method

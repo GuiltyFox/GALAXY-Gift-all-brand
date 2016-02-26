@@ -425,7 +425,7 @@
     :try_start_138
     iget-object v9, p0, Lcom/samsung/privilege/util/NfcUtils$1;->val$objActivityContext:Landroid/content/Context;
 
-    const v10, 0x7f0a01bd
+    const v10, 0x7f0901bc
 
     invoke-virtual {v9, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
     :try_end_140

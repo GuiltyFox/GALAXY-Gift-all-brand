@@ -406,20 +406,20 @@
 .end method
 
 .method private static microsToCurrencyString(J)Ljava/lang/String;
-    .registers 7
+    .registers 8
     .param p0, "currencyInMicros"    # J
 
     .prologue
     .line 649
     sget-object v0, Lcom/google/analytics/tracking/android/Tracker;->DF:Ljava/text/DecimalFormat;
 
-    long-to-double v1, p0
+    long-to-double v2, p0
 
-    const-wide v3, 0x412e848000000000L
+    const-wide v4, 0x412e848000000000L
 
-    div-double/2addr v1, v3
+    div-double/2addr v2, v4
 
-    invoke-virtual {v0, v1, v2}, Ljava/text/DecimalFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v0, v2, v3}, Ljava/text/DecimalFormat;->format(D)Ljava/lang/String;
 
     move-result-object v0
 
@@ -721,7 +721,7 @@
 .end method
 
 .method public constructTiming(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/util/Map;
-    .registers 9
+    .registers 10
     .param p1, "category"    # Ljava/lang/String;
     .param p2, "intervalInMilliseconds"    # J
     .param p4, "name"    # Ljava/lang/String;
@@ -2054,7 +2054,7 @@
 .end method
 
 .method public setCustomMetric(ILjava/lang/Long;)V
-    .registers 6
+    .registers 7
     .param p1, "index"    # I
     .param p2, "value"    # Ljava/lang/Long;
 
@@ -2110,9 +2110,9 @@
     .line 604
     invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+    invoke-static {v2, v3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v0
 
@@ -2153,7 +2153,7 @@
 .end method
 
 .method setLastTrackTime(J)V
-    .registers 3
+    .registers 4
     .param p1, "lastTrackTime"    # J
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -2274,7 +2274,7 @@
 .end method
 
 .method setTokens(J)V
-    .registers 3
+    .registers 4
     .param p1, "tokens"    # J
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
@@ -2317,14 +2317,14 @@
 .end method
 
 .method declared-synchronized tokensAvailable()Z
-    .registers 12
+    .registers 13
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 
     .prologue
-    const-wide/32 v7, 0x1d4c0
+    const-wide/32 v8, 0x1d4c0
 
-    const-wide/16 v9, 0x7d0
+    const-wide/16 v10, 0x7d0
 
     const/4 v4, 0x1
 
@@ -2353,37 +2353,37 @@
 
     .line 770
     .local v2, "timeNow":J
-    iget-wide v5, p0, Lcom/google/analytics/tracking/android/Tracker;->mTokens:J
+    iget-wide v6, p0, Lcom/google/analytics/tracking/android/Tracker;->mTokens:J
 
-    cmp-long v5, v5, v7
+    cmp-long v5, v6, v8
 
     if-gez v5, :cond_2d
 
     .line 771
-    iget-wide v5, p0, Lcom/google/analytics/tracking/android/Tracker;->mLastTrackTime:J
+    iget-wide v6, p0, Lcom/google/analytics/tracking/android/Tracker;->mLastTrackTime:J
 
-    sub-long v0, v2, v5
+    sub-long v0, v2, v6
 
     .line 772
     .local v0, "timeElapsed":J
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
-    cmp-long v5, v0, v5
+    cmp-long v5, v0, v6
 
     if-lez v5, :cond_2d
 
     .line 773
-    const-wide/32 v5, 0x1d4c0
+    const-wide/32 v6, 0x1d4c0
 
-    iget-wide v7, p0, Lcom/google/analytics/tracking/android/Tracker;->mTokens:J
+    iget-wide v8, p0, Lcom/google/analytics/tracking/android/Tracker;->mTokens:J
 
-    add-long/2addr v7, v0
+    add-long/2addr v8, v0
 
-    invoke-static {v5, v6, v7, v8}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v6, v7, v8, v9}, Ljava/lang/Math;->min(JJ)J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    iput-wide v5, p0, Lcom/google/analytics/tracking/android/Tracker;->mTokens:J
+    iput-wide v6, p0, Lcom/google/analytics/tracking/android/Tracker;->mTokens:J
 
     .line 776
     .end local v0    # "timeElapsed":J
@@ -2391,18 +2391,18 @@
     iput-wide v2, p0, Lcom/google/analytics/tracking/android/Tracker;->mLastTrackTime:J
 
     .line 777
-    iget-wide v5, p0, Lcom/google/analytics/tracking/android/Tracker;->mTokens:J
+    iget-wide v6, p0, Lcom/google/analytics/tracking/android/Tracker;->mTokens:J
 
-    cmp-long v5, v5, v9
+    cmp-long v5, v6, v10
 
     if-ltz v5, :cond_3e
 
     .line 778
-    iget-wide v5, p0, Lcom/google/analytics/tracking/android/Tracker;->mTokens:J
+    iget-wide v6, p0, Lcom/google/analytics/tracking/android/Tracker;->mTokens:J
 
-    sub-long/2addr v5, v9
+    sub-long/2addr v6, v10
 
-    iput-wide v5, p0, Lcom/google/analytics/tracking/android/Tracker;->mTokens:J
+    iput-wide v6, p0, Lcom/google/analytics/tracking/android/Tracker;->mTokens:J
     :try_end_3a
     .catchall {:try_start_d .. :try_end_3a} :catchall_3b
 

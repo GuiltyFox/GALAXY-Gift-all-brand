@@ -116,7 +116,7 @@
 .end method
 
 .method private constructor <init>(JJJI)V
-    .registers 8
+    .registers 9
     .param p1, "lastResumeTime"    # J
     .param p3, "lastSuspendTime"    # J
     .param p5, "millisecondsSpentInSession"    # J
@@ -146,7 +146,7 @@
 .end method
 
 .method synthetic constructor <init>(JJJILcom/facebook/FacebookTimeSpentData;)V
-    .registers 9
+    .registers 10
 
     .prologue
     .line 95
@@ -156,7 +156,7 @@
 .end method
 
 .method private constructor <init>(JJJILjava/lang/String;)V
-    .registers 9
+    .registers 10
     .param p1, "lastResumeTime"    # J
     .param p3, "lastSuspendTime"    # J
     .param p5, "millisecondsSpentInSession"    # J
@@ -190,7 +190,7 @@
 .end method
 
 .method synthetic constructor <init>(JJJILjava/lang/String;Lcom/facebook/FacebookTimeSpentData;)V
-    .registers 10
+    .registers 11
 
     .prologue
     .line 156
@@ -200,7 +200,7 @@
 .end method
 
 .method private static getQuantaIndex(J)I
-    .registers 5
+    .registers 6
     .param p0, "timeBetweenSessions"    # J
 
     .prologue
@@ -219,10 +219,10 @@
     .line 274
     sget-object v1, Lcom/facebook/FacebookTimeSpentData;->INACTIVE_SECONDS_QUANTA:[J
 
-    aget-wide v1, v1, v0
+    aget-wide v2, v1, v0
 
     .line 272
-    cmp-long v1, v1, p0
+    cmp-long v1, v2, p0
 
     if-ltz v1, :cond_f
 
@@ -348,10 +348,10 @@
 .end method
 
 .method private resetSession()V
-    .registers 4
+    .registers 5
 
     .prologue
-    const-wide/16 v1, -0x1
+    const-wide/16 v2, -0x1
 
     const/4 v0, 0x0
 
@@ -359,10 +359,10 @@
     iput-boolean v0, p0, Lcom/facebook/FacebookTimeSpentData;->isAppActive:Z
 
     .line 284
-    iput-wide v1, p0, Lcom/facebook/FacebookTimeSpentData;->lastResumeTime:J
+    iput-wide v2, p0, Lcom/facebook/FacebookTimeSpentData;->lastResumeTime:J
 
     .line 285
-    iput-wide v1, p0, Lcom/facebook/FacebookTimeSpentData;->lastSuspendTime:J
+    iput-wide v2, p0, Lcom/facebook/FacebookTimeSpentData;->lastSuspendTime:J
 
     .line 286
     iput v0, p0, Lcom/facebook/FacebookTimeSpentData;->interruptionCount:I
@@ -401,198 +401,198 @@
 .end method
 
 .method private writeReplace()Ljava/lang/Object;
-    .registers 10
+    .registers 11
 
     .prologue
     .line 172
-    new-instance v0, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV2;
+    new-instance v1, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV2;
 
     .line 173
-    iget-wide v1, p0, Lcom/facebook/FacebookTimeSpentData;->lastResumeTime:J
+    iget-wide v2, p0, Lcom/facebook/FacebookTimeSpentData;->lastResumeTime:J
 
     .line 174
-    iget-wide v3, p0, Lcom/facebook/FacebookTimeSpentData;->lastSuspendTime:J
+    iget-wide v4, p0, Lcom/facebook/FacebookTimeSpentData;->lastSuspendTime:J
 
     .line 175
-    iget-wide v5, p0, Lcom/facebook/FacebookTimeSpentData;->millisecondsSpentInSession:J
+    iget-wide v6, p0, Lcom/facebook/FacebookTimeSpentData;->millisecondsSpentInSession:J
 
     .line 176
-    iget v7, p0, Lcom/facebook/FacebookTimeSpentData;->interruptionCount:I
+    iget v8, p0, Lcom/facebook/FacebookTimeSpentData;->interruptionCount:I
 
     .line 177
-    iget-object v8, p0, Lcom/facebook/FacebookTimeSpentData;->firstOpenSourceApplication:Ljava/lang/String;
+    iget-object v9, p0, Lcom/facebook/FacebookTimeSpentData;->firstOpenSourceApplication:Ljava/lang/String;
 
     .line 172
-    invoke-direct/range {v0 .. v8}, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV2;-><init>(JJJILjava/lang/String;)V
+    invoke-direct/range {v1 .. v9}, Lcom/facebook/FacebookTimeSpentData$SerializationProxyV2;-><init>(JJJILjava/lang/String;)V
 
-    return-object v0
+    return-object v1
 .end method
 
 
 # virtual methods
 .method onResume(Lcom/facebook/AppEventsLogger;JLjava/lang/String;)V
-    .registers 16
+    .registers 15
     .param p1, "logger"    # Lcom/facebook/AppEventsLogger;
     .param p2, "eventTime"    # J
     .param p4, "sourceApplicationInfo"    # Ljava/lang/String;
 
     .prologue
-    const-wide/16 v5, 0x0
-
     .line 199
-    move-wide v3, p2
+    move-wide v4, p2
 
     .line 205
-    .local v3, "now":J
+    .local v4, "now":J
     invoke-direct {p0}, Lcom/facebook/FacebookTimeSpentData;->isColdLaunch()Z
 
-    move-result v7
+    move-result v1
 
-    if-nez v7, :cond_14
+    if-nez v1, :cond_12
 
     .line 206
-    iget-wide v7, p0, Lcom/facebook/FacebookTimeSpentData;->lastActivateEventLoggedTime:J
+    iget-wide v6, p0, Lcom/facebook/FacebookTimeSpentData;->lastActivateEventLoggedTime:J
 
-    sub-long v7, v3, v7
+    sub-long v6, v4, v6
 
-    const-wide/32 v9, 0x493e0
+    const-wide/32 v8, 0x493e0
 
-    cmp-long v7, v7, v9
+    cmp-long v1, v6, v8
 
-    if-lez v7, :cond_25
+    if-lez v1, :cond_23
 
     .line 207
-    :cond_14
+    :cond_12
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     .line 209
     .local v0, "eventParams":Landroid/os/Bundle;
-    const-string v7, "fb_mobile_launch_source"
+    const-string v1, "fb_mobile_launch_source"
 
     .line 208
-    invoke-virtual {v0, v7, p4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, p4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 211
-    const-string v7, "fb_mobile_activate_app"
+    const-string v1, "fb_mobile_activate_app"
 
-    invoke-virtual {p1, v7, v0}, Lcom/facebook/AppEventsLogger;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
+    invoke-virtual {p1, v1, v0}, Lcom/facebook/AppEventsLogger;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 212
-    iput-wide v3, p0, Lcom/facebook/FacebookTimeSpentData;->lastActivateEventLoggedTime:J
+    iput-wide v4, p0, Lcom/facebook/FacebookTimeSpentData;->lastActivateEventLoggedTime:J
 
     .line 217
     .end local v0    # "eventParams":Landroid/os/Bundle;
-    :cond_25
-    iget-boolean v7, p0, Lcom/facebook/FacebookTimeSpentData;->isAppActive:Z
+    :cond_23
+    iget-boolean v1, p0, Lcom/facebook/FacebookTimeSpentData;->isAppActive:Z
 
-    if-eqz v7, :cond_33
+    if-eqz v1, :cond_31
 
     .line 218
-    sget-object v5, Lcom/facebook/LoggingBehavior;->APP_EVENTS:Lcom/facebook/LoggingBehavior;
+    sget-object v1, Lcom/facebook/LoggingBehavior;->APP_EVENTS:Lcom/facebook/LoggingBehavior;
 
     sget-object v6, Lcom/facebook/FacebookTimeSpentData;->TAG:Ljava/lang/String;
 
     const-string v7, "Resume for active app"
 
-    invoke-static {v5, v6, v7}, Lcom/facebook/internal/Logger;->log(Lcom/facebook/LoggingBehavior;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v6, v7}, Lcom/facebook/internal/Logger;->log(Lcom/facebook/LoggingBehavior;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 247
-    :goto_32
+    :goto_30
     return-void
 
     .line 222
-    :cond_33
+    :cond_31
     invoke-direct {p0}, Lcom/facebook/FacebookTimeSpentData;->wasSuspendedEver()Z
 
-    move-result v7
+    move-result v1
 
-    if-eqz v7, :cond_62
+    if-eqz v1, :cond_62
 
-    iget-wide v7, p0, Lcom/facebook/FacebookTimeSpentData;->lastSuspendTime:J
+    iget-wide v6, p0, Lcom/facebook/FacebookTimeSpentData;->lastSuspendTime:J
 
-    sub-long v1, v3, v7
+    sub-long v2, v4, v6
 
     .line 223
-    .local v1, "interruptionDurationMillis":J
-    :goto_3d
-    cmp-long v5, v1, v5
+    .local v2, "interruptionDurationMillis":J
+    :goto_3b
+    const-wide/16 v6, 0x0
 
-    if-gez v5, :cond_4c
+    cmp-long v1, v2, v6
+
+    if-gez v1, :cond_4c
 
     .line 224
-    sget-object v5, Lcom/facebook/LoggingBehavior;->APP_EVENTS:Lcom/facebook/LoggingBehavior;
+    sget-object v1, Lcom/facebook/LoggingBehavior;->APP_EVENTS:Lcom/facebook/LoggingBehavior;
 
     sget-object v6, Lcom/facebook/FacebookTimeSpentData;->TAG:Ljava/lang/String;
 
     const-string v7, "Clock skew detected"
 
-    invoke-static {v5, v6, v7}, Lcom/facebook/internal/Logger;->log(Lcom/facebook/LoggingBehavior;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v6, v7}, Lcom/facebook/internal/Logger;->log(Lcom/facebook/LoggingBehavior;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 225
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
     .line 230
     :cond_4c
-    const-wide/32 v5, 0xea60
+    const-wide/32 v6, 0xea60
 
-    cmp-long v5, v1, v5
+    cmp-long v1, v2, v6
 
-    if-lez v5, :cond_64
+    if-lez v1, :cond_65
 
     .line 231
-    invoke-direct {p0, p1, v1, v2}, Lcom/facebook/FacebookTimeSpentData;->logAppDeactivatedEvent(Lcom/facebook/AppEventsLogger;J)V
+    invoke-direct {p0, p1, v2, v3}, Lcom/facebook/FacebookTimeSpentData;->logAppDeactivatedEvent(Lcom/facebook/AppEventsLogger;J)V
 
     .line 241
     :cond_56
     :goto_56
-    iget v5, p0, Lcom/facebook/FacebookTimeSpentData;->interruptionCount:I
+    iget v1, p0, Lcom/facebook/FacebookTimeSpentData;->interruptionCount:I
 
-    if-nez v5, :cond_5c
+    if-nez v1, :cond_5c
 
     .line 242
     iput-object p4, p0, Lcom/facebook/FacebookTimeSpentData;->firstOpenSourceApplication:Ljava/lang/String;
 
     .line 245
     :cond_5c
-    iput-wide v3, p0, Lcom/facebook/FacebookTimeSpentData;->lastResumeTime:J
+    iput-wide v4, p0, Lcom/facebook/FacebookTimeSpentData;->lastResumeTime:J
 
     .line 246
-    const/4 v5, 0x1
+    const/4 v1, 0x1
 
-    iput-boolean v5, p0, Lcom/facebook/FacebookTimeSpentData;->isAppActive:Z
+    iput-boolean v1, p0, Lcom/facebook/FacebookTimeSpentData;->isAppActive:Z
 
-    goto :goto_32
-
-    .end local v1    # "interruptionDurationMillis":J
-    :cond_62
-    move-wide v1, v5
+    goto :goto_30
 
     .line 222
-    goto :goto_3d
+    .end local v2    # "interruptionDurationMillis":J
+    :cond_62
+    const-wide/16 v2, 0x0
+
+    goto :goto_3b
 
     .line 235
-    .restart local v1    # "interruptionDurationMillis":J
-    :cond_64
-    const-wide/16 v5, 0x3e8
+    .restart local v2    # "interruptionDurationMillis":J
+    :cond_65
+    const-wide/16 v6, 0x3e8
 
-    cmp-long v5, v1, v5
+    cmp-long v1, v2, v6
 
-    if-lez v5, :cond_56
+    if-lez v1, :cond_56
 
     .line 236
-    iget v5, p0, Lcom/facebook/FacebookTimeSpentData;->interruptionCount:I
+    iget v1, p0, Lcom/facebook/FacebookTimeSpentData;->interruptionCount:I
 
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    iput v5, p0, Lcom/facebook/FacebookTimeSpentData;->interruptionCount:I
+    iput v1, p0, Lcom/facebook/FacebookTimeSpentData;->interruptionCount:I
 
     goto :goto_56
 .end method
 
 .method onSuspend(Lcom/facebook/AppEventsLogger;J)V
-    .registers 11
+    .registers 12
     .param p1, "logger"    # Lcom/facebook/AppEventsLogger;
     .param p2, "eventTime"    # J
 

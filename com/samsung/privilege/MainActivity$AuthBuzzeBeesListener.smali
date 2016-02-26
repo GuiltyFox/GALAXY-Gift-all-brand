@@ -25,12 +25,12 @@
     .registers 3
 
     .prologue
-    .line 564
+    .line 984
     iput-object p1, p0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;->this$0:Lcom/samsung/privilege/MainActivity;
 
     invoke-direct {p0}, Lcom/samsung/privilege/util/http/HttpRQListener;-><init>()V
 
-    .line 565
+    .line 985
     invoke-static {}, Lcom/facebook/Session;->getActiveSession()Lcom/facebook/Session;
 
     move-result-object v0
@@ -44,7 +44,7 @@
     .registers 2
 
     .prologue
-    .line 564
+    .line 984
     iget-object v0, p0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;->this$0:Lcom/samsung/privilege/MainActivity;
 
     return-object v0
@@ -59,7 +59,7 @@
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 569
+    .line 989
     iget-object v0, p0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;->this$0:Lcom/samsung/privilege/MainActivity;
 
     # getter for: Lcom/samsung/privilege/MainActivity;->LOGCAT:Ljava/lang/String;
@@ -93,7 +93,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 570
+    .line 990
     iget-object v0, p0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;->this$0:Lcom/samsung/privilege/MainActivity;
 
     # getter for: Lcom/samsung/privilege/MainActivity;->LOGCAT:Ljava/lang/String;
@@ -105,7 +105,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 580
+    .line 1000
     iget-object v0, p0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;->this$0:Lcom/samsung/privilege/MainActivity;
 
     # getter for: Lcom/samsung/privilege/MainActivity;->gDialog:Landroid/app/ProgressDialog;
@@ -115,11 +115,11 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 582
+    .line 1002
     iget-object v0, p0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;->this$0:Lcom/samsung/privilege/MainActivity;
 
     # getter for: Lcom/samsung/privilege/MainActivity;->gHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/samsung/privilege/MainActivity;->access$3(Lcom/samsung/privilege/MainActivity;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/samsung/privilege/MainActivity;->access$5(Lcom/samsung/privilege/MainActivity;)Landroid/os/Handler;
 
     move-result-object v0
 
@@ -129,11 +129,11 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 723
+    .line 1143
     iget-object v0, p0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;->this$0:Lcom/samsung/privilege/MainActivity;
 
     # getter for: Lcom/samsung/privilege/MainActivity;->gHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/samsung/privilege/MainActivity;->access$3(Lcom/samsung/privilege/MainActivity;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/samsung/privilege/MainActivity;->access$5(Lcom/samsung/privilege/MainActivity;)Landroid/os/Handler;
 
     move-result-object v0
 
@@ -143,6 +143,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 729
+    .line 1149
     return-void
 .end method

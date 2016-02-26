@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogUtil;->showDialogSerial3TypeCode(Landroid/app/Activity;Lcom/samsung/privilege/bean/Purchasing;JILjava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/bitmapfun/util/ImageFetcher;Ljava/lang/String;Landroid/os/Handler;Lcom/samsung/privilege/bean/NFCTag;)V
+    value = Lcom/samsung/privilege/util/DialogUtil;->showDialogSerial3TypeCodeXXX(Landroid/app/Activity;Lcom/samsung/privilege/bean/Purchasing;JILjava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/bitmapfun/util/ImageFetcher;Ljava/lang/String;Landroid/os/Handler;Lcom/samsung/privilege/bean/NFCTag;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,30 +18,46 @@
 
 
 # instance fields
-.field private final synthetic val$activityContext:Landroid/app/Activity;
+.field private final synthetic val$animation1:Landroid/view/animation/Animation;
 
-.field private final synthetic val$dialogSerial:Landroid/app/Dialog;
+.field private final synthetic val$animation2:Landroid/view/animation/Animation;
 
-.field private final synthetic val$objHandler:Landroid/os/Handler;
+.field private final synthetic val$btnSwithToBarcode:Landroid/widget/LinearLayout;
 
-.field private final synthetic val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
+.field private final synthetic val$btnSwithToQRCode:Landroid/widget/LinearLayout;
+
+.field private final synthetic val$btnSwithToSerial:Landroid/widget/LinearLayout;
+
+.field private final synthetic val$contentBarcode:Landroid/widget/LinearLayout;
+
+.field private final synthetic val$contentQRCode:Landroid/widget/LinearLayout;
+
+.field private final synthetic val$tvSerialNumber:Landroid/widget/TextView;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/bean/NFCTag;Landroid/app/Activity;Landroid/os/Handler;Landroid/app/Dialog;)V
-    .registers 5
+.method constructor <init>(Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroid/view/animation/Animation;Landroid/widget/LinearLayout;Landroid/widget/TextView;Landroid/widget/LinearLayout;Landroid/view/animation/Animation;)V
+    .registers 9
 
     .prologue
     .line 1
-    iput-object p1, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
+    iput-object p1, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$btnSwithToBarcode:Landroid/widget/LinearLayout;
 
-    iput-object p2, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$activityContext:Landroid/app/Activity;
+    iput-object p2, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$btnSwithToSerial:Landroid/widget/LinearLayout;
 
-    iput-object p3, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$objHandler:Landroid/os/Handler;
+    iput-object p3, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$btnSwithToQRCode:Landroid/widget/LinearLayout;
 
-    iput-object p4, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$dialogSerial:Landroid/app/Dialog;
+    iput-object p4, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$animation1:Landroid/view/animation/Animation;
 
-    .line 821
+    iput-object p5, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$contentBarcode:Landroid/widget/LinearLayout;
+
+    iput-object p6, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$tvSerialNumber:Landroid/widget/TextView;
+
+    iput-object p7, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$contentQRCode:Landroid/widget/LinearLayout;
+
+    iput-object p8, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$animation2:Landroid/view/animation/Animation;
+
+    .line 834
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,210 +66,99 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 6
-    .param p1, "view"    # Landroid/view/View;
+    .registers 9
+    .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 823
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
-
-    if-eqz v0, :cond_2b
-
-    .line 824
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
-
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
-
-    if-eqz v0, :cond_2b
-
-    .line 825
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
-
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
-
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->ActionName:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "Status"
-
-    invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_45
-
-    .line 826
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
-
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
-
-    iget-object v1, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$activityContext:Landroid/app/Activity;
-
-    iget-object v2, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$objHandler:Landroid/os/Handler;
-
-    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/NfcUtils;->Action_Status(Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;Landroid/os/Handler;)V
-
-    .line 843
-    :cond_2b
-    :goto_2b
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$dialogSerial:Landroid/app/Dialog;
-
-    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
-
-    .line 846
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$activityContext:Landroid/app/Activity;
-
-    invoke-static {v0}, Lic/buzzebeeslib/util/ScreenUtil;->getBrightnessMode(Landroid/app/Activity;)I
-
-    move-result v0
-
-    if-nez v0, :cond_aa
-
-    .line 847
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$activityContext:Landroid/app/Activity;
-
-    sget v1, Lic/buzzebeeslib/util/ScreenUtil;->DEFAULT_MANUAL:I
-
-    sget v2, Lic/buzzebeeslib/util/ScreenUtil;->DEFAULT_MANUAL:I
-
-    invoke-static {v0, v1, v2}, Lic/buzzebeeslib/util/ScreenUtil;->setBrightness(Landroid/app/Activity;II)V
-
-    .line 852
-    :goto_41
-    const/4 v0, 0x1
-
-    sput-boolean v0, Lcom/samsung/privilege/util/DialogUtil;->gIsFinish:Z
-
-    .line 853
-    return-void
-
-    .line 827
-    :cond_45
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
-
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
-
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->ActionName:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "Share"
-
-    invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_68
-
-    .line 828
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
-
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
-
     const/4 v1, 0x0
 
-    iget-object v2, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$activityContext:Landroid/app/Activity;
+    .line 837
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$btnSwithToBarcode:Landroid/widget/LinearLayout;
 
-    iget-object v3, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$objHandler:Landroid/os/Handler;
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/util/NfcUtils;->Action_Share(Lcom/samsung/privilege/bean/NFCTag;Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;Landroid/os/Handler;)V
+    .line 838
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$btnSwithToSerial:Landroid/widget/LinearLayout;
 
-    goto :goto_2b
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 829
-    :cond_68
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
+    .line 839
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$btnSwithToQRCode:Landroid/widget/LinearLayout;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
+    const/16 v1, 0x8
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->ActionName:Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    .line 841
+    iget-object v6, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$animation1:Landroid/view/animation/Animation;
 
-    move-result-object v0
+    new-instance v0, Lcom/samsung/privilege/util/DialogUtil$13$1;
 
-    const-string v1, "CheckIn"
+    iget-object v2, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$contentQRCode:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    iget-object v3, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$contentBarcode:Landroid/widget/LinearLayout;
 
-    move-result-object v1
+    iget-object v4, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$tvSerialNumber:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iget-object v5, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$animation2:Landroid/view/animation/Animation;
 
-    move-result v0
+    move-object v1, p0
 
-    if-eqz v0, :cond_8a
+    invoke-direct/range {v0 .. v5}, Lcom/samsung/privilege/util/DialogUtil$13$1;-><init>(Lcom/samsung/privilege/util/DialogUtil$13;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroid/widget/TextView;Landroid/view/animation/Animation;)V
 
-    .line 830
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
+    invoke-virtual {v6, v0}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
+    .line 864
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$contentBarcode:Landroid/widget/LinearLayout;
 
-    iget-object v1, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$activityContext:Landroid/app/Activity;
-
-    iget-object v2, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$objHandler:Landroid/os/Handler;
-
-    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/NfcUtils;->Action_CheckIn(Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;Landroid/os/Handler;)V
-
-    goto :goto_2b
-
-    .line 831
-    :cond_8a
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
-
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
-
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->ActionName:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "ReDeem"
-
-    invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getVisibility()I
 
     move-result v0
 
-    if-eqz v0, :cond_2b
+    if-nez v0, :cond_41
 
-    .line 832
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$paramNFCTag:Lcom/samsung/privilege/bean/NFCTag;
+    .line 865
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$contentBarcode:Landroid/widget/LinearLayout;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
+    invoke-virtual {v0}, Landroid/widget/LinearLayout;->clearAnimation()V
 
-    iget-object v1, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$activityContext:Landroid/app/Activity;
+    .line 866
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$contentBarcode:Landroid/widget/LinearLayout;
 
-    invoke-static {v0, v1}, Lcom/samsung/privilege/util/NfcUtils;->Action_ReDeem(Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;)V
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$animation1:Landroid/view/animation/Animation;
 
-    goto :goto_2b
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setAnimation(Landroid/view/animation/Animation;)V
 
-    .line 849
-    :cond_aa
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$activityContext:Landroid/app/Activity;
+    .line 867
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$contentBarcode:Landroid/widget/LinearLayout;
 
-    const/16 v1, 0x32
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$animation1:Landroid/view/animation/Animation;
 
-    const/16 v2, 0x80
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->startAnimation(Landroid/view/animation/Animation;)V
 
-    invoke-static {v0, v1, v2}, Lic/buzzebeeslib/util/ScreenUtil;->setBrightness(Landroid/app/Activity;II)V
+    .line 873
+    :goto_40
+    return-void
 
-    goto :goto_41
+    .line 869
+    :cond_41
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$tvSerialNumber:Landroid/widget/TextView;
+
+    invoke-virtual {v0}, Landroid/widget/TextView;->clearAnimation()V
+
+    .line 870
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$tvSerialNumber:Landroid/widget/TextView;
+
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$animation1:Landroid/view/animation/Animation;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setAnimation(Landroid/view/animation/Animation;)V
+
+    .line 871
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$tvSerialNumber:Landroid/widget/TextView;
+
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogUtil$13;->val$animation1:Landroid/view/animation/Animation;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->startAnimation(Landroid/view/animation/Animation;)V
+
+    goto :goto_40
 .end method

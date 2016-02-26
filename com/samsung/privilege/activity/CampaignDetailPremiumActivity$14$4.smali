@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14$4;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;
 
-    .line 2212
+    .line 2213
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,10 +43,10 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 2215
+    .line 2216
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 2216
+    .line 2217
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14$4;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -56,6 +56,6 @@
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->finish()V
 
-    .line 2217
+    .line 2218
     return-void
 .end method

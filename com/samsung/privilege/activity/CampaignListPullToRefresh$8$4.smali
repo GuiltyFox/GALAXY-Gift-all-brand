@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$4;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;
 
-    .line 1029
+    .line 1033
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,9 +43,9 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 1032
+    .line 1036
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 1034
+    .line 1038
     return-void
 .end method

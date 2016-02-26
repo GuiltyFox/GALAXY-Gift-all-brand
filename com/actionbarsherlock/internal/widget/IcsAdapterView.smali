@@ -124,9 +124,9 @@
 
     .prologue
     .local p0, "this":Lcom/actionbarsherlock/internal/widget/IcsAdapterView;, "Lcom/actionbarsherlock/internal/widget/IcsAdapterView<TT;>;"
-    const/4 v3, -0x1
+    const/4 v1, -0x1
 
-    const-wide/high16 v1, -0x8000000000000000L
+    const-wide/high16 v2, -0x8000000000000000L
 
     const/4 v0, 0x0
 
@@ -137,7 +137,7 @@
     iput v0, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mFirstPosition:I
 
     .line 84
-    iput-wide v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSyncRowId:J
+    iput-wide v2, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSyncRowId:J
 
     .line 94
     iput-boolean v0, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mNeedSync:Z
@@ -146,22 +146,22 @@
     iput-boolean v0, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mInLayout:Z
 
     .line 153
-    iput v3, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mNextSelectedPosition:I
+    iput v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mNextSelectedPosition:I
 
     .line 158
-    iput-wide v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mNextSelectedRowId:J
+    iput-wide v2, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mNextSelectedRowId:J
 
     .line 164
-    iput v3, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSelectedPosition:I
+    iput v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSelectedPosition:I
 
     .line 169
-    iput-wide v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSelectedRowId:J
+    iput-wide v2, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSelectedRowId:J
 
     .line 201
-    iput v3, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mOldSelectedPosition:I
+    iput v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mOldSelectedPosition:I
 
     .line 206
-    iput-wide v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mOldSelectedRowId:J
+    iput-wide v2, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mOldSelectedRowId:J
 
     .line 225
     iput-boolean v0, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mBlockLayoutRequests:Z
@@ -177,9 +177,9 @@
 
     .prologue
     .local p0, "this":Lcom/actionbarsherlock/internal/widget/IcsAdapterView;, "Lcom/actionbarsherlock/internal/widget/IcsAdapterView<TT;>;"
-    const/4 v3, -0x1
+    const/4 v1, -0x1
 
-    const-wide/high16 v1, -0x8000000000000000L
+    const-wide/high16 v2, -0x8000000000000000L
 
     const/4 v0, 0x0
 
@@ -190,7 +190,7 @@
     iput v0, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mFirstPosition:I
 
     .line 84
-    iput-wide v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSyncRowId:J
+    iput-wide v2, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSyncRowId:J
 
     .line 94
     iput-boolean v0, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mNeedSync:Z
@@ -199,22 +199,22 @@
     iput-boolean v0, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mInLayout:Z
 
     .line 153
-    iput v3, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mNextSelectedPosition:I
+    iput v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mNextSelectedPosition:I
 
     .line 158
-    iput-wide v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mNextSelectedRowId:J
+    iput-wide v2, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mNextSelectedRowId:J
 
     .line 164
-    iput v3, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSelectedPosition:I
+    iput v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSelectedPosition:I
 
     .line 169
-    iput-wide v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSelectedRowId:J
+    iput-wide v2, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSelectedRowId:J
 
     .line 201
-    iput v3, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mOldSelectedPosition:I
+    iput v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mOldSelectedPosition:I
 
     .line 206
-    iput-wide v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mOldSelectedRowId:J
+    iput-wide v2, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mOldSelectedRowId:J
 
     .line 225
     iput-boolean v0, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mBlockLayoutRequests:Z
@@ -231,9 +231,9 @@
 
     .prologue
     .local p0, "this":Lcom/actionbarsherlock/internal/widget/IcsAdapterView;, "Lcom/actionbarsherlock/internal/widget/IcsAdapterView<TT;>;"
-    const/4 v3, -0x1
+    const/4 v1, -0x1
 
-    const-wide/high16 v1, -0x8000000000000000L
+    const-wide/high16 v2, -0x8000000000000000L
 
     const/4 v0, 0x0
 
@@ -244,7 +244,7 @@
     iput v0, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mFirstPosition:I
 
     .line 84
-    iput-wide v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSyncRowId:J
+    iput-wide v2, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSyncRowId:J
 
     .line 94
     iput-boolean v0, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mNeedSync:Z
@@ -253,22 +253,22 @@
     iput-boolean v0, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mInLayout:Z
 
     .line 153
-    iput v3, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mNextSelectedPosition:I
+    iput v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mNextSelectedPosition:I
 
     .line 158
-    iput-wide v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mNextSelectedRowId:J
+    iput-wide v2, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mNextSelectedRowId:J
 
     .line 164
-    iput v3, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSelectedPosition:I
+    iput v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSelectedPosition:I
 
     .line 169
-    iput-wide v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSelectedRowId:J
+    iput-wide v2, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSelectedRowId:J
 
     .line 201
-    iput v3, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mOldSelectedPosition:I
+    iput v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mOldSelectedPosition:I
 
     .line 206
-    iput-wide v1, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mOldSelectedRowId:J
+    iput-wide v2, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mOldSelectedRowId:J
 
     .line 225
     iput-boolean v0, p0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mBlockLayoutRequests:Z
@@ -853,216 +853,222 @@
 .end method
 
 .method findSyncPosition()I
-    .registers 20
+    .registers 21
 
     .prologue
     .line 1011
     .local p0, "this":Lcom/actionbarsherlock/internal/widget/IcsAdapterView;, "Lcom/actionbarsherlock/internal/widget/IcsAdapterView<TT;>;"
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mItemCount:I
+    iget v3, v0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mItemCount:I
 
     .line 1013
-    .local v2, "count":I
-    if-nez v2, :cond_8
+    .local v3, "count":I
+    if-nez v3, :cond_8
 
     .line 1014
-    const/4 v14, -0x1
+    const/4 v13, -0x1
 
     .line 1086
     :cond_7
     :goto_7
-    return v14
+    return v13
 
     .line 1017
     :cond_8
     move-object/from16 v0, p0
 
-    iget-wide v8, v0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSyncRowId:J
+    iget-wide v10, v0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSyncRowId:J
 
     .line 1018
-    .local v8, "idToMatch":J
+    .local v10, "idToMatch":J
     move-object/from16 v0, p0
 
-    iget v14, v0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSyncPosition:I
+    iget v13, v0, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->mSyncPosition:I
 
     .line 1021
-    .local v14, "seed":I
-    const-wide/high16 v15, -0x8000000000000000L
+    .local v13, "seed":I
+    const-wide/high16 v16, -0x8000000000000000L
 
-    cmp-long v15, v8, v15
+    cmp-long v16, v10, v16
 
-    if-nez v15, :cond_18
+    if-nez v16, :cond_18
 
     .line 1022
-    const/4 v14, -0x1
+    const/4 v13, -0x1
 
     goto :goto_7
 
     .line 1026
     :cond_18
-    const/4 v15, 0x0
+    const/16 v16, 0x0
 
-    invoke-static {v15, v14}, Ljava/lang/Math;->max(II)I
+    move/from16 v0, v16
 
-    move-result v14
+    invoke-static {v0, v13}, Ljava/lang/Math;->max(II)I
+
+    move-result v13
 
     .line 1027
-    add-int/lit8 v15, v2, -0x1
+    add-int/lit8 v16, v3, -0x1
 
-    invoke-static {v15, v14}, Ljava/lang/Math;->min(II)I
+    move/from16 v0, v16
 
-    move-result v14
+    invoke-static {v0, v13}, Ljava/lang/Math;->min(II)I
+
+    move-result v13
 
     .line 1029
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v15
+    move-result-wide v16
 
-    const-wide/16 v17, 0x64
+    const-wide/16 v18, 0x64
 
-    add-long v3, v15, v17
+    add-long v4, v16, v18
 
     .line 1034
-    .local v3, "endTime":J
-    move v5, v14
+    .local v4, "endTime":J
+    move v6, v13
 
     .line 1037
-    .local v5, "first":I
-    move v10, v14
+    .local v6, "first":I
+    move v9, v13
 
     .line 1040
-    .local v10, "last":I
-    const/4 v11, 0x0
+    .local v9, "last":I
+    const/4 v12, 0x0
 
     .line 1050
-    .local v11, "next":Z
+    .local v12, "next":Z
     invoke-virtual/range {p0 .. p0}, Lcom/actionbarsherlock/internal/widget/IcsAdapterView;->getAdapter()Landroid/widget/Adapter;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 1051
-    .local v1, "adapter":Landroid/widget/Adapter;, "TT;"
-    if-nez v1, :cond_5a
+    .local v2, "adapter":Landroid/widget/Adapter;, "TT;"
+    if-nez v2, :cond_61
 
     .line 1052
-    const/4 v14, -0x1
+    const/4 v13, -0x1
 
     goto :goto_7
 
     .line 1056
-    :cond_36
-    invoke-interface {v1, v14}, Landroid/widget/Adapter;->getItemId(I)J
+    :cond_3b
+    invoke-interface {v2, v13}, Landroid/widget/Adapter;->getItemId(I)J
 
-    move-result-wide v12
+    move-result-wide v14
 
     .line 1057
-    .local v12, "rowId":J
-    cmp-long v15, v12, v8
+    .local v14, "rowId":J
+    cmp-long v16, v14, v10
 
-    if-eqz v15, :cond_7
+    if-eqz v16, :cond_7
 
     .line 1062
-    add-int/lit8 v15, v2, -0x1
+    add-int/lit8 v16, v3, -0x1
 
-    if-ne v10, v15, :cond_4c
+    move/from16 v0, v16
+
+    if-ne v9, v0, :cond_53
+
+    const/4 v8, 0x1
+
+    .line 1063
+    .local v8, "hitLast":Z
+    :goto_4a
+    if-nez v6, :cond_55
 
     const/4 v7, 0x1
 
-    .line 1063
-    .local v7, "hitLast":Z
-    :goto_43
-    if-nez v5, :cond_4e
-
-    const/4 v6, 0x1
-
     .line 1065
-    .local v6, "hitFirst":Z
-    :goto_46
-    if-eqz v7, :cond_50
+    .local v7, "hitFirst":Z
+    :goto_4d
+    if-eqz v8, :cond_57
 
-    if-eqz v6, :cond_50
+    if-eqz v7, :cond_57
 
     .line 1086
-    .end local v6    # "hitFirst":Z
-    .end local v7    # "hitLast":Z
-    .end local v12    # "rowId":J
-    :goto_4a
-    const/4 v14, -0x1
+    .end local v7    # "hitFirst":Z
+    .end local v8    # "hitLast":Z
+    .end local v14    # "rowId":J
+    :goto_51
+    const/4 v13, -0x1
 
     goto :goto_7
 
     .line 1062
-    .restart local v12    # "rowId":J
-    :cond_4c
-    const/4 v7, 0x0
-
-    goto :goto_43
-
-    .line 1063
-    .restart local v7    # "hitLast":Z
-    :cond_4e
-    const/4 v6, 0x0
-
-    goto :goto_46
-
-    .line 1070
-    .restart local v6    # "hitFirst":Z
-    :cond_50
-    if-nez v6, :cond_56
-
-    if-eqz v11, :cond_63
-
-    if-nez v7, :cond_63
-
-    .line 1072
-    :cond_56
-    add-int/lit8 v10, v10, 0x1
-
-    .line 1073
-    move v14, v10
-
-    .line 1075
-    const/4 v11, 0x0
-
-    .line 1055
-    .end local v6    # "hitFirst":Z
-    .end local v7    # "hitLast":Z
-    .end local v12    # "rowId":J
-    :cond_5a
-    :goto_5a
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v15
-
-    cmp-long v15, v15, v3
-
-    if-lez v15, :cond_36
+    .restart local v14    # "rowId":J
+    :cond_53
+    const/4 v8, 0x0
 
     goto :goto_4a
 
+    .line 1063
+    .restart local v8    # "hitLast":Z
+    :cond_55
+    const/4 v7, 0x0
+
+    goto :goto_4d
+
+    .line 1070
+    .restart local v7    # "hitFirst":Z
+    :cond_57
+    if-nez v7, :cond_5d
+
+    if-eqz v12, :cond_6a
+
+    if-nez v8, :cond_6a
+
+    .line 1072
+    :cond_5d
+    add-int/lit8 v9, v9, 0x1
+
+    .line 1073
+    move v13, v9
+
+    .line 1075
+    const/4 v12, 0x0
+
+    .line 1055
+    .end local v7    # "hitFirst":Z
+    .end local v8    # "hitLast":Z
+    .end local v14    # "rowId":J
+    :cond_61
+    :goto_61
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v16
+
+    cmp-long v16, v16, v4
+
+    if-lez v16, :cond_3b
+
+    goto :goto_51
+
     .line 1076
-    .restart local v6    # "hitFirst":Z
-    .restart local v7    # "hitLast":Z
-    .restart local v12    # "rowId":J
-    :cond_63
-    if-nez v7, :cond_69
+    .restart local v7    # "hitFirst":Z
+    .restart local v8    # "hitLast":Z
+    .restart local v14    # "rowId":J
+    :cond_6a
+    if-nez v8, :cond_70
 
-    if-nez v11, :cond_5a
+    if-nez v12, :cond_61
 
-    if-nez v6, :cond_5a
+    if-nez v7, :cond_61
 
     .line 1078
-    :cond_69
-    add-int/lit8 v5, v5, -0x1
+    :cond_70
+    add-int/lit8 v6, v6, -0x1
 
     .line 1079
-    move v14, v5
+    move v13, v6
 
     .line 1081
-    const/4 v11, 0x1
+    const/4 v12, 0x1
 
-    goto :goto_5a
+    goto :goto_61
 .end method
 
 .method public abstract getAdapter()Landroid/widget/Adapter;
@@ -1140,7 +1146,7 @@
 .end method
 
 .method public getItemIdAtPosition(I)J
-    .registers 5
+    .registers 6
     .param p1, "position"    # I
 
     .prologue
@@ -1157,15 +1163,15 @@
     if-gez p1, :cond_b
 
     :cond_8
-    const-wide/high16 v1, -0x8000000000000000L
+    const-wide/high16 v2, -0x8000000000000000L
 
     :goto_a
-    return-wide v1
+    return-wide v2
 
     :cond_b
     invoke-interface {v0, p1}, Landroid/widget/Adapter;->getItemId(I)J
 
-    move-result-wide v1
+    move-result-wide v2
 
     goto :goto_a
 .end method

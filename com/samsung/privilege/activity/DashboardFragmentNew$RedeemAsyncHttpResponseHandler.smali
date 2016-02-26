@@ -34,27 +34,27 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 2422
+    .line 2486
     iput-object p1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$RedeemAsyncHttpResponseHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
 
-    .line 2419
+    .line 2483
     iput-boolean v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$RedeemAsyncHttpResponseHandler;->gIsShowSerial:Z
 
-    .line 2420
+    .line 2484
     iput-boolean v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$RedeemAsyncHttpResponseHandler;->gIsGotoWebsite:Z
 
-    .line 2423
+    .line 2487
     iput-object p2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$RedeemAsyncHttpResponseHandler;->gDashboardItem:Lcom/samsung/privilege/bean/DashboardItem;
 
-    .line 2424
+    .line 2488
     iput-boolean p3, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$RedeemAsyncHttpResponseHandler;->gIsShowSerial:Z
 
-    .line 2425
+    .line 2489
     iput-boolean p4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$RedeemAsyncHttpResponseHandler;->gIsGotoWebsite:Z
 
-    .line 2426
+    .line 2490
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .registers 2
 
     .prologue
-    .line 2419
+    .line 2483
     iget-boolean v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$RedeemAsyncHttpResponseHandler;->gIsShowSerial:Z
 
     return v0
@@ -72,7 +72,7 @@
     .registers 2
 
     .prologue
-    .line 2418
+    .line 2482
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$RedeemAsyncHttpResponseHandler;->gDashboardItem:Lcom/samsung/privilege/bean/DashboardItem;
 
     return-object v0
@@ -82,7 +82,7 @@
     .registers 2
 
     .prologue
-    .line 2417
+    .line 2481
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$RedeemAsyncHttpResponseHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     return-object v0
@@ -96,12 +96,12 @@
     .param p2, "response"    # Ljava/lang/String;
 
     .prologue
-    .line 2553
+    .line 2617
     const/16 v0, -0x1f4
 
     invoke-virtual {p0, v0, p2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$RedeemAsyncHttpResponseHandler;->onSuccess(ILjava/lang/String;)V
 
-    .line 2554
+    .line 2618
     return-void
 .end method
 
@@ -109,7 +109,7 @@
     .registers 1
 
     .prologue
-    .line 2559
+    .line 2623
     return-void
 .end method
 
@@ -117,7 +117,7 @@
     .registers 1
 
     .prologue
-    .line 2431
+    .line 2495
     return-void
 .end method
 
@@ -127,7 +127,7 @@
     .param p2, "response_text"    # Ljava/lang/String;
 
     .prologue
-    .line 2435
+    .line 2499
     const-string v1, "gift.dashboard"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -156,7 +156,7 @@
 
     invoke-static {v1, v2}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2437
+    .line 2501
     iget-object v1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$RedeemAsyncHttpResponseHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     invoke-virtual {v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -165,11 +165,11 @@
 
     if-nez v1, :cond_27
 
-    .line 2549
+    .line 2613
     :goto_26
     return-void
 
-    .line 2441
+    .line 2505
     :cond_27
     iget-object v1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$RedeemAsyncHttpResponseHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
@@ -183,18 +183,18 @@
 
     if-eqz v1, :cond_90
 
-    .line 2442
+    .line 2506
     new-instance v0, Ljava/util/Date;
 
     invoke-direct {v0}, Ljava/util/Date;-><init>()V
 
-    .line 2443
+    .line 2507
     .local v0, "date":Ljava/util/Date;
     const/16 v1, 0xc8
 
     if-ne p1, v1, :cond_af
 
-    .line 2444
+    .line 2508
     const-string v1, "REDEEM"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -277,7 +277,7 @@
 
     invoke-static {v1, v2, v3}, Lcom/samsung/privilege/AppSetting;->LOG(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 2452
+    .line 2516
     .end local v0    # "date":Ljava/util/Date;
     :cond_90
     :goto_90
@@ -293,20 +293,20 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v4/app/FragmentActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 2541
+    .line 2605
     :try_start_9e
     sget-object v1, Lcom/samsung/privilege/AppSetting;->gCampaignListActivity:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     if-eqz v1, :cond_a7
 
-    .line 2542
+    .line 2606
     sget-object v1, Lcom/samsung/privilege/AppSetting;->gCampaignListActivity:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     invoke-virtual {v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->getPoints()V
     :try_end_a7
     .catch Ljava/lang/Exception; {:try_start_9e .. :try_end_a7} :catch_104
 
-    .line 2548
+    .line 2612
     :cond_a7
     :goto_a7
     iget-object v1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$RedeemAsyncHttpResponseHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
@@ -317,7 +317,7 @@
 
     goto/16 :goto_26
 
-    .line 2446
+    .line 2510
     .restart local v0    # "date":Ljava/util/Date;
     :cond_af
     const-string v1, "REDEEM"
@@ -404,7 +404,7 @@
 
     goto :goto_90
 
-    .line 2544
+    .line 2608
     .end local v0    # "date":Ljava/util/Date;
     :catch_104
     move-exception v1

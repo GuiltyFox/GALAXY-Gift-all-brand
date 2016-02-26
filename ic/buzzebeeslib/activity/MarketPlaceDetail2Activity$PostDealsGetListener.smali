@@ -23,7 +23,7 @@
     .registers 2
 
     .prologue
-    .line 1509
+    .line 1511
     iput-object p1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostDealsGetListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
@@ -35,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 1509
+    .line 1511
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostDealsGetListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     return-object v0
@@ -49,15 +49,15 @@
     .param p2, "content"    # Ljava/lang/String;
 
     .prologue
-    .line 1551
+    .line 1553
     invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 1552
+    .line 1554
     const/16 v0, -0x1f4
 
     invoke-virtual {p0, v0, p2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostDealsGetListener;->onSuccess(ILjava/lang/String;)V
 
-    .line 1553
+    .line 1555
     return-void
 .end method
 
@@ -67,7 +67,7 @@
     .param p2, "response_text"    # Ljava/lang/String;
 
     .prologue
-    .line 1513
+    .line 1515
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostDealsGetListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->TAG:Ljava/lang/String;
@@ -101,7 +101,7 @@
 
     invoke-static {v0, v1}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1515
+    .line 1517
     const-string v1, "onComplete"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -131,7 +131,7 @@
 
     invoke-static {v1, v0}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1516
+    .line 1518
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostDealsGetListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     invoke-virtual {v0}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->isFinishing()Z
@@ -140,7 +140,7 @@
 
     if-nez v0, :cond_62
 
-    .line 1517
+    .line 1519
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostDealsGetListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gDialog:Landroid/app/ProgressDialog;
@@ -150,7 +150,7 @@
 
     if-eqz v0, :cond_58
 
-    .line 1518
+    .line 1520
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostDealsGetListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gDialog:Landroid/app/ProgressDialog;
@@ -160,7 +160,7 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 1520
+    .line 1522
     :cond_58
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostDealsGetListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
@@ -170,11 +170,11 @@
 
     invoke-virtual {v0, v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1547
+    .line 1549
     :cond_62
     return-void
 
-    .line 1515
+    .line 1517
     :cond_63
     const/4 v0, 0x1
 

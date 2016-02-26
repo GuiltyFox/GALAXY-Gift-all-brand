@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener$3;->this$1:Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;
 
-    .line 715
+    .line 729
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 3
 
     .prologue
-    .line 717
+    .line 731
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener$3;->this$1:Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
@@ -63,7 +63,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->registerForContextMenu(Landroid/view/View;)V
 
-    .line 718
+    .line 732
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener$3;->this$1:Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
@@ -85,7 +85,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->openContextMenu(Landroid/view/View;)V
 
-    .line 719
+    .line 733
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener$3;->this$1:Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
@@ -107,6 +107,6 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->unregisterForContextMenu(Landroid/view/View;)V
 
-    .line 720
+    .line 734
     return-void
 .end method

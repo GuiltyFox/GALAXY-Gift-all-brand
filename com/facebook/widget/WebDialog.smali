@@ -464,14 +464,14 @@
 .end method
 
 .method private getScaledSize(IFII)I
-    .registers 14
+    .registers 15
     .param p1, "screenSize"    # I
     .param p2, "density"    # F
     .param p3, "noPaddingSize"    # I
     .param p4, "maxPaddingSize"    # I
 
     .prologue
-    const-wide/high16 v7, 0x3fe0000000000000L
+    const-wide/high16 v8, 0x3fe0000000000000L
 
     .line 306
     int-to-float v3, p1
@@ -490,11 +490,11 @@
     .line 320
     .local v0, "scaleFactor":D
     :goto_9
-    int-to-double v3, p1
+    int-to-double v4, p1
 
-    mul-double/2addr v3, v0
+    mul-double/2addr v4, v0
 
-    double-to-int v3, v3
+    double-to-int v3, v4
 
     return v3
 
@@ -515,20 +515,20 @@
     :cond_12
     sub-int v3, p4, v2
 
-    int-to-double v3, v3
+    int-to-double v4, v3
 
     .line 317
-    sub-int v5, p4, p3
+    sub-int v3, p4, p3
 
-    int-to-double v5, v5
+    int-to-double v6, v3
 
     .line 316
-    div-double/2addr v3, v5
+    div-double/2addr v4, v6
 
-    mul-double/2addr v3, v7
+    mul-double/2addr v4, v8
 
     .line 315
-    add-double v0, v7, v3
+    add-double v0, v8, v4
 
     .restart local v0    # "scaleFactor":D
     goto :goto_9

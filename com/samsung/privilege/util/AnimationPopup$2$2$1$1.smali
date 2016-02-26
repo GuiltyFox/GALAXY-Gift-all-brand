@@ -75,7 +75,7 @@
 
     const/4 v5, 0x1
 
-    const v4, 0x7f0a033c
+    const v4, 0x7f090343
 
     const/4 v3, 0x0
 

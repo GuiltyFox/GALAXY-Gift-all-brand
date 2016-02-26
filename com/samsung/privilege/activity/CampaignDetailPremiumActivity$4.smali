@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$4;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
-    .line 1120
+    .line 1121
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1122
+    .line 1123
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$4;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     invoke-virtual {v2}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getApplicationContext()Landroid/content/Context;
@@ -54,7 +54,7 @@
 
     move-result-object v0
 
-    .line 1123
+    .line 1124
     .local v0, "token":Ljava/lang/String;
     if-eqz v0, :cond_69
 
@@ -66,7 +66,7 @@
 
     if-nez v2, :cond_69
 
-    .line 1124
+    .line 1125
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$4;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->paramCampaign:Lcom/samsung/privilege/bean/CampaignView;
@@ -78,7 +78,7 @@
 
     if-nez v2, :cond_6a
 
-    .line 1126
+    .line 1127
     new-instance v2, Ljava/lang/StringBuilder;
 
     sget-object v3, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
@@ -122,7 +122,7 @@
 
     move-result-object v1
 
-    .line 1127
+    .line 1128
     .local v1, "url":Ljava/lang/String;
     const-string v2, "campaign.detail"
 
@@ -142,7 +142,7 @@
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1128
+    .line 1129
     new-instance v2, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$DoLikeListener;
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$4;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -153,13 +153,13 @@
 
     invoke-static {v1, v5, v2, v5}, Lcom/samsung/privilege/util/http/HttpCall;->RQ_DELETE(Ljava/lang/String;Ljava/util/ArrayList;Lcom/samsung/privilege/util/http/RQListener;Ljava/lang/Object;)V
 
-    .line 1136
+    .line 1137
     .end local v1    # "url":Ljava/lang/String;
     :cond_69
     :goto_69
     return-void
 
-    .line 1131
+    .line 1132
     :cond_6a
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -204,7 +204,7 @@
 
     move-result-object v1
 
-    .line 1132
+    .line 1133
     .restart local v1    # "url":Ljava/lang/String;
     const-string v2, "campaign.detail"
 
@@ -224,7 +224,7 @@
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1133
+    .line 1134
     new-instance v2, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$DoLikeListener;
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$4;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;

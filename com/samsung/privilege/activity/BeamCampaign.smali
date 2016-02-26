@@ -100,7 +100,7 @@
     const/4 v1, 0x0
 
     .line 109
-    const v3, 0x7f070068
+    const v3, 0x7f0c0068
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/BeamCampaign;->findViewById(I)Landroid/view/View;
 
@@ -455,7 +455,7 @@
 
     .line 70
     .local v0, "font":Landroid/graphics/Typeface;
-    const v4, 0x7f070064
+    const v4, 0x7f0c0064
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/BeamCampaign;->findViewById(I)Landroid/view/View;
 
@@ -465,7 +465,7 @@
 
     .line 71
     .local v3, "tvStatus":Landroid/widget/TextView;
-    const v4, 0x7f070066
+    const v4, 0x7f0c0066
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/BeamCampaign;->findViewById(I)Landroid/view/View;
 
@@ -475,7 +475,7 @@
 
     .line 73
     .local v1, "tvCancel":Landroid/widget/TextView;
-    const v4, 0x7f07006a
+    const v4, 0x7f0c006a
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/BeamCampaign;->findViewById(I)Landroid/view/View;
 
@@ -536,7 +536,7 @@
     invoke-virtual {v4, p0, p0, v5}, Landroid/nfc/NfcAdapter;->setOnNdefPushCompleteCallback(Landroid/nfc/NfcAdapter$OnNdefPushCompleteCallback;Landroid/app/Activity;[Landroid/app/Activity;)V
 
     .line 93
-    const v4, 0x7f070062
+    const v4, 0x7f0c0062
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/BeamCampaign;->findViewById(I)Landroid/view/View;
 
@@ -547,7 +547,7 @@
     iput-object v4, p0, Lcom/samsung/privilege/activity/BeamCampaign;->gLayoutWait:Landroid/widget/RelativeLayout;
 
     .line 94
-    const v4, 0x7f070067
+    const v4, 0x7f0c0067
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/BeamCampaign;->findViewById(I)Landroid/view/View;
 
@@ -675,7 +675,7 @@
 
     .line 228
     :pswitch_data_18
-    .packed-switch 0x7f07038b
+    .packed-switch 0x7f0c039a
         :pswitch_c
     .end packed-switch
 .end method

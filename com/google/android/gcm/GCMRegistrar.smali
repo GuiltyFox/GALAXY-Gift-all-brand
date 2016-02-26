@@ -1161,9 +1161,9 @@
     .local v0, "expirationTime":J
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    cmp-long v5, v5, v0
+    cmp-long v5, v6, v0
 
     if-lez v5, :cond_53
 
@@ -1378,11 +1378,11 @@
     .line 385
     invoke-static {p0}, Lcom/google/android/gcm/GCMRegistrar;->getGCMPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
-    move-result-object v5
+    move-result-object v1
 
     .line 386
-    .local v5, "prefs":Landroid/content/SharedPreferences;
-    invoke-interface {v5}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    .local v1, "prefs":Landroid/content/SharedPreferences;
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
@@ -1395,18 +1395,18 @@
     .line 389
     invoke-static {p0}, Lcom/google/android/gcm/GCMRegistrar;->getRegisterOnServerLifespan(Landroid/content/Context;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
     .line 390
-    .local v3, "lifespan":J
+    .local v4, "lifespan":J
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 
-    add-long v1, v6, v3
+    add-long v2, v6, v4
 
     .line 391
-    .local v1, "expirationTime":J
+    .local v2, "expirationTime":J
     const-string v6, "GCMRegistrar"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1431,7 +1431,7 @@
 
     new-instance v8, Ljava/sql/Timestamp;
 
-    invoke-direct {v8, v1, v2}, Ljava/sql/Timestamp;-><init>(J)V
+    invoke-direct {v8, v2, v3}, Ljava/sql/Timestamp;-><init>(J)V
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -1446,7 +1446,7 @@
     .line 393
     const-string v6, "onServerExpirationTime"
 
-    invoke-interface {v0, v6, v1, v2}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v0, v6, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
     .line 394
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z

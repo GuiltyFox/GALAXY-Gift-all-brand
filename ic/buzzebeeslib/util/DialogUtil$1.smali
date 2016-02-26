@@ -133,10 +133,10 @@
 
     iget-wide v2, v0, Lic/buzzebeeslib/util/DialogUtil$1;->val$plngExpireIn:J
 
-    add-long v17, v34, v2
+    add-long v18, v34, v2
 
     .line 235
-    .local v17, "expire_time":J
+    .local v18, "expire_time":J
     new-instance v14, Ljava/util/Date;
 
     invoke-direct {v14}, Ljava/util/Date;-><init>()V
@@ -155,11 +155,11 @@
 
     .line 237
     .local v12, "add_time":J
-    add-long v27, v34, v12
+    add-long v28, v34, v12
 
     .line 238
-    .local v27, "server_time_running":J
-    cmp-long v2, v27, v17
+    .local v28, "server_time_running":J
+    cmp-long v2, v28, v18
 
     if-lez v2, :cond_a9
 
@@ -253,8 +253,8 @@
     .line 291
     .end local v12    # "add_time":J
     .end local v14    # "dateNow":Ljava/util/Date;
-    .end local v17    # "expire_time":J
-    .end local v27    # "server_time_running":J
+    .end local v18    # "expire_time":J
+    .end local v28    # "server_time_running":J
     .end local v31    # "strText":Ljava/lang/String;
     .end local v32    # "strTextFinal":Ljava/lang/String;
     :goto_88
@@ -301,48 +301,48 @@
     .end local v16    # "e":Ljava/lang/InterruptedException;
     .restart local v12    # "add_time":J
     .restart local v14    # "dateNow":Ljava/util/Date;
-    .restart local v17    # "expire_time":J
-    .restart local v27    # "server_time_running":J
+    .restart local v18    # "expire_time":J
+    .restart local v28    # "server_time_running":J
     .restart local v31    # "strText":Ljava/lang/String;
     :cond_a9
-    sub-long v23, v17, v27
+    sub-long v24, v18, v28
 
     .line 257
-    .local v23, "remain_time":J
+    .local v24, "remain_time":J
     const-wide/16 v2, 0xe10
 
     :try_start_ad
-    div-long v19, v23, v2
+    div-long v20, v24, v2
 
     .line 258
-    .local v19, "hours":J
+    .local v20, "hours":J
     const-wide/16 v2, 0xe10
 
-    rem-long v2, v23, v2
+    rem-long v2, v24, v2
 
     const-wide/16 v4, 0x3c
 
-    div-long v21, v2, v4
+    div-long v22, v2, v4
 
     .line 259
-    .local v21, "minutes":J
+    .local v22, "minutes":J
     const-wide/16 v2, 0x3c
 
-    rem-long v25, v23, v2
+    rem-long v26, v24, v2
 
     .line 261
-    .local v25, "seconds":J
-    const-string v29, ""
+    .local v26, "seconds":J
+    const-string v17, ""
 
     .line 262
-    .local v29, "strMinute":Ljava/lang/String;
+    .local v17, "strMinute":Ljava/lang/String;
     const-string v30, ""
 
     .line 263
     .local v30, "strSecond":Ljava/lang/String;
     const-wide/16 v2, 0xa
 
-    cmp-long v2, v21, v2
+    cmp-long v2, v22, v2
 
     if-gez v2, :cond_116
 
@@ -353,7 +353,7 @@
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-wide/from16 v0, v21
+    move-wide/from16 v0, v22
 
     invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -361,13 +361,13 @@
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v29
+    move-result-object v17
 
     .line 268
     :goto_d6
     const-wide/16 v2, 0xa
 
-    cmp-long v2, v25, v2
+    cmp-long v2, v26, v2
 
     if-gez v2, :cond_126
 
@@ -378,7 +378,7 @@
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-wide/from16 v0, v25
+    move-wide/from16 v0, v26
 
     invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -392,7 +392,7 @@
     :goto_ed
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v19 .. v20}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    invoke-static/range {v20 .. v21}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v3
 
@@ -404,7 +404,7 @@
 
     move-result-object v2
 
-    move-object/from16 v0, v29
+    move-object/from16 v0, v17
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -439,7 +439,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-wide/from16 v0, v21
+    move-wide/from16 v0, v22
 
     invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -447,7 +447,7 @@
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v29
+    move-result-object v17
 
     goto :goto_d6
 
@@ -457,7 +457,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-wide/from16 v0, v25
+    move-wide/from16 v0, v26
 
     invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -474,13 +474,13 @@
     .line 286
     .end local v12    # "add_time":J
     .end local v14    # "dateNow":Ljava/util/Date;
-    .end local v17    # "expire_time":J
-    .end local v19    # "hours":J
-    .end local v21    # "minutes":J
-    .end local v23    # "remain_time":J
-    .end local v25    # "seconds":J
-    .end local v27    # "server_time_running":J
-    .end local v29    # "strMinute":Ljava/lang/String;
+    .end local v17    # "strMinute":Ljava/lang/String;
+    .end local v18    # "expire_time":J
+    .end local v20    # "hours":J
+    .end local v22    # "minutes":J
+    .end local v24    # "remain_time":J
+    .end local v26    # "seconds":J
+    .end local v28    # "server_time_running":J
     .end local v30    # "strSecond":Ljava/lang/String;
     .end local v31    # "strText":Ljava/lang/String;
     :catch_136

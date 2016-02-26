@@ -66,7 +66,7 @@
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment$5;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->tabAll1:Landroid/widget/RelativeLayout;
-    invoke-static {v0}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->access$9(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)Landroid/widget/RelativeLayout;
+    invoke-static {v0}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->access$8(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)Landroid/widget/RelativeLayout;
 
     move-result-object v0
 

@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$21;->val$session:Lcom/facebook/Session;
 
-    .line 2719
+    .line 2734
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -47,7 +47,7 @@
     .param p2, "response"    # Lcom/facebook/Response;
 
     .prologue
-    .line 2722
+    .line 2737
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$21;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -68,7 +68,7 @@
 
     if-nez v0, :cond_7a
 
-    .line 2723
+    .line 2738
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$21;->val$session:Lcom/facebook/Session;
 
     invoke-static {}, Lcom/facebook/Session;->getActiveSession()Lcom/facebook/Session;
@@ -77,10 +77,10 @@
 
     if-ne v0, v1, :cond_6b
 
-    .line 2724
+    .line 2739
     if-eqz p1, :cond_6b
 
-    .line 2725
+    .line 2740
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$21;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -93,7 +93,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/UserLogin;->SetFacebookUID(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 2726
+    .line 2741
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$21;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -106,7 +106,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/UserLogin;->SetFacebookName(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 2728
+    .line 2743
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$21;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -119,7 +119,7 @@
 
     if-eqz v0, :cond_64
 
-    .line 2729
+    .line 2744
     const-string v0, "APP"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -150,16 +150,16 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/AppSetting;->LOG(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 2732
+    .line 2747
     :cond_64
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$21;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$21;->val$session:Lcom/facebook/Session;
 
     # invokes: Lcom/samsung/privilege/activity/MainMenuFragment;->requestBuzzebeesAuth(Lcom/facebook/Session;)V
-    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$31(Lcom/samsung/privilege/activity/MainMenuFragment;Lcom/facebook/Session;)V
+    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$28(Lcom/samsung/privilege/activity/MainMenuFragment;Lcom/facebook/Session;)V
 
-    .line 2735
+    .line 2750
     :cond_6b
     invoke-virtual {p2}, Lcom/facebook/Response;->getError()Lcom/facebook/FacebookRequestError;
 
@@ -167,7 +167,7 @@
 
     if-eqz v0, :cond_7a
 
-    .line 2736
+    .line 2751
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$21;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {p2}, Lcom/facebook/Response;->getError()Lcom/facebook/FacebookRequestError;
@@ -175,9 +175,9 @@
     move-result-object v1
 
     # invokes: Lcom/samsung/privilege/activity/MainMenuFragment;->handleError(Lcom/facebook/FacebookRequestError;)V
-    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$32(Lcom/samsung/privilege/activity/MainMenuFragment;Lcom/facebook/FacebookRequestError;)V
+    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$29(Lcom/samsung/privilege/activity/MainMenuFragment;Lcom/facebook/FacebookRequestError;)V
 
-    .line 2739
+    .line 2754
     :cond_7a
     return-void
 .end method

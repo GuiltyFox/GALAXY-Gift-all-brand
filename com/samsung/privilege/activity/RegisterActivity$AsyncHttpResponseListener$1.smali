@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;
 
-    .line 249
+    .line 281
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 8
 
     .prologue
-    .line 252
+    .line 284
     :try_start_0
     iget-object v4, p0, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;
 
@@ -76,7 +76,7 @@
 
     invoke-static {v4, v5}, Lcom/samsung/privilege/UserLogin;->SetFirstName(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 253
+    .line 285
     iget-object v4, p0, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/RegisterActivity;
@@ -110,7 +110,7 @@
 
     invoke-static {v4, v5}, Lcom/samsung/privilege/UserLogin;->SetLastName(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 254
+    .line 286
     iget-object v4, p0, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/RegisterActivity;
@@ -144,7 +144,7 @@
 
     invoke-static {v4, v5}, Lcom/samsung/privilege/UserLogin;->SetBirthday(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 255
+    .line 287
     iget-object v4, p0, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/RegisterActivity;
@@ -170,7 +170,7 @@
 
     invoke-static {v4, v5}, Lcom/samsung/privilege/UserLogin;->SetGender(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 256
+    .line 288
     iget-object v4, p0, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/RegisterActivity;
@@ -185,7 +185,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0a00e3
+    const v6, 0x7f0900e3
 
     invoke-virtual {v5, v6}, Lcom/samsung/privilege/activity/RegisterActivity;->getString(I)Ljava/lang/String;
 
@@ -193,7 +193,7 @@
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/RegisterActivity;->showToast(Ljava/lang/String;)V
 
-    .line 257
+    .line 289
     new-instance v3, Landroid/content/Intent;
 
     iget-object v4, p0, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;
@@ -211,7 +211,7 @@
 
     invoke-direct {v3, v4, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 258
+    .line 290
     .local v3, "intent":Landroid/content/Intent;
     const-string v4, "msg_newbie"
 
@@ -229,7 +229,7 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 259
+    .line 291
     iget-object v4, p0, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/RegisterActivity;
@@ -239,7 +239,7 @@
 
     invoke-virtual {v4, v3}, Lcom/samsung/privilege/activity/RegisterActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 260
+    .line 292
     iget-object v4, p0, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/RegisterActivity;
@@ -251,7 +251,7 @@
     :try_end_bc
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_bc} :catch_c4
 
-    .line 275
+    .line 307
     .end local v3    # "intent":Landroid/content/Intent;
     :cond_bc
     :goto_bc
@@ -261,18 +261,18 @@
 
     invoke-static {v4, v5}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 276
+    .line 308
     return-void
 
-    .line 261
+    .line 293
     :catch_c4
     move-exception v1
 
-    .line 262
+    .line 294
     .local v1, "e":Ljava/lang/Exception;
     const/4 v0, 0x0
 
-    .line 264
+    .line 296
     .local v0, "blnIsAdmin":Z
     :try_start_c6
     iget-object v4, p0, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;
@@ -294,15 +294,15 @@
 
     if-eqz v4, :cond_d7
 
-    .line 265
+    .line 297
     const/4 v0, 0x1
 
-    .line 270
+    .line 302
     :cond_d7
     :goto_d7
     if-eqz v0, :cond_bc
 
-    .line 271
+    .line 303
     iget-object v4, p0, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener$1;->this$1:Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;
 
     # getter for: Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/RegisterActivity;
@@ -332,11 +332,11 @@
 
     goto :goto_bc
 
-    .line 267
+    .line 299
     :catch_f6
     move-exception v2
 
-    .line 268
+    .line 300
     .local v2, "e2":Ljava/lang/Exception;
     const-string v4, "Register"
 

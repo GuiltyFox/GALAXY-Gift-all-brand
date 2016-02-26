@@ -37,7 +37,7 @@
 
     iput-object p3, p0, Lcom/samsung/privilege/activity/CampaignListActivity$2;->val$currText:Landroid/widget/TextView;
 
-    .line 402
+    .line 416
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,7 +50,7 @@
     .param p1, "arg0"    # I
 
     .prologue
-    .line 459
+    .line 473
     return-void
 .end method
 
@@ -61,21 +61,21 @@
     .param p3, "arg2"    # I
 
     .prologue
-    .line 454
+    .line 468
     return-void
 .end method
 
 .method public onPageSelected(I)V
-    .registers 9
+    .registers 7
     .param p1, "arg0"    # I
 
     .prologue
-    .line 406
+    .line 420
     const/4 v1, 0x2
 
-    if-lt p1, v1, :cond_c2
+    if-lt p1, v1, :cond_4f
 
-    .line 407
+    .line 421
     :try_start_3
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$2;->val$listCats:Ljava/util/ArrayList;
 
@@ -87,22 +87,22 @@
 
     check-cast v0, Lcom/samsung/privilege/bean/CampaignCategoryDynamic;
 
-    .line 409
+    .line 423
     .local v0, "objCampaignCategoryDynamic":Lcom/samsung/privilege/bean/CampaignCategoryDynamic;
     iget v1, v0, Lcom/samsung/privilege/bean/CampaignCategoryDynamic;->cat:I
 
     sget v2, Lcom/samsung/privilege/AppSetting;->CAT_PREMIUM_THAI:I
 
-    if-ne v1, v2, :cond_a7
+    if-ne v1, v2, :cond_35
 
-    .line 410
+    .line 424
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$2;->val$currText:Landroid/widget/TextView;
 
-    const v2, 0x7f0200a1
+    const v2, 0x7f0200a3
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
-    .line 411
+    .line 425
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$2;->val$currText:Landroid/widget/TextView;
 
     const/4 v2, 0x0
@@ -116,168 +116,43 @@
     move-result v2
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+    :try_end_29
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_29} :catch_4d
 
-    .line 421
-    :goto_29
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$2;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$8(Lcom/samsung/privilege/activity/CampaignListActivity;)Lcom/google/analytics/tracking/android/Tracker;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "CATE_"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v3, v0, Lcom/samsung/privilege/bean/CampaignCategoryDynamic;->name_en:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-
-    .line 422
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$2;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$8(Lcom/samsung/privilege/activity/CampaignListActivity;)Lcom/google/analytics/tracking/android/Tracker;
-
-    move-result-object v1
-
-    const-string v2, "Dashboard"
-
-    const-string v3, "View"
-
-    iget-object v4, v0, Lcom/samsung/privilege/bean/CampaignCategoryDynamic;->name_en:Ljava/lang/String;
-
-    const-wide/16 v5, 0x1
-
-    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v5
-
-    invoke-virtual {v1, v2, v3, v4, v5}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-    :try_end_58
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_58} :catch_c0
-
-    .line 429
+    .line 443
     .end local v0    # "objCampaignCategoryDynamic":Lcom/samsung/privilege/bean/CampaignCategoryDynamic;
-    :goto_58
-    if-nez p1, :cond_83
+    :goto_29
+    if-nez p1, :cond_34
 
-    .line 431
-    :try_start_5a
+    .line 445
+    :try_start_2b
     sget-object v1, Lcom/samsung/privilege/AppSetting;->M_MainMenuFragment:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    if-eqz v1, :cond_63
+    if-eqz v1, :cond_34
 
-    .line 432
+    .line 446
     sget-object v1, Lcom/samsung/privilege/AppSetting;->M_MainMenuFragment:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->getHistoryByCatch()V
-    :try_end_63
-    .catch Ljava/lang/Exception; {:try_start_5a .. :try_end_63} :catch_db
+    :try_end_34
+    .catch Ljava/lang/Exception; {:try_start_2b .. :try_end_34} :catch_67
 
-    .line 438
-    :cond_63
-    :goto_63
-    :try_start_63
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$2;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$8(Lcom/samsung/privilege/activity/CampaignListActivity;)Lcom/google/analytics/tracking/android/Tracker;
-
-    move-result-object v1
-
-    const-string v2, "Menu"
-
-    const-string v3, "View"
-
-    const-string v4, "Setting"
-
-    const-wide/16 v5, 0x1
-
-    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v5
-
-    invoke-virtual {v1, v2, v3, v4, v5}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-
-    .line 439
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$2;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$8(Lcom/samsung/privilege/activity/CampaignListActivity;)Lcom/google/analytics/tracking/android/Tracker;
-
-    move-result-object v1
-
-    const-string v2, "Menu"
-
-    invoke-virtual {v1, v2}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-
-    .line 442
-    :cond_83
-    const/4 v1, 0x1
-
-    if-ne p1, v1, :cond_a6
-
-    .line 443
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$2;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$8(Lcom/samsung/privilege/activity/CampaignListActivity;)Lcom/google/analytics/tracking/android/Tracker;
-
-    move-result-object v1
-
-    const-string v2, "Dashboard"
-
-    const-string v3, "View"
-
-    const-string v4, "Hot Privileges"
-
-    const-wide/16 v5, 0x1
-
-    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v5
-
-    invoke-virtual {v1, v2, v3, v4, v5}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-
-    .line 444
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$2;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$8(Lcom/samsung/privilege/activity/CampaignListActivity;)Lcom/google/analytics/tracking/android/Tracker;
-
-    move-result-object v1
-
-    const-string v2, "Dashboard"
-
-    invoke-virtual {v1, v2}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-
-    .line 449
-    :cond_a6
-    :goto_a6
+    .line 463
+    :cond_34
+    :goto_34
     return-void
 
-    .line 416
+    .line 430
     .restart local v0    # "objCampaignCategoryDynamic":Lcom/samsung/privilege/bean/CampaignCategoryDynamic;
-    :cond_a7
+    :cond_35
+    :try_start_35
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$2;->val$currText:Landroid/widget/TextView;
 
-    const v2, 0x7f02009f
+    const v2, 0x7f0200a1
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
-    .line 417
+    .line 431
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$2;->val$currText:Landroid/widget/TextView;
 
     const/16 v2, 0xff
@@ -292,24 +167,24 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    goto/16 :goto_29
+    goto :goto_29
 
-    .line 446
+    .line 460
     .end local v0    # "objCampaignCategoryDynamic":Lcom/samsung/privilege/bean/CampaignCategoryDynamic;
-    :catch_c0
+    :catch_4d
     move-exception v1
 
-    goto :goto_a6
+    goto :goto_34
 
-    .line 424
-    :cond_c2
+    .line 438
+    :cond_4f
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$2;->val$currText:Landroid/widget/TextView;
 
-    const v2, 0x7f02009f
+    const v2, 0x7f0200a1
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
-    .line 425
+    .line 439
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$2;->val$currText:Landroid/widget/TextView;
 
     const/16 v2, 0xff
@@ -323,14 +198,14 @@
     move-result v2
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
-    :try_end_d9
-    .catch Ljava/lang/Exception; {:try_start_63 .. :try_end_d9} :catch_c0
+    :try_end_66
+    .catch Ljava/lang/Exception; {:try_start_35 .. :try_end_66} :catch_4d
 
-    goto/16 :goto_58
+    goto :goto_29
 
-    .line 434
-    :catch_db
+    .line 448
+    :catch_67
     move-exception v1
 
-    goto :goto_63
+    goto :goto_34
 .end method

@@ -222,7 +222,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-    .registers 12
+    .registers 13
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
     .param p3, "defStyle"    # I
@@ -243,9 +243,9 @@
 
     invoke-virtual {v5}, Ljava/lang/Thread;->getId()J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    iput-wide v5, p0, Lcom/actionbarsherlock/internal/widget/IcsProgressBar;->mUiThreadId:J
+    iput-wide v6, p0, Lcom/actionbarsherlock/internal/widget/IcsProgressBar;->mUiThreadId:J
 
     .line 282
     invoke-direct {p0}, Lcom/actionbarsherlock/internal/widget/IcsProgressBar;->initProgressBar()V
@@ -692,7 +692,7 @@
 .end method
 
 .method private declared-synchronized refreshProgress(IIZ)V
-    .registers 9
+    .registers 10
     .param p1, "id"    # I
     .param p2, "progress"    # I
     .param p3, "fromUser"    # Z
@@ -702,17 +702,17 @@
     monitor-enter p0
 
     :try_start_1
-    iget-wide v1, p0, Lcom/actionbarsherlock/internal/widget/IcsProgressBar;->mUiThreadId:J
+    iget-wide v2, p0, Lcom/actionbarsherlock/internal/widget/IcsProgressBar;->mUiThreadId:J
 
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3}, Ljava/lang/Thread;->getId()J
+    invoke-virtual {v1}, Ljava/lang/Thread;->getId()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    cmp-long v1, v1, v3
+    cmp-long v1, v2, v4
 
     if-nez v1, :cond_15
 
@@ -779,7 +779,7 @@
 .end method
 
 .method private scheduleAccessibilityEventSender()V
-    .registers 4
+    .registers 5
 
     .prologue
     .line 1177
@@ -800,9 +800,9 @@
     :goto_c
     iget-object v0, p0, Lcom/actionbarsherlock/internal/widget/IcsProgressBar;->mAccessibilityEventSender:Lcom/actionbarsherlock/internal/widget/IcsProgressBar$AccessibilityEventSender;
 
-    const-wide/16 v1, 0xc8
+    const-wide/16 v2, 0xc8
 
-    invoke-virtual {p0, v0, v1, v2}, Lcom/actionbarsherlock/internal/widget/IcsProgressBar;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {p0, v0, v2, v3}, Lcom/actionbarsherlock/internal/widget/IcsProgressBar;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 1183
     return-void
@@ -2881,7 +2881,7 @@
 .end method
 
 .method startAnimation()V
-    .registers 4
+    .registers 5
 
     .prologue
     .line 836
@@ -2970,9 +2970,9 @@
 
     iget v1, p0, Lcom/actionbarsherlock/internal/widget/IcsProgressBar;->mDuration:I
 
-    int-to-long v1, v1
+    int-to-long v2, v1
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
 
     .line 853
     iget-object v0, p0, Lcom/actionbarsherlock/internal/widget/IcsProgressBar;->mAnimation:Landroid/view/animation/AlphaAnimation;
@@ -2984,9 +2984,9 @@
     .line 854
     iget-object v0, p0, Lcom/actionbarsherlock/internal/widget/IcsProgressBar;->mAnimation:Landroid/view/animation/AlphaAnimation;
 
-    const-wide/16 v1, -0x1
+    const-wide/16 v2, -0x1
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;->setStartTime(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/AlphaAnimation;->setStartTime(J)V
 
     goto :goto_13
 .end method

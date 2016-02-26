@@ -93,7 +93,7 @@
 
     .line 82
     .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v1, 0x2
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockActionMode_background:I
 
     .line 81
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -102,15 +102,18 @@
 
     invoke-virtual {p0, v1}, Lcom/actionbarsherlock/internal/widget/ActionBarContextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
+    .line 84
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockActionMode_titleTextStyle:I
+
     .line 83
-    invoke-virtual {v0, v2, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v1
 
     iput v1, p0, Lcom/actionbarsherlock/internal/widget/ActionBarContextView;->mTitleStyleRes:I
 
     .line 86
-    const/4 v1, 0x1
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockActionMode_subtitleTextStyle:I
 
     .line 85
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
@@ -120,7 +123,7 @@
     iput v1, p0, Lcom/actionbarsherlock/internal/widget/ActionBarContextView;->mSubtitleStyleRes:I
 
     .line 89
-    const/4 v1, 0x4
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockActionMode_height:I
 
     .line 88
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
@@ -130,7 +133,7 @@
     iput v1, p0, Lcom/actionbarsherlock/internal/widget/ActionBarContextView;->mContentHeight:I
 
     .line 92
-    const/4 v1, 0x3
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockActionMode_backgroundSplit:I
 
     .line 91
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -603,9 +606,9 @@
 
     .line 422
     .local v2, "buttonAnimator":Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;
-    const-wide/16 v7, 0xc8
+    const-wide/16 v8, 0xc8
 
-    invoke-virtual {v2, v7, v8}, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;->setDuration(J)Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;
+    invoke-virtual {v2, v8, v9}, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;->setDuration(J)Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;
 
     .line 423
     invoke-virtual {v2, p0}, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;->addListener(Lcom/actionbarsherlock/internal/nineoldandroids/animation/Animator$AnimatorListener;)V
@@ -689,16 +692,16 @@
 
     .line 436
     .local v0, "a":Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;
-    const-wide/16 v7, 0x64
+    const-wide/16 v8, 0x64
 
-    invoke-virtual {v0, v7, v8}, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;->setDuration(J)Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;
+    invoke-virtual {v0, v8, v9}, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;->setDuration(J)Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;
 
     .line 437
     mul-int/lit8 v7, v5, 0x46
 
-    int-to-long v7, v7
+    int-to-long v8, v7
 
-    invoke-virtual {v0, v7, v8}, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;->setStartDelay(J)V
+    invoke-virtual {v0, v8, v9}, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;->setStartDelay(J)V
 
     .line 438
     invoke-virtual {v1, v0}, Lcom/actionbarsherlock/internal/nineoldandroids/animation/AnimatorSet$Builder;->with(Lcom/actionbarsherlock/internal/nineoldandroids/animation/Animator;)Lcom/actionbarsherlock/internal/nineoldandroids/animation/AnimatorSet$Builder;

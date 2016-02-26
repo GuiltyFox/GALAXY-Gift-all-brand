@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$13;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    .line 1147
+    .line 1150
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,13 +42,13 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
 
     .prologue
-    .line 1150
+    .line 1153
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$13;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$7(Lcom/samsung/privilege/activity/MainMenuFragment;Z)V
 
-    .line 1151
+    .line 1154
     return-void
 .end method

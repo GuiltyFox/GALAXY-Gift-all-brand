@@ -507,7 +507,7 @@
 .end method
 
 .method private animateOffsetToStartPosition(ILandroid/view/animation/Animation$AnimationListener;)V
-    .registers 6
+    .registers 7
     .param p1, "from"    # I
     .param p2, "listener"    # Landroid/view/animation/Animation$AnimationListener;
 
@@ -525,9 +525,9 @@
 
     iget v1, p0, Landroid/support/v4/widget/SwipeRefreshLayout;->mMediumAnimationDuration:I
 
-    int-to-long v1, v1
+    int-to-long v2, v1
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 223
     iget-object v0, p0, Landroid/support/v4/widget/SwipeRefreshLayout;->mAnimateToStartPosition:Landroid/view/animation/Animation;
@@ -873,7 +873,7 @@
 .end method
 
 .method private updatePositionTimeout()V
-    .registers 4
+    .registers 5
 
     .prologue
     .line 549
@@ -884,9 +884,9 @@
     .line 550
     iget-object v0, p0, Landroid/support/v4/widget/SwipeRefreshLayout;->mCancel:Ljava/lang/Runnable;
 
-    const-wide/16 v1, 0x12c
+    const-wide/16 v2, 0x12c
 
-    invoke-virtual {p0, v0, v1, v2}, Landroid/support/v4/widget/SwipeRefreshLayout;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {p0, v0, v2, v3}, Landroid/support/v4/widget/SwipeRefreshLayout;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 551
     return-void

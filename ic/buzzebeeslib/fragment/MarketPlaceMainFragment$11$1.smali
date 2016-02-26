@@ -42,11 +42,11 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 5
+    .registers 6
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    const-wide/16 v1, 0x64
+    const-wide/16 v2, 0x64
 
     .line 1059
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceMainFragment$11$1;->this$1:Lic/buzzebeeslib/fragment/MarketPlaceMainFragment$11;
@@ -61,12 +61,12 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setStartOffset(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setStartOffset(J)V
 
     .line 1060
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceMainFragment$11$1;->val$slideOut:Landroid/view/animation/Animation;
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setStartOffset(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setStartOffset(J)V
 
     .line 1062
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceMainFragment$11$1;->this$1:Lic/buzzebeeslib/fragment/MarketPlaceMainFragment$11;

@@ -357,7 +357,7 @@
 .end method
 
 .method public static PlayPointAnimation2(Landroid/os/Handler;ILandroid/widget/RelativeLayout;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;)V
-    .registers 19
+    .registers 20
     .param p0, "handler"    # Landroid/os/Handler;
     .param p1, "pPoints"    # I
     .param p2, "pLayoutRoot"    # Landroid/widget/RelativeLayout;
@@ -371,450 +371,466 @@
     .line 142
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v11
 
     .line 143
-    .local v10, "str_points":Ljava/lang/String;
-    invoke-virtual {v10}, Ljava/lang/String;->length()I
+    .local v11, "str_points":Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    if-ne v1, v2, :cond_67
+    if-ne v2, v3, :cond_6c
 
     .line 144
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p3, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 145
-    const/4 v1, 0x4
+    const/4 v2, 0x4
 
-    invoke-virtual {p4, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    move-object/from16 v0, p4
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 146
-    const/4 v1, 0x4
+    const/4 v2, 0x4
 
     move-object/from16 v0, p5
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 147
-    const/4 v1, 0x4
+    const/4 v2, 0x4
 
     move-object/from16 v0, p6
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 148
-    const/4 v1, 0x4
+    const/4 v2, 0x4
 
     move-object/from16 v0, p7
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 149
     invoke-static {p3, p1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
 
     .line 150
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-static {p4, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
+    move-object/from16 v0, p4
+
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
 
     .line 151
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     move-object/from16 v0, p5
 
-    invoke-static {v0, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
 
     .line 152
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     move-object/from16 v0, p6
 
-    invoke-static {v0, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
 
     .line 185
-    :goto_38
+    :goto_3c
     invoke-static {}, Lic/buzzebeeslib/util/AnimationPoint;->inFromTopAnimation()Landroid/view/animation/Animation;
 
-    move-result-object v9
+    move-result-object v10
 
     .line 186
-    .local v9, "animationInFromTop":Landroid/view/animation/Animation;
-    const/4 v1, 0x1
+    .local v10, "animationInFromTop":Landroid/view/animation/Animation;
+    const/4 v2, 0x1
 
-    invoke-virtual {v9, v1}, Landroid/view/animation/Animation;->setFillEnabled(Z)V
+    invoke-virtual {v10, v2}, Landroid/view/animation/Animation;->setFillEnabled(Z)V
 
     .line 187
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    invoke-virtual {v9, v1}, Landroid/view/animation/Animation;->setFillAfter(Z)V
+    invoke-virtual {v10, v2}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
     .line 188
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {v9, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v10, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 189
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {v9, v1, v2}, Landroid/view/animation/Animation;->setStartOffset(J)V
+    invoke-virtual {v10, v2, v3}, Landroid/view/animation/Animation;->setStartOffset(J)V
 
     .line 191
-    new-instance v1, Lic/buzzebeeslib/util/AnimationPoint$2;
+    new-instance v2, Lic/buzzebeeslib/util/AnimationPoint$2;
 
-    move-object v2, p2
+    move-object v3, p2
 
-    move-object v3, p3
+    move-object v4, p3
 
-    move-object v4, p4
+    move-object/from16 v5, p4
 
-    move-object/from16 v5, p5
+    move-object/from16 v6, p5
 
-    move-object/from16 v6, p6
+    move-object/from16 v7, p6
 
-    move-object v7, p0
+    move-object v8, p0
 
-    move-object/from16 v8, p7
+    move-object/from16 v9, p7
 
-    invoke-direct/range {v1 .. v8}, Lic/buzzebeeslib/util/AnimationPoint$2;-><init>(Landroid/widget/RelativeLayout;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/os/Handler;Landroid/widget/ImageView;)V
+    invoke-direct/range {v2 .. v9}, Lic/buzzebeeslib/util/AnimationPoint$2;-><init>(Landroid/widget/RelativeLayout;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/os/Handler;Landroid/widget/ImageView;)V
 
-    invoke-virtual {v9, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+    invoke-virtual {v10, v2}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
     .line 250
     invoke-virtual {p2}, Landroid/widget/RelativeLayout;->clearAnimation()V
 
     .line 251
-    invoke-virtual {p2, v9}, Landroid/widget/RelativeLayout;->setAnimation(Landroid/view/animation/Animation;)V
+    invoke-virtual {p2, v10}, Landroid/widget/RelativeLayout;->setAnimation(Landroid/view/animation/Animation;)V
 
     .line 252
     return-void
 
     .line 153
-    .end local v9    # "animationInFromTop":Landroid/view/animation/Animation;
-    :cond_67
-    invoke-virtual {v10}, Ljava/lang/String;->length()I
+    .end local v10    # "animationInFromTop":Landroid/view/animation/Animation;
+    :cond_6c
+    invoke-virtual {v11}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x2
+    const/4 v3, 0x2
 
-    if-ne v1, v2, :cond_b7
+    if-ne v2, v3, :cond_c1
 
     .line 154
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p3, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 155
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {p4, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    move-object/from16 v0, p4
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 156
-    const/4 v1, 0x4
-
-    move-object/from16 v0, p5
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 157
-    const/4 v1, 0x4
-
-    move-object/from16 v0, p6
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 158
-    const/4 v1, 0x4
-
-    move-object/from16 v0, p7
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 159
-    const/4 v1, 0x1
-
-    const/4 v2, 0x2
-
-    invoke-virtual {v10, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-static {p3, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
-
-    .line 160
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v10, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-static {p4, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
-
-    .line 161
-    const/4 v1, 0x0
-
-    move-object/from16 v0, p5
-
-    invoke-static {v0, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
-
-    .line 162
-    const/4 v1, 0x0
-
-    move-object/from16 v0, p6
-
-    invoke-static {v0, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
-
-    goto :goto_38
-
-    .line 163
-    :cond_b7
-    invoke-virtual {v10}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    if-ne v1, v2, :cond_115
-
-    .line 164
-    const/4 v1, 0x0
-
-    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 165
-    const/4 v1, 0x0
-
-    invoke-virtual {p4, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 166
-    const/4 v1, 0x0
-
-    move-object/from16 v0, p5
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 167
-    const/4 v1, 0x4
-
-    move-object/from16 v0, p6
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 168
-    const/4 v1, 0x4
-
-    move-object/from16 v0, p7
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 169
-    const/4 v1, 0x2
-
-    const/4 v2, 0x3
-
-    invoke-virtual {v10, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-static {p3, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
-
-    .line 170
-    const/4 v1, 0x1
-
-    const/4 v2, 0x2
-
-    invoke-virtual {v10, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-static {p4, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
-
-    .line 171
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v10, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    move-object/from16 v0, p5
-
-    invoke-static {v0, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
-
-    .line 172
-    const/4 v1, 0x0
-
-    move-object/from16 v0, p6
-
-    invoke-static {v0, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
-
-    goto/16 :goto_38
-
-    .line 174
-    :cond_115
-    const/4 v1, 0x0
-
-    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 175
-    const/4 v1, 0x0
-
-    invoke-virtual {p4, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 176
-    const/4 v1, 0x0
-
-    move-object/from16 v0, p5
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 177
-    const/4 v1, 0x0
-
-    move-object/from16 v0, p6
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 178
-    const/4 v1, 0x0
-
-    move-object/from16 v0, p7
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 179
-    const/4 v1, 0x3
-
     const/4 v2, 0x4
 
-    invoke-virtual {v10, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-static {p3, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
-
-    .line 180
-    const/4 v1, 0x2
-
-    const/4 v2, 0x3
-
-    invoke-virtual {v10, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-static {p4, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
-
-    .line 181
-    const/4 v1, 0x1
-
-    const/4 v2, 0x2
-
-    invoke-virtual {v10, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
     move-object/from16 v0, p5
 
-    invoke-static {v0, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 182
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v10, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
+    .line 157
+    const/4 v2, 0x4
 
     move-object/from16 v0, p6
 
-    invoke-static {v0, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto/16 :goto_38
+    .line 158
+    const/4 v2, 0x4
+
+    move-object/from16 v0, p7
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 159
+    const/4 v2, 0x1
+
+    const/4 v3, 0x2
+
+    invoke-virtual {v11, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    invoke-static {p3, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
+
+    .line 160
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v11, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    move-object/from16 v0, p4
+
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
+
+    .line 161
+    const/4 v2, 0x0
+
+    move-object/from16 v0, p5
+
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
+
+    .line 162
+    const/4 v2, 0x0
+
+    move-object/from16 v0, p6
+
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
+
+    goto/16 :goto_3c
+
+    .line 163
+    :cond_c1
+    invoke-virtual {v11}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    const/4 v3, 0x3
+
+    if-ne v2, v3, :cond_123
+
+    .line 164
+    const/4 v2, 0x0
+
+    invoke-virtual {p3, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 165
+    const/4 v2, 0x0
+
+    move-object/from16 v0, p4
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 166
+    const/4 v2, 0x0
+
+    move-object/from16 v0, p5
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 167
+    const/4 v2, 0x4
+
+    move-object/from16 v0, p6
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 168
+    const/4 v2, 0x4
+
+    move-object/from16 v0, p7
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 169
+    const/4 v2, 0x2
+
+    const/4 v3, 0x3
+
+    invoke-virtual {v11, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    invoke-static {p3, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
+
+    .line 170
+    const/4 v2, 0x1
+
+    const/4 v3, 0x2
+
+    invoke-virtual {v11, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    move-object/from16 v0, p4
+
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
+
+    .line 171
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v11, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    move-object/from16 v0, p5
+
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
+
+    .line 172
+    const/4 v2, 0x0
+
+    move-object/from16 v0, p6
+
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
+
+    goto/16 :goto_3c
+
+    .line 174
+    :cond_123
+    const/4 v2, 0x0
+
+    invoke-virtual {p3, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 175
+    const/4 v2, 0x0
+
+    move-object/from16 v0, p4
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 176
+    const/4 v2, 0x0
+
+    move-object/from16 v0, p5
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 177
+    const/4 v2, 0x0
+
+    move-object/from16 v0, p6
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 178
+    const/4 v2, 0x0
+
+    move-object/from16 v0, p7
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 179
+    const/4 v2, 0x3
+
+    const/4 v3, 0x4
+
+    invoke-virtual {v11, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    invoke-static {p3, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
+
+    .line 180
+    const/4 v2, 0x2
+
+    const/4 v3, 0x3
+
+    invoke-virtual {v11, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    move-object/from16 v0, p4
+
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
+
+    .line 181
+    const/4 v2, 0x1
+
+    const/4 v3, 0x2
+
+    invoke-virtual {v11, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    move-object/from16 v0, p5
+
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
+
+    .line 182
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v11, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    move-object/from16 v0, p6
+
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigit(Landroid/widget/ImageView;I)V
+
+    goto/16 :goto_3c
 .end method
 
 .method public static PlayPointAnimationFade(ILandroid/widget/RelativeLayout;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;)V
-    .registers 18
+    .registers 19
     .param p0, "pPoints"    # I
     .param p1, "pLayoutRoot"    # Landroid/widget/RelativeLayout;
     .param p2, "pImgCash1"    # Landroid/widget/ImageView;
@@ -827,452 +843,468 @@
     .line 255
     invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v11
 
     .line 256
-    .local v10, "str_points":Ljava/lang/String;
-    invoke-virtual {v10}, Ljava/lang/String;->length()I
+    .local v11, "str_points":Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    if-ne v1, v3, :cond_7e
+    if-ne v2, v4, :cond_83
 
     .line 257
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p2, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 258
-    const/16 v1, 0x8
+    const/16 v2, 0x8
 
-    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p3, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 259
-    const/16 v1, 0x8
+    const/16 v2, 0x8
 
-    invoke-virtual {p4, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    move-object/from16 v0, p4
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 260
-    const/16 v1, 0x8
+    const/16 v2, 0x8
 
     move-object/from16 v0, p5
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 261
-    const/16 v1, 0x8
+    const/16 v2, 0x8
 
     move-object/from16 v0, p6
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 262
     invoke-static {p2, p0}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
 
     .line 263
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-static {p3, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
+    invoke-static {p3, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
 
     .line 264
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-static {p4, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
+    move-object/from16 v0, p4
+
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
 
     .line 265
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     move-object/from16 v0, p5
 
-    invoke-static {v0, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
 
     .line 298
-    :goto_38
-    new-instance v9, Landroid/view/animation/AlphaAnimation;
+    :goto_3c
+    new-instance v10, Landroid/view/animation/AlphaAnimation;
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    const/high16 v3, 0x3f800000
+    const/high16 v4, 0x3f800000
 
-    invoke-direct {v9, v1, v3}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
+    invoke-direct {v10, v2, v4}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
 
     .line 299
-    .local v9, "fadeIn":Landroid/view/animation/Animation;
-    new-instance v1, Landroid/view/animation/DecelerateInterpolator;
+    .local v10, "fadeIn":Landroid/view/animation/Animation;
+    new-instance v2, Landroid/view/animation/DecelerateInterpolator;
 
-    invoke-direct {v1}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
+    invoke-direct {v2}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
 
-    invoke-virtual {v9, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+    invoke-virtual {v10, v2}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
     .line 300
-    const-wide/16 v3, 0x3e8
+    const-wide/16 v4, 0x3e8
 
-    invoke-virtual {v9, v3, v4}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v10, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 302
-    new-instance v2, Landroid/view/animation/AlphaAnimation;
+    new-instance v3, Landroid/view/animation/AlphaAnimation;
 
-    const/high16 v1, 0x3f800000
+    const/high16 v2, 0x3f800000
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    invoke-direct {v2, v1, v3}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
+    invoke-direct {v3, v2, v4}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
 
     .line 303
-    .local v2, "fadeOut":Landroid/view/animation/Animation;
-    new-instance v1, Landroid/view/animation/AccelerateInterpolator;
+    .local v3, "fadeOut":Landroid/view/animation/Animation;
+    new-instance v2, Landroid/view/animation/AccelerateInterpolator;
 
-    invoke-direct {v1}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
+    invoke-direct {v2}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
 
-    invoke-virtual {v2, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+    invoke-virtual {v3, v2}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
     .line 304
-    const-wide/16 v3, 0x9c4
+    const-wide/16 v4, 0x9c4
 
-    invoke-virtual {v2, v3, v4}, Landroid/view/animation/Animation;->setStartOffset(J)V
+    invoke-virtual {v3, v4, v5}, Landroid/view/animation/Animation;->setStartOffset(J)V
 
     .line 305
-    const-wide/16 v3, 0x3e8
+    const-wide/16 v4, 0x3e8
 
-    invoke-virtual {v2, v3, v4}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v3, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 307
-    new-instance v1, Lic/buzzebeeslib/util/AnimationPoint$3;
+    new-instance v2, Lic/buzzebeeslib/util/AnimationPoint$3;
 
-    move-object v3, p1
+    move-object v4, p1
 
-    move-object v4, p2
+    move-object v5, p2
 
-    move-object v5, p3
+    move-object v6, p3
 
-    move-object v6, p4
+    move-object/from16 v7, p4
 
-    move-object/from16 v7, p5
+    move-object/from16 v8, p5
 
-    move-object/from16 v8, p6
+    move-object/from16 v9, p6
 
-    invoke-direct/range {v1 .. v8}, Lic/buzzebeeslib/util/AnimationPoint$3;-><init>(Landroid/view/animation/Animation;Landroid/widget/RelativeLayout;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;)V
+    invoke-direct/range {v2 .. v9}, Lic/buzzebeeslib/util/AnimationPoint$3;-><init>(Landroid/view/animation/Animation;Landroid/widget/RelativeLayout;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;)V
 
-    invoke-virtual {v9, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+    invoke-virtual {v10, v2}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
     .line 362
     invoke-virtual {p1}, Landroid/widget/RelativeLayout;->clearAnimation()V
 
     .line 363
-    invoke-virtual {p1, v9}, Landroid/widget/RelativeLayout;->setAnimation(Landroid/view/animation/Animation;)V
+    invoke-virtual {p1, v10}, Landroid/widget/RelativeLayout;->setAnimation(Landroid/view/animation/Animation;)V
 
     .line 364
     return-void
 
     .line 266
-    .end local v2    # "fadeOut":Landroid/view/animation/Animation;
-    .end local v9    # "fadeIn":Landroid/view/animation/Animation;
-    :cond_7e
-    invoke-virtual {v10}, Ljava/lang/String;->length()I
+    .end local v3    # "fadeOut":Landroid/view/animation/Animation;
+    .end local v10    # "fadeIn":Landroid/view/animation/Animation;
+    :cond_83
+    invoke-virtual {v11}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v3, 0x2
+    const/4 v4, 0x2
 
-    if-ne v1, v3, :cond_ce
+    if-ne v2, v4, :cond_d7
 
     .line 267
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p2, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 268
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p3, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 269
-    const/16 v1, 0x8
+    const/16 v2, 0x8
 
-    invoke-virtual {p4, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    move-object/from16 v0, p4
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 270
-    const/16 v1, 0x8
+    const/16 v2, 0x8
 
     move-object/from16 v0, p5
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 271
-    const/16 v1, 0x8
+    const/16 v2, 0x8
 
     move-object/from16 v0, p6
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 272
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    const/4 v3, 0x2
+    const/4 v4, 0x2
 
-    invoke-virtual {v10, v1, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v11, v2, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {p2, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
+    invoke-static {p2, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
 
     .line 273
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-virtual {v10, v1, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v11, v2, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {p3, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
+    invoke-static {p3, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
 
     .line 274
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-static {p4, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
+    move-object/from16 v0, p4
+
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
 
     .line 275
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     move-object/from16 v0, p5
 
-    invoke-static {v0, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
 
-    goto/16 :goto_38
+    goto/16 :goto_3c
 
     .line 276
-    :cond_ce
-    invoke-virtual {v10}, Ljava/lang/String;->length()I
+    :cond_d7
+    invoke-virtual {v11}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v3, 0x3
+    const/4 v4, 0x3
 
-    if-ne v1, v3, :cond_12a
+    if-ne v2, v4, :cond_137
 
     .line 277
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p2, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 278
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p3, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 279
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {p4, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    move-object/from16 v0, p4
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 280
-    const/16 v1, 0x8
+    const/16 v2, 0x8
 
     move-object/from16 v0, p5
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 281
-    const/16 v1, 0x8
+    const/16 v2, 0x8
 
     move-object/from16 v0, p6
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 282
-    const/4 v1, 0x2
+    const/4 v2, 0x2
 
-    const/4 v3, 0x3
+    const/4 v4, 0x3
 
-    invoke-virtual {v10, v1, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v11, v2, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {p2, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
+    invoke-static {p2, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
 
     .line 283
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    const/4 v3, 0x2
+    const/4 v4, 0x2
 
-    invoke-virtual {v10, v1, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v11, v2, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {p3, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
+    invoke-static {p3, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
 
     .line 284
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-virtual {v10, v1, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v11, v2, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {p4, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
+    move-object/from16 v0, p4
+
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
 
     .line 285
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     move-object/from16 v0, p5
 
-    invoke-static {v0, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
 
-    goto/16 :goto_38
+    goto/16 :goto_3c
 
     .line 287
-    :cond_12a
-    const/4 v1, 0x0
+    :cond_137
+    const/4 v2, 0x0
 
-    invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p2, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 288
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p3, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 289
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {p4, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    move-object/from16 v0, p4
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 290
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     move-object/from16 v0, p5
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 291
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     move-object/from16 v0, p6
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 292
-    const/4 v1, 0x3
+    const/4 v2, 0x3
 
-    const/4 v3, 0x4
+    const/4 v4, 0x4
 
-    invoke-virtual {v10, v1, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v11, v2, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {p2, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
+    invoke-static {p2, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
 
     .line 293
-    const/4 v1, 0x2
+    const/4 v2, 0x2
 
-    const/4 v3, 0x3
+    const/4 v4, 0x3
 
-    invoke-virtual {v10, v1, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v11, v2, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {p3, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
+    invoke-static {p3, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
 
     .line 294
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    const/4 v3, 0x2
+    const/4 v4, 0x2
 
-    invoke-virtual {v10, v1, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v11, v2, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {p4, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
+    move-object/from16 v0, p4
+
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
 
     .line 295
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-virtual {v10, v1, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v11, v2, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    move-result v1
+    move-result v2
 
     move-object/from16 v0, p5
 
-    invoke-static {v0, v1}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
+    invoke-static {v0, v2}, Lic/buzzebeeslib/util/AnimationPoint;->setImageDigitGift(Landroid/widget/ImageView;I)V
 
-    goto/16 :goto_38
+    goto/16 :goto_3c
 .end method
 
 .method static synthetic access$0()Landroid/view/animation/Animation;
@@ -1314,9 +1346,9 @@
 
     .line 420
     .local v0, "inFromTop":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x3e8
+    const-wide/16 v2, 0x3e8
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 421
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
@@ -1356,9 +1388,9 @@
 
     .line 441
     .local v0, "outFromBottom":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x3e8
+    const-wide/16 v2, 0x3e8
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 442
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
@@ -1398,9 +1430,9 @@
 
     .line 427
     .local v0, "outToBottom":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x3e8
+    const-wide/16 v2, 0x3e8
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 428
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
@@ -1440,9 +1472,9 @@
 
     .line 434
     .local v0, "outToTop":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x3e8
+    const-wide/16 v2, 0x3e8
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 435
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;

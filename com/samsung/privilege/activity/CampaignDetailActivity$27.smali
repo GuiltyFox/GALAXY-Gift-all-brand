@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/CampaignDetailActivity;->fetchPlaces(Z)V
+    value = Lcom/samsung/privilege/activity/CampaignDetailActivity;->getLocationByGPS()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$27;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
-    .line 3188
+    .line 3291
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,21 +38,19 @@
 
 # virtual methods
 .method public run()V
-    .registers 3
+    .registers 2
 
     .prologue
-    .line 3194
+    .line 3294
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$27;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->gPbLoadingMap:Landroid/widget/ProgressBar;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$24(Lcom/samsung/privilege/activity/CampaignDetailActivity;)Landroid/widget/ProgressBar;
+    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->gListBranch:Lcom/samsung/privilege/control/PullToRefreshListView;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$22(Lcom/samsung/privilege/activity/CampaignDetailActivity;)Lcom/samsung/privilege/control/PullToRefreshListView;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Lcom/samsung/privilege/control/PullToRefreshListView;->onRefreshComplete()V
 
-    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
-
-    .line 3195
+    .line 3295
     return-void
 .end method

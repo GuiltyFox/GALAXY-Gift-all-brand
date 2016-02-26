@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener$1;->val$response_text:Ljava/lang/String;
 
-    .line 4046
+    .line 4054
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
     .registers 2
 
     .prologue
-    .line 4046
+    .line 4054
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener$1;->this$1:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;
 
     return-object v0
@@ -55,7 +55,7 @@
     .registers 9
 
     .prologue
-    .line 4050
+    .line 4058
     :try_start_0
     new-instance v3, Lorg/json/JSONObject;
 
@@ -63,7 +63,7 @@
 
     invoke-direct {v3, v5}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 4051
+    .line 4059
     .local v3, "jsonRoot":Lorg/json/JSONObject;
     const-string v5, "Address"
 
@@ -71,7 +71,7 @@
 
     move-result-object v4
 
-    .line 4052
+    .line 4060
     .local v4, "strAddress":Ljava/lang/String;
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener$1;->this$1:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;
 
@@ -86,7 +86,7 @@
 
     invoke-static {v5, v4}, Lic/buzzebeeslib/LibUserLogin;->SetAddress(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 4054
+    .line 4062
     if-eqz v4, :cond_82
 
     const-string v5, ""
@@ -97,7 +97,7 @@
 
     if-nez v5, :cond_82
 
-    .line 4055
+    .line 4063
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener$1;->this$1:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -120,7 +120,7 @@
 
     if-eqz v5, :cond_43
 
-    .line 4056
+    .line 4064
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener$1;->this$1:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -132,13 +132,13 @@
 
     invoke-virtual {v5, v6}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->doBuy(Landroid/view/View;)V
 
-    .line 4086
+    .line 4094
     .end local v3    # "jsonRoot":Lorg/json/JSONObject;
     .end local v4    # "strAddress":Ljava/lang/String;
     :goto_42
     return-void
 
-    .line 4058
+    .line 4066
     .restart local v3    # "jsonRoot":Lorg/json/JSONObject;
     .restart local v4    # "strAddress":Ljava/lang/String;
     :cond_43
@@ -164,7 +164,7 @@
 
     if-eqz v5, :cond_78
 
-    .line 4059
+    .line 4067
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener$1;->this$1:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -179,13 +179,13 @@
 
     goto :goto_42
 
-    .line 4083
+    .line 4091
     .end local v3    # "jsonRoot":Lorg/json/JSONObject;
     .end local v4    # "strAddress":Ljava/lang/String;
     :catch_61
     move-exception v2
 
-    .line 4084
+    .line 4092
     .local v2, "e":Ljava/lang/Exception;
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener$1;->this$1:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;
 
@@ -212,7 +212,7 @@
 
     goto :goto_42
 
-    .line 4061
+    .line 4069
     .end local v2    # "e":Ljava/lang/Exception;
     .restart local v3    # "jsonRoot":Lorg/json/JSONObject;
     .restart local v4    # "strAddress":Ljava/lang/String;
@@ -230,7 +230,7 @@
 
     goto :goto_42
 
-    .line 4067
+    .line 4075
     :cond_82
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
@@ -243,7 +243,7 @@
 
     invoke-direct {v1, v5}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 4068
+    .line 4076
     .local v1, "builder":Landroid/app/AlertDialog$Builder;
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener$1;->this$1:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;
 
@@ -295,7 +295,7 @@
 
     move-result-object v5
 
-    .line 4075
+    .line 4083
     const-string v6, "No"
 
     new-instance v7, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener$1$2;
@@ -304,12 +304,12 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 4080
+    .line 4088
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    .line 4081
+    .line 4089
     .local v0, "alert":Landroid/app/AlertDialog;
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
     :try_end_ce

@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$7$1;->this$1:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$7;
 
-    .line 944
+    .line 964
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,6 +41,6 @@
     .registers 1
 
     .prologue
-    .line 948
+    .line 968
     return-void
 .end method

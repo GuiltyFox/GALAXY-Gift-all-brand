@@ -650,7 +650,7 @@
 .end method
 
 .method static applyMaskPenaltyRule4(Lcom/google/zxing/qrcode/encoder/ByteMatrix;)I
-    .registers 16
+    .registers 17
     .param p0, "matrix"    # Lcom/google/zxing/qrcode/encoder/ByteMatrix;
 
     .prologue
@@ -659,19 +659,19 @@
 
     .line 129
     .local v6, "numDarkCells":I
-    invoke-virtual {p0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getArray()[[B
+    invoke-virtual/range {p0 .. p0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getArray()[[B
 
     move-result-object v0
 
     .line 130
     .local v0, "array":[[B
-    invoke-virtual {p0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
+    invoke-virtual/range {p0 .. p0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
 
     move-result v8
 
     .line 131
     .local v8, "width":I
-    invoke-virtual {p0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
+    invoke-virtual/range {p0 .. p0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
 
     move-result v5
 
@@ -720,11 +720,11 @@
     .end local v1    # "arrayY":[B
     .end local v9    # "x":I
     :cond_22
-    invoke-virtual {p0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
+    invoke-virtual/range {p0 .. p0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
 
     move-result v11
 
-    invoke-virtual {p0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
+    invoke-virtual/range {p0 .. p0}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
 
     move-result v12
 
@@ -732,27 +732,27 @@
 
     .line 141
     .local v7, "numTotalCells":I
-    int-to-double v11, v6
+    int-to-double v12, v6
 
-    int-to-double v13, v7
+    int-to-double v14, v7
 
-    div-double v2, v11, v13
+    div-double v2, v12, v14
 
     .line 142
     .local v2, "darkRatio":D
-    const-wide/high16 v11, 0x3fe0000000000000L
+    const-wide/high16 v12, 0x3fe0000000000000L
 
-    sub-double v11, v2, v11
+    sub-double v12, v2, v12
 
-    invoke-static {v11, v12}, Ljava/lang/Math;->abs(D)D
+    invoke-static {v12, v13}, Ljava/lang/Math;->abs(D)D
 
-    move-result-wide v11
+    move-result-wide v12
 
-    const-wide/high16 v13, 0x4034000000000000L
+    const-wide/high16 v14, 0x4034000000000000L
 
-    mul-double/2addr v11, v13
+    mul-double/2addr v12, v14
 
-    double-to-int v4, v11
+    double-to-int v4, v12
 
     .line 143
     .local v4, "fivePercentVariances":I

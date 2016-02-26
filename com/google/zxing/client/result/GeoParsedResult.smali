@@ -56,7 +56,7 @@
 .end method
 
 .method public getDisplayResult()Ljava/lang/String;
-    .registers 6
+    .registers 7
 
     .prologue
     .line 84
@@ -68,9 +68,9 @@
 
     .line 85
     .local v0, "result":Ljava/lang/StringBuilder;
-    iget-wide v1, p0, Lcom/google/zxing/client/result/GeoParsedResult;->latitude:D
+    iget-wide v2, p0, Lcom/google/zxing/client/result/GeoParsedResult;->latitude:D
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
     .line 86
     const-string v1, ", "
@@ -78,16 +78,16 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 87
-    iget-wide v1, p0, Lcom/google/zxing/client/result/GeoParsedResult;->longitude:D
+    iget-wide v2, p0, Lcom/google/zxing/client/result/GeoParsedResult;->longitude:D
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
     .line 88
-    iget-wide v1, p0, Lcom/google/zxing/client/result/GeoParsedResult;->altitude:D
+    iget-wide v2, p0, Lcom/google/zxing/client/result/GeoParsedResult;->altitude:D
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v4, 0x0
 
-    cmpl-double v1, v1, v3
+    cmpl-double v1, v2, v4
 
     if-lez v1, :cond_2d
 
@@ -97,9 +97,9 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 90
-    iget-wide v1, p0, Lcom/google/zxing/client/result/GeoParsedResult;->altitude:D
+    iget-wide v2, p0, Lcom/google/zxing/client/result/GeoParsedResult;->altitude:D
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
     .line 91
     const/16 v1, 0x6d
@@ -137,10 +137,10 @@
 .end method
 
 .method public getGeoURI()Ljava/lang/String;
-    .registers 7
+    .registers 8
 
     .prologue
-    const/16 v5, 0x2c
+    const/16 v6, 0x2c
 
     .line 38
     new-instance v0, Ljava/lang/StringBuilder;
@@ -154,34 +154,34 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 40
-    iget-wide v1, p0, Lcom/google/zxing/client/result/GeoParsedResult;->latitude:D
+    iget-wide v2, p0, Lcom/google/zxing/client/result/GeoParsedResult;->latitude:D
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
     .line 41
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 42
-    iget-wide v1, p0, Lcom/google/zxing/client/result/GeoParsedResult;->longitude:D
+    iget-wide v2, p0, Lcom/google/zxing/client/result/GeoParsedResult;->longitude:D
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
     .line 43
-    iget-wide v1, p0, Lcom/google/zxing/client/result/GeoParsedResult;->altitude:D
+    iget-wide v2, p0, Lcom/google/zxing/client/result/GeoParsedResult;->altitude:D
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v4, 0x0
 
-    cmpl-double v1, v1, v3
+    cmpl-double v1, v2, v4
 
     if-lez v1, :cond_29
 
     .line 44
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 45
-    iget-wide v1, p0, Lcom/google/zxing/client/result/GeoParsedResult;->altitude:D
+    iget-wide v2, p0, Lcom/google/zxing/client/result/GeoParsedResult;->altitude:D
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
     .line 47
     :cond_29

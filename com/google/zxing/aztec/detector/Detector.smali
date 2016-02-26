@@ -691,7 +691,7 @@
 .end method
 
 .method private getBullEyeCornerPoints(Lcom/google/zxing/aztec/detector/Detector$Point;)[Lcom/google/zxing/aztec/detector/Detector$Point;
-    .registers 30
+    .registers 32
     .param p1, "pCenter"    # Lcom/google/zxing/aztec/detector/Detector$Point;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -701,29 +701,29 @@
 
     .prologue
     .line 262
-    move-object/from16 v6, p1
-
-    .line 263
-    .local v6, "pina":Lcom/google/zxing/aztec/detector/Detector$Point;
     move-object/from16 v7, p1
 
-    .line 264
-    .local v7, "pinb":Lcom/google/zxing/aztec/detector/Detector$Point;
+    .line 263
+    .local v7, "pina":Lcom/google/zxing/aztec/detector/Detector$Point;
     move-object/from16 v8, p1
 
-    .line 265
-    .local v8, "pinc":Lcom/google/zxing/aztec/detector/Detector$Point;
+    .line 264
+    .local v8, "pinb":Lcom/google/zxing/aztec/detector/Detector$Point;
     move-object/from16 v9, p1
 
+    .line 265
+    .local v9, "pinc":Lcom/google/zxing/aztec/detector/Detector$Point;
+    move-object/from16 v10, p1
+
     .line 267
-    .local v9, "pind":Lcom/google/zxing/aztec/detector/Detector$Point;
-    const/4 v3, 0x1
+    .local v10, "pind":Lcom/google/zxing/aztec/detector/Detector$Point;
+    const/4 v4, 0x1
 
     .line 269
-    .local v3, "color":Z
-    const/16 v24, 0x1
+    .local v4, "color":Z
+    const/16 v25, 0x1
 
-    move/from16 v0, v24
+    move/from16 v0, v25
 
     move-object/from16 v1, p0
 
@@ -734,115 +734,97 @@
 
     iget v0, v0, Lcom/google/zxing/aztec/detector/Detector;->nbCenterLayers:I
 
-    move/from16 v24, v0
+    move/from16 v25, v0
 
-    const/16 v25, 0x9
+    const/16 v26, 0x9
 
-    move/from16 v0, v24
+    move/from16 v0, v25
 
-    move/from16 v1, v25
+    move/from16 v1, v26
 
     if-ge v0, v1, :cond_a5
 
     .line 270
-    const/16 v24, 0x1
-
-    const/16 v25, -0x1
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, v24
-
-    move/from16 v2, v25
-
-    invoke-direct {v0, v6, v3, v1, v2}, Lcom/google/zxing/aztec/detector/Detector;->getFirstDifferent(Lcom/google/zxing/aztec/detector/Detector$Point;ZII)Lcom/google/zxing/aztec/detector/Detector$Point;
-
-    move-result-object v10
-
-    .line 271
-    .local v10, "pouta":Lcom/google/zxing/aztec/detector/Detector$Point;
-    const/16 v24, 0x1
-
     const/16 v25, 0x1
 
+    const/16 v26, -0x1
+
     move-object/from16 v0, p0
 
-    move/from16 v1, v24
+    move/from16 v1, v25
 
-    move/from16 v2, v25
+    move/from16 v2, v26
 
-    invoke-direct {v0, v7, v3, v1, v2}, Lcom/google/zxing/aztec/detector/Detector;->getFirstDifferent(Lcom/google/zxing/aztec/detector/Detector$Point;ZII)Lcom/google/zxing/aztec/detector/Detector$Point;
+    invoke-direct {v0, v7, v4, v1, v2}, Lcom/google/zxing/aztec/detector/Detector;->getFirstDifferent(Lcom/google/zxing/aztec/detector/Detector$Point;ZII)Lcom/google/zxing/aztec/detector/Detector$Point;
 
     move-result-object v11
 
-    .line 272
-    .local v11, "poutb":Lcom/google/zxing/aztec/detector/Detector$Point;
-    const/16 v24, -0x1
-
+    .line 271
+    .local v11, "pouta":Lcom/google/zxing/aztec/detector/Detector$Point;
     const/16 v25, 0x1
+
+    const/16 v26, 0x1
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v24
+    move/from16 v1, v25
 
-    move/from16 v2, v25
+    move/from16 v2, v26
 
-    invoke-direct {v0, v8, v3, v1, v2}, Lcom/google/zxing/aztec/detector/Detector;->getFirstDifferent(Lcom/google/zxing/aztec/detector/Detector$Point;ZII)Lcom/google/zxing/aztec/detector/Detector$Point;
+    invoke-direct {v0, v8, v4, v1, v2}, Lcom/google/zxing/aztec/detector/Detector;->getFirstDifferent(Lcom/google/zxing/aztec/detector/Detector$Point;ZII)Lcom/google/zxing/aztec/detector/Detector$Point;
 
     move-result-object v12
 
-    .line 273
-    .local v12, "poutc":Lcom/google/zxing/aztec/detector/Detector$Point;
-    const/16 v24, -0x1
-
+    .line 272
+    .local v12, "poutb":Lcom/google/zxing/aztec/detector/Detector$Point;
     const/16 v25, -0x1
+
+    const/16 v26, 0x1
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v24
+    move/from16 v1, v25
 
-    move/from16 v2, v25
+    move/from16 v2, v26
 
-    invoke-direct {v0, v9, v3, v1, v2}, Lcom/google/zxing/aztec/detector/Detector;->getFirstDifferent(Lcom/google/zxing/aztec/detector/Detector$Point;ZII)Lcom/google/zxing/aztec/detector/Detector$Point;
+    invoke-direct {v0, v9, v4, v1, v2}, Lcom/google/zxing/aztec/detector/Detector;->getFirstDifferent(Lcom/google/zxing/aztec/detector/Detector$Point;ZII)Lcom/google/zxing/aztec/detector/Detector$Point;
 
     move-result-object v13
 
+    .line 273
+    .local v13, "poutc":Lcom/google/zxing/aztec/detector/Detector$Point;
+    const/16 v25, -0x1
+
+    const/16 v26, -0x1
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v25
+
+    move/from16 v2, v26
+
+    invoke-direct {v0, v10, v4, v1, v2}, Lcom/google/zxing/aztec/detector/Detector;->getFirstDifferent(Lcom/google/zxing/aztec/detector/Detector$Point;ZII)Lcom/google/zxing/aztec/detector/Detector$Point;
+
+    move-result-object v14
+
     .line 279
-    .local v13, "poutd":Lcom/google/zxing/aztec/detector/Detector$Point;
+    .local v14, "poutd":Lcom/google/zxing/aztec/detector/Detector$Point;
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/google/zxing/aztec/detector/Detector;->nbCenterLayers:I
 
-    move/from16 v24, v0
+    move/from16 v25, v0
 
-    const/16 v25, 0x2
+    const/16 v26, 0x2
 
-    move/from16 v0, v24
+    move/from16 v0, v25
 
-    move/from16 v1, v25
+    move/from16 v1, v26
 
     if-le v0, v1, :cond_c6
 
     .line 280
-    invoke-static {v13, v10}, Lcom/google/zxing/aztec/detector/Detector;->distance(Lcom/google/zxing/aztec/detector/Detector$Point;Lcom/google/zxing/aztec/detector/Detector$Point;)F
-
-    move-result v24
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/google/zxing/aztec/detector/Detector;->nbCenterLayers:I
-
-    move/from16 v25, v0
-
-    move/from16 v0, v25
-
-    int-to-float v0, v0
-
-    move/from16 v25, v0
-
-    mul-float v24, v24, v25
-
-    invoke-static {v9, v6}, Lcom/google/zxing/aztec/detector/Detector;->distance(Lcom/google/zxing/aztec/detector/Detector$Point;Lcom/google/zxing/aztec/detector/Detector$Point;)F
+    invoke-static {v14, v11}, Lcom/google/zxing/aztec/detector/Detector;->distance(Lcom/google/zxing/aztec/detector/Detector$Point;Lcom/google/zxing/aztec/detector/Detector$Point;)F
 
     move-result v25
 
@@ -851,8 +833,6 @@
     iget v0, v0, Lcom/google/zxing/aztec/detector/Detector;->nbCenterLayers:I
 
     move/from16 v26, v0
-
-    add-int/lit8 v26, v26, 0x2
 
     move/from16 v0, v26
 
@@ -862,56 +842,76 @@
 
     mul-float v25, v25, v26
 
-    div-float v14, v24, v25
+    invoke-static {v10, v7}, Lcom/google/zxing/aztec/detector/Detector;->distance(Lcom/google/zxing/aztec/detector/Detector$Point;Lcom/google/zxing/aztec/detector/Detector$Point;)F
 
-    .line 281
-    .local v14, "q":F
-    float-to-double v0, v14
-
-    move-wide/from16 v24, v0
-
-    const-wide/high16 v26, 0x3fe8000000000000L
-
-    cmpg-double v24, v24, v26
-
-    if-ltz v24, :cond_a5
-
-    float-to-double v0, v14
-
-    move-wide/from16 v24, v0
-
-    const-wide/high16 v26, 0x3ff4000000000000L
-
-    cmpl-double v24, v24, v26
-
-    if-gtz v24, :cond_a5
+    move-result v26
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v10, v11, v12, v13}, Lcom/google/zxing/aztec/detector/Detector;->isWhiteOrBlackRectangle(Lcom/google/zxing/aztec/detector/Detector$Point;Lcom/google/zxing/aztec/detector/Detector$Point;Lcom/google/zxing/aztec/detector/Detector$Point;Lcom/google/zxing/aztec/detector/Detector$Point;)Z
+    iget v0, v0, Lcom/google/zxing/aztec/detector/Detector;->nbCenterLayers:I
 
-    move-result v24
+    move/from16 v27, v0
 
-    if-nez v24, :cond_c6
+    add-int/lit8 v27, v27, 0x2
+
+    move/from16 v0, v27
+
+    int-to-float v0, v0
+
+    move/from16 v27, v0
+
+    mul-float v26, v26, v27
+
+    div-float v15, v25, v26
+
+    .line 281
+    .local v15, "q":F
+    float-to-double v0, v15
+
+    move-wide/from16 v26, v0
+
+    const-wide/high16 v28, 0x3fe8000000000000L
+
+    cmpg-double v25, v26, v28
+
+    if-ltz v25, :cond_a5
+
+    float-to-double v0, v15
+
+    move-wide/from16 v26, v0
+
+    const-wide/high16 v28, 0x3ff4000000000000L
+
+    cmpl-double v25, v26, v28
+
+    if-gtz v25, :cond_a5
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v11, v12, v13, v14}, Lcom/google/zxing/aztec/detector/Detector;->isWhiteOrBlackRectangle(Lcom/google/zxing/aztec/detector/Detector$Point;Lcom/google/zxing/aztec/detector/Detector$Point;Lcom/google/zxing/aztec/detector/Detector$Point;Lcom/google/zxing/aztec/detector/Detector$Point;)Z
+
+    move-result v25
+
+    if-nez v25, :cond_c6
 
     .line 294
-    .end local v10    # "pouta":Lcom/google/zxing/aztec/detector/Detector$Point;
-    .end local v11    # "poutb":Lcom/google/zxing/aztec/detector/Detector$Point;
-    .end local v12    # "poutc":Lcom/google/zxing/aztec/detector/Detector$Point;
-    .end local v13    # "poutd":Lcom/google/zxing/aztec/detector/Detector$Point;
-    .end local v14    # "q":F
+    .end local v11    # "pouta":Lcom/google/zxing/aztec/detector/Detector$Point;
+    .end local v12    # "poutb":Lcom/google/zxing/aztec/detector/Detector$Point;
+    .end local v13    # "poutc":Lcom/google/zxing/aztec/detector/Detector$Point;
+    .end local v14    # "poutd":Lcom/google/zxing/aztec/detector/Detector$Point;
+    .end local v15    # "q":F
     :cond_a5
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/google/zxing/aztec/detector/Detector;->nbCenterLayers:I
 
-    move/from16 v24, v0
+    move/from16 v25, v0
 
-    const/16 v25, 0x5
+    const/16 v26, 0x5
 
-    move/from16 v0, v24
+    move/from16 v0, v25
 
-    move/from16 v1, v25
+    move/from16 v1, v26
 
     if-eq v0, v1, :cond_df
 
@@ -919,44 +919,44 @@
 
     iget v0, v0, Lcom/google/zxing/aztec/detector/Detector;->nbCenterLayers:I
 
-    move/from16 v24, v0
+    move/from16 v25, v0
 
-    const/16 v25, 0x7
+    const/16 v26, 0x7
 
-    move/from16 v0, v24
+    move/from16 v0, v25
 
-    move/from16 v1, v25
+    move/from16 v1, v26
 
     if-eq v0, v1, :cond_df
 
     .line 295
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v24
+    move-result-object v25
 
-    throw v24
+    throw v25
 
     .line 286
-    .restart local v10    # "pouta":Lcom/google/zxing/aztec/detector/Detector$Point;
-    .restart local v11    # "poutb":Lcom/google/zxing/aztec/detector/Detector$Point;
-    .restart local v12    # "poutc":Lcom/google/zxing/aztec/detector/Detector$Point;
-    .restart local v13    # "poutd":Lcom/google/zxing/aztec/detector/Detector$Point;
+    .restart local v11    # "pouta":Lcom/google/zxing/aztec/detector/Detector$Point;
+    .restart local v12    # "poutb":Lcom/google/zxing/aztec/detector/Detector$Point;
+    .restart local v13    # "poutc":Lcom/google/zxing/aztec/detector/Detector$Point;
+    .restart local v14    # "poutd":Lcom/google/zxing/aztec/detector/Detector$Point;
     :cond_c6
-    move-object v6, v10
-
-    .line 287
     move-object v7, v11
 
-    .line 288
+    .line 287
     move-object v8, v12
 
-    .line 289
+    .line 288
     move-object v9, v13
 
-    .line 291
-    if-nez v3, :cond_dd
+    .line 289
+    move-object v10, v14
 
-    const/4 v3, 0x1
+    .line 291
+    if-nez v4, :cond_dd
+
+    const/4 v4, 0x1
 
     .line 269
     :goto_cd
@@ -964,11 +964,11 @@
 
     iget v0, v0, Lcom/google/zxing/aztec/detector/Detector;->nbCenterLayers:I
 
-    move/from16 v24, v0
+    move/from16 v25, v0
 
-    add-int/lit8 v24, v24, 0x1
+    add-int/lit8 v25, v25, 0x1
 
-    move/from16 v0, v24
+    move/from16 v0, v25
 
     move-object/from16 v1, p0
 
@@ -978,51 +978,89 @@
 
     .line 291
     :cond_dd
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     goto :goto_cd
 
     .line 298
-    .end local v10    # "pouta":Lcom/google/zxing/aztec/detector/Detector$Point;
-    .end local v11    # "poutb":Lcom/google/zxing/aztec/detector/Detector$Point;
-    .end local v12    # "poutc":Lcom/google/zxing/aztec/detector/Detector$Point;
-    .end local v13    # "poutd":Lcom/google/zxing/aztec/detector/Detector$Point;
+    .end local v11    # "pouta":Lcom/google/zxing/aztec/detector/Detector$Point;
+    .end local v12    # "poutb":Lcom/google/zxing/aztec/detector/Detector$Point;
+    .end local v13    # "poutc":Lcom/google/zxing/aztec/detector/Detector$Point;
+    .end local v14    # "poutd":Lcom/google/zxing/aztec/detector/Detector$Point;
     :cond_df
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/google/zxing/aztec/detector/Detector;->nbCenterLayers:I
-
-    move/from16 v24, v0
-
-    const/16 v25, 0x5
-
-    move/from16 v0, v24
-
-    move/from16 v1, v25
-
-    if-ne v0, v1, :cond_205
-
-    const/16 v24, 0x1
-
-    :goto_ef
-    move/from16 v0, v24
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Lcom/google/zxing/aztec/detector/Detector;->compact:Z
-
-    .line 300
-    const/high16 v24, 0x3fc00000
-
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/google/zxing/aztec/detector/Detector;->nbCenterLayers:I
 
     move/from16 v25, v0
 
-    mul-int/lit8 v25, v25, 0x2
+    const/16 v26, 0x5
 
-    add-int/lit8 v25, v25, -0x3
+    move/from16 v0, v25
+
+    move/from16 v1, v26
+
+    if-ne v0, v1, :cond_205
+
+    const/16 v25, 0x1
+
+    :goto_ef
+    move/from16 v0, v25
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/google/zxing/aztec/detector/Detector;->compact:Z
+
+    .line 300
+    const/high16 v25, 0x3fc00000
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/google/zxing/aztec/detector/Detector;->nbCenterLayers:I
+
+    move/from16 v26, v0
+
+    mul-int/lit8 v26, v26, 0x2
+
+    add-int/lit8 v26, v26, -0x3
+
+    move/from16 v0, v26
+
+    int-to-float v0, v0
+
+    move/from16 v26, v0
+
+    div-float v16, v25, v26
+
+    .line 302
+    .local v16, "ratio":F
+    invoke-virtual {v7}, Lcom/google/zxing/aztec/detector/Detector$Point;->getX()I
+
+    move-result v25
+
+    invoke-virtual {v9}, Lcom/google/zxing/aztec/detector/Detector$Point;->getX()I
+
+    move-result v26
+
+    sub-int v5, v25, v26
+
+    .line 303
+    .local v5, "dx":I
+    invoke-virtual {v7}, Lcom/google/zxing/aztec/detector/Detector$Point;->getY()I
+
+    move-result v25
+
+    invoke-virtual {v9}, Lcom/google/zxing/aztec/detector/Detector$Point;->getY()I
+
+    move-result v26
+
+    sub-int v6, v25, v26
+
+    .line 304
+    .local v6, "dy":I
+    invoke-virtual {v9}, Lcom/google/zxing/aztec/detector/Detector$Point;->getX()I
+
+    move-result v25
 
     move/from16 v0, v25
 
@@ -1030,399 +1068,361 @@
 
     move/from16 v25, v0
 
-    div-float v15, v24, v25
-
-    .line 302
-    .local v15, "ratio":F
-    invoke-virtual {v6}, Lcom/google/zxing/aztec/detector/Detector$Point;->getX()I
-
-    move-result v24
-
-    invoke-virtual {v8}, Lcom/google/zxing/aztec/detector/Detector$Point;->getX()I
-
-    move-result v25
-
-    sub-int v4, v24, v25
-
-    .line 303
-    .local v4, "dx":I
-    invoke-virtual {v6}, Lcom/google/zxing/aztec/detector/Detector$Point;->getY()I
-
-    move-result v24
-
-    invoke-virtual {v8}, Lcom/google/zxing/aztec/detector/Detector$Point;->getY()I
-
-    move-result v25
-
-    sub-int v5, v24, v25
-
-    .line 304
-    .local v5, "dy":I
-    invoke-virtual {v8}, Lcom/google/zxing/aztec/detector/Detector$Point;->getX()I
-
-    move-result v24
-
-    move/from16 v0, v24
-
-    int-to-float v0, v0
-
-    move/from16 v24, v0
-
-    int-to-float v0, v4
-
-    move/from16 v25, v0
-
-    mul-float v25, v25, v15
-
-    sub-float v24, v24, v25
-
-    invoke-static/range {v24 .. v24}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
-
-    move-result v20
-
-    .line 305
-    .local v20, "targetcx":I
-    invoke-virtual {v8}, Lcom/google/zxing/aztec/detector/Detector$Point;->getY()I
-
-    move-result v24
-
-    move/from16 v0, v24
-
-    int-to-float v0, v0
-
-    move/from16 v24, v0
-
     int-to-float v0, v5
 
-    move/from16 v25, v0
+    move/from16 v26, v0
 
-    mul-float v25, v25, v15
+    mul-float v26, v26, v16
 
-    sub-float v24, v24, v25
+    sub-float v25, v25, v26
 
-    invoke-static/range {v24 .. v24}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
+    invoke-static/range {v25 .. v25}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
 
     move-result v21
 
-    .line 306
-    .local v21, "targetcy":I
-    invoke-virtual {v6}, Lcom/google/zxing/aztec/detector/Detector$Point;->getX()I
-
-    move-result v24
-
-    move/from16 v0, v24
-
-    int-to-float v0, v0
-
-    move/from16 v24, v0
-
-    int-to-float v0, v4
-
-    move/from16 v25, v0
-
-    mul-float v25, v25, v15
-
-    add-float v24, v24, v25
-
-    invoke-static/range {v24 .. v24}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
-
-    move-result v16
-
-    .line 307
-    .local v16, "targetax":I
-    invoke-virtual {v6}, Lcom/google/zxing/aztec/detector/Detector$Point;->getY()I
-
-    move-result v24
-
-    move/from16 v0, v24
-
-    int-to-float v0, v0
-
-    move/from16 v24, v0
-
-    int-to-float v0, v5
-
-    move/from16 v25, v0
-
-    mul-float v25, v25, v15
-
-    add-float v24, v24, v25
-
-    invoke-static/range {v24 .. v24}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
-
-    move-result v17
-
-    .line 309
-    .local v17, "targetay":I
-    invoke-virtual {v7}, Lcom/google/zxing/aztec/detector/Detector$Point;->getX()I
-
-    move-result v24
-
-    invoke-virtual {v9}, Lcom/google/zxing/aztec/detector/Detector$Point;->getX()I
-
-    move-result v25
-
-    sub-int v4, v24, v25
-
-    .line 310
-    invoke-virtual {v7}, Lcom/google/zxing/aztec/detector/Detector$Point;->getY()I
-
-    move-result v24
-
+    .line 305
+    .local v21, "targetcx":I
     invoke-virtual {v9}, Lcom/google/zxing/aztec/detector/Detector$Point;->getY()I
 
     move-result v25
 
-    sub-int v5, v24, v25
-
-    .line 312
-    invoke-virtual {v9}, Lcom/google/zxing/aztec/detector/Detector$Point;->getX()I
-
-    move-result v24
-
-    move/from16 v0, v24
+    move/from16 v0, v25
 
     int-to-float v0, v0
 
-    move/from16 v24, v0
-
-    int-to-float v0, v4
-
     move/from16 v25, v0
 
-    mul-float v25, v25, v15
+    int-to-float v0, v6
 
-    sub-float v24, v24, v25
+    move/from16 v26, v0
 
-    invoke-static/range {v24 .. v24}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
+    mul-float v26, v26, v16
+
+    sub-float v25, v25, v26
+
+    invoke-static/range {v25 .. v25}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
 
     move-result v22
 
-    .line 313
-    .local v22, "targetdx":I
-    invoke-virtual {v9}, Lcom/google/zxing/aztec/detector/Detector$Point;->getY()I
+    .line 306
+    .local v22, "targetcy":I
+    invoke-virtual {v7}, Lcom/google/zxing/aztec/detector/Detector$Point;->getX()I
 
-    move-result v24
+    move-result v25
 
-    move/from16 v0, v24
+    move/from16 v0, v25
 
     int-to-float v0, v0
 
-    move/from16 v24, v0
+    move/from16 v25, v0
 
     int-to-float v0, v5
 
-    move/from16 v25, v0
+    move/from16 v26, v0
 
-    mul-float v25, v25, v15
+    mul-float v26, v26, v16
 
-    sub-float v24, v24, v25
+    add-float v25, v25, v26
 
-    invoke-static/range {v24 .. v24}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
+    invoke-static/range {v25 .. v25}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
 
-    move-result v23
+    move-result v17
 
-    .line 314
-    .local v23, "targetdy":I
-    invoke-virtual {v7}, Lcom/google/zxing/aztec/detector/Detector$Point;->getX()I
+    .line 307
+    .local v17, "targetax":I
+    invoke-virtual {v7}, Lcom/google/zxing/aztec/detector/Detector$Point;->getY()I
 
-    move-result v24
+    move-result v25
 
-    move/from16 v0, v24
+    move/from16 v0, v25
 
     int-to-float v0, v0
 
-    move/from16 v24, v0
-
-    int-to-float v0, v4
-
     move/from16 v25, v0
 
-    mul-float v25, v25, v15
+    int-to-float v0, v6
 
-    add-float v24, v24, v25
+    move/from16 v26, v0
 
-    invoke-static/range {v24 .. v24}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
+    mul-float v26, v26, v16
+
+    add-float v25, v25, v26
+
+    invoke-static/range {v25 .. v25}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
 
     move-result v18
 
-    .line 315
-    .local v18, "targetbx":I
-    invoke-virtual {v7}, Lcom/google/zxing/aztec/detector/Detector$Point;->getY()I
+    .line 309
+    .local v18, "targetay":I
+    invoke-virtual {v8}, Lcom/google/zxing/aztec/detector/Detector$Point;->getX()I
 
-    move-result v24
+    move-result v25
 
-    move/from16 v0, v24
+    invoke-virtual {v10}, Lcom/google/zxing/aztec/detector/Detector$Point;->getX()I
+
+    move-result v26
+
+    sub-int v5, v25, v26
+
+    .line 310
+    invoke-virtual {v8}, Lcom/google/zxing/aztec/detector/Detector$Point;->getY()I
+
+    move-result v25
+
+    invoke-virtual {v10}, Lcom/google/zxing/aztec/detector/Detector$Point;->getY()I
+
+    move-result v26
+
+    sub-int v6, v25, v26
+
+    .line 312
+    invoke-virtual {v10}, Lcom/google/zxing/aztec/detector/Detector$Point;->getX()I
+
+    move-result v25
+
+    move/from16 v0, v25
 
     int-to-float v0, v0
 
-    move/from16 v24, v0
+    move/from16 v25, v0
 
     int-to-float v0, v5
 
+    move/from16 v26, v0
+
+    mul-float v26, v26, v16
+
+    sub-float v25, v25, v26
+
+    invoke-static/range {v25 .. v25}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
+
+    move-result v23
+
+    .line 313
+    .local v23, "targetdx":I
+    invoke-virtual {v10}, Lcom/google/zxing/aztec/detector/Detector$Point;->getY()I
+
+    move-result v25
+
+    move/from16 v0, v25
+
+    int-to-float v0, v0
+
     move/from16 v25, v0
 
-    mul-float v25, v25, v15
+    int-to-float v0, v6
 
-    add-float v24, v24, v25
+    move/from16 v26, v0
 
-    invoke-static/range {v24 .. v24}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
+    mul-float v26, v26, v16
+
+    sub-float v25, v25, v26
+
+    invoke-static/range {v25 .. v25}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
+
+    move-result v24
+
+    .line 314
+    .local v24, "targetdy":I
+    invoke-virtual {v8}, Lcom/google/zxing/aztec/detector/Detector$Point;->getX()I
+
+    move-result v25
+
+    move/from16 v0, v25
+
+    int-to-float v0, v0
+
+    move/from16 v25, v0
+
+    int-to-float v0, v5
+
+    move/from16 v26, v0
+
+    mul-float v26, v26, v16
+
+    add-float v25, v25, v26
+
+    invoke-static/range {v25 .. v25}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
 
     move-result v19
 
+    .line 315
+    .local v19, "targetbx":I
+    invoke-virtual {v8}, Lcom/google/zxing/aztec/detector/Detector$Point;->getY()I
+
+    move-result v25
+
+    move/from16 v0, v25
+
+    int-to-float v0, v0
+
+    move/from16 v25, v0
+
+    int-to-float v0, v6
+
+    move/from16 v26, v0
+
+    mul-float v26, v26, v16
+
+    add-float v25, v25, v26
+
+    invoke-static/range {v25 .. v25}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
+
+    move-result v20
+
     .line 317
-    .local v19, "targetby":I
+    .local v20, "targetby":I
     move-object/from16 v0, p0
 
-    move/from16 v1, v16
+    move/from16 v1, v17
 
-    move/from16 v2, v17
+    move/from16 v2, v18
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/aztec/detector/Detector;->isValid(II)Z
 
-    move-result v24
+    move-result v25
 
-    if-eqz v24, :cond_200
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, v18
-
-    move/from16 v2, v19
-
-    invoke-direct {v0, v1, v2}, Lcom/google/zxing/aztec/detector/Detector;->isValid(II)Z
-
-    move-result v24
-
-    if-eqz v24, :cond_200
+    if-eqz v25, :cond_200
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v20
+    move/from16 v1, v19
 
-    move/from16 v2, v21
+    move/from16 v2, v20
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/aztec/detector/Detector;->isValid(II)Z
 
-    move-result v24
+    move-result v25
 
-    if-eqz v24, :cond_200
+    if-eqz v25, :cond_200
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v22
+    move/from16 v1, v21
 
-    move/from16 v2, v23
+    move/from16 v2, v22
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/aztec/detector/Detector;->isValid(II)Z
 
-    move-result v24
+    move-result v25
 
-    if-nez v24, :cond_209
+    if-eqz v25, :cond_200
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v23
+
+    move/from16 v2, v24
+
+    invoke-direct {v0, v1, v2}, Lcom/google/zxing/aztec/detector/Detector;->isValid(II)Z
+
+    move-result v25
+
+    if-nez v25, :cond_209
 
     .line 321
     :cond_200
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v24
+    move-result-object v25
 
-    throw v24
+    throw v25
 
     .line 298
-    .end local v4    # "dx":I
-    .end local v5    # "dy":I
-    .end local v15    # "ratio":F
-    .end local v16    # "targetax":I
-    .end local v17    # "targetay":I
-    .end local v18    # "targetbx":I
-    .end local v19    # "targetby":I
-    .end local v20    # "targetcx":I
-    .end local v21    # "targetcy":I
-    .end local v22    # "targetdx":I
-    .end local v23    # "targetdy":I
+    .end local v5    # "dx":I
+    .end local v6    # "dy":I
+    .end local v16    # "ratio":F
+    .end local v17    # "targetax":I
+    .end local v18    # "targetay":I
+    .end local v19    # "targetbx":I
+    .end local v20    # "targetby":I
+    .end local v21    # "targetcx":I
+    .end local v22    # "targetcy":I
+    .end local v23    # "targetdx":I
+    .end local v24    # "targetdy":I
     :cond_205
-    const/16 v24, 0x0
+    const/16 v25, 0x0
 
     goto/16 :goto_ef
 
     .line 324
-    .restart local v4    # "dx":I
-    .restart local v5    # "dy":I
-    .restart local v15    # "ratio":F
-    .restart local v16    # "targetax":I
-    .restart local v17    # "targetay":I
-    .restart local v18    # "targetbx":I
-    .restart local v19    # "targetby":I
-    .restart local v20    # "targetcx":I
-    .restart local v21    # "targetcy":I
-    .restart local v22    # "targetdx":I
-    .restart local v23    # "targetdy":I
+    .restart local v5    # "dx":I
+    .restart local v6    # "dy":I
+    .restart local v16    # "ratio":F
+    .restart local v17    # "targetax":I
+    .restart local v18    # "targetay":I
+    .restart local v19    # "targetbx":I
+    .restart local v20    # "targetby":I
+    .restart local v21    # "targetcx":I
+    .restart local v22    # "targetcy":I
+    .restart local v23    # "targetdx":I
+    .restart local v24    # "targetdy":I
     :cond_209
-    const/16 v24, 0x4
+    const/16 v25, 0x4
 
-    move/from16 v0, v24
+    move/from16 v0, v25
 
     new-array v0, v0, [Lcom/google/zxing/aztec/detector/Detector$Point;
 
-    move-object/from16 v24, v0
+    move-object/from16 v25, v0
 
-    const/16 v25, 0x0
+    const/16 v26, 0x0
 
-    new-instance v26, Lcom/google/zxing/aztec/detector/Detector$Point;
+    new-instance v27, Lcom/google/zxing/aztec/detector/Detector$Point;
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move/from16 v1, v16
+    move/from16 v1, v17
 
-    move/from16 v2, v17
-
-    invoke-direct {v0, v1, v2}, Lcom/google/zxing/aztec/detector/Detector$Point;-><init>(II)V
-
-    aput-object v26, v24, v25
-
-    const/16 v25, 0x1
-
-    new-instance v26, Lcom/google/zxing/aztec/detector/Detector$Point;
-
-    move-object/from16 v0, v26
-
-    move/from16 v1, v18
-
-    move/from16 v2, v19
+    move/from16 v2, v18
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/aztec/detector/Detector$Point;-><init>(II)V
 
-    aput-object v26, v24, v25
+    aput-object v27, v25, v26
 
-    const/16 v25, 0x2
+    const/16 v26, 0x1
 
-    new-instance v26, Lcom/google/zxing/aztec/detector/Detector$Point;
+    new-instance v27, Lcom/google/zxing/aztec/detector/Detector$Point;
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v27
 
-    move/from16 v1, v20
+    move/from16 v1, v19
 
-    move/from16 v2, v21
-
-    invoke-direct {v0, v1, v2}, Lcom/google/zxing/aztec/detector/Detector$Point;-><init>(II)V
-
-    aput-object v26, v24, v25
-
-    const/16 v25, 0x3
-
-    new-instance v26, Lcom/google/zxing/aztec/detector/Detector$Point;
-
-    move-object/from16 v0, v26
-
-    move/from16 v1, v22
-
-    move/from16 v2, v23
+    move/from16 v2, v20
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/aztec/detector/Detector$Point;-><init>(II)V
 
-    aput-object v26, v24, v25
+    aput-object v27, v25, v26
 
-    return-object v24
+    const/16 v26, 0x2
+
+    new-instance v27, Lcom/google/zxing/aztec/detector/Detector$Point;
+
+    move-object/from16 v0, v27
+
+    move/from16 v1, v21
+
+    move/from16 v2, v22
+
+    invoke-direct {v0, v1, v2}, Lcom/google/zxing/aztec/detector/Detector$Point;-><init>(II)V
+
+    aput-object v27, v25, v26
+
+    const/16 v26, 0x3
+
+    new-instance v27, Lcom/google/zxing/aztec/detector/Detector$Point;
+
+    move-object/from16 v0, v27
+
+    move/from16 v1, v23
+
+    move/from16 v2, v24
+
+    invoke-direct {v0, v1, v2}, Lcom/google/zxing/aztec/detector/Detector$Point;-><init>(II)V
+
+    aput-object v27, v25, v26
+
+    return-object v25
 .end method
 
 .method private getColor(Lcom/google/zxing/aztec/detector/Detector$Point;Lcom/google/zxing/aztec/detector/Detector$Point;)I

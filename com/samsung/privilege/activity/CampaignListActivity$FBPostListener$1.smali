@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$FBPostListener$1;->this$1:Lcom/samsung/privilege/activity/CampaignListActivity$FBPostListener;
 
-    .line 2334
+    .line 2352
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 4
 
     .prologue
-    .line 2336
+    .line 2354
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$FBPostListener$1;->this$1:Lcom/samsung/privilege/activity/CampaignListActivity$FBPostListener;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity$FBPostListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
@@ -57,7 +57,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 2337
+    .line 2355
     .local v0, "imgLogo":Landroid/widget/ImageView;
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$FBPostListener$1;->this$1:Lcom/samsung/privilege/activity/CampaignListActivity$FBPostListener;
 
@@ -76,18 +76,18 @@
 
     if-eqz v1, :cond_26
 
-    .line 2338
-    const v1, 0x7f0202ba
+    .line 2356
+    const v1, 0x7f0202bc
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2342
+    .line 2360
     :goto_25
     return-void
 
-    .line 2340
+    .line 2358
     :cond_26
-    const v1, 0x7f0202b9
+    const v1, 0x7f0202bb
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 

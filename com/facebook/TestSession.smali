@@ -1444,7 +1444,7 @@
 .end method
 
 .method private validNameStringFromInteger(J)Ljava/lang/String;
-    .registers 11
+    .registers 12
     .param p1, "i"    # J
 
     .prologue

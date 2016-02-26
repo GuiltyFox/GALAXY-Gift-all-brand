@@ -182,10 +182,10 @@
 .end method
 
 .method private initHttpDiskCache()V
-    .registers 8
+    .registers 9
 
     .prologue
-    const-wide/32 v5, 0x3200000
+    const-wide/32 v6, 0x3200000
 
     .line 91
     iget-object v1, p0, Lcom/bitmapfun/util/ImageFetcher;->mHttpCacheDir:Ljava/io/File;
@@ -215,9 +215,9 @@
     :try_end_18
     .catchall {:try_start_13 .. :try_end_18} :catchall_39
 
-    move-result-wide v3
+    move-result-wide v4
 
-    cmp-long v1, v3, v5
+    cmp-long v1, v4, v6
 
     if-lez v1, :cond_2a
 
@@ -229,9 +229,9 @@
 
     const/4 v4, 0x1
 
-    const-wide/32 v5, 0x3200000
+    const-wide/32 v6, 0x3200000
 
-    invoke-static {v1, v3, v4, v5, v6}, Lcom/bitmapfun/util/DiskLruCache;->open(Ljava/io/File;IIJ)Lcom/bitmapfun/util/DiskLruCache;
+    invoke-static {v1, v3, v4, v6, v7}, Lcom/bitmapfun/util/DiskLruCache;->open(Ljava/io/File;IIJ)Lcom/bitmapfun/util/DiskLruCache;
 
     move-result-object v1
 

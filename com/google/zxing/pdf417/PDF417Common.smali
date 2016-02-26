@@ -5654,7 +5654,7 @@
 .end method
 
 .method private static findCodewordIndex(J)I
-    .registers 7
+    .registers 8
     .param p0, "symbol"    # J
 
     .prologue
@@ -5683,9 +5683,9 @@
 
     aget v3, v3, v1
 
-    int-to-long v3, v3
+    int-to-long v4, v3
 
-    cmp-long v3, p0, v3
+    cmp-long v3, p0, v4
 
     if-gez v3, :cond_15
 
@@ -5700,9 +5700,9 @@
 
     aget v3, v3, v1
 
-    int-to-long v3, v3
+    int-to-long v4, v3
 
-    cmp-long v3, p0, v3
+    cmp-long v3, p0, v4
 
     if-lez v3, :cond_22
 
@@ -5764,35 +5764,35 @@
     .param p0, "symbol"    # J
 
     .prologue
-    const/4 v3, -0x1
+    const/4 v1, -0x1
 
     .line 68
     const-wide/32 v4, 0x3ffff
 
-    and-long v1, p0, v4
+    and-long v2, p0, v4
 
     .line 69
-    .local v1, "sym":J
-    invoke-static {v1, v2}, Lcom/google/zxing/pdf417/PDF417Common;->findCodewordIndex(J)I
+    .local v2, "sym":J
+    invoke-static {v2, v3}, Lcom/google/zxing/pdf417/PDF417Common;->findCodewordIndex(J)I
 
     move-result v0
 
     .line 70
     .local v0, "i":I
-    if-ne v0, v3, :cond_d
+    if-ne v0, v1, :cond_d
 
     .line 73
     :goto_c
-    return v3
+    return v1
 
     :cond_d
-    sget-object v3, Lcom/google/zxing/pdf417/PDF417Common;->CODEWORD_TABLE:[I
+    sget-object v1, Lcom/google/zxing/pdf417/PDF417Common;->CODEWORD_TABLE:[I
 
-    aget v3, v3, v0
+    aget v1, v1, v0
 
-    add-int/lit8 v3, v3, -0x1
+    add-int/lit8 v1, v1, -0x1
 
-    rem-int/lit16 v3, v3, 0x3a1
+    rem-int/lit16 v1, v1, 0x3a1
 
     goto :goto_c
 .end method

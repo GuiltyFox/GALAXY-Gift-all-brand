@@ -34,27 +34,27 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 953
+    .line 954
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$RedeemListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     invoke-direct {p0}, Lcom/samsung/privilege/util/http/HttpRQListener;-><init>()V
 
-    .line 950
+    .line 951
     iput-boolean v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$RedeemListener;->gIsShowSerial:Z
 
-    .line 951
+    .line 952
     iput-boolean v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$RedeemListener;->gIsGotoWebsite:Z
 
-    .line 954
+    .line 955
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$RedeemListener;->gCampaign:Lcom/samsung/privilege/bean/CampaignView;
 
-    .line 955
+    .line 956
     iput-boolean p3, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$RedeemListener;->gIsShowSerial:Z
 
-    .line 956
+    .line 957
     iput-boolean p4, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$RedeemListener;->gIsGotoWebsite:Z
 
-    .line 957
+    .line 958
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .registers 2
 
     .prologue
-    .line 950
+    .line 951
     iget-boolean v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$RedeemListener;->gIsShowSerial:Z
 
     return v0
@@ -72,7 +72,7 @@
     .registers 2
 
     .prologue
-    .line 949
+    .line 950
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$RedeemListener;->gCampaign:Lcom/samsung/privilege/bean/CampaignView;
 
     return-object v0
@@ -82,7 +82,7 @@
     .registers 2
 
     .prologue
-    .line 951
+    .line 952
     iget-boolean v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$RedeemListener;->gIsGotoWebsite:Z
 
     return v0
@@ -92,7 +92,7 @@
     .registers 2
 
     .prologue
-    .line 947
+    .line 948
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$RedeemListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     return-object v0
@@ -107,7 +107,7 @@
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 961
+    .line 962
     const-string v2, "campaign.detail"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -136,7 +136,7 @@
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 963
+    .line 964
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$RedeemListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     invoke-virtual {v2}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getApplicationContext()Landroid/content/Context;
@@ -149,18 +149,18 @@
 
     if-eqz v2, :cond_87
 
-    .line 964
+    .line 965
     new-instance v0, Ljava/util/Date;
 
     invoke-direct {v0}, Ljava/util/Date;-><init>()V
 
-    .line 965
+    .line 966
     .local v0, "date":Ljava/util/Date;
     const/16 v2, 0xc8
 
     if-ne p1, v2, :cond_cc
 
-    .line 966
+    .line 967
     const-string v2, "REDEEM"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -243,7 +243,7 @@
 
     invoke-static {v2, v3, v4}, Lcom/samsung/privilege/AppSetting;->LOG(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 972
+    .line 973
     .end local v0    # "date":Ljava/util/Date;
     :cond_87
     :goto_87
@@ -263,7 +263,7 @@
 
     move-result-object v1
 
-    .line 974
+    .line 975
     .local v1, "response_text_final":Ljava/lang/String;
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$RedeemListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
@@ -274,7 +274,7 @@
 
     invoke-virtual {v2}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 976
+    .line 977
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$RedeemListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     new-instance v3, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$RedeemListener$1;
@@ -283,13 +283,13 @@
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1090
+    .line 1091
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$RedeemListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     # invokes: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getPoints()V
     invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->access$9(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;)V
 
-    .line 1091
+    .line 1092
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$RedeemListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$RedeemListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -314,17 +314,17 @@
     # invokes: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getCampaign(ILcom/samsung/privilege/bean/NFCTag;)V
     invoke-static {v2, v3, v4}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->access$11(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;ILcom/samsung/privilege/bean/NFCTag;)V
 
-    .line 1093
+    .line 1094
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$RedeemListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     const/4 v3, 0x0
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->access$12(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;Z)V
 
-    .line 1094
+    .line 1095
     return-void
 
-    .line 968
+    .line 969
     .end local v1    # "response_text_final":Ljava/lang/String;
     .restart local v0    # "date":Ljava/util/Date;
     :cond_cc

@@ -73,20 +73,20 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 82
+    .line 83
     invoke-direct {p0}, Landroid/support/v4/app/Fragment;-><init>()V
 
-    .line 83
+    .line 84
     const-string v0, "gift.dashboard.fragment.lc"
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->LOGCATLC:Ljava/lang/String;
 
-    .line 84
+    .line 85
     const-string v0, "gift.dashboard"
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->LOGCAT:Ljava/lang/String;
 
-    .line 86
+    .line 87
     const-class v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -95,36 +95,36 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->TAG:Ljava/lang/String;
 
-    .line 93
+    .line 94
     new-instance v0, Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     invoke-direct {v0}, Lcom/samsung/privilege/holder/DashboardNewHolder;-><init>()V
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
-    .line 98
-    const-string v0, "Dashboard"
+    .line 99
+    const-string v0, "Hot Privilege"
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
 
-    .line 110
+    .line 111
     iput-boolean v1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->booleanCancelRunnable:Z
 
-    .line 111
+    .line 112
     iput-boolean v1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->doRedeeming:Z
 
-    .line 112
+    .line 113
     iput-boolean v1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gIsSendGA:Z
 
-    .line 600
+    .line 606
     iput-boolean v1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gIsUpdateViewForUser:Z
 
-    .line 82
+    .line 83
     return-void
 .end method
 
 .method private InitialDashboardItemBig(Lcom/samsung/privilege/bean/DashboardItem;Landroid/view/ViewGroup;ZZZ)Landroid/view/View;
-    .registers 27
+    .registers 25
     .param p1, "dashboardItem"    # Lcom/samsung/privilege/bean/DashboardItem;
     .param p2, "root"    # Landroid/view/ViewGroup;
     .param p3, "attachToRoot"    # Z
@@ -132,7 +132,7 @@
     .param p5, "is_bottom"    # Z
 
     .prologue
-    .line 1272
+    .line 1314
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -145,7 +145,7 @@
 
     check-cast v9, Landroid/view/LayoutInflater;
 
-    .line 1273
+    .line 1315
     .local v9, "inflater":Landroid/view/LayoutInflater;
     const v2, 0x7f0300c9
 
@@ -157,11 +157,11 @@
 
     move-result-object v17
 
-    .line 1275
+    .line 1317
     .local v17, "viewDashboardItem":Landroid/view/View;
     if-eqz p4, :cond_27
 
-    .line 1276
+    .line 1318
     const/high16 v2, 0x7f1c0000
 
     move-object/from16 v0, v17
@@ -170,7 +170,7 @@
 
     move-result-object v18
 
-    .line 1277
+    .line 1319
     .local v18, "viewTop":Landroid/view/View;
     const/4 v2, 0x0
 
@@ -178,12 +178,12 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1279
+    .line 1321
     .end local v18    # "viewTop":Landroid/view/View;
     :cond_27
     if-eqz p5, :cond_38
 
-    .line 1280
+    .line 1322
     const v2, 0x7f1c0003
 
     move-object/from16 v0, v17
@@ -192,7 +192,7 @@
 
     move-result-object v16
 
-    .line 1281
+    .line 1323
     .local v16, "viewBottom":Landroid/view/View;
     const/4 v2, 0x0
 
@@ -200,7 +200,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1284
+    .line 1326
     .end local v16    # "viewBottom":Landroid/view/View;
     :cond_38
     const v2, 0x7f1c0001
@@ -213,7 +213,7 @@
 
     check-cast v4, Landroid/widget/ImageView;
 
-    .line 1285
+    .line 1327
     .local v4, "imgPhoto":Landroid/widget/ImageView;
     move-object/from16 v0, p0
 
@@ -225,13 +225,13 @@
 
     const/4 v5, 0x0
 
-    const v6, 0x7f02039f
+    const v6, 0x7f0203a7
 
     const/4 v7, 0x0
 
     invoke-virtual/range {v2 .. v7}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
 
-    .line 1287
+    .line 1329
     invoke-virtual {v4}, Landroid/widget/ImageView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v2
@@ -244,14 +244,14 @@
 
     invoke-virtual {v2, v3}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 1300
+    .line 1342
     invoke-virtual/range {p1 .. p1}, Lcom/samsung/privilege/bean/DashboardItem;->image_url_large()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v4, v2}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 1302
+    .line 1344
     const v2, 0x7f1c0002
 
     move-object/from16 v0, v17
@@ -262,13 +262,13 @@
 
     check-cast v13, Landroid/widget/TextView;
 
-    .line 1303
+    .line 1345
     .local v13, "tvCaption":Landroid/widget/TextView;
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
 
-    if-eqz v2, :cond_1a4
+    if-eqz v2, :cond_182
 
     move-object/from16 v0, p1
 
@@ -280,9 +280,9 @@
 
     move-result v2
 
-    if-nez v2, :cond_1a4
+    if-nez v2, :cond_182
 
-    .line 1304
+    .line 1346
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -307,11 +307,11 @@
 
     move-result-object v8
 
-    .line 1305
+    .line 1347
     .local v8, "fontDefault":Landroid/graphics/Typeface;
     invoke-virtual {v13, v8}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1306
+    .line 1348
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -322,7 +322,7 @@
 
     invoke-virtual {v13, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1307
+    .line 1349
     invoke-virtual {v13}, Landroid/widget/TextView;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
@@ -331,28 +331,28 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 1308
+    .line 1350
     const/4 v2, 0x0
 
     invoke-virtual {v13, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1309
+    .line 1351
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
 
     invoke-virtual {v13, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1314
+    .line 1356
     .end local v8    # "fontDefault":Landroid/graphics/Typeface;
     :goto_bf
     move-object/from16 v0, p1
 
     iget-boolean v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_showcode:Z
 
-    if-eqz v2, :cond_1d5
+    if-eqz v2, :cond_1b3
 
-    .line 1315
+    .line 1357
     const v2, 0x7f1c000d
 
     move-object/from16 v0, v17
@@ -363,7 +363,7 @@
 
     check-cast v11, Landroid/widget/LinearLayout;
 
-    .line 1316
+    .line 1358
     .local v11, "layoutLastCode":Landroid/widget/LinearLayout;
     const v2, 0x7f1c000e
 
@@ -375,7 +375,7 @@
 
     check-cast v14, Landroid/widget/TextView;
 
-    .line 1317
+    .line 1359
     .local v14, "tvLastCode":Landroid/widget/TextView;
     const v2, 0x7f1c000f
 
@@ -387,7 +387,7 @@
 
     check-cast v15, Landroid/widget/TextView;
 
-    .line 1318
+    .line 1360
     .local v15, "tvLastCodeDesc":Landroid/widget/TextView;
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -397,7 +397,7 @@
 
     invoke-static {v14, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1319
+    .line 1361
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -406,7 +406,7 @@
 
     invoke-static {v15, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1320
+    .line 1362
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -421,7 +421,7 @@
 
     invoke-virtual {v14, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1321
+    .line 1363
     invoke-virtual {v14}, Landroid/widget/TextView;->getPaintFlags()I
 
     move-result v2
@@ -430,7 +430,7 @@
 
     invoke-virtual {v14, v2}, Landroid/widget/TextView;->setPaintFlags(I)V
 
-    .line 1322
+    .line 1364
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -445,7 +445,7 @@
 
     invoke-virtual {v15, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1323
+    .line 1365
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -462,9 +462,9 @@
 
     move-result-object v10
 
-    .line 1324
+    .line 1366
     .local v10, "lastCode":Ljava/lang/String;
-    if-eqz v10, :cond_1cf
+    if-eqz v10, :cond_1ad
 
     const-string v2, ""
 
@@ -472,9 +472,9 @@
 
     move-result v2
 
-    if-nez v2, :cond_1cf
+    if-nez v2, :cond_1ad
 
-    .line 1325
+    .line 1367
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -491,9 +491,9 @@
 
     move-result-object v12
 
-    .line 1326
+    .line 1368
     .local v12, "strPrivilegeMessage":Ljava/lang/String;
-    if-eqz v12, :cond_1ab
+    if-eqz v12, :cond_189
 
     const-string v2, ""
 
@@ -501,24 +501,24 @@
 
     move-result v2
 
-    if-nez v2, :cond_1ab
+    if-nez v2, :cond_189
 
-    .line 1327
+    .line 1369
     const/16 v2, 0x8
 
     invoke-virtual {v14, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1328
+    .line 1370
     invoke-virtual {v15, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1335
+    .line 1377
     :cond_157
     :goto_157
     const/4 v2, 0x0
 
     invoke-virtual {v11, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 1344
+    .line 1386
     .end local v10    # "lastCode":Ljava/lang/String;
     .end local v12    # "strPrivilegeMessage":Ljava/lang/String;
     .end local v14    # "tvLastCode":Landroid/widget/TextView;
@@ -536,12 +536,12 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1353
+    .line 1395
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
 
-    if-eqz v2, :cond_1a3
+    if-eqz v2, :cond_178
 
     move-object/from16 v0, p1
 
@@ -551,72 +551,38 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
-
-    if-nez v2, :cond_1a3
-
-    .line 1354
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+    .line 1399
+    :cond_178
+    const-string v2, "View"
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+    move-object/from16 v1, p1
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    invoke-direct {v0, v2, v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->sendGA(Ljava/lang/String;Lcom/samsung/privilege/bean/DashboardItem;)V
 
-    const-string v6, "View "
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, p1
-
-    iget-object v6, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    move-object/from16 v0, p1
-
-    iget-object v6, v0, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
-
-    const-wide/16 v19, 0x1
-
-    invoke-static/range {v19 .. v20}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v7
-
-    invoke-virtual {v2, v3, v5, v6, v7}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-
-    .line 1357
-    :cond_1a3
+    .line 1401
     return-object v17
 
-    .line 1311
+    .line 1353
     .end local v11    # "layoutLastCode":Landroid/widget/LinearLayout;
-    :cond_1a4
+    :cond_182
     const/16 v2, 0x8
 
     invoke-virtual {v13, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto/16 :goto_bf
 
-    .line 1330
+    .line 1372
     .restart local v10    # "lastCode":Ljava/lang/String;
     .restart local v11    # "layoutLastCode":Landroid/widget/LinearLayout;
     .restart local v12    # "strPrivilegeMessage":Ljava/lang/String;
     .restart local v14    # "tvLastCode":Landroid/widget/TextView;
     .restart local v15    # "tvLastCodeDesc":Landroid/widget/TextView;
-    :cond_1ab
+    :cond_189
     invoke-virtual {v14, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1331
+    .line 1373
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_url:Ljava/lang/String;
@@ -635,12 +601,12 @@
 
     if-nez v2, :cond_157
 
-    .line 1332
+    .line 1374
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
 
-    const v3, 0x7f0a0180
+    const v3, 0x7f090180
 
     invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -650,21 +616,21 @@
 
     goto :goto_157
 
-    .line 1337
+    .line 1379
     .end local v12    # "strPrivilegeMessage":Ljava/lang/String;
-    :cond_1cf
+    :cond_1ad
     const/16 v2, 0x8
 
     invoke-virtual {v11, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     goto :goto_15b
 
-    .line 1340
+    .line 1382
     .end local v10    # "lastCode":Ljava/lang/String;
     .end local v11    # "layoutLastCode":Landroid/widget/LinearLayout;
     .end local v14    # "tvLastCode":Landroid/widget/TextView;
     .end local v15    # "tvLastCodeDesc":Landroid/widget/TextView;
-    :cond_1d5
+    :cond_1b3
     const v2, 0x7f1c000d
 
     move-object/from16 v0, v17
@@ -675,17 +641,17 @@
 
     check-cast v11, Landroid/widget/LinearLayout;
 
-    .line 1341
+    .line 1383
     .restart local v11    # "layoutLastCode":Landroid/widget/LinearLayout;
     const/16 v2, 0x8
 
     invoke-virtual {v11, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    goto/16 :goto_15b
+    goto :goto_15b
 .end method
 
 .method private InitialDashboardItemBigAutoRedeem(Lcom/samsung/privilege/bean/DashboardItem;Landroid/view/ViewGroup;ZZZ)Landroid/view/View;
-    .registers 29
+    .registers 27
     .param p1, "dashboardItem"    # Lcom/samsung/privilege/bean/DashboardItem;
     .param p2, "root"    # Landroid/view/ViewGroup;
     .param p3, "attachToRoot"    # Z
@@ -693,7 +659,7 @@
     .param p5, "is_bottom"    # Z
 
     .prologue
-    .line 1361
+    .line 1405
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -706,7 +672,7 @@
 
     check-cast v8, Landroid/view/LayoutInflater;
 
-    .line 1362
+    .line 1406
     .local v8, "inflater":Landroid/view/LayoutInflater;
     const v2, 0x7f0300ca
 
@@ -718,11 +684,11 @@
 
     move-result-object v19
 
-    .line 1364
+    .line 1408
     .local v19, "viewDashboardItem":Landroid/view/View;
     if-eqz p4, :cond_27
 
-    .line 1365
+    .line 1409
     const/high16 v2, 0x7f1c0000
 
     move-object/from16 v0, v19
@@ -731,7 +697,7 @@
 
     move-result-object v20
 
-    .line 1366
+    .line 1410
     .local v20, "viewTop":Landroid/view/View;
     const/4 v2, 0x0
 
@@ -739,12 +705,12 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1368
+    .line 1412
     .end local v20    # "viewTop":Landroid/view/View;
     :cond_27
     if-eqz p5, :cond_38
 
-    .line 1369
+    .line 1413
     const v2, 0x7f1c0003
 
     move-object/from16 v0, v19
@@ -753,7 +719,7 @@
 
     move-result-object v18
 
-    .line 1370
+    .line 1414
     .local v18, "viewBottom":Landroid/view/View;
     const/4 v2, 0x0
 
@@ -761,7 +727,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1373
+    .line 1417
     .end local v18    # "viewBottom":Landroid/view/View;
     :cond_38
     const v2, 0x7f1c0001
@@ -774,7 +740,7 @@
 
     check-cast v4, Landroid/widget/ImageView;
 
-    .line 1374
+    .line 1418
     .local v4, "imgPhoto":Landroid/widget/ImageView;
     move-object/from16 v0, p0
 
@@ -786,20 +752,20 @@
 
     const/4 v5, 0x0
 
-    const v6, 0x7f02039f
+    const v6, 0x7f0203a7
 
     const/4 v7, 0x0
 
     invoke-virtual/range {v2 .. v7}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
 
-    .line 1375
+    .line 1419
     invoke-virtual/range {p1 .. p1}, Lcom/samsung/privilege/bean/DashboardItem;->image_url_large()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v4, v2}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 1377
+    .line 1421
     const v2, 0x7f1c0012
 
     move-object/from16 v0, v19
@@ -810,7 +776,7 @@
 
     check-cast v14, Landroid/widget/TextView;
 
-    .line 1378
+    .line 1422
     .local v14, "tvLine1":Landroid/widget/TextView;
     const v2, 0x7f1c0013
 
@@ -822,7 +788,7 @@
 
     check-cast v15, Landroid/widget/TextView;
 
-    .line 1379
+    .line 1423
     .local v15, "tvLine2":Landroid/widget/TextView;
     const v2, 0x7f1c0014
 
@@ -834,7 +800,7 @@
 
     check-cast v16, Landroid/widget/TextView;
 
-    .line 1380
+    .line 1424
     .local v16, "tvLine3":Landroid/widget/TextView;
     const v2, 0x7f1c0015
 
@@ -846,7 +812,7 @@
 
     check-cast v17, Landroid/widget/TextView;
 
-    .line 1382
+    .line 1426
     .local v17, "tvLine4":Landroid/widget/TextView;
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -856,7 +822,7 @@
 
     invoke-static {v14, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1383
+    .line 1427
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -865,7 +831,7 @@
 
     invoke-static {v15, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1384
+    .line 1428
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -876,7 +842,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1385
+    .line 1429
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -887,7 +853,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1387
+    .line 1431
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -902,7 +868,7 @@
 
     invoke-virtual {v14, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1388
+    .line 1432
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -917,7 +883,7 @@
 
     invoke-virtual {v15, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1389
+    .line 1433
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -934,7 +900,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1390
+    .line 1434
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -951,21 +917,21 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1392
+    .line 1436
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
 
     invoke-virtual {v14, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1393
+    .line 1437
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->line2:Ljava/lang/String;
 
     invoke-virtual {v15, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1394
+    .line 1438
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -980,7 +946,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1395
+    .line 1439
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -995,14 +961,14 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1397
+    .line 1441
     move-object/from16 v0, p1
 
     iget-boolean v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_showcode:Z
 
-    if-eqz v2, :cond_221
+    if-eqz v2, :cond_1ff
 
-    .line 1398
+    .line 1442
     const v2, 0x7f1c000d
 
     move-object/from16 v0, v19
@@ -1013,7 +979,7 @@
 
     check-cast v10, Landroid/widget/LinearLayout;
 
-    .line 1399
+    .line 1443
     .local v10, "layoutLastCode":Landroid/widget/LinearLayout;
     const v2, 0x7f1c000e
 
@@ -1025,7 +991,7 @@
 
     check-cast v12, Landroid/widget/TextView;
 
-    .line 1400
+    .line 1444
     .local v12, "tvLastCode":Landroid/widget/TextView;
     const v2, 0x7f1c000f
 
@@ -1037,7 +1003,7 @@
 
     check-cast v13, Landroid/widget/TextView;
 
-    .line 1401
+    .line 1445
     .local v13, "tvLastCodeDesc":Landroid/widget/TextView;
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -1047,7 +1013,7 @@
 
     invoke-static {v12, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1402
+    .line 1446
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -1056,7 +1022,7 @@
 
     invoke-static {v13, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1403
+    .line 1447
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -1071,7 +1037,7 @@
 
     invoke-virtual {v12, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1404
+    .line 1448
     invoke-virtual {v12}, Landroid/widget/TextView;->getPaintFlags()I
 
     move-result v2
@@ -1080,7 +1046,7 @@
 
     invoke-virtual {v12, v2}, Landroid/widget/TextView;->setPaintFlags(I)V
 
-    .line 1405
+    .line 1449
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -1095,7 +1061,7 @@
 
     invoke-virtual {v13, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1406
+    .line 1450
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -1112,9 +1078,9 @@
 
     move-result-object v9
 
-    .line 1407
+    .line 1451
     .local v9, "lastCode":Ljava/lang/String;
-    if-eqz v9, :cond_21b
+    if-eqz v9, :cond_1f9
 
     const-string v2, ""
 
@@ -1122,9 +1088,9 @@
 
     move-result v2
 
-    if-nez v2, :cond_21b
+    if-nez v2, :cond_1f9
 
-    .line 1408
+    .line 1452
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -1141,9 +1107,9 @@
 
     move-result-object v11
 
-    .line 1409
+    .line 1453
     .local v11, "strPrivilegeMessage":Ljava/lang/String;
-    if-eqz v11, :cond_1f7
+    if-eqz v11, :cond_1d5
 
     const-string v2, ""
 
@@ -1151,24 +1117,24 @@
 
     move-result v2
 
-    if-nez v2, :cond_1f7
+    if-nez v2, :cond_1d5
 
-    .line 1410
+    .line 1454
     const/16 v2, 0x8
 
     invoke-virtual {v12, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1411
+    .line 1455
     invoke-virtual {v13, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1418
+    .line 1462
     :cond_1aa
     :goto_1aa
     const/4 v2, 0x0
 
     invoke-virtual {v10, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 1427
+    .line 1471
     .end local v9    # "lastCode":Ljava/lang/String;
     .end local v11    # "strPrivilegeMessage":Ljava/lang/String;
     .end local v12    # "tvLastCode":Landroid/widget/TextView;
@@ -1186,12 +1152,12 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1434
+    .line 1478
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
 
-    if-eqz v2, :cond_1f6
+    if-eqz v2, :cond_1cb
 
     move-object/from16 v0, p1
 
@@ -1201,62 +1167,28 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
-
-    if-nez v2, :cond_1f6
-
-    .line 1435
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+    .line 1482
+    :cond_1cb
+    const-string v2, "View"
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+    move-object/from16 v1, p1
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    invoke-direct {v0, v2, v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->sendGA(Ljava/lang/String;Lcom/samsung/privilege/bean/DashboardItem;)V
 
-    const-string v6, "View "
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, p1
-
-    iget-object v6, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    move-object/from16 v0, p1
-
-    iget-object v6, v0, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
-
-    const-wide/16 v21, 0x1
-
-    invoke-static/range {v21 .. v22}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v7
-
-    invoke-virtual {v2, v3, v5, v6, v7}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-
-    .line 1438
-    :cond_1f6
+    .line 1484
     return-object v19
 
-    .line 1413
+    .line 1457
     .restart local v9    # "lastCode":Ljava/lang/String;
     .restart local v11    # "strPrivilegeMessage":Ljava/lang/String;
     .restart local v12    # "tvLastCode":Landroid/widget/TextView;
     .restart local v13    # "tvLastCodeDesc":Landroid/widget/TextView;
-    :cond_1f7
+    :cond_1d5
     invoke-virtual {v12, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1414
+    .line 1458
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_url:Ljava/lang/String;
@@ -1275,12 +1207,12 @@
 
     if-nez v2, :cond_1aa
 
-    .line 1415
+    .line 1459
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
 
-    const v3, 0x7f0a0180
+    const v3, 0x7f090180
 
     invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -1290,21 +1222,21 @@
 
     goto :goto_1aa
 
-    .line 1420
+    .line 1464
     .end local v11    # "strPrivilegeMessage":Ljava/lang/String;
-    :cond_21b
+    :cond_1f9
     const/16 v2, 0x8
 
     invoke-virtual {v10, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     goto :goto_1ae
 
-    .line 1423
+    .line 1467
     .end local v9    # "lastCode":Ljava/lang/String;
     .end local v10    # "layoutLastCode":Landroid/widget/LinearLayout;
     .end local v12    # "tvLastCode":Landroid/widget/TextView;
     .end local v13    # "tvLastCodeDesc":Landroid/widget/TextView;
-    :cond_221
+    :cond_1ff
     const v2, 0x7f1c000d
 
     move-object/from16 v0, v19
@@ -1315,13 +1247,13 @@
 
     check-cast v10, Landroid/widget/LinearLayout;
 
-    .line 1424
+    .line 1468
     .restart local v10    # "layoutLastCode":Landroid/widget/LinearLayout;
     const/16 v2, 0x8
 
     invoke-virtual {v10, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    goto/16 :goto_1ae
+    goto :goto_1ae
 .end method
 
 .method private InitialDashboardItemBigPager(Lcom/samsung/privilege/bean/DashboardItem;ZZ)Landroid/view/View;
@@ -1331,7 +1263,7 @@
     .param p3, "is_bottom"    # Z
 
     .prologue
-    .line 1442
+    .line 1488
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -1344,7 +1276,7 @@
 
     check-cast v6, Landroid/view/LayoutInflater;
 
-    .line 1443
+    .line 1489
     .local v6, "inflater":Landroid/view/LayoutInflater;
     const v2, 0x7f0300cb
 
@@ -1354,7 +1286,7 @@
 
     move-result-object v12
 
-    .line 1444
+    .line 1490
     .local v12, "viewDashboardItem":Landroid/view/View;
     const v2, 0x7f1c0004
 
@@ -1364,42 +1296,42 @@
 
     check-cast v10, Landroid/support/v4/view/ViewPager;
 
-    .line 1446
+    .line 1492
     .local v10, "pagerPhoto":Landroid/support/v4/view/ViewPager;
     if-eqz p2, :cond_29
 
-    .line 1447
+    .line 1493
     const/high16 v2, 0x7f1c0000
 
     invoke-virtual {v12, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v13
 
-    .line 1448
+    .line 1494
     .local v13, "viewTop":Landroid/view/View;
     const/4 v2, 0x0
 
     invoke-virtual {v13, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1450
+    .line 1496
     .end local v13    # "viewTop":Landroid/view/View;
     :cond_29
     if-eqz p3, :cond_36
 
-    .line 1451
+    .line 1497
     const v2, 0x7f1c0003
 
     invoke-virtual {v12, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v11
 
-    .line 1452
+    .line 1498
     .local v11, "viewBottom":Landroid/view/View;
     const/4 v2, 0x0
 
     invoke-virtual {v11, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1455
+    .line 1501
     .end local v11    # "viewBottom":Landroid/view/View;
     :cond_36
     invoke-virtual {v10}, Landroid/support/v4/view/ViewPager;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -1412,7 +1344,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 1469
+    .line 1515
     new-instance v9, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardItemPagerAdapter;
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -1423,11 +1355,11 @@
 
     invoke-direct {v9, p0, v2, v3}, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardItemPagerAdapter;-><init>(Lcom/samsung/privilege/activity/DashboardFragmentNew;Landroid/content/Context;Ljava/util/ArrayList;)V
 
-    .line 1470
+    .line 1516
     .local v9, "objDashboardItemPagerAdapter":Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardItemPagerAdapter;
     invoke-virtual {v10, v9}, Landroid/support/v4/view/ViewPager;->setAdapter(Landroid/support/v4/view/PagerAdapter;)V
 
-    .line 1472
+    .line 1518
     const v2, 0x7f1c0005
 
     invoke-virtual {v12, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1436,7 +1368,7 @@
 
     check-cast v8, Landroid/widget/RelativeLayout;
 
-    .line 1473
+    .line 1519
     .local v8, "layoutPagerPrev":Landroid/widget/RelativeLayout;
     new-instance v2, Lcom/samsung/privilege/activity/DashboardFragmentNew$8;
 
@@ -1444,7 +1376,7 @@
 
     invoke-virtual {v8, v2}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1490
+    .line 1536
     const v2, 0x7f1c0006
 
     invoke-virtual {v12, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1453,7 +1385,7 @@
 
     check-cast v7, Landroid/widget/RelativeLayout;
 
-    .line 1491
+    .line 1537
     .local v7, "layoutPagerNext":Landroid/widget/RelativeLayout;
     new-instance v2, Lcom/samsung/privilege/activity/DashboardFragmentNew$9;
 
@@ -1461,18 +1393,18 @@
 
     invoke-virtual {v7, v2}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1508
+    .line 1554
     new-instance v0, Ljava/util/Timer;
 
     invoke-direct {v0}, Ljava/util/Timer;-><init>()V
 
-    .line 1509
+    .line 1555
     .local v0, "timer":Ljava/util/Timer;
     new-instance v1, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;
 
     invoke-direct {v1, p0, v10}, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;-><init>(Lcom/samsung/privilege/activity/DashboardFragmentNew;Landroid/support/v4/view/ViewPager;)V
 
-    .line 1510
+    .line 1556
     .local v1, "taskSlideImage":Ljava/util/TimerTask;
     const-wide/16 v2, 0x1388
 
@@ -1480,7 +1412,7 @@
 
     invoke-virtual/range {v0 .. v5}, Ljava/util/Timer;->scheduleAtFixedRate(Ljava/util/TimerTask;JJ)V
 
-    .line 1512
+    .line 1558
     return-object v12
 .end method
 
@@ -1493,7 +1425,7 @@
     .param p5, "is_bottom"    # Z
 
     .prologue
-    .line 1245
+    .line 1251
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -1506,7 +1438,7 @@
 
     check-cast v7, Landroid/view/LayoutInflater;
 
-    .line 1246
+    .line 1252
     .local v7, "inflater":Landroid/view/LayoutInflater;
     const v0, 0x7f0300cc
 
@@ -1514,42 +1446,42 @@
 
     move-result-object v10
 
-    .line 1248
+    .line 1254
     .local v10, "viewDashboardItem":Landroid/view/View;
     if-eqz p4, :cond_20
 
-    .line 1249
-    const v0, 0x7f0702fc
+    .line 1255
+    const v0, 0x7f0c02fc
 
     invoke-virtual {v10, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v11
 
-    .line 1250
+    .line 1256
     .local v11, "viewTop":Landroid/view/View;
     const/4 v0, 0x0
 
     invoke-virtual {v11, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1252
+    .line 1258
     .end local v11    # "viewTop":Landroid/view/View;
     :cond_20
     if-eqz p5, :cond_2d
 
-    .line 1253
-    const v0, 0x7f0702ff
+    .line 1259
+    const v0, 0x7f0c02ff
 
     invoke-virtual {v10, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v9
 
-    .line 1254
+    .line 1260
     .local v9, "viewBottom":Landroid/view/View;
     const/4 v0, 0x0
 
     invoke-virtual {v9, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1257
+    .line 1263
     .end local v9    # "viewBottom":Landroid/view/View;
     :cond_2d
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -1576,9 +1508,9 @@
 
     move-result-object v6
 
-    .line 1258
+    .line 1264
     .local v6, "fontDefault":Landroid/graphics/Typeface;
-    const v0, 0x7f0702fe
+    const v0, 0x7f0c02fe
 
     invoke-virtual {v10, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1586,13 +1518,13 @@
 
     check-cast v8, Landroid/widget/TextView;
 
-    .line 1259
+    .line 1265
     .local v8, "tvCatName":Landroid/widget/TextView;
     const/4 v0, 0x1
 
     invoke-virtual {v8, v6, v0}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
 
-    .line 1260
+    .line 1266
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -1603,7 +1535,22 @@
 
     invoke-virtual {v8, v0}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1262
+    .line 1268
+    iget-object v0, p1, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
+
+    if-eqz v0, :cond_98
+
+    iget-object v0, p1, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
+
+    const-string v3, ""
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_98
+
+    .line 1269
     iget-object v0, p1, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
@@ -1612,8 +1559,10 @@
 
     invoke-virtual {v8, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1264
-    const v0, 0x7f0702fd
+    .line 1278
+    :cond_74
+    :goto_74
+    const v0, 0x7f0c02fd
 
     invoke-virtual {v10, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1621,8 +1570,106 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    .line 1265
+    .line 1279
     .local v2, "imgCatIcon":Landroid/widget/ImageView;
+    iget-object v0, p1, Lcom/samsung/privilege/bean/DashboardItem;->cat_header_image:Ljava/lang/String;
+
+    if-eqz v0, :cond_c2
+
+    iget-object v0, p1, Lcom/samsung/privilege/bean/DashboardItem;->cat_header_image:Ljava/lang/String;
+
+    const-string v3, ""
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_c2
+
+    .line 1280
+    iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
+
+    iget-object v1, p1, Lcom/samsung/privilege/bean/DashboardItem;->cat_header_image:Ljava/lang/String;
+
+    const/4 v3, 0x0
+
+    const v4, 0x7f0202cc
+
+    const/4 v5, 0x1
+
+    invoke-virtual/range {v0 .. v5}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
+
+    .line 1288
+    :goto_97
+    return-object v10
+
+    .line 1270
+    .end local v2    # "imgCatIcon":Landroid/widget/ImageView;
+    :cond_98
+    iget-object v0, p1, Lcom/samsung/privilege/bean/DashboardItem;->cat_header_en:Ljava/lang/String;
+
+    if-eqz v0, :cond_74
+
+    iget-object v0, p1, Lcom/samsung/privilege/bean/DashboardItem;->cat_header_en:Ljava/lang/String;
+
+    const-string v3, ""
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_74
+
+    .line 1271
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/samsung/privilege/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v3, "1054"
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_bc
+
+    .line 1272
+    iget-object v0, p1, Lcom/samsung/privilege/bean/DashboardItem;->cat_header_th:Ljava/lang/String;
+
+    invoke-virtual {v8, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_74
+
+    .line 1274
+    :cond_bc
+    iget-object v0, p1, Lcom/samsung/privilege/bean/DashboardItem;->cat_header_en:Ljava/lang/String;
+
+    invoke-virtual {v8, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_74
+
+    .line 1281
+    .restart local v2    # "imgCatIcon":Landroid/widget/ImageView;
+    :cond_c2
+    iget-object v0, p1, Lcom/samsung/privilege/bean/DashboardItem;->cat:Ljava/lang/String;
+
+    if-eqz v0, :cond_fc
+
+    iget-object v0, p1, Lcom/samsung/privilege/bean/DashboardItem;->cat:Ljava/lang/String;
+
+    const-string v3, ""
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_fc
+
+    .line 1282
     new-instance v0, Ljava/lang/StringBuilder;
 
     sget-object v3, Lic/buzzebeeslib/LibConst;->API_URL_BUZZEBEES:Ljava/lang/String;
@@ -1655,24 +1702,32 @@
 
     move-result-object v1
 
-    .line 1266
+    .line 1283
     .local v1, "cat_img_url":Ljava/lang/String;
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
     const/4 v3, 0x0
 
-    const v4, 0x7f0202ca
+    const v4, 0x7f0202cc
 
     const/4 v5, 0x1
 
     invoke-virtual/range {v0 .. v5}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
 
-    .line 1268
-    return-object v10
+    goto :goto_97
+
+    .line 1285
+    .end local v1    # "cat_img_url":Ljava/lang/String;
+    :cond_fc
+    const v0, 0x7f0202bb
+
+    invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    goto :goto_97
 .end method
 
 .method private InitialDashboardItemMedium(Lcom/samsung/privilege/bean/DashboardItem;Landroid/view/ViewGroup;ZZZ)Landroid/view/View;
-    .registers 27
+    .registers 25
     .param p1, "dashboardItem"    # Lcom/samsung/privilege/bean/DashboardItem;
     .param p2, "root"    # Landroid/view/ViewGroup;
     .param p3, "attachToRoot"    # Z
@@ -1680,7 +1735,7 @@
     .param p5, "is_bottom"    # Z
 
     .prologue
-    .line 1544
+    .line 1590
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -1693,7 +1748,7 @@
 
     check-cast v9, Landroid/view/LayoutInflater;
 
-    .line 1545
+    .line 1591
     .local v9, "inflater":Landroid/view/LayoutInflater;
     const v2, 0x7f0300cd
 
@@ -1705,11 +1760,11 @@
 
     move-result-object v17
 
-    .line 1547
+    .line 1593
     .local v17, "viewDashboardItem":Landroid/view/View;
     if-eqz p4, :cond_27
 
-    .line 1548
+    .line 1594
     const/high16 v2, 0x7f1c0000
 
     move-object/from16 v0, v17
@@ -1718,7 +1773,7 @@
 
     move-result-object v18
 
-    .line 1549
+    .line 1595
     .local v18, "viewTop":Landroid/view/View;
     const/4 v2, 0x0
 
@@ -1726,12 +1781,12 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1551
+    .line 1597
     .end local v18    # "viewTop":Landroid/view/View;
     :cond_27
     if-eqz p5, :cond_38
 
-    .line 1552
+    .line 1598
     const v2, 0x7f1c0003
 
     move-object/from16 v0, v17
@@ -1740,7 +1795,7 @@
 
     move-result-object v16
 
-    .line 1553
+    .line 1599
     .local v16, "viewBottom":Landroid/view/View;
     const/4 v2, 0x0
 
@@ -1748,7 +1803,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1556
+    .line 1602
     .end local v16    # "viewBottom":Landroid/view/View;
     :cond_38
     const v2, 0x7f1c0001
@@ -1761,7 +1816,7 @@
 
     check-cast v4, Landroid/widget/ImageView;
 
-    .line 1557
+    .line 1603
     .local v4, "imgPhoto":Landroid/widget/ImageView;
     move-object/from16 v0, p0
 
@@ -1773,13 +1828,13 @@
 
     const/4 v5, 0x0
 
-    const v6, 0x7f02039f
+    const v6, 0x7f0203a7
 
     const/4 v7, 0x0
 
     invoke-virtual/range {v2 .. v7}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
 
-    .line 1559
+    .line 1605
     invoke-virtual {v4}, Landroid/widget/ImageView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v2
@@ -1792,14 +1847,14 @@
 
     invoke-virtual {v2, v3}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 1572
+    .line 1618
     invoke-virtual/range {p1 .. p1}, Lcom/samsung/privilege/bean/DashboardItem;->image_url_large()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v4, v2}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 1574
+    .line 1620
     const v2, 0x7f1c0002
 
     move-object/from16 v0, v17
@@ -1810,13 +1865,13 @@
 
     check-cast v13, Landroid/widget/TextView;
 
-    .line 1575
+    .line 1621
     .local v13, "tvCaption":Landroid/widget/TextView;
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
 
-    if-eqz v2, :cond_1a4
+    if-eqz v2, :cond_182
 
     move-object/from16 v0, p1
 
@@ -1828,9 +1883,9 @@
 
     move-result v2
 
-    if-nez v2, :cond_1a4
+    if-nez v2, :cond_182
 
-    .line 1576
+    .line 1622
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -1855,11 +1910,11 @@
 
     move-result-object v8
 
-    .line 1577
+    .line 1623
     .local v8, "fontDefault":Landroid/graphics/Typeface;
     invoke-virtual {v13, v8}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1578
+    .line 1624
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -1870,7 +1925,7 @@
 
     invoke-virtual {v13, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1579
+    .line 1625
     invoke-virtual {v13}, Landroid/widget/TextView;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
@@ -1879,28 +1934,28 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 1580
+    .line 1626
     const/4 v2, 0x0
 
     invoke-virtual {v13, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1581
+    .line 1627
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
 
     invoke-virtual {v13, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1586
+    .line 1632
     .end local v8    # "fontDefault":Landroid/graphics/Typeface;
     :goto_bf
     move-object/from16 v0, p1
 
     iget-boolean v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_showcode:Z
 
-    if-eqz v2, :cond_1d5
+    if-eqz v2, :cond_1b3
 
-    .line 1587
+    .line 1633
     const v2, 0x7f1c000d
 
     move-object/from16 v0, v17
@@ -1911,7 +1966,7 @@
 
     check-cast v11, Landroid/widget/LinearLayout;
 
-    .line 1588
+    .line 1634
     .local v11, "layoutLastCode":Landroid/widget/LinearLayout;
     const v2, 0x7f1c000e
 
@@ -1923,7 +1978,7 @@
 
     check-cast v14, Landroid/widget/TextView;
 
-    .line 1589
+    .line 1635
     .local v14, "tvLastCode":Landroid/widget/TextView;
     const v2, 0x7f1c000f
 
@@ -1935,7 +1990,7 @@
 
     check-cast v15, Landroid/widget/TextView;
 
-    .line 1590
+    .line 1636
     .local v15, "tvLastCodeDesc":Landroid/widget/TextView;
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -1945,7 +2000,7 @@
 
     invoke-static {v14, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1591
+    .line 1637
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -1954,7 +2009,7 @@
 
     invoke-static {v15, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1592
+    .line 1638
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -1969,7 +2024,7 @@
 
     invoke-virtual {v14, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1593
+    .line 1639
     invoke-virtual {v14}, Landroid/widget/TextView;->getPaintFlags()I
 
     move-result v2
@@ -1978,7 +2033,7 @@
 
     invoke-virtual {v14, v2}, Landroid/widget/TextView;->setPaintFlags(I)V
 
-    .line 1594
+    .line 1640
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -1993,7 +2048,7 @@
 
     invoke-virtual {v15, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1595
+    .line 1641
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -2010,9 +2065,9 @@
 
     move-result-object v10
 
-    .line 1596
+    .line 1642
     .local v10, "lastCode":Ljava/lang/String;
-    if-eqz v10, :cond_1cf
+    if-eqz v10, :cond_1ad
 
     const-string v2, ""
 
@@ -2020,9 +2075,9 @@
 
     move-result v2
 
-    if-nez v2, :cond_1cf
+    if-nez v2, :cond_1ad
 
-    .line 1597
+    .line 1643
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -2039,9 +2094,9 @@
 
     move-result-object v12
 
-    .line 1598
+    .line 1644
     .local v12, "strPrivilegeMessage":Ljava/lang/String;
-    if-eqz v12, :cond_1ab
+    if-eqz v12, :cond_189
 
     const-string v2, ""
 
@@ -2049,24 +2104,24 @@
 
     move-result v2
 
-    if-nez v2, :cond_1ab
+    if-nez v2, :cond_189
 
-    .line 1599
+    .line 1645
     const/16 v2, 0x8
 
     invoke-virtual {v14, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1600
+    .line 1646
     invoke-virtual {v15, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1607
+    .line 1653
     :cond_157
     :goto_157
     const/4 v2, 0x0
 
     invoke-virtual {v11, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 1616
+    .line 1662
     .end local v10    # "lastCode":Ljava/lang/String;
     .end local v12    # "strPrivilegeMessage":Ljava/lang/String;
     .end local v14    # "tvLastCode":Landroid/widget/TextView;
@@ -2084,12 +2139,12 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1625
+    .line 1671
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
 
-    if-eqz v2, :cond_1a3
+    if-eqz v2, :cond_178
 
     move-object/from16 v0, p1
 
@@ -2099,72 +2154,38 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
-
-    if-nez v2, :cond_1a3
-
-    .line 1626
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+    .line 1675
+    :cond_178
+    const-string v2, "View"
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+    move-object/from16 v1, p1
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    invoke-direct {v0, v2, v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->sendGA(Ljava/lang/String;Lcom/samsung/privilege/bean/DashboardItem;)V
 
-    const-string v6, "View "
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, p1
-
-    iget-object v6, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    move-object/from16 v0, p1
-
-    iget-object v6, v0, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
-
-    const-wide/16 v19, 0x1
-
-    invoke-static/range {v19 .. v20}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v7
-
-    invoke-virtual {v2, v3, v5, v6, v7}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-
-    .line 1629
-    :cond_1a3
+    .line 1677
     return-object v17
 
-    .line 1583
+    .line 1629
     .end local v11    # "layoutLastCode":Landroid/widget/LinearLayout;
-    :cond_1a4
+    :cond_182
     const/16 v2, 0x8
 
     invoke-virtual {v13, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto/16 :goto_bf
 
-    .line 1602
+    .line 1648
     .restart local v10    # "lastCode":Ljava/lang/String;
     .restart local v11    # "layoutLastCode":Landroid/widget/LinearLayout;
     .restart local v12    # "strPrivilegeMessage":Ljava/lang/String;
     .restart local v14    # "tvLastCode":Landroid/widget/TextView;
     .restart local v15    # "tvLastCodeDesc":Landroid/widget/TextView;
-    :cond_1ab
+    :cond_189
     invoke-virtual {v14, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1603
+    .line 1649
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_url:Ljava/lang/String;
@@ -2183,12 +2204,12 @@
 
     if-nez v2, :cond_157
 
-    .line 1604
+    .line 1650
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
 
-    const v3, 0x7f0a0180
+    const v3, 0x7f090180
 
     invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -2198,21 +2219,21 @@
 
     goto :goto_157
 
-    .line 1609
+    .line 1655
     .end local v12    # "strPrivilegeMessage":Ljava/lang/String;
-    :cond_1cf
+    :cond_1ad
     const/16 v2, 0x8
 
     invoke-virtual {v11, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     goto :goto_15b
 
-    .line 1612
+    .line 1658
     .end local v10    # "lastCode":Ljava/lang/String;
     .end local v11    # "layoutLastCode":Landroid/widget/LinearLayout;
     .end local v14    # "tvLastCode":Landroid/widget/TextView;
     .end local v15    # "tvLastCodeDesc":Landroid/widget/TextView;
-    :cond_1d5
+    :cond_1b3
     const v2, 0x7f1c000d
 
     move-object/from16 v0, v17
@@ -2223,17 +2244,17 @@
 
     check-cast v11, Landroid/widget/LinearLayout;
 
-    .line 1613
+    .line 1659
     .restart local v11    # "layoutLastCode":Landroid/widget/LinearLayout;
     const/16 v2, 0x8
 
     invoke-virtual {v11, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    goto/16 :goto_15b
+    goto :goto_15b
 .end method
 
 .method private InitialDashboardItemMediumAutoRedeem(Lcom/samsung/privilege/bean/DashboardItem;Landroid/view/ViewGroup;ZZZ)Landroid/view/View;
-    .registers 29
+    .registers 27
     .param p1, "dashboardItem"    # Lcom/samsung/privilege/bean/DashboardItem;
     .param p2, "root"    # Landroid/view/ViewGroup;
     .param p3, "attachToRoot"    # Z
@@ -2241,7 +2262,7 @@
     .param p5, "is_bottom"    # Z
 
     .prologue
-    .line 1633
+    .line 1681
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -2254,7 +2275,7 @@
 
     check-cast v8, Landroid/view/LayoutInflater;
 
-    .line 1634
+    .line 1682
     .local v8, "inflater":Landroid/view/LayoutInflater;
     const v2, 0x7f0300ce
 
@@ -2266,11 +2287,11 @@
 
     move-result-object v19
 
-    .line 1636
+    .line 1684
     .local v19, "viewDashboardItem":Landroid/view/View;
     if-eqz p4, :cond_27
 
-    .line 1637
+    .line 1685
     const/high16 v2, 0x7f1c0000
 
     move-object/from16 v0, v19
@@ -2279,7 +2300,7 @@
 
     move-result-object v20
 
-    .line 1638
+    .line 1686
     .local v20, "viewTop":Landroid/view/View;
     const/4 v2, 0x0
 
@@ -2287,12 +2308,12 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1640
+    .line 1688
     .end local v20    # "viewTop":Landroid/view/View;
     :cond_27
     if-eqz p5, :cond_38
 
-    .line 1641
+    .line 1689
     const v2, 0x7f1c0003
 
     move-object/from16 v0, v19
@@ -2301,7 +2322,7 @@
 
     move-result-object v18
 
-    .line 1642
+    .line 1690
     .local v18, "viewBottom":Landroid/view/View;
     const/4 v2, 0x0
 
@@ -2309,7 +2330,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1645
+    .line 1693
     .end local v18    # "viewBottom":Landroid/view/View;
     :cond_38
     const v2, 0x7f1c0001
@@ -2322,7 +2343,7 @@
 
     check-cast v4, Landroid/widget/ImageView;
 
-    .line 1646
+    .line 1694
     .local v4, "imgPhoto":Landroid/widget/ImageView;
     move-object/from16 v0, p0
 
@@ -2334,20 +2355,20 @@
 
     const/4 v5, 0x0
 
-    const v6, 0x7f02039f
+    const v6, 0x7f0203a7
 
     const/4 v7, 0x0
 
     invoke-virtual/range {v2 .. v7}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
 
-    .line 1647
+    .line 1695
     invoke-virtual/range {p1 .. p1}, Lcom/samsung/privilege/bean/DashboardItem;->image_url_large()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v4, v2}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 1649
+    .line 1697
     const v2, 0x7f1c0012
 
     move-object/from16 v0, v19
@@ -2358,7 +2379,7 @@
 
     check-cast v14, Landroid/widget/TextView;
 
-    .line 1650
+    .line 1698
     .local v14, "tvLine1":Landroid/widget/TextView;
     const v2, 0x7f1c0013
 
@@ -2370,7 +2391,7 @@
 
     check-cast v15, Landroid/widget/TextView;
 
-    .line 1651
+    .line 1699
     .local v15, "tvLine2":Landroid/widget/TextView;
     const v2, 0x7f1c0014
 
@@ -2382,7 +2403,7 @@
 
     check-cast v16, Landroid/widget/TextView;
 
-    .line 1652
+    .line 1700
     .local v16, "tvLine3":Landroid/widget/TextView;
     const v2, 0x7f1c0015
 
@@ -2394,7 +2415,7 @@
 
     check-cast v17, Landroid/widget/TextView;
 
-    .line 1654
+    .line 1702
     .local v17, "tvLine4":Landroid/widget/TextView;
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -2404,7 +2425,7 @@
 
     invoke-static {v14, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1655
+    .line 1703
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -2413,7 +2434,7 @@
 
     invoke-static {v15, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1656
+    .line 1704
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -2424,7 +2445,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1657
+    .line 1705
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -2435,7 +2456,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1659
+    .line 1707
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -2450,7 +2471,7 @@
 
     invoke-virtual {v14, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1660
+    .line 1708
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -2465,7 +2486,7 @@
 
     invoke-virtual {v15, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1661
+    .line 1709
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -2482,7 +2503,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1662
+    .line 1710
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -2499,21 +2520,21 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1664
+    .line 1712
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
 
     invoke-virtual {v14, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1665
+    .line 1713
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->line2:Ljava/lang/String;
 
     invoke-virtual {v15, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1666
+    .line 1714
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -2528,7 +2549,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1667
+    .line 1715
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -2543,14 +2564,14 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1669
+    .line 1717
     move-object/from16 v0, p1
 
     iget-boolean v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_showcode:Z
 
-    if-eqz v2, :cond_221
+    if-eqz v2, :cond_1ff
 
-    .line 1670
+    .line 1718
     const v2, 0x7f1c000d
 
     move-object/from16 v0, v19
@@ -2561,7 +2582,7 @@
 
     check-cast v10, Landroid/widget/LinearLayout;
 
-    .line 1671
+    .line 1719
     .local v10, "layoutLastCode":Landroid/widget/LinearLayout;
     const v2, 0x7f1c000e
 
@@ -2573,7 +2594,7 @@
 
     check-cast v12, Landroid/widget/TextView;
 
-    .line 1672
+    .line 1720
     .local v12, "tvLastCode":Landroid/widget/TextView;
     const v2, 0x7f1c000f
 
@@ -2585,7 +2606,7 @@
 
     check-cast v13, Landroid/widget/TextView;
 
-    .line 1673
+    .line 1721
     .local v13, "tvLastCodeDesc":Landroid/widget/TextView;
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -2595,7 +2616,7 @@
 
     invoke-static {v12, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1674
+    .line 1722
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -2604,7 +2625,7 @@
 
     invoke-static {v13, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1675
+    .line 1723
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -2619,7 +2640,7 @@
 
     invoke-virtual {v12, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1676
+    .line 1724
     invoke-virtual {v12}, Landroid/widget/TextView;->getPaintFlags()I
 
     move-result v2
@@ -2628,7 +2649,7 @@
 
     invoke-virtual {v12, v2}, Landroid/widget/TextView;->setPaintFlags(I)V
 
-    .line 1677
+    .line 1725
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -2643,7 +2664,7 @@
 
     invoke-virtual {v13, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1678
+    .line 1726
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -2660,9 +2681,9 @@
 
     move-result-object v9
 
-    .line 1679
+    .line 1727
     .local v9, "lastCode":Ljava/lang/String;
-    if-eqz v9, :cond_21b
+    if-eqz v9, :cond_1f9
 
     const-string v2, ""
 
@@ -2670,9 +2691,9 @@
 
     move-result v2
 
-    if-nez v2, :cond_21b
+    if-nez v2, :cond_1f9
 
-    .line 1680
+    .line 1728
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -2689,9 +2710,9 @@
 
     move-result-object v11
 
-    .line 1681
+    .line 1729
     .local v11, "strPrivilegeMessage":Ljava/lang/String;
-    if-eqz v11, :cond_1f7
+    if-eqz v11, :cond_1d5
 
     const-string v2, ""
 
@@ -2699,24 +2720,24 @@
 
     move-result v2
 
-    if-nez v2, :cond_1f7
+    if-nez v2, :cond_1d5
 
-    .line 1682
+    .line 1730
     const/16 v2, 0x8
 
     invoke-virtual {v12, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1683
+    .line 1731
     invoke-virtual {v13, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1690
+    .line 1738
     :cond_1aa
     :goto_1aa
     const/4 v2, 0x0
 
     invoke-virtual {v10, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 1699
+    .line 1747
     .end local v9    # "lastCode":Ljava/lang/String;
     .end local v11    # "strPrivilegeMessage":Ljava/lang/String;
     .end local v12    # "tvLastCode":Landroid/widget/TextView;
@@ -2734,12 +2755,12 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1706
+    .line 1754
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
 
-    if-eqz v2, :cond_1f6
+    if-eqz v2, :cond_1cb
 
     move-object/from16 v0, p1
 
@@ -2749,62 +2770,28 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
-
-    if-nez v2, :cond_1f6
-
-    .line 1707
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+    .line 1758
+    :cond_1cb
+    const-string v2, "View"
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+    move-object/from16 v1, p1
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    invoke-direct {v0, v2, v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->sendGA(Ljava/lang/String;Lcom/samsung/privilege/bean/DashboardItem;)V
 
-    const-string v6, "View "
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, p1
-
-    iget-object v6, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    move-object/from16 v0, p1
-
-    iget-object v6, v0, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
-
-    const-wide/16 v21, 0x1
-
-    invoke-static/range {v21 .. v22}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v7
-
-    invoke-virtual {v2, v3, v5, v6, v7}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-
-    .line 1710
-    :cond_1f6
+    .line 1760
     return-object v19
 
-    .line 1685
+    .line 1733
     .restart local v9    # "lastCode":Ljava/lang/String;
     .restart local v11    # "strPrivilegeMessage":Ljava/lang/String;
     .restart local v12    # "tvLastCode":Landroid/widget/TextView;
     .restart local v13    # "tvLastCodeDesc":Landroid/widget/TextView;
-    :cond_1f7
+    :cond_1d5
     invoke-virtual {v12, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1686
+    .line 1734
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_url:Ljava/lang/String;
@@ -2823,12 +2810,12 @@
 
     if-nez v2, :cond_1aa
 
-    .line 1687
+    .line 1735
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
 
-    const v3, 0x7f0a0180
+    const v3, 0x7f090180
 
     invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -2838,21 +2825,21 @@
 
     goto :goto_1aa
 
-    .line 1692
+    .line 1740
     .end local v11    # "strPrivilegeMessage":Ljava/lang/String;
-    :cond_21b
+    :cond_1f9
     const/16 v2, 0x8
 
     invoke-virtual {v10, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     goto :goto_1ae
 
-    .line 1695
+    .line 1743
     .end local v9    # "lastCode":Ljava/lang/String;
     .end local v10    # "layoutLastCode":Landroid/widget/LinearLayout;
     .end local v12    # "tvLastCode":Landroid/widget/TextView;
     .end local v13    # "tvLastCodeDesc":Landroid/widget/TextView;
-    :cond_221
+    :cond_1ff
     const v2, 0x7f1c000d
 
     move-object/from16 v0, v19
@@ -2863,13 +2850,13 @@
 
     check-cast v10, Landroid/widget/LinearLayout;
 
-    .line 1696
+    .line 1744
     .restart local v10    # "layoutLastCode":Landroid/widget/LinearLayout;
     const/16 v2, 0x8
 
     invoke-virtual {v10, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    goto/16 :goto_1ae
+    goto :goto_1ae
 .end method
 
 .method private InitialDashboardItemMediumPager(Lcom/samsung/privilege/bean/DashboardItem;ZZ)Landroid/view/View;
@@ -2879,7 +2866,7 @@
     .param p3, "is_bottom"    # Z
 
     .prologue
-    .line 1714
+    .line 1764
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -2892,7 +2879,7 @@
 
     check-cast v6, Landroid/view/LayoutInflater;
 
-    .line 1715
+    .line 1765
     .local v6, "inflater":Landroid/view/LayoutInflater;
     const v2, 0x7f0300cf
 
@@ -2902,7 +2889,7 @@
 
     move-result-object v12
 
-    .line 1716
+    .line 1766
     .local v12, "viewDashboardItem":Landroid/view/View;
     const v2, 0x7f1c0004
 
@@ -2912,42 +2899,42 @@
 
     check-cast v10, Landroid/support/v4/view/ViewPager;
 
-    .line 1718
+    .line 1768
     .local v10, "pagerPhoto":Landroid/support/v4/view/ViewPager;
     if-eqz p2, :cond_29
 
-    .line 1719
+    .line 1769
     const/high16 v2, 0x7f1c0000
 
     invoke-virtual {v12, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v13
 
-    .line 1720
+    .line 1770
     .local v13, "viewTop":Landroid/view/View;
     const/4 v2, 0x0
 
     invoke-virtual {v13, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1722
+    .line 1772
     .end local v13    # "viewTop":Landroid/view/View;
     :cond_29
     if-eqz p3, :cond_36
 
-    .line 1723
+    .line 1773
     const v2, 0x7f1c0003
 
     invoke-virtual {v12, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v11
 
-    .line 1724
+    .line 1774
     .local v11, "viewBottom":Landroid/view/View;
     const/4 v2, 0x0
 
     invoke-virtual {v11, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1727
+    .line 1777
     .end local v11    # "viewBottom":Landroid/view/View;
     :cond_36
     invoke-virtual {v10}, Landroid/support/v4/view/ViewPager;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -2960,7 +2947,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 1741
+    .line 1791
     new-instance v9, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardItemPagerAdapter;
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -2971,11 +2958,11 @@
 
     invoke-direct {v9, p0, v2, v3}, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardItemPagerAdapter;-><init>(Lcom/samsung/privilege/activity/DashboardFragmentNew;Landroid/content/Context;Ljava/util/ArrayList;)V
 
-    .line 1742
+    .line 1792
     .local v9, "objDashboardItemPagerAdapter":Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardItemPagerAdapter;
     invoke-virtual {v10, v9}, Landroid/support/v4/view/ViewPager;->setAdapter(Landroid/support/v4/view/PagerAdapter;)V
 
-    .line 1744
+    .line 1794
     const v2, 0x7f1c0005
 
     invoke-virtual {v12, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -2984,7 +2971,7 @@
 
     check-cast v8, Landroid/widget/RelativeLayout;
 
-    .line 1745
+    .line 1795
     .local v8, "layoutPagerPrev":Landroid/widget/RelativeLayout;
     new-instance v2, Lcom/samsung/privilege/activity/DashboardFragmentNew$14;
 
@@ -2992,7 +2979,7 @@
 
     invoke-virtual {v8, v2}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1762
+    .line 1812
     const v2, 0x7f1c0006
 
     invoke-virtual {v12, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3001,7 +2988,7 @@
 
     check-cast v7, Landroid/widget/RelativeLayout;
 
-    .line 1763
+    .line 1813
     .local v7, "layoutPagerNext":Landroid/widget/RelativeLayout;
     new-instance v2, Lcom/samsung/privilege/activity/DashboardFragmentNew$15;
 
@@ -3009,18 +2996,18 @@
 
     invoke-virtual {v7, v2}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1780
+    .line 1830
     new-instance v0, Ljava/util/Timer;
 
     invoke-direct {v0}, Ljava/util/Timer;-><init>()V
 
-    .line 1781
+    .line 1831
     .local v0, "timer":Ljava/util/Timer;
     new-instance v1, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;
 
     invoke-direct {v1, p0, v10}, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;-><init>(Lcom/samsung/privilege/activity/DashboardFragmentNew;Landroid/support/v4/view/ViewPager;)V
 
-    .line 1782
+    .line 1832
     .local v1, "taskSlideImage":Ljava/util/TimerTask;
     const-wide/16 v2, 0x1388
 
@@ -3028,7 +3015,7 @@
 
     invoke-virtual/range {v0 .. v5}, Ljava/util/Timer;->scheduleAtFixedRate(Ljava/util/TimerTask;JJ)V
 
-    .line 1784
+    .line 1834
     return-object v12
 .end method
 
@@ -3042,7 +3029,7 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 1096
+    .line 1102
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v7
@@ -3055,7 +3042,7 @@
 
     check-cast v1, Landroid/view/LayoutInflater;
 
-    .line 1097
+    .line 1103
     .local v1, "inflater":Landroid/view/LayoutInflater;
     const v7, 0x7f0300d0
 
@@ -3063,38 +3050,38 @@
 
     move-result-object v5
 
-    .line 1099
+    .line 1105
     .local v5, "viewDashboardItem":Landroid/view/View;
     if-eqz p3, :cond_20
 
-    .line 1100
-    const v7, 0x7f0702fc
+    .line 1106
+    const v7, 0x7f0c02fc
 
     invoke-virtual {v5, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v6
 
-    .line 1101
+    .line 1107
     .local v6, "viewTop":Landroid/view/View;
     invoke-virtual {v6, v9}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1103
+    .line 1109
     .end local v6    # "viewTop":Landroid/view/View;
     :cond_20
     if-eqz p4, :cond_2c
 
-    .line 1104
-    const v7, 0x7f0702ff
+    .line 1110
+    const v7, 0x7f0c02ff
 
     invoke-virtual {v5, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 1105
+    .line 1111
     .local v4, "viewBottom":Landroid/view/View;
     invoke-virtual {v4, v9}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1108
+    .line 1114
     .end local v4    # "viewBottom":Landroid/view/View;
     :cond_2c
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -3121,9 +3108,9 @@
 
     move-result-object v0
 
-    .line 1109
+    .line 1115
     .local v0, "fontDefault":Landroid/graphics/Typeface;
-    const v7, 0x7f070302
+    const v7, 0x7f0c0302
 
     invoke-virtual {v5, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3131,11 +3118,11 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    .line 1110
+    .line 1116
     .local v3, "tvJoin":Landroid/widget/TextView;
     invoke-virtual {v3, v0}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1111
+    .line 1117
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v7
@@ -3146,8 +3133,8 @@
 
     invoke-virtual {v3, v7}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1113
-    const v7, 0x7f070301
+    .line 1119
+    const v7, 0x7f0c0301
 
     invoke-virtual {v5, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3155,7 +3142,7 @@
 
     check-cast v2, Landroid/widget/RelativeLayout;
 
-    .line 1114
+    .line 1120
     .local v2, "layoutJoin":Landroid/widget/RelativeLayout;
     new-instance v7, Lcom/samsung/privilege/activity/DashboardFragmentNew$3;
 
@@ -3163,7 +3150,7 @@
 
     invoke-virtual {v2, v7}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1146
+    .line 1152
     return-object v5
 .end method
 
@@ -3175,7 +3162,7 @@
     .param p4, "is_bottom"    # Z
 
     .prologue
-    .line 1788
+    .line 1838
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -3188,7 +3175,7 @@
 
     check-cast v12, Landroid/view/LayoutInflater;
 
-    .line 1789
+    .line 1839
     .local v12, "inflater":Landroid/view/LayoutInflater;
     const v2, 0x7f0300d1
 
@@ -3198,11 +3185,11 @@
 
     move-result-object v28
 
-    .line 1791
+    .line 1841
     .local v28, "viewDashboardItem":Landroid/view/View;
     if-eqz p3, :cond_24
 
-    .line 1792
+    .line 1842
     const/high16 v2, 0x7f1c0000
 
     move-object/from16 v0, v28
@@ -3211,7 +3198,7 @@
 
     move-result-object v29
 
-    .line 1793
+    .line 1843
     .local v29, "viewTop":Landroid/view/View;
     const/4 v2, 0x0
 
@@ -3219,12 +3206,12 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1795
+    .line 1845
     .end local v29    # "viewTop":Landroid/view/View;
     :cond_24
     if-eqz p4, :cond_35
 
-    .line 1796
+    .line 1846
     const v2, 0x7f1c0003
 
     move-object/from16 v0, v28
@@ -3233,7 +3220,7 @@
 
     move-result-object v27
 
-    .line 1797
+    .line 1847
     .local v27, "viewBottom":Landroid/view/View;
     const/4 v2, 0x0
 
@@ -3241,7 +3228,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1800
+    .line 1850
     .end local v27    # "viewBottom":Landroid/view/View;
     :cond_35
     const v2, 0x7f1c0007
@@ -3254,7 +3241,7 @@
 
     check-cast v15, Landroid/widget/RelativeLayout;
 
-    .line 1801
+    .line 1851
     .local v15, "layoutItemA":Landroid/widget/RelativeLayout;
     const v2, 0x7f1c0008
 
@@ -3266,7 +3253,7 @@
 
     check-cast v4, Landroid/widget/ImageView;
 
-    .line 1802
+    .line 1852
     .local v4, "imgPhotoA":Landroid/widget/ImageView;
     move-object/from16 v0, p0
 
@@ -3278,13 +3265,13 @@
 
     const/4 v5, 0x0
 
-    const v6, 0x7f02039f
+    const v6, 0x7f0203a7
 
     const/4 v7, 0x0
 
     invoke-virtual/range {v2 .. v7}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
 
-    .line 1804
+    .line 1854
     invoke-virtual {v4}, Landroid/widget/ImageView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v2
@@ -3299,14 +3286,14 @@
 
     invoke-virtual {v2, v3}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 1824
+    .line 1874
     invoke-virtual/range {p1 .. p1}, Lcom/samsung/privilege/bean/DashboardItem;->image_url_large()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v4, v2}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 1826
+    .line 1876
     const v2, 0x7f1c0009
 
     move-object/from16 v0, v28
@@ -3317,13 +3304,13 @@
 
     check-cast v21, Landroid/widget/TextView;
 
-    .line 1827
+    .line 1877
     .local v21, "tvCaptionA":Landroid/widget/TextView;
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
 
-    if-eqz v2, :cond_35e
+    if-eqz v2, :cond_31a
 
     move-object/from16 v0, p1
 
@@ -3335,9 +3322,9 @@
 
     move-result v2
 
-    if-nez v2, :cond_35e
+    if-nez v2, :cond_31a
 
-    .line 1828
+    .line 1878
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -3362,13 +3349,13 @@
 
     move-result-object v11
 
-    .line 1829
+    .line 1879
     .local v11, "fontDefault":Landroid/graphics/Typeface;
     move-object/from16 v0, v21
 
     invoke-virtual {v0, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1830
+    .line 1880
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -3381,7 +3368,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1831
+    .line 1881
     invoke-virtual/range {v21 .. v21}, Landroid/widget/TextView;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
@@ -3390,14 +3377,14 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 1832
+    .line 1882
     const/4 v2, 0x0
 
     move-object/from16 v0, v21
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1833
+    .line 1883
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
@@ -3406,16 +3393,16 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1838
+    .line 1888
     .end local v11    # "fontDefault":Landroid/graphics/Typeface;
     :goto_d1
     move-object/from16 v0, p1
 
     iget-boolean v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_showcode:Z
 
-    if-eqz v2, :cond_399
+    if-eqz v2, :cond_355
 
-    .line 1839
+    .line 1889
     const v2, 0x7f1c0016
 
     move-object/from16 v0, v28
@@ -3426,7 +3413,7 @@
 
     check-cast v17, Landroid/widget/LinearLayout;
 
-    .line 1840
+    .line 1890
     .local v17, "layoutLastCodeA":Landroid/widget/LinearLayout;
     const v2, 0x7f1c0017
 
@@ -3438,7 +3425,7 @@
 
     check-cast v23, Landroid/widget/TextView;
 
-    .line 1841
+    .line 1891
     .local v23, "tvLastCodeA":Landroid/widget/TextView;
     const v2, 0x7f1c0018
 
@@ -3450,7 +3437,7 @@
 
     check-cast v25, Landroid/widget/TextView;
 
-    .line 1842
+    .line 1892
     .local v25, "tvLastCodeDescA":Landroid/widget/TextView;
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -3462,7 +3449,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1843
+    .line 1893
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -3473,7 +3460,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1844
+    .line 1894
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -3490,7 +3477,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1845
+    .line 1895
     invoke-virtual/range {v23 .. v23}, Landroid/widget/TextView;->getPaintFlags()I
 
     move-result v2
@@ -3501,7 +3488,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setPaintFlags(I)V
 
-    .line 1846
+    .line 1896
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -3514,7 +3501,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1847
+    .line 1897
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -3531,9 +3518,9 @@
 
     move-result-object v13
 
-    .line 1848
+    .line 1898
     .local v13, "lastCodeA":Ljava/lang/String;
-    if-eqz v13, :cond_390
+    if-eqz v13, :cond_34c
 
     const-string v2, ""
 
@@ -3541,9 +3528,9 @@
 
     move-result v2
 
-    if-nez v2, :cond_390
+    if-nez v2, :cond_34c
 
-    .line 1849
+    .line 1899
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -3560,9 +3547,9 @@
 
     move-result-object v19
 
-    .line 1850
+    .line 1900
     .local v19, "strPrivilegeMessage":Ljava/lang/String;
-    if-eqz v19, :cond_367
+    if-eqz v19, :cond_323
 
     const-string v2, ""
 
@@ -3572,23 +3559,23 @@
 
     move-result v2
 
-    if-nez v2, :cond_367
+    if-nez v2, :cond_323
 
-    .line 1851
+    .line 1901
     const/16 v2, 0x8
 
     move-object/from16 v0, v23
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1852
+    .line 1902
     move-object/from16 v0, v25
 
     move-object/from16 v1, v19
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1859
+    .line 1909
     :cond_178
     :goto_178
     const/4 v2, 0x0
@@ -3597,7 +3584,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 1868
+    .line 1918
     .end local v13    # "lastCodeA":Ljava/lang/String;
     .end local v19    # "strPrivilegeMessage":Ljava/lang/String;
     .end local v23    # "tvLastCodeA":Landroid/widget/TextView;
@@ -3613,7 +3600,7 @@
 
     invoke-virtual {v15, v2}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1876
+    .line 1926
     const v2, 0x7f1c000a
 
     move-object/from16 v0, v28
@@ -3624,7 +3611,7 @@
 
     check-cast v16, Landroid/widget/RelativeLayout;
 
-    .line 1877
+    .line 1927
     .local v16, "layoutItemB":Landroid/widget/RelativeLayout;
     const v2, 0x7f1c000b
 
@@ -3636,13 +3623,13 @@
 
     check-cast v7, Landroid/widget/ImageView;
 
-    .line 1879
+    .line 1929
     .local v7, "imgPhotoB":Landroid/widget/ImageView;
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
 
-    if-eqz v2, :cond_1da
+    if-eqz v2, :cond_1af
 
     move-object/from16 v0, p1
 
@@ -3652,54 +3639,20 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
-
-    if-nez v2, :cond_1da
-
-    .line 1880
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+    .line 1933
+    :cond_1af
+    const-string v2, "View"
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+    move-object/from16 v1, p1
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    invoke-direct {v0, v2, v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->sendGA(Ljava/lang/String;Lcom/samsung/privilege/bean/DashboardItem;)V
 
-    const-string v6, "View "
+    .line 1935
+    if-eqz p2, :cond_3b8
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, p1
-
-    iget-object v6, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    move-object/from16 v0, p1
-
-    iget-object v6, v0, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
-
-    const-wide/16 v8, 0x1
-
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v8
-
-    invoke-virtual {v2, v3, v5, v6, v8}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-
-    .line 1883
-    :cond_1da
-    if-eqz p2, :cond_3fc
-
-    .line 1884
+    .line 1936
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
@@ -3710,13 +3663,13 @@
 
     const/4 v8, 0x0
 
-    const v9, 0x7f02039f
+    const v9, 0x7f0203a7
 
     const/4 v10, 0x0
 
     invoke-virtual/range {v5 .. v10}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
 
-    .line 1886
+    .line 1938
     invoke-virtual {v7}, Landroid/widget/ImageView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v2
@@ -3731,14 +3684,14 @@
 
     invoke-virtual {v2, v3}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 1908
+    .line 1960
     invoke-virtual/range {p2 .. p2}, Lcom/samsung/privilege/bean/DashboardItem;->image_url_large()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v7, v2}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 1910
+    .line 1962
     const v2, 0x7f1c000c
 
     move-object/from16 v0, v28
@@ -3749,13 +3702,13 @@
 
     check-cast v22, Landroid/widget/TextView;
 
-    .line 1911
+    .line 1963
     .local v22, "tvCaptionB":Landroid/widget/TextView;
     move-object/from16 v0, p2
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
 
-    if-eqz v2, :cond_3ad
+    if-eqz v2, :cond_369
 
     move-object/from16 v0, p2
 
@@ -3767,9 +3720,9 @@
 
     move-result v2
 
-    if-nez v2, :cond_3ad
+    if-nez v2, :cond_369
 
-    .line 1912
+    .line 1964
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -3794,13 +3747,13 @@
 
     move-result-object v11
 
-    .line 1913
+    .line 1965
     .restart local v11    # "fontDefault":Landroid/graphics/Typeface;
     move-object/from16 v0, v22
 
     invoke-virtual {v0, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1914
+    .line 1966
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -3813,7 +3766,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1915
+    .line 1967
     invoke-virtual/range {v22 .. v22}, Landroid/widget/TextView;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
@@ -3822,14 +3775,14 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 1916
+    .line 1968
     const/4 v2, 0x0
 
     move-object/from16 v0, v22
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1917
+    .line 1969
     move-object/from16 v0, p2
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
@@ -3838,16 +3791,16 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1922
+    .line 1974
     .end local v11    # "fontDefault":Landroid/graphics/Typeface;
-    :goto_262
+    :goto_240
     move-object/from16 v0, p2
 
     iget-boolean v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_showcode:Z
 
-    if-eqz v2, :cond_3e8
+    if-eqz v2, :cond_3a4
 
-    .line 1923
+    .line 1975
     const v2, 0x7f1c0019
 
     move-object/from16 v0, v28
@@ -3858,7 +3811,7 @@
 
     check-cast v18, Landroid/widget/LinearLayout;
 
-    .line 1924
+    .line 1976
     .local v18, "layoutLastCodeB":Landroid/widget/LinearLayout;
     const v2, 0x7f1c001a
 
@@ -3870,7 +3823,7 @@
 
     check-cast v24, Landroid/widget/TextView;
 
-    .line 1925
+    .line 1977
     .local v24, "tvLastCodeB":Landroid/widget/TextView;
     const v2, 0x7f1c001b
 
@@ -3882,7 +3835,7 @@
 
     check-cast v26, Landroid/widget/TextView;
 
-    .line 1926
+    .line 1978
     .local v26, "tvLastCodeDescB":Landroid/widget/TextView;
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -3894,7 +3847,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1927
+    .line 1979
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -3905,7 +3858,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1928
+    .line 1980
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -3922,7 +3875,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1929
+    .line 1981
     invoke-virtual/range {v24 .. v24}, Landroid/widget/TextView;->getPaintFlags()I
 
     move-result v2
@@ -3933,7 +3886,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setPaintFlags(I)V
 
-    .line 1930
+    .line 1982
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -3946,7 +3899,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1931
+    .line 1983
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -3963,9 +3916,9 @@
 
     move-result-object v14
 
-    .line 1932
+    .line 1984
     .local v14, "lastCodeB":Ljava/lang/String;
-    if-eqz v14, :cond_3df
+    if-eqz v14, :cond_39b
 
     const-string v2, ""
 
@@ -3973,9 +3926,9 @@
 
     move-result v2
 
-    if-nez v2, :cond_3df
+    if-nez v2, :cond_39b
 
-    .line 1933
+    .line 1985
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -3992,9 +3945,9 @@
 
     move-result-object v20
 
-    .line 1934
+    .line 1986
     .local v20, "strPrivilegeMessageB":Ljava/lang/String;
-    if-eqz v20, :cond_3b6
+    if-eqz v20, :cond_372
 
     const-string v2, ""
 
@@ -4004,37 +3957,37 @@
 
     move-result v2
 
-    if-nez v2, :cond_3b6
+    if-nez v2, :cond_372
 
-    .line 1935
+    .line 1987
     const/16 v2, 0x8
 
     move-object/from16 v0, v24
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1936
+    .line 1988
     move-object/from16 v0, v26
 
     move-object/from16 v1, v20
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1943
-    :cond_309
-    :goto_309
+    .line 1995
+    :cond_2e7
+    :goto_2e7
     const/4 v2, 0x0
 
     move-object/from16 v0, v18
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 1952
+    .line 2004
     .end local v14    # "lastCodeB":Ljava/lang/String;
     .end local v20    # "strPrivilegeMessageB":Ljava/lang/String;
     .end local v24    # "tvLastCodeB":Landroid/widget/TextView;
     .end local v26    # "tvLastCodeDescB":Landroid/widget/TextView;
-    :goto_30f
+    :goto_2ed
     new-instance v2, Lcom/samsung/privilege/activity/DashboardFragmentNew$19;
 
     move-object/from16 v0, p0
@@ -4047,19 +4000,19 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1960
+    .line 2012
     const/4 v2, 0x0
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 1962
+    .line 2014
     move-object/from16 v0, p2
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
 
-    if-eqz v2, :cond_35d
+    if-eqz v2, :cond_310
 
     move-object/from16 v0, p2
 
@@ -4069,61 +4022,27 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
-
-    if-nez v2, :cond_35d
-
-    .line 1963
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+    .line 2018
+    :cond_310
+    const-string v2, "View"
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+    move-object/from16 v1, p2
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    invoke-direct {v0, v2, v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->sendGA(Ljava/lang/String;Lcom/samsung/privilege/bean/DashboardItem;)V
 
-    const-string v6, "View "
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, p2
-
-    iget-object v6, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    move-object/from16 v0, p2
-
-    iget-object v6, v0, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
-
-    const-wide/16 v8, 0x1
-
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v8
-
-    invoke-virtual {v2, v3, v5, v6, v8}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-
-    .line 1969
+    .line 2023
     .end local v18    # "layoutLastCodeB":Landroid/widget/LinearLayout;
     .end local v22    # "tvCaptionB":Landroid/widget/TextView;
-    :cond_35d
-    :goto_35d
+    :goto_319
     return-object v28
 
-    .line 1835
+    .line 1885
     .end local v7    # "imgPhotoB":Landroid/widget/ImageView;
     .end local v16    # "layoutItemB":Landroid/widget/RelativeLayout;
     .end local v17    # "layoutLastCodeA":Landroid/widget/LinearLayout;
-    :cond_35e
+    :cond_31a
     const/16 v2, 0x8
 
     move-object/from16 v0, v21
@@ -4132,18 +4051,18 @@
 
     goto/16 :goto_d1
 
-    .line 1854
+    .line 1904
     .restart local v13    # "lastCodeA":Ljava/lang/String;
     .restart local v17    # "layoutLastCodeA":Landroid/widget/LinearLayout;
     .restart local v19    # "strPrivilegeMessage":Ljava/lang/String;
     .restart local v23    # "tvLastCodeA":Landroid/widget/TextView;
     .restart local v25    # "tvLastCodeDescA":Landroid/widget/TextView;
-    :cond_367
+    :cond_323
     move-object/from16 v0, v23
 
     invoke-virtual {v0, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1855
+    .line 1905
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_url:Ljava/lang/String;
@@ -4162,12 +4081,12 @@
 
     if-nez v2, :cond_178
 
-    .line 1856
+    .line 1906
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
 
-    const v3, 0x7f0a0180
+    const v3, 0x7f090180
 
     invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -4179,9 +4098,9 @@
 
     goto/16 :goto_178
 
-    .line 1861
+    .line 1911
     .end local v19    # "strPrivilegeMessage":Ljava/lang/String;
-    :cond_390
+    :cond_34c
     const/16 v2, 0x8
 
     move-object/from16 v0, v17
@@ -4190,12 +4109,12 @@
 
     goto/16 :goto_17e
 
-    .line 1864
+    .line 1914
     .end local v13    # "lastCodeA":Ljava/lang/String;
     .end local v17    # "layoutLastCodeA":Landroid/widget/LinearLayout;
     .end local v23    # "tvLastCodeA":Landroid/widget/TextView;
     .end local v25    # "tvLastCodeDescA":Landroid/widget/TextView;
-    :cond_399
+    :cond_355
     const v2, 0x7f1c0016
 
     move-object/from16 v0, v28
@@ -4206,7 +4125,7 @@
 
     check-cast v17, Landroid/widget/LinearLayout;
 
-    .line 1865
+    .line 1915
     .restart local v17    # "layoutLastCodeA":Landroid/widget/LinearLayout;
     const/16 v2, 0x8
 
@@ -4216,36 +4135,36 @@
 
     goto/16 :goto_17e
 
-    .line 1919
+    .line 1971
     .restart local v7    # "imgPhotoB":Landroid/widget/ImageView;
     .restart local v16    # "layoutItemB":Landroid/widget/RelativeLayout;
     .restart local v22    # "tvCaptionB":Landroid/widget/TextView;
-    :cond_3ad
+    :cond_369
     const/16 v2, 0x8
 
     move-object/from16 v0, v22
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    goto/16 :goto_262
+    goto/16 :goto_240
 
-    .line 1938
+    .line 1990
     .restart local v14    # "lastCodeB":Ljava/lang/String;
     .restart local v18    # "layoutLastCodeB":Landroid/widget/LinearLayout;
     .restart local v20    # "strPrivilegeMessageB":Ljava/lang/String;
     .restart local v24    # "tvLastCodeB":Landroid/widget/TextView;
     .restart local v26    # "tvLastCodeDescB":Landroid/widget/TextView;
-    :cond_3b6
+    :cond_372
     move-object/from16 v0, v24
 
     invoke-virtual {v0, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1939
+    .line 1991
     move-object/from16 v0, p2
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_url:Ljava/lang/String;
 
-    if-eqz v2, :cond_309
+    if-eqz v2, :cond_2e7
 
     move-object/from16 v0, p2
 
@@ -4257,14 +4176,14 @@
 
     move-result v2
 
-    if-nez v2, :cond_309
+    if-nez v2, :cond_2e7
 
-    .line 1940
+    .line 1992
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
 
-    const v3, 0x7f0a0180
+    const v3, 0x7f090180
 
     invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -4274,25 +4193,25 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_309
+    goto/16 :goto_2e7
 
-    .line 1945
+    .line 1997
     .end local v20    # "strPrivilegeMessageB":Ljava/lang/String;
-    :cond_3df
+    :cond_39b
     const/16 v2, 0x8
 
     move-object/from16 v0, v18
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    goto/16 :goto_30f
+    goto/16 :goto_2ed
 
-    .line 1948
+    .line 2000
     .end local v14    # "lastCodeB":Ljava/lang/String;
     .end local v18    # "layoutLastCodeB":Landroid/widget/LinearLayout;
     .end local v24    # "tvLastCodeB":Landroid/widget/TextView;
     .end local v26    # "tvLastCodeDescB":Landroid/widget/TextView;
-    :cond_3e8
+    :cond_3a4
     const v2, 0x7f1c0019
 
     move-object/from16 v0, v28
@@ -4303,7 +4222,7 @@
 
     check-cast v18, Landroid/widget/LinearLayout;
 
-    .line 1949
+    .line 2001
     .restart local v18    # "layoutLastCodeB":Landroid/widget/LinearLayout;
     const/16 v2, 0x8
 
@@ -4311,19 +4230,19 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    goto/16 :goto_30f
+    goto/16 :goto_2ed
 
-    .line 1966
+    .line 2020
     .end local v18    # "layoutLastCodeB":Landroid/widget/LinearLayout;
     .end local v22    # "tvCaptionB":Landroid/widget/TextView;
-    :cond_3fc
+    :cond_3b8
     const/4 v2, 0x4
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    goto/16 :goto_35d
+    goto/16 :goto_319
 .end method
 
 .method private InitialDashboardItemSmallAutoRedeem(Lcom/samsung/privilege/bean/DashboardItem;Lcom/samsung/privilege/bean/DashboardItem;ZZ)Landroid/view/View;
@@ -4334,7 +4253,7 @@
     .param p4, "is_bottom"    # Z
 
     .prologue
-    .line 1973
+    .line 2027
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -4347,7 +4266,7 @@
 
     check-cast v11, Landroid/view/LayoutInflater;
 
-    .line 1974
+    .line 2028
     .local v11, "inflater":Landroid/view/LayoutInflater;
     const v2, 0x7f0300d2
 
@@ -4357,11 +4276,11 @@
 
     move-result-object v33
 
-    .line 1976
+    .line 2030
     .local v33, "viewDashboardItem":Landroid/view/View;
     if-eqz p3, :cond_24
 
-    .line 1977
+    .line 2031
     const/high16 v2, 0x7f1c0000
 
     move-object/from16 v0, v33
@@ -4370,7 +4289,7 @@
 
     move-result-object v34
 
-    .line 1978
+    .line 2032
     .local v34, "viewTop":Landroid/view/View;
     const/4 v2, 0x0
 
@@ -4378,12 +4297,12 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1980
+    .line 2034
     .end local v34    # "viewTop":Landroid/view/View;
     :cond_24
     if-eqz p4, :cond_35
 
-    .line 1981
+    .line 2035
     const v2, 0x7f1c0003
 
     move-object/from16 v0, v33
@@ -4392,7 +4311,7 @@
 
     move-result-object v32
 
-    .line 1982
+    .line 2036
     .local v32, "viewBottom":Landroid/view/View;
     const/4 v2, 0x0
 
@@ -4400,7 +4319,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1985
+    .line 2039
     .end local v32    # "viewBottom":Landroid/view/View;
     :cond_35
     const v2, 0x7f1c0007
@@ -4413,7 +4332,7 @@
 
     check-cast v14, Landroid/widget/RelativeLayout;
 
-    .line 1986
+    .line 2040
     .local v14, "layoutItemA":Landroid/widget/RelativeLayout;
     const v2, 0x7f1c0008
 
@@ -4425,7 +4344,7 @@
 
     check-cast v4, Landroid/widget/ImageView;
 
-    .line 1987
+    .line 2041
     .local v4, "imgPhotoA":Landroid/widget/ImageView;
     move-object/from16 v0, p0
 
@@ -4437,20 +4356,20 @@
 
     const/4 v5, 0x0
 
-    const v6, 0x7f02039f
+    const v6, 0x7f0203a7
 
     const/4 v7, 0x0
 
     invoke-virtual/range {v2 .. v7}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
 
-    .line 1988
+    .line 2042
     invoke-virtual/range {p1 .. p1}, Lcom/samsung/privilege/bean/DashboardItem;->image_url_large()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v4, v2}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 1990
+    .line 2044
     const v2, 0x7f1c001d
 
     move-object/from16 v0, v33
@@ -4461,7 +4380,7 @@
 
     check-cast v24, Landroid/widget/TextView;
 
-    .line 1991
+    .line 2045
     .local v24, "tvLine1A":Landroid/widget/TextView;
     const v2, 0x7f1c001e
 
@@ -4473,7 +4392,7 @@
 
     check-cast v26, Landroid/widget/TextView;
 
-    .line 1992
+    .line 2046
     .local v26, "tvLine2A":Landroid/widget/TextView;
     const v2, 0x7f1c001f
 
@@ -4485,7 +4404,7 @@
 
     check-cast v28, Landroid/widget/TextView;
 
-    .line 1993
+    .line 2047
     .local v28, "tvLine3A":Landroid/widget/TextView;
     const v2, 0x7f1c0020
 
@@ -4497,7 +4416,7 @@
 
     check-cast v30, Landroid/widget/TextView;
 
-    .line 1995
+    .line 2049
     .local v30, "tvLine4A":Landroid/widget/TextView;
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -4509,7 +4428,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1996
+    .line 2050
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -4520,7 +4439,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1997
+    .line 2051
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -4531,7 +4450,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 1998
+    .line 2052
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -4542,7 +4461,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 2000
+    .line 2054
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -4559,7 +4478,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 2001
+    .line 2055
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -4576,7 +4495,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 2002
+    .line 2056
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -4593,7 +4512,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 2003
+    .line 2057
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -4610,7 +4529,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 2005
+    .line 2059
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
@@ -4619,7 +4538,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2006
+    .line 2060
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->line2:Ljava/lang/String;
@@ -4628,7 +4547,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2007
+    .line 2061
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -4643,7 +4562,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2008
+    .line 2062
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -4658,14 +4577,14 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2010
+    .line 2064
     move-object/from16 v0, p1
 
     iget-boolean v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_showcode:Z
 
-    if-eqz v2, :cond_436
+    if-eqz v2, :cond_3f2
 
-    .line 2011
+    .line 2065
     const v2, 0x7f1c0016
 
     move-object/from16 v0, v33
@@ -4676,7 +4595,7 @@
 
     check-cast v16, Landroid/widget/LinearLayout;
 
-    .line 2012
+    .line 2066
     .local v16, "layoutLastCodeA":Landroid/widget/LinearLayout;
     const v2, 0x7f1c0017
 
@@ -4688,7 +4607,7 @@
 
     check-cast v20, Landroid/widget/TextView;
 
-    .line 2013
+    .line 2067
     .local v20, "tvLastCodeA":Landroid/widget/TextView;
     const v2, 0x7f1c0018
 
@@ -4700,7 +4619,7 @@
 
     check-cast v22, Landroid/widget/TextView;
 
-    .line 2014
+    .line 2068
     .local v22, "tvLastCodeDescA":Landroid/widget/TextView;
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -4712,7 +4631,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 2015
+    .line 2069
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -4723,7 +4642,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 2016
+    .line 2070
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -4740,7 +4659,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 2017
+    .line 2071
     invoke-virtual/range {v20 .. v20}, Landroid/widget/TextView;->getPaintFlags()I
 
     move-result v2
@@ -4751,7 +4670,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setPaintFlags(I)V
 
-    .line 2018
+    .line 2072
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -4764,7 +4683,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 2019
+    .line 2073
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -4781,9 +4700,9 @@
 
     move-result-object v12
 
-    .line 2020
+    .line 2074
     .local v12, "lastCodeA":Ljava/lang/String;
-    if-eqz v12, :cond_42d
+    if-eqz v12, :cond_3e9
 
     const-string v2, ""
 
@@ -4791,9 +4710,9 @@
 
     move-result v2
 
-    if-nez v2, :cond_42d
+    if-nez v2, :cond_3e9
 
-    .line 2021
+    .line 2075
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -4810,9 +4729,9 @@
 
     move-result-object v18
 
-    .line 2022
+    .line 2076
     .local v18, "strPrivilegeMessage":Ljava/lang/String;
-    if-eqz v18, :cond_404
+    if-eqz v18, :cond_3c0
 
     const-string v2, ""
 
@@ -4822,23 +4741,23 @@
 
     move-result v2
 
-    if-nez v2, :cond_404
+    if-nez v2, :cond_3c0
 
-    .line 2023
+    .line 2077
     const/16 v2, 0x8
 
     move-object/from16 v0, v20
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 2024
+    .line 2078
     move-object/from16 v0, v22
 
     move-object/from16 v1, v18
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2031
+    .line 2085
     :cond_1cd
     :goto_1cd
     const/4 v2, 0x0
@@ -4847,7 +4766,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 2040
+    .line 2094
     .end local v12    # "lastCodeA":Ljava/lang/String;
     .end local v18    # "strPrivilegeMessage":Ljava/lang/String;
     .end local v20    # "tvLastCodeA":Landroid/widget/TextView;
@@ -4863,7 +4782,7 @@
 
     invoke-virtual {v14, v2}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2047
+    .line 2101
     const v2, 0x7f1c000a
 
     move-object/from16 v0, v33
@@ -4874,7 +4793,7 @@
 
     check-cast v15, Landroid/widget/RelativeLayout;
 
-    .line 2048
+    .line 2102
     .local v15, "layoutItemB":Landroid/widget/RelativeLayout;
     const v2, 0x7f1c000b
 
@@ -4886,13 +4805,13 @@
 
     check-cast v7, Landroid/widget/ImageView;
 
-    .line 2050
+    .line 2104
     .local v7, "imgPhotoB":Landroid/widget/ImageView;
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
 
-    if-eqz v2, :cond_22f
+    if-eqz v2, :cond_204
 
     move-object/from16 v0, p1
 
@@ -4902,54 +4821,20 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
-
-    if-nez v2, :cond_22f
-
-    .line 2051
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+    .line 2108
+    :cond_204
+    const-string v2, "View"
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+    move-object/from16 v1, p1
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    invoke-direct {v0, v2, v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->sendGA(Ljava/lang/String;Lcom/samsung/privilege/bean/DashboardItem;)V
 
-    const-string v6, "View "
+    .line 2110
+    if-eqz p2, :cond_44c
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, p1
-
-    iget-object v6, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    move-object/from16 v0, p1
-
-    iget-object v6, v0, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
-
-    const-wide/16 v8, 0x1
-
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v8
-
-    invoke-virtual {v2, v3, v5, v6, v8}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-
-    .line 2054
-    :cond_22f
-    if-eqz p2, :cond_490
-
-    .line 2055
+    .line 2111
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
@@ -4960,20 +4845,20 @@
 
     const/4 v8, 0x0
 
-    const v9, 0x7f02039f
+    const v9, 0x7f0203a7
 
     const/4 v10, 0x0
 
     invoke-virtual/range {v5 .. v10}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
 
-    .line 2056
+    .line 2112
     invoke-virtual/range {p2 .. p2}, Lcom/samsung/privilege/bean/DashboardItem;->image_url_large()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v7, v2}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 2058
+    .line 2114
     const v2, 0x7f1c0022
 
     move-object/from16 v0, v33
@@ -4984,7 +4869,7 @@
 
     check-cast v25, Landroid/widget/TextView;
 
-    .line 2059
+    .line 2115
     .local v25, "tvLine1B":Landroid/widget/TextView;
     const v2, 0x7f1c0023
 
@@ -4996,7 +4881,7 @@
 
     check-cast v27, Landroid/widget/TextView;
 
-    .line 2060
+    .line 2116
     .local v27, "tvLine2B":Landroid/widget/TextView;
     const v2, 0x7f1c0024
 
@@ -5008,7 +4893,7 @@
 
     check-cast v29, Landroid/widget/TextView;
 
-    .line 2061
+    .line 2117
     .local v29, "tvLine3B":Landroid/widget/TextView;
     const v2, 0x7f1c0025
 
@@ -5020,7 +4905,7 @@
 
     check-cast v31, Landroid/widget/TextView;
 
-    .line 2063
+    .line 2119
     .local v31, "tvLine4B":Landroid/widget/TextView;
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -5032,7 +4917,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 2064
+    .line 2120
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -5043,7 +4928,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 2065
+    .line 2121
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -5054,7 +4939,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 2066
+    .line 2122
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -5065,7 +4950,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 2068
+    .line 2124
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -5082,7 +4967,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 2069
+    .line 2125
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -5099,7 +4984,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 2070
+    .line 2126
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -5116,7 +5001,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 2071
+    .line 2127
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -5133,7 +5018,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 2073
+    .line 2129
     move-object/from16 v0, p2
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
@@ -5142,7 +5027,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2074
+    .line 2130
     move-object/from16 v0, p2
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->line2:Ljava/lang/String;
@@ -5151,7 +5036,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2075
+    .line 2131
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -5166,7 +5051,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2076
+    .line 2132
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -5181,14 +5066,14 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2078
+    .line 2134
     move-object/from16 v0, p2
 
     iget-boolean v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_showcode:Z
 
-    if-eqz v2, :cond_47c
+    if-eqz v2, :cond_438
 
-    .line 2079
+    .line 2135
     const v2, 0x7f1c0019
 
     move-object/from16 v0, v33
@@ -5199,7 +5084,7 @@
 
     check-cast v17, Landroid/widget/LinearLayout;
 
-    .line 2080
+    .line 2136
     .local v17, "layoutLastCodeB":Landroid/widget/LinearLayout;
     const v2, 0x7f1c001a
 
@@ -5211,7 +5096,7 @@
 
     check-cast v21, Landroid/widget/TextView;
 
-    .line 2081
+    .line 2137
     .local v21, "tvLastCodeB":Landroid/widget/TextView;
     const v2, 0x7f1c001b
 
@@ -5223,7 +5108,7 @@
 
     check-cast v23, Landroid/widget/TextView;
 
-    .line 2082
+    .line 2138
     .local v23, "tvLastCodeDescB":Landroid/widget/TextView;
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -5235,7 +5120,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 2083
+    .line 2139
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -5246,7 +5131,7 @@
 
     invoke-static {v0, v2, v3}, Lcom/samsung/privilege/util/FontUtil;->SetFontDefault(Landroid/widget/TextView;Landroid/content/Context;I)V
 
-    .line 2084
+    .line 2140
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -5263,7 +5148,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 2085
+    .line 2141
     invoke-virtual/range {v21 .. v21}, Landroid/widget/TextView;->getPaintFlags()I
 
     move-result v2
@@ -5274,7 +5159,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setPaintFlags(I)V
 
-    .line 2086
+    .line 2142
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -5287,7 +5172,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 2087
+    .line 2143
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -5304,9 +5189,9 @@
 
     move-result-object v13
 
-    .line 2088
+    .line 2144
     .local v13, "lastCodeB":Ljava/lang/String;
-    if-eqz v13, :cond_473
+    if-eqz v13, :cond_42f
 
     const-string v2, ""
 
@@ -5314,9 +5199,9 @@
 
     move-result v2
 
-    if-nez v2, :cond_473
+    if-nez v2, :cond_42f
 
-    .line 2089
+    .line 2145
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -5333,9 +5218,9 @@
 
     move-result-object v19
 
-    .line 2090
+    .line 2146
     .local v19, "strPrivilegeMessageB":Ljava/lang/String;
-    if-eqz v19, :cond_44a
+    if-eqz v19, :cond_406
 
     const-string v2, ""
 
@@ -5345,37 +5230,37 @@
 
     move-result v2
 
-    if-nez v2, :cond_44a
+    if-nez v2, :cond_406
 
-    .line 2091
+    .line 2147
     const/16 v2, 0x8
 
     move-object/from16 v0, v21
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 2092
+    .line 2148
     move-object/from16 v0, v23
 
     move-object/from16 v1, v19
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2099
-    :cond_3b3
-    :goto_3b3
+    .line 2155
+    :cond_391
+    :goto_391
     const/4 v2, 0x0
 
     move-object/from16 v0, v17
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 2108
+    .line 2164
     .end local v13    # "lastCodeB":Ljava/lang/String;
     .end local v19    # "strPrivilegeMessageB":Ljava/lang/String;
     .end local v21    # "tvLastCodeB":Landroid/widget/TextView;
     .end local v23    # "tvLastCodeDescB":Landroid/widget/TextView;
-    :goto_3b9
+    :goto_397
     new-instance v2, Lcom/samsung/privilege/activity/DashboardFragmentNew$21;
 
     move-object/from16 v0, p0
@@ -5386,17 +5271,17 @@
 
     invoke-virtual {v15, v2}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2115
+    .line 2171
     const/4 v2, 0x0
 
     invoke-virtual {v15, v2}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 2117
+    .line 2173
     move-object/from16 v0, p2
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
 
-    if-eqz v2, :cond_403
+    if-eqz v2, :cond_3b6
 
     move-object/from16 v0, p2
 
@@ -5406,72 +5291,38 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
-
-    if-nez v2, :cond_403
-
-    .line 2118
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+    .line 2177
+    :cond_3b6
+    const-string v2, "View"
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+    move-object/from16 v1, p2
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    invoke-direct {v0, v2, v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->sendGA(Ljava/lang/String;Lcom/samsung/privilege/bean/DashboardItem;)V
 
-    const-string v6, "View "
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, p2
-
-    iget-object v6, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    move-object/from16 v0, p2
-
-    iget-object v6, v0, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
-
-    const-wide/16 v8, 0x1
-
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v8
-
-    invoke-virtual {v2, v3, v5, v6, v8}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-
-    .line 2124
+    .line 2182
     .end local v17    # "layoutLastCodeB":Landroid/widget/LinearLayout;
     .end local v25    # "tvLine1B":Landroid/widget/TextView;
     .end local v27    # "tvLine2B":Landroid/widget/TextView;
     .end local v29    # "tvLine3B":Landroid/widget/TextView;
     .end local v31    # "tvLine4B":Landroid/widget/TextView;
-    :cond_403
-    :goto_403
+    :goto_3bf
     return-object v33
 
-    .line 2026
+    .line 2080
     .end local v7    # "imgPhotoB":Landroid/widget/ImageView;
     .end local v15    # "layoutItemB":Landroid/widget/RelativeLayout;
     .restart local v12    # "lastCodeA":Ljava/lang/String;
     .restart local v18    # "strPrivilegeMessage":Ljava/lang/String;
     .restart local v20    # "tvLastCodeA":Landroid/widget/TextView;
     .restart local v22    # "tvLastCodeDescA":Landroid/widget/TextView;
-    :cond_404
+    :cond_3c0
     move-object/from16 v0, v20
 
     invoke-virtual {v0, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2027
+    .line 2081
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_url:Ljava/lang/String;
@@ -5490,12 +5341,12 @@
 
     if-nez v2, :cond_1cd
 
-    .line 2028
+    .line 2082
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
 
-    const v3, 0x7f0a0180
+    const v3, 0x7f090180
 
     invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -5507,9 +5358,9 @@
 
     goto/16 :goto_1cd
 
-    .line 2033
+    .line 2087
     .end local v18    # "strPrivilegeMessage":Ljava/lang/String;
-    :cond_42d
+    :cond_3e9
     const/16 v2, 0x8
 
     move-object/from16 v0, v16
@@ -5518,12 +5369,12 @@
 
     goto/16 :goto_1d3
 
-    .line 2036
+    .line 2090
     .end local v12    # "lastCodeA":Ljava/lang/String;
     .end local v16    # "layoutLastCodeA":Landroid/widget/LinearLayout;
     .end local v20    # "tvLastCodeA":Landroid/widget/TextView;
     .end local v22    # "tvLastCodeDescA":Landroid/widget/TextView;
-    :cond_436
+    :cond_3f2
     const v2, 0x7f1c0016
 
     move-object/from16 v0, v33
@@ -5534,7 +5385,7 @@
 
     check-cast v16, Landroid/widget/LinearLayout;
 
-    .line 2037
+    .line 2091
     .restart local v16    # "layoutLastCodeA":Landroid/widget/LinearLayout;
     const/16 v2, 0x8
 
@@ -5544,7 +5395,7 @@
 
     goto/16 :goto_1d3
 
-    .line 2094
+    .line 2150
     .restart local v7    # "imgPhotoB":Landroid/widget/ImageView;
     .restart local v13    # "lastCodeB":Ljava/lang/String;
     .restart local v15    # "layoutItemB":Landroid/widget/RelativeLayout;
@@ -5556,17 +5407,17 @@
     .restart local v27    # "tvLine2B":Landroid/widget/TextView;
     .restart local v29    # "tvLine3B":Landroid/widget/TextView;
     .restart local v31    # "tvLine4B":Landroid/widget/TextView;
-    :cond_44a
+    :cond_406
     move-object/from16 v0, v21
 
     invoke-virtual {v0, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2095
+    .line 2151
     move-object/from16 v0, p2
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_url:Ljava/lang/String;
 
-    if-eqz v2, :cond_3b3
+    if-eqz v2, :cond_391
 
     move-object/from16 v0, p2
 
@@ -5578,14 +5429,14 @@
 
     move-result v2
 
-    if-nez v2, :cond_3b3
+    if-nez v2, :cond_391
 
-    .line 2096
+    .line 2152
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
 
-    const v3, 0x7f0a0180
+    const v3, 0x7f090180
 
     invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -5595,25 +5446,25 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_3b3
+    goto/16 :goto_391
 
-    .line 2101
+    .line 2157
     .end local v19    # "strPrivilegeMessageB":Ljava/lang/String;
-    :cond_473
+    :cond_42f
     const/16 v2, 0x8
 
     move-object/from16 v0, v17
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    goto/16 :goto_3b9
+    goto/16 :goto_397
 
-    .line 2104
+    .line 2160
     .end local v13    # "lastCodeB":Ljava/lang/String;
     .end local v17    # "layoutLastCodeB":Landroid/widget/LinearLayout;
     .end local v21    # "tvLastCodeB":Landroid/widget/TextView;
     .end local v23    # "tvLastCodeDescB":Landroid/widget/TextView;
-    :cond_47c
+    :cond_438
     const v2, 0x7f1c0019
 
     move-object/from16 v0, v33
@@ -5624,7 +5475,7 @@
 
     check-cast v17, Landroid/widget/LinearLayout;
 
-    .line 2105
+    .line 2161
     .restart local v17    # "layoutLastCodeB":Landroid/widget/LinearLayout;
     const/16 v2, 0x8
 
@@ -5632,20 +5483,20 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    goto/16 :goto_3b9
+    goto/16 :goto_397
 
-    .line 2121
+    .line 2179
     .end local v17    # "layoutLastCodeB":Landroid/widget/LinearLayout;
     .end local v25    # "tvLine1B":Landroid/widget/TextView;
     .end local v27    # "tvLine2B":Landroid/widget/TextView;
     .end local v29    # "tvLine3B":Landroid/widget/TextView;
     .end local v31    # "tvLine4B":Landroid/widget/TextView;
-    :cond_490
+    :cond_44c
     const/4 v2, 0x4
 
     invoke-virtual {v15, v2}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    goto/16 :goto_403
+    goto/16 :goto_3bf
 .end method
 
 .method private InitialDashboardItemWebview(Lcom/samsung/privilege/bean/DashboardItem;Landroid/view/ViewGroup;ZZZ)Landroid/view/View;
@@ -5661,7 +5512,7 @@
 
     const/4 v7, 0x1
 
-    .line 1030
+    .line 1036
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v5
@@ -5674,11 +5525,11 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    .line 1031
+    .line 1037
     .local v0, "inflater":Landroid/view/LayoutInflater;
     const/4 v2, 0x0
 
-    .line 1036
+    .line 1042
     .local v2, "viewDashboardItem":Landroid/view/View;
     iget-object v5, p1, Lcom/samsung/privilege/bean/DashboardItem;->size:Ljava/lang/String;
 
@@ -5690,48 +5541,48 @@
 
     if-eqz v5, :cond_9d
 
-    .line 1037
+    .line 1043
     const v5, 0x7f0300d5
 
     invoke-virtual {v0, v5, p2, p3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v2
 
-    .line 1044
+    .line 1050
     :goto_20
     if-eqz p4, :cond_2c
 
-    .line 1045
-    const v5, 0x7f0702fc
+    .line 1051
+    const v5, 0x7f0c02fc
 
     invoke-virtual {v2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 1046
+    .line 1052
     .local v3, "viewTop":Landroid/view/View;
     invoke-virtual {v3, v8}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1048
+    .line 1054
     .end local v3    # "viewTop":Landroid/view/View;
     :cond_2c
     if-eqz p5, :cond_38
 
-    .line 1049
-    const v5, 0x7f0702ff
+    .line 1055
+    const v5, 0x7f0c02ff
 
     invoke-virtual {v2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1050
+    .line 1056
     .local v1, "viewBottom":Landroid/view/View;
     invoke-virtual {v1, v8}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1053
+    .line 1059
     .end local v1    # "viewBottom":Landroid/view/View;
     :cond_38
-    const v5, 0x7f070304
+    const v5, 0x7f0c0304
 
     invoke-virtual {v2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -5739,114 +5590,114 @@
 
     check-cast v4, Landroid/webkit/WebView;
 
-    .line 1055
+    .line 1061
     .local v4, "webview1":Landroid/webkit/WebView;
     iget-object v5, p1, Lcom/samsung/privilege/bean/DashboardItem;->url:Ljava/lang/String;
 
     invoke-virtual {v4, v5}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    .line 1059
+    .line 1065
     iget-boolean v5, p1, Lcom/samsung/privilege/bean/DashboardItem;->web_dis_autoresize:Z
 
     if-nez v5, :cond_58
 
-    .line 1060
+    .line 1066
     invoke-virtual {v4}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object v5
 
     invoke-virtual {v5, v7}, Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V
 
-    .line 1061
+    .line 1067
     invoke-virtual {v4}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object v5
 
     invoke-virtual {v5, v7}, Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V
 
-    .line 1067
+    .line 1073
     :cond_58
     iget-boolean v5, p1, Lcom/samsung/privilege/bean/DashboardItem;->web_dis_clearcache:Z
 
     if-nez v5, :cond_62
 
-    .line 1068
+    .line 1074
     invoke-virtual {v4, v7}, Landroid/webkit/WebView;->clearCache(Z)V
 
-    .line 1069
+    .line 1075
     invoke-virtual {v4}, Landroid/webkit/WebView;->clearHistory()V
 
-    .line 1072
+    .line 1078
     :cond_62
     iget-boolean v5, p1, Lcom/samsung/privilege/bean/DashboardItem;->web_dis_javascript:Z
 
     if-nez v5, :cond_6d
 
-    .line 1073
+    .line 1079
     invoke-virtual {v4}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object v5
 
     invoke-virtual {v5, v7}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
 
-    .line 1076
+    .line 1082
     :cond_6d
     iget-boolean v5, p1, Lcom/samsung/privilege/bean/DashboardItem;->web_dis_javascript_cowa:Z
 
     if-nez v5, :cond_78
 
-    .line 1077
+    .line 1083
     invoke-virtual {v4}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object v5
 
     invoke-virtual {v5, v7}, Landroid/webkit/WebSettings;->setJavaScriptCanOpenWindowsAutomatically(Z)V
 
-    .line 1080
+    .line 1086
     :cond_78
     iget-boolean v5, p1, Lcom/samsung/privilege/bean/DashboardItem;->web_dis_scrollbar:Z
 
     if-nez v5, :cond_8a
 
-    .line 1081
+    .line 1087
     const/high16 v5, 0x2000000
 
     invoke-virtual {v4, v5}, Landroid/webkit/WebView;->setScrollBarStyle(I)V
 
-    .line 1082
+    .line 1088
     invoke-virtual {v4, v8}, Landroid/webkit/WebView;->setScrollbarFadingEnabled(Z)V
 
-    .line 1083
+    .line 1089
     invoke-virtual {v4, v7}, Landroid/webkit/WebView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 1084
+    .line 1090
     invoke-virtual {v4, v7}, Landroid/webkit/WebView;->setHorizontalScrollBarEnabled(Z)V
 
-    .line 1087
+    .line 1093
     :cond_8a
     iget-boolean v5, p1, Lcom/samsung/privilege/bean/DashboardItem;->web_dis_zoom:Z
 
     if-nez v5, :cond_9c
 
-    .line 1088
+    .line 1094
     invoke-virtual {v4}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object v5
 
     invoke-virtual {v5, v7}, Landroid/webkit/WebSettings;->setSupportZoom(Z)V
 
-    .line 1089
+    .line 1095
     invoke-virtual {v4}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object v5
 
     invoke-virtual {v5, v7}, Landroid/webkit/WebSettings;->setLightTouchEnabled(Z)V
 
-    .line 1092
+    .line 1098
     :cond_9c
     return-object v2
 
-    .line 1038
+    .line 1044
     .end local v4    # "webview1":Landroid/webkit/WebView;
     :cond_9d
     iget-object v5, p1, Lcom/samsung/privilege/bean/DashboardItem;->size:Ljava/lang/String;
@@ -5859,17 +5710,17 @@
 
     if-eqz v5, :cond_b0
 
-    .line 1039
+    .line 1045
     const v5, 0x7f0300d4
 
     invoke-virtual {v0, v5, p2, p3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v2
 
-    .line 1040
+    .line 1046
     goto/16 :goto_20
 
-    .line 1041
+    .line 1047
     :cond_b0
     const v5, 0x7f0300d3
 
@@ -5893,7 +5744,7 @@
     .end annotation
 
     .prologue
-    .line 960
+    .line 966
     .local p1, "dashboardItems":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/DashboardItem;>;"
     const/4 v10, 0x0
 
@@ -5905,10 +5756,10 @@
 
     if-lt v10, v0, :cond_8
 
-    .line 1027
+    .line 1033
     return-void
 
-    .line 962
+    .line 968
     :cond_8
     :try_start_8
     invoke-virtual {p1, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5917,27 +5768,27 @@
 
     check-cast v1, Lcom/samsung/privilege/bean/DashboardItem;
 
-    .line 964
+    .line 970
     .local v1, "dashboardItem":Lcom/samsung/privilege/bean/DashboardItem;
     const/4 v4, 0x0
 
-    .line 965
+    .line 971
     .local v4, "is_top":Z
     const/4 v5, 0x0
 
-    .line 966
+    .line 972
     .local v5, "is_bottom":Z
     if-nez v10, :cond_34
 
-    .line 967
+    .line 973
     const/4 v4, 0x1
 
-    .line 969
+    .line 975
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getArguments()Landroid/os/Bundle;
 
     move-result-object v6
 
-    .line 970
+    .line 976
     .local v6, "arguments":Landroid/os/Bundle;
     const-string v0, "category_code"
 
@@ -5945,7 +5796,7 @@
 
     move-result-object v7
 
-    .line 971
+    .line 977
     .local v7, "categoryCode":Ljava/lang/String;
     sget v0, Lcom/samsung/privilege/AppSetting;->CAT_PREMIUM_THAI:I
 
@@ -5959,7 +5810,7 @@
 
     if-eqz v0, :cond_34
 
-    .line 972
+    .line 978
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -5970,10 +5821,10 @@
 
     if-nez v0, :cond_34
 
-    .line 973
+    .line 979
     const/4 v4, 0x0
 
-    .line 977
+    .line 983
     .end local v6    # "arguments":Landroid/os/Bundle;
     .end local v7    # "categoryCode":Ljava/lang/String;
     :cond_34
@@ -5987,7 +5838,7 @@
 
     const/4 v5, 0x1
 
-    .line 979
+    .line 985
     :cond_3d
     iget-object v0, v1, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
 
@@ -5999,7 +5850,7 @@
 
     if-eqz v0, :cond_58
 
-    .line 980
+    .line 986
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v11, v0, Lcom/samsung/privilege/holder/DashboardNewHolder;->layoutDashboardItem:Landroid/widget/LinearLayout;
@@ -6016,7 +5867,7 @@
 
     invoke-virtual {v11, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 960
+    .line 966
     .end local v1    # "dashboardItem":Lcom/samsung/privilege/bean/DashboardItem;
     .end local v4    # "is_top":Z
     .end local v5    # "is_bottom":Z
@@ -6025,7 +5876,7 @@
 
     goto :goto_1
 
-    .line 981
+    .line 987
     .restart local v1    # "dashboardItem":Lcom/samsung/privilege/bean/DashboardItem;
     .restart local v4    # "is_top":Z
     .restart local v5    # "is_bottom":Z
@@ -6040,7 +5891,7 @@
 
     if-eqz v0, :cond_8b
 
-    .line 982
+    .line 988
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v11, v0, Lcom/samsung/privilege/holder/DashboardNewHolder;->layoutDashboardItem:Landroid/widget/LinearLayout;
@@ -6061,14 +5912,14 @@
 
     goto :goto_55
 
-    .line 1023
+    .line 1029
     .end local v1    # "dashboardItem":Lcom/samsung/privilege/bean/DashboardItem;
     .end local v4    # "is_top":Z
     .end local v5    # "is_bottom":Z
     :catch_71
     move-exception v9
 
-    .line 1024
+    .line 1030
     .local v9, "e":Ljava/lang/Exception;
     const-string v0, "gift.dashboard"
 
@@ -6094,7 +5945,7 @@
 
     goto :goto_55
 
-    .line 984
+    .line 990
     .end local v9    # "e":Ljava/lang/Exception;
     .restart local v1    # "dashboardItem":Lcom/samsung/privilege/bean/DashboardItem;
     .restart local v4    # "is_top":Z
@@ -6115,7 +5966,7 @@
 
     if-eqz v0, :cond_111
 
-    .line 985
+    .line 991
     add-int/lit8 v0, v10, 0x1
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -6124,7 +5975,7 @@
 
     check-cast v8, Lcom/samsung/privilege/bean/DashboardItem;
 
-    .line 986
+    .line 992
     .local v8, "dashboardItemNext":Lcom/samsung/privilege/bean/DashboardItem;
     iget-object v0, v8, Lcom/samsung/privilege/bean/DashboardItem;->size:Ljava/lang/String;
 
@@ -6160,10 +6011,10 @@
 
     if-nez v0, :cond_e9
 
-    .line 987
+    .line 993
     add-int/lit8 v10, v10, 0x1
 
-    .line 988
+    .line 994
     iget-object v0, v1, Lcom/samsung/privilege/bean/DashboardItem;->dashboard_layout:Ljava/lang/String;
 
     const-string v2, "premium"
@@ -6174,7 +6025,7 @@
 
     if-eqz v0, :cond_dc
 
-    .line 989
+    .line 995
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v0, v0, Lcom/samsung/privilege/holder/DashboardNewHolder;->layoutDashboardItem:Landroid/widget/LinearLayout;
@@ -6187,7 +6038,7 @@
 
     goto/16 :goto_55
 
-    .line 991
+    .line 997
     :cond_dc
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
@@ -6201,7 +6052,7 @@
 
     goto/16 :goto_55
 
-    .line 994
+    .line 1000
     :cond_e9
     iget-object v0, v1, Lcom/samsung/privilege/bean/DashboardItem;->dashboard_layout:Ljava/lang/String;
 
@@ -6213,7 +6064,7 @@
 
     if-eqz v0, :cond_103
 
-    .line 996
+    .line 1002
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v11, v0, Lcom/samsung/privilege/holder/DashboardNewHolder;->layoutDashboardItem:Landroid/widget/LinearLayout;
@@ -6232,7 +6083,7 @@
 
     goto/16 :goto_55
 
-    .line 998
+    .line 1004
     :cond_103
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
@@ -6248,7 +6099,7 @@
 
     goto/16 :goto_55
 
-    .line 1001
+    .line 1007
     .end local v8    # "dashboardItemNext":Lcom/samsung/privilege/bean/DashboardItem;
     :cond_111
     iget-object v0, v1, Lcom/samsung/privilege/bean/DashboardItem;->size:Ljava/lang/String;
@@ -6265,7 +6116,7 @@
 
     if-eqz v0, :cond_164
 
-    .line 1002
+    .line 1008
     iget-object v0, v1, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -6280,7 +6131,7 @@
 
     if-eqz v0, :cond_13a
 
-    .line 1003
+    .line 1009
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v0, v0, Lcom/samsung/privilege/holder/DashboardNewHolder;->layoutDashboardItem:Landroid/widget/LinearLayout;
@@ -6293,7 +6144,7 @@
 
     goto/16 :goto_55
 
-    .line 1005
+    .line 1011
     :cond_13a
     iget-object v0, v1, Lcom/samsung/privilege/bean/DashboardItem;->dashboard_layout:Ljava/lang/String;
 
@@ -6305,7 +6156,7 @@
 
     if-eqz v0, :cond_154
 
-    .line 1006
+    .line 1012
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v11, v0, Lcom/samsung/privilege/holder/DashboardNewHolder;->layoutDashboardItem:Landroid/widget/LinearLayout;
@@ -6324,7 +6175,7 @@
 
     goto/16 :goto_55
 
-    .line 1008
+    .line 1014
     :cond_154
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
@@ -6344,7 +6195,7 @@
 
     goto/16 :goto_55
 
-    .line 1012
+    .line 1018
     :cond_164
     iget-object v0, v1, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
 
@@ -6360,7 +6211,7 @@
 
     if-eqz v0, :cond_17f
 
-    .line 1013
+    .line 1019
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v0, v0, Lcom/samsung/privilege/holder/DashboardNewHolder;->layoutDashboardItem:Landroid/widget/LinearLayout;
@@ -6373,7 +6224,7 @@
 
     goto/16 :goto_55
 
-    .line 1015
+    .line 1021
     :cond_17f
     iget-object v0, v1, Lcom/samsung/privilege/bean/DashboardItem;->dashboard_layout:Ljava/lang/String;
 
@@ -6385,7 +6236,7 @@
 
     if-eqz v0, :cond_199
 
-    .line 1016
+    .line 1022
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v11, v0, Lcom/samsung/privilege/holder/DashboardNewHolder;->layoutDashboardItem:Landroid/widget/LinearLayout;
@@ -6404,7 +6255,7 @@
 
     goto/16 :goto_55
 
-    .line 1018
+    .line 1024
     :cond_199
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
@@ -6431,7 +6282,7 @@
     .registers 2
 
     .prologue
-    .line 95
+    .line 96
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
 
     return-object v0
@@ -6441,7 +6292,7 @@
     .registers 2
 
     .prologue
-    .line 98
+    .line 99
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
 
     return-object v0
@@ -6451,7 +6302,7 @@
     .registers 2
 
     .prologue
-    .line 102
+    .line 103
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
     return-object v0
@@ -6461,7 +6312,7 @@
     .registers 3
 
     .prologue
-    .line 2562
+    .line 2626
     invoke-direct {p0, p1, p2}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getLastRedeemCode(Lcom/samsung/privilege/bean/DashboardItem;Ljava/lang/String;)V
 
     return-void
@@ -6471,7 +6322,7 @@
     .registers 2
 
     .prologue
-    .line 111
+    .line 112
     iput-boolean p1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->doRedeeming:Z
 
     return-void
@@ -6481,7 +6332,7 @@
     .registers 7
 
     .prologue
-    .line 1632
+    .line 1680
     invoke-direct/range {p0 .. p5}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->InitialDashboardItemMediumAutoRedeem(Lcom/samsung/privilege/bean/DashboardItem;Landroid/view/ViewGroup;ZZZ)Landroid/view/View;
 
     move-result-object v0
@@ -6493,7 +6344,7 @@
     .registers 7
 
     .prologue
-    .line 1543
+    .line 1589
     invoke-direct/range {p0 .. p5}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->InitialDashboardItemMedium(Lcom/samsung/privilege/bean/DashboardItem;Landroid/view/ViewGroup;ZZZ)Landroid/view/View;
 
     move-result-object v0
@@ -6505,7 +6356,7 @@
     .registers 7
 
     .prologue
-    .line 1360
+    .line 1404
     invoke-direct/range {p0 .. p5}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->InitialDashboardItemBigAutoRedeem(Lcom/samsung/privilege/bean/DashboardItem;Landroid/view/ViewGroup;ZZZ)Landroid/view/View;
 
     move-result-object v0
@@ -6517,7 +6368,7 @@
     .registers 7
 
     .prologue
-    .line 1271
+    .line 1313
     invoke-direct/range {p0 .. p5}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->InitialDashboardItemBig(Lcom/samsung/privilege/bean/DashboardItem;Landroid/view/ViewGroup;ZZZ)Landroid/view/View;
 
     move-result-object v0
@@ -6529,7 +6380,7 @@
     .registers 2
 
     .prologue
-    .line 89
+    .line 90
     iput-object p1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gDialog:Landroid/app/ProgressDialog;
 
     return-void
@@ -6539,7 +6390,7 @@
     .registers 2
 
     .prologue
-    .line 2127
+    .line 2185
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->handleDashboardItem(Lcom/samsung/privilege/bean/DashboardItem;)V
 
     return-void
@@ -6549,7 +6400,7 @@
     .registers 2
 
     .prologue
-    .line 2373
+    .line 2437
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->doRedeem(Lcom/samsung/privilege/bean/DashboardItem;)V
 
     return-void
@@ -6559,7 +6410,7 @@
     .registers 2
 
     .prologue
-    .line 665
+    .line 671
     invoke-direct {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getDashboardKey()Ljava/lang/String;
 
     move-result-object v0
@@ -6571,7 +6422,7 @@
     .registers 2
 
     .prologue
-    .line 853
+    .line 859
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->processJsonDashboard(Ljava/lang/String;)V
 
     return-void
@@ -6581,7 +6432,7 @@
     .registers 2
 
     .prologue
-    .line 93
+    .line 94
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     return-object v0
@@ -6591,7 +6442,7 @@
     .registers 2
 
     .prologue
-    .line 909
+    .line 915
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->processJsonPremium(Ljava/lang/String;)V
 
     return-void
@@ -6601,7 +6452,7 @@
     .registers 2
 
     .prologue
-    .line 89
+    .line 90
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gDialog:Landroid/app/ProgressDialog;
 
     return-object v0
@@ -6611,7 +6462,7 @@
     .registers 2
 
     .prologue
-    .line 88
+    .line 89
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gHandler:Landroid/os/Handler;
 
     return-object v0
@@ -6621,7 +6472,7 @@
     .registers 2
 
     .prologue
-    .line 715
+    .line 721
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->loadDashboard(Z)V
 
     return-void
@@ -6631,7 +6482,7 @@
     .registers 1
 
     .prologue
-    .line 686
+    .line 692
     invoke-direct {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->loadDashboardFromCatch()V
 
     return-void
@@ -6641,41 +6492,45 @@
     .registers 2
 
     .prologue
-    .line 553
+    .line 559
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v0, v0, Lcom/samsung/privilege/holder/DashboardNewHolder;->listDashboard:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/control/PullToRefreshListView;->onRefreshComplete()V
 
-    .line 578
+    .line 584
     return-void
 .end method
 
 .method private doRedeem(Lcom/samsung/privilege/bean/DashboardItem;)V
-    .registers 15
+    .registers 14
     .param p1, "dashboardItem"    # Lcom/samsung/privilege/bean/DashboardItem;
 
     .prologue
-    .line 2374
+    const/4 v11, 0x0
+
+    const/4 v10, 0x1
+
+    .line 2438
     iget-boolean v7, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->doRedeeming:Z
 
-    if-eqz v7, :cond_c
+    if-eqz v7, :cond_e
 
-    .line 2375
+    .line 2439
     const-string v7, "gift.dashboard"
 
     const-string v8, "if (doRedeeming == true) {"
 
     invoke-static {v7, v8}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2415
-    :cond_b
-    :goto_b
+    .line 2479
+    :cond_d
+    :goto_d
     return-void
 
-    .line 2377
-    :cond_c
+    .line 2441
+    :cond_e
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v7
@@ -6684,9 +6539,9 @@
 
     move-result-object v5
 
-    .line 2378
+    .line 2442
     .local v5, "token":Ljava/lang/String;
-    if-eqz v5, :cond_b
+    if-eqz v5, :cond_d
 
     const-string v7, ""
 
@@ -6694,35 +6549,12 @@
 
     move-result v7
 
-    if-nez v7, :cond_b
+    if-nez v7, :cond_d
 
-    .line 2379
-    const/4 v7, 0x1
+    .line 2443
+    iput-boolean v10, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->doRedeeming:Z
 
-    iput-boolean v7, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->doRedeeming:Z
-
-    .line 2382
-    :try_start_21
-    iget-object v7, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    iget-object v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
-
-    const-string v9, "Redeem "
-
-    iget-object v10, p1, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
-
-    const-wide/16 v11, 0x1
-
-    invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v11
-
-    invoke-virtual {v7, v8, v9, v10, v11}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-    :try_end_32
-    .catch Ljava/lang/Exception; {:try_start_21 .. :try_end_32} :catch_124
-
-    .line 2387
-    :goto_32
+    .line 2451
     new-instance v2, Lcom/samsung/privilege/util/DeviceHelper;
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -6731,7 +6563,7 @@
 
     invoke-direct {v2, v7}, Lcom/samsung/privilege/util/DeviceHelper;-><init>(Landroid/content/Context;)V
 
-    .line 2388
+    .line 2452
     .local v2, "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -6741,7 +6573,7 @@
 
     move-result-object v0
 
-    .line 2391
+    .line 2455
     .local v0, "carrier":Ljava/lang/String;
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -6789,7 +6621,7 @@
 
     move-result-object v6
 
-    .line 2392
+    .line 2456
     .local v6, "url":Ljava/lang/String;
     const-string v7, "gift.dashboard"
 
@@ -6809,7 +6641,7 @@
 
     invoke-static {v7, v8}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2393
+    .line 2457
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v7
@@ -6818,14 +6650,14 @@
 
     move-result v7
 
-    if-eqz v7, :cond_df
+    if-eqz v7, :cond_cf
 
-    .line 2394
+    .line 2458
     new-instance v1, Ljava/util/Date;
 
     invoke-direct {v1}, Ljava/util/Date;-><init>()V
 
-    .line 2395
+    .line 2459
     .local v1, "date":Ljava/util/Date;
     const-string v7, "REDEEM"
 
@@ -6871,7 +6703,7 @@
 
     invoke-static {v7, v8, v9}, Lcom/samsung/privilege/AppSetting;->LOG(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 2396
+    .line 2460
     const-string v7, "REDEEM"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -6898,24 +6730,20 @@
 
     invoke-static {v7, v8, v9}, Lcom/samsung/privilege/AppSetting;->LOG(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 2399
+    .line 2463
     .end local v1    # "date":Ljava/util/Date;
-    :cond_df
+    :cond_cf
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v7
 
     const-string v8, ""
 
-    const v9, 0x7f0a018d
+    const v9, 0x7f09018d
 
     invoke-virtual {p0, v9}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getString(I)Ljava/lang/String;
 
     move-result-object v9
-
-    const/4 v10, 0x1
-
-    const/4 v11, 0x0
 
     invoke-static {v7, v8, v9, v10, v11}, Landroid/app/ProgressDialog;->show(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;
 
@@ -6923,8 +6751,8 @@
 
     iput-object v7, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gDialog:Landroid/app/ProgressDialog;
 
-    .line 2402
-    :try_start_f4
+    .line 2466
+    :try_start_e2
     iget-object v7, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gDialog:Landroid/app/ProgressDialog;
 
     const v8, 0x102000b
@@ -6935,16 +6763,16 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    .line 2403
+    .line 2467
     .local v3, "mMessageView":Landroid/widget/TextView;
-    if-eqz v3, :cond_111
+    if-eqz v3, :cond_ff
 
-    .line 2404
+    .line 2468
     iget-object v7, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gFont:Landroid/graphics/Typeface;
 
     invoke-virtual {v3, v7}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 2405
+    .line 2469
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v7
@@ -6954,53 +6782,40 @@
     move-result v7
 
     invoke-virtual {v3, v7}, Landroid/widget/TextView;->setTextSize(F)V
-    :try_end_111
-    .catch Ljava/lang/Exception; {:try_start_f4 .. :try_end_111} :catch_122
+    :try_end_ff
+    .catch Ljava/lang/Exception; {:try_start_e2 .. :try_end_ff} :catch_10e
 
-    .line 2411
+    .line 2475
     .end local v3    # "mMessageView":Landroid/widget/TextView;
-    :cond_111
-    :goto_111
+    :cond_ff
+    :goto_ff
     new-instance v4, Lcom/loopj/android/http/RequestParams;
 
     invoke-direct {v4}, Lcom/loopj/android/http/RequestParams;-><init>()V
 
-    .line 2412
+    .line 2476
     .local v4, "params":Lcom/loopj/android/http/RequestParams;
     new-instance v7, Lcom/samsung/privilege/activity/DashboardFragmentNew$RedeemAsyncHttpResponseHandler;
 
-    const/4 v8, 0x1
-
-    const/4 v9, 0x0
-
-    invoke-direct {v7, p0, p1, v8, v9}, Lcom/samsung/privilege/activity/DashboardFragmentNew$RedeemAsyncHttpResponseHandler;-><init>(Lcom/samsung/privilege/activity/DashboardFragmentNew;Lcom/samsung/privilege/bean/DashboardItem;ZZ)V
+    invoke-direct {v7, p0, p1, v10, v11}, Lcom/samsung/privilege/activity/DashboardFragmentNew$RedeemAsyncHttpResponseHandler;-><init>(Lcom/samsung/privilege/activity/DashboardFragmentNew;Lcom/samsung/privilege/bean/DashboardItem;ZZ)V
 
     invoke-static {v6, v4, v7}, Lcom/samsung/privilege/util/http/BuzzbeesRestClient;->post(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
 
-    goto/16 :goto_b
+    goto/16 :goto_d
 
-    .line 2407
+    .line 2471
     .end local v4    # "params":Lcom/loopj/android/http/RequestParams;
-    :catch_122
+    :catch_10e
     move-exception v7
 
-    goto :goto_111
-
-    .line 2383
-    .end local v0    # "carrier":Ljava/lang/String;
-    .end local v2    # "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
-    .end local v6    # "url":Ljava/lang/String;
-    :catch_124
-    move-exception v7
-
-    goto/16 :goto_32
+    goto :goto_ff
 .end method
 
 .method private getDashboardKey()Ljava/lang/String;
     .registers 5
 
     .prologue
-    .line 666
+    .line 672
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v3
@@ -7009,13 +6824,13 @@
 
     move-result-object v2
 
-    .line 668
+    .line 674
     .local v2, "key":Ljava/lang/String;
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 669
+    .line 675
     .local v0, "arguments":Landroid/os/Bundle;
     const-string v3, "category_code"
 
@@ -7023,7 +6838,7 @@
 
     move-result-object v1
 
-    .line 670
+    .line 676
     .local v1, "categoryCode":Ljava/lang/String;
     sget v3, Lcom/samsung/privilege/AppSetting;->CAT_SHOPPING_THAI:I
 
@@ -7037,10 +6852,10 @@
 
     if-eqz v3, :cond_20
 
-    .line 671
+    .line 677
     sget-object v2, Lcom/samsung/privilege/AppSetting;->DASHBOARD_KEY_SHOPPING_THAI:Ljava/lang/String;
 
-    .line 673
+    .line 679
     :cond_20
     sget v3, Lcom/samsung/privilege/AppSetting;->CAT_PRIMETIME_THAI:I
 
@@ -7054,10 +6869,10 @@
 
     if-eqz v3, :cond_2e
 
-    .line 674
+    .line 680
     sget-object v2, Lcom/samsung/privilege/AppSetting;->DASHBOARD_KEY_PRIMETIME_THAI:Ljava/lang/String;
 
-    .line 676
+    .line 682
     :cond_2e
     sget v3, Lcom/samsung/privilege/AppSetting;->CAT_PREMIUM_THAI:I
 
@@ -7071,10 +6886,10 @@
 
     if-eqz v3, :cond_3c
 
-    .line 677
+    .line 683
     sget-object v2, Lcom/samsung/privilege/AppSetting;->DASHBOARD_KEY_PREMIUM_THAI:Ljava/lang/String;
 
-    .line 679
+    .line 685
     :cond_3c
     sget v3, Lcom/samsung/privilege/AppSetting;->CAT_SPARE_THAI:I
 
@@ -7088,10 +6903,10 @@
 
     if-eqz v3, :cond_4a
 
-    .line 680
+    .line 686
     sget-object v2, Lcom/samsung/privilege/AppSetting;->DASHBOARD_KEY_SPARE_THAI:Ljava/lang/String;
 
-    .line 683
+    .line 689
     :cond_4a
     return-object v2
 .end method
@@ -7102,7 +6917,7 @@
     .param p2, "error_message"    # Ljava/lang/String;
 
     .prologue
-    .line 2563
+    .line 2627
     new-instance v1, Ljava/lang/StringBuilder;
 
     sget-object v2, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
@@ -7147,7 +6962,7 @@
 
     move-result-object v0
 
-    .line 2564
+    .line 2628
     .local v0, "url":Ljava/lang/String;
     const-string v1, "gift.dashboard"
 
@@ -7167,7 +6982,7 @@
 
     invoke-static {v1, v2}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2565
+    .line 2629
     const/4 v1, 0x0
 
     new-instance v2, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;
@@ -7176,28 +6991,28 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/http/BuzzbeesRestClient;->get(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
 
-    .line 2566
+    .line 2630
     return-void
 .end method
 
 .method private handleDashboardItem(Lcom/samsung/privilege/bean/DashboardItem;)V
-    .registers 27
+    .registers 25
     .param p1, "dashboardItem"    # Lcom/samsung/privilege/bean/DashboardItem;
 
     .prologue
-    .line 2128
+    .line 2186
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v19
 
     if-nez v19, :cond_7
 
-    .line 2371
+    .line 2435
     :cond_6
     :goto_6
     return-void
 
-    .line 2132
+    .line 2190
     :cond_7
     move-object/from16 v0, p1
 
@@ -7205,7 +7020,7 @@
 
     move-object/from16 v19, v0
 
-    if-eqz v19, :cond_4d
+    if-eqz v19, :cond_1a
 
     move-object/from16 v0, p1
 
@@ -7217,59 +7032,19 @@
 
     invoke-virtual/range {v19 .. v20}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v19
-
-    if-nez v19, :cond_4d
-
-    .line 2133
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    move-object/from16 v19, v0
+    .line 2194
+    :cond_1a
+    const-string v19, "Click"
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+    move-object/from16 v1, v19
 
-    move-object/from16 v20, v0
+    move-object/from16 v2, p1
 
-    new-instance v21, Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1, v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->sendGA(Ljava/lang/String;Lcom/samsung/privilege/bean/DashboardItem;)V
 
-    const-string v22, "Click "
-
-    invoke-direct/range {v21 .. v22}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, p1
-
-    iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
-
-    move-object/from16 v22, v0
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v21
-
-    move-object/from16 v0, p1
-
-    iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
-
-    move-object/from16 v22, v0
-
-    const-wide/16 v23, 0x1
-
-    invoke-static/range {v23 .. v24}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v23
-
-    invoke-virtual/range {v19 .. v23}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-
-    .line 2137
-    :cond_4d
+    .line 2197
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
@@ -7286,21 +7061,21 @@
 
     move-result v19
 
-    if-eqz v19, :cond_1db
+    if-eqz v19, :cond_1ab
 
-    .line 2138
+    .line 2198
     move-object/from16 v0, p1
 
     iget-boolean v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem:Z
 
     move/from16 v19, v0
 
-    if-eqz v19, :cond_171
+    if-eqz v19, :cond_14b
 
-    .line 2139
+    .line 2199
     const/4 v10, 0x1
 
-    .line 2140
+    .line 2200
     .local v10, "flowRedeem":Z
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -7320,9 +7095,9 @@
 
     move-result-object v14
 
-    .line 2141
+    .line 2201
     .local v14, "lastCode":Ljava/lang/String;
-    if-eqz v14, :cond_10d
+    if-eqz v14, :cond_e7
 
     const-string v19, ""
 
@@ -7332,16 +7107,16 @@
 
     move-result v19
 
-    if-nez v19, :cond_10d
+    if-nez v19, :cond_e7
 
-    .line 2142
+    .line 2202
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem_url:Ljava/lang/String;
 
     move-object/from16 v19, v0
 
-    if-eqz v19, :cond_10b
+    if-eqz v19, :cond_e5
 
     move-object/from16 v0, p1
 
@@ -7355,16 +7130,16 @@
 
     move-result v19
 
-    if-nez v19, :cond_10b
+    if-nez v19, :cond_e5
 
-    .line 2143
+    .line 2203
     const/4 v10, 0x0
 
-    .line 2151
-    :goto_9d
-    if-eqz v10, :cond_10f
+    .line 2211
+    :goto_75
+    if-eqz v10, :cond_e9
 
-    .line 2152
+    .line 2212
     new-instance v6, Landroid/app/AlertDialog$Builder;
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -7375,9 +7150,9 @@
 
     invoke-direct {v6, v0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 2153
+    .line 2213
     .local v6, "builder":Landroid/app/AlertDialog$Builder;
-    const v19, 0x7f0a001d
+    const v19, 0x7f09001d
 
     move-object/from16 v0, p0
 
@@ -7391,8 +7166,8 @@
 
     invoke-virtual {v6, v0}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 2154
-    const v19, 0x7f0a02ff
+    .line 2214
+    const v19, 0x7f090306
 
     move-object/from16 v0, p0
 
@@ -7414,7 +7189,7 @@
 
     move-result-object v19
 
-    const v20, 0x7f0a034d
+    const v20, 0x7f09035a
 
     move-object/from16 v0, p0
 
@@ -7430,14 +7205,16 @@
 
     move-object/from16 v1, p0
 
-    invoke-direct {v0, v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew$22;-><init>(Lcom/samsung/privilege/activity/DashboardFragmentNew;)V
+    move-object/from16 v2, p1
+
+    invoke-direct {v0, v1, v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$22;-><init>(Lcom/samsung/privilege/activity/DashboardFragmentNew;Lcom/samsung/privilege/bean/DashboardItem;)V
 
     invoke-virtual/range {v19 .. v21}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v19
 
-    .line 2158
-    const v20, 0x7f0a034c
+    .line 2220
+    const v20, 0x7f090359
 
     move-object/from16 v0, p0
 
@@ -7459,35 +7236,35 @@
 
     invoke-virtual/range {v19 .. v21}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 2166
+    .line 2230
     invoke-virtual {v6}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v4
 
-    .line 2167
+    .line 2231
     .local v4, "alert":Landroid/app/AlertDialog;
     invoke-virtual {v4}, Landroid/app/AlertDialog;->show()V
 
     goto/16 :goto_6
 
-    .line 2145
+    .line 2205
     .end local v4    # "alert":Landroid/app/AlertDialog;
     .end local v6    # "builder":Landroid/app/AlertDialog$Builder;
-    :cond_10b
+    :cond_e5
     const/4 v10, 0x1
 
-    .line 2147
-    goto :goto_9d
+    .line 2207
+    goto :goto_75
 
-    .line 2148
-    :cond_10d
+    .line 2208
+    :cond_e7
     const/4 v10, 0x1
 
-    goto :goto_9d
+    goto :goto_75
 
-    .line 2170
-    :cond_10f
-    :try_start_10f
+    .line 2234
+    :cond_e9
+    :try_start_e9
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v19
@@ -7500,11 +7277,11 @@
 
     check-cast v7, Landroid/content/ClipboardManager;
 
-    .line 2171
+    .line 2235
     .local v7, "clipboard":Landroid/content/ClipboardManager;
     invoke-virtual {v7, v14}, Landroid/content/ClipboardManager;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2173
+    .line 2237
     const-string v19, "Your discount code is already in clipboard."
 
     move-object/from16 v0, p0
@@ -7512,12 +7289,12 @@
     move-object/from16 v1, v19
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->showToast(Ljava/lang/String;)V
-    :try_end_127
-    .catch Ljava/lang/Exception; {:try_start_10f .. :try_end_127} :catch_676
+    :try_end_101
+    .catch Ljava/lang/Exception; {:try_start_e9 .. :try_end_101} :catch_5ef
 
-    .line 2178
+    .line 2242
     .end local v7    # "clipboard":Landroid/content/ClipboardManager;
-    :goto_127
+    :goto_101
     new-instance v12, Landroid/content/Intent;
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -7532,7 +7309,7 @@
 
     invoke-direct {v12, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2179
+    .line 2243
     .local v12, "intent":Landroid/content/Intent;
     const-string v19, "url"
 
@@ -7548,14 +7325,14 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2180
+    .line 2244
     const-string v19, "serial"
 
     move-object/from16 v0, v19
 
     invoke-virtual {v12, v0, v14}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2181
+    .line 2245
     const-string v19, "enable_webview_back"
 
     const/16 v20, 0x1
@@ -7566,7 +7343,7 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 2182
+    .line 2246
     const-string v19, "hide_serial"
 
     move-object/from16 v0, p1
@@ -7581,7 +7358,7 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 2183
+    .line 2247
     const/16 v19, 0x0
 
     move-object/from16 v0, p0
@@ -7592,11 +7369,11 @@
 
     goto/16 :goto_6
 
-    .line 2197
+    .line 2261
     .end local v10    # "flowRedeem":Z
     .end local v12    # "intent":Landroid/content/Intent;
     .end local v14    # "lastCode":Ljava/lang/String;
-    :cond_171
+    :cond_14b
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->campaigndetail_layout:Ljava/lang/String;
@@ -7609,9 +7386,9 @@
 
     move-result v19
 
-    if-eqz v19, :cond_1b3
+    if-eqz v19, :cond_182
 
-    .line 2198
+    .line 2262
     new-instance v12, Landroid/content/Intent;
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -7630,7 +7407,7 @@
 
     invoke-direct {v12, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2199
+    .line 2263
     .restart local v12    # "intent":Landroid/content/Intent;
     const-string v19, "campaign_id"
 
@@ -7646,28 +7423,16 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 2201
+    .line 2265
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v12}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->startActivity(Landroid/content/Intent;)V
 
-    .line 2209
-    :goto_1a6
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    move-object/from16 v19, v0
-
-    const-string v20, "DASHBOARD_GIFT_CAMPAIGN"
-
-    invoke-virtual/range {v19 .. v20}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-
     goto/16 :goto_6
 
-    .line 2203
+    .line 2267
     .end local v12    # "intent":Landroid/content/Intent;
-    :cond_1b3
+    :cond_182
     new-instance v12, Landroid/content/Intent;
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -7686,7 +7451,7 @@
 
     invoke-direct {v12, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2204
+    .line 2268
     .restart local v12    # "intent":Landroid/content/Intent;
     const-string v19, "campaign_id"
 
@@ -7702,16 +7467,16 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 2206
+    .line 2270
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v12}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->startActivity(Landroid/content/Intent;)V
 
-    goto :goto_1a6
+    goto/16 :goto_6
 
-    .line 2211
+    .line 2275
     .end local v12    # "intent":Landroid/content/Intent;
-    :cond_1db
+    :cond_1ab
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
@@ -7728,9 +7493,9 @@
 
     move-result v19
 
-    if-eqz v19, :cond_22c
+    if-eqz v19, :cond_1f1
 
-    .line 2212
+    .line 2276
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v19
@@ -7741,7 +7506,7 @@
 
     invoke-static/range {v19 .. v19}, Lcom/samsung/privilege/AppSetting;->InitialLibBuzzebeesConfig(Landroid/content/Context;)V
 
-    .line 2225
+    .line 2289
     new-instance v12, Landroid/content/Intent;
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -7760,7 +7525,7 @@
 
     invoke-direct {v12, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2226
+    .line 2290
     .restart local v12    # "intent":Landroid/content/Intent;
     const-string v19, "campaign_id"
 
@@ -7776,27 +7541,16 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 2228
+    .line 2292
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v12}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->startActivity(Landroid/content/Intent;)V
 
-    .line 2230
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    move-object/from16 v19, v0
-
-    const-string v20, "DASHBOARD_BZBS_CAMPAIGN"
-
-    invoke-virtual/range {v19 .. v20}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-
     goto/16 :goto_6
 
-    .line 2231
+    .line 2295
     .end local v12    # "intent":Landroid/content/Intent;
-    :cond_22c
+    :cond_1f1
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
@@ -7813,9 +7567,9 @@
 
     move-result v19
 
-    if-eqz v19, :cond_27d
+    if-eqz v19, :cond_237
 
-    .line 2232
+    .line 2296
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v19
@@ -7826,7 +7580,7 @@
 
     invoke-static/range {v19 .. v19}, Lcom/samsung/privilege/AppSetting;->InitialLibBuzzebeesConfig(Landroid/content/Context;)V
 
-    .line 2245
+    .line 2309
     new-instance v12, Landroid/content/Intent;
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -7845,7 +7599,7 @@
 
     invoke-direct {v12, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2246
+    .line 2310
     .restart local v12    # "intent":Landroid/content/Intent;
     const-string v19, "campaign_id"
 
@@ -7861,27 +7615,16 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 2248
+    .line 2312
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v12}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->startActivity(Landroid/content/Intent;)V
 
-    .line 2250
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    move-object/from16 v19, v0
-
-    const-string v20, "DASHBOARD_BZBS_ADS"
-
-    invoke-virtual/range {v19 .. v20}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-
     goto/16 :goto_6
 
-    .line 2251
+    .line 2315
     .end local v12    # "intent":Landroid/content/Intent;
-    :cond_27d
+    :cond_237
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
@@ -7898,9 +7641,9 @@
 
     move-result v19
 
-    if-eqz v19, :cond_2a9
+    if-eqz v19, :cond_258
 
-    .line 2252
+    .line 2316
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->cat:Ljava/lang/String;
@@ -7913,21 +7656,10 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->switchPagerByCat(Ljava/lang/String;)V
 
-    .line 2254
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    move-object/from16 v19, v0
-
-    const-string v20, "DASHBOARD_GIFT_CATE"
-
-    invoke-virtual/range {v19 .. v20}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-
     goto/16 :goto_6
 
-    .line 2255
-    :cond_2a9
+    .line 2319
+    :cond_258
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
@@ -7946,7 +7678,7 @@
 
     if-nez v19, :cond_6
 
-    .line 2257
+    .line 2321
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
@@ -7963,9 +7695,9 @@
 
     move-result v19
 
-    if-eqz v19, :cond_2f4
+    if-eqz v19, :cond_298
 
-    .line 2258
+    .line 2322
     new-instance v15, Landroid/content/Intent;
 
     const-string v19, "android.intent.action.VIEW"
@@ -7986,28 +7718,17 @@
 
     invoke-direct {v15, v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 2259
+    .line 2323
     .local v15, "openUrlIntent":Landroid/content/Intent;
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v15}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->startActivity(Landroid/content/Intent;)V
 
-    .line 2261
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    move-object/from16 v19, v0
-
-    const-string v20, "DASHBOARD_GIFT_LINK"
-
-    invoke-virtual/range {v19 .. v20}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-
     goto/16 :goto_6
 
-    .line 2262
+    .line 2326
     .end local v15    # "openUrlIntent":Landroid/content/Intent;
-    :cond_2f4
+    :cond_298
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
@@ -8024,10 +7745,10 @@
 
     move-result v19
 
-    if-eqz v19, :cond_432
+    if-eqz v19, :cond_3cc
 
-    .line 2264
-    :try_start_306
+    .line 2328
+    :try_start_2aa
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v19
@@ -8043,21 +7764,21 @@
     move-object/from16 v20, v0
 
     invoke-virtual/range {v19 .. v20}, Landroid/content/pm/PackageManager;->getLaunchIntentForPackage(Ljava/lang/String;)Landroid/content/Intent;
-    :try_end_317
-    .catch Ljava/lang/Exception; {:try_start_306 .. :try_end_317} :catch_3de
+    :try_end_2bb
+    .catch Ljava/lang/Exception; {:try_start_2aa .. :try_end_2bb} :catch_2ef
 
     move-result-object v3
 
-    .line 2267
+    .line 2331
     .local v3, "LaunchApp":Landroid/content/Intent;
-    :try_start_318
+    :try_start_2bc
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->and_ns_params:Ljava/lang/String;
 
     move-object/from16 v19, v0
 
-    if-eqz v19, :cond_344
+    if-eqz v19, :cond_2e8
 
     move-object/from16 v0, p1
 
@@ -8071,9 +7792,9 @@
 
     move-result v19
 
-    if-nez v19, :cond_344
+    if-nez v19, :cond_2e8
 
-    .line 2268
+    .line 2332
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->and_ns_params:Ljava/lang/String;
@@ -8086,251 +7807,46 @@
 
     move-result-object v16
 
-    .line 2269
+    .line 2333
     .local v16, "params":[Ljava/lang/String;
     const/4 v11, 0x0
 
     .local v11, "i":I
-    :goto_33b
+    :goto_2df
     move-object/from16 v0, v16
 
     array-length v0, v0
 
     move/from16 v19, v0
-    :try_end_340
-    .catch Ljava/lang/Exception; {:try_start_318 .. :try_end_340} :catch_673
+    :try_end_2e4
+    .catch Ljava/lang/Exception; {:try_start_2bc .. :try_end_2e4} :catch_5ec
 
     move/from16 v0, v19
 
-    if-lt v11, v0, :cond_356
+    if-lt v11, v0, :cond_343
 
-    .line 2302
+    .line 2366
     .end local v11    # "i":I
     .end local v16    # "params":[Ljava/lang/String;
-    :cond_344
-    :goto_344
-    :try_start_344
+    :cond_2e8
+    :goto_2e8
+    :try_start_2e8
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v3}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->startActivity(Landroid/content/Intent;)V
-    :try_end_349
-    .catch Ljava/lang/Exception; {:try_start_344 .. :try_end_349} :catch_3de
-
-    .line 2311
-    .end local v3    # "LaunchApp":Landroid/content/Intent;
-    :goto_349
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    move-object/from16 v19, v0
-
-    const-string v20, "DASHBOARD_GIFT_OPENAPP"
-
-    invoke-virtual/range {v19 .. v20}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
+    :try_end_2ed
+    .catch Ljava/lang/Exception; {:try_start_2e8 .. :try_end_2ed} :catch_2ef
 
     goto/16 :goto_6
 
-    .line 2271
-    .restart local v3    # "LaunchApp":Landroid/content/Intent;
-    .restart local v11    # "i":I
-    .restart local v16    # "params":[Ljava/lang/String;
-    :cond_356
-    :try_start_356
-    aget-object v19, v16, v11
-
-    const-string v20, "="
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v8
-
-    .line 2272
-    .local v8, "datas":[Ljava/lang/String;
-    const/16 v19, 0x0
-
-    aget-object v19, v8, v19
-
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v13
-
-    .line 2273
-    .local v13, "key":Ljava/lang/String;
-    const/16 v19, 0x1
-
-    aget-object v19, v8, v19
-
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v18
-
-    .line 2274
-    .local v18, "value":Ljava/lang/String;
-    const-string v19, "<"
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v19
-
-    if-eqz v19, :cond_3d8
-
-    .line 2275
-    const-string v19, ">"
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v17
-
-    .line 2276
-    .local v17, "temps":[Ljava/lang/String;
-    const/16 v19, 0x0
-
-    aget-object v19, v17, v19
-
-    const-string v20, "<int"
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v19
-
-    if-eqz v19, :cond_398
-
-    .line 2277
-    const/16 v19, 0x1
-
-    aget-object v19, v17, v19
-
-    invoke-static/range {v19 .. v19}, Lcom/samsung/privilege/util/BBUtil;->CTypeInteger(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v19
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v3, v13, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
-
-    .line 2269
-    .end local v8    # "datas":[Ljava/lang/String;
-    .end local v13    # "key":Ljava/lang/String;
-    .end local v17    # "temps":[Ljava/lang/String;
-    .end local v18    # "value":Ljava/lang/String;
-    :goto_395
-    add-int/lit8 v11, v11, 0x1
-
-    goto :goto_33b
-
-    .line 2279
-    .restart local v8    # "datas":[Ljava/lang/String;
-    .restart local v13    # "key":Ljava/lang/String;
-    .restart local v17    # "temps":[Ljava/lang/String;
-    .restart local v18    # "value":Ljava/lang/String;
-    :cond_398
-    const/16 v19, 0x0
-
-    aget-object v19, v17, v19
-
-    const-string v20, "<double"
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v19
-
-    if-eqz v19, :cond_3b4
-
-    .line 2280
-    const/16 v19, 0x1
-
-    aget-object v19, v17, v19
-
-    invoke-static/range {v19 .. v19}, Lcom/samsung/privilege/util/BBUtil;->CTypeDouble(Ljava/lang/String;)Ljava/lang/Double;
-
-    move-result-object v19
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v3, v13, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
-
-    goto :goto_395
-
-    .line 2293
-    .end local v8    # "datas":[Ljava/lang/String;
-    .end local v13    # "key":Ljava/lang/String;
-    .end local v17    # "temps":[Ljava/lang/String;
-    .end local v18    # "value":Ljava/lang/String;
-    :catch_3b2
-    move-exception v19
-
-    goto :goto_395
-
-    .line 2282
-    .restart local v8    # "datas":[Ljava/lang/String;
-    .restart local v13    # "key":Ljava/lang/String;
-    .restart local v17    # "temps":[Ljava/lang/String;
-    .restart local v18    # "value":Ljava/lang/String;
-    :cond_3b4
-    const/16 v19, 0x0
-
-    aget-object v19, v17, v19
-
-    const-string v20, "<boolean"
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v19
-
-    if-eqz v19, :cond_3ce
-
-    .line 2283
-    const/16 v19, 0x1
-
-    aget-object v19, v17, v19
-
-    invoke-static/range {v19 .. v19}, Lcom/samsung/privilege/util/BBUtil;->CtypeBoolean(Ljava/lang/String;)Z
-
-    move-result v19
-
-    move/from16 v0, v19
-
-    invoke-virtual {v3, v13, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    goto :goto_395
-
-    .line 2286
-    :cond_3ce
-    const/16 v19, 0x1
-
-    aget-object v19, v17, v19
-
-    move-object/from16 v0, v19
-
-    invoke-virtual {v3, v13, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    goto :goto_395
-
-    .line 2290
-    .end local v17    # "temps":[Ljava/lang/String;
-    :cond_3d8
-    move-object/from16 v0, v18
-
-    invoke-virtual {v3, v13, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-    :try_end_3dd
-    .catch Ljava/lang/Exception; {:try_start_356 .. :try_end_3dd} :catch_3b2
-
-    goto :goto_395
-
-    .line 2303
+    .line 2367
     .end local v3    # "LaunchApp":Landroid/content/Intent;
-    .end local v8    # "datas":[Ljava/lang/String;
-    .end local v11    # "i":I
-    .end local v13    # "key":Ljava/lang/String;
-    .end local v16    # "params":[Ljava/lang/String;
-    .end local v18    # "value":Ljava/lang/String;
-    :catch_3de
+    :catch_2ef
     move-exception v9
 
-    .line 2305
+    .line 2369
     .local v9, "ex":Ljava/lang/Exception;
-    :try_start_3df
+    :try_start_2f0
     new-instance v19, Landroid/content/Intent;
 
     const-string v20, "android.intent.action.VIEW"
@@ -8366,16 +7882,16 @@
     move-object/from16 v1, v19
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->startActivity(Landroid/content/Intent;)V
-    :try_end_406
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_3df .. :try_end_406} :catch_408
+    :try_end_317
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_2f0 .. :try_end_317} :catch_319
 
-    goto/16 :goto_349
+    goto/16 :goto_6
 
-    .line 2306
-    :catch_408
+    .line 2370
+    :catch_319
     move-exception v5
 
-    .line 2307
+    .line 2371
     .local v5, "anfe":Landroid/content/ActivityNotFoundException;
     new-instance v19, Landroid/content/Intent;
 
@@ -8413,12 +7929,205 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->startActivity(Landroid/content/Intent;)V
 
-    goto/16 :goto_349
+    goto/16 :goto_6
 
-    .line 2312
+    .line 2335
     .end local v5    # "anfe":Landroid/content/ActivityNotFoundException;
     .end local v9    # "ex":Ljava/lang/Exception;
-    :cond_432
+    .restart local v3    # "LaunchApp":Landroid/content/Intent;
+    .restart local v11    # "i":I
+    .restart local v16    # "params":[Ljava/lang/String;
+    :cond_343
+    :try_start_343
+    aget-object v19, v16, v11
+
+    const-string v20, "="
+
+    invoke-virtual/range {v19 .. v20}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v8
+
+    .line 2336
+    .local v8, "datas":[Ljava/lang/String;
+    const/16 v19, 0x0
+
+    aget-object v19, v8, v19
+
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v13
+
+    .line 2337
+    .local v13, "key":Ljava/lang/String;
+    const/16 v19, 0x1
+
+    aget-object v19, v8, v19
+
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v18
+
+    .line 2338
+    .local v18, "value":Ljava/lang/String;
+    const-string v19, "<"
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v19
+
+    if-eqz v19, :cond_3c6
+
+    .line 2339
+    const-string v19, ">"
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v17
+
+    .line 2340
+    .local v17, "temps":[Ljava/lang/String;
+    const/16 v19, 0x0
+
+    aget-object v19, v17, v19
+
+    const-string v20, "<int"
+
+    invoke-virtual/range {v19 .. v20}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v19
+
+    if-eqz v19, :cond_386
+
+    .line 2341
+    const/16 v19, 0x1
+
+    aget-object v19, v17, v19
+
+    invoke-static/range {v19 .. v19}, Lcom/samsung/privilege/util/BBUtil;->CTypeInteger(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v19
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v3, v13, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+
+    .line 2333
+    .end local v8    # "datas":[Ljava/lang/String;
+    .end local v13    # "key":Ljava/lang/String;
+    .end local v17    # "temps":[Ljava/lang/String;
+    .end local v18    # "value":Ljava/lang/String;
+    :goto_382
+    add-int/lit8 v11, v11, 0x1
+
+    goto/16 :goto_2df
+
+    .line 2343
+    .restart local v8    # "datas":[Ljava/lang/String;
+    .restart local v13    # "key":Ljava/lang/String;
+    .restart local v17    # "temps":[Ljava/lang/String;
+    .restart local v18    # "value":Ljava/lang/String;
+    :cond_386
+    const/16 v19, 0x0
+
+    aget-object v19, v17, v19
+
+    const-string v20, "<double"
+
+    invoke-virtual/range {v19 .. v20}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v19
+
+    if-eqz v19, :cond_3a2
+
+    .line 2344
+    const/16 v19, 0x1
+
+    aget-object v19, v17, v19
+
+    invoke-static/range {v19 .. v19}, Lcom/samsung/privilege/util/BBUtil;->CTypeDouble(Ljava/lang/String;)Ljava/lang/Double;
+
+    move-result-object v19
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v3, v13, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+
+    goto :goto_382
+
+    .line 2357
+    .end local v8    # "datas":[Ljava/lang/String;
+    .end local v13    # "key":Ljava/lang/String;
+    .end local v17    # "temps":[Ljava/lang/String;
+    .end local v18    # "value":Ljava/lang/String;
+    :catch_3a0
+    move-exception v19
+
+    goto :goto_382
+
+    .line 2346
+    .restart local v8    # "datas":[Ljava/lang/String;
+    .restart local v13    # "key":Ljava/lang/String;
+    .restart local v17    # "temps":[Ljava/lang/String;
+    .restart local v18    # "value":Ljava/lang/String;
+    :cond_3a2
+    const/16 v19, 0x0
+
+    aget-object v19, v17, v19
+
+    const-string v20, "<boolean"
+
+    invoke-virtual/range {v19 .. v20}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v19
+
+    if-eqz v19, :cond_3bc
+
+    .line 2347
+    const/16 v19, 0x1
+
+    aget-object v19, v17, v19
+
+    invoke-static/range {v19 .. v19}, Lcom/samsung/privilege/util/BBUtil;->CtypeBoolean(Ljava/lang/String;)Z
+
+    move-result v19
+
+    move/from16 v0, v19
+
+    invoke-virtual {v3, v13, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    goto :goto_382
+
+    .line 2350
+    :cond_3bc
+    const/16 v19, 0x1
+
+    aget-object v19, v17, v19
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v3, v13, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    goto :goto_382
+
+    .line 2354
+    .end local v17    # "temps":[Ljava/lang/String;
+    :cond_3c6
+    move-object/from16 v0, v18
+
+    invoke-virtual {v3, v13, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    :try_end_3cb
+    .catch Ljava/lang/Exception; {:try_start_343 .. :try_end_3cb} :catch_3a0
+
+    goto :goto_382
+
+    .line 2376
+    .end local v3    # "LaunchApp":Landroid/content/Intent;
+    .end local v8    # "datas":[Ljava/lang/String;
+    .end local v11    # "i":I
+    .end local v13    # "key":Ljava/lang/String;
+    .end local v16    # "params":[Ljava/lang/String;
+    .end local v18    # "value":Ljava/lang/String;
+    :cond_3cc
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
@@ -8435,9 +8144,9 @@
 
     move-result v19
 
-    if-eqz v19, :cond_474
+    if-eqz v19, :cond_403
 
-    .line 2313
+    .line 2377
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v19
@@ -8448,7 +8157,7 @@
 
     invoke-static/range {v19 .. v19}, Lcom/samsung/privilege/AppSetting;->InitialLibBuzzebeesConfig(Landroid/content/Context;)V
 
-    .line 2316
+    .line 2380
     new-instance v12, Landroid/content/Intent;
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -8467,28 +8176,17 @@
 
     invoke-direct {v12, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2317
+    .line 2381
     .restart local v12    # "intent":Landroid/content/Intent;
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v12}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->startActivity(Landroid/content/Intent;)V
 
-    .line 2319
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    move-object/from16 v19, v0
-
-    const-string v20, "DASHBOARD_MARKETPLACE_BZBS"
-
-    invoke-virtual/range {v19 .. v20}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-
     goto/16 :goto_6
 
-    .line 2320
+    .line 2384
     .end local v12    # "intent":Landroid/content/Intent;
-    :cond_474
+    :cond_403
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
@@ -8505,7 +8203,7 @@
 
     move-result v19
 
-    if-nez v19, :cond_498
+    if-nez v19, :cond_427
 
     move-object/from16 v0, p1
 
@@ -8523,10 +8221,10 @@
 
     move-result v19
 
-    if-eqz v19, :cond_4d7
+    if-eqz v19, :cond_45b
 
-    .line 2321
-    :cond_498
+    .line 2385
+    :cond_427
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v19
@@ -8537,7 +8235,7 @@
 
     invoke-static/range {v19 .. v19}, Lcom/samsung/privilege/AppSetting;->InitialLibBuzzebeesConfig(Landroid/content/Context;)V
 
-    .line 2324
+    .line 2388
     new-instance v12, Landroid/content/Intent;
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -8556,7 +8254,7 @@
 
     invoke-direct {v12, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2325
+    .line 2389
     .restart local v12    # "intent":Landroid/content/Intent;
     const-string v19, "cat"
 
@@ -8572,27 +8270,16 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2326
+    .line 2390
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v12}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->startActivity(Landroid/content/Intent;)V
 
-    .line 2328
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    move-object/from16 v19, v0
-
-    const-string v20, "DASHBOARD_MARKETPLACE_BZBS_CATE"
-
-    invoke-virtual/range {v19 .. v20}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-
     goto/16 :goto_6
 
-    .line 2329
+    .line 2393
     .end local v12    # "intent":Landroid/content/Intent;
-    :cond_4d7
+    :cond_45b
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
@@ -8609,9 +8296,9 @@
 
     move-result v19
 
-    if-eqz v19, :cond_519
+    if-eqz v19, :cond_492
 
-    .line 2330
+    .line 2394
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v19
@@ -8622,7 +8309,7 @@
 
     invoke-static/range {v19 .. v19}, Lcom/samsung/privilege/AppSetting;->InitialLibBuzzebeesConfig(Landroid/content/Context;)V
 
-    .line 2332
+    .line 2396
     new-instance v12, Landroid/content/Intent;
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -8641,28 +8328,17 @@
 
     invoke-direct {v12, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2333
+    .line 2397
     .restart local v12    # "intent":Landroid/content/Intent;
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v12}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->startActivity(Landroid/content/Intent;)V
 
-    .line 2335
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    move-object/from16 v19, v0
-
-    const-string v20, "DASHBOARD_DASHBOARD_BZBS"
-
-    invoke-virtual/range {v19 .. v20}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-
     goto/16 :goto_6
 
-    .line 2336
+    .line 2400
     .end local v12    # "intent":Landroid/content/Intent;
-    :cond_519
+    :cond_492
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
@@ -8681,7 +8357,7 @@
 
     if-eqz v19, :cond_6
 
-    .line 2338
+    .line 2402
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->menu:Ljava/lang/String;
@@ -8700,7 +8376,7 @@
 
     if-nez v19, :cond_6
 
-    .line 2340
+    .line 2404
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->menu:Ljava/lang/String;
@@ -8719,7 +8395,7 @@
 
     if-nez v19, :cond_6
 
-    .line 2342
+    .line 2406
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->menu:Ljava/lang/String;
@@ -8736,9 +8412,9 @@
 
     move-result v19
 
-    if-eqz v19, :cond_57b
+    if-eqz v19, :cond_4f4
 
-    .line 2343
+    .line 2407
     new-instance v12, Landroid/content/Intent;
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -8757,7 +8433,7 @@
 
     invoke-direct {v12, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2344
+    .line 2408
     .restart local v12    # "intent":Landroid/content/Intent;
     move-object/from16 v0, p0
 
@@ -8765,9 +8441,9 @@
 
     goto/16 :goto_6
 
-    .line 2345
+    .line 2409
     .end local v12    # "intent":Landroid/content/Intent;
-    :cond_57b
+    :cond_4f4
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->menu:Ljava/lang/String;
@@ -8786,7 +8462,7 @@
 
     if-nez v19, :cond_6
 
-    .line 2347
+    .line 2411
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->menu:Ljava/lang/String;
@@ -8805,7 +8481,7 @@
 
     if-nez v19, :cond_6
 
-    .line 2349
+    .line 2413
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->menu:Ljava/lang/String;
@@ -8824,7 +8500,7 @@
 
     if-nez v19, :cond_6
 
-    .line 2351
+    .line 2415
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->menu:Ljava/lang/String;
@@ -8843,7 +8519,7 @@
 
     if-nez v19, :cond_6
 
-    .line 2353
+    .line 2417
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->menu:Ljava/lang/String;
@@ -8860,9 +8536,9 @@
 
     move-result v19
 
-    if-eqz v19, :cond_5ef
+    if-eqz v19, :cond_568
 
-    .line 2354
+    .line 2418
     new-instance v12, Landroid/content/Intent;
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -8881,7 +8557,7 @@
 
     invoke-direct {v12, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2355
+    .line 2419
     .restart local v12    # "intent":Landroid/content/Intent;
     move-object/from16 v0, p0
 
@@ -8889,9 +8565,9 @@
 
     goto/16 :goto_6
 
-    .line 2356
+    .line 2420
     .end local v12    # "intent":Landroid/content/Intent;
-    :cond_5ef
+    :cond_568
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->menu:Ljava/lang/String;
@@ -8908,9 +8584,9 @@
 
     move-result v19
 
-    if-eqz v19, :cond_61b
+    if-eqz v19, :cond_594
 
-    .line 2357
+    .line 2421
     new-instance v12, Landroid/content/Intent;
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -8929,7 +8605,7 @@
 
     invoke-direct {v12, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2358
+    .line 2422
     .restart local v12    # "intent":Landroid/content/Intent;
     move-object/from16 v0, p0
 
@@ -8937,9 +8613,9 @@
 
     goto/16 :goto_6
 
-    .line 2359
+    .line 2423
     .end local v12    # "intent":Landroid/content/Intent;
-    :cond_61b
+    :cond_594
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->menu:Ljava/lang/String;
@@ -8956,9 +8632,9 @@
 
     move-result v19
 
-    if-eqz v19, :cond_647
+    if-eqz v19, :cond_5c0
 
-    .line 2360
+    .line 2424
     new-instance v12, Landroid/content/Intent;
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -8977,7 +8653,7 @@
 
     invoke-direct {v12, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2361
+    .line 2425
     .restart local v12    # "intent":Landroid/content/Intent;
     move-object/from16 v0, p0
 
@@ -8985,9 +8661,9 @@
 
     goto/16 :goto_6
 
-    .line 2362
+    .line 2426
     .end local v12    # "intent":Landroid/content/Intent;
-    :cond_647
+    :cond_5c0
     move-object/from16 v0, p1
 
     iget-object v0, v0, Lcom/samsung/privilege/bean/DashboardItem;->menu:Ljava/lang/String;
@@ -9006,7 +8682,7 @@
 
     if-eqz v19, :cond_6
 
-    .line 2363
+    .line 2427
     new-instance v12, Landroid/content/Intent;
 
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -9025,7 +8701,7 @@
 
     invoke-direct {v12, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2364
+    .line 2428
     .restart local v12    # "intent":Landroid/content/Intent;
     move-object/from16 v0, p0
 
@@ -9033,34 +8709,34 @@
 
     goto/16 :goto_6
 
-    .line 2298
+    .line 2362
     .end local v12    # "intent":Landroid/content/Intent;
     .restart local v3    # "LaunchApp":Landroid/content/Intent;
-    :catch_673
+    :catch_5ec
     move-exception v19
 
-    goto/16 :goto_344
+    goto/16 :goto_2e8
 
-    .line 2174
+    .line 2238
     .end local v3    # "LaunchApp":Landroid/content/Intent;
     .restart local v10    # "flowRedeem":Z
     .restart local v14    # "lastCode":Ljava/lang/String;
-    :catch_676
+    :catch_5ef
     move-exception v19
 
-    goto/16 :goto_127
+    goto/16 :goto_101
 .end method
 
 .method private initScreenSize()V
     .registers 3
 
     .prologue
-    .line 545
+    .line 551
     new-instance v0, Landroid/util/DisplayMetrics;
 
     invoke-direct {v0}, Landroid/util/DisplayMetrics;-><init>()V
 
-    .line 546
+    .line 552
     .local v0, "metrics":Landroid/util/DisplayMetrics;
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -9076,22 +8752,22 @@
 
     invoke-virtual {v1, v0}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
-    .line 547
+    .line 553
     iget v1, v0, Landroid/util/DisplayMetrics;->densityDpi:I
 
     sput v1, Lcom/samsung/privilege/AppSetting;->dpi:I
 
-    .line 548
+    .line 554
     iget v1, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
     sput v1, Lcom/samsung/privilege/AppSetting;->screenWidth:I
 
-    .line 549
+    .line 555
     iget v1, v0, Landroid/util/DisplayMetrics;->heightPixels:I
 
     sput v1, Lcom/samsung/privilege/AppSetting;->screenHeight:I
 
-    .line 550
+    .line 556
     return-void
 .end method
 
@@ -9100,21 +8776,21 @@
     .param p1, "forceUpdate"    # Z
 
     .prologue
-    .line 716
+    .line 722
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v5
 
     if-eqz v5, :cond_105
 
-    .line 717
+    .line 723
     iget-object v5, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v5, v5, Lcom/samsung/privilege/holder/DashboardNewHolder;->pbLoadingDashboard:Landroid/widget/ProgressBar;
 
     if-eqz v5, :cond_14
 
-    .line 718
+    .line 724
     iget-object v5, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v5, v5, Lcom/samsung/privilege/holder/DashboardNewHolder;->pbLoadingDashboard:Landroid/widget/ProgressBar;
@@ -9123,7 +8799,7 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 721
+    .line 727
     :cond_14
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -9153,13 +8829,13 @@
 
     move-result-object v4
 
-    .line 722
+    .line 728
     .local v4, "url":Ljava/lang/String;
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 723
+    .line 729
     .local v0, "arguments":Landroid/os/Bundle;
     const-string v5, "category_code"
 
@@ -9167,7 +8843,7 @@
 
     move-result-object v1
 
-    .line 724
+    .line 730
     .local v1, "categoryCode":Ljava/lang/String;
     sget v5, Lcom/samsung/privilege/AppSetting;->CAT_SHOPPING_THAI:I
 
@@ -9180,92 +8856,6 @@
     move-result v5
 
     if-eqz v5, :cond_64
-
-    .line 725
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    sget-object v6, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
-
-    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v6, "api/dashboard/"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-direct {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getDashboardKey()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 727
-    :cond_64
-    sget v5, Lcom/samsung/privilege/AppSetting;->CAT_PRIMETIME_THAI:I
-
-    invoke-static {v5}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_8d
-
-    .line 728
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    sget-object v6, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
-
-    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v6, "api/dashboard/"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-direct {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getDashboardKey()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 730
-    :cond_8d
-    sget v5, Lcom/samsung/privilege/AppSetting;->CAT_PREMIUM_THAI:I
-
-    invoke-static {v5}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_b6
 
     .line 731
     new-instance v5, Ljava/lang/StringBuilder;
@@ -9297,8 +8887,8 @@
     move-result-object v4
 
     .line 733
-    :cond_b6
-    sget v5, Lcom/samsung/privilege/AppSetting;->CAT_SPARE_THAI:I
+    :cond_64
+    sget v5, Lcom/samsung/privilege/AppSetting;->CAT_PRIMETIME_THAI:I
 
     invoke-static {v5}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
@@ -9308,7 +8898,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_df
+    if-eqz v5, :cond_8d
 
     .line 734
     new-instance v5, Ljava/lang/StringBuilder;
@@ -9339,7 +8929,93 @@
 
     move-result-object v4
 
+    .line 736
+    :cond_8d
+    sget v5, Lcom/samsung/privilege/AppSetting;->CAT_PREMIUM_THAI:I
+
+    invoke-static {v5}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_b6
+
     .line 737
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    sget-object v6, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
+
+    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v6, "api/dashboard/"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-direct {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getDashboardKey()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 739
+    :cond_b6
+    sget v5, Lcom/samsung/privilege/AppSetting;->CAT_SPARE_THAI:I
+
+    invoke-static {v5}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_df
+
+    .line 740
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    sget-object v6, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
+
+    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v6, "api/dashboard/"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-direct {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getDashboardKey()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 743
     :cond_df
     const-string v5, "gift.dashboard"
 
@@ -9359,7 +9035,7 @@
 
     invoke-static {v5, v6}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 738
+    .line 744
     new-instance v5, Ljava/util/Date;
 
     invoke-direct {v5}, Ljava/util/Date;-><init>()V
@@ -9368,7 +9044,7 @@
 
     move-result-wide v2
 
-    .line 739
+    .line 745
     .local v2, "startTime":J
     const/4 v5, 0x0
 
@@ -9378,7 +9054,7 @@
 
     invoke-static {v4, v5, v6}, Lcom/samsung/privilege/util/http/BuzzbeesRestClient;->get(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
 
-    .line 741
+    .line 747
     .end local v0    # "arguments":Landroid/os/Bundle;
     .end local v1    # "categoryCode":Ljava/lang/String;
     .end local v2    # "startTime":J
@@ -9393,14 +9069,14 @@
     .prologue
     const/4 v10, 0x0
 
-    .line 687
+    .line 693
     iget-object v7, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v7, v7, Lcom/samsung/privilege/holder/DashboardNewHolder;->imgLoading:Landroid/widget/ImageView;
 
     invoke-virtual {v7, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 689
+    .line 695
     new-instance v7, Ljava/lang/StringBuilder;
 
     const-string v8, "dashboard_key_"
@@ -9427,7 +9103,7 @@
 
     move-result-object v1
 
-    .line 690
+    .line 696
     .local v1, "catch_dashboard_items":Ljava/lang/String;
     const-string v7, ""
 
@@ -9437,15 +9113,15 @@
 
     if-nez v7, :cond_ee
 
-    .line 691
+    .line 697
     invoke-direct {p0, v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->processJsonDashboard(Ljava/lang/String;)V
 
-    .line 693
+    .line 699
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 694
+    .line 700
     .local v0, "arguments":Landroid/os/Bundle;
     const-string v7, "category_code"
 
@@ -9453,7 +9129,7 @@
 
     move-result-object v3
 
-    .line 695
+    .line 701
     .local v3, "categoryCode":Ljava/lang/String;
     sget v7, Lcom/samsung/privilege/AppSetting;->CAT_PREMIUM_THAI:I
 
@@ -9467,7 +9143,7 @@
 
     if-eqz v7, :cond_59
 
-    .line 696
+    .line 702
     const-string v7, "dashboard_premium"
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -9478,7 +9154,7 @@
 
     move-result-object v2
 
-    .line 697
+    .line 703
     .local v2, "catch_premium":Ljava/lang/String;
     const-string v7, ""
 
@@ -9488,10 +9164,10 @@
 
     if-nez v7, :cond_7e
 
-    .line 698
+    .line 704
     invoke-direct {p0, v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->processJsonPremium(Ljava/lang/String;)V
 
-    .line 706
+    .line 712
     .end local v2    # "catch_premium":Ljava/lang/String;
     :cond_59
     :goto_59
@@ -9521,18 +9197,18 @@
 
     move-result-wide v4
 
-    .line 707
+    .line 713
     .local v4, "times_sec":J
-    const-wide/16 v7, 0xe10
+    const-wide/16 v8, 0xe10
 
-    cmp-long v7, v4, v7
+    cmp-long v7, v4, v8
 
     if-lez v7, :cond_7d
 
-    .line 708
+    .line 714
     invoke-direct {p0, v10}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->loadDashboard(Z)V
 
-    .line 713
+    .line 719
     .end local v0    # "arguments":Landroid/os/Bundle;
     .end local v3    # "categoryCode":Ljava/lang/String;
     .end local v4    # "times_sec":J
@@ -9540,7 +9216,7 @@
     :goto_7d
     return-void
 
-    .line 700
+    .line 706
     .restart local v0    # "arguments":Landroid/os/Bundle;
     .restart local v2    # "catch_premium":Ljava/lang/String;
     .restart local v3    # "categoryCode":Ljava/lang/String;
@@ -9625,7 +9301,7 @@
 
     move-result-object v6
 
-    .line 701
+    .line 707
     .local v6, "url":Ljava/lang/String;
     const-string v7, "gift.dashboard"
 
@@ -9645,7 +9321,7 @@
 
     invoke-static {v7, v8}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 702
+    .line 708
     const/4 v7, 0x0
 
     new-instance v8, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetPremiumListener;
@@ -9656,7 +9332,7 @@
 
     goto/16 :goto_59
 
-    .line 711
+    .line 717
     .end local v0    # "arguments":Landroid/os/Bundle;
     .end local v2    # "catch_premium":Ljava/lang/String;
     .end local v3    # "categoryCode":Ljava/lang/String;
@@ -9672,7 +9348,7 @@
     .param p1, "jsonText"    # Ljava/lang/String;
 
     .prologue
-    .line 855
+    .line 861
     :try_start_0
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -9680,18 +9356,18 @@
 
     if-eqz v10, :cond_5c
 
-    .line 856
+    .line 862
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 858
+    .line 864
     .local v3, "dashboardItems":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/DashboardItem;>;"
     new-instance v8, Lorg/json/JSONArray;
 
     invoke-direct {v8, p1}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
 
-    .line 859
+    .line 865
     .local v8, "jsonArray":Lorg/json/JSONArray;
     const/4 v5, 0x0
 
@@ -9703,14 +9379,14 @@
 
     if-lt v5, v10, :cond_5d
 
-    .line 883
+    .line 889
     const/4 v10, 0x1
 
     iput-boolean v10, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gIsSendGA:Z
     :try_end_1a
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1a} :catch_86
 
-    .line 886
+    .line 892
     :try_start_1a
     iget-object v10, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
@@ -9720,7 +9396,7 @@
 
     invoke-virtual {v10, v11}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 887
+    .line 893
     iget-object v10, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v10, v10, Lcom/samsung/privilege/holder/DashboardNewHolder;->layoutDashboardItem:Landroid/widget/LinearLayout;
@@ -9729,14 +9405,14 @@
     :try_end_2a
     .catch Ljava/lang/Exception; {:try_start_1a .. :try_end_2a} :catch_88
 
-    .line 892
+    .line 898
     :goto_2a
     :try_start_2a
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 893
+    .line 899
     .local v0, "arguments":Landroid/os/Bundle;
     const-string v10, "category_code"
 
@@ -9744,7 +9420,7 @@
 
     move-result-object v1
 
-    .line 894
+    .line 900
     .local v1, "categoryCode":Ljava/lang/String;
     sget v10, Lcom/samsung/privilege/AppSetting;->CAT_PREMIUM_THAI:I
 
@@ -9758,7 +9434,7 @@
 
     if-eqz v10, :cond_59
 
-    .line 895
+    .line 901
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v10
@@ -9769,14 +9445,14 @@
 
     if-nez v10, :cond_59
 
-    .line 896
+    .line 902
     const/4 v7, 0x1
 
-    .line 897
+    .line 903
     .local v7, "is_top":Z
     const/4 v6, 0x0
 
-    .line 898
+    .line 904
     .local v6, "is_bottom":Z
     iget-object v10, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
@@ -9792,7 +9468,7 @@
 
     invoke-virtual {v10, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 902
+    .line 908
     .end local v6    # "is_bottom":Z
     .end local v7    # "is_top":Z
     :cond_59
@@ -9800,7 +9476,7 @@
     :try_end_5c
     .catch Ljava/lang/Exception; {:try_start_2a .. :try_end_5c} :catch_86
 
-    .line 907
+    .line 913
     .end local v0    # "arguments":Landroid/os/Bundle;
     .end local v1    # "categoryCode":Ljava/lang/String;
     .end local v3    # "dashboardItems":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/DashboardItem;>;"
@@ -9810,7 +9486,7 @@
     :goto_5c
     return-void
 
-    .line 861
+    .line 867
     .restart local v3    # "dashboardItems":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/DashboardItem;>;"
     .restart local v5    # "i":I
     .restart local v8    # "jsonArray":Lorg/json/JSONArray;
@@ -9820,20 +9496,20 @@
 
     move-result-object v9
 
-    .line 862
+    .line 868
     .local v9, "jsonDashboard":Lorg/json/JSONObject;
     new-instance v2, Lcom/samsung/privilege/bean/DashboardItem;
 
     invoke-direct {v2, v9}, Lcom/samsung/privilege/bean/DashboardItem;-><init>(Lorg/json/JSONObject;)V
 
-    .line 863
+    .line 869
     .local v2, "dashboardItem":Lcom/samsung/privilege/bean/DashboardItem;
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_69
     .catch Lorg/json/JSONException; {:try_start_5d .. :try_end_69} :catch_6c
     .catch Ljava/lang/Exception; {:try_start_5d .. :try_end_69} :catch_86
 
-    .line 859
+    .line 865
     .end local v2    # "dashboardItem":Lcom/samsung/privilege/bean/DashboardItem;
     .end local v9    # "jsonDashboard":Lorg/json/JSONObject;
     :goto_69
@@ -9841,11 +9517,11 @@
 
     goto :goto_11
 
-    .line 878
+    .line 884
     :catch_6c
     move-exception v4
 
-    .line 879
+    .line 885
     .local v4, "e":Lorg/json/JSONException;
     :try_start_6d
     const-string v10, "gift.dashboard"
@@ -9874,7 +9550,7 @@
 
     goto :goto_69
 
-    .line 904
+    .line 910
     .end local v3    # "dashboardItems":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/DashboardItem;>;"
     .end local v4    # "e":Lorg/json/JSONException;
     .end local v5    # "i":I
@@ -9884,7 +9560,7 @@
 
     goto :goto_5c
 
-    .line 888
+    .line 894
     .restart local v3    # "dashboardItems":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/DashboardItem;>;"
     .restart local v5    # "i":I
     .restart local v8    # "jsonArray":Lorg/json/JSONArray;
@@ -9899,7 +9575,7 @@
     .param p1, "jsonText"    # Ljava/lang/String;
 
     .prologue
-    .line 911
+    .line 917
     :try_start_0
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -9907,22 +9583,22 @@
 
     if-eqz v9, :cond_1c
 
-    .line 912
+    .line 918
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 913
+    .line 919
     .local v1, "dashboardItems":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/DashboardItem;>;"
     new-instance v4, Lorg/json/JSONArray;
 
     invoke-direct {v4, p1}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
 
-    .line 914
+    .line 920
     .local v4, "jsonArray":Lorg/json/JSONArray;
     const-string v6, ""
 
-    .line 915
+    .line 921
     .local v6, "lastCatName":Ljava/lang/String;
     const/4 v3, 0x0
 
@@ -9934,12 +9610,12 @@
 
     if-lt v3, v9, :cond_1d
 
-    .line 952
+    .line 958
     invoke-direct {p0, v1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->InitialDashboardItems(Ljava/util/ArrayList;)V
     :try_end_1c
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1c} :catch_c3
 
-    .line 957
+    .line 963
     .end local v1    # "dashboardItems":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/DashboardItem;>;"
     .end local v3    # "i":I
     .end local v4    # "jsonArray":Lorg/json/JSONArray;
@@ -9948,7 +9624,7 @@
     :goto_1c
     return-void
 
-    .line 917
+    .line 923
     .restart local v1    # "dashboardItems":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/DashboardItem;>;"
     .restart local v3    # "i":I
     .restart local v4    # "jsonArray":Lorg/json/JSONArray;
@@ -9959,7 +9635,7 @@
 
     move-result-object v5
 
-    .line 919
+    .line 925
     .local v5, "jsonCampaign":Lorg/json/JSONObject;
     const-string v9, "CategoryName"
 
@@ -9967,7 +9643,7 @@
 
     move-result-object v0
 
-    .line 920
+    .line 926
     .local v0, "catName":Ljava/lang/String;
     invoke-virtual {v0, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -9975,18 +9651,18 @@
 
     if-nez v9, :cond_49
 
-    .line 921
+    .line 927
     new-instance v8, Lcom/samsung/privilege/bean/DashboardItem;
 
     invoke-direct {v8}, Lcom/samsung/privilege/bean/DashboardItem;-><init>()V
 
-    .line 922
+    .line 928
     .local v8, "objDashboardItemCatHeader":Lcom/samsung/privilege/bean/DashboardItem;
     const-string v9, "cat_header"
 
     iput-object v9, v8, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
 
-    .line 923
+    .line 929
     const-string v9, "CategoryID"
 
     invoke-static {v5, v9}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -9995,7 +9671,7 @@
 
     iput-object v9, v8, Lcom/samsung/privilege/bean/DashboardItem;->cat:Ljava/lang/String;
 
-    .line 924
+    .line 930
     const-string v9, "CategoryName"
 
     invoke-static {v5, v9}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -10004,28 +9680,28 @@
 
     iput-object v9, v8, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
 
-    .line 926
+    .line 932
     invoke-virtual {v1, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 929
+    .line 935
     .end local v8    # "objDashboardItemCatHeader":Lcom/samsung/privilege/bean/DashboardItem;
     :cond_49
     new-instance v7, Lcom/samsung/privilege/bean/DashboardItem;
 
     invoke-direct {v7}, Lcom/samsung/privilege/bean/DashboardItem;-><init>()V
 
-    .line 930
+    .line 936
     .local v7, "objDashboardItem":Lcom/samsung/privilege/bean/DashboardItem;
     const-string v9, "campaign"
 
     iput-object v9, v7, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
 
-    .line 931
+    .line 937
     const-string v9, "small"
 
     iput-object v9, v7, Lcom/samsung/privilege/bean/DashboardItem;->size:Ljava/lang/String;
 
-    .line 932
+    .line 938
     const-string v9, "ID"
 
     invoke-static {v5, v9}, Lcom/samsung/privilege/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -10034,7 +9710,7 @@
 
     iput v9, v7, Lcom/samsung/privilege/bean/DashboardItem;->id:I
 
-    .line 933
+    .line 939
     const-string v9, "AgencyName"
 
     invoke-static {v5, v9}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -10043,7 +9719,7 @@
 
     iput-object v9, v7, Lcom/samsung/privilege/bean/DashboardItem;->line1:Ljava/lang/String;
 
-    .line 934
+    .line 940
     const-string v9, "Name"
 
     invoke-static {v5, v9}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -10052,7 +9728,7 @@
 
     iput-object v9, v7, Lcom/samsung/privilege/bean/DashboardItem;->line2:Ljava/lang/String;
 
-    .line 935
+    .line 941
     const-string v9, "Type"
 
     invoke-static {v5, v9}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -10061,7 +9737,7 @@
 
     iput-object v9, v7, Lcom/samsung/privilege/bean/DashboardItem;->campaigntype:Ljava/lang/String;
 
-    .line 936
+    .line 942
     const-string v9, "PointPerUnit"
 
     invoke-static {v5, v9}, Lcom/samsung/privilege/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -10070,7 +9746,7 @@
 
     iput v9, v7, Lcom/samsung/privilege/bean/DashboardItem;->campaignpoint:I
 
-    .line 937
+    .line 943
     const-string v9, "Barcode"
 
     invoke-static {v5, v9}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -10079,7 +9755,7 @@
 
     iput-object v9, v7, Lcom/samsung/privilege/bean/DashboardItem;->campaignbarcode:Ljava/lang/String;
 
-    .line 938
+    .line 944
     const-string v9, "Discount"
 
     invoke-static {v5, v9}, Lcom/samsung/privilege/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -10088,7 +9764,7 @@
 
     iput v9, v7, Lcom/samsung/privilege/bean/DashboardItem;->campaigndiscount:I
 
-    .line 939
+    .line 945
     const-string v9, "FullImageUrl"
 
     invoke-static {v5, v9}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -10097,31 +9773,31 @@
 
     iput-object v9, v7, Lcom/samsung/privilege/bean/DashboardItem;->image_url:Ljava/lang/String;
 
-    .line 940
+    .line 946
     const-string v9, "premium"
 
     iput-object v9, v7, Lcom/samsung/privilege/bean/DashboardItem;->dashboard_layout:Ljava/lang/String;
 
-    .line 941
+    .line 947
     const-string v9, "premium"
 
     iput-object v9, v7, Lcom/samsung/privilege/bean/DashboardItem;->campaigndetail_layout:Ljava/lang/String;
 
-    .line 942
+    .line 948
     const/4 v9, 0x0
 
     iput-boolean v9, v7, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem:Z
 
-    .line 944
+    .line 950
     invoke-virtual {v1, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_a4
     .catch Lorg/json/JSONException; {:try_start_1d .. :try_end_a4} :catch_a9
     .catch Ljava/lang/Exception; {:try_start_1d .. :try_end_a4} :catch_c3
 
-    .line 946
+    .line 952
     move-object v6, v0
 
-    .line 915
+    .line 921
     .end local v0    # "catName":Ljava/lang/String;
     .end local v5    # "jsonCampaign":Lorg/json/JSONObject;
     .end local v7    # "objDashboardItem":Lcom/samsung/privilege/bean/DashboardItem;
@@ -10130,11 +9806,11 @@
 
     goto/16 :goto_13
 
-    .line 947
+    .line 953
     :catch_a9
     move-exception v2
 
-    .line 948
+    .line 954
     .local v2, "e":Lorg/json/JSONException;
     :try_start_aa
     const-string v9, "gift.dashboard"
@@ -10163,7 +9839,7 @@
 
     goto :goto_a5
 
-    .line 954
+    .line 960
     .end local v1    # "dashboardItems":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/DashboardItem;>;"
     .end local v2    # "e":Lorg/json/JSONException;
     .end local v3    # "i":I
@@ -10180,7 +9856,7 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 539
+    .line 545
     const-string v0, "onSaveInstanceState"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
@@ -10189,7 +9865,7 @@
 
     if-eqz v0, :cond_10
 
-    .line 540
+    .line 546
     const-string v0, "gIsSendGA"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -10198,27 +9874,566 @@
 
     iput-boolean v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gIsSendGA:Z
 
-    .line 542
+    .line 548
     :cond_10
     return-void
+.end method
+
+.method private sendGA(Ljava/lang/String;Lcom/samsung/privilege/bean/DashboardItem;)V
+    .registers 11
+    .param p1, "action"    # Ljava/lang/String;
+    .param p2, "dashboardItem"    # Lcom/samsung/privilege/bean/DashboardItem;
+
+    .prologue
+    const-wide/16 v6, 0x1
+
+    .line 1292
+    if-eqz p2, :cond_5c
+
+    .line 1293
+    iget-object v0, p2, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
+
+    const-string v1, "campaign"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a8
+
+    .line 1294
+    iget-boolean v0, p2, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem:Z
+
+    if-eqz v0, :cond_5d
+
+    .line 1295
+    iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Dashboard "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v3, " Campaign Autoredeem"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    iget v4, p2, Lcom/samsung/privilege/bean/DashboardItem;->id:I
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v4, "|"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {p2}, Lcom/samsung/privilege/bean/DashboardItem;->GetCampaignNameForGA()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
+
+    .line 1311
+    :cond_5c
+    :goto_5c
+    return-void
+
+    .line 1297
+    :cond_5d
+    iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Dashboard "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v3, " Campaign Banner"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    iget v4, p2, Lcom/samsung/privilege/bean/DashboardItem;->id:I
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v4, "|"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {p2}, Lcom/samsung/privilege/bean/DashboardItem;->GetCampaignNameForGA()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
+
+    goto :goto_5c
+
+    .line 1299
+    :cond_a8
+    iget-object v0, p2, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
+
+    const-string v1, "bzbs_campaign"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_bc
+
+    iget-object v0, p2, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
+
+    const-string v1, "bzbs_campaign_ads"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_108
+
+    .line 1300
+    :cond_bc
+    iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Dashboard "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v3, " BZB Campaign Banner"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    iget v4, p2, Lcom/samsung/privilege/bean/DashboardItem;->id:I
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v4, "|"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {p2}, Lcom/samsung/privilege/bean/DashboardItem;->GetCampaignNameForGA()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
+
+    goto/16 :goto_5c
+
+    .line 1301
+    :cond_108
+    iget-object v0, p2, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
+
+    const-string v1, "cat"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_15e
+
+    .line 1302
+    iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Dashboard "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v3, " Category Banner"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    iget v4, p2, Lcom/samsung/privilege/bean/DashboardItem;->id:I
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v4, "|"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {p2}, Lcom/samsung/privilege/bean/DashboardItem;->GetCampaignNameForGA()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
+
+    goto/16 :goto_5c
+
+    .line 1303
+    :cond_15e
+    iget-object v0, p2, Lcom/samsung/privilege/bean/DashboardItem;->type:Ljava/lang/String;
+
+    const-string v1, "bzbs_cat"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1b4
+
+    .line 1304
+    iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Dashboard "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v3, " BZB Category Banner"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    iget v4, p2, Lcom/samsung/privilege/bean/DashboardItem;->id:I
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v4, "|"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {p2}, Lcom/samsung/privilege/bean/DashboardItem;->GetCampaignNameForGA()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
+
+    goto/16 :goto_5c
+
+    .line 1306
+    :cond_1b4
+    iget-object v0, p2, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
+
+    if-eqz v0, :cond_5c
+
+    iget-object v0, p2, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
+
+    const-string v1, ""
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_5c
+
+    .line 1307
+    iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Dashboard "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v3, " "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p2, Lcom/samsung/privilege/bean/DashboardItem;->ga_label:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    iget v4, p2, Lcom/samsung/privilege/bean/DashboardItem;->id:I
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v4, "|"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {p2}, Lcom/samsung/privilege/bean/DashboardItem;->GetCampaignNameForGA()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
+
+    goto/16 :goto_5c
 .end method
 
 .method private setPointsFromCatchAndRefresh()V
     .registers 3
 
     .prologue
-    .line 640
+    .line 646
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
     if-nez v0, :cond_7
 
-    .line 663
+    .line 669
     :goto_6
     return-void
 
-    .line 643
+    .line 649
     :cond_7
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -10244,19 +10459,19 @@
     .param p1, "cat"    # Ljava/lang/String;
 
     .prologue
-    .line 2653
+    .line 2717
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v1
 
     if-nez v1, :cond_7
 
-    .line 2660
+    .line 2724
     :cond_6
     :goto_6
     return-void
 
-    .line 2656
+    .line 2720
     :cond_7
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -10266,14 +10481,14 @@
 
     if-eqz v1, :cond_6
 
-    .line 2657
+    .line 2721
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
     check-cast v0, Lcom/samsung/privilege/activity/CampaignListActivity;
 
-    .line 2658
+    .line 2722
     .local v0, "ca":Lcom/samsung/privilege/activity/CampaignListActivity;
     invoke-virtual {v0, p1}, Lcom/samsung/privilege/activity/CampaignListActivity;->switchPagerByCat(Ljava/lang/String;)V
 
@@ -10287,10 +10502,10 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 400
+    .line 406
     invoke-super {p0, p1}, Landroid/support/v4/app/Fragment;->onActivityCreated(Landroid/os/Bundle;)V
 
-    .line 410
+    .line 416
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -10307,10 +10522,10 @@
 
     if-nez v0, :cond_16
 
-    .line 411
+    .line 417
     invoke-direct {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->bindingEvent()V
 
-    .line 413
+    .line 419
     :cond_16
     return-void
 .end method
@@ -10322,117 +10537,161 @@
     .param p3, "data"    # Landroid/content/Intent;
 
     .prologue
-    .line 118
+    .line 119
     invoke-super {p0, p1, p2, p3}, Landroid/support/v4/app/Fragment;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 119
+    .line 120
     return-void
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .registers 16
+    .registers 14
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 123
+    const/4 v11, 0x0
+
+    .line 124
     invoke-super {p0, p1}, Landroid/support/v4/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 135
-    const/4 v9, 0x0
+    .line 136
+    iput-boolean v11, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->booleanCancelRunnable:Z
 
-    iput-boolean v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->booleanCancelRunnable:Z
-
-    .line 137
+    .line 138
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 138
-    .local v0, "arguments":Landroid/os/Bundle;
-    const-string v9, "category_code"
-
-    invoke-virtual {v0, v9}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
     .line 139
-    .local v3, "categoryCode":Ljava/lang/String;
-    sget v9, Lcom/samsung/privilege/AppSetting;->CAT_SHOPPING_THAI:I
+    .local v0, "arguments":Landroid/os/Bundle;
+    const-string v8, "category_code"
 
-    invoke-static {v9}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-virtual {v0, v8}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v9
-
-    invoke-virtual {v3, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_20
+    move-result-object v2
 
     .line 140
-    const-string v9, "Shopping"
+    .local v2, "categoryCode":Ljava/lang/String;
+    sget v8, Lcom/samsung/privilege/AppSetting;->CAT_SHOPPING_THAI:I
 
-    iput-object v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+    invoke-static {v8}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    .line 142
-    :cond_20
-    sget v9, Lcom/samsung/privilege/AppSetting;->CAT_PRIMETIME_THAI:I
+    move-result-object v8
 
-    invoke-static {v9}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-virtual {v2, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v9
+    move-result v8
 
-    invoke-virtual {v3, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v8, :cond_20
 
-    move-result v9
+    .line 141
+    const-string v8, "Gift Shop"
 
-    if-eqz v9, :cond_30
+    iput-object v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
 
     .line 143
-    const-string v9, "PrimeTime"
+    :cond_20
+    sget v8, Lcom/samsung/privilege/AppSetting;->CAT_PRIMETIME_THAI:I
 
-    iput-object v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+    invoke-static {v8}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    .line 145
-    :cond_30
-    sget v9, Lcom/samsung/privilege/AppSetting;->CAT_PREMIUM_THAI:I
+    move-result-object v8
 
-    invoke-static {v9}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-virtual {v2, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v9
+    move-result v8
 
-    invoke-virtual {v3, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v8, :cond_30
 
-    move-result v9
+    .line 144
+    const-string v8, "PrimeTime"
 
-    if-eqz v9, :cond_40
+    iput-object v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
 
     .line 146
-    const-string v9, "Premium"
+    :cond_30
+    sget v8, Lcom/samsung/privilege/AppSetting;->CAT_PREMIUM_THAI:I
 
-    iput-object v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+    invoke-static {v8}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    .line 148
+    move-result-object v8
+
+    invoke-virtual {v2, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_40
+
+    .line 147
+    const-string v8, "My Privilege"
+
+    iput-object v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+
+    .line 149
     :cond_40
-    sget v9, Lcom/samsung/privilege/AppSetting;->CAT_SPARE_THAI:I
+    sget v8, Lcom/samsung/privilege/AppSetting;->CAT_SPARE_THAI:I
 
-    invoke-static {v9}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-static {v8}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v2, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_50
+
+    .line 150
+    const-string v8, "Spare"
+
+    iput-object v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+
+    .line 153
+    :cond_50
+    :try_start_50
+    iget-object v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    const-string v10, "Dashboard "
+
+    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v10, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
-    invoke-virtual {v3, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result v9
+    move-result-object v9
 
-    if-eqz v9, :cond_50
+    invoke-virtual {v8, v9}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
+    :try_end_66
+    .catch Ljava/lang/Exception; {:try_start_50 .. :try_end_66} :catch_263
 
-    .line 149
-    const-string v9, "Spare"
+    .line 162
+    :goto_66
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    iput-object v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+    move-result-object v8
 
-    .line 156
-    :cond_50
+    invoke-virtual {v8}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v8
+
+    invoke-static {v8}, Lcom/samsung/privilege/util/LanguageSetting;->SetLanguage(Landroid/content/Context;)V
+
+    .line 163
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
+
+    move-result-object v8
+
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v9
@@ -10441,373 +10700,289 @@
 
     move-result-object v9
 
-    invoke-static {v9}, Lcom/samsung/privilege/util/LanguageSetting;->SetLanguage(Landroid/content/Context;)V
-
-    .line 157
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-static {v9}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v9
 
-    invoke-virtual {v9}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
+    invoke-static {v8, v9}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v10
-
-    invoke-static {v10}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v9, v10}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gFont:Landroid/graphics/Typeface;
-
-    .line 160
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
-
-    move-result-object v9
-
-    const-string v10, "Wall-Image-FadeIn"
-
-    invoke-static {v9, v10}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
-
-    move-result v9
-
-    sput v9, Lcom/samsung/privilege/AppSetting;->WALL_IMAGE_FADEIN:I
-
-    .line 161
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
-
-    move-result-object v9
-
-    const-string v10, "Wall-Mem-Cache-Size"
-
-    invoke-static {v9, v10}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
-
-    move-result v9
-
-    sput v9, Lcom/samsung/privilege/AppSetting;->WALL_MEM_CACHE_SIZE:I
-
-    .line 162
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
-
-    move-result-object v9
-
-    const-string v10, "Wall-Disk-Cache-Size"
-
-    invoke-static {v9, v10}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
-
-    move-result v9
-
-    sput v9, Lcom/samsung/privilege/AppSetting;->WALL_DISK_CACHE_SIZE:I
-
-    .line 164
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
-
-    move-result-object v9
-
-    const-string v10, "Image-Cache-Memory"
-
-    invoke-static {v9, v10}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
-
-    move-result v9
-
-    sput v9, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_CACHE_MEMORY:I
-
-    .line 165
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
-
-    move-result-object v9
-
-    const-string v10, "Image-Retry-Number"
-
-    invoke-static {v9, v10}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
-
-    move-result v9
-
-    sput v9, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_RETRY_NUMBER:I
+    iput-object v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gFont:Landroid/graphics/Typeface;
 
     .line 166
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v9}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
+    invoke-virtual {v8}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
 
-    move-result-object v9
+    move-result-object v8
 
-    const-string v10, "Image-Timeout-Connect"
+    const-string v9, "Wall-Image-FadeIn"
 
-    invoke-static {v9, v10}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v9}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
 
-    move-result v9
+    move-result v8
 
-    sput v9, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_CONNECT_TIMEOUT:I
+    sput v8, Lcom/samsung/privilege/AppSetting;->WALL_IMAGE_FADEIN:I
 
     .line 167
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v9}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
+    invoke-virtual {v8}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
 
-    move-result-object v9
+    move-result-object v8
 
-    const-string v10, "Image-Timeout-Read"
+    const-string v9, "Wall-Mem-Cache-Size"
 
-    invoke-static {v9, v10}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v9}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
 
-    move-result v9
+    move-result v8
 
-    sput v9, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_READ_TIMEOUT:I
+    sput v8, Lcom/samsung/privilege/AppSetting;->WALL_MEM_CACHE_SIZE:I
 
     .line 168
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v9}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
+    invoke-virtual {v8}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
 
-    move-result-object v9
+    move-result-object v8
 
-    const-string v10, "Image-SampleSize"
+    const-string v9, "Wall-Disk-Cache-Size"
 
-    invoke-static {v9, v10}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v9}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
 
-    move-result v9
+    move-result v8
 
-    sput v9, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_SAMPLE_SIZE:I
-
-    .line 169
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
-
-    move-result-object v9
-
-    const-string v10, "Image-TempStorage"
-
-    invoke-static {v9, v10}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
-
-    move-result v9
-
-    sput v9, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_TEMP_STORAGE:I
+    sput v8, Lcom/samsung/privilege/AppSetting;->WALL_DISK_CACHE_SIZE:I
 
     .line 170
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v9}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
+    invoke-virtual {v8}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
 
-    move-result-object v9
+    move-result-object v8
 
-    const-string v10, "Image-SaveQuality"
+    const-string v9, "Image-Cache-Memory"
 
-    invoke-static {v9, v10}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v9}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
 
-    move-result v9
+    move-result v8
 
-    sput v9, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_SAVE_QUALITY:I
+    sput v8, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_CACHE_MEMORY:I
+
+    .line 171
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
+
+    move-result-object v8
+
+    const-string v9, "Image-Retry-Number"
+
+    invoke-static {v8, v9}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
+
+    move-result v8
+
+    sput v8, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_RETRY_NUMBER:I
 
     .line 172
-    const/4 v9, 0x1
-
-    invoke-virtual {p0, v9}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->setRetainInstance(Z)V
-
-    .line 179
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v9}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {v8}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-static {v9}, Lcom/google/analytics/tracking/android/GoogleAnalytics;->getInstance(Landroid/content/Context;)Lcom/google/analytics/tracking/android/GoogleAnalytics;
+    const-string v9, "Image-Timeout-Connect"
 
-    move-result-object v9
+    invoke-static {v8, v9}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaInstance:Lcom/google/analytics/tracking/android/GoogleAnalytics;
+    move-result-object v8
 
-    .line 182
-    iget-object v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaInstance:Lcom/google/analytics/tracking/android/GoogleAnalytics;
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
+
+    move-result v8
+
+    sput v8, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_CONNECT_TIMEOUT:I
+
+    .line 173
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v10
+    move-result-object v8
 
-    invoke-virtual {v10}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {v8}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
 
-    move-result-object v10
+    move-result-object v8
 
-    invoke-static {v10}, Lcom/samsung/privilege/AppSetting;->GA_TRACKING_ID(Landroid/content/Context;)Ljava/lang/String;
+    const-string v9, "Image-Timeout-Read"
 
-    move-result-object v10
+    invoke-static {v8, v9}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v9, v10}, Lcom/google/analytics/tracking/android/GoogleAnalytics;->getTracker(Ljava/lang/String;)Lcom/google/analytics/tracking/android/Tracker;
+    move-result-object v8
 
-    move-result-object v9
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    iput-object v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
+
+    move-result v8
+
+    sput v8, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_READ_TIMEOUT:I
+
+    .line 174
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
+
+    move-result-object v8
+
+    const-string v9, "Image-SampleSize"
+
+    invoke-static {v8, v9}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
+
+    move-result v8
+
+    sput v8, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_SAMPLE_SIZE:I
+
+    .line 175
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
+
+    move-result-object v8
+
+    const-string v9, "Image-TempStorage"
+
+    invoke-static {v8, v9}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
+
+    move-result v8
+
+    sput v8, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_TEMP_STORAGE:I
+
+    .line 176
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/support/v4/app/FragmentActivity;->getBaseContext()Landroid/content/Context;
+
+    move-result-object v8
+
+    const-string v9, "Image-SaveQuality"
+
+    invoke-static {v8, v9}, Lcom/samsung/privilege/util/SharedPreferencesUtil;->GetAdminConfig(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
+
+    move-result v8
+
+    sput v8, Lcom/samsung/privilege/AppSetting;->WEB_IMAGE_SAVE_QUALITY:I
+
+    .line 178
+    const/4 v8, 0x1
+
+    invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->setRetainInstance(Z)V
 
     .line 185
-    invoke-static {}, Lcom/google/analytics/tracking/android/GAServiceManager;->getInstance()Lcom/google/analytics/tracking/android/GAServiceManager;
-
-    move-result-object v9
-
-    const/16 v10, 0x1e
-
-    invoke-virtual {v9, v10}, Lcom/google/analytics/tracking/android/GAServiceManager;->setDispatchPeriod(I)V
-
-    .line 188
-    :try_start_194
-    iget-object v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    const-string v10, "DASHBOARD"
-
-    invoke-virtual {v9, v10}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-
-    .line 189
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-static {v9}, Lcom/samsung/privilege/UserLogin;->GetModeLogin(Landroid/content/Context;)Ljava/lang/String;
+    invoke-virtual {v8}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v9
+    move-result-object v8
 
-    const-string v10, "1"
+    invoke-static {v8}, Lcom/google/analytics/tracking/android/GoogleAnalytics;->getInstance(Landroid/content/Context;)Lcom/google/analytics/tracking/android/GoogleAnalytics;
 
-    invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v8
 
-    move-result v9
+    iput-object v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaInstance:Lcom/google/analytics/tracking/android/GoogleAnalytics;
 
-    if-eqz v9, :cond_257
+    .line 188
+    iget-object v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaInstance:Lcom/google/analytics/tracking/android/GoogleAnalytics;
 
-    .line 190
-    iget-object v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    const-string v10, "DASHBOARD_LOGIN_FB"
-
-    invoke-virtual {v9, v10}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-    :try_end_1b2
-    .catch Ljava/lang/Exception; {:try_start_194 .. :try_end_1b2} :catch_270
-
-    .line 199
-    :cond_1b2
-    :goto_1b2
-    :try_start_1b2
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v9
@@ -10816,248 +10991,259 @@
 
     move-result-object v9
 
-    invoke-static {v9}, Lcom/samsung/privilege/util/PhoneManagerUtil;->GetSimOperatorDual(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v9}, Lcom/samsung/privilege/AppSetting;->GA_TRACKING_ID(Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v9
 
-    .line 200
-    .local v2, "carrier":Ljava/lang/String;
-    iget-object v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+    invoke-virtual {v8, v9}, Lcom/google/analytics/tracking/android/GoogleAnalytics;->getTracker(Ljava/lang/String;)Lcom/google/analytics/tracking/android/Tracker;
 
-    iget-object v10, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mScreenName:Ljava/lang/String;
+    move-result-object v8
 
-    const-string v11, "carrier"
+    iput-object v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
 
-    const-wide/16 v12, 0x1
+    .line 191
+    invoke-static {}, Lcom/google/analytics/tracking/android/GAServiceManager;->getInstance()Lcom/google/analytics/tracking/android/GAServiceManager;
 
-    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result-object v8
 
-    move-result-object v12
+    const/16 v9, 0x1e
 
-    invoke-virtual {v9, v10, v11, v2, v12}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-    :try_end_1cd
-    .catch Ljava/lang/Exception; {:try_start_1b2 .. :try_end_1cd} :catch_275
+    invoke-virtual {v8, v9}, Lcom/google/analytics/tracking/android/GAServiceManager;->setDispatchPeriod(I)V
 
-    .line 205
-    .end local v2    # "carrier":Ljava/lang/String;
-    :goto_1cd
-    new-instance v9, Landroid/os/Handler;
-
-    invoke-direct {v9}, Landroid/os/Handler;-><init>()V
-
-    iput-object v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gHandler:Landroid/os/Handler;
-
-    .line 208
-    new-instance v7, Landroid/util/DisplayMetrics;
-
-    invoke-direct {v7}, Landroid/util/DisplayMetrics;-><init>()V
-
-    .line 209
-    .local v7, "metrics":Landroid/util/DisplayMetrics;
+    .line 195
+    :try_start_1aa
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v9}, Landroid/support/v4/app/FragmentActivity;->getWindowManager()Landroid/view/WindowManager;
+    invoke-static {v8}, Lcom/samsung/privilege/UserLogin;->GetModeLogin(Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-interface {v9}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    const-string v9, "1"
 
-    move-result-object v9
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v9, v7}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
+    move-result v8
+
+    if-nez v8, :cond_1c7
+
+    .line 197
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v8
+
+    invoke-static {v8}, Lcom/samsung/privilege/UserLogin;->GetModeLogin(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v8
+
+    const-string v9, "2"
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :try_end_1c7
+    .catch Ljava/lang/Exception; {:try_start_1aa .. :try_end_1c7} :catch_260
+
+    .line 205
+    :cond_1c7
+    :goto_1c7
+    :try_start_1c7
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v8
+
+    invoke-static {v8}, Lcom/samsung/privilege/util/PhoneManagerUtil;->GetSimOperatorDual(Landroid/content/Context;)Ljava/lang/String;
+    :try_end_1d2
+    .catch Ljava/lang/Exception; {:try_start_1c7 .. :try_end_1d2} :catch_25d
 
     .line 211
+    :goto_1d2
+    new-instance v8, Landroid/os/Handler;
+
+    invoke-direct {v8}, Landroid/os/Handler;-><init>()V
+
+    iput-object v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gHandler:Landroid/os/Handler;
+
+    .line 214
+    new-instance v6, Landroid/util/DisplayMetrics;
+
+    invoke-direct {v6}, Landroid/util/DisplayMetrics;-><init>()V
+
+    .line 215
+    .local v6, "metrics":Landroid/util/DisplayMetrics;
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/support/v4/app/FragmentActivity;->getWindowManager()Landroid/view/WindowManager;
+
+    move-result-object v8
+
+    invoke-interface {v8}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v6}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
+
+    .line 217
     new-instance v1, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v9}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {v8}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v9
+    move-result-object v8
 
-    const-string v10, "cache_dashboard"
+    const-string v9, "cache_dashboard"
 
-    invoke-direct {v1, v9, v10}, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-direct {v1, v8, v9}, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 212
+    .line 218
     .local v1, "cacheParams":Lcom/bitmapfun/util/ImageCache$ImageCacheParams;
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v8
+
+    const/high16 v9, 0x3e800000
+
+    invoke-virtual {v1, v8, v9}, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->setMemCacheSizePercent(Landroid/content/Context;F)V
+
+    .line 219
+    new-instance v3, Landroid/util/DisplayMetrics;
+
+    invoke-direct {v3}, Landroid/util/DisplayMetrics;-><init>()V
+
+    .line 220
+    .local v3, "displayMetrics":Landroid/util/DisplayMetrics;
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/support/v4/app/FragmentActivity;->getWindowManager()Landroid/view/WindowManager;
+
+    move-result-object v8
+
+    invoke-interface {v8}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v3}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
+
+    .line 221
+    iget v8, v3, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    iput v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gScreenHeight:I
+
+    .line 222
+    iget v8, v3, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    iput v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gScreenWidth:I
+
+    .line 224
+    iget v7, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gScreenWidth:I
+
+    .line 225
+    .local v7, "width":I
+    iget v4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gScreenHeight:I
+
+    .line 227
+    .local v4, "height":I
+    if-le v4, v7, :cond_25b
+
+    .end local v4    # "height":I
+    :goto_22b
+    div-int/lit8 v5, v4, 0x2
+
+    .line 228
+    .local v5, "longest":I
+    new-instance v8, Lcom/bitmapfun/util/ImageFetcher;
+
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
     move-result-object v9
 
     invoke-virtual {v9}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v9
 
-    const/high16 v10, 0x3e800000
+    invoke-direct {v8, v9, v5}, Lcom/bitmapfun/util/ImageFetcher;-><init>(Landroid/content/Context;I)V
 
-    invoke-virtual {v1, v9, v10}, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->setMemCacheSizePercent(Landroid/content/Context;F)V
+    iput-object v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
-    .line 213
-    new-instance v4, Landroid/util/DisplayMetrics;
+    .line 237
+    iget-object v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
-    invoke-direct {v4}, Landroid/util/DisplayMetrics;-><init>()V
-
-    .line 214
-    .local v4, "displayMetrics":Landroid/util/DisplayMetrics;
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v9
 
-    invoke-virtual {v9}, Landroid/support/v4/app/FragmentActivity;->getWindowManager()Landroid/view/WindowManager;
+    invoke-virtual {v9}, Landroid/support/v4/app/FragmentActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v9
 
-    invoke-interface {v9}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    invoke-virtual {v8, v9, v1}, Lcom/bitmapfun/util/ImageFetcher;->addImageCache(Landroid/support/v4/app/FragmentManager;Lcom/bitmapfun/util/ImageCache$ImageCacheParams;)V
 
-    move-result-object v9
+    .line 238
+    iget-object v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
-    invoke-virtual {v9, v4}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
+    invoke-virtual {v8, v11}, Lcom/bitmapfun/util/ImageFetcher;->setImageFadeIn(Z)V
 
-    .line 215
-    iget v9, v4, Landroid/util/DisplayMetrics;->heightPixels:I
-
-    iput v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gScreenHeight:I
-
-    .line 216
-    iget v9, v4, Landroid/util/DisplayMetrics;->widthPixels:I
-
-    iput v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gScreenWidth:I
-
-    .line 218
+    .line 240
     iget v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gScreenWidth:I
 
-    .line 219
-    .local v8, "width":I
-    iget v5, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gScreenHeight:I
+    iput v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gImageWidth:I
 
-    .line 221
-    .local v5, "height":I
-    if-le v5, v8, :cond_273
+    .line 241
+    iget v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gImageWidth:I
 
-    .end local v5    # "height":I
-    :goto_226
-    div-int/lit8 v6, v5, 0x2
+    mul-int/lit16 v8, v8, 0xc8
 
-    .line 222
-    .local v6, "longest":I
-    new-instance v9, Lcom/bitmapfun/util/ImageFetcher;
+    div-int/lit16 v8, v8, 0x12c
 
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    iput v8, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gImageHeight:I
 
-    move-result-object v10
-
-    invoke-virtual {v10}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v10
-
-    invoke-direct {v9, v10, v6}, Lcom/bitmapfun/util/ImageFetcher;-><init>(Landroid/content/Context;I)V
-
-    iput-object v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
-
-    .line 231
-    iget-object v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Landroid/support/v4/app/FragmentActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
-
-    move-result-object v10
-
-    invoke-virtual {v9, v10, v1}, Lcom/bitmapfun/util/ImageFetcher;->addImageCache(Landroid/support/v4/app/FragmentManager;Lcom/bitmapfun/util/ImageCache$ImageCacheParams;)V
-
-    .line 232
-    iget-object v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
-
-    const/4 v10, 0x0
-
-    invoke-virtual {v9, v10}, Lcom/bitmapfun/util/ImageFetcher;->setImageFadeIn(Z)V
-
-    .line 234
-    iget v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gScreenWidth:I
-
-    iput v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gImageWidth:I
-
-    .line 235
-    iget v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gImageWidth:I
-
-    mul-int/lit16 v9, v9, 0xc8
-
-    div-int/lit16 v9, v9, 0x12c
-
-    iput v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gImageHeight:I
-
-    .line 236
+    .line 242
     return-void
 
-    .line 191
+    .end local v5    # "longest":I
+    .restart local v4    # "height":I
+    :cond_25b
+    move v4, v7
+
+    .line 227
+    goto :goto_22b
+
+    .line 207
     .end local v1    # "cacheParams":Lcom/bitmapfun/util/ImageCache$ImageCacheParams;
-    .end local v4    # "displayMetrics":Landroid/util/DisplayMetrics;
-    .end local v6    # "longest":I
-    .end local v7    # "metrics":Landroid/util/DisplayMetrics;
-    .end local v8    # "width":I
-    :cond_257
-    :try_start_257
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    .end local v3    # "displayMetrics":Landroid/util/DisplayMetrics;
+    .end local v4    # "height":I
+    .end local v6    # "metrics":Landroid/util/DisplayMetrics;
+    .end local v7    # "width":I
+    :catch_25d
+    move-exception v8
 
-    move-result-object v9
+    goto/16 :goto_1d2
 
-    invoke-static {v9}, Lcom/samsung/privilege/UserLogin;->GetModeLogin(Landroid/content/Context;)Ljava/lang/String;
+    .line 200
+    :catch_260
+    move-exception v8
 
-    move-result-object v9
+    goto/16 :goto_1c7
 
-    const-string v10, "2"
+    .line 154
+    :catch_263
+    move-exception v8
 
-    invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_1b2
-
-    .line 192
-    iget-object v9, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    const-string v10, "DASHBOARD_LOGIN_DEVICE"
-
-    invoke-virtual {v9, v10}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-    :try_end_26e
-    .catch Ljava/lang/Exception; {:try_start_257 .. :try_end_26e} :catch_270
-
-    goto/16 :goto_1b2
-
-    .line 194
-    :catch_270
-    move-exception v9
-
-    goto/16 :goto_1b2
-
-    .restart local v1    # "cacheParams":Lcom/bitmapfun/util/ImageCache$ImageCacheParams;
-    .restart local v4    # "displayMetrics":Landroid/util/DisplayMetrics;
-    .restart local v5    # "height":I
-    .restart local v7    # "metrics":Landroid/util/DisplayMetrics;
-    .restart local v8    # "width":I
-    :cond_273
-    move v5, v8
-
-    .line 221
-    goto :goto_226
-
-    .line 201
-    .end local v1    # "cacheParams":Lcom/bitmapfun/util/ImageCache$ImageCacheParams;
-    .end local v4    # "displayMetrics":Landroid/util/DisplayMetrics;
-    .end local v5    # "height":I
-    .end local v7    # "metrics":Landroid/util/DisplayMetrics;
-    .end local v8    # "width":I
-    :catch_275
-    move-exception v9
-
-    goto/16 :goto_1cd
+    goto/16 :goto_66
 .end method
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
@@ -11067,7 +11253,7 @@
     .param p3, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 298
+    .line 304
     const v4, 0x7f0300d6
 
     const/4 v5, 0x0
@@ -11078,14 +11264,14 @@
 
     iput-object v4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mLeak:Landroid/view/View;
 
-    .line 300
+    .line 306
     new-instance v4, Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     invoke-direct {v4}, Lcom/samsung/privilege/holder/DashboardNewHolder;-><init>()V
 
     iput-object v4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
-    .line 310
+    .line 316
     iget-object v5, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mLeak:Landroid/view/View;
@@ -11100,13 +11286,13 @@
 
     iput-object v4, v5, Lcom/samsung/privilege/holder/DashboardNewHolder;->listDashboard:Lcom/samsung/privilege/control/PullToRefreshListView;
 
-    .line 313
+    .line 319
     :try_start_20
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 314
+    .line 320
     .local v0, "arguments":Landroid/os/Bundle;
     const-string v4, "category_code"
 
@@ -11114,7 +11300,7 @@
 
     move-result-object v1
 
-    .line 315
+    .line 321
     .local v1, "categoryCode":Ljava/lang/String;
     sget v4, Lcom/samsung/privilege/AppSetting;->CAT_PREMIUM_THAI:I
 
@@ -11128,14 +11314,14 @@
 
     if-eqz v4, :cond_45
 
-    .line 316
+    .line 322
     iget-object v4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mLeak:Landroid/view/View;
 
-    const v5, 0x7f020087
+    const v5, 0x7f020089
 
     invoke-virtual {v4, v5}, Landroid/view/View;->setBackgroundResource(I)V
 
-    .line 317
+    .line 323
     iget-object v4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v4, v4, Lcom/samsung/privilege/holder/DashboardNewHolder;->listDashboard:Lcom/samsung/privilege/control/PullToRefreshListView;
@@ -11146,20 +11332,20 @@
     :try_end_45
     .catch Ljava/lang/Exception; {:try_start_20 .. :try_end_45} :catch_d0
 
-    .line 340
+    .line 346
     .end local v0    # "arguments":Landroid/os/Bundle;
     .end local v1    # "categoryCode":Ljava/lang/String;
     :cond_45
     :goto_45
     invoke-direct {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->initScreenSize()V
 
-    .line 344
+    .line 350
     if-eqz p3, :cond_4d
 
-    .line 345
+    .line 351
     invoke-direct {p0, p3}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->restoreInstanceState(Landroid/os/Bundle;)V
 
-    .line 348
+    .line 354
     :cond_4d
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -11177,7 +11363,7 @@
 
     move-result-object v2
 
-    .line 349
+    .line 355
     .local v2, "headerView":Landroid/view/View;
     iget-object v4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
@@ -11185,7 +11371,7 @@
 
     invoke-virtual {v4, v2}, Lcom/samsung/privilege/control/PullToRefreshListView;->addHeaderView(Landroid/view/View;)V
 
-    .line 370
+    .line 376
     iget-object v5, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     const/high16 v4, 0x7f1d0000
@@ -11198,7 +11384,7 @@
 
     iput-object v4, v5, Lcom/samsung/privilege/holder/DashboardNewHolder;->imgLoading:Landroid/widget/ImageView;
 
-    .line 371
+    .line 377
     iget-object v5, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     const v4, 0x7f1d0001
@@ -11211,12 +11397,12 @@
 
     iput-object v4, v5, Lcom/samsung/privilege/holder/DashboardNewHolder;->layoutDashboardItem:Landroid/widget/LinearLayout;
 
-    .line 373
+    .line 379
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 374
+    .line 380
     .local v3, "tempList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     new-instance v4, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter;
 
@@ -11224,7 +11410,7 @@
 
     iput-object v4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gDashboardAdapter:Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardAdapter;
 
-    .line 375
+    .line 381
     iget-object v4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v4, v4, Lcom/samsung/privilege/holder/DashboardNewHolder;->listDashboard:Lcom/samsung/privilege/control/PullToRefreshListView;
@@ -11233,7 +11419,7 @@
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/control/PullToRefreshListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 377
+    .line 383
     iget-object v4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v4, v4, Lcom/samsung/privilege/holder/DashboardNewHolder;->listDashboard:Lcom/samsung/privilege/control/PullToRefreshListView;
@@ -11244,7 +11430,7 @@
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/control/PullToRefreshListView;->setOnRefreshListener(Lcom/samsung/privilege/control/PullToRefreshListView$OnRefreshListener;)V
 
-    .line 386
+    .line 392
     :try_start_9e
     iget-object v4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
@@ -11254,7 +11440,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 387
+    .line 393
     iget-object v4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v4, v4, Lcom/samsung/privilege/holder/DashboardNewHolder;->tvNotiUnread:Landroid/widget/TextView;
@@ -11263,7 +11449,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 388
+    .line 394
     iget-object v4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v4, v4, Lcom/samsung/privilege/holder/DashboardNewHolder;->tvMyPoint:Landroid/widget/TextView;
@@ -11272,7 +11458,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 389
+    .line 395
     iget-object v4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v4, v4, Lcom/samsung/privilege/holder/DashboardNewHolder;->tvMyPointNumber:Landroid/widget/TextView;
@@ -11281,7 +11467,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 390
+    .line 396
     iget-object v4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
     iget-object v4, v4, Lcom/samsung/privilege/holder/DashboardNewHolder;->tvLogin:Landroid/widget/TextView;
@@ -11292,19 +11478,19 @@
     :try_end_cb
     .catch Ljava/lang/Exception; {:try_start_9e .. :try_end_cb} :catch_ce
 
-    .line 395
+    .line 401
     :goto_cb
     iget-object v4, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mLeak:Landroid/view/View;
 
     return-object v4
 
-    .line 391
+    .line 397
     :catch_ce
     move-exception v4
 
     goto :goto_cb
 
-    .line 319
+    .line 325
     .end local v2    # "headerView":Landroid/view/View;
     .end local v3    # "tempList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     :catch_d0
@@ -11317,18 +11503,18 @@
     .registers 2
 
     .prologue
-    .line 494
+    .line 500
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onDestroy()V
 
-    .line 498
+    .line 504
     invoke-static {}, Lcom/samsung/privilege/util/http/HttpCall;->RQ_GET2_CANCEL()V
 
-    .line 499
+    .line 505
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
     invoke-virtual {v0}, Lcom/bitmapfun/util/ImageFetcher;->closeCache()V
 
-    .line 500
+    .line 506
     return-void
 .end method
 
@@ -11338,26 +11524,26 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 479
+    .line 485
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onDestroyView()V
 
-    .line 481
+    .line 487
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->booleanCancelRunnable:Z
 
-    .line 483
+    .line 489
     iput-object v1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gViewHolder:Lcom/samsung/privilege/holder/DashboardNewHolder;
 
-    .line 484
+    .line 490
     iput-object v1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mLeak:Landroid/view/View;
 
-    .line 485
+    .line 491
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gIsUpdateViewForUser:Z
 
-    .line 490
+    .line 496
     return-void
 .end method
 
@@ -11365,10 +11551,10 @@
     .registers 1
 
     .prologue
-    .line 504
+    .line 510
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onDetach()V
 
-    .line 508
+    .line 514
     return-void
 .end method
 
@@ -11376,35 +11562,33 @@
     .registers 3
 
     .prologue
-    .line 458
+    .line 464
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onPause()V
 
-    .line 463
+    .line 469
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/bitmapfun/util/ImageFetcher;->setExitTasksEarly(Z)V
 
-    .line 464
+    .line 470
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
     invoke-virtual {v0}, Lcom/bitmapfun/util/ImageFetcher;->flushCache()V
 
-    .line 467
+    .line 473
     return-void
 .end method
 
 .method public onResume()V
-    .registers 4
+    .registers 3
 
     .prologue
-    const/4 v2, 0x0
-
-    .line 425
+    .line 431
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onResume()V
 
-    .line 433
+    .line 439
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -11415,30 +11599,17 @@
 
     sput-object v0, Lcom/samsung/privilege/AppSetting;->APP_CONTEXT:Landroid/content/Context;
 
-    .line 434
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v1
-
-    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/ResumeUtil;->callResume(Landroid/content/Context;Landroid/app/Activity;Z)J
-
-    .line 437
+    .line 443
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
-    invoke-virtual {v0, v2}, Lcom/bitmapfun/util/ImageFetcher;->setExitTasksEarly(Z)V
+    const/4 v1, 0x0
 
-    .line 441
+    invoke-virtual {v0, v1}, Lcom/bitmapfun/util/ImageFetcher;->setExitTasksEarly(Z)V
+
+    .line 447
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->updateViewForUser()V
 
-    .line 454
+    .line 460
     return-void
 .end method
 
@@ -11447,24 +11618,24 @@
     .param p1, "bundle"    # Landroid/os/Bundle;
 
     .prologue
-    .line 512
+    .line 518
     invoke-super {p0, p1}, Landroid/support/v4/app/Fragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 524
+    .line 530
     const-string v0, "onSaveInstanceState"
 
     const/4 v1, 0x1
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 526
+    .line 532
     const-string v0, "gIsSendGA"
 
     iget-boolean v1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gIsSendGA:Z
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 527
+    .line 533
     return-void
 .end method
 
@@ -11472,10 +11643,10 @@
     .registers 1
 
     .prologue
-    .line 417
+    .line 423
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onStart()V
 
-    .line 421
+    .line 427
     return-void
 .end method
 
@@ -11483,10 +11654,10 @@
     .registers 1
 
     .prologue
-    .line 471
+    .line 477
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onStop()V
 
-    .line 475
+    .line 481
     return-void
 .end method
 
@@ -11495,7 +11666,7 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 591
+    .line 597
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/samsung/privilege/activity/DashboardFragmentNew$2;
@@ -11504,7 +11675,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 598
+    .line 604
     return-void
 .end method
 
@@ -11512,23 +11683,23 @@
     .registers 2
 
     .prologue
-    .line 605
+    .line 611
     invoke-direct {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->setPointsFromCatchAndRefresh()V
 
-    .line 607
+    .line 613
     iget-boolean v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gIsUpdateViewForUser:Z
 
     if-nez v0, :cond_a
 
-    .line 620
+    .line 626
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew;->gIsUpdateViewForUser:Z
 
-    .line 636
+    .line 642
     :cond_a
     invoke-direct {p0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->loadDashboardFromCatch()V
 
-    .line 637
+    .line 643
     return-void
 .end method

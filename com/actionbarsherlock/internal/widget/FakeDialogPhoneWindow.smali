@@ -42,14 +42,14 @@
 
     .line 21
     .local v0, "a":Landroid/content/res/TypedArray;
-    const/16 v1, 0x31
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockTheme_windowMinWidthMajor:I
 
     iget-object v2, p0, Lcom/actionbarsherlock/internal/widget/FakeDialogPhoneWindow;->mMinWidthMajor:Landroid/util/TypedValue;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
 
     .line 22
-    const/16 v1, 0x32
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockTheme_windowMinWidthMinor:I
 
     iget-object v2, p0, Lcom/actionbarsherlock/internal/widget/FakeDialogPhoneWindow;->mMinWidthMinor:Landroid/util/TypedValue;
 

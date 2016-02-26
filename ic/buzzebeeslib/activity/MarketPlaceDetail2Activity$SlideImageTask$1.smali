@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask$1;->this$1:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask;
 
-    .line 4322
+    .line 4330
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 4324
+    .line 4332
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask$1;->this$1:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -58,7 +58,7 @@
 
     if-eqz v0, :cond_63
 
-    .line 4325
+    .line 4333
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask$1;->this$1:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -77,7 +77,7 @@
 
     if-eqz v0, :cond_63
 
-    .line 4326
+    .line 4334
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask$1;->this$1:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -100,7 +100,7 @@
 
     if-le v0, v2, :cond_63
 
-    .line 4327
+    .line 4335
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask$1;->this$1:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -141,7 +141,7 @@
 
     if-ne v0, v1, :cond_64
 
-    .line 4328
+    .line 4336
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask$1;->this$1:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -158,12 +158,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/view/ViewPager;->setCurrentItem(IZ)V
 
-    .line 4335
+    .line 4343
     :cond_63
     :goto_63
     return-void
 
-    .line 4330
+    .line 4338
     :cond_64
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask$1;->this$1:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$SlideImageTask;
 

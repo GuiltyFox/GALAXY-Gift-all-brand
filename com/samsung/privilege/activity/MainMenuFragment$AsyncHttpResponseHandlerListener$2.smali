@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener$2;->val$response:Ljava/lang/String;
 
-    .line 1342
+    .line 1356
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 4
 
     .prologue
-    .line 1344
+    .line 1358
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener$2;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -72,7 +72,7 @@
     # invokes: Lcom/samsung/privilege/activity/MainMenuFragment;->showToast(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$6(Lcom/samsung/privilege/activity/MainMenuFragment;Ljava/lang/String;)V
 
-    .line 1346
+    .line 1360
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener$2;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -87,7 +87,7 @@
 
     if-eqz v0, :cond_33
 
-    .line 1347
+    .line 1361
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener$2;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$AsyncHttpResponseHandlerListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -102,7 +102,7 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 1350
+    .line 1364
     :cond_33
     return-void
 .end method

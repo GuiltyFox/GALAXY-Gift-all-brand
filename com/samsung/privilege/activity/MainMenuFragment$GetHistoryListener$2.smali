@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetHistoryListener$2;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetHistoryListener;
 
-    .line 2418
+    .line 2433
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 2
 
     .prologue
-    .line 2420
+    .line 2435
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetHistoryListener$2;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetHistoryListener;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$GetHistoryListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -56,6 +56,6 @@
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->clearItemHistory()V
 
-    .line 2421
+    .line 2436
     return-void
 .end method

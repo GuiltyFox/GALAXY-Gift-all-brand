@@ -55,13 +55,13 @@
     .end annotation
 
     .prologue
-    .line 823
+    .line 826
     .local p3, "d":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/CampaignView;>;"
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 824
+    .line 827
     const-string v0, "layout_inflater"
 
     invoke-virtual {p2, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -72,10 +72,10 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->gInflater:Landroid/view/LayoutInflater;
 
-    .line 825
+    .line 828
     iput-object p3, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->data:Ljava/util/ArrayList;
 
-    .line 826
+    .line 829
     invoke-virtual {p2}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
 
     move-result-object v0
@@ -90,7 +90,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->font:Landroid/graphics/Typeface;
 
-    .line 827
+    .line 830
     return-void
 .end method
 
@@ -100,19 +100,19 @@
     .registers 2
 
     .prologue
-    .line 830
+    .line 833
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->data:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_b
 
-    .line 831
+    .line 834
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->data:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 833
+    .line 836
     :goto_a
     return v0
 
@@ -127,7 +127,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 838
+    .line 841
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -140,570 +140,622 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 842
+    .line 845
     int-to-long v0, p1
 
     return-wide v0
 .end method
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 22
+    .registers 24
     .param p1, "position"    # I
     .param p2, "convertView"    # Landroid/view/View;
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 854
+    .line 857
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->data:Ljava/util/ArrayList;
+    iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->data:Ljava/util/ArrayList;
 
     move/from16 v0, p1
 
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v8
 
-    check-cast v7, Lcom/samsung/privilege/bean/CampaignView;
-
-    .line 856
-    .local v7, "campaign":Lcom/samsung/privilege/bean/CampaignView;
-    const/4 v12, 0x0
-
-    .line 857
-    .local v12, "holder":Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;
-    move-object/from16 v15, p2
+    check-cast v8, Lcom/samsung/privilege/bean/CampaignView;
 
     .line 859
-    .local v15, "view":Landroid/view/View;
-    if-eqz p2, :cond_17
-
-    invoke-virtual {v15}, Landroid/view/View;->getTag()Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-nez v1, :cond_180
+    .local v8, "campaign":Lcom/samsung/privilege/bean/CampaignView;
+    const/4 v13, 0x0
 
     .line 860
-    :cond_17
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->gInflater:Landroid/view/LayoutInflater;
-
-    const v3, 0x7f0300b4
-
-    const/4 v4, 0x0
-
-    move-object/from16 v0, p3
-
-    invoke-virtual {v1, v3, v0, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object v15
-
-    .line 861
-    new-instance v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;
-
-    .end local v12    # "holder":Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;
-    move-object/from16 v0, p0
-
-    invoke-direct {v12, v0}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;-><init>(Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;)V
+    .local v13, "holder":Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;
+    move-object/from16 v16, p2
 
     .line 862
-    .restart local v12    # "holder":Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;
-    const/high16 v1, 0x7f4d0000
+    .local v16, "view":Landroid/view/View;
+    if-eqz p2, :cond_17
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/ImageView;
-
-    iput-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->imgCampaign:Landroid/widget/ImageView;
-
-    .line 863
-    const v1, 0x7f430002
-
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvAgencyName:Landroid/widget/TextView;
-
-    .line 864
-    const v1, 0x7f430004
-
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvCampaignName:Landroid/widget/TextView;
-
-    .line 865
-    const v1, 0x7f430005
-
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iput-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvRemaining:Landroid/widget/TextView;
-
-    .line 866
-    const v1, 0x7f430001
-
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/ImageView;
-
-    iput-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->imageNew:Landroid/widget/ImageView;
-
-    .line 869
-    :try_start_62
-    iget-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvAgencyName:Landroid/widget/TextView;
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->font:Landroid/graphics/Typeface;
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 870
-    iget-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvCampaignName:Landroid/widget/TextView;
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->font:Landroid/graphics/Typeface;
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 871
-    iget-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvRemaining:Landroid/widget/TextView;
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->font:Landroid/graphics/Typeface;
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 873
-    iget-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvAgencyName:Landroid/widget/TextView;
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
-
-    invoke-virtual {v3}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v3
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextSize(F)V
-
-    .line 874
-    iget-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvCampaignName:Landroid/widget/TextView;
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
-
-    invoke-virtual {v3}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v3
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextSize(F)V
-
-    .line 875
-    iget-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvRemaining:Landroid/widget/TextView;
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
-
-    invoke-virtual {v3}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v3
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextSize(F)V
-    :try_end_b0
-    .catch Ljava/lang/Exception; {:try_start_62 .. :try_end_b0} :catch_1c8
-
-    .line 880
-    :goto_b0
-    invoke-virtual {v15, v12}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
-
-    .line 885
-    :goto_b3
-    const v13, 0x7f02031e
-
-    .line 905
-    .local v13, "resource_back":I
-    :try_start_b6
-    invoke-virtual {v15, v13}, Landroid/view/View;->setBackgroundResource(I)V
-    :try_end_b9
-    .catch Ljava/lang/Exception; {:try_start_b6 .. :try_end_b9} :catch_1c3
-
-    .line 912
-    :goto_b9
-    iget-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvAgencyName:Landroid/widget/TextView;
-
-    iget-object v3, v7, Lcom/samsung/privilege/bean/CampaignView;->AgencyName:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 913
-    iget-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvCampaignName:Landroid/widget/TextView;
-
-    iget-object v3, v7, Lcom/samsung/privilege/bean/CampaignView;->Name:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 915
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
-
-    invoke-virtual {v1}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_1b2
-
-    .line 916
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
-
-    invoke-virtual {v1}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/samsung/privilege/UserLogin;->IS_ADMIN(Landroid/content/Context;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1a9
-
-    .line 917
-    new-instance v11, Ljava/text/DecimalFormat;
-
-    const-string v1, "#,###,###"
-
-    invoke-direct {v11, v1}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;)V
-
-    .line 919
-    .local v11, "formatter":Ljava/text/DecimalFormat;
-    const-string v14, ""
-
-    .line 921
-    .local v14, "strCampaign_remain":Ljava/lang/String;
-    :try_start_ec
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
-
-    invoke-virtual {v3}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v3
-
-    const v4, 0x7f0a0308
-
-    invoke-virtual {v3, v4}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v3, " "
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v3, v7, Lcom/samsung/privilege/bean/CampaignView;->Qty:I
-
-    int-to-long v3, v3
-
-    invoke-virtual {v11, v3, v4}, Ljava/text/DecimalFormat;->format(J)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    :try_end_118
-    .catch Ljava/lang/Exception; {:try_start_ec .. :try_end_118} :catch_188
-
-    move-result-object v14
-
-    .line 926
-    :goto_119
-    iget-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvRemaining:Landroid/widget/TextView;
-
-    invoke-virtual {v1, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 927
-    iget-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvRemaining:Landroid/widget/TextView;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 935
-    .end local v11    # "formatter":Ljava/text/DecimalFormat;
-    .end local v14    # "strCampaign_remain":Ljava/lang/String;
-    :goto_124
-    iget v1, v7, Lcom/samsung/privilege/bean/CampaignView;->Quantity:I
-
-    int-to-double v3, v1
-
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v3
-
-    iget v1, v7, Lcom/samsung/privilege/bean/CampaignView;->ItemCountSold:I
-
-    int-to-double v5, v1
-
-    invoke-static {v5, v6}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v5
-
-    sub-double v8, v3, v5
-
-    .line 936
-    .local v8, "dblRemain":D
-    iget v1, v7, Lcom/samsung/privilege/bean/CampaignView;->DayProceed:I
-
-    const/4 v3, 0x2
-
-    if-gt v1, v3, :cond_1bb
-
-    const-wide/16 v3, 0x0
-
-    cmpl-double v1, v8, v3
-
-    if-lez v1, :cond_1bb
-
-    .line 937
-    iget-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->imageNew:Landroid/widget/ImageView;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 944
-    :goto_14d
-    invoke-virtual {v7}, Lcom/samsung/privilege/bean/CampaignView;->FullImageUrlMedium()Ljava/lang/String;
+    invoke-virtual/range {v16 .. v16}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 946
-    .local v2, "img_url":Ljava/lang/String;
+    if-nez v2, :cond_1b6
+
+    .line 863
+    :cond_17
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
+    iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->gInflater:Landroid/view/LayoutInflater;
 
-    # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$8(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;)Lcom/bitmapfun/util/ImageFetcher;
+    const v4, 0x7f0300b4
 
-    move-result-object v1
+    const/4 v5, 0x0
 
-    iget-object v3, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->imgCampaign:Landroid/widget/ImageView;
+    move-object/from16 v0, p3
 
-    const/4 v4, 0x0
+    invoke-virtual {v2, v4, v0, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    sget v5, Lcom/bitmapfun/util/ImageFetcher;->IMAGE_LOADING_TRANS:I
+    move-result-object v16
 
-    const/4 v6, 0x1
+    .line 864
+    new-instance v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;
 
-    invoke-virtual/range {v1 .. v6}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
-
-    .line 949
-    :try_start_162
+    .end local v13    # "holder":Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
+    invoke-direct {v13, v0}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;-><init>(Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;)V
 
-    # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$0(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;)Lcom/google/analytics/tracking/android/Tracker;
+    .line 865
+    .restart local v13    # "holder":Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;
+    const/high16 v2, 0x7f4d0000
 
-    move-result-object v1
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/ImageView;
+
+    iput-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->imgCampaign:Landroid/widget/ImageView;
+
+    .line 866
+    const v2, 0x7f430002
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvAgencyName:Landroid/widget/TextView;
+
+    .line 867
+    const v2, 0x7f430004
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvCampaignName:Landroid/widget/TextView;
+
+    .line 868
+    const v2, 0x7f430005
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvRemaining:Landroid/widget/TextView;
+
+    .line 869
+    const v2, 0x7f430001
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/ImageView;
+
+    iput-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->imageNew:Landroid/widget/ImageView;
+
+    .line 872
+    :try_start_6c
+    iget-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvAgencyName:Landroid/widget/TextView;
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
+    iget-object v4, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->font:Landroid/graphics/Typeface;
 
-    # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mCategoryName:Ljava/lang/String;
-    invoke-static {v3}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$9(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;)Ljava/lang/String;
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    move-result-object v3
+    .line 873
+    iget-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvCampaignName:Landroid/widget/TextView;
 
-    const-string v4, "View"
-
-    iget-object v5, v7, Lcom/samsung/privilege/bean/CampaignView;->Name:Ljava/lang/String;
-
-    const-wide/16 v16, 0x1
-
-    invoke-static/range {v16 .. v17}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v6
-
-    invoke-virtual {v1, v3, v4, v5, v6}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-    :try_end_17f
-    .catch Ljava/lang/Exception; {:try_start_162 .. :try_end_17f} :catch_1c6
-
-    .line 954
-    :goto_17f
-    return-object v15
-
-    .line 882
-    .end local v2    # "img_url":Ljava/lang/String;
-    .end local v8    # "dblRemain":D
-    .end local v13    # "resource_back":I
-    :cond_180
-    invoke-virtual {v15}, Landroid/view/View;->getTag()Ljava/lang/Object;
-
-    move-result-object v12
-
-    .end local v12    # "holder":Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;
-    check-cast v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;
-
-    .restart local v12    # "holder":Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;
-    goto/16 :goto_b3
-
-    .line 922
-    .restart local v11    # "formatter":Ljava/text/DecimalFormat;
-    .restart local v13    # "resource_back":I
-    .restart local v14    # "strCampaign_remain":Ljava/lang/String;
-    :catch_188
-    move-exception v10
-
-    .line 923
-    .local v10, "e":Ljava/lang/Exception;
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
+    iget-object v4, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->font:Landroid/graphics/Typeface;
 
-    # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->TAG:Ljava/lang/String;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$7(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;)Ljava/lang/String;
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    move-result-object v1
+    .line 874
+    iget-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvRemaining:Landroid/widget/TextView;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    move-object/from16 v0, p0
 
-    const-string v4, "getView|Exception := "
+    iget-object v4, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->font:Landroid/graphics/Typeface;
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    invoke-virtual {v10}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    .line 876
+    iget-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvAgencyName:Landroid/widget/TextView;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
+
+    invoke-virtual {v4}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v4
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
 
-    move-result-object v3
+    move-result v4
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setTextSize(F)V
 
-    move-result-object v3
+    .line 877
+    iget-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvCampaignName:Landroid/widget/TextView;
 
-    invoke-static {v1, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    move-object/from16 v0, p0
 
-    goto/16 :goto_119
+    iget-object v4, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
+
+    invoke-virtual {v4}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
+
+    move-result v4
+
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setTextSize(F)V
+
+    .line 878
+    iget-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvRemaining:Landroid/widget/TextView;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
+
+    invoke-virtual {v4}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
+
+    move-result v4
+
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setTextSize(F)V
+    :try_end_ba
+    .catch Ljava/lang/Exception; {:try_start_6c .. :try_end_ba} :catch_1ff
+
+    .line 883
+    :goto_ba
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v13}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    .line 888
+    :goto_bf
+    const v14, 0x7f020320
+
+    .line 908
+    .local v14, "resource_back":I
+    :try_start_c2
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v14}, Landroid/view/View;->setBackgroundResource(I)V
+    :try_end_c7
+    .catch Ljava/lang/Exception; {:try_start_c2 .. :try_end_c7} :catch_1fa
+
+    .line 915
+    :goto_c7
+    iget-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvAgencyName:Landroid/widget/TextView;
+
+    iget-object v4, v8, Lcom/samsung/privilege/bean/CampaignView;->AgencyName:Ljava/lang/String;
+
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 916
+    iget-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvCampaignName:Landroid/widget/TextView;
+
+    iget-object v4, v8, Lcom/samsung/privilege/bean/CampaignView;->Name:Ljava/lang/String;
+
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 918
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
+
+    invoke-virtual {v2}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_1e8
+
+    .line 919
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
+
+    invoke-virtual {v2}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/samsung/privilege/UserLogin;->IS_ADMIN(Landroid/content/Context;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1df
+
+    .line 920
+    new-instance v12, Ljava/text/DecimalFormat;
+
+    const-string v2, "#,###,###"
+
+    invoke-direct {v12, v2}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;)V
+
+    .line 922
+    .local v12, "formatter":Ljava/text/DecimalFormat;
+    const-string v15, ""
+
+    .line 924
+    .local v15, "strCampaign_remain":Ljava/lang/String;
+    :try_start_fa
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
+
+    invoke-virtual {v4}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v4
+
+    const v5, 0x7f09030f
+
+    invoke-virtual {v4, v5}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v4, " "
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget v4, v8, Lcom/samsung/privilege/bean/CampaignView;->Qty:I
+
+    int-to-long v4, v4
+
+    invoke-virtual {v12, v4, v5}, Ljava/text/DecimalFormat;->format(J)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :try_end_126
+    .catch Ljava/lang/Exception; {:try_start_fa .. :try_end_126} :catch_1be
+
+    move-result-object v15
 
     .line 929
-    .end local v10    # "e":Ljava/lang/Exception;
-    .end local v11    # "formatter":Ljava/text/DecimalFormat;
-    .end local v14    # "strCampaign_remain":Ljava/lang/String;
-    :cond_1a9
-    iget-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvRemaining:Landroid/widget/TextView;
+    :goto_127
+    iget-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvRemaining:Landroid/widget/TextView;
 
-    const/16 v3, 0x8
+    invoke-virtual {v2, v15}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setVisibility(I)V
+    .line 930
+    iget-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvRemaining:Landroid/widget/TextView;
 
-    goto/16 :goto_124
+    const/4 v4, 0x0
 
-    .line 932
-    :cond_1b2
-    iget-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvRemaining:Landroid/widget/TextView;
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    const/16 v3, 0x8
+    .line 938
+    .end local v12    # "formatter":Ljava/text/DecimalFormat;
+    .end local v15    # "strCampaign_remain":Ljava/lang/String;
+    :goto_132
+    iget v2, v8, Lcom/samsung/privilege/bean/CampaignView;->Quantity:I
 
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setVisibility(I)V
+    int-to-double v4, v2
 
-    goto/16 :goto_124
+    invoke-static {v4, v5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v4
+
+    iget v2, v8, Lcom/samsung/privilege/bean/CampaignView;->ItemCountSold:I
+
+    int-to-double v6, v2
+
+    invoke-static {v6, v7}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v6
+
+    sub-double v10, v4, v6
 
     .line 939
-    .restart local v8    # "dblRemain":D
-    :cond_1bb
-    iget-object v1, v12, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->imageNew:Landroid/widget/ImageView;
+    .local v10, "dblRemain":D
+    iget v2, v8, Lcom/samsung/privilege/bean/CampaignView;->DayProceed:I
 
-    const/16 v3, 0x8
+    const/4 v4, 0x2
 
-    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setVisibility(I)V
+    if-gt v2, v4, :cond_1f1
 
-    goto :goto_14d
+    const-wide/16 v4, 0x0
 
-    .line 906
-    .end local v8    # "dblRemain":D
-    :catch_1c3
-    move-exception v1
+    cmpl-double v2, v10, v4
 
-    goto/16 :goto_b9
+    if-lez v2, :cond_1f1
 
-    .line 950
-    .restart local v2    # "img_url":Ljava/lang/String;
-    .restart local v8    # "dblRemain":D
-    :catch_1c6
-    move-exception v1
+    .line 940
+    iget-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->imageNew:Landroid/widget/ImageView;
 
-    goto :goto_17f
+    const/4 v4, 0x0
 
-    .line 876
-    .end local v2    # "img_url":Ljava/lang/String;
-    .end local v8    # "dblRemain":D
-    .end local v13    # "resource_back":I
-    :catch_1c8
-    move-exception v1
+    invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto/16 :goto_b0
+    .line 947
+    :goto_15b
+    invoke-virtual {v8}, Lcom/samsung/privilege/bean/CampaignView;->FullImageUrlMedium()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 949
+    .local v3, "img_url":Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
+
+    # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$8(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;)Lcom/bitmapfun/util/ImageFetcher;
+
+    move-result-object v2
+
+    iget-object v4, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->imgCampaign:Landroid/widget/ImageView;
+
+    const/4 v5, 0x0
+
+    sget v6, Lcom/bitmapfun/util/ImageFetcher;->IMAGE_LOADING_TRANS:I
+
+    const/4 v7, 0x1
+
+    invoke-virtual/range {v2 .. v7}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
+
+    .line 953
+    :try_start_170
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
+
+    # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$0(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;)Lcom/google/analytics/tracking/android/Tracker;
+
+    move-result-object v2
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v5, "Category-"
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
+
+    # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mCategoryName:Ljava/lang/String;
+    invoke-static {v5}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$9(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, "View Campaign Banner"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    iget-object v7, v8, Lcom/samsung/privilege/bean/CampaignView;->ID:Ljava/lang/String;
+
+    invoke-static {v7}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v7, "|"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    iget-object v7, v8, Lcom/samsung/privilege/bean/CampaignView;->Name:Ljava/lang/String;
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    const-wide/16 v18, 0x1
+
+    invoke-static/range {v18 .. v19}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v7
+
+    invoke-virtual {v2, v4, v5, v6, v7}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
+    :try_end_1b5
+    .catch Ljava/lang/Exception; {:try_start_170 .. :try_end_1b5} :catch_1fd
+
+    .line 958
+    :goto_1b5
+    return-object v16
+
+    .line 885
+    .end local v3    # "img_url":Ljava/lang/String;
+    .end local v10    # "dblRemain":D
+    .end local v14    # "resource_back":I
+    :cond_1b6
+    invoke-virtual/range {v16 .. v16}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v13
+
+    .end local v13    # "holder":Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;
+    check-cast v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;
+
+    .restart local v13    # "holder":Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;
+    goto/16 :goto_bf
+
+    .line 925
+    .restart local v12    # "formatter":Ljava/text/DecimalFormat;
+    .restart local v14    # "resource_back":I
+    .restart local v15    # "strCampaign_remain":Ljava/lang/String;
+    :catch_1be
+    move-exception v9
+
+    .line 926
+    .local v9, "e":Ljava/lang/Exception;
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
+
+    # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->TAG:Ljava/lang/String;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->access$7(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;)Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v5, "getView|Exception := "
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v9}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v2, v4}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_127
+
+    .line 932
+    .end local v9    # "e":Ljava/lang/Exception;
+    .end local v12    # "formatter":Ljava/text/DecimalFormat;
+    .end local v15    # "strCampaign_remain":Ljava/lang/String;
+    :cond_1df
+    iget-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvRemaining:Landroid/widget/TextView;
+
+    const/16 v4, 0x8
+
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setVisibility(I)V
+
+    goto/16 :goto_132
+
+    .line 935
+    :cond_1e8
+    iget-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->tvRemaining:Landroid/widget/TextView;
+
+    const/16 v4, 0x8
+
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setVisibility(I)V
+
+    goto/16 :goto_132
+
+    .line 942
+    .restart local v10    # "dblRemain":D
+    :cond_1f1
+    iget-object v2, v13, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter$ViewHolderMarketPlaceRow;->imageNew:Landroid/widget/ImageView;
+
+    const/16 v4, 0x8
+
+    invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    goto/16 :goto_15b
+
+    .line 909
+    .end local v10    # "dblRemain":D
+    :catch_1fa
+    move-exception v2
+
+    goto/16 :goto_c7
+
+    .line 954
+    .restart local v3    # "img_url":Ljava/lang/String;
+    .restart local v10    # "dblRemain":D
+    :catch_1fd
+    move-exception v2
+
+    goto :goto_1b5
+
+    .line 879
+    .end local v3    # "img_url":Ljava/lang/String;
+    .end local v10    # "dblRemain":D
+    .end local v14    # "resource_back":I
+    :catch_1ff
+    move-exception v2
+
+    goto/16 :goto_ba
 .end method

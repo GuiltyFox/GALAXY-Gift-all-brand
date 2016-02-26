@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener$1;->this$1:Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;
 
-    .line 482
+    .line 484
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 2
 
     .prologue
-    .line 486
+    .line 488
     iget-object v0, p0, Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener$1;->this$1:Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;
 
     # getter for: Lcom/samsung/privilege/control/PullToRefreshListView$HeaderAnimationListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
@@ -52,6 +52,6 @@
     # invokes: Lcom/samsung/privilege/control/PullToRefreshListView;->bounceBackHeader()V
     invoke-static {v0}, Lcom/samsung/privilege/control/PullToRefreshListView;->access$7(Lcom/samsung/privilege/control/PullToRefreshListView;)V
 
-    .line 488
+    .line 490
     return-void
 .end method

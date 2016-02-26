@@ -148,7 +148,7 @@
 
     const/4 v4, 0x1
 
-    const v5, 0x7f02039f
+    const v5, 0x7f0203a7
 
     move v7, v6
 

@@ -136,7 +136,7 @@
     .param p3, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    const v9, 0x7f03011c
+    const v9, 0x7f03011e
 
     const/16 v8, 0x8
 
@@ -195,7 +195,7 @@
     if-gt v5, v6, :cond_c7
 
     .line 48
-    const v5, 0x7f03011d
+    const v5, 0x7f03011f
 
     invoke-virtual {p1, v5, p2, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -208,7 +208,7 @@
     :goto_3e
     iget-object v5, p0, Lcom/samsung/privilege/activity/SplashFragment;->mLeak:Landroid/view/View;
 
-    const v6, 0x7f070328
+    const v6, 0x7f0c0335
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -246,7 +246,7 @@
     :goto_61
     iget-object v5, p0, Lcom/samsung/privilege/activity/SplashFragment;->mLeak:Landroid/view/View;
 
-    const v6, 0x7f070327
+    const v6, 0x7f0c0334
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -258,7 +258,7 @@
     .local v1, "button_login":Landroid/widget/ImageButton;
     iget-object v5, p0, Lcom/samsung/privilege/activity/SplashFragment;->mLeak:Landroid/view/View;
 
-    const v6, 0x7f07038a
+    const v6, 0x7f0c0399
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -445,7 +445,7 @@
     if-eqz v0, :cond_f
 
     .line 122
-    const v0, 0x7f07007c
+    const v0, 0x7f0c007c
 
     invoke-static {p0, v0}, Lic/buzzebeeslib/util/OnDestroyView;->unbindReferences(Landroid/support/v4/app/Fragment;I)V
 
@@ -504,7 +504,7 @@
     .line 100
     iget-object v1, p0, Lcom/samsung/privilege/activity/SplashFragment;->mLeak:Landroid/view/View;
 
-    const v2, 0x7f070328
+    const v2, 0x7f0c0335
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

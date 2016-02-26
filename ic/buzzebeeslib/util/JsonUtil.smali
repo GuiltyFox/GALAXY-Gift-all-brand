@@ -228,38 +228,38 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
     .line 68
     :try_start_2
     invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
     const-string v4, ""
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v1
 
-    if-nez v3, :cond_1a
+    if-nez v1, :cond_1a
 
     invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
     const-string v4, "null"
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v1
 
-    if-eqz v3, :cond_1b
+    if-eqz v1, :cond_1b
 
     .line 74
     :cond_1a
     :goto_1a
-    return-wide v1
+    return-wide v2
 
     .line 71
     :cond_1b
@@ -267,7 +267,7 @@
     :try_end_1e
     .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_1e} :catch_20
 
-    move-result-wide v1
+    move-result-wide v2
 
     goto :goto_1a
 
@@ -344,38 +344,38 @@
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
     .line 36
     :try_start_2
     invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
     const-string v4, ""
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v1
 
-    if-nez v3, :cond_1a
+    if-nez v1, :cond_1a
 
     invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
     const-string v4, "null"
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v1
 
-    if-eqz v3, :cond_1b
+    if-eqz v1, :cond_1b
 
     .line 42
     :cond_1a
     :goto_1a
-    return-wide v1
+    return-wide v2
 
     .line 39
     :cond_1b
@@ -383,7 +383,7 @@
     :try_end_1e
     .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_1e} :catch_20
 
-    move-result-wide v1
+    move-result-wide v2
 
     goto :goto_1a
 

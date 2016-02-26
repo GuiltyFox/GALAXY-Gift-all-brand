@@ -337,12 +337,10 @@
 .end method
 
 .method private parseAttributes(Landroid/util/AttributeSet;)V
-    .registers 6
+    .registers 5
     .param p1, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    const/4 v3, 0x1
-
     .line 385
     invoke-virtual {p0}, Lcom/facebook/widget/ProfilePictureView;->getContext()Landroid/content/Context;
 
@@ -356,7 +354,7 @@
 
     .line 386
     .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v1, 0x0
+    sget v1, Lcom/facebook/android/R$styleable;->com_facebook_profile_picture_view_preset_size:I
 
     const/4 v2, -0x1
 
@@ -367,7 +365,11 @@
     invoke-virtual {p0, v1}, Lcom/facebook/widget/ProfilePictureView;->setPresetSize(I)V
 
     .line 387
-    invoke-virtual {v0, v3, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    sget v1, Lcom/facebook/android/R$styleable;->com_facebook_profile_picture_view_is_cropped:I
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v1
 

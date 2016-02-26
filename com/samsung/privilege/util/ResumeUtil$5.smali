@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/util/ResumeUtil$5;->val$activity:Landroid/app/Activity;
 
-    .line 478
+    .line 491
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,10 +45,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 480
-    invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
+    .line 494
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 481
+    .line 495
     iget-object v2, p0, Lcom/samsung/privilege/util/ResumeUtil$5;->val$activity:Landroid/app/Activity;
 
     invoke-virtual {v2}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
@@ -57,15 +57,15 @@
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/UserLogin;->SetIsshowDialogHasNewVersion(Landroid/content/Context;Z)Z
 
-    .line 483
+    .line 497
     iget-object v2, p0, Lcom/samsung/privilege/util/ResumeUtil$5;->val$activity:Landroid/app/Activity;
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/UserLogin;->Logout(Landroid/content/Context;Z)V
 
-    .line 485
+    .line 499
     sget-object v1, Lcom/samsung/privilege/AppSetting;->UriPlayStoreGift:Ljava/lang/String;
 
-    .line 487
+    .line 501
     .local v1, "appNameBuzzebees":Ljava/lang/String;
     :try_start_14
     iget-object v2, p0, Lcom/samsung/privilege/util/ResumeUtil$5;->val$activity:Landroid/app/Activity;
@@ -98,15 +98,15 @@
     :try_end_33
     .catch Landroid/content/ActivityNotFoundException; {:try_start_14 .. :try_end_33} :catch_34
 
-    .line 491
+    .line 505
     :goto_33
     return-void
 
-    .line 488
+    .line 502
     :catch_34
     move-exception v0
 
-    .line 489
+    .line 503
     .local v0, "anfe":Landroid/content/ActivityNotFoundException;
     iget-object v2, p0, Lcom/samsung/privilege/util/ResumeUtil$5;->val$activity:Landroid/app/Activity;
 

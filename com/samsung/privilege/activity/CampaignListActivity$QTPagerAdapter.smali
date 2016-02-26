@@ -28,22 +28,22 @@
     .param p2, "arrImg"    # [Ljava/lang/Integer;
 
     .prologue
-    .line 1983
+    .line 2001
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$QTPagerAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     invoke-direct {p0}, Landroid/support/v4/view/PagerAdapter;-><init>()V
 
-    .line 1984
+    .line 2002
     invoke-virtual {p1}, Lcom/samsung/privilege/activity/CampaignListActivity;->getLayoutInflater()Landroid/view/LayoutInflater;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$QTPagerAdapter;->inflater:Landroid/view/LayoutInflater;
 
-    .line 1985
+    .line 2003
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignListActivity$QTPagerAdapter;->arrImg:[Ljava/lang/Integer;
 
-    .line 1986
+    .line 2004
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .param p3, "object"    # Ljava/lang/Object;
 
     .prologue
-    .line 1990
+    .line 2008
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     .end local p1    # "container":Landroid/view/ViewGroup;
@@ -65,7 +65,7 @@
     .end local p3    # "object":Ljava/lang/Object;
     invoke-virtual {p1, p3}, Landroid/support/v4/view/ViewPager;->removeView(Landroid/view/View;)V
 
-    .line 1991
+    .line 2009
     return-void
 .end method
 
@@ -74,7 +74,7 @@
     .param p1, "container"    # Landroid/view/View;
 
     .prologue
-    .line 1995
+    .line 2013
     return-void
 .end method
 
@@ -82,7 +82,7 @@
     .registers 2
 
     .prologue
-    .line 1999
+    .line 2017
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$QTPagerAdapter;->arrImg:[Ljava/lang/Integer;
 
     array-length v0, v0
@@ -100,18 +100,18 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 2005
+    .line 2023
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListActivity$QTPagerAdapter;->inflater:Landroid/view/LayoutInflater;
 
-    const v3, 0x7f030110
+    const v3, 0x7f030112
 
     invoke-virtual {v2, v3, p1, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2006
+    .line 2024
     .local v0, "imageLayout":Landroid/view/View;
-    const v2, 0x7f070352
+    const v2, 0x7f0c0360
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -119,7 +119,7 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    .line 2008
+    .line 2026
     .local v1, "imgGiftWelcome":Landroid/widget/ImageView;
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListActivity$QTPagerAdapter;->arrImg:[Ljava/lang/Integer;
 
@@ -127,10 +127,10 @@
 
     if-ge p2, v2, :cond_2c
 
-    .line 2009
+    .line 2027
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2010
+    .line 2028
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListActivity$QTPagerAdapter;->arrImg:[Ljava/lang/Integer;
 
     aget-object v2, v2, p2
@@ -141,17 +141,17 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2015
+    .line 2033
     :goto_26
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     .end local p1    # "view":Landroid/view/ViewGroup;
     invoke-virtual {p1, v0, v4}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
-    .line 2016
+    .line 2034
     return-object v0
 
-    .line 2012
+    .line 2030
     .restart local p1    # "view":Landroid/view/ViewGroup;
     :cond_2c
     const/16 v2, 0x8
@@ -167,7 +167,7 @@
     .param p2, "object"    # Ljava/lang/Object;
 
     .prologue
-    .line 2022
+    .line 2040
     invoke-virtual {p1, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -181,7 +181,7 @@
     .param p2, "loader"    # Ljava/lang/ClassLoader;
 
     .prologue
-    .line 2027
+    .line 2045
     return-void
 .end method
 
@@ -189,7 +189,7 @@
     .registers 2
 
     .prologue
-    .line 2031
+    .line 2049
     const/4 v0, 0x0
 
     return-object v0
@@ -200,6 +200,6 @@
     .param p1, "container"    # Landroid/view/View;
 
     .prologue
-    .line 2036
+    .line 2054
     return-void
 .end method

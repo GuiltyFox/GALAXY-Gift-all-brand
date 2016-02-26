@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener$1$1;->val$response_text:Ljava/lang/String;
 
-    .line 3280
+    .line 3455
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 4
 
     .prologue
-    .line 3283
+    .line 3458
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener$1$1;->this$2:Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener$1;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener$1;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;
@@ -75,6 +75,6 @@
     # invokes: Lcom/samsung/privilege/activity/CampaignDetailActivity;->ProcessJsonPlace(Ljava/lang/String;Z)V
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$23(Lcom/samsung/privilege/activity/CampaignDetailActivity;Ljava/lang/String;Z)V
 
-    .line 3284
+    .line 3459
     return-void
 .end method

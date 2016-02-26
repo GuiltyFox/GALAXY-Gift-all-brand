@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public transferred(J)V
-    .registers 9
+    .registers 10
     .param p1, "num"    # J
 
     .prologue

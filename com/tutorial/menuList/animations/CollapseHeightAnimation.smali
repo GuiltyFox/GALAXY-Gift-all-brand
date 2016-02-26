@@ -36,14 +36,14 @@
 .end method
 
 .method public constructor <init>(Landroid/view/View;III)V
-    .registers 9
+    .registers 10
     .param p1, "v"    # Landroid/view/View;
     .param p2, "FromHeight"    # I
     .param p3, "ToHeight"    # I
     .param p4, "Duration"    # I
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     .line 17
     invoke-direct {p0}, Landroid/view/animation/Animation;-><init>()V
@@ -60,7 +60,7 @@
 
     .line 20
     .local v0, "lyp":Landroid/view/ViewGroup$LayoutParams;
-    sput v3, Lcom/tutorial/menuList/animations/CollapseHeightAnimation;->ANIMATION_DURATION:I
+    sput v4, Lcom/tutorial/menuList/animations/CollapseHeightAnimation;->ANIMATION_DURATION:I
 
     .line 21
     iget v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
@@ -75,9 +75,9 @@
     .line 23
     sget v1, Lcom/tutorial/menuList/animations/CollapseHeightAnimation;->ANIMATION_DURATION:I
 
-    int-to-long v1, v1
+    int-to-long v2, v1
 
-    invoke-virtual {p0, v1, v2}, Lcom/tutorial/menuList/animations/CollapseHeightAnimation;->setDuration(J)V
+    invoke-virtual {p0, v2, v3}, Lcom/tutorial/menuList/animations/CollapseHeightAnimation;->setDuration(J)V
 
     .line 24
     const/4 v1, 0x5
@@ -85,7 +85,7 @@
     invoke-virtual {p0, v1}, Lcom/tutorial/menuList/animations/CollapseHeightAnimation;->setRepeatCount(I)V
 
     .line 25
-    invoke-virtual {p0, v3}, Lcom/tutorial/menuList/animations/CollapseHeightAnimation;->setFillAfter(Z)V
+    invoke-virtual {p0, v4}, Lcom/tutorial/menuList/animations/CollapseHeightAnimation;->setFillAfter(Z)V
 
     .line 26
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;

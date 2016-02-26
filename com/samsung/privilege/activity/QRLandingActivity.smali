@@ -212,7 +212,7 @@
     .param p2, "nfcResult"    # Lcom/samsung/privilege/bean/NFCResult;
 
     .prologue
-    const v4, 0x7f0a0353
+    const v4, 0x7f090360
 
     .line 513
     iget-object v2, p1, Lcom/samsung/privilege/bean/NFCPlan;->Type:Ljava/lang/String;
@@ -1622,12 +1622,12 @@
     .line 260
     iget v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->RC_BARCODE_SCANNER:I
 
-    if-ne p1, v1, :cond_3a
+    if-ne p1, v1, :cond_33
 
     .line 261
     const/4 v1, -0x1
 
-    if-ne p2, v1, :cond_2f
+    if-ne p2, v1, :cond_28
 
     .line 262
     const-string v1, "SCAN_RESULT"
@@ -1656,23 +1656,16 @@
 
     invoke-static {v1, v2}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 265
-    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    const-string v2, "QR"
-
-    invoke-virtual {v1, v2}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-
     .line 267
     invoke-direct {p0, v0}, Lcom/samsung/privilege/activity/QRLandingActivity;->processNFC_QR(Ljava/lang/String;)V
 
     .line 276
     .end local v0    # "result":Ljava/lang/String;
-    :goto_2e
+    :goto_27
     return-void
 
     .line 269
-    :cond_2f
+    :cond_28
     iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
 
     const-string v2, "#5"
@@ -1682,17 +1675,17 @@
     .line 270
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->finish()V
 
-    goto :goto_2e
+    goto :goto_27
 
     .line 273
-    :cond_3a
+    :cond_33
     iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
 
     const-string v2, "#4"
 
     invoke-static {v1, v2}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_2e
+    goto :goto_27
 .end method
 
 .method public onContextItemSelected(Landroid/view/MenuItem;)Z
@@ -2007,7 +2000,7 @@
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->requestWindowFeature(I)Z
 
     .line 70
-    const v1, 0x7f03010f
+    const v1, 0x7f030111
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->setContentView(I)V
 
@@ -2047,7 +2040,7 @@
     iput-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
 
     .line 78
-    const v1, 0x7f070351
+    const v1, 0x7f0c035f
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2132,7 +2125,7 @@
     if-lez v0, :cond_14d
 
     .line 451
-    const v0, 0x7f0a0346
+    const v0, 0x7f090353
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getString(I)Ljava/lang/String;
 
@@ -2487,7 +2480,7 @@
     invoke-virtual {v0}, Lcom/facebook/UiLifecycleHelper;->onDestroy()V
 
     .line 289
-    const v0, 0x7f07007c
+    const v0, 0x7f0c007c
 
     invoke-static {p0, v0}, Lic/buzzebeeslib/util/OnDestroyView;->unbindReferences(Landroid/app/Activity;I)V
 

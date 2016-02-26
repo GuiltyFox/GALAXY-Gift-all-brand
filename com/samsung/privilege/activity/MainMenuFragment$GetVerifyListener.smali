@@ -26,20 +26,20 @@
     .param p2, "need_clear"    # Z
 
     .prologue
-    .line 2181
+    .line 2196
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetVerifyListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-direct {p0}, Lcom/samsung/privilege/util/http/HttpRQListener;-><init>()V
 
-    .line 2179
+    .line 2194
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetVerifyListener;->gNeedClear:Z
 
-    .line 2182
+    .line 2197
     iput-boolean p2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetVerifyListener;->gNeedClear:Z
 
-    .line 2183
+    .line 2198
     return-void
 .end method
 
@@ -47,7 +47,7 @@
     .registers 2
 
     .prologue
-    .line 2177
+    .line 2192
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetVerifyListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     return-object v0
@@ -62,7 +62,7 @@
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 2187
+    .line 2202
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -94,7 +94,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2188
+    .line 2203
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetVerifyListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -103,12 +103,12 @@
 
     if-eqz v0, :cond_3a
 
-    .line 2189
+    .line 2204
     const/16 v0, 0xc8
 
     if-ne p1, v0, :cond_3b
 
-    .line 2190
+    .line 2205
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetVerifyListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -121,12 +121,12 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 2264
+    .line 2279
     :cond_3a
     :goto_3a
     return-void
 
-    .line 2261
+    .line 2276
     :cond_3b
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetVerifyListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
@@ -144,10 +144,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 2268
+    .line 2283
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onFileNotFoundException(Ljava/io/FileNotFoundException;Ljava/lang/Object;)V
 
-    .line 2269
+    .line 2284
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -173,7 +173,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2270
+    .line 2285
     return-void
 .end method
 
@@ -183,10 +183,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 2274
+    .line 2289
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onIOException(Ljava/io/IOException;Ljava/lang/Object;)V
 
-    .line 2275
+    .line 2290
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -212,7 +212,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2276
+    .line 2291
     return-void
 .end method
 
@@ -222,10 +222,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 2280
+    .line 2295
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onMalformedURLException(Ljava/net/MalformedURLException;Ljava/lang/Object;)V
 
-    .line 2281
+    .line 2296
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$0()Ljava/lang/String;
 
@@ -251,6 +251,6 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2282
+    .line 2297
     return-void
 .end method

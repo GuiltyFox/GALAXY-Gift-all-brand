@@ -93,18 +93,18 @@
 
     invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v0, v1, v2}, Lic/buzzebeeslib/activity/Place2Activity;->access$9(Lic/buzzebeeslib/activity/Place2Activity;D)V
+    invoke-static {v0, v2, v3}, Lic/buzzebeeslib/activity/Place2Activity;->access$9(Lic/buzzebeeslib/activity/Place2Activity;D)V
 
     .line 878
     iget-object v0, p0, Lic/buzzebeeslib/activity/Place2Activity$MyLocationListener;->this$0:Lic/buzzebeeslib/activity/Place2Activity;
 
     invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v0, v1, v2}, Lic/buzzebeeslib/activity/Place2Activity;->access$10(Lic/buzzebeeslib/activity/Place2Activity;D)V
+    invoke-static {v0, v2, v3}, Lic/buzzebeeslib/activity/Place2Activity;->access$10(Lic/buzzebeeslib/activity/Place2Activity;D)V
 
     .line 880
     iget-object v0, p0, Lic/buzzebeeslib/activity/Place2Activity$MyLocationListener;->this$0:Lic/buzzebeeslib/activity/Place2Activity;
@@ -169,10 +169,10 @@
     invoke-static {v1, v2}, Lic/buzzebeeslib/activity/Place2Activity;->access$14(Lic/buzzebeeslib/activity/Place2Activity;Ljava/lang/Runnable;)V
 
     .line 898
-    const-wide/16 v3, 0x3e8
+    const-wide/16 v4, 0x3e8
 
     .line 891
-    invoke-virtual {v0, v2, v3, v4}, Lic/buzzebeeslib/control/PullToRefreshListView;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v2, v4, v5}, Lic/buzzebeeslib/control/PullToRefreshListView;->postDelayed(Ljava/lang/Runnable;J)Z
 
     goto :goto_50
 .end method

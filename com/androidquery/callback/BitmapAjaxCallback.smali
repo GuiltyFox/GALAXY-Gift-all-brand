@@ -1954,27 +1954,25 @@
     .param p7, "source"    # I
 
     .prologue
-    const/4 v7, 0x0
-
-    const/4 v6, 0x1
-
     .line 792
     invoke-static {p0, p1, p3}, Lcom/androidquery/callback/BitmapAjaxCallback;->filter(Landroid/view/View;Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
 
     move-result-object p1
 
     .line 793
-    if-nez p1, :cond_c
+    if-nez p1, :cond_b
 
     .line 794
-    invoke-virtual {p0, v7}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+    const/4 v5, 0x0
+
+    invoke-virtual {p0, v5}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
     .line 827
-    :goto_b
+    :goto_a
     return-void
 
     .line 798
-    :cond_c
+    :cond_b
     invoke-static {p0, p1, p5, p6}, Lcom/androidquery/callback/BitmapAjaxCallback;->makeDrawable(Landroid/widget/ImageView;Landroid/graphics/Bitmap;FF)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
@@ -1989,10 +1987,10 @@
 
     move-result v5
 
-    if-eqz v5, :cond_59
+    if-eqz v5, :cond_5a
 
     .line 802
-    if-nez p2, :cond_3e
+    if-nez p2, :cond_3d
 
     .line 803
     new-instance v0, Landroid/view/animation/AlphaAnimation;
@@ -2013,32 +2011,32 @@
     invoke-virtual {v0, v5}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
     .line 805
-    const-wide/16 v5, 0x12c
+    const-wide/16 v6, 0x12c
 
-    invoke-virtual {v0, v5, v6}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v6, v7}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 819
-    :cond_2e
-    :goto_2e
+    :cond_2d
+    :goto_2d
     invoke-virtual {p0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 821
-    if-eqz v0, :cond_64
+    if-eqz v0, :cond_65
 
     .line 822
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    invoke-virtual {v0, v5, v6}, Landroid/view/animation/Animation;->setStartTime(J)V
+    invoke-virtual {v0, v6, v7}, Landroid/view/animation/Animation;->setStartTime(J)V
 
     .line 823
     invoke-virtual {p0, v0}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    goto :goto_b
+    goto :goto_a
 
     .line 808
-    :cond_3e
+    :cond_3d
     invoke-static {p0, p2, p5, p6}, Lcom/androidquery/callback/BitmapAjaxCallback;->makeDrawable(Landroid/widget/ImageView;Landroid/graphics/Bitmap;FF)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -2053,7 +2051,9 @@
 
     aput-object v3, v2, v5
 
-    aput-object v1, v2, v6
+    const/4 v5, 0x1
+
+    aput-object v1, v2, v5
 
     .line 810
     .local v2, "ds":[Landroid/graphics/drawable/Drawable;
@@ -2063,7 +2063,9 @@
 
     .line 811
     .local v4, "td":Landroid/graphics/drawable/TransitionDrawable;
-    invoke-virtual {v4, v6}, Landroid/graphics/drawable/TransitionDrawable;->setCrossFadeEnabled(Z)V
+    const/4 v5, 0x1
+
+    invoke-virtual {v4, v5}, Landroid/graphics/drawable/TransitionDrawable;->setCrossFadeEnabled(Z)V
 
     .line 812
     const/16 v5, 0x12c
@@ -2073,14 +2075,14 @@
     .line 813
     move-object v1, v4
 
-    goto :goto_2e
+    goto :goto_2d
 
     .line 815
     .end local v2    # "ds":[Landroid/graphics/drawable/Drawable;
     .end local v3    # "pd":Landroid/graphics/drawable/Drawable;
     .end local v4    # "td":Landroid/graphics/drawable/TransitionDrawable;
-    :cond_59
-    if-lez p4, :cond_2e
+    :cond_5a
+    if-lez p4, :cond_2d
 
     .line 816
     invoke-virtual {p0}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
@@ -2091,13 +2093,15 @@
 
     move-result-object v0
 
-    goto :goto_2e
+    goto :goto_2d
 
     .line 825
-    :cond_64
-    invoke-virtual {p0, v7}, Landroid/widget/ImageView;->setAnimation(Landroid/view/animation/Animation;)V
+    :cond_65
+    const/4 v5, 0x0
 
-    goto :goto_b
+    invoke-virtual {p0, v5}, Landroid/widget/ImageView;->setAnimation(Landroid/view/animation/Animation;)V
+
+    goto :goto_a
 .end method
 
 .method public static setCacheLimit(I)V

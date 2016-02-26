@@ -37,7 +37,7 @@
 
     iput-object p3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostSubmitListener$1;->val$response_text:Ljava/lang/String;
 
-    .line 1567
+    .line 1569
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,17 +49,17 @@
     .registers 14
 
     .prologue
-    .line 1570
+    .line 1572
     iget v9, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostSubmitListener$1;->val$response_code:I
 
     const/16 v10, 0xc8
 
     if-ne v9, v10, :cond_6c
 
-    .line 1571
+    .line 1573
     const-wide/16 v6, 0x0
 
-    .line 1573
+    .line 1575
     .local v6, "points":J
     :try_start_8
     new-instance v2, Lorg/json/JSONObject;
@@ -68,7 +68,7 @@
 
     invoke-direct {v2, v9}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1574
+    .line 1576
     .local v2, "jsonRoot":Lorg/json/JSONObject;
     const-string v9, "buzzebees"
 
@@ -76,7 +76,7 @@
 
     move-result-object v1
 
-    .line 1575
+    .line 1577
     .local v1, "jsonBuzzebees":Lorg/json/JSONObject;
     const-string v9, "points"
 
@@ -86,17 +86,17 @@
 
     move-result-wide v6
 
-    .line 1579
+    .line 1581
     .end local v1    # "jsonBuzzebees":Lorg/json/JSONObject;
     .end local v2    # "jsonRoot":Lorg/json/JSONObject;
     :goto_1b
-    const-wide/16 v9, 0x0
+    const-wide/16 v10, 0x0
 
-    cmp-long v9, v6, v9
+    cmp-long v9, v6, v10
 
     if-lez v9, :cond_37
 
-    .line 1580
+    .line 1582
     long-to-int v9, v6
 
     const-string v10, ""
@@ -122,11 +122,11 @@
 
     invoke-static {v9, v10, v11, v12}, Lic/buzzebeeslib/util/AnimationPoint;->showToastPointsGift(ILjava/lang/String;Landroid/os/Handler;Landroid/app/Activity;)V
 
-    .line 1582
+    .line 1584
     :cond_37
     const-string v8, ""
 
-    .line 1584
+    .line 1586
     .local v8, "strAdsMessage":Ljava/lang/String;
     :try_start_39
     new-instance v2, Lorg/json/JSONObject;
@@ -135,7 +135,7 @@
 
     invoke-direct {v2, v9}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1585
+    .line 1587
     .restart local v2    # "jsonRoot":Lorg/json/JSONObject;
     const-string v9, "AdsMessage"
 
@@ -145,7 +145,7 @@
 
     move-result-object v8
 
-    .line 1589
+    .line 1591
     .end local v2    # "jsonRoot":Lorg/json/JSONObject;
     :goto_46
     iget-object v9, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostSubmitListener$1;->this$1:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostSubmitListener;
@@ -180,43 +180,43 @@
     # invokes: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->getCampaign(I)V
     invoke-static {v9, v10}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$15(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;I)V
 
-    .line 1609
+    .line 1611
     .end local v6    # "points":J
     .end local v8    # "strAdsMessage":Ljava/lang/String;
     :goto_63
     return-void
 
-    .line 1576
+    .line 1578
     .restart local v6    # "points":J
     :catch_64
     move-exception v0
 
-    .line 1577
+    .line 1579
     .local v0, "e":Ljava/lang/Exception;
     const-wide/16 v6, 0x0
 
     goto :goto_1b
 
-    .line 1586
+    .line 1588
     .end local v0    # "e":Ljava/lang/Exception;
     .restart local v8    # "strAdsMessage":Ljava/lang/String;
     :catch_68
     move-exception v0
 
-    .line 1587
+    .line 1589
     .restart local v0    # "e":Ljava/lang/Exception;
     const-string v8, ""
 
     goto :goto_46
 
-    .line 1591
+    .line 1593
     .end local v0    # "e":Ljava/lang/Exception;
     .end local v6    # "points":J
     .end local v8    # "strAdsMessage":Ljava/lang/String;
     :cond_6c
     const-string v5, ""
 
-    .line 1594
+    .line 1596
     .local v5, "message":Ljava/lang/String;
     :try_start_6e
     new-instance v4, Lorg/json/JSONObject;
@@ -225,7 +225,7 @@
 
     invoke-direct {v4, v9}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1595
+    .line 1597
     .local v4, "json_result":Lorg/json/JSONObject;
     const-string v9, "error"
 
@@ -233,7 +233,7 @@
 
     move-result-object v3
 
-    .line 1596
+    .line 1598
     .local v3, "json_error":Lorg/json/JSONObject;
     const-string v9, "message"
 
@@ -243,7 +243,7 @@
 
     move-result-object v5
 
-    .line 1601
+    .line 1603
     .end local v3    # "json_error":Lorg/json/JSONObject;
     .end local v4    # "json_result":Lorg/json/JSONObject;
     :goto_81
@@ -255,7 +255,7 @@
 
     if-eqz v9, :cond_95
 
-    .line 1602
+    .line 1604
     iget-object v9, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostSubmitListener$1;->this$1:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostSubmitListener;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostSubmitListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -269,7 +269,7 @@
 
     move-result-object v5
 
-    .line 1605
+    .line 1607
     :cond_95
     iget-object v9, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostSubmitListener$1;->this$1:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostSubmitListener;
 
@@ -283,11 +283,11 @@
 
     goto :goto_63
 
-    .line 1597
+    .line 1599
     :catch_9f
     move-exception v0
 
-    .line 1598
+    .line 1600
     .restart local v0    # "e":Ljava/lang/Exception;
     iget-object v9, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostSubmitListener$1;->this$1:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostSubmitListener;
 

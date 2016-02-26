@@ -51,33 +51,16 @@
     move-result-object v1
 
     # invokes: Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->gotoAllListView()V
-    invoke-static {v1}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->access$10(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)V
-
-    .line 323
-    iget-object v1, p0, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment$5$1;->this$1:Lic/buzzebeeslib/fragment/MarketPlaceTabFragment$5;
-
-    # getter for: Lic/buzzebeeslib/fragment/MarketPlaceTabFragment$5;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;
-    invoke-static {v1}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment$5;->access$0(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment$5;)Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;
-
-    move-result-object v1
-
-    # getter for: Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-    invoke-static {v1}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->access$4(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)Lcom/google/analytics/tracking/android/Tracker;
-
-    move-result-object v1
-
-    const-string v2, "MARKETPLACE_BZBS_TYPE_ALL"
-
-    invoke-virtual {v1, v2}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
-    :try_end_18
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_19
+    invoke-static {v1}, Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;->access$9(Lic/buzzebeeslib/fragment/MarketPlaceTabFragment;)V
+    :try_end_9
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_9} :catch_a
 
     .line 327
-    :goto_18
+    :goto_9
     return-void
 
     .line 324
-    :catch_19
+    :catch_a
     move-exception v0
 
     .line 325
@@ -107,5 +90,5 @@
 
     invoke-static {v1, v2}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_18
+    goto :goto_9
 .end method

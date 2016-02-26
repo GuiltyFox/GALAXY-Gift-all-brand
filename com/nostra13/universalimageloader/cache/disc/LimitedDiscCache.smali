@@ -137,175 +137,185 @@
 .end method
 
 .method private removeNext()I
-    .registers 15
+    .registers 17
 
     .prologue
     .line 113
-    iget-object v7, p0, Lcom/nostra13/universalimageloader/cache/disc/LimitedDiscCache;->lastUsageDates:Ljava/util/Map;
+    move-object/from16 v0, p0
 
-    invoke-interface {v7}, Ljava/util/Map;->isEmpty()Z
+    iget-object v8, v0, Lcom/nostra13/universalimageloader/cache/disc/LimitedDiscCache;->lastUsageDates:Ljava/util/Map;
 
-    move-result v7
+    invoke-interface {v8}, Ljava/util/Map;->isEmpty()Z
 
-    if-eqz v7, :cond_a
+    move-result v8
+
+    if-eqz v8, :cond_c
 
     .line 114
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     .line 139
-    :cond_9
-    :goto_9
-    return v3
+    :cond_b
+    :goto_b
+    return v4
 
     .line 117
-    :cond_a
-    const/4 v6, 0x0
+    :cond_c
+    const/4 v7, 0x0
 
     .line 118
-    .local v6, "oldestUsage":Ljava/lang/Long;
-    const/4 v5, 0x0
+    .local v7, "oldestUsage":Ljava/lang/Long;
+    const/4 v6, 0x0
 
     .line 119
-    .local v5, "mostLongUsedFile":Ljava/io/File;
-    iget-object v7, p0, Lcom/nostra13/universalimageloader/cache/disc/LimitedDiscCache;->lastUsageDates:Ljava/util/Map;
+    .local v6, "mostLongUsedFile":Ljava/io/File;
+    move-object/from16 v0, p0
 
-    invoke-interface {v7}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    iget-object v8, v0, Lcom/nostra13/universalimageloader/cache/disc/LimitedDiscCache;->lastUsageDates:Ljava/util/Map;
 
-    move-result-object v1
-
-    .line 120
-    .local v1, "entries":Ljava/util/Set;, "Ljava/util/Set<Ljava/util/Map$Entry<Ljava/io/File;Ljava/lang/Long;>;>;"
-    iget-object v8, p0, Lcom/nostra13/universalimageloader/cache/disc/LimitedDiscCache;->lastUsageDates:Ljava/util/Map;
-
-    monitor-enter v8
-
-    .line 121
-    :try_start_15
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v9
-
-    :cond_19
-    :goto_19
-    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v7
-
-    if-nez v7, :cond_30
-
-    .line 120
-    monitor-exit v8
-    :try_end_20
-    .catchall {:try_start_15 .. :try_end_20} :catchall_65
-
-    .line 135
-    invoke-virtual {p0, v5}, Lcom/nostra13/universalimageloader/cache/disc/LimitedDiscCache;->getSize(Ljava/io/File;)I
-
-    move-result v3
-
-    .line 136
-    .local v3, "fileSize":I
-    invoke-virtual {v5}, Ljava/io/File;->delete()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_9
-
-    .line 137
-    iget-object v7, p0, Lcom/nostra13/universalimageloader/cache/disc/LimitedDiscCache;->lastUsageDates:Ljava/util/Map;
-
-    invoke-interface {v7, v5}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_9
-
-    .line 121
-    .end local v3    # "fileSize":I
-    :cond_30
-    :try_start_30
-    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v8}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v2
 
-    check-cast v2, Ljava/util/Map$Entry;
+    .line 120
+    .local v2, "entries":Ljava/util/Set;, "Ljava/util/Set<Ljava/util/Map$Entry<Ljava/io/File;Ljava/lang/Long;>;>;"
+    move-object/from16 v0, p0
+
+    iget-object v9, v0, Lcom/nostra13/universalimageloader/cache/disc/LimitedDiscCache;->lastUsageDates:Ljava/util/Map;
+
+    monitor-enter v9
+
+    .line 121
+    :try_start_1b
+    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v10
+
+    :cond_1f
+    :goto_1f
+    invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v8
+
+    if-nez v8, :cond_3a
+
+    .line 120
+    monitor-exit v9
+    :try_end_26
+    .catchall {:try_start_1b .. :try_end_26} :catchall_6f
+
+    .line 135
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v6}, Lcom/nostra13/universalimageloader/cache/disc/LimitedDiscCache;->getSize(Ljava/io/File;)I
+
+    move-result v4
+
+    .line 136
+    .local v4, "fileSize":I
+    invoke-virtual {v6}, Ljava/io/File;->delete()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_b
+
+    .line 137
+    move-object/from16 v0, p0
+
+    iget-object v8, v0, Lcom/nostra13/universalimageloader/cache/disc/LimitedDiscCache;->lastUsageDates:Ljava/util/Map;
+
+    invoke-interface {v8, v6}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_b
+
+    .line 121
+    .end local v4    # "fileSize":I
+    :cond_3a
+    :try_start_3a
+    invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/Map$Entry;
 
     .line 122
-    .local v2, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/io/File;Ljava/lang/Long;>;"
-    if-nez v5, :cond_49
+    .local v3, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/io/File;Ljava/lang/Long;>;"
+    if-nez v6, :cond_53
 
     .line 123
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v8
 
-    move-object v0, v7
+    move-object v0, v8
 
     check-cast v0, Ljava/io/File;
-
-    move-object v5, v0
-
-    .line 124
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v7
-
-    move-object v0, v7
-
-    check-cast v0, Ljava/lang/Long;
 
     move-object v6, v0
 
+    .line 124
+    invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v8
+
+    move-object v0, v8
+
+    check-cast v0, Ljava/lang/Long;
+
+    move-object v7, v0
+
     .line 125
-    goto :goto_19
+    goto :goto_1f
 
     .line 126
-    :cond_49
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    :cond_53
+    invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v5
 
-    check-cast v4, Ljava/lang/Long;
+    check-cast v5, Ljava/lang/Long;
 
     .line 127
-    .local v4, "lastValueUsage":Ljava/lang/Long;
-    invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v10
-
-    invoke-virtual {v6}, Ljava/lang/Long;->longValue()J
+    .local v5, "lastValueUsage":Ljava/lang/Long;
+    invoke-virtual {v5}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v12
 
-    cmp-long v7, v10, v12
+    invoke-virtual {v7}, Ljava/lang/Long;->longValue()J
 
-    if-gez v7, :cond_19
+    move-result-wide v14
+
+    cmp-long v8, v12, v14
+
+    if-gez v8, :cond_1f
 
     .line 128
-    move-object v6, v4
+    move-object v7, v5
 
     .line 129
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v8
 
-    move-object v0, v7
+    move-object v0, v8
 
     check-cast v0, Ljava/io/File;
 
-    move-object v5, v0
+    move-object v6, v0
 
-    goto :goto_19
+    goto :goto_1f
 
     .line 120
-    .end local v2    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/io/File;Ljava/lang/Long;>;"
-    .end local v4    # "lastValueUsage":Ljava/lang/Long;
-    :catchall_65
-    move-exception v7
+    .end local v3    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/io/File;Ljava/lang/Long;>;"
+    .end local v5    # "lastValueUsage":Ljava/lang/Long;
+    :catchall_6f
+    move-exception v8
 
-    monitor-exit v8
-    :try_end_67
-    .catchall {:try_start_30 .. :try_end_67} :catchall_65
+    monitor-exit v9
+    :try_end_71
+    .catchall {:try_start_3a .. :try_end_71} :catchall_6f
 
-    throw v7
+    throw v8
 .end method
 
 
@@ -372,7 +382,7 @@
 .end method
 
 .method public put(Ljava/lang/String;Ljava/io/File;)V
-    .registers 8
+    .registers 9
     .param p1, "key"    # Ljava/lang/String;
     .param p2, "file"    # Ljava/io/File;
 
@@ -404,9 +414,9 @@
     .line 88
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
@@ -414,9 +424,9 @@
     .local v0, "currentTime":Ljava/lang/Long;
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    invoke-virtual {p2, v3, v4}, Ljava/io/File;->setLastModified(J)Z
+    invoke-virtual {p2, v4, v5}, Ljava/io/File;->setLastModified(J)Z
 
     .line 90
     iget-object v3, p0, Lcom/nostra13/universalimageloader/cache/disc/LimitedDiscCache;->lastUsageDates:Ljava/util/Map;

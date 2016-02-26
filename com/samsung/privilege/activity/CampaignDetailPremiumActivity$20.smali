@@ -41,7 +41,7 @@
 
     iput-boolean p6, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$20;->val$pLoadMore:Z
 
-    .line 2391
+    .line 2392
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -53,7 +53,7 @@
     .registers 7
 
     .prologue
-    .line 2394
+    .line 2395
     new-instance v2, Ljava/lang/StringBuilder;
 
     sget-object v3, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
@@ -89,9 +89,9 @@
 
     move-result-object v2
 
-    iget-wide v3, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$20;->val$lat:D
+    iget-wide v4, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$20;->val$lat:D
 
-    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -101,9 +101,9 @@
 
     move-result-object v2
 
-    iget-wide v3, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$20;->val$lon:D
+    iget-wide v4, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$20;->val$lon:D
 
-    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -151,7 +151,7 @@
 
     move-result-object v1
 
-    .line 2396
+    .line 2397
     .local v1, "url":Ljava/lang/String;
     iget-boolean v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$20;->val$pLoadMore:Z
 
@@ -170,14 +170,14 @@
 
     if-eqz v2, :cond_d8
 
-    .line 2397
+    .line 2398
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$20;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     iget-boolean v3, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$20;->val$pLoadMore:Z
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->access$31(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;Z)V
 
-    .line 2398
+    .line 2399
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$20;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$20;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -212,7 +212,7 @@
 
     invoke-static {v3, v4, v5}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->access$32(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;J)V
 
-    .line 2399
+    .line 2400
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -232,9 +232,9 @@
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->gLastRank:J
     invoke-static {v3}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->access$33(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -242,11 +242,11 @@
 
     move-result-object v1
 
-    .line 2405
+    .line 2406
     :goto_b5
     const/4 v0, 0x0
 
-    .line 2406
+    .line 2407
     .local v0, "cache_name":Ljava/lang/String;
     const-string v2, "campaign.detail"
 
@@ -266,7 +266,7 @@
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2407
+    .line 2408
     new-instance v2, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener;
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$20;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -279,10 +279,10 @@
 
     invoke-static {v1, v2, v3}, Lcom/samsung/privilege/util/http/HttpCall;->RQ_GET(Ljava/lang/String;Lcom/samsung/privilege/util/http/RQListener;Ljava/lang/Object;)V
 
-    .line 2408
+    .line 2409
     return-void
 
-    .line 2401
+    .line 2402
     .end local v0    # "cache_name":Ljava/lang/String;
     :cond_d8
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$20;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -291,7 +291,7 @@
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->access$31(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;Z)V
 
-    .line 2402
+    .line 2403
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$20;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     new-instance v3, Ljava/util/ArrayList;

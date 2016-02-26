@@ -110,7 +110,7 @@
 .end method
 
 .method public final getDeviceId()Ljava/lang/String;
-    .registers 8
+    .registers 9
 
     .prologue
     .line 53
@@ -171,9 +171,9 @@
     .line 67
     invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
 
@@ -183,11 +183,11 @@
     :try_end_33
     .catch Ljava/lang/Exception; {:try_start_20 .. :try_end_33} :catch_5b
 
-    move-result-wide v3
+    move-result-wide v4
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
-    cmp-long v3, v3, v5
+    cmp-long v3, v4, v6
 
     if-nez v3, :cond_3b
 

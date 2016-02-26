@@ -24,13 +24,13 @@
     .param p1, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 617
+    .line 632
     invoke-direct {p0}, Lcom/samsung/privilege/util/http/HttpRQListener;-><init>()V
 
-    .line 618
+    .line 633
     iput-object p1, p0, Lcom/samsung/privilege/util/ResumeUtil$GetUpdateDeviceListener;->gAppContext:Landroid/content/Context;
 
-    .line 619
+    .line 634
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 623
+    .line 638
     const-string v0, "gift.noti"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -72,7 +72,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 624
+    .line 639
     return-void
 .end method
 
@@ -82,10 +82,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 628
+    .line 643
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onFileNotFoundException(Ljava/io/FileNotFoundException;Ljava/lang/Object;)V
 
-    .line 629
+    .line 644
     const-string v0, "gift.noti"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -108,7 +108,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 630
+    .line 645
     return-void
 .end method
 
@@ -118,10 +118,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 634
+    .line 649
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onIOException(Ljava/io/IOException;Ljava/lang/Object;)V
 
-    .line 635
+    .line 650
     const-string v0, "gift.noti"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -144,7 +144,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 636
+    .line 651
     return-void
 .end method
 
@@ -154,10 +154,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 640
+    .line 655
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onMalformedURLException(Ljava/net/MalformedURLException;Ljava/lang/Object;)V
 
-    .line 641
+    .line 656
     const-string v0, "gift.noti"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -180,6 +180,6 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 642
+    .line 657
     return-void
 .end method

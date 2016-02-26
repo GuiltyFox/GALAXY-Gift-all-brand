@@ -51,26 +51,26 @@
     .end annotation
 
     .prologue
-    .line 4346
+    .line 4354
     .local p3, "galImages":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lic/buzzebeeslib/bean/CampaignGallery;>;"
     iput-object p1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$ImageAdapter;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     invoke-direct {p0}, Landroid/support/v4/view/PagerAdapter;-><init>()V
 
-    .line 4347
+    .line 4355
     iput-object p2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$ImageAdapter;->context:Landroid/content/Context;
 
-    .line 4348
+    .line 4356
     iput-object p3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$ImageAdapter;->galImages:Ljava/util/ArrayList;
 
-    .line 4349
+    .line 4357
     invoke-virtual {p1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
 
     move-result-object v0
 
     iput-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$ImageAdapter;->inflater:Landroid/view/LayoutInflater;
 
-    .line 4350
+    .line 4358
     return-void
 .end method
 
@@ -83,7 +83,7 @@
     .param p3, "object"    # Ljava/lang/Object;
 
     .prologue
-    .line 4405
+    .line 4413
     return-void
 .end method
 
@@ -91,7 +91,7 @@
     .registers 2
 
     .prologue
-    .line 4354
+    .line 4362
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$ImageAdapter;->galImages:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -109,7 +109,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 4364
+    .line 4372
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$ImageAdapter;->galImages:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -118,7 +118,7 @@
 
     check-cast v7, Lic/buzzebeeslib/bean/CampaignGallery;
 
-    .line 4366
+    .line 4374
     .local v7, "marketGalleryView":Lic/buzzebeeslib/bean/CampaignGallery;
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$ImageAdapter;->inflater:Landroid/view/LayoutInflater;
 
@@ -128,11 +128,11 @@
 
     move-result-object v6
 
-    .line 4367
+    .line 4375
     .local v6, "imageLayout":Landroid/view/View;
     iput-object v6, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$ImageAdapter;->imageLayout:Landroid/view/View;
 
-    .line 4368
+    .line 4376
     sget v0, Lic/buzzebeeslib/R$id;->image:I
 
     invoke-virtual {v6, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -141,11 +141,11 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    .line 4370
+    .line 4378
     .local v2, "imageView":Landroid/widget/ImageView;
     const/4 v1, 0x0
 
-    .line 4371
+    .line 4379
     .local v1, "img_url":Ljava/lang/String;
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$ImageAdapter;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
@@ -165,7 +165,7 @@
 
     if-ne v0, v3, :cond_68
 
-    .line 4372
+    .line 4380
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-virtual {v7}, Lic/buzzebeeslib/bean/CampaignGallery;->FullImageUrlLarge()Ljava/lang/String;
@@ -195,7 +195,7 @@
 
     move-result-object v1
 
-    .line 4381
+    .line 4389
     :cond_4a
     :goto_4a
     invoke-virtual {v2}, Landroid/widget/ImageView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -208,7 +208,7 @@
 
     invoke-virtual {v0, v3}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 4394
+    .line 4402
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$ImageAdapter;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
@@ -222,16 +222,16 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
 
-    .line 4396
+    .line 4404
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     .end local p1    # "container":Landroid/view/ViewGroup;
     invoke-virtual {p1, v6, v5}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
-    .line 4398
+    .line 4406
     return-object v6
 
-    .line 4373
+    .line 4381
     .restart local p1    # "container":Landroid/view/ViewGroup;
     :cond_68
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$ImageAdapter;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -252,7 +252,7 @@
 
     if-ne v0, v3, :cond_97
 
-    .line 4374
+    .line 4382
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-virtual {v7}, Lic/buzzebeeslib/bean/CampaignGallery;->FullImageUrlLarge()Ljava/lang/String;
@@ -282,7 +282,7 @@
 
     move-result-object v1
 
-    .line 4375
+    .line 4383
     goto :goto_4a
 
     :cond_97
@@ -304,7 +304,7 @@
 
     if-ne v0, v3, :cond_c6
 
-    .line 4376
+    .line 4384
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-virtual {v7}, Lic/buzzebeeslib/bean/CampaignGallery;->FullImageUrlLarge()Ljava/lang/String;
@@ -334,7 +334,7 @@
 
     move-result-object v1
 
-    .line 4377
+    .line 4385
     goto :goto_4a
 
     :cond_c6
@@ -356,7 +356,7 @@
 
     if-ne v0, v3, :cond_4a
 
-    .line 4378
+    .line 4386
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-virtual {v7}, Lic/buzzebeeslib/bean/CampaignGallery;->FullImageUrlLarge()Ljava/lang/String;
@@ -395,7 +395,7 @@
     .param p2, "object"    # Ljava/lang/Object;
 
     .prologue
-    .line 4359
+    .line 4367
     invoke-virtual {p1, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0

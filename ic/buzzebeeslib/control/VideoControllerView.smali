@@ -871,7 +871,7 @@
 .end method
 
 .method private setProgress()I
-    .registers 10
+    .registers 11
 
     .prologue
     .line 334
@@ -918,15 +918,15 @@
     if-lez v0, :cond_29
 
     .line 343
-    const-wide/16 v5, 0x3e8
+    const-wide/16 v6, 0x3e8
 
-    int-to-long v7, v4
+    int-to-long v8, v4
 
-    mul-long/2addr v5, v7
+    mul-long/2addr v6, v8
 
-    int-to-long v7, v0
+    int-to-long v8, v0
 
-    div-long v2, v5, v7
+    div-long v2, v6, v8
 
     .line 344
     .local v2, "pos":J
@@ -1766,9 +1766,9 @@
     .line 293
     iget-object v2, p0, Lic/buzzebeeslib/control/VideoControllerView;->mHandler:Landroid/os/Handler;
 
-    int-to-long v3, p1
+    int-to-long v4, p1
 
-    invoke-virtual {v2, v0, v3, v4}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v2, v0, v4, v5}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     .line 295
     :cond_47

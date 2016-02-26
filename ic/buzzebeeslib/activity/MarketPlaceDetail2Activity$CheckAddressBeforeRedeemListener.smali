@@ -26,15 +26,15 @@
     .param p2, "pCampaign"    # Lic/buzzebeeslib/bean/Campaign;
 
     .prologue
-    .line 4032
+    .line 4040
     iput-object p1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     invoke-direct {p0}, Lic/buzzebeeslib/util/http/HttpRQListener;-><init>()V
 
-    .line 4033
+    .line 4041
     iput-object p2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;->gCampaign:Lic/buzzebeeslib/bean/Campaign;
 
-    .line 4034
+    .line 4042
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .registers 2
 
     .prologue
-    .line 4028
+    .line 4036
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     return-object v0
@@ -57,7 +57,7 @@
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 4038
+    .line 4046
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->TAG:Ljava/lang/String;
@@ -91,7 +91,7 @@
 
     invoke-static {v0, v1}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4039
+    .line 4047
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     invoke-virtual {v0}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->isFinishing()Z
@@ -100,7 +100,7 @@
 
     if-nez v0, :cond_4d
 
-    .line 4041
+    .line 4049
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gDialog:Landroid/app/ProgressDialog;
@@ -110,7 +110,7 @@
 
     if-eqz v0, :cond_3b
 
-    .line 4042
+    .line 4050
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gDialog:Landroid/app/ProgressDialog;
@@ -120,13 +120,13 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 4045
+    .line 4053
     :cond_3b
     const/16 v0, 0xc8
 
     if-ne p1, v0, :cond_4e
 
-    .line 4046
+    .line 4054
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->mHandler:Landroid/os/Handler;
@@ -140,12 +140,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 4092
+    .line 4100
     :cond_4d
     :goto_4d
     return-void
 
-    .line 4089
+    .line 4097
     :cond_4e
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$CheckAddressBeforeRedeemListener;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 

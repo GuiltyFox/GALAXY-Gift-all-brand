@@ -52,12 +52,12 @@
     .line 295
     iget-object v0, p0, Lcom/facebook/AppEventsLogger$1;->val$logger:Lcom/facebook/AppEventsLogger;
 
-    iget-wide v1, p0, Lcom/facebook/AppEventsLogger$1;->val$eventTime:J
+    iget-wide v2, p0, Lcom/facebook/AppEventsLogger$1;->val$eventTime:J
 
-    iget-object v3, p0, Lcom/facebook/AppEventsLogger$1;->val$sourceApplicationInfo:Ljava/lang/String;
+    iget-object v1, p0, Lcom/facebook/AppEventsLogger$1;->val$sourceApplicationInfo:Ljava/lang/String;
 
     # invokes: Lcom/facebook/AppEventsLogger;->logAppSessionResumeEvent(JLjava/lang/String;)V
-    invoke-static {v0, v1, v2, v3}, Lcom/facebook/AppEventsLogger;->access$3(Lcom/facebook/AppEventsLogger;JLjava/lang/String;)V
+    invoke-static {v0, v2, v3, v1}, Lcom/facebook/AppEventsLogger;->access$3(Lcom/facebook/AppEventsLogger;JLjava/lang/String;)V
 
     .line 296
     return-void

@@ -55,13 +55,13 @@
     .end annotation
 
     .prologue
-    .line 2551
+    .line 2552
     .local p2, "d":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/PlaceNewDetail;>;"
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 2547
+    .line 2548
     new-instance v0, Ljava/text/DecimalFormat;
 
     const-string v1, "###,###,###"
@@ -70,7 +70,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->formatter:Ljava/text/NumberFormat;
 
-    .line 2548
+    .line 2549
     new-instance v0, Ljava/text/DecimalFormat;
 
     const-string v1, "###,###,###.##"
@@ -79,7 +79,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->formatterHasDigi:Ljava/text/NumberFormat;
 
-    .line 2552
+    .line 2553
     const-string v0, "layout_inflater"
 
     invoke-virtual {p1, v0}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -90,10 +90,10 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->gInflater:Landroid/view/LayoutInflater;
 
-    .line 2553
+    .line 2554
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->data:Ljava/util/ArrayList;
 
-    .line 2554
+    .line 2555
     return-void
 .end method
 
@@ -103,7 +103,7 @@
     .registers 2
 
     .prologue
-    .line 2558
+    .line 2559
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->data:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -118,7 +118,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 2563
+    .line 2564
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -131,7 +131,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 2568
+    .line 2569
     int-to-long v0, p1
 
     return-wide v0
@@ -144,11 +144,11 @@
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    const v8, 0x7f090037
+    const v8, 0x7f080037
 
     const/16 v7, 0x8
 
-    .line 2581
+    .line 2582
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->data:Ljava/util/ArrayList;
 
     invoke-virtual {v4, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -157,15 +157,15 @@
 
     check-cast v2, Lcom/samsung/privilege/bean/PlaceNewDetail;
 
-    .line 2583
+    .line 2584
     .local v2, "placeNewDetail":Lcom/samsung/privilege/bean/PlaceNewDetail;
     const/4 v1, 0x0
 
-    .line 2584
+    .line 2585
     .local v1, "holder":Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;
     move-object v3, p2
 
-    .line 2586
+    .line 2587
     .local v3, "view":Landroid/view/View;
     if-eqz p2, :cond_17
 
@@ -175,7 +175,7 @@
 
     if-nez v4, :cond_fb
 
-    .line 2587
+    .line 2588
     :cond_17
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->gInflater:Landroid/view/LayoutInflater;
 
@@ -187,13 +187,13 @@
 
     move-result-object v3
 
-    .line 2588
+    .line 2589
     new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;
 
     .end local v1    # "holder":Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;
     invoke-direct {v1, p0}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;-><init>(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;)V
 
-    .line 2589
+    .line 2590
     .restart local v1    # "holder":Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;
     const v4, 0x7f400009
 
@@ -205,7 +205,7 @@
 
     iput-object v4, v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->layoutMain:Landroid/widget/RelativeLayout;
 
-    .line 2590
+    .line 2591
     const v4, 0x7f40000a
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -216,7 +216,7 @@
 
     iput-object v4, v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->tvBranchName:Landroid/widget/TextView;
 
-    .line 2591
+    .line 2592
     const v4, 0x7f40000b
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -227,7 +227,7 @@
 
     iput-object v4, v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->tvPeopleCount:Landroid/widget/TextView;
 
-    .line 2592
+    .line 2593
     const v4, 0x7f40000c
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -238,7 +238,7 @@
 
     iput-object v4, v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->tvDistance:Landroid/widget/TextView;
 
-    .line 2593
+    .line 2594
     const v4, 0x7f40000d
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -249,7 +249,7 @@
 
     iput-object v4, v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->imgIconMap:Landroid/widget/ImageView;
 
-    .line 2596
+    .line 2597
     :try_start_5d
     iget-object v4, v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->tvBranchName:Landroid/widget/TextView;
 
@@ -262,7 +262,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 2597
+    .line 2598
     iget-object v4, v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->tvPeopleCount:Landroid/widget/TextView;
 
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -274,7 +274,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 2598
+    .line 2599
     iget-object v4, v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->tvDistance:Landroid/widget/TextView;
 
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -286,23 +286,8 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 2600
-    iget-object v4, v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->tvBranchName:Landroid/widget/TextView;
-
-    iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
-
-    invoke-virtual {v5}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    invoke-static {v5}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v5
-
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTextSize(F)V
-
     .line 2601
-    iget-object v4, v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->tvPeopleCount:Landroid/widget/TextView;
+    iget-object v4, v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->tvBranchName:Landroid/widget/TextView;
 
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
@@ -317,6 +302,21 @@
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTextSize(F)V
 
     .line 2602
+    iget-object v4, v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->tvPeopleCount:Landroid/widget/TextView;
+
+    iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
+
+    invoke-virtual {v5}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v5
+
+    invoke-static {v5}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
+
+    move-result v5
+
+    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTextSize(F)V
+
+    .line 2603
     iget-object v4, v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->tvDistance:Landroid/widget/TextView;
 
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -333,11 +333,11 @@
     :try_end_ab
     .catch Ljava/lang/Exception; {:try_start_5d .. :try_end_ab} :catch_187
 
-    .line 2607
+    .line 2608
     :goto_ab
     invoke-virtual {v3, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 2612
+    .line 2613
     :goto_ae
     iget-object v4, v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->tvBranchName:Landroid/widget/TextView;
 
@@ -345,22 +345,22 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2624
+    .line 2625
     iget-object v4, v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->tvPeopleCount:Landroid/widget/TextView;
 
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 2625
+    .line 2626
     iget-object v4, v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->tvDistance:Landroid/widget/TextView;
 
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 2626
+    .line 2627
     iget-object v4, v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->imgIconMap:Landroid/widget/ImageView;
 
     invoke-virtual {v4, v7}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2628
+    .line 2629
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     invoke-virtual {v4}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getResources()Landroid/content/res/Resources;
@@ -371,7 +371,7 @@
 
     move-result v0
 
-    .line 2629
+    .line 2630
     .local v0, "color":I
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
@@ -400,29 +400,29 @@
 
     if-eqz v4, :cond_102
 
-    .line 2630
+    .line 2631
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     invoke-virtual {v4}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
-    const v5, 0x7f090033
+    const v5, 0x7f080033
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getColor(I)I
 
     move-result v0
 
-    .line 2640
+    .line 2641
     :goto_f5
     iget-object v4, v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;->tvBranchName:Landroid/widget/TextView;
 
     invoke-virtual {v4, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2649
+    .line 2650
     return-object v3
 
-    .line 2609
+    .line 2610
     .end local v0    # "color":I
     :cond_fb
     invoke-virtual {v3}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -435,7 +435,7 @@
     .restart local v1    # "holder":Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter$ViewHolderCampaignBranch;
     goto :goto_ae
 
-    .line 2631
+    .line 2632
     .restart local v0    # "color":I
     :cond_102
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -465,20 +465,20 @@
 
     if-eqz v4, :cond_12a
 
-    .line 2632
+    .line 2633
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     invoke-virtual {v4}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
-    const v5, 0x7f090034
+    const v5, 0x7f080034
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getColor(I)I
 
     move-result v0
 
-    .line 2633
+    .line 2634
     goto :goto_f5
 
     :cond_12a
@@ -509,20 +509,20 @@
 
     if-eqz v4, :cond_152
 
-    .line 2634
+    .line 2635
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     invoke-virtual {v4}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
-    const v5, 0x7f090035
+    const v5, 0x7f080035
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getColor(I)I
 
     move-result v0
 
-    .line 2635
+    .line 2636
     goto :goto_f5
 
     :cond_152
@@ -553,23 +553,23 @@
 
     if-eqz v4, :cond_17b
 
-    .line 2636
+    .line 2637
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     invoke-virtual {v4}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
-    const v5, 0x7f090036
+    const v5, 0x7f080036
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getColor(I)I
 
     move-result v0
 
-    .line 2637
+    .line 2638
     goto/16 :goto_f5
 
-    .line 2638
+    .line 2639
     :cond_17b
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
@@ -583,7 +583,7 @@
 
     goto/16 :goto_f5
 
-    .line 2603
+    .line 2604
     .end local v0    # "color":I
     :catch_187
     move-exception v4

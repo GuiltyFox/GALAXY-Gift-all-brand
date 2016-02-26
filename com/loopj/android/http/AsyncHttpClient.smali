@@ -89,7 +89,7 @@
     .registers 7
 
     .prologue
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
     .line 115
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -102,9 +102,9 @@
     .line 118
     sget v1, Lcom/loopj/android/http/AsyncHttpClient;->socketTimeout:I
 
-    int-to-long v1, v1
+    int-to-long v2, v1
 
-    invoke-static {v0, v1, v2}, Lorg/apache/http/conn/params/ConnManagerParams;->setTimeout(Lorg/apache/http/params/HttpParams;J)V
+    invoke-static {v0, v2, v3}, Lorg/apache/http/conn/params/ConnManagerParams;->setTimeout(Lorg/apache/http/params/HttpParams;J)V
 
     .line 119
     new-instance v1, Lorg/apache/http/conn/params/ConnPerRouteBean;
@@ -131,7 +131,7 @@
     invoke-static {v0, v1}, Lorg/apache/http/params/HttpConnectionParams;->setConnectionTimeout(Lorg/apache/http/params/HttpParams;I)V
 
     .line 124
-    invoke-static {v0, v3}, Lorg/apache/http/params/HttpConnectionParams;->setTcpNoDelay(Lorg/apache/http/params/HttpParams;Z)V
+    invoke-static {v0, v4}, Lorg/apache/http/params/HttpConnectionParams;->setTcpNoDelay(Lorg/apache/http/params/HttpParams;Z)V
 
     .line 125
     const/16 v1, 0x2000
@@ -146,7 +146,7 @@
     .line 128
     const-string v1, "android-async-http/%s (http://loopj.com/android-async-http)"
 
-    new-array v2, v3, [Ljava/lang/Object;
+    new-array v2, v4, [Ljava/lang/Object;
 
     const/4 v3, 0x0
 
@@ -1113,7 +1113,7 @@
 .end method
 
 .method public setTimeout(I)V
-    .registers 5
+    .registers 6
 
     .prologue
     .line 223
@@ -1124,9 +1124,9 @@
     move-result-object v0
 
     .line 224
-    int-to-long v1, p1
+    int-to-long v2, p1
 
-    invoke-static {v0, v1, v2}, Lorg/apache/http/conn/params/ConnManagerParams;->setTimeout(Lorg/apache/http/params/HttpParams;J)V
+    invoke-static {v0, v2, v3}, Lorg/apache/http/conn/params/ConnManagerParams;->setTimeout(Lorg/apache/http/params/HttpParams;J)V
 
     .line 225
     invoke-static {v0, p1}, Lorg/apache/http/params/HttpConnectionParams;->setSoTimeout(Lorg/apache/http/params/HttpParams;I)V

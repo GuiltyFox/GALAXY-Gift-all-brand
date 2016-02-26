@@ -54,7 +54,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;Ljava/lang/String;)V
-    .registers 10
+    .registers 11
     .param p1, "pMediaType"    # Ljava/lang/String;
     .param p2, "nfcPlan"    # Lcom/samsung/privilege/bean/NFCPlan;
     .param p3, "nfcResult"    # Lcom/samsung/privilege/bean/NFCResult;
@@ -63,7 +63,7 @@
     .prologue
     const/4 v1, 0x0
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v4, 0x0
 
     const/4 v2, 0x0
 
@@ -280,14 +280,14 @@
     iput-object v0, p0, Lcom/samsung/privilege/bean/NFCTag;->CheckIn_Message:Ljava/lang/String;
 
     .line 106
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v4, v5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/samsung/privilege/bean/NFCTag;->CheckIn_Latitude:Ljava/lang/Double;
 
     .line 107
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v4, v5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v0
 

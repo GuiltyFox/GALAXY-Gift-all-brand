@@ -1051,17 +1051,17 @@
 
     .line 399
     .local v8, "tmp":Ljava/lang/StringBuilder;
-    const-wide/16 v9, 0x384
+    const-wide/16 v10, 0x384
 
-    invoke-static {v9, v10}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+    invoke-static {v10, v11}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
     move-result-object v6
 
     .line 400
     .local v6, "num900":Ljava/math/BigInteger;
-    const-wide/16 v9, 0x0
+    const-wide/16 v10, 0x0
 
-    invoke-static {v9, v10}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+    invoke-static {v10, v11}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
     move-result-object v5
 

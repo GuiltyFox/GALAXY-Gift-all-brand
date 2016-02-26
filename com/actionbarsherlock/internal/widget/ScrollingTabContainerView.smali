@@ -109,7 +109,7 @@
 
     .line 74
     .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v1, 0x4
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_height:I
 
     invoke-virtual {v0, v1, v5}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
 
@@ -688,11 +688,11 @@
 .end method
 
 .method public animateToVisibility(I)V
-    .registers 9
+    .registers 10
     .param p1, "visibility"    # I
 
     .prologue
-    const-wide/16 v5, 0xc8
+    const-wide/16 v6, 0xc8
 
     const/4 v2, 0x1
 
@@ -740,7 +740,7 @@
 
     .line 227
     .local v0, "anim":Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;
-    invoke-virtual {v0, v5, v6}, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;->setDuration(J)Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;
+    invoke-virtual {v0, v6, v7}, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;->setDuration(J)Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;
 
     .line 228
     sget-object v1, Lcom/actionbarsherlock/internal/widget/ScrollingTabContainerView;->sAlphaInterpolator:Landroid/view/animation/Interpolator;
@@ -778,7 +778,7 @@
 
     .line 234
     .restart local v0    # "anim":Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;
-    invoke-virtual {v0, v5, v6}, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;->setDuration(J)Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;
+    invoke-virtual {v0, v6, v7}, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;->setDuration(J)Lcom/actionbarsherlock/internal/nineoldandroids/animation/ObjectAnimator;
 
     .line 235
     sget-object v1, Lcom/actionbarsherlock/internal/widget/ScrollingTabContainerView;->sAlphaInterpolator:Landroid/view/animation/Interpolator;
@@ -851,7 +851,7 @@
 
     .line 214
     .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v1, 0x4
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_height:I
 
     invoke-virtual {v0, v1, v5}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
 

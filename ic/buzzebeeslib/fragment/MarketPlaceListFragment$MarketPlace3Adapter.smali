@@ -141,873 +141,987 @@
 .end method
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 20
+    .registers 21
     .param p1, "position"    # I
     .param p2, "convertView"    # Landroid/view/View;
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
     .line 1136
-    const/4 v7, 0x0
+    const/4 v8, 0x0
 
     .line 1138
-    .local v7, "campaign":Lic/buzzebeeslib/bean/Campaign;
+    .local v8, "campaign":Lic/buzzebeeslib/bean/Campaign;
     :try_start_1
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCampaignViews:Ljava/util/ArrayList;
-    invoke-static {v1}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->access$6(Lic/buzzebeeslib/fragment/MarketPlaceListFragment;)Ljava/util/ArrayList;
+    invoke-static {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->access$6(Lic/buzzebeeslib/fragment/MarketPlaceListFragment;)Ljava/util/ArrayList;
 
-    move-result-object v1
+    move-result-object v2
 
     move/from16 v0, p1
 
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Lic/buzzebeeslib/bean/Campaign;
+    check-cast v2, Lic/buzzebeeslib/bean/Campaign;
 
-    invoke-virtual {v1}, Lic/buzzebeeslib/bean/Campaign;->clone()Ljava/lang/Object;
+    invoke-virtual {v2}, Lic/buzzebeeslib/bean/Campaign;->clone()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    move-object v0, v1
+    move-object v0, v2
 
     check-cast v0, Lic/buzzebeeslib/bean/Campaign;
 
-    move-object v7, v0
+    move-object v8, v0
     :try_end_19
-    .catch Ljava/lang/CloneNotSupportedException; {:try_start_1 .. :try_end_19} :catch_43e
+    .catch Ljava/lang/CloneNotSupportedException; {:try_start_1 .. :try_end_19} :catch_474
 
     .line 1143
     :goto_19
-    const/4 v12, 0x0
+    const/4 v13, 0x0
 
     .line 1144
-    .local v12, "holder":Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;
-    move-object/from16 v15, p2
+    .local v13, "holder":Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;
+    move-object/from16 v16, p2
 
     .line 1146
-    .local v15, "view":Landroid/view/View;
+    .local v16, "view":Landroid/view/View;
     if-eqz p2, :cond_24
 
-    invoke-virtual {v15}, Landroid/view/View;->getTag()Ljava/lang/Object;
+    invoke-virtual/range {v16 .. v16}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-nez v1, :cond_444
+    if-nez v2, :cond_47a
 
     .line 1148
     :cond_24
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->gInflater:Landroid/view/LayoutInflater;
+    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->gInflater:Landroid/view/LayoutInflater;
 
-    sget v2, Lic/buzzebeeslib/R$layout;->bz_market_place_list_row:I
+    sget v3, Lic/buzzebeeslib/R$layout;->bz_market_place_list_row:I
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    invoke-virtual {v1, v2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+    invoke-virtual {v2, v3, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    move-result-object v15
+    move-result-object v16
 
     .line 1149
-    new-instance v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;
+    new-instance v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;
 
-    .end local v12    # "holder":Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;
-    const/4 v1, 0x0
+    .end local v13    # "holder":Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;
+    const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
-    invoke-direct {v12, v0, v1}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;-><init>(Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;)V
+    invoke-direct {v13, v0, v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;-><init>(Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;)V
 
     .line 1150
-    .restart local v12    # "holder":Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;
-    sget v1, Lic/buzzebeeslib/R$id;->imgCampaignThumb:I
+    .restart local v13    # "holder":Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;
+    sget v2, Lic/buzzebeeslib/R$id;->imgCampaignThumb:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/ImageView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgCampaignThumb:Landroid/widget/ImageView;
+    check-cast v2, Landroid/widget/ImageView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgCampaignThumb:Landroid/widget/ImageView;
 
     .line 1151
-    sget v1, Lic/buzzebeeslib/R$id;->imgCampaign:I
+    sget v2, Lic/buzzebeeslib/R$id;->imgCampaign:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/ImageView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgCampaign:Landroid/widget/ImageView;
+    check-cast v2, Landroid/widget/ImageView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgCampaign:Landroid/widget/ImageView;
 
     .line 1152
-    sget v1, Lic/buzzebeeslib/R$id;->imgRibbon:I
+    sget v2, Lic/buzzebeeslib/R$id;->imgRibbon:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/ImageView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRibbon:Landroid/widget/ImageView;
+    check-cast v2, Landroid/widget/ImageView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRibbon:Landroid/widget/ImageView;
 
     .line 1153
-    sget v1, Lic/buzzebeeslib/R$id;->tvCaption:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvCaption:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvCaption:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvCaption:Landroid/widget/TextView;
 
     .line 1154
-    sget v1, Lic/buzzebeeslib/R$id;->tvHeader:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvHeader:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvHeader:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvHeader:Landroid/widget/TextView;
 
     .line 1155
-    sget v1, Lic/buzzebeeslib/R$id;->tvDescription:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvDescription:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvDescription:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvDescription:Landroid/widget/TextView;
 
     .line 1156
-    sget v1, Lic/buzzebeeslib/R$id;->tvDiscountNumber:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvDiscountNumber:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvDiscountNumber:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvDiscountNumber:Landroid/widget/TextView;
 
     .line 1157
-    sget v1, Lic/buzzebeeslib/R$id;->imgPoint:I
+    sget v2, Lic/buzzebeeslib/R$id;->imgPoint:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/ImageView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgPoint:Landroid/widget/ImageView;
+    check-cast v2, Landroid/widget/ImageView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgPoint:Landroid/widget/ImageView;
 
     .line 1158
-    sget v1, Lic/buzzebeeslib/R$id;->tvPointNumber:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvPointNumber:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPointNumber:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPointNumber:Landroid/widget/TextView;
 
     .line 1159
-    sget v1, Lic/buzzebeeslib/R$id;->tvPriceNumber:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvPriceNumber:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPriceNumber:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPriceNumber:Landroid/widget/TextView;
 
     .line 1160
-    sget v1, Lic/buzzebeeslib/R$id;->tvRemainNumber:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvRemainNumber:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
 
     .line 1161
-    sget v1, Lic/buzzebeeslib/R$id;->tvTimeNumber:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvTimeNumber:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumber:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumber:Landroid/widget/TextView;
 
     .line 1162
-    sget v1, Lic/buzzebeeslib/R$id;->layoutRight:I
+    sget v2, Lic/buzzebeeslib/R$id;->layoutRight:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/RelativeLayout;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->layoutRight:Landroid/widget/RelativeLayout;
+    check-cast v2, Landroid/widget/RelativeLayout;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->layoutRight:Landroid/widget/RelativeLayout;
 
     .line 1164
-    sget v1, Lic/buzzebeeslib/R$id;->tvDiscountCaption:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvDiscountCaption:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvDiscountCaption:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvDiscountCaption:Landroid/widget/TextView;
 
     .line 1165
-    sget v1, Lic/buzzebeeslib/R$id;->tvPointCaption:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvPointCaption:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPointCaption:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPointCaption:Landroid/widget/TextView;
 
     .line 1166
-    sget v1, Lic/buzzebeeslib/R$id;->tvPriceCaption:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvPriceCaption:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPriceCaption:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPriceCaption:Landroid/widget/TextView;
 
     .line 1167
-    sget v1, Lic/buzzebeeslib/R$id;->tvRemainCaption:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvRemainCaption:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainCaption:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainCaption:Landroid/widget/TextView;
 
     .line 1168
-    sget v1, Lic/buzzebeeslib/R$id;->tvTimeCaption:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvTimeCaption:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeCaption:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeCaption:Landroid/widget/TextView;
 
     .line 1170
-    sget v1, Lic/buzzebeeslib/R$id;->layoutRightAdBuzz:I
+    sget v2, Lic/buzzebeeslib/R$id;->layoutRightAdBuzz:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/RelativeLayout;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->layoutRightAdBuzz:Landroid/widget/RelativeLayout;
+    check-cast v2, Landroid/widget/RelativeLayout;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->layoutRightAdBuzz:Landroid/widget/RelativeLayout;
 
     .line 1171
-    sget v1, Lic/buzzebeeslib/R$id;->tvAddPointsAdBuzz:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvAddPointsAdBuzz:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvAddPointsAdBuzz:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvAddPointsAdBuzz:Landroid/widget/TextView;
 
     .line 1172
-    sget v1, Lic/buzzebeeslib/R$id;->tvPointNumberAdBuzz:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvPointNumberAdBuzz:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPointNumberAdBuzz:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPointNumberAdBuzz:Landroid/widget/TextView;
 
     .line 1173
-    sget v1, Lic/buzzebeeslib/R$id;->imgRemainAdBuzz:I
+    sget v2, Lic/buzzebeeslib/R$id;->imgRemainAdBuzz:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/ImageView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRemainAdBuzz:Landroid/widget/ImageView;
+    check-cast v2, Landroid/widget/ImageView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRemainAdBuzz:Landroid/widget/ImageView;
 
     .line 1174
-    sget v1, Lic/buzzebeeslib/R$id;->tvRemainCaptionAdBuzz:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvRemainCaptionAdBuzz:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainCaptionAdBuzz:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainCaptionAdBuzz:Landroid/widget/TextView;
 
     .line 1175
-    sget v1, Lic/buzzebeeslib/R$id;->tvRemainNumberAdBuzz:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvRemainNumberAdBuzz:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
 
     .line 1176
-    sget v1, Lic/buzzebeeslib/R$id;->tvTimeCaptionAdBuzz:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvTimeCaptionAdBuzz:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeCaptionAdBuzz:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeCaptionAdBuzz:Landroid/widget/TextView;
 
     .line 1177
-    sget v1, Lic/buzzebeeslib/R$id;->tvTimeNumberAdBuzz:I
+    sget v2, Lic/buzzebeeslib/R$id;->tvTimeNumberAdBuzz:I
 
-    invoke-virtual {v15, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-object/from16 v0, v16
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/TextView;
+    move-result-object v2
 
-    iput-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumberAdBuzz:Landroid/widget/TextView;
+    check-cast v2, Landroid/widget/TextView;
+
+    iput-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumberAdBuzz:Landroid/widget/TextView;
 
     .line 1179
-    invoke-virtual {v15, v12}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v13}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     .line 1186
-    :goto_13e
-    :try_start_13e
+    :goto_174
+    :try_start_174
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v1}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
+    invoke-virtual {v2}, Landroid/support/v4/app/FragmentActivity;->getAssets()Landroid/content/res/AssetManager;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "fonts/kit55p.ttf"
+    const-string v3, "fonts/kit55p.ttf"
 
-    invoke-static {v1, v2}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
+    invoke-static {v2, v3}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
 
-    move-result-object v11
+    move-result-object v12
 
     .line 1188
-    .local v11, "font":Landroid/graphics/Typeface;
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvCaption:Landroid/widget/TextView;
+    .local v12, "font":Landroid/graphics/Typeface;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvCaption:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 1189
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvHeader:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvHeader:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 1190
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvDescription:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvDescription:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 1191
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvDiscountNumber:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvDiscountNumber:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 1192
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPointNumber:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPointNumber:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 1193
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPriceNumber:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPriceNumber:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 1194
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 1195
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumber:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumber:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 1197
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvDiscountCaption:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvDiscountCaption:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 1198
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPointCaption:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPointCaption:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 1199
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPriceCaption:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPriceCaption:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 1200
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainCaption:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainCaption:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 1201
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeCaption:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeCaption:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 1203
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvAddPointsAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvAddPointsAdBuzz:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 1204
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPointNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPointNumberAdBuzz:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 1205
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainCaptionAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainCaptionAdBuzz:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 1206
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 1207
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeCaptionAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeCaptionAdBuzz:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 1208
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumberAdBuzz:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-    :try_end_1af
-    .catch Ljava/lang/Exception; {:try_start_13e .. :try_end_1af} :catch_67c
+    invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    :try_end_1e5
+    .catch Ljava/lang/Exception; {:try_start_174 .. :try_end_1e5} :catch_6b2
 
     .line 1213
-    .end local v11    # "font":Landroid/graphics/Typeface;
-    :goto_1af
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvHeader:Landroid/widget/TextView;
+    .end local v12    # "font":Landroid/graphics/Typeface;
+    :goto_1e5
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvHeader:Landroid/widget/TextView;
 
-    iget-object v2, v7, Lic/buzzebeeslib/bean/Campaign;->AgencyName:Ljava/lang/String;
+    iget-object v3, v8, Lic/buzzebeeslib/bean/Campaign;->AgencyName:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1214
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvDescription:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvDescription:Landroid/widget/TextView;
 
-    iget-object v2, v7, Lic/buzzebeeslib/bean/Campaign;->Name:Ljava/lang/String;
+    iget-object v3, v8, Lic/buzzebeeslib/bean/Campaign;->Name:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1215
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvDiscountNumber:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvDiscountNumber:Landroid/widget/TextView;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatter:Ljava/text/NumberFormat;
+    iget-object v4, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatter:Ljava/text/NumberFormat;
 
-    iget-object v4, v7, Lic/buzzebeeslib/bean/Campaign;->Discount:Ljava/lang/String;
+    iget-object v5, v8, Lic/buzzebeeslib/bean/Campaign;->Discount:Ljava/lang/String;
+
+    invoke-static {v5}, Lic/buzzebeeslib/util/BBUtil;->CTypeDouble(Ljava/lang/String;)Ljava/lang/Double;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v6
+
+    const/4 v5, 0x5
+
+    invoke-static {v6, v7, v5}, Lic/buzzebeeslib/util/BBUtil;->roundMyData(DI)D
+
+    move-result-wide v6
+
+    invoke-virtual {v4, v6, v7}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v4, " %"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 1216
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPointNumber:Landroid/widget/TextView;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatterHasDigi:Ljava/text/NumberFormat;
+
+    iget-object v4, v8, Lic/buzzebeeslib/bean/Campaign;->PointPerUnit:Ljava/lang/String;
 
     invoke-static {v4}, Lic/buzzebeeslib/util/BBUtil;->CTypeDouble(Ljava/lang/String;)Ljava/lang/Double;
 
     move-result-object v4
 
-    invoke-virtual {v4}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v4
-
-    const/4 v6, 0x5
-
-    invoke-static {v4, v5, v6}, Lic/buzzebeeslib/util/BBUtil;->roundMyData(DI)D
-
-    move-result-wide v4
-
-    invoke-virtual {v3, v4, v5}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v3, v4}, Ljava/text/NumberFormat;->format(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v3, " %"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 1216
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPointNumber:Landroid/widget/TextView;
-
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatterHasDigi:Ljava/text/NumberFormat;
-
-    iget-object v3, v7, Lic/buzzebeeslib/bean/Campaign;->PointPerUnit:Ljava/lang/String;
-
-    invoke-static {v3}, Lic/buzzebeeslib/util/BBUtil;->CTypeDouble(Ljava/lang/String;)Ljava/lang/Double;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/text/NumberFormat;->format(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1217
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPointNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPointNumberAdBuzz:Landroid/widget/TextView;
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatterHasDigi:Ljava/text/NumberFormat;
+    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatterHasDigi:Ljava/text/NumberFormat;
 
-    iget-object v3, v7, Lic/buzzebeeslib/bean/Campaign;->PointPerUnit:Ljava/lang/String;
+    iget-object v4, v8, Lic/buzzebeeslib/bean/Campaign;->PointPerUnit:Ljava/lang/String;
 
-    invoke-static {v3}, Lic/buzzebeeslib/util/BBUtil;->CTypeDouble(Ljava/lang/String;)Ljava/lang/Double;
+    invoke-static {v4}, Lic/buzzebeeslib/util/BBUtil;->CTypeDouble(Ljava/lang/String;)Ljava/lang/Double;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/text/NumberFormat;->format(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/text/NumberFormat;->format(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1218
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPriceNumber:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvPriceNumber:Landroid/widget/TextView;
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatterHasDigi:Ljava/text/NumberFormat;
+    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatterHasDigi:Ljava/text/NumberFormat;
 
-    iget-object v3, v7, Lic/buzzebeeslib/bean/Campaign;->PricePerUnit:Ljava/lang/String;
+    iget-object v4, v8, Lic/buzzebeeslib/bean/Campaign;->PricePerUnit:Ljava/lang/String;
 
-    invoke-static {v3}, Lic/buzzebeeslib/util/BBUtil;->CTypeDouble(Ljava/lang/String;)Ljava/lang/Double;
+    invoke-static {v4}, Lic/buzzebeeslib/util/BBUtil;->CTypeDouble(Ljava/lang/String;)Ljava/lang/Double;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/text/NumberFormat;->format(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/text/NumberFormat;->format(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1220
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v1}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-eqz v1, :cond_260
+    if-eqz v2, :cond_296
 
     .line 1221
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v1}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v2}, Landroid/support/v4/app/FragmentActivity;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
-    move-result-object v1
+    move-result-object v2
 
-    iget v1, v1, Landroid/content/res/Configuration;->screenLayout:I
+    iget v2, v2, Landroid/content/res/Configuration;->screenLayout:I
 
-    and-int/lit8 v1, v1, 0xf
+    and-int/lit8 v2, v2, 0xf
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    if-ne v1, v2, :cond_454
+    if-ne v2, v3, :cond_48a
 
     .line 1222
-    iget-object v1, v7, Lic/buzzebeeslib/bean/Campaign;->PointPerUnit:Ljava/lang/String;
+    iget-object v2, v8, Lic/buzzebeeslib/bean/Campaign;->PointPerUnit:Ljava/lang/String;
 
-    invoke-static {v1}, Lic/buzzebeeslib/util/BBUtil;->CTypeDouble(Ljava/lang/String;)Ljava/lang/Double;
+    invoke-static {v2}, Lic/buzzebeeslib/util/BBUtil;->CTypeDouble(Ljava/lang/String;)Ljava/lang/Double;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Double;->doubleValue()D
+    invoke-virtual {v2}, Ljava/lang/Double;->doubleValue()D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    const-wide v3, 0x40f86a0000000000L
+    const-wide v4, 0x40f86a0000000000L
 
-    cmpl-double v1, v1, v3
+    cmpl-double v2, v2, v4
 
-    if-ltz v1, :cond_44c
+    if-ltz v2, :cond_482
 
     .line 1223
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgPoint:Landroid/widget/ImageView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgPoint:Landroid/widget/ImageView;
 
-    const/16 v2, 0x8
+    const/16 v3, 0x8
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 1242
-    :cond_260
-    :goto_260
-    iget-wide v1, v7, Lic/buzzebeeslib/bean/Campaign;->Qty:J
+    :cond_296
+    :goto_296
+    iget-wide v2, v8, Lic/buzzebeeslib/bean/Campaign;->Qty:J
 
-    long-to-double v8, v1
+    long-to-double v10, v2
 
     .line 1243
-    .local v8, "dblRemaining":D
-    iget-boolean v1, v7, Lic/buzzebeeslib/bean/Campaign;->isFromNoti:Z
+    .local v10, "dblRemaining":D
+    iget-boolean v2, v8, Lic/buzzebeeslib/bean/Campaign;->isFromNoti:Z
 
-    if-eqz v1, :cond_26a
+    if-eqz v2, :cond_2a0
 
     .line 1244
-    iget v1, v7, Lic/buzzebeeslib/bean/Campaign;->ItemRemain:I
+    iget v2, v8, Lic/buzzebeeslib/bean/Campaign;->ItemRemain:I
 
-    int-to-double v8, v1
+    int-to-double v10, v2
 
     .line 1247
-    :cond_26a
-    sget v1, Lic/buzzebeeslib/util/ThemesUtil;->gTheme:I
+    :cond_2a0
+    sget v2, Lic/buzzebeeslib/util/ThemesUtil;->gTheme:I
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    if-ne v1, v2, :cond_4eb
+    if-ne v2, v3, :cond_521
 
     .line 1248
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    cmpl-double v1, v8, v1
+    cmpl-double v2, v10, v2
 
-    if-lez v1, :cond_4a3
+    if-lez v2, :cond_4d9
 
     .line 1249
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatterHasDigi:Ljava/text/NumberFormat;
+    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatterHasDigi:Ljava/text/NumberFormat;
 
-    invoke-virtual {v2, v8, v9}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v3, v10, v11}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1250
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
 
-    const-string v2, "#ffffff"
+    const-string v3, "#ffffff"
 
-    invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 1251
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatterHasDigi:Ljava/text/NumberFormat;
+    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatterHasDigi:Ljava/text/NumberFormat;
 
-    invoke-virtual {v2, v8, v9}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v3, v10, v11}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 1252
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
+
+    const-string v3, "#ff764814"
+
+    invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 1291
+    :goto_2db
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "0"
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v3, v8, Lic/buzzebeeslib/bean/Campaign;->DayRemain:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 1252
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
+    move-result-object v2
 
-    const-string v2, "#ff764814"
+    invoke-static {v2}, Lic/buzzebeeslib/util/BBUtil;->CTypeInteger(Ljava/lang/String;)Ljava/lang/Integer;
 
-    invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
-
-    .line 1291
-    :goto_2a5
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "0"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, v7, Lic/buzzebeeslib/bean/Campaign;->DayRemain:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lic/buzzebeeslib/util/BBUtil;->CTypeInteger(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    if-lez v1, :cond_5bf
+    if-lez v2, :cond_5f5
 
     .line 1292
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v1}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-eqz v1, :cond_322
+    if-eqz v2, :cond_358
 
     .line 1293
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumber:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumber:Landroid/widget/TextView;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    iget-object v3, v7, Lic/buzzebeeslib/bean/Campaign;->DayRemain:Ljava/lang/String;
+    iget-object v4, v8, Lic/buzzebeeslib/bean/Campaign;->DayRemain:Ljava/lang/String;
 
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v4, " "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v3, " "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v4, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v3}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v4}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v4
+
+    sget v5, Lic/buzzebeeslib/R$string;->market_days:I
+
+    invoke-virtual {v4, v5}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    sget v4, Lic/buzzebeeslib/R$string;->market_days:I
-
-    invoke-virtual {v3, v4}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1294
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumberAdBuzz:Landroid/widget/TextView;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    iget-object v3, v7, Lic/buzzebeeslib/bean/Campaign;->DayRemain:Ljava/lang/String;
+    iget-object v4, v8, Lic/buzzebeeslib/bean/Campaign;->DayRemain:Ljava/lang/String;
 
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v4, " "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v3, " "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v4, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v3}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v4}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v4
+
+    sget v5, Lic/buzzebeeslib/R$string;->market_days:I
+
+    invoke-virtual {v4, v5}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    sget v4, Lic/buzzebeeslib/R$string;->market_days:I
-
-    invoke-virtual {v3, v4}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 1297
+    :cond_358
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumber:Landroid/widget/TextView;
+
+    const-string v3, "#ffffff"
+
+    invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 1298
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumberAdBuzz:Landroid/widget/TextView;
+
+    const-string v3, "#ff764814"
+
+    invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 1311
+    :goto_36e
+    iget-wide v2, v8, Lic/buzzebeeslib/bean/Campaign;->Qty:J
+
+    long-to-double v14, v2
+
+    .line 1313
+    .local v14, "intRemain":D
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+
+    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_3cb
+
+    .line 1314
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "0"
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v3, v8, Lic/buzzebeeslib/bean/Campaign;->DayRemain:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1017,960 +1131,900 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 1297
-    :cond_322
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumber:Landroid/widget/TextView;
-
-    const-string v2, "#ffffff"
-
-    invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
-
-    .line 1298
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumberAdBuzz:Landroid/widget/TextView;
-
-    const-string v2, "#ff764814"
-
-    invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
-
-    .line 1311
-    :goto_338
-    iget-wide v1, v7, Lic/buzzebeeslib/bean/Campaign;->Qty:J
-
-    long-to-double v13, v1
-
-    .line 1313
-    .local v13, "intRemain":D
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
-
-    invoke-virtual {v1}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_395
-
-    .line 1314
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "0"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, v7, Lic/buzzebeeslib/bean/Campaign;->DayRemain:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lic/buzzebeeslib/util/BBUtil;->CTypeInteger(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    if-lez v1, :cond_607
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "0"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, v7, Lic/buzzebeeslib/bean/Campaign;->DayRemain:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lic/buzzebeeslib/util/BBUtil;->CTypeInteger(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    if-ge v1, v2, :cond_607
-
-    .line 1315
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRibbon:Landroid/widget/ImageView;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 1316
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRibbon:Landroid/widget/ImageView;
-
-    sget v2, Lic/buzzebeeslib/R$drawable;->bz_ribbon_dayremain:I
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
-
-    invoke-virtual {v3}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-static {v1, v2, v3}, Lic/buzzebeeslib/util/BBUtil;->setImageResource(Landroid/widget/ImageView;ILandroid/content/Context;)V
-
-    .line 1328
-    :cond_395
-    :goto_395
-    iget-object v1, v7, Lic/buzzebeeslib/bean/Campaign;->Caption:Ljava/lang/String;
-
-    const-string v2, ""
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_65d
-
-    .line 1329
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvCaption:Landroid/widget/TextView;
-
-    iget-object v2, v7, Lic/buzzebeeslib/bean/Campaign;->Caption:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 1330
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvCaption:Landroid/widget/TextView;
-
-    const/16 v2, 0x8
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 1351
-    :goto_3ad
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
-
-    # getter for: Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
-    invoke-static {v1}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->access$8(Lic/buzzebeeslib/fragment/MarketPlaceListFragment;)Lcom/bitmapfun/util/ImageFetcher;
-
-    move-result-object v1
-
-    invoke-virtual {v7}, Lic/buzzebeeslib/bean/Campaign;->FullImageUrlThumb()Ljava/lang/String;
+    invoke-static {v2}, Lic/buzzebeeslib/util/BBUtil;->CTypeInteger(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v2
 
-    iget-object v3, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgCampaignThumb:Landroid/widget/ImageView;
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    const/4 v4, 0x0
+    move-result v2
 
-    sget v5, Lic/buzzebeeslib/R$drawable;->t1_1:I
+    if-lez v2, :cond_63d
 
-    const/4 v6, 0x0
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {v1 .. v6}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
+    const-string v3, "0"
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v3, v8, Lic/buzzebeeslib/bean/Campaign;->DayRemain:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lic/buzzebeeslib/util/BBUtil;->CTypeInteger(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    const/4 v3, 0x3
+
+    if-ge v2, v3, :cond_63d
+
+    .line 1315
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRibbon:Landroid/widget/ImageView;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 1316
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRibbon:Landroid/widget/ImageView;
+
+    sget v3, Lic/buzzebeeslib/R$drawable;->bz_ribbon_dayremain:I
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+
+    invoke-virtual {v4}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    invoke-static {v2, v3, v4}, Lic/buzzebeeslib/util/BBUtil;->setImageResource(Landroid/widget/ImageView;ILandroid/content/Context;)V
+
+    .line 1328
+    :cond_3cb
+    :goto_3cb
+    iget-object v2, v8, Lic/buzzebeeslib/bean/Campaign;->Caption:Ljava/lang/String;
+
+    const-string v3, ""
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_693
+
+    .line 1329
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvCaption:Landroid/widget/TextView;
+
+    iget-object v3, v8, Lic/buzzebeeslib/bean/Campaign;->Caption:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 1330
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvCaption:Landroid/widget/TextView;
+
+    const/16 v3, 0x8
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 1351
+    :goto_3e3
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+
+    # getter for: Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
+    invoke-static {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->access$8(Lic/buzzebeeslib/fragment/MarketPlaceListFragment;)Lcom/bitmapfun/util/ImageFetcher;
+
+    move-result-object v2
+
+    invoke-virtual {v8}, Lic/buzzebeeslib/bean/Campaign;->FullImageUrlThumb()Ljava/lang/String;
+
+    move-result-object v3
+
+    iget-object v4, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgCampaignThumb:Landroid/widget/ImageView;
+
+    const/4 v5, 0x0
+
+    sget v6, Lic/buzzebeeslib/R$drawable;->t1_1:I
+
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v2 .. v7}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
 
     .line 1352
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgCampaign:Landroid/widget/ImageView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgCampaign:Landroid/widget/ImageView;
 
-    const/4 v2, 0x4
+    const/4 v3, 0x4
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 1353
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
-    invoke-static {v1}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->access$8(Lic/buzzebeeslib/fragment/MarketPlaceListFragment;)Lcom/bitmapfun/util/ImageFetcher;
-
-    move-result-object v1
-
-    invoke-virtual {v7}, Lic/buzzebeeslib/bean/Campaign;->FullImageUrlLarge()Ljava/lang/String;
+    invoke-static {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->access$8(Lic/buzzebeeslib/fragment/MarketPlaceListFragment;)Lcom/bitmapfun/util/ImageFetcher;
 
     move-result-object v2
 
-    iget-object v3, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgCampaign:Landroid/widget/ImageView;
+    invoke-virtual {v8}, Lic/buzzebeeslib/bean/Campaign;->FullImageUrlLarge()Ljava/lang/String;
 
-    const/4 v4, 0x0
+    move-result-object v3
 
-    sget v5, Lic/buzzebeeslib/R$drawable;->t1_1:I
+    iget-object v4, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgCampaign:Landroid/widget/ImageView;
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    invoke-virtual/range {v1 .. v6}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
+    sget v6, Lic/buzzebeeslib/R$drawable;->t1_1:I
+
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v2 .. v7}, Lcom/bitmapfun/util/ImageFetcher;->loadImage(Ljava/lang/Object;Landroid/widget/ImageView;Landroid/widget/ProgressBar;IZ)V
 
     .line 1355
-    iget-object v1, v7, Lic/buzzebeeslib/bean/Campaign;->Type:Ljava/lang/String;
+    iget-object v2, v8, Lic/buzzebeeslib/bean/Campaign;->Type:Ljava/lang/String;
 
-    const-string v2, "5"
+    const-string v3, "5"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-nez v1, :cond_3f1
+    if-nez v2, :cond_427
 
-    iget-object v1, v7, Lic/buzzebeeslib/bean/Campaign;->Type:Ljava/lang/String;
+    iget-object v2, v8, Lic/buzzebeeslib/bean/Campaign;->Type:Ljava/lang/String;
 
-    const-string v2, "6"
+    const-string v3, "6"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_66d
+    if-eqz v2, :cond_6a3
 
     .line 1356
-    :cond_3f1
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->layoutRight:Landroid/widget/RelativeLayout;
+    :cond_427
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->layoutRight:Landroid/widget/RelativeLayout;
 
-    const/4 v2, 0x4
+    const/4 v3, 0x4
 
-    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
     .line 1357
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->layoutRightAdBuzz:Landroid/widget/RelativeLayout;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->layoutRightAdBuzz:Landroid/widget/RelativeLayout;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
     .line 1358
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRemainAdBuzz:Landroid/widget/ImageView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRemainAdBuzz:Landroid/widget/ImageView;
 
-    const/4 v2, 0x4
+    const/4 v3, 0x4
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 1359
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainCaptionAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainCaptionAdBuzz:Landroid/widget/TextView;
 
-    const/4 v2, 0x4
+    const/4 v3, 0x4
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 1360
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
 
-    const/4 v2, 0x4
+    const/4 v3, 0x4
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 1361
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v1}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-eqz v1, :cond_43d
+    if-eqz v2, :cond_473
 
     .line 1362
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v1}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {v2}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Lic/buzzebeeslib/LibUserLogin;->IS_ADMIN(Landroid/content/Context;)Z
+    invoke-static {v2}, Lic/buzzebeeslib/LibUserLogin;->IS_ADMIN(Landroid/content/Context;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_43d
+    if-eqz v2, :cond_473
 
     .line 1363
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRemainAdBuzz:Landroid/widget/ImageView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRemainAdBuzz:Landroid/widget/ImageView;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 1364
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainCaptionAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainCaptionAdBuzz:Landroid/widget/TextView;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 1365
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 1373
-    :cond_43d
-    :goto_43d
-    return-object v15
+    :cond_473
+    :goto_473
+    return-object v16
 
     .line 1139
-    .end local v8    # "dblRemaining":D
-    .end local v12    # "holder":Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;
-    .end local v13    # "intRemain":D
-    .end local v15    # "view":Landroid/view/View;
-    :catch_43e
-    move-exception v10
+    .end local v10    # "dblRemaining":D
+    .end local v13    # "holder":Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;
+    .end local v14    # "intRemain":D
+    .end local v16    # "view":Landroid/view/View;
+    :catch_474
+    move-exception v9
 
     .line 1140
-    .local v10, "e1":Ljava/lang/CloneNotSupportedException;
-    invoke-virtual {v10}, Ljava/lang/CloneNotSupportedException;->printStackTrace()V
+    .local v9, "e1":Ljava/lang/CloneNotSupportedException;
+    invoke-virtual {v9}, Ljava/lang/CloneNotSupportedException;->printStackTrace()V
 
     goto/16 :goto_19
 
     .line 1181
-    .end local v10    # "e1":Ljava/lang/CloneNotSupportedException;
-    .restart local v12    # "holder":Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;
-    .restart local v15    # "view":Landroid/view/View;
-    :cond_444
-    invoke-virtual {v15}, Landroid/view/View;->getTag()Ljava/lang/Object;
+    .end local v9    # "e1":Ljava/lang/CloneNotSupportedException;
+    .restart local v13    # "holder":Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;
+    .restart local v16    # "view":Landroid/view/View;
+    :cond_47a
+    invoke-virtual/range {v16 .. v16}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
-    move-result-object v12
+    move-result-object v13
 
-    .end local v12    # "holder":Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;
-    check-cast v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;
+    .end local v13    # "holder":Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;
+    check-cast v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;
 
-    .restart local v12    # "holder":Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;
-    goto/16 :goto_13e
+    .restart local v13    # "holder":Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;
+    goto/16 :goto_174
 
     .line 1225
-    :cond_44c
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgPoint:Landroid/widget/ImageView;
+    :cond_482
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgPoint:Landroid/widget/ImageView;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto/16 :goto_260
+    goto/16 :goto_296
 
     .line 1227
-    :cond_454
+    :cond_48a
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v1}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v2}, Landroid/support/v4/app/FragmentActivity;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
-    move-result-object v1
+    move-result-object v2
 
-    iget v1, v1, Landroid/content/res/Configuration;->screenLayout:I
+    iget v2, v2, Landroid/content/res/Configuration;->screenLayout:I
 
-    and-int/lit8 v1, v1, 0xf
+    and-int/lit8 v2, v2, 0xf
 
-    const/4 v2, 0x2
+    const/4 v3, 0x2
 
-    if-ne v1, v2, :cond_49b
+    if-ne v2, v3, :cond_4d1
 
     .line 1228
-    iget-object v1, v7, Lic/buzzebeeslib/bean/Campaign;->PointPerUnit:Ljava/lang/String;
+    iget-object v2, v8, Lic/buzzebeeslib/bean/Campaign;->PointPerUnit:Ljava/lang/String;
 
-    invoke-static {v1}, Lic/buzzebeeslib/util/BBUtil;->CTypeDouble(Ljava/lang/String;)Ljava/lang/Double;
+    invoke-static {v2}, Lic/buzzebeeslib/util/BBUtil;->CTypeDouble(Ljava/lang/String;)Ljava/lang/Double;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Double;->doubleValue()D
+    invoke-virtual {v2}, Ljava/lang/Double;->doubleValue()D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    const-wide v3, 0x40f86a0000000000L
+    const-wide v4, 0x40f86a0000000000L
 
-    cmpl-double v1, v1, v3
+    cmpl-double v2, v2, v4
 
-    if-ltz v1, :cond_493
+    if-ltz v2, :cond_4c9
 
     .line 1229
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gDpi:I
-    invoke-static {v1}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->access$7(Lic/buzzebeeslib/fragment/MarketPlaceListFragment;)I
+    invoke-static {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->access$7(Lic/buzzebeeslib/fragment/MarketPlaceListFragment;)I
 
-    move-result v1
+    move-result v2
 
-    const/16 v2, 0xf0
+    const/16 v3, 0xf0
 
-    if-gt v1, v2, :cond_260
+    if-gt v2, v3, :cond_296
 
     .line 1230
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgPoint:Landroid/widget/ImageView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgPoint:Landroid/widget/ImageView;
 
-    const/16 v2, 0x8
+    const/16 v3, 0x8
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto/16 :goto_260
+    goto/16 :goto_296
 
     .line 1233
-    :cond_493
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgPoint:Landroid/widget/ImageView;
+    :cond_4c9
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgPoint:Landroid/widget/ImageView;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto/16 :goto_260
+    goto/16 :goto_296
 
     .line 1236
-    :cond_49b
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgPoint:Landroid/widget/ImageView;
+    :cond_4d1
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgPoint:Landroid/widget/ImageView;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto/16 :goto_260
+    goto/16 :goto_296
 
     .line 1254
-    .restart local v8    # "dblRemaining":D
-    :cond_4a3
+    .restart local v10    # "dblRemaining":D
+    :cond_4d9
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v1}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-eqz v1, :cond_4d3
+    if-eqz v2, :cond_509
 
     .line 1255
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v3}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v2
+    move-result-object v3
 
-    sget v3, Lic/buzzebeeslib/R$string;->market_soldout:I
+    sget v4, Lic/buzzebeeslib/R$string;->market_soldout:I
 
-    invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3, v4}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1256
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v3}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v2
+    move-result-object v3
 
-    sget v3, Lic/buzzebeeslib/R$string;->market_soldout:I
+    sget v4, Lic/buzzebeeslib/R$string;->market_soldout:I
 
-    invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3, v4}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1258
-    :cond_4d3
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
+    :cond_509
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
 
-    const-string v2, "#ff0000"
+    const-string v3, "#ff0000"
 
-    invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 1259
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
 
-    const-string v2, "#ff0000"
+    const-string v3, "#ff0000"
 
-    invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    goto/16 :goto_2a5
+    goto/16 :goto_2db
 
     .line 1261
-    :cond_4eb
-    sget v1, Lic/buzzebeeslib/util/ThemesUtil;->gTheme:I
+    :cond_521
+    sget v2, Lic/buzzebeeslib/util/ThemesUtil;->gTheme:I
 
-    const/4 v2, 0x2
+    const/4 v3, 0x2
 
-    if-ne v1, v2, :cond_53f
+    if-ne v2, v3, :cond_575
 
     .line 1265
-    iget-object v1, v7, Lic/buzzebeeslib/bean/Campaign;->AgencyID:Ljava/lang/String;
+    iget-object v2, v8, Lic/buzzebeeslib/bean/Campaign;->AgencyID:Ljava/lang/String;
 
-    if-eqz v1, :cond_524
+    if-eqz v2, :cond_55a
 
-    iget-object v1, v7, Lic/buzzebeeslib/bean/Campaign;->AgencyID:Ljava/lang/String;
+    iget-object v2, v8, Lic/buzzebeeslib/bean/Campaign;->AgencyID:Ljava/lang/String;
 
-    sget-object v2, Lic/buzzebeeslib/LibConst;->SPONSOR_ID:Ljava/lang/String;
+    sget-object v3, Lic/buzzebeeslib/LibConst;->SPONSOR_ID:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_524
+    if-eqz v2, :cond_55a
 
     .line 1266
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
 
-    const-string v2, "-"
+    const-string v3, "-"
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1267
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
 
-    const-string v2, "-"
+    const-string v3, "-"
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1273
-    :goto_50c
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
+    :goto_542
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
 
-    const-string v2, "#ffffff"
+    const-string v3, "#ffffff"
 
-    invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 1274
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
 
-    const-string v2, "#ff764814"
+    const-string v3, "#ff764814"
 
-    invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    goto/16 :goto_2a5
+    goto/16 :goto_2db
 
     .line 1269
-    :cond_524
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
+    :cond_55a
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatterHasDigi:Ljava/text/NumberFormat;
+    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatterHasDigi:Ljava/text/NumberFormat;
 
-    invoke-virtual {v2, v8, v9}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v3, v10, v11}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1270
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatterHasDigi:Ljava/text/NumberFormat;
+    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatterHasDigi:Ljava/text/NumberFormat;
 
-    invoke-virtual {v2, v8, v9}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v3, v10, v11}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_50c
+    goto :goto_542
 
     .line 1276
-    :cond_53f
-    const-wide/16 v1, 0x0
+    :cond_575
+    const-wide/16 v2, 0x0
 
-    cmpl-double v1, v8, v1
+    cmpl-double v2, v10, v2
 
-    if-lez v1, :cond_577
+    if-lez v2, :cond_5ad
 
     .line 1277
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatterHasDigi:Ljava/text/NumberFormat;
+    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatterHasDigi:Ljava/text/NumberFormat;
 
-    invoke-virtual {v2, v8, v9}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v3, v10, v11}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1278
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
 
-    const-string v2, "#ffffff"
+    const-string v3, "#ffffff"
 
-    invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 1279
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatterHasDigi:Ljava/text/NumberFormat;
+    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->formatterHasDigi:Ljava/text/NumberFormat;
 
-    invoke-virtual {v2, v8, v9}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v3, v10, v11}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1280
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
 
-    const-string v2, "#ffffff"
+    const-string v3, "#ffffff"
 
-    invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    goto/16 :goto_2a5
+    goto/16 :goto_2db
 
     .line 1282
-    :cond_577
+    :cond_5ad
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v1}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-eqz v1, :cond_5a7
+    if-eqz v2, :cond_5dd
 
     .line 1283
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v3}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v2
+    move-result-object v3
 
-    sget v3, Lic/buzzebeeslib/R$string;->market_soldout:I
+    sget v4, Lic/buzzebeeslib/R$string;->market_soldout:I
 
-    invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3, v4}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1284
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v3}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v2
+    move-result-object v3
 
-    sget v3, Lic/buzzebeeslib/R$string;->market_soldout:I
+    sget v4, Lic/buzzebeeslib/R$string;->market_soldout:I
 
-    invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3, v4}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1286
-    :cond_5a7
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
+    :cond_5dd
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumber:Landroid/widget/TextView;
 
-    const-string v2, "#ff0000"
+    const-string v3, "#ff0000"
 
-    invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 1287
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvRemainNumberAdBuzz:Landroid/widget/TextView;
 
-    const-string v2, "#ff0000"
+    const-string v3, "#ff0000"
 
-    invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    goto/16 :goto_2a5
+    goto/16 :goto_2db
 
     .line 1300
-    :cond_5bf
+    :cond_5f5
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v1}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-eqz v1, :cond_5ef
+    if-eqz v2, :cond_625
 
     .line 1301
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumber:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumber:Landroid/widget/TextView;
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v3}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v2
+    move-result-object v3
 
-    sget v3, Lic/buzzebeeslib/R$string;->market_time_over:I
+    sget v4, Lic/buzzebeeslib/R$string;->market_time_over:I
 
-    invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3, v4}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1302
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumberAdBuzz:Landroid/widget/TextView;
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v2}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v3}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v2
+    move-result-object v3
 
-    sget v3, Lic/buzzebeeslib/R$string;->market_time_over:I
+    sget v4, Lic/buzzebeeslib/R$string;->market_time_over:I
 
-    invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3, v4}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1304
-    :cond_5ef
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumber:Landroid/widget/TextView;
+    :cond_625
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumber:Landroid/widget/TextView;
 
-    const-string v2, "#ff0000"
+    const-string v3, "#ff0000"
 
-    invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 1305
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumberAdBuzz:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvTimeNumberAdBuzz:Landroid/widget/TextView;
 
-    const-string v2, "#ff0000"
+    const-string v3, "#ff0000"
 
-    invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    goto/16 :goto_338
+    goto/16 :goto_36e
 
     .line 1317
-    .restart local v13    # "intRemain":D
-    :cond_607
-    const-wide/16 v1, 0x0
+    .restart local v14    # "intRemain":D
+    :cond_63d
+    const-wide/16 v2, 0x0
 
-    cmpl-double v1, v13, v1
+    cmpl-double v2, v14, v2
 
-    if-lez v1, :cond_62e
+    if-lez v2, :cond_664
 
-    const-wide/high16 v1, 0x4024000000000000L
+    const-wide/high16 v2, 0x4024000000000000L
 
-    cmpg-double v1, v13, v1
+    cmpg-double v2, v14, v2
 
-    if-gez v1, :cond_62e
+    if-gez v2, :cond_664
 
     .line 1318
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRibbon:Landroid/widget/ImageView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRibbon:Landroid/widget/ImageView;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 1319
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRibbon:Landroid/widget/ImageView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRibbon:Landroid/widget/ImageView;
 
-    sget v2, Lic/buzzebeeslib/R$drawable;->bz_ribbon_itemremain:I
+    sget v3, Lic/buzzebeeslib/R$drawable;->bz_ribbon_itemremain:I
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v4, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v3}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v4}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v3}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {v4}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-static {v1, v2, v3}, Lic/buzzebeeslib/util/BBUtil;->setImageResource(Landroid/widget/ImageView;ILandroid/content/Context;)V
+    invoke-static {v2, v3, v4}, Lic/buzzebeeslib/util/BBUtil;->setImageResource(Landroid/widget/ImageView;ILandroid/content/Context;)V
 
-    goto/16 :goto_395
+    goto/16 :goto_3cb
 
     .line 1320
-    :cond_62e
-    iget v1, v7, Lic/buzzebeeslib/bean/Campaign;->DayProceed:I
+    :cond_664
+    iget v2, v8, Lic/buzzebeeslib/bean/Campaign;->DayProceed:I
 
-    const/4 v2, 0x3
+    const/4 v3, 0x3
 
-    if-gt v1, v2, :cond_654
+    if-gt v2, v3, :cond_68a
 
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    cmpl-double v1, v13, v1
+    cmpl-double v2, v14, v2
 
-    if-lez v1, :cond_654
+    if-lez v2, :cond_68a
 
     .line 1321
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRibbon:Landroid/widget/ImageView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRibbon:Landroid/widget/ImageView;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 1322
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRibbon:Landroid/widget/ImageView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRibbon:Landroid/widget/ImageView;
 
-    sget v2, Lic/buzzebeeslib/R$drawable;->bz_ribbon_new:I
+    sget v3, Lic/buzzebeeslib/R$drawable;->bz_ribbon_new:I
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
+    iget-object v4, v0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceListFragment;
 
-    invoke-virtual {v3}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {v4}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v3}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {v4}, Landroid/support/v4/app/FragmentActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-static {v1, v2, v3}, Lic/buzzebeeslib/util/BBUtil;->setImageResource(Landroid/widget/ImageView;ILandroid/content/Context;)V
+    invoke-static {v2, v3, v4}, Lic/buzzebeeslib/util/BBUtil;->setImageResource(Landroid/widget/ImageView;ILandroid/content/Context;)V
 
-    goto/16 :goto_395
+    goto/16 :goto_3cb
 
     .line 1324
-    :cond_654
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRibbon:Landroid/widget/ImageView;
+    :cond_68a
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->imgRibbon:Landroid/widget/ImageView;
 
-    const/16 v2, 0x8
+    const/16 v3, 0x8
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto/16 :goto_395
+    goto/16 :goto_3cb
 
     .line 1332
-    :cond_65d
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvCaption:Landroid/widget/TextView;
+    :cond_693
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvCaption:Landroid/widget/TextView;
 
-    const-string v2, ""
+    const-string v3, ""
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1333
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvCaption:Landroid/widget/TextView;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->tvCaption:Landroid/widget/TextView;
 
-    const/16 v2, 0x8
+    const/16 v3, 0x8
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    goto/16 :goto_3ad
+    goto/16 :goto_3e3
 
     .line 1369
-    :cond_66d
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->layoutRight:Landroid/widget/RelativeLayout;
+    :cond_6a3
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->layoutRight:Landroid/widget/RelativeLayout;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
     .line 1370
-    iget-object v1, v12, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->layoutRightAdBuzz:Landroid/widget/RelativeLayout;
+    iget-object v2, v13, Lic/buzzebeeslib/fragment/MarketPlaceListFragment$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->layoutRightAdBuzz:Landroid/widget/RelativeLayout;
 
-    const/16 v2, 0x8
+    const/16 v3, 0x8
 
-    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    goto/16 :goto_43d
+    goto/16 :goto_473
 
     .line 1209
-    .end local v8    # "dblRemaining":D
-    .end local v13    # "intRemain":D
-    :catch_67c
-    move-exception v1
+    .end local v10    # "dblRemaining":D
+    .end local v14    # "intRemain":D
+    :catch_6b2
+    move-exception v2
 
-    goto/16 :goto_1af
+    goto/16 :goto_1e5
 .end method

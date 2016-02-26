@@ -35,7 +35,7 @@
 
 # direct methods
 .method constructor <init>(Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;FJFFFF)V
-    .registers 9
+    .registers 10
 
     .prologue
     .line 1
@@ -62,23 +62,23 @@
 
 # virtual methods
 .method public run()V
-    .registers 8
+    .registers 9
 
     .prologue
     .line 380
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 381
-    .local v1, "now":J
+    .local v2, "now":J
     iget v4, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$durationMs:F
 
-    iget-wide v5, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$startTime:J
+    iget-wide v6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$startTime:J
 
-    sub-long v5, v1, v5
+    sub-long v6, v2, v6
 
-    long-to-float v5, v5
+    long-to-float v5, v6
 
     invoke-static {v4, v5}, Ljava/lang/Math;->min(FF)F
 
@@ -92,17 +92,17 @@
 
     mul-float/2addr v5, v0
 
-    add-float v3, v4, v5
+    add-float v1, v4, v5
 
     .line 383
-    .local v3, "target":F
+    .local v1, "target":F
     iget-object v4, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
     iget v5, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$centerX:F
 
     iget v6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$centerY:F
 
-    invoke-virtual {v4, v3, v5, v6}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->zoomTo(FFF)V
+    invoke-virtual {v4, v1, v5, v6}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->zoomTo(FFF)V
 
     .line 384
     iget v4, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$durationMs:F

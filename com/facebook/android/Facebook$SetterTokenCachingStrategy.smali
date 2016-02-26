@@ -59,7 +59,7 @@
 .end method
 
 .method public load()Landroid/os/Bundle;
-    .registers 4
+    .registers 5
 
     .prologue
     .line 1169
@@ -94,9 +94,9 @@
     # getter for: Lcom/facebook/android/Facebook;->accessExpiresMillisecondsAfterEpoch:J
     invoke-static {v1}, Lcom/facebook/android/Facebook;->access$2(Lcom/facebook/android/Facebook;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v0, v1, v2}, Lcom/facebook/TokenCachingStrategy;->putExpirationMilliseconds(Landroid/os/Bundle;J)V
+    invoke-static {v0, v2, v3}, Lcom/facebook/TokenCachingStrategy;->putExpirationMilliseconds(Landroid/os/Bundle;J)V
 
     .line 1174
     iget-object v1, p0, Lcom/facebook/android/Facebook$SetterTokenCachingStrategy;->this$0:Lcom/facebook/android/Facebook;
@@ -124,9 +124,9 @@
     # getter for: Lcom/facebook/android/Facebook;->lastAccessUpdateMillisecondsAfterEpoch:J
     invoke-static {v1}, Lcom/facebook/android/Facebook;->access$5(Lcom/facebook/android/Facebook;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v0, v1, v2}, Lcom/facebook/TokenCachingStrategy;->putLastRefreshMilliseconds(Landroid/os/Bundle;J)V
+    invoke-static {v0, v2, v3}, Lcom/facebook/TokenCachingStrategy;->putLastRefreshMilliseconds(Landroid/os/Bundle;J)V
 
     .line 1179
     :cond_3a
@@ -134,7 +134,7 @@
 .end method
 
 .method public save(Landroid/os/Bundle;)V
-    .registers 5
+    .registers 6
     .param p1, "bundle"    # Landroid/os/Bundle;
 
     .prologue
@@ -152,9 +152,9 @@
 
     invoke-static {p1}, Lcom/facebook/TokenCachingStrategy;->getExpirationMilliseconds(Landroid/os/Bundle;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v0, v1, v2}, Lcom/facebook/android/Facebook;->access$7(Lcom/facebook/android/Facebook;J)V
+    invoke-static {v0, v2, v3}, Lcom/facebook/android/Facebook;->access$7(Lcom/facebook/android/Facebook;J)V
 
     .line 1186
     iget-object v0, p0, Lcom/facebook/android/Facebook$SetterTokenCachingStrategy;->this$0:Lcom/facebook/android/Facebook;
@@ -175,9 +175,9 @@
 
     invoke-static {p1}, Lcom/facebook/TokenCachingStrategy;->getLastRefreshMilliseconds(Landroid/os/Bundle;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v0, v1, v2}, Lcom/facebook/android/Facebook;->access$10(Lcom/facebook/android/Facebook;J)V
+    invoke-static {v0, v2, v3}, Lcom/facebook/android/Facebook;->access$10(Lcom/facebook/android/Facebook;J)V
 
     .line 1188
     return-void

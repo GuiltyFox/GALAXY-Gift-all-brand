@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetCampaignListener$2;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetCampaignListener;
 
-    .line 2789
+    .line 2790
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,6 +41,6 @@
     .registers 1
 
     .prologue
-    .line 2793
+    .line 2794
     return-void
 .end method

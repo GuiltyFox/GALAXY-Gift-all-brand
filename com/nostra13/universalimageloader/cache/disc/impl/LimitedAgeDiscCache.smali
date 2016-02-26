@@ -21,7 +21,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/File;J)V
-    .registers 5
+    .registers 6
     .param p1, "cacheDir"    # Ljava/io/File;
     .param p2, "maxAge"    # J
 
@@ -38,7 +38,7 @@
 .end method
 
 .method public constructor <init>(Ljava/io/File;Lcom/nostra13/universalimageloader/cache/disc/naming/FileNameGenerator;J)V
-    .registers 7
+    .registers 8
     .param p1, "cacheDir"    # Ljava/io/File;
     .param p2, "fileNameGenerator"    # Lcom/nostra13/universalimageloader/cache/disc/naming/FileNameGenerator;
     .param p3, "maxAge"    # J
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public get(Ljava/lang/String;)Ljava/io/File;
-    .registers 9
+    .registers 10
     .param p1, "key"    # Ljava/lang/String;
 
     .prologue
@@ -109,9 +109,9 @@
     .local v0, "cached":Z
     invoke-virtual {v1}, Ljava/io/File;->lastModified()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
 
@@ -119,17 +119,17 @@
     :goto_1d
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v3
+    move-result-wide v4
 
     invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    sub-long/2addr v3, v5
+    sub-long/2addr v4, v6
 
-    iget-wide v5, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/LimitedAgeDiscCache;->maxFileAge:J
+    iget-wide v6, p0, Lcom/nostra13/universalimageloader/cache/disc/impl/LimitedAgeDiscCache;->maxFileAge:J
 
-    cmp-long v3, v3, v5
+    cmp-long v3, v4, v6
 
     if-lez v3, :cond_37
 

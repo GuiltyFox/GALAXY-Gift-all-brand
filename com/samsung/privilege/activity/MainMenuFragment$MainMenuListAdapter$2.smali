@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter$2;->val$model:Lcom/samsung/privilege/bean/MainMenuItemModel;
 
-    .line 1927
+    .line 1942
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,14 +46,14 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 1930
+    .line 1945
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter$2;->val$model:Lcom/samsung/privilege/bean/MainMenuItemModel;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_play_animation:Z
 
-    .line 1931
+    .line 1946
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 1936
+    .line 1951
     return-void
 .end method
 
@@ -71,6 +71,6 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 1941
+    .line 1956
     return-void
 .end method

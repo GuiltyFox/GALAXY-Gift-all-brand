@@ -28,22 +28,22 @@
     .param p2, "arrImg"    # [Ljava/lang/Integer;
 
     .prologue
-    .line 4162
+    .line 4170
     iput-object p1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$QTPagerAdapter;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     invoke-direct {p0}, Landroid/support/v4/view/PagerAdapter;-><init>()V
 
-    .line 4163
+    .line 4171
     invoke-virtual {p1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
 
     move-result-object v0
 
     iput-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$QTPagerAdapter;->inflater:Landroid/view/LayoutInflater;
 
-    .line 4164
+    .line 4172
     iput-object p2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$QTPagerAdapter;->arrImg:[Ljava/lang/Integer;
 
-    .line 4165
+    .line 4173
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .param p3, "object"    # Ljava/lang/Object;
 
     .prologue
-    .line 4169
+    .line 4177
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     .end local p1    # "container":Landroid/view/ViewGroup;
@@ -65,7 +65,7 @@
     .end local p3    # "object":Ljava/lang/Object;
     invoke-virtual {p1, p3}, Landroid/support/v4/view/ViewPager;->removeView(Landroid/view/View;)V
 
-    .line 4170
+    .line 4178
     return-void
 .end method
 
@@ -74,7 +74,7 @@
     .param p1, "container"    # Landroid/view/View;
 
     .prologue
-    .line 4174
+    .line 4182
     return-void
 .end method
 
@@ -82,7 +82,7 @@
     .registers 2
 
     .prologue
-    .line 4178
+    .line 4186
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$QTPagerAdapter;->arrImg:[Ljava/lang/Integer;
 
     array-length v0, v0
@@ -100,7 +100,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 4184
+    .line 4192
     iget-object v2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$QTPagerAdapter;->inflater:Landroid/view/LayoutInflater;
 
     sget v3, Lic/buzzebeeslib/R$layout;->qt_content:I
@@ -109,7 +109,7 @@
 
     move-result-object v0
 
-    .line 4185
+    .line 4193
     .local v0, "imageLayout":Landroid/view/View;
     sget v2, Lic/buzzebeeslib/R$id;->imgGiftWelcome:I
 
@@ -119,23 +119,23 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    .line 4186
+    .line 4194
     .local v1, "imgGiftWelcome":Landroid/widget/ImageView;
     sget-object v2, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 4187
+    .line 4195
     iget-object v2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$QTPagerAdapter;->arrImg:[Ljava/lang/Integer;
 
     array-length v2, v2
 
     if-ge p2, v2, :cond_2f
 
-    .line 4188
+    .line 4196
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 4189
+    .line 4197
     iget-object v2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$QTPagerAdapter;->arrImg:[Ljava/lang/Integer;
 
     aget-object v2, v2, p2
@@ -146,17 +146,17 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 4194
+    .line 4202
     :goto_29
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     .end local p1    # "view":Landroid/view/ViewGroup;
     invoke-virtual {p1, v0, v4}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
-    .line 4195
+    .line 4203
     return-object v0
 
-    .line 4191
+    .line 4199
     .restart local p1    # "view":Landroid/view/ViewGroup;
     :cond_2f
     const/16 v2, 0x8
@@ -172,7 +172,7 @@
     .param p2, "object"    # Ljava/lang/Object;
 
     .prologue
-    .line 4201
+    .line 4209
     invoke-virtual {p1, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -186,7 +186,7 @@
     .param p2, "loader"    # Ljava/lang/ClassLoader;
 
     .prologue
-    .line 4206
+    .line 4214
     return-void
 .end method
 
@@ -194,7 +194,7 @@
     .registers 2
 
     .prologue
-    .line 4210
+    .line 4218
     const/4 v0, 0x0
 
     return-object v0
@@ -205,6 +205,6 @@
     .param p1, "container"    # Landroid/view/View;
 
     .prologue
-    .line 4215
+    .line 4223
     return-void
 .end method

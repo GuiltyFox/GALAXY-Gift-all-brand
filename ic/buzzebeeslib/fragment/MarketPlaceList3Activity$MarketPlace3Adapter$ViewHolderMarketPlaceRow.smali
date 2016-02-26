@@ -45,7 +45,7 @@
     .registers 2
 
     .prologue
-    .line 1231
+    .line 1251
     iput-object p1, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketPlace3Adapter$ViewHolderMarketPlaceRow;->this$1:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketPlace3Adapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
     .registers 3
 
     .prologue
-    .line 1231
+    .line 1251
     invoke-direct {p0, p1}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketPlace3Adapter$ViewHolderMarketPlaceRow;-><init>(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketPlace3Adapter;)V
 
     return-void

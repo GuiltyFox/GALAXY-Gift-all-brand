@@ -574,7 +574,7 @@
 .end method
 
 .method private handleDecodeExternally(Lcom/google/zxing/Result;Lcom/google/zxing/client/android/result/ResultHandler;Landroid/graphics/Bitmap;)V
-    .registers 29
+    .registers 30
     .param p1, "rawResult"    # Lcom/google/zxing/Result;
     .param p2, "resultHandler"    # Lcom/google/zxing/client/android/result/ResultHandler;
     .param p3, "barcode"    # Landroid/graphics/Bitmap;
@@ -588,9 +588,9 @@
 
     iget-object v0, v0, Lcom/google/zxing/client/android/CaptureActivity;->viewfinderView:Lcom/google/zxing/client/android/ViewfinderView;
 
-    move-object/from16 v21, v0
+    move-object/from16 v22, v0
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
     move-object/from16 v1, p3
 
@@ -600,93 +600,55 @@
     :cond_f
     invoke-virtual/range {p0 .. p0}, Lcom/google/zxing/client/android/CaptureActivity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v21
+    move-result-object v22
 
-    if-nez v21, :cond_16b
+    if-nez v22, :cond_16f
 
     .line 594
-    const-wide/16 v18, 0x5dc
+    const-wide/16 v20, 0x5dc
 
     .line 599
-    .local v18, "resultDurationMS":J
+    .local v20, "resultDurationMS":J
     :goto_17
-    const-wide/16 v21, 0x0
+    const-wide/16 v22, 0x0
 
-    cmp-long v21, v18, v21
+    cmp-long v22, v20, v22
 
-    if-lez v21, :cond_7e
+    if-lez v22, :cond_7e
 
     .line 600
     invoke-static/range {p1 .. p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v16
+    move-result-object v17
 
     .line 601
-    .local v16, "rawResultString":Ljava/lang/String;
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->length()I
+    .local v17, "rawResultString":Ljava/lang/String;
+    invoke-virtual/range {v17 .. v17}, Ljava/lang/String;->length()I
 
-    move-result v21
+    move-result v22
 
-    const/16 v22, 0x20
+    const/16 v23, 0x20
 
-    move/from16 v0, v21
+    move/from16 v0, v22
 
-    move/from16 v1, v22
+    move/from16 v1, v23
 
     if-le v0, v1, :cond_4e
 
     .line 602
-    new-instance v21, Ljava/lang/StringBuilder;
-
-    const/16 v22, 0x0
-
-    const/16 v23, 0x20
-
-    move-object/from16 v0, v16
-
-    move/from16 v1, v22
-
-    move/from16 v2, v23
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v22
-
-    invoke-static/range {v22 .. v22}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v22
-
-    invoke-direct/range {v21 .. v22}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v22, " ..."
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
-
-    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v16
-
-    .line 604
-    :cond_4e
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/google/zxing/client/android/CaptureActivity;->statusView:Landroid/widget/TextView;
-
-    move-object/from16 v21, v0
-
     new-instance v22, Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {p2 .. p2}, Lcom/google/zxing/client/android/result/ResultHandler;->getDisplayTitle()I
+    const/16 v23, 0x0
 
-    move-result v23
+    const/16 v24, 0x20
 
-    move-object/from16 v0, p0
+    move-object/from16 v0, v17
 
     move/from16 v1, v23
 
-    invoke-virtual {v0, v1}, Lcom/google/zxing/client/android/CaptureActivity;->getString(I)Ljava/lang/String;
+    move/from16 v2, v24
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v23
 
@@ -696,551 +658,593 @@
 
     invoke-direct/range {v22 .. v23}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v23, " : "
+    const-string v23, " ..."
 
     invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v22
 
-    move-object/from16 v0, v22
+    invoke-virtual/range {v22 .. v22}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-object/from16 v1, v16
+    move-result-object v17
+
+    .line 604
+    :cond_4e
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/zxing/client/android/CaptureActivity;->statusView:Landroid/widget/TextView;
+
+    move-object/from16 v22, v0
+
+    new-instance v23, Ljava/lang/StringBuilder;
+
+    invoke-virtual/range {p2 .. p2}, Lcom/google/zxing/client/android/result/ResultHandler;->getDisplayTitle()I
+
+    move-result v24
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v24
+
+    invoke-virtual {v0, v1}, Lcom/google/zxing/client/android/CaptureActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v24
+
+    invoke-static/range {v24 .. v24}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v24
+
+    invoke-direct/range {v23 .. v24}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v24, " : "
+
+    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v23
+
+    move-object/from16 v0, v23
+
+    move-object/from16 v1, v17
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v22
+    move-result-object v23
 
-    invoke-virtual/range {v22 .. v22}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v23 .. v23}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v22
+    move-result-object v23
 
-    invoke-virtual/range {v21 .. v22}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual/range {v22 .. v23}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 607
-    .end local v16    # "rawResultString":Ljava/lang/String;
+    .end local v17    # "rawResultString":Ljava/lang/String;
     :cond_7e
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/google/zxing/client/android/CaptureActivity;->copyToClipboard:Z
 
-    move/from16 v21, v0
+    move/from16 v22, v0
 
-    if-eqz v21, :cond_a3
+    if-eqz v22, :cond_a3
 
     invoke-virtual/range {p2 .. p2}, Lcom/google/zxing/client/android/result/ResultHandler;->areContentsSecure()Z
 
-    move-result v21
+    move-result v22
 
-    if-nez v21, :cond_a3
+    if-nez v22, :cond_a3
 
     .line 608
-    const-string v21, "clipboard"
+    const-string v22, "clipboard"
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v21
+    move-object/from16 v1, v22
 
     invoke-virtual {v0, v1}, Lcom/google/zxing/client/android/CaptureActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v8
 
-    check-cast v7, Landroid/text/ClipboardManager;
+    check-cast v8, Landroid/text/ClipboardManager;
 
     .line 609
-    .local v7, "clipboard":Landroid/text/ClipboardManager;
+    .local v8, "clipboard":Landroid/text/ClipboardManager;
     invoke-virtual/range {p2 .. p2}, Lcom/google/zxing/client/android/result/ResultHandler;->getDisplayContents()Ljava/lang/CharSequence;
 
-    move-result-object v20
+    move-result-object v19
 
     .line 610
-    .local v20, "text":Ljava/lang/CharSequence;
-    if-eqz v20, :cond_a3
+    .local v19, "text":Ljava/lang/CharSequence;
+    if-eqz v19, :cond_a3
 
     .line 612
     :try_start_9e
-    move-object/from16 v0, v20
+    move-object/from16 v0, v19
 
-    invoke-virtual {v7, v0}, Landroid/text/ClipboardManager;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v8, v0}, Landroid/text/ClipboardManager;->setText(Ljava/lang/CharSequence;)V
     :try_end_a3
-    .catch Ljava/lang/NullPointerException; {:try_start_9e .. :try_end_a3} :catch_179
+    .catch Ljava/lang/NullPointerException; {:try_start_9e .. :try_end_a3} :catch_17d
 
     .line 620
-    .end local v7    # "clipboard":Landroid/text/ClipboardManager;
-    .end local v20    # "text":Ljava/lang/CharSequence;
+    .end local v8    # "clipboard":Landroid/text/ClipboardManager;
+    .end local v19    # "text":Ljava/lang/CharSequence;
     :cond_a3
     :goto_a3
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/client/android/CaptureActivity;->source:Lcom/google/zxing/client/android/IntentSource;
 
-    move-object/from16 v21, v0
+    move-object/from16 v22, v0
 
-    sget-object v22, Lcom/google/zxing/client/android/IntentSource;->NATIVE_APP_INTENT:Lcom/google/zxing/client/android/IntentSource;
+    sget-object v23, Lcom/google/zxing/client/android/IntentSource;->NATIVE_APP_INTENT:Lcom/google/zxing/client/android/IntentSource;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
-    move-object/from16 v1, v22
+    move-object/from16 v1, v23
 
-    if-ne v0, v1, :cond_1a6
+    if-ne v0, v1, :cond_1aa
 
     .line 624
-    new-instance v11, Landroid/content/Intent;
+    new-instance v12, Landroid/content/Intent;
 
     invoke-virtual/range {p0 .. p0}, Lcom/google/zxing/client/android/CaptureActivity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v21
+    move-result-object v22
 
-    invoke-virtual/range {v21 .. v21}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    invoke-virtual/range {v22 .. v22}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v21
+    move-result-object v22
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
-    invoke-direct {v11, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v12, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 625
-    .local v11, "intent":Landroid/content/Intent;
-    const/high16 v21, 0x80000
+    .local v12, "intent":Landroid/content/Intent;
+    const/high16 v22, 0x80000
 
-    move/from16 v0, v21
+    move/from16 v0, v22
 
-    invoke-virtual {v11, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    invoke-virtual {v12, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     .line 626
-    const-string v21, "SCAN_RESULT"
+    const-string v22, "SCAN_RESULT"
 
     invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/Result;->toString()Ljava/lang/String;
 
-    move-result-object v22
+    move-result-object v23
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
-    move-object/from16 v1, v22
+    move-object/from16 v1, v23
 
-    invoke-virtual {v11, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 627
-    const-string v21, "SCAN_RESULT_FORMAT"
+    const-string v22, "SCAN_RESULT_FORMAT"
 
     invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/Result;->getBarcodeFormat()Lcom/google/zxing/BarcodeFormat;
 
-    move-result-object v22
+    move-result-object v23
 
-    invoke-virtual/range {v22 .. v22}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
+    invoke-virtual/range {v23 .. v23}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
 
-    move-result-object v22
+    move-result-object v23
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
-    move-object/from16 v1, v22
+    move-object/from16 v1, v23
 
-    invoke-virtual {v11, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 628
     invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/Result;->getRawBytes()[B
 
-    move-result-object v15
+    move-result-object v16
 
     .line 629
-    .local v15, "rawBytes":[B
-    if-eqz v15, :cond_f7
+    .local v16, "rawBytes":[B
+    if-eqz v16, :cond_fb
 
-    array-length v0, v15
+    move-object/from16 v0, v16
 
-    move/from16 v21, v0
+    array-length v0, v0
 
-    if-lez v21, :cond_f7
+    move/from16 v22, v0
+
+    if-lez v22, :cond_fb
 
     .line 630
-    const-string v21, "SCAN_RESULT_BYTES"
+    const-string v22, "SCAN_RESULT_BYTES"
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
-    invoke-virtual {v11, v0, v15}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
+    move-object/from16 v1, v16
+
+    invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
 
     .line 632
-    :cond_f7
+    :cond_fb
     invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/Result;->getResultMetadata()Ljava/util/Map;
 
-    move-result-object v12
+    move-result-object v13
 
     .line 633
-    .local v12, "metadata":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;*>;"
-    if-eqz v12, :cond_15f
+    .local v13, "metadata":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;*>;"
+    if-eqz v13, :cond_163
 
     .line 634
-    sget-object v21, Lcom/google/zxing/ResultMetadataType;->UPC_EAN_EXTENSION:Lcom/google/zxing/ResultMetadataType;
-
-    move-object/from16 v0, v21
-
-    invoke-interface {v12, v0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v21
-
-    if-eqz v21, :cond_11c
-
-    .line 635
-    const-string v21, "SCAN_RESULT_UPC_EAN_EXTENSION"
-
     sget-object v22, Lcom/google/zxing/ResultMetadataType;->UPC_EAN_EXTENSION:Lcom/google/zxing/ResultMetadataType;
 
     move-object/from16 v0, v22
 
-    invoke-interface {v12, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v13, v0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
-    move-result-object v22
+    move-result v22
 
-    invoke-virtual/range {v22 .. v22}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    if-eqz v22, :cond_120
 
-    move-result-object v22
+    .line 635
+    const-string v22, "SCAN_RESULT_UPC_EAN_EXTENSION"
 
-    move-object/from16 v0, v21
+    sget-object v23, Lcom/google/zxing/ResultMetadataType;->UPC_EAN_EXTENSION:Lcom/google/zxing/ResultMetadataType;
 
-    move-object/from16 v1, v22
+    move-object/from16 v0, v23
 
-    invoke-virtual {v11, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-interface {v13, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v23
+
+    invoke-virtual/range {v23 .. v23}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v23
+
+    move-object/from16 v0, v22
+
+    move-object/from16 v1, v23
+
+    invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 637
-    :cond_11c
-    sget-object v21, Lcom/google/zxing/ResultMetadataType;->ORIENTATION:Lcom/google/zxing/ResultMetadataType;
+    :cond_120
+    sget-object v22, Lcom/google/zxing/ResultMetadataType;->ORIENTATION:Lcom/google/zxing/ResultMetadataType;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
-    invoke-interface {v12, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v13, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v14
+    move-result-object v15
 
-    check-cast v14, Ljava/lang/Integer;
+    check-cast v15, Ljava/lang/Integer;
 
     .line 638
-    .local v14, "orientation":Ljava/lang/Integer;
-    if-eqz v14, :cond_135
+    .local v15, "orientation":Ljava/lang/Integer;
+    if-eqz v15, :cond_139
 
     .line 639
-    const-string v21, "SCAN_RESULT_ORIENTATION"
+    const-string v22, "SCAN_RESULT_ORIENTATION"
 
-    invoke-virtual {v14}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v15}, Ljava/lang/Integer;->intValue()I
 
-    move-result v22
+    move-result v23
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
-    move/from16 v1, v22
+    move/from16 v1, v23
 
-    invoke-virtual {v11, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     .line 641
-    :cond_135
-    sget-object v21, Lcom/google/zxing/ResultMetadataType;->ERROR_CORRECTION_LEVEL:Lcom/google/zxing/ResultMetadataType;
+    :cond_139
+    sget-object v22, Lcom/google/zxing/ResultMetadataType;->ERROR_CORRECTION_LEVEL:Lcom/google/zxing/ResultMetadataType;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
-    invoke-interface {v12, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v13, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v9
 
-    check-cast v8, Ljava/lang/String;
+    check-cast v9, Ljava/lang/String;
 
     .line 642
-    .local v8, "ecLevel":Ljava/lang/String;
-    if-eqz v8, :cond_148
+    .local v9, "ecLevel":Ljava/lang/String;
+    if-eqz v9, :cond_14c
 
     .line 643
-    const-string v21, "SCAN_RESULT_ERROR_CORRECTION_LEVEL"
+    const-string v22, "SCAN_RESULT_ERROR_CORRECTION_LEVEL"
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
-    invoke-virtual {v11, v0, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v12, v0, v9}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 645
-    :cond_148
-    sget-object v21, Lcom/google/zxing/ResultMetadataType;->BYTE_SEGMENTS:Lcom/google/zxing/ResultMetadataType;
+    :cond_14c
+    sget-object v22, Lcom/google/zxing/ResultMetadataType;->BYTE_SEGMENTS:Lcom/google/zxing/ResultMetadataType;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
-    invoke-interface {v12, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v13, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v7
 
-    check-cast v6, Ljava/lang/Iterable;
+    check-cast v7, Ljava/lang/Iterable;
 
     .line 646
-    .local v6, "byteSegments":Ljava/lang/Iterable;, "Ljava/lang/Iterable<[B>;"
-    if-eqz v6, :cond_15f
+    .local v7, "byteSegments":Ljava/lang/Iterable;, "Ljava/lang/Iterable<[B>;"
+    if-eqz v7, :cond_163
 
     .line 647
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
     .line 648
-    .local v10, "i":I
-    invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    .local v11, "i":I
+    invoke-interface {v7}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v21
+    move-result-object v22
 
-    :goto_159
-    invoke-interface/range {v21 .. v21}, Ljava/util/Iterator;->hasNext()Z
+    :goto_15d
+    invoke-interface/range {v22 .. v22}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v22
+    move-result v23
 
-    if-nez v22, :cond_187
+    if-nez v23, :cond_18b
 
     .line 654
-    .end local v6    # "byteSegments":Ljava/lang/Iterable;, "Ljava/lang/Iterable<[B>;"
-    .end local v8    # "ecLevel":Ljava/lang/String;
-    .end local v10    # "i":I
-    .end local v14    # "orientation":Ljava/lang/Integer;
-    :cond_15f
-    sget v21, Lcom/google/zxing/client/android/R$id;->return_scan_result:I
+    .end local v7    # "byteSegments":Ljava/lang/Iterable;, "Ljava/lang/Iterable<[B>;"
+    .end local v9    # "ecLevel":Ljava/lang/String;
+    .end local v11    # "i":I
+    .end local v15    # "orientation":Ljava/lang/Integer;
+    :cond_163
+    sget v22, Lcom/google/zxing/client/android/R$id;->return_scan_result:I
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v21
+    move/from16 v1, v22
 
-    move-wide/from16 v2, v18
+    move-wide/from16 v2, v20
 
-    invoke-direct {v0, v1, v11, v2, v3}, Lcom/google/zxing/client/android/CaptureActivity;->sendReplyMessage(ILjava/lang/Object;J)V
+    invoke-direct {v0, v1, v12, v2, v3}, Lcom/google/zxing/client/android/CaptureActivity;->sendReplyMessage(ILjava/lang/Object;J)V
 
     .line 672
-    .end local v11    # "intent":Landroid/content/Intent;
-    .end local v12    # "metadata":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;*>;"
-    .end local v15    # "rawBytes":[B
-    :cond_16a
-    :goto_16a
+    .end local v12    # "intent":Landroid/content/Intent;
+    .end local v13    # "metadata":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;*>;"
+    .end local v16    # "rawBytes":[B
+    :cond_16e
+    :goto_16e
     return-void
 
     .line 596
-    .end local v18    # "resultDurationMS":J
-    :cond_16b
+    .end local v20    # "resultDurationMS":J
+    :cond_16f
     invoke-virtual/range {p0 .. p0}, Lcom/google/zxing/client/android/CaptureActivity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v21
+    move-result-object v22
 
-    const-string v22, "RESULT_DISPLAY_DURATION_MS"
+    const-string v23, "RESULT_DISPLAY_DURATION_MS"
 
-    const-wide/16 v23, 0x5dc
+    const-wide/16 v24, 0x5dc
 
-    invoke-virtual/range {v21 .. v24}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
+    invoke-virtual/range {v22 .. v25}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
-    move-result-wide v18
+    move-result-wide v20
 
-    .restart local v18    # "resultDurationMS":J
+    .restart local v20    # "resultDurationMS":J
     goto/16 :goto_17
 
     .line 613
-    .restart local v7    # "clipboard":Landroid/text/ClipboardManager;
-    .restart local v20    # "text":Ljava/lang/CharSequence;
-    :catch_179
-    move-exception v13
+    .restart local v8    # "clipboard":Landroid/text/ClipboardManager;
+    .restart local v19    # "text":Ljava/lang/CharSequence;
+    :catch_17d
+    move-exception v14
 
     .line 615
-    .local v13, "npe":Ljava/lang/NullPointerException;
-    sget-object v21, Lcom/google/zxing/client/android/CaptureActivity;->TAG:Ljava/lang/String;
+    .local v14, "npe":Ljava/lang/NullPointerException;
+    sget-object v22, Lcom/google/zxing/client/android/CaptureActivity;->TAG:Ljava/lang/String;
 
-    const-string v22, "Clipboard bug"
+    const-string v23, "Clipboard bug"
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
-    move-object/from16 v1, v22
+    move-object/from16 v1, v23
 
-    invoke-static {v0, v1, v13}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v0, v1, v14}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto/16 :goto_a3
 
     .line 648
-    .end local v7    # "clipboard":Landroid/text/ClipboardManager;
-    .end local v13    # "npe":Ljava/lang/NullPointerException;
-    .end local v20    # "text":Ljava/lang/CharSequence;
-    .restart local v6    # "byteSegments":Ljava/lang/Iterable;, "Ljava/lang/Iterable<[B>;"
-    .restart local v8    # "ecLevel":Ljava/lang/String;
-    .restart local v10    # "i":I
-    .restart local v11    # "intent":Landroid/content/Intent;
-    .restart local v12    # "metadata":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;*>;"
-    .restart local v14    # "orientation":Ljava/lang/Integer;
-    .restart local v15    # "rawBytes":[B
-    :cond_187
-    invoke-interface/range {v21 .. v21}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .end local v8    # "clipboard":Landroid/text/ClipboardManager;
+    .end local v14    # "npe":Ljava/lang/NullPointerException;
+    .end local v19    # "text":Ljava/lang/CharSequence;
+    .restart local v7    # "byteSegments":Ljava/lang/Iterable;, "Ljava/lang/Iterable<[B>;"
+    .restart local v9    # "ecLevel":Ljava/lang/String;
+    .restart local v11    # "i":I
+    .restart local v12    # "intent":Landroid/content/Intent;
+    .restart local v13    # "metadata":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;*>;"
+    .restart local v15    # "orientation":Ljava/lang/Integer;
+    .restart local v16    # "rawBytes":[B
+    :cond_18b
+    invoke-interface/range {v22 .. v22}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v6
 
-    check-cast v5, [B
+    check-cast v6, [B
 
     .line 649
-    .local v5, "byteSegment":[B
-    new-instance v22, Ljava/lang/StringBuilder;
+    .local v6, "byteSegment":[B
+    new-instance v23, Ljava/lang/StringBuilder;
 
-    const-string v23, "SCAN_RESULT_BYTE_SEGMENTS_"
+    const-string v24, "SCAN_RESULT_BYTE_SEGMENTS_"
 
-    invoke-direct/range {v22 .. v23}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct/range {v23 .. v24}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
-    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v22
+    move-result-object v23
 
-    invoke-virtual/range {v22 .. v22}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v23 .. v23}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v22
+    move-result-object v23
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
-    invoke-virtual {v11, v0, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
+    invoke-virtual {v12, v0, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
 
     .line 650
-    add-int/lit8 v10, v10, 0x1
+    add-int/lit8 v11, v11, 0x1
 
-    goto :goto_159
+    goto :goto_15d
 
     .line 656
-    .end local v5    # "byteSegment":[B
-    .end local v6    # "byteSegments":Ljava/lang/Iterable;, "Ljava/lang/Iterable<[B>;"
-    .end local v8    # "ecLevel":Ljava/lang/String;
-    .end local v10    # "i":I
-    .end local v11    # "intent":Landroid/content/Intent;
-    .end local v12    # "metadata":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;*>;"
-    .end local v14    # "orientation":Ljava/lang/Integer;
-    .end local v15    # "rawBytes":[B
-    :cond_1a6
+    .end local v6    # "byteSegment":[B
+    .end local v7    # "byteSegments":Ljava/lang/Iterable;, "Ljava/lang/Iterable<[B>;"
+    .end local v9    # "ecLevel":Ljava/lang/String;
+    .end local v11    # "i":I
+    .end local v12    # "intent":Landroid/content/Intent;
+    .end local v13    # "metadata":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;*>;"
+    .end local v15    # "orientation":Ljava/lang/Integer;
+    .end local v16    # "rawBytes":[B
+    :cond_1aa
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/client/android/CaptureActivity;->source:Lcom/google/zxing/client/android/IntentSource;
 
-    move-object/from16 v21, v0
+    move-object/from16 v22, v0
 
-    sget-object v22, Lcom/google/zxing/client/android/IntentSource;->PRODUCT_SEARCH_LINK:Lcom/google/zxing/client/android/IntentSource;
+    sget-object v23, Lcom/google/zxing/client/android/IntentSource;->PRODUCT_SEARCH_LINK:Lcom/google/zxing/client/android/IntentSource;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
-    move-object/from16 v1, v22
+    move-object/from16 v1, v23
 
-    if-ne v0, v1, :cond_200
+    if-ne v0, v1, :cond_204
 
     .line 660
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/client/android/CaptureActivity;->sourceUrl:Ljava/lang/String;
 
-    move-object/from16 v21, v0
+    move-object/from16 v22, v0
 
-    const-string v22, "/scan"
+    const-string v23, "/scan"
 
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
+    invoke-virtual/range {v22 .. v23}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
 
-    move-result v9
+    move-result v10
 
     .line 661
-    .local v9, "end":I
-    new-instance v21, Ljava/lang/StringBuilder;
+    .local v10, "end":I
+    new-instance v22, Ljava/lang/StringBuilder;
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/client/android/CaptureActivity;->sourceUrl:Ljava/lang/String;
 
-    move-object/from16 v22, v0
+    move-object/from16 v23, v0
 
-    const/16 v23, 0x0
+    const/16 v24, 0x0
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
-    move/from16 v1, v23
+    move/from16 v1, v24
 
-    invoke-virtual {v0, v1, v9}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v0, v1, v10}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v23
+
+    invoke-static/range {v23 .. v23}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v23
+
+    invoke-direct/range {v22 .. v23}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v23, "?q="
+
+    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v22
-
-    invoke-static/range {v22 .. v22}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v22
-
-    invoke-direct/range {v21 .. v22}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v22, "?q="
-
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v21
 
     invoke-virtual/range {p2 .. p2}, Lcom/google/zxing/client/android/result/ResultHandler;->getDisplayContents()Ljava/lang/CharSequence;
 
+    move-result-object v23
+
+    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
     move-result-object v22
 
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v23, "&source=zxing"
 
-    move-result-object v21
+    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v22, "&source=zxing"
+    move-result-object v22
 
-    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v22 .. v22}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v21
-
-    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v17
+    move-result-object v18
 
     .line 662
-    .local v17, "replyURL":Ljava/lang/String;
-    sget v21, Lcom/google/zxing/client/android/R$id;->launch_product_query:I
+    .local v18, "replyURL":Ljava/lang/String;
+    sget v22, Lcom/google/zxing/client/android/R$id;->launch_product_query:I
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v21
+    move/from16 v1, v22
 
-    move-object/from16 v2, v17
+    move-object/from16 v2, v18
 
-    move-wide/from16 v3, v18
+    move-wide/from16 v3, v20
 
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/zxing/client/android/CaptureActivity;->sendReplyMessage(ILjava/lang/Object;J)V
 
-    goto/16 :goto_16a
+    goto/16 :goto_16e
 
     .line 664
-    .end local v9    # "end":I
-    .end local v17    # "replyURL":Ljava/lang/String;
-    :cond_200
+    .end local v10    # "end":I
+    .end local v18    # "replyURL":Ljava/lang/String;
+    :cond_204
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/client/android/CaptureActivity;->source:Lcom/google/zxing/client/android/IntentSource;
 
-    move-object/from16 v21, v0
+    move-object/from16 v22, v0
 
-    sget-object v22, Lcom/google/zxing/client/android/IntentSource;->ZXING_LINK:Lcom/google/zxing/client/android/IntentSource;
+    sget-object v23, Lcom/google/zxing/client/android/IntentSource;->ZXING_LINK:Lcom/google/zxing/client/android/IntentSource;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
-    move-object/from16 v1, v22
+    move-object/from16 v1, v23
 
-    if-ne v0, v1, :cond_16a
+    if-ne v0, v1, :cond_16e
 
     .line 666
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/client/android/CaptureActivity;->scanFromWebPageManager:Lcom/google/zxing/client/android/ScanFromWebPageManager;
 
-    move-object/from16 v21, v0
+    move-object/from16 v22, v0
 
-    if-eqz v21, :cond_16a
+    if-eqz v22, :cond_16e
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/client/android/CaptureActivity;->scanFromWebPageManager:Lcom/google/zxing/client/android/ScanFromWebPageManager;
 
-    move-object/from16 v21, v0
+    move-object/from16 v22, v0
 
-    invoke-virtual/range {v21 .. v21}, Lcom/google/zxing/client/android/ScanFromWebPageManager;->isScanFromWebPage()Z
+    invoke-virtual/range {v22 .. v22}, Lcom/google/zxing/client/android/ScanFromWebPageManager;->isScanFromWebPage()Z
 
-    move-result v21
+    move-result v22
 
-    if-eqz v21, :cond_16a
+    if-eqz v22, :cond_16e
 
     .line 667
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/client/android/CaptureActivity;->scanFromWebPageManager:Lcom/google/zxing/client/android/ScanFromWebPageManager;
 
-    move-object/from16 v21, v0
+    move-object/from16 v22, v0
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
     move-object/from16 v1, p1
 
@@ -1248,23 +1252,23 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/zxing/client/android/ScanFromWebPageManager;->buildReplyURL(Lcom/google/zxing/Result;Lcom/google/zxing/client/android/result/ResultHandler;)Ljava/lang/String;
 
-    move-result-object v17
+    move-result-object v18
 
     .line 668
-    .restart local v17    # "replyURL":Ljava/lang/String;
-    sget v21, Lcom/google/zxing/client/android/R$id;->launch_product_query:I
+    .restart local v18    # "replyURL":Ljava/lang/String;
+    sget v22, Lcom/google/zxing/client/android/R$id;->launch_product_query:I
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v21
+    move/from16 v1, v22
 
-    move-object/from16 v2, v17
+    move-object/from16 v2, v18
 
-    move-wide/from16 v3, v18
+    move-wide/from16 v3, v20
 
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/zxing/client/android/CaptureActivity;->sendReplyMessage(ILjava/lang/Object;J)V
 
-    goto/16 :goto_16a
+    goto/16 :goto_16e
 .end method
 
 .method private handleDecodeInternally(Lcom/google/zxing/Result;Lcom/google/zxing/client/android/result/ResultHandler;Landroid/graphics/Bitmap;)V
@@ -2141,7 +2145,7 @@
 .end method
 
 .method private sendReplyMessage(ILjava/lang/Object;J)V
-    .registers 8
+    .registers 10
     .param p1, "id"    # I
     .param p2, "arg"    # Ljava/lang/Object;
     .param p3, "delayMS"    # J
@@ -2156,9 +2160,9 @@
 
     .line 676
     .local v0, "message":Landroid/os/Message;
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    cmp-long v1, p3, v1
+    cmp-long v1, p3, v2
 
     if-lez v1, :cond_12
 
@@ -2783,9 +2787,9 @@
     if-eqz v1, :cond_5
 
     .line 291
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    invoke-virtual {p0, v1, v2}, Lcom/google/zxing/client/android/CaptureActivity;->restartPreviewAfterDelay(J)V
+    invoke-virtual {p0, v2, v3}, Lcom/google/zxing/client/android/CaptureActivity;->restartPreviewAfterDelay(J)V
 
     goto :goto_9
 
@@ -3405,7 +3409,7 @@
 .end method
 
 .method public restartPreviewAfterDelay(J)V
-    .registers 5
+    .registers 6
     .param p1, "delayMS"    # J
 
     .prologue

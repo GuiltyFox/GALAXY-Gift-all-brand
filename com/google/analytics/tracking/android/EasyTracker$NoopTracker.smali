@@ -561,7 +561,7 @@
 .end method
 
 .method public setSampleRate(D)V
-    .registers 3
+    .registers 4
     .param p1, "sampleRate"    # D
 
     .prologue

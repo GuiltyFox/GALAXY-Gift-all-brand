@@ -141,7 +141,7 @@
 
     .line 103
     .local v11, "notificationManager":Landroid/app/NotificationManager;
-    const v5, 0x7f0202f2
+    const v5, 0x7f0202f4
 
     .line 105
     .local v5, "icon":I

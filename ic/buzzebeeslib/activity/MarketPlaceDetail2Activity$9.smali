@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$9;->val$dialogSerial:Landroid/app/Dialog;
 
-    .line 1462
+    .line 1464
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,12 +50,12 @@
 
     const/4 v11, 0x1
 
-    .line 1464
+    .line 1466
     iget-object v6, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$9;->val$dialogSerial:Landroid/app/Dialog;
 
     invoke-virtual {v6}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1471
+    .line 1473
     iget-object v6, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$9;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->paramCampaign:Lic/buzzebeeslib/bean/Campaign;
@@ -84,25 +84,25 @@
 
     if-nez v6, :cond_3d
 
-    .line 1472
+    .line 1474
     iget-object v6, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$9;->val$dialogSerial:Landroid/app/Dialog;
 
     invoke-virtual {v6}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1475
+    .line 1477
     const-string v6, "content://someURI"
 
     invoke-static {v6}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v4
 
-    .line 1476
+    .line 1478
     .local v4, "uri":Landroid/net/Uri;
     new-instance v3, Landroid/content/Intent;
 
     invoke-direct {v3, v12, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 1477
+    .line 1479
     .local v3, "intent":Landroid/content/Intent;
     iget-object v6, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$9;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
@@ -110,19 +110,19 @@
 
     invoke-virtual {v6, v7, v3}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->setResult(ILandroid/content/Intent;)V
 
-    .line 1478
+    .line 1480
     iget-object v6, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$9;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # invokes: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->showCustominput()V
     invoke-static {v6}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$39(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)V
 
-    .line 1497
+    .line 1499
     .end local v3    # "intent":Landroid/content/Intent;
     .end local v4    # "uri":Landroid/net/Uri;
     :goto_3c
     return-void
 
-    .line 1480
+    .line 1482
     :cond_3d
     iget-object v6, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$9;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
@@ -144,7 +144,7 @@
 
     invoke-static {v6, v7}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$20(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Landroid/app/ProgressDialog;)V
 
-    .line 1482
+    .line 1484
     new-instance v2, Lic/buzzebeeslib/util/DeviceHelper;
 
     iget-object v6, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$9;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -155,7 +155,7 @@
 
     invoke-direct {v2, v6}, Lic/buzzebeeslib/util/DeviceHelper;-><init>(Landroid/content/Context;)V
 
-    .line 1483
+    .line 1485
     .local v2, "deviceHelper":Lic/buzzebeeslib/util/DeviceHelper;
     iget-object v6, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$9;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
@@ -167,13 +167,13 @@
 
     move-result-object v0
 
-    .line 1484
+    .line 1486
     .local v0, "carrier":Ljava/lang/String;
     invoke-virtual {v2}, Lic/buzzebeeslib/util/DeviceHelper;->getPhoneNumber()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1486
+    .line 1488
     .local v1, "contact_number":Ljava/lang/String;
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -248,7 +248,7 @@
 
     move-result-object v5
 
-    .line 1487
+    .line 1489
     .local v5, "url":Ljava/lang/String;
     iget-object v6, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$9;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
@@ -273,7 +273,7 @@
 
     invoke-static {v6, v7}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1492
+    .line 1494
     new-instance v6, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$PostDealsGetListener;
 
     iget-object v7, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$9;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;

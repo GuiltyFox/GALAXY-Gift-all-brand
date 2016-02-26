@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogUtil;->showDialogConfirmLoginFacebook(Landroid/content/Context;Ljava/lang/String;Z)V
+    value = Lcom/samsung/privilege/util/DialogUtil;->showDialogPointTransferConfirm(Landroid/content/Context;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,28 +20,20 @@
 # instance fields
 .field private final synthetic val$activityContext:Landroid/content/Context;
 
-.field private final synthetic val$dialogConfirm:Landroid/app/Dialog;
-
-.field private final synthetic val$imgOk:Landroid/widget/ImageView;
-
-.field private final synthetic val$is_auto_login_fb:Z
+.field private final synthetic val$dialogPoint:Landroid/app/Dialog;
 
 
 # direct methods
-.method constructor <init>(Landroid/app/Dialog;Landroid/widget/ImageView;Landroid/content/Context;Z)V
-    .registers 5
+.method constructor <init>(Landroid/app/Dialog;Landroid/content/Context;)V
+    .registers 3
 
     .prologue
     .line 1
-    iput-object p1, p0, Lcom/samsung/privilege/util/DialogUtil$6;->val$dialogConfirm:Landroid/app/Dialog;
+    iput-object p1, p0, Lcom/samsung/privilege/util/DialogUtil$6;->val$dialogPoint:Landroid/app/Dialog;
 
-    iput-object p2, p0, Lcom/samsung/privilege/util/DialogUtil$6;->val$imgOk:Landroid/widget/ImageView;
+    iput-object p2, p0, Lcom/samsung/privilege/util/DialogUtil$6;->val$activityContext:Landroid/content/Context;
 
-    iput-object p3, p0, Lcom/samsung/privilege/util/DialogUtil$6;->val$activityContext:Landroid/content/Context;
-
-    iput-boolean p4, p0, Lcom/samsung/privilege/util/DialogUtil$6;->val$is_auto_login_fb:Z
-
-    .line 330
+    .line 227
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -54,28 +46,76 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 332
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$6;->val$dialogConfirm:Landroid/app/Dialog;
+    .line 229
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogUtil$6;->val$dialogPoint:Landroid/app/Dialog;
 
-    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
+    invoke-virtual {v1}, Landroid/app/Dialog;->dismiss()V
 
-    .line 334
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$6;->val$imgOk:Landroid/widget/ImageView;
+    .line 231
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v1, Lcom/samsung/privilege/util/DialogUtil$6$1;
+    sget-object v2, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v2, "api/auth/transfer?isTransfer=false&token="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-object v2, p0, Lcom/samsung/privilege/util/DialogUtil$6;->val$activityContext:Landroid/content/Context;
 
-    iget-boolean v3, p0, Lcom/samsung/privilege/util/DialogUtil$6;->val$is_auto_login_fb:Z
+    invoke-static {v2}, Lcom/samsung/privilege/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
 
-    invoke-direct {v1, p0, v2, v3}, Lcom/samsung/privilege/util/DialogUtil$6$1;-><init>(Lcom/samsung/privilege/util/DialogUtil$6;Landroid/content/Context;Z)V
+    move-result-object v2
 
-    .line 339
-    const-wide/16 v2, 0x1f4
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 334
-    invoke-virtual {v0, v1, v2, v3}, Landroid/widget/ImageView;->postDelayed(Ljava/lang/Runnable;J)Z
+    move-result-object v1
 
-    .line 340
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 232
+    .local v0, "url":Ljava/lang/String;
+    # getter for: Lcom/samsung/privilege/util/DialogUtil;->TAG:Ljava/lang/String;
+    invoke-static {}, Lcom/samsung/privilege/util/DialogUtil;->access$0()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "trasfer_no="
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 233
+    const/4 v1, 0x0
+
+    new-instance v2, Lcom/samsung/privilege/util/DialogUtil$NotTransferListener;
+
+    iget-object v3, p0, Lcom/samsung/privilege/util/DialogUtil$6;->val$activityContext:Landroid/content/Context;
+
+    invoke-direct {v2, v3}, Lcom/samsung/privilege/util/DialogUtil$NotTransferListener;-><init>(Landroid/content/Context;)V
+
+    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/http/BuzzbeesRestClient;->post(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
+
+    .line 234
     return-void
 .end method

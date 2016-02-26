@@ -642,7 +642,7 @@
 .end method
 
 .method public static GetLogDownload(Landroid/content/Context;Ljava/lang/String;)J
-    .registers 5
+    .registers 6
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "key"    # Ljava/lang/String;
 
@@ -658,13 +658,13 @@
 
     .line 97
     .local v0, "savedSession":Landroid/content/SharedPreferences;
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    invoke-interface {v0, p1, v1, v2}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+    invoke-interface {v0, p1, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    return-wide v1
+    return-wide v2
 .end method
 
 .method public static SetAdminConfig(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
@@ -700,7 +700,7 @@
 .end method
 
 .method public static SetLogDownload(Landroid/content/Context;Ljava/lang/String;J)Z
-    .registers 7
+    .registers 8
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "key"    # Ljava/lang/String;
     .param p2, "byteTotal"    # J

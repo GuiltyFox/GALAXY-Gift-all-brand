@@ -194,10 +194,10 @@
     .line 132
     iput-boolean v1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gFoundLocation:Z
 
-    .line 602
+    .line 605
     iput-boolean v1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gIsLoading:Z
 
-    .line 603
+    .line 606
     iput v1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gLoadMoreCount:I
 
     .line 137
@@ -294,10 +294,10 @@
     .line 132
     iput-boolean v1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gFoundLocation:Z
 
-    .line 602
+    .line 605
     iput-boolean v1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gIsLoading:Z
 
-    .line 603
+    .line 606
     iput v1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gLoadMoreCount:I
 
     .line 141
@@ -323,26 +323,26 @@
     .param p2, "is_catch"    # Z
 
     .prologue
-    .line 712
+    .line 715
     :try_start_0
     new-instance v3, Lorg/json/JSONArray;
 
     invoke-direct {v3, p1}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
 
-    .line 714
+    .line 717
     .local v3, "jsonArray":Lorg/json/JSONArray;
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCampaignViews:Ljava/util/ArrayList;
 
     if-nez v5, :cond_10
 
-    .line 715
+    .line 718
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v5, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCampaignViews:Ljava/util/ArrayList;
 
-    .line 718
+    .line 721
     :cond_10
     invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
 
@@ -350,7 +350,7 @@
 
     if-lez v5, :cond_1d
 
-    .line 719
+    .line 722
     iget v5, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gSumListPerPage:I
 
     iget v6, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gListPerPage:I
@@ -359,7 +359,7 @@
 
     iput v5, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gSumListPerPage:I
 
-    .line 722
+    .line 725
     :cond_1d
     invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
 
@@ -367,12 +367,12 @@
 
     if-lez v5, :cond_46
 
-    .line 723
+    .line 726
     const/4 v5, 0x1
 
     iput-boolean v5, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gIsHasData:Z
 
-    .line 728
+    .line 731
     :goto_26
     const/4 v2, 0x0
 
@@ -384,12 +384,12 @@
 
     if-lt v2, v5, :cond_64
 
-    .line 739
+    .line 742
     invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
 
     move-result v0
 
-    .line 740
+    .line 743
     .local v0, "count_item":I
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mHandler:Landroid/os/Handler;
 
@@ -399,7 +399,7 @@
 
     invoke-virtual {v5, v6}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 761
+    .line 764
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mHandler:Landroid/os/Handler;
 
     new-instance v6, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$6;
@@ -408,14 +408,14 @@
 
     invoke-virtual {v5, v6}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 775
+    .line 778
     .end local v0    # "count_item":I
     .end local v2    # "i":I
     .end local v3    # "jsonArray":Lorg/json/JSONArray;
     :goto_45
     return-void
 
-    .line 725
+    .line 728
     .restart local v3    # "jsonArray":Lorg/json/JSONArray;
     :cond_46
     const/4 v5, 0x0
@@ -426,12 +426,12 @@
 
     goto :goto_26
 
-    .line 772
+    .line 775
     .end local v3    # "jsonArray":Lorg/json/JSONArray;
     :catch_4a
     move-exception v1
 
-    .line 773
+    .line 776
     .local v1, "e":Lorg/json/JSONException;
     const-string v5, "buzzebees.marketlist.fragment"
 
@@ -457,7 +457,7 @@
 
     goto :goto_45
 
-    .line 730
+    .line 733
     .end local v1    # "e":Lorg/json/JSONException;
     .restart local v2    # "i":I
     .restart local v3    # "jsonArray":Lorg/json/JSONArray;
@@ -467,13 +467,13 @@
 
     move-result-object v4
 
-    .line 731
+    .line 734
     .local v4, "json_campaign":Lorg/json/JSONObject;
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCampaignViews:Ljava/util/ArrayList;
 
     if-eqz v5, :cond_76
 
-    .line 732
+    .line 735
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCampaignViews:Ljava/util/ArrayList;
 
     new-instance v6, Lcom/samsung/privilege/bean/CampaignView;
@@ -484,7 +484,7 @@
     :try_end_76
     .catch Lorg/json/JSONException; {:try_start_64 .. :try_end_76} :catch_79
 
-    .line 728
+    .line 731
     .end local v4    # "json_campaign":Lorg/json/JSONObject;
     :cond_76
     :goto_76
@@ -492,11 +492,11 @@
 
     goto :goto_27
 
-    .line 734
+    .line 737
     :catch_79
     move-exception v1
 
-    .line 735
+    .line 738
     .restart local v1    # "e":Lorg/json/JSONException;
     :try_start_7a
     const-string v5, "buzzebees.marketlist.fragment"
@@ -530,12 +530,12 @@
     .registers 2
 
     .prologue
-    .line 409
+    .line 412
     const-string v0, ""
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCurrentFilterCategory:Ljava/lang/String;
 
-    .line 415
+    .line 418
     return-void
 .end method
 
@@ -570,7 +570,7 @@
 .end method
 
 .method static synthetic access$11(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;D)V
-    .registers 3
+    .registers 4
 
     .prologue
     .line 133
@@ -580,7 +580,7 @@
 .end method
 
 .method static synthetic access$12(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;D)V
-    .registers 3
+    .registers 4
 
     .prologue
     .line 134
@@ -623,7 +623,7 @@
     .registers 3
 
     .prologue
-    .line 605
+    .line 608
     invoke-direct {p0, p1, p2}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->loadCampaign(ZLjava/lang/String;)V
 
     return-void
@@ -663,7 +663,7 @@
     .registers 3
 
     .prologue
-    .line 710
+    .line 713
     invoke-direct {p0, p1, p2}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->ProcessJsonCampaign(Ljava/lang/String;Z)V
 
     return-void
@@ -803,7 +803,7 @@
     .registers 2
 
     .prologue
-    .line 587
+    .line 590
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->loadCampaignByCatch(Ljava/lang/String;)V
 
     return-void
@@ -813,7 +813,7 @@
     .registers 2
 
     .prologue
-    .line 533
+    .line 536
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->restoreInstanceState(Landroid/os/Bundle;)V
 
     return-void
@@ -833,7 +833,7 @@
     .registers 1
 
     .prologue
-    .line 777
+    .line 780
     invoke-direct {p0}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->setCampaignUI()V
 
     return-void
@@ -853,7 +853,7 @@
     .registers 2
 
     .prologue
-    .line 603
+    .line 606
     iget v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gLoadMoreCount:I
 
     return v0
@@ -873,7 +873,7 @@
     .registers 2
 
     .prologue
-    .line 602
+    .line 605
     iput-boolean p1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gIsLoading:Z
 
     return-void
@@ -913,7 +913,7 @@
     .registers 3
 
     .prologue
-    .line 962
+    .line 966
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -930,22 +930,22 @@
 
     if-nez v0, :cond_1f
 
-    .line 963
+    .line 967
     const-string v0, "buzzebees.marketlist.fragment"
 
     const-string v1, "public void getLocation() {"
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 965
+    .line 969
     new-instance v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;
 
     invoke-direct {v0, p0}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;-><init>(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;)V
 
-    .line 1039
+    .line 1043
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;->start()V
 
-    .line 1041
+    .line 1045
     :cond_1f
     return-void
 .end method
@@ -956,33 +956,33 @@
     .param p2, "filter_category_id"    # Ljava/lang/String;
 
     .prologue
-    const/4 v9, 0x1
+    const/4 v7, 0x1
 
     const/4 v2, 0x0
 
-    const-wide/16 v7, 0x0
+    const-wide/16 v8, 0x0
 
-    .line 606
+    .line 609
     iget-boolean v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gIsLoading:Z
 
     if-eqz v0, :cond_10
 
-    .line 607
+    .line 610
     const-string v0, "buzzebees.marketlist.fragment"
 
     const-string v1, "loadCampaign --> can not load, because the current loading is not finish..."
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 642
+    .line 645
     :goto_f
     return-void
 
-    .line 609
+    .line 612
     :cond_10
-    iput-boolean v9, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gIsLoading:Z
+    iput-boolean v7, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gIsLoading:Z
 
-    .line 611
+    .line 614
     const-string v0, "nearby"
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -993,32 +993,32 @@
 
     iget-wide v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCurrentLat:D
 
-    cmpl-double v0, v0, v7
+    cmpl-double v0, v0, v8
 
     if-nez v0, :cond_2a
 
     iget-wide v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCurrentLon:D
 
-    cmpl-double v0, v0, v7
+    cmpl-double v0, v0, v8
 
     if-nez v0, :cond_2a
 
-    .line 612
+    .line 615
     invoke-direct {p0}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getLocation()V
 
     goto :goto_f
 
-    .line 614
+    .line 617
     :cond_2a
     if-eqz p1, :cond_107
 
-    .line 615
+    .line 618
     iput v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gLoadMoreCount:I
 
-    .line 616
+    .line 619
     iput v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gSumListPerPage:I
 
-    .line 621
+    .line 624
     :goto_30
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1056,7 +1056,7 @@
 
     move-result-object v6
 
-    .line 622
+    .line 625
     .local v6, "url":Ljava/lang/String;
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1098,7 +1098,7 @@
 
     move-result-object v6
 
-    .line 624
+    .line 627
     const-string v0, "nearby"
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1107,7 +1107,7 @@
 
     if-eqz v0, :cond_10f
 
-    .line 625
+    .line 628
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -1122,9 +1122,9 @@
 
     move-result-object v0
 
-    iget-wide v1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCurrentLat:D
+    iget-wide v8, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCurrentLat:D
 
-    invoke-static {v1, v2}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
+    invoke-static {v8, v9}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1138,9 +1138,9 @@
 
     move-result-object v0
 
-    iget-wide v1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCurrentLon:D
+    iget-wide v8, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCurrentLon:D
 
-    invoke-static {v1, v2}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
+    invoke-static {v8, v9}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1152,12 +1152,12 @@
 
     move-result-object v6
 
-    .line 632
+    .line 635
     :cond_b3
     :goto_b3
-    iput-boolean v9, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gIsLoadingMore:Z
+    iput-boolean v7, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gIsLoadingMore:Z
 
-    .line 633
+    .line 636
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -1182,7 +1182,7 @@
 
     move-result-object v6
 
-    .line 635
+    .line 638
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "campaign_"
@@ -1197,7 +1197,7 @@
 
     move-result-object v3
 
-    .line 637
+    .line 640
     .local v3, "cache_name":Ljava/lang/String;
     const-string v0, "buzzebees.marketlist.fragment"
 
@@ -1217,7 +1217,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 638
+    .line 641
     new-instance v0, Ljava/util/Date;
 
     invoke-direct {v0}, Ljava/util/Date;-><init>()V
@@ -1226,7 +1226,7 @@
 
     move-result-wide v4
 
-    .line 639
+    .line 642
     .local v4, "startTime":J
     new-instance v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$GetCampaignListener;
 
@@ -1242,7 +1242,7 @@
 
     goto/16 :goto_f
 
-    .line 618
+    .line 621
     .end local v3    # "cache_name":Ljava/lang/String;
     .end local v4    # "startTime":J
     .end local v6    # "url":Ljava/lang/String;
@@ -1255,7 +1255,7 @@
 
     goto/16 :goto_30
 
-    .line 627
+    .line 630
     .restart local v6    # "url":Ljava/lang/String;
     :cond_10f
     const-string v0, ""
@@ -1266,7 +1266,7 @@
 
     if-nez v0, :cond_b3
 
-    .line 628
+    .line 631
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -1299,7 +1299,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 588
+    .line 591
     const-string v1, "nearby"
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1308,14 +1308,14 @@
 
     if-eqz v1, :cond_d
 
-    .line 589
+    .line 592
     invoke-direct {p0, v3, p1}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->loadCampaign(ZLjava/lang/String;)V
 
-    .line 600
+    .line 603
     :goto_c
     return-void
 
-    .line 591
+    .line 594
     :cond_d
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1339,7 +1339,7 @@
 
     move-result-object v0
 
-    .line 592
+    .line 595
     .local v0, "catch_campaign":Ljava/lang/String;
     const-string v1, ""
 
@@ -1349,15 +1349,15 @@
 
     if-nez v1, :cond_33
 
-    .line 593
+    .line 596
     invoke-direct {p0, v0, v3}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->ProcessJsonCampaign(Ljava/lang/String;Z)V
 
-    .line 595
+    .line 598
     invoke-direct {p0, v3, p1}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->loadCampaign(ZLjava/lang/String;)V
 
     goto :goto_c
 
-    .line 597
+    .line 600
     :cond_33
     invoke-direct {p0, v3, p1}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->loadCampaign(ZLjava/lang/String;)V
 
@@ -1369,7 +1369,7 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 542
+    .line 545
     const-string v0, "onSaveInstanceState"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
@@ -1378,7 +1378,7 @@
 
     if-eqz v0, :cond_4d
 
-    .line 543
+    .line 546
     const-string v0, "gCampaignViews"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getSerializable(Ljava/lang/String;)Ljava/io/Serializable;
@@ -1389,7 +1389,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCampaignViews:Ljava/util/ArrayList;
 
-    .line 544
+    .line 547
     const-string v0, "gCurrentFilterCategory"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -1398,7 +1398,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCurrentFilterCategory:Ljava/lang/String;
 
-    .line 545
+    .line 548
     const-string v0, "gIsLoadingMore"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -1407,7 +1407,7 @@
 
     iput-boolean v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gIsLoadingMore:Z
 
-    .line 546
+    .line 549
     const-string v0, "gIsHasData"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -1416,7 +1416,7 @@
 
     iput-boolean v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gIsHasData:Z
 
-    .line 547
+    .line 550
     const-string v0, "gSumListPerPage"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -1425,7 +1425,7 @@
 
     iput v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gSumListPerPage:I
 
-    .line 551
+    .line 554
     :try_start_32
     const-string v0, "listState"
 
@@ -1435,7 +1435,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mListState:Landroid/os/Parcelable;
 
-    .line 552
+    .line 555
     const-string v0, "listPosition"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -1444,7 +1444,7 @@
 
     iput v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mListPosition:I
 
-    .line 553
+    .line 556
     const-string v0, "itemPosition"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -1455,15 +1455,15 @@
     :try_end_4a
     .catch Ljava/lang/Exception; {:try_start_32 .. :try_end_4a} :catch_4e
 
-    .line 558
+    .line 561
     :goto_4a
     invoke-direct {p0}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->setCampaignUI()V
 
-    .line 562
+    .line 565
     :cond_4d
     return-void
 
-    .line 554
+    .line 557
     :catch_4e
     move-exception v0
 
@@ -1476,12 +1476,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 778
+    .line 781
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gAdapter:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;
 
     if-nez v0, :cond_6d
 
-    .line 779
+    .line 782
     new-instance v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;
 
     sget-object v1, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gContext:Landroid/content/Context;
@@ -1492,7 +1492,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gAdapter:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;
 
-    .line 780
+    .line 783
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCampaignViews:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_67
@@ -1505,14 +1505,14 @@
 
     if-lez v0, :cond_67
 
-    .line 781
+    .line 784
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gListAward:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gAdapter:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/control/PullToRefreshListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 797
+    .line 800
     :goto_23
     const-string v0, "buzzebees.marketlist.fragment"
 
@@ -1534,7 +1534,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 798
+    .line 801
     const-string v0, "buzzebees.marketlist.fragment"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1555,19 +1555,19 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 801
+    .line 804
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mListState:Landroid/os/Parcelable;
 
     if-eqz v0, :cond_5a
 
-    .line 802
+    .line 805
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gListAward:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mListState:Landroid/os/Parcelable;
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/control/PullToRefreshListView;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    .line 803
+    .line 806
     :cond_5a
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gListAward:Lcom/samsung/privilege/control/PullToRefreshListView;
 
@@ -1577,15 +1577,15 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/samsung/privilege/control/PullToRefreshListView;->setSelectionFromTop(II)V
 
-    .line 805
+    .line 808
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gIsLoadingMore:Z
 
-    .line 806
+    .line 809
     return-void
 
-    .line 783
+    .line 786
     :cond_67
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gListAward:Lcom/samsung/privilege/control/PullToRefreshListView;
 
@@ -1593,7 +1593,7 @@
 
     goto :goto_23
 
-    .line 789
+    .line 792
     :cond_6d
     new-instance v0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;
 
@@ -1605,7 +1605,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gAdapter:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;
 
-    .line 790
+    .line 793
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCampaignViews:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_8c
@@ -1618,7 +1618,7 @@
 
     if-lez v0, :cond_8c
 
-    .line 791
+    .line 794
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gListAward:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gAdapter:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;
@@ -1627,7 +1627,7 @@
 
     goto :goto_23
 
-    .line 793
+    .line 796
     :cond_8c
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gListAward:Lcom/samsung/privilege/control/PullToRefreshListView;
 
@@ -1642,14 +1642,14 @@
     .registers 7
 
     .prologue
-    .line 1044
+    .line 1048
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
 
     if-eqz v2, :cond_6d
 
-    .line 1046
+    .line 1050
     :try_start_6
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gHandler:Landroid/os/Handler;
 
@@ -1659,7 +1659,7 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1055
+    .line 1059
     new-instance v2, Lcom/samsung/privilege/newconcepts/utils/GPSTracker;
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -1670,7 +1670,7 @@
 
     iput-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gps:Lcom/samsung/privilege/newconcepts/utils/GPSTracker;
 
-    .line 1058
+    .line 1062
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gps:Lcom/samsung/privilege/newconcepts/utils/GPSTracker;
 
     invoke-virtual {v2}, Lcom/samsung/privilege/newconcepts/utils/GPSTracker;->canGetLocation()Z
@@ -1679,7 +1679,7 @@
 
     if-eqz v2, :cond_6e
 
-    .line 1059
+    .line 1063
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gps:Lcom/samsung/privilege/newconcepts/utils/GPSTracker;
 
     invoke-virtual {v2}, Lcom/samsung/privilege/newconcepts/utils/GPSTracker;->getLatitude()D
@@ -1688,7 +1688,7 @@
 
     iput-wide v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCurrentLat:D
 
-    .line 1060
+    .line 1064
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gps:Lcom/samsung/privilege/newconcepts/utils/GPSTracker;
 
     invoke-virtual {v2}, Lcom/samsung/privilege/newconcepts/utils/GPSTracker;->getLongitude()D
@@ -1697,7 +1697,7 @@
 
     iput-wide v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCurrentLon:D
 
-    .line 1062
+    .line 1066
     const-string v2, "buzzebees.marketlist.fragment"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1718,7 +1718,7 @@
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1063
+    .line 1067
     const-string v2, "buzzebees.marketlist.fragment"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1739,29 +1739,29 @@
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1065
+    .line 1069
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gIsLoading:Z
 
-    .line 1066
+    .line 1070
     const/4 v2, 0x1
 
     const-string v3, "nearby"
 
     invoke-direct {p0, v2, v3}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->loadCampaign(ZLjava/lang/String;)V
 
-    .line 1068
+    .line 1072
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gps:Lcom/samsung/privilege/newconcepts/utils/GPSTracker;
 
     invoke-virtual {v2}, Lcom/samsung/privilege/newconcepts/utils/GPSTracker;->stopUsingGPS()V
 
-    .line 1091
+    .line 1095
     :cond_6d
     :goto_6d
     return-void
 
-    .line 1073
+    .line 1077
     :cond_6e
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gps:Lcom/samsung/privilege/newconcepts/utils/GPSTracker;
 
@@ -1771,19 +1771,19 @@
 
     goto :goto_6d
 
-    .line 1075
+    .line 1079
     :catch_74
     move-exception v0
 
-    .line 1076
+    .line 1080
     .local v0, "e":Ljava/lang/Exception;
-    const v2, 0x7f0a0319
+    const v2, 0x7f090320
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1077
+    .line 1081
     .local v1, "error":Ljava/lang/String;
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -1799,7 +1799,7 @@
 
     if-eqz v2, :cond_a9
 
-    .line 1078
+    .line 1082
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -1830,11 +1830,11 @@
 
     move-result-object v1
 
-    .line 1080
+    .line 1084
     :cond_a9
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->showToast(Ljava/lang/String;)V
 
-    .line 1082
+    .line 1086
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gHandler:Landroid/os/Handler;
 
     new-instance v3, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$10;
@@ -1851,10 +1851,10 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 419
+    .line 422
     invoke-super {p0, p1}, Landroid/support/v4/app/Fragment;->onActivityCreated(Landroid/os/Bundle;)V
 
-    .line 428
+    .line 431
     return-void
 .end method
 
@@ -1865,10 +1865,10 @@
     .param p3, "i"    # Landroid/content/Intent;
 
     .prologue
-    .line 566
+    .line 569
     invoke-super {p0, p1, p2, p3}, Landroid/support/v4/app/Fragment;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 567
+    .line 570
     const/4 v3, -0x1
 
     if-ne p2, v3, :cond_34
@@ -1877,12 +1877,12 @@
 
     if-ne p1, v3, :cond_34
 
-    .line 568
+    .line 571
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gAdapter:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;
 
     invoke-virtual {v3}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$CampaignListAdapter;->notifyDataSetChanged()V
 
-    .line 571
+    .line 574
     :try_start_f
     const-string v3, "redirect"
 
@@ -1890,7 +1890,7 @@
 
     move-result-object v2
 
-    .line 573
+    .line 576
     .local v2, "redirect":Ljava/lang/String;
     const-string v3, "history"
 
@@ -1900,7 +1900,7 @@
 
     if-eqz v3, :cond_34
 
-    .line 574
+    .line 577
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v3
@@ -1915,31 +1915,31 @@
 
     if-eqz v3, :cond_34
 
-    .line 575
+    .line 578
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v1
 
     check-cast v1, Lcom/samsung/privilege/activity/CampaignListActivity;
 
-    .line 576
+    .line 579
     .local v1, "ra":Lcom/samsung/privilege/activity/CampaignListActivity;
     invoke-virtual {v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->gotoMenuHistory()V
     :try_end_34
     .catch Ljava/lang/Exception; {:try_start_f .. :try_end_34} :catch_35
 
-    .line 585
+    .line 588
     .end local v1    # "ra":Lcom/samsung/privilege/activity/CampaignListActivity;
     .end local v2    # "redirect":Ljava/lang/String;
     :cond_34
     :goto_34
     return-void
 
-    .line 579
+    .line 582
     :catch_35
     move-exception v0
 
-    .line 580
+    .line 583
     .local v0, "e":Ljava/lang/Exception;
     const-string v3, "buzzebees.marketlist.fragment"
 
@@ -2050,7 +2050,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f080031
+    const v6, 0x7f070031
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2140,7 +2140,7 @@
     .line 223
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
-    const v6, 0x7f02039f
+    const v6, 0x7f0203a7
 
     invoke-virtual {v5, v6}, Lcom/bitmapfun/util/ImageFetcher;->setLoadingImage(I)V
 
@@ -2227,13 +2227,32 @@
     iput-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mCategoryName:Ljava/lang/String;
 
     .line 247
+    iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    const-string v6, "Category-"
+
+    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
+
+    .line 249
     invoke-virtual {p1}, Landroid/view/LayoutInflater;->getContext()Landroid/content/Context;
 
     move-result-object v4
 
     sput-object v4, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gContext:Landroid/content/Context;
 
-    .line 248
+    .line 250
     const v4, 0x7f0300b3
 
     const/4 v5, 0x0
@@ -2242,7 +2261,7 @@
 
     move-result-object v3
 
-    .line 250
+    .line 252
     .local v3, "view":Landroid/view/View;
     const/high16 v4, 0x7f420000
 
@@ -2254,7 +2273,7 @@
 
     iput-object v4, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gListAward:Lcom/samsung/privilege/control/PullToRefreshListView;
 
-    .line 251
+    .line 253
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v4
@@ -2263,7 +2282,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f030122
+    const v5, 0x7f030124
 
     const/4 v6, 0x0
 
@@ -2273,7 +2292,7 @@
 
     iput-object v4, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->footerListView:Landroid/view/View;
 
-    .line 252
+    .line 254
     const v4, 0x7f420001
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -2284,7 +2303,7 @@
 
     iput-object v4, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gPbLoadingMap:Landroid/widget/ProgressBar;
 
-    .line 253
+    .line 255
     const v4, 0x7f420002
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -2295,7 +2314,7 @@
 
     iput-object v4, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gTvLoadingMap:Landroid/widget/TextView;
 
-    .line 255
+    .line 257
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gListAward:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     new-instance v5, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$1;
@@ -2304,7 +2323,7 @@
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/control/PullToRefreshListView;->setOnRefreshListener(Lcom/samsung/privilege/control/PullToRefreshListView$OnRefreshListener;)V
 
-    .line 270
+    .line 272
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gListAward:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     new-instance v5, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$2;
@@ -2313,7 +2332,7 @@
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/control/PullToRefreshListView;->setOnScrollListener(Landroid/widget/AbsListView$OnScrollListener;)V
 
-    .line 310
+    .line 312
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gListAward:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     new-instance v5, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$3;
@@ -2322,20 +2341,20 @@
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/control/PullToRefreshListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 362
+    .line 365
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gListAward:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     new-instance v5, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$4;
 
     invoke-direct {v5, p0, p3}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$4;-><init>(Lcom/samsung/privilege/activity/CampaignListPullToRefresh;Landroid/os/Bundle;)V
 
-    .line 402
+    .line 405
     const-wide/16 v6, 0x64
 
-    .line 362
+    .line 365
     invoke-virtual {v4, v5, v6, v7}, Lcom/samsung/privilege/control/PullToRefreshListView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 404
+    .line 407
     return-object v3
 .end method
 
@@ -2343,15 +2362,15 @@
     .registers 2
 
     .prologue
-    .line 479
+    .line 482
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onDestroy()V
 
-    .line 484
+    .line 487
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
     invoke-virtual {v0}, Lcom/bitmapfun/util/ImageFetcher;->closeCache()V
 
-    .line 485
+    .line 488
     return-void
 .end method
 
@@ -2359,10 +2378,10 @@
     .registers 1
 
     .prologue
-    .line 471
+    .line 474
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onDestroyView()V
 
-    .line 475
+    .line 478
     return-void
 .end method
 
@@ -2370,10 +2389,10 @@
     .registers 1
 
     .prologue
-    .line 489
+    .line 492
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onDetach()V
 
-    .line 493
+    .line 496
     return-void
 .end method
 
@@ -2381,25 +2400,25 @@
     .registers 3
 
     .prologue
-    .line 451
+    .line 454
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onPause()V
 
-    .line 455
+    .line 458
     invoke-static {}, Lcom/facebook/android/PostEvents;->clearPostListener()V
 
-    .line 457
+    .line 460
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/bitmapfun/util/ImageFetcher;->setExitTasksEarly(Z)V
 
-    .line 458
+    .line 461
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
     invoke-virtual {v0}, Lcom/bitmapfun/util/ImageFetcher;->flushCache()V
 
-    .line 459
+    .line 462
     return-void
 .end method
 
@@ -2407,17 +2426,17 @@
     .registers 3
 
     .prologue
-    .line 440
+    .line 443
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onResume()V
 
-    .line 445
+    .line 448
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/bitmapfun/util/ImageFetcher;->setExitTasksEarly(Z)V
 
-    .line 447
+    .line 450
     return-void
 .end method
 
@@ -2428,52 +2447,52 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 497
+    .line 500
     invoke-super {p0, p1}, Landroid/support/v4/app/Fragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 507
+    .line 510
     const-string v2, "onSaveInstanceState"
 
     const/4 v3, 0x1
 
     invoke-virtual {p1, v2, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 509
+    .line 512
     const-string v2, "gCampaignViews"
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCampaignViews:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v2, v3}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
 
-    .line 510
+    .line 513
     const-string v2, "gCurrentFilterCategory"
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gCurrentFilterCategory:Ljava/lang/String;
 
     invoke-virtual {p1, v2, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 511
+    .line 514
     const-string v2, "gIsLoadingMore"
 
     iget-boolean v3, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gIsLoadingMore:Z
 
     invoke-virtual {p1, v2, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 512
+    .line 515
     const-string v2, "gIsHasData"
 
     iget-boolean v3, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gIsHasData:Z
 
     invoke-virtual {p1, v2, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 513
+    .line 516
     const-string v2, "gSumListPerPage"
 
     iget v3, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gSumListPerPage:I
 
     invoke-virtual {p1, v2, v3}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 517
+    .line 520
     :try_start_2d
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gListAward:Lcom/samsung/privilege/control/PullToRefreshListView;
 
@@ -2483,14 +2502,14 @@
 
     iput-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mListState:Landroid/os/Parcelable;
 
-    .line 518
+    .line 521
     const-string v2, "listState"
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mListState:Landroid/os/Parcelable;
 
     invoke-virtual {p1, v2, v3}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 521
+    .line 524
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gListAward:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     invoke-virtual {v2}, Lcom/samsung/privilege/control/PullToRefreshListView;->getFirstVisiblePosition()I
@@ -2499,14 +2518,14 @@
 
     iput v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mListPosition:I
 
-    .line 522
+    .line 525
     const-string v2, "listPosition"
 
     iget v3, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mListPosition:I
 
     invoke-virtual {p1, v2, v3}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 525
+    .line 528
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->gListAward:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     const/4 v3, 0x0
@@ -2515,26 +2534,26 @@
 
     move-result-object v0
 
-    .line 526
+    .line 529
     .local v0, "itemView":Landroid/view/View;
     if-nez v0, :cond_5e
 
     :goto_54
     iput v1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mItemPosition:I
 
-    .line 527
+    .line 530
     const-string v1, "itemPosition"
 
     iget v2, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mItemPosition:I
 
     invoke-virtual {p1, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 531
+    .line 534
     .end local v0    # "itemView":Landroid/view/View;
     :goto_5d
     return-void
 
-    .line 526
+    .line 529
     .restart local v0    # "itemView":Landroid/view/View;
     :cond_5e
     invoke-virtual {v0}, Landroid/view/View;->getTop()I
@@ -2545,7 +2564,7 @@
 
     goto :goto_54
 
-    .line 528
+    .line 531
     .end local v0    # "itemView":Landroid/view/View;
     :catch_63
     move-exception v1
@@ -2557,10 +2576,10 @@
     .registers 1
 
     .prologue
-    .line 432
+    .line 435
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onStart()V
 
-    .line 436
+    .line 439
     return-void
 .end method
 
@@ -2568,10 +2587,10 @@
     .registers 1
 
     .prologue
-    .line 463
+    .line 466
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onStop()V
 
-    .line 467
+    .line 470
     return-void
 .end method
 
@@ -2580,7 +2599,7 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 809
+    .line 812
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$7;
@@ -2589,6 +2608,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 816
+    .line 819
     return-void
 .end method

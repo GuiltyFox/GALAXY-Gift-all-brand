@@ -74,7 +74,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    const-wide/16 v7, 0x1f4
+    const-wide/16 v8, 0x1f4
 
     const/4 v6, 0x4
 
@@ -128,7 +128,7 @@
     invoke-virtual {v12, v0}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
     .line 253
-    invoke-virtual {v12, v7, v8}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v12, v8, v9}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 254
     iget-object v0, p0, Lcom/samsung/privilege/util/AnimationPopup$3;->val$pImagePopup1:Landroid/widget/ImageView;
@@ -183,7 +183,7 @@
     invoke-virtual {v11, v3}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
     .line 288
-    invoke-virtual {v11, v7, v8}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v11, v8, v9}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 289
     iget-object v0, p0, Lcom/samsung/privilege/util/AnimationPopup$3;->val$pImagePopup2:Landroid/widget/ImageView;

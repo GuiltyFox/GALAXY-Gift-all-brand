@@ -755,7 +755,7 @@
 
     .line 641
     .local v17, "stringData":Ljava/lang/String;
-    const v3, 0x7f070364
+    const v3, 0x7f0c0373
 
     move-object/from16 v0, p0
 
@@ -1235,7 +1235,7 @@
     iput-boolean v0, v1, Lcom/samsung/privilege/activity/RequestHelpPostActivity;->doPosting:Z
 
     .line 498
-    const v19, 0x7f070364
+    const v19, 0x7f0c0373
 
     move-object/from16 v0, p0
 
@@ -1450,7 +1450,7 @@
     if-nez v19, :cond_fd
 
     .line 513
-    const v19, 0x7f0a0106
+    const v19, 0x7f090106
 
     move-object/from16 v0, p0
 
@@ -1652,7 +1652,7 @@
     .line 547
     const-string v19, ""
 
-    const v20, 0x7f0a018d
+    const v20, 0x7f09018d
 
     move-object/from16 v0, p0
 
@@ -1823,7 +1823,7 @@
     .end local v9    # "intent":Landroid/content/Intent;
     .end local v17    # "uri":Landroid/net/Uri;
     :cond_231
-    const v19, 0x7f0a0107
+    const v19, 0x7f090107
 
     move-object/from16 v0, p0
 
@@ -1951,7 +1951,7 @@
     if-nez v7, :cond_4b
 
     .line 431
-    const v0, 0x7f0a031d
+    const v0, 0x7f090324
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RequestHelpPostActivity;->getString(I)Ljava/lang/String;
 
@@ -2008,7 +2008,7 @@
     iput-object v7, v0, Lcom/samsung/privilege/PostData;->gBitmapImage:Landroid/graphics/Bitmap;
 
     .line 442
-    const v0, 0x7f070363
+    const v0, 0x7f0c0372
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RequestHelpPostActivity;->findViewById(I)Landroid/view/View;
 
@@ -2087,7 +2087,7 @@
     iput-object v6, v0, Lcom/samsung/privilege/PostData;->gBitmapImage:Landroid/graphics/Bitmap;
 
     .line 462
-    const v0, 0x7f070363
+    const v0, 0x7f0c0372
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RequestHelpPostActivity;->findViewById(I)Landroid/view/View;
 
@@ -2464,7 +2464,7 @@
     .line 116
     iget-object v12, p0, Lcom/samsung/privilege/activity/RequestHelpPostActivity;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
-    const v13, 0x7f02039f
+    const v13, 0x7f0203a7
 
     invoke-virtual {v12, v13}, Lcom/bitmapfun/util/ImageFetcher;->setLoadingImage(I)V
 
@@ -2485,12 +2485,12 @@
     invoke-virtual {v12, v13}, Lcom/bitmapfun/util/ImageFetcher;->setImageFadeIn(Z)V
 
     .line 121
-    const v12, 0x7f030113
+    const v12, 0x7f030115
 
     invoke-virtual {p0, v12}, Lcom/samsung/privilege/activity/RequestHelpPostActivity;->setContentView(I)V
 
     .line 123
-    const v12, 0x7f070031
+    const v12, 0x7f0c0031
 
     invoke-virtual {p0, v12}, Lcom/samsung/privilege/activity/RequestHelpPostActivity;->findViewById(I)Landroid/view/View;
 
@@ -2517,13 +2517,13 @@
     if-eqz v12, :cond_156
 
     .line 125
-    const v12, 0x7f0202b6
+    const v12, 0x7f0202b8
 
     invoke-virtual {v4, v12}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 134
     :goto_a2
-    const v12, 0x7f07005a
+    const v12, 0x7f0c005a
 
     invoke-virtual {p0, v12}, Lcom/samsung/privilege/activity/RequestHelpPostActivity;->findViewById(I)Landroid/view/View;
 
@@ -2544,7 +2544,7 @@
     if-eqz v12, :cond_18e
 
     .line 136
-    const v12, 0x7f0202ba
+    const v12, 0x7f0202bc
 
     invoke-virtual {v5, v12}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2576,7 +2576,7 @@
     iput-object v12, p0, Lcom/samsung/privilege/activity/RequestHelpPostActivity;->gFont:Landroid/graphics/Typeface;
 
     .line 144
-    const v12, 0x7f07005b
+    const v12, 0x7f0c005b
 
     invoke-virtual {p0, v12}, Lcom/samsung/privilege/activity/RequestHelpPostActivity;->findViewById(I)Landroid/view/View;
 
@@ -2586,7 +2586,7 @@
 
     .line 145
     .local v9, "tvHeaderCaption":Landroid/widget/TextView;
-    const v12, 0x7f070364
+    const v12, 0x7f0c0373
 
     invoke-virtual {p0, v12}, Lcom/samsung/privilege/activity/RequestHelpPostActivity;->findViewById(I)Landroid/view/View;
 
@@ -2596,7 +2596,7 @@
 
     .line 146
     .local v2, "etTextPost":Landroid/widget/EditText;
-    const v12, 0x7f070366
+    const v12, 0x7f0c0375
 
     invoke-virtual {p0, v12}, Lcom/samsung/privilege/activity/RequestHelpPostActivity;->findViewById(I)Landroid/view/View;
 
@@ -2758,7 +2758,7 @@
     if-eqz v12, :cond_16e
 
     .line 127
-    const v12, 0x7f0202b5
+    const v12, 0x7f0202b7
 
     invoke-virtual {v4, v12}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2783,7 +2783,7 @@
     if-eqz v12, :cond_186
 
     .line 129
-    const v12, 0x7f0202b7
+    const v12, 0x7f0202b9
 
     invoke-virtual {v4, v12}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2791,7 +2791,7 @@
 
     .line 131
     :cond_186
-    const v12, 0x7f0202b8
+    const v12, 0x7f0202ba
 
     invoke-virtual {v4, v12}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2800,7 +2800,7 @@
     .line 138
     .restart local v5    # "imgLogo":Landroid/widget/ImageView;
     :cond_18e
-    const v12, 0x7f0202b9
+    const v12, 0x7f0202bb
 
     invoke-virtual {v5, v12}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2836,7 +2836,7 @@
     invoke-interface {p1}, Landroid/view/ContextMenu;->clear()V
 
     .line 298
-    const v0, 0x7f0a031c
+    const v0, 0x7f090323
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RequestHelpPostActivity;->getString(I)Ljava/lang/String;
 
@@ -2845,7 +2845,7 @@
     invoke-interface {p1, v0}, Landroid/view/ContextMenu;->setHeaderTitle(Ljava/lang/CharSequence;)Landroid/view/ContextMenu;
 
     .line 299
-    const v0, 0x7f0a0102
+    const v0, 0x7f090102
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RequestHelpPostActivity;->getString(I)Ljava/lang/String;
 
@@ -2854,7 +2854,7 @@
     invoke-interface {p1, v1, v2, v1, v0}, Landroid/view/ContextMenu;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
 
     .line 300
-    const v0, 0x7f0a0103
+    const v0, 0x7f090103
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RequestHelpPostActivity;->getString(I)Ljava/lang/String;
 
@@ -2874,7 +2874,7 @@
     if-eqz v0, :cond_3a
 
     .line 303
-    const v0, 0x7f0a0104
+    const v0, 0x7f090104
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RequestHelpPostActivity;->getString(I)Ljava/lang/String;
 

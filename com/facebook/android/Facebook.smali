@@ -144,14 +144,14 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 6
+    .registers 7
     .param p1, "appId"    # Ljava/lang/String;
     .param p2, "graphBaseUrl"    # Ljava/lang/String;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .prologue
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
     .line 120
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -169,10 +169,10 @@
     iput-object v0, p0, Lcom/facebook/android/Facebook;->accessToken:Ljava/lang/String;
 
     .line 95
-    iput-wide v1, p0, Lcom/facebook/android/Facebook;->accessExpiresMillisecondsAfterEpoch:J
+    iput-wide v2, p0, Lcom/facebook/android/Facebook;->accessExpiresMillisecondsAfterEpoch:J
 
     .line 96
-    iput-wide v1, p0, Lcom/facebook/android/Facebook;->lastAccessUpdateMillisecondsAfterEpoch:J
+    iput-wide v2, p0, Lcom/facebook/android/Facebook;->lastAccessUpdateMillisecondsAfterEpoch:J
 
     .line 121
     if-nez p1, :cond_1d
@@ -240,7 +240,7 @@
 .end method
 
 .method static synthetic access$10(Lcom/facebook/android/Facebook;J)V
-    .registers 3
+    .registers 4
 
     .prologue
     .line 96
@@ -312,7 +312,7 @@
 .end method
 
 .method static synthetic access$7(Lcom/facebook/android/Facebook;J)V
-    .registers 3
+    .registers 4
 
     .prologue
     .line 95
@@ -1325,7 +1325,7 @@
 .end method
 
 .method public getAccessExpires()J
-    .registers 4
+    .registers 5
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -1346,14 +1346,14 @@
 
     invoke-virtual {v1}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 1019
     :goto_e
-    return-wide v1
+    return-wide v2
 
     :cond_f
-    iget-wide v1, p0, Lcom/facebook/android/Facebook;->accessExpiresMillisecondsAfterEpoch:J
+    iget-wide v2, p0, Lcom/facebook/android/Facebook;->accessExpiresMillisecondsAfterEpoch:J
 
     goto :goto_e
 .end method
@@ -1772,7 +1772,7 @@
 .end method
 
 .method logoutImpl(Landroid/content/Context;)Ljava/lang/String;
-    .registers 11
+    .registers 12
     .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -1803,16 +1803,16 @@
     .line 659
     invoke-virtual {p0, v0}, Lcom/facebook/android/Facebook;->request(Landroid/os/Bundle;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
     .line 661
-    .local v3, "response":Ljava/lang/String;
+    .local v1, "response":Ljava/lang/String;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 662
-    .local v1, "currentTimeMillis":J
+    .local v2, "currentTimeMillis":J
     const/4 v4, 0x0
 
     .line 664
@@ -1836,12 +1836,12 @@
     iput-object v5, p0, Lcom/facebook/android/Facebook;->accessToken:Ljava/lang/String;
 
     .line 669
-    const-wide/16 v7, 0x0
+    const-wide/16 v8, 0x0
 
-    iput-wide v7, p0, Lcom/facebook/android/Facebook;->accessExpiresMillisecondsAfterEpoch:J
+    iput-wide v8, p0, Lcom/facebook/android/Facebook;->accessExpiresMillisecondsAfterEpoch:J
 
     .line 670
-    iput-wide v1, p0, Lcom/facebook/android/Facebook;->lastAccessUpdateMillisecondsAfterEpoch:J
+    iput-wide v2, p0, Lcom/facebook/android/Facebook;->lastAccessUpdateMillisecondsAfterEpoch:J
 
     .line 671
     const/4 v5, 0x0
@@ -1861,7 +1861,7 @@
 
     .line 678
     :cond_34
-    return-object v3
+    return-object v1
 
     .line 664
     :catchall_35
@@ -2075,7 +2075,7 @@
 .end method
 
 .method public setAccessExpires(J)V
-    .registers 7
+    .registers 8
     .param p1, "timestampInMsec"    # J
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation

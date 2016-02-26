@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$2;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
 
-    .line 403
+    .line 405
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,7 +49,7 @@
 
     const/4 v5, 0x0
 
-    .line 405
+    .line 407
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$2;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
 
     # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity;->gIsSelectStartDateTime:Z
@@ -59,11 +59,11 @@
 
     if-eqz v0, :cond_60
 
-    .line 406
+    .line 408
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$2;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
 
-    # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity;->gTvBirthday:Landroid/widget/EditText;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileSettingActivity;->access$2(Lcom/samsung/privilege/activity/ProfileSettingActivity;)Landroid/widget/EditText;
+    # getter for: Lcom/samsung/privilege/activity/ProfileSettingActivity;->gTvBirthday:Landroid/widget/TextView;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileSettingActivity;->access$2(Lcom/samsung/privilege/activity/ProfileSettingActivity;)Landroid/widget/TextView;
 
     move-result-object v0
 
@@ -143,9 +143,9 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 408
+    .line 410
     :cond_60
     return-void
 .end method

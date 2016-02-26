@@ -26,7 +26,7 @@
     .registers 2
 
     .prologue
-    .line 500
+    .line 502
     iput-object p1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$PTROnGlobalLayoutListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
     .registers 3
 
     .prologue
-    .line 500
+    .line 502
     invoke-direct {p0, p1}, Lcom/samsung/privilege/control/PullToRefreshListView$PTROnGlobalLayoutListener;-><init>(Lcom/samsung/privilege/control/PullToRefreshListView;)V
 
     return-void
@@ -50,7 +50,7 @@
     .registers 4
 
     .prologue
-    .line 504
+    .line 506
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$PTROnGlobalLayoutListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     # getter for: Lcom/samsung/privilege/control/PullToRefreshListView;->header:Landroid/widget/RelativeLayout;
@@ -62,14 +62,14 @@
 
     move-result v0
 
-    .line 506
+    .line 508
     .local v0, "initialHeaderHeight":I
     if-lez v0, :cond_2e
 
-    .line 507
+    .line 509
     invoke-static {v0}, Lcom/samsung/privilege/control/PullToRefreshListView;->access$9(I)V
 
-    .line 509
+    .line 511
     # getter for: Lcom/samsung/privilege/control/PullToRefreshListView;->measuredHeaderHeight:I
     invoke-static {}, Lcom/samsung/privilege/control/PullToRefreshListView;->access$10()I
 
@@ -88,7 +88,7 @@
 
     if-eq v1, v2, :cond_2e
 
-    .line 510
+    .line 512
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$PTROnGlobalLayoutListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     # getter for: Lcom/samsung/privilege/control/PullToRefreshListView;->measuredHeaderHeight:I
@@ -101,12 +101,12 @@
     # invokes: Lcom/samsung/privilege/control/PullToRefreshListView;->setHeaderPadding(I)V
     invoke-static {v1, v2}, Lcom/samsung/privilege/control/PullToRefreshListView;->access$4(Lcom/samsung/privilege/control/PullToRefreshListView;I)V
 
-    .line 511
+    .line 513
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$PTROnGlobalLayoutListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
     invoke-virtual {v1}, Lcom/samsung/privilege/control/PullToRefreshListView;->requestLayout()V
 
-    .line 515
+    .line 517
     :cond_2e
     iget-object v1, p0, Lcom/samsung/privilege/control/PullToRefreshListView$PTROnGlobalLayoutListener;->this$0:Lcom/samsung/privilege/control/PullToRefreshListView;
 
@@ -116,6 +116,6 @@
 
     invoke-virtual {v1, p0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 516
+    .line 518
     return-void
 .end method

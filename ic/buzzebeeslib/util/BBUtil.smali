@@ -87,412 +87,464 @@
 .end method
 
 .method public static CDateToTime(JLandroid/content/Context;)Ljava/lang/String;
-    .registers 21
+    .registers 25
     .param p0, "epochTime"    # J
     .param p2, "appContext"    # Landroid/content/Context;
 
     .prologue
     .line 333
-    new-instance v7, Ljava/util/Date;
+    new-instance v10, Ljava/util/Date;
 
-    const-wide/16 v14, 0x3e8
+    const-wide/16 v18, 0x3e8
 
-    mul-long v14, v14, p0
+    mul-long v18, v18, p0
 
-    invoke-direct {v7, v14, v15}, Ljava/util/Date;-><init>(J)V
+    move-wide/from16 v0, v18
+
+    invoke-direct {v10, v0, v1}, Ljava/util/Date;-><init>(J)V
 
     .line 335
-    .local v7, "nTime":Ljava/util/Date;
+    .local v10, "nTime":Ljava/util/Date;
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
-    move-result-object v1
+    move-result-object v4
 
     .line 336
-    .local v1, "calendar":Ljava/util/Calendar;
-    invoke-virtual {v1}, Ljava/util/Calendar;->getTimeInMillis()J
+    .local v4, "calendar":Ljava/util/Calendar;
+    invoke-virtual {v4}, Ljava/util/Calendar;->getTimeInMillis()J
 
-    move-result-wide v2
+    move-result-wide v6
 
     .line 337
-    .local v2, "current":J
-    invoke-virtual {v7}, Ljava/util/Date;->getTime()J
+    .local v6, "current":J
+    invoke-virtual {v10}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v12
+    move-result-wide v16
 
     .line 338
-    .local v12, "update":J
-    sub-long v14, v2, v12
+    .local v16, "update":J
+    sub-long v18, v6, v16
 
-    invoke-static {v14, v15}, Ljava/lang/Math;->abs(J)J
+    invoke-static/range {v18 .. v19}, Ljava/lang/Math;->abs(J)J
 
-    move-result-wide v10
+    move-result-wide v14
 
     .line 340
-    .local v10, "timeago":J
-    const-wide/32 v14, 0x5265c00
+    .local v14, "timeago":J
+    const-wide/32 v18, 0x5265c00
 
-    div-long v14, v10, v14
+    div-long v18, v14, v18
 
-    long-to-int v6, v14
+    move-wide/from16 v0, v18
+
+    long-to-int v9, v0
 
     .line 341
-    .local v6, "int_diff_days_now_and_parameter":I
-    const/4 v14, 0x7
+    .local v9, "int_diff_days_now_and_parameter":I
+    const/4 v13, 0x7
 
-    if-lt v6, v14, :cond_39
+    if-lt v9, v13, :cond_45
 
     .line 342
-    new-instance v14, Ljava/text/SimpleDateFormat;
+    new-instance v13, Ljava/text/SimpleDateFormat;
 
-    const-string v15, "yyyy-MM-dd HH:mm"
+    const-string v18, "yyyy-MM-dd HH:mm"
 
-    invoke-direct {v14, v15}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+    move-object/from16 v0, v18
 
-    new-instance v15, Ljava/util/Date;
+    invoke-direct {v13, v0}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    const-wide/16 v16, 0x3e8
+    new-instance v18, Ljava/util/Date;
 
-    mul-long v16, v16, p0
+    const-wide/16 v20, 0x3e8
 
-    invoke-direct/range {v15 .. v17}, Ljava/util/Date;-><init>(J)V
+    mul-long v20, v20, p0
 
-    invoke-virtual {v14, v15}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    move-object/from16 v0, v18
 
-    move-result-object v14
+    move-wide/from16 v1, v20
+
+    invoke-direct {v0, v1, v2}, Ljava/util/Date;-><init>(J)V
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v13, v0}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v13
 
     .line 388
-    :goto_38
-    return-object v14
+    :goto_44
+    return-object v13
 
     .line 343
-    :cond_39
-    const/4 v14, 0x2
+    :cond_45
+    const/4 v13, 0x2
 
-    if-lt v6, v14, :cond_5f
+    if-lt v9, v13, :cond_6d
 
     .line 355
-    const/4 v14, 0x1
+    const/4 v13, 0x1
 
-    new-array v5, v14, [Ljava/lang/String;
+    new-array v8, v13, [Ljava/lang/String;
 
-    const/4 v14, 0x0
+    const/4 v13, 0x0
 
-    const-string v15, "EEEE \'at\' HH:mm"
+    const-string v18, "EEEE \'at\' HH:mm"
 
-    aput-object v15, v5, v14
+    aput-object v18, v8, v13
 
     .line 356
-    .local v5, "formats":[Ljava/lang/String;
-    array-length v14, v5
+    .local v8, "formats":[Ljava/lang/String;
+    array-length v13, v8
 
-    if-eqz v14, :cond_13f
+    if-eqz v13, :cond_174
 
-    const/4 v14, 0x0
+    const/4 v13, 0x0
 
-    aget-object v4, v5, v14
+    aget-object v5, v8, v13
 
     .line 357
-    .local v4, "format":Ljava/lang/String;
-    new-instance v8, Ljava/text/SimpleDateFormat;
+    .local v5, "format":Ljava/lang/String;
+    new-instance v11, Ljava/text/SimpleDateFormat;
 
-    sget-object v14, Ljava/util/Locale;->US:Ljava/util/Locale;
+    sget-object v13, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    invoke-direct {v8, v4, v14}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+    invoke-direct {v11, v5, v13}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
     .line 359
-    .local v8, "sdf":Ljava/text/SimpleDateFormat;
-    new-instance v14, Ljava/util/Date;
+    .local v11, "sdf":Ljava/text/SimpleDateFormat;
+    new-instance v13, Ljava/util/Date;
 
-    const-wide/16 v15, 0x3e8
+    const-wide/16 v18, 0x3e8
 
-    mul-long v15, v15, p0
+    mul-long v18, v18, p0
 
-    invoke-direct/range {v14 .. v16}, Ljava/util/Date;-><init>(J)V
+    move-wide/from16 v0, v18
 
-    invoke-virtual {v8, v14}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-direct {v13, v0, v1}, Ljava/util/Date;-><init>(J)V
 
-    move-result-object v14
+    invoke-virtual {v11, v13}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    goto :goto_38
+    move-result-object v13
+
+    goto :goto_44
 
     .line 361
-    .end local v4    # "format":Ljava/lang/String;
-    .end local v5    # "formats":[Ljava/lang/String;
-    .end local v8    # "sdf":Ljava/text/SimpleDateFormat;
-    :cond_5f
-    const/4 v14, 0x1
+    .end local v5    # "format":Ljava/lang/String;
+    .end local v8    # "formats":[Ljava/lang/String;
+    .end local v11    # "sdf":Ljava/text/SimpleDateFormat;
+    :cond_6d
+    const/4 v13, 0x1
 
-    if-lt v6, v14, :cond_77
+    if-lt v9, v13, :cond_8d
 
     .line 362
-    new-instance v14, Ljava/text/SimpleDateFormat;
+    new-instance v13, Ljava/text/SimpleDateFormat;
 
-    const-string v15, "\'yesterday\' \'at\' HH:mm"
+    const-string v18, "\'yesterday\' \'at\' HH:mm"
 
-    invoke-direct {v14, v15}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+    move-object/from16 v0, v18
 
-    new-instance v15, Ljava/util/Date;
+    invoke-direct {v13, v0}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    const-wide/16 v16, 0x3e8
+    new-instance v18, Ljava/util/Date;
 
-    mul-long v16, v16, p0
+    const-wide/16 v20, 0x3e8
 
-    invoke-direct/range {v15 .. v17}, Ljava/util/Date;-><init>(J)V
+    mul-long v20, v20, p0
 
-    invoke-virtual {v14, v15}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    move-object/from16 v0, v18
 
-    move-result-object v14
+    move-wide/from16 v1, v20
 
-    goto :goto_38
+    invoke-direct {v0, v1, v2}, Ljava/util/Date;-><init>(J)V
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v13, v0}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v13
+
+    goto :goto_44
 
     .line 364
-    :cond_77
-    const-wide/32 v14, 0xea60
+    :cond_8d
+    const-wide/32 v18, 0xea60
 
-    cmp-long v14, v10, v14
+    cmp-long v13, v14, v18
 
-    if-gtz v14, :cond_b3
+    if-gtz v13, :cond_d4
 
     .line 365
-    const-wide/16 v14, 0x3e8
+    const-wide/16 v18, 0x3e8
 
-    div-long v14, v10, v14
+    div-long v18, v14, v18
 
-    long-to-int v9, v14
+    move-wide/from16 v0, v18
+
+    long-to-int v12, v0
 
     .line 366
-    .local v9, "time":I
-    const/4 v14, 0x1
+    .local v12, "time":I
+    const/4 v13, 0x1
 
-    if-ne v9, v14, :cond_8f
+    if-ne v12, v13, :cond_a7
 
     .line 367
-    sget v14, Lic/buzzebeeslib/R$string;->facebook_lable_time_1:I
+    sget v13, Lic/buzzebeeslib/R$string;->facebook_lable_time_1:I
 
     move-object/from16 v0, p2
 
-    invoke-virtual {v0, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v13
 
-    goto :goto_38
+    goto :goto_44
 
     .line 369
-    :cond_8f
-    new-instance v14, Ljava/lang/StringBuilder;
+    :cond_a7
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    invoke-static {v9}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    invoke-static {v12}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v18
 
-    invoke-static {v15}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v18 .. v18}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v18
 
-    invoke-direct {v14, v15}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-object/from16 v0, v18
 
-    const-string v15, " "
+    invoke-direct {v13, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v18, " "
 
-    move-result-object v14
+    move-object/from16 v0, v18
 
-    sget v15, Lic/buzzebeeslib/R$string;->facebook_lable_time_2:I
+    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    sget v18, Lic/buzzebeeslib/R$string;->facebook_lable_time_2:I
 
     move-object/from16 v0, p2
 
-    invoke-virtual {v0, v15}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    move/from16 v1, v18
 
-    move-result-object v15
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v18
 
-    move-result-object v14
+    move-object/from16 v0, v18
 
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v14
+    move-result-object v13
 
-    goto :goto_38
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    goto/16 :goto_44
 
     .line 371
-    .end local v9    # "time":I
-    :cond_b3
-    const-wide/32 v14, 0x36ee80
+    .end local v12    # "time":I
+    :cond_d4
+    const-wide/32 v18, 0x36ee80
 
-    cmp-long v14, v10, v14
+    cmp-long v13, v14, v18
 
-    if-gtz v14, :cond_f9
+    if-gtz v13, :cond_124
 
-    const-wide/32 v14, 0xea60
+    const-wide/32 v18, 0xea60
 
-    cmp-long v14, v10, v14
+    cmp-long v13, v14, v18
 
-    if-ltz v14, :cond_f9
+    if-ltz v13, :cond_124
 
     .line 372
-    const-wide/32 v14, 0xea60
+    const-wide/32 v18, 0xea60
 
-    div-long v14, v10, v14
+    div-long v18, v14, v18
 
-    long-to-int v9, v14
+    move-wide/from16 v0, v18
+
+    long-to-int v12, v0
 
     .line 373
-    .restart local v9    # "time":I
-    const/4 v14, 0x1
+    .restart local v12    # "time":I
+    const/4 v13, 0x1
 
-    if-ne v9, v14, :cond_d4
+    if-ne v12, v13, :cond_f7
 
     .line 374
-    sget v14, Lic/buzzebeeslib/R$string;->facebook_lable_time_3:I
+    sget v13, Lic/buzzebeeslib/R$string;->facebook_lable_time_3:I
 
     move-object/from16 v0, p2
 
-    invoke-virtual {v0, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v13
 
-    goto/16 :goto_38
+    goto/16 :goto_44
 
     .line 376
-    :cond_d4
-    new-instance v14, Ljava/lang/StringBuilder;
+    :cond_f7
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    invoke-static {v9}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    invoke-static {v12}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v18
 
-    invoke-static {v15}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v18 .. v18}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v18
 
-    invoke-direct {v14, v15}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-object/from16 v0, v18
 
-    const-string v15, " "
+    invoke-direct {v13, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v18, " "
 
-    move-result-object v14
+    move-object/from16 v0, v18
 
-    sget v15, Lic/buzzebeeslib/R$string;->facebook_lable_time_4:I
+    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    sget v18, Lic/buzzebeeslib/R$string;->facebook_lable_time_4:I
 
     move-object/from16 v0, p2
 
-    invoke-virtual {v0, v15}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    move/from16 v1, v18
 
-    move-result-object v15
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v18
 
-    move-result-object v14
+    move-object/from16 v0, v18
 
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v14
+    move-result-object v13
 
-    goto/16 :goto_38
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    goto/16 :goto_44
 
     .line 378
-    .end local v9    # "time":I
-    :cond_f9
-    const-wide/32 v14, 0x5265c00
+    .end local v12    # "time":I
+    :cond_124
+    const-wide/32 v18, 0x5265c00
 
-    cmp-long v14, v10, v14
+    cmp-long v13, v14, v18
 
-    if-gtz v14, :cond_13f
+    if-gtz v13, :cond_174
 
-    const-wide/32 v14, 0x36ee80
+    const-wide/32 v18, 0x36ee80
 
-    cmp-long v14, v10, v14
+    cmp-long v13, v14, v18
 
-    if-ltz v14, :cond_13f
+    if-ltz v13, :cond_174
 
     .line 379
-    const-wide/32 v14, 0x36ee80
+    const-wide/32 v18, 0x36ee80
 
-    div-long v14, v10, v14
+    div-long v18, v14, v18
 
-    long-to-int v9, v14
+    move-wide/from16 v0, v18
+
+    long-to-int v12, v0
 
     .line 380
-    .restart local v9    # "time":I
-    const/4 v14, 0x1
+    .restart local v12    # "time":I
+    const/4 v13, 0x1
 
-    if-ne v9, v14, :cond_11a
+    if-ne v12, v13, :cond_147
 
     .line 381
-    sget v14, Lic/buzzebeeslib/R$string;->facebook_lable_time_5:I
+    sget v13, Lic/buzzebeeslib/R$string;->facebook_lable_time_5:I
 
     move-object/from16 v0, p2
 
-    invoke-virtual {v0, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v13
 
-    goto/16 :goto_38
+    goto/16 :goto_44
 
     .line 383
-    :cond_11a
-    new-instance v14, Ljava/lang/StringBuilder;
+    :cond_147
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    invoke-static {v9}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    invoke-static {v12}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v18
 
-    invoke-static {v15}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v18 .. v18}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v18
 
-    invoke-direct {v14, v15}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-object/from16 v0, v18
 
-    const-string v15, " "
+    invoke-direct {v13, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v18, " "
 
-    move-result-object v14
+    move-object/from16 v0, v18
 
-    sget v15, Lic/buzzebeeslib/R$string;->facebook_lable_time_6:I
+    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    sget v18, Lic/buzzebeeslib/R$string;->facebook_lable_time_6:I
 
     move-object/from16 v0, p2
 
-    invoke-virtual {v0, v15}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    move/from16 v1, v18
 
-    move-result-object v15
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v18
 
-    move-result-object v14
+    move-object/from16 v0, v18
 
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v14
+    move-result-object v13
 
-    goto/16 :goto_38
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    goto/16 :goto_44
 
     .line 388
-    .end local v9    # "time":I
-    :cond_13f
-    const-string v14, ""
+    .end local v12    # "time":I
+    :cond_174
+    const-string v13, ""
 
-    goto/16 :goto_38
+    goto/16 :goto_44
 .end method
 
 .method public static CDateToTimeOLD(J)Ljava/lang/String;
-    .registers 13
+    .registers 14
     .param p0, "epochTime"    # J
 
     .prologue
     .line 294
-    new-instance v3, Ljava/util/Date;
+    new-instance v1, Ljava/util/Date;
 
-    const-wide/16 v9, 0x3e8
+    const-wide/16 v10, 0x3e8
 
-    mul-long/2addr v9, p0
+    mul-long/2addr v10, p0
 
-    invoke-direct {v3, v9, v10}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v1, v10, v11}, Ljava/util/Date;-><init>(J)V
 
     .line 296
-    .local v3, "nTime":Ljava/util/Date;
+    .local v1, "nTime":Ljava/util/Date;
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
@@ -501,53 +553,53 @@
     .local v0, "calendar":Ljava/util/Calendar;
     invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 298
-    .local v1, "current":J
-    invoke-virtual {v3}, Ljava/util/Date;->getTime()J
+    .local v2, "current":J
+    invoke-virtual {v1}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v7
+    move-result-wide v8
 
     .line 299
-    .local v7, "update":J
-    sub-long v9, v1, v7
+    .local v8, "update":J
+    sub-long v10, v2, v8
 
-    invoke-static {v9, v10}, Ljava/lang/Math;->abs(J)J
+    invoke-static {v10, v11}, Ljava/lang/Math;->abs(J)J
 
-    move-result-wide v5
+    move-result-wide v6
 
     .line 301
-    .local v5, "timeago":J
-    const-wide/32 v9, 0xea60
+    .local v6, "timeago":J
+    const-wide/32 v10, 0xea60
 
-    cmp-long v9, v5, v9
+    cmp-long v5, v6, v10
 
-    if-gtz v9, :cond_44
+    if-gtz v5, :cond_44
 
     .line 302
-    const-wide/16 v9, 0x3e8
+    const-wide/16 v10, 0x3e8
 
-    div-long v9, v5, v9
+    div-long v10, v6, v10
 
-    long-to-int v4, v9
+    long-to-int v4, v10
 
     .line 303
     .local v4, "time":I
-    const/4 v9, 0x1
+    const/4 v5, 0x1
 
-    if-ne v4, v9, :cond_2c
+    if-ne v4, v5, :cond_2c
 
     .line 304
-    const-string v9, "a second ago"
+    const-string v5, "a second ago"
 
     .line 327
     :goto_2b
-    return-object v9
+    return-object v5
 
     .line 306
     :cond_2c
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-static {v4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -557,56 +609,56 @@
 
     move-result-object v10
 
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const-string v10, " seconds ago"
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v5
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v5
 
     goto :goto_2b
 
     .line 308
     .end local v4    # "time":I
     :cond_44
-    const-wide/32 v9, 0x36ee80
+    const-wide/32 v10, 0x36ee80
 
-    cmp-long v9, v5, v9
+    cmp-long v5, v6, v10
 
-    if-gtz v9, :cond_76
+    if-gtz v5, :cond_76
 
-    const-wide/32 v9, 0xea60
+    const-wide/32 v10, 0xea60
 
-    cmp-long v9, v5, v9
+    cmp-long v5, v6, v10
 
-    if-ltz v9, :cond_76
+    if-ltz v5, :cond_76
 
     .line 309
-    const-wide/32 v9, 0xea60
+    const-wide/32 v10, 0xea60
 
-    div-long v9, v5, v9
+    div-long v10, v6, v10
 
-    long-to-int v4, v9
+    long-to-int v4, v10
 
     .line 310
     .restart local v4    # "time":I
-    const/4 v9, 0x1
+    const/4 v5, 0x1
 
-    if-ne v4, v9, :cond_5e
+    if-ne v4, v5, :cond_5e
 
     .line 311
-    const-string v9, "about a minute ago"
+    const-string v5, "about a minute ago"
 
     goto :goto_2b
 
     .line 313
     :cond_5e
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-static {v4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -616,56 +668,56 @@
 
     move-result-object v10
 
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const-string v10, " minutes ago"
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v5
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v5
 
     goto :goto_2b
 
     .line 315
     .end local v4    # "time":I
     :cond_76
-    const-wide/32 v9, 0x5265c00
+    const-wide/32 v10, 0x5265c00
 
-    cmp-long v9, v5, v9
+    cmp-long v5, v6, v10
 
-    if-gtz v9, :cond_a8
+    if-gtz v5, :cond_a8
 
-    const-wide/32 v9, 0x36ee80
+    const-wide/32 v10, 0x36ee80
 
-    cmp-long v9, v5, v9
+    cmp-long v5, v6, v10
 
-    if-ltz v9, :cond_a8
+    if-ltz v5, :cond_a8
 
     .line 316
-    const-wide/32 v9, 0x36ee80
+    const-wide/32 v10, 0x36ee80
 
-    div-long v9, v5, v9
+    div-long v10, v6, v10
 
-    long-to-int v4, v9
+    long-to-int v4, v10
 
     .line 317
     .restart local v4    # "time":I
-    const/4 v9, 0x1
+    const/4 v5, 0x1
 
-    if-ne v4, v9, :cond_90
+    if-ne v4, v5, :cond_90
 
     .line 318
-    const-string v9, "about an hour ago"
+    const-string v5, "about an hour ago"
 
     goto :goto_2b
 
     .line 320
     :cond_90
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-static {v4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -675,43 +727,43 @@
 
     move-result-object v10
 
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const-string v10, " hours ago"
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v5
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v5
 
     goto :goto_2b
 
     .line 323
     .end local v4    # "time":I
     :cond_a8
-    const-wide/32 v9, 0x5265c00
+    const-wide/32 v10, 0x5265c00
 
-    div-long v9, v5, v9
+    div-long v10, v6, v10
 
-    long-to-int v4, v9
+    long-to-int v4, v10
 
     .line 324
     .restart local v4    # "time":I
-    const/4 v9, 0x1
+    const/4 v5, 0x1
 
-    if-ne v4, v9, :cond_b5
+    if-ne v4, v5, :cond_b5
 
     .line 325
-    const-string v9, "yesterday"
+    const-string v5, "yesterday"
 
     goto/16 :goto_2b
 
     .line 327
     :cond_b5
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-static {v4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -721,23 +773,23 @@
 
     move-result-object v10
 
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const-string v10, " days ago"
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v5
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v5
 
     goto/16 :goto_2b
 .end method
 
 .method public static CTypeDouble(Ljava/lang/String;)Ljava/lang/Double;
-    .registers 4
+    .registers 5
     .param p0, "value"    # Ljava/lang/String;
 
     .prologue
@@ -745,9 +797,9 @@
     :try_start_0
     invoke-static {p0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v1, v2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
     :try_end_7
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_7} :catch_9
 
@@ -763,9 +815,9 @@
 
     .line 44
     .local v0, "e":Ljava/lang/Exception;
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    invoke-static {v1, v2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v1
 
@@ -837,7 +889,7 @@
 .end method
 
 .method public static CTypeLong(Ljava/lang/String;)Ljava/lang/Long;
-    .registers 4
+    .registers 5
     .param p0, "value"    # Ljava/lang/String;
 
     .prologue
@@ -845,9 +897,9 @@
     :try_start_0
     invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
     :try_end_7
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_7} :catch_9
 
@@ -863,9 +915,9 @@
 
     .line 60
     .local v0, "e":Ljava/lang/Exception;
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
 
@@ -1618,9 +1670,10 @@
     .line 408
     .local v3, "isCheckSamsung":Z
     :try_start_1
-    const-string v1, "samsung"
+    sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
     .line 409
+    .local v1, "MANUFACTURER":Ljava/lang/String;
     if-eqz v1, :cond_15
 
     .line 410
@@ -1654,9 +1707,10 @@
 
     .line 416
     :cond_15
-    const-string v0, "samsung"
+    sget-object v0, Landroid/os/Build;->BRAND:Ljava/lang/String;
 
     .line 417
+    .local v0, "BRAND":Ljava/lang/String;
     if-eqz v0, :cond_29
 
     .line 418
@@ -1871,7 +1925,7 @@
 .end method
 
 .method public static daysBetweenDates(Ljava/lang/String;Ljava/lang/String;)I
-    .registers 9
+    .registers 10
     .param p0, "pD1"    # Ljava/lang/String;
     .param p1, "pD2"    # Ljava/lang/String;
 
@@ -1891,19 +1945,19 @@
     .local v1, "d2":Ljava/util/Date;
     invoke-virtual {v0}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v3
+    move-result-wide v4
 
     invoke-virtual {v1}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    sub-long/2addr v3, v5
+    sub-long/2addr v4, v6
 
-    const-wide/32 v5, 0x5265c00
+    const-wide/32 v6, 0x5265c00
 
-    div-long/2addr v3, v5
+    div-long/2addr v4, v6
 
-    long-to-int v2, v3
+    long-to-int v2, v4
 
     .line 168
     .local v2, "days":I
@@ -1911,7 +1965,7 @@
 .end method
 
 .method public static daysBetweenDates(Ljava/util/Date;Ljava/util/Date;)I
-    .registers 7
+    .registers 8
     .param p0, "d1"    # Ljava/util/Date;
     .param p1, "d2"    # Ljava/util/Date;
 
@@ -1919,19 +1973,19 @@
     .line 157
     invoke-virtual {p0}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v1
+    move-result-wide v2
 
     invoke-virtual {p1}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    sub-long/2addr v1, v3
+    sub-long/2addr v2, v4
 
-    const-wide/32 v3, 0x5265c00
+    const-wide/32 v4, 0x5265c00
 
-    div-long/2addr v1, v3
+    div-long/2addr v2, v4
 
-    long-to-int v0, v1
+    long-to-int v0, v2
 
     .line 159
     .local v0, "days":I
@@ -2146,7 +2200,7 @@
 .end method
 
 .method public static dp_to_px(DLandroid/content/Context;)I
-    .registers 8
+    .registers 9
     .param p0, "dp"    # D
     .param p2, "appContext"    # Landroid/content/Context;
 
@@ -2164,21 +2218,21 @@
     .local v0, "displayMetrics":Landroid/util/DisplayMetrics;
     iget v1, v0, Landroid/util/DisplayMetrics;->density:F
 
-    float-to-double v1, v1
+    float-to-double v2, v1
 
-    mul-double/2addr v1, p0
+    mul-double/2addr v2, p0
 
-    const-wide/high16 v3, 0x3fe0000000000000L
+    const-wide/high16 v4, 0x3fe0000000000000L
 
-    add-double/2addr v1, v3
+    add-double/2addr v2, v4
 
-    double-to-int v1, v1
+    double-to-int v1, v2
 
     return v1
 .end method
 
 .method public static findDistFrom(DDDD)D
-    .registers 27
+    .registers 28
     .param p0, "lat1"    # D
     .param p2, "lng1"    # D
     .param p4, "lat2"    # D
@@ -2190,101 +2244,101 @@
 
     .line 264
     .local v10, "earthRadius":D
-    sub-double v13, p4, p0
+    sub-double v14, p4, p0
 
-    invoke-static {v13, v14}, Ljava/lang/Math;->toRadians(D)D
+    invoke-static {v14, v15}, Ljava/lang/Math;->toRadians(D)D
 
     move-result-wide v4
 
     .line 265
     .local v4, "dLat":D
-    sub-double v13, p6, p2
+    sub-double v14, p6, p2
 
-    invoke-static {v13, v14}, Ljava/lang/Math;->toRadians(D)D
+    invoke-static {v14, v15}, Ljava/lang/Math;->toRadians(D)D
 
     move-result-wide v6
 
     .line 266
     .local v6, "dLng":D
-    const-wide/high16 v13, 0x4000000000000000L
+    const-wide/high16 v14, 0x4000000000000000L
 
-    div-double v13, v4, v13
+    div-double v14, v4, v14
 
-    invoke-static {v13, v14}, Ljava/lang/Math;->sin(D)D
+    invoke-static {v14, v15}, Ljava/lang/Math;->sin(D)D
 
-    move-result-wide v13
+    move-result-wide v14
 
-    const-wide/high16 v15, 0x4000000000000000L
+    const-wide/high16 v16, 0x4000000000000000L
 
-    div-double v15, v4, v15
+    div-double v16, v4, v16
 
-    invoke-static/range {v15 .. v16}, Ljava/lang/Math;->sin(D)D
+    invoke-static/range {v16 .. v17}, Ljava/lang/Math;->sin(D)D
 
-    move-result-wide v15
+    move-result-wide v16
 
-    mul-double/2addr v13, v15
+    mul-double v14, v14, v16
 
     invoke-static/range {p0 .. p1}, Ljava/lang/Math;->toRadians(D)D
 
-    move-result-wide v15
+    move-result-wide v16
 
-    invoke-static/range {v15 .. v16}, Ljava/lang/Math;->cos(D)D
+    invoke-static/range {v16 .. v17}, Ljava/lang/Math;->cos(D)D
 
-    move-result-wide v15
+    move-result-wide v16
 
     invoke-static/range {p4 .. p5}, Ljava/lang/Math;->toRadians(D)D
 
-    move-result-wide v17
+    move-result-wide v18
 
-    invoke-static/range {v17 .. v18}, Ljava/lang/Math;->cos(D)D
+    invoke-static/range {v18 .. v19}, Ljava/lang/Math;->cos(D)D
 
-    move-result-wide v17
+    move-result-wide v18
 
-    mul-double v15, v15, v17
+    mul-double v16, v16, v18
 
-    const-wide/high16 v17, 0x4000000000000000L
+    const-wide/high16 v18, 0x4000000000000000L
 
-    div-double v17, v6, v17
+    div-double v18, v6, v18
 
-    invoke-static/range {v17 .. v18}, Ljava/lang/Math;->sin(D)D
+    invoke-static/range {v18 .. v19}, Ljava/lang/Math;->sin(D)D
 
-    move-result-wide v17
+    move-result-wide v18
 
-    mul-double v15, v15, v17
+    mul-double v16, v16, v18
 
-    const-wide/high16 v17, 0x4000000000000000L
+    const-wide/high16 v18, 0x4000000000000000L
 
-    div-double v17, v6, v17
+    div-double v18, v6, v18
 
-    invoke-static/range {v17 .. v18}, Ljava/lang/Math;->sin(D)D
+    invoke-static/range {v18 .. v19}, Ljava/lang/Math;->sin(D)D
 
-    move-result-wide v17
+    move-result-wide v18
 
-    mul-double v15, v15, v17
+    mul-double v16, v16, v18
 
-    add-double v0, v13, v15
+    add-double v0, v14, v16
 
     .line 267
     .local v0, "a":D
-    const-wide/high16 v13, 0x4000000000000000L
+    const-wide/high16 v14, 0x4000000000000000L
 
     invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
 
-    move-result-wide v15
+    move-result-wide v16
 
-    const-wide/high16 v17, 0x3ff0000000000000L
+    const-wide/high16 v18, 0x3ff0000000000000L
 
-    sub-double v17, v17, v0
+    sub-double v18, v18, v0
 
-    invoke-static/range {v17 .. v18}, Ljava/lang/Math;->sqrt(D)D
+    invoke-static/range {v18 .. v19}, Ljava/lang/Math;->sqrt(D)D
 
-    move-result-wide v17
+    move-result-wide v18
 
-    invoke-static/range {v15 .. v18}, Ljava/lang/Math;->atan2(DD)D
+    invoke-static/range {v16 .. v19}, Ljava/lang/Math;->atan2(DD)D
 
-    move-result-wide v15
+    move-result-wide v16
 
-    mul-double v2, v13, v15
+    mul-double v2, v14, v16
 
     .line 268
     .local v2, "c":D
@@ -2308,9 +2362,9 @@
 
     move-result v13
 
-    float-to-double v13, v13
+    float-to-double v14, v13
 
-    return-wide v13
+    return-wide v14
 .end method
 
 .method public static formatK(I)Ljava/lang/String;
@@ -2795,44 +2849,44 @@
 
     .prologue
     .line 243
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
     .line 246
-    .local v1, "km":D
+    .local v2, "km":D
     :try_start_2
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v4, "0"
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     const/high16 v4, 0x447a0000
 
     div-float v4, p0, v4
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-static {v3}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+    invoke-static {v1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
-    move-result-wide v3
+    move-result-wide v4
 
-    const/4 v5, 0x2
+    const/4 v1, 0x2
 
-    invoke-static {v3, v4, v5}, Lic/buzzebeeslib/util/BBUtil;->roundMyData(DI)D
+    invoke-static {v4, v5, v1}, Lic/buzzebeeslib/util/BBUtil;->roundMyData(DI)D
     :try_end_1d
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_1d} :catch_1f
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 251
     :goto_1e
-    return-wide v1
+    return-wide v2
 
     .line 247
     :catch_1f
@@ -2840,7 +2894,7 @@
 
     .line 248
     .local v0, "e":Ljava/lang/Exception;
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
     goto :goto_1e
 .end method
@@ -2995,7 +3049,7 @@
 .end method
 
 .method public static px_to_dp(ILandroid/content/Context;)I
-    .registers 7
+    .registers 8
     .param p0, "px"    # I
     .param p1, "appContext"    # Landroid/content/Context;
 
@@ -3017,13 +3071,13 @@
 
     div-float/2addr v1, v2
 
-    float-to-double v1, v1
+    float-to-double v2, v1
 
-    const-wide/high16 v3, 0x3fe0000000000000L
+    const-wide/high16 v4, 0x3fe0000000000000L
 
-    add-double/2addr v1, v3
+    add-double/2addr v2, v4
 
-    double-to-int v1, v1
+    double-to-int v1, v2
 
     return v1
 .end method

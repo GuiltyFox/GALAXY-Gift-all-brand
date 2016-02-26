@@ -51,19 +51,19 @@
     .end annotation
 
     .prologue
-    .line 2718
+    .line 2782
     .local p3, "pListDashboardItems":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/DashboardItem;>;"
     iput-object p1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardItemPagerAdapter;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     invoke-direct {p0}, Landroid/support/v4/view/PagerAdapter;-><init>()V
 
-    .line 2719
+    .line 2783
     iput-object p2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardItemPagerAdapter;->context:Landroid/content/Context;
 
-    .line 2720
+    .line 2784
     iput-object p3, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardItemPagerAdapter;->listDashboardItems:Ljava/util/ArrayList;
 
-    .line 2721
+    .line 2785
     invoke-virtual {p1}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -74,7 +74,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardItemPagerAdapter;->inflater:Landroid/view/LayoutInflater;
 
-    .line 2722
+    .line 2786
     return-void
 .end method
 
@@ -87,7 +87,7 @@
     .param p3, "object"    # Ljava/lang/Object;
 
     .prologue
-    .line 2759
+    .line 2823
     return-void
 .end method
 
@@ -95,7 +95,7 @@
     .registers 2
 
     .prologue
-    .line 2726
+    .line 2790
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardItemPagerAdapter;->listDashboardItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -113,7 +113,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2736
+    .line 2800
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardItemPagerAdapter;->listDashboardItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -122,7 +122,7 @@
 
     check-cast v1, Lcom/samsung/privilege/bean/DashboardItem;
 
-    .line 2738
+    .line 2802
     .local v1, "objDashboardItem":Lcom/samsung/privilege/bean/DashboardItem;
     iget-object v0, v1, Lcom/samsung/privilege/bean/DashboardItem;->size:Ljava/lang/String;
 
@@ -138,12 +138,12 @@
 
     if-eqz v0, :cond_3c
 
-    .line 2739
+    .line 2803
     iget-boolean v0, v1, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem:Z
 
     if-eqz v0, :cond_30
 
-    .line 2740
+    .line 2804
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardItemPagerAdapter;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     move-object v2, p1
@@ -159,7 +159,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardItemPagerAdapter;->viewDashboardItem:Landroid/view/View;
 
-    .line 2752
+    .line 2816
     :goto_26
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
@@ -168,12 +168,12 @@
 
     invoke-virtual {p1, v0, v3}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
-    .line 2753
+    .line 2817
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardItemPagerAdapter;->viewDashboardItem:Landroid/view/View;
 
     return-object v0
 
-    .line 2742
+    .line 2806
     .restart local p1    # "container":Landroid/view/ViewGroup;
     :cond_30
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardItemPagerAdapter;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
@@ -193,13 +193,13 @@
 
     goto :goto_26
 
-    .line 2745
+    .line 2809
     :cond_3c
     iget-boolean v0, v1, Lcom/samsung/privilege/bean/DashboardItem;->autoredeem:Z
 
     if-eqz v0, :cond_4c
 
-    .line 2746
+    .line 2810
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardItemPagerAdapter;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     move-object v2, p1
@@ -217,7 +217,7 @@
 
     goto :goto_26
 
-    .line 2748
+    .line 2812
     :cond_4c
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$DashboardItemPagerAdapter;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
@@ -243,7 +243,7 @@
     .param p2, "object"    # Ljava/lang/Object;
 
     .prologue
-    .line 2731
+    .line 2795
     invoke-virtual {p1, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0

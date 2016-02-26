@@ -1655,14 +1655,14 @@
 .end method
 
 .method public setDuration(J)Lcom/actionbarsherlock/internal/nineoldandroids/animation/AnimatorSet;
-    .registers 6
+    .registers 8
     .param p1, "duration"    # J
 
     .prologue
     .line 415
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    cmp-long v1, p1, v1
+    cmp-long v1, p1, v2
 
     if-gez v1, :cond_e
 
@@ -1753,7 +1753,7 @@
 .end method
 
 .method public setStartDelay(J)V
-    .registers 3
+    .registers 4
     .param p1, "startDelay"    # J
 
     .prologue
@@ -2008,7 +2008,7 @@
     const/4 v4, 0x0
 
     :goto_49
-    if-lt v4, v10, :cond_16f
+    if-lt v4, v10, :cond_173
 
     .line 533
     .end local v10    # "numListeners":I
@@ -2070,7 +2070,7 @@
     const/4 v4, 0x0
 
     :goto_79
-    if-lt v4, v10, :cond_17e
+    if-lt v4, v10, :cond_182
 
     .line 546
     .end local v10    # "numListeners":I
@@ -2339,7 +2339,7 @@
 
     new-array v14, v14, [F
 
-    fill-array-data v14, :array_18e
+    fill-array-data v14, :array_192
 
     invoke-static {v14}, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->ofFloat([F)Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;
 
@@ -2356,9 +2356,13 @@
 
     move-object/from16 v0, p0
 
-    iget-wide v15, v0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/AnimatorSet;->mStartDelay:J
+    iget-wide v0, v0, Lcom/actionbarsherlock/internal/nineoldandroids/animation/AnimatorSet;->mStartDelay:J
 
-    invoke-virtual/range {v14 .. v16}, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->setDuration(J)Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;
+    move-wide/from16 v16, v0
+
+    move-wide/from16 v0, v16
+
+    invoke-virtual {v14, v0, v1}, Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;->setDuration(J)Lcom/actionbarsherlock/internal/nineoldandroids/animation/ValueAnimator;
 
     .line 507
     move-object/from16 v0, p0
@@ -2385,7 +2389,7 @@
     .line 530
     .restart local v10    # "numListeners":I
     .restart local v13    # "tmpListeners":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/actionbarsherlock/internal/nineoldandroids/animation/Animator$AnimatorListener;>;"
-    :cond_16f
+    :cond_173
     invoke-virtual {v13, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v14
@@ -2402,7 +2406,7 @@
     goto/16 :goto_49
 
     .line 542
-    :cond_17e
+    :cond_182
     invoke-virtual {v13, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v14
@@ -2421,7 +2425,7 @@
     .line 505
     nop
 
-    :array_18e
+    :array_192
     .array-data 4
         0x0
         0x3f800000

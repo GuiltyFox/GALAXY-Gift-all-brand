@@ -1006,7 +1006,7 @@
     :try_start_14
     sget-object v1, Lcom/samsung/privilege/util/PostAsyncUtil;->gContext:Landroid/content/Context;
 
-    const v2, 0x7f0a00c5
+    const v2, 0x7f0900c5
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2260,9 +2260,9 @@
 
     invoke-virtual {p0}, Ljava/io/File;->length()J
 
-    move-result-wide v7
+    move-result-wide v8
 
-    long-to-int v7, v7
+    long-to-int v7, v8
 
     invoke-virtual {v5, v0, v6, v7}, Ljava/io/BufferedReader;->read([CII)I
 
@@ -2584,7 +2584,7 @@
 
     sget-object v14, Lcom/samsung/privilege/util/PostAsyncUtil;->gContext:Landroid/content/Context;
 
-    const v15, 0x7f0a001d
+    const v15, 0x7f09001d
 
     invoke-virtual {v14, v15}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2610,7 +2610,7 @@
 
     .line 2178
     :goto_66
-    const v9, 0x7f0202f2
+    const v9, 0x7f0202f4
 
     .line 2180
     .local v9, "icon":I
@@ -2618,9 +2618,9 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v13
+    move-result-wide v14
 
-    invoke-direct {v11, v9, v12, v13, v14}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
+    invoke-direct {v11, v9, v12, v14, v15}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
 
     .line 2181
     .local v11, "notification":Landroid/app/Notification;
@@ -2707,7 +2707,7 @@
 
     sget-object v14, Lcom/samsung/privilege/util/PostAsyncUtil;->gContext:Landroid/content/Context;
 
-    const v15, 0x7f0a001d
+    const v15, 0x7f09001d
 
     invoke-virtual {v14, v15}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2947,7 +2947,7 @@
 
     sget-object v5, Lcom/samsung/privilege/util/PostAsyncUtil;->gContext:Landroid/content/Context;
 
-    const v6, 0x7f0a001d
+    const v6, 0x7f09001d
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2973,7 +2973,7 @@
 
     .line 2134
     :goto_28
-    const v1, 0x7f0202f2
+    const v1, 0x7f0202f4
 
     .line 2136
     .local v1, "icon":I
@@ -3167,7 +3167,7 @@
     .line 1207
     .end local v15    # "br":Ljava/io/BufferedReader;
     :goto_4e
-    const v20, 0x7f0202f2
+    const v20, 0x7f0202f4
 
     .line 1208
     .local v20, "icon":I
@@ -3178,7 +3178,7 @@
     :try_start_53
     sget-object v2, Lcom/samsung/privilege/util/PostAsyncUtil;->gContext:Landroid/content/Context;
 
-    const v8, 0x7f0a001d
+    const v8, 0x7f09001d
 
     invoke-virtual {v2, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
     :try_end_5b
@@ -3214,13 +3214,13 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v11
+    move-result-wide v12
 
     move-object/from16 v0, v23
 
     move/from16 v1, v20
 
-    invoke-direct {v0, v1, v2, v11, v12}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
+    invoke-direct {v0, v1, v2, v12, v13}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
 
     .line 1215
     .local v23, "notificationOngoing":Landroid/app/Notification;
@@ -3319,7 +3319,7 @@
 
     move-result-object v8
 
-    const v11, 0x7f03010c
+    const v11, 0x7f03010e
 
     invoke-direct {v2, v8, v11}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
 
@@ -3354,7 +3354,7 @@
 
     move-result-object v11
 
-    const v12, 0x7f02039f
+    const v12, 0x7f0203a7
 
     invoke-static {v11, v12}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -5381,10 +5381,10 @@
 
     .line 1286
     :cond_7b0
-    const-wide/16 v11, 0x3e8
+    const-wide/16 v12, 0x3e8
 
     :try_start_7b2
-    invoke-static {v11, v12}, Ljava/lang/Thread;->sleep(J)V
+    invoke-static {v12, v13}, Ljava/lang/Thread;->sleep(J)V
     :try_end_7b5
     .catch Ljava/lang/Exception; {:try_start_7b2 .. :try_end_7b5} :catch_7b7
 
@@ -5585,7 +5585,7 @@
     .end local v35    # "xml":Ljava/lang/String;
     :cond_6f
     :goto_6f
-    const v21, 0x7f0202f2
+    const v21, 0x7f0202f4
 
     .line 939
     .local v21, "icon":I
@@ -5596,7 +5596,7 @@
     :try_start_74
     sget-object v2, Lcom/samsung/privilege/util/PostAsyncUtil;->gContext:Landroid/content/Context;
 
-    const v8, 0x7f0a001d
+    const v8, 0x7f09001d
 
     invoke-virtual {v2, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
     :try_end_7c
@@ -5632,13 +5632,13 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v11
+    move-result-wide v12
 
     move-object/from16 v0, v25
 
     move/from16 v1, v21
 
-    invoke-direct {v0, v1, v2, v11, v12}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
+    invoke-direct {v0, v1, v2, v12, v13}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
 
     .line 947
     .local v25, "notificationOngoing":Landroid/app/Notification;
@@ -5737,7 +5737,7 @@
 
     move-result-object v8
 
-    const v11, 0x7f03010c
+    const v11, 0x7f03010e
 
     invoke-direct {v2, v8, v11}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
 
@@ -5772,7 +5772,7 @@
 
     move-result-object v11
 
-    const v12, 0x7f02039f
+    const v12, 0x7f0203a7
 
     invoke-static {v11, v12}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -7879,10 +7879,10 @@
 
     .line 1019
     :cond_7c1
-    const-wide/16 v11, 0x3e8
+    const-wide/16 v12, 0x3e8
 
     :try_start_7c3
-    invoke-static {v11, v12}, Ljava/lang/Thread;->sleep(J)V
+    invoke-static {v12, v13}, Ljava/lang/Thread;->sleep(J)V
     :try_end_7c6
     .catch Ljava/lang/Exception; {:try_start_7c3 .. :try_end_7c6} :catch_7c8
 

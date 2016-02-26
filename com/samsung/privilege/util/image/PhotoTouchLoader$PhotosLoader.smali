@@ -34,15 +34,15 @@
 
 # virtual methods
 .method public run()V
-    .registers 8
+    .registers 9
 
     .prologue
     .line 262
     :cond_0
-    const-wide/16 v5, 0x64
+    const-wide/16 v6, 0x64
 
     :try_start_2
-    invoke-static {v5, v6}, Ljava/lang/Thread;->sleep(J)V
+    invoke-static {v6, v7}, Ljava/lang/Thread;->sleep(J)V
     :try_end_5
     .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_5} :catch_b9
 

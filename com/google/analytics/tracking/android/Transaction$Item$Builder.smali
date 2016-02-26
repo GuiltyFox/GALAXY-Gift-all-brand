@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JJ)V
-    .registers 9
+    .registers 10
     .param p1, "SKU"    # Ljava/lang/String;
     .param p2, "name"    # Ljava/lang/String;
     .param p3, "priceInMicros"    # J

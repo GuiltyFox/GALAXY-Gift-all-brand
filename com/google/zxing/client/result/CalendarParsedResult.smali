@@ -118,7 +118,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;DD)V
-    .registers 21
+    .registers 22
     .param p1, "summary"    # Ljava/lang/String;
     .param p2, "startString"    # Ljava/lang/String;
     .param p3, "endString"    # Ljava/lang/String;
@@ -147,10 +147,10 @@
 
     iput-object v5, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->start:Ljava/util/Date;
     :try_end_d
-    .catch Ljava/text/ParseException; {:try_start_7 .. :try_end_d} :catch_47
+    .catch Ljava/text/ParseException; {:try_start_7 .. :try_end_d} :catch_49
 
     .line 87
-    if-nez p3, :cond_5f
+    if-nez p3, :cond_61
 
     .line 88
     invoke-static {p4}, Lcom/google/zxing/client/result/CalendarParsedResult;->parseDurationMS(Ljava/lang/CharSequence;)J
@@ -159,11 +159,11 @@
 
     .line 89
     .local v2, "durationMS":J
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
-    cmp-long v5, v2, v5
+    cmp-long v5, v2, v6
 
-    if-gez v5, :cond_52
+    if-gez v5, :cond_54
 
     const/4 v5, 0x0
 
@@ -179,7 +179,7 @@
 
     const/16 v6, 0x8
 
-    if-ne v5, v6, :cond_71
+    if-ne v5, v6, :cond_73
 
     const/4 v5, 0x1
 
@@ -187,7 +187,7 @@
     iput-boolean v5, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->startAllDay:Z
 
     .line 99
-    if-eqz p3, :cond_73
+    if-eqz p3, :cond_75
 
     invoke-virtual {p3}, Ljava/lang/String;->length()I
 
@@ -195,7 +195,7 @@
 
     const/16 v6, 0x8
 
-    if-ne v5, v6, :cond_73
+    if-ne v5, v6, :cond_75
 
     const/4 v5, 0x1
 
@@ -209,7 +209,9 @@
     iput-object p6, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->organizer:Ljava/lang/String;
 
     .line 103
-    iput-object p7, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->attendees:[Ljava/lang/String;
+    move-object/from16 v0, p7
+
+    iput-object v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->attendees:[Ljava/lang/String;
 
     .line 104
     move-object/from16 v0, p8
@@ -230,7 +232,7 @@
     return-void
 
     .line 83
-    :catch_47
+    :catch_49
     move-exception v4
 
     .line 84
@@ -248,7 +250,7 @@
     .line 89
     .end local v4    # "pe":Ljava/text/ParseException;
     .restart local v2    # "durationMS":J
-    :cond_52
+    :cond_54
     new-instance v5, Ljava/util/Date;
 
     iget-object v6, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->start:Ljava/util/Date;
@@ -265,20 +267,20 @@
 
     .line 92
     .end local v2    # "durationMS":J
-    :cond_5f
-    :try_start_5f
+    :cond_61
+    :try_start_61
     invoke-static {p3}, Lcom/google/zxing/client/result/CalendarParsedResult;->parseDate(Ljava/lang/String;)Ljava/util/Date;
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->end:Ljava/util/Date;
-    :try_end_65
-    .catch Ljava/text/ParseException; {:try_start_5f .. :try_end_65} :catch_66
+    :try_end_67
+    .catch Ljava/text/ParseException; {:try_start_61 .. :try_end_67} :catch_68
 
     goto :goto_1c
 
     .line 93
-    :catch_66
+    :catch_68
     move-exception v4
 
     .line 94
@@ -295,13 +297,13 @@
 
     .line 98
     .end local v4    # "pe":Ljava/text/ParseException;
-    :cond_71
+    :cond_73
     const/4 v5, 0x0
 
     goto :goto_25
 
     .line 99
-    :cond_73
+    :cond_75
     const/4 v5, 0x0
 
     goto :goto_32
@@ -500,7 +502,7 @@
 .end method
 
 .method private static parseDurationMS(Ljava/lang/CharSequence;)J
-    .registers 10
+    .registers 11
     .param p0, "durationString"    # Ljava/lang/CharSequence;
 
     .prologue
@@ -558,17 +560,17 @@
     .line 236
     sget-object v5, Lcom/google/zxing/client/result/CalendarParsedResult;->RFC2445_DURATION_FIELD_UNITS:[J
 
-    aget-wide v5, v5, v3
+    aget-wide v6, v5, v3
 
     invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v7
+    move-result v5
 
-    int-to-long v7, v7
+    int-to-long v8, v5
 
-    mul-long/2addr v5, v7
+    mul-long/2addr v6, v8
 
-    add-long/2addr v0, v5
+    add-long/2addr v0, v6
 
     .line 233
     :cond_2c

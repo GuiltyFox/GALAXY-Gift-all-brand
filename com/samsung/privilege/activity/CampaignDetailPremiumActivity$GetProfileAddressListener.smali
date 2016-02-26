@@ -23,7 +23,7 @@
     .registers 2
 
     .prologue
-    .line 2818
+    .line 2819
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetProfileAddressListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     invoke-direct {p0}, Lcom/samsung/privilege/util/http/HttpRQListener;-><init>()V
@@ -35,7 +35,7 @@
     .registers 3
 
     .prologue
-    .line 2818
+    .line 2819
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetProfileAddressListener;-><init>(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;)V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 2
 
     .prologue
-    .line 2818
+    .line 2819
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetProfileAddressListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     return-object v0
@@ -60,7 +60,7 @@
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 2822
+    .line 2823
     const-string v0, "campaign.detail"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -89,7 +89,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2824
+    .line 2825
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetProfileAddressListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->gHandler:Landroid/os/Handler;
@@ -103,6 +103,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 2849
+    .line 2850
     return-void
 .end method

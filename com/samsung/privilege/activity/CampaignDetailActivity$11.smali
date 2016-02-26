@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$11;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
-    .line 1751
+    .line 1846
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,10 +43,10 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 1753
+    .line 1848
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 1754
+    .line 1849
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$11;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
@@ -59,12 +59,12 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1755
+    .line 1850
     .local v0, "intent":Landroid/content/Intent;
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$11;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 1756
+    .line 1851
     return-void
 .end method

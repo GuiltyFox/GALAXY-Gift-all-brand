@@ -66,7 +66,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f02039f
+    const v3, 0x7f0203a7
 
     invoke-direct {v1, v2, v3}, Lcom/samsung/privilege/util/image/PhotoTouchLoader;-><init>(Landroid/content/Context;I)V
 
@@ -202,7 +202,7 @@
     invoke-virtual {v2, v3}, Landroid/view/Window;->addFlags(I)V
 
     .line 32
-    const v2, 0x7f030109
+    const v2, 0x7f03010b
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/PhotoViewerActivity;->setContentView(I)V
 

@@ -69,7 +69,7 @@
     .registers 9
 
     .prologue
-    const v7, 0x7f0a033c
+    const v7, 0x7f090343
 
     const/4 v6, 0x4
 
@@ -232,7 +232,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/util/AnimationPopup$3$3$1$1;->val$pActivity:Landroid/app/Activity;
 
-    const v2, 0x7f0a033d
+    const v2, 0x7f090344
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 

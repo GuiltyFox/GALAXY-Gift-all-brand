@@ -1026,31 +1026,31 @@
 
     .prologue
     .line 343
-    move v5, p1
+    move v6, p1
 
     .line 344
-    .local v5, "dx":F
-    move v6, p2
+    .local v6, "dx":F
+    move v7, p2
 
     .line 345
-    .local v6, "dy":F
+    .local v7, "dy":F
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v3
+    move-result-wide v4
 
     .line 346
-    .local v3, "startTime":J
-    iget-object v7, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->mHandler:Landroid/os/Handler;
+    .local v4, "startTime":J
+    iget-object v0, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->mHandler:Landroid/os/Handler;
 
-    new-instance v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;
+    new-instance v1, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;
 
-    move-object v1, p0
+    move-object v2, p0
 
-    move v2, p3
+    move v3, p3
 
-    invoke-direct/range {v0 .. v6}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;-><init>(Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;FJFF)V
+    invoke-direct/range {v1 .. v7}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;-><init>(Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;FJFF)V
 
-    invoke-virtual {v7, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     .line 368
     return-void
@@ -1616,41 +1616,41 @@
     .line 373
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v3
+    move-result-wide v4
 
     .line 374
-    .local v3, "startTime":J
+    .local v4, "startTime":J
     invoke-virtual {p0}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->getScale()F
 
     move-result v0
 
     sub-float v0, p1, v0
 
-    div-float v6, v0, p4
+    div-float v7, v0, p4
 
     .line 375
-    .local v6, "incrementPerMs":F
+    .local v7, "incrementPerMs":F
     invoke-virtual {p0}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->getScale()F
 
-    move-result v5
+    move-result v6
 
     .line 376
-    .local v5, "oldScale":F
-    iget-object v9, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->mHandler:Landroid/os/Handler;
+    .local v6, "oldScale":F
+    iget-object v0, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->mHandler:Landroid/os/Handler;
 
-    new-instance v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;
+    new-instance v1, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;
 
-    move-object v1, p0
+    move-object v2, p0
 
-    move v2, p4
+    move v3, p4
 
-    move v7, p2
+    move v8, p2
 
-    move v8, p3
+    move v9, p3
 
-    invoke-direct/range {v0 .. v8}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;-><init>(Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;FJFFFF)V
+    invoke-direct/range {v1 .. v9}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;-><init>(Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;FJFFFF)V
 
-    invoke-virtual {v9, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     .line 391
     return-void

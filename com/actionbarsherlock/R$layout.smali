@@ -61,9 +61,9 @@
 
 .field public static final abs__simple_dropdown_hint:I = 0x7f030018
 
-.field public static final sherlock_spinner_dropdown_item:I = 0x7f030119
+.field public static final sherlock_spinner_dropdown_item:I = 0x7f03011b
 
-.field public static final sherlock_spinner_item:I = 0x7f03011a
+.field public static final sherlock_spinner_item:I = 0x7f03011c
 
 
 # direct methods

@@ -15,11 +15,11 @@
 
 
 # static fields
-.field public static final launcher_icon:I = 0x7f020319
+.field public static final launcher_icon:I = 0x7f02031b
 
-.field public static final share_via_barcode:I = 0x7f02038f
+.field public static final share_via_barcode:I = 0x7f020391
 
-.field public static final shopper_icon:I = 0x7f020390
+.field public static final shopper_icon:I = 0x7f020392
 
 
 # direct methods

@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$7;->val$response_text:Ljava/lang/String;
 
-    .line 896
+    .line 916
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -47,7 +47,7 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 899
+    .line 919
     :try_start_1
     new-instance v3, Lorg/json/JSONArray;
 
@@ -55,7 +55,7 @@
 
     invoke-direct {v3, v5}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
 
-    .line 901
+    .line 921
     .local v3, "jsonArray":Lorg/json/JSONArray;
     iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$7;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
@@ -66,16 +66,16 @@
 
     if-nez v5, :cond_1a
 
-    .line 902
+    .line 922
     iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$7;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-static {v5, v6}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$11(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;Ljava/util/ArrayList;)V
+    invoke-static {v5, v6}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$12(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;Ljava/util/ArrayList;)V
 
-    .line 905
+    .line 925
     :cond_1a
     invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
 
@@ -83,19 +83,19 @@
 
     if-lez v5, :cond_2b
 
-    .line 906
+    .line 926
     iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$7;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->gSumListPerPage:I
-    invoke-static {v5}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$32(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)I
+    invoke-static {v5}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$34(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)I
 
     move-result v6
 
     add-int/lit8 v6, v6, 0x19
 
-    invoke-static {v5, v6}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$10(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;I)V
+    invoke-static {v5, v6}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$11(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;I)V
 
-    .line 909
+    .line 929
     :cond_2b
     invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
 
@@ -103,14 +103,14 @@
 
     if-le v5, v7, :cond_60
 
-    .line 910
+    .line 930
     iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$7;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     const/4 v6, 0x1
 
-    invoke-static {v5, v6}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$33(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;Z)V
+    invoke-static {v5, v6}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$35(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;Z)V
 
-    .line 915
+    .line 935
     :goto_37
     iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$7;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
@@ -121,7 +121,7 @@
 
     if-eqz v5, :cond_46
 
-    .line 916
+    .line 936
     const/4 v2, 0x0
 
     .local v2, "i":I
@@ -132,14 +132,14 @@
 
     if-lt v2, v5, :cond_8b
 
-    .line 926
+    .line 946
     .end local v2    # "i":I
     :cond_46
     invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
 
     move-result v0
 
-    .line 930
+    .line 950
     .local v0, "count_item":I
     if-eqz v0, :cond_50
 
@@ -147,12 +147,12 @@
 
     if-ge v0, v5, :cond_ba
 
-    .line 931
+    .line 951
     :cond_50
     iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$7;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->gContentFooter:Landroid/widget/LinearLayout;
-    invoke-static {v5}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$24(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Landroid/widget/LinearLayout;
+    invoke-static {v5}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$25(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Landroid/widget/LinearLayout;
 
     move-result-object v5
 
@@ -160,38 +160,38 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 936
+    .line 956
     :goto_5a
     iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$7;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     # invokes: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->setCampaignUI()V
-    invoke-static {v5}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$34(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)V
+    invoke-static {v5}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$36(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)V
 
-    .line 952
+    .line 972
     .end local v0    # "count_item":I
     .end local v3    # "jsonArray":Lorg/json/JSONArray;
     :goto_5f
     return-void
 
-    .line 912
+    .line 932
     .restart local v3    # "jsonArray":Lorg/json/JSONArray;
     :cond_60
     iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$7;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     const/4 v6, 0x0
 
-    invoke-static {v5, v6}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$33(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;Z)V
+    invoke-static {v5, v6}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$35(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;Z)V
     :try_end_66
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_66} :catch_67
 
     goto :goto_37
 
-    .line 942
+    .line 962
     .end local v3    # "jsonArray":Lorg/json/JSONArray;
     :catch_67
     move-exception v1
 
-    .line 943
+    .line 963
     .local v1, "e":Ljava/lang/Exception;
     const-string v5, "buzzebees.markets"
 
@@ -215,7 +215,7 @@
 
     invoke-static {v5, v6}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 944
+    .line 964
     iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$7;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     new-instance v6, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$7$1;
@@ -226,7 +226,7 @@
 
     goto :goto_5f
 
-    .line 918
+    .line 938
     .end local v1    # "e":Ljava/lang/Exception;
     .restart local v2    # "i":I
     .restart local v3    # "jsonArray":Lorg/json/JSONArray;
@@ -236,7 +236,7 @@
 
     move-result-object v4
 
-    .line 919
+    .line 939
     .local v4, "json_campaign":Lorg/json/JSONObject;
     iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$7;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
@@ -254,18 +254,18 @@
     .catch Lorg/json/JSONException; {:try_start_8b .. :try_end_9d} :catch_a0
     .catch Ljava/lang/Exception; {:try_start_8b .. :try_end_9d} :catch_67
 
-    .line 916
+    .line 936
     .end local v4    # "json_campaign":Lorg/json/JSONObject;
     :goto_9d
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_40
 
-    .line 920
+    .line 940
     :catch_a0
     move-exception v1
 
-    .line 921
+    .line 941
     .local v1, "e":Lorg/json/JSONException;
     :try_start_a1
     const-string v5, "buzzebees.markets"
@@ -292,7 +292,7 @@
 
     goto :goto_9d
 
-    .line 933
+    .line 953
     .end local v1    # "e":Lorg/json/JSONException;
     .end local v2    # "i":I
     .restart local v0    # "count_item":I
@@ -300,7 +300,7 @@
     iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$7;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->gContentFooter:Landroid/widget/LinearLayout;
-    invoke-static {v5}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$24(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Landroid/widget/LinearLayout;
+    invoke-static {v5}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$25(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Landroid/widget/LinearLayout;
 
     move-result-object v5
 

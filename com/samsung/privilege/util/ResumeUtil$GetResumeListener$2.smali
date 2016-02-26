@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener$2;->this$1:Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;
 
-    .line 323
+    .line 317
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,18 +41,18 @@
     .registers 8
 
     .prologue
-    .line 326
+    .line 320
     const-string v1, ""
 
-    .line 327
+    .line 321
     .local v1, "strApp_name":Ljava/lang/String;
     const-string v2, ""
 
-    .line 328
+    .line 322
     .local v2, "strBuzzebees_error_message":Ljava/lang/String;
     const-string v3, ""
 
-    .line 330
+    .line 324
     .local v3, "strBuzzebees_error_message_th":Ljava/lang/String;
     :try_start_6
     iget-object v4, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener$2;->this$1:Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;
@@ -62,13 +62,13 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a001d
+    const v5, 0x7f09001d
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 331
+    .line 325
     iget-object v4, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener$2;->this$1:Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;
 
     # getter for: Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gAppContext:Landroid/content/Context;
@@ -76,13 +76,13 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a029b
+    const v5, 0x7f09029b
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 332
+    .line 326
     iget-object v4, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener$2;->this$1:Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;
 
     # getter for: Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gAppContext:Landroid/content/Context;
@@ -90,7 +90,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a00b7
+    const v5, 0x7f0900b7
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
     :try_end_2c
@@ -98,7 +98,7 @@
 
     move-result-object v3
 
-    .line 337
+    .line 331
     :goto_2d
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -131,14 +131,14 @@
 
     invoke-static {v1, v4, v5}, Lcom/samsung/privilege/util/ResumeUtil;->showDialogBuzzebeesError(Ljava/lang/String;Ljava/lang/String;Landroid/app/Activity;)V
 
-    .line 338
+    .line 332
     return-void
 
-    .line 333
+    .line 327
     :catch_4e
     move-exception v0
 
-    .line 334
+    .line 328
     .local v0, "e":Ljava/lang/Exception;
     # getter for: Lcom/samsung/privilege/util/ResumeUtil;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/util/ResumeUtil;->access$1()Ljava/lang/String;

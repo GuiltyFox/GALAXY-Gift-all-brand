@@ -49,7 +49,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f07035e
+    const v3, 0x7f0c036d
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/RequestHelpActivity;->findViewById(I)Landroid/view/View;
 
@@ -66,7 +66,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f070360
+    const v3, 0x7f0c036f
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/RequestHelpActivity;->findViewById(I)Landroid/view/View;
 

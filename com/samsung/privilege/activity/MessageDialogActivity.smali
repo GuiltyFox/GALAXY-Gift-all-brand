@@ -214,7 +214,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 26
-    const v0, 0x7f030104
+    const v0, 0x7f030106
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/MessageDialogActivity;->setContentView(I)V
 

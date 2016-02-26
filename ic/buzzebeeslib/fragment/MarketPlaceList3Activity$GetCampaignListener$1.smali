@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener$1;->this$1:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener;
 
-    .line 880
+    .line 900
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 3
 
     .prologue
-    .line 883
+    .line 903
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener$1;->this$1:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
@@ -56,7 +56,7 @@
 
     if-nez v0, :cond_2f
 
-    .line 884
+    .line 904
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener$1;->this$1:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
@@ -71,7 +71,7 @@
 
     if-eqz v0, :cond_25
 
-    .line 885
+    .line 905
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener$1;->this$1:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
@@ -86,7 +86,7 @@
 
     invoke-virtual {v0}, Lic/buzzebeeslib/control/PullToRefreshGridView;->onRefreshComplete()V
 
-    .line 887
+    .line 907
     :cond_25
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener$1;->this$1:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener;
 
@@ -99,7 +99,7 @@
 
     invoke-static {v0, v1}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$4(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;Z)V
 
-    .line 889
+    .line 909
     :cond_2f
     return-void
 .end method

@@ -89,7 +89,7 @@
 .end method
 
 .method public handleButtonPress(I)V
-    .registers 7
+    .registers 8
     .param p1, "index"    # I
 
     .prologue
@@ -122,13 +122,13 @@
     :pswitch_12
     invoke-virtual {v0}, Lcom/google/zxing/client/result/GeoParsedResult;->getLatitude()D
 
-    move-result-wide v1
+    move-result-wide v2
 
     invoke-virtual {v0}, Lcom/google/zxing/client/result/GeoParsedResult;->getLongitude()D
 
-    move-result-wide v3
+    move-result-wide v4
 
-    invoke-virtual {p0, v1, v2, v3, v4}, Lcom/google/zxing/client/android/result/GeoResultHandler;->getDirections(DD)V
+    invoke-virtual {p0, v2, v3, v4, v5}, Lcom/google/zxing/client/android/result/GeoResultHandler;->getDirections(DD)V
 
     goto :goto_9
 

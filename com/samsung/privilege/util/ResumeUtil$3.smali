@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->val$activity:Landroid/app/Activity;
 
-    .line 447
+    .line 453
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,22 +43,35 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 449
-    invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
+    .line 455
+    # getter for: Lcom/samsung/privilege/util/ResumeUtil;->gIsClosingDialog:Z
+    invoke-static {}, Lcom/samsung/privilege/util/ResumeUtil;->access$2()Z
 
-    .line 450
+    move-result v2
+
+    if-nez v2, :cond_34
+
+    .line 456
+    const/4 v2, 0x1
+
+    invoke-static {v2}, Lcom/samsung/privilege/util/ResumeUtil;->access$3(Z)V
+
+    .line 459
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+
+    .line 461
     iget-object v2, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->val$activity:Landroid/app/Activity;
 
     const/4 v3, 0x0
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/UserLogin;->Logout(Landroid/content/Context;Z)V
 
-    .line 452
+    .line 463
     sget-object v1, Lcom/samsung/privilege/AppSetting;->UriPlayStoreGift:Ljava/lang/String;
 
-    .line 454
+    .line 465
     .local v1, "appNameBuzzebees":Ljava/lang/String;
-    :try_start_b
+    :try_start_15
     iget-object v2, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->val$activity:Landroid/app/Activity;
 
     new-instance v3, Landroid/content/Intent;
@@ -86,18 +99,21 @@
     invoke-direct {v3, v4, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-    :try_end_2a
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_b .. :try_end_2a} :catch_2b
+    :try_end_34
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_15 .. :try_end_34} :catch_35
 
-    .line 458
-    :goto_2a
+    .line 470
+    .end local v1    # "appNameBuzzebees":Ljava/lang/String;
+    :cond_34
+    :goto_34
     return-void
 
-    .line 455
-    :catch_2b
+    .line 466
+    .restart local v1    # "appNameBuzzebees":Ljava/lang/String;
+    :catch_35
     move-exception v0
 
-    .line 456
+    .line 467
     .local v0, "anfe":Landroid/content/ActivityNotFoundException;
     iget-object v2, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->val$activity:Landroid/app/Activity;
 
@@ -127,5 +143,5 @@
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    goto :goto_2a
+    goto :goto_34
 .end method

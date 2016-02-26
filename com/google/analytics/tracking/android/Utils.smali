@@ -681,18 +681,18 @@
 .end method
 
 .method public static safeParseDouble(Ljava/lang/String;)D
-    .registers 4
+    .registers 5
     .param p0, "s"    # Ljava/lang/String;
 
     .prologue
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
     .line 39
     if-nez p0, :cond_5
 
     .line 45
     :goto_4
-    return-wide v1
+    return-wide v2
 
     .line 43
     :cond_5
@@ -701,7 +701,7 @@
     :try_end_8
     .catch Ljava/lang/NumberFormatException; {:try_start_5 .. :try_end_8} :catch_a
 
-    move-result-wide v1
+    move-result-wide v2
 
     goto :goto_4
 
@@ -715,18 +715,18 @@
 .end method
 
 .method public static safeParseLong(Ljava/lang/String;)J
-    .registers 4
+    .registers 5
     .param p0, "s"    # Ljava/lang/String;
 
     .prologue
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
     .line 51
     if-nez p0, :cond_5
 
     .line 57
     :goto_4
-    return-wide v1
+    return-wide v2
 
     .line 55
     :cond_5
@@ -735,7 +735,7 @@
     :try_end_8
     .catch Ljava/lang/NumberFormatException; {:try_start_5 .. :try_end_8} :catch_a
 
-    move-result-wide v1
+    move-result-wide v2
 
     goto :goto_4
 

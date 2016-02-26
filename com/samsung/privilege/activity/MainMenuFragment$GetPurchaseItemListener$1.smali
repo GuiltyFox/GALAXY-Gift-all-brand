@@ -37,7 +37,7 @@
 
     iput-object p3, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener$1;->val$response_text:Ljava/lang/String;
 
-    .line 1388
+    .line 1402
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,179 +46,188 @@
 
 # virtual methods
 .method public run()V
-    .registers 25
+    .registers 24
 
     .prologue
-    .line 1390
+    .line 1404
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener$1;->val$response_code:I
 
     const/16 v3, 0xc8
 
-    if-ne v2, v3, :cond_18f
+    if-ne v2, v3, :cond_195
 
-    .line 1392
+    .line 1406
     :try_start_8
-    new-instance v22, Lorg/json/JSONObject;
+    new-instance v21, Lorg/json/JSONObject;
 
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener$1;->val$response_text:Ljava/lang/String;
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v21
 
     invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1393
-    .local v22, "jsonRoot":Lorg/json/JSONObject;
-    new-instance v23, Lcom/samsung/privilege/bean/Purchasing;
+    .line 1407
+    .local v21, "jsonRoot":Lorg/json/JSONObject;
+    new-instance v22, Lcom/samsung/privilege/bean/Purchasing;
 
-    move-object/from16 v0, v23
-
-    move-object/from16 v1, v22
-
-    invoke-direct {v0, v1}, Lcom/samsung/privilege/bean/Purchasing;-><init>(Lorg/json/JSONObject;)V
-
-    .line 1395
-    .local v23, "purchasing":Lcom/samsung/privilege/bean/Purchasing;
-    new-instance v21, Lcom/samsung/privilege/bean/MainMenuItemModel;
-
-    invoke-direct/range {v21 .. v21}, Lcom/samsung/privilege/bean/MainMenuItemModel;-><init>()V
-
-    .line 1396
-    .local v21, "item":Lcom/samsung/privilege/bean/MainMenuItemModel;
-    const/4 v2, 0x3
-
-    move-object/from16 v0, v21
-
-    iput v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->type:I
-
-    .line 1397
-    move-object/from16 v0, v23
+    move-object/from16 v0, v22
 
     move-object/from16 v1, v21
 
+    invoke-direct {v0, v1}, Lcom/samsung/privilege/bean/Purchasing;-><init>(Lorg/json/JSONObject;)V
+
+    .line 1409
+    .local v22, "purchasing":Lcom/samsung/privilege/bean/Purchasing;
+    new-instance v20, Lcom/samsung/privilege/bean/MainMenuItemModel;
+
+    invoke-direct/range {v20 .. v20}, Lcom/samsung/privilege/bean/MainMenuItemModel;-><init>()V
+
+    .line 1410
+    .local v20, "item":Lcom/samsung/privilege/bean/MainMenuItemModel;
+    const/4 v2, 0x3
+
+    move-object/from16 v0, v20
+
+    iput v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->type:I
+
+    .line 1411
+    move-object/from16 v0, v22
+
+    move-object/from16 v1, v20
+
     iput-object v0, v1, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_purchasing:Lcom/samsung/privilege/bean/Purchasing;
 
-    .line 1398
-    move-object/from16 v0, v23
+    .line 1412
+    move-object/from16 v0, v22
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/Purchasing;->RedeemKey:Ljava/lang/String;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iput-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_id:Ljava/lang/String;
 
-    .line 1399
-    move-object/from16 v0, v23
+    .line 1413
+    move-object/from16 v0, v22
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/Purchasing;->ID:Ljava/lang/String;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iput-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_campaign_id:Ljava/lang/String;
 
-    .line 1400
-    move-object/from16 v0, v23
+    .line 1414
+    move-object/from16 v0, v22
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/Purchasing;->CategoryID:Ljava/lang/String;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iput-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_cat_id:Ljava/lang/String;
 
-    .line 1401
-    move-object/from16 v0, v23
+    .line 1415
+    move-object/from16 v0, v22
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/Purchasing;->Type:Ljava/lang/String;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iput-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_type:Ljava/lang/String;
 
-    .line 1402
-    move-object/from16 v0, v23
+    .line 1416
+    move-object/from16 v0, v22
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/Purchasing;->Name:Ljava/lang/String;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iput-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_detail:Ljava/lang/String;
 
-    .line 1403
-    move-object/from16 v0, v23
+    .line 1417
+    move-object/from16 v0, v22
 
     iget v2, v0, Lcom/samsung/privilege/bean/Purchasing;->LocationAgencyId:I
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iput v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_location_agency_id:I
 
-    .line 1404
-    move-object/from16 v0, v23
+    .line 1418
+    move-object/from16 v0, v22
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/Purchasing;->AgencyID:Ljava/lang/String;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iput-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_agencyid:Ljava/lang/String;
 
-    .line 1405
-    move-object/from16 v0, v23
+    .line 1419
+    move-object/from16 v0, v22
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/Purchasing;->AgencyName:Ljava/lang/String;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iput-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_agencyname:Ljava/lang/String;
 
-    .line 1406
-    move-object/from16 v0, v23
+    .line 1420
+    move-object/from16 v0, v22
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/Purchasing;->Serial:Ljava/lang/String;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iput-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_serial:Ljava/lang/String;
 
-    .line 1407
-    move-object/from16 v0, v23
+    .line 1421
+    move-object/from16 v0, v22
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/Purchasing;->Barcode:Ljava/lang/String;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iput-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_barcode:Ljava/lang/String;
 
-    .line 1408
-    move-object/from16 v0, v23
+    .line 1422
+    move-object/from16 v0, v22
 
     iget-wide v2, v0, Lcom/samsung/privilege/bean/Purchasing;->RedeemDate:J
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iput-wide v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_redeem_date:J
 
-    .line 1409
-    move-object/from16 v0, v23
+    .line 1423
+    move-object/from16 v0, v22
 
     iget v2, v0, Lcom/samsung/privilege/bean/Purchasing;->MinutesValidAfterUsed:I
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iput v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_minutes_valid_after_used:I
 
-    .line 1410
-    move-object/from16 v0, v23
+    .line 1424
+    move-object/from16 v0, v22
 
     iget-object v2, v0, Lcom/samsung/privilege/bean/Purchasing;->PrivilegeMessage:Ljava/lang/String;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iput-object v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_privilege_message:Ljava/lang/String;
 
-    .line 1418
+    .line 1425
+    move-object/from16 v0, v22
+
+    iget-wide v2, v0, Lcom/samsung/privilege/bean/Purchasing;->VoucherExpireDate:J
+
+    move-object/from16 v0, v20
+
+    iput-wide v2, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_VoucherExpireDate:J
+
+    .line 1433
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;
@@ -232,15 +241,15 @@
 
     move-result-object v2
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iget-object v3, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_purchasing:Lcom/samsung/privilege/bean/Purchasing;
 
-    move-object/from16 v0, v23
+    move-object/from16 v0, v22
 
     iget-wide v4, v0, Lcom/samsung/privilege/bean/Purchasing;->RedeemDate:J
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iget-object v6, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_campaign_id:Ljava/lang/String;
 
@@ -248,11 +257,11 @@
 
     move-result v6
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iget-object v7, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_agencyname:Ljava/lang/String;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
     iget-object v8, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_detail:Ljava/lang/String;
 
@@ -260,77 +269,75 @@
 
     iget-object v9, v0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;
 
-    # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->gLongExpireIn:J
-    invoke-static {v9}, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->access$0(Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;)J
+    # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->gLongExpireIn:Ljava/lang/Long;
+    invoke-static {v9}, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->access$0(Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;)Ljava/lang/Long;
 
-    move-result-wide v9
+    move-result-object v9
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
-    iget-object v11, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_serial:Ljava/lang/String;
+    iget-object v10, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_serial:Ljava/lang/String;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
-    iget-object v12, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_barcode:Ljava/lang/String;
+    iget-object v11, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_barcode:Ljava/lang/String;
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
-    iget-object v13, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_privilege_message:Ljava/lang/String;
+    iget-object v12, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_privilege_message:Ljava/lang/String;
 
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;
+    iget-object v13, v0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-    invoke-static {v14}, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->access$1(Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;)Lcom/samsung/privilege/activity/MainMenuFragment;
+    invoke-static {v13}, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->access$1(Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;)Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    move-result-object v14
+    move-result-object v13
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
-    invoke-static {v14}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$10(Lcom/samsung/privilege/activity/MainMenuFragment;)Lcom/bitmapfun/util/ImageFetcher;
+    invoke-static {v13}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$10(Lcom/samsung/privilege/activity/MainMenuFragment;)Lcom/bitmapfun/util/ImageFetcher;
 
-    move-result-object v14
+    move-result-object v13
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v20
 
-    iget-object v15, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_type:Ljava/lang/String;
+    iget-object v14, v0, Lcom/samsung/privilege/bean/MainMenuItemModel;->history_type:Ljava/lang/String;
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;
-
-    move-object/from16 v16, v0
+    iget-object v15, v0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
-    invoke-static/range {v16 .. v16}, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->access$1(Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;)Lcom/samsung/privilege/activity/MainMenuFragment;
+    invoke-static {v15}, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;->access$1(Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;)Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    move-result-object v16
+    move-result-object v15
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->gHandler:Landroid/os/Handler;
-    invoke-static/range {v16 .. v16}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$11(Lcom/samsung/privilege/activity/MainMenuFragment;)Landroid/os/Handler;
+    invoke-static {v15}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$11(Lcom/samsung/privilege/activity/MainMenuFragment;)Landroid/os/Handler;
 
-    move-result-object v16
+    move-result-object v15
 
-    const/16 v17, 0x0
+    const/16 v16, 0x0
 
-    invoke-static/range {v2 .. v17}, Lcom/samsung/privilege/util/DialogUtil;->showDialogSerial3TypeCode(Landroid/app/Activity;Lcom/samsung/privilege/bean/Purchasing;JILjava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/bitmapfun/util/ImageFetcher;Ljava/lang/String;Landroid/os/Handler;Lcom/samsung/privilege/bean/NFCTag;)V
-    :try_end_ef
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_ef} :catch_f0
+    invoke-static/range {v2 .. v16}, Lcom/samsung/privilege/util/DialogSerialVersion2;->showDialogSerial(Landroid/app/Activity;Lcom/samsung/privilege/bean/Purchasing;JILjava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/bitmapfun/util/ImageFetcher;Ljava/lang/String;Landroid/os/Handler;Lcom/samsung/privilege/bean/NFCTag;)V
+    :try_end_f5
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_f5} :catch_f6
 
-    .line 1444
-    .end local v21    # "item":Lcom/samsung/privilege/bean/MainMenuItemModel;
-    .end local v22    # "jsonRoot":Lorg/json/JSONObject;
-    .end local v23    # "purchasing":Lcom/samsung/privilege/bean/Purchasing;
-    :cond_ef
-    :goto_ef
+    .line 1459
+    .end local v20    # "item":Lcom/samsung/privilege/bean/MainMenuItemModel;
+    .end local v21    # "jsonRoot":Lorg/json/JSONObject;
+    .end local v22    # "purchasing":Lcom/samsung/privilege/bean/Purchasing;
+    :cond_f5
+    :goto_f5
     return-void
 
-    .line 1419
-    :catch_f0
-    move-exception v20
+    .line 1434
+    :catch_f6
+    move-exception v19
 
-    .line 1420
-    .local v20, "ex":Ljava/lang/Exception;
+    .line 1435
+    .local v19, "ex":Ljava/lang/Exception;
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;
@@ -344,14 +351,14 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_ef
+    if-eqz v2, :cond_f5
 
-    .line 1422
-    const/16 v18, 0x0
+    .line 1437
+    const/16 v17, 0x0
 
-    .line 1424
-    .local v18, "blnIsAdmin":Z
-    :try_start_101
+    .line 1439
+    .local v17, "blnIsAdmin":Z
+    :try_start_107
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;
@@ -366,22 +373,22 @@
     move-result-object v2
 
     invoke-static {v2}, Lcom/samsung/privilege/UserLogin;->IS_ADMIN(Landroid/content/Context;)Z
-    :try_end_110
-    .catch Ljava/lang/Exception; {:try_start_101 .. :try_end_110} :catch_14b
+    :try_end_116
+    .catch Ljava/lang/Exception; {:try_start_107 .. :try_end_116} :catch_151
 
     move-result v2
 
-    if-eqz v2, :cond_115
+    if-eqz v2, :cond_11b
 
-    .line 1425
-    const/16 v18, 0x1
+    .line 1440
+    const/16 v17, 0x1
 
-    .line 1431
-    :cond_115
-    :goto_115
-    if-eqz v18, :cond_16f
+    .line 1446
+    :cond_11b
+    :goto_11b
+    if-eqz v17, :cond_175
 
-    .line 1432
+    .line 1447
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;
@@ -406,7 +413,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a018c
+    const v5, 0x7f09018c
 
     invoke-virtual {v4, v5}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -418,7 +425,7 @@
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object v4
 
@@ -433,14 +440,14 @@
     # invokes: Lcom/samsung/privilege/activity/MainMenuFragment;->showToast(Ljava/lang/String;)V
     invoke-static {v2, v3}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$6(Lcom/samsung/privilege/activity/MainMenuFragment;Ljava/lang/String;)V
 
-    goto :goto_ef
+    goto :goto_f5
 
-    .line 1427
-    :catch_14b
-    move-exception v19
+    .line 1442
+    :catch_151
+    move-exception v18
 
-    .line 1428
-    .local v19, "e2":Ljava/lang/Exception;
+    .line 1443
+    .local v18, "e2":Ljava/lang/Exception;
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;
@@ -461,7 +468,7 @@
 
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
     move-result-object v4
 
@@ -475,11 +482,11 @@
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_115
+    goto :goto_11b
 
-    .line 1434
-    .end local v19    # "e2":Ljava/lang/Exception;
-    :cond_16f
+    .line 1449
+    .end local v18    # "e2":Ljava/lang/Exception;
+    :cond_175
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;
@@ -502,7 +509,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0a018c
+    const v4, 0x7f09018c
 
     invoke-virtual {v3, v4}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -511,12 +518,12 @@
     # invokes: Lcom/samsung/privilege/activity/MainMenuFragment;->showToast(Ljava/lang/String;)V
     invoke-static {v2, v3}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$6(Lcom/samsung/privilege/activity/MainMenuFragment;Ljava/lang/String;)V
 
-    goto/16 :goto_ef
+    goto/16 :goto_f5
 
-    .line 1440
-    .end local v18    # "blnIsAdmin":Z
-    .end local v20    # "ex":Ljava/lang/Exception;
-    :cond_18f
+    .line 1455
+    .end local v17    # "blnIsAdmin":Z
+    .end local v19    # "ex":Ljava/lang/Exception;
+    :cond_195
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;
@@ -530,9 +537,9 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_ef
+    if-eqz v2, :cond_f5
 
-    .line 1441
+    .line 1456
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetPurchaseItemListener;
@@ -555,7 +562,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0a018b
+    const v4, 0x7f09018b
 
     invoke-virtual {v3, v4}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -564,5 +571,5 @@
     # invokes: Lcom/samsung/privilege/activity/MainMenuFragment;->showToast(Ljava/lang/String;)V
     invoke-static {v2, v3}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$6(Lcom/samsung/privilege/activity/MainMenuFragment;Ljava/lang/String;)V
 
-    goto/16 :goto_ef
+    goto/16 :goto_f5
 .end method

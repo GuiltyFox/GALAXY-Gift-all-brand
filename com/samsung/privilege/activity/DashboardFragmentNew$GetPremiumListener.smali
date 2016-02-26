@@ -23,7 +23,7 @@
     .registers 2
 
     .prologue
-    .line 817
+    .line 823
     iput-object p1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetPremiumListener;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
@@ -35,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 817
+    .line 823
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetPremiumListener;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     return-object v0
@@ -49,15 +49,15 @@
     .param p2, "content"    # Ljava/lang/String;
 
     .prologue
-    .line 848
+    .line 854
     invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 849
+    .line 855
     const/16 v0, -0x1f4
 
     invoke-virtual {p0, v0, p2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetPremiumListener;->onSuccess(ILjava/lang/String;)V
 
-    .line 850
+    .line 856
     return-void
 .end method
 
@@ -67,7 +67,7 @@
     .param p2, "response_text"    # Ljava/lang/String;
 
     .prologue
-    .line 820
+    .line 826
     const-string v2, "gift.dashboard"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -96,7 +96,7 @@
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 821
+    .line 827
     iget-object v2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetPremiumListener;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     invoke-virtual {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -117,12 +117,12 @@
 
     if-nez v2, :cond_69
 
-    .line 822
+    .line 828
     const/16 v2, 0xc8
 
     if-ne p1, v2, :cond_6a
 
-    .line 823
+    .line 829
     const-string v2, "dashboard_premium"
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetPremiumListener;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
@@ -135,7 +135,7 @@
 
     move-result-object v0
 
-    .line 825
+    .line 831
     .local v0, "catch_premium":Ljava/lang/String;
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -143,7 +143,7 @@
 
     if-nez v2, :cond_69
 
-    .line 826
+    .line 832
     iget-object v2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetPremiumListener;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     invoke-virtual {v2}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -156,7 +156,7 @@
 
     invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 832
+    .line 838
     const-string v2, ""
 
     invoke-virtual {p2, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -165,7 +165,7 @@
 
     if-nez v2, :cond_69
 
-    .line 833
+    .line 839
     const-string v2, "dashboard_premium"
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetPremiumListener;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
@@ -176,17 +176,17 @@
 
     invoke-static {v2, p2, v3}, Lcom/samsung/privilege/helper/LocalFileHelper;->saveCatchToSD(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 844
+    .line 850
     .end local v0    # "catch_premium":Ljava/lang/String;
     :cond_69
     :goto_69
     return-void
 
-    .line 837
+    .line 843
     :cond_6a
     const-string v1, "Error while load premium..."
 
-    .line 838
+    .line 844
     .local v1, "err_message":Ljava/lang/String;
     iget-object v2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetPremiumListener;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
@@ -204,7 +204,7 @@
 
     if-eqz v2, :cond_93
 
-    .line 839
+    .line 845
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -227,7 +227,7 @@
 
     move-result-object v1
 
-    .line 841
+    .line 847
     :cond_93
     iget-object v2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetPremiumListener;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 

@@ -26,7 +26,7 @@
     .registers 2
 
     .prologue
-    .line 2308
+    .line 2326
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$FBPostListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
     .registers 3
 
     .prologue
-    .line 2308
+    .line 2326
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/CampaignListActivity$FBPostListener;-><init>(Lcom/samsung/privilege/activity/CampaignListActivity;)V
 
     return-void
@@ -48,7 +48,7 @@
     .registers 2
 
     .prologue
-    .line 2308
+    .line 2326
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$FBPostListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     return-object v0
@@ -60,7 +60,7 @@
     .registers 1
 
     .prologue
-    .line 2313
+    .line 2331
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .param p2, "postData"    # Lcom/samsung/privilege/PostData;
 
     .prologue
-    .line 2328
+    .line 2346
     return-void
 .end method
 
@@ -91,7 +91,7 @@
     .end annotation
 
     .prologue
-    .line 2323
+    .line 2341
     .local p3, "badgeAlerts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/BadgeAlert;>;"
     return-void
 .end method
@@ -113,7 +113,7 @@
     .end annotation
 
     .prologue
-    .line 2318
+    .line 2336
     .local p3, "badgeAlerts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/BadgeAlert;>;"
     return-void
 .end method
@@ -122,14 +122,14 @@
     .registers 3
 
     .prologue
-    .line 2332
+    .line 2350
     const-string v0, "CampaignListActivity"
 
     const-string v1, "onPremiumChanged"
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2334
+    .line 2352
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$FBPostListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     new-instance v1, Lcom/samsung/privilege/activity/CampaignListActivity$FBPostListener$1;
@@ -138,6 +138,6 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 2344
+    .line 2362
     return-void
 .end method

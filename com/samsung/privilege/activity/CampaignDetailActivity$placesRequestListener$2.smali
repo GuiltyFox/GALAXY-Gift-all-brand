@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener$2;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;
 
-    .line 3297
+    .line 3472
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
     .prologue
     const/16 v1, 0x8
 
-    .line 3300
+    .line 3475
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener$2;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
@@ -58,7 +58,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 3301
+    .line 3476
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener$2;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity$placesRequestListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
@@ -73,6 +73,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 3302
+    .line 3477
     return-void
 .end method

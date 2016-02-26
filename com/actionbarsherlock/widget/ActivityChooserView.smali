@@ -115,17 +115,15 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 13
+    .registers 12
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
     .param p3, "defStyle"    # I
 
     .prologue
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
-    const/4 v7, 0x4
-
-    const/4 v6, 0x1
+    const/4 v6, 0x4
 
     .line 213
     invoke-direct {p0, p1, p2, p3}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
@@ -145,7 +143,7 @@
     iput-object v4, p0, Lcom/actionbarsherlock/widget/ActivityChooserView;->mOnGlobalLayoutListener:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
     .line 172
-    iput v7, p0, Lcom/actionbarsherlock/widget/ActivityChooserView;->mInitialActivityCount:I
+    iput v6, p0, Lcom/actionbarsherlock/widget/ActivityChooserView;->mInitialActivityCount:I
 
     .line 214
     iput-object p1, p0, Lcom/actionbarsherlock/widget/ActivityChooserView;->mContext:Landroid/content/Context;
@@ -160,16 +158,19 @@
 
     move-result-object v0
 
-    .line 219
+    .line 220
     .local v0, "attributesArray":Landroid/content/res/TypedArray;
-    invoke-virtual {v0, v6, v7}, Landroid/content/res/TypedArray;->getInt(II)I
+    sget v4, Lcom/actionbarsherlock/R$styleable;->SherlockActivityChooserView_initialActivityCount:I
+
+    .line 219
+    invoke-virtual {v0, v4, v6}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v4
 
     iput v4, p0, Lcom/actionbarsherlock/widget/ActivityChooserView;->mInitialActivityCount:I
 
     .line 224
-    const/4 v4, 0x2
+    sget v4, Lcom/actionbarsherlock/R$styleable;->SherlockActivityChooserView_expandActivityOverflowButtonDrawable:I
 
     .line 223
     invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -191,12 +192,14 @@
     .local v2, "inflater":Landroid/view/LayoutInflater;
     sget v4, Lcom/actionbarsherlock/R$layout;->abs__activity_chooser_view:I
 
-    invoke-virtual {v2, v4, p0, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    const/4 v5, 0x1
+
+    invoke-virtual {v2, v4, p0, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 231
     new-instance v4, Lcom/actionbarsherlock/widget/ActivityChooserView$Callbacks;
 
-    invoke-direct {v4, p0, v8}, Lcom/actionbarsherlock/widget/ActivityChooserView$Callbacks;-><init>(Lcom/actionbarsherlock/widget/ActivityChooserView;Lcom/actionbarsherlock/widget/ActivityChooserView$Callbacks;)V
+    invoke-direct {v4, p0, v7}, Lcom/actionbarsherlock/widget/ActivityChooserView$Callbacks;-><init>(Lcom/actionbarsherlock/widget/ActivityChooserView;Lcom/actionbarsherlock/widget/ActivityChooserView$Callbacks;)V
 
     iput-object v4, p0, Lcom/actionbarsherlock/widget/ActivityChooserView;->mCallbacks:Lcom/actionbarsherlock/widget/ActivityChooserView$Callbacks;
 
@@ -298,7 +301,7 @@
     .line 247
     new-instance v4, Lcom/actionbarsherlock/widget/ActivityChooserView$ActivityChooserViewAdapter;
 
-    invoke-direct {v4, p0, v8}, Lcom/actionbarsherlock/widget/ActivityChooserView$ActivityChooserViewAdapter;-><init>(Lcom/actionbarsherlock/widget/ActivityChooserView;Lcom/actionbarsherlock/widget/ActivityChooserView$ActivityChooserViewAdapter;)V
+    invoke-direct {v4, p0, v7}, Lcom/actionbarsherlock/widget/ActivityChooserView$ActivityChooserViewAdapter;-><init>(Lcom/actionbarsherlock/widget/ActivityChooserView;Lcom/actionbarsherlock/widget/ActivityChooserView$ActivityChooserViewAdapter;)V
 
     iput-object v4, p0, Lcom/actionbarsherlock/widget/ActivityChooserView;->mAdapter:Lcom/actionbarsherlock/widget/ActivityChooserView$ActivityChooserViewAdapter;
 

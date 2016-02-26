@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignListActivity$GetCampaignCategoryListener$1;->val$response_text:Ljava/lang/String;
 
-    .line 258
+    .line 272
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 4
 
     .prologue
-    .line 262
+    .line 276
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -116,7 +116,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/helper/LocalFileHelper;->saveCatchToSD(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 264
+    .line 278
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$GetCampaignCategoryListener$1;->this$1:Lcom/samsung/privilege/activity/CampaignListActivity$GetCampaignCategoryListener;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity$GetCampaignCategoryListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
@@ -133,11 +133,11 @@
     :try_end_50
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_50} :catch_51
 
-    .line 268
+    .line 282
     :goto_50
     return-void
 
-    .line 265
+    .line 279
     :catch_51
     move-exception v0
 

@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignListActivity$20;->val$msg:Ljava/lang/String;
 
-    .line 2040
+    .line 2058
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 5
 
     .prologue
-    .line 2043
+    .line 2061
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$20;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     invoke-virtual {v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->getApplicationContext()Landroid/content/Context;
@@ -60,10 +60,10 @@
 
     move-result-object v0
 
-    .line 2044
+    .line 2062
     .local v0, "toast":Landroid/widget/Toast;
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 2045
+    .line 2063
     return-void
 .end method

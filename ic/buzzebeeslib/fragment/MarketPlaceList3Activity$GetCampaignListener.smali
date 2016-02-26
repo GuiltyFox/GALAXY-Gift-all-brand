@@ -26,20 +26,20 @@
     .param p2, "pIsAll"    # Z
 
     .prologue
-    .line 858
+    .line 878
     iput-object p1, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     invoke-direct {p0}, Lic/buzzebeeslib/util/http/HttpRQListener;-><init>()V
 
-    .line 856
+    .line 876
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener;->gIsAll:Z
 
-    .line 859
+    .line 879
     iput-boolean p2, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener;->gIsAll:Z
 
-    .line 860
+    .line 880
     return-void
 .end method
 
@@ -47,7 +47,7 @@
     .registers 2
 
     .prologue
-    .line 854
+    .line 874
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     return-object v0
@@ -56,13 +56,13 @@
 
 # virtual methods
 .method public onComplete(ILjava/lang/String;Ljava/lang/Object;)V
-    .registers 11
+    .registers 12
     .param p1, "response_code"    # I
     .param p2, "response_text"    # Ljava/lang/String;
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 864
+    .line 884
     const-string v2, "buzzebees.marketlist.fragment"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -91,23 +91,23 @@
 
     invoke-static {v2, v3}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 865
+    .line 885
     const/16 v2, 0xc8
 
     if-ne p1, v2, :cond_5a
 
-    .line 866
+    .line 886
     iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     # invokes: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->ProcessJsonCampaign(Ljava/lang/String;)V
     invoke-static {v2, p2}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$0(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;Ljava/lang/String;)V
 
-    .line 868
+    .line 888
     iget-boolean v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener;->gIsAll:Z
 
     if-eqz v2, :cond_3c
 
-    .line 869
+    .line 889
     iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     # invokes: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->getCache_name()Ljava/lang/String;
@@ -115,11 +115,11 @@
 
     move-result-object v0
 
-    .line 870
+    .line 890
     .local v0, "cache_name":Ljava/lang/String;
     if-eqz v0, :cond_3c
 
-    .line 871
+    .line 891
     iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     invoke-virtual {v2}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->getApplicationContext()Landroid/content/Context;
@@ -128,7 +128,7 @@
 
     invoke-static {v0, p2, v2}, Lic/buzzebeeslib/util/LocalFileHelper;->saveCatchToSD(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 879
+    .line 899
     .end local v0    # "cache_name":Ljava/lang/String;
     :cond_3c
     :goto_3c
@@ -141,7 +141,7 @@
 
     if-eqz v2, :cond_59
 
-    .line 880
+    .line 900
     iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->gGridCampaign:Lic/buzzebeeslib/control/PullToRefreshGridView;
@@ -157,21 +157,21 @@
 
     invoke-static {v3, v4}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$5(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;Ljava/lang/Runnable;)V
 
-    .line 890
-    const-wide/16 v5, 0x3e8
+    .line 910
+    const-wide/16 v6, 0x3e8
 
-    .line 880
-    invoke-virtual {v2, v4, v5, v6}, Lic/buzzebeeslib/control/PullToRefreshGridView;->postDelayed(Ljava/lang/Runnable;J)Z
+    .line 900
+    invoke-virtual {v2, v4, v6, v7}, Lic/buzzebeeslib/control/PullToRefreshGridView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 892
+    .line 912
     :cond_59
     return-void
 
-    .line 875
+    .line 895
     :cond_5a
     const-string v1, "Error while load campaign..."
 
-    .line 876
+    .line 896
     .local v1, "err_message":Ljava/lang/String;
     iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$GetCampaignListener;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 

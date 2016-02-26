@@ -29,7 +29,7 @@
     .line 16
     new-array v0, v3, [I
 
-    const v1, 0x7f0a02c1
+    const v1, 0x7f0902c1
 
     aput v1, v0, v2
 

@@ -15,27 +15,27 @@
 
 
 # static fields
-.field public static final contents_text:I = 0x7f09000b
+.field public static final contents_text:I = 0x7f08000b
 
-.field public static final encode_view:I = 0x7f09000c
+.field public static final encode_view:I = 0x7f08000c
 
-.field public static final possible_result_points:I = 0x7f09000d
+.field public static final possible_result_points:I = 0x7f08000d
 
-.field public static final result_minor_text:I = 0x7f09000e
+.field public static final result_minor_text:I = 0x7f08000e
 
-.field public static final result_points:I = 0x7f09000f
+.field public static final result_points:I = 0x7f08000f
 
-.field public static final result_text:I = 0x7f090010
+.field public static final result_text:I = 0x7f080010
 
-.field public static final result_view:I = 0x7f090011
+.field public static final result_view:I = 0x7f080011
 
-.field public static final status_text:I = 0x7f090012
+.field public static final status_text:I = 0x7f080012
 
-.field public static final transparent:I = 0x7f090013
+.field public static final transparent:I = 0x7f080013
 
-.field public static final viewfinder_laser:I = 0x7f090014
+.field public static final viewfinder_laser:I = 0x7f080014
 
-.field public static final viewfinder_mask:I = 0x7f090015
+.field public static final viewfinder_mask:I = 0x7f080015
 
 
 # direct methods

@@ -770,9 +770,9 @@
     move-result-object v4
 
     .line 157
-    const-wide/16 v15, -0x1
+    const-wide/16 v16, -0x1
 
-    cmp-long v15, v12, v15
+    cmp-long v15, v12, v16
 
     if-eqz v15, :cond_9f
 

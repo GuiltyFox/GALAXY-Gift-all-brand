@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public skip(J)J
-    .registers 11
+    .registers 12
     .param p1, "n"    # J
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -40,36 +40,36 @@
 
     .prologue
     .line 66
-    const-wide/16 v3, 0x0
+    const-wide/16 v4, 0x0
 
     .line 67
-    .local v3, "totalBytesSkipped":J
+    .local v4, "totalBytesSkipped":J
     :goto_2
-    cmp-long v5, v3, p1
+    cmp-long v1, v4, p1
 
-    if-ltz v5, :cond_7
+    if-ltz v1, :cond_7
 
     .line 79
     :cond_6
-    return-wide v3
+    return-wide v4
 
     .line 68
     :cond_7
-    iget-object v5, p0, Lcom/facebook/android/Utility$FlushedInputStream;->in:Ljava/io/InputStream;
+    iget-object v1, p0, Lcom/facebook/android/Utility$FlushedInputStream;->in:Ljava/io/InputStream;
 
-    sub-long v6, p1, v3
+    sub-long v6, p1, v4
 
-    invoke-virtual {v5, v6, v7}, Ljava/io/InputStream;->skip(J)J
+    invoke-virtual {v1, v6, v7}, Ljava/io/InputStream;->skip(J)J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 69
-    .local v1, "bytesSkipped":J
-    const-wide/16 v5, 0x0
+    .local v2, "bytesSkipped":J
+    const-wide/16 v6, 0x0
 
-    cmp-long v5, v1, v5
+    cmp-long v1, v2, v6
 
-    if-nez v5, :cond_1d
+    if-nez v1, :cond_1d
 
     .line 70
     invoke-virtual {p0}, Lcom/facebook/android/Utility$FlushedInputStream;->read()I
@@ -81,12 +81,12 @@
     if-ltz v0, :cond_6
 
     .line 74
-    const-wide/16 v1, 0x1
+    const-wide/16 v2, 0x1
 
     .line 77
     .end local v0    # "b":I
     :cond_1d
-    add-long/2addr v3, v1
+    add-long/2addr v4, v2
 
     goto :goto_2
 .end method

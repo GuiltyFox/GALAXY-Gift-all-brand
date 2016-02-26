@@ -37,7 +37,7 @@
 
     iput-object p3, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$12;->val$imagePopupMyPoint:Landroid/widget/ImageView;
 
-    .line 2021
+    .line 2022
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,7 +50,7 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 2024
+    .line 2025
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$12;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$12$1;
@@ -61,7 +61,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 2029
+    .line 2030
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 2034
+    .line 2035
     return-void
 .end method
 
@@ -79,7 +79,7 @@
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    .line 2038
+    .line 2039
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$12;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$12$2;
@@ -90,6 +90,6 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 2043
+    .line 2044
     return-void
 .end method

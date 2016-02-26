@@ -522,7 +522,7 @@
 .end method
 
 .method private writeToFile(Ljava/io/InputStream;Ljava/io/OutputStream;Lic/buzzebeeslib/control/download/DownloadRequest;)J
-    .registers 11
+    .registers 12
     .param p1, "is"    # Ljava/io/InputStream;
     .param p2, "os"    # Ljava/io/OutputStream;
     .param p3, "request"    # Lic/buzzebeeslib/control/download/DownloadRequest;
@@ -583,9 +583,9 @@
     :cond_20
     invoke-virtual {p3}, Lic/buzzebeeslib/control/download/DownloadRequest;->getDownloadSize()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    return-wide v3
+    return-wide v4
 
     .line 137
     :cond_25
@@ -597,13 +597,13 @@
     .line 139
     invoke-virtual {p3}, Lic/buzzebeeslib/control/download/DownloadRequest;->getDownloadSize()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    int-to-long v5, v2
+    int-to-long v6, v2
 
-    add-long/2addr v3, v5
+    add-long/2addr v4, v6
 
-    invoke-virtual {p3, v3, v4}, Lic/buzzebeeslib/control/download/DownloadRequest;->setDownloadSize(J)J
+    invoke-virtual {p3, v4, v5}, Lic/buzzebeeslib/control/download/DownloadRequest;->setDownloadSize(J)J
 
     .line 140
     invoke-direct {p0, p3}, Lic/buzzebeeslib/control/download/HttpDownloader;->notifyProgress(Lic/buzzebeeslib/control/download/DownloadRequest;)V
@@ -684,7 +684,7 @@
 .end method
 
 .method public doDownload(Lic/buzzebeeslib/control/download/DownloadRequest;)I
-    .registers 19
+    .registers 20
     .param p1, "request"    # Lic/buzzebeeslib/control/download/DownloadRequest;
 
     .prologue
@@ -769,35 +769,35 @@
 
     move-result v13
 
-    if-eqz v13, :cond_205
+    if-eqz v13, :cond_217
 
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
     move-result v13
 
-    if-eqz v13, :cond_205
+    if-eqz v13, :cond_217
 
     invoke-virtual/range {p1 .. p1}, Lic/buzzebeeslib/control/download/DownloadRequest;->getDownloadSize()J
 
-    move-result-wide v13
+    move-result-wide v14
 
     invoke-virtual {v2}, Ljava/io/File;->length()J
 
-    move-result-wide v15
+    move-result-wide v16
 
-    cmp-long v13, v13, v15
+    cmp-long v13, v14, v16
 
-    if-nez v13, :cond_205
+    if-nez v13, :cond_217
 
     invoke-virtual/range {p1 .. p1}, Lic/buzzebeeslib/control/download/DownloadRequest;->getTotalSize()J
 
-    move-result-wide v13
+    move-result-wide v14
 
-    const-wide/16 v15, 0x0
+    const-wide/16 v16, 0x0
 
-    cmp-long v13, v13, v15
+    cmp-long v13, v14, v16
 
-    if-eqz v13, :cond_205
+    if-eqz v13, :cond_217
 
     const/4 v8, 0x1
 
@@ -879,9 +879,11 @@
 
     invoke-virtual/range {p1 .. p1}, Lic/buzzebeeslib/control/download/DownloadRequest;->getDownloadSize()J
 
-    move-result-wide v15
+    move-result-wide v16
 
-    invoke-virtual/range {v14 .. v16}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-wide/from16 v0, v16
+
+    invoke-virtual {v14, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v14
 
@@ -902,9 +904,11 @@
 
     invoke-virtual {v2}, Ljava/io/File;->length()J
 
-    move-result-wide v15
+    move-result-wide v16
 
-    invoke-virtual/range {v14 .. v16}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-wide/from16 v0, v16
+
+    invoke-virtual {v14, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v14
 
@@ -925,9 +929,11 @@
 
     invoke-virtual/range {p1 .. p1}, Lic/buzzebeeslib/control/download/DownloadRequest;->getTotalSize()J
 
-    move-result-wide v15
+    move-result-wide v16
 
-    invoke-virtual/range {v14 .. v16}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-wide/from16 v0, v16
+
+    invoke-virtual {v14, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v14
 
@@ -938,7 +944,7 @@
     invoke-static {v13, v14}, Lic/buzzebeeslib/util/LogUtil;->LogV(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 56
-    if-eqz v8, :cond_208
+    if-eqz v8, :cond_21a
 
     .line 57
     const-string v13, "x-ms-version"
@@ -958,9 +964,11 @@
 
     invoke-virtual {v2}, Ljava/io/File;->length()J
 
-    move-result-wide v15
+    move-result-wide v16
 
-    invoke-virtual/range {v14 .. v16}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-wide/from16 v0, v16
+
+    invoke-virtual {v14, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v14
 
@@ -990,25 +998,25 @@
     .line 71
     .end local v10    # "os":Ljava/io/OutputStream;
     .restart local v9    # "os":Ljava/io/OutputStream;
-    :goto_11f
+    :goto_127
     invoke-interface {v6, v5}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;
 
     move-result-object v11
 
     .line 72
     .local v11, "response":Lorg/apache/http/HttpResponse;
-    if-nez v8, :cond_154
+    if-nez v8, :cond_15e
 
     .line 73
     invoke-virtual {v2}, Ljava/io/File;->length()J
 
-    move-result-wide v13
+    move-result-wide v14
 
-    const-wide/16 v15, 0x0
+    const-wide/16 v16, 0x0
 
-    cmp-long v13, v13, v15
+    cmp-long v13, v14, v16
 
-    if-lez v13, :cond_154
+    if-lez v13, :cond_15e
 
     .line 74
     const-string v13, "x-ms-version"
@@ -1028,9 +1036,11 @@
 
     invoke-virtual {v2}, Ljava/io/File;->length()J
 
-    move-result-wide v15
+    move-result-wide v16
 
-    invoke-virtual/range {v14 .. v16}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-wide/from16 v0, v16
+
+    invoke-virtual {v14, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v14
 
@@ -1047,7 +1057,7 @@
     invoke-interface {v11, v13, v14}, Lorg/apache/http/HttpResponse;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 79
-    :cond_154
+    :cond_15e
     invoke-interface {v11}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
 
     move-result-object v4
@@ -1064,9 +1074,11 @@
 
     invoke-interface {v4}, Lorg/apache/http/HttpEntity;->getContentLength()J
 
-    move-result-wide v15
+    move-result-wide v16
 
-    invoke-virtual/range {v14 .. v16}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-wide/from16 v0, v16
+
+    invoke-virtual {v14, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v14
 
@@ -1087,9 +1099,11 @@
 
     invoke-interface {v4}, Lorg/apache/http/HttpEntity;->getContentLength()J
 
-    move-result-wide v15
+    move-result-wide v16
 
-    invoke-virtual/range {v14 .. v16}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-wide/from16 v0, v16
+
+    invoke-virtual {v14, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v14
 
@@ -1106,18 +1120,18 @@
 
     .line 87
     .local v7, "is":Ljava/io/InputStream;
-    if-nez v8, :cond_1df
+    if-nez v8, :cond_1f1
 
     .line 88
     invoke-virtual {v2}, Ljava/io/File;->length()J
 
-    move-result-wide v13
+    move-result-wide v14
 
-    const-wide/16 v15, 0x0
+    const-wide/16 v16, 0x0
 
-    cmp-long v13, v13, v15
+    cmp-long v13, v14, v16
 
-    if-lez v13, :cond_24f
+    if-lez v13, :cond_263
 
     .line 89
     const-string v13, "OAT"
@@ -1137,9 +1151,11 @@
 
     invoke-virtual {v2}, Ljava/io/File;->length()J
 
-    move-result-wide v15
+    move-result-wide v16
 
-    invoke-virtual/range {v14 .. v16}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-wide/from16 v0, v16
+
+    invoke-virtual {v14, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v14
 
@@ -1160,9 +1176,11 @@
 
     invoke-interface {v4}, Lorg/apache/http/HttpEntity;->getContentLength()J
 
-    move-result-wide v15
+    move-result-wide v16
 
-    invoke-virtual/range {v14 .. v16}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-wide/from16 v0, v16
+
+    invoke-virtual {v14, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v14
 
@@ -1175,22 +1193,22 @@
     .line 92
     invoke-interface {v4}, Lorg/apache/http/HttpEntity;->getContentLength()J
 
-    move-result-wide v13
+    move-result-wide v14
 
     move-object/from16 v0, p1
 
-    invoke-virtual {v0, v13, v14}, Lic/buzzebeeslib/control/download/DownloadRequest;->setTotalSize(J)J
+    invoke-virtual {v0, v14, v15}, Lic/buzzebeeslib/control/download/DownloadRequest;->setTotalSize(J)J
 
     .line 93
-    const-wide/16 v13, 0x0
+    const-wide/16 v14, 0x0
 
     move-object/from16 v0, p1
 
-    invoke-virtual {v0, v13, v14}, Lic/buzzebeeslib/control/download/DownloadRequest;->setDownloadSize(J)J
+    invoke-virtual {v0, v14, v15}, Lic/buzzebeeslib/control/download/DownloadRequest;->setDownloadSize(J)J
 
     .line 101
-    :cond_1df
-    :goto_1df
+    :cond_1f1
+    :goto_1f1
     invoke-direct/range {p0 .. p1}, Lic/buzzebeeslib/control/download/HttpDownloader;->notifyStart(Lic/buzzebeeslib/control/download/DownloadRequest;)V
 
     .line 103
@@ -1203,15 +1221,15 @@
     .line 105
     invoke-virtual/range {p1 .. p1}, Lic/buzzebeeslib/control/download/DownloadRequest;->getTotalSize()J
 
-    move-result-wide v13
+    move-result-wide v14
 
     invoke-virtual/range {p1 .. p1}, Lic/buzzebeeslib/control/download/DownloadRequest;->getDownloadSize()J
 
-    move-result-wide v15
+    move-result-wide v16
 
-    cmp-long v13, v13, v15
+    cmp-long v13, v14, v16
 
-    if-nez v13, :cond_287
+    if-nez v13, :cond_29d
 
     .line 106
     new-instance v13, Ljava/io/File;
@@ -1232,27 +1250,27 @@
     .end local v7    # "is":Ljava/io/InputStream;
     .end local v8    # "isContinueDownload":Z
     .end local v11    # "response":Lorg/apache/http/HttpResponse;
-    :goto_204
+    :goto_216
     return v12
 
     .line 47
-    :cond_205
+    :cond_217
     const/4 v8, 0x0
 
     goto/16 :goto_65
 
     .line 61
     .restart local v8    # "isContinueDownload":Z
-    :cond_208
+    :cond_21a
     invoke-virtual {v2}, Ljava/io/File;->length()J
 
-    move-result-wide v13
+    move-result-wide v14
 
-    const-wide/16 v15, 0x0
+    const-wide/16 v16, 0x0
 
-    cmp-long v13, v13, v15
+    cmp-long v13, v14, v16
 
-    if-lez v13, :cond_247
+    if-lez v13, :cond_25b
 
     .line 62
     const-string v13, "OAT"
@@ -1279,9 +1297,11 @@
 
     invoke-virtual {v2}, Ljava/io/File;->length()J
 
-    move-result-wide v15
+    move-result-wide v16
 
-    invoke-virtual/range {v14 .. v16}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-wide/from16 v0, v16
+
+    invoke-virtual {v14, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v14
 
@@ -1311,10 +1331,10 @@
     .line 66
     .end local v10    # "os":Ljava/io/OutputStream;
     .restart local v9    # "os":Ljava/io/OutputStream;
-    goto/16 :goto_11f
+    goto/16 :goto_127
 
     .line 67
-    :cond_247
+    :cond_25b
     new-instance v10, Ljava/io/FileOutputStream;
 
     invoke-direct {v10, v2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
@@ -1325,13 +1345,13 @@
 
     .end local v10    # "os":Ljava/io/OutputStream;
     .restart local v9    # "os":Ljava/io/OutputStream;
-    goto/16 :goto_11f
+    goto/16 :goto_127
 
     .line 95
     .restart local v4    # "entry":Lorg/apache/http/HttpEntity;
     .restart local v7    # "is":Ljava/io/InputStream;
     .restart local v11    # "response":Lorg/apache/http/HttpResponse;
-    :cond_24f
+    :cond_263
     const-string v13, "OAT"
 
     new-instance v14, Ljava/lang/StringBuilder;
@@ -1342,9 +1362,11 @@
 
     invoke-interface {v4}, Lorg/apache/http/HttpEntity;->getContentLength()J
 
-    move-result-wide v15
+    move-result-wide v16
 
-    invoke-virtual/range {v14 .. v16}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-wide/from16 v0, v16
+
+    invoke-virtual {v14, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v14
 
@@ -1357,32 +1379,32 @@
     .line 96
     invoke-interface {v4}, Lorg/apache/http/HttpEntity;->getContentLength()J
 
-    move-result-wide v13
+    move-result-wide v14
 
     move-object/from16 v0, p1
 
-    invoke-virtual {v0, v13, v14}, Lic/buzzebeeslib/control/download/DownloadRequest;->setTotalSize(J)J
+    invoke-virtual {v0, v14, v15}, Lic/buzzebeeslib/control/download/DownloadRequest;->setTotalSize(J)J
 
     .line 97
-    const-wide/16 v13, 0x0
+    const-wide/16 v14, 0x0
 
     move-object/from16 v0, p1
 
-    invoke-virtual {v0, v13, v14}, Lic/buzzebeeslib/control/download/DownloadRequest;->setDownloadSize(J)J
-    :try_end_277
-    .catch Lorg/apache/http/client/ClientProtocolException; {:try_start_42 .. :try_end_277} :catch_279
-    .catch Ljava/io/FileNotFoundException; {:try_start_42 .. :try_end_277} :catch_28c
-    .catch Ljava/io/IOException; {:try_start_42 .. :try_end_277} :catch_29a
-    .catch Ljava/lang/Exception; {:try_start_42 .. :try_end_277} :catch_2a8
+    invoke-virtual {v0, v14, v15}, Lic/buzzebeeslib/control/download/DownloadRequest;->setDownloadSize(J)J
+    :try_end_28d
+    .catch Lorg/apache/http/client/ClientProtocolException; {:try_start_42 .. :try_end_28d} :catch_28f
+    .catch Ljava/io/FileNotFoundException; {:try_start_42 .. :try_end_28d} :catch_2a2
+    .catch Ljava/io/IOException; {:try_start_42 .. :try_end_28d} :catch_2b0
+    .catch Ljava/lang/Exception; {:try_start_42 .. :try_end_28d} :catch_2be
 
-    goto/16 :goto_1df
+    goto/16 :goto_1f1
 
     .line 111
     .end local v4    # "entry":Lorg/apache/http/HttpEntity;
     .end local v7    # "is":Ljava/io/InputStream;
     .end local v8    # "isContinueDownload":Z
     .end local v11    # "response":Lorg/apache/http/HttpResponse;
-    :catch_279
+    :catch_28f
     move-exception v3
 
     .line 112
@@ -1399,7 +1421,7 @@
     .line 114
     invoke-direct/range {p0 .. p1}, Lic/buzzebeeslib/control/download/HttpDownloader;->notifyError(Lic/buzzebeeslib/control/download/DownloadRequest;)V
 
-    goto/16 :goto_204
+    goto/16 :goto_216
 
     .line 109
     .end local v3    # "e":Lorg/apache/http/client/ClientProtocolException;
@@ -1407,23 +1429,23 @@
     .restart local v7    # "is":Ljava/io/InputStream;
     .restart local v8    # "isContinueDownload":Z
     .restart local v11    # "response":Lorg/apache/http/HttpResponse;
-    :cond_287
-    :try_start_287
+    :cond_29d
+    :try_start_29d
     invoke-direct/range {p0 .. p1}, Lic/buzzebeeslib/control/download/HttpDownloader;->notifyProgress(Lic/buzzebeeslib/control/download/DownloadRequest;)V
-    :try_end_28a
-    .catch Lorg/apache/http/client/ClientProtocolException; {:try_start_287 .. :try_end_28a} :catch_279
-    .catch Ljava/io/FileNotFoundException; {:try_start_287 .. :try_end_28a} :catch_28c
-    .catch Ljava/io/IOException; {:try_start_287 .. :try_end_28a} :catch_29a
-    .catch Ljava/lang/Exception; {:try_start_287 .. :try_end_28a} :catch_2a8
+    :try_end_2a0
+    .catch Lorg/apache/http/client/ClientProtocolException; {:try_start_29d .. :try_end_2a0} :catch_28f
+    .catch Ljava/io/FileNotFoundException; {:try_start_29d .. :try_end_2a0} :catch_2a2
+    .catch Ljava/io/IOException; {:try_start_29d .. :try_end_2a0} :catch_2b0
+    .catch Ljava/lang/Exception; {:try_start_29d .. :try_end_2a0} :catch_2be
 
-    goto/16 :goto_204
+    goto/16 :goto_216
 
     .line 115
     .end local v4    # "entry":Lorg/apache/http/HttpEntity;
     .end local v7    # "is":Ljava/io/InputStream;
     .end local v8    # "isContinueDownload":Z
     .end local v11    # "response":Lorg/apache/http/HttpResponse;
-    :catch_28c
+    :catch_2a2
     move-exception v3
 
     .line 116
@@ -1440,11 +1462,11 @@
     .line 118
     invoke-direct/range {p0 .. p1}, Lic/buzzebeeslib/control/download/HttpDownloader;->notifyError(Lic/buzzebeeslib/control/download/DownloadRequest;)V
 
-    goto/16 :goto_204
+    goto/16 :goto_216
 
     .line 119
     .end local v3    # "e":Ljava/io/FileNotFoundException;
-    :catch_29a
+    :catch_2b0
     move-exception v3
 
     .line 120
@@ -1461,11 +1483,11 @@
     .line 122
     invoke-direct/range {p0 .. p1}, Lic/buzzebeeslib/control/download/HttpDownloader;->notifyError(Lic/buzzebeeslib/control/download/DownloadRequest;)V
 
-    goto/16 :goto_204
+    goto/16 :goto_216
 
     .line 123
     .end local v3    # "e":Ljava/io/IOException;
-    :catch_2a8
+    :catch_2be
     move-exception v3
 
     .line 124
@@ -1482,7 +1504,7 @@
     .line 126
     invoke-direct/range {p0 .. p1}, Lic/buzzebeeslib/control/download/HttpDownloader;->notifyError(Lic/buzzebeeslib/control/download/DownloadRequest;)V
 
-    goto/16 :goto_204
+    goto/16 :goto_216
 .end method
 
 .method declared-synchronized removeDownloadListener(Lic/buzzebeeslib/control/download/DownloadListener;)V

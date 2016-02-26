@@ -3,12 +3,12 @@
 .source "DialogUtil.java"
 
 # interfaces
-.implements Landroid/view/animation/Animation$AnimationListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogUtil$10;->onClick(Landroid/view/View;)V
+    value = Lcom/samsung/privilege/util/DialogUtil$10;->run()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,18 +20,26 @@
 # instance fields
 .field final synthetic this$1:Lcom/samsung/privilege/util/DialogUtil$10;
 
-.field private final synthetic val$animation2:Landroid/view/animation/Animation;
+.field private final synthetic val$btnSwithToBarcode:Landroid/widget/LinearLayout;
+
+.field private final synthetic val$btnSwithToQRCode:Landroid/widget/LinearLayout;
+
+.field private final synthetic val$btnSwithToSerial:Landroid/widget/LinearLayout;
 
 .field private final synthetic val$contentBarcode:Landroid/widget/LinearLayout;
 
 .field private final synthetic val$contentQRCode:Landroid/widget/LinearLayout;
 
+.field private final synthetic val$imgProgress:Landroid/widget/ImageView;
+
 .field private final synthetic val$tvSerialNumber:Landroid/widget/TextView;
+
+.field private final synthetic val$tvTitleTime:Landroid/widget/TextView;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/util/DialogUtil$10;Landroid/widget/TextView;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroid/view/animation/Animation;)V
-    .registers 6
+.method constructor <init>(Lcom/samsung/privilege/util/DialogUtil$10;Landroid/widget/TextView;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroid/widget/ImageView;Landroid/widget/TextView;)V
+    .registers 10
 
     .prologue
     .line 1
@@ -39,13 +47,21 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$tvSerialNumber:Landroid/widget/TextView;
 
-    iput-object p3, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$contentQRCode:Landroid/widget/LinearLayout;
+    iput-object p3, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$contentBarcode:Landroid/widget/LinearLayout;
 
-    iput-object p4, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$contentBarcode:Landroid/widget/LinearLayout;
+    iput-object p4, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$contentQRCode:Landroid/widget/LinearLayout;
 
-    iput-object p5, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$animation2:Landroid/view/animation/Animation;
+    iput-object p5, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$btnSwithToBarcode:Landroid/widget/LinearLayout;
 
-    .line 701
+    iput-object p6, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$btnSwithToSerial:Landroid/widget/LinearLayout;
+
+    iput-object p7, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$btnSwithToQRCode:Landroid/widget/LinearLayout;
+
+    iput-object p8, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$imgProgress:Landroid/widget/ImageView;
+
+    iput-object p9, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$tvTitleTime:Landroid/widget/TextView;
+
+    .line 663
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -53,67 +69,61 @@
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/view/animation/Animation;)V
+.method public run()V
     .registers 4
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
     .prologue
-    const/4 v1, 0x4
+    const/16 v2, 0x8
 
-    .line 714
+    .line 665
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$tvSerialNumber:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+    const-string v1, " XXXXXXX "
 
-    .line 715
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 666
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$contentBarcode:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
+
+    .line 667
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$contentQRCode:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 716
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$contentBarcode:Landroid/widget/LinearLayout;
+    .line 668
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$tvSerialNumber:Landroid/widget/TextView;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 718
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$contentBarcode:Landroid/widget/LinearLayout;
+    .line 669
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$btnSwithToBarcode:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v0}, Landroid/widget/LinearLayout;->clearAnimation()V
+    invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 719
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$contentBarcode:Landroid/widget/LinearLayout;
+    .line 670
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$btnSwithToSerial:Landroid/widget/LinearLayout;
 
-    iget-object v1, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$animation2:Landroid/view/animation/Animation;
+    invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setAnimation(Landroid/view/animation/Animation;)V
+    .line 671
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$btnSwithToQRCode:Landroid/widget/LinearLayout;
 
-    .line 720
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$contentBarcode:Landroid/widget/LinearLayout;
+    invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    iget-object v1, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$animation2:Landroid/view/animation/Animation;
+    .line 672
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$imgProgress:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->startAnimation(Landroid/view/animation/Animation;)V
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 721
-    return-void
-.end method
+    .line 673
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogUtil$10$1;->val$tvTitleTime:Landroid/widget/TextView;
 
-.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
-    .registers 2
-    .param p1, "animation"    # Landroid/view/animation/Animation;
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .prologue
-    .line 710
-    return-void
-.end method
-
-.method public onAnimationStart(Landroid/view/animation/Animation;)V
-    .registers 2
-    .param p1, "animation"    # Landroid/view/animation/Animation;
-
-    .prologue
-    .line 705
+    .line 674
     return-void
 .end method

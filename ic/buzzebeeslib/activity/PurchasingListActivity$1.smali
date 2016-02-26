@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
-    .registers 13
+    .registers 14
     .param p1, "v"    # Landroid/view/View;
     .param p2, "keyCode"    # I
     .param p3, "event"    # Landroid/view/KeyEvent;
@@ -105,13 +105,13 @@
 
     move-result v5
 
-    int-to-double v5, v5
+    int-to-double v6, v5
 
-    const-wide v7, 0x3fed99999999999aL
+    const-wide v8, 0x3fed99999999999aL
 
-    mul-double/2addr v5, v7
+    mul-double/2addr v6, v8
 
-    double-to-int v5, v5
+    double-to-int v5, v6
 
     const/16 v6, 0x14
 

@@ -918,7 +918,7 @@
 .end method
 
 .method public onListItemClick(Landroid/widget/ListView;Landroid/view/View;IJ)V
-    .registers 13
+    .registers 14
     .param p1, "l"    # Landroid/widget/ListView;
     .param p2, "v"    # Landroid/view/View;
     .param p3, "position"    # I

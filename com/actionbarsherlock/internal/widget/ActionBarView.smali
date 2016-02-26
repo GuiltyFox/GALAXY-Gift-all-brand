@@ -193,7 +193,7 @@
 
     .line 182
     .local v15, "pm":Landroid/content/pm/PackageManager;
-    const/4 v2, 0x6
+    sget v2, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_navigationMode:I
 
     .line 183
     const/4 v3, 0x0
@@ -208,7 +208,7 @@
     iput v2, v0, Lcom/actionbarsherlock/internal/widget/ActionBarView;->mNavigationMode:I
 
     .line 184
-    const/16 v2, 0x8
+    sget v2, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_title:I
 
     invoke-virtual {v9, v2}, Landroid/content/res/TypedArray;->getText(I)Ljava/lang/CharSequence;
 
@@ -219,7 +219,7 @@
     iput-object v2, v0, Lcom/actionbarsherlock/internal/widget/ActionBarView;->mTitle:Ljava/lang/CharSequence;
 
     .line 185
-    const/16 v2, 0x9
+    sget v2, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_subtitle:I
 
     invoke-virtual {v9, v2}, Landroid/content/res/TypedArray;->getText(I)Ljava/lang/CharSequence;
 
@@ -230,7 +230,7 @@
     iput-object v2, v0, Lcom/actionbarsherlock/internal/widget/ActionBarView;->mSubtitle:Ljava/lang/CharSequence;
 
     .line 187
-    const/16 v2, 0xb
+    sget v2, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_logo:I
 
     invoke-virtual {v9, v2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -245,21 +245,21 @@
 
     iget-object v2, v0, Lcom/actionbarsherlock/internal/widget/ActionBarView;->mLogo:Landroid/graphics/drawable/Drawable;
 
-    if-nez v2, :cond_96
+    if-nez v2, :cond_97
 
     .line 189
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0xb
 
-    if-ge v2, v3, :cond_1c2
+    if-ge v2, v3, :cond_1c7
 
     .line 190
     move-object/from16 v0, p1
 
     instance-of v2, v0, Landroid/app/Activity;
 
-    if-eqz v2, :cond_96
+    if-eqz v2, :cond_97
 
     move-object/from16 v2, p1
 
@@ -272,7 +272,7 @@
 
     .line 194
     .local v16, "resId":I
-    if-eqz v16, :cond_96
+    if-eqz v16, :cond_97
 
     .line 195
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -291,9 +291,9 @@
 
     .line 212
     .end local v16    # "resId":I
-    :cond_96
-    :goto_96
-    const/16 v2, 0xa
+    :cond_97
+    :goto_97
+    sget v2, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_icon:I
 
     invoke-virtual {v9, v2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -308,17 +308,17 @@
 
     iget-object v2, v0, Lcom/actionbarsherlock/internal/widget/ActionBarView;->mIcon:Landroid/graphics/drawable/Drawable;
 
-    if-nez v2, :cond_cb
+    if-nez v2, :cond_cc
 
     .line 214
     move-object/from16 v0, p1
 
     instance-of v2, v0, Landroid/app/Activity;
 
-    if-eqz v2, :cond_bd
+    if-eqz v2, :cond_be
 
     .line 216
-    :try_start_ac
+    :try_start_ad
     move-object/from16 v0, p1
 
     check-cast v0, Landroid/app/Activity;
@@ -336,17 +336,17 @@
     move-object/from16 v0, p0
 
     iput-object v2, v0, Lcom/actionbarsherlock/internal/widget/ActionBarView;->mIcon:Landroid/graphics/drawable/Drawable;
-    :try_end_bd
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_ac .. :try_end_bd} :catch_1f2
+    :try_end_be
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_ad .. :try_end_be} :catch_1f7
 
     .line 221
-    :cond_bd
-    :goto_bd
+    :cond_be
+    :goto_be
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/actionbarsherlock/internal/widget/ActionBarView;->mIcon:Landroid/graphics/drawable/Drawable;
 
-    if-nez v2, :cond_cb
+    if-nez v2, :cond_cc
 
     .line 222
     invoke-virtual {v10, v15}, Landroid/content/pm/ApplicationInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
@@ -358,14 +358,14 @@
     iput-object v2, v0, Lcom/actionbarsherlock/internal/widget/ActionBarView;->mIcon:Landroid/graphics/drawable/Drawable;
 
     .line 226
-    :cond_cb
+    :cond_cc
     invoke-static/range {p1 .. p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v14
 
     .line 229
     .local v14, "inflater":Landroid/view/LayoutInflater;
-    const/16 v2, 0xe
+    sget v2, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_homeLayout:I
 
     .line 230
     sget v3, Lcom/actionbarsherlock/R$layout;->abs__action_bar_home:I
@@ -446,7 +446,7 @@
     invoke-virtual {v2, v3}, Lcom/actionbarsherlock/internal/widget/ActionBarView$HomeView;->setContentDescription(Ljava/lang/CharSequence;)V
 
     .line 240
-    const/4 v2, 0x0
+    sget v2, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_titleTextStyle:I
 
     const/4 v3, 0x0
 
@@ -459,7 +459,7 @@
     iput v2, v0, Lcom/actionbarsherlock/internal/widget/ActionBarView;->mTitleStyleRes:I
 
     .line 241
-    const/4 v2, 0x1
+    sget v2, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_subtitleTextStyle:I
 
     const/4 v3, 0x0
 
@@ -472,7 +472,7 @@
     iput v2, v0, Lcom/actionbarsherlock/internal/widget/ActionBarView;->mSubtitleStyleRes:I
 
     .line 242
-    const/16 v2, 0xf
+    sget v2, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_progressBarStyle:I
 
     const/4 v3, 0x0
 
@@ -485,7 +485,7 @@
     iput v2, v0, Lcom/actionbarsherlock/internal/widget/ActionBarView;->mProgressStyle:I
 
     .line 244
-    const/16 v2, 0x10
+    sget v2, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_indeterminateProgressStyle:I
 
     const/4 v3, 0x0
 
@@ -499,7 +499,7 @@
     iput v2, v0, Lcom/actionbarsherlock/internal/widget/ActionBarView;->mIndeterminateProgressStyle:I
 
     .line 246
-    const/16 v2, 0x11
+    sget v2, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_progressBarPadding:I
 
     const/4 v3, 0x0
 
@@ -512,7 +512,7 @@
     iput v2, v0, Lcom/actionbarsherlock/internal/widget/ActionBarView;->mProgressBarPadding:I
 
     .line 247
-    const/16 v2, 0x12
+    sget v2, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_itemPadding:I
 
     const/4 v3, 0x0
 
@@ -525,7 +525,7 @@
     iput v2, v0, Lcom/actionbarsherlock/internal/widget/ActionBarView;->mItemPadding:I
 
     .line 249
-    const/4 v2, 0x7
+    sget v2, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_displayOptions:I
 
     const/4 v3, 0x0
 
@@ -538,7 +538,7 @@
     invoke-virtual {v0, v2}, Lcom/actionbarsherlock/internal/widget/ActionBarView;->setDisplayOptions(I)V
 
     .line 251
-    const/16 v2, 0xd
+    sget v2, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_customNavigationLayout:I
 
     const/4 v3, 0x0
 
@@ -548,7 +548,7 @@
 
     .line 252
     .local v11, "customNavId":I
-    if-eqz v11, :cond_184
+    if-eqz v11, :cond_188
 
     .line 253
     const/4 v2, 0x0
@@ -582,8 +582,8 @@
     invoke-virtual {v0, v2}, Lcom/actionbarsherlock/internal/widget/ActionBarView;->setDisplayOptions(I)V
 
     .line 258
-    :cond_184
-    const/4 v2, 0x4
+    :cond_188
+    sget v2, Lcom/actionbarsherlock/R$styleable;->SherlockActionBar_height:I
 
     const/4 v3, 0x0
 
@@ -657,15 +657,15 @@
     .end local v11    # "customNavId":I
     .end local v13    # "homeResId":I
     .end local v14    # "inflater":Landroid/view/LayoutInflater;
-    :cond_1c2
+    :cond_1c7
     move-object/from16 v0, p1
 
     instance-of v2, v0, Landroid/app/Activity;
 
-    if-eqz v2, :cond_1d9
+    if-eqz v2, :cond_1de
 
     .line 201
-    :try_start_1c8
+    :try_start_1cd
     move-object/from16 v0, p1
 
     check-cast v0, Landroid/app/Activity;
@@ -683,17 +683,17 @@
     move-object/from16 v0, p0
 
     iput-object v2, v0, Lcom/actionbarsherlock/internal/widget/ActionBarView;->mLogo:Landroid/graphics/drawable/Drawable;
-    :try_end_1d9
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1c8 .. :try_end_1d9} :catch_1e9
+    :try_end_1de
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1cd .. :try_end_1de} :catch_1ee
 
     .line 206
-    :cond_1d9
-    :goto_1d9
+    :cond_1de
+    :goto_1de
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/actionbarsherlock/internal/widget/ActionBarView;->mLogo:Landroid/graphics/drawable/Drawable;
 
-    if-nez v2, :cond_96
+    if-nez v2, :cond_97
 
     .line 207
     invoke-virtual {v10, v15}, Landroid/content/pm/ApplicationInfo;->loadLogo(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
@@ -704,10 +704,10 @@
 
     iput-object v2, v0, Lcom/actionbarsherlock/internal/widget/ActionBarView;->mLogo:Landroid/graphics/drawable/Drawable;
 
-    goto/16 :goto_96
+    goto/16 :goto_97
 
     .line 202
-    :catch_1e9
+    :catch_1ee
     move-exception v12
 
     .line 203
@@ -718,11 +718,11 @@
 
     invoke-static {v2, v3, v12}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1d9
+    goto :goto_1de
 
     .line 217
     .end local v12    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
-    :catch_1f2
+    :catch_1f7
     move-exception v12
 
     .line 218
@@ -733,7 +733,7 @@
 
     invoke-static {v2, v3, v12}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto/16 :goto_bd
+    goto/16 :goto_be
 .end method
 
 .method static synthetic access$0(Lcom/actionbarsherlock/internal/widget/ActionBarView;)Lcom/actionbarsherlock/app/ActionBar$OnNavigationListener;

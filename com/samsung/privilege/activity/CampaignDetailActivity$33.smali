@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$33;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
-    .line 3580
+    .line 3739
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,36 +38,17 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .registers 3
 
     .prologue
-    .line 3582
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$33;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
-
+    .line 3741
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$33;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
-    const v2, 0x7f3c0026
+    const/4 v1, 0x1
 
-    invoke-virtual {v0, v2}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->findViewById(I)Landroid/view/View;
+    # invokes: Lcom/samsung/privilege/activity/CampaignDetailActivity;->initialLayout(Z)V
+    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$29(Lcom/samsung/privilege/activity/CampaignDetailActivity;Z)V
 
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ProgressBar;
-
-    invoke-static {v1, v0}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$56(Lcom/samsung/privilege/activity/CampaignDetailActivity;Landroid/widget/ProgressBar;)V
-
-    .line 3583
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$33;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->gPbLoadingCampaign:Landroid/widget/ProgressBar;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$30(Lcom/samsung/privilege/activity/CampaignDetailActivity;)Landroid/widget/ProgressBar;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
-
-    .line 3584
+    .line 3742
     return-void
 .end method

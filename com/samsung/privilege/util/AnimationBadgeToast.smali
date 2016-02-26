@@ -38,270 +38,274 @@
 .end method
 
 .method private static showDialogBadge(Landroid/content/Context;Lcom/samsung/privilege/bean/BadgeAlert;Landroid/graphics/Bitmap;)V
-    .registers 19
+    .registers 21
     .param p0, "activityContext"    # Landroid/content/Context;
     .param p1, "pBadge"    # Lcom/samsung/privilege/bean/BadgeAlert;
     .param p2, "bmp"    # Landroid/graphics/Bitmap;
 
     .prologue
     .line 47
-    new-instance v2, Landroid/app/Dialog;
+    new-instance v3, Landroid/app/Dialog;
 
-    const v13, 0x1030010
+    const v14, 0x1030010
 
     move-object/from16 v0, p0
 
-    invoke-direct {v2, v0, v13}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
+    invoke-direct {v3, v0, v14}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
     .line 49
-    .local v2, "dialogBadge":Landroid/app/Dialog;
-    const v13, 0x7f03011f
+    .local v3, "dialogBadge":Landroid/app/Dialog;
+    const v14, 0x7f030121
 
-    invoke-virtual {v2, v13}, Landroid/app/Dialog;->setContentView(I)V
+    invoke-virtual {v3, v14}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 51
-    const v13, 0x7f550009
+    const v14, 0x7f550009
 
-    invoke-virtual {v2, v13}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v6
-
-    check-cast v6, Landroid/widget/RelativeLayout;
-
-    .line 52
-    .local v6, "layoutMarketRoot":Landroid/widget/RelativeLayout;
-    const v13, 0x7f550002
-
-    invoke-virtual {v2, v13}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/widget/ImageView;
-
-    .line 53
-    .local v5, "ivBadge":Landroid/widget/ImageView;
-    const v13, 0x7f550004
-
-    invoke-virtual {v2, v13}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v8
-
-    check-cast v8, Landroid/widget/TextView;
-
-    .line 54
-    .local v8, "tvBadgeName":Landroid/widget/TextView;
-    const v13, 0x7f550003
-
-    invoke-virtual {v2, v13}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v3, v14}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v7
 
-    check-cast v7, Landroid/widget/TextView;
+    check-cast v7, Landroid/widget/RelativeLayout;
 
-    .line 55
-    .local v7, "tvBadgeLevel":Landroid/widget/TextView;
-    const v13, 0x7f550005
+    .line 52
+    .local v7, "layoutMarketRoot":Landroid/widget/RelativeLayout;
+    const v14, 0x7f550002
 
-    invoke-virtual {v2, v13}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v3, v14}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
-    move-result-object v12
+    move-result-object v6
 
-    check-cast v12, Landroid/widget/TextView;
+    check-cast v6, Landroid/widget/ImageView;
 
-    .line 56
-    .local v12, "tvYouEarned":Landroid/widget/TextView;
-    const v13, 0x7f55000a
+    .line 53
+    .local v6, "ivBadge":Landroid/widget/ImageView;
+    const v14, 0x7f550004
 
-    invoke-virtual {v2, v13}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v10
-
-    check-cast v10, Landroid/widget/TextView;
-
-    .line 57
-    .local v10, "tvMarket":Landroid/widget/TextView;
-    const v13, 0x7f550007
-
-    invoke-virtual {v2, v13}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v11
-
-    check-cast v11, Landroid/widget/TextView;
-
-    .line 58
-    .local v11, "tvPoint":Landroid/widget/TextView;
-    const v13, 0x7f55000b
-
-    invoke-virtual {v2, v13}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v3, v14}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v9
 
     check-cast v9, Landroid/widget/TextView;
 
-    .line 60
-    .local v9, "tvClose":Landroid/widget/TextView;
-    invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
+    .line 54
+    .local v9, "tvBadgeName":Landroid/widget/TextView;
+    const v14, 0x7f550003
+
+    invoke-virtual {v3, v14}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v8
+
+    check-cast v8, Landroid/widget/TextView;
+
+    .line 55
+    .local v8, "tvBadgeLevel":Landroid/widget/TextView;
+    const v14, 0x7f550005
+
+    invoke-virtual {v3, v14}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v13
 
-    invoke-static/range {p0 .. p0}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT(Landroid/content/Context;)Ljava/lang/String;
+    check-cast v13, Landroid/widget/TextView;
+
+    .line 56
+    .local v13, "tvYouEarned":Landroid/widget/TextView;
+    const v14, 0x7f55000a
+
+    invoke-virtual {v3, v14}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v11
+
+    check-cast v11, Landroid/widget/TextView;
+
+    .line 57
+    .local v11, "tvMarket":Landroid/widget/TextView;
+    const v14, 0x7f550007
+
+    invoke-virtual {v3, v14}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v12
+
+    check-cast v12, Landroid/widget/TextView;
+
+    .line 58
+    .local v12, "tvPoint":Landroid/widget/TextView;
+    const v14, 0x7f55000b
+
+    invoke-virtual {v3, v14}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v10
+
+    check-cast v10, Landroid/widget/TextView;
+
+    .line 60
+    .local v10, "tvClose":Landroid/widget/TextView;
+    invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
 
     move-result-object v14
 
-    invoke-static {v13, v14}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
+    invoke-static/range {p0 .. p0}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT(Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v15
+
+    invoke-static {v14, v15}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
+
+    move-result-object v4
 
     .line 61
-    .local v3, "fontDefault":Landroid/graphics/Typeface;
-    invoke-virtual {v8, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    .local v4, "fontDefault":Landroid/graphics/Typeface;
+    invoke-virtual {v9, v4}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 62
-    invoke-virtual {v7, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v8, v4}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 63
-    invoke-virtual {v12, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v13, v4}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 64
-    invoke-virtual {v11, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v12, v4}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 65
-    invoke-virtual {v10, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v11, v4}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 66
-    invoke-virtual {v9, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v10, v4}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 68
     move-object/from16 v0, p2
 
-    invoke-virtual {v5, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+    invoke-virtual {v6, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
     .line 70
     move-object/from16 v0, p1
 
-    iget-object v13, v0, Lcom/samsung/privilege/bean/BadgeAlert;->name:Ljava/lang/String;
+    iget-object v14, v0, Lcom/samsung/privilege/bean/BadgeAlert;->name:Ljava/lang/String;
 
-    invoke-virtual {v8, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v9, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 71
     move-object/from16 v0, p1
 
-    iget-object v13, v0, Lcom/samsung/privilege/bean/BadgeAlert;->description:Ljava/lang/String;
+    iget-object v14, v0, Lcom/samsung/privilege/bean/BadgeAlert;->description:Ljava/lang/String;
 
-    invoke-virtual {v10, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v11, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 73
-    new-instance v4, Ljava/text/DecimalFormat;
+    new-instance v5, Ljava/text/DecimalFormat;
 
-    const-string v13, "###,###,###"
+    const-string v14, "###,###,###"
 
-    invoke-direct {v4, v13}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v14}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;)V
 
     .line 74
-    .local v4, "formatter":Ljava/text/NumberFormat;
+    .local v5, "formatter":Ljava/text/NumberFormat;
     move-object/from16 v0, p1
 
-    iget v13, v0, Lcom/samsung/privilege/bean/BadgeAlert;->points:I
-
-    int-to-long v13, v13
-
-    invoke-virtual {v4, v13, v14}, Ljava/text/NumberFormat;->format(J)Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-virtual {v11, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 76
-    new-instance v13, Ljava/lang/StringBuilder;
-
-    const-string v14, "x"
-
-    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, p1
-
-    iget v14, v0, Lcom/samsung/privilege/bean/BadgeAlert;->level:I
+    iget v14, v0, Lcom/samsung/privilege/bean/BadgeAlert;->points:I
 
     int-to-long v14, v14
 
-    invoke-virtual {v4, v14, v15}, Ljava/text/NumberFormat;->format(J)Ljava/lang/String;
+    invoke-virtual {v5, v14, v15}, Ljava/text/NumberFormat;->format(J)Ljava/lang/String;
 
     move-result-object v14
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v12, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    move-result-object v13
+    .line 76
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    const-string v14, " "
+    const-string v15, "x"
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v14, v15}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result-object v13
+    move-object/from16 v0, p1
 
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget v15, v0, Lcom/samsung/privilege/bean/BadgeAlert;->level:I
 
-    move-result-object v13
+    int-to-long v0, v15
 
-    invoke-virtual {v7, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    move-wide/from16 v16, v0
+
+    move-wide/from16 v0, v16
+
+    invoke-virtual {v5, v0, v1}, Ljava/text/NumberFormat;->format(J)Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    const-string v15, " "
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-virtual {v8, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 77
     move-object/from16 v0, p1
 
-    iget v13, v0, Lcom/samsung/privilege/bean/BadgeAlert;->level:I
+    iget v14, v0, Lcom/samsung/privilege/bean/BadgeAlert;->level:I
 
-    const/4 v14, 0x1
+    const/4 v15, 0x1
 
-    if-le v13, v14, :cond_e7
+    if-le v14, v15, :cond_eb
 
     .line 78
-    const/4 v13, 0x0
+    const/4 v14, 0x0
 
-    invoke-virtual {v7, v13}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v8, v14}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 94
-    :goto_c8
-    new-instance v13, Lcom/samsung/privilege/util/AnimationBadgeToast$1;
+    :goto_cc
+    new-instance v14, Lcom/samsung/privilege/util/AnimationBadgeToast$1;
 
-    invoke-direct {v13, v2}, Lcom/samsung/privilege/util/AnimationBadgeToast$1;-><init>(Landroid/app/Dialog;)V
+    invoke-direct {v14, v3}, Lcom/samsung/privilege/util/AnimationBadgeToast$1;-><init>(Landroid/app/Dialog;)V
 
-    invoke-virtual {v9, v13}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v10, v14}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 106
-    invoke-virtual {v2}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v3}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-virtual {v13}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+    invoke-virtual {v14}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 107
-    .local v1, "WMLP":Landroid/view/WindowManager$LayoutParams;
-    const/16 v13, 0x11
+    .local v2, "WMLP":Landroid/view/WindowManager$LayoutParams;
+    const/16 v14, 0x11
 
-    iput v13, v1, Landroid/view/WindowManager$LayoutParams;->gravity:I
+    iput v14, v2, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
     .line 108
-    invoke-virtual {v2}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v3}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-virtual {v13, v1}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+    invoke-virtual {v14, v2}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
     .line 110
-    invoke-virtual {v2}, Landroid/app/Dialog;->show()V
+    invoke-virtual {v3}, Landroid/app/Dialog;->show()V
 
     .line 139
     return-void
 
     .line 80
-    .end local v1    # "WMLP":Landroid/view/WindowManager$LayoutParams;
-    :cond_e7
-    const/16 v13, 0x8
+    .end local v2    # "WMLP":Landroid/view/WindowManager$LayoutParams;
+    :cond_eb
+    const/16 v14, 0x8
 
-    invoke-virtual {v7, v13}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v8, v14}, Landroid/widget/TextView;->setVisibility(I)V
 
-    goto :goto_c8
+    goto :goto_cc
 .end method
 
 .method public static showToastBadge(Lcom/samsung/privilege/bean/BadgeAlert;Landroid/os/Handler;Landroid/content/Context;)V

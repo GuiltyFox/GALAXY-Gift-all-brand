@@ -204,7 +204,7 @@
 .end method
 
 .method public constructor <init>(Lorg/json/JSONObject;)V
-    .registers 9
+    .registers 10
     .param p1, "jsonObject"    # Lorg/json/JSONObject;
 
     .prologue
@@ -344,18 +344,18 @@
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->StartDate:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->StartDate:J
 
     .line 106
     const-string v0, "ExpireDate"
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->ExpireDate:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->ExpireDate:J
 
     .line 107
     const-string v0, "Location"
@@ -380,81 +380,81 @@
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->Discount:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->Discount:J
 
     .line 110
     const-string v0, "OriginalPrice"
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->OriginalPrice:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->OriginalPrice:J
 
     .line 111
     const-string v0, "PricePerUnit"
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->PricePerUnit:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->PricePerUnit:J
 
     .line 112
     const-string v0, "PointPerUnit"
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->PointPerUnit:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->PointPerUnit:J
 
     .line 113
     const-string v0, "Quantity"
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->Quantity:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->Quantity:J
 
     .line 114
     const-string v0, "RedeemMostPerPerson"
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->RedeemMostPerPerson:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->RedeemMostPerPerson:J
 
     .line 115
     const-string v0, "PeopleLike"
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->PeopleLike:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->PeopleLike:J
 
     .line 116
     const-string v0, "PeopleDislike"
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->PeopleDislike:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->PeopleDislike:J
 
     .line 117
     const-string v0, "ItemCountSold"
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->ItemCountSold:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->ItemCountSold:J
 
     .line 118
     const-string v0, "Under18"
@@ -487,9 +487,9 @@
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->StatusID:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->StatusID:J
 
     .line 121
     const-string v0, "TermsAndConditions"
@@ -505,9 +505,9 @@
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->CreateDate:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->CreateDate:J
 
     .line 123
     const-string v0, "CreateBy"
@@ -523,9 +523,9 @@
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->ModifyDate:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->ModifyDate:J
 
     .line 125
     const-string v0, "ModifyBy"
@@ -541,18 +541,18 @@
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->Buzz:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->Buzz:J
 
     .line 127
     const-string v0, "Score"
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->Score:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->Score:J
 
     .line 128
     const-string v0, "Type"
@@ -613,9 +613,9 @@
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->DayRemain:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->DayRemain:J
 
     .line 135
     const-string v0, "RefID"
@@ -649,18 +649,18 @@
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->RedeemDate:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->RedeemDate:J
 
     .line 139
     const-string v0, "UsedDate"
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->UsedDate:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->UsedDate:J
 
     .line 140
     const-string v0, "MinutesValidAfterUsed"
@@ -778,9 +778,9 @@
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->VoucherExpireDate:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->VoucherExpireDate:J
 
     .line 157
     const-string v0, "HasWinner"
@@ -813,9 +813,9 @@
 
     invoke-static {p1, v0}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->CurrentDate:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->CurrentDate:J
 
     .line 162
     const-string v0, "ParcelNo"
@@ -827,22 +827,22 @@
     iput-object v0, p0, Lcom/samsung/privilege/bean/Purchasing;->ParcelNo:Ljava/lang/String;
 
     .line 164
-    iget-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->CurrentDate:J
+    iget-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->CurrentDate:J
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
-    cmp-long v0, v3, v5
+    cmp-long v0, v4, v6
 
     if-lez v0, :cond_231
 
     .line 165
-    iget-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->CurrentDate:J
+    iget-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->CurrentDate:J
 
-    const-wide/16 v5, 0x6270
+    const-wide/16 v6, 0x6270
 
-    sub-long/2addr v3, v5
+    sub-long/2addr v4, v6
 
-    iput-wide v3, p0, Lcom/samsung/privilege/bean/Purchasing;->CurrentDate:J
+    iput-wide v4, p0, Lcom/samsung/privilege/bean/Purchasing;->CurrentDate:J
 
     .line 168
     :cond_231

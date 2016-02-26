@@ -226,7 +226,7 @@
 .end method
 
 .method public constructor <init>(ILjava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 13
+    .registers 14
     .param p1, "pTabState"    # I
     .param p2, "pTextSearch"    # Ljava/lang/String;
     .param p3, "pFilter_category_id"    # Ljava/lang/String;
@@ -513,7 +513,7 @@
 .end method
 
 .method static synthetic access$18(Lic/buzzebeeslib/fragment/MarketPlaceListFragment;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 9
+    .registers 10
 
     .prologue
     .line 772
@@ -565,7 +565,7 @@
 .end method
 
 .method static synthetic access$22(Lic/buzzebeeslib/fragment/MarketPlaceListFragment;J)V
-    .registers 3
+    .registers 4
 
     .prologue
     .line 113
@@ -898,7 +898,7 @@
 .end method
 
 .method private get_all()Z
-    .registers 6
+    .registers 7
 
     .prologue
     .line 731
@@ -936,11 +936,11 @@
 
     .line 738
     :cond_17
-    iget-wide v1, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPoints:J
+    iget-wide v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPoints:J
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v4, 0x0
 
-    cmp-long v1, v1, v3
+    cmp-long v1, v2, v4
 
     if-ltz v1, :cond_20
 
@@ -1037,9 +1037,9 @@
 
     .line 1419
     .local v0, "inFromTop":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x3e8
+    const-wide/16 v2, 0x3e8
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 1420
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
@@ -1053,7 +1053,7 @@
 .end method
 
 .method private loadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 15
+    .registers 16
     .param p1, "TextSearch"    # Ljava/lang/String;
     .param p2, "filter_category_id"    # Ljava/lang/String;
     .param p3, "filter_points"    # J
@@ -1507,9 +1507,9 @@
 
     .line 1426
     .local v0, "outToTop":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x3e8
+    const-wide/16 v2, 0x3e8
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 1427
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
@@ -1837,7 +1837,7 @@
 
 # virtual methods
 .method public UpdatePoint(J)V
-    .registers 9
+    .registers 10
     .param p1, "points"    # J
 
     .prologue
@@ -1959,10 +1959,10 @@
 .end method
 
 .method public doFilterAll()V
-    .registers 11
+    .registers 12
 
     .prologue
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
     .line 1068
     const-string v0, "all"
@@ -1970,7 +1970,7 @@
     iput-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterMode:Ljava/lang/String;
 
     .line 1069
-    iput v9, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gSumListPerPage:I
+    iput v10, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gSumListPerPage:I
 
     .line 1070
     new-instance v0, Ljava/util/ArrayList;
@@ -2001,23 +2001,23 @@
     invoke-static {v0, v1}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1074
-    iget-object v1, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterTextSearch:Ljava/lang/String;
+    iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterTextSearch:Ljava/lang/String;
 
-    iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCategory:Ljava/lang/String;
+    iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCategory:Ljava/lang/String;
 
-    iget-wide v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPoints:J
+    iget-wide v4, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPoints:J
 
-    iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCenter:Ljava/lang/String;
+    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCenter:Ljava/lang/String;
 
-    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterMode:Ljava/lang/String;
+    iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterMode:Ljava/lang/String;
 
-    iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterSponsor:Ljava/lang/String;
+    iget-object v8, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterSponsor:Ljava/lang/String;
 
-    iget-object v8, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPlace:Ljava/lang/String;
+    iget-object v9, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPlace:Ljava/lang/String;
 
-    move-object v0, p0
+    move-object v1, p0
 
-    invoke-direct/range {v0 .. v8}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->loadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v9}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->loadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1076
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gListAward:Lic/buzzebeeslib/control/PullToRefreshListView;
@@ -2037,7 +2037,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v9}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v10}, Landroid/view/View;->setVisibility(I)V
 
     .line 1079
     :cond_49
@@ -2045,10 +2045,10 @@
 .end method
 
 .method public doFilterDeal()V
-    .registers 11
+    .registers 12
 
     .prologue
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
     .line 1055
     const-string v0, "deal"
@@ -2056,7 +2056,7 @@
     iput-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterMode:Ljava/lang/String;
 
     .line 1056
-    iput v9, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gSumListPerPage:I
+    iput v10, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gSumListPerPage:I
 
     .line 1057
     new-instance v0, Ljava/util/ArrayList;
@@ -2073,23 +2073,23 @@
     invoke-static {v0, v1}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1061
-    iget-object v1, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterTextSearch:Ljava/lang/String;
+    iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterTextSearch:Ljava/lang/String;
 
-    iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCategory:Ljava/lang/String;
+    iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCategory:Ljava/lang/String;
 
-    iget-wide v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPoints:J
+    iget-wide v4, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPoints:J
 
-    iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCenter:Ljava/lang/String;
+    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCenter:Ljava/lang/String;
 
-    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterMode:Ljava/lang/String;
+    iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterMode:Ljava/lang/String;
 
-    iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterSponsor:Ljava/lang/String;
+    iget-object v8, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterSponsor:Ljava/lang/String;
 
-    iget-object v8, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPlace:Ljava/lang/String;
+    iget-object v9, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPlace:Ljava/lang/String;
 
-    move-object v0, p0
+    move-object v1, p0
 
-    invoke-direct/range {v0 .. v8}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->loadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v9}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->loadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1062
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gListAward:Lic/buzzebeeslib/control/PullToRefreshListView;
@@ -2109,7 +2109,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v9}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v10}, Landroid/view/View;->setVisibility(I)V
 
     .line 1065
     :cond_3a
@@ -2117,10 +2117,10 @@
 .end method
 
 .method public doFilterDraw()V
-    .registers 11
+    .registers 12
 
     .prologue
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
     .line 1043
     const-string v0, "draw"
@@ -2128,7 +2128,7 @@
     iput-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterMode:Ljava/lang/String;
 
     .line 1044
-    iput v9, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gSumListPerPage:I
+    iput v10, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gSumListPerPage:I
 
     .line 1045
     new-instance v0, Ljava/util/ArrayList;
@@ -2138,23 +2138,23 @@
     iput-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCampaignViews:Ljava/util/ArrayList;
 
     .line 1048
-    iget-object v1, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterTextSearch:Ljava/lang/String;
+    iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterTextSearch:Ljava/lang/String;
 
-    iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCategory:Ljava/lang/String;
+    iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCategory:Ljava/lang/String;
 
-    iget-wide v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPoints:J
+    iget-wide v4, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPoints:J
 
-    iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCenter:Ljava/lang/String;
+    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCenter:Ljava/lang/String;
 
-    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterMode:Ljava/lang/String;
+    iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterMode:Ljava/lang/String;
 
-    iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterSponsor:Ljava/lang/String;
+    iget-object v8, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterSponsor:Ljava/lang/String;
 
-    iget-object v8, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPlace:Ljava/lang/String;
+    iget-object v9, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPlace:Ljava/lang/String;
 
-    move-object v0, p0
+    move-object v1, p0
 
-    invoke-direct/range {v0 .. v8}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->loadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v9}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->loadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1049
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gListAward:Lic/buzzebeeslib/control/PullToRefreshListView;
@@ -2174,7 +2174,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v9}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v10}, Landroid/view/View;->setVisibility(I)V
 
     .line 1052
     :cond_33
@@ -2182,10 +2182,10 @@
 .end method
 
 .method public doFilterFree()V
-    .registers 11
+    .registers 12
 
     .prologue
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
     .line 1024
     const-string v0, "buzzebees.marketlist.fragment"
@@ -2200,7 +2200,7 @@
     iput-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterMode:Ljava/lang/String;
 
     .line 1027
-    iput v9, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gSumListPerPage:I
+    iput v10, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gSumListPerPage:I
 
     .line 1028
     new-instance v0, Ljava/util/ArrayList;
@@ -2217,23 +2217,23 @@
     invoke-static {v0, v1}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1034
-    iget-object v1, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterTextSearch:Ljava/lang/String;
+    iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterTextSearch:Ljava/lang/String;
 
-    iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCategory:Ljava/lang/String;
+    iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCategory:Ljava/lang/String;
 
-    iget-wide v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPoints:J
+    iget-wide v4, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPoints:J
 
-    iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCenter:Ljava/lang/String;
+    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCenter:Ljava/lang/String;
 
-    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterMode:Ljava/lang/String;
+    iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterMode:Ljava/lang/String;
 
-    iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterSponsor:Ljava/lang/String;
+    iget-object v8, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterSponsor:Ljava/lang/String;
 
-    iget-object v8, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPlace:Ljava/lang/String;
+    iget-object v9, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPlace:Ljava/lang/String;
 
-    move-object v0, p0
+    move-object v1, p0
 
-    invoke-direct/range {v0 .. v8}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->loadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v9}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->loadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1036
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gListAward:Lic/buzzebeeslib/control/PullToRefreshListView;
@@ -2253,7 +2253,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v9}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v10}, Landroid/view/View;->setVisibility(I)V
 
     .line 1040
     :cond_41
@@ -2261,7 +2261,7 @@
 .end method
 
 .method public doRefresh()V
-    .registers 10
+    .registers 11
 
     .prologue
     .line 995
@@ -2272,23 +2272,23 @@
     invoke-static {v0, v1}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 997
-    iget-object v1, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterTextSearch:Ljava/lang/String;
+    iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterTextSearch:Ljava/lang/String;
 
-    iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCategory:Ljava/lang/String;
+    iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCategory:Ljava/lang/String;
 
-    iget-wide v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPoints:J
+    iget-wide v4, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPoints:J
 
-    iget-object v5, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCenter:Ljava/lang/String;
+    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterCenter:Ljava/lang/String;
 
-    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterMode:Ljava/lang/String;
+    iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterMode:Ljava/lang/String;
 
-    iget-object v7, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterSponsor:Ljava/lang/String;
+    iget-object v8, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterSponsor:Ljava/lang/String;
 
-    iget-object v8, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPlace:Ljava/lang/String;
+    iget-object v9, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPlace:Ljava/lang/String;
 
-    move-object v0, p0
+    move-object v1, p0
 
-    invoke-direct/range {v0 .. v8}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->loadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v9}, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->loadCampaign(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 998
     iget-object v0, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gListAward:Lic/buzzebeeslib/control/PullToRefreshListView;
@@ -2985,7 +2985,7 @@
 .end method
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
-    .registers 7
+    .registers 8
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
@@ -3025,9 +3025,9 @@
     .line 648
     const-string v2, "gCurrentFilterPoints"
 
-    iget-wide v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPoints:J
+    iget-wide v4, p0, Lic/buzzebeeslib/fragment/MarketPlaceListFragment;->gCurrentFilterPoints:J
 
-    invoke-virtual {p1, v2, v3, v4}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    invoke-virtual {p1, v2, v4, v5}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 649
     const-string v2, "gCurrentFilterCenter"

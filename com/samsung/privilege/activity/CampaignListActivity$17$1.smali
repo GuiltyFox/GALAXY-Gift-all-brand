@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17$1;->val$layoutPopupWelcome:Landroid/widget/RelativeLayout;
 
-    .line 1679
+    .line 1697
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,14 +45,14 @@
     .registers 3
 
     .prologue
-    .line 1681
+    .line 1699
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17$1;->val$layoutPopupWelcome:Landroid/widget/RelativeLayout;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 1683
+    .line 1701
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17$1;->this$1:Lcom/samsung/privilege/activity/CampaignListActivity$17;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
@@ -64,7 +64,7 @@
 
     iput-boolean v1, v0, Lcom/samsung/privilege/activity/CampaignListActivity;->gIsShowingMessage:Z
 
-    .line 1684
+    .line 1702
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$17$1;->this$1:Lcom/samsung/privilege/activity/CampaignListActivity$17;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
@@ -74,6 +74,6 @@
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->checkAndShowDialogMessagePopup()V
 
-    .line 1685
+    .line 1703
     return-void
 .end method

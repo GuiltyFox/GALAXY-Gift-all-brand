@@ -37,7 +37,7 @@
 
     iput-boolean p3, p0, Lcom/samsung/privilege/activity/MainMenuFragment$19;->val$isPlayAnimation:Z
 
-    .line 2573
+    .line 2588
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,18 +49,18 @@
     .registers 10
 
     .prologue
-    .line 2575
+    .line 2590
     const/4 v3, -0x1
 
-    .line 2576
+    .line 2591
     .local v3, "indexSignOut":I
     const/4 v1, -0x1
 
-    .line 2577
+    .line 2592
     .local v1, "indexHistory":I
     const/4 v2, -0x1
 
-    .line 2578
+    .line 2593
     .local v2, "indexNotification":I
     const/4 v0, 0x0
 
@@ -79,28 +79,28 @@
 
     if-lt v0, v7, :cond_71
 
-    .line 2591
+    .line 2606
     const/4 v7, -0x1
 
     if-ne v2, v7, :cond_2c
 
-    .line 2592
+    .line 2607
     new-instance v4, Lcom/samsung/privilege/bean/MainMenuItemModel;
 
     invoke-direct {v4}, Lcom/samsung/privilege/bean/MainMenuItemModel;-><init>()V
 
-    .line 2593
+    .line 2608
     .local v4, "itemHeader":Lcom/samsung/privilege/bean/MainMenuItemModel;
     const/4 v7, 0x0
 
     iput v7, v4, Lcom/samsung/privilege/bean/MainMenuItemModel;->type:I
 
-    .line 2594
+    .line 2609
     const-string v7, "Notification"
 
     iput-object v7, v4, Lcom/samsung/privilege/bean/MainMenuItemModel;->header:Ljava/lang/String;
 
-    .line 2595
+    .line 2610
     iget-object v7, p0, Lcom/samsung/privilege/activity/MainMenuFragment$19;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->mMainMenuAdapter:Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;
@@ -112,70 +112,70 @@
 
     invoke-virtual {v7, v8, v4}, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->addItem(ILcom/samsung/privilege/bean/MainMenuItemModel;)V
 
-    .line 2596
+    .line 2611
     add-int/lit8 v2, v3, 0x1
 
-    .line 2599
+    .line 2614
     .end local v4    # "itemHeader":Lcom/samsung/privilege/bean/MainMenuItemModel;
     :cond_2c
     new-instance v5, Lcom/samsung/privilege/bean/MainMenuItemModel;
 
     invoke-direct {v5}, Lcom/samsung/privilege/bean/MainMenuItemModel;-><init>()V
 
-    .line 2600
+    .line 2615
     .local v5, "itemNoti":Lcom/samsung/privilege/bean/MainMenuItemModel;
     const/4 v7, 0x2
 
     iput v7, v5, Lcom/samsung/privilege/bean/MainMenuItemModel;->type:I
 
-    .line 2601
+    .line 2616
     iget-object v7, p0, Lcom/samsung/privilege/activity/MainMenuFragment$19;->val$messageGCM:Lcom/samsung/privilege/bean/MessageGCM;
 
     iget-object v7, v7, Lcom/samsung/privilege/bean/MessageGCM;->object_id:Ljava/lang/String;
 
     iput-object v7, v5, Lcom/samsung/privilege/bean/MainMenuItemModel;->noti_id:Ljava/lang/String;
 
-    .line 2602
+    .line 2617
     iget-object v7, p0, Lcom/samsung/privilege/activity/MainMenuFragment$19;->val$messageGCM:Lcom/samsung/privilege/bean/MessageGCM;
 
     iget-object v7, v7, Lcom/samsung/privilege/bean/MessageGCM;->type:Ljava/lang/String;
 
     iput-object v7, v5, Lcom/samsung/privilege/bean/MainMenuItemModel;->noti_cat_id:Ljava/lang/String;
 
-    .line 2603
+    .line 2618
     iget-object v7, p0, Lcom/samsung/privilege/activity/MainMenuFragment$19;->val$messageGCM:Lcom/samsung/privilege/bean/MessageGCM;
 
     iget-object v7, v7, Lcom/samsung/privilege/bean/MessageGCM;->cp_cat_id:Ljava/lang/String;
 
     iput-object v7, v5, Lcom/samsung/privilege/bean/MainMenuItemModel;->noti_cp_cat_id:Ljava/lang/String;
 
-    .line 2604
+    .line 2619
     iget-object v7, p0, Lcom/samsung/privilege/activity/MainMenuFragment$19;->val$messageGCM:Lcom/samsung/privilege/bean/MessageGCM;
 
     iget-object v7, v7, Lcom/samsung/privilege/bean/MessageGCM;->alert:Ljava/lang/String;
 
     iput-object v7, v5, Lcom/samsung/privilege/bean/MainMenuItemModel;->noti_detail:Ljava/lang/String;
 
-    .line 2605
+    .line 2620
     iget-object v7, p0, Lcom/samsung/privilege/activity/MainMenuFragment$19;->val$messageGCM:Lcom/samsung/privilege/bean/MessageGCM;
 
     iget-object v7, v7, Lcom/samsung/privilege/bean/MessageGCM;->agency_id:Ljava/lang/String;
 
     iput-object v7, v5, Lcom/samsung/privilege/bean/MainMenuItemModel;->noti_agency_id:Ljava/lang/String;
 
-    .line 2606
+    .line 2621
     iget-object v7, p0, Lcom/samsung/privilege/activity/MainMenuFragment$19;->val$messageGCM:Lcom/samsung/privilege/bean/MessageGCM;
 
     iget-object v7, v7, Lcom/samsung/privilege/bean/MessageGCM;->url:Ljava/lang/String;
 
     iput-object v7, v5, Lcom/samsung/privilege/bean/MainMenuItemModel;->noti_url:Ljava/lang/String;
 
-    .line 2607
+    .line 2622
     iget-boolean v7, p0, Lcom/samsung/privilege/activity/MainMenuFragment$19;->val$isPlayAnimation:Z
 
     iput-boolean v7, v5, Lcom/samsung/privilege/bean/MainMenuItemModel;->noti_play_animation:Z
 
-    .line 2608
+    .line 2623
     iget-object v7, p0, Lcom/samsung/privilege/activity/MainMenuFragment$19;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->mMainMenuAdapter:Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;
@@ -187,7 +187,7 @@
 
     invoke-virtual {v7, v8, v5}, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->addItem(ILcom/samsung/privilege/bean/MainMenuItemModel;)V
 
-    .line 2610
+    .line 2625
     iget-object v7, p0, Lcom/samsung/privilege/activity/MainMenuFragment$19;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->mMainMenuAdapter:Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;
@@ -197,10 +197,10 @@
 
     invoke-virtual {v7}, Lcom/samsung/privilege/activity/MainMenuFragment$MainMenuListAdapter;->notifyDataSetChanged()V
 
-    .line 2611
+    .line 2626
     return-void
 
-    .line 2579
+    .line 2594
     .end local v5    # "itemNoti":Lcom/samsung/privilege/bean/MainMenuItemModel;
     :cond_71
     iget-object v7, p0, Lcom/samsung/privilege/activity/MainMenuFragment$19;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -216,7 +216,7 @@
 
     check-cast v6, Lcom/samsung/privilege/bean/MainMenuItemModel;
 
-    .line 2580
+    .line 2595
     .local v6, "menuItem":Lcom/samsung/privilege/bean/MainMenuItemModel;
     iget v7, v6, Lcom/samsung/privilege/bean/MainMenuItemModel;->type:I
 
@@ -234,10 +234,10 @@
 
     if-eqz v7, :cond_8d
 
-    .line 2581
+    .line 2596
     move v3, v0
 
-    .line 2583
+    .line 2598
     :cond_8d
     iget v7, v6, Lcom/samsung/privilege/bean/MainMenuItemModel;->type:I
 
@@ -253,10 +253,10 @@
 
     if-eqz v7, :cond_9c
 
-    .line 2584
+    .line 2599
     move v1, v0
 
-    .line 2586
+    .line 2601
     :cond_9c
     iget v7, v6, Lcom/samsung/privilege/bean/MainMenuItemModel;->type:I
 
@@ -272,10 +272,10 @@
 
     if-eqz v7, :cond_ab
 
-    .line 2587
+    .line 2602
     move v2, v0
 
-    .line 2578
+    .line 2593
     :cond_ab
     add-int/lit8 v0, v0, 0x1
 

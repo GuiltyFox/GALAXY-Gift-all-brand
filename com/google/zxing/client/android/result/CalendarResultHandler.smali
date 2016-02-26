@@ -67,17 +67,17 @@
 
     .prologue
     .line 103
-    new-instance v3, Landroid/content/Intent;
+    new-instance v1, Landroid/content/Intent;
 
     const-string v6, "android.intent.action.INSERT"
 
-    invoke-direct {v3, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 104
-    .local v3, "intent":Landroid/content/Intent;
+    .local v1, "intent":Landroid/content/Intent;
     const-string v6, "vnd.android.cursor.item/event"
 
-    invoke-virtual {v3, v6}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v1, v6}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
     .line 105
     invoke-virtual {p2}, Ljava/util/Date;->getTime()J
@@ -88,7 +88,7 @@
     .local v4, "startMilliseconds":J
     const-string v6, "beginTime"
 
-    invoke-virtual {v3, v6, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
+    invoke-virtual {v1, v6, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
     .line 107
     if-eqz p3, :cond_1d
@@ -98,7 +98,7 @@
 
     const/4 v7, 0x1
 
-    invoke-virtual {v3, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    invoke-virtual {v1, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
     .line 111
     :cond_1d
@@ -110,29 +110,29 @@
     .line 114
     const-wide/32 v6, 0x5265c00
 
-    add-long v1, v4, v6
+    add-long v2, v4, v6
 
     .line 121
-    .local v1, "endMilliseconds":J
+    .local v2, "endMilliseconds":J
     :goto_26
     const-string v6, "endTime"
 
-    invoke-virtual {v3, v6, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
+    invoke-virtual {v1, v6, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
     .line 122
     const-string v6, "title"
 
-    invoke-virtual {v3, v6, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v1, v6, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 123
     const-string v6, "eventLocation"
 
-    invoke-virtual {v3, v6, p5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v1, v6, p5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 124
     const-string v6, "description"
 
-    invoke-virtual {v3, v6, p6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v1, v6, p6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 125
     if-eqz p7, :cond_41
@@ -140,12 +140,12 @@
     .line 126
     const-string v6, "android.intent.extra.EMAIL"
 
-    invoke-virtual {v3, v6, p7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v1, v6, p7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/Intent;
 
     .line 132
     :cond_41
     :try_start_41
-    invoke-virtual {p0, v3}, Lcom/google/zxing/client/android/result/CalendarResultHandler;->rawLaunchIntent(Landroid/content/Intent;)V
+    invoke-virtual {p0, v1}, Lcom/google/zxing/client/android/result/CalendarResultHandler;->rawLaunchIntent(Landroid/content/Intent;)V
     :try_end_44
     .catch Landroid/content/ActivityNotFoundException; {:try_start_41 .. :try_end_44} :catch_4c
 
@@ -154,22 +154,22 @@
     return-void
 
     .line 116
-    .end local v1    # "endMilliseconds":J
+    .end local v2    # "endMilliseconds":J
     :cond_45
-    move-wide v1, v4
+    move-wide v2, v4
 
     .line 118
-    .restart local v1    # "endMilliseconds":J
+    .restart local v2    # "endMilliseconds":J
     goto :goto_26
 
     .line 119
-    .end local v1    # "endMilliseconds":J
+    .end local v2    # "endMilliseconds":J
     :cond_47
     invoke-virtual {p4}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    .restart local v1    # "endMilliseconds":J
+    .restart local v2    # "endMilliseconds":J
     goto :goto_26
 
     .line 133
@@ -187,10 +187,10 @@
     .line 136
     const-string v6, "android.intent.action.EDIT"
 
-    invoke-virtual {v3, v6}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v1, v6}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
     .line 137
-    invoke-virtual {p0, v3}, Lcom/google/zxing/client/android/result/CalendarResultHandler;->launchIntent(Landroid/content/Intent;)V
+    invoke-virtual {p0, v1}, Lcom/google/zxing/client/android/result/CalendarResultHandler;->launchIntent(Landroid/content/Intent;)V
 
     goto :goto_44
 .end method
@@ -269,7 +269,7 @@
 .end method
 
 .method public getDisplayContents()Ljava/lang/CharSequence;
-    .registers 10
+    .registers 11
 
     .prologue
     .line 145
@@ -339,13 +339,13 @@
 
     invoke-virtual {v1}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    const-wide/32 v7, 0x5265c00
+    const-wide/32 v8, 0x5265c00
 
-    sub-long/2addr v5, v7
+    sub-long/2addr v6, v8
 
-    invoke-direct {v2, v5, v6}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v2, v6, v7}, Ljava/util/Date;-><init>(J)V
 
     .end local v1    # "end":Ljava/util/Date;
     .local v2, "end":Ljava/util/Date;

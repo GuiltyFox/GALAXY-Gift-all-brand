@@ -143,7 +143,7 @@
     :try_start_30
     sget-object v10, Lcom/samsung/privilege/service/NotificationBarAlarm;->gContext:Landroid/content/Context;
 
-    const v11, 0x7f0a001d
+    const v11, 0x7f09001d
 
     invoke-virtual {v10, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
     :try_end_38
@@ -264,7 +264,7 @@
     sput-object v10, Lcom/samsung/privilege/service/NotificationBarAlarm;->gNotifyManager:Landroid/app/NotificationManager;
 
     .line 173
-    const v4, 0x7f0202f2
+    const v4, 0x7f0202f4
 
     .line 178
     .local v4, "icon":I

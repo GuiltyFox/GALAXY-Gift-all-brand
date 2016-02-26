@@ -23,7 +23,7 @@
     .registers 2
 
     .prologue
-    .line 680
+    .line 694
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     invoke-direct {p0}, Lcom/samsung/privilege/util/http/HttpRQListener;-><init>()V
@@ -35,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 680
+    .line 694
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     return-object v0
@@ -50,7 +50,7 @@
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 683
+    .line 697
     iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     invoke-virtual {v6}, Lcom/samsung/privilege/activity/CampaignListActivity;->isFinishing()Z
@@ -59,7 +59,7 @@
 
     if-nez v6, :cond_c5
 
-    .line 684
+    .line 698
     const-string v6, "CampaignListActivity"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -88,7 +88,7 @@
 
     invoke-static {v6, v7}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 686
+    .line 700
     iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     invoke-virtual {v6}, Lcom/samsung/privilege/activity/CampaignListActivity;->getApplicationContext()Landroid/content/Context;
@@ -101,7 +101,7 @@
 
     if-eqz v6, :cond_56
 
-    .line 687
+    .line 701
     const-string v6, "NFC"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -136,19 +136,19 @@
 
     invoke-static {v6, v7, v8}, Lcom/samsung/privilege/AppSetting;->LOG(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 690
+    .line 704
     :cond_56
     const/16 v6, 0xc8
 
     if-ne p1, v6, :cond_105
 
-    .line 692
+    .line 706
     :try_start_5a
     new-instance v1, Lorg/json/JSONObject;
 
     invoke-direct {v1, p2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 694
+    .line 708
     .local v1, "jsonRoot":Lorg/json/JSONObject;
     iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
@@ -158,16 +158,16 @@
 
     invoke-static {v6, v7}, Lcom/samsung/privilege/activity/CampaignListActivity;->access$3(Lcom/samsung/privilege/activity/CampaignListActivity;Lcom/samsung/privilege/bean/NFCResult;)V
 
-    .line 696
+    .line 710
     iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
-    const v7, 0x7f0a0343
+    const v7, 0x7f090350
 
     invoke-virtual {v6, v7}, Lcom/samsung/privilege/activity/CampaignListActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 697
+    .line 711
     .local v4, "message":Ljava/lang/String;
     iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
@@ -197,7 +197,7 @@
 
     if-nez v6, :cond_94
 
-    .line 698
+    .line 712
     iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
@@ -207,11 +207,11 @@
 
     iget-object v4, v6, Lcom/samsung/privilege/bean/NFCResult;->alert_no_plan:Ljava/lang/String;
 
-    .line 700
+    .line 714
     :cond_94
     move-object v5, v4
 
-    .line 702
+    .line 716
     .local v5, "message_final":Ljava/lang/String;
     iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
@@ -243,7 +243,7 @@
 
     if-nez v6, :cond_c6
 
-    .line 703
+    .line 717
     iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     new-instance v7, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener$1;
@@ -252,7 +252,7 @@
 
     invoke-virtual {v6, v7}, Lcom/samsung/privilege/activity/CampaignListActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 724
+    .line 738
     :goto_bb
     iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
@@ -262,7 +262,7 @@
 
     invoke-virtual {v6, v7}, Lcom/samsung/privilege/activity/CampaignListActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 766
+    .line 780
     .end local v1    # "jsonRoot":Lorg/json/JSONObject;
     .end local v4    # "message":Ljava/lang/String;
     .end local v5    # "message_final":Ljava/lang/String;
@@ -270,7 +270,7 @@
     :goto_c5
     return-void
 
-    .line 708
+    .line 722
     .restart local v1    # "jsonRoot":Lorg/json/JSONObject;
     .restart local v4    # "message":Ljava/lang/String;
     .restart local v5    # "message_final":Ljava/lang/String;
@@ -292,7 +292,7 @@
 
     if-ne v6, v7, :cond_fa
 
-    .line 709
+    .line 723
     iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     new-instance v7, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener$2;
@@ -305,14 +305,14 @@
 
     goto :goto_bb
 
-    .line 731
+    .line 745
     .end local v1    # "jsonRoot":Lorg/json/JSONObject;
     .end local v4    # "message":Ljava/lang/String;
     .end local v5    # "message_final":Ljava/lang/String;
     :catch_e0
     move-exception v0
 
-    .line 732
+    .line 746
     .local v0, "e":Lorg/json/JSONException;
     const-string v6, "CampaignListActivity"
 
@@ -338,7 +338,7 @@
 
     goto :goto_c5
 
-    .line 715
+    .line 729
     .end local v0    # "e":Lorg/json/JSONException;
     .restart local v1    # "jsonRoot":Lorg/json/JSONObject;
     .restart local v4    # "message":Ljava/lang/String;
@@ -357,14 +357,14 @@
 
     goto :goto_bb
 
-    .line 734
+    .line 748
     .end local v1    # "jsonRoot":Lorg/json/JSONObject;
     .end local v4    # "message":Ljava/lang/String;
     .end local v5    # "message_final":Ljava/lang/String;
     :cond_105
     if-gez p1, :cond_142
 
-    .line 735
+    .line 749
     new-instance v6, Ljava/lang/StringBuilder;
 
     const-string v7, "code:"
@@ -385,7 +385,7 @@
 
     move-result-object v4
 
-    .line 736
+    .line 750
     .restart local v4    # "message":Ljava/lang/String;
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -397,7 +397,7 @@
 
     iget-object v7, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
-    const v8, 0x7f0a0342
+    const v8, 0x7f090349
 
     invoke-virtual {v7, v8}, Lcom/samsung/privilege/activity/CampaignListActivity;->getString(I)Ljava/lang/String;
 
@@ -411,10 +411,10 @@
 
     move-result-object v4
 
-    .line 738
+    .line 752
     move-object v5, v4
 
-    .line 739
+    .line 753
     .restart local v5    # "message_final":Ljava/lang/String;
     iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
@@ -426,20 +426,20 @@
 
     goto :goto_c5
 
-    .line 745
+    .line 759
     .end local v4    # "message":Ljava/lang/String;
     .end local v5    # "message_final":Ljava/lang/String;
     :cond_142
     const-string v4, ""
 
-    .line 747
+    .line 761
     .restart local v4    # "message":Ljava/lang/String;
     :try_start_144
     new-instance v3, Lorg/json/JSONObject;
 
     invoke-direct {v3, p2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 748
+    .line 762
     .local v3, "json_result":Lorg/json/JSONObject;
     const-string v6, "error"
 
@@ -447,7 +447,7 @@
 
     move-result-object v2
 
-    .line 749
+    .line 763
     .local v2, "json_error":Lorg/json/JSONObject;
     const-string v6, "message"
 
@@ -457,7 +457,7 @@
 
     move-result-object v4
 
-    .line 754
+    .line 768
     .end local v2    # "json_error":Lorg/json/JSONObject;
     .end local v3    # "json_result":Lorg/json/JSONObject;
     :goto_155
@@ -469,14 +469,14 @@
 
     if-eqz v6, :cond_15e
 
-    .line 755
+    .line 769
     move-object v4, p2
 
-    .line 758
+    .line 772
     :cond_15e
     move-object v5, v4
 
-    .line 759
+    .line 773
     .restart local v5    # "message_final":Ljava/lang/String;
     iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignListActivity$PostNFCEncyptListener;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
@@ -488,12 +488,12 @@
 
     goto/16 :goto_c5
 
-    .line 750
+    .line 764
     .end local v5    # "message_final":Ljava/lang/String;
     :catch_16b
     move-exception v0
 
-    .line 751
+    .line 765
     .local v0, "e":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 

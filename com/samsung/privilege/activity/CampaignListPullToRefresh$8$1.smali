@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$1;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;
 
-    .line 970
+    .line 974
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 973
+    .line 977
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$1;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
@@ -69,7 +69,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a0316
+    const v3, 0x7f09031d
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignListPullToRefresh;->getString(I)Ljava/lang/String;
 
@@ -91,7 +91,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 974
+    .line 978
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$1;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
@@ -106,7 +106,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 975
+    .line 979
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8$1;->this$1:Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListPullToRefresh$8;->this$0:Lcom/samsung/privilege/activity/CampaignListPullToRefresh;
@@ -121,6 +121,6 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 976
+    .line 980
     return-void
 .end method

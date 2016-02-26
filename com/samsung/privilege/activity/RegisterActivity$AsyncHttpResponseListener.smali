@@ -23,7 +23,7 @@
     .registers 2
 
     .prologue
-    .line 244
+    .line 276
     iput-object p1, p0, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/RegisterActivity;
 
     invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
@@ -35,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 244
+    .line 276
     iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/RegisterActivity;
 
     return-object v0
@@ -49,7 +49,7 @@
     .param p2, "response"    # Ljava/lang/String;
 
     .prologue
-    .line 282
+    .line 314
     const-string v0, "Register"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -68,7 +68,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 283
+    .line 315
     iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/RegisterActivity;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/RegisterActivity;->pbLoadingProfile:Landroid/widget/ProgressBar;
@@ -77,7 +77,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 284
+    .line 316
     iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/RegisterActivity;
 
     # getter for: Lcom/samsung/privilege/activity/RegisterActivity;->gHandler:Landroid/os/Handler;
@@ -91,7 +91,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 301
+    .line 333
     return-void
 .end method
 
@@ -100,7 +100,7 @@
     .param p1, "response"    # Ljava/lang/String;
 
     .prologue
-    .line 247
+    .line 279
     iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/RegisterActivity;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/RegisterActivity;->pbLoadingProfile:Landroid/widget/ProgressBar;
@@ -109,7 +109,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 248
+    .line 280
     const-string v0, "Register"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -128,7 +128,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 249
+    .line 281
     iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity$AsyncHttpResponseListener;->this$0:Lcom/samsung/privilege/activity/RegisterActivity;
 
     # getter for: Lcom/samsung/privilege/activity/RegisterActivity;->gHandler:Landroid/os/Handler;
@@ -142,6 +142,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 278
+    .line 310
     return-void
 .end method

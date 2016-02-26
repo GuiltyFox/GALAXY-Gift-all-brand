@@ -105,7 +105,7 @@
 .end method
 
 .method public static cleanCache(Ljava/io/File;JJ)V
-    .registers 11
+    .registers 12
     .param p0, "cacheDir"    # Ljava/io/File;
     .param p1, "triggerSize"    # J
     .param p3, "targetSize"    # J
@@ -189,16 +189,16 @@
 .end method
 
 .method private static cleanCache([Ljava/io/File;J)V
-    .registers 10
+    .registers 12
     .param p0, "files"    # [Ljava/io/File;
     .param p1, "maxSize"    # J
 
     .prologue
     .line 636
-    const-wide/16 v3, 0x0
+    const-wide/16 v4, 0x0
 
     .line 637
-    .local v3, "total":J
+    .local v4, "total":J
     const/4 v0, 0x0
 
     .line 639
@@ -207,18 +207,18 @@
 
     .local v2, "i":I
     :goto_4
-    array-length v5, p0
+    array-length v3, p0
 
-    if-lt v2, v5, :cond_11
+    if-lt v2, v3, :cond_11
 
     .line 658
-    const-string v5, "deleted"
+    const-string v3, "deleted"
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
-    invoke-static {v5, v6}, Lcom/androidquery/util/AQUtility;->debug(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v3, v6}, Lcom/androidquery/util/AQUtility;->debug(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 659
     return-void
@@ -231,21 +231,21 @@
     .local v1, "f":Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->isFile()Z
 
-    move-result v5
+    move-result v3
 
-    if-eqz v5, :cond_27
+    if-eqz v3, :cond_27
 
     .line 645
     invoke-virtual {v1}, Ljava/io/File;->length()J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    add-long/2addr v3, v5
+    add-long/2addr v4, v6
 
     .line 647
-    cmp-long v5, v3, p1
+    cmp-long v3, v4, p1
 
-    if-ltz v5, :cond_27
+    if-ltz v3, :cond_27
 
     .line 650
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
@@ -634,7 +634,7 @@
 .end method
 
 .method public static debugWait(J)V
-    .registers 5
+    .registers 6
     .param p0, "time"    # J
 
     .prologue
@@ -1581,7 +1581,7 @@
 .end method
 
 .method private static setAlpha(Landroid/view/View;F)V
-    .registers 5
+    .registers 6
     .param p0, "view"    # Landroid/view/View;
     .param p1, "alphaValue"    # F
 
@@ -1608,9 +1608,9 @@
 
     .line 240
     .local v0, "alpha":Landroid/view/animation/AlphaAnimation;
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
 
     .line 241
     const/4 v1, 0x1
@@ -1762,28 +1762,28 @@
 .end method
 
 .method private static testCleanNeeded([Ljava/io/File;J)Z
-    .registers 11
+    .registers 12
     .param p0, "files"    # [Ljava/io/File;
     .param p1, "triggerSize"    # J
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     .line 622
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
     .line 624
-    .local v1, "total":J
+    .local v2, "total":J
     array-length v5, p0
 
-    move v4, v3
+    move v4, v1
 
     :goto_5
     if-lt v4, v5, :cond_8
 
     .line 631
     :goto_7
-    return v3
+    return v1
 
     .line 624
     :cond_8
@@ -1795,15 +1795,15 @@
 
     move-result-wide v6
 
-    add-long/2addr v1, v6
+    add-long/2addr v2, v6
 
     .line 626
-    cmp-long v6, v1, p1
+    cmp-long v6, v2, p1
 
     if-lez v6, :cond_15
 
     .line 627
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
     goto :goto_7
 
@@ -1815,7 +1815,7 @@
 .end method
 
 .method public static time(Ljava/lang/String;)V
-    .registers 4
+    .registers 5
     .param p0, "tag"    # Ljava/lang/String;
 
     .prologue
@@ -1824,9 +1824,9 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
 
@@ -1837,17 +1837,17 @@
 .end method
 
 .method public static timeEnd(Ljava/lang/String;J)J
-    .registers 12
+    .registers 14
     .param p0, "tag"    # Ljava/lang/String;
     .param p1, "threshold"    # J
 
     .prologue
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
     .line 152
-    sget-object v7, Lcom/androidquery/util/AQUtility;->times:Ljava/util/Map;
+    sget-object v5, Lcom/androidquery/util/AQUtility;->times:Ljava/util/Map;
 
-    invoke-interface {v7, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v5, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -1857,7 +1857,7 @@
     .local v4, "old":Ljava/lang/Long;
     if-nez v4, :cond_e
 
-    move-wide v0, v5
+    move-wide v0, v6
 
     .line 163
     :cond_d
@@ -1874,13 +1874,13 @@
     .local v2, "now":J
     invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v7
+    move-result-wide v8
 
-    sub-long v0, v2, v7
+    sub-long v0, v2, v8
 
     .line 159
     .local v0, "diff":J
-    cmp-long v5, p1, v5
+    cmp-long v5, p1, v6
 
     if-eqz v5, :cond_20
 

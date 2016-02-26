@@ -29,18 +29,18 @@
     .param p3, "error_message"    # Ljava/lang/String;
 
     .prologue
-    .line 2572
+    .line 2636
     iput-object p1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
 
-    .line 2573
+    .line 2637
     iput-object p2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gDashboardItem:Lcom/samsung/privilege/bean/DashboardItem;
 
-    .line 2574
+    .line 2638
     iput-object p3, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gErrorMessage:Ljava/lang/String;
 
-    .line 2575
+    .line 2639
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .registers 2
 
     .prologue
-    .line 2569
+    .line 2633
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gDashboardItem:Lcom/samsung/privilege/bean/DashboardItem;
 
     return-object v0
@@ -58,7 +58,7 @@
     .registers 2
 
     .prologue
-    .line 2570
+    .line 2634
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->gErrorMessage:Ljava/lang/String;
 
     return-object v0
@@ -68,7 +68,7 @@
     .registers 2
 
     .prologue
-    .line 2568
+    .line 2632
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     return-object v0
@@ -82,12 +82,12 @@
     .param p2, "response"    # Ljava/lang/String;
 
     .prologue
-    .line 2643
+    .line 2707
     const/16 v0, -0x1f4
 
     invoke-virtual {p0, v0, p2}, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->onSuccess(ILjava/lang/String;)V
 
-    .line 2644
+    .line 2708
     return-void
 .end method
 
@@ -95,7 +95,7 @@
     .registers 1
 
     .prologue
-    .line 2649
+    .line 2713
     return-void
 .end method
 
@@ -103,7 +103,7 @@
     .registers 1
 
     .prologue
-    .line 2580
+    .line 2644
     return-void
 .end method
 
@@ -113,7 +113,7 @@
     .param p2, "response_text"    # Ljava/lang/String;
 
     .prologue
-    .line 2584
+    .line 2648
     const-string v0, "gift.dashboard"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -142,7 +142,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2586
+    .line 2650
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -151,11 +151,11 @@
 
     if-nez v0, :cond_27
 
-    .line 2639
+    .line 2703
     :goto_26
     return-void
 
-    .line 2590
+    .line 2654
     :cond_27
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
@@ -166,7 +166,7 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 2592
+    .line 2656
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$GetLastRedeemCodeHandler;->this$0:Lcom/samsung/privilege/activity/DashboardFragmentNew;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/DashboardFragmentNew;->getActivity()Landroid/support/v4/app/FragmentActivity;

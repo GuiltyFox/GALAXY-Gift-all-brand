@@ -472,7 +472,7 @@
 .end method
 
 .method private logAuthorizationMethodComplete(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V
-    .registers 11
+    .registers 12
     .param p1, "method"    # Ljava/lang/String;
     .param p2, "result"    # Ljava/lang/String;
     .param p3, "errorMessage"    # Ljava/lang/String;
@@ -542,9 +542,9 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    invoke-virtual {v0, v2, v3, v4}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    invoke-virtual {v0, v2, v4, v5}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 512
     invoke-direct {p0}, Lcom/facebook/AuthorizationClient;->getAppEventsLogger()Lcom/facebook/AppEventsLogger;
@@ -673,7 +673,7 @@
 .end method
 
 .method private logWebLoginCompleted(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 8
+    .registers 9
     .param p1, "applicationId"    # Ljava/lang/String;
     .param p2, "e2e"    # Ljava/lang/String;
 
@@ -702,9 +702,9 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    invoke-virtual {v1, v2, v3, v4}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    invoke-virtual {v1, v2, v4, v5}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 893
     const-string v2, "app_id"

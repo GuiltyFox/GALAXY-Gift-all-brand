@@ -27,7 +27,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;IJ)V
-    .registers 5
+    .registers 6
     .param p1, "targetView"    # Landroid/view/View;
     .param p2, "position"    # I
     .param p3, "id"    # J

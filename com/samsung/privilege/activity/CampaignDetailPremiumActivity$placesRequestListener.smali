@@ -29,23 +29,23 @@
     .param p3, "pCacheName"    # Ljava/lang/String;
 
     .prologue
-    .line 2418
+    .line 2419
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     invoke-direct {p0}, Lcom/samsung/privilege/util/http/HttpRQListener;-><init>()V
 
-    .line 2416
+    .line 2417
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener;->gCacheName:Ljava/lang/String;
 
-    .line 2419
+    .line 2420
     iput-boolean p2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener;->gLoadMore:Z
 
-    .line 2420
+    .line 2421
     iput-object p3, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener;->gCacheName:Ljava/lang/String;
 
-    .line 2421
+    .line 2422
     return-void
 .end method
 
@@ -53,7 +53,7 @@
     .registers 2
 
     .prologue
-    .line 2415
+    .line 2416
     iget-boolean v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener;->gLoadMore:Z
 
     return v0
@@ -63,7 +63,7 @@
     .registers 2
 
     .prologue
-    .line 2413
+    .line 2414
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     return-object v0
@@ -78,7 +78,7 @@
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 2425
+    .line 2426
     const-string v1, "campaign.detail"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -107,12 +107,12 @@
 
     invoke-static {v1, v2}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2427
+    .line 2428
     const/16 v1, 0xc8
 
     if-ne p1, v1, :cond_45
 
-    .line 2428
+    .line 2429
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->gHandler:Landroid/os/Handler;
@@ -126,7 +126,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 2448
+    .line 2449
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->gHandler:Landroid/os/Handler;
@@ -140,22 +140,22 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 2463
+    .line 2464
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     const/4 v2, 0x0
 
     invoke-static {v1, v2}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->access$23(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;Z)V
 
-    .line 2464
+    .line 2465
     :goto_44
     return-void
 
-    .line 2440
+    .line 2441
     :cond_45
     const-string v0, "Error: nearby places could not be fetched"
 
-    .line 2441
+    .line 2442
     .local v0, "err_message":Ljava/lang/String;
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
@@ -169,7 +169,7 @@
 
     if-eqz v1, :cond_6a
 
-    .line 2442
+    .line 2443
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -192,7 +192,7 @@
 
     move-result-object v0
 
-    .line 2444
+    .line 2445
     :cond_6a
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$placesRequestListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 

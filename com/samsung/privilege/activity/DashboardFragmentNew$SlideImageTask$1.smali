@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;
 
-    .line 1524
+    .line 1570
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,14 +43,14 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 1526
+    .line 1572
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;->gPagerPhoto:Landroid/support/v4/view/ViewPager;
 
     if-eqz v0, :cond_3f
 
-    .line 1527
+    .line 1573
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;->gPagerPhoto:Landroid/support/v4/view/ViewPager;
@@ -61,7 +61,7 @@
 
     if-eqz v0, :cond_3f
 
-    .line 1528
+    .line 1574
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;->gPagerPhoto:Landroid/support/v4/view/ViewPager;
@@ -76,7 +76,7 @@
 
     if-le v0, v2, :cond_3f
 
-    .line 1529
+    .line 1575
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;->gPagerPhoto:Landroid/support/v4/view/ViewPager;
@@ -101,7 +101,7 @@
 
     if-ne v0, v1, :cond_40
 
-    .line 1530
+    .line 1576
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;->gPagerPhoto:Landroid/support/v4/view/ViewPager;
@@ -110,12 +110,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/view/ViewPager;->setCurrentItem(IZ)V
 
-    .line 1537
+    .line 1583
     :cond_3f
     :goto_3f
     return-void
 
-    .line 1532
+    .line 1578
     :cond_40
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask$1;->this$1:Lcom/samsung/privilege/activity/DashboardFragmentNew$SlideImageTask;
 

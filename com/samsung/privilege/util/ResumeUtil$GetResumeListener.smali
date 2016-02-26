@@ -30,19 +30,19 @@
     .param p3, "isForceCall"    # Z
 
     .prologue
-    .line 198
+    .line 192
     invoke-direct {p0}, Lcom/samsung/privilege/util/http/HttpRQListener;-><init>()V
 
-    .line 199
+    .line 193
     iput-object p1, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gAppContext:Landroid/content/Context;
 
-    .line 200
+    .line 194
     iput-object p2, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gActivity:Landroid/app/Activity;
 
-    .line 201
+    .line 195
     iput-boolean p3, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gIsForceCall:Z
 
-    .line 202
+    .line 196
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .registers 2
 
     .prologue
-    .line 194
+    .line 188
     iget-object v0, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gAppContext:Landroid/content/Context;
 
     return-object v0
@@ -60,7 +60,7 @@
     .registers 2
 
     .prologue
-    .line 195
+    .line 189
     iget-object v0, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gActivity:Landroid/app/Activity;
 
     return-object v0
@@ -75,7 +75,7 @@
     .param p3, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 206
+    .line 200
     # getter for: Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/util/ResumeUtil;->access$0()Ljava/lang/String;
 
@@ -107,12 +107,12 @@
 
     invoke-static {v5, v6}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 208
+    .line 202
     iget-boolean v5, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gIsForceCall:Z
 
     if-eqz v5, :cond_3d
 
-    .line 209
+    .line 203
     const-string v5, "RESUME"
 
     const-string v6, ""
@@ -121,7 +121,7 @@
 
     invoke-static {v5, v6, v7}, Lcom/samsung/privilege/AppSetting;->SaveLogOnSD(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 210
+    .line 204
     const-string v5, "RESUME"
 
     const-string v6, "--------------------"
@@ -130,26 +130,26 @@
 
     invoke-static {v5, v6, v7}, Lcom/samsung/privilege/AppSetting;->SaveLogOnSD(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 211
+    .line 205
     const-string v5, "RESUME"
 
     iget-object v6, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gAppContext:Landroid/content/Context;
 
     invoke-static {v5, p2, v6}, Lcom/samsung/privilege/AppSetting;->SaveLogOnSD(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 216
+    .line 210
     :cond_3d
     const/16 v5, 0xc8
 
     if-ne p1, v5, :cond_de
 
-    .line 218
+    .line 212
     :try_start_41
     new-instance v1, Lorg/json/JSONObject;
 
     invoke-direct {v1, p2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 219
+    .line 213
     .local v1, "jsonRoot":Lorg/json/JSONObject;
     const-string v5, "token"
 
@@ -157,13 +157,13 @@
 
     move-result-object v4
 
-    .line 220
+    .line 214
     .local v4, "token":Ljava/lang/String;
     iget-object v5, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gAppContext:Landroid/content/Context;
 
     invoke-static {v5, v4}, Lcom/samsung/privilege/UserLogin;->SetTokenBuzzeBees(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 221
+    .line 215
     # getter for: Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/util/ResumeUtil;->access$0()Ljava/lang/String;
 
@@ -187,7 +187,7 @@
     :try_end_67
     .catch Ljava/lang/Exception; {:try_start_41 .. :try_end_67} :catch_df
 
-    .line 227
+    .line 221
     .end local v1    # "jsonRoot":Lorg/json/JSONObject;
     .end local v4    # "token":Ljava/lang/String;
     :goto_67
@@ -196,7 +196,7 @@
 
     invoke-direct {v1, p2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 228
+    .line 222
     .restart local v1    # "jsonRoot":Lorg/json/JSONObject;
     const-string v5, "isPremiumUser"
 
@@ -206,7 +206,7 @@
 
     if-eqz v5, :cond_83
 
-    .line 229
+    .line 223
     iget-object v5, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gAppContext:Landroid/content/Context;
 
     const-string v6, "isPremiumUser"
@@ -223,7 +223,7 @@
     :try_end_83
     .catch Ljava/lang/Exception; {:try_start_67 .. :try_end_83} :catch_fc
 
-    .line 236
+    .line 230
     .end local v1    # "jsonRoot":Lorg/json/JSONObject;
     :cond_83
     :goto_83
@@ -232,7 +232,7 @@
 
     invoke-direct {v1, p2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 237
+    .line 231
     .restart local v1    # "jsonRoot":Lorg/json/JSONObject;
     const-string v5, "version"
 
@@ -240,7 +240,7 @@
 
     move-result-object v2
 
-    .line 239
+    .line 233
     .local v2, "json_version":Lorg/json/JSONObject;
     iget-object v5, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gAppContext:Landroid/content/Context;
 
@@ -256,7 +256,7 @@
 
     invoke-static {v5, v6}, Lcom/samsung/privilege/UserLogin;->SetIsAllowUse(Landroid/content/Context;Z)Z
 
-    .line 240
+    .line 234
     iget-object v5, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gAppContext:Landroid/content/Context;
 
     const-string v6, "has_new_version"
@@ -271,7 +271,7 @@
 
     invoke-static {v5, v6}, Lcom/samsung/privilege/UserLogin;->SetIsHasNewVersion(Landroid/content/Context;Z)Z
 
-    .line 241
+    .line 235
     iget-object v5, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gAppContext:Landroid/content/Context;
 
     const-string v6, "token_need_logout"
@@ -286,7 +286,7 @@
 
     invoke-static {v5, v6}, Lcom/samsung/privilege/UserLogin;->SetIsTokenNeedLogout(Landroid/content/Context;Z)Z
 
-    .line 242
+    .line 236
     iget-object v5, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gAppContext:Landroid/content/Context;
 
     const-string v6, "is_show_shopping_basket_button_on_marketplace_buzzebees"
@@ -301,20 +301,20 @@
 
     invoke-static {v5, v6}, Lcom/samsung/privilege/UserLogin;->SetIsShowShoppingBasket(Landroid/content/Context;Z)Z
 
-    .line 244
+    .line 238
     const-string v5, "resume_message"
 
     invoke-static {v1, v5}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 246
+    .line 240
     .local v3, "resume_message":Ljava/lang/String;
     iget-object v5, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gActivity:Landroid/app/Activity;
 
     if-eqz v5, :cond_de
 
-    .line 247
+    .line 241
     iget-object v5, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gActivity:Landroid/app/Activity;
 
     new-instance v6, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener$1;
@@ -325,7 +325,7 @@
     :try_end_de
     .catch Ljava/lang/Exception; {:try_start_83 .. :try_end_de} :catch_119
 
-    .line 343
+    .line 337
     .end local v1    # "jsonRoot":Lorg/json/JSONObject;
     .end local v2    # "json_version":Lorg/json/JSONObject;
     .end local v3    # "resume_message":Ljava/lang/String;
@@ -333,11 +333,11 @@
     :goto_de
     return-void
 
-    .line 222
+    .line 216
     :catch_df
     move-exception v0
 
-    .line 223
+    .line 217
     .local v0, "ex":Ljava/lang/Exception;
     # getter for: Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/util/ResumeUtil;->access$0()Ljava/lang/String;
@@ -366,12 +366,12 @@
 
     goto/16 :goto_67
 
-    .line 231
+    .line 225
     .end local v0    # "ex":Ljava/lang/Exception;
     :catch_fc
     move-exception v0
 
-    .line 232
+    .line 226
     .restart local v0    # "ex":Ljava/lang/Exception;
     # getter for: Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/util/ResumeUtil;->access$0()Ljava/lang/String;
@@ -400,12 +400,12 @@
 
     goto/16 :goto_83
 
-    .line 320
+    .line 314
     .end local v0    # "ex":Ljava/lang/Exception;
     :catch_119
     move-exception v0
 
-    .line 321
+    .line 315
     .restart local v0    # "ex":Ljava/lang/Exception;
     # getter for: Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/util/ResumeUtil;->access$0()Ljava/lang/String;
@@ -432,12 +432,12 @@
 
     invoke-static {v5, v6}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 322
+    .line 316
     iget-object v5, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gActivity:Landroid/app/Activity;
 
     if-eqz v5, :cond_de
 
-    .line 323
+    .line 317
     iget-object v5, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gActivity:Landroid/app/Activity;
 
     new-instance v6, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener$2;
@@ -455,10 +455,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 347
+    .line 341
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onFileNotFoundException(Ljava/io/FileNotFoundException;Ljava/lang/Object;)V
 
-    .line 348
+    .line 342
     # getter for: Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/util/ResumeUtil;->access$0()Ljava/lang/String;
 
@@ -484,7 +484,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 349
+    .line 343
     return-void
 .end method
 
@@ -494,10 +494,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 353
+    .line 347
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onIOException(Ljava/io/IOException;Ljava/lang/Object;)V
 
-    .line 354
+    .line 348
     # getter for: Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/util/ResumeUtil;->access$0()Ljava/lang/String;
 
@@ -523,7 +523,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 355
+    .line 349
     return-void
 .end method
 
@@ -533,10 +533,10 @@
     .param p2, "state"    # Ljava/lang/Object;
 
     .prologue
-    .line 359
+    .line 353
     invoke-super {p0, p1, p2}, Lcom/samsung/privilege/util/http/HttpRQListener;->onMalformedURLException(Ljava/net/MalformedURLException;Ljava/lang/Object;)V
 
-    .line 360
+    .line 354
     # getter for: Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/util/ResumeUtil;->access$0()Ljava/lang/String;
 
@@ -562,6 +562,6 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 361
+    .line 355
     return-void
 .end method

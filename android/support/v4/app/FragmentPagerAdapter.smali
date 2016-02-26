@@ -42,7 +42,7 @@
 .end method
 
 .method private static makeFragmentName(IJ)Ljava/lang/String;
-    .registers 5
+    .registers 6
     .param p0, "viewId"    # I
     .param p1, "id"    # J
 
@@ -185,23 +185,23 @@
     :cond_d
     invoke-virtual {p0, p2}, Landroid/support/v4/app/FragmentPagerAdapter;->getItemId(I)J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 91
-    .local v1, "itemId":J
+    .local v2, "itemId":J
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getId()I
 
     move-result v4
 
-    invoke-static {v4, v1, v2}, Landroid/support/v4/app/FragmentPagerAdapter;->makeFragmentName(IJ)Ljava/lang/String;
+    invoke-static {v4, v2, v3}, Landroid/support/v4/app/FragmentPagerAdapter;->makeFragmentName(IJ)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
     .line 92
-    .local v3, "name":Ljava/lang/String;
+    .local v1, "name":Ljava/lang/String;
     iget-object v4, p0, Landroid/support/v4/app/FragmentPagerAdapter;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
 
-    invoke-virtual {v4, v3}, Landroid/support/v4/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/support/v4/app/Fragment;
+    invoke-virtual {v4, v1}, Landroid/support/v4/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/support/v4/app/Fragment;
 
     move-result-object v0
 
@@ -247,7 +247,7 @@
 
     move-result v6
 
-    invoke-static {v6, v1, v2}, Landroid/support/v4/app/FragmentPagerAdapter;->makeFragmentName(IJ)Ljava/lang/String;
+    invoke-static {v6, v2, v3}, Landroid/support/v4/app/FragmentPagerAdapter;->makeFragmentName(IJ)Ljava/lang/String;
 
     move-result-object v6
 

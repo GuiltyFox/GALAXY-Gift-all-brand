@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$20;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
-    .line 2661
+    .line 2665
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,14 +38,14 @@
 
 # virtual methods
 .method public run()V
-    .registers 9
+    .registers 11
 
     .prologue
     const/4 v7, 0x0
 
     const/4 v6, 0x0
 
-    .line 2664
+    .line 2668
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$20;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     invoke-virtual {v3}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->getApplicationContext()Landroid/content/Context;
@@ -56,7 +56,7 @@
 
     move-result-object v1
 
-    .line 2665
+    .line 2669
     .local v1, "token":Ljava/lang/String;
     if-eqz v1, :cond_7a
 
@@ -68,7 +68,7 @@
 
     if-nez v3, :cond_7a
 
-    .line 2667
+    .line 2671
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$20;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     sget v4, Lic/buzzebeeslib/R$id;->pbToolLike:I
@@ -79,11 +79,11 @@
 
     check-cast v0, Landroid/widget/ProgressBar;
 
-    .line 2668
+    .line 2672
     .local v0, "pbToolLike":Landroid/widget/ProgressBar;
     invoke-virtual {v0, v7}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 2671
+    .line 2675
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$20;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->paramCampaign:Lic/buzzebeeslib/bean/Campaign;
@@ -95,7 +95,7 @@
 
     if-eqz v3, :cond_7b
 
-    .line 2674
+    .line 2678
     new-instance v3, Ljava/lang/StringBuilder;
 
     sget-object v4, Lic/buzzebeeslib/LibConst;->API_URL_BUZZEBEES:Ljava/lang/String;
@@ -139,7 +139,7 @@
 
     move-result-object v2
 
-    .line 2675
+    .line 2679
     .local v2, "url":Ljava/lang/String;
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$20;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
@@ -164,7 +164,7 @@
 
     invoke-static {v3, v4}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2676
+    .line 2680
     new-instance v3, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$DoLikeListener;
 
     iget-object v4, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$20;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -173,14 +173,14 @@
 
     invoke-static {v2, v6, v3, v6}, Lic/buzzebeeslib/util/http/HttpCall;->RQ_DELETE(Ljava/lang/String;Ljava/util/ArrayList;Lic/buzzebeeslib/util/http/RQListener;Ljava/lang/Object;)V
 
-    .line 2695
+    .line 2701
     .end local v0    # "pbToolLike":Landroid/widget/ProgressBar;
     .end local v2    # "url":Ljava/lang/String;
     :cond_7a
     :goto_7a
     return-void
 
-    .line 2680
+    .line 2684
     .restart local v0    # "pbToolLike":Landroid/widget/ProgressBar;
     :cond_7b
     new-instance v3, Ljava/lang/StringBuilder;
@@ -226,7 +226,7 @@
 
     move-result-object v2
 
-    .line 2681
+    .line 2685
     .restart local v2    # "url":Ljava/lang/String;
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$20;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
@@ -251,7 +251,7 @@
 
     invoke-static {v3, v4}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2692
+    .line 2696
     new-instance v3, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$DoLikeListener;
 
     iget-object v4, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$20;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -262,5 +262,65 @@
 
     invoke-static {v2, v6, v3, v6}, Lic/buzzebeeslib/util/http/HttpCall;->RQ_POST(Ljava/lang/String;Ljava/util/ArrayList;Lic/buzzebeeslib/util/http/RQListener;Ljava/lang/Object;)V
 
-    goto :goto_7a
+    .line 2698
+    iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$20;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
+
+    # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+    invoke-static {v3}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$40(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Lcom/google/analytics/tracking/android/Tracker;
+
+    move-result-object v3
+
+    const-string v4, "BZB Campaign Details"
+
+    const-string v5, "Click Like"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    iget-object v7, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$20;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
+
+    # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->paramCampaign:Lic/buzzebeeslib/bean/Campaign;
+    invoke-static {v7}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$3(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Lic/buzzebeeslib/bean/Campaign;
+
+    move-result-object v7
+
+    iget-object v7, v7, Lic/buzzebeeslib/bean/Campaign;->ID:Ljava/lang/String;
+
+    invoke-static {v7}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v7, "|"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    iget-object v7, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$20;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
+
+    # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->paramCampaign:Lic/buzzebeeslib/bean/Campaign;
+    invoke-static {v7}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$3(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Lic/buzzebeeslib/bean/Campaign;
+
+    move-result-object v7
+
+    iget-object v7, v7, Lic/buzzebeeslib/bean/Campaign;->Name:Ljava/lang/String;
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    const-wide/16 v8, 0x1
+
+    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v7
+
+    invoke-virtual {v3, v4, v5, v6, v7}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
+
+    goto/16 :goto_7a
 .end method

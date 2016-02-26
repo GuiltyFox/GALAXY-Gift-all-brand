@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14$2$1;->this$2:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14$2;
 
-    .line 2173
+    .line 2174
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 2
 
     .prologue
-    .line 2176
+    .line 2177
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14$2$1;->this$2:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14$2;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14$2;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;
@@ -56,6 +56,6 @@
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getLocationByGPS()V
 
-    .line 2177
+    .line 2178
     return-void
 .end method

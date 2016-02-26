@@ -121,7 +121,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a02e4
+    const v3, 0x7f0902e4
 
     invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
     :try_end_4b

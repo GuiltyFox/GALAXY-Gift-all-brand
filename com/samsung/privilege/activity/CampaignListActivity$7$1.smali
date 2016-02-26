@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignListActivity$7$1;->val$activityContext:Landroid/content/Context;
 
-    .line 1145
+    .line 1159
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 3
 
     .prologue
-    .line 1148
+    .line 1162
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$7$1;->this$1:Lcom/samsung/privilege/activity/CampaignListActivity$7;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignListActivity$7;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
@@ -57,6 +57,6 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignListActivity;->showDialogPointTransferConfirm(Landroid/content/Context;)V
 
-    .line 1149
+    .line 1163
     return-void
 .end method

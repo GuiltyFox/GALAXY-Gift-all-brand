@@ -70,7 +70,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/pager/CategoryFragmentDynamicAdapter;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0a02b5
+    const v4, 0x7f0902b5
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -87,7 +87,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/pager/CategoryFragmentDynamicAdapter;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0a02b6
+    const v4, 0x7f0902b6
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

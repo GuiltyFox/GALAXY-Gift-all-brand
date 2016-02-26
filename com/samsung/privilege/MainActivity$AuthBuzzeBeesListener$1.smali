@@ -37,7 +37,7 @@
 
     iput-object p3, p0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->val$response_text:Ljava/lang/String;
 
-    .line 582
+    .line 1002
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,10 +46,10 @@
 
 # virtual methods
 .method public run()V
-    .registers 30
+    .registers 31
 
     .prologue
-    .line 585
+    .line 1005
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->val$response_code:I
@@ -62,9 +62,9 @@
 
     move/from16 v1, v26
 
-    if-ne v0, v1, :cond_40a
+    if-ne v0, v1, :cond_40e
 
-    .line 589
+    .line 1009
     :try_start_e
     new-instance v9, Lorg/json/JSONObject;
 
@@ -78,7 +78,7 @@
 
     invoke-direct {v9, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 590
+    .line 1010
     .local v9, "jsonRoot":Lorg/json/JSONObject;
     const-string v25, "token"
 
@@ -88,7 +88,7 @@
 
     move-result-object v23
 
-    .line 591
+    .line 1011
     .local v23, "token":Ljava/lang/String;
     const-string v25, "version"
 
@@ -98,7 +98,7 @@
 
     move-result-object v24
 
-    .line 592
+    .line 1012
     .local v24, "version":Ljava/lang/String;
     const-string v25, "logon_message_id"
 
@@ -108,7 +108,7 @@
 
     move-result-object v17
 
-    .line 593
+    .line 1013
     .local v17, "logon_message_id":Ljava/lang/String;
     const-string v25, "logon_message"
 
@@ -118,7 +118,7 @@
 
     move-result-object v16
 
-    .line 595
+    .line 1015
     .local v16, "logon_message":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -141,7 +141,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/UserLogin;->SetTokenBuzzeBees(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 596
+    .line 1016
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -178,7 +178,7 @@
 
     invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/UserLogin;->SetUserCarrier(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 598
+    .line 1018
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -204,7 +204,7 @@
 
     invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/UserLogin;->SetLocale(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 599
+    .line 1019
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -230,7 +230,7 @@
 
     invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/UserLogin;->SetUserId(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 601
+    .line 1021
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -260,7 +260,7 @@
 
     invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/UserLogin;->SetIsPremium(Landroid/content/Context;Z)Z
 
-    .line 603
+    .line 1023
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -288,7 +288,7 @@
 
     if-eqz v25, :cond_ef
 
-    .line 604
+    .line 1024
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -308,7 +308,7 @@
 
     invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/UserLogin;->SetLocale(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 612
+    .line 1032
     :cond_ef
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
@@ -316,9 +316,9 @@
 
     invoke-static/range {v25 .. v25}, Ljava/util/Locale;->setDefault(Ljava/util/Locale;)V
     :try_end_f6
-    .catch Lorg/json/JSONException; {:try_start_e .. :try_end_f6} :catch_34f
+    .catch Lorg/json/JSONException; {:try_start_e .. :try_end_f6} :catch_353
 
-    .line 615
+    .line 1035
     :try_start_f6
     const-string v25, "sponsor_pages"
 
@@ -330,10 +330,10 @@
 
     sput-object v25, Lcom/samsung/privilege/AppSetting;->SPONSOR_PAGES:Ljava/lang/String;
     :try_end_100
-    .catch Ljava/lang/Exception; {:try_start_f6 .. :try_end_100} :catch_328
-    .catch Lorg/json/JSONException; {:try_start_f6 .. :try_end_100} :catch_34f
+    .catch Ljava/lang/Exception; {:try_start_f6 .. :try_end_100} :catch_32c
+    .catch Lorg/json/JSONException; {:try_start_f6 .. :try_end_100} :catch_353
 
-    .line 621
+    .line 1041
     :goto_100
     :try_start_100
     const-string v25, "updated_points"
@@ -344,7 +344,7 @@
 
     move-result-object v13
 
-    .line 622
+    .line 1042
     .local v13, "json_updated_points":Lorg/json/JSONObject;
     move-object/from16 v0, p0
 
@@ -371,10 +371,10 @@
 
     invoke-static/range {v25 .. v27}, Lcom/samsung/privilege/UserLogin;->SetPoints(Landroid/content/Context;J)Z
     :try_end_121
-    .catch Ljava/lang/Exception; {:try_start_100 .. :try_end_121} :catch_364
-    .catch Lorg/json/JSONException; {:try_start_100 .. :try_end_121} :catch_34f
+    .catch Ljava/lang/Exception; {:try_start_100 .. :try_end_121} :catch_368
+    .catch Lorg/json/JSONException; {:try_start_100 .. :try_end_121} :catch_353
 
-    .line 626
+    .line 1046
     .end local v13    # "json_updated_points":Lorg/json/JSONObject;
     :goto_121
     :try_start_121
@@ -417,9 +417,13 @@
 
     invoke-static/range {v27 .. v27}, Lcom/samsung/privilege/UserLogin;->GetPoints(Landroid/content/Context;)J
 
-    move-result-wide v27
+    move-result-wide v28
 
-    invoke-virtual/range {v26 .. v28}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-object/from16 v0, v26
+
+    move-wide/from16 v1, v28
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v26
 
@@ -428,11 +432,11 @@
     move-result-object v26
 
     invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_153
-    .catch Lorg/json/JSONException; {:try_start_121 .. :try_end_153} :catch_34f
+    :try_end_157
+    .catch Lorg/json/JSONException; {:try_start_121 .. :try_end_157} :catch_353
 
-    .line 629
-    :try_start_153
+    .line 1049
+    :try_start_157
     const-string v25, "user_rank"
 
     move-object/from16 v0, v25
@@ -441,7 +445,7 @@
 
     move-result-object v14
 
-    .line 630
+    .line 1050
     .local v14, "json_user_rank":Lorg/json/JSONObject;
     move-object/from16 v0, p0
 
@@ -467,14 +471,14 @@
     move-result-object v26
 
     invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/UserLogin;->SetRank(Landroid/content/Context;Ljava/lang/String;)Z
-    :try_end_174
-    .catch Ljava/lang/Exception; {:try_start_153 .. :try_end_174} :catch_37a
-    .catch Lorg/json/JSONException; {:try_start_153 .. :try_end_174} :catch_34f
+    :try_end_178
+    .catch Ljava/lang/Exception; {:try_start_157 .. :try_end_178} :catch_37e
+    .catch Lorg/json/JSONException; {:try_start_157 .. :try_end_178} :catch_353
 
-    .line 635
+    .line 1055
     .end local v14    # "json_user_rank":Lorg/json/JSONObject;
-    :goto_174
-    :try_start_174
+    :goto_178
+    :try_start_178
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -494,9 +498,9 @@
 
     move-result v25
 
-    if-nez v25, :cond_19c
+    if-nez v25, :cond_1a0
 
-    .line 636
+    .line 1056
     new-instance v19, Lcom/samsung/privilege/bean/MessagePopup;
 
     const-string v25, "term"
@@ -507,7 +511,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/privilege/bean/MessagePopup;-><init>(Ljava/lang/String;)V
 
-    .line 637
+    .line 1057
     .local v19, "messagePopup":Lcom/samsung/privilege/bean/MessagePopup;
     sget-object v25, Lcom/samsung/privilege/AppSetting;->QUEUE_MESSAGEPOPUPS:Ljava/util/Queue;
 
@@ -517,9 +521,9 @@
 
     invoke-interface {v0, v1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
 
-    .line 640
+    .line 1060
     .end local v19    # "messagePopup":Lcom/samsung/privilege/bean/MessagePopup;
-    :cond_19c
+    :cond_1a0
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -539,9 +543,9 @@
 
     move-result v25
 
-    if-nez v25, :cond_1d7
+    if-nez v25, :cond_1db
 
-    .line 641
+    .line 1061
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -561,7 +565,7 @@
 
     invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/UserLogin;->SetIsPlayingIntro(Landroid/content/Context;Z)Z
 
-    .line 643
+    .line 1063
     new-instance v19, Lcom/samsung/privilege/bean/MessagePopup;
 
     const-string v25, "welcome"
@@ -572,7 +576,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/privilege/bean/MessagePopup;-><init>(Ljava/lang/String;)V
 
-    .line 644
+    .line 1064
     .restart local v19    # "messagePopup":Lcom/samsung/privilege/bean/MessagePopup;
     sget-object v25, Lcom/samsung/privilege/AppSetting;->QUEUE_MESSAGEPOPUPS:Ljava/util/Queue;
 
@@ -581,13 +585,13 @@
     move-object/from16 v1, v19
 
     invoke-interface {v0, v1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
-    :try_end_1d7
-    .catch Lorg/json/JSONException; {:try_start_174 .. :try_end_1d7} :catch_34f
+    :try_end_1db
+    .catch Lorg/json/JSONException; {:try_start_178 .. :try_end_1db} :catch_353
 
-    .line 648
+    .line 1068
     .end local v19    # "messagePopup":Lcom/samsung/privilege/bean/MessagePopup;
-    :cond_1d7
-    :try_start_1d7
+    :cond_1db
+    :try_start_1db
     const-string v25, "buzzebees"
 
     move-object/from16 v0, v25
@@ -596,7 +600,7 @@
 
     move-result-object v12
 
-    .line 650
+    .line 1070
     .local v12, "json_buzzebees":Lorg/json/JSONObject;
     const-string v25, "points"
 
@@ -606,14 +610,14 @@
 
     move-result v21
 
-    .line 652
+    .line 1072
     .local v21, "points_add":I
-    if-lez v21, :cond_20e
+    if-lez v21, :cond_212
 
-    .line 653
+    .line 1073
     const-string v22, "weeklytopup"
 
-    .line 654
+    .line 1074
     .local v22, "strFrom":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -627,7 +631,7 @@
     move-result-object v25
 
     # getter for: Lcom/samsung/privilege/MainActivity;->gHandler:Landroid/os/Handler;
-    invoke-static/range {v25 .. v25}, Lcom/samsung/privilege/MainActivity;->access$3(Lcom/samsung/privilege/MainActivity;)Landroid/os/Handler;
+    invoke-static/range {v25 .. v25}, Lcom/samsung/privilege/MainActivity;->access$5(Lcom/samsung/privilege/MainActivity;)Landroid/os/Handler;
 
     move-result-object v25
 
@@ -652,9 +656,9 @@
 
     invoke-static {v0, v1, v2, v3}, Lic/buzzebeeslib/util/AnimationPoint;->showToastPointsGift(ILjava/lang/String;Landroid/os/Handler;Landroid/app/Activity;)V
 
-    .line 657
+    .line 1077
     .end local v22    # "strFrom":Ljava/lang/String;
-    :cond_20e
+    :cond_212
     const-string v25, "badges"
 
     move-object/from16 v0, v25
@@ -663,44 +667,44 @@
 
     move-result-object v11
 
-    .line 658
+    .line 1078
     .local v11, "json_badges":Lorg/json/JSONArray;
     const/4 v6, 0x0
 
     .local v6, "i":I
-    :goto_217
+    :goto_21b
     invoke-virtual {v11}, Lorg/json/JSONArray;->length()I
-    :try_end_21a
-    .catch Ljava/lang/Exception; {:try_start_1d7 .. :try_end_21a} :catch_3e3
-    .catch Lorg/json/JSONException; {:try_start_1d7 .. :try_end_21a} :catch_34f
+    :try_end_21e
+    .catch Ljava/lang/Exception; {:try_start_1db .. :try_end_21e} :catch_3e7
+    .catch Lorg/json/JSONException; {:try_start_1db .. :try_end_21e} :catch_353
 
     move-result v25
 
     move/from16 v0, v25
 
-    if-lt v6, v0, :cond_3a1
+    if-lt v6, v0, :cond_3a5
 
-    .line 673
+    .line 1093
     .end local v6    # "i":I
     .end local v11    # "json_badges":Lorg/json/JSONArray;
     .end local v12    # "json_buzzebees":Lorg/json/JSONObject;
     .end local v21    # "points_add":I
-    :goto_21f
+    :goto_223
     const/16 v25, 0x0
 
-    :try_start_221
+    :try_start_225
     sput-boolean v25, Lcom/samsung/privilege/AppSetting;->IS_SERVER_BUZZEBEES_DOWN:Z
 
-    .line 675
+    .line 1095
     const-string v25, ""
 
     invoke-virtual/range {v24 .. v25}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v25
 
-    if-nez v25, :cond_2c6
+    if-nez v25, :cond_2ca
 
-    .line 678
+    .line 1098
     const-string v25, "version"
 
     move-object/from16 v0, v25
@@ -709,7 +713,7 @@
 
     move-result-object v15
 
-    .line 679
+    .line 1099
     .local v15, "json_version":Lorg/json/JSONObject;
     const-string v25, "menu_buzzebees_visible"
 
@@ -723,7 +727,7 @@
 
     move-result v7
 
-    .line 680
+    .line 1100
     .local v7, "isMenuBuzzebeesVisible":Z
     move-object/from16 v0, p0
 
@@ -744,7 +748,7 @@
 
     invoke-static {v0, v7}, Lcom/samsung/privilege/UserLogin;->SetMenuBuzzebeesVisible(Landroid/content/Context;Z)Z
 
-    .line 682
+    .line 1102
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -774,7 +778,7 @@
 
     invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/UserLogin;->SetIsAllowUse(Landroid/content/Context;Z)Z
 
-    .line 683
+    .line 1103
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -804,7 +808,7 @@
 
     invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/UserLogin;->SetIsHasNewVersion(Landroid/content/Context;Z)Z
 
-    .line 684
+    .line 1104
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -834,7 +838,7 @@
 
     invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/UserLogin;->SetIsTokenNeedLogout(Landroid/content/Context;Z)Z
 
-    .line 686
+    .line 1106
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -864,10 +868,10 @@
 
     invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/UserLogin;->SetIsShowShoppingBasket(Landroid/content/Context;Z)Z
 
-    .line 689
+    .line 1109
     .end local v7    # "isMenuBuzzebeesVisible":Z
     .end local v15    # "json_version":Lorg/json/JSONObject;
-    :cond_2c6
+    :cond_2ca
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -887,7 +891,7 @@
 
     invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/UserLogin;->SetModeLogin(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 690
+    .line 1110
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -907,8 +911,8 @@
 
     invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/UserLogin;->SetIsFacebookUser(Landroid/content/Context;Z)Z
 
-    .line 692
-    if-eqz v16, :cond_31a
+    .line 1112
+    if-eqz v16, :cond_31e
 
     const-string v25, ""
 
@@ -920,9 +924,9 @@
 
     move-result v25
 
-    if-nez v25, :cond_31a
+    if-nez v25, :cond_31e
 
-    .line 693
+    .line 1113
     new-instance v19, Lcom/samsung/privilege/bean/MessagePopup;
 
     const-string v25, "message"
@@ -933,7 +937,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/privilege/bean/MessagePopup;-><init>(Ljava/lang/String;)V
 
-    .line 694
+    .line 1114
     .restart local v19    # "messagePopup":Lcom/samsung/privilege/bean/MessagePopup;
     move-object/from16 v0, v17
 
@@ -941,14 +945,14 @@
 
     iput-object v0, v1, Lcom/samsung/privilege/bean/MessagePopup;->message_id:Ljava/lang/String;
 
-    .line 695
+    .line 1115
     move-object/from16 v0, v16
 
     move-object/from16 v1, v19
 
     iput-object v0, v1, Lcom/samsung/privilege/bean/MessagePopup;->message_text:Ljava/lang/String;
 
-    .line 696
+    .line 1116
     sget-object v25, Lcom/samsung/privilege/AppSetting;->QUEUE_MESSAGEPOPUPS:Ljava/util/Queue;
 
     move-object/from16 v0, v25
@@ -957,9 +961,9 @@
 
     invoke-interface {v0, v1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
 
-    .line 699
+    .line 1119
     .end local v19    # "messagePopup":Lcom/samsung/privilege/bean/MessagePopup;
-    :cond_31a
+    :cond_31e
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -972,27 +976,27 @@
     move-result-object v25
 
     # invokes: Lcom/samsung/privilege/MainActivity;->GetProfileData()V
-    invoke-static/range {v25 .. v25}, Lcom/samsung/privilege/MainActivity;->access$5(Lcom/samsung/privilege/MainActivity;)V
+    invoke-static/range {v25 .. v25}, Lcom/samsung/privilege/MainActivity;->access$7(Lcom/samsung/privilege/MainActivity;)V
 
-    .line 720
+    .line 1140
     .end local v9    # "jsonRoot":Lorg/json/JSONObject;
     .end local v16    # "logon_message":Ljava/lang/String;
     .end local v17    # "logon_message_id":Ljava/lang/String;
     .end local v23    # "token":Ljava/lang/String;
     .end local v24    # "version":Ljava/lang/String;
-    :goto_327
+    :goto_32b
     return-void
 
-    .line 616
+    .line 1036
     .restart local v9    # "jsonRoot":Lorg/json/JSONObject;
     .restart local v16    # "logon_message":Ljava/lang/String;
     .restart local v17    # "logon_message_id":Ljava/lang/String;
     .restart local v23    # "token":Ljava/lang/String;
     .restart local v24    # "version":Ljava/lang/String;
-    :catch_328
+    :catch_32c
     move-exception v5
 
-    .line 617
+    .line 1037
     .local v5, "e":Ljava/lang/Exception;
     move-object/from16 v0, p0
 
@@ -1029,22 +1033,22 @@
     move-result-object v26
 
     invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_34d
-    .catch Lorg/json/JSONException; {:try_start_221 .. :try_end_34d} :catch_34f
+    :try_end_351
+    .catch Lorg/json/JSONException; {:try_start_225 .. :try_end_351} :catch_353
 
     goto/16 :goto_100
 
-    .line 700
+    .line 1120
     .end local v5    # "e":Ljava/lang/Exception;
     .end local v9    # "jsonRoot":Lorg/json/JSONObject;
     .end local v16    # "logon_message":Ljava/lang/String;
     .end local v17    # "logon_message_id":Ljava/lang/String;
     .end local v23    # "token":Ljava/lang/String;
     .end local v24    # "version":Ljava/lang/String;
-    :catch_34f
+    :catch_353
     move-exception v5
 
-    .line 701
+    .line 1121
     .local v5, "e":Lorg/json/JSONException;
     move-object/from16 v0, p0
 
@@ -1060,28 +1064,28 @@
     const-string v26, "Authentication with BuzzeBees Fail...\r\n{Invalid data format}..."
 
     # invokes: Lcom/samsung/privilege/MainActivity;->showToast(Ljava/lang/String;)V
-    invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/MainActivity;->access$6(Lcom/samsung/privilege/MainActivity;Ljava/lang/String;)V
+    invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/MainActivity;->access$4(Lcom/samsung/privilege/MainActivity;Ljava/lang/String;)V
 
-    .line 702
+    .line 1122
     const/16 v25, 0x1
 
     sput-boolean v25, Lcom/samsung/privilege/AppSetting;->IS_SERVER_BUZZEBEES_DOWN:Z
 
-    goto :goto_327
+    goto :goto_32b
 
-    .line 623
+    .line 1043
     .end local v5    # "e":Lorg/json/JSONException;
     .restart local v9    # "jsonRoot":Lorg/json/JSONObject;
     .restart local v16    # "logon_message":Ljava/lang/String;
     .restart local v17    # "logon_message_id":Ljava/lang/String;
     .restart local v23    # "token":Ljava/lang/String;
     .restart local v24    # "version":Ljava/lang/String;
-    :catch_364
+    :catch_368
     move-exception v5
 
-    .line 624
+    .line 1044
     .local v5, "e":Ljava/lang/Exception;
-    :try_start_365
+    :try_start_369
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -1103,12 +1107,12 @@
 
     goto/16 :goto_121
 
-    .line 631
+    .line 1051
     .end local v5    # "e":Ljava/lang/Exception;
-    :catch_37a
+    :catch_37e
     move-exception v5
 
-    .line 632
+    .line 1052
     .restart local v5    # "e":Ljava/lang/Exception;
     move-object/from16 v0, p0
 
@@ -1145,24 +1149,24 @@
     move-result-object v26
 
     invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_39f
-    .catch Lorg/json/JSONException; {:try_start_365 .. :try_end_39f} :catch_34f
+    :try_end_3a3
+    .catch Lorg/json/JSONException; {:try_start_369 .. :try_end_3a3} :catch_353
 
-    goto/16 :goto_174
+    goto/16 :goto_178
 
-    .line 659
+    .line 1079
     .end local v5    # "e":Ljava/lang/Exception;
     .restart local v6    # "i":I
     .restart local v11    # "json_badges":Lorg/json/JSONArray;
     .restart local v12    # "json_buzzebees":Lorg/json/JSONObject;
     .restart local v21    # "points_add":I
-    :cond_3a1
-    :try_start_3a1
+    :cond_3a5
+    :try_start_3a5
     invoke-virtual {v11, v6}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v10
 
-    .line 660
+    .line 1080
     .local v10, "json_badge":Lorg/json/JSONObject;
     new-instance v20, Lcom/samsung/privilege/bean/BadgeAlert;
 
@@ -1170,7 +1174,7 @@
 
     invoke-direct {v0, v10}, Lcom/samsung/privilege/bean/BadgeAlert;-><init>(Lorg/json/JSONObject;)V
 
-    .line 663
+    .line 1083
     .local v20, "objBadgeAlert":Lcom/samsung/privilege/bean/BadgeAlert;
     new-instance v19, Lcom/samsung/privilege/bean/MessagePopup;
 
@@ -1182,7 +1186,7 @@
 
     invoke-direct {v0, v1}, Lcom/samsung/privilege/bean/MessagePopup;-><init>(Ljava/lang/String;)V
 
-    .line 664
+    .line 1084
     .restart local v19    # "messagePopup":Lcom/samsung/privilege/bean/MessagePopup;
     move-object/from16 v0, v20
 
@@ -1190,7 +1194,7 @@
 
     iput-object v0, v1, Lcom/samsung/privilege/bean/MessagePopup;->badgeAlert:Lcom/samsung/privilege/bean/BadgeAlert;
 
-    .line 665
+    .line 1085
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -1214,9 +1218,9 @@
 
     move-object/from16 v26, v0
 
-    invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/MainActivity;->access$4(Lcom/samsung/privilege/MainActivity;Ljava/lang/String;)V
+    invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/MainActivity;->access$6(Lcom/samsung/privilege/MainActivity;Ljava/lang/String;)V
 
-    .line 667
+    .line 1087
     sget-object v25, Lcom/samsung/privilege/AppSetting;->QUEUE_MESSAGEPOPUPS:Ljava/util/Queue;
 
     move-object/from16 v0, v25
@@ -1224,16 +1228,16 @@
     move-object/from16 v1, v19
 
     invoke-interface {v0, v1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
-    :try_end_3df
-    .catch Ljava/lang/Exception; {:try_start_3a1 .. :try_end_3df} :catch_3e3
-    .catch Lorg/json/JSONException; {:try_start_3a1 .. :try_end_3df} :catch_34f
+    :try_end_3e3
+    .catch Ljava/lang/Exception; {:try_start_3a5 .. :try_end_3e3} :catch_3e7
+    .catch Lorg/json/JSONException; {:try_start_3a5 .. :try_end_3e3} :catch_353
 
-    .line 658
+    .line 1078
     add-int/lit8 v6, v6, 0x1
 
-    goto/16 :goto_217
+    goto/16 :goto_21b
 
-    .line 669
+    .line 1089
     .end local v6    # "i":I
     .end local v10    # "json_badge":Lorg/json/JSONObject;
     .end local v11    # "json_badges":Lorg/json/JSONArray;
@@ -1241,12 +1245,12 @@
     .end local v19    # "messagePopup":Lcom/samsung/privilege/bean/MessagePopup;
     .end local v20    # "objBadgeAlert":Lcom/samsung/privilege/bean/BadgeAlert;
     .end local v21    # "points_add":I
-    :catch_3e3
+    :catch_3e7
     move-exception v5
 
-    .line 670
+    .line 1090
     .restart local v5    # "e":Ljava/lang/Exception;
-    :try_start_3e4
+    :try_start_3e8
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -1282,28 +1286,28 @@
     move-result-object v26
 
     invoke-static/range {v25 .. v26}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_408
-    .catch Lorg/json/JSONException; {:try_start_3e4 .. :try_end_408} :catch_34f
+    :try_end_40c
+    .catch Lorg/json/JSONException; {:try_start_3e8 .. :try_end_40c} :catch_353
 
-    goto/16 :goto_21f
+    goto/16 :goto_223
 
-    .line 705
+    .line 1125
     .end local v5    # "e":Ljava/lang/Exception;
     .end local v9    # "jsonRoot":Lorg/json/JSONObject;
     .end local v16    # "logon_message":Ljava/lang/String;
     .end local v17    # "logon_message_id":Ljava/lang/String;
     .end local v23    # "token":Ljava/lang/String;
     .end local v24    # "version":Ljava/lang/String;
-    :cond_40a
+    :cond_40e
     const-string v4, ""
 
-    .line 706
+    .line 1126
     .local v4, "code":Ljava/lang/String;
     const-string v18, ""
 
-    .line 708
+    .line 1128
     .local v18, "message":Ljava/lang/String;
-    :try_start_40e
+    :try_start_412
     new-instance v9, Lorg/json/JSONObject;
 
     move-object/from16 v0, p0
@@ -1316,7 +1320,7 @@
 
     invoke-direct {v9, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 709
+    .line 1129
     .restart local v9    # "jsonRoot":Lorg/json/JSONObject;
     const-string v25, "error"
 
@@ -1326,7 +1330,7 @@
 
     move-result-object v8
 
-    .line 710
+    .line 1130
     .local v8, "jsonError":Lorg/json/JSONObject;
     const-string v25, "message"
 
@@ -1336,21 +1340,21 @@
 
     move-result-object v18
 
-    .line 711
+    .line 1131
     const-string v25, "code"
 
     move-object/from16 v0, v25
 
     invoke-static {v8, v0}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
-    :try_end_432
-    .catch Ljava/lang/Exception; {:try_start_40e .. :try_end_432} :catch_44a
+    :try_end_436
+    .catch Ljava/lang/Exception; {:try_start_412 .. :try_end_436} :catch_44e
 
     move-result-object v4
 
-    .line 716
+    .line 1136
     .end local v8    # "jsonError":Lorg/json/JSONObject;
     .end local v9    # "jsonRoot":Lorg/json/JSONObject;
-    :goto_433
+    :goto_437
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener$1;->this$1:Lcom/samsung/privilege/MainActivity$AuthBuzzeBeesListener;
@@ -1368,18 +1372,18 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/DialogUtil;->showDialogMessage(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 718
+    .line 1138
     const/16 v25, 0x1
 
     sput-boolean v25, Lcom/samsung/privilege/AppSetting;->IS_SERVER_BUZZEBEES_DOWN:Z
 
-    goto/16 :goto_327
+    goto/16 :goto_32b
 
-    .line 712
-    :catch_44a
+    .line 1132
+    :catch_44e
     move-exception v5
 
-    .line 713
+    .line 1133
     .restart local v5    # "e":Ljava/lang/Exception;
     move-object/from16 v0, p0
 
@@ -1392,11 +1396,11 @@
 
     move-result-object v25
 
-    const v26, 0x7f0a02b1
+    const v26, 0x7f0902b1
 
     invoke-virtual/range {v25 .. v26}, Lcom/samsung/privilege/MainActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v18
 
-    goto :goto_433
+    goto :goto_437
 .end method

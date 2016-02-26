@@ -27,7 +27,7 @@
     .registers 2
 
     .prologue
-    .line 1710
+    .line 1737
     iput-object p1, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter$ViewHolderMarketFilterRow;->this$1:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

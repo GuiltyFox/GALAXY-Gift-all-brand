@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$10;->val$menuItem:Lcom/samsung/privilege/bean/MainMenuItemModel;
 
-    .line 827
+    .line 830
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -47,10 +47,10 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 829
+    .line 832
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 832
+    .line 835
     :try_start_3
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$10;->val$menuItem:Lcom/samsung/privilege/bean/MainMenuItemModel;
 
@@ -58,7 +58,7 @@
 
     iget-object v1, v2, Lcom/samsung/privilege/bean/Purchasing;->InstallAppUrl:Ljava/lang/String;
 
-    .line 833
+    .line 836
     .local v1, "url":Ljava/lang/String;
     const-string v2, "{token}"
 
@@ -76,7 +76,7 @@
 
     move-result-object v1
 
-    .line 834
+    .line 837
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$10;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->TAG:Ljava/lang/String;
@@ -100,7 +100,7 @@
 
     invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 835
+    .line 838
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$10;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     new-instance v3, Landroid/content/Intent;
@@ -117,16 +117,16 @@
     :try_end_41
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_41} :catch_42
 
-    .line 839
+    .line 842
     .end local v1    # "url":Ljava/lang/String;
     :goto_41
     return-void
 
-    .line 836
+    .line 839
     :catch_42
     move-exception v0
 
-    .line 837
+    .line 840
     .local v0, "e":Ljava/lang/Exception;
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$10;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 

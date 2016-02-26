@@ -17,18 +17,20 @@
 
 .field private static TAG:Ljava/lang/String;
 
+.field private static gIsClosingDialog:Z
+
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 1
 
     .prologue
-    .line 40
+    .line 36
     const-string v0, "gift.resume"
 
     sput-object v0, Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
 
-    .line 41
+    .line 37
     const-class v0, Lcom/samsung/privilege/util/ResumeUtil;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -37,6 +39,11 @@
 
     sput-object v0, Lcom/samsung/privilege/util/ResumeUtil;->TAG:Ljava/lang/String;
 
+    .line 439
+    const/4 v0, 0x0
+
+    sput-boolean v0, Lcom/samsung/privilege/util/ResumeUtil;->gIsClosingDialog:Z
+
     return-void
 .end method
 
@@ -44,7 +51,7 @@
     .registers 1
 
     .prologue
-    .line 38
+    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -54,7 +61,7 @@
     .registers 1
 
     .prologue
-    .line 40
+    .line 36
     sget-object v0, Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
 
     return-object v0
@@ -64,10 +71,30 @@
     .registers 1
 
     .prologue
-    .line 41
+    .line 37
     sget-object v0, Lcom/samsung/privilege/util/ResumeUtil;->TAG:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method static synthetic access$2()Z
+    .registers 1
+
+    .prologue
+    .line 439
+    sget-boolean v0, Lcom/samsung/privilege/util/ResumeUtil;->gIsClosingDialog:Z
+
+    return v0
+.end method
+
+.method static synthetic access$3(Z)V
+    .registers 1
+
+    .prologue
+    .line 439
+    sput-boolean p0, Lcom/samsung/privilege/util/ResumeUtil;->gIsClosingDialog:Z
+
+    return-void
 .end method
 
 .method public static callResume(Landroid/content/Context;Landroid/app/Activity;Z)J
@@ -77,31 +104,36 @@
     .param p2, "isForceCall"    # Z
 
     .prologue
-    .line 46
+    .line 41
+    const/16 v26, 0x0
+
+    sput-boolean v26, Lcom/samsung/privilege/util/ResumeUtil;->gIsClosingDialog:Z
+
+    .line 42
     invoke-static/range {p0 .. p0}, Lcom/samsung/privilege/UserLogin;->GetLastResumeTime(Landroid/content/Context;)J
 
-    move-result-wide v17
+    move-result-wide v18
 
-    .line 48
-    .local v17, "lastResumeTime":J
+    .line 44
+    .local v18, "lastResumeTime":J
     new-instance v8, Ljava/util/Date;
 
     invoke-direct {v8}, Ljava/util/Date;-><init>()V
 
-    .line 49
+    .line 45
     .local v8, "date":Ljava/util/Date;
     invoke-virtual {v8}, Ljava/util/Date;->getTime()J
 
     move-result-wide v26
 
-    sub-long v26, v26, v17
+    sub-long v26, v26, v18
 
     const-wide/16 v28, 0x3e8
 
-    div-long v11, v26, v28
+    div-long v12, v26, v28
 
-    .line 51
-    .local v11, "difftime":J
+    .line 47
+    .local v12, "difftime":J
     sget-object v26, Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
 
     new-instance v27, Ljava/lang/StringBuilder;
@@ -124,12 +156,12 @@
 
     invoke-static/range {v26 .. v27}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 52
+    .line 48
     sget-object v26, Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
 
     new-instance v27, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v17 .. v18}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    invoke-static/range {v18 .. v19}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v28
 
@@ -157,7 +189,7 @@
 
     move-object/from16 v0, v27
 
-    invoke-virtual {v0, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v12, v13}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v27
 
@@ -167,7 +199,7 @@
 
     invoke-static/range {v26 .. v27}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 55
+    .line 51
     sget v26, Lcom/samsung/privilege/AppSetting;->RESUME_TIME:I
 
     move/from16 v0, v26
@@ -176,27 +208,27 @@
 
     move-wide/from16 v26, v0
 
-    cmp-long v26, v11, v26
+    cmp-long v26, v12, v26
 
-    if-gtz v26, :cond_6a
+    if-gtz v26, :cond_6e
 
     const-wide/16 v26, 0x0
 
-    cmp-long v26, v17, v26
+    cmp-long v26, v18, v26
 
-    if-eqz v26, :cond_6a
+    if-eqz v26, :cond_6e
 
-    if-eqz p2, :cond_309
+    if-eqz p2, :cond_30d
 
-    .line 67
-    :cond_6a
+    .line 63
+    :cond_6e
     invoke-static/range {p0 .. p0}, Lcom/samsung/privilege/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v23
 
-    .line 68
+    .line 64
     .local v23, "strTokenBuzzeBees":Ljava/lang/String;
-    if-eqz v23, :cond_328
+    if-eqz v23, :cond_32c
 
     const-string v26, ""
 
@@ -208,9 +240,9 @@
 
     move-result v26
 
-    if-nez v26, :cond_328
+    if-nez v26, :cond_32c
 
-    .line 69
+    .line 65
     new-instance v26, Ljava/lang/StringBuilder;
 
     sget-object v27, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
@@ -239,14 +271,14 @@
 
     move-result-object v24
 
-    .line 71
+    .line 67
     .local v24, "url":Ljava/lang/String;
-    new-instance v21, Ljava/util/ArrayList;
+    new-instance v17, Ljava/util/ArrayList;
 
-    invoke-direct/range {v21 .. v21}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct/range {v17 .. v17}, Ljava/util/ArrayList;-><init>()V
 
-    .line 73
-    .local v21, "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/InputItem;>;"
+    .line 69
+    .local v17, "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/InputItem;>;"
     new-instance v26, Lcom/samsung/privilege/bean/InputItem;
 
     const-string v27, "access_token"
@@ -257,26 +289,26 @@
 
     invoke-direct/range {v26 .. v28}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v17
 
     move-object/from16 v1, v26
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 75
+    .line 71
     new-instance v9, Lcom/samsung/privilege/util/DeviceHelper;
 
     move-object/from16 v0, p0
 
     invoke-direct {v9, v0}, Lcom/samsung/privilege/util/DeviceHelper;-><init>(Landroid/content/Context;)V
 
-    .line 77
+    .line 73
     .local v9, "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
     invoke-virtual {v9}, Lcom/samsung/privilege/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
 
     move-result-object v10
 
-    .line 78
+    .line 74
     .local v10, "device_id":Ljava/lang/String;
     new-instance v26, Lcom/samsung/privilege/bean/InputItem;
 
@@ -288,13 +320,13 @@
 
     invoke-direct {v0, v1, v10}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v17
 
     move-object/from16 v1, v26
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 80
+    .line 76
     new-instance v26, Ljava/lang/StringBuilder;
 
     sget-object v27, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
@@ -321,7 +353,7 @@
 
     move-result-object v22
 
-    .line 81
+    .line 77
     .local v22, "platform":Ljava/lang/String;
     new-instance v26, Lcom/samsung/privilege/bean/InputItem;
 
@@ -335,16 +367,16 @@
 
     invoke-direct {v0, v1, v2}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v17
 
     move-object/from16 v1, v26
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 83
+    .line 79
     sget-object v4, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
 
-    .line 84
+    .line 80
     .local v4, "AndroidVersion":Ljava/lang/String;
     new-instance v26, Lcom/samsung/privilege/bean/InputItem;
 
@@ -368,18 +400,18 @@
 
     invoke-direct/range {v26 .. v28}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v17
 
     move-object/from16 v1, v26
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 86
+    .line 82
     const-string v25, ""
 
-    .line 88
+    .line 84
     .local v25, "versionName":Ljava/lang/String;
-    :try_start_11f
+    :try_start_123
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v26
@@ -399,11 +431,11 @@
     iget-object v0, v0, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
 
     move-object/from16 v25, v0
-    :try_end_133
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_11f .. :try_end_133} :catch_268
+    :try_end_137
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_123 .. :try_end_137} :catch_26c
 
-    .line 92
-    :goto_133
+    .line 88
+    :goto_137
     new-instance v26, Lcom/samsung/privilege/bean/InputItem;
 
     const-string v27, "client_version"
@@ -434,13 +466,13 @@
 
     invoke-direct/range {v26 .. v28}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v17
 
     move-object/from16 v1, v26
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 94
+    .line 90
     new-instance v26, Lcom/samsung/privilege/bean/InputItem;
 
     const-string v27, "device_token"
@@ -451,20 +483,20 @@
 
     invoke-direct/range {v26 .. v28}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v17
 
     move-object/from16 v1, v26
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 96
+    .line 92
     invoke-static/range {p0 .. p0}, Lcom/samsung/privilege/UserLogin;->GetIsNotificationOn(Landroid/content/Context;)Z
 
     move-result v26
 
-    if-eqz v26, :cond_283
+    if-eqz v26, :cond_287
 
-    .line 97
+    .line 93
     new-instance v26, Lcom/samsung/privilege/bean/InputItem;
 
     const-string v27, "device_noti_enable"
@@ -473,19 +505,19 @@
 
     invoke-direct/range {v26 .. v28}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v17
 
     move-object/from16 v1, v26
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 102
-    :goto_182
+    .line 98
+    :goto_186
     invoke-virtual {v9}, Lcom/samsung/privilege/util/DeviceHelper;->getAndroidID()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 103
+    .line 99
     .local v5, "android_id":Ljava/lang/String;
     new-instance v26, Lcom/samsung/privilege/bean/InputItem;
 
@@ -497,18 +529,18 @@
 
     invoke-direct {v0, v1, v5}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v17
 
     move-object/from16 v1, v26
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 106
+    .line 102
     invoke-static/range {p0 .. p0}, Lcom/samsung/privilege/util/PhoneManagerUtil;->GetSimOperatorDual(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 107
+    .line 103
     .local v6, "carrier":Ljava/lang/String;
     new-instance v26, Lcom/samsung/privilege/bean/InputItem;
 
@@ -520,13 +552,13 @@
 
     invoke-direct {v0, v1, v6}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v17
 
     move-object/from16 v1, v26
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 108
+    .line 104
     sget-object v26, Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
 
     new-instance v27, Ljava/lang/StringBuilder;
@@ -547,7 +579,7 @@
 
     invoke-static/range {v26 .. v27}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 120
+    .line 114
     new-instance v26, Lcom/samsung/privilege/bean/InputItem;
 
     const-string v27, "transfer_points"
@@ -556,25 +588,25 @@
 
     invoke-direct/range {v26 .. v28}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v17
 
     move-object/from16 v1, v26
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 121
+    .line 115
     sget-object v26, Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
 
     const-string v27, "transfer_points=manual"
 
     invoke-static/range {v26 .. v27}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 158
+    .line 152
     invoke-static/range {p1 .. p1}, Lcom/samsung/privilege/util/InfoData;->GetInfoData(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v15
 
-    .line 159
+    .line 153
     .local v15, "info":Ljava/lang/String;
     new-instance v26, Lcom/samsung/privilege/bean/InputItem;
 
@@ -586,13 +618,13 @@
 
     invoke-direct {v0, v1, v15}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v17
 
     move-object/from16 v1, v26
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 160
+    .line 154
     sget-object v26, Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
 
     new-instance v27, Ljava/lang/StringBuilder;
@@ -613,7 +645,7 @@
 
     invoke-static/range {v26 .. v27}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 163
+    .line 157
     sget-object v26, Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
 
     new-instance v27, Ljava/lang/StringBuilder;
@@ -636,10 +668,10 @@
 
     invoke-static/range {v26 .. v27}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 164
-    if-eqz p2, :cond_235
+    .line 158
+    if-eqz p2, :cond_239
 
-    .line 165
+    .line 159
     const-string v26, "RESUME"
 
     move-object/from16 v0, v26
@@ -648,7 +680,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/AppSetting;->ClearLogOnSD(Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 166
+    .line 160
     const-string v26, "RESUME"
 
     move-object/from16 v0, v26
@@ -659,25 +691,25 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/AppSetting;->SaveLogOnSDNoNewLine(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 168
-    :cond_235
+    .line 162
+    :cond_239
     const-string v7, "?"
 
-    .line 169
+    .line 163
     .local v7, "comma":Ljava/lang/String;
     const/4 v14, 0x0
 
     .local v14, "i":I
-    :goto_238
-    invoke-virtual/range {v21 .. v21}, Ljava/util/ArrayList;->size()I
+    :goto_23c
+    invoke-virtual/range {v17 .. v17}, Ljava/util/ArrayList;->size()I
 
     move-result v26
 
     move/from16 v0, v26
 
-    if-lt v14, v0, :cond_295
+    if-lt v14, v0, :cond_299
 
-    .line 177
+    .line 171
     new-instance v26, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;
 
     move-object/from16 v0, v26
@@ -694,7 +726,7 @@
 
     move-object/from16 v0, v24
 
-    move-object/from16 v1, v21
+    move-object/from16 v1, v17
 
     move-object/from16 v2, v26
 
@@ -702,21 +734,21 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/util/http/HttpCall;->RQ_POST(Ljava/lang/String;Ljava/util/ArrayList;Lcom/samsung/privilege/util/http/RQListener;Ljava/lang/Object;)V
 
-    .line 179
+    .line 173
     invoke-virtual {v8}, Ljava/util/Date;->getTime()J
 
-    move-result-wide v17
+    move-result-wide v18
 
-    .line 180
+    .line 174
     move-object/from16 v0, p0
 
-    move-wide/from16 v1, v17
+    move-wide/from16 v1, v18
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/UserLogin;->SetLastResumeTime(Landroid/content/Context;J)Z
 
-    move-wide/from16 v19, v17
+    move-wide/from16 v20, v18
 
-    .line 189
+    .line 183
     .end local v4    # "AndroidVersion":Ljava/lang/String;
     .end local v5    # "android_id":Ljava/lang/String;
     .end local v6    # "carrier":Ljava/lang/String;
@@ -725,32 +757,32 @@
     .end local v10    # "device_id":Ljava/lang/String;
     .end local v14    # "i":I
     .end local v15    # "info":Ljava/lang/String;
-    .end local v17    # "lastResumeTime":J
-    .end local v21    # "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/InputItem;>;"
+    .end local v17    # "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/InputItem;>;"
+    .end local v18    # "lastResumeTime":J
     .end local v22    # "platform":Ljava/lang/String;
     .end local v23    # "strTokenBuzzeBees":Ljava/lang/String;
     .end local v24    # "url":Ljava/lang/String;
     .end local v25    # "versionName":Ljava/lang/String;
-    .local v19, "lastResumeTime":J
-    :goto_267
-    return-wide v19
+    .local v20, "lastResumeTime":J
+    :goto_26b
+    return-wide v20
 
-    .line 89
-    .end local v19    # "lastResumeTime":J
+    .line 85
+    .end local v20    # "lastResumeTime":J
     .restart local v4    # "AndroidVersion":Ljava/lang/String;
     .restart local v9    # "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
     .restart local v10    # "device_id":Ljava/lang/String;
-    .restart local v17    # "lastResumeTime":J
-    .restart local v21    # "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/InputItem;>;"
+    .restart local v17    # "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/InputItem;>;"
+    .restart local v18    # "lastResumeTime":J
     .restart local v22    # "platform":Ljava/lang/String;
     .restart local v23    # "strTokenBuzzeBees":Ljava/lang/String;
     .restart local v24    # "url":Ljava/lang/String;
     .restart local v25    # "versionName":Ljava/lang/String;
-    :catch_268
-    move-exception v13
+    :catch_26c
+    move-exception v11
 
-    .line 90
-    .local v13, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
+    .line 86
+    .local v11, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     sget-object v26, Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
 
     new-instance v27, Ljava/lang/StringBuilder;
@@ -759,7 +791,7 @@
 
     invoke-direct/range {v27 .. v28}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v13}, Landroid/content/pm/PackageManager$NameNotFoundException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v11}, Landroid/content/pm/PackageManager$NameNotFoundException;->getMessage()Ljava/lang/String;
 
     move-result-object v28
 
@@ -773,11 +805,11 @@
 
     invoke-static/range {v26 .. v27}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_133
+    goto/16 :goto_137
 
-    .line 99
-    .end local v13    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
-    :cond_283
+    .line 95
+    .end local v11    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
+    :cond_287
     new-instance v26, Lcom/samsung/privilege/bean/InputItem;
 
     const-string v27, "device_noti_enable"
@@ -786,22 +818,22 @@
 
     invoke-direct/range {v26 .. v28}, Lcom/samsung/privilege/bean/InputItem;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v17
 
     move-object/from16 v1, v26
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_182
+    goto/16 :goto_186
 
-    .line 170
+    .line 164
     .restart local v5    # "android_id":Ljava/lang/String;
     .restart local v6    # "carrier":Ljava/lang/String;
     .restart local v7    # "comma":Ljava/lang/String;
     .restart local v14    # "i":I
     .restart local v15    # "info":Ljava/lang/String;
-    :cond_295
-    move-object/from16 v0, v21
+    :cond_299
+    move-object/from16 v0, v17
 
     invoke-virtual {v0, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -809,7 +841,7 @@
 
     check-cast v16, Lcom/samsung/privilege/bean/InputItem;
 
-    .line 171
+    .line 165
     .local v16, "item":Lcom/samsung/privilege/bean/InputItem;
     sget-object v26, Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
 
@@ -851,10 +883,10 @@
 
     invoke-static/range {v26 .. v27}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 172
-    if-eqz p2, :cond_305
+    .line 166
+    if-eqz p2, :cond_309
 
-    .line 173
+    .line 167
     const-string v26, "RESUME"
 
     new-instance v27, Ljava/lang/StringBuilder;
@@ -911,16 +943,16 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/AppSetting;->SaveLogOnSDNoNewLine(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 174
+    .line 168
     const-string v7, "&"
 
-    .line 169
-    :cond_305
+    .line 163
+    :cond_309
     add-int/lit8 v14, v14, 0x1
 
-    goto/16 :goto_238
+    goto/16 :goto_23c
 
-    .line 184
+    .line 178
     .end local v4    # "AndroidVersion":Ljava/lang/String;
     .end local v5    # "android_id":Ljava/lang/String;
     .end local v6    # "carrier":Ljava/lang/String;
@@ -930,12 +962,12 @@
     .end local v14    # "i":I
     .end local v15    # "info":Ljava/lang/String;
     .end local v16    # "item":Lcom/samsung/privilege/bean/InputItem;
-    .end local v21    # "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/InputItem;>;"
+    .end local v17    # "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/InputItem;>;"
     .end local v22    # "platform":Ljava/lang/String;
     .end local v23    # "strTokenBuzzeBees":Ljava/lang/String;
     .end local v24    # "url":Ljava/lang/String;
     .end local v25    # "versionName":Ljava/lang/String;
-    :cond_309
+    :cond_30d
     sget-object v26, Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
 
     new-instance v27, Ljava/lang/StringBuilder;
@@ -962,16 +994,16 @@
 
     invoke-static/range {v26 .. v27}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 186
+    .line 180
     invoke-static/range {p0 .. p1}, Lcom/samsung/privilege/util/ResumeUtil;->handleTableVersion(Landroid/content/Context;Landroid/app/Activity;)V
 
-    :cond_328
-    move-wide/from16 v19, v17
+    :cond_32c
+    move-wide/from16 v20, v18
 
-    .line 189
-    .end local v17    # "lastResumeTime":J
-    .restart local v19    # "lastResumeTime":J
-    goto/16 :goto_267
+    .line 183
+    .end local v18    # "lastResumeTime":J
+    .restart local v20    # "lastResumeTime":J
+    goto/16 :goto_26b
 .end method
 
 .method public static callUpdateDeviceNoti(Landroid/content/Context;)V
@@ -979,12 +1011,12 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 546
+    .line 561
     invoke-static {p0}, Lcom/samsung/privilege/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 547
+    .line 562
     .local v6, "strTokenBuzzeBees":Ljava/lang/String;
     if-eqz v6, :cond_c8
 
@@ -996,7 +1028,7 @@
 
     if-nez v9, :cond_c8
 
-    .line 548
+    .line 563
     new-instance v9, Ljava/lang/StringBuilder;
 
     sget-object v10, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
@@ -1021,23 +1053,23 @@
 
     move-result-object v8
 
-    .line 550
+    .line 565
     .local v8, "url":Ljava/lang/String;
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 552
+    .line 567
     .local v5, "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/InputItem;>;"
     new-instance v2, Lcom/samsung/privilege/util/DeviceHelper;
 
     invoke-direct {v2, p0}, Lcom/samsung/privilege/util/DeviceHelper;-><init>(Landroid/content/Context;)V
 
-    .line 562
+    .line 577
     .local v2, "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
     sget-object v0, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
 
-    .line 563
+    .line 578
     .local v0, "AndroidVersion":Ljava/lang/String;
     new-instance v9, Lcom/samsung/privilege/bean/InputItem;
 
@@ -1061,7 +1093,7 @@
 
     invoke-virtual {v5, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 579
+    .line 594
     new-instance v9, Lcom/samsung/privilege/bean/InputItem;
 
     const-string v10, "device_token"
@@ -1074,14 +1106,14 @@
 
     invoke-virtual {v5, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 582
+    .line 597
     invoke-static {p0}, Lcom/samsung/privilege/UserLogin;->GetIsNotificationOn(Landroid/content/Context;)Z
 
     move-result v9
 
     if-eqz v9, :cond_c9
 
-    .line 583
+    .line 598
     new-instance v9, Lcom/samsung/privilege/bean/InputItem;
 
     const-string v10, "device_noti_enable"
@@ -1092,13 +1124,13 @@
 
     invoke-virtual {v5, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 590
+    .line 605
     :goto_6c
     invoke-virtual {v2}, Lcom/samsung/privilege/util/DeviceHelper;->getAndroidID()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 591
+    .line 606
     .local v1, "android_id":Ljava/lang/String;
     new-instance v9, Lcom/samsung/privilege/bean/InputItem;
 
@@ -1108,7 +1140,7 @@
 
     invoke-virtual {v5, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 596
+    .line 611
     const-string v9, "gift.noti"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -1127,7 +1159,7 @@
 
     invoke-static {v9, v10}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 597
+    .line 612
     const/4 v3, 0x0
 
     .local v3, "i":I
@@ -1138,7 +1170,7 @@
 
     if-lt v3, v9, :cond_d6
 
-    .line 602
+    .line 617
     new-instance v9, Ljava/lang/StringBuilder;
 
     const-string v10, "token="
@@ -1167,7 +1199,7 @@
 
     move-result-object v7
 
-    .line 604
+    .line 619
     .local v7, "strUpdateDevice":Ljava/lang/String;
     invoke-static {p0}, Lcom/samsung/privilege/UserLogin;->GetLastUpdateDevice(Landroid/content/Context;)Ljava/lang/String;
 
@@ -1179,7 +1211,7 @@
 
     if-nez v9, :cond_c8
 
-    .line 607
+    .line 622
     new-instance v9, Lcom/samsung/privilege/util/ResumeUtil$GetUpdateDeviceListener;
 
     invoke-direct {v9, p0}, Lcom/samsung/privilege/util/ResumeUtil$GetUpdateDeviceListener;-><init>(Landroid/content/Context;)V
@@ -1188,10 +1220,10 @@
 
     invoke-static {v8, v5, v9, v10}, Lcom/samsung/privilege/util/http/HttpCall;->RQ_POST(Ljava/lang/String;Ljava/util/ArrayList;Lcom/samsung/privilege/util/http/RQListener;Ljava/lang/Object;)V
 
-    .line 608
+    .line 623
     invoke-static {p0, v7}, Lcom/samsung/privilege/UserLogin;->SetLastUpdateDevice(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 611
+    .line 626
     .end local v0    # "AndroidVersion":Ljava/lang/String;
     .end local v1    # "android_id":Ljava/lang/String;
     .end local v2    # "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
@@ -1202,7 +1234,7 @@
     :cond_c8
     return-void
 
-    .line 586
+    .line 601
     .restart local v0    # "AndroidVersion":Ljava/lang/String;
     .restart local v2    # "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
     .restart local v5    # "params":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/InputItem;>;"
@@ -1220,7 +1252,7 @@
 
     goto :goto_6c
 
-    .line 598
+    .line 613
     .restart local v1    # "android_id":Ljava/lang/String;
     .restart local v3    # "i":I
     :cond_d6
@@ -1230,7 +1262,7 @@
 
     check-cast v4, Lcom/samsung/privilege/bean/InputItem;
 
-    .line 599
+    .line 614
     .local v4, "item":Lcom/samsung/privilege/bean/InputItem;
     const-string v9, "gift.noti"
 
@@ -1264,7 +1296,7 @@
 
     invoke-static {v9, v10}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 597
+    .line 612
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_8f
@@ -1276,38 +1308,38 @@
     .param p1, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 365
+    .line 359
     invoke-static {p0}, Lcom/samsung/privilege/UserLogin;->GetIsTokenNeedLogout(Landroid/content/Context;)Z
 
     move-result v5
 
     if-eqz v5, :cond_3d
 
-    .line 366
+    .line 360
     sget-object v5, Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
 
     const-string v6, "this token need to logout..."
 
     invoke-static {v5, v6}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 368
+    .line 362
     const-string v2, ""
 
-    .line 369
+    .line 363
     .local v2, "strApp_name":Ljava/lang/String;
     const-string v4, ""
 
-    .line 371
+    .line 365
     .local v4, "strNeedLogout_message":Ljava/lang/String;
-    const v5, 0x7f0a001d
+    const v5, 0x7f09001d
 
     :try_start_14
     invoke-virtual {p0, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 372
-    const v5, 0x7f0a02a8
+    .line 366
+    const v5, 0x7f0902a8
 
     invoke-virtual {p0, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
     :try_end_1e
@@ -1315,23 +1347,23 @@
 
     move-result-object v4
 
-    .line 377
+    .line 371
     :goto_1f
     invoke-static {v2, v4, p1}, Lcom/samsung/privilege/util/ResumeUtil;->showDialogNeedLogout(Ljava/lang/String;Ljava/lang/String;Landroid/app/Activity;)V
 
-    .line 411
+    .line 405
     .end local v2    # "strApp_name":Ljava/lang/String;
     .end local v4    # "strNeedLogout_message":Ljava/lang/String;
     :goto_22
     return-void
 
-    .line 373
+    .line 367
     .restart local v2    # "strApp_name":Ljava/lang/String;
     .restart local v4    # "strNeedLogout_message":Ljava/lang/String;
     :catch_23
     move-exception v0
 
-    .line 374
+    .line 368
     .local v0, "e":Ljava/lang/Exception;
     sget-object v5, Lcom/samsung/privilege/util/ResumeUtil;->TAG:Ljava/lang/String;
 
@@ -1357,7 +1389,7 @@
 
     goto :goto_1f
 
-    .line 379
+    .line 373
     .end local v0    # "e":Ljava/lang/Exception;
     .end local v2    # "strApp_name":Ljava/lang/String;
     .end local v4    # "strNeedLogout_message":Ljava/lang/String;
@@ -1368,31 +1400,31 @@
 
     if-nez v5, :cond_7a
 
-    .line 380
+    .line 374
     sget-object v5, Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
 
     const-string v6, "don\'t allow use, close application..."
 
     invoke-static {v5, v6}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 382
+    .line 376
     const-string v2, ""
 
-    .line 383
+    .line 377
     .restart local v2    # "strApp_name":Ljava/lang/String;
     const-string v1, ""
 
-    .line 385
+    .line 379
     .local v1, "strAllow_use_message":Ljava/lang/String;
-    const v5, 0x7f0a001d
+    const v5, 0x7f09001d
 
     :try_start_51
     invoke-virtual {p0, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 386
-    const v5, 0x7f0a02a9
+    .line 380
+    const v5, 0x7f0902a9
 
     invoke-virtual {p0, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
     :try_end_5b
@@ -1400,17 +1432,17 @@
 
     move-result-object v1
 
-    .line 391
+    .line 385
     :goto_5c
     invoke-static {v2, v1, p1}, Lcom/samsung/privilege/util/ResumeUtil;->showDialogAllowUse(Ljava/lang/String;Ljava/lang/String;Landroid/app/Activity;)V
 
     goto :goto_22
 
-    .line 387
+    .line 381
     :catch_60
     move-exception v0
 
-    .line 388
+    .line 382
     .restart local v0    # "e":Ljava/lang/Exception;
     sget-object v5, Lcom/samsung/privilege/util/ResumeUtil;->TAG:Ljava/lang/String;
 
@@ -1436,7 +1468,7 @@
 
     goto :goto_5c
 
-    .line 393
+    .line 387
     .end local v0    # "e":Ljava/lang/Exception;
     .end local v1    # "strAllow_use_message":Ljava/lang/String;
     .end local v2    # "strApp_name":Ljava/lang/String;
@@ -1447,31 +1479,31 @@
 
     if-eqz v5, :cond_b7
 
-    .line 394
+    .line 388
     sget-object v5, Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
 
     const-string v6, "have new version?"
 
     invoke-static {v5, v6}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 396
+    .line 390
     const-string v2, ""
 
-    .line 397
+    .line 391
     .restart local v2    # "strApp_name":Ljava/lang/String;
     const-string v3, ""
 
-    .line 399
+    .line 393
     .local v3, "strHas_new_version_message":Ljava/lang/String;
-    const v5, 0x7f0a001d
+    const v5, 0x7f09001d
 
     :try_start_8e
     invoke-virtual {p0, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 400
-    const v5, 0x7f0a02aa
+    .line 394
+    const v5, 0x7f0902aa
 
     invoke-virtual {p0, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
     :try_end_98
@@ -1479,17 +1511,17 @@
 
     move-result-object v3
 
-    .line 405
+    .line 399
     :goto_99
     invoke-static {v2, v3, p1}, Lcom/samsung/privilege/util/ResumeUtil;->showDialogHasNewVersion(Ljava/lang/String;Ljava/lang/String;Landroid/app/Activity;)V
 
     goto :goto_22
 
-    .line 401
+    .line 395
     :catch_9d
     move-exception v0
 
-    .line 402
+    .line 396
     .restart local v0    # "e":Ljava/lang/Exception;
     sget-object v5, Lcom/samsung/privilege/util/ResumeUtil;->TAG:Ljava/lang/String;
 
@@ -1515,7 +1547,7 @@
 
     goto :goto_99
 
-    .line 407
+    .line 401
     .end local v0    # "e":Ljava/lang/Exception;
     .end local v2    # "strApp_name":Ljava/lang/String;
     .end local v3    # "strHas_new_version_message":Ljava/lang/String;
@@ -1530,72 +1562,114 @@
 .end method
 
 .method public static showDialogAllowUse(Ljava/lang/String;Ljava/lang/String;Landroid/app/Activity;)V
-    .registers 8
+    .registers 10
     .param p0, "header"    # Ljava/lang/String;
     .param p1, "message"    # Ljava/lang/String;
     .param p2, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 444
+    const/4 v6, 0x0
+
+    .line 441
     invoke-virtual {p2}, Landroid/app/Activity;->isFinishing()Z
 
-    move-result v2
+    move-result v4
 
-    if-nez v2, :cond_33
+    if-nez v4, :cond_4b
+
+    .line 443
+    :try_start_7
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, "com.samsung.privilege.activity.CampaignListActivity"
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1f
+
+    .line 444
+    move-object v0, p2
+
+    check-cast v0, Lcom/samsung/privilege/activity/CampaignListActivity;
+
+    move-object v3, v0
 
     .line 445
-    new-instance v1, Landroid/app/AlertDialog$Builder;
+    .local v3, "objCampaignListActivity":Lcom/samsung/privilege/activity/CampaignListActivity;
+    const/4 v4, 0x0
 
-    invoke-direct {v1, p2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/CampaignListActivity;->EnablePage(Z)V
+    :try_end_1f
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_1f} :catch_4c
 
-    .line 446
-    .local v1, "builder":Landroid/app/AlertDialog$Builder;
-    invoke-virtual {v1, p0}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+    .line 451
+    .end local v3    # "objCampaignListActivity":Lcom/samsung/privilege/activity/CampaignListActivity;
+    :cond_1f
+    :goto_1f
+    new-instance v2, Landroid/app/AlertDialog$Builder;
+
+    invoke-direct {v2, p2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    .line 452
+    .local v2, "builder":Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v2, p0}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    .line 453
+    invoke-virtual {v2, p1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v6}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v4
+
+    const-string v5, "Yes"
+
+    new-instance v6, Lcom/samsung/privilege/util/ResumeUtil$3;
+
+    invoke-direct {v6, p2}, Lcom/samsung/privilege/util/ResumeUtil$3;-><init>(Landroid/app/Activity;)V
+
+    invoke-virtual {v4, v5, v6}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v4
+
+    .line 471
+    const-string v5, "No"
+
+    new-instance v6, Lcom/samsung/privilege/util/ResumeUtil$4;
+
+    invoke-direct {v6, p2}, Lcom/samsung/privilege/util/ResumeUtil$4;-><init>(Landroid/app/Activity;)V
+
+    invoke-virtual {v4, v5, v6}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    .line 478
+    invoke-virtual {v2}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+
+    move-result-object v1
+
+    .line 479
+    .local v1, "alert":Landroid/app/AlertDialog;
+    invoke-virtual {v1}, Landroid/app/AlertDialog;->show()V
+
+    .line 481
+    .end local v1    # "alert":Landroid/app/AlertDialog;
+    .end local v2    # "builder":Landroid/app/AlertDialog$Builder;
+    :cond_4b
+    return-void
 
     .line 447
-    invoke-virtual {v1, p1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+    :catch_4c
+    move-exception v4
 
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v2
-
-    const-string v3, "Yes"
-
-    new-instance v4, Lcom/samsung/privilege/util/ResumeUtil$3;
-
-    invoke-direct {v4, p2}, Lcom/samsung/privilege/util/ResumeUtil$3;-><init>(Landroid/app/Activity;)V
-
-    invoke-virtual {v2, v3, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v2
-
-    .line 459
-    const-string v3, "No"
-
-    new-instance v4, Lcom/samsung/privilege/util/ResumeUtil$4;
-
-    invoke-direct {v4, p2}, Lcom/samsung/privilege/util/ResumeUtil$4;-><init>(Landroid/app/Activity;)V
-
-    invoke-virtual {v2, v3, v4}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    .line 465
-    invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
-
-    move-result-object v0
-
-    .line 466
-    .local v0, "alert":Landroid/app/AlertDialog;
-    invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
-
-    .line 468
-    .end local v0    # "alert":Landroid/app/AlertDialog;
-    .end local v1    # "builder":Landroid/app/AlertDialog$Builder;
-    :cond_33
-    return-void
+    goto :goto_1f
 .end method
 
 .method public static showDialogBuzzebeesError(Ljava/lang/String;Ljava/lang/String;Landroid/app/Activity;)V
@@ -1605,23 +1679,23 @@
     .param p2, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 414
+    .line 408
     invoke-virtual {p2}, Landroid/app/Activity;->isFinishing()Z
 
     move-result v2
 
     if-nez v2, :cond_28
 
-    .line 415
+    .line 409
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v1, p2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 416
+    .line 410
     .local v1, "builder":Landroid/app/AlertDialog$Builder;
     invoke-virtual {v1, p0}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 417
+    .line 411
     invoke-virtual {v1, p1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v2
@@ -1640,16 +1714,16 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 422
+    .line 417
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    .line 423
+    .line 418
     .local v0, "alert":Landroid/app/AlertDialog;
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 425
+    .line 420
     .end local v0    # "alert":Landroid/app/AlertDialog;
     .end local v1    # "builder":Landroid/app/AlertDialog$Builder;
     :cond_28
@@ -1663,14 +1737,14 @@
     .param p2, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 471
+    .line 484
     invoke-virtual {p2}, Landroid/app/Activity;->isFinishing()Z
 
     move-result v3
 
     if-nez v3, :cond_45
 
-    .line 472
+    .line 485
     invoke-virtual {p2}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v3
@@ -1681,7 +1755,7 @@
 
     if-nez v3, :cond_45
 
-    .line 474
+    .line 487
     :try_start_10
     invoke-virtual {p2}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
 
@@ -1691,16 +1765,16 @@
 
     invoke-static {v3, v4}, Lcom/samsung/privilege/UserLogin;->SetIsshowDialogHasNewVersion(Landroid/content/Context;Z)Z
 
-    .line 476
+    .line 489
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v1, p2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 477
+    .line 490
     .local v1, "builder":Landroid/app/AlertDialog$Builder;
     invoke-virtual {v1, p0}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 478
+    .line 491
     invoke-virtual {v1, p1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
@@ -1721,7 +1795,7 @@
 
     move-result-object v3
 
-    .line 492
+    .line 506
     const-string v4, "No"
 
     new-instance v5, Lcom/samsung/privilege/util/ResumeUtil$6;
@@ -1730,29 +1804,29 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 498
+    .line 513
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    .line 499
+    .line 514
     .local v0, "alert":Landroid/app/AlertDialog;
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
     :try_end_45
     .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_45} :catch_46
 
-    .line 505
+    .line 520
     .end local v0    # "alert":Landroid/app/AlertDialog;
     .end local v1    # "builder":Landroid/app/AlertDialog$Builder;
     :cond_45
     :goto_45
     return-void
 
-    .line 500
+    .line 515
     :catch_46
     move-exception v2
 
-    .line 501
+    .line 516
     .local v2, "e":Ljava/lang/Exception;
     sget-object v3, Lcom/samsung/privilege/util/ResumeUtil;->LOGCAT:Ljava/lang/String;
 
@@ -1784,27 +1858,27 @@
     .param p0, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 508
+    .line 523
     invoke-virtual {p0}, Landroid/app/Activity;->isFinishing()Z
 
     move-result v7
 
     if-nez v7, :cond_85
 
-    .line 509
+    .line 524
     new-instance v1, Landroid/app/Dialog;
 
     const v7, 0x1030010
 
     invoke-direct {v1, p0, v7}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
-    .line 511
+    .line 526
     .local v1, "dialogMessage":Landroid/app/Dialog;
     const v7, 0x7f0300e0
 
     invoke-virtual {v1, v7}, Landroid/app/Dialog;->setContentView(I)V
 
-    .line 513
+    .line 528
     const v7, 0x7f480002
 
     invoke-virtual {v1, v7}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
@@ -1813,7 +1887,7 @@
 
     check-cast v5, Landroid/widget/TextView;
 
-    .line 514
+    .line 529
     .local v5, "tvHeader":Landroid/widget/TextView;
     const v7, 0x7f480004
 
@@ -1823,7 +1897,7 @@
 
     check-cast v6, Landroid/widget/TextView;
 
-    .line 515
+    .line 530
     .local v6, "tvMessage":Landroid/widget/TextView;
     const v7, 0x7f480005
 
@@ -1833,7 +1907,7 @@
 
     check-cast v3, Landroid/widget/ImageView;
 
-    .line 516
+    .line 531
     .local v3, "imgClose":Landroid/widget/ImageView;
     const v7, 0x7f480006
 
@@ -1843,7 +1917,7 @@
 
     check-cast v4, Landroid/widget/TextView;
 
-    .line 518
+    .line 533
     .local v4, "tvClose":Landroid/widget/TextView;
     invoke-virtual {p0}, Landroid/app/Activity;->getAssets()Landroid/content/res/AssetManager;
 
@@ -1857,50 +1931,50 @@
 
     move-result-object v2
 
-    .line 519
+    .line 534
     .local v2, "font":Landroid/graphics/Typeface;
     invoke-virtual {v5, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 520
+    .line 535
     invoke-virtual {v6, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 521
+    .line 536
     invoke-virtual {v4, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 523
+    .line 538
     invoke-static {p0}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
 
     move-result v7
 
     invoke-virtual {v5, v7}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 524
+    .line 539
     invoke-static {p0}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
 
     move-result v7
 
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 525
+    .line 540
     invoke-static {p0}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
 
     move-result v7
 
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 527
+    .line 542
     const-string v7, "Something went wrong!\nAnd we need to log you out!"
 
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 529
+    .line 544
     new-instance v7, Lcom/samsung/privilege/util/ResumeUtil$7;
 
     invoke-direct {v7, v1, p0}, Lcom/samsung/privilege/util/ResumeUtil$7;-><init>(Landroid/app/Dialog;Landroid/app/Activity;)V
 
     invoke-virtual {v3, v7}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 537
+    .line 552
     invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v7
@@ -1909,23 +1983,23 @@
 
     move-result-object v0
 
-    .line 538
+    .line 553
     .local v0, "WMLP":Landroid/view/WindowManager$LayoutParams;
     const/16 v7, 0x11
 
     iput v7, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 539
+    .line 554
     invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v7
 
     invoke-virtual {v7, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 541
+    .line 556
     invoke-virtual {v1}, Landroid/app/Dialog;->show()V
 
-    .line 543
+    .line 558
     .end local v0    # "WMLP":Landroid/view/WindowManager$LayoutParams;
     .end local v1    # "dialogMessage":Landroid/app/Dialog;
     .end local v2    # "font":Landroid/graphics/Typeface;
@@ -1944,23 +2018,23 @@
     .param p2, "activity"    # Landroid/app/Activity;
 
     .prologue
-    .line 428
+    .line 423
     invoke-virtual {p2}, Landroid/app/Activity;->isFinishing()Z
 
     move-result v2
 
     if-nez v2, :cond_28
 
-    .line 429
+    .line 424
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v1, p2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 430
+    .line 425
     .local v1, "builder":Landroid/app/AlertDialog$Builder;
     invoke-virtual {v1, p0}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 431
+    .line 426
     invoke-virtual {v1, p1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v2
@@ -1979,16 +2053,16 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 438
+    .line 434
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    .line 439
+    .line 435
     .local v0, "alert":Landroid/app/AlertDialog;
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 441
+    .line 437
     .end local v0    # "alert":Landroid/app/AlertDialog;
     .end local v1    # "builder":Landroid/app/AlertDialog$Builder;
     :cond_28

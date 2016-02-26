@@ -158,9 +158,9 @@
     iput-object v5, p0, Lcom/samsung/privilege/bean/NFCResult;->nfc_info:Ljava/lang/String;
 
     .line 22
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
-    iput-wide v5, p0, Lcom/samsung/privilege/bean/NFCResult;->created_time:J
+    iput-wide v6, p0, Lcom/samsung/privilege/bean/NFCResult;->created_time:J
 
     .line 23
     const/4 v5, 0x0
@@ -236,9 +236,9 @@
 
     invoke-static {p1, v5}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    iput-wide v5, p0, Lcom/samsung/privilege/bean/NFCResult;->created_time:J
+    iput-wide v6, p0, Lcom/samsung/privilege/bean/NFCResult;->created_time:J
 
     .line 44
     const-string v5, "is_write_back"

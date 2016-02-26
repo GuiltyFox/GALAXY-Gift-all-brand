@@ -292,7 +292,7 @@
 .end method
 
 .method public onDraw(Landroid/graphics/Canvas;)V
-    .registers 24
+    .registers 25
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
@@ -316,25 +316,25 @@
 
     invoke-virtual {v2}, Lcom/google/zxing/client/android/camera/CameraManager;->getFramingRect()Landroid/graphics/Rect;
 
-    move-result-object v11
+    move-result-object v12
 
     .line 85
-    .local v11, "frame":Landroid/graphics/Rect;
-    if-eqz v11, :cond_6
+    .local v12, "frame":Landroid/graphics/Rect;
+    if-eqz v12, :cond_6
 
     .line 88
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->getWidth()I
 
-    move-result v21
+    move-result v22
 
     .line 89
-    .local v21, "width":I
+    .local v22, "width":I
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->getHeight()I
 
-    move-result v14
+    move-result v15
 
     .line 92
-    .local v14, "height":I
+    .local v15, "height":I
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/google/zxing/client/android/ViewfinderView;->paint:Landroid/graphics/Paint;
@@ -357,11 +357,11 @@
 
     const/4 v4, 0x0
 
-    move/from16 v0, v21
+    move/from16 v0, v22
 
     int-to-float v5, v0
 
-    iget v2, v11, Landroid/graphics/Rect;->top:I
+    iget v2, v12, Landroid/graphics/Rect;->top:I
 
     int-to-float v6, v2
 
@@ -376,15 +376,15 @@
     .line 94
     const/4 v3, 0x0
 
-    iget v2, v11, Landroid/graphics/Rect;->top:I
+    iget v2, v12, Landroid/graphics/Rect;->top:I
 
     int-to-float v4, v2
 
-    iget v2, v11, Landroid/graphics/Rect;->left:I
+    iget v2, v12, Landroid/graphics/Rect;->left:I
 
     int-to-float v5, v2
 
-    iget v2, v11, Landroid/graphics/Rect;->bottom:I
+    iget v2, v12, Landroid/graphics/Rect;->bottom:I
 
     add-int/lit8 v2, v2, 0x1
 
@@ -399,21 +399,21 @@
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     .line 95
-    iget v2, v11, Landroid/graphics/Rect;->right:I
+    iget v2, v12, Landroid/graphics/Rect;->right:I
 
     add-int/lit8 v2, v2, 0x1
 
     int-to-float v3, v2
 
-    iget v2, v11, Landroid/graphics/Rect;->top:I
+    iget v2, v12, Landroid/graphics/Rect;->top:I
 
     int-to-float v4, v2
 
-    move/from16 v0, v21
+    move/from16 v0, v22
 
     int-to-float v5, v0
 
-    iget v2, v11, Landroid/graphics/Rect;->bottom:I
+    iget v2, v12, Landroid/graphics/Rect;->bottom:I
 
     add-int/lit8 v2, v2, 0x1
 
@@ -430,17 +430,17 @@
     .line 96
     const/4 v3, 0x0
 
-    iget v2, v11, Landroid/graphics/Rect;->bottom:I
+    iget v2, v12, Landroid/graphics/Rect;->bottom:I
 
     add-int/lit8 v2, v2, 0x1
 
     int-to-float v4, v2
 
-    move/from16 v0, v21
+    move/from16 v0, v22
 
     int-to-float v5, v0
 
-    int-to-float v6, v14
+    int-to-float v6, v15
 
     move-object/from16 v0, p0
 
@@ -479,7 +479,7 @@
 
     move-object/from16 v0, p1
 
-    invoke-virtual {v0, v2, v3, v11, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+    invoke-virtual {v0, v2, v3, v12, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
     goto/16 :goto_6
 
@@ -536,35 +536,35 @@
     iput v2, v0, Lcom/google/zxing/client/android/ViewfinderView;->scannerAlpha:I
 
     .line 108
-    invoke-virtual {v11}, Landroid/graphics/Rect;->height()I
+    invoke-virtual {v12}, Landroid/graphics/Rect;->height()I
 
     move-result v2
 
     div-int/lit8 v2, v2, 0x2
 
-    iget v3, v11, Landroid/graphics/Rect;->top:I
+    iget v3, v12, Landroid/graphics/Rect;->top:I
 
-    add-int v15, v2, v3
+    add-int v16, v2, v3
 
     .line 109
-    .local v15, "middle":I
-    iget v2, v11, Landroid/graphics/Rect;->left:I
+    .local v16, "middle":I
+    iget v2, v12, Landroid/graphics/Rect;->left:I
 
     add-int/lit8 v2, v2, 0x2
 
     int-to-float v3, v2
 
-    add-int/lit8 v2, v15, -0x1
+    add-int/lit8 v2, v16, -0x1
 
     int-to-float v4, v2
 
-    iget v2, v11, Landroid/graphics/Rect;->right:I
+    iget v2, v12, Landroid/graphics/Rect;->right:I
 
     add-int/lit8 v2, v2, -0x1
 
     int-to-float v5, v2
 
-    add-int/lit8 v2, v15, 0x2
+    add-int/lit8 v2, v16, 0x2
 
     int-to-float v6, v2
 
@@ -583,33 +583,17 @@
 
     invoke-virtual {v2}, Lcom/google/zxing/client/android/camera/CameraManager;->getFramingRectInPreview()Landroid/graphics/Rect;
 
-    move-result-object v17
+    move-result-object v18
 
     .line 112
-    .local v17, "previewFrame":Landroid/graphics/Rect;
-    invoke-virtual {v11}, Landroid/graphics/Rect;->width()I
+    .local v18, "previewFrame":Landroid/graphics/Rect;
+    invoke-virtual {v12}, Landroid/graphics/Rect;->width()I
 
     move-result v2
 
     int-to-float v2, v2
 
-    invoke-virtual/range {v17 .. v17}, Landroid/graphics/Rect;->width()I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    div-float v19, v2, v3
-
-    .line 113
-    .local v19, "scaleX":F
-    invoke-virtual {v11}, Landroid/graphics/Rect;->height()I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    invoke-virtual/range {v17 .. v17}, Landroid/graphics/Rect;->height()I
+    invoke-virtual/range {v18 .. v18}, Landroid/graphics/Rect;->width()I
 
     move-result v3
 
@@ -617,29 +601,45 @@
 
     div-float v20, v2, v3
 
+    .line 113
+    .local v20, "scaleX":F
+    invoke-virtual {v12}, Landroid/graphics/Rect;->height()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    invoke-virtual/range {v18 .. v18}, Landroid/graphics/Rect;->height()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    div-float v21, v2, v3
+
     .line 115
-    .local v20, "scaleY":F
+    .local v21, "scaleY":F
     move-object/from16 v0, p0
 
-    iget-object v10, v0, Lcom/google/zxing/client/android/ViewfinderView;->possibleResultPoints:Ljava/util/List;
+    iget-object v11, v0, Lcom/google/zxing/client/android/ViewfinderView;->possibleResultPoints:Ljava/util/List;
 
     .line 116
-    .local v10, "currentPossible":Ljava/util/List;, "Ljava/util/List<Lcom/google/zxing/ResultPoint;>;"
+    .local v11, "currentPossible":Ljava/util/List;, "Ljava/util/List<Lcom/google/zxing/ResultPoint;>;"
     move-object/from16 v0, p0
 
-    iget-object v9, v0, Lcom/google/zxing/client/android/ViewfinderView;->lastPossibleResultPoints:Ljava/util/List;
+    iget-object v10, v0, Lcom/google/zxing/client/android/ViewfinderView;->lastPossibleResultPoints:Ljava/util/List;
 
     .line 117
-    .local v9, "currentLast":Ljava/util/List;, "Ljava/util/List<Lcom/google/zxing/ResultPoint;>;"
-    iget v12, v11, Landroid/graphics/Rect;->left:I
+    .local v10, "currentLast":Ljava/util/List;, "Ljava/util/List<Lcom/google/zxing/ResultPoint;>;"
+    iget v13, v12, Landroid/graphics/Rect;->left:I
 
     .line 118
-    .local v12, "frameLeft":I
-    iget v13, v11, Landroid/graphics/Rect;->top:I
+    .local v13, "frameLeft":I
+    iget v14, v12, Landroid/graphics/Rect;->top:I
 
     .line 119
-    .local v13, "frameTop":I
-    invoke-interface {v10}, Ljava/util/List;->isEmpty()Z
+    .local v14, "frameTop":I
+    invoke-interface {v11}, Ljava/util/List;->isEmpty()Z
 
     move-result v2
 
@@ -654,7 +654,7 @@
 
     .line 134
     :goto_122
-    if-eqz v9, :cond_146
+    if-eqz v10, :cond_146
 
     .line 135
     move-object/from16 v0, p0
@@ -677,15 +677,15 @@
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 137
-    monitor-enter v9
+    monitor-enter v10
 
     .line 138
-    const/high16 v18, 0x40400000
+    const/high16 v19, 0x40400000
 
     .line 139
-    .local v18, "radius":F
+    .local v19, "radius":F
     :try_start_13b
-    invoke-interface {v9}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v10}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
@@ -697,39 +697,39 @@
     if-nez v3, :cond_1b5
 
     .line 137
-    monitor-exit v9
+    monitor-exit v10
     :try_end_146
     .catchall {:try_start_13b .. :try_end_146} :catchall_1da
 
     .line 149
-    .end local v18    # "radius":F
+    .end local v19    # "radius":F
     :cond_146
-    const-wide/16 v3, 0x50
+    const-wide/16 v4, 0x50
 
     .line 150
-    iget v2, v11, Landroid/graphics/Rect;->left:I
-
-    add-int/lit8 v5, v2, -0x6
-
-    .line 151
-    iget v2, v11, Landroid/graphics/Rect;->top:I
+    iget v2, v12, Landroid/graphics/Rect;->left:I
 
     add-int/lit8 v6, v2, -0x6
 
+    .line 151
+    iget v2, v12, Landroid/graphics/Rect;->top:I
+
+    add-int/lit8 v7, v2, -0x6
+
     .line 152
-    iget v2, v11, Landroid/graphics/Rect;->right:I
-
-    add-int/lit8 v7, v2, 0x6
-
-    .line 153
-    iget v2, v11, Landroid/graphics/Rect;->bottom:I
+    iget v2, v12, Landroid/graphics/Rect;->right:I
 
     add-int/lit8 v8, v2, 0x6
 
-    move-object/from16 v2, p0
+    .line 153
+    iget v2, v12, Landroid/graphics/Rect;->bottom:I
+
+    add-int/lit8 v9, v2, 0x6
+
+    move-object/from16 v3, p0
 
     .line 149
-    invoke-virtual/range {v2 .. v8}, Lcom/google/zxing/client/android/ViewfinderView;->postInvalidateDelayed(JIIII)V
+    invoke-virtual/range {v3 .. v9}, Lcom/google/zxing/client/android/ViewfinderView;->postInvalidateDelayed(JIIII)V
 
     goto/16 :goto_6
 
@@ -748,7 +748,7 @@
     .line 123
     move-object/from16 v0, p0
 
-    iput-object v10, v0, Lcom/google/zxing/client/android/ViewfinderView;->lastPossibleResultPoints:Ljava/util/List;
+    iput-object v11, v0, Lcom/google/zxing/client/android/ViewfinderView;->lastPossibleResultPoints:Ljava/util/List;
 
     .line 124
     move-object/from16 v0, p0
@@ -771,11 +771,11 @@
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 126
-    monitor-enter v10
+    monitor-enter v11
 
     .line 127
     :try_start_182
-    invoke-interface {v10}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v11}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
@@ -787,14 +787,14 @@
     if-nez v3, :cond_191
 
     .line 126
-    monitor-exit v10
+    monitor-exit v11
 
     goto :goto_122
 
     :catchall_18e
     move-exception v2
 
-    monitor-exit v10
+    monitor-exit v11
     :try_end_190
     .catchall {:try_start_182 .. :try_end_190} :catchall_18e
 
@@ -805,34 +805,34 @@
     :try_start_191
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v16
+    move-result-object v17
 
-    check-cast v16, Lcom/google/zxing/ResultPoint;
+    check-cast v17, Lcom/google/zxing/ResultPoint;
 
     .line 128
-    .local v16, "point":Lcom/google/zxing/ResultPoint;
-    invoke-virtual/range {v16 .. v16}, Lcom/google/zxing/ResultPoint;->getX()F
+    .local v17, "point":Lcom/google/zxing/ResultPoint;
+    invoke-virtual/range {v17 .. v17}, Lcom/google/zxing/ResultPoint;->getX()F
 
     move-result v3
 
-    mul-float v3, v3, v19
+    mul-float v3, v3, v20
 
     float-to-int v3, v3
 
-    add-int/2addr v3, v12
+    add-int/2addr v3, v13
 
     int-to-float v3, v3
 
     .line 129
-    invoke-virtual/range {v16 .. v16}, Lcom/google/zxing/ResultPoint;->getY()F
+    invoke-virtual/range {v17 .. v17}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v4
 
-    mul-float v4, v4, v20
+    mul-float v4, v4, v21
 
     float-to-int v4, v4
 
-    add-int/2addr v4, v13
+    add-int/2addr v4, v14
 
     int-to-float v4, v4
 
@@ -853,40 +853,40 @@
     goto :goto_186
 
     .line 139
-    .end local v16    # "point":Lcom/google/zxing/ResultPoint;
-    .restart local v18    # "radius":F
+    .end local v17    # "point":Lcom/google/zxing/ResultPoint;
+    .restart local v19    # "radius":F
     :cond_1b5
     :try_start_1b5
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v16
+    move-result-object v17
 
-    check-cast v16, Lcom/google/zxing/ResultPoint;
+    check-cast v17, Lcom/google/zxing/ResultPoint;
 
     .line 140
-    .restart local v16    # "point":Lcom/google/zxing/ResultPoint;
-    invoke-virtual/range {v16 .. v16}, Lcom/google/zxing/ResultPoint;->getX()F
+    .restart local v17    # "point":Lcom/google/zxing/ResultPoint;
+    invoke-virtual/range {v17 .. v17}, Lcom/google/zxing/ResultPoint;->getX()F
 
     move-result v3
 
-    mul-float v3, v3, v19
+    mul-float v3, v3, v20
 
     float-to-int v3, v3
 
-    add-int/2addr v3, v12
+    add-int/2addr v3, v13
 
     int-to-float v3, v3
 
     .line 141
-    invoke-virtual/range {v16 .. v16}, Lcom/google/zxing/ResultPoint;->getY()F
+    invoke-virtual/range {v17 .. v17}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v4
 
-    mul-float v4, v4, v20
+    mul-float v4, v4, v21
 
     float-to-int v4, v4
 
-    add-int/2addr v4, v13
+    add-int/2addr v4, v14
 
     int-to-float v4, v4
 
@@ -898,18 +898,18 @@
     .line 140
     move-object/from16 v0, p1
 
-    move/from16 v1, v18
+    move/from16 v1, v19
 
     invoke-virtual {v0, v3, v4, v1, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     goto/16 :goto_13f
 
     .line 137
-    .end local v16    # "point":Lcom/google/zxing/ResultPoint;
+    .end local v17    # "point":Lcom/google/zxing/ResultPoint;
     :catchall_1da
     move-exception v2
 
-    monitor-exit v9
+    monitor-exit v10
     :try_end_1dc
     .catchall {:try_start_1b5 .. :try_end_1dc} :catchall_1da
 

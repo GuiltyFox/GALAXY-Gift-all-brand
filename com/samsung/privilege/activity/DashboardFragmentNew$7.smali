@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$7;->val$pagerPhoto:Landroid/support/v4/view/ViewPager;
 
-    .line 1455
+    .line 1501
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 6
 
     .prologue
-    .line 1458
+    .line 1504
     iget-object v3, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$7;->val$pagerPhoto:Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {v3}, Landroid/support/v4/view/ViewPager;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -54,26 +54,26 @@
 
     invoke-virtual {v3, p0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 1460
+    .line 1506
     iget-object v3, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$7;->val$pagerPhoto:Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {v3}, Landroid/support/v4/view/ViewPager;->getMeasuredWidth()I
 
     move-result v1
 
-    .line 1461
+    .line 1507
     .local v1, "gLayoutImageWidth":I
     mul-int/lit8 v3, v1, 0x2
 
     div-int/lit8 v0, v3, 0x3
 
-    .line 1462
+    .line 1508
     .local v0, "gLayoutImageHeight":I
     new-instance v2, Landroid/widget/RelativeLayout$LayoutParams;
 
     invoke-direct {v2, v1, v0}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
 
-    .line 1464
+    .line 1510
     .local v2, "params":Landroid/widget/RelativeLayout$LayoutParams;
     const/4 v3, 0x3
 
@@ -81,11 +81,11 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 1465
+    .line 1511
     iget-object v3, p0, Lcom/samsung/privilege/activity/DashboardFragmentNew$7;->val$pagerPhoto:Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {v3, v2}, Landroid/support/v4/view/ViewPager;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1466
+    .line 1512
     return-void
 .end method

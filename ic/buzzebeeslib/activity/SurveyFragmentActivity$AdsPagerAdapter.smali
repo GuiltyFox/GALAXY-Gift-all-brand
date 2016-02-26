@@ -5574,100 +5574,100 @@
 .end method
 
 .method public actionSubmit()V
-    .registers 62
+    .registers 63
 
     .prologue
     .line 1182
-    const/16 v20, 0x0
+    const/16 v21, 0x0
 
     .line 1183
-    .local v20, "isCheck":Z
-    const/16 v39, 0x0
+    .local v21, "isCheck":Z
+    const/16 v40, 0x0
 
     .line 1184
-    .local v39, "passSurvey":Z
-    const/16 v17, 0x0
+    .local v40, "passSurvey":Z
+    const/16 v18, 0x0
 
     .line 1185
-    .local v17, "haveAnswer":Z
-    const-string v3, ""
+    .local v18, "haveAnswer":Z
+    const-string v4, ""
 
     .line 1186
-    .local v3, "checkbox_input_text":Ljava/lang/String;
-    const-string v19, "["
+    .local v4, "checkbox_input_text":Ljava/lang/String;
+    const-string v20, "["
 
     .line 1187
-    .local v19, "info1":Ljava/lang/String;
-    const-string v46, ""
+    .local v20, "info1":Ljava/lang/String;
+    const-string v47, ""
 
     .line 1188
-    .local v46, "str_comma":Ljava/lang/String;
-    const/16 v16, 0x0
+    .local v47, "str_comma":Ljava/lang/String;
+    const/16 v17, 0x0
 
     .line 1189
-    .local v16, "forIndex":I
+    .local v17, "forIndex":I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lic/buzzebeeslib/activity/SurveyFragmentActivity;
 
-    move-object/from16 v55, v0
+    move-object/from16 v56, v0
 
     # getter for: Lic/buzzebeeslib/activity/SurveyFragmentActivity;->gView_pager:Lic/buzzebeeslib/control/CustomPager;
-    invoke-static/range {v55 .. v55}, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->access$3(Lic/buzzebeeslib/activity/SurveyFragmentActivity;)Lic/buzzebeeslib/control/CustomPager;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Lic/buzzebeeslib/control/CustomPager;->getChildCount()I
-
-    move-result v55
-
-    add-int/lit8 v18, v55, -0x1
-
-    .local v18, "i":I
-    :goto_1e
-    if-gtz v18, :cond_f9
-
-    .line 1433
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v56 .. v56}, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->access$3(Lic/buzzebeeslib/activity/SurveyFragmentActivity;)Lic/buzzebeeslib/control/CustomPager;
 
     move-result-object v56
 
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual/range {v56 .. v56}, Lic/buzzebeeslib/control/CustomPager;->getChildCount()I
 
-    const-string v56, "]"
+    move-result v56
 
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    add-int/lit8 v19, v56, -0x1
 
-    move-result-object v55
+    .local v19, "i":I
+    :goto_1e
+    if-gtz v19, :cond_f9
 
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 1433
+    new-instance v56, Ljava/lang/StringBuilder;
 
-    move-result-object v19
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v57, "]"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
 
     .line 1434
-    const-string v55, "OAT"
+    const-string v56, "OAT"
 
-    move-object/from16 v0, v55
+    move-object/from16 v0, v56
 
-    move-object/from16 v1, v19
+    move-object/from16 v1, v20
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1437
     :try_start_3c
-    const-string v55, "utf-8"
+    const-string v56, "utf-8"
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
-    move-object/from16 v1, v55
+    move-object/from16 v1, v56
 
     invoke-static {v0, v1}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     :try_end_45
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_3c .. :try_end_45} :catch_a2c
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_3c .. :try_end_45} :catch_a34
 
-    move-result-object v19
+    move-result-object v20
 
     .line 1441
     :goto_46
@@ -5675,144 +5675,123 @@
 
     iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lic/buzzebeeslib/activity/SurveyFragmentActivity;
 
-    move-object/from16 v55, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lic/buzzebeeslib/activity/SurveyFragmentActivity;
-
     move-object/from16 v56, v0
 
-    const-string v57, ""
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lic/buzzebeeslib/activity/SurveyFragmentActivity;
+
+    move-object/from16 v57, v0
+
+    const-string v58, ""
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lic/buzzebeeslib/activity/SurveyFragmentActivity;
 
-    move-object/from16 v58, v0
+    move-object/from16 v59, v0
 
-    sget v59, Lic/buzzebeeslib/R$string;->please_wait:I
+    sget v60, Lic/buzzebeeslib/R$string;->please_wait:I
 
-    invoke-virtual/range {v58 .. v59}, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual/range {v59 .. v60}, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->getString(I)Ljava/lang/String;
 
-    move-result-object v58
-
-    const/16 v59, 0x1
+    move-result-object v59
 
     const/16 v60, 0x1
 
-    invoke-static/range {v56 .. v60}, Landroid/app/ProgressDialog;->show(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;
+    const/16 v61, 0x1
 
-    move-result-object v56
+    invoke-static/range {v57 .. v61}, Landroid/app/ProgressDialog;->show(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;
 
-    invoke-static/range {v55 .. v56}, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->access$22(Lic/buzzebeeslib/activity/SurveyFragmentActivity;Landroid/app/ProgressDialog;)V
+    move-result-object v57
+
+    invoke-static/range {v56 .. v57}, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->access$22(Lic/buzzebeeslib/activity/SurveyFragmentActivity;Landroid/app/ProgressDialog;)V
 
     .line 1442
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    sget-object v56, Lic/buzzebeeslib/LibConst;->API_URL_BUZZEBEES:Ljava/lang/String;
-
-    invoke-static/range {v56 .. v56}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v56, "api/campaign/"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lic/buzzebeeslib/activity/SurveyFragmentActivity;
-
-    move-object/from16 v56, v0
-
-    # getter for: Lic/buzzebeeslib/activity/SurveyFragmentActivity;->paramCampaign:Lic/buzzebeeslib/bean/Campaign;
-    invoke-static/range {v56 .. v56}, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->access$8(Lic/buzzebeeslib/activity/SurveyFragmentActivity;)Lic/buzzebeeslib/bean/Campaign;
-
-    move-result-object v56
-
-    move-object/from16 v0, v56
-
-    iget-object v0, v0, Lic/buzzebeeslib/bean/Campaign;->ID:Ljava/lang/String;
-
-    move-object/from16 v56, v0
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "/redeem?token="
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lic/buzzebeeslib/activity/SurveyFragmentActivity;
-
-    move-object/from16 v56, v0
-
-    invoke-virtual/range {v56 .. v56}, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v56
-
-    invoke-static/range {v56 .. v56}, Lic/buzzebeeslib/LibUserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v52
-
-    .line 1443
-    .local v52, "url":Ljava/lang/String;
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v52 .. v52}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v56, "&info1="
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    move-object/from16 v0, v55
-
-    move-object/from16 v1, v19
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v52
-
-    .line 1444
-    const-string v55, "campaign.adbuzz"
-
     new-instance v56, Ljava/lang/StringBuilder;
 
-    const-string v57, "redeem url="
+    sget-object v57, Lic/buzzebeeslib/LibConst;->API_URL_BUZZEBEES:Ljava/lang/String;
+
+    invoke-static/range {v57 .. v57}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
 
     invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    const-string v57, "api/campaign/"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lic/buzzebeeslib/activity/SurveyFragmentActivity;
+
+    move-object/from16 v57, v0
+
+    # getter for: Lic/buzzebeeslib/activity/SurveyFragmentActivity;->paramCampaign:Lic/buzzebeeslib/bean/Campaign;
+    invoke-static/range {v57 .. v57}, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->access$8(Lic/buzzebeeslib/activity/SurveyFragmentActivity;)Lic/buzzebeeslib/bean/Campaign;
+
+    move-result-object v57
+
+    move-object/from16 v0, v57
+
+    iget-object v0, v0, Lic/buzzebeeslib/bean/Campaign;->ID:Ljava/lang/String;
+
+    move-object/from16 v57, v0
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "/redeem?token="
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lic/buzzebeeslib/activity/SurveyFragmentActivity;
+
+    move-object/from16 v57, v0
+
+    invoke-virtual/range {v57 .. v57}, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v57
+
+    invoke-static/range {v57 .. v57}, Lic/buzzebeeslib/LibUserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v53
+
+    .line 1443
+    .local v53, "url":Ljava/lang/String;
+    new-instance v56, Ljava/lang/StringBuilder;
+
+    invoke-static/range {v53 .. v53}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v57, "&info1="
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
     move-object/from16 v0, v56
 
-    move-object/from16 v1, v52
+    move-object/from16 v1, v20
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5820,32 +5799,53 @@
 
     invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v56
+    move-result-object v53
 
-    invoke-static/range {v55 .. v56}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    .line 1444
+    const-string v56, "campaign.adbuzz"
+
+    new-instance v57, Ljava/lang/StringBuilder;
+
+    const-string v58, "redeem url="
+
+    invoke-direct/range {v57 .. v58}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, v57
+
+    move-object/from16 v1, v53
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v57
+
+    invoke-virtual/range {v57 .. v57}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-static/range {v56 .. v57}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1446
-    new-instance v38, Lcom/loopj/android/http/RequestParams;
+    new-instance v39, Lcom/loopj/android/http/RequestParams;
 
-    invoke-direct/range {v38 .. v38}, Lcom/loopj/android/http/RequestParams;-><init>()V
+    invoke-direct/range {v39 .. v39}, Lcom/loopj/android/http/RequestParams;-><init>()V
 
     .line 1447
-    .local v38, "params":Lcom/loopj/android/http/RequestParams;
-    new-instance v55, Lic/buzzebeeslib/activity/SurveyFragmentActivity$PostSubmitListener;
+    .local v39, "params":Lcom/loopj/android/http/RequestParams;
+    new-instance v56, Lic/buzzebeeslib/activity/SurveyFragmentActivity$PostSubmitListener;
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lic/buzzebeeslib/activity/SurveyFragmentActivity;
 
-    move-object/from16 v56, v0
+    move-object/from16 v57, v0
 
-    invoke-direct/range {v55 .. v56}, Lic/buzzebeeslib/activity/SurveyFragmentActivity$PostSubmitListener;-><init>(Lic/buzzebeeslib/activity/SurveyFragmentActivity;)V
+    invoke-direct/range {v56 .. v57}, Lic/buzzebeeslib/activity/SurveyFragmentActivity$PostSubmitListener;-><init>(Lic/buzzebeeslib/activity/SurveyFragmentActivity;)V
 
-    move-object/from16 v0, v52
+    move-object/from16 v0, v53
 
-    move-object/from16 v1, v38
+    move-object/from16 v1, v39
 
-    move-object/from16 v2, v55
+    move-object/from16 v2, v56
 
     invoke-static {v0, v1, v2}, Lic/buzzebeeslib/util/http/BuzzbeesRestClient;->post(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
 
@@ -5853,563 +5853,462 @@
     return-void
 
     .line 1190
-    .end local v38    # "params":Lcom/loopj/android/http/RequestParams;
-    .end local v52    # "url":Ljava/lang/String;
+    .end local v39    # "params":Lcom/loopj/android/http/RequestParams;
+    .end local v53    # "url":Ljava/lang/String;
     :cond_f9
-    add-int/lit8 v16, v16, 0x1
+    add-int/lit8 v17, v17, 0x1
 
     .line 1191
-    if-eqz v39, :cond_11e
+    if-eqz v40, :cond_11e
 
-    if-nez v17, :cond_11e
+    if-nez v18, :cond_11e
 
     .line 1192
-    new-instance v55, Ljava/lang/StringBuilder;
+    new-instance v56, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v56
+    move-result-object v57
 
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-object/from16 v0, v55
+    move-object/from16 v0, v56
 
-    move-object/from16 v1, v46
+    move-object/from16 v1, v47
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v55
+    move-result-object v56
 
-    const-string v56, "{survey_pass:true}"
+    const-string v57, "{survey_pass:true}"
 
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v55
+    move-result-object v56
 
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v20
 
     .line 1193
-    const-string v46, ","
+    const-string v47, ","
 
     .line 1194
-    const/16 v39, 0x0
+    const/16 v40, 0x0
 
     .line 1197
     :cond_11e
-    const/16 v20, 0x0
+    const/16 v21, 0x0
 
     .line 1198
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lic/buzzebeeslib/activity/SurveyFragmentActivity;
 
-    move-object/from16 v55, v0
+    move-object/from16 v56, v0
 
     # getter for: Lic/buzzebeeslib/activity/SurveyFragmentActivity;->gView_pager:Lic/buzzebeeslib/control/CustomPager;
-    invoke-static/range {v55 .. v55}, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->access$3(Lic/buzzebeeslib/activity/SurveyFragmentActivity;)Lic/buzzebeeslib/control/CustomPager;
+    invoke-static/range {v56 .. v56}, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->access$3(Lic/buzzebeeslib/activity/SurveyFragmentActivity;)Lic/buzzebeeslib/control/CustomPager;
 
-    move-result-object v55
+    move-result-object v56
 
-    move-object/from16 v0, v55
+    move-object/from16 v0, v56
 
-    move/from16 v1, v18
+    move/from16 v1, v19
 
     invoke-virtual {v0, v1}, Lic/buzzebeeslib/control/CustomPager;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v54
+    move-result-object v55
 
     .line 1199
-    .local v54, "view_pager_survey":Landroid/view/View;
-    sget v55, Lic/buzzebeeslib/R$id;->layoutRootSurvey:I
+    .local v55, "view_pager_survey":Landroid/view/View;
+    sget v56, Lic/buzzebeeslib/R$id;->layoutRootSurvey:I
 
-    invoke-virtual/range {v54 .. v55}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual/range {v55 .. v56}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v35
+    move-result-object v36
 
-    check-cast v35, Landroid/widget/LinearLayout;
+    check-cast v36, Landroid/widget/LinearLayout;
 
     .line 1200
-    .local v35, "layoutRootSurvey":Landroid/widget/LinearLayout;
-    if-eqz v35, :cond_269
+    .local v36, "layoutRootSurvey":Landroid/widget/LinearLayout;
+    if-eqz v36, :cond_269
 
     .line 1201
-    new-instance v55, Ljava/lang/StringBuilder;
+    new-instance v56, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v46 .. v46}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v47 .. v47}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v57, "{check_box:["
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v56
 
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string v56, "{check_box:["
+    move-result-object v44
 
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 1202
+    .local v44, "str_checkbox_prefix":Ljava/lang/String;
+    const-string v41, ""
 
-    move-result-object v55
+    .line 1203
+    .local v41, "str_checkbox_comma":Ljava/lang/String;
+    new-instance v56, Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static/range {v47 .. v47}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v57, "{check_box:["
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v43
 
-    .line 1202
-    .local v43, "str_checkbox_prefix":Ljava/lang/String;
-    const-string v40, ""
-
-    .line 1203
-    .local v40, "str_checkbox_comma":Ljava/lang/String;
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v46 .. v46}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v56, "{check_box:["
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v42
-
     .line 1204
-    .local v42, "str_checkbox_input_prefix":Ljava/lang/String;
-    const-string v41, ""
+    .local v43, "str_checkbox_input_prefix":Ljava/lang/String;
+    const-string v42, ""
 
     .line 1205
-    .local v41, "str_checkbox_input_comma":Ljava/lang/String;
-    new-instance v55, Ljava/lang/StringBuilder;
+    .local v42, "str_checkbox_input_comma":Ljava/lang/String;
+    new-instance v56, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v46 .. v46}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v47 .. v47}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v57, "{info_choice_with_others:["
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v56
 
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string v56, "{info_choice_with_others:["
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v45
+    move-result-object v46
 
     .line 1206
-    .local v45, "str_choice_input_prefix":Ljava/lang/String;
-    const-string v44, ""
+    .local v46, "str_choice_input_prefix":Ljava/lang/String;
+    const-string v45, ""
 
     .line 1207
-    .local v44, "str_choice_input_comma":Ljava/lang/String;
-    new-instance v55, Ljava/lang/StringBuilder;
+    .local v45, "str_choice_input_comma":Ljava/lang/String;
+    new-instance v56, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v46 .. v46}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v47 .. v47}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v56
+    move-result-object v57
 
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v56, "{inputs:["
+    const-string v57, "{inputs:["
 
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v49
-
-    .line 1208
-    .local v49, "str_input_prefix":Ljava/lang/String;
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v46 .. v46}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v56
 
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v56, "{image_url:["
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v47
-
-    .line 1209
-    .local v47, "str_image_prefix":Ljava/lang/String;
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v46 .. v46}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v56, "{scan_code:["
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v50
 
+    .line 1208
+    .local v50, "str_input_prefix":Ljava/lang/String;
+    new-instance v56, Ljava/lang/StringBuilder;
+
+    invoke-static/range {v47 .. v47}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v57, "{image_url:["
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v48
+
+    .line 1209
+    .local v48, "str_image_prefix":Ljava/lang/String;
+    new-instance v56, Ljava/lang/StringBuilder;
+
+    invoke-static/range {v47 .. v47}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v57, "{scan_code:["
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v51
+
     .line 1210
-    .local v50, "str_scan_prefix":Ljava/lang/String;
-    const-string v48, ""
+    .local v51, "str_scan_prefix":Ljava/lang/String;
+    const-string v49, ""
 
     .line 1211
-    .local v48, "str_input_comma":Ljava/lang/String;
-    const/16 v17, 0x0
+    .local v49, "str_input_comma":Ljava/lang/String;
+    const/16 v18, 0x0
 
     .line 1212
-    const/16 v21, 0x0
+    const/16 v22, 0x0
 
-    .local v21, "j":I
+    .local v22, "j":I
     :goto_1ba
-    invoke-virtual/range {v35 .. v35}, Landroid/widget/LinearLayout;->getChildCount()I
+    invoke-virtual/range {v36 .. v36}, Landroid/widget/LinearLayout;->getChildCount()I
 
-    move-result v55
+    move-result v56
 
-    move/from16 v0, v21
+    move/from16 v0, v22
 
-    move/from16 v1, v55
+    move/from16 v1, v56
 
     if-lt v0, v1, :cond_26d
 
     .line 1409
-    const-string v55, ""
+    const-string v56, ""
 
-    move-object/from16 v0, v43
+    move-object/from16 v0, v44
 
-    move-object/from16 v1, v55
+    move-object/from16 v1, v56
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v55
+    move-result v56
 
-    if-eqz v55, :cond_1e3
+    if-eqz v56, :cond_1e3
 
     .line 1410
-    new-instance v55, Ljava/lang/StringBuilder;
+    new-instance v56, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v57, "]}"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v56
 
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string v56, "]}"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
+    move-result-object v20
 
     .line 1412
     :cond_1e3
-    const-string v55, ""
+    const-string v56, ""
 
-    move-object/from16 v0, v42
+    move-object/from16 v0, v43
 
-    move-object/from16 v1, v55
+    move-object/from16 v1, v56
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v55
+    move-result v56
 
-    if-eqz v55, :cond_20c
+    if-eqz v56, :cond_20c
 
     .line 1413
-    const-string v55, ""
+    const-string v56, ""
 
-    move-object/from16 v0, v55
+    move-object/from16 v0, v56
 
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v55
+    move-result v56
 
-    if-eqz v55, :cond_9de
+    if-eqz v56, :cond_9e6
 
     .line 1414
-    new-instance v55, Ljava/lang/StringBuilder;
+    new-instance v56, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v57, "]}"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v56
 
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string v56, "]}"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
+    move-result-object v20
 
     .line 1421
     :cond_20c
     :goto_20c
-    const-string v55, ""
-
-    move-object/from16 v0, v49
-
-    move-object/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v55
-
-    if-eqz v55, :cond_22b
-
-    .line 1422
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v56, "]}"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    .line 1424
-    :cond_22b
-    const-string v55, ""
-
-    move-object/from16 v0, v47
-
-    move-object/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v55
-
-    if-eqz v55, :cond_24a
-
-    .line 1425
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v56, "]}"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    .line 1427
-    :cond_24a
-    const-string v55, ""
+    const-string v56, ""
 
     move-object/from16 v0, v50
 
-    move-object/from16 v1, v55
+    move-object/from16 v1, v56
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v55
+    move-result v56
 
-    if-eqz v55, :cond_269
+    if-eqz v56, :cond_22b
 
-    .line 1428
-    new-instance v55, Ljava/lang/StringBuilder;
+    .line 1422
+    new-instance v56, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v57, "]}"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v56
 
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string v56, "]}"
+    move-result-object v20
 
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 1424
+    :cond_22b
+    const-string v56, ""
 
-    move-result-object v55
+    move-object/from16 v0, v48
 
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-object/from16 v1, v56
 
-    move-result-object v19
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v56
+
+    if-eqz v56, :cond_24a
+
+    .line 1425
+    new-instance v56, Ljava/lang/StringBuilder;
+
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v57, "]}"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
+
+    .line 1427
+    :cond_24a
+    const-string v56, ""
+
+    move-object/from16 v0, v51
+
+    move-object/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v56
+
+    if-eqz v56, :cond_269
+
+    .line 1428
+    new-instance v56, Ljava/lang/StringBuilder;
+
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v57, "]}"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
 
     .line 1189
-    .end local v21    # "j":I
-    .end local v40    # "str_checkbox_comma":Ljava/lang/String;
-    .end local v41    # "str_checkbox_input_comma":Ljava/lang/String;
-    .end local v42    # "str_checkbox_input_prefix":Ljava/lang/String;
-    .end local v43    # "str_checkbox_prefix":Ljava/lang/String;
-    .end local v44    # "str_choice_input_comma":Ljava/lang/String;
-    .end local v45    # "str_choice_input_prefix":Ljava/lang/String;
-    .end local v47    # "str_image_prefix":Ljava/lang/String;
-    .end local v48    # "str_input_comma":Ljava/lang/String;
-    .end local v49    # "str_input_prefix":Ljava/lang/String;
-    .end local v50    # "str_scan_prefix":Ljava/lang/String;
+    .end local v22    # "j":I
+    .end local v41    # "str_checkbox_comma":Ljava/lang/String;
+    .end local v42    # "str_checkbox_input_comma":Ljava/lang/String;
+    .end local v43    # "str_checkbox_input_prefix":Ljava/lang/String;
+    .end local v44    # "str_checkbox_prefix":Ljava/lang/String;
+    .end local v45    # "str_choice_input_comma":Ljava/lang/String;
+    .end local v46    # "str_choice_input_prefix":Ljava/lang/String;
+    .end local v48    # "str_image_prefix":Ljava/lang/String;
+    .end local v49    # "str_input_comma":Ljava/lang/String;
+    .end local v50    # "str_input_prefix":Ljava/lang/String;
+    .end local v51    # "str_scan_prefix":Ljava/lang/String;
     :cond_269
-    add-int/lit8 v18, v18, -0x1
+    add-int/lit8 v19, v19, -0x1
 
     goto/16 :goto_1e
 
     .line 1213
-    .restart local v21    # "j":I
-    .restart local v40    # "str_checkbox_comma":Ljava/lang/String;
-    .restart local v41    # "str_checkbox_input_comma":Ljava/lang/String;
-    .restart local v42    # "str_checkbox_input_prefix":Ljava/lang/String;
-    .restart local v43    # "str_checkbox_prefix":Ljava/lang/String;
-    .restart local v44    # "str_choice_input_comma":Ljava/lang/String;
-    .restart local v45    # "str_choice_input_prefix":Ljava/lang/String;
-    .restart local v47    # "str_image_prefix":Ljava/lang/String;
-    .restart local v48    # "str_input_comma":Ljava/lang/String;
-    .restart local v49    # "str_input_prefix":Ljava/lang/String;
-    .restart local v50    # "str_scan_prefix":Ljava/lang/String;
+    .restart local v22    # "j":I
+    .restart local v41    # "str_checkbox_comma":Ljava/lang/String;
+    .restart local v42    # "str_checkbox_input_comma":Ljava/lang/String;
+    .restart local v43    # "str_checkbox_input_prefix":Ljava/lang/String;
+    .restart local v44    # "str_checkbox_prefix":Ljava/lang/String;
+    .restart local v45    # "str_choice_input_comma":Ljava/lang/String;
+    .restart local v46    # "str_choice_input_prefix":Ljava/lang/String;
+    .restart local v48    # "str_image_prefix":Ljava/lang/String;
+    .restart local v49    # "str_input_comma":Ljava/lang/String;
+    .restart local v50    # "str_input_prefix":Ljava/lang/String;
+    .restart local v51    # "str_scan_prefix":Ljava/lang/String;
     :cond_26d
-    move-object/from16 v0, v35
+    move-object/from16 v0, v36
 
-    move/from16 v1, v21
+    move/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v53
+    move-result-object v54
 
     .line 1214
-    .local v53, "view_field_row":Landroid/view/View;
-    sget v55, Lic/buzzebeeslib/R$id;->layoutQuestion:I
+    .local v54, "view_field_row":Landroid/view/View;
+    sget v56, Lic/buzzebeeslib/R$id;->layoutQuestion:I
 
-    move-object/from16 v0, v53
+    move-object/from16 v0, v54
 
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v33
-
-    check-cast v33, Landroid/widget/RelativeLayout;
-
-    .line 1215
-    .local v33, "layoutQuestion":Landroid/widget/RelativeLayout;
-    if-eqz v33, :cond_37c
-
-    .line 1217
-    sget v55, Lic/buzzebeeslib/R$id;->layoutInfoChoice:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v26
-
-    check-cast v26, Landroid/widget/RelativeLayout;
-
-    .line 1218
-    .local v26, "layoutInfoChoice":Landroid/widget/RelativeLayout;
-    sget v55, Lic/buzzebeeslib/R$id;->layoutInfoCheckbox:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v25
-
-    check-cast v25, Landroid/widget/RelativeLayout;
-
-    .line 1219
-    .local v25, "layoutInfoCheckbox":Landroid/widget/RelativeLayout;
-    sget v55, Lic/buzzebeeslib/R$id;->layoutInfoInput:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v29
-
-    check-cast v29, Landroid/widget/RelativeLayout;
-
-    .line 1220
-    .local v29, "layoutInfoInput":Landroid/widget/RelativeLayout;
-    sget v55, Lic/buzzebeeslib/R$id;->layoutDate:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v22
-
-    check-cast v22, Landroid/widget/RelativeLayout;
-
-    .line 1221
-    .local v22, "layoutDate":Landroid/widget/RelativeLayout;
-    sget v55, Lic/buzzebeeslib/R$id;->layoutTime:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v37
-
-    check-cast v37, Landroid/widget/RelativeLayout;
-
-    .line 1222
-    .local v37, "layoutTime":Landroid/widget/RelativeLayout;
-    sget v55, Lic/buzzebeeslib/R$id;->layoutInfoTextArea:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v32
-
-    check-cast v32, Landroid/widget/RelativeLayout;
-
-    .line 1223
-    .local v32, "layoutInfoTextArea":Landroid/widget/RelativeLayout;
-    sget v55, Lic/buzzebeeslib/R$id;->layoutQuestionwithBox:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
+    move/from16 v1, v56
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -6417,1212 +6316,16 @@
 
     check-cast v34, Landroid/widget/RelativeLayout;
 
-    .line 1224
-    .local v34, "layoutQuestionwithBox":Landroid/widget/RelativeLayout;
-    sget v55, Lic/buzzebeeslib/R$id;->layoutScanCodeInput:I
+    .line 1215
+    .local v34, "layoutQuestion":Landroid/widget/RelativeLayout;
+    if-eqz v34, :cond_37c
 
-    move-object/from16 v0, v53
+    .line 1217
+    sget v56, Lic/buzzebeeslib/R$id;->layoutInfoChoice:I
 
-    move/from16 v1, v55
+    move-object/from16 v0, v54
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v36
-
-    check-cast v36, Landroid/widget/RelativeLayout;
-
-    .line 1225
-    .local v36, "layoutScanCodeInput":Landroid/widget/RelativeLayout;
-    sget v55, Lic/buzzebeeslib/R$id;->layoutImageInput:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v23
-
-    check-cast v23, Landroid/widget/RelativeLayout;
-
-    .line 1226
-    .local v23, "layoutImageInput":Landroid/widget/RelativeLayout;
-    sget v55, Lic/buzzebeeslib/R$id;->layoutInfoRate:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v31
-
-    check-cast v31, Landroid/widget/LinearLayout;
-
-    .line 1227
-    .local v31, "layoutInfoRate":Landroid/widget/LinearLayout;
-    sget v55, Lic/buzzebeeslib/R$id;->layoutInfoEmotion:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v28
-
-    check-cast v28, Landroid/widget/LinearLayout;
-
-    .line 1228
-    .local v28, "layoutInfoEmotion":Landroid/widget/LinearLayout;
-    sget v55, Lic/buzzebeeslib/R$id;->layoutInfoLocation:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v30
-
-    check-cast v30, Landroid/widget/LinearLayout;
-
-    .line 1229
-    .local v30, "layoutInfoLocation":Landroid/widget/LinearLayout;
-    invoke-virtual/range {v36 .. v36}, Landroid/widget/RelativeLayout;->getVisibility()I
-
-    move-result v55
-
-    if-nez v55, :cond_383
-
-    .line 1230
-    sget v55, Lic/buzzebeeslib/R$id;->etFieldInputCode:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v10
-
-    check-cast v10, Landroid/widget/TextView;
-
-    .line 1232
-    .local v10, "etFieldInputCode":Landroid/widget/TextView;
-    invoke-virtual {v10}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v55
-
-    invoke-interface/range {v55 .. v55}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v55
-
-    const-string v56, ""
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v55
-
-    if-nez v55, :cond_380
-
-    .line 1233
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v55
-
-    move-object/from16 v1, v50
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    move-object/from16 v0, v55
-
-    move-object/from16 v1, v48
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "\""
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual {v10}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v56
-
-    invoke-interface/range {v56 .. v56}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-virtual/range {v56 .. v56}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "\""
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    .line 1234
-    const-string v50, ""
-
-    .line 1235
-    const-string v48, ","
-
-    .line 1236
-    const-string v46, ","
-
-    .line 1237
-    const/16 v39, 0x0
-
-    .line 1238
-    const/16 v17, 0x1
-
-    .line 1212
-    .end local v10    # "etFieldInputCode":Landroid/widget/TextView;
-    .end local v22    # "layoutDate":Landroid/widget/RelativeLayout;
-    .end local v23    # "layoutImageInput":Landroid/widget/RelativeLayout;
-    .end local v25    # "layoutInfoCheckbox":Landroid/widget/RelativeLayout;
-    .end local v26    # "layoutInfoChoice":Landroid/widget/RelativeLayout;
-    .end local v28    # "layoutInfoEmotion":Landroid/widget/LinearLayout;
-    .end local v29    # "layoutInfoInput":Landroid/widget/RelativeLayout;
-    .end local v30    # "layoutInfoLocation":Landroid/widget/LinearLayout;
-    .end local v31    # "layoutInfoRate":Landroid/widget/LinearLayout;
-    .end local v32    # "layoutInfoTextArea":Landroid/widget/RelativeLayout;
-    .end local v34    # "layoutQuestionwithBox":Landroid/widget/RelativeLayout;
-    .end local v36    # "layoutScanCodeInput":Landroid/widget/RelativeLayout;
-    .end local v37    # "layoutTime":Landroid/widget/RelativeLayout;
-    :cond_37c
-    :goto_37c
-    add-int/lit8 v21, v21, 0x1
-
-    goto/16 :goto_1ba
-
-    .line 1240
-    .restart local v10    # "etFieldInputCode":Landroid/widget/TextView;
-    .restart local v22    # "layoutDate":Landroid/widget/RelativeLayout;
-    .restart local v23    # "layoutImageInput":Landroid/widget/RelativeLayout;
-    .restart local v25    # "layoutInfoCheckbox":Landroid/widget/RelativeLayout;
-    .restart local v26    # "layoutInfoChoice":Landroid/widget/RelativeLayout;
-    .restart local v28    # "layoutInfoEmotion":Landroid/widget/LinearLayout;
-    .restart local v29    # "layoutInfoInput":Landroid/widget/RelativeLayout;
-    .restart local v30    # "layoutInfoLocation":Landroid/widget/LinearLayout;
-    .restart local v31    # "layoutInfoRate":Landroid/widget/LinearLayout;
-    .restart local v32    # "layoutInfoTextArea":Landroid/widget/RelativeLayout;
-    .restart local v34    # "layoutQuestionwithBox":Landroid/widget/RelativeLayout;
-    .restart local v36    # "layoutScanCodeInput":Landroid/widget/RelativeLayout;
-    .restart local v37    # "layoutTime":Landroid/widget/RelativeLayout;
-    :cond_380
-    const/16 v39, 0x1
-
-    .line 1242
-    goto :goto_37c
-
-    .end local v10    # "etFieldInputCode":Landroid/widget/TextView;
-    :cond_383
-    invoke-virtual/range {v23 .. v23}, Landroid/widget/RelativeLayout;->getVisibility()I
-
-    move-result v55
-
-    if-nez v55, :cond_3f0
-
-    .line 1243
-    sget v55, Lic/buzzebeeslib/R$id;->etFieldInputImage:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v11
-
-    check-cast v11, Landroid/widget/TextView;
-
-    .line 1245
-    .local v11, "etFieldInputImage":Landroid/widget/TextView;
-    invoke-virtual {v11}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v55
-
-    invoke-interface/range {v55 .. v55}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v55
-
-    const-string v56, ""
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v55
-
-    if-nez v55, :cond_3ed
-
-    .line 1246
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v55
-
-    move-object/from16 v1, v47
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    move-object/from16 v0, v55
-
-    move-object/from16 v1, v48
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "\""
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual {v11}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v56
-
-    invoke-interface/range {v56 .. v56}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-virtual/range {v56 .. v56}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "\""
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    .line 1247
-    const-string v47, ""
-
-    .line 1248
-    const-string v48, ","
-
-    .line 1249
-    const-string v46, ","
-
-    .line 1250
-    const/16 v39, 0x0
-
-    .line 1251
-    const/16 v17, 0x1
-
-    .line 1252
-    goto :goto_37c
-
-    .line 1253
-    :cond_3ed
-    const/16 v39, 0x1
-
-    .line 1255
-    goto :goto_37c
-
-    .end local v11    # "etFieldInputImage":Landroid/widget/TextView;
-    :cond_3f0
-    invoke-virtual/range {v31 .. v31}, Landroid/widget/LinearLayout;->getVisibility()I
-
-    move-result v55
-
-    if-nez v55, :cond_452
-
-    .line 1256
-    sget v55, Lic/buzzebeeslib/R$id;->etFieldInputRateValue:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v14
-
-    check-cast v14, Landroid/widget/TextView;
-
-    .line 1257
-    .local v14, "etFieldInputRateValue":Landroid/widget/TextView;
-    invoke-virtual {v14}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v55
-
-    invoke-interface/range {v55 .. v55}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v55
-
-    const-string v56, ""
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v55
-
-    if-nez v55, :cond_44f
-
-    .line 1258
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v55
-
-    move-object/from16 v1, v46
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "{answer:"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual {v14}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v56
-
-    invoke-interface/range {v56 .. v56}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "}"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    .line 1259
-    const-string v46, ","
-
-    .line 1260
-    const/16 v39, 0x0
-
-    .line 1261
-    const/16 v17, 0x1
-
-    .line 1265
-    :goto_449
-    invoke-virtual/range {v35 .. v35}, Landroid/widget/LinearLayout;->getChildCount()I
-
-    move-result v21
-
-    .line 1266
-    goto/16 :goto_37c
-
-    .line 1263
-    :cond_44f
-    const/16 v39, 0x1
-
-    goto :goto_449
-
-    .line 1266
-    .end local v14    # "etFieldInputRateValue":Landroid/widget/TextView;
-    :cond_452
-    invoke-virtual/range {v28 .. v28}, Landroid/widget/LinearLayout;->getVisibility()I
-
-    move-result v55
-
-    if-nez v55, :cond_4b4
-
-    .line 1267
-    sget v55, Lic/buzzebeeslib/R$id;->etFieldInputMode:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v13
-
-    check-cast v13, Landroid/widget/TextView;
-
-    .line 1268
-    .local v13, "etFieldInputMode":Landroid/widget/TextView;
-    invoke-virtual {v13}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v55
-
-    invoke-interface/range {v55 .. v55}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v55
-
-    const-string v56, ""
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v55
-
-    if-nez v55, :cond_4b1
-
-    .line 1269
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v55
-
-    move-object/from16 v1, v46
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "{answer:"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual {v13}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v56
-
-    invoke-interface/range {v56 .. v56}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "}"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    .line 1270
-    const-string v46, ","
-
-    .line 1271
-    const/16 v39, 0x0
-
-    .line 1272
-    const/16 v17, 0x1
-
-    .line 1276
-    :goto_4ab
-    invoke-virtual/range {v35 .. v35}, Landroid/widget/LinearLayout;->getChildCount()I
-
-    move-result v21
-
-    .line 1277
-    goto/16 :goto_37c
-
-    .line 1274
-    :cond_4b1
-    const/16 v39, 0x1
-
-    goto :goto_4ab
-
-    .line 1277
-    .end local v13    # "etFieldInputMode":Landroid/widget/TextView;
-    :cond_4b4
-    invoke-virtual/range {v30 .. v30}, Landroid/widget/LinearLayout;->getVisibility()I
-
-    move-result v55
-
-    if-nez v55, :cond_533
-
-    .line 1278
-    sget v55, Lic/buzzebeeslib/R$id;->etFieldInputLocation:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v12
-
-    check-cast v12, Landroid/widget/TextView;
-
-    .line 1279
-    .local v12, "etFieldInputLocation":Landroid/widget/TextView;
-    invoke-virtual {v12}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v55
-
-    invoke-interface/range {v55 .. v55}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v55
-
-    const-string v56, ""
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v55
-
-    if-nez v55, :cond_52f
-
-    .line 1280
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v55
-
-    move-object/from16 v1, v46
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "{latitude:"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lic/buzzebeeslib/activity/SurveyFragmentActivity;
-
-    move-object/from16 v56, v0
-
-    move-object/from16 v0, v56
-
-    iget-wide v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->lat:D
-
-    move-wide/from16 v56, v0
-
-    invoke-virtual/range {v55 .. v57}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, ","
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "longitude:"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lic/buzzebeeslib/activity/SurveyFragmentActivity;
-
-    move-object/from16 v56, v0
-
-    move-object/from16 v0, v56
-
-    iget-wide v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->lng:D
-
-    move-wide/from16 v56, v0
-
-    invoke-virtual/range {v55 .. v57}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "}"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    .line 1281
-    const-string v46, ","
-
-    .line 1282
-    const/16 v39, 0x0
-
-    .line 1283
-    const/16 v17, 0x1
-
-    .line 1284
-    goto/16 :goto_37c
-
-    .line 1285
-    :cond_52f
-    const/16 v39, 0x1
-
-    .line 1287
-    goto/16 :goto_37c
-
-    .end local v12    # "etFieldInputLocation":Landroid/widget/TextView;
-    :cond_533
-    invoke-virtual/range {v33 .. v33}, Landroid/widget/RelativeLayout;->getVisibility()I
-
-    move-result v55
-
-    if-nez v55, :cond_5b0
-
-    .line 1288
-    sget v55, Lic/buzzebeeslib/R$id;->tvFieldAnswer:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/widget/CheckBox;
-
-    .line 1289
-    .local v5, "chkFieldChoice":Landroid/widget/CheckBox;
-    invoke-virtual {v5}, Landroid/widget/CheckBox;->isChecked()Z
-
-    move-result v55
-
-    if-eqz v55, :cond_5ac
-
-    .line 1290
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v55
-
-    move-object/from16 v1, v46
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "{answer:"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v56
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->gAdBuzzItems:Ljava/util/ArrayList;
-
-    move-object/from16 v55, v0
-
-    add-int/lit8 v57, v16, -0x1
-
-    move-object/from16 v0, v55
-
-    move/from16 v1, v57
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v55
-
-    check-cast v55, Lic/buzzebeeslib/bean/AdBuzzItem;
-
-    move-object/from16 v0, v55
-
-    iget-object v0, v0, Lic/buzzebeeslib/bean/AdBuzzItem;->campaignExtraSurveyPage:Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;
-
-    move-object/from16 v55, v0
-
-    move-object/from16 v0, v55
-
-    iget-object v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;->inputs:Ljava/util/ArrayList;
-
-    move-object/from16 v55, v0
-
-    add-int/lit8 v57, v21, -0x3
-
-    move-object/from16 v0, v55
-
-    move/from16 v1, v57
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v55
-
-    check-cast v55, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;
-
-    move-object/from16 v0, v55
-
-    iget v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;->index:I
-
-    move/from16 v55, v0
-
-    move-object/from16 v0, v56
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "}"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    .line 1291
-    const-string v46, ","
-
-    .line 1292
-    const/16 v39, 0x0
-
-    .line 1293
-    const/16 v17, 0x1
-
-    .line 1294
-    goto/16 :goto_37c
-
-    .line 1295
-    :cond_5ac
-    const/16 v39, 0x1
-
-    .line 1298
-    goto/16 :goto_37c
-
-    .end local v5    # "chkFieldChoice":Landroid/widget/CheckBox;
-    :cond_5b0
-    invoke-virtual/range {v34 .. v34}, Landroid/widget/RelativeLayout;->getVisibility()I
-
-    move-result v55
-
-    if-nez v55, :cond_6de
-
-    .line 1300
-    sget v55, Lic/buzzebeeslib/R$id;->tvFieldAnswerBox:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v51
-
-    check-cast v51, Landroid/widget/CheckBox;
-
-    .line 1301
-    .local v51, "tvFieldAnswerBox":Landroid/widget/CheckBox;
-    sget v55, Lic/buzzebeeslib/R$id;->layoutInfoAnswerEdt:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v24
-
-    check-cast v24, Landroid/widget/RelativeLayout;
-
-    .line 1302
-    .local v24, "layoutInfoAnswerEdt":Landroid/widget/RelativeLayout;
-    invoke-virtual/range {v51 .. v51}, Landroid/widget/CheckBox;->isChecked()Z
-
-    move-result v55
-
-    if-eqz v55, :cond_639
-
-    .line 1303
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v55
-
-    move-object/from16 v1, v46
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "{answer:"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v56
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->gAdBuzzItems:Ljava/util/ArrayList;
-
-    move-object/from16 v55, v0
-
-    add-int/lit8 v57, v16, -0x1
-
-    move-object/from16 v0, v55
-
-    move/from16 v1, v57
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v55
-
-    check-cast v55, Lic/buzzebeeslib/bean/AdBuzzItem;
-
-    move-object/from16 v0, v55
-
-    iget-object v0, v0, Lic/buzzebeeslib/bean/AdBuzzItem;->campaignExtraSurveyPage:Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;
-
-    move-object/from16 v55, v0
-
-    move-object/from16 v0, v55
-
-    iget-object v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;->inputs:Ljava/util/ArrayList;
-
-    move-object/from16 v55, v0
-
-    add-int/lit8 v57, v21, -0x3
-
-    move-object/from16 v0, v55
-
-    move/from16 v1, v57
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v55
-
-    check-cast v55, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;
-
-    move-object/from16 v0, v55
-
-    iget v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;->index:I
-
-    move/from16 v55, v0
-
-    move-object/from16 v0, v56
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, ", choice_input :\""
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "\"}"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    .line 1304
-    const-string v46, ","
-
-    .line 1305
-    const/16 v39, 0x0
-
-    .line 1306
-    const/16 v17, 0x1
-
-    .line 1308
-    :cond_639
-    invoke-virtual/range {v24 .. v24}, Landroid/widget/RelativeLayout;->getVisibility()I
-
-    move-result v55
-
-    if-nez v55, :cond_6ce
-
-    .line 1309
-    sget v55, Lic/buzzebeeslib/R$id;->etFieldInputAnswer:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v8
-
-    check-cast v8, Landroid/widget/EditText;
-
-    .line 1310
-    .local v8, "etFieldInputAnswer":Landroid/widget/EditText;
-    invoke-virtual {v8}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v55
-
-    invoke-interface/range {v55 .. v55}, Landroid/text/Editable;->toString()Ljava/lang/String;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/String;->length()I
-
-    move-result v55
-
-    if-lez v55, :cond_6ce
-
-    .line 1311
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v55
-
-    move-object/from16 v1, v46
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "{answer:"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v56
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->gAdBuzzItems:Ljava/util/ArrayList;
-
-    move-object/from16 v55, v0
-
-    add-int/lit8 v57, v16, -0x1
-
-    move-object/from16 v0, v55
-
-    move/from16 v1, v57
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v55
-
-    check-cast v55, Lic/buzzebeeslib/bean/AdBuzzItem;
-
-    move-object/from16 v0, v55
-
-    iget-object v0, v0, Lic/buzzebeeslib/bean/AdBuzzItem;->campaignExtraSurveyPage:Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;
-
-    move-object/from16 v55, v0
-
-    move-object/from16 v0, v55
-
-    iget-object v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;->inputs:Ljava/util/ArrayList;
-
-    move-object/from16 v55, v0
-
-    add-int/lit8 v57, v21, -0x3
-
-    move-object/from16 v0, v55
-
-    move/from16 v1, v57
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v55
-
-    check-cast v55, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;
-
-    move-object/from16 v0, v55
-
-    iget v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;->index:I
-
-    move/from16 v55, v0
-
-    move-object/from16 v0, v56
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, ", choice_input :\""
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual {v8}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v56
-
-    invoke-interface/range {v56 .. v56}, Landroid/text/Editable;->toString()Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "\"}"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    .line 1312
-    const-string v46, ","
-
-    .line 1313
-    const/16 v39, 0x0
-
-    .line 1314
-    const/16 v17, 0x1
-
-    .line 1317
-    .end local v8    # "etFieldInputAnswer":Landroid/widget/EditText;
-    :cond_6ce
-    invoke-virtual/range {v51 .. v51}, Landroid/widget/CheckBox;->isChecked()Z
-
-    move-result v55
-
-    if-nez v55, :cond_37c
-
-    invoke-virtual/range {v24 .. v24}, Landroid/widget/RelativeLayout;->getVisibility()I
-
-    move-result v55
-
-    if-eqz v55, :cond_37c
-
-    .line 1318
-    const/16 v39, 0x1
-
-    .line 1321
-    goto/16 :goto_37c
-
-    .end local v24    # "layoutInfoAnswerEdt":Landroid/widget/RelativeLayout;
-    .end local v51    # "tvFieldAnswerBox":Landroid/widget/CheckBox;
-    :cond_6de
-    invoke-virtual/range {v26 .. v26}, Landroid/widget/RelativeLayout;->getVisibility()I
-
-    move-result v55
-
-    if-nez v55, :cond_7a5
-
-    .line 1322
-    sget v55, Lic/buzzebeeslib/R$id;->chkFieldChoice:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/widget/CheckBox;
-
-    .line 1323
-    .restart local v5    # "chkFieldChoice":Landroid/widget/CheckBox;
-    sget v55, Lic/buzzebeeslib/R$id;->layoutInfoChoiceEdt:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
+    move/from16 v1, v56
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7630,131 +6333,1111 @@
 
     check-cast v27, Landroid/widget/RelativeLayout;
 
-    .line 1324
-    .local v27, "layoutInfoChoiceEdt":Landroid/widget/RelativeLayout;
-    invoke-virtual {v5}, Landroid/widget/CheckBox;->isChecked()Z
+    .line 1218
+    .local v27, "layoutInfoChoice":Landroid/widget/RelativeLayout;
+    sget v56, Lic/buzzebeeslib/R$id;->layoutInfoCheckbox:I
 
-    move-result v55
+    move-object/from16 v0, v54
 
-    if-eqz v55, :cond_763
+    move/from16 v1, v56
 
-    .line 1325
-    const/16 v20, 0x1
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    .line 1326
-    new-instance v55, Ljava/lang/StringBuilder;
+    move-result-object v26
 
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    check-cast v26, Landroid/widget/RelativeLayout;
+
+    .line 1219
+    .local v26, "layoutInfoCheckbox":Landroid/widget/RelativeLayout;
+    sget v56, Lic/buzzebeeslib/R$id;->layoutInfoInput:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v30
+
+    check-cast v30, Landroid/widget/RelativeLayout;
+
+    .line 1220
+    .local v30, "layoutInfoInput":Landroid/widget/RelativeLayout;
+    sget v56, Lic/buzzebeeslib/R$id;->layoutDate:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v23
+
+    check-cast v23, Landroid/widget/RelativeLayout;
+
+    .line 1221
+    .local v23, "layoutDate":Landroid/widget/RelativeLayout;
+    sget v56, Lic/buzzebeeslib/R$id;->layoutTime:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v38
+
+    check-cast v38, Landroid/widget/RelativeLayout;
+
+    .line 1222
+    .local v38, "layoutTime":Landroid/widget/RelativeLayout;
+    sget v56, Lic/buzzebeeslib/R$id;->layoutInfoTextArea:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v33
+
+    check-cast v33, Landroid/widget/RelativeLayout;
+
+    .line 1223
+    .local v33, "layoutInfoTextArea":Landroid/widget/RelativeLayout;
+    sget v56, Lic/buzzebeeslib/R$id;->layoutQuestionwithBox:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v35
+
+    check-cast v35, Landroid/widget/RelativeLayout;
+
+    .line 1224
+    .local v35, "layoutQuestionwithBox":Landroid/widget/RelativeLayout;
+    sget v56, Lic/buzzebeeslib/R$id;->layoutScanCodeInput:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v37
+
+    check-cast v37, Landroid/widget/RelativeLayout;
+
+    .line 1225
+    .local v37, "layoutScanCodeInput":Landroid/widget/RelativeLayout;
+    sget v56, Lic/buzzebeeslib/R$id;->layoutImageInput:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v24
+
+    check-cast v24, Landroid/widget/RelativeLayout;
+
+    .line 1226
+    .local v24, "layoutImageInput":Landroid/widget/RelativeLayout;
+    sget v56, Lic/buzzebeeslib/R$id;->layoutInfoRate:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v32
+
+    check-cast v32, Landroid/widget/LinearLayout;
+
+    .line 1227
+    .local v32, "layoutInfoRate":Landroid/widget/LinearLayout;
+    sget v56, Lic/buzzebeeslib/R$id;->layoutInfoEmotion:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v29
+
+    check-cast v29, Landroid/widget/LinearLayout;
+
+    .line 1228
+    .local v29, "layoutInfoEmotion":Landroid/widget/LinearLayout;
+    sget v56, Lic/buzzebeeslib/R$id;->layoutInfoLocation:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v31
+
+    check-cast v31, Landroid/widget/LinearLayout;
+
+    .line 1229
+    .local v31, "layoutInfoLocation":Landroid/widget/LinearLayout;
+    invoke-virtual/range {v37 .. v37}, Landroid/widget/RelativeLayout;->getVisibility()I
+
+    move-result v56
+
+    if-nez v56, :cond_383
+
+    .line 1230
+    sget v56, Lic/buzzebeeslib/R$id;->etFieldInputCode:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v11
+
+    check-cast v11, Landroid/widget/TextView;
+
+    .line 1232
+    .local v11, "etFieldInputCode":Landroid/widget/TextView;
+    invoke-virtual {v11}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v56
 
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-interface/range {v56 .. v56}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
-    move-object/from16 v0, v55
+    move-result-object v56
 
-    move-object/from16 v1, v42
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v56
+
+    const-string v57, ""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v56
+
+    if-nez v56, :cond_380
+
+    .line 1233
+    new-instance v56, Ljava/lang/StringBuilder;
+
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v51
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v55
+    move-result-object v56
 
-    move-object/from16 v0, v55
+    move-object/from16 v0, v56
 
-    move-object/from16 v1, v41
+    move-object/from16 v1, v49
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "\""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual {v11}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v57
+
+    invoke-interface/range {v57 .. v57}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-virtual/range {v57 .. v57}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "\""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
+
+    .line 1234
+    const-string v51, ""
+
+    .line 1235
+    const-string v49, ","
+
+    .line 1236
+    const-string v47, ","
+
+    .line 1237
+    const/16 v40, 0x0
+
+    .line 1238
+    const/16 v18, 0x1
+
+    .line 1212
+    .end local v11    # "etFieldInputCode":Landroid/widget/TextView;
+    .end local v23    # "layoutDate":Landroid/widget/RelativeLayout;
+    .end local v24    # "layoutImageInput":Landroid/widget/RelativeLayout;
+    .end local v26    # "layoutInfoCheckbox":Landroid/widget/RelativeLayout;
+    .end local v27    # "layoutInfoChoice":Landroid/widget/RelativeLayout;
+    .end local v29    # "layoutInfoEmotion":Landroid/widget/LinearLayout;
+    .end local v30    # "layoutInfoInput":Landroid/widget/RelativeLayout;
+    .end local v31    # "layoutInfoLocation":Landroid/widget/LinearLayout;
+    .end local v32    # "layoutInfoRate":Landroid/widget/LinearLayout;
+    .end local v33    # "layoutInfoTextArea":Landroid/widget/RelativeLayout;
+    .end local v35    # "layoutQuestionwithBox":Landroid/widget/RelativeLayout;
+    .end local v37    # "layoutScanCodeInput":Landroid/widget/RelativeLayout;
+    .end local v38    # "layoutTime":Landroid/widget/RelativeLayout;
+    :cond_37c
+    :goto_37c
+    add-int/lit8 v22, v22, 0x1
+
+    goto/16 :goto_1ba
+
+    .line 1240
+    .restart local v11    # "etFieldInputCode":Landroid/widget/TextView;
+    .restart local v23    # "layoutDate":Landroid/widget/RelativeLayout;
+    .restart local v24    # "layoutImageInput":Landroid/widget/RelativeLayout;
+    .restart local v26    # "layoutInfoCheckbox":Landroid/widget/RelativeLayout;
+    .restart local v27    # "layoutInfoChoice":Landroid/widget/RelativeLayout;
+    .restart local v29    # "layoutInfoEmotion":Landroid/widget/LinearLayout;
+    .restart local v30    # "layoutInfoInput":Landroid/widget/RelativeLayout;
+    .restart local v31    # "layoutInfoLocation":Landroid/widget/LinearLayout;
+    .restart local v32    # "layoutInfoRate":Landroid/widget/LinearLayout;
+    .restart local v33    # "layoutInfoTextArea":Landroid/widget/RelativeLayout;
+    .restart local v35    # "layoutQuestionwithBox":Landroid/widget/RelativeLayout;
+    .restart local v37    # "layoutScanCodeInput":Landroid/widget/RelativeLayout;
+    .restart local v38    # "layoutTime":Landroid/widget/RelativeLayout;
+    :cond_380
+    const/16 v40, 0x1
+
+    .line 1242
+    goto :goto_37c
+
+    .end local v11    # "etFieldInputCode":Landroid/widget/TextView;
+    :cond_383
+    invoke-virtual/range {v24 .. v24}, Landroid/widget/RelativeLayout;->getVisibility()I
+
+    move-result v56
+
+    if-nez v56, :cond_3f0
+
+    .line 1243
+    sget v56, Lic/buzzebeeslib/R$id;->etFieldInputImage:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v12
+
+    check-cast v12, Landroid/widget/TextView;
+
+    .line 1245
+    .local v12, "etFieldInputImage":Landroid/widget/TextView;
+    invoke-virtual {v12}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v56
+
+    invoke-interface/range {v56 .. v56}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v56
+
+    const-string v57, ""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v56
+
+    if-nez v56, :cond_3ed
+
+    .line 1246
+    new-instance v56, Ljava/lang/StringBuilder;
+
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v48
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v49
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "\""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual {v12}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v57
+
+    invoke-interface/range {v57 .. v57}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-virtual/range {v57 .. v57}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "\""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
+
+    .line 1247
+    const-string v48, ""
+
+    .line 1248
+    const-string v49, ","
+
+    .line 1249
+    const-string v47, ","
+
+    .line 1250
+    const/16 v40, 0x0
+
+    .line 1251
+    const/16 v18, 0x1
+
+    .line 1252
+    goto :goto_37c
+
+    .line 1253
+    :cond_3ed
+    const/16 v40, 0x1
+
+    .line 1255
+    goto :goto_37c
+
+    .end local v12    # "etFieldInputImage":Landroid/widget/TextView;
+    :cond_3f0
+    invoke-virtual/range {v32 .. v32}, Landroid/widget/LinearLayout;->getVisibility()I
+
+    move-result v56
+
+    if-nez v56, :cond_452
+
+    .line 1256
+    sget v56, Lic/buzzebeeslib/R$id;->etFieldInputRateValue:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v15
+
+    check-cast v15, Landroid/widget/TextView;
+
+    .line 1257
+    .local v15, "etFieldInputRateValue":Landroid/widget/TextView;
+    invoke-virtual {v15}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v56
+
+    invoke-interface/range {v56 .. v56}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v56
+
+    const-string v57, ""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v56
+
+    if-nez v56, :cond_44f
+
+    .line 1258
+    new-instance v56, Ljava/lang/StringBuilder;
+
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v47
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "{answer:"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual {v15}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v57
+
+    invoke-interface/range {v57 .. v57}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "}"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
+
+    .line 1259
+    const-string v47, ","
+
+    .line 1260
+    const/16 v40, 0x0
+
+    .line 1261
+    const/16 v18, 0x1
+
+    .line 1265
+    :goto_449
+    invoke-virtual/range {v36 .. v36}, Landroid/widget/LinearLayout;->getChildCount()I
+
+    move-result v22
+
+    .line 1266
+    goto/16 :goto_37c
+
+    .line 1263
+    :cond_44f
+    const/16 v40, 0x1
+
+    goto :goto_449
+
+    .line 1266
+    .end local v15    # "etFieldInputRateValue":Landroid/widget/TextView;
+    :cond_452
+    invoke-virtual/range {v29 .. v29}, Landroid/widget/LinearLayout;->getVisibility()I
+
+    move-result v56
+
+    if-nez v56, :cond_4b4
+
+    .line 1267
+    sget v56, Lic/buzzebeeslib/R$id;->etFieldInputMode:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v14
+
+    check-cast v14, Landroid/widget/TextView;
+
+    .line 1268
+    .local v14, "etFieldInputMode":Landroid/widget/TextView;
+    invoke-virtual {v14}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v56
+
+    invoke-interface/range {v56 .. v56}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v56
+
+    const-string v57, ""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v56
+
+    if-nez v56, :cond_4b1
+
+    .line 1269
+    new-instance v56, Ljava/lang/StringBuilder;
+
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v47
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "{answer:"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual {v14}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v57
+
+    invoke-interface/range {v57 .. v57}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "}"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
+
+    .line 1270
+    const-string v47, ","
+
+    .line 1271
+    const/16 v40, 0x0
+
+    .line 1272
+    const/16 v18, 0x1
+
+    .line 1276
+    :goto_4ab
+    invoke-virtual/range {v36 .. v36}, Landroid/widget/LinearLayout;->getChildCount()I
+
+    move-result v22
+
+    .line 1277
+    goto/16 :goto_37c
+
+    .line 1274
+    :cond_4b1
+    const/16 v40, 0x1
+
+    goto :goto_4ab
+
+    .line 1277
+    .end local v14    # "etFieldInputMode":Landroid/widget/TextView;
+    :cond_4b4
+    invoke-virtual/range {v31 .. v31}, Landroid/widget/LinearLayout;->getVisibility()I
+
+    move-result v56
+
+    if-nez v56, :cond_53b
+
+    .line 1278
+    sget v56, Lic/buzzebeeslib/R$id;->etFieldInputLocation:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v13
+
+    check-cast v13, Landroid/widget/TextView;
+
+    .line 1279
+    .local v13, "etFieldInputLocation":Landroid/widget/TextView;
+    invoke-virtual {v13}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v56
+
+    invoke-interface/range {v56 .. v56}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v56
+
+    const-string v57, ""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v56
+
+    if-nez v56, :cond_537
+
+    .line 1280
+    new-instance v56, Ljava/lang/StringBuilder;
+
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v47
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "{latitude:"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v56
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->gAdBuzzItems:Ljava/util/ArrayList;
+    iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lic/buzzebeeslib/activity/SurveyFragmentActivity;
 
-    move-object/from16 v55, v0
+    move-object/from16 v57, v0
 
-    add-int/lit8 v57, v16, -0x1
+    move-object/from16 v0, v57
 
-    move-object/from16 v0, v55
+    iget-wide v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->lat:D
 
-    move/from16 v1, v57
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v55
-
-    check-cast v55, Lic/buzzebeeslib/bean/AdBuzzItem;
-
-    move-object/from16 v0, v55
-
-    iget-object v0, v0, Lic/buzzebeeslib/bean/AdBuzzItem;->campaignExtraSurveyPage:Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;
-
-    move-object/from16 v55, v0
-
-    move-object/from16 v0, v55
-
-    iget-object v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;->inputs:Ljava/util/ArrayList;
-
-    move-object/from16 v55, v0
-
-    add-int/lit8 v57, v21, -0x3
-
-    move-object/from16 v0, v55
-
-    move/from16 v1, v57
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v55
-
-    check-cast v55, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;
-
-    move-object/from16 v0, v55
-
-    iget v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;->index:I
-
-    move/from16 v55, v0
+    move-wide/from16 v58, v0
 
     move-object/from16 v0, v56
 
-    move/from16 v1, v55
+    move-wide/from16 v1, v58
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, ","
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "longitude:"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lic/buzzebeeslib/activity/SurveyFragmentActivity;
+
+    move-object/from16 v57, v0
+
+    move-object/from16 v0, v57
+
+    iget-wide v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity;->lng:D
+
+    move-wide/from16 v58, v0
+
+    move-object/from16 v0, v56
+
+    move-wide/from16 v1, v58
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "}"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
+
+    .line 1281
+    const-string v47, ","
+
+    .line 1282
+    const/16 v40, 0x0
+
+    .line 1283
+    const/16 v18, 0x1
+
+    .line 1284
+    goto/16 :goto_37c
+
+    .line 1285
+    :cond_537
+    const/16 v40, 0x1
+
+    .line 1287
+    goto/16 :goto_37c
+
+    .end local v13    # "etFieldInputLocation":Landroid/widget/TextView;
+    :cond_53b
+    invoke-virtual/range {v34 .. v34}, Landroid/widget/RelativeLayout;->getVisibility()I
+
+    move-result v56
+
+    if-nez v56, :cond_5b8
+
+    .line 1288
+    sget v56, Lic/buzzebeeslib/R$id;->tvFieldAnswer:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v6
+
+    check-cast v6, Landroid/widget/CheckBox;
+
+    .line 1289
+    .local v6, "chkFieldChoice":Landroid/widget/CheckBox;
+    invoke-virtual {v6}, Landroid/widget/CheckBox;->isChecked()Z
+
+    move-result v56
+
+    if-eqz v56, :cond_5b4
+
+    .line 1290
+    new-instance v56, Ljava/lang/StringBuilder;
+
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v47
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "{answer:"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v57
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->gAdBuzzItems:Ljava/util/ArrayList;
+
+    move-object/from16 v56, v0
+
+    add-int/lit8 v58, v17, -0x1
+
+    move-object/from16 v0, v56
+
+    move/from16 v1, v58
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v56
+
+    check-cast v56, Lic/buzzebeeslib/bean/AdBuzzItem;
+
+    move-object/from16 v0, v56
+
+    iget-object v0, v0, Lic/buzzebeeslib/bean/AdBuzzItem;->campaignExtraSurveyPage:Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;
+
+    move-object/from16 v56, v0
+
+    move-object/from16 v0, v56
+
+    iget-object v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;->inputs:Ljava/util/ArrayList;
+
+    move-object/from16 v56, v0
+
+    add-int/lit8 v58, v22, -0x3
+
+    move-object/from16 v0, v56
+
+    move/from16 v1, v58
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v56
+
+    check-cast v56, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;
+
+    move-object/from16 v0, v56
+
+    iget v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;->index:I
+
+    move/from16 v56, v0
+
+    move-object/from16 v0, v57
+
+    move/from16 v1, v56
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v55
+    move-result-object v56
 
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v57, "}"
 
-    move-result-object v19
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1327
-    const-string v42, ""
+    move-result-object v56
 
-    .line 1328
-    const-string v41, ","
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 1329
-    const-string v46, ","
+    move-result-object v20
 
-    .line 1330
-    const/16 v39, 0x0
+    .line 1291
+    const-string v47, ","
 
-    .line 1331
-    const/16 v17, 0x1
+    .line 1292
+    const/16 v40, 0x0
 
-    .line 1333
-    :cond_763
-    invoke-virtual/range {v27 .. v27}, Landroid/widget/RelativeLayout;->getVisibility()I
+    .line 1293
+    const/16 v18, 0x1
 
-    move-result v55
+    .line 1294
+    goto/16 :goto_37c
 
-    if-nez v55, :cond_795
+    .line 1295
+    :cond_5b4
+    const/16 v40, 0x1
 
-    .line 1334
-    sget v55, Lic/buzzebeeslib/R$id;->etFieldInputChoice:I
+    .line 1298
+    goto/16 :goto_37c
 
-    move-object/from16 v0, v53
+    .end local v6    # "chkFieldChoice":Landroid/widget/CheckBox;
+    :cond_5b8
+    invoke-virtual/range {v35 .. v35}, Landroid/widget/RelativeLayout;->getVisibility()I
 
-    move/from16 v1, v55
+    move-result v56
+
+    if-nez v56, :cond_6e6
+
+    .line 1300
+    sget v56, Lic/buzzebeeslib/R$id;->tvFieldAnswerBox:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v52
+
+    check-cast v52, Landroid/widget/CheckBox;
+
+    .line 1301
+    .local v52, "tvFieldAnswerBox":Landroid/widget/CheckBox;
+    sget v56, Lic/buzzebeeslib/R$id;->layoutInfoAnswerEdt:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v25
+
+    check-cast v25, Landroid/widget/RelativeLayout;
+
+    .line 1302
+    .local v25, "layoutInfoAnswerEdt":Landroid/widget/RelativeLayout;
+    invoke-virtual/range {v52 .. v52}, Landroid/widget/CheckBox;->isChecked()Z
+
+    move-result v56
+
+    if-eqz v56, :cond_641
+
+    .line 1303
+    new-instance v56, Ljava/lang/StringBuilder;
+
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v47
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "{answer:"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v57
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->gAdBuzzItems:Ljava/util/ArrayList;
+
+    move-object/from16 v56, v0
+
+    add-int/lit8 v58, v17, -0x1
+
+    move-object/from16 v0, v56
+
+    move/from16 v1, v58
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v56
+
+    check-cast v56, Lic/buzzebeeslib/bean/AdBuzzItem;
+
+    move-object/from16 v0, v56
+
+    iget-object v0, v0, Lic/buzzebeeslib/bean/AdBuzzItem;->campaignExtraSurveyPage:Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;
+
+    move-object/from16 v56, v0
+
+    move-object/from16 v0, v56
+
+    iget-object v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;->inputs:Ljava/util/ArrayList;
+
+    move-object/from16 v56, v0
+
+    add-int/lit8 v58, v22, -0x3
+
+    move-object/from16 v0, v56
+
+    move/from16 v1, v58
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v56
+
+    check-cast v56, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;
+
+    move-object/from16 v0, v56
+
+    iget v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;->index:I
+
+    move/from16 v56, v0
+
+    move-object/from16 v0, v57
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, ", choice_input :\""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "\"}"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
+
+    .line 1304
+    const-string v47, ","
+
+    .line 1305
+    const/16 v40, 0x0
+
+    .line 1306
+    const/16 v18, 0x1
+
+    .line 1308
+    :cond_641
+    invoke-virtual/range {v25 .. v25}, Landroid/widget/RelativeLayout;->getVisibility()I
+
+    move-result v56
+
+    if-nez v56, :cond_6d6
+
+    .line 1309
+    sget v56, Lic/buzzebeeslib/R$id;->etFieldInputAnswer:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7762,280 +7445,554 @@
 
     check-cast v9, Landroid/widget/EditText;
 
-    .line 1335
-    .local v9, "etFieldInputChoice":Landroid/widget/EditText;
+    .line 1310
+    .local v9, "etFieldInputAnswer":Landroid/widget/EditText;
     invoke-virtual {v9}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v55
-
-    invoke-interface/range {v55 .. v55}, Landroid/text/Editable;->toString()Ljava/lang/String;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/String;->length()I
-
-    move-result v55
-
-    if-lez v55, :cond_795
-
-    .line 1336
-    const-string v42, ""
-
-    .line 1337
-    invoke-virtual {v9}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v55
-
-    invoke-interface/range {v55 .. v55}, Landroid/text/Editable;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 1338
-    const/16 v39, 0x0
-
-    .line 1339
-    const/16 v17, 0x1
-
-    .line 1342
-    .end local v9    # "etFieldInputChoice":Landroid/widget/EditText;
-    :cond_795
-    invoke-virtual {v5}, Landroid/widget/CheckBox;->isChecked()Z
-
-    move-result v55
-
-    if-nez v55, :cond_37c
-
-    invoke-virtual/range {v27 .. v27}, Landroid/widget/RelativeLayout;->getVisibility()I
-
-    move-result v55
-
-    if-eqz v55, :cond_37c
-
-    .line 1343
-    const/16 v39, 0x1
-
-    .line 1345
-    goto/16 :goto_37c
-
-    .end local v5    # "chkFieldChoice":Landroid/widget/CheckBox;
-    .end local v27    # "layoutInfoChoiceEdt":Landroid/widget/RelativeLayout;
-    :cond_7a5
-    invoke-virtual/range {v25 .. v25}, Landroid/widget/RelativeLayout;->getVisibility()I
-
-    move-result v55
-
-    if-nez v55, :cond_822
-
-    .line 1346
-    sget v55, Lic/buzzebeeslib/R$id;->chkFieldCheckbox:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/widget/CheckBox;
-
-    .line 1347
-    .local v4, "chkFieldCheckbox":Landroid/widget/CheckBox;
-    invoke-virtual {v4}, Landroid/widget/CheckBox;->isChecked()Z
-
-    move-result v55
-
-    if-eqz v55, :cond_81e
-
-    .line 1348
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v56
 
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-interface/range {v56 .. v56}, Landroid/text/Editable;->toString()Ljava/lang/String;
 
-    move-object/from16 v0, v55
+    move-result-object v56
 
-    move-object/from16 v1, v43
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v56
 
-    move-result-object v55
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/String;->length()I
 
-    move-object/from16 v0, v55
+    move-result v56
 
-    move-object/from16 v1, v40
+    if-lez v56, :cond_6d6
+
+    .line 1311
+    new-instance v56, Ljava/lang/StringBuilder;
+
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v47
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v56
+
+    const-string v57, "{answer:"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v57
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->gAdBuzzItems:Ljava/util/ArrayList;
 
-    move-object/from16 v55, v0
+    move-object/from16 v56, v0
 
-    add-int/lit8 v57, v16, -0x1
-
-    move-object/from16 v0, v55
-
-    move/from16 v1, v57
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v55
-
-    check-cast v55, Lic/buzzebeeslib/bean/AdBuzzItem;
-
-    move-object/from16 v0, v55
-
-    iget-object v0, v0, Lic/buzzebeeslib/bean/AdBuzzItem;->campaignExtraSurveyPage:Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;
-
-    move-object/from16 v55, v0
-
-    move-object/from16 v0, v55
-
-    iget-object v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;->inputs:Ljava/util/ArrayList;
-
-    move-object/from16 v55, v0
-
-    add-int/lit8 v57, v21, -0x3
-
-    move-object/from16 v0, v55
-
-    move/from16 v1, v57
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v55
-
-    check-cast v55, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;
-
-    move-object/from16 v0, v55
-
-    iget v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;->index:I
-
-    move/from16 v55, v0
+    add-int/lit8 v58, v17, -0x1
 
     move-object/from16 v0, v56
 
-    move/from16 v1, v55
+    move/from16 v1, v58
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v56
+
+    check-cast v56, Lic/buzzebeeslib/bean/AdBuzzItem;
+
+    move-object/from16 v0, v56
+
+    iget-object v0, v0, Lic/buzzebeeslib/bean/AdBuzzItem;->campaignExtraSurveyPage:Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;
+
+    move-object/from16 v56, v0
+
+    move-object/from16 v0, v56
+
+    iget-object v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;->inputs:Ljava/util/ArrayList;
+
+    move-object/from16 v56, v0
+
+    add-int/lit8 v58, v22, -0x3
+
+    move-object/from16 v0, v56
+
+    move/from16 v1, v58
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v56
+
+    check-cast v56, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;
+
+    move-object/from16 v0, v56
+
+    iget v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;->index:I
+
+    move/from16 v56, v0
+
+    move-object/from16 v0, v57
+
+    move/from16 v1, v56
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v55
+    move-result-object v56
 
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v57, ", choice_input :\""
 
-    move-result-object v19
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1349
+    move-result-object v56
+
+    invoke-virtual {v9}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v57
+
+    invoke-interface/range {v57 .. v57}, Landroid/text/Editable;->toString()Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "\"}"
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
+
+    .line 1312
+    const-string v47, ","
+
+    .line 1313
+    const/16 v40, 0x0
+
+    .line 1314
+    const/16 v18, 0x1
+
+    .line 1317
+    .end local v9    # "etFieldInputAnswer":Landroid/widget/EditText;
+    :cond_6d6
+    invoke-virtual/range {v52 .. v52}, Landroid/widget/CheckBox;->isChecked()Z
+
+    move-result v56
+
+    if-nez v56, :cond_37c
+
+    invoke-virtual/range {v25 .. v25}, Landroid/widget/RelativeLayout;->getVisibility()I
+
+    move-result v56
+
+    if-eqz v56, :cond_37c
+
+    .line 1318
+    const/16 v40, 0x1
+
+    .line 1321
+    goto/16 :goto_37c
+
+    .end local v25    # "layoutInfoAnswerEdt":Landroid/widget/RelativeLayout;
+    .end local v52    # "tvFieldAnswerBox":Landroid/widget/CheckBox;
+    :cond_6e6
+    invoke-virtual/range {v27 .. v27}, Landroid/widget/RelativeLayout;->getVisibility()I
+
+    move-result v56
+
+    if-nez v56, :cond_7ad
+
+    .line 1322
+    sget v56, Lic/buzzebeeslib/R$id;->chkFieldChoice:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v6
+
+    check-cast v6, Landroid/widget/CheckBox;
+
+    .line 1323
+    .restart local v6    # "chkFieldChoice":Landroid/widget/CheckBox;
+    sget v56, Lic/buzzebeeslib/R$id;->layoutInfoChoiceEdt:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v28
+
+    check-cast v28, Landroid/widget/RelativeLayout;
+
+    .line 1324
+    .local v28, "layoutInfoChoiceEdt":Landroid/widget/RelativeLayout;
+    invoke-virtual {v6}, Landroid/widget/CheckBox;->isChecked()Z
+
+    move-result v56
+
+    if-eqz v56, :cond_76b
+
+    .line 1325
+    const/16 v21, 0x1
+
+    .line 1326
+    new-instance v56, Ljava/lang/StringBuilder;
+
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v43
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v42
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v57
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->gAdBuzzItems:Ljava/util/ArrayList;
+
+    move-object/from16 v56, v0
+
+    add-int/lit8 v58, v17, -0x1
+
+    move-object/from16 v0, v56
+
+    move/from16 v1, v58
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v56
+
+    check-cast v56, Lic/buzzebeeslib/bean/AdBuzzItem;
+
+    move-object/from16 v0, v56
+
+    iget-object v0, v0, Lic/buzzebeeslib/bean/AdBuzzItem;->campaignExtraSurveyPage:Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;
+
+    move-object/from16 v56, v0
+
+    move-object/from16 v0, v56
+
+    iget-object v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;->inputs:Ljava/util/ArrayList;
+
+    move-object/from16 v56, v0
+
+    add-int/lit8 v58, v22, -0x3
+
+    move-object/from16 v0, v56
+
+    move/from16 v1, v58
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v56
+
+    check-cast v56, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;
+
+    move-object/from16 v0, v56
+
+    iget v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;->index:I
+
+    move/from16 v56, v0
+
+    move-object/from16 v0, v57
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
+
+    .line 1327
     const-string v43, ""
 
+    .line 1328
+    const-string v42, ","
+
+    .line 1329
+    const-string v47, ","
+
+    .line 1330
+    const/16 v40, 0x0
+
+    .line 1331
+    const/16 v18, 0x1
+
+    .line 1333
+    :cond_76b
+    invoke-virtual/range {v28 .. v28}, Landroid/widget/RelativeLayout;->getVisibility()I
+
+    move-result v56
+
+    if-nez v56, :cond_79d
+
+    .line 1334
+    sget v56, Lic/buzzebeeslib/R$id;->etFieldInputChoice:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v10
+
+    check-cast v10, Landroid/widget/EditText;
+
+    .line 1335
+    .local v10, "etFieldInputChoice":Landroid/widget/EditText;
+    invoke-virtual {v10}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v56
+
+    invoke-interface/range {v56 .. v56}, Landroid/text/Editable;->toString()Ljava/lang/String;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/String;->length()I
+
+    move-result v56
+
+    if-lez v56, :cond_79d
+
+    .line 1336
+    const-string v43, ""
+
+    .line 1337
+    invoke-virtual {v10}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v56
+
+    invoke-interface/range {v56 .. v56}, Landroid/text/Editable;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 1338
+    const/16 v40, 0x0
+
+    .line 1339
+    const/16 v18, 0x1
+
+    .line 1342
+    .end local v10    # "etFieldInputChoice":Landroid/widget/EditText;
+    :cond_79d
+    invoke-virtual {v6}, Landroid/widget/CheckBox;->isChecked()Z
+
+    move-result v56
+
+    if-nez v56, :cond_37c
+
+    invoke-virtual/range {v28 .. v28}, Landroid/widget/RelativeLayout;->getVisibility()I
+
+    move-result v56
+
+    if-eqz v56, :cond_37c
+
+    .line 1343
+    const/16 v40, 0x1
+
+    .line 1345
+    goto/16 :goto_37c
+
+    .end local v6    # "chkFieldChoice":Landroid/widget/CheckBox;
+    .end local v28    # "layoutInfoChoiceEdt":Landroid/widget/RelativeLayout;
+    :cond_7ad
+    invoke-virtual/range {v26 .. v26}, Landroid/widget/RelativeLayout;->getVisibility()I
+
+    move-result v56
+
+    if-nez v56, :cond_82a
+
+    .line 1346
+    sget v56, Lic/buzzebeeslib/R$id;->chkFieldCheckbox:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/widget/CheckBox;
+
+    .line 1347
+    .local v5, "chkFieldCheckbox":Landroid/widget/CheckBox;
+    invoke-virtual {v5}, Landroid/widget/CheckBox;->isChecked()Z
+
+    move-result v56
+
+    if-eqz v56, :cond_826
+
+    .line 1348
+    new-instance v56, Ljava/lang/StringBuilder;
+
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v44
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v41
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v57
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lic/buzzebeeslib/activity/SurveyFragmentActivity$AdsPagerAdapter;->gAdBuzzItems:Ljava/util/ArrayList;
+
+    move-object/from16 v56, v0
+
+    add-int/lit8 v58, v17, -0x1
+
+    move-object/from16 v0, v56
+
+    move/from16 v1, v58
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v56
+
+    check-cast v56, Lic/buzzebeeslib/bean/AdBuzzItem;
+
+    move-object/from16 v0, v56
+
+    iget-object v0, v0, Lic/buzzebeeslib/bean/AdBuzzItem;->campaignExtraSurveyPage:Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;
+
+    move-object/from16 v56, v0
+
+    move-object/from16 v0, v56
+
+    iget-object v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPage;->inputs:Ljava/util/ArrayList;
+
+    move-object/from16 v56, v0
+
+    add-int/lit8 v58, v22, -0x3
+
+    move-object/from16 v0, v56
+
+    move/from16 v1, v58
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v56
+
+    check-cast v56, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;
+
+    move-object/from16 v0, v56
+
+    iget v0, v0, Lic/buzzebeeslib/bean/CampaignExtraSurveyPageInput;->index:I
+
+    move/from16 v56, v0
+
+    move-object/from16 v0, v57
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
+
+    .line 1349
+    const-string v44, ""
+
     .line 1350
-    const-string v40, ","
+    const-string v41, ","
 
     .line 1351
-    const-string v46, ","
+    const-string v47, ","
 
     .line 1352
-    const/16 v39, 0x0
+    const/16 v40, 0x0
 
     .line 1353
-    const/16 v17, 0x1
+    const/16 v18, 0x1
 
     .line 1354
     goto/16 :goto_37c
 
     .line 1355
-    :cond_81e
-    const/16 v39, 0x1
+    :cond_826
+    const/16 v40, 0x1
 
     .line 1358
     goto/16 :goto_37c
 
-    .end local v4    # "chkFieldCheckbox":Landroid/widget/CheckBox;
-    :cond_822
-    invoke-virtual/range {v29 .. v29}, Landroid/widget/RelativeLayout;->getVisibility()I
+    .end local v5    # "chkFieldCheckbox":Landroid/widget/CheckBox;
+    :cond_82a
+    invoke-virtual/range {v30 .. v30}, Landroid/widget/RelativeLayout;->getVisibility()I
 
-    move-result v55
+    move-result v56
 
-    if-nez v55, :cond_891
+    if-nez v56, :cond_899
 
     .line 1359
-    sget v55, Lic/buzzebeeslib/R$id;->etFieldInput:I
+    sget v56, Lic/buzzebeeslib/R$id;->etFieldInput:I
 
-    move-object/from16 v0, v53
+    move-object/from16 v0, v54
 
-    move/from16 v1, v55
+    move/from16 v1, v56
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v7
+    move-result-object v8
 
-    check-cast v7, Landroid/widget/EditText;
+    check-cast v8, Landroid/widget/EditText;
 
     .line 1360
-    .local v7, "etFieldInput":Landroid/widget/EditText;
-    invoke-virtual {v7}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v55
-
-    invoke-interface/range {v55 .. v55}, Landroid/text/Editable;->toString()Ljava/lang/String;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v55
-
-    const-string v56, ""
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v55
-
-    if-nez v55, :cond_88d
-
-    .line 1361
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v55
-
-    move-object/from16 v1, v49
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    move-object/from16 v0, v55
-
-    move-object/from16 v1, v48
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "\""
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual {v7}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+    .local v8, "etFieldInput":Landroid/widget/EditText;
+    invoke-virtual {v8}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v56
 
@@ -8047,120 +8004,120 @@
 
     move-result-object v56
 
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v57, ""
 
-    move-result-object v55
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const-string v56, "\""
+    move-result v56
 
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-nez v56, :cond_895
 
-    move-result-object v55
+    .line 1361
+    new-instance v56, Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v50
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v49
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "\""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual {v8}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v57
+
+    invoke-interface/range {v57 .. v57}, Landroid/text/Editable;->toString()Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-virtual/range {v57 .. v57}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "\""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
 
     .line 1362
-    const-string v49, ""
+    const-string v50, ""
 
     .line 1363
-    const-string v48, ","
+    const-string v49, ","
 
     .line 1364
-    const-string v46, ","
+    const-string v47, ","
 
     .line 1365
-    const/16 v39, 0x0
+    const/16 v40, 0x0
 
     .line 1366
-    const/16 v17, 0x1
+    const/16 v18, 0x1
 
     .line 1367
     goto/16 :goto_37c
 
     .line 1368
-    :cond_88d
-    const/16 v39, 0x1
+    :cond_895
+    const/16 v40, 0x1
 
     .line 1370
     goto/16 :goto_37c
 
-    .end local v7    # "etFieldInput":Landroid/widget/EditText;
-    :cond_891
-    invoke-virtual/range {v37 .. v37}, Landroid/widget/RelativeLayout;->getVisibility()I
+    .end local v8    # "etFieldInput":Landroid/widget/EditText;
+    :cond_899
+    invoke-virtual/range {v38 .. v38}, Landroid/widget/RelativeLayout;->getVisibility()I
 
-    move-result v55
+    move-result v56
 
-    if-nez v55, :cond_900
+    if-nez v56, :cond_908
 
     .line 1371
-    sget v55, Lic/buzzebeeslib/R$id;->etFieldInputTime:I
+    sget v56, Lic/buzzebeeslib/R$id;->etFieldInputTime:I
 
-    move-object/from16 v0, v53
+    move-object/from16 v0, v54
 
-    move/from16 v1, v55
+    move/from16 v1, v56
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v7
+    move-result-object v8
 
-    check-cast v7, Landroid/widget/TextView;
+    check-cast v8, Landroid/widget/TextView;
 
     .line 1372
-    .local v7, "etFieldInput":Landroid/widget/TextView;
-    invoke-virtual {v7}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v55
-
-    invoke-interface/range {v55 .. v55}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v55
-
-    const-string v56, ""
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v55
-
-    if-nez v55, :cond_8fc
-
-    .line 1373
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v55
-
-    move-object/from16 v1, v49
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    move-object/from16 v0, v55
-
-    move-object/from16 v1, v48
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "\""
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual {v7}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+    .local v8, "etFieldInput":Landroid/widget/TextView;
+    invoke-virtual {v8}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v56
 
@@ -8172,120 +8129,120 @@
 
     move-result-object v56
 
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v57, ""
 
-    move-result-object v55
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const-string v56, "\""
+    move-result v56
 
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-nez v56, :cond_904
 
-    move-result-object v55
+    .line 1373
+    new-instance v56, Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v50
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v49
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "\""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual {v8}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v57
+
+    invoke-interface/range {v57 .. v57}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-virtual/range {v57 .. v57}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "\""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
 
     .line 1374
-    const-string v49, ""
+    const-string v50, ""
 
     .line 1375
-    const-string v48, ","
+    const-string v49, ","
 
     .line 1376
-    const-string v46, ","
+    const-string v47, ","
 
     .line 1377
-    const/16 v39, 0x0
+    const/16 v40, 0x0
 
     .line 1378
-    const/16 v17, 0x1
+    const/16 v18, 0x1
 
     .line 1379
     goto/16 :goto_37c
 
     .line 1380
-    :cond_8fc
-    const/16 v39, 0x1
+    :cond_904
+    const/16 v40, 0x1
 
     .line 1382
     goto/16 :goto_37c
 
-    .end local v7    # "etFieldInput":Landroid/widget/TextView;
-    :cond_900
-    invoke-virtual/range {v22 .. v22}, Landroid/widget/RelativeLayout;->getVisibility()I
+    .end local v8    # "etFieldInput":Landroid/widget/TextView;
+    :cond_908
+    invoke-virtual/range {v23 .. v23}, Landroid/widget/RelativeLayout;->getVisibility()I
 
-    move-result v55
+    move-result v56
 
-    if-nez v55, :cond_96f
+    if-nez v56, :cond_977
 
     .line 1383
-    sget v55, Lic/buzzebeeslib/R$id;->etFieldInputDate:I
+    sget v56, Lic/buzzebeeslib/R$id;->etFieldInputDate:I
 
-    move-object/from16 v0, v53
+    move-object/from16 v0, v54
 
-    move/from16 v1, v55
+    move/from16 v1, v56
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v7
+    move-result-object v8
 
-    check-cast v7, Landroid/widget/TextView;
+    check-cast v8, Landroid/widget/TextView;
 
     .line 1384
-    .restart local v7    # "etFieldInput":Landroid/widget/TextView;
-    invoke-virtual {v7}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v55
-
-    invoke-interface/range {v55 .. v55}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v55
-
-    const-string v56, ""
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v55
-
-    if-nez v55, :cond_96b
-
-    .line 1385
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v56
-
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v55
-
-    move-object/from16 v1, v49
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    move-object/from16 v0, v55
-
-    move-object/from16 v1, v48
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    const-string v56, "\""
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual {v7}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+    .restart local v8    # "etFieldInput":Landroid/widget/TextView;
+    invoke-virtual {v8}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v56
 
@@ -8297,120 +8254,120 @@
 
     move-result-object v56
 
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v57, ""
 
-    move-result-object v55
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const-string v56, "\""
+    move-result v56
 
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-nez v56, :cond_973
 
-    move-result-object v55
+    .line 1385
+    new-instance v56, Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v57
 
-    .line 1386
-    const-string v49, ""
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 1387
-    const-string v48, ","
+    move-object/from16 v0, v56
 
-    .line 1388
-    const-string v46, ","
+    move-object/from16 v1, v50
 
-    .line 1389
-    const/16 v39, 0x0
-
-    .line 1390
-    const/16 v17, 0x1
-
-    .line 1391
-    goto/16 :goto_37c
-
-    .line 1392
-    :cond_96b
-    const/16 v39, 0x1
-
-    .line 1394
-    goto/16 :goto_37c
-
-    .end local v7    # "etFieldInput":Landroid/widget/TextView;
-    :cond_96f
-    invoke-virtual/range {v32 .. v32}, Landroid/widget/RelativeLayout;->getVisibility()I
-
-    move-result v55
-
-    if-nez v55, :cond_37c
-
-    .line 1395
-    sget v55, Lic/buzzebeeslib/R$id;->etFieldTextArea:I
-
-    move-object/from16 v0, v53
-
-    move/from16 v1, v55
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v15
-
-    check-cast v15, Landroid/widget/EditText;
-
-    .line 1396
-    .local v15, "etFieldTextArea":Landroid/widget/EditText;
-    invoke-virtual {v15}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v55
-
-    invoke-interface/range {v55 .. v55}, Landroid/text/Editable;->toString()Ljava/lang/String;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v55
-
-    const-string v56, ""
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v55
-
-    if-nez v55, :cond_9da
-
-    .line 1397
-    new-instance v55, Ljava/lang/StringBuilder;
-
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v56
 
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v55
+    move-object/from16 v0, v56
 
     move-object/from16 v1, v49
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v55
+    move-result-object v56
 
-    move-object/from16 v0, v55
+    const-string v57, "\""
 
-    move-object/from16 v1, v48
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v56
 
-    move-result-object v55
+    invoke-virtual {v8}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
-    const-string v56, "\""
+    move-result-object v57
 
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface/range {v57 .. v57}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
-    move-result-object v55
+    move-result-object v57
 
-    invoke-virtual {v15}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+    invoke-virtual/range {v57 .. v57}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "\""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
+
+    .line 1386
+    const-string v50, ""
+
+    .line 1387
+    const-string v49, ","
+
+    .line 1388
+    const-string v47, ","
+
+    .line 1389
+    const/16 v40, 0x0
+
+    .line 1390
+    const/16 v18, 0x1
+
+    .line 1391
+    goto/16 :goto_37c
+
+    .line 1392
+    :cond_973
+    const/16 v40, 0x1
+
+    .line 1394
+    goto/16 :goto_37c
+
+    .end local v8    # "etFieldInput":Landroid/widget/TextView;
+    :cond_977
+    invoke-virtual/range {v33 .. v33}, Landroid/widget/RelativeLayout;->getVisibility()I
+
+    move-result v56
+
+    if-nez v56, :cond_37c
+
+    .line 1395
+    sget v56, Lic/buzzebeeslib/R$id;->etFieldTextArea:I
+
+    move-object/from16 v0, v54
+
+    move/from16 v1, v56
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v16
+
+    check-cast v16, Landroid/widget/EditText;
+
+    .line 1396
+    .local v16, "etFieldTextArea":Landroid/widget/EditText;
+    invoke-virtual/range {v16 .. v16}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v56
 
@@ -8422,161 +8379,212 @@
 
     move-result-object v56
 
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v57, ""
 
-    move-result-object v55
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const-string v56, "\""
+    move-result v56
 
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-nez v56, :cond_9e2
 
-    move-result-object v55
+    .line 1397
+    new-instance v56, Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v50
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    move-object/from16 v0, v56
+
+    move-object/from16 v1, v49
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "\""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v16 .. v16}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v57
+
+    invoke-interface/range {v57 .. v57}, Landroid/text/Editable;->toString()Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-virtual/range {v57 .. v57}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    const-string v57, "\""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v56
+
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v20
 
     .line 1398
-    const-string v49, ""
+    const-string v50, ""
 
     .line 1399
-    const-string v48, ","
+    const-string v49, ","
 
     .line 1400
-    const-string v46, ","
+    const-string v47, ","
 
     .line 1401
-    const/16 v39, 0x0
+    const/16 v40, 0x0
 
     .line 1402
-    const/16 v17, 0x1
+    const/16 v18, 0x1
 
     .line 1403
     goto/16 :goto_37c
 
     .line 1404
-    :cond_9da
-    const/16 v39, 0x1
+    :cond_9e2
+    const/16 v40, 0x1
 
     goto/16 :goto_37c
 
     .line 1415
-    .end local v15    # "etFieldTextArea":Landroid/widget/EditText;
-    .end local v22    # "layoutDate":Landroid/widget/RelativeLayout;
-    .end local v23    # "layoutImageInput":Landroid/widget/RelativeLayout;
-    .end local v25    # "layoutInfoCheckbox":Landroid/widget/RelativeLayout;
-    .end local v26    # "layoutInfoChoice":Landroid/widget/RelativeLayout;
-    .end local v28    # "layoutInfoEmotion":Landroid/widget/LinearLayout;
-    .end local v29    # "layoutInfoInput":Landroid/widget/RelativeLayout;
-    .end local v30    # "layoutInfoLocation":Landroid/widget/LinearLayout;
-    .end local v31    # "layoutInfoRate":Landroid/widget/LinearLayout;
-    .end local v32    # "layoutInfoTextArea":Landroid/widget/RelativeLayout;
-    .end local v33    # "layoutQuestion":Landroid/widget/RelativeLayout;
-    .end local v34    # "layoutQuestionwithBox":Landroid/widget/RelativeLayout;
-    .end local v36    # "layoutScanCodeInput":Landroid/widget/RelativeLayout;
-    .end local v37    # "layoutTime":Landroid/widget/RelativeLayout;
-    .end local v53    # "view_field_row":Landroid/view/View;
-    :cond_9de
-    const-string v55, ""
+    .end local v16    # "etFieldTextArea":Landroid/widget/EditText;
+    .end local v23    # "layoutDate":Landroid/widget/RelativeLayout;
+    .end local v24    # "layoutImageInput":Landroid/widget/RelativeLayout;
+    .end local v26    # "layoutInfoCheckbox":Landroid/widget/RelativeLayout;
+    .end local v27    # "layoutInfoChoice":Landroid/widget/RelativeLayout;
+    .end local v29    # "layoutInfoEmotion":Landroid/widget/LinearLayout;
+    .end local v30    # "layoutInfoInput":Landroid/widget/RelativeLayout;
+    .end local v31    # "layoutInfoLocation":Landroid/widget/LinearLayout;
+    .end local v32    # "layoutInfoRate":Landroid/widget/LinearLayout;
+    .end local v33    # "layoutInfoTextArea":Landroid/widget/RelativeLayout;
+    .end local v34    # "layoutQuestion":Landroid/widget/RelativeLayout;
+    .end local v35    # "layoutQuestionwithBox":Landroid/widget/RelativeLayout;
+    .end local v37    # "layoutScanCodeInput":Landroid/widget/RelativeLayout;
+    .end local v38    # "layoutTime":Landroid/widget/RelativeLayout;
+    .end local v54    # "view_field_row":Landroid/view/View;
+    :cond_9e6
+    const-string v56, ""
 
-    move-object/from16 v0, v55
+    move-object/from16 v0, v56
 
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v55
+    move-result v56
 
-    if-nez v55, :cond_a0b
+    if-nez v56, :cond_a13
 
-    if-eqz v20, :cond_a0b
+    if-eqz v21, :cond_a13
 
     .line 1416
-    new-instance v55, Ljava/lang/StringBuilder;
+    new-instance v56, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v57, "],check_box_input :\""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v56
 
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-object/from16 v0, v56
 
-    const-string v56, "],check_box_input :\""
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v56
 
-    move-result-object v55
+    const-string v57, "\"}"
 
-    move-object/from16 v0, v55
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v56
 
-    move-result-object v55
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string v56, "\"}"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
+    move-result-object v20
 
     .line 1417
     goto/16 :goto_20c
 
     .line 1418
-    :cond_a0b
-    new-instance v55, Ljava/lang/StringBuilder;
+    :cond_a13
+    new-instance v56, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v57
+
+    invoke-direct/range {v56 .. v57}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v57, ",{check_box:[],check_box_input :\""
+
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v56
 
-    invoke-direct/range {v55 .. v56}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-object/from16 v0, v56
 
-    const-string v56, ",{check_box:[],check_box_input :\""
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v56
 
-    move-result-object v55
+    const-string v57, "\"}"
 
-    move-object/from16 v0, v55
+    invoke-virtual/range {v56 .. v57}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v56
 
-    move-result-object v55
+    invoke-virtual/range {v56 .. v56}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string v56, "\"}"
-
-    invoke-virtual/range {v55 .. v56}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v55
-
-    invoke-virtual/range {v55 .. v55}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
+    move-result-object v20
 
     goto/16 :goto_20c
 
     .line 1438
-    .end local v21    # "j":I
-    .end local v35    # "layoutRootSurvey":Landroid/widget/LinearLayout;
-    .end local v40    # "str_checkbox_comma":Ljava/lang/String;
-    .end local v41    # "str_checkbox_input_comma":Ljava/lang/String;
-    .end local v42    # "str_checkbox_input_prefix":Ljava/lang/String;
-    .end local v43    # "str_checkbox_prefix":Ljava/lang/String;
-    .end local v44    # "str_choice_input_comma":Ljava/lang/String;
-    .end local v45    # "str_choice_input_prefix":Ljava/lang/String;
-    .end local v47    # "str_image_prefix":Ljava/lang/String;
-    .end local v48    # "str_input_comma":Ljava/lang/String;
-    .end local v49    # "str_input_prefix":Ljava/lang/String;
-    .end local v50    # "str_scan_prefix":Ljava/lang/String;
-    .end local v54    # "view_pager_survey":Landroid/view/View;
-    :catch_a2c
-    move-exception v6
+    .end local v22    # "j":I
+    .end local v36    # "layoutRootSurvey":Landroid/widget/LinearLayout;
+    .end local v41    # "str_checkbox_comma":Ljava/lang/String;
+    .end local v42    # "str_checkbox_input_comma":Ljava/lang/String;
+    .end local v43    # "str_checkbox_input_prefix":Ljava/lang/String;
+    .end local v44    # "str_checkbox_prefix":Ljava/lang/String;
+    .end local v45    # "str_choice_input_comma":Ljava/lang/String;
+    .end local v46    # "str_choice_input_prefix":Ljava/lang/String;
+    .end local v48    # "str_image_prefix":Ljava/lang/String;
+    .end local v49    # "str_input_comma":Ljava/lang/String;
+    .end local v50    # "str_input_prefix":Ljava/lang/String;
+    .end local v51    # "str_scan_prefix":Ljava/lang/String;
+    .end local v55    # "view_pager_survey":Landroid/view/View;
+    :catch_a34
+    move-exception v7
 
     .line 1439
-    .local v6, "e":Ljava/io/UnsupportedEncodingException;
-    invoke-virtual {v6}, Ljava/io/UnsupportedEncodingException;->printStackTrace()V
+    .local v7, "e":Ljava/io/UnsupportedEncodingException;
+    invoke-virtual {v7}, Ljava/io/UnsupportedEncodingException;->printStackTrace()V
 
     goto/16 :goto_46
 .end method

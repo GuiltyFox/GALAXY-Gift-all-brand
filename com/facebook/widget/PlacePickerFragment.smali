@@ -797,14 +797,12 @@
 .end method
 
 .method public onInflate(Landroid/app/Activity;Landroid/util/AttributeSet;Landroid/os/Bundle;)V
-    .registers 8
+    .registers 7
     .param p1, "activity"    # Landroid/app/Activity;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
     .param p3, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    const/4 v3, 0x1
-
     .line 246
     invoke-super {p0, p1, p2, p3}, Lcom/facebook/widget/PickerFragment;->onInflate(Landroid/app/Activity;Landroid/util/AttributeSet;Landroid/os/Bundle;)V
 
@@ -817,7 +815,7 @@
 
     .line 249
     .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v1, 0x0
+    sget v1, Lcom/facebook/android/R$styleable;->com_facebook_place_picker_fragment_radius_in_meters:I
 
     iget v2, p0, Lcom/facebook/widget/PlacePickerFragment;->radiusInMeters:I
 
@@ -828,23 +826,27 @@
     invoke-virtual {p0, v1}, Lcom/facebook/widget/PlacePickerFragment;->setRadiusInMeters(I)V
 
     .line 250
-    iget v1, p0, Lcom/facebook/widget/PlacePickerFragment;->resultsLimit:I
+    sget v1, Lcom/facebook/android/R$styleable;->com_facebook_place_picker_fragment_results_limit:I
 
-    invoke-virtual {v0, v3, v1}, Landroid/content/res/TypedArray;->getInt(II)I
+    iget v2, p0, Lcom/facebook/widget/PlacePickerFragment;->resultsLimit:I
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v1
 
     invoke-virtual {p0, v1}, Lcom/facebook/widget/PlacePickerFragment;->setResultsLimit(I)V
 
     .line 251
-    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    sget v1, Lcom/facebook/android/R$styleable;->com_facebook_place_picker_fragment_results_limit:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_30
 
     .line 252
-    const/4 v1, 0x2
+    sget v1, Lcom/facebook/android/R$styleable;->com_facebook_place_picker_fragment_search_text:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -853,8 +855,8 @@
     invoke-virtual {p0, v1}, Lcom/facebook/widget/PlacePickerFragment;->setSearchText(Ljava/lang/String;)V
 
     .line 254
-    :cond_2b
-    const/4 v1, 0x3
+    :cond_30
+    sget v1, Lcom/facebook/android/R$styleable;->com_facebook_place_picker_fragment_show_search_box:I
 
     iget-boolean v2, p0, Lcom/facebook/widget/PlacePickerFragment;->showSearchBox:Z
 

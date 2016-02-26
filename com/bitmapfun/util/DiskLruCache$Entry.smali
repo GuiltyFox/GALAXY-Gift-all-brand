@@ -152,7 +152,7 @@
 .end method
 
 .method static synthetic access$9(Lcom/bitmapfun/util/DiskLruCache$Entry;J)V
-    .registers 3
+    .registers 4
 
     .prologue
     .line 909
@@ -198,7 +198,7 @@
 .end method
 
 .method private setLengths([Ljava/lang/String;)V
-    .registers 7
+    .registers 8
     .param p1, "strings"    # [Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -248,9 +248,9 @@
 
     invoke-static {v3}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    aput-wide v3, v2, v1
+    aput-wide v4, v2, v1
     :try_end_1d
     .catch Ljava/lang/NumberFormatException; {:try_start_f .. :try_end_1d} :catch_20
 
@@ -388,34 +388,34 @@
 
     array-length v5, v4
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     :goto_9
-    if-lt v3, v5, :cond_10
+    if-lt v1, v5, :cond_10
 
     .line 921
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    return-object v3
+    return-object v1
 
     .line 918
     :cond_10
-    aget-wide v1, v4, v3
+    aget-wide v2, v4, v1
 
     .line 919
-    .local v1, "size":J
+    .local v2, "size":J
     const/16 v6, 0x20
 
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v6
 
-    invoke-virtual {v6, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     .line 918
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_9
 .end method

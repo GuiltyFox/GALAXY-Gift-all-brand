@@ -33,7 +33,7 @@
 
     iput-boolean p2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$21;->val$loadMore:Z
 
-    .line 2508
+    .line 2509
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 5
 
     .prologue
-    .line 2511
+    .line 2512
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$21;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->gAdapter:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;
@@ -59,7 +59,7 @@
 
     if-nez v0, :cond_4d
 
-    .line 2512
+    .line 2513
     :cond_c
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$21;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
@@ -78,7 +78,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->access$36(Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;)V
 
-    .line 2513
+    .line 2514
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$21;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->gCampaignBranches:Ljava/util/ArrayList;
@@ -101,7 +101,7 @@
 
     if-lez v0, :cond_42
 
-    .line 2514
+    .line 2515
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$21;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->gListBranch:Landroid/widget/ListView;
@@ -118,11 +118,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 2523
+    .line 2524
     :goto_41
     return-void
 
-    .line 2516
+    .line 2517
     :cond_42
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$21;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
@@ -137,7 +137,7 @@
 
     goto :goto_41
 
-    .line 2519
+    .line 2520
     :cond_4d
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$21;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
@@ -148,7 +148,7 @@
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$CampaignBranchAdapter;->notifyDataSetChanged()V
 
-    .line 2520
+    .line 2521
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$21;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->gListBranch:Landroid/widget/ListView;
@@ -158,7 +158,7 @@
 
     invoke-virtual {v0}, Landroid/widget/ListView;->refreshDrawableState()V
 
-    .line 2521
+    .line 2522
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$21;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->footerListView:Landroid/view/View;

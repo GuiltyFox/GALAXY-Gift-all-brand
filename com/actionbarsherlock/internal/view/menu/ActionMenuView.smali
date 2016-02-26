@@ -975,14 +975,14 @@
 
     .line 204
     .local v26, "minCells":I
-    const-wide/16 v27, 0x0
+    const-wide/16 v28, 0x0
 
     .line 205
-    .local v27, "minCellsAt":J
-    const/16 v29, 0x0
+    .local v28, "minCellsAt":J
+    const/16 v27, 0x0
 
     .line 206
-    .local v29, "minCellsItemCount":I
+    .local v27, "minCellsItemCount":I
     const/16 v21, 0x0
 
     :goto_214
@@ -991,10 +991,10 @@
     if-lt v0, v12, :cond_22a
 
     .line 225
-    or-long v32, v32, v27
+    or-long v32, v32, v28
 
     .line 227
-    move/from16 v0, v29
+    move/from16 v0, v27
 
     if-gt v0, v8, :cond_71
 
@@ -1079,10 +1079,10 @@
 
     int-to-long v0, v0
 
-    move-wide/from16 v27, v0
+    move-wide/from16 v28, v0
 
     .line 217
-    const/16 v29, 0x1
+    const/16 v27, 0x1
 
     .line 218
     goto :goto_240
@@ -1111,10 +1111,10 @@
 
     move-wide/from16 v38, v0
 
-    or-long v27, v27, v38
+    or-long v28, v28, v38
 
     .line 220
-    add-int/lit8 v29, v29, 0x1
+    add-int/lit8 v27, v27, 0x1
 
     goto :goto_240
 
@@ -1150,7 +1150,7 @@
 
     move-wide/from16 v38, v0
 
-    and-long v38, v38, v27
+    and-long v38, v38, v28
 
     const-wide/16 v40, 0x0
 
@@ -1271,8 +1271,8 @@
     .end local v11    # "child":Landroid/view/View;
     .end local v23    # "lp":Lcom/actionbarsherlock/internal/view/menu/ActionMenuView$LayoutParams;
     .end local v26    # "minCells":I
-    .end local v27    # "minCellsAt":J
-    .end local v29    # "minCellsItemCount":I
+    .end local v27    # "minCellsItemCount":I
+    .end local v28    # "minCellsAt":J
     :cond_2fb
     const/16 v31, 0x0
 

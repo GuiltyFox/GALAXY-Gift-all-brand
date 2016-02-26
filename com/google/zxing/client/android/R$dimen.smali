@@ -15,9 +15,9 @@
 
 
 # static fields
-.field public static final half_padding:I = 0x7f08001e
+.field public static final half_padding:I = 0x7f07001e
 
-.field public static final standard_padding:I = 0x7f08001d
+.field public static final standard_padding:I = 0x7f07001d
 
 
 # direct methods

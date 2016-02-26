@@ -178,10 +178,10 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 10
+    .registers 11
 
     .prologue
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
     .line 205
     new-instance v0, Lcom/bitmapfun/util/AsyncTask$1;
@@ -201,31 +201,31 @@
     sput-object v0, Lcom/bitmapfun/util/AsyncTask;->sPoolWorkQueue:Ljava/util/concurrent/BlockingQueue;
 
     .line 220
-    new-instance v0, Ljava/util/concurrent/ThreadPoolExecutor;
+    new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
 
-    const/4 v1, 0x5
+    const/4 v2, 0x5
 
-    const/16 v2, 0x80
+    const/16 v3, 0x80
 
-    const-wide/16 v3, 0x1
+    const-wide/16 v4, 0x1
 
     .line 221
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    sget-object v6, Lcom/bitmapfun/util/AsyncTask;->sPoolWorkQueue:Ljava/util/concurrent/BlockingQueue;
+    sget-object v7, Lcom/bitmapfun/util/AsyncTask;->sPoolWorkQueue:Ljava/util/concurrent/BlockingQueue;
 
-    sget-object v7, Lcom/bitmapfun/util/AsyncTask;->sThreadFactory:Ljava/util/concurrent/ThreadFactory;
+    sget-object v8, Lcom/bitmapfun/util/AsyncTask;->sThreadFactory:Ljava/util/concurrent/ThreadFactory;
 
     .line 222
-    new-instance v8, Ljava/util/concurrent/ThreadPoolExecutor$DiscardOldestPolicy;
+    new-instance v9, Ljava/util/concurrent/ThreadPoolExecutor$DiscardOldestPolicy;
 
-    invoke-direct {v8}, Ljava/util/concurrent/ThreadPoolExecutor$DiscardOldestPolicy;-><init>()V
+    invoke-direct {v9}, Ljava/util/concurrent/ThreadPoolExecutor$DiscardOldestPolicy;-><init>()V
 
     .line 220
-    invoke-direct/range {v0 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;Ljava/util/concurrent/RejectedExecutionHandler;)V
+    invoke-direct/range {v1 .. v9}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;Ljava/util/concurrent/RejectedExecutionHandler;)V
 
     .line 219
-    sput-object v0, Lcom/bitmapfun/util/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
+    sput-object v1, Lcom/bitmapfun/util/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     .line 228
     invoke-static {}, Lcom/bitmapfun/util/Utils;->hasHoneycomb()Z
@@ -236,7 +236,7 @@
 
     new-instance v0, Lcom/bitmapfun/util/AsyncTask$SerialExecutor;
 
-    invoke-direct {v0, v9}, Lcom/bitmapfun/util/AsyncTask$SerialExecutor;-><init>(Lcom/bitmapfun/util/AsyncTask$SerialExecutor;)V
+    invoke-direct {v0, v10}, Lcom/bitmapfun/util/AsyncTask$SerialExecutor;-><init>(Lcom/bitmapfun/util/AsyncTask$SerialExecutor;)V
 
     :goto_33
     sput-object v0, Lcom/bitmapfun/util/AsyncTask;->SERIAL_EXECUTOR:Ljava/util/concurrent/Executor;
@@ -256,7 +256,7 @@
     .line 237
     new-instance v0, Lcom/bitmapfun/util/AsyncTask$InternalHandler;
 
-    invoke-direct {v0, v9}, Lcom/bitmapfun/util/AsyncTask$InternalHandler;-><init>(Lcom/bitmapfun/util/AsyncTask$InternalHandler;)V
+    invoke-direct {v0, v10}, Lcom/bitmapfun/util/AsyncTask$InternalHandler;-><init>(Lcom/bitmapfun/util/AsyncTask$InternalHandler;)V
 
     sput-object v0, Lcom/bitmapfun/util/AsyncTask;->sHandler:Lcom/bitmapfun/util/AsyncTask$InternalHandler;
 

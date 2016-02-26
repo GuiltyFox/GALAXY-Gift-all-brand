@@ -122,7 +122,7 @@
 .end method
 
 .method public sendHit(Ljava/util/Map;JLjava/lang/String;Ljava/util/List;)V
-    .registers 11
+    .registers 12
     .param p1, "wireParams"    # Ljava/util/Map;
     .param p2, "hitTimeInMilliseconds"    # J
     .param p4, "path"    # Ljava/lang/String;

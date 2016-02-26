@@ -37,7 +37,7 @@
     const/4 v6, 0x0
 
     .line 32
-    const v5, 0x7f0702de
+    const v5, 0x7f0c02de
 
     invoke-virtual {p0, v5}, Lcom/samsung/privilege/CheckCountryActivity;->findViewById(I)Landroid/view/View;
 
@@ -47,7 +47,7 @@
 
     .line 33
     .local v3, "layoutLoading":Landroid/widget/LinearLayout;
-    const v5, 0x7f0702df
+    const v5, 0x7f0c02df
 
     invoke-virtual {p0, v5}, Lcom/samsung/privilege/CheckCountryActivity;->findViewById(I)Landroid/view/View;
 
@@ -57,7 +57,7 @@
 
     .line 34
     .local v4, "layoutThai":Landroid/widget/LinearLayout;
-    const v5, 0x7f0702e0
+    const v5, 0x7f0c02e0
 
     invoke-virtual {p0, v5}, Lcom/samsung/privilege/CheckCountryActivity;->findViewById(I)Landroid/view/View;
 
@@ -67,7 +67,7 @@
 
     .line 35
     .local v2, "layoutLaos":Landroid/widget/LinearLayout;
-    const v5, 0x7f0702e1
+    const v5, 0x7f0c02e1
 
     invoke-virtual {p0, v5}, Lcom/samsung/privilege/CheckCountryActivity;->findViewById(I)Landroid/view/View;
 

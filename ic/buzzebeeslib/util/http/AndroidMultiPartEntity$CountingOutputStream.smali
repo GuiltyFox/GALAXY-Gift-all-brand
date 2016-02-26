@@ -71,9 +71,9 @@
     .line 62
     iget-object v0, p0, Lic/buzzebeeslib/util/http/AndroidMultiPartEntity$CountingOutputStream;->listener:Lic/buzzebeeslib/util/http/AndroidMultiPartEntity$ProgressListener;
 
-    iget-wide v1, p0, Lic/buzzebeeslib/util/http/AndroidMultiPartEntity$CountingOutputStream;->transferred:J
+    iget-wide v2, p0, Lic/buzzebeeslib/util/http/AndroidMultiPartEntity$CountingOutputStream;->transferred:J
 
-    invoke-interface {v0, v1, v2}, Lic/buzzebeeslib/util/http/AndroidMultiPartEntity$ProgressListener;->transferred(J)V
+    invoke-interface {v0, v2, v3}, Lic/buzzebeeslib/util/http/AndroidMultiPartEntity$ProgressListener;->transferred(J)V
 
     .line 63
     return-void
@@ -108,9 +108,9 @@
     .line 56
     iget-object v0, p0, Lic/buzzebeeslib/util/http/AndroidMultiPartEntity$CountingOutputStream;->listener:Lic/buzzebeeslib/util/http/AndroidMultiPartEntity$ProgressListener;
 
-    iget-wide v1, p0, Lic/buzzebeeslib/util/http/AndroidMultiPartEntity$CountingOutputStream;->transferred:J
+    iget-wide v2, p0, Lic/buzzebeeslib/util/http/AndroidMultiPartEntity$CountingOutputStream;->transferred:J
 
-    invoke-interface {v0, v1, v2}, Lic/buzzebeeslib/util/http/AndroidMultiPartEntity$ProgressListener;->transferred(J)V
+    invoke-interface {v0, v2, v3}, Lic/buzzebeeslib/util/http/AndroidMultiPartEntity$ProgressListener;->transferred(J)V
 
     .line 57
     return-void

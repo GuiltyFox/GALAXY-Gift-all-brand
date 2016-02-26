@@ -37,7 +37,7 @@
 
     iput-object p3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketPlace3Adapter$1;->val$campaign_website_final:Ljava/lang/String;
 
-    .line 1393
+    .line 1413
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,7 +50,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 1396
+    .line 1416
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketPlace3Adapter$1;->val$campaign_type_final:Ljava/lang/String;
 
     const-string v4, "3"
@@ -61,7 +61,7 @@
 
     if-eqz v3, :cond_b8
 
-    .line 1397
+    .line 1417
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketPlace3Adapter$1;->val$campaign_website_final:Ljava/lang/String;
 
     if-eqz v3, :cond_b8
@@ -76,13 +76,13 @@
 
     if-nez v3, :cond_b8
 
-    .line 1399
+    .line 1419
     :try_start_18
     iget-object v2, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketPlace3Adapter$1;->val$campaign_website_final:Ljava/lang/String;
     :try_end_1a
     .catch Ljava/lang/Exception; {:try_start_18 .. :try_end_1a} :catch_e5
 
-    .line 1402
+    .line 1422
     .local v2, "url":Ljava/lang/String;
     :try_start_1a
     const-string v3, "<uid>"
@@ -106,7 +106,7 @@
 
     move-result-object v2
 
-    .line 1403
+    .line 1423
     new-instance v0, Lic/buzzebeeslib/util/DeviceHelper;
 
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketPlace3Adapter$1;->this$1:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketPlace3Adapter;
@@ -122,7 +122,7 @@
 
     invoke-direct {v0, v3}, Lic/buzzebeeslib/util/DeviceHelper;-><init>(Landroid/content/Context;)V
 
-    .line 1404
+    .line 1424
     .local v0, "deviceHelper":Lic/buzzebeeslib/util/DeviceHelper;
     const-string v3, "<deviceId>"
 
@@ -136,7 +136,7 @@
 
     move-result-object v2
 
-    .line 1409
+    .line 1429
     .end local v0    # "deviceHelper":Lic/buzzebeeslib/util/DeviceHelper;
     :goto_47
     :try_start_47
@@ -156,7 +156,7 @@
 
     if-nez v3, :cond_66
 
-    .line 1410
+    .line 1430
     new-instance v3, Ljava/lang/StringBuilder;
 
     const-string v4, "http://"
@@ -171,7 +171,7 @@
 
     move-result-object v2
 
-    .line 1412
+    .line 1432
     :cond_66
     const-string v3, "?"
 
@@ -181,7 +181,7 @@
 
     if-eqz v3, :cond_b9
 
-    .line 1413
+    .line 1433
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -225,7 +225,7 @@
 
     move-result-object v2
 
-    .line 1418
+    .line 1438
     :goto_99
     new-instance v1, Landroid/content/Intent;
 
@@ -244,13 +244,13 @@
 
     invoke-direct {v1, v3, v4}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1419
+    .line 1439
     .local v1, "intent":Landroid/content/Intent;
     const-string v3, "url"
 
     invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1420
+    .line 1440
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketPlace3Adapter$1;->this$1:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketPlace3Adapter;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketPlace3Adapter;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
@@ -260,14 +260,14 @@
 
     invoke-virtual {v3, v1}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 1426
+    .line 1446
     .end local v1    # "intent":Landroid/content/Intent;
     .end local v2    # "url":Ljava/lang/String;
     :cond_b8
     :goto_b8
     return-void
 
-    .line 1415
+    .line 1435
     .restart local v2    # "url":Ljava/lang/String;
     :cond_b9
     new-instance v3, Ljava/lang/StringBuilder;
@@ -317,14 +317,14 @@
 
     goto :goto_99
 
-    .line 1421
+    .line 1441
     .end local v2    # "url":Ljava/lang/String;
     :catch_e5
     move-exception v3
 
     goto :goto_b8
 
-    .line 1405
+    .line 1425
     .restart local v2    # "url":Ljava/lang/String;
     :catch_e7
     move-exception v3

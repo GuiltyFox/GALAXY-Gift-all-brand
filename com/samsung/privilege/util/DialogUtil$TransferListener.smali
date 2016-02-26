@@ -24,13 +24,13 @@
     .param p1, "activityContext"    # Landroid/content/Context;
 
     .prologue
-    .line 208
+    .line 249
     invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
 
-    .line 209
+    .line 250
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogUtil$TransferListener;->gActivityContext:Landroid/content/Context;
 
-    .line 210
+    .line 251
     return-void
 .end method
 
@@ -42,12 +42,12 @@
     .param p2, "response"    # Ljava/lang/String;
 
     .prologue
-    .line 243
+    .line 284
     const/16 v0, -0x1f4
 
     invoke-virtual {p0, v0, p2}, Lcom/samsung/privilege/util/DialogUtil$TransferListener;->onSuccess(ILjava/lang/String;)V
 
-    .line 244
+    .line 285
     return-void
 .end method
 
@@ -55,7 +55,7 @@
     .registers 1
 
     .prologue
-    .line 249
+    .line 290
     return-void
 .end method
 
@@ -63,7 +63,7 @@
     .registers 1
 
     .prologue
-    .line 215
+    .line 256
     return-void
 .end method
 
@@ -73,7 +73,7 @@
     .param p2, "response_text"    # Ljava/lang/String;
 
     .prologue
-    .line 219
+    .line 260
     # getter for: Lcom/samsung/privilege/util/DialogUtil;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/samsung/privilege/util/DialogUtil;->access$0()Ljava/lang/String;
 
@@ -105,17 +105,17 @@
 
     invoke-static {v5, v6}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 221
+    .line 262
     const/16 v5, 0xc8
 
     if-ne p1, v5, :cond_3c
 
-    .line 222
+    .line 263
     iget-object v5, p0, Lcom/samsung/privilege/util/DialogUtil$TransferListener;->gActivityContext:Landroid/content/Context;
 
     iget-object v6, p0, Lcom/samsung/privilege/util/DialogUtil$TransferListener;->gActivityContext:Landroid/content/Context;
 
-    const v7, 0x7f0a02ad
+    const v7, 0x7f0902ad
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -123,29 +123,29 @@
 
     invoke-static {v5, v6}, Lcom/samsung/privilege/util/DialogUtil;->showDialogMessage(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 224
+    .line 265
     sget-object v5, Lcom/samsung/privilege/AppSetting;->gCampaignListActivity:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     if-eqz v5, :cond_3b
 
-    .line 225
+    .line 266
     sget-object v5, Lcom/samsung/privilege/AppSetting;->gCampaignListActivity:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     invoke-virtual {v5}, Lcom/samsung/privilege/activity/CampaignListActivity;->getPoints()V
 
-    .line 239
+    .line 280
     :cond_3b
     :goto_3b
     return-void
 
-    .line 229
+    .line 270
     :cond_3c
     :try_start_3c
     new-instance v3, Lorg/json/JSONObject;
 
     invoke-direct {v3, p2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 230
+    .line 271
     .local v3, "json_result":Lorg/json/JSONObject;
     const-string v5, "error"
 
@@ -153,7 +153,7 @@
 
     move-result-object v2
 
-    .line 231
+    .line 272
     .local v2, "json_error":Lorg/json/JSONObject;
     const-string v5, "id"
 
@@ -161,7 +161,7 @@
 
     move-result-object v1
 
-    .line 232
+    .line 273
     .local v1, "id":Ljava/lang/String;
     const-string v5, "message"
 
@@ -169,7 +169,7 @@
 
     move-result-object v4
 
-    .line 233
+    .line 274
     .local v4, "message":Ljava/lang/String;
     iget-object v5, p0, Lcom/samsung/privilege/util/DialogUtil$TransferListener;->gActivityContext:Landroid/content/Context;
 
@@ -179,7 +179,7 @@
 
     goto :goto_3b
 
-    .line 234
+    .line 275
     .end local v1    # "id":Ljava/lang/String;
     .end local v2    # "json_error":Lorg/json/JSONObject;
     .end local v3    # "json_result":Lorg/json/JSONObject;
@@ -187,17 +187,17 @@
     :catch_59
     move-exception v0
 
-    .line 235
+    .line 276
     .local v0, "e":Ljava/lang/Exception;
     iget-object v5, p0, Lcom/samsung/privilege/util/DialogUtil$TransferListener;->gActivityContext:Landroid/content/Context;
 
-    const v6, 0x7f0a02ae
+    const v6, 0x7f0902ae
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 236
+    .line 277
     .restart local v4    # "message":Ljava/lang/String;
     iget-object v5, p0, Lcom/samsung/privilege/util/DialogUtil$TransferListener;->gActivityContext:Landroid/content/Context;
 

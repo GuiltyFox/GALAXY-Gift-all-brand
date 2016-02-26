@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14$2;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;
 
-    .line 2162
+    .line 2163
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
     .registers 2
 
     .prologue
-    .line 2162
+    .line 2163
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14$2;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;
 
     return-object v0
@@ -51,7 +51,7 @@
     .registers 6
 
     .prologue
-    .line 2166
+    .line 2167
     const-wide/16 v2, 0x2710
 
     :try_start_2
@@ -59,7 +59,7 @@
     :try_end_5
     .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_5} :catch_24
 
-    .line 2172
+    .line 2173
     :goto_5
     :try_start_5
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14$2;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;
@@ -76,7 +76,7 @@
 
     if-nez v2, :cond_23
 
-    .line 2173
+    .line 2174
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14$2;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -97,16 +97,16 @@
     :try_end_23
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_23} :catch_3e
 
-    .line 2194
+    .line 2195
     :cond_23
     :goto_23
     return-void
 
-    .line 2167
+    .line 2168
     :catch_24
     move-exception v0
 
-    .line 2168
+    .line 2169
     .local v0, "e":Ljava/lang/InterruptedException;
     const-string v2, "campaign.detail"
 
@@ -132,12 +132,12 @@
 
     goto :goto_5
 
-    .line 2180
+    .line 2181
     .end local v0    # "e":Ljava/lang/InterruptedException;
     :catch_3e
     move-exception v0
 
-    .line 2181
+    .line 2182
     .local v0, "e":Ljava/lang/Exception;
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14$2;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;
 
@@ -146,13 +146,13 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a0318
+    const v3, 0x7f09031f
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 2182
+    .line 2183
     .local v1, "error":Ljava/lang/String;
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14$2;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;
 
@@ -171,7 +171,7 @@
 
     if-eqz v2, :cond_7b
 
-    .line 2183
+    .line 2184
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -202,7 +202,7 @@
 
     move-result-object v1
 
-    .line 2185
+    .line 2186
     :cond_7b
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14$2;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$14;
 

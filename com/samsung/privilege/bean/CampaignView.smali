@@ -67,6 +67,8 @@
 
 .field public ID:Ljava/lang/String;
 
+.field public InterfaceDisplay:Ljava/lang/String;
+
 .field public IsConditionPass:Z
 
 .field public IsLike:Z
@@ -109,6 +111,8 @@
 .field public PeopleLike:I
 
 .field public PointPerUnit:Ljava/lang/String;
+
+.field public PointType:Ljava/lang/String;
 
 .field public PricePerUnit:Ljava/lang/String;
 
@@ -156,7 +160,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 209
+    .line 215
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 68
@@ -199,14 +203,24 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/bean/CampaignView;->ParentCategoryID:Ljava/lang/String;
 
-    .line 207
+    .line 93
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/samsung/privilege/bean/CampaignView;->InterfaceDisplay:Ljava/lang/String;
+
+    .line 94
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/samsung/privilege/bean/CampaignView;->PointType:Ljava/lang/String;
+
+    .line 213
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/samsung/privilege/bean/CampaignView;->MarketGalleryView:Ljava/util/ArrayList;
 
-    .line 211
+    .line 217
     return-void
 .end method
 
@@ -217,7 +231,7 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 213
+    .line 219
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 68
@@ -260,14 +274,24 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->ParentCategoryID:Ljava/lang/String;
 
-    .line 207
+    .line 93
+    const-string v6, ""
+
+    iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->InterfaceDisplay:Ljava/lang/String;
+
+    .line 94
+    const-string v6, ""
+
+    iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->PointType:Ljava/lang/String;
+
+    .line 213
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->MarketGalleryView:Ljava/util/ArrayList;
 
-    .line 214
+    .line 220
     const-string v6, "AgencyName"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -276,7 +300,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->AgencyName:Ljava/lang/String;
 
-    .line 215
+    .line 221
     const-string v6, "ID"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -285,7 +309,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->ID:Ljava/lang/String;
 
-    .line 216
+    .line 222
     const-string v6, "AgencyID"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -294,7 +318,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->AgencyID:Ljava/lang/String;
 
-    .line 217
+    .line 223
     const-string v6, "Name"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -303,7 +327,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->Name:Ljava/lang/String;
 
-    .line 218
+    .line 224
     const-string v6, "Detail"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -312,7 +336,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->Detail:Ljava/lang/String;
 
-    .line 219
+    .line 225
     const-string v6, "Condition"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -321,7 +345,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->Condition:Ljava/lang/String;
 
-    .line 220
+    .line 226
     const-string v6, "ReferenceCode"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -330,7 +354,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->ReferenceCode:Ljava/lang/String;
 
-    .line 221
+    .line 227
     const-string v6, "CategoryID"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -339,7 +363,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->CategoryID:Ljava/lang/String;
 
-    .line 222
+    .line 228
     const-string v6, "CategoryName"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -348,7 +372,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->CategoryName:Ljava/lang/String;
 
-    .line 223
+    .line 229
     const-string v6, "StartDate"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -357,7 +381,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->StartDate:Ljava/lang/String;
 
-    .line 224
+    .line 230
     const-string v6, "ExpireDate"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -366,7 +390,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->ExpireDate:Ljava/lang/String;
 
-    .line 225
+    .line 231
     const-string v6, "CurrentDate"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -375,7 +399,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->CurrentDate:Ljava/lang/String;
 
-    .line 226
+    .line 232
     const-string v6, "Location"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -384,7 +408,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->Location:Ljava/lang/String;
 
-    .line 227
+    .line 233
     const-string v6, "Website"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -393,7 +417,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->Website:Ljava/lang/String;
 
-    .line 228
+    .line 234
     const-string v6, "Discount"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -402,7 +426,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->Discount:Ljava/lang/String;
 
-    .line 229
+    .line 235
     const-string v6, "OriginalPrice"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -411,7 +435,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->OriginalPrice:Ljava/lang/String;
 
-    .line 230
+    .line 236
     const-string v6, "PricePerUnit"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -420,7 +444,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->PricePerUnit:Ljava/lang/String;
 
-    .line 231
+    .line 237
     const-string v6, "PointPerUnit"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -429,7 +453,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->PointPerUnit:Ljava/lang/String;
 
-    .line 232
+    .line 238
     const-string v6, "Quantity"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -438,7 +462,7 @@
 
     iput v6, p0, Lcom/samsung/privilege/bean/CampaignView;->Quantity:I
 
-    .line 233
+    .line 239
     const-string v6, "RedeemMostPerPerson"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -447,7 +471,7 @@
 
     iput v6, p0, Lcom/samsung/privilege/bean/CampaignView;->RedeemMostPerPerson:I
 
-    .line 234
+    .line 240
     const-string v6, "PeopleLike"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -456,7 +480,7 @@
 
     iput v6, p0, Lcom/samsung/privilege/bean/CampaignView;->PeopleLike:I
 
-    .line 235
+    .line 241
     const-string v6, "PeopleDislike"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -465,7 +489,7 @@
 
     iput v6, p0, Lcom/samsung/privilege/bean/CampaignView;->PeopleDislike:I
 
-    .line 236
+    .line 242
     const-string v6, "ItemCountSold"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -474,7 +498,7 @@
 
     iput v6, p0, Lcom/samsung/privilege/bean/CampaignView;->ItemCountSold:I
 
-    .line 237
+    .line 243
     const-string v6, "Under18"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -483,7 +507,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->Under18:Ljava/lang/String;
 
-    .line 238
+    .line 244
     const-string v6, "Delivered"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getBoolean(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -496,7 +520,7 @@
 
     iput-boolean v6, p0, Lcom/samsung/privilege/bean/CampaignView;->Delivered:Z
 
-    .line 239
+    .line 245
     const-string v6, "StatusID"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -505,7 +529,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->StatusID:Ljava/lang/String;
 
-    .line 240
+    .line 246
     const-string v6, "TermsAndConditions"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -514,7 +538,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->TermsAndConditions:Ljava/lang/String;
 
-    .line 241
+    .line 247
     const-string v6, "CreateDate"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -523,7 +547,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->CreateDate:Ljava/lang/String;
 
-    .line 242
+    .line 248
     const-string v6, "CreateBy"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -532,7 +556,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->CreateBy:Ljava/lang/String;
 
-    .line 243
+    .line 249
     const-string v6, "ModifyDate"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -541,7 +565,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->ModifyDate:Ljava/lang/String;
 
-    .line 244
+    .line 250
     const-string v6, "ModifyBy"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -550,7 +574,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->ModifyBy:Ljava/lang/String;
 
-    .line 245
+    .line 251
     const-string v6, "Buzz"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -559,7 +583,7 @@
 
     iput v6, p0, Lcom/samsung/privilege/bean/CampaignView;->Buzz:I
 
-    .line 246
+    .line 252
     const-string v6, "Score"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -568,7 +592,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->Score:Ljava/lang/String;
 
-    .line 247
+    .line 253
     const-string v6, "Type"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -577,7 +601,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->Type:Ljava/lang/String;
 
-    .line 248
+    .line 254
     const-string v6, "AgencyAddress"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -586,7 +610,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->AgencyAddress:Ljava/lang/String;
 
-    .line 249
+    .line 255
     const-string v6, "AgencyCity"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -595,7 +619,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->AgencyCity:Ljava/lang/String;
 
-    .line 250
+    .line 256
     const-string v6, "AgencyCountry"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -604,7 +628,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->AgencyCountry:Ljava/lang/String;
 
-    .line 251
+    .line 257
     const-string v6, "AgencyZipCode"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -613,7 +637,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->AgencyZipCode:Ljava/lang/String;
 
-    .line 252
+    .line 258
     const-string v6, "AgencyTel"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -622,7 +646,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->AgencyTel:Ljava/lang/String;
 
-    .line 253
+    .line 259
     const-string v6, "AgencyWebsite"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -631,7 +655,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->AgencyWebsite:Ljava/lang/String;
 
-    .line 254
+    .line 260
     const-string v6, "DayRemain"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -640,7 +664,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->DayRemain:Ljava/lang/String;
 
-    .line 255
+    .line 261
     const-string v6, "VoucherExpireDate"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
@@ -649,7 +673,7 @@
 
     iput-wide v6, p0, Lcom/samsung/privilege/bean/CampaignView;->VoucherExpireDate:J
 
-    .line 257
+    .line 263
     const-string v6, "TracesJson"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -658,7 +682,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->TracesJson:Ljava/lang/String;
 
-    .line 258
+    .line 264
     const-string v6, "IsConditionPass"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getBoolean(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -671,7 +695,7 @@
 
     iput-boolean v6, p0, Lcom/samsung/privilege/bean/CampaignView;->IsConditionPass:Z
 
-    .line 260
+    .line 266
     const-string v6, "DayProceed"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -680,7 +704,7 @@
 
     iput v6, p0, Lcom/samsung/privilege/bean/CampaignView;->DayProceed:I
 
-    .line 262
+    .line 268
     const-string v6, "Caption"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -689,7 +713,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->Caption:Ljava/lang/String;
 
-    .line 264
+    .line 270
     const-string v6, "FanPageId"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -698,7 +722,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->FanPageId:Ljava/lang/String;
 
-    .line 266
+    .line 272
     const-string v6, "LocationAgencyId"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -707,7 +731,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->LocationAgencyId:Ljava/lang/String;
 
-    .line 267
+    .line 273
     const-string v6, "NextRedeemDate"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
@@ -716,7 +740,7 @@
 
     iput-wide v6, p0, Lcom/samsung/privilege/bean/CampaignView;->NextRedeemDate:J
 
-    .line 268
+    .line 274
     const-string v6, "RedeemCount"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -725,7 +749,7 @@
 
     iput v6, p0, Lcom/samsung/privilege/bean/CampaignView;->RedeemCount:I
 
-    .line 270
+    .line 276
     const-string v6, "ConditionAlert"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -734,7 +758,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->ConditionAlert:Ljava/lang/String;
 
-    .line 272
+    .line 278
     const-string v6, "IsLike"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getBoolean(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -747,7 +771,7 @@
 
     iput-boolean v6, p0, Lcom/samsung/privilege/bean/CampaignView;->IsLike:Z
 
-    .line 274
+    .line 280
     const-string v6, "Qty"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -756,7 +780,7 @@
 
     iput v6, p0, Lcom/samsung/privilege/bean/CampaignView;->Qty:I
 
-    .line 276
+    .line 282
     const-string v6, "RedeemMedia"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -765,7 +789,7 @@
 
     iput v6, p0, Lcom/samsung/privilege/bean/CampaignView;->RedeemMedia:I
 
-    .line 277
+    .line 283
     const-string v6, "ConditionAlertID"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -774,7 +798,7 @@
 
     iput v6, p0, Lcom/samsung/privilege/bean/CampaignView;->ConditionAlertID:I
 
-    .line 278
+    .line 284
     const-string v6, "Barcode"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -783,7 +807,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->Barcode:Ljava/lang/String;
 
-    .line 282
+    .line 288
     const-string v6, "MinutesValidAfterUsed"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -792,7 +816,7 @@
 
     iput v6, p0, Lcom/samsung/privilege/bean/CampaignView;->MinutesValidAfterUsed:I
 
-    .line 283
+    .line 289
     const-string v6, "FullImageUrl"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -801,7 +825,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->FullImageUrl:Ljava/lang/String;
 
-    .line 284
+    .line 290
     const-string v6, "CustomInput"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -810,7 +834,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->CustomInput:Ljava/lang/String;
 
-    .line 285
+    .line 291
     const-string v6, "CustomCaption"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -819,7 +843,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->CustomCaption:Ljava/lang/String;
 
-    .line 287
+    .line 293
     const-string v6, "ParentCategoryID"
 
     invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -828,15 +852,33 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->ParentCategoryID:Ljava/lang/String;
 
-    .line 290
-    :try_start_21d
+    .line 295
+    const-string v6, "InterfaceDisplay"
+
+    invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->InterfaceDisplay:Ljava/lang/String;
+
+    .line 296
+    const-string v6, "PointType"
+
+    invoke-static {p1, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->PointType:Ljava/lang/String;
+
+    .line 299
+    :try_start_235
     const-string v6, "Pictures"
 
     invoke-virtual {p1, v6}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v3
 
-    .line 292
+    .line 301
     .local v3, "jsonPictures":Lorg/json/JSONArray;
     new-instance v6, Ljava/util/ArrayList;
 
@@ -844,26 +886,26 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->MarketGalleryView:Ljava/util/ArrayList;
 
-    .line 293
+    .line 302
     const/4 v1, 0x0
 
     .local v1, "i":I
-    :goto_22b
+    :goto_243
     invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
-    :try_end_22e
-    .catch Lorg/json/JSONException; {:try_start_21d .. :try_end_22e} :catch_269
+    :try_end_246
+    .catch Lorg/json/JSONException; {:try_start_235 .. :try_end_246} :catch_281
 
     move-result v6
 
-    if-lt v1, v6, :cond_258
+    if-lt v1, v6, :cond_270
 
-    .line 301
+    .line 310
     .end local v1    # "i":I
     .end local v3    # "jsonPictures":Lorg/json/JSONArray;
-    :goto_231
+    :goto_249
     iget-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->TracesJson:Ljava/lang/String;
 
-    if-eqz v6, :cond_257
+    if-eqz v6, :cond_26f
 
     iget-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->TracesJson:Ljava/lang/String;
 
@@ -873,7 +915,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_257
+    if-nez v6, :cond_26f
 
     iget-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->TracesJson:Ljava/lang/String;
 
@@ -883,47 +925,47 @@
 
     move-result v6
 
-    if-nez v6, :cond_257
+    if-nez v6, :cond_26f
 
-    .line 303
-    :try_start_249
+    .line 312
+    :try_start_261
     new-instance v5, Lorg/json/JSONArray;
 
     iget-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->TracesJson:Ljava/lang/String;
 
     invoke-direct {v5, v6}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
 
-    .line 304
+    .line 313
     .local v5, "jsonTracesJsonArray":Lorg/json/JSONArray;
     const/4 v1, 0x0
 
     .restart local v1    # "i":I
-    :goto_251
+    :goto_269
     invoke-virtual {v5}, Lorg/json/JSONArray;->length()I
-    :try_end_254
-    .catch Lorg/json/JSONException; {:try_start_249 .. :try_end_254} :catch_2a2
+    :try_end_26c
+    .catch Lorg/json/JSONException; {:try_start_261 .. :try_end_26c} :catch_2ba
 
     move-result v6
 
-    if-lt v1, v6, :cond_283
+    if-lt v1, v6, :cond_29b
 
-    .line 317
+    .line 326
     .end local v1    # "i":I
     .end local v5    # "jsonTracesJsonArray":Lorg/json/JSONArray;
-    :cond_257
-    :goto_257
+    :cond_26f
+    :goto_26f
     return-void
 
-    .line 294
+    .line 303
     .restart local v1    # "i":I
     .restart local v3    # "jsonPictures":Lorg/json/JSONArray;
-    :cond_258
-    :try_start_258
+    :cond_270
+    :try_start_270
     invoke-virtual {v3, v1}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v2
 
-    .line 295
+    .line 304
     .local v2, "jsonPicture":Lorg/json/JSONObject;
     iget-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->MarketGalleryView:Ljava/util/ArrayList;
 
@@ -932,22 +974,22 @@
     invoke-direct {v7, v2}, Lcom/samsung/privilege/bean/MarketGalleryView;-><init>(Lorg/json/JSONObject;)V
 
     invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_266
-    .catch Lorg/json/JSONException; {:try_start_258 .. :try_end_266} :catch_269
+    :try_end_27e
+    .catch Lorg/json/JSONException; {:try_start_270 .. :try_end_27e} :catch_281
 
-    .line 293
+    .line 302
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_22b
+    goto :goto_243
 
-    .line 297
+    .line 306
     .end local v1    # "i":I
     .end local v2    # "jsonPicture":Lorg/json/JSONObject;
     .end local v3    # "jsonPictures":Lorg/json/JSONArray;
-    :catch_269
+    :catch_281
     move-exception v0
 
-    .line 298
+    .line 307
     .local v0, "e":Lorg/json/JSONException;
     const-string v6, "MyLog"
 
@@ -971,19 +1013,19 @@
 
     invoke-static {v6, v7}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_231
+    goto :goto_249
 
-    .line 305
+    .line 314
     .end local v0    # "e":Lorg/json/JSONException;
     .restart local v1    # "i":I
     .restart local v5    # "jsonTracesJsonArray":Lorg/json/JSONArray;
-    :cond_283
-    :try_start_283
+    :cond_29b
+    :try_start_29b
     invoke-virtual {v5, v1}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v4
 
-    .line 307
+    .line 316
     .local v4, "jsonTraceJsonObject":Lorg/json/JSONObject;
     const-string v6, "TracePlanId"
 
@@ -993,7 +1035,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->TracePlanId:Ljava/lang/String;
 
-    .line 308
+    .line 317
     const-string v6, "Value"
 
     invoke-static {v4, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1002,7 +1044,7 @@
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->Value:Ljava/lang/String;
 
-    .line 309
+    .line 318
     const-string v6, "Caption"
 
     invoke-static {v4, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1010,22 +1052,22 @@
     move-result-object v6
 
     iput-object v6, p0, Lcom/samsung/privilege/bean/CampaignView;->Caption:Ljava/lang/String;
-    :try_end_29f
-    .catch Lorg/json/JSONException; {:try_start_283 .. :try_end_29f} :catch_2a2
+    :try_end_2b7
+    .catch Lorg/json/JSONException; {:try_start_29b .. :try_end_2b7} :catch_2ba
 
-    .line 304
+    .line 313
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_251
+    goto :goto_269
 
-    .line 311
+    .line 320
     .end local v1    # "i":I
     .end local v4    # "jsonTraceJsonObject":Lorg/json/JSONObject;
     .end local v5    # "jsonTracesJsonArray":Lorg/json/JSONArray;
-    :catch_2a2
+    :catch_2ba
     move-exception v6
 
-    goto :goto_257
+    goto :goto_26f
 .end method
 
 
@@ -1034,7 +1076,7 @@
     .registers 4
 
     .prologue
-    .line 121
+    .line 124
     iget-object v0, p0, Lcom/samsung/privilege/bean/CampaignView;->FullImageUrl:Ljava/lang/String;
 
     const-string v1, ""
@@ -1045,7 +1087,7 @@
 
     if-nez v0, :cond_15
 
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/samsung/privilege/bean/CampaignView;->FullImageUrl:Ljava/lang/String;
 
     const-string v1, "?"
@@ -1056,7 +1098,7 @@
 
     move-result-object v0
 
-    .line 124
+    .line 127
     :goto_14
     return-object v0
 
@@ -1106,7 +1148,7 @@
     .registers 3
 
     .prologue
-    .line 112
+    .line 115
     iget-object v0, p0, Lcom/samsung/privilege/bean/CampaignView;->FullImageUrl:Ljava/lang/String;
 
     const-string v1, ""
@@ -1117,10 +1159,10 @@
 
     if-nez v0, :cond_d
 
-    .line 113
+    .line 116
     iget-object v0, p0, Lcom/samsung/privilege/bean/CampaignView;->FullImageUrl:Ljava/lang/String;
 
-    .line 115
+    .line 118
     :goto_c
     return-object v0
 
@@ -1170,7 +1212,7 @@
     .registers 4
 
     .prologue
-    .line 103
+    .line 106
     iget-object v0, p0, Lcom/samsung/privilege/bean/CampaignView;->FullImageUrl:Ljava/lang/String;
 
     const-string v1, ""
@@ -1181,7 +1223,7 @@
 
     if-nez v0, :cond_15
 
-    .line 104
+    .line 107
     iget-object v0, p0, Lcom/samsung/privilege/bean/CampaignView;->FullImageUrl:Ljava/lang/String;
 
     const-string v1, "?"
@@ -1192,7 +1234,7 @@
 
     move-result-object v0
 
-    .line 106
+    .line 109
     :goto_14
     return-object v0
 
@@ -1242,7 +1284,7 @@
     .registers 4
 
     .prologue
-    .line 94
+    .line 97
     iget-object v0, p0, Lcom/samsung/privilege/bean/CampaignView;->FullImageUrl:Ljava/lang/String;
 
     const-string v1, ""
@@ -1253,7 +1295,7 @@
 
     if-nez v0, :cond_15
 
-    .line 95
+    .line 98
     iget-object v0, p0, Lcom/samsung/privilege/bean/CampaignView;->FullImageUrl:Ljava/lang/String;
 
     const-string v1, "?"
@@ -1264,7 +1306,7 @@
 
     move-result-object v0
 
-    .line 97
+    .line 100
     :goto_14
     return-object v0
 
@@ -1311,331 +1353,341 @@
 .end method
 
 .method public clone()Lcom/samsung/privilege/bean/CampaignView;
-    .registers 4
+    .registers 5
 
     .prologue
-    .line 130
+    .line 133
     new-instance v0, Lcom/samsung/privilege/bean/CampaignView;
 
     invoke-direct {v0}, Lcom/samsung/privilege/bean/CampaignView;-><init>()V
 
-    .line 131
+    .line 134
     .local v0, "newCampaign":Lcom/samsung/privilege/bean/CampaignView;
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->AgencyName:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->AgencyName:Ljava/lang/String;
 
-    .line 132
+    .line 135
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->ID:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->ID:Ljava/lang/String;
 
-    .line 133
+    .line 136
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->AgencyID:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->AgencyID:Ljava/lang/String;
 
-    .line 134
+    .line 137
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->Name:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->Name:Ljava/lang/String;
 
-    .line 135
+    .line 138
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->Detail:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->Detail:Ljava/lang/String;
 
-    .line 136
+    .line 139
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->Condition:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->Condition:Ljava/lang/String;
 
-    .line 137
+    .line 140
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->ReferenceCode:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->ReferenceCode:Ljava/lang/String;
 
-    .line 138
+    .line 141
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->CategoryID:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->CategoryID:Ljava/lang/String;
 
-    .line 139
+    .line 142
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->CategoryName:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->CategoryName:Ljava/lang/String;
 
-    .line 140
+    .line 143
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->StartDate:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->StartDate:Ljava/lang/String;
 
-    .line 141
+    .line 144
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->ExpireDate:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->ExpireDate:Ljava/lang/String;
 
-    .line 142
+    .line 145
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->CurrentDate:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->CurrentDate:Ljava/lang/String;
 
-    .line 143
+    .line 146
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->Location:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->Location:Ljava/lang/String;
 
-    .line 144
+    .line 147
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->Website:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->Website:Ljava/lang/String;
 
-    .line 145
+    .line 148
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->Discount:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->Discount:Ljava/lang/String;
 
-    .line 146
+    .line 149
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->OriginalPrice:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->OriginalPrice:Ljava/lang/String;
 
-    .line 147
+    .line 150
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->PricePerUnit:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->PricePerUnit:Ljava/lang/String;
 
-    .line 148
+    .line 151
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->PointPerUnit:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->PointPerUnit:Ljava/lang/String;
 
-    .line 149
+    .line 152
     iget v1, p0, Lcom/samsung/privilege/bean/CampaignView;->Quantity:I
 
     iput v1, v0, Lcom/samsung/privilege/bean/CampaignView;->Quantity:I
 
-    .line 150
+    .line 153
     iget v1, p0, Lcom/samsung/privilege/bean/CampaignView;->RedeemMostPerPerson:I
 
     iput v1, v0, Lcom/samsung/privilege/bean/CampaignView;->RedeemMostPerPerson:I
 
-    .line 151
+    .line 154
     iget v1, p0, Lcom/samsung/privilege/bean/CampaignView;->PeopleLike:I
 
     iput v1, v0, Lcom/samsung/privilege/bean/CampaignView;->PeopleLike:I
 
-    .line 152
+    .line 155
     iget v1, p0, Lcom/samsung/privilege/bean/CampaignView;->PeopleDislike:I
 
     iput v1, v0, Lcom/samsung/privilege/bean/CampaignView;->PeopleDislike:I
 
-    .line 153
+    .line 156
     iget v1, p0, Lcom/samsung/privilege/bean/CampaignView;->ItemCountSold:I
 
     iput v1, v0, Lcom/samsung/privilege/bean/CampaignView;->ItemCountSold:I
 
-    .line 154
+    .line 157
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->Under18:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->Under18:Ljava/lang/String;
 
-    .line 155
+    .line 158
     iget-boolean v1, p0, Lcom/samsung/privilege/bean/CampaignView;->Delivered:Z
 
     iput-boolean v1, v0, Lcom/samsung/privilege/bean/CampaignView;->Delivered:Z
 
-    .line 156
+    .line 159
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->StatusID:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->StatusID:Ljava/lang/String;
 
-    .line 157
+    .line 160
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->TermsAndConditions:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->TermsAndConditions:Ljava/lang/String;
 
-    .line 158
+    .line 161
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->CreateDate:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->CreateDate:Ljava/lang/String;
 
-    .line 159
+    .line 162
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->CreateBy:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->CreateBy:Ljava/lang/String;
 
-    .line 160
+    .line 163
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->ModifyDate:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->ModifyDate:Ljava/lang/String;
 
-    .line 161
+    .line 164
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->ModifyBy:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->ModifyBy:Ljava/lang/String;
 
-    .line 162
+    .line 165
     iget v1, p0, Lcom/samsung/privilege/bean/CampaignView;->Buzz:I
 
     iput v1, v0, Lcom/samsung/privilege/bean/CampaignView;->Buzz:I
 
-    .line 163
+    .line 166
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->Score:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->Score:Ljava/lang/String;
 
-    .line 164
+    .line 167
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->Type:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->Type:Ljava/lang/String;
 
-    .line 165
+    .line 168
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->AgencyAddress:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->AgencyAddress:Ljava/lang/String;
 
-    .line 166
+    .line 169
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->AgencyCity:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->AgencyCity:Ljava/lang/String;
 
-    .line 167
+    .line 170
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->AgencyCountry:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->AgencyCountry:Ljava/lang/String;
 
-    .line 168
+    .line 171
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->AgencyZipCode:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->AgencyZipCode:Ljava/lang/String;
 
-    .line 169
+    .line 172
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->AgencyTel:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->AgencyTel:Ljava/lang/String;
 
-    .line 170
+    .line 173
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->AgencyWebsite:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->AgencyWebsite:Ljava/lang/String;
 
-    .line 171
+    .line 174
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->DayRemain:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->DayRemain:Ljava/lang/String;
 
-    .line 172
-    iget-wide v1, p0, Lcom/samsung/privilege/bean/CampaignView;->VoucherExpireDate:J
+    .line 175
+    iget-wide v2, p0, Lcom/samsung/privilege/bean/CampaignView;->VoucherExpireDate:J
 
-    iput-wide v1, v0, Lcom/samsung/privilege/bean/CampaignView;->VoucherExpireDate:J
+    iput-wide v2, v0, Lcom/samsung/privilege/bean/CampaignView;->VoucherExpireDate:J
 
-    .line 174
+    .line 177
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->TracesJson:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->TracesJson:Ljava/lang/String;
 
-    .line 175
+    .line 178
     iget-boolean v1, p0, Lcom/samsung/privilege/bean/CampaignView;->IsConditionPass:Z
 
     iput-boolean v1, v0, Lcom/samsung/privilege/bean/CampaignView;->IsConditionPass:Z
 
-    .line 176
+    .line 179
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->TracePlanId:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->TracePlanId:Ljava/lang/String;
 
-    .line 177
+    .line 180
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->Value:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->Value:Ljava/lang/String;
 
-    .line 179
+    .line 182
     iget-boolean v1, p0, Lcom/samsung/privilege/bean/CampaignView;->isFromNoti:Z
 
     iput-boolean v1, v0, Lcom/samsung/privilege/bean/CampaignView;->isFromNoti:Z
 
-    .line 180
+    .line 183
     iget v1, p0, Lcom/samsung/privilege/bean/CampaignView;->ItemRemain:I
 
     iput v1, v0, Lcom/samsung/privilege/bean/CampaignView;->ItemRemain:I
 
-    .line 182
+    .line 185
     iget v1, p0, Lcom/samsung/privilege/bean/CampaignView;->DayProceed:I
 
     iput v1, v0, Lcom/samsung/privilege/bean/CampaignView;->DayProceed:I
 
-    .line 183
+    .line 186
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->FanPageId:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->FanPageId:Ljava/lang/String;
 
-    .line 185
+    .line 188
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->LocationAgencyId:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->LocationAgencyId:Ljava/lang/String;
 
-    .line 186
-    iget-wide v1, p0, Lcom/samsung/privilege/bean/CampaignView;->NextRedeemDate:J
+    .line 189
+    iget-wide v2, p0, Lcom/samsung/privilege/bean/CampaignView;->NextRedeemDate:J
 
-    iput-wide v1, v0, Lcom/samsung/privilege/bean/CampaignView;->NextRedeemDate:J
+    iput-wide v2, v0, Lcom/samsung/privilege/bean/CampaignView;->NextRedeemDate:J
 
-    .line 188
+    .line 191
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->ConditionAlert:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->ConditionAlert:Ljava/lang/String;
 
-    .line 190
+    .line 193
     iget-boolean v1, p0, Lcom/samsung/privilege/bean/CampaignView;->IsLike:Z
 
     iput-boolean v1, v0, Lcom/samsung/privilege/bean/CampaignView;->IsLike:Z
 
-    .line 192
+    .line 195
     iget v1, p0, Lcom/samsung/privilege/bean/CampaignView;->Qty:I
 
     iput v1, v0, Lcom/samsung/privilege/bean/CampaignView;->Qty:I
 
-    .line 194
+    .line 197
     iget v1, p0, Lcom/samsung/privilege/bean/CampaignView;->RedeemMedia:I
 
     iput v1, v0, Lcom/samsung/privilege/bean/CampaignView;->RedeemMedia:I
 
-    .line 195
+    .line 198
     iget v1, p0, Lcom/samsung/privilege/bean/CampaignView;->ConditionAlertID:I
 
     iput v1, v0, Lcom/samsung/privilege/bean/CampaignView;->ConditionAlertID:I
 
-    .line 196
+    .line 199
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->Barcode:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->Barcode:Ljava/lang/String;
 
-    .line 197
+    .line 200
     iget v1, p0, Lcom/samsung/privilege/bean/CampaignView;->MinutesValidAfterUsed:I
 
     iput v1, v0, Lcom/samsung/privilege/bean/CampaignView;->MinutesValidAfterUsed:I
 
-    .line 198
+    .line 201
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->FullImageUrl:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->FullImageUrl:Ljava/lang/String;
 
-    .line 199
+    .line 202
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->CustomInput:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->CustomInput:Ljava/lang/String;
 
-    .line 200
+    .line 203
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->CustomCaption:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->CustomCaption:Ljava/lang/String;
 
-    .line 202
+    .line 205
     iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->ParentCategoryID:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->ParentCategoryID:Ljava/lang/String;
 
-    .line 204
+    .line 207
+    iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->InterfaceDisplay:Ljava/lang/String;
+
+    iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->InterfaceDisplay:Ljava/lang/String;
+
+    .line 208
+    iget-object v1, p0, Lcom/samsung/privilege/bean/CampaignView;->PointType:Ljava/lang/String;
+
+    iput-object v1, v0, Lcom/samsung/privilege/bean/CampaignView;->PointType:Ljava/lang/String;
+
+    .line 210
     return-object v0
 .end method
 

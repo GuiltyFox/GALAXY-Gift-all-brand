@@ -35,7 +35,7 @@
     .param p2, "image_stub"    # I
 
     .prologue
-    const v2, 0x7f02039f
+    const v2, 0x7f0203a7
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

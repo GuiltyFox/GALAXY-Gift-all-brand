@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 8
+    .registers 9
 
     .prologue
     .line 755
@@ -291,9 +291,9 @@
 
     iget v3, v3, Lic/buzzebeeslib/bean/Place;->rank:I
 
-    int-to-long v5, v3
+    int-to-long v6, v3
 
-    invoke-static {v4, v5, v6}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$39(Lic/buzzebeeslib/fragment/PlaceListFragment;J)V
+    invoke-static {v4, v6, v7}, Lic/buzzebeeslib/fragment/PlaceListFragment;->access$39(Lic/buzzebeeslib/fragment/PlaceListFragment;J)V
 
     .line 782
     new-instance v3, Ljava/lang/StringBuilder;

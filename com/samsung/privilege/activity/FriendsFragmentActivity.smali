@@ -122,7 +122,7 @@
     invoke-virtual {v1, v0}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
     .line 160
-    const v1, 0x7f030105
+    const v1, 0x7f030107
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/FriendsFragmentActivity;->setContentView(I)V
 
@@ -258,7 +258,7 @@
     invoke-direct {p0}, Lcom/samsung/privilege/activity/FriendsFragmentActivity;->initialLayout()V
 
     .line 56
-    const v10, 0x7f070031
+    const v10, 0x7f0c0031
 
     invoke-virtual {p0, v10}, Lcom/samsung/privilege/activity/FriendsFragmentActivity;->findViewById(I)Landroid/view/View;
 
@@ -285,7 +285,7 @@
     if-eqz v10, :cond_10a
 
     .line 58
-    const v10, 0x7f0202b6
+    const v10, 0x7f0202b8
 
     invoke-virtual {v3, v10}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -312,7 +312,7 @@
     if-eqz v10, :cond_142
 
     .line 69
-    const v10, 0x7f0202ba
+    const v10, 0x7f0202bc
 
     invoke-virtual {v4, v10}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -336,7 +336,7 @@
     iput-object v10, p0, Lcom/samsung/privilege/activity/FriendsFragmentActivity;->mAdapter:Lcom/samsung/privilege/activity/pager/FriendsFragmentAdapter;
 
     .line 82
-    const v10, 0x7f070055
+    const v10, 0x7f0c0055
 
     invoke-virtual {p0, v10}, Lcom/samsung/privilege/activity/FriendsFragmentActivity;->findViewById(I)Landroid/view/View;
 
@@ -383,7 +383,7 @@
 
     .line 87
     .local v9, "tf":Landroid/graphics/Typeface;
-    const v10, 0x7f070056
+    const v10, 0x7f0c0056
 
     invoke-virtual {p0, v10}, Lcom/samsung/privilege/activity/FriendsFragmentActivity;->findViewById(I)Landroid/view/View;
 
@@ -443,7 +443,7 @@
     invoke-virtual {v1, v10}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 96
-    const v10, 0x7f02009f
+    const v10, 0x7f0200a1
 
     invoke-virtual {v1, v10}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
@@ -517,7 +517,7 @@
     if-eqz v10, :cond_122
 
     .line 60
-    const v10, 0x7f0202b5
+    const v10, 0x7f0202b7
 
     invoke-virtual {v3, v10}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -542,7 +542,7 @@
     if-eqz v10, :cond_13a
 
     .line 62
-    const v10, 0x7f0202b7
+    const v10, 0x7f0202b9
 
     invoke-virtual {v3, v10}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -550,7 +550,7 @@
 
     .line 64
     :cond_13a
-    const v10, 0x7f0202b8
+    const v10, 0x7f0202ba
 
     invoke-virtual {v3, v10}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -559,7 +559,7 @@
     .line 71
     .restart local v4    # "imgLogo":Landroid/widget/ImageView;
     :cond_142
-    const v10, 0x7f0202b9
+    const v10, 0x7f0202bb
 
     invoke-virtual {v4, v10}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -634,7 +634,7 @@
 .end method
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
-    .registers 5
+    .registers 6
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
@@ -658,9 +658,9 @@
     .line 128
     const-string v0, "gLastResumeTime"
 
-    iget-wide v1, p0, Lcom/samsung/privilege/activity/FriendsFragmentActivity;->gLastResumeTime:J
+    iget-wide v2, p0, Lcom/samsung/privilege/activity/FriendsFragmentActivity;->gLastResumeTime:J
 
-    invoke-virtual {p1, v0, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    invoke-virtual {p1, v0, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     .line 129
     return-void

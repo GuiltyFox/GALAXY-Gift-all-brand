@@ -42,16 +42,16 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .registers 5
 
     .prologue
     .line 334
     iget-object v0, p0, Lcom/facebook/AppEventsLogger$2;->val$logger:Lcom/facebook/AppEventsLogger;
 
-    iget-wide v1, p0, Lcom/facebook/AppEventsLogger$2;->val$eventTime:J
+    iget-wide v2, p0, Lcom/facebook/AppEventsLogger$2;->val$eventTime:J
 
     # invokes: Lcom/facebook/AppEventsLogger;->logAppSessionSuspendEvent(J)V
-    invoke-static {v0, v1, v2}, Lcom/facebook/AppEventsLogger;->access$4(Lcom/facebook/AppEventsLogger;J)V
+    invoke-static {v0, v2, v3}, Lcom/facebook/AppEventsLogger;->access$4(Lcom/facebook/AppEventsLogger;J)V
 
     .line 335
     return-void

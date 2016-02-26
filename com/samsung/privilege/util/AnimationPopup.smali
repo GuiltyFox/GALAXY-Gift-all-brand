@@ -139,9 +139,9 @@
 
     .line 390
     .local v0, "bigToSmall":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0xfa
+    const-wide/16 v2, 0xfa
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 391
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
@@ -161,9 +161,9 @@
     .param p2, "pIsUseSmall"    # Z
 
     .prologue
-    const v0, 0x7f020357
+    const v0, 0x7f020359
 
-    const v1, 0x7f020356
+    const v1, 0x7f020358
 
     const/4 v4, 0x3
 
@@ -193,13 +193,13 @@
     if-ne p0, v2, :cond_18
 
     .line 42
-    const v0, 0x7f020359
+    const v0, 0x7f02035b
 
     goto :goto_f
 
     .line 44
     :cond_18
-    const v0, 0x7f020359
+    const v0, 0x7f02035b
 
     goto :goto_f
 
@@ -211,13 +211,13 @@
     if-ne p0, v2, :cond_24
 
     .line 48
-    const v0, 0x7f02035b
+    const v0, 0x7f02035d
 
     goto :goto_f
 
     .line 50
     :cond_24
-    const v0, 0x7f02035b
+    const v0, 0x7f02035d
 
     goto :goto_f
 
@@ -226,13 +226,13 @@
     if-ne p0, v2, :cond_2e
 
     .line 54
-    const v0, 0x7f02035d
+    const v0, 0x7f02035f
 
     goto :goto_f
 
     .line 56
     :cond_2e
-    const v0, 0x7f02035d
+    const v0, 0x7f02035f
 
     goto :goto_f
 
@@ -262,13 +262,13 @@
     if-ne p0, v2, :cond_42
 
     .line 68
-    const v0, 0x7f020358
+    const v0, 0x7f02035a
 
     goto :goto_f
 
     .line 70
     :cond_42
-    const v0, 0x7f020358
+    const v0, 0x7f02035a
 
     goto :goto_f
 
@@ -280,13 +280,13 @@
     if-ne p0, v2, :cond_4e
 
     .line 74
-    const v0, 0x7f02035a
+    const v0, 0x7f02035c
 
     goto :goto_f
 
     .line 76
     :cond_4e
-    const v0, 0x7f02035a
+    const v0, 0x7f02035c
 
     goto :goto_f
 
@@ -295,13 +295,13 @@
     if-ne p0, v2, :cond_58
 
     .line 80
-    const v0, 0x7f02035c
+    const v0, 0x7f02035e
 
     goto :goto_f
 
     .line 82
     :cond_58
-    const v0, 0x7f02035c
+    const v0, 0x7f02035e
 
     goto :goto_f
 .end method
@@ -333,9 +333,9 @@
 
     .line 411
     .local v0, "inFromLeft":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 412
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
@@ -375,9 +375,9 @@
 
     .line 397
     .local v0, "inFromRight":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 398
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
@@ -417,9 +417,9 @@
 
     .line 404
     .local v0, "outtoLeft":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 405
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
@@ -459,9 +459,9 @@
 
     .line 418
     .local v0, "outtoRight":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 419
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;
@@ -475,7 +475,7 @@
 .end method
 
 .method public static playPopupMarketBzbs(ILandroid/app/Activity;Landroid/widget/RelativeLayout;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/LinearLayout;Landroid/widget/RelativeLayout;Landroid/widget/RelativeLayout;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/TextView;)V
-    .registers 37
+    .registers 38
     .param p0, "pAnimationSet"    # I
     .param p1, "pActivity"    # Landroid/app/Activity;
     .param p2, "pLayoutPopup"    # Landroid/widget/RelativeLayout;
@@ -493,247 +493,247 @@
     .line 102
     invoke-virtual/range {p1 .. p1}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-static {v3}, Lcom/samsung/privilege/util/LanguageSetting;->SetLanguage(Landroid/content/Context;)V
+    invoke-static {v4}, Lcom/samsung/privilege/util/LanguageSetting;->SetLanguage(Landroid/content/Context;)V
 
     .line 104
-    const v3, 0x7f0a033b
+    const v4, 0x7f090342
 
     move-object/from16 v0, p1
 
-    invoke-virtual {v0, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
     move-object/from16 v0, p10
 
-    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 105
-    const v3, 0x7f0a033c
+    const v4, 0x7f090343
 
     move-object/from16 v0, p1
 
-    invoke-virtual {v0, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
     move-object/from16 v0, p11
 
-    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 107
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    sput v3, Lcom/samsung/privilege/util/AnimationPopup;->gCurrentPopupWelcome:I
+    sput v4, Lcom/samsung/privilege/util/AnimationPopup;->gCurrentPopupWelcome:I
 
     .line 109
-    new-instance v20, Landroid/util/DisplayMetrics;
+    new-instance v21, Landroid/util/DisplayMetrics;
 
-    invoke-direct/range {v20 .. v20}, Landroid/util/DisplayMetrics;-><init>()V
+    invoke-direct/range {v21 .. v21}, Landroid/util/DisplayMetrics;-><init>()V
 
     .line 110
-    .local v20, "displayMetrics":Landroid/util/DisplayMetrics;
+    .local v21, "displayMetrics":Landroid/util/DisplayMetrics;
     invoke-virtual/range {p1 .. p1}, Landroid/app/Activity;->getWindowManager()Landroid/view/WindowManager;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-interface {v3}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    invoke-interface {v4}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
-    move-result-object v3
+    move-result-object v4
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v21
 
-    invoke-virtual {v3, v0}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
+    invoke-virtual {v4, v0}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
     .line 111
-    move-object/from16 v0, v20
+    move-object/from16 v0, v21
 
     iget v0, v0, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    move/from16 v21, v0
+    move/from16 v22, v0
 
     .line 112
-    .local v21, "height":I
-    move-object/from16 v0, v20
+    .local v22, "height":I
+    move-object/from16 v0, v21
 
     iget v0, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    move/from16 v24, v0
+    move/from16 v25, v0
 
     .line 113
-    .local v24, "width":I
-    move/from16 v0, v24
+    .local v25, "width":I
+    move/from16 v0, v25
 
-    int-to-float v3, v0
+    int-to-float v4, v0
 
-    const/high16 v4, 0x40000000
+    const/high16 v5, 0x40000000
 
-    div-float v18, v3, v4
+    div-float v19, v4, v5
 
     .line 114
-    .local v18, "centerX":F
-    move/from16 v0, v21
+    .local v19, "centerX":F
+    move/from16 v0, v22
 
-    int-to-float v3, v0
+    int-to-float v4, v0
 
-    const/high16 v4, 0x40000000
+    const/high16 v5, 0x40000000
 
-    div-float v19, v3, v4
+    div-float v20, v4, v5
 
     .line 116
-    .local v19, "centerY":F
-    const/16 v22, 0x0
+    .local v20, "centerY":F
+    const/16 v23, 0x0
 
     .line 117
-    .local v22, "isUseSmallImage":Z
+    .local v23, "isUseSmallImage":Z
     invoke-virtual/range {p1 .. p1}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v3}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+    invoke-virtual {v4}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
-    move-result-object v3
+    move-result-object v4
 
-    iget v3, v3, Landroid/content/res/Configuration;->screenLayout:I
+    iget v4, v4, Landroid/content/res/Configuration;->screenLayout:I
 
-    and-int/lit8 v3, v3, 0xf
+    and-int/lit8 v4, v4, 0xf
 
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
-    if-ne v3, v4, :cond_65
+    if-ne v4, v5, :cond_65
 
     .line 118
-    const/16 v22, 0x1
+    const/16 v23, 0x1
 
     .line 120
     :cond_65
-    move/from16 v7, v22
+    move/from16 v8, v23
 
     .line 122
-    .local v7, "isUseSmallImageFinal":Z
-    const/4 v3, 0x0
+    .local v8, "isUseSmallImageFinal":Z
+    const/4 v4, 0x0
 
     move-object/from16 v0, p2
 
-    invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    invoke-virtual {v0, v4}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
     .line 124
-    new-instance v3, Lcom/samsung/privilege/util/AnimationPopup$1;
+    new-instance v4, Lcom/samsung/privilege/util/AnimationPopup$1;
 
-    invoke-direct {v3}, Lcom/samsung/privilege/util/AnimationPopup$1;-><init>()V
+    invoke-direct {v4}, Lcom/samsung/privilege/util/AnimationPopup$1;-><init>()V
 
     move-object/from16 v0, p2
 
-    invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v0, v4}, Landroid/widget/RelativeLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 132
-    new-instance v3, Lcom/samsung/privilege/util/AnimationPopup$2;
+    new-instance v4, Lcom/samsung/privilege/util/AnimationPopup$2;
 
-    move-object/from16 v4, p3
+    move-object/from16 v5, p3
 
-    move-object/from16 v5, p4
+    move-object/from16 v6, p4
 
-    move/from16 v6, p0
+    move/from16 v7, p0
 
-    move-object/from16 v8, p2
+    move-object/from16 v9, p2
 
-    move-object/from16 v9, p1
+    move-object/from16 v10, p1
 
-    move-object/from16 v10, p11
+    move-object/from16 v11, p11
 
-    move-object/from16 v11, p6
+    move-object/from16 v12, p6
 
-    move-object/from16 v12, p5
+    move-object/from16 v13, p5
 
-    invoke-direct/range {v3 .. v12}, Lcom/samsung/privilege/util/AnimationPopup$2;-><init>(Landroid/widget/ImageView;Landroid/widget/ImageView;IZLandroid/widget/RelativeLayout;Landroid/app/Activity;Landroid/widget/TextView;Landroid/widget/RelativeLayout;Landroid/widget/LinearLayout;)V
+    invoke-direct/range {v4 .. v13}, Lcom/samsung/privilege/util/AnimationPopup$2;-><init>(Landroid/widget/ImageView;Landroid/widget/ImageView;IZLandroid/widget/RelativeLayout;Landroid/app/Activity;Landroid/widget/TextView;Landroid/widget/RelativeLayout;Landroid/widget/LinearLayout;)V
 
     move-object/from16 v0, p8
 
-    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 232
-    new-instance v8, Lcom/samsung/privilege/util/AnimationPopup$3;
+    new-instance v9, Lcom/samsung/privilege/util/AnimationPopup$3;
 
-    move-object/from16 v9, p1
+    move-object/from16 v10, p1
 
-    move-object/from16 v10, p3
+    move-object/from16 v11, p3
 
-    move-object/from16 v11, p4
+    move-object/from16 v12, p4
 
-    move/from16 v12, p0
+    move/from16 v13, p0
 
-    move v13, v7
+    move v14, v8
 
-    move-object/from16 v14, p2
+    move-object/from16 v15, p2
 
-    move-object/from16 v15, p11
+    move-object/from16 v16, p11
 
-    move-object/from16 v16, p6
+    move-object/from16 v17, p6
 
-    move-object/from16 v17, p5
+    move-object/from16 v18, p5
 
-    invoke-direct/range {v8 .. v17}, Lcom/samsung/privilege/util/AnimationPopup$3;-><init>(Landroid/app/Activity;Landroid/widget/ImageView;Landroid/widget/ImageView;IZLandroid/widget/RelativeLayout;Landroid/widget/TextView;Landroid/widget/RelativeLayout;Landroid/widget/LinearLayout;)V
+    invoke-direct/range {v9 .. v18}, Lcom/samsung/privilege/util/AnimationPopup$3;-><init>(Landroid/app/Activity;Landroid/widget/ImageView;Landroid/widget/ImageView;IZLandroid/widget/RelativeLayout;Landroid/widget/TextView;Landroid/widget/RelativeLayout;Landroid/widget/LinearLayout;)V
 
     move-object/from16 v0, p9
 
-    invoke-virtual {v0, v8}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v9}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 346
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
     move/from16 v0, p0
 
-    invoke-static {v0, v3, v7}, Lcom/samsung/privilege/util/AnimationPopup;->getImagePopup(IIZ)I
+    invoke-static {v0, v4, v8}, Lcom/samsung/privilege/util/AnimationPopup;->getImagePopup(IIZ)I
 
-    move-result v3
+    move-result v4
 
     move-object/from16 v0, p3
 
-    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 347
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    sput v3, Lcom/samsung/privilege/util/AnimationPopup;->gCurrentPopupWelcome:I
+    sput v4, Lcom/samsung/privilege/util/AnimationPopup;->gCurrentPopupWelcome:I
 
     .line 349
-    invoke-static/range {v18 .. v19}, Lcom/samsung/privilege/util/AnimationPopup;->smallToBig1Animation(FF)Landroid/view/animation/Animation;
+    invoke-static/range {v19 .. v20}, Lcom/samsung/privilege/util/AnimationPopup;->smallToBig1Animation(FF)Landroid/view/animation/Animation;
 
-    move-result-object v23
+    move-result-object v24
 
     .line 350
-    .local v23, "smallToBig1":Landroid/view/animation/Animation;
-    const/4 v3, 0x1
+    .local v24, "smallToBig1":Landroid/view/animation/Animation;
+    const/4 v4, 0x1
 
-    move-object/from16 v0, v23
+    move-object/from16 v0, v24
 
-    invoke-virtual {v0, v3}, Landroid/view/animation/Animation;->setFillEnabled(Z)V
+    invoke-virtual {v0, v4}, Landroid/view/animation/Animation;->setFillEnabled(Z)V
 
     .line 351
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    move-object/from16 v0, v23
+    move-object/from16 v0, v24
 
-    invoke-virtual {v0, v3}, Landroid/view/animation/Animation;->setFillAfter(Z)V
+    invoke-virtual {v0, v4}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
     .line 352
-    const-wide/16 v3, 0x1f4
+    const-wide/16 v4, 0x1f4
 
-    move-object/from16 v0, v23
+    move-object/from16 v0, v24
 
-    invoke-virtual {v0, v3, v4}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 353
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v24
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V
 
     .line 355
-    new-instance v3, Lcom/samsung/privilege/util/AnimationPopup$4;
+    new-instance v4, Lcom/samsung/privilege/util/AnimationPopup$4;
 
     move-object/from16 v0, p1
 
@@ -741,11 +741,11 @@
 
     move-object/from16 v2, p3
 
-    invoke-direct {v3, v0, v1, v2}, Lcom/samsung/privilege/util/AnimationPopup$4;-><init>(Landroid/app/Activity;Landroid/widget/LinearLayout;Landroid/widget/ImageView;)V
+    invoke-direct {v4, v0, v1, v2}, Lcom/samsung/privilege/util/AnimationPopup$4;-><init>(Landroid/app/Activity;Landroid/widget/LinearLayout;Landroid/widget/ImageView;)V
 
-    move-object/from16 v0, v23
+    move-object/from16 v0, v24
 
-    invoke-virtual {v0, v3}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+    invoke-virtual {v0, v4}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
     .line 379
     return-void
@@ -776,9 +776,9 @@
 
     .line 383
     .local v0, "smallToBig":Landroid/view/animation/Animation;
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 384
     new-instance v1, Landroid/view/animation/AccelerateInterpolator;

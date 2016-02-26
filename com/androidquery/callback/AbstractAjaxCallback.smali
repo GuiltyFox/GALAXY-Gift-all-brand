@@ -1022,7 +1022,7 @@
 .end method
 
 .method private fileWork()V
-    .registers 6
+    .registers 7
 
     .prologue
     .line 1009
@@ -1071,9 +1071,9 @@
 
     invoke-virtual {v0}, Ljava/io/File;->lastModified()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    invoke-direct {v2, v3, v4}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v2, v4, v5}, Ljava/util/Date;-><init>(J)V
 
     invoke-virtual {v1, v2}, Lcom/androidquery/callback/AjaxStatus;->time(Ljava/util/Date;)Lcom/androidquery/callback/AjaxStatus;
 
@@ -1486,7 +1486,7 @@
 .end method
 
 .method private httpDo(Lorg/apache/http/client/methods/HttpUriRequest;Ljava/lang/String;Ljava/util/Map;Lcom/androidquery/callback/AjaxStatus;)V
-    .registers 37
+    .registers 39
     .param p1, "hr"    # Lorg/apache/http/client/methods/HttpUriRequest;
     .param p2, "url"    # Ljava/lang/String;
     .param p4, "status"    # Lcom/androidquery/callback/AjaxStatus;
@@ -1516,20 +1516,20 @@
     .line 1424
     .local p0, "this":Lcom/androidquery/callback/AbstractAjaxCallback;, "Lcom/androidquery/callback/AbstractAjaxCallback<TT;TK;>;"
     .local p3, "headers":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
-    sget-object v28, Lcom/androidquery/callback/AbstractAjaxCallback;->AGENT:Ljava/lang/String;
+    sget-object v29, Lcom/androidquery/callback/AbstractAjaxCallback;->AGENT:Ljava/lang/String;
 
-    if-eqz v28, :cond_11
+    if-eqz v29, :cond_11
 
     .line 1425
-    const-string v28, "User-Agent"
+    const-string v29, "User-Agent"
 
-    sget-object v29, Lcom/androidquery/callback/AbstractAjaxCallback;->AGENT:Ljava/lang/String;
+    sget-object v30, Lcom/androidquery/callback/AbstractAjaxCallback;->AGENT:Ljava/lang/String;
 
     move-object/from16 v0, p1
 
-    move-object/from16 v1, v28
+    move-object/from16 v1, v29
 
-    move-object/from16 v2, v29
+    move-object/from16 v2, v30
 
     invoke-interface {v0, v1, v2}, Lorg/apache/http/client/methods/HttpUriRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1540,50 +1540,50 @@
     .line 1429
     invoke-interface/range {p3 .. p3}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
-    move-result-object v28
-
-    invoke-interface/range {v28 .. v28}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
     move-result-object v29
 
+    invoke-interface/range {v29 .. v29}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v30
+
     :goto_1b
-    invoke-interface/range {v29 .. v29}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface/range {v30 .. v30}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v28
+    move-result v29
 
-    if-nez v28, :cond_e7
+    if-nez v29, :cond_e7
 
     .line 1435
     :cond_21
-    sget-boolean v28, Lcom/androidquery/callback/AbstractAjaxCallback;->GZIP:Z
+    sget-boolean v29, Lcom/androidquery/callback/AbstractAjaxCallback;->GZIP:Z
 
-    if-eqz v28, :cond_40
+    if-eqz v29, :cond_40
 
     if-eqz p3, :cond_33
 
-    const-string v28, "Accept-Encoding"
+    const-string v29, "Accept-Encoding"
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v28
+    move-object/from16 v1, v29
 
     invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
-    move-result v28
+    move-result v29
 
-    if-nez v28, :cond_40
+    if-nez v29, :cond_40
 
     .line 1436
     :cond_33
-    const-string v28, "Accept-Encoding"
+    const-string v29, "Accept-Encoding"
 
-    const-string v29, "gzip"
+    const-string v30, "gzip"
 
     move-object/from16 v0, p1
 
-    move-object/from16 v1, v28
+    move-object/from16 v1, v29
 
-    move-object/from16 v2, v29
+    move-object/from16 v2, v30
 
     invoke-interface {v0, v1, v2}, Lorg/apache/http/client/methods/HttpUriRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1591,20 +1591,20 @@
     :cond_40
     invoke-direct/range {p0 .. p0}, Lcom/androidquery/callback/AbstractAjaxCallback;->makeCookie()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
     .line 1440
-    .local v8, "cookie":Ljava/lang/String;
-    if-eqz v8, :cond_4f
+    .local v9, "cookie":Ljava/lang/String;
+    if-eqz v9, :cond_4f
 
     .line 1441
-    const-string v28, "Cookie"
+    const-string v29, "Cookie"
 
     move-object/from16 v0, p1
 
-    move-object/from16 v1, v28
+    move-object/from16 v1, v29
 
-    invoke-interface {v0, v1, v8}, Lorg/apache/http/client/methods/HttpUriRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0, v1, v9}, Lorg/apache/http/client/methods/HttpUriRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1444
     :cond_4f
@@ -1612,18 +1612,18 @@
 
     iget-object v0, v0, Lcom/androidquery/callback/AbstractAjaxCallback;->ah:Lcom/androidquery/auth/AccountHandle;
 
-    move-object/from16 v28, v0
+    move-object/from16 v29, v0
 
-    if-eqz v28, :cond_66
+    if-eqz v29, :cond_66
 
     .line 1445
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/androidquery/callback/AbstractAjaxCallback;->ah:Lcom/androidquery/auth/AccountHandle;
 
-    move-object/from16 v28, v0
+    move-object/from16 v29, v0
 
-    move-object/from16 v0, v28
+    move-object/from16 v0, v29
 
     move-object/from16 v1, p0
 
@@ -1635,37 +1635,37 @@
     :cond_66
     invoke-static {}, Lcom/androidquery/callback/AbstractAjaxCallback;->getClient()Lorg/apache/http/impl/client/DefaultHttpClient;
 
-    move-result-object v5
+    move-result-object v6
 
     .line 1450
-    .local v5, "client":Lorg/apache/http/impl/client/DefaultHttpClient;
+    .local v6, "client":Lorg/apache/http/impl/client/DefaultHttpClient;
     invoke-interface/range {p1 .. p1}, Lorg/apache/http/client/methods/HttpUriRequest;->getParams()Lorg/apache/http/params/HttpParams;
 
-    move-result-object v18
+    move-result-object v19
 
     .line 1451
-    .local v18, "hp":Lorg/apache/http/params/HttpParams;
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/androidquery/callback/AbstractAjaxCallback;->proxy:Lorg/apache/http/HttpHost;
-
-    move-object/from16 v28, v0
-
-    if-eqz v28, :cond_87
-
-    const-string v28, "http.route.default-proxy"
-
+    .local v19, "hp":Lorg/apache/http/params/HttpParams;
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/androidquery/callback/AbstractAjaxCallback;->proxy:Lorg/apache/http/HttpHost;
 
     move-object/from16 v29, v0
 
-    move-object/from16 v0, v18
+    if-eqz v29, :cond_87
 
-    move-object/from16 v1, v28
+    const-string v29, "http.route.default-proxy"
 
-    move-object/from16 v2, v29
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/androidquery/callback/AbstractAjaxCallback;->proxy:Lorg/apache/http/HttpHost;
+
+    move-object/from16 v30, v0
+
+    move-object/from16 v0, v19
+
+    move-object/from16 v1, v29
+
+    move-object/from16 v2, v30
 
     invoke-interface {v0, v1, v2}, Lorg/apache/http/params/HttpParams;->setParameter(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/params/HttpParams;
 
@@ -1675,78 +1675,78 @@
 
     iget v0, v0, Lcom/androidquery/callback/AbstractAjaxCallback;->timeout:I
 
-    move/from16 v28, v0
+    move/from16 v29, v0
 
-    if-lez v28, :cond_c0
+    if-lez v29, :cond_c0
 
     .line 1453
-    const-string v28, "timeout param"
+    const-string v29, "timeout param"
 
-    const-string v29, "http.connection.timeout"
+    const-string v30, "http.connection.timeout"
 
-    invoke-static/range {v28 .. v29}, Lcom/androidquery/util/AQUtility;->debug(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static/range {v29 .. v30}, Lcom/androidquery/util/AQUtility;->debug(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 1454
-    const-string v28, "http.connection.timeout"
+    const-string v29, "http.connection.timeout"
 
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/androidquery/callback/AbstractAjaxCallback;->timeout:I
 
-    move/from16 v29, v0
+    move/from16 v30, v0
 
-    invoke-static/range {v29 .. v29}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static/range {v30 .. v30}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v29
+    move-result-object v30
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
-    move-object/from16 v1, v28
+    move-object/from16 v1, v29
 
-    move-object/from16 v2, v29
+    move-object/from16 v2, v30
 
     invoke-interface {v0, v1, v2}, Lorg/apache/http/params/HttpParams;->setParameter(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/params/HttpParams;
 
     .line 1455
-    const-string v28, "http.socket.timeout"
+    const-string v29, "http.socket.timeout"
 
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/androidquery/callback/AbstractAjaxCallback;->timeout:I
 
-    move/from16 v29, v0
+    move/from16 v30, v0
 
-    invoke-static/range {v29 .. v29}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static/range {v30 .. v30}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v29
+    move-result-object v30
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
-    move-object/from16 v1, v28
+    move-object/from16 v1, v29
 
-    move-object/from16 v2, v29
+    move-object/from16 v2, v30
 
     invoke-interface {v0, v1, v2}, Lorg/apache/http/params/HttpParams;->setParameter(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/params/HttpParams;
 
     .line 1458
     :cond_c0
-    new-instance v7, Lorg/apache/http/protocol/BasicHttpContext;
+    new-instance v8, Lorg/apache/http/protocol/BasicHttpContext;
 
-    invoke-direct {v7}, Lorg/apache/http/protocol/BasicHttpContext;-><init>()V
+    invoke-direct {v8}, Lorg/apache/http/protocol/BasicHttpContext;-><init>()V
 
     .line 1459
-    .local v7, "context":Lorg/apache/http/protocol/HttpContext;
-    new-instance v9, Lorg/apache/http/impl/client/BasicCookieStore;
+    .local v8, "context":Lorg/apache/http/protocol/HttpContext;
+    new-instance v10, Lorg/apache/http/impl/client/BasicCookieStore;
 
-    invoke-direct {v9}, Lorg/apache/http/impl/client/BasicCookieStore;-><init>()V
+    invoke-direct {v10}, Lorg/apache/http/impl/client/BasicCookieStore;-><init>()V
 
     .line 1460
-    .local v9, "cookieStore":Lorg/apache/http/client/CookieStore;
-    const-string v28, "http.cookie-store"
+    .local v10, "cookieStore":Lorg/apache/http/client/CookieStore;
+    const-string v29, "http.cookie-store"
 
-    move-object/from16 v0, v28
+    move-object/from16 v0, v29
 
-    invoke-interface {v7, v0, v9}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v8, v0, v10}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 1462
     move-object/from16 v0, p1
@@ -1760,558 +1760,560 @@
 
     iget-boolean v0, v0, Lcom/androidquery/callback/AbstractAjaxCallback;->abort:Z
 
-    move/from16 v28, v0
+    move/from16 v29, v0
 
-    if-eqz v28, :cond_102
+    if-eqz v29, :cond_102
 
     .line 1465
-    new-instance v28, Ljava/io/IOException;
+    new-instance v29, Ljava/io/IOException;
 
-    const-string v29, "Aborted"
+    const-string v30, "Aborted"
 
-    invoke-direct/range {v28 .. v29}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct/range {v29 .. v30}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw v28
+    throw v29
 
     .line 1429
-    .end local v5    # "client":Lorg/apache/http/impl/client/DefaultHttpClient;
-    .end local v7    # "context":Lorg/apache/http/protocol/HttpContext;
-    .end local v8    # "cookie":Ljava/lang/String;
-    .end local v9    # "cookieStore":Lorg/apache/http/client/CookieStore;
-    .end local v18    # "hp":Lorg/apache/http/params/HttpParams;
+    .end local v6    # "client":Lorg/apache/http/impl/client/DefaultHttpClient;
+    .end local v8    # "context":Lorg/apache/http/protocol/HttpContext;
+    .end local v9    # "cookie":Ljava/lang/String;
+    .end local v10    # "cookieStore":Lorg/apache/http/client/CookieStore;
+    .end local v19    # "hp":Lorg/apache/http/params/HttpParams;
     :cond_e7
-    invoke-interface/range {v29 .. v29}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface/range {v30 .. v30}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v21
+    move-result-object v22
 
-    check-cast v21, Ljava/lang/String;
+    check-cast v22, Ljava/lang/String;
 
     .line 1430
-    .local v21, "name":Ljava/lang/String;
+    .local v22, "name":Ljava/lang/String;
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v21
+    move-object/from16 v1, v22
 
     invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v28
+    move-result-object v29
 
-    check-cast v28, Ljava/lang/String;
+    check-cast v29, Ljava/lang/String;
 
     move-object/from16 v0, p1
 
-    move-object/from16 v1, v21
+    move-object/from16 v1, v22
 
-    move-object/from16 v2, v28
+    move-object/from16 v2, v29
 
     invoke-interface {v0, v1, v2}, Lorg/apache/http/client/methods/HttpUriRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_1b
 
     .line 1468
-    .end local v21    # "name":Ljava/lang/String;
-    .restart local v5    # "client":Lorg/apache/http/impl/client/DefaultHttpClient;
-    .restart local v7    # "context":Lorg/apache/http/protocol/HttpContext;
-    .restart local v8    # "cookie":Ljava/lang/String;
-    .restart local v9    # "cookieStore":Lorg/apache/http/client/CookieStore;
-    .restart local v18    # "hp":Lorg/apache/http/params/HttpParams;
+    .end local v22    # "name":Ljava/lang/String;
+    .restart local v6    # "client":Lorg/apache/http/impl/client/DefaultHttpClient;
+    .restart local v8    # "context":Lorg/apache/http/protocol/HttpContext;
+    .restart local v9    # "cookie":Ljava/lang/String;
+    .restart local v10    # "cookieStore":Lorg/apache/http/client/CookieStore;
+    .restart local v19    # "hp":Lorg/apache/http/params/HttpParams;
     :cond_102
     move-object/from16 v0, p1
 
-    invoke-virtual {v5, v0, v7}, Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
-
-    move-result-object v25
-
-    .line 1470
-    .local v25, "response":Lorg/apache/http/HttpResponse;
-    const/4 v12, 0x0
-
-    check-cast v12, [B
-
-    .line 1473
-    .local v12, "data":[B
-    move-object/from16 v24, p2
-
-    .line 1475
-    .local v24, "redirect":Ljava/lang/String;
-    invoke-interface/range {v25 .. v25}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
-
-    move-result-object v28
-
-    invoke-interface/range {v28 .. v28}, Lorg/apache/http/StatusLine;->getStatusCode()I
-
-    move-result v6
-
-    .line 1476
-    .local v6, "code":I
-    invoke-interface/range {v25 .. v25}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
-
-    move-result-object v28
-
-    invoke-interface/range {v28 .. v28}, Lorg/apache/http/StatusLine;->getReasonPhrase()Ljava/lang/String;
-
-    move-result-object v20
-
-    .line 1477
-    .local v20, "message":Ljava/lang/String;
-    const/4 v15, 0x0
-
-    .line 1479
-    .local v15, "error":Ljava/lang/String;
-    invoke-interface/range {v25 .. v25}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
-
-    move-result-object v14
-
-    .line 1481
-    .local v14, "entity":Lorg/apache/http/HttpEntity;
-    const/16 v17, 0x0
-
-    .line 1483
-    .local v17, "file":Ljava/io/File;
-    const/16 v28, 0xc8
-
-    move/from16 v0, v28
-
-    if-lt v6, v0, :cond_130
-
-    const/16 v28, 0x12c
-
-    move/from16 v0, v28
-
-    if-lt v6, v0, :cond_1c3
-
-    .line 1487
-    :cond_130
-    if-eqz v14, :cond_15e
-
-    .line 1489
-    :try_start_132
-    invoke-interface {v14}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
-
-    move-result-object v19
-
-    .line 1490
-    .local v19, "is":Ljava/io/InputStream;
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v14}, Lcom/androidquery/callback/AbstractAjaxCallback;->getEncoding(Lorg/apache/http/HttpEntity;)Ljava/lang/String;
-
-    move-result-object v28
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v28
-
-    move-object/from16 v2, v19
-
-    invoke-direct {v0, v1, v2}, Lcom/androidquery/callback/AbstractAjaxCallback;->toData(Ljava/lang/String;Ljava/io/InputStream;)[B
+    invoke-virtual {v6, v0, v8}, Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
 
     move-result-object v26
 
-    .line 1492
-    .local v26, "s":[B
-    new-instance v16, Ljava/lang/String;
+    .line 1470
+    .local v26, "response":Lorg/apache/http/HttpResponse;
+    const/4 v13, 0x0
 
-    const-string v28, "UTF-8"
+    check-cast v13, [B
 
-    move-object/from16 v0, v16
+    .line 1473
+    .local v13, "data":[B
+    move-object/from16 v25, p2
 
-    move-object/from16 v1, v26
-
-    move-object/from16 v2, v28
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
-    :try_end_153
-    .catch Ljava/lang/Exception; {:try_start_132 .. :try_end_153} :catch_1be
-
-    .line 1494
-    .end local v15    # "error":Ljava/lang/String;
-    .local v16, "error":Ljava/lang/String;
-    :try_start_153
-    const-string v28, "error"
-
-    move-object/from16 v0, v28
-
-    move-object/from16 v1, v16
-
-    invoke-static {v0, v1}, Lcom/androidquery/util/AQUtility;->debug(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_15c
-    .catch Ljava/lang/Exception; {:try_start_153 .. :try_end_15c} :catch_284
-
-    move-object/from16 v15, v16
-
-    .line 1548
-    .end local v16    # "error":Ljava/lang/String;
-    .end local v19    # "is":Ljava/io/InputStream;
-    .end local v26    # "s":[B
-    .restart local v15    # "error":Ljava/lang/String;
-    :cond_15e
-    :goto_15e
-    const-string v28, "response"
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 1475
+    .local v25, "redirect":Ljava/lang/String;
+    invoke-interface/range {v26 .. v26}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
 
     move-result-object v29
 
-    invoke-static/range {v28 .. v29}, Lcom/androidquery/util/AQUtility;->debug(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-interface/range {v29 .. v29}, Lorg/apache/http/StatusLine;->getStatusCode()I
+
+    move-result v7
+
+    .line 1476
+    .local v7, "code":I
+    invoke-interface/range {v26 .. v26}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
+
+    move-result-object v29
+
+    invoke-interface/range {v29 .. v29}, Lorg/apache/http/StatusLine;->getReasonPhrase()Ljava/lang/String;
+
+    move-result-object v21
+
+    .line 1477
+    .local v21, "message":Ljava/lang/String;
+    const/16 v16, 0x0
+
+    .line 1479
+    .local v16, "error":Ljava/lang/String;
+    invoke-interface/range {v26 .. v26}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+
+    move-result-object v15
+
+    .line 1481
+    .local v15, "entity":Lorg/apache/http/HttpEntity;
+    const/16 v18, 0x0
+
+    .line 1483
+    .local v18, "file":Ljava/io/File;
+    const/16 v29, 0xc8
+
+    move/from16 v0, v29
+
+    if-lt v7, v0, :cond_131
+
+    const/16 v29, 0x12c
+
+    move/from16 v0, v29
+
+    if-lt v7, v0, :cond_1c6
+
+    .line 1487
+    :cond_131
+    if-eqz v15, :cond_15f
+
+    .line 1489
+    :try_start_133
+    invoke-interface {v15}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
+
+    move-result-object v20
+
+    .line 1490
+    .local v20, "is":Ljava/io/InputStream;
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v15}, Lcom/androidquery/callback/AbstractAjaxCallback;->getEncoding(Lorg/apache/http/HttpEntity;)Ljava/lang/String;
+
+    move-result-object v29
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v29
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/androidquery/callback/AbstractAjaxCallback;->toData(Ljava/lang/String;Ljava/io/InputStream;)[B
+
+    move-result-object v27
+
+    .line 1492
+    .local v27, "s":[B
+    new-instance v17, Ljava/lang/String;
+
+    const-string v29, "UTF-8"
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v27
+
+    move-object/from16 v2, v29
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
+    :try_end_154
+    .catch Ljava/lang/Exception; {:try_start_133 .. :try_end_154} :catch_1c1
+
+    .line 1494
+    .end local v16    # "error":Ljava/lang/String;
+    .local v17, "error":Ljava/lang/String;
+    :try_start_154
+    const-string v29, "error"
+
+    move-object/from16 v0, v29
+
+    move-object/from16 v1, v17
+
+    invoke-static {v0, v1}, Lcom/androidquery/util/AQUtility;->debug(Ljava/lang/Object;Ljava/lang/Object;)V
+    :try_end_15d
+    .catch Ljava/lang/Exception; {:try_start_154 .. :try_end_15d} :catch_287
+
+    move-object/from16 v16, v17
+
+    .line 1548
+    .end local v17    # "error":Ljava/lang/String;
+    .end local v20    # "is":Ljava/io/InputStream;
+    .end local v27    # "s":[B
+    .restart local v16    # "error":Ljava/lang/String;
+    :cond_15f
+    :goto_15f
+    const-string v29, "response"
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v30
+
+    invoke-static/range {v29 .. v30}, Lcom/androidquery/util/AQUtility;->debug(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 1549
-    if-eqz v12, :cond_177
+    if-eqz v13, :cond_178
 
     .line 1550
-    array-length v0, v12
+    array-length v0, v13
 
-    move/from16 v28, v0
+    move/from16 v29, v0
 
-    invoke-static/range {v28 .. v28}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static/range {v29 .. v29}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v28
+    move-result-object v29
 
-    move-object/from16 v0, v28
+    move-object/from16 v0, v29
 
     move-object/from16 v1, p2
 
     invoke-static {v0, v1}, Lcom/androidquery/util/AQUtility;->debug(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 1553
-    :cond_177
+    :cond_178
     move-object/from16 v0, p4
 
-    invoke-virtual {v0, v6}, Lcom/androidquery/callback/AjaxStatus;->code(I)Lcom/androidquery/callback/AjaxStatus;
-
-    move-result-object v28
-
-    move-object/from16 v0, v28
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Lcom/androidquery/callback/AjaxStatus;->message(Ljava/lang/String;)Lcom/androidquery/callback/AjaxStatus;
-
-    move-result-object v28
-
-    move-object/from16 v0, v28
-
-    invoke-virtual {v0, v15}, Lcom/androidquery/callback/AjaxStatus;->error(Ljava/lang/String;)Lcom/androidquery/callback/AjaxStatus;
-
-    move-result-object v28
-
-    move-object/from16 v0, v28
-
-    move-object/from16 v1, v24
-
-    invoke-virtual {v0, v1}, Lcom/androidquery/callback/AjaxStatus;->redirect(Ljava/lang/String;)Lcom/androidquery/callback/AjaxStatus;
-
-    move-result-object v28
-
-    new-instance v29, Ljava/util/Date;
-
-    invoke-direct/range {v29 .. v29}, Ljava/util/Date;-><init>()V
-
-    invoke-virtual/range {v28 .. v29}, Lcom/androidquery/callback/AjaxStatus;->time(Ljava/util/Date;)Lcom/androidquery/callback/AjaxStatus;
-
-    move-result-object v28
-
-    move-object/from16 v0, v28
-
-    invoke-virtual {v0, v12}, Lcom/androidquery/callback/AjaxStatus;->data([B)Lcom/androidquery/callback/AjaxStatus;
-
-    move-result-object v28
-
-    move-object/from16 v0, v28
-
-    move-object/from16 v1, v17
-
-    invoke-virtual {v0, v1}, Lcom/androidquery/callback/AjaxStatus;->file(Ljava/io/File;)Lcom/androidquery/callback/AjaxStatus;
-
-    move-result-object v28
-
-    move-object/from16 v0, v28
-
-    invoke-virtual {v0, v5}, Lcom/androidquery/callback/AjaxStatus;->client(Lorg/apache/http/impl/client/DefaultHttpClient;)Lcom/androidquery/callback/AjaxStatus;
-
-    move-result-object v28
-
-    move-object/from16 v0, v28
-
-    invoke-virtual {v0, v7}, Lcom/androidquery/callback/AjaxStatus;->context(Lorg/apache/http/protocol/HttpContext;)Lcom/androidquery/callback/AjaxStatus;
-
-    move-result-object v28
-
-    invoke-interface/range {v25 .. v25}, Lorg/apache/http/HttpResponse;->getAllHeaders()[Lorg/apache/http/Header;
+    invoke-virtual {v0, v7}, Lcom/androidquery/callback/AjaxStatus;->code(I)Lcom/androidquery/callback/AjaxStatus;
 
     move-result-object v29
 
-    invoke-virtual/range {v28 .. v29}, Lcom/androidquery/callback/AjaxStatus;->headers([Lorg/apache/http/Header;)Lcom/androidquery/callback/AjaxStatus;
+    move-object/from16 v0, v29
+
+    move-object/from16 v1, v21
+
+    invoke-virtual {v0, v1}, Lcom/androidquery/callback/AjaxStatus;->message(Ljava/lang/String;)Lcom/androidquery/callback/AjaxStatus;
+
+    move-result-object v29
+
+    move-object/from16 v0, v29
+
+    move-object/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Lcom/androidquery/callback/AjaxStatus;->error(Ljava/lang/String;)Lcom/androidquery/callback/AjaxStatus;
+
+    move-result-object v29
+
+    move-object/from16 v0, v29
+
+    move-object/from16 v1, v25
+
+    invoke-virtual {v0, v1}, Lcom/androidquery/callback/AjaxStatus;->redirect(Ljava/lang/String;)Lcom/androidquery/callback/AjaxStatus;
+
+    move-result-object v29
+
+    new-instance v30, Ljava/util/Date;
+
+    invoke-direct/range {v30 .. v30}, Ljava/util/Date;-><init>()V
+
+    invoke-virtual/range {v29 .. v30}, Lcom/androidquery/callback/AjaxStatus;->time(Ljava/util/Date;)Lcom/androidquery/callback/AjaxStatus;
+
+    move-result-object v29
+
+    move-object/from16 v0, v29
+
+    invoke-virtual {v0, v13}, Lcom/androidquery/callback/AjaxStatus;->data([B)Lcom/androidquery/callback/AjaxStatus;
+
+    move-result-object v29
+
+    move-object/from16 v0, v29
+
+    move-object/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcom/androidquery/callback/AjaxStatus;->file(Ljava/io/File;)Lcom/androidquery/callback/AjaxStatus;
+
+    move-result-object v29
+
+    move-object/from16 v0, v29
+
+    invoke-virtual {v0, v6}, Lcom/androidquery/callback/AjaxStatus;->client(Lorg/apache/http/impl/client/DefaultHttpClient;)Lcom/androidquery/callback/AjaxStatus;
+
+    move-result-object v29
+
+    move-object/from16 v0, v29
+
+    invoke-virtual {v0, v8}, Lcom/androidquery/callback/AjaxStatus;->context(Lorg/apache/http/protocol/HttpContext;)Lcom/androidquery/callback/AjaxStatus;
+
+    move-result-object v29
+
+    invoke-interface/range {v26 .. v26}, Lorg/apache/http/HttpResponse;->getAllHeaders()[Lorg/apache/http/Header;
+
+    move-result-object v30
+
+    invoke-virtual/range {v29 .. v30}, Lcom/androidquery/callback/AjaxStatus;->headers([Lorg/apache/http/Header;)Lcom/androidquery/callback/AjaxStatus;
 
     .line 1556
     return-void
 
     .line 1497
-    :catch_1be
-    move-exception v13
+    :catch_1c1
+    move-exception v14
 
     .line 1498
-    .local v13, "e":Ljava/lang/Exception;
-    :goto_1bf
-    invoke-static {v13}, Lcom/androidquery/util/AQUtility;->debug(Ljava/lang/Throwable;)V
+    .local v14, "e":Ljava/lang/Exception;
+    :goto_1c2
+    invoke-static {v14}, Lcom/androidquery/util/AQUtility;->debug(Ljava/lang/Throwable;)V
 
-    goto :goto_15e
+    goto :goto_15f
 
     .line 1505
-    .end local v13    # "e":Ljava/lang/Exception;
-    :cond_1c3
-    const-string v28, "http.target_host"
+    .end local v14    # "e":Ljava/lang/Exception;
+    :cond_1c6
+    const-string v29, "http.target_host"
 
-    move-object/from16 v0, v28
+    move-object/from16 v0, v29
 
-    invoke-interface {v7, v0}, Lorg/apache/http/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Lorg/apache/http/HttpHost;
-
-    .line 1506
-    .local v10, "currentHost":Lorg/apache/http/HttpHost;
-    const-string v28, "http.request"
-
-    move-object/from16 v0, v28
-
-    invoke-interface {v7, v0}, Lorg/apache/http/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v8, v0}, Lorg/apache/http/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v11
 
-    check-cast v11, Lorg/apache/http/client/methods/HttpUriRequest;
+    check-cast v11, Lorg/apache/http/HttpHost;
+
+    .line 1506
+    .local v11, "currentHost":Lorg/apache/http/HttpHost;
+    const-string v29, "http.request"
+
+    move-object/from16 v0, v29
+
+    invoke-interface {v8, v0}, Lorg/apache/http/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Lorg/apache/http/client/methods/HttpUriRequest;
 
     .line 1507
-    .local v11, "currentReq":Lorg/apache/http/client/methods/HttpUriRequest;
-    new-instance v28, Ljava/lang/StringBuilder;
+    .local v12, "currentReq":Lorg/apache/http/client/methods/HttpUriRequest;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10}, Lorg/apache/http/HttpHost;->toURI()Ljava/lang/String;
+    invoke-virtual {v11}, Lorg/apache/http/HttpHost;->toURI()Ljava/lang/String;
+
+    move-result-object v30
+
+    invoke-static/range {v30 .. v30}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v30
+
+    invoke-direct/range {v29 .. v30}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {v12}, Lorg/apache/http/client/methods/HttpUriRequest;->getURI()Ljava/net/URI;
+
+    move-result-object v30
+
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v29
 
-    invoke-static/range {v29 .. v29}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v29
-
-    invoke-direct/range {v28 .. v29}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-interface {v11}, Lorg/apache/http/client/methods/HttpUriRequest;->getURI()Ljava/net/URI;
-
-    move-result-object v29
-
-    invoke-virtual/range {v28 .. v29}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v28
-
-    invoke-virtual/range {v28 .. v28}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v24
+    move-result-object v25
 
     .line 1509
-    const/16 v28, 0x20
+    const/16 v29, 0x20
 
-    const/high16 v29, 0x10000
+    const/high16 v30, 0x10000
 
-    invoke-interface {v14}, Lorg/apache/http/HttpEntity;->getContentLength()J
+    invoke-interface {v15}, Lorg/apache/http/HttpEntity;->getContentLength()J
 
-    move-result-wide v30
+    move-result-wide v32
 
-    move-wide/from16 v0, v30
+    move-wide/from16 v0, v32
 
     long-to-int v0, v0
 
-    move/from16 v30, v0
+    move/from16 v31, v0
 
-    invoke-static/range {v29 .. v30}, Ljava/lang/Math;->min(II)I
+    invoke-static/range {v30 .. v31}, Ljava/lang/Math;->min(II)I
 
-    move-result v29
+    move-result v30
 
-    invoke-static/range {v28 .. v29}, Ljava/lang/Math;->max(II)I
+    invoke-static/range {v29 .. v30}, Ljava/lang/Math;->max(II)I
 
-    move-result v27
+    move-result v28
 
     .line 1511
-    .local v27, "size":I
-    const/16 v22, 0x0
+    .local v28, "size":I
+    const/16 v23, 0x0
 
     .line 1512
-    .local v22, "os":Ljava/io/OutputStream;
-    const/16 v19, 0x0
+    .local v23, "os":Ljava/io/OutputStream;
+    const/16 v20, 0x0
 
     .line 1515
-    .restart local v19    # "is":Ljava/io/InputStream;
-    :try_start_209
+    .restart local v20    # "is":Ljava/io/InputStream;
+    :try_start_20c
     invoke-direct/range {p0 .. p0}, Lcom/androidquery/callback/AbstractAjaxCallback;->getPreFile()Ljava/io/File;
 
-    move-result-object v17
+    move-result-object v18
 
     .line 1517
-    if-nez v17, :cond_251
+    if-nez v18, :cond_254
 
     .line 1518
-    new-instance v23, Lcom/androidquery/util/PredefinedBAOS;
+    new-instance v24, Lcom/androidquery/util/PredefinedBAOS;
 
-    move-object/from16 v0, v23
+    move-object/from16 v0, v24
 
-    move/from16 v1, v27
+    move/from16 v1, v28
 
     invoke-direct {v0, v1}, Lcom/androidquery/util/PredefinedBAOS;-><init>(I)V
 
-    .end local v22    # "os":Ljava/io/OutputStream;
-    .local v23, "os":Ljava/io/OutputStream;
-    move-object/from16 v22, v23
+    .end local v23    # "os":Ljava/io/OutputStream;
+    .local v24, "os":Ljava/io/OutputStream;
+    move-object/from16 v23, v24
 
     .line 1526
-    .end local v23    # "os":Ljava/io/OutputStream;
-    .restart local v22    # "os":Ljava/io/OutputStream;
-    :goto_21a
-    invoke-interface {v14}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
-
-    move-result-object v28
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v14}, Lcom/androidquery/callback/AbstractAjaxCallback;->getEncoding(Lorg/apache/http/HttpEntity;)Ljava/lang/String;
+    .end local v24    # "os":Ljava/io/OutputStream;
+    .restart local v23    # "os":Ljava/io/OutputStream;
+    :goto_21d
+    invoke-interface {v15}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
 
     move-result-object v29
 
-    invoke-interface {v14}, Lorg/apache/http/HttpEntity;->getContentLength()J
+    move-object/from16 v0, p0
 
-    move-result-wide v30
+    invoke-direct {v0, v15}, Lcom/androidquery/callback/AbstractAjaxCallback;->getEncoding(Lorg/apache/http/HttpEntity;)Ljava/lang/String;
 
-    move-wide/from16 v0, v30
+    move-result-object v30
+
+    invoke-interface {v15}, Lorg/apache/http/HttpEntity;->getContentLength()J
+
+    move-result-wide v32
+
+    move-wide/from16 v0, v32
 
     long-to-int v0, v0
 
-    move/from16 v30, v0
+    move/from16 v31, v0
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v28
+    move-object/from16 v1, v29
 
-    move-object/from16 v2, v22
+    move-object/from16 v2, v23
 
-    move-object/from16 v3, v29
+    move-object/from16 v3, v30
 
-    move/from16 v4, v30
+    move/from16 v4, v31
 
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/androidquery/callback/AbstractAjaxCallback;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;Ljava/lang/String;I)V
 
     .line 1531
-    invoke-virtual/range {v22 .. v22}, Ljava/io/OutputStream;->flush()V
+    invoke-virtual/range {v23 .. v23}, Ljava/io/OutputStream;->flush()V
 
     .line 1533
-    if-nez v17, :cond_269
+    if-nez v18, :cond_26c
 
     .line 1534
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
     check-cast v0, Lcom/androidquery/util/PredefinedBAOS;
 
-    move-object/from16 v28, v0
+    move-object/from16 v29, v0
 
-    invoke-virtual/range {v28 .. v28}, Lcom/androidquery/util/PredefinedBAOS;->toByteArray()[B
-    :try_end_248
-    .catchall {:try_start_209 .. :try_end_248} :catchall_27c
+    invoke-virtual/range {v29 .. v29}, Lcom/androidquery/util/PredefinedBAOS;->toByteArray()[B
+    :try_end_24b
+    .catchall {:try_start_20c .. :try_end_24b} :catchall_27f
 
-    move-result-object v12
+    move-result-object v13
 
     .line 1542
-    :cond_249
-    :goto_249
-    invoke-static/range {v19 .. v19}, Lcom/androidquery/util/AQUtility;->close(Ljava/io/Closeable;)V
+    :cond_24c
+    :goto_24c
+    invoke-static/range {v20 .. v20}, Lcom/androidquery/util/AQUtility;->close(Ljava/io/Closeable;)V
 
     .line 1543
-    invoke-static/range {v22 .. v22}, Lcom/androidquery/util/AQUtility;->close(Ljava/io/Closeable;)V
+    invoke-static/range {v23 .. v23}, Lcom/androidquery/util/AQUtility;->close(Ljava/io/Closeable;)V
 
-    goto/16 :goto_15e
+    goto/16 :goto_15f
 
     .line 1520
-    :cond_251
-    :try_start_251
-    invoke-virtual/range {v17 .. v17}, Ljava/io/File;->createNewFile()Z
+    :cond_254
+    :try_start_254
+    invoke-virtual/range {v18 .. v18}, Ljava/io/File;->createNewFile()Z
 
     .line 1521
-    new-instance v23, Ljava/io/BufferedOutputStream;
+    new-instance v24, Ljava/io/BufferedOutputStream;
 
-    new-instance v28, Ljava/io/FileOutputStream;
+    new-instance v29, Ljava/io/FileOutputStream;
 
-    move-object/from16 v0, v28
+    move-object/from16 v0, v29
 
-    move-object/from16 v1, v17
+    move-object/from16 v1, v18
 
     invoke-direct {v0, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    move-object/from16 v0, v23
+    move-object/from16 v0, v24
 
-    move-object/from16 v1, v28
+    move-object/from16 v1, v29
 
     invoke-direct {v0, v1}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    .end local v22    # "os":Ljava/io/OutputStream;
-    .restart local v23    # "os":Ljava/io/OutputStream;
-    move-object/from16 v22, v23
-
     .end local v23    # "os":Ljava/io/OutputStream;
-    .restart local v22    # "os":Ljava/io/OutputStream;
-    goto :goto_21a
+    .restart local v24    # "os":Ljava/io/OutputStream;
+    move-object/from16 v23, v24
+
+    .end local v24    # "os":Ljava/io/OutputStream;
+    .restart local v23    # "os":Ljava/io/OutputStream;
+    goto :goto_21d
 
     .line 1536
-    :cond_269
-    invoke-virtual/range {v17 .. v17}, Ljava/io/File;->exists()Z
+    :cond_26c
+    invoke-virtual/range {v18 .. v18}, Ljava/io/File;->exists()Z
 
-    move-result v28
+    move-result v29
 
-    if-eqz v28, :cond_279
+    if-eqz v29, :cond_27c
 
-    invoke-virtual/range {v17 .. v17}, Ljava/io/File;->length()J
-    :try_end_272
-    .catchall {:try_start_251 .. :try_end_272} :catchall_27c
+    invoke-virtual/range {v18 .. v18}, Ljava/io/File;->length()J
+    :try_end_275
+    .catchall {:try_start_254 .. :try_end_275} :catchall_27f
 
-    move-result-wide v28
+    move-result-wide v30
 
-    const-wide/16 v30, 0x0
+    const-wide/16 v32, 0x0
 
-    cmp-long v28, v28, v30
+    cmp-long v29, v30, v32
 
-    if-nez v28, :cond_249
+    if-nez v29, :cond_24c
 
     .line 1537
-    :cond_279
-    const/16 v17, 0x0
+    :cond_27c
+    const/16 v18, 0x0
 
-    goto :goto_249
+    goto :goto_24c
 
     .line 1541
-    :catchall_27c
-    move-exception v28
+    :catchall_27f
+    move-exception v29
 
     .line 1542
-    invoke-static/range {v19 .. v19}, Lcom/androidquery/util/AQUtility;->close(Ljava/io/Closeable;)V
+    invoke-static/range {v20 .. v20}, Lcom/androidquery/util/AQUtility;->close(Ljava/io/Closeable;)V
 
     .line 1543
-    invoke-static/range {v22 .. v22}, Lcom/androidquery/util/AQUtility;->close(Ljava/io/Closeable;)V
+    invoke-static/range {v23 .. v23}, Lcom/androidquery/util/AQUtility;->close(Ljava/io/Closeable;)V
 
     .line 1544
-    throw v28
+    throw v29
 
     .line 1497
-    .end local v10    # "currentHost":Lorg/apache/http/HttpHost;
-    .end local v11    # "currentReq":Lorg/apache/http/client/methods/HttpUriRequest;
-    .end local v15    # "error":Ljava/lang/String;
-    .end local v22    # "os":Ljava/io/OutputStream;
-    .end local v27    # "size":I
-    .restart local v16    # "error":Ljava/lang/String;
-    .restart local v26    # "s":[B
-    :catch_284
-    move-exception v13
-
-    move-object/from16 v15, v16
-
+    .end local v11    # "currentHost":Lorg/apache/http/HttpHost;
+    .end local v12    # "currentReq":Lorg/apache/http/client/methods/HttpUriRequest;
     .end local v16    # "error":Ljava/lang/String;
-    .restart local v15    # "error":Ljava/lang/String;
-    goto/16 :goto_1bf
+    .end local v23    # "os":Ljava/io/OutputStream;
+    .end local v28    # "size":I
+    .restart local v17    # "error":Ljava/lang/String;
+    .restart local v27    # "s":[B
+    :catch_287
+    move-exception v14
+
+    move-object/from16 v16, v17
+
+    .end local v17    # "error":Ljava/lang/String;
+    .restart local v16    # "error":Ljava/lang/String;
+    goto/16 :goto_1c2
 .end method
 
 .method private httpEntity(Ljava/lang/String;Lorg/apache/http/client/methods/HttpEntityEnclosingRequestBase;Ljava/util/Map;Ljava/util/Map;Lcom/androidquery/callback/AjaxStatus;)V

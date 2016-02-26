@@ -737,7 +737,7 @@
     if-eqz v0, :cond_8
 
     .line 366
-    const/4 v1, 0x1
+    sget v1, Lcom/facebook/android/R$styleable;->com_facebook_like_view_object_id:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -752,7 +752,7 @@
     iput-object v1, p0, Lcom/facebook/widget/LikeView;->objectId:Ljava/lang/String;
 
     .line 368
-    const/4 v1, 0x2
+    sget v1, Lcom/facebook/android/R$styleable;->com_facebook_like_view_style:I
 
     .line 369
     sget-object v2, Lcom/facebook/widget/LikeView$Style;->DEFAULT:Lcom/facebook/widget/LikeView$Style;
@@ -777,7 +777,7 @@
     .line 370
     iget-object v1, p0, Lcom/facebook/widget/LikeView;->likeViewStyle:Lcom/facebook/widget/LikeView$Style;
 
-    if-nez v1, :cond_3e
+    if-nez v1, :cond_40
 
     .line 371
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -789,8 +789,8 @@
     throw v1
 
     .line 375
-    :cond_3e
-    const/4 v1, 0x3
+    :cond_40
+    sget v1, Lcom/facebook/android/R$styleable;->com_facebook_like_view_auxiliary_view_position:I
 
     .line 376
     sget-object v2, Lcom/facebook/widget/LikeView$AuxiliaryViewPosition;->DEFAULT:Lcom/facebook/widget/LikeView$AuxiliaryViewPosition;
@@ -815,7 +815,7 @@
     .line 377
     iget-object v1, p0, Lcom/facebook/widget/LikeView;->auxiliaryViewPosition:Lcom/facebook/widget/LikeView$AuxiliaryViewPosition;
 
-    if-nez v1, :cond_5b
+    if-nez v1, :cond_5e
 
     .line 378
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -827,8 +827,8 @@
     throw v1
 
     .line 382
-    :cond_5b
-    const/4 v1, 0x4
+    :cond_5e
+    sget v1, Lcom/facebook/android/R$styleable;->com_facebook_like_view_horizontal_alignment:I
 
     .line 383
     sget-object v2, Lcom/facebook/widget/LikeView$HorizontalAlignment;->DEFAULT:Lcom/facebook/widget/LikeView$HorizontalAlignment;
@@ -853,7 +853,7 @@
     .line 384
     iget-object v1, p0, Lcom/facebook/widget/LikeView;->horizontalAlignment:Lcom/facebook/widget/LikeView$HorizontalAlignment;
 
-    if-nez v1, :cond_78
+    if-nez v1, :cond_7c
 
     .line 385
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -865,8 +865,8 @@
     throw v1
 
     .line 388
-    :cond_78
-    const/4 v1, 0x0
+    :cond_7c
+    sget v1, Lcom/facebook/android/R$styleable;->com_facebook_like_view_foreground_color:I
 
     const/4 v2, -0x1
 

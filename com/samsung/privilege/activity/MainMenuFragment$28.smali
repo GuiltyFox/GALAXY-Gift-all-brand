@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$28;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    .line 3435
+    .line 3366
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,18 +43,18 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 3437
+    .line 3368
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 3438
+    .line 3369
     const/4 v2, 0x0
 
-    invoke-static {v2}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$35(Z)V
+    invoke-static {v2}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$32(Z)V
 
-    .line 3440
+    .line 3371
     sget-object v1, Lcom/samsung/privilege/AppSetting;->UriPlayStoreGift:Ljava/lang/String;
 
-    .line 3442
+    .line 3373
     .local v1, "appNameBuzzebees":Ljava/lang/String;
     :try_start_9
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$28;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -87,15 +87,15 @@
     :try_end_28
     .catch Landroid/content/ActivityNotFoundException; {:try_start_9 .. :try_end_28} :catch_29
 
-    .line 3446
+    .line 3377
     :goto_28
     return-void
 
-    .line 3443
+    .line 3374
     :catch_29
     move-exception v0
 
-    .line 3444
+    .line 3375
     .local v0, "anfe":Landroid/content/ActivityNotFoundException;
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainMenuFragment$28;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 

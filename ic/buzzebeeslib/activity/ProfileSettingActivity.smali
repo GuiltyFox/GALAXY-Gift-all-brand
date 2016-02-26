@@ -154,556 +154,556 @@
 .end method
 
 .method private ProcessJsonProfileAndGenUI(Ljava/lang/String;)V
-    .registers 18
+    .registers 20
     .param p1, "response_text"    # Ljava/lang/String;
 
     .prologue
     .line 593
     :try_start_0
-    new-instance v7, Lorg/json/JSONObject;
+    new-instance v8, Lorg/json/JSONObject;
 
     move-object/from16 v0, p1
 
-    invoke-direct {v7, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    invoke-direct {v8, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
     .line 598
-    .local v7, "jsonRoot":Lorg/json/JSONObject;
+    .local v8, "jsonRoot":Lorg/json/JSONObject;
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->tvFullName:Landroid/widget/TextView;
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->tvFullName:Landroid/widget/TextView;
 
-    new-instance v13, Ljava/lang/StringBuilder;
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    const-string v14, "FirstName"
+    const-string v15, "FirstName"
 
-    invoke-static {v7, v14}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v15}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v15
 
-    invoke-static {v14}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v15}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v15
 
-    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v14, v15}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v14, " "
+    const-string v15, " "
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    const-string v14, "LastName"
-
-    invoke-static {v7, v14}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v14
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v15, "LastName"
 
-    move-result-object v13
+    invoke-static {v8, v15}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v15
 
-    move-result-object v13
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v12, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    move-result-object v14
+
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-virtual {v13, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 599
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvFirstName:Landroid/widget/EditText;
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvFirstName:Landroid/widget/EditText;
 
-    const-string v13, "ShippingFirstName"
+    const-string v14, "ShippingFirstName"
 
-    invoke-static {v7, v13}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v14}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-virtual {v12, v13}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v13, v14}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 600
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvLastName:Landroid/widget/EditText;
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvLastName:Landroid/widget/EditText;
 
-    const-string v13, "ShippingLastName"
+    const-string v14, "ShippingLastName"
 
-    invoke-static {v7, v13}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v14}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-virtual {v13, v14}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+
+    .line 602
+    const-string v13, "Gender"
+
+    invoke-static {v8, v13}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v11
+
+    .line 603
+    .local v11, "strGender":Ljava/lang/String;
+    const-string v13, ""
+
+    invoke-virtual {v11, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v13
+
+    if-nez v13, :cond_7e
+
+    .line 604
+    invoke-virtual {v11}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v13
 
-    invoke-virtual {v12, v13}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    const-string v14, "F"
 
-    .line 602
-    const-string v12, "Gender"
+    invoke-virtual {v13, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-static {v7, v12}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    move-result v13
 
-    move-result-object v10
+    if-nez v13, :cond_75
 
-    .line 603
-    .local v10, "strGender":Ljava/lang/String;
-    const-string v12, ""
+    invoke-virtual {v11}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    invoke-virtual {v10, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v13
 
-    move-result v12
+    invoke-virtual {v13}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    if-nez v12, :cond_7e
+    move-result-object v13
 
-    .line 604
-    invoke-virtual {v10}, Ljava/lang/String;->trim()Ljava/lang/String;
+    const-string v14, "female"
 
-    move-result-object v12
+    invoke-virtual {v13, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const-string v13, "F"
+    move-result v13
 
-    invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v12
-
-    if-nez v12, :cond_75
-
-    invoke-virtual {v10}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v12
-
-    const-string v13, "female"
-
-    invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v12
-
-    if-eqz v12, :cond_16a
+    if-eqz v13, :cond_16b
 
     .line 605
     :cond_75
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvSex:Landroid/widget/EditText;
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvSex:Landroid/widget/EditText;
 
-    const-string v13, "Female"
+    const-string v14, "Female"
 
-    invoke-virtual {v12, v13}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v13, v14}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 611
     :cond_7e
     :goto_7e
-    const-string v12, "BirthDate"
+    const-string v13, "BirthDate"
 
-    invoke-static {v7, v12}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v13}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 612
-    .local v1, "birth_date":Ljava/lang/String;
+    .local v2, "birth_date":Ljava/lang/String;
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->TAG:Ljava/lang/String;
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->TAG:Ljava/lang/String;
 
-    new-instance v13, Ljava/lang/StringBuilder;
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    const-string v14, "birth_date "
+    const-string v15, "birth_date "
 
-    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v14, v15}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v13, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-static {v12, v13}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v13, v14}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 613
-    const-string v12, ""
+    const-string v13, ""
 
-    invoke-virtual {v1, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v12
+    move-result v13
 
-    if-nez v12, :cond_cc
+    if-nez v13, :cond_cd
 
     .line 615
-    invoke-static {v1}, Ljava/lang/Long;->valueOf(Ljava/lang/String;)Ljava/lang/Long;
+    invoke-static {v2}, Ljava/lang/Long;->valueOf(Ljava/lang/String;)Ljava/lang/Long;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v14
+
+    const-wide/16 v16, 0x3e8
+
+    mul-long v14, v14, v16
+
+    invoke-static {v14, v15}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    .line 616
+    .local v4, "date":Ljava/lang/Long;
+    new-instance v5, Ljava/util/Date;
+
+    invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v14
+
+    invoke-direct {v5, v14, v15}, Ljava/util/Date;-><init>(J)V
+
+    .line 619
+    .local v5, "dateObj":Ljava/util/Date;
+    new-instance v6, Ljava/text/SimpleDateFormat;
+
+    const-string v13, "dd/MM/yyyy"
+
+    invoke-direct {v6, v13}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    .line 620
+    .local v6, "df":Ljava/text/SimpleDateFormat;
+    invoke-virtual {v6, v5}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v12
 
-    invoke-virtual {v12}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v12
-
-    const-wide/16 v14, 0x3e8
-
-    mul-long/2addr v12, v14
-
-    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    .line 616
-    .local v3, "date":Ljava/lang/Long;
-    new-instance v4, Ljava/util/Date;
-
-    invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v12
-
-    invoke-direct {v4, v12, v13}, Ljava/util/Date;-><init>(J)V
-
-    .line 619
-    .local v4, "dateObj":Ljava/util/Date;
-    new-instance v5, Ljava/text/SimpleDateFormat;
-
-    const-string v12, "dd/MM/yyyy"
-
-    invoke-direct {v5, v12}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
-
-    .line 620
-    .local v5, "df":Ljava/text/SimpleDateFormat;
-    invoke-virtual {v5, v4}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
-
-    move-result-object v11
-
     .line 621
-    .local v11, "text":Ljava/lang/String;
+    .local v12, "text":Ljava/lang/String;
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvBirthday:Landroid/widget/EditText;
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvBirthday:Landroid/widget/EditText;
 
-    invoke-virtual {v12, v11}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v13, v12}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 625
-    .end local v3    # "date":Ljava/lang/Long;
-    .end local v4    # "dateObj":Ljava/util/Date;
-    .end local v5    # "df":Ljava/text/SimpleDateFormat;
-    .end local v11    # "text":Ljava/lang/String;
-    :cond_cc
-    const-string v2, ""
+    .end local v4    # "date":Ljava/lang/Long;
+    .end local v5    # "dateObj":Ljava/util/Date;
+    .end local v6    # "df":Ljava/text/SimpleDateFormat;
+    .end local v12    # "text":Ljava/lang/String;
+    :cond_cd
+    const-string v3, ""
 
     .line 626
-    .local v2, "contact_Number":Ljava/lang/String;
-    const-string v9, "+00000000000"
-    :try_end_d0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_d0} :catch_191
+    .local v3, "contact_Number":Ljava/lang/String;
+    const-string v10, "+00000000000"
+    :try_end_d1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_d1} :catch_192
 
     .line 628
-    .local v9, "phoneNumber":Ljava/lang/String;
-    :try_start_d0
+    .local v10, "phoneNumber":Ljava/lang/String;
+    :try_start_d1
     invoke-virtual/range {p0 .. p0}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getApplicationContext()Landroid/content/Context;
 
     .line 629
     invoke-virtual/range {p0 .. p0}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v12
+    move-result-object v13
 
-    const-string v13, "phone"
+    const-string v14, "phone"
 
-    invoke-virtual {v12, v13}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v13, v14}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v9
 
-    check-cast v8, Landroid/telephony/TelephonyManager;
+    check-cast v9, Landroid/telephony/TelephonyManager;
 
     .line 630
-    .local v8, "phoneManager":Landroid/telephony/TelephonyManager;
-    invoke-virtual {v8}, Landroid/telephony/TelephonyManager;->getLine1Number()Ljava/lang/String;
+    .local v9, "phoneManager":Landroid/telephony/TelephonyManager;
+    invoke-virtual {v9}, Landroid/telephony/TelephonyManager;->getLine1Number()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v10
 
     .line 632
-    const-string v12, ""
+    const-string v13, ""
 
-    invoke-virtual {v9, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v10, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v12
+    move-result v13
 
-    if-eqz v12, :cond_ef
+    if-eqz v13, :cond_f0
 
     .line 633
-    invoke-virtual {v8}, Landroid/telephony/TelephonyManager;->getSubscriberId()Ljava/lang/String;
-    :try_end_ee
-    .catch Ljava/lang/Exception; {:try_start_d0 .. :try_end_ee} :catch_1c9
+    invoke-virtual {v9}, Landroid/telephony/TelephonyManager;->getSubscriberId()Ljava/lang/String;
+    :try_end_ef
+    .catch Ljava/lang/Exception; {:try_start_d1 .. :try_end_ef} :catch_1ca
 
-    move-result-object v9
+    move-result-object v10
 
     .line 639
-    .end local v8    # "phoneManager":Landroid/telephony/TelephonyManager;
-    :cond_ef
-    :goto_ef
-    :try_start_ef
-    const-string v12, "Contact_Number"
+    .end local v9    # "phoneManager":Landroid/telephony/TelephonyManager;
+    :cond_f0
+    :goto_f0
+    :try_start_f0
+    const-string v13, "Contact_Number"
 
-    invoke-static {v7, v12}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v13}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
     .line 640
-    if-eqz v2, :cond_19a
+    if-eqz v3, :cond_19b
 
-    const-string v12, ""
+    const-string v13, ""
 
-    invoke-virtual {v2, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v12
+    move-result v13
 
-    if-nez v12, :cond_19a
+    if-nez v13, :cond_19b
 
     .line 641
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvMobile:Landroid/widget/EditText;
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvMobile:Landroid/widget/EditText;
 
-    invoke-virtual {v12, v2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v13, v3}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 646
-    :goto_106
+    :goto_107
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvEmail:Landroid/widget/EditText;
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvEmail:Landroid/widget/EditText;
 
-    const-string v13, "Email"
+    const-string v14, "Email"
 
-    invoke-static {v7, v13}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v14}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-virtual {v12, v13}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v13, v14}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 647
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvAddress:Landroid/widget/EditText;
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvAddress:Landroid/widget/EditText;
 
-    const-string v13, "Address"
+    const-string v14, "Address"
 
-    invoke-static {v7, v13}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v14}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-virtual {v12, v13}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v13, v14}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 649
     invoke-virtual/range {p0 .. p0}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v12
-
-    const-string v13, "Address"
-
-    invoke-static {v7, v13}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
-
     move-result-object v13
 
-    invoke-static {v12, v13}, Lic/buzzebeeslib/LibUserLogin;->SetAddress(Landroid/content/Context;Ljava/lang/String;)Z
+    const-string v14, "Address"
+
+    invoke-static {v8, v14}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-static {v13, v14}, Lic/buzzebeeslib/LibUserLogin;->SetAddress(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 651
     invoke-virtual/range {p0 .. p0}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-static {v12}, Lic/buzzebeeslib/LibUserLogin;->GetIsNotificationOn(Landroid/content/Context;)Z
+    invoke-static {v13}, Lic/buzzebeeslib/LibUserLogin;->GetIsNotificationOn(Landroid/content/Context;)Z
 
-    move-result v12
+    move-result v13
 
-    if-eqz v12, :cond_1a3
+    if-eqz v13, :cond_1a4
 
     .line 652
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gToggleNotificationButton:Landroid/widget/ToggleButton;
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gToggleNotificationButton:Landroid/widget/ToggleButton;
 
-    const/4 v13, 0x1
+    const/4 v14, 0x1
 
-    invoke-virtual {v12, v13}, Landroid/widget/ToggleButton;->setChecked(Z)V
+    invoke-virtual {v13, v14}, Landroid/widget/ToggleButton;->setChecked(Z)V
 
     .line 657
-    :goto_13f
-    const-string v12, "Locale"
+    :goto_140
+    const-string v13, "Locale"
 
-    invoke-static {v7, v12}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v13}, Lic/buzzebeeslib/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    const-string v13, "1054"
+    const-string v14, "1054"
 
-    invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v13, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v12
+    move-result v13
 
-    if-eqz v12, :cond_1ac
+    if-eqz v13, :cond_1ad
 
     .line 658
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvDisplayLanguage:Landroid/widget/TextView;
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvDisplayLanguage:Landroid/widget/TextView;
 
-    sget v13, Lic/buzzebeeslib/R$string;->profile_setting_select_language_th:I
+    sget v14, Lic/buzzebeeslib/R$string;->profile_setting_select_language_th:I
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v13}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v14}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getString(I)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-virtual {v12, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v13, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 659
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gImgDisplayLanguage:Landroid/widget/ImageView;
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gImgDisplayLanguage:Landroid/widget/ImageView;
 
-    sget v13, Lic/buzzebeeslib/R$drawable;->bz_icon_flag_thai_2x:I
+    sget v14, Lic/buzzebeeslib/R$drawable;->bz_icon_flag_thai_2x:I
 
     invoke-virtual/range {p0 .. p0}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v14
+    move-result-object v15
 
-    invoke-static {v12, v13, v14}, Lic/buzzebeeslib/util/BBUtil;->setImageResource(Landroid/widget/ImageView;ILandroid/content/Context;)V
+    invoke-static {v13, v14, v15}, Lic/buzzebeeslib/util/BBUtil;->setImageResource(Landroid/widget/ImageView;ILandroid/content/Context;)V
 
     .line 667
-    .end local v1    # "birth_date":Ljava/lang/String;
-    .end local v2    # "contact_Number":Ljava/lang/String;
-    .end local v7    # "jsonRoot":Lorg/json/JSONObject;
-    .end local v9    # "phoneNumber":Ljava/lang/String;
-    .end local v10    # "strGender":Ljava/lang/String;
-    :goto_169
+    .end local v2    # "birth_date":Ljava/lang/String;
+    .end local v3    # "contact_Number":Ljava/lang/String;
+    .end local v8    # "jsonRoot":Lorg/json/JSONObject;
+    .end local v10    # "phoneNumber":Ljava/lang/String;
+    .end local v11    # "strGender":Ljava/lang/String;
+    :goto_16a
     return-void
 
     .line 606
-    .restart local v7    # "jsonRoot":Lorg/json/JSONObject;
-    .restart local v10    # "strGender":Ljava/lang/String;
-    :cond_16a
-    invoke-virtual {v10}, Ljava/lang/String;->trim()Ljava/lang/String;
+    .restart local v8    # "jsonRoot":Lorg/json/JSONObject;
+    .restart local v11    # "strGender":Ljava/lang/String;
+    :cond_16b
+    invoke-virtual {v11}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    const-string v13, "M"
+    const-string v14, "M"
 
-    invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v13, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v12
+    move-result v13
 
-    if-nez v12, :cond_186
+    if-nez v13, :cond_187
 
-    invoke-virtual {v10}, Ljava/lang/String;->trim()Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-virtual {v12}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    invoke-virtual {v13}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    const-string v13, "male"
+    const-string v14, "male"
 
-    invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v13, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v12
+    move-result v13
 
-    if-eqz v12, :cond_7e
+    if-eqz v13, :cond_7e
 
     .line 607
-    :cond_186
+    :cond_187
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvSex:Landroid/widget/EditText;
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvSex:Landroid/widget/EditText;
 
-    const-string v13, "Male"
+    const-string v14, "Male"
 
-    invoke-virtual {v12, v13}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
-    :try_end_18f
-    .catch Ljava/lang/Exception; {:try_start_ef .. :try_end_18f} :catch_191
+    invoke-virtual {v13, v14}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    :try_end_190
+    .catch Ljava/lang/Exception; {:try_start_f0 .. :try_end_190} :catch_192
 
     goto/16 :goto_7e
 
     .line 664
-    .end local v7    # "jsonRoot":Lorg/json/JSONObject;
-    .end local v10    # "strGender":Ljava/lang/String;
-    :catch_191
-    move-exception v6
+    .end local v8    # "jsonRoot":Lorg/json/JSONObject;
+    .end local v11    # "strGender":Ljava/lang/String;
+    :catch_192
+    move-exception v7
 
     .line 665
-    .local v6, "e":Ljava/lang/Exception;
-    const-string v12, "Error while load profile data."
+    .local v7, "e":Ljava/lang/Exception;
+    const-string v13, "Error while load profile data."
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v12}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->showToast(Ljava/lang/String;)V
+    invoke-direct {v0, v13}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->showToast(Ljava/lang/String;)V
 
-    goto :goto_169
+    goto :goto_16a
 
     .line 643
-    .end local v6    # "e":Ljava/lang/Exception;
-    .restart local v1    # "birth_date":Ljava/lang/String;
-    .restart local v2    # "contact_Number":Ljava/lang/String;
-    .restart local v7    # "jsonRoot":Lorg/json/JSONObject;
-    .restart local v9    # "phoneNumber":Ljava/lang/String;
-    .restart local v10    # "strGender":Ljava/lang/String;
-    :cond_19a
-    :try_start_19a
+    .end local v7    # "e":Ljava/lang/Exception;
+    .restart local v2    # "birth_date":Ljava/lang/String;
+    .restart local v3    # "contact_Number":Ljava/lang/String;
+    .restart local v8    # "jsonRoot":Lorg/json/JSONObject;
+    .restart local v10    # "phoneNumber":Ljava/lang/String;
+    .restart local v11    # "strGender":Ljava/lang/String;
+    :cond_19b
+    :try_start_19b
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvMobile:Landroid/widget/EditText;
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvMobile:Landroid/widget/EditText;
 
-    invoke-virtual {v12, v9}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v13, v10}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_106
+    goto/16 :goto_107
 
     .line 654
-    :cond_1a3
+    :cond_1a4
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gToggleNotificationButton:Landroid/widget/ToggleButton;
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gToggleNotificationButton:Landroid/widget/ToggleButton;
 
-    const/4 v13, 0x0
+    const/4 v14, 0x0
 
-    invoke-virtual {v12, v13}, Landroid/widget/ToggleButton;->setChecked(Z)V
+    invoke-virtual {v13, v14}, Landroid/widget/ToggleButton;->setChecked(Z)V
 
-    goto :goto_13f
+    goto :goto_140
 
     .line 661
-    :cond_1ac
+    :cond_1ad
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvDisplayLanguage:Landroid/widget/TextView;
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvDisplayLanguage:Landroid/widget/TextView;
 
-    sget v13, Lic/buzzebeeslib/R$string;->profile_setting_select_language_en:I
+    sget v14, Lic/buzzebeeslib/R$string;->profile_setting_select_language_en:I
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v13}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v14}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getString(I)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-virtual {v12, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v13, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 662
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gImgDisplayLanguage:Landroid/widget/ImageView;
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gImgDisplayLanguage:Landroid/widget/ImageView;
 
-    sget v13, Lic/buzzebeeslib/R$drawable;->bz_icon_flag_uk_2x:I
+    sget v14, Lic/buzzebeeslib/R$drawable;->bz_icon_flag_uk_2x:I
 
     invoke-virtual/range {p0 .. p0}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v14
+    move-result-object v15
 
-    invoke-static {v12, v13, v14}, Lic/buzzebeeslib/util/BBUtil;->setImageResource(Landroid/widget/ImageView;ILandroid/content/Context;)V
-    :try_end_1c8
-    .catch Ljava/lang/Exception; {:try_start_19a .. :try_end_1c8} :catch_191
+    invoke-static {v13, v14, v15}, Lic/buzzebeeslib/util/BBUtil;->setImageResource(Landroid/widget/ImageView;ILandroid/content/Context;)V
+    :try_end_1c9
+    .catch Ljava/lang/Exception; {:try_start_19b .. :try_end_1c9} :catch_192
 
-    goto :goto_169
+    goto :goto_16a
 
     .line 635
-    :catch_1c9
-    move-exception v12
+    :catch_1ca
+    move-exception v13
 
-    goto/16 :goto_ef
+    goto/16 :goto_f0
 .end method
 
 .method static synthetic access$0(Lic/buzzebeeslib/activity/ProfileSettingActivity;Z)V
@@ -2841,41 +2841,41 @@
 .end method
 
 .method public doGoToUpdate(Landroid/view/View;)V
-    .registers 19
+    .registers 20
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 903
-    new-instance v3, Lic/buzzebeeslib/util/ConnectionDetector;
+    new-instance v4, Lic/buzzebeeslib/util/ConnectionDetector;
 
     invoke-virtual/range {p0 .. p0}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v11
+    move-result-object v12
 
-    invoke-direct {v3, v11}, Lic/buzzebeeslib/util/ConnectionDetector;-><init>(Landroid/content/Context;)V
+    invoke-direct {v4, v12}, Lic/buzzebeeslib/util/ConnectionDetector;-><init>(Landroid/content/Context;)V
 
     .line 904
-    .local v3, "cd":Lic/buzzebeeslib/util/ConnectionDetector;
-    invoke-virtual {v3}, Lic/buzzebeeslib/util/ConnectionDetector;->isConnectingToInternet()Z
+    .local v4, "cd":Lic/buzzebeeslib/util/ConnectionDetector;
+    invoke-virtual {v4}, Lic/buzzebeeslib/util/ConnectionDetector;->isConnectingToInternet()Z
 
-    move-result v11
+    move-result v12
 
-    if-nez v11, :cond_1f
+    if-nez v12, :cond_1f
 
     .line 905
     invoke-virtual/range {p0 .. p0}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v11
+    move-result-object v12
 
-    sget v12, Lic/buzzebeeslib/R$string;->no_network_connection:I
+    sget v13, Lic/buzzebeeslib/R$string;->no_network_connection:I
 
-    invoke-virtual {v11, v12}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v12
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v11}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->showToast(Ljava/lang/String;)V
+    invoke-direct {v0, v12}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->showToast(Ljava/lang/String;)V
 
     .line 1088
     :goto_1e
@@ -2885,447 +2885,7 @@
     :cond_1f
     move-object/from16 v0, p0
 
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvFirstName:Landroid/widget/EditText;
-
-    invoke-virtual {v11}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v11
-
-    invoke-interface {v11}, Landroid/text/Editable;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/String;->length()I
-
-    move-result v11
-
-    if-gtz v11, :cond_43
-
-    .line 910
-    sget v11, Lic/buzzebeeslib/R$string;->profile_setting_label_varidate_first_name:I
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v11}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v11
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v11}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->showToast(Ljava/lang/String;)V
-
-    goto :goto_1e
-
-    .line 912
-    :cond_43
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvLastName:Landroid/widget/EditText;
-
-    invoke-virtual {v11}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v11
-
-    invoke-interface {v11}, Landroid/text/Editable;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/String;->length()I
-
-    move-result v11
-
-    if-gtz v11, :cond_67
-
-    .line 913
-    sget v11, Lic/buzzebeeslib/R$string;->profile_setting_label_varidate_last_name:I
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v11}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v11
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v11}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->showToast(Ljava/lang/String;)V
-
-    goto :goto_1e
-
-    .line 921
-    :cond_67
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gPbLoadingProfile:Landroid/widget/ProgressBar;
-
-    const/4 v12, 0x0
-
-    invoke-virtual {v11, v12}, Landroid/widget/ProgressBar;->setVisibility(I)V
-
-    .line 924
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gImgProfile:Landroid/widget/ImageView;
-
-    if-nez v11, :cond_b1
-
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvFirstName:Landroid/widget/EditText;
-
-    invoke-virtual {v11}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v11
-
-    invoke-interface {v11}, Landroid/text/Editable;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    const-string v12, ""
-
-    invoke-virtual {v11, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_b1
-
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvLastName:Landroid/widget/EditText;
-
-    invoke-virtual {v11}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v11
-
-    invoke-interface {v11}, Landroid/text/Editable;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    const-string v12, ""
-
-    invoke-virtual {v11, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_b1
-
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvSex:Landroid/widget/EditText;
-
-    invoke-virtual {v11}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v11
-
-    invoke-interface {v11}, Landroid/text/Editable;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    const-string v12, ""
-
-    invoke-virtual {v11, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v11
-
-    if-nez v11, :cond_3dc
-
-    .line 966
-    :cond_b1
-    const-string v10, ""
-
-    .line 973
-    .local v10, "url":Ljava/lang/String;
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    sget-object v12, Lic/buzzebeeslib/LibConst;->API_URL_BUZZEBEES:Ljava/lang/String;
-
-    invoke-static {v12}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v12, "api/profile/me/user?token="
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual/range {p0 .. p0}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v12
-
-    invoke-static {v12}, Lic/buzzebeeslib/LibUserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    .line 975
-    const-string v11, "profile.setting"
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    const-string v13, "url= "
-
-    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v12, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v11, v12}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 976
-    new-instance v8, Lcom/loopj/android/http/RequestParams;
-
-    invoke-direct {v8}, Lcom/loopj/android/http/RequestParams;-><init>()V
-
-    .line 986
-    .local v8, "paramsRequestParams":Lcom/loopj/android/http/RequestParams;
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gImgProfile:Landroid/widget/ImageView;
-
-    if-eqz v11, :cond_12f
-
-    .line 987
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gObjCameraData:Lic/buzzebeeslib/bean/CameraData;
-
-    iget-object v11, v11, Lic/buzzebeeslib/bean/CameraData;->gBitmapImage:Landroid/graphics/Bitmap;
-
-    if-eqz v11, :cond_12f
-
-    .line 989
-    :try_start_fb
-    new-instance v2, Ljava/io/ByteArrayOutputStream;
-
-    invoke-direct {v2}, Ljava/io/ByteArrayOutputStream;-><init>()V
-
-    .line 990
-    .local v2, "bos":Ljava/io/ByteArrayOutputStream;
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gObjCameraData:Lic/buzzebeeslib/bean/CameraData;
-
-    iget-object v11, v11, Lic/buzzebeeslib/bean/CameraData;->gBitmapImage:Landroid/graphics/Bitmap;
-
-    sget-object v12, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
-
-    const/16 v13, 0x64
-
-    invoke-virtual {v11, v12, v13, v2}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
-
-    .line 995
-    invoke-virtual {v2}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
-
-    move-result-object v1
-
-    .line 996
-    .local v1, "bitmapdata":[B
-    const-string v11, "profile.setting"
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    const-string v13, "bitmapdata "
-
-    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v12, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v11, v12}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 997
-    const-string v11, "data"
-
-    new-instance v12, Ljava/io/ByteArrayInputStream;
-
-    invoke-direct {v12, v1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
-
-    invoke-virtual {v8, v11, v12}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/io/InputStream;)V
-    :try_end_12f
-    .catch Ljava/lang/Exception; {:try_start_fb .. :try_end_12f} :catch_356
-
-    .line 1004
-    .end local v1    # "bitmapdata":[B
-    .end local v2    # "bos":Ljava/io/ByteArrayOutputStream;
-    :cond_12f
-    :goto_12f
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvSex:Landroid/widget/EditText;
-
-    invoke-virtual {v11}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v11
-
-    invoke-interface {v11}, Landroid/text/Editable;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v11
-
-    const-string v12, "female"
-
-    invoke-virtual {v11, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_35c
-
-    .line 1005
-    const-string v11, "gender"
-
-    const-string v12, "female"
-
-    invoke-virtual {v8, v11, v12}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1006
-    const-string v11, "profile.setting"
-
-    const-string v12, "gender female"
-
-    invoke-static {v11, v12}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1012
-    :cond_155
-    :goto_155
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvBirthday:Landroid/widget/EditText;
-
-    invoke-virtual {v11}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v11
-
-    invoke-interface {v11}, Landroid/text/Editable;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    const-string v12, ""
-
-    invoke-virtual {v11, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v11
-
-    if-nez v11, :cond_1ac
-
-    .line 1013
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvBirthday:Landroid/widget/EditText;
-
-    invoke-virtual {v11}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v11
-
-    invoke-interface {v11}, Landroid/text/Editable;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    .line 1015
-    .local v9, "str_date":Ljava/lang/String;
-    const/4 v4, 0x0
-
-    .line 1016
-    .local v4, "date":Ljava/util/Date;
-    new-instance v6, Ljava/text/SimpleDateFormat;
-
-    const-string v11, "dd/MM/yyyy"
-
-    invoke-direct {v6, v11}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
-
-    .line 1018
-    .local v6, "formatter":Ljava/text/SimpleDateFormat;
-    :try_start_17d
-    invoke-virtual {v6, v9}, Ljava/text/SimpleDateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
-    :try_end_180
-    .catch Ljava/text/ParseException; {:try_start_17d .. :try_end_180} :catch_384
-
-    move-result-object v4
-
-    .line 1023
-    :goto_181
-    const-string v11, "birthdate"
-
-    invoke-virtual {v4}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v12
-
-    const-wide/16 v14, 0x3e8
-
-    div-long/2addr v12, v14
-
-    invoke-static {v12, v13}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-virtual {v8, v11, v12}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1024
-    const-string v11, "profile.setting"
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    const-string v13, "birthdate "
-
-    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v13
-
-    const-wide/16 v15, 0x3e8
-
-    div-long/2addr v13, v15
-
-    invoke-virtual {v12, v13, v14}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v11, v12}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1027
-    .end local v4    # "date":Ljava/util/Date;
-    .end local v6    # "formatter":Ljava/text/SimpleDateFormat;
-    .end local v9    # "str_date":Ljava/lang/String;
-    :cond_1ac
-    const-string v11, "email"
-
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvEmail:Landroid/widget/EditText;
+    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvFirstName:Landroid/widget/EditText;
 
     invoke-virtual {v12}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
@@ -3335,41 +2895,86 @@
 
     move-result-object v12
 
-    invoke-virtual {v8, v11, v12}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v12}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    .line 1028
-    const-string v11, "profile.setting"
+    move-result-object v12
 
-    new-instance v12, Ljava/lang/StringBuilder;
+    invoke-virtual {v12}, Ljava/lang/String;->length()I
 
-    const-string v13, "email "
+    move-result v12
 
-    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    if-gtz v12, :cond_43
+
+    .line 910
+    sget v12, Lic/buzzebeeslib/R$string;->profile_setting_label_varidate_first_name:I
 
     move-object/from16 v0, p0
 
-    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvEmail:Landroid/widget/EditText;
-
-    invoke-virtual {v13}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v13
-
-    invoke-interface {v13}, Landroid/text/Editable;->toString()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v12}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v12
 
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v12}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->showToast(Ljava/lang/String;)V
+
+    goto :goto_1e
+
+    .line 912
+    :cond_43
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvLastName:Landroid/widget/EditText;
+
+    invoke-virtual {v12}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v12
 
-    invoke-static {v11, v12}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v12}, Landroid/text/Editable;->toString()Ljava/lang/String;
 
-    .line 1033
-    const-string v11, "ShippingFirstName"
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/String;->length()I
+
+    move-result v12
+
+    if-gtz v12, :cond_67
+
+    .line 913
+    sget v12, Lic/buzzebeeslib/R$string;->profile_setting_label_varidate_last_name:I
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v12}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v12
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v12}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->showToast(Ljava/lang/String;)V
+
+    goto :goto_1e
+
+    .line 921
+    :cond_67
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gPbLoadingProfile:Landroid/widget/ProgressBar;
+
+    const/4 v13, 0x0
+
+    invoke-virtual {v12, v13}, Landroid/widget/ProgressBar;->setVisibility(I)V
+
+    .line 924
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gImgProfile:Landroid/widget/ImageView;
+
+    if-nez v12, :cond_b1
 
     move-object/from16 v0, p0
 
@@ -3383,41 +2988,13 @@
 
     move-result-object v12
 
-    invoke-virtual {v8, v11, v12}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+    const-string v13, ""
 
-    .line 1034
-    const-string v11, "profile.setting"
+    invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    new-instance v12, Ljava/lang/StringBuilder;
+    move-result v12
 
-    const-string v13, "firstname "
-
-    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvFirstName:Landroid/widget/EditText;
-
-    invoke-virtual {v13}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v13
-
-    invoke-interface {v13}, Landroid/text/Editable;->toString()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v11, v12}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1037
-    const-string v11, "ShippingLastName"
+    if-eqz v12, :cond_b1
 
     move-object/from16 v0, p0
 
@@ -3431,16 +3008,416 @@
 
     move-result-object v12
 
-    invoke-virtual {v8, v11, v12}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+    const-string v13, ""
 
-    .line 1038
-    const-string v11, "profile.setting"
+    invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
+    move-result v12
+
+    if-eqz v12, :cond_b1
+
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvSex:Landroid/widget/EditText;
+
+    invoke-virtual {v12}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v12
+
+    invoke-interface {v12}, Landroid/text/Editable;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    const-string v13, ""
+
+    invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v12
+
+    if-nez v12, :cond_3de
+
+    .line 966
+    :cond_b1
+    const-string v11, ""
+
+    .line 973
+    .local v11, "url":Ljava/lang/String;
     new-instance v12, Ljava/lang/StringBuilder;
 
-    const-string v13, "lastname "
+    sget-object v13, Lic/buzzebeeslib/LibConst;->API_URL_BUZZEBEES:Ljava/lang/String;
+
+    invoke-static {v13}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v13
 
     invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v13, "api/profile/me/user?token="
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual/range {p0 .. p0}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v13
+
+    invoke-static {v13}, Lic/buzzebeeslib/LibUserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    .line 975
+    const-string v12, "profile.setting"
+
+    new-instance v13, Ljava/lang/StringBuilder;
+
+    const-string v14, "url= "
+
+    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v13, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v12, v13}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 976
+    new-instance v9, Lcom/loopj/android/http/RequestParams;
+
+    invoke-direct {v9}, Lcom/loopj/android/http/RequestParams;-><init>()V
+
+    .line 986
+    .local v9, "paramsRequestParams":Lcom/loopj/android/http/RequestParams;
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gImgProfile:Landroid/widget/ImageView;
+
+    if-eqz v12, :cond_12f
+
+    .line 987
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gObjCameraData:Lic/buzzebeeslib/bean/CameraData;
+
+    iget-object v12, v12, Lic/buzzebeeslib/bean/CameraData;->gBitmapImage:Landroid/graphics/Bitmap;
+
+    if-eqz v12, :cond_12f
+
+    .line 989
+    :try_start_fb
+    new-instance v3, Ljava/io/ByteArrayOutputStream;
+
+    invoke-direct {v3}, Ljava/io/ByteArrayOutputStream;-><init>()V
+
+    .line 990
+    .local v3, "bos":Ljava/io/ByteArrayOutputStream;
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gObjCameraData:Lic/buzzebeeslib/bean/CameraData;
+
+    iget-object v12, v12, Lic/buzzebeeslib/bean/CameraData;->gBitmapImage:Landroid/graphics/Bitmap;
+
+    sget-object v13, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+
+    const/16 v14, 0x64
+
+    invoke-virtual {v12, v13, v14, v3}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+
+    .line 995
+    invoke-virtual {v3}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+
+    move-result-object v2
+
+    .line 996
+    .local v2, "bitmapdata":[B
+    const-string v12, "profile.setting"
+
+    new-instance v13, Ljava/lang/StringBuilder;
+
+    const-string v14, "bitmapdata "
+
+    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v13, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v12, v13}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 997
+    const-string v12, "data"
+
+    new-instance v13, Ljava/io/ByteArrayInputStream;
+
+    invoke-direct {v13, v2}, Ljava/io/ByteArrayInputStream;-><init>([B)V
+
+    invoke-virtual {v9, v12, v13}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/io/InputStream;)V
+    :try_end_12f
+    .catch Ljava/lang/Exception; {:try_start_fb .. :try_end_12f} :catch_358
+
+    .line 1004
+    .end local v2    # "bitmapdata":[B
+    .end local v3    # "bos":Ljava/io/ByteArrayOutputStream;
+    :cond_12f
+    :goto_12f
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvSex:Landroid/widget/EditText;
+
+    invoke-virtual {v12}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v12
+
+    invoke-interface {v12}, Landroid/text/Editable;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v12
+
+    const-string v13, "female"
+
+    invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v12
+
+    if-eqz v12, :cond_35e
+
+    .line 1005
+    const-string v12, "gender"
+
+    const-string v13, "female"
+
+    invoke-virtual {v9, v12, v13}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1006
+    const-string v12, "profile.setting"
+
+    const-string v13, "gender female"
+
+    invoke-static {v12, v13}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1012
+    :cond_155
+    :goto_155
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvBirthday:Landroid/widget/EditText;
+
+    invoke-virtual {v12}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v12
+
+    invoke-interface {v12}, Landroid/text/Editable;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    const-string v13, ""
+
+    invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v12
+
+    if-nez v12, :cond_1ae
+
+    .line 1013
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvBirthday:Landroid/widget/EditText;
+
+    invoke-virtual {v12}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v12
+
+    invoke-interface {v12}, Landroid/text/Editable;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    .line 1015
+    .local v10, "str_date":Ljava/lang/String;
+    const/4 v5, 0x0
+
+    .line 1016
+    .local v5, "date":Ljava/util/Date;
+    new-instance v7, Ljava/text/SimpleDateFormat;
+
+    const-string v12, "dd/MM/yyyy"
+
+    invoke-direct {v7, v12}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    .line 1018
+    .local v7, "formatter":Ljava/text/SimpleDateFormat;
+    :try_start_17d
+    invoke-virtual {v7, v10}, Ljava/text/SimpleDateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
+    :try_end_180
+    .catch Ljava/text/ParseException; {:try_start_17d .. :try_end_180} :catch_386
+
+    move-result-object v5
+
+    .line 1023
+    :goto_181
+    const-string v12, "birthdate"
+
+    invoke-virtual {v5}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v14
+
+    const-wide/16 v16, 0x3e8
+
+    div-long v14, v14, v16
+
+    invoke-static {v14, v15}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-virtual {v9, v12, v13}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1024
+    const-string v12, "profile.setting"
+
+    new-instance v13, Ljava/lang/StringBuilder;
+
+    const-string v14, "birthdate "
+
+    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v5}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v14
+
+    const-wide/16 v16, 0x3e8
+
+    div-long v14, v14, v16
+
+    invoke-virtual {v13, v14, v15}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v12, v13}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1027
+    .end local v5    # "date":Ljava/util/Date;
+    .end local v7    # "formatter":Ljava/text/SimpleDateFormat;
+    .end local v10    # "str_date":Ljava/lang/String;
+    :cond_1ae
+    const-string v12, "email"
+
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvEmail:Landroid/widget/EditText;
+
+    invoke-virtual {v13}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v13
+
+    invoke-interface {v13}, Landroid/text/Editable;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-virtual {v9, v12, v13}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1028
+    const-string v12, "profile.setting"
+
+    new-instance v13, Ljava/lang/StringBuilder;
+
+    const-string v14, "email "
+
+    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvEmail:Landroid/widget/EditText;
+
+    invoke-virtual {v14}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v14
+
+    invoke-interface {v14}, Landroid/text/Editable;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v12, v13}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1033
+    const-string v12, "ShippingFirstName"
+
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvFirstName:Landroid/widget/EditText;
+
+    invoke-virtual {v13}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v13
+
+    invoke-interface {v13}, Landroid/text/Editable;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-virtual {v9, v12, v13}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1034
+    const-string v12, "profile.setting"
+
+    new-instance v13, Ljava/lang/StringBuilder;
+
+    const-string v14, "firstname "
+
+    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvFirstName:Landroid/widget/EditText;
+
+    invoke-virtual {v14}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v14
+
+    invoke-interface {v14}, Landroid/text/Editable;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v12, v13}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1037
+    const-string v12, "ShippingLastName"
 
     move-object/from16 v0, p0
 
@@ -3454,41 +3431,41 @@
 
     move-result-object v13
 
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v12, v13}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v12
+    .line 1038
+    const-string v12, "profile.setting"
 
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    const-string v14, "lastname "
 
-    invoke-static {v11, v12}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1039
-    const-string v11, "Contact_Number"
+    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvMobile:Landroid/widget/EditText;
+    iget-object v14, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvLastName:Landroid/widget/EditText;
 
-    invoke-virtual {v12}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+    invoke-virtual {v14}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
-    move-result-object v12
+    move-result-object v14
 
-    invoke-interface {v12}, Landroid/text/Editable;->toString()Ljava/lang/String;
+    invoke-interface {v14}, Landroid/text/Editable;->toString()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v14
 
-    invoke-virtual {v8, v11, v12}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1040
-    const-string v11, "profile.setting"
+    move-result-object v13
 
-    new-instance v12, Ljava/lang/StringBuilder;
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string v13, "contact_number "
+    move-result-object v13
 
-    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-static {v12, v13}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1039
+    const-string v12, "Contact_Number"
 
     move-object/from16 v0, p0
 
@@ -3502,60 +3479,60 @@
 
     move-result-object v13
 
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v12, v13}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v12
+    .line 1040
+    const-string v12, "profile.setting"
 
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    const-string v14, "contact_number "
 
-    invoke-static {v11, v12}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvMobile:Landroid/widget/EditText;
+
+    invoke-virtual {v14}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v14
+
+    invoke-interface {v14}, Landroid/text/Editable;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v12, v13}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1050
     move-object/from16 v0, p0
 
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvAddress:Landroid/widget/EditText;
+    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvAddress:Landroid/widget/EditText;
 
-    if-eqz v11, :cond_38a
-
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvAddress:Landroid/widget/EditText;
-
-    const-string v12, ""
-
-    invoke-virtual {v11, v12}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v11
-
-    if-nez v11, :cond_38a
-
-    .line 1051
-    const-string v11, "address"
+    if-eqz v12, :cond_38c
 
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvAddress:Landroid/widget/EditText;
 
-    invoke-virtual {v12}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+    const-string v13, ""
 
-    move-result-object v12
+    invoke-virtual {v12, v13}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    invoke-interface {v12}, Landroid/text/Editable;->toString()Ljava/lang/String;
+    move-result v12
 
-    move-result-object v12
+    if-nez v12, :cond_38c
 
-    invoke-virtual {v8, v11, v12}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1052
-    const-string v11, "profile.setting"
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    const-string v13, "address "
-
-    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    .line 1051
+    const-string v12, "address"
 
     move-object/from16 v0, p0
 
@@ -3569,110 +3546,108 @@
 
     move-result-object v13
 
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v12, v13}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v12
+    .line 1052
+    const-string v12, "profile.setting"
 
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    const-string v14, "address "
 
-    invoke-static {v11, v12}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvAddress:Landroid/widget/EditText;
+
+    invoke-virtual {v14}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v14
+
+    invoke-interface {v14}, Landroid/text/Editable;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v12, v13}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1061
     move-object/from16 v0, p0
 
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvDisplayLanguage:Landroid/widget/TextView;
+    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvDisplayLanguage:Landroid/widget/TextView;
 
-    invoke-virtual {v11}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+    invoke-virtual {v12}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
-    move-result-object v11
+    move-result-object v12
 
-    invoke-interface {v11}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+    invoke-interface {v12}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v12
 
     invoke-virtual/range {p0 .. p0}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v12
+    move-result-object v13
 
-    sget v13, Lic/buzzebeeslib/R$string;->profile_setting_select_language_en:I
+    sget v14, Lic/buzzebeeslib/R$string;->profile_setting_select_language_en:I
 
-    invoke-virtual {v12, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-virtual {v11, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_3aa
-
-    .line 1062
-    const-string v11, "locale"
-
-    const-string v12, "1033"
-
-    invoke-virtual {v8, v11, v12}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1063
-    const-string v11, "profile.setting"
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    const-string v13, "locale "
-
-    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvDisplayLanguage:Landroid/widget/TextView;
-
-    invoke-virtual {v13}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+    invoke-virtual {v13, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v13
 
-    invoke-interface {v13}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v11, v12}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1069
-    :goto_2f6
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gToggleNotificationButton:Landroid/widget/ToggleButton;
-
-    invoke-virtual {v11}, Landroid/widget/ToggleButton;->isChecked()Z
-
-    move-result v11
-
-    invoke-virtual/range {p0 .. p0}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v12
-
-    const/4 v13, 0x1
-
-    invoke-static {v12, v13}, Lic/buzzebeeslib/LibUserLogin;->SetIsNotificationOn(Landroid/content/Context;Z)Z
+    invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v12
 
-    if-eq v11, v12, :cond_329
+    if-eqz v12, :cond_3ac
 
-    .line 1070
-    invoke-virtual/range {p0 .. p0}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getApplicationContext()Landroid/content/Context;
+    .line 1062
+    const-string v12, "locale"
 
-    move-result-object v11
+    const-string v13, "1033"
 
+    invoke-virtual {v9, v12, v13}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1063
+    const-string v12, "profile.setting"
+
+    new-instance v13, Ljava/lang/StringBuilder;
+
+    const-string v14, "locale "
+
+    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvDisplayLanguage:Landroid/widget/TextView;
+
+    invoke-virtual {v14}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v14
+
+    invoke-interface {v14}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-static {v12, v13}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1069
+    :goto_2f8
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gToggleNotificationButton:Landroid/widget/ToggleButton;
@@ -3681,252 +3656,277 @@
 
     move-result v12
 
-    invoke-static {v11, v12}, Lic/buzzebeeslib/LibUserLogin;->SetIsNotificationOn(Landroid/content/Context;Z)Z
+    invoke-virtual/range {p0 .. p0}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v13
+
+    const/4 v14, 0x1
+
+    invoke-static {v13, v14}, Lic/buzzebeeslib/LibUserLogin;->SetIsNotificationOn(Landroid/content/Context;Z)Z
+
+    move-result v13
+
+    if-eq v12, v13, :cond_32b
+
+    .line 1070
+    invoke-virtual/range {p0 .. p0}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v12
+
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gToggleNotificationButton:Landroid/widget/ToggleButton;
+
+    invoke-virtual {v13}, Landroid/widget/ToggleButton;->isChecked()Z
+
+    move-result v13
+
+    invoke-static {v12, v13}, Lic/buzzebeeslib/LibUserLogin;->SetIsNotificationOn(Landroid/content/Context;Z)Z
 
     .line 1071
     invoke-virtual/range {p0 .. p0}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v11
+    move-result-object v12
 
-    invoke-static {v11}, Lic/buzzebeeslib/LibUserLogin;->GetIsNotificationOn(Landroid/content/Context;)Z
+    invoke-static {v12}, Lic/buzzebeeslib/LibUserLogin;->GetIsNotificationOn(Landroid/content/Context;)Z
 
-    move-result v11
+    move-result v12
 
-    if-eqz v11, :cond_3d3
+    if-eqz v12, :cond_3d5
 
     .line 1073
-    const-string v11, "notification"
+    const-string v12, "notification"
 
-    const-string v12, "true"
+    const-string v13, "true"
 
-    invoke-virtual {v8, v11, v12}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v9, v12, v13}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1080
-    :cond_329
-    :goto_329
-    new-instance v7, Lcom/loopj/android/http/AsyncHttpClient;
+    :cond_32b
+    :goto_32b
+    new-instance v8, Lcom/loopj/android/http/AsyncHttpClient;
 
-    invoke-direct {v7}, Lcom/loopj/android/http/AsyncHttpClient;-><init>()V
+    invoke-direct {v8}, Lcom/loopj/android/http/AsyncHttpClient;-><init>()V
 
     .line 1081
-    .local v7, "myClient":Lcom/loopj/android/http/AsyncHttpClient;
-    const v11, 0x1d4c0
+    .local v8, "myClient":Lcom/loopj/android/http/AsyncHttpClient;
+    const v12, 0x1d4c0
 
-    invoke-virtual {v7, v11}, Lcom/loopj/android/http/AsyncHttpClient;->setTimeout(I)V
+    invoke-virtual {v8, v12}, Lcom/loopj/android/http/AsyncHttpClient;->setTimeout(I)V
 
     .line 1082
     move-object/from16 v0, p0
 
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->TAG:Ljava/lang/String;
+    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->TAG:Ljava/lang/String;
 
-    new-instance v12, Ljava/lang/StringBuilder;
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    const-string v13, "url="
+    const-string v14, "url="
 
-    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v12, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-static {v11, v12}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v12, v13}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1083
-    new-instance v11, Lic/buzzebeeslib/activity/ProfileSettingActivity$AsyncHttpResponseListener;
+    new-instance v12, Lic/buzzebeeslib/activity/ProfileSettingActivity$AsyncHttpResponseListener;
 
     move-object/from16 v0, p0
 
-    invoke-direct {v11, v0}, Lic/buzzebeeslib/activity/ProfileSettingActivity$AsyncHttpResponseListener;-><init>(Lic/buzzebeeslib/activity/ProfileSettingActivity;)V
+    invoke-direct {v12, v0}, Lic/buzzebeeslib/activity/ProfileSettingActivity$AsyncHttpResponseListener;-><init>(Lic/buzzebeeslib/activity/ProfileSettingActivity;)V
 
-    invoke-virtual {v7, v10, v8, v11}, Lcom/loopj/android/http/AsyncHttpClient;->post(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
+    invoke-virtual {v8, v11, v9, v12}, Lcom/loopj/android/http/AsyncHttpClient;->post(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
 
     goto/16 :goto_1e
 
     .line 998
-    .end local v7    # "myClient":Lcom/loopj/android/http/AsyncHttpClient;
-    :catch_356
-    move-exception v5
+    .end local v8    # "myClient":Lcom/loopj/android/http/AsyncHttpClient;
+    :catch_358
+    move-exception v6
 
     .line 999
-    .local v5, "e":Ljava/lang/Exception;
-    invoke-virtual {v5}, Ljava/lang/Exception;->printStackTrace()V
+    .local v6, "e":Ljava/lang/Exception;
+    invoke-virtual {v6}, Ljava/lang/Exception;->printStackTrace()V
 
     goto/16 :goto_12f
 
     .line 1007
-    .end local v5    # "e":Ljava/lang/Exception;
-    :cond_35c
+    .end local v6    # "e":Ljava/lang/Exception;
+    :cond_35e
     move-object/from16 v0, p0
 
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvSex:Landroid/widget/EditText;
+    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvSex:Landroid/widget/EditText;
 
-    invoke-virtual {v11}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+    invoke-virtual {v12}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
-    move-result-object v11
+    move-result-object v12
 
-    invoke-interface {v11}, Landroid/text/Editable;->toString()Ljava/lang/String;
+    invoke-interface {v12}, Landroid/text/Editable;->toString()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v12
 
-    invoke-virtual {v11}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    invoke-virtual {v12}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v12
 
-    const-string v12, "male"
+    const-string v13, "male"
 
-    invoke-virtual {v11, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v11
+    move-result v12
 
-    if-eqz v11, :cond_155
+    if-eqz v12, :cond_155
 
     .line 1008
-    const-string v11, "gender"
+    const-string v12, "gender"
 
-    const-string v12, "male"
+    const-string v13, "male"
 
-    invoke-virtual {v8, v11, v12}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v9, v12, v13}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1009
-    const-string v11, "profile.setting"
+    const-string v12, "profile.setting"
 
-    const-string v12, "gender male"
+    const-string v13, "gender male"
 
-    invoke-static {v11, v12}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v12, v13}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_155
 
     .line 1019
-    .restart local v4    # "date":Ljava/util/Date;
-    .restart local v6    # "formatter":Ljava/text/SimpleDateFormat;
-    .restart local v9    # "str_date":Ljava/lang/String;
-    :catch_384
-    move-exception v5
+    .restart local v5    # "date":Ljava/util/Date;
+    .restart local v7    # "formatter":Ljava/text/SimpleDateFormat;
+    .restart local v10    # "str_date":Ljava/lang/String;
+    :catch_386
+    move-exception v6
 
     .line 1020
-    .local v5, "e":Ljava/text/ParseException;
-    invoke-virtual {v5}, Ljava/text/ParseException;->printStackTrace()V
+    .local v6, "e":Ljava/text/ParseException;
+    invoke-virtual {v6}, Ljava/text/ParseException;->printStackTrace()V
 
     goto/16 :goto_181
 
     .line 1054
-    .end local v4    # "date":Ljava/util/Date;
-    .end local v5    # "e":Ljava/text/ParseException;
-    .end local v6    # "formatter":Ljava/text/SimpleDateFormat;
-    .end local v9    # "str_date":Ljava/lang/String;
-    :cond_38a
+    .end local v5    # "date":Ljava/util/Date;
+    .end local v6    # "e":Ljava/text/ParseException;
+    .end local v7    # "formatter":Ljava/text/SimpleDateFormat;
+    .end local v10    # "str_date":Ljava/lang/String;
+    :cond_38c
     invoke-virtual/range {p0 .. p0}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v11
+    move-result-object v12
 
-    if-eqz v11, :cond_39f
+    if-eqz v12, :cond_3a1
 
     .line 1055
     invoke-virtual/range {p0 .. p0}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v11
+    move-result-object v12
 
-    sget v12, Lic/buzzebeeslib/R$string;->profile_setting_label_varidate_email:I
+    sget v13, Lic/buzzebeeslib/R$string;->profile_setting_label_varidate_email:I
 
-    invoke-virtual {v11, v12}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v12
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v11}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->showToast(Ljava/lang/String;)V
+    invoke-direct {v0, v12}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->showToast(Ljava/lang/String;)V
 
     .line 1057
-    :cond_39f
+    :cond_3a1
     move-object/from16 v0, p0
 
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gPbLoadingProfile:Landroid/widget/ProgressBar;
+    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gPbLoadingProfile:Landroid/widget/ProgressBar;
 
-    const/16 v12, 0x8
+    const/16 v13, 0x8
 
-    invoke-virtual {v11, v12}, Landroid/widget/ProgressBar;->setVisibility(I)V
+    invoke-virtual {v12, v13}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
     goto/16 :goto_1e
 
     .line 1065
-    :cond_3aa
-    const-string v11, "locale"
+    :cond_3ac
+    const-string v12, "locale"
 
-    const-string v12, "1054"
+    const-string v13, "1054"
 
-    invoke-virtual {v8, v11, v12}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v9, v12, v13}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1066
-    const-string v11, "profile.setting"
+    const-string v12, "profile.setting"
 
-    new-instance v12, Ljava/lang/StringBuilder;
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    const-string v13, "locale "
+    const-string v14, "locale "
 
-    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     move-object/from16 v0, p0
 
-    iget-object v13, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvDisplayLanguage:Landroid/widget/TextView;
+    iget-object v14, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gTvDisplayLanguage:Landroid/widget/TextView;
 
-    invoke-virtual {v13}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+    invoke-virtual {v14}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v14
+
+    invoke-interface {v14}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v13
 
-    invoke-interface {v13}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v13
 
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v12, v13}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-static {v11, v12}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_2f6
+    goto/16 :goto_2f8
 
     .line 1076
-    :cond_3d3
-    const-string v11, "notification"
+    :cond_3d5
+    const-string v12, "notification"
 
-    const-string v12, "false"
+    const-string v13, "false"
 
-    invoke-virtual {v8, v11, v12}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v9, v12, v13}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_329
+    goto/16 :goto_32b
 
     .line 1085
-    .end local v8    # "paramsRequestParams":Lcom/loopj/android/http/RequestParams;
-    .end local v10    # "url":Ljava/lang/String;
-    :cond_3dc
-    sget v11, Lic/buzzebeeslib/R$string;->profile_setting_label_validate_data:I
+    .end local v9    # "paramsRequestParams":Lcom/loopj/android/http/RequestParams;
+    .end local v11    # "url":Ljava/lang/String;
+    :cond_3de
+    sget v12, Lic/buzzebeeslib/R$string;->profile_setting_label_validate_data:I
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v11}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v12}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->getString(I)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v12
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v11}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->showToast(Ljava/lang/String;)V
+    invoke-direct {v0, v12}, Lic/buzzebeeslib/activity/ProfileSettingActivity;->showToast(Ljava/lang/String;)V
 
     .line 1086
     move-object/from16 v0, p0
 
-    iget-object v11, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gPbLoadingProfile:Landroid/widget/ProgressBar;
+    iget-object v12, v0, Lic/buzzebeeslib/activity/ProfileSettingActivity;->gPbLoadingProfile:Landroid/widget/ProgressBar;
 
-    const/16 v12, 0x8
+    const/16 v13, 0x8
 
-    invoke-virtual {v11, v12}, Landroid/widget/ProgressBar;->setVisibility(I)V
+    invoke-virtual {v12, v13}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
     goto/16 :goto_1e
 .end method

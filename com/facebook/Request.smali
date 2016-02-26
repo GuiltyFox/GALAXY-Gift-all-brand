@@ -2133,7 +2133,7 @@
 .end method
 
 .method public static newPlacesSearchRequest(Lcom/facebook/Session;Landroid/location/Location;IILjava/lang/String;Lcom/facebook/Request$GraphPlaceListCallback;)Lcom/facebook/Request;
-    .registers 15
+    .registers 16
     .param p0, "session"    # Lcom/facebook/Session;
     .param p1, "location"    # Landroid/location/Location;
     .param p2, "radiusInMeters"    # I
@@ -2200,9 +2200,9 @@
 
     invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
 
-    move-result-wide v7
+    move-result-wide v8
 
-    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v8, v9}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v7
 
@@ -2212,9 +2212,9 @@
 
     invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
 
-    move-result-wide v7
+    move-result-wide v8
 
-    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v8, v9}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v7
 

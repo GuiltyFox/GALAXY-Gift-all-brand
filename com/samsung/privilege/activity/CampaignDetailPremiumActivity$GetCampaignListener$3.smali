@@ -33,7 +33,7 @@
 
     iput p2, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetCampaignListener$3;->val$response_code:I
 
-    .line 2798
+    .line 2799
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 3
 
     .prologue
-    .line 2800
+    .line 2801
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetCampaignListener$3;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetCampaignListener;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetCampaignListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -62,7 +62,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 2802
+    .line 2803
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetCampaignListener$3;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetCampaignListener;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetCampaignListener;->gNFCTag:Lcom/samsung/privilege/bean/NFCTag;
@@ -83,14 +83,14 @@
 
     if-eqz v0, :cond_31
 
-    .line 2803
+    .line 2804
     iget v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetCampaignListener$3;->val$response_code:I
 
     const/16 v1, 0xc8
 
     if-ne v0, v1, :cond_31
 
-    .line 2804
+    .line 2805
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetCampaignListener$3;->this$1:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetCampaignListener;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity$GetCampaignListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;
@@ -102,7 +102,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailPremiumActivity;->doRedeem(Landroid/view/View;)V
 
-    .line 2807
+    .line 2808
     :cond_31
     return-void
 .end method

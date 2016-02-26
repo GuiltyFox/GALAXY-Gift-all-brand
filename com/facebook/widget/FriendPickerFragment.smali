@@ -641,7 +641,7 @@
 
     .line 202
     .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v1, 0x0
+    sget v1, Lcom/facebook/android/R$styleable;->com_facebook_friend_picker_fragment_multi_select:I
 
     iget-boolean v2, p0, Lcom/facebook/widget/FriendPickerFragment;->multiSelect:Z
 

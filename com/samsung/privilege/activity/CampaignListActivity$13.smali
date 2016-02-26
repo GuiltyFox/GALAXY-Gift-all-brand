@@ -37,7 +37,7 @@
 
     iput-object p3, p0, Lcom/samsung/privilege/activity/CampaignListActivity$13;->val$activityContext:Landroid/content/Context;
 
-    .line 1322
+    .line 1336
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,30 +50,30 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 1324
+    .line 1338
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$13;->val$dialogTerm:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1326
+    .line 1340
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$13;->val$activityContext:Landroid/content/Context;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/UserLogin;->SetIsAcceptTerm(Landroid/content/Context;Z)Z
 
-    .line 1327
+    .line 1341
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$13;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/samsung/privilege/activity/CampaignListActivity;->gIsShowingMessage:Z
 
-    .line 1328
+    .line 1342
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$13;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->checkAndShowDialogMessagePopup()V
 
-    .line 1329
+    .line 1343
     return-void
 .end method

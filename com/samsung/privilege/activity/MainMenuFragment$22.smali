@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$22;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
-    .line 2757
+    .line 2772
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,24 +43,24 @@
     .param p2, "i"    # I
 
     .prologue
-    .line 2760
+    .line 2775
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.VIEW"
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment;->M_FACEBOOK_URL:Landroid/net/Uri;
-    invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$33()Landroid/net/Uri;
+    invoke-static {}, Lcom/samsung/privilege/activity/MainMenuFragment;->access$30()Landroid/net/Uri;
 
     move-result-object v2
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 2761
+    .line 2776
     .local v0, "intent":Landroid/content/Intent;
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$22;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/MainMenuFragment;->startActivity(Landroid/content/Intent;)V
 
-    .line 2762
+    .line 2777
     return-void
 .end method

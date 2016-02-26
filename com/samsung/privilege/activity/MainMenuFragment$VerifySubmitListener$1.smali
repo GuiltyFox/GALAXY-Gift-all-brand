@@ -37,7 +37,7 @@
 
     iput-object p3, p0, Lcom/samsung/privilege/activity/MainMenuFragment$VerifySubmitListener$1;->val$response_text:Ljava/lang/String;
 
-    .line 2319
+    .line 2334
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,17 +49,17 @@
     .registers 10
 
     .prologue
-    .line 2322
+    .line 2337
     iget v6, p0, Lcom/samsung/privilege/activity/MainMenuFragment$VerifySubmitListener$1;->val$response_code:I
 
     const/16 v7, 0xc8
 
     if-ne v6, v7, :cond_46
 
-    .line 2323
+    .line 2338
     const/4 v4, 0x0
 
-    .line 2325
+    .line 2340
     .local v4, "points":I
     :try_start_7
     new-instance v3, Lorg/json/JSONObject;
@@ -68,7 +68,7 @@
 
     invoke-direct {v3, v6}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 2326
+    .line 2341
     .local v3, "jsonRoot":Lorg/json/JSONObject;
     const-string v6, "buzzebees"
 
@@ -76,7 +76,7 @@
 
     move-result-object v2
 
-    .line 2327
+    .line 2342
     .local v2, "jsonBuzzebees":Lorg/json/JSONObject;
     const-string v6, "points"
 
@@ -84,14 +84,14 @@
 
     move-result v4
 
-    .line 2328
+    .line 2343
     const-string v6, "description"
 
     invoke-static {v2, v6}, Lcom/samsung/privilege/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 2330
+    .line 2345
     .local v5, "pointsDesc":Ljava/lang/String;
     iget-object v6, p0, Lcom/samsung/privilege/activity/MainMenuFragment$VerifySubmitListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$VerifySubmitListener;
 
@@ -118,7 +118,7 @@
 
     invoke-static {v4, v5, v6, v7}, Lic/buzzebeeslib/util/AnimationPoint;->showToastPointsGift(ILjava/lang/String;Landroid/os/Handler;Landroid/app/Activity;)V
 
-    .line 2332
+    .line 2347
     iget-object v6, p0, Lcom/samsung/privilege/activity/MainMenuFragment$VerifySubmitListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$VerifySubmitListener;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$VerifySubmitListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -132,13 +132,13 @@
 
     check-cast v0, Lcom/samsung/privilege/activity/CampaignListActivity;
 
-    .line 2333
+    .line 2348
     .local v0, "activity":Lcom/samsung/privilege/activity/CampaignListActivity;
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/CampaignListActivity;->getPoints()V
     :try_end_46
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_46} :catch_47
 
-    .line 2339
+    .line 2354
     .end local v0    # "activity":Lcom/samsung/privilege/activity/CampaignListActivity;
     .end local v2    # "jsonBuzzebees":Lorg/json/JSONObject;
     .end local v3    # "jsonRoot":Lorg/json/JSONObject;
@@ -148,12 +148,12 @@
     :goto_46
     return-void
 
-    .line 2334
+    .line 2349
     .restart local v4    # "points":I
     :catch_47
     move-exception v1
 
-    .line 2335
+    .line 2350
     .local v1, "e":Ljava/lang/Exception;
     const-string v6, "OAT"
 

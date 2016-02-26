@@ -46,7 +46,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/NotificationPostAsyncDialogBoxActivity$1;->this$0:Lcom/samsung/privilege/activity/NotificationPostAsyncDialogBoxActivity;
 
-    const v2, 0x7f0a001d
+    const v2, 0x7f09001d
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/NotificationPostAsyncDialogBoxActivity;->getString(I)Ljava/lang/String;
 
@@ -54,7 +54,7 @@
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/NotificationPostAsyncDialogBoxActivity$1;->this$0:Lcom/samsung/privilege/activity/NotificationPostAsyncDialogBoxActivity;
 
-    const v3, 0x7f0a0338
+    const v3, 0x7f09033f
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/NotificationPostAsyncDialogBoxActivity;->getString(I)Ljava/lang/String;
 

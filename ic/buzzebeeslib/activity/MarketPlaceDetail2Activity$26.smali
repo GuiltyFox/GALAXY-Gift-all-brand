@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$26;->val$dialogSerial:Landroid/app/Dialog;
 
-    .line 3323
+    .line 3329
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,12 +46,12 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 3325
+    .line 3331
     iget-object v2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$26;->val$dialogSerial:Landroid/app/Dialog;
 
     invoke-virtual {v2}, Landroid/app/Dialog;->dismiss()V
 
-    .line 3327
+    .line 3333
     iget-object v2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$26;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     iget-object v3, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$26;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -74,14 +74,14 @@
     # invokes: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->getCampaign(I)V
     invoke-static {v2, v3}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$15(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;I)V
 
-    .line 3329
+    .line 3335
     const-string v2, "content://someURI"
 
     invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 3330
+    .line 3336
     .local v1, "uri":Landroid/net/Uri;
     new-instance v0, Landroid/content/Intent;
 
@@ -89,7 +89,7 @@
 
     invoke-direct {v0, v2, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 3331
+    .line 3337
     .local v0, "intent":Landroid/content/Intent;
     iget-object v2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$26;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
@@ -97,6 +97,6 @@
 
     invoke-virtual {v2, v3, v0}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->setResult(ILandroid/content/Intent;)V
 
-    .line 3333
+    .line 3339
     return-void
 .end method

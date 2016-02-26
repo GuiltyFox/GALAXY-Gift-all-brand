@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/RegisterActivity$2;->this$0:Lcom/samsung/privilege/activity/RegisterActivity;
 
-    .line 321
+    .line 353
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,20 +42,20 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 324
+    .line 356
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v0
 
     invoke-static {v0}, Ljava/util/Locale;->setDefault(Ljava/util/Locale;)V
 
-    .line 325
+    .line 357
     iget-object v0, p0, Lcom/samsung/privilege/activity/RegisterActivity$2;->this$0:Lcom/samsung/privilege/activity/RegisterActivity;
 
     const/16 v1, 0x3e7
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/RegisterActivity;->showDialog(I)V
 
-    .line 326
+    .line 358
     return-void
 .end method

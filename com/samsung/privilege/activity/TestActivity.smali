@@ -153,7 +153,7 @@
     .line 60
     iget-object v7, p0, Lcom/samsung/privilege/activity/TestActivity;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
-    const v8, 0x7f02039f
+    const v8, 0x7f0203a7
 
     invoke-virtual {v7, v8}, Lcom/bitmapfun/util/ImageFetcher;->setLoadingImage(I)V
 

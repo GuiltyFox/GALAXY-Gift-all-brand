@@ -41,7 +41,7 @@
 
     iput-object p4, p0, Lcom/samsung/privilege/activity/CampaignListActivity$7;->val$activityContext:Landroid/content/Context;
 
-    .line 1141
+    .line 1155
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -51,7 +51,7 @@
     .registers 2
 
     .prologue
-    .line 1141
+    .line 1155
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$7;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     return-object v0
@@ -64,12 +64,12 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 1143
+    .line 1157
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$7;->val$dialogPoint:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1145
+    .line 1159
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$7;->val$imgOk:Landroid/widget/ImageView;
 
     new-instance v1, Lcom/samsung/privilege/activity/CampaignListActivity$7$1;
@@ -78,12 +78,12 @@
 
     invoke-direct {v1, p0, v2}, Lcom/samsung/privilege/activity/CampaignListActivity$7$1;-><init>(Lcom/samsung/privilege/activity/CampaignListActivity$7;Landroid/content/Context;)V
 
-    .line 1150
+    .line 1164
     const-wide/16 v2, 0x3e8
 
-    .line 1145
+    .line 1159
     invoke-virtual {v0, v1, v2, v3}, Landroid/widget/ImageView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1151
+    .line 1165
     return-void
 .end method

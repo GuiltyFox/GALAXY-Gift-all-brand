@@ -54,12 +54,12 @@
 
 # virtual methods
 .method public compare(Lcom/google/zxing/qrcode/detector/FinderPattern;Lcom/google/zxing/qrcode/detector/FinderPattern;)I
-    .registers 8
+    .registers 9
     .param p1, "center1"    # Lcom/google/zxing/qrcode/detector/FinderPattern;
     .param p2, "center2"    # Lcom/google/zxing/qrcode/detector/FinderPattern;
 
     .prologue
-    const-wide/16 v3, 0x0
+    const-wide/16 v4, 0x0
 
     .line 82
     invoke-virtual {p2}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getEstimatedModuleSize()F
@@ -74,9 +74,9 @@
 
     .line 83
     .local v0, "value":F
-    float-to-double v1, v0
+    float-to-double v2, v0
 
-    cmpg-double v1, v1, v3
+    cmpg-double v1, v2, v4
 
     if-gez v1, :cond_13
 
@@ -86,9 +86,9 @@
     return v1
 
     :cond_13
-    float-to-double v1, v0
+    float-to-double v2, v0
 
-    cmpl-double v1, v1, v3
+    cmpl-double v1, v2, v4
 
     if-lez v1, :cond_1a
 

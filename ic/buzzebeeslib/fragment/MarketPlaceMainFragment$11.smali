@@ -48,13 +48,13 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
-    .registers 9
+    .registers 10
     .param p1, "arg0"    # Landroid/view/animation/Animation;
 
     .prologue
-    const-wide/32 v5, 0xea60
+    const-wide/32 v6, 0xea60
 
-    const-wide/16 v3, 0x1f4
+    const-wide/16 v4, 0x1f4
 
     const/4 v2, 0x1
 
@@ -86,7 +86,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v3, v4}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v1, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 1044
     iget-object v1, p0, Lic/buzzebeeslib/fragment/MarketPlaceMainFragment$11;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceMainFragment;
@@ -96,7 +96,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v5, v6}, Landroid/view/animation/Animation;->setStartOffset(J)V
+    invoke-virtual {v1, v6, v7}, Landroid/view/animation/Animation;->setStartOffset(J)V
 
     .line 1046
     iget-object v1, p0, Lic/buzzebeeslib/fragment/MarketPlaceMainFragment$11;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceMainFragment;
@@ -114,10 +114,10 @@
     invoke-virtual {v0, v2}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
     .line 1049
-    invoke-virtual {v0, v3, v4}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 1050
-    invoke-virtual {v0, v5, v6}, Landroid/view/animation/Animation;->setStartOffset(J)V
+    invoke-virtual {v0, v6, v7}, Landroid/view/animation/Animation;->setStartOffset(J)V
 
     .line 1052
     iget-object v1, p0, Lic/buzzebeeslib/fragment/MarketPlaceMainFragment$11;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceMainFragment;

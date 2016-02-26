@@ -2908,7 +2908,7 @@
 
     move-result-object v11
 
-    const-string v12, "GT-I5700"
+    sget-object v12, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4381,7 +4381,7 @@
     invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 196
-    if-eqz p1, :cond_115
+    if-eqz p1, :cond_10e
 
     .line 197
     const-string v6, "buzzebees.MarketReview"
@@ -4436,13 +4436,6 @@
     move-result-object v6
 
     iput-object v6, p0, Lic/buzzebeeslib/activity/HelpCenterListActivity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    .line 212
-    iget-object v6, p0, Lic/buzzebeeslib/activity/HelpCenterListActivity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    const-string v7, "REQUEST HELP"
-
-    invoke-virtual {v6, v7}, Lcom/google/analytics/tracking/android/Tracker;->sendView(Ljava/lang/String;)V
 
     .line 214
     new-instance v4, Landroid/util/DisplayMetrics;
@@ -4518,10 +4511,10 @@
 
     .line 227
     .local v2, "height":I
-    if-le v2, v5, :cond_11e
+    if-le v2, v5, :cond_117
 
     .end local v2    # "height":I
-    :goto_81
+    :goto_7a
     div-int/lit8 v3, v2, 0x2
 
     .line 228
@@ -4681,7 +4674,7 @@
     .end local v3    # "longest":I
     .end local v4    # "metrics":Landroid/util/DisplayMetrics;
     .end local v5    # "width":I
-    :cond_115
+    :cond_10e
     const-string v6, "buzzebees.MarketReview"
 
     const-string v7, "public void onCreate(Bundle savedInstanceState == null) {"
@@ -4695,11 +4688,11 @@
     .restart local v2    # "height":I
     .restart local v4    # "metrics":Landroid/util/DisplayMetrics;
     .restart local v5    # "width":I
-    :cond_11e
+    :cond_117
     move v2, v5
 
     .line 227
-    goto/16 :goto_81
+    goto/16 :goto_7a
 .end method
 
 .method public onDestroy()V
@@ -5053,7 +5046,7 @@
 .end method
 
 .method public openImage(Landroid/view/View;)V
-    .registers 7
+    .registers 8
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
@@ -5086,17 +5079,17 @@
     invoke-direct {v2, p0}, Lic/buzzebeeslib/activity/HelpCenterListActivity$9;-><init>(Lic/buzzebeeslib/activity/HelpCenterListActivity;)V
 
     .line 1001
-    const-wide/16 v3, 0x32
+    const-wide/16 v4, 0x32
 
     .line 994
-    invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 1002
     return-void
 .end method
 
 .method public openSticker(Landroid/view/View;)V
-    .registers 7
+    .registers 8
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
@@ -5129,10 +5122,10 @@
     invoke-direct {v2, p0}, Lic/buzzebeeslib/activity/HelpCenterListActivity$8;-><init>(Lic/buzzebeeslib/activity/HelpCenterListActivity;)V
 
     .line 986
-    const-wide/16 v3, 0x32
+    const-wide/16 v4, 0x32
 
     .line 979
-    invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 988
     return-void

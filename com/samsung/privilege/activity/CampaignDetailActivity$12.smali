@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$12;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
-    .line 1757
+    .line 1852
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,9 +43,9 @@
     .param p2, "id"    # I
 
     .prologue
-    .line 1759
+    .line 1854
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 1760
+    .line 1855
     return-void
 .end method

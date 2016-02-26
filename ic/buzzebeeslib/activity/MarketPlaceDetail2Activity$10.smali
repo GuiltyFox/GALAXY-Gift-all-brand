@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$10;->val$dialogSerial:Landroid/app/Dialog;
 
-    .line 1729
+    .line 1731
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,11 +46,11 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 1731
+    .line 1733
     iget-object v0, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$10;->val$dialogSerial:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1733
+    .line 1735
     return-void
 .end method

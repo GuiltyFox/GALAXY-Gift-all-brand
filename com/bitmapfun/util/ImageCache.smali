@@ -484,7 +484,7 @@
 .end method
 
 .method public static getUsableSpace(Ljava/io/File;)J
-    .registers 6
+    .registers 7
     .param p0, "path"    # Ljava/io/File;
     .annotation build Landroid/annotation/TargetApi;
         value = 0x9
@@ -501,11 +501,11 @@
     .line 512
     invoke-virtual {p0}, Ljava/io/File;->getUsableSpace()J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 515
     :goto_a
-    return-wide v1
+    return-wide v2
 
     .line 514
     :cond_b
@@ -523,15 +523,15 @@
 
     move-result v1
 
-    int-to-long v1, v1
+    int-to-long v2, v1
 
     invoke-virtual {v0}, Landroid/os/StatFs;->getAvailableBlocks()I
 
-    move-result v3
+    move-result v1
 
-    int-to-long v3, v3
+    int-to-long v4, v1
 
-    mul-long/2addr v1, v3
+    mul-long/2addr v2, v4
 
     goto :goto_a
 .end method
@@ -1592,9 +1592,9 @@
 
     iget v5, v5, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->diskCacheSize:I
 
-    int-to-long v5, v5
+    int-to-long v6, v5
 
-    invoke-static {v0, v2, v4, v5, v6}, Lcom/bitmapfun/util/DiskLruCache;->open(Ljava/io/File;IIJ)Lcom/bitmapfun/util/DiskLruCache;
+    invoke-static {v0, v2, v4, v6, v7}, Lcom/bitmapfun/util/DiskLruCache;->open(Ljava/io/File;IIJ)Lcom/bitmapfun/util/DiskLruCache;
 
     move-result-object v2
 

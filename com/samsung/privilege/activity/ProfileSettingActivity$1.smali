@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$1;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
 
-    .line 394
+    .line 396
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,18 +45,18 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 397
+    .line 399
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$1;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
 
     invoke-static {v0, v2}, Lcom/samsung/privilege/activity/ProfileSettingActivity;->access$0(Lcom/samsung/privilege/activity/ProfileSettingActivity;Z)V
 
-    .line 398
+    .line 400
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileSettingActivity$1;->this$0:Lcom/samsung/privilege/activity/ProfileSettingActivity;
 
     const/16 v1, 0xa
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/ProfileSettingActivity;->showDialog(I)V
 
-    .line 399
+    .line 401
     return v2
 .end method

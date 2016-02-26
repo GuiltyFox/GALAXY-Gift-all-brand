@@ -40,7 +40,7 @@
 
     iput-object p2, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->val$listFilter:Landroid/widget/ListView;
 
-    .line 505
+    .line 513
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 15
+    .registers 16
     .param p2, "arg1"    # Landroid/view/View;
     .param p3, "position"    # I
     .param p4, "arg3"    # J
@@ -64,7 +64,7 @@
     .end annotation
 
     .prologue
-    .line 509
+    .line 517
     .local p1, "arg0":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     :try_start_0
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
@@ -73,7 +73,7 @@
 
     iput-object v4, v3, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->strHashtag:Ljava/lang/String;
 
-    .line 510
+    .line 518
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->val$listFilter:Landroid/widget/ListView;
 
     invoke-virtual {v3}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
@@ -82,7 +82,7 @@
 
     check-cast v0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;
 
-    .line 511
+    .line 519
     .local v0, "adapter":Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;
     invoke-virtual {v0, p3}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;->getItem(I)Ljava/lang/Object;
 
@@ -90,7 +90,7 @@
 
     check-cast v2, Lic/buzzebeeslib/bean/CampaignCategory;
 
-    .line 513
+    .line 521
     .local v2, "objCampaignCategory":Lic/buzzebeeslib/bean/CampaignCategory;
     iget-object v3, v2, Lic/buzzebeeslib/bean/CampaignCategory;->Mode:Ljava/lang/String;
 
@@ -100,9 +100,9 @@
 
     move-result v3
 
-    if-eqz v3, :cond_7d
+    if-eqz v3, :cond_c8
 
-    .line 514
+    .line 522
     iget-object v3, v2, Lic/buzzebeeslib/bean/CampaignCategory;->Name:Ljava/lang/String;
 
     const-string v4, "All"
@@ -111,53 +111,58 @@
 
     move-result v3
 
-    if-eqz v3, :cond_43
+    if-eqz v3, :cond_4e
 
-    .line 515
+    .line 523
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     invoke-virtual {v3}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->doFilterAll()V
-    :try_end_2d
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_2d} :catch_53
+
+    .line 525
+    iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
+
+    const-string v4, "All"
+
+    invoke-static {v3, v4}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$33(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;Ljava/lang/String;)V
 
     .line 526
-    :cond_2d
-    :goto_2d
-    :try_start_2d
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-    invoke-static {v3}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$8(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Lcom/google/analytics/tracking/android/Tracker;
+    invoke-static {v3}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$9(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Lcom/google/analytics/tracking/android/Tracker;
 
     move-result-object v3
 
-    const-string v4, "Marketplace Category"
+    const-string v4, "BZB Marketplace"
 
-    const-string v5, "Category Click"
+    const-string v5, "Click BZB Category"
 
-    iget-object v6, v2, Lic/buzzebeeslib/bean/CampaignCategory;->Name_En:Ljava/lang/String;
+    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
-    const-wide/16 v7, 0x1
+    # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->gCurrentFilterCatName:Ljava/lang/String;
+    invoke-static {v6}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$8(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Ljava/lang/String;
 
-    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result-object v6
+
+    const-wide/16 v8, 0x1
+
+    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v7
 
     invoke-virtual {v3, v4, v5, v6, v7}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-    :try_end_42
-    .catch Ljava/lang/Exception; {:try_start_2d .. :try_end_42} :catch_86
 
-    .line 533
+    .line 553
     .end local v0    # "adapter":Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;
     .end local v2    # "objCampaignCategory":Lic/buzzebeeslib/bean/CampaignCategory;
-    :goto_42
+    :cond_4d
+    :goto_4d
     return-void
 
-    .line 516
+    .line 527
     .restart local v0    # "adapter":Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;
     .restart local v2    # "objCampaignCategory":Lic/buzzebeeslib/bean/CampaignCategory;
-    :cond_43
-    :try_start_43
+    :cond_4e
     iget-object v3, v2, Lic/buzzebeeslib/bean/CampaignCategory;->Name:Ljava/lang/String;
 
     const-string v4, "Free"
@@ -166,24 +171,58 @@
 
     move-result v3
 
-    if-eqz v3, :cond_6d
+    if-eqz v3, :cond_98
 
-    .line 517
+    .line 528
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     invoke-virtual {v3}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->doFilterFree()V
-    :try_end_52
-    .catch Ljava/lang/Exception; {:try_start_43 .. :try_end_52} :catch_53
-
-    goto :goto_2d
 
     .line 530
-    .end local v0    # "adapter":Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;
-    .end local v2    # "objCampaignCategory":Lic/buzzebeeslib/bean/CampaignCategory;
-    :catch_53
-    move-exception v1
+    iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
+
+    const-string v4, "Free"
+
+    invoke-static {v3, v4}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$33(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;Ljava/lang/String;)V
 
     .line 531
+    iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
+
+    # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+    invoke-static {v3}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$9(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Lcom/google/analytics/tracking/android/Tracker;
+
+    move-result-object v3
+
+    const-string v4, "BZB Marketplace"
+
+    const-string v5, "Click BZB Category"
+
+    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
+
+    # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->gCurrentFilterCatName:Ljava/lang/String;
+    invoke-static {v6}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$8(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-wide/16 v8, 0x1
+
+    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v7
+
+    invoke-virtual {v3, v4, v5, v6, v7}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
+    :try_end_7d
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_7d} :catch_7e
+
+    goto :goto_4d
+
+    .line 550
+    .end local v0    # "adapter":Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;
+    .end local v2    # "objCampaignCategory":Lic/buzzebeeslib/bean/CampaignCategory;
+    :catch_7e
+    move-exception v1
+
+    .line 551
     .local v1, "ex":Ljava/lang/Exception;
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
@@ -207,14 +246,14 @@
 
     invoke-virtual {v3, v4}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->showToast(Ljava/lang/String;)V
 
-    goto :goto_42
+    goto :goto_4d
 
-    .line 518
+    .line 532
     .end local v1    # "ex":Ljava/lang/Exception;
     .restart local v0    # "adapter":Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$MarketFilterAdapter;
     .restart local v2    # "objCampaignCategory":Lic/buzzebeeslib/bean/CampaignCategory;
-    :cond_6d
-    :try_start_6d
+    :cond_98
+    :try_start_98
     iget-object v3, v2, Lic/buzzebeeslib/bean/CampaignCategory;->Name:Ljava/lang/String;
 
     const-string v4, "Deal"
@@ -223,17 +262,51 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2d
+    if-eqz v3, :cond_4d
 
-    .line 519
+    .line 533
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     invoke-virtual {v3}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->doFilterDeal()V
 
-    goto :goto_2d
+    .line 535
+    iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
-    .line 522
-    :cond_7d
+    const-string v4, "Deal"
+
+    invoke-static {v3, v4}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$33(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;Ljava/lang/String;)V
+
+    .line 536
+    iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
+
+    # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+    invoke-static {v3}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$9(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Lcom/google/analytics/tracking/android/Tracker;
+
+    move-result-object v3
+
+    const-string v4, "BZB Marketplace"
+
+    const-string v5, "Click BZB Category"
+
+    iget-object v6, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
+
+    # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->gCurrentFilterCatName:Ljava/lang/String;
+    invoke-static {v6}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$8(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-wide/16 v8, 0x1
+
+    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v7
+
+    invoke-virtual {v3, v4, v5, v6, v7}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
+
+    goto :goto_4d
+
+    .line 539
+    :cond_c8
     iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
     iget-object v4, v2, Lic/buzzebeeslib/bean/CampaignCategory;->Cat:Ljava/lang/String;
@@ -241,14 +314,61 @@
     const/4 v5, 0x0
 
     invoke-virtual {v3, v4, v5}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->doFilterCat(Ljava/lang/String;Z)V
-    :try_end_85
-    .catch Ljava/lang/Exception; {:try_start_6d .. :try_end_85} :catch_53
 
-    goto :goto_2d
+    .line 541
+    iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
 
-    .line 527
-    :catch_86
-    move-exception v3
+    iget-object v4, v2, Lic/buzzebeeslib/bean/CampaignCategory;->Name_En:Ljava/lang/String;
 
-    goto :goto_42
+    invoke-static {v3, v4}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$33(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;Ljava/lang/String;)V
+
+    .line 542
+    iget-object v3, p0, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity$6;->this$0:Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;
+
+    # getter for: Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
+    invoke-static {v3}, Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;->access$9(Lic/buzzebeeslib/fragment/MarketPlaceList3Activity;)Lcom/google/analytics/tracking/android/Tracker;
+
+    move-result-object v3
+
+    const-string v4, "BZB Marketplace"
+
+    const-string v5, "Click BZB Category"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    iget-object v7, v2, Lic/buzzebeeslib/bean/CampaignCategory;->Cat:Ljava/lang/String;
+
+    invoke-static {v7}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v7, "|"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    iget-object v7, v2, Lic/buzzebeeslib/bean/CampaignCategory;->Name_En:Ljava/lang/String;
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    const-wide/16 v8, 0x1
+
+    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v7
+
+    invoke-virtual {v3, v4, v5, v6, v7}, Lcom/google/analytics/tracking/android/Tracker;->sendEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
+    :try_end_105
+    .catch Ljava/lang/Exception; {:try_start_98 .. :try_end_105} :catch_7e
+
+    goto/16 :goto_4d
 .end method

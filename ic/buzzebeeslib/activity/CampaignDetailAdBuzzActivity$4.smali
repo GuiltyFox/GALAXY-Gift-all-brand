@@ -74,7 +74,7 @@
 .end method
 
 .method public onTick(J)V
-    .registers 7
+    .registers 8
     .param p1, "millisUntilFinished"    # J
 
     .prologue

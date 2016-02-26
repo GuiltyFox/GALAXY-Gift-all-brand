@@ -26,7 +26,7 @@
     .line 1
     iput-object p1, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
-    .line 3652
+    .line 3658
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     return-void
@@ -41,14 +41,14 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 3654
+    .line 3660
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 3655
+    .line 3661
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->_fileLoader:Lic/buzzebeeslib/util/AsyncFileLoader;
-    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$60(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Lic/buzzebeeslib/util/AsyncFileLoader;
+    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$61(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Lic/buzzebeeslib/util/AsyncFileLoader;
 
     move-result-object v5
 
@@ -58,17 +58,17 @@
 
     if-eqz v5, :cond_32
 
-    .line 3656
+    .line 3662
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->_progressDialogDownload:Landroid/app/ProgressDialog;
-    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$61(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/app/ProgressDialog;
+    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$62(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/app/ProgressDialog;
 
     move-result-object v5
 
     invoke-virtual {v5}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 3657
+    .line 3663
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->TAG:Ljava/lang/String;
@@ -92,17 +92,17 @@
 
     invoke-static {v5, v6}, Lic/buzzebeeslib/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3700
+    .line 3706
     :cond_31
     :goto_31
     return-void
 
-    .line 3658
+    .line 3664
     :cond_32
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->_fileLoader:Lic/buzzebeeslib/util/AsyncFileLoader;
-    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$60(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Lic/buzzebeeslib/util/AsyncFileLoader;
+    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$61(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Lic/buzzebeeslib/util/AsyncFileLoader;
 
     move-result-object v5
 
@@ -114,7 +114,7 @@
 
     if-ne v5, v6, :cond_140
 
-    .line 3662
+    .line 3668
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->paramCampaign:Lic/buzzebeeslib/bean/Campaign;
@@ -131,7 +131,7 @@
     iget-object v6, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gCurrentDownloadImageIndex:I
-    invoke-static {v6}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$66(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)I
+    invoke-static {v6}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$67(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)I
 
     move-result v6
 
@@ -143,12 +143,12 @@
 
     iget-object v3, v5, Lic/buzzebeeslib/bean/CampaignExtraAdItem;->Src:Ljava/lang/String;
 
-    .line 3663
+    .line 3669
     .local v3, "strSrc":Ljava/lang/String;
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # invokes: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->getOutputFilePIC(Ljava/lang/String;)Ljava/io/File;
-    invoke-static {v5, v3}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$67(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Ljava/lang/String;)Ljava/io/File;
+    invoke-static {v5, v3}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$68(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v5
 
@@ -160,7 +160,7 @@
 
     move-result-object v0
 
-    .line 3664
+    .line 3670
     .local v0, "bitmap":Landroid/graphics/Bitmap;
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
@@ -171,11 +171,11 @@
 
     invoke-virtual {v5, v3, v0}, Lcom/bitmapfun/util/ImageFetcher;->addBitmapToCacheByHack(Ljava/lang/String;Landroid/graphics/Bitmap;)V
 
-    .line 3666
+    .line 3672
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # invokes: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->IsAllLoadFromCache()Z
-    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$68(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Z
+    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$69(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Z
 
     move-result v5
 
@@ -184,20 +184,20 @@
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->gIsShow:Z
-    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$69(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Z
+    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$70(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Z
 
     move-result v5
 
     if-nez v5, :cond_cf
 
-    .line 3668
+    .line 3674
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     const/4 v6, 0x1
 
-    invoke-static {v5, v6}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$70(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Z)V
+    invoke-static {v5, v6}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$71(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Z)V
 
-    .line 3670
+    .line 3676
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->TAG:Ljava/lang/String;
@@ -209,17 +209,17 @@
 
     invoke-static {v5, v6}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3672
+    .line 3678
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->_progressDialogDownload:Landroid/app/ProgressDialog;
-    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$61(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/app/ProgressDialog;
+    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$62(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/app/ProgressDialog;
 
     move-result-object v5
 
     invoke-virtual {v5}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 3673
+    .line 3679
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     iget-object v6, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -242,7 +242,7 @@
     # invokes: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->getCampaign(I)V
     invoke-static {v5, v6}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$15(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;I)V
 
-    .line 3674
+    .line 3680
     new-instance v2, Landroid/content/Intent;
 
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
@@ -255,7 +255,7 @@
 
     invoke-direct {v2, v5, v6}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 3675
+    .line 3681
     .local v2, "intent":Landroid/content/Intent;
     const-string v5, "campaign"
 
@@ -268,14 +268,14 @@
 
     invoke-virtual {v2, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 3676
+    .line 3682
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     invoke-virtual {v5, v2}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->startActivity(Landroid/content/Intent;)V
 
     goto/16 :goto_31
 
-    .line 3678
+    .line 3684
     .end local v2    # "intent":Landroid/content/Intent;
     :cond_cf
     const/4 v1, 0x0
@@ -301,7 +301,7 @@
 
     if-ge v1, v5, :cond_31
 
-    .line 3679
+    .line 3685
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->paramCampaign:Lic/buzzebeeslib/bean/Campaign;
@@ -323,7 +323,7 @@
 
     iget-object v4, v5, Lic/buzzebeeslib/bean/CampaignExtraAdItem;->Src:Ljava/lang/String;
 
-    .line 3680
+    .line 3686
     .local v4, "strUrl":Ljava/lang/String;
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
@@ -338,11 +338,11 @@
 
     if-nez v5, :cond_12f
 
-    .line 3683
+    .line 3689
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->cd:Lic/buzzebeeslib/util/ConnectionDetector;
-    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$71(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Lic/buzzebeeslib/util/ConnectionDetector;
+    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$72(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Lic/buzzebeeslib/util/ConnectionDetector;
 
     move-result-object v5
 
@@ -352,50 +352,50 @@
 
     if-eqz v5, :cond_132
 
-    .line 3684
+    .line 3690
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
-    invoke-static {v5, v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$72(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;I)V
+    invoke-static {v5, v1}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$73(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;I)V
 
-    .line 3685
+    .line 3691
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # invokes: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->initFileLoaderPIC(Ljava/lang/String;)V
-    invoke-static {v5, v4}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$73(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Ljava/lang/String;)V
+    invoke-static {v5, v4}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$74(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;Ljava/lang/String;)V
 
-    .line 3686
+    .line 3692
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     invoke-virtual {v5, v8}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->showDialog(I)V
 
-    .line 3687
+    .line 3693
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->_progressDialogDownload:Landroid/app/ProgressDialog;
-    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$61(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/app/ProgressDialog;
+    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$62(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/app/ProgressDialog;
 
     move-result-object v5
 
     invoke-virtual {v5, v8}, Landroid/app/ProgressDialog;->setProgress(I)V
 
-    .line 3688
+    .line 3694
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->_progressHandler:Landroid/os/Handler;
-    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$65(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/os/Handler;
+    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$66(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/os/Handler;
 
     move-result-object v5
 
     invoke-virtual {v5, v8}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 3678
+    .line 3684
     :cond_12f
     :goto_12f
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_d0
 
-    .line 3690
+    .line 3696
     :cond_132
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
@@ -412,7 +412,7 @@
 
     goto :goto_12f
 
-    .line 3697
+    .line 3703
     .end local v0    # "bitmap":Landroid/graphics/Bitmap;
     .end local v1    # "i":I
     .end local v3    # "strSrc":Ljava/lang/String;
@@ -421,14 +421,14 @@
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->_progressDialogDownload:Landroid/app/ProgressDialog;
-    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$61(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/app/ProgressDialog;
+    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$62(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/app/ProgressDialog;
 
     move-result-object v5
 
     iget-object v6, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->_fileLoader:Lic/buzzebeeslib/util/AsyncFileLoader;
-    invoke-static {v6}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$60(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Lic/buzzebeeslib/util/AsyncFileLoader;
+    invoke-static {v6}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$61(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Lic/buzzebeeslib/util/AsyncFileLoader;
 
     move-result-object v6
 
@@ -438,11 +438,11 @@
 
     invoke-virtual {v5, v6}, Landroid/app/ProgressDialog;->setProgress(I)V
 
-    .line 3698
+    .line 3704
     iget-object v5, p0, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity$28;->this$0:Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;
 
     # getter for: Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->_progressHandler:Landroid/os/Handler;
-    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$65(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/os/Handler;
+    invoke-static {v5}, Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;->access$66(Lic/buzzebeeslib/activity/MarketPlaceDetail2Activity;)Landroid/os/Handler;
 
     move-result-object v5
 

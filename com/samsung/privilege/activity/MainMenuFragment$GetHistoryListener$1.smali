@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetHistoryListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetHistoryListener;
 
-    .line 2403
+    .line 2418
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 4
 
     .prologue
-    .line 2405
+    .line 2420
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetHistoryListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetHistoryListener;
 
     # getter for: Lcom/samsung/privilege/activity/MainMenuFragment$GetHistoryListener;->this$0:Lcom/samsung/privilege/activity/MainMenuFragment;
@@ -56,7 +56,7 @@
 
     if-eqz v1, :cond_22
 
-    .line 2407
+    .line 2422
     :try_start_c
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainMenuFragment$GetHistoryListener$1;->this$1:Lcom/samsung/privilege/activity/MainMenuFragment$GetHistoryListener;
 
@@ -74,7 +74,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 2408
+    .line 2423
     const-string v1, "HISTORY"
 
     const-string v2, "gProgressHistory.setVisibility(View.GONE);"
@@ -83,16 +83,16 @@
     :try_end_22
     .catch Ljava/lang/Exception; {:try_start_c .. :try_end_22} :catch_23
 
-    .line 2413
+    .line 2428
     :cond_22
     :goto_22
     return-void
 
-    .line 2409
+    .line 2424
     :catch_23
     move-exception v0
 
-    .line 2410
+    .line 2425
     .local v0, "e":Ljava/lang/Exception;
     const-string v1, "HISTORY"
 

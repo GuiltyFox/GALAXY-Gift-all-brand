@@ -29,7 +29,7 @@
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$3;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
-    .line 891
+    .line 893
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,14 +45,14 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 894
+    .line 896
     invoke-static {p1, p2}, Lcom/samsung/privilege/util/BBUtil;->IsSlideToDown(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1a
 
-    .line 895
+    .line 897
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$3;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailActivity;->gStateShowGallery:Ljava/lang/String;
@@ -68,13 +68,13 @@
 
     if-eqz v0, :cond_1a
 
-    .line 897
+    .line 899
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$3;->this$0:Lcom/samsung/privilege/activity/CampaignDetailActivity;
 
     # invokes: Lcom/samsung/privilege/activity/CampaignDetailActivity;->HideTabGallery()V
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailActivity;->access$36(Lcom/samsung/privilege/activity/CampaignDetailActivity;)V
 
-    .line 902
+    .line 904
     :cond_1a
     return v2
 .end method

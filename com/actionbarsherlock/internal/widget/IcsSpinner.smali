@@ -87,7 +87,7 @@
 
     .line 107
     .local v2, "popup":Lcom/actionbarsherlock/internal/widget/IcsSpinner$DropdownPopup;
-    const/4 v4, 0x4
+    sget v4, Lcom/actionbarsherlock/R$styleable;->SherlockSpinner_android_dropDownWidth:I
 
     .line 108
     const/4 v5, -0x2
@@ -100,7 +100,7 @@
     iput v4, p0, Lcom/actionbarsherlock/internal/widget/IcsSpinner;->mDropDownWidth:I
 
     .line 110
-    const/4 v4, 0x2
+    sget v4, Lcom/actionbarsherlock/R$styleable;->SherlockSpinner_android_popupBackground:I
 
     .line 109
     invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -110,7 +110,7 @@
     invoke-virtual {v2, v4}, Lcom/actionbarsherlock/internal/widget/IcsSpinner$DropdownPopup;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 112
-    const/4 v4, 0x6
+    sget v4, Lcom/actionbarsherlock/R$styleable;->SherlockSpinner_android_dropDownVerticalOffset:I
 
     .line 111
     invoke-virtual {v0, v4, v6}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
@@ -119,14 +119,14 @@
 
     .line 113
     .local v3, "verticalOffset":I
-    if-eqz v3, :cond_30
+    if-eqz v3, :cond_33
 
     .line 114
     invoke-virtual {v2, v3}, Lcom/actionbarsherlock/internal/widget/IcsSpinner$DropdownPopup;->setVerticalOffset(I)V
 
     .line 118
-    :cond_30
-    const/4 v4, 0x5
+    :cond_33
+    sget v4, Lcom/actionbarsherlock/R$styleable;->SherlockSpinner_android_dropDownHorizontalOffset:I
 
     .line 117
     invoke-virtual {v0, v4, v6}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
@@ -135,19 +135,21 @@
 
     .line 119
     .local v1, "horizontalOffset":I
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_3e
 
     .line 120
     invoke-virtual {v2, v1}, Lcom/actionbarsherlock/internal/widget/IcsSpinner$DropdownPopup;->setHorizontalOffset(I)V
 
     .line 123
-    :cond_3a
+    :cond_3e
     iput-object v2, p0, Lcom/actionbarsherlock/internal/widget/IcsSpinner;->mPopup:Lcom/actionbarsherlock/internal/widget/IcsSpinner$SpinnerPopup;
 
     .line 125
-    const/16 v4, 0x11
+    sget v4, Lcom/actionbarsherlock/R$styleable;->SherlockSpinner_android_gravity:I
 
-    invoke-virtual {v0, v6, v4}, Landroid/content/res/TypedArray;->getInt(II)I
+    const/16 v5, 0x11
+
+    invoke-virtual {v0, v4, v5}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v4
 
@@ -156,7 +158,7 @@
     .line 127
     iget-object v4, p0, Lcom/actionbarsherlock/internal/widget/IcsSpinner;->mPopup:Lcom/actionbarsherlock/internal/widget/IcsSpinner$SpinnerPopup;
 
-    const/4 v5, 0x3
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockSpinner_android_prompt:I
 
     invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -175,7 +177,7 @@
     .line 135
     iget-object v4, p0, Lcom/actionbarsherlock/internal/widget/IcsSpinner;->mTempAdapter:Lcom/actionbarsherlock/internal/widget/IcsSpinner$DropDownAdapter;
 
-    if-eqz v4, :cond_62
+    if-eqz v4, :cond_69
 
     .line 136
     iget-object v4, p0, Lcom/actionbarsherlock/internal/widget/IcsSpinner;->mPopup:Lcom/actionbarsherlock/internal/widget/IcsSpinner$SpinnerPopup;
@@ -190,7 +192,7 @@
     iput-object v4, p0, Lcom/actionbarsherlock/internal/widget/IcsSpinner;->mTempAdapter:Lcom/actionbarsherlock/internal/widget/IcsSpinner$DropDownAdapter;
 
     .line 139
-    :cond_62
+    :cond_69
     return-void
 .end method
 

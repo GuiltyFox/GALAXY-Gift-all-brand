@@ -33,7 +33,7 @@
 
     iput p2, p0, Lcom/samsung/privilege/activity/CampaignListActivity$26;->val$position:I
 
-    .line 2264
+    .line 2282
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,14 +45,14 @@
     .registers 4
 
     .prologue
-    .line 2266
+    .line 2284
     iget v0, p0, Lcom/samsung/privilege/activity/CampaignListActivity$26;->val$position:I
 
-    .line 2267
+    .line 2285
     .local v0, "categoryNo":I
     if-gez v0, :cond_16
 
-    .line 2268
+    .line 2286
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$26;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/CampaignListActivity;->mPager:Landroid/support/v4/view/ViewPager;
@@ -69,11 +69,11 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v4/view/ViewPager;->setCurrentItem(I)V
 
-    .line 2272
+    .line 2290
     :goto_15
     return-void
 
-    .line 2270
+    .line 2288
     :cond_16
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignListActivity$26;->this$0:Lcom/samsung/privilege/activity/CampaignListActivity;
 

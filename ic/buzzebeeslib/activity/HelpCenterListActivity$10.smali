@@ -94,9 +94,9 @@
     invoke-virtual {v0, v4}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
     .line 1140
-    const-wide/16 v1, 0x64
+    const-wide/16 v2, 0x64
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 1142
     iget-object v1, p0, Lic/buzzebeeslib/activity/HelpCenterListActivity$10;->val$layoutLike:Landroid/widget/ImageView;

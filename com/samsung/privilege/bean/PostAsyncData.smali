@@ -423,29 +423,29 @@
 
     .prologue
     .line 79
-    iget-object v3, p0, Lcom/samsung/privilege/bean/PostAsyncData;->file:Ljava/io/File;
+    iget-object v1, p0, Lcom/samsung/privilege/bean/PostAsyncData;->file:Ljava/io/File;
 
-    invoke-virtual {v3}, Ljava/io/File;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/io/File;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-static {v3}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+    invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
-    move-result-wide v1
+    move-result-wide v2
 
     .line 80
-    .local v1, "time":J
+    .local v2, "time":J
     new-instance v0, Ljava/util/Date;
 
-    invoke-direct {v0, v1, v2}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v0, v2, v3}, Ljava/util/Date;-><init>(J)V
 
     .line 81
     .local v0, "date":Ljava/util/Date;
     invoke-virtual {v0}, Ljava/util/Date;->toGMTString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    return-object v3
+    return-object v1
 .end method
 
 .method public getValue(Ljava/lang/String;)Ljava/lang/String;

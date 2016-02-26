@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public after(J)Lcom/actionbarsherlock/internal/nineoldandroids/animation/AnimatorSet$Builder;
-    .registers 5
+    .registers 6
     .param p1, "delay"    # J
 
     .prologue

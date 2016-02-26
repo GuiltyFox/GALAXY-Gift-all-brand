@@ -264,7 +264,7 @@
 .end method
 
 .method public setNuxDisplayTime(J)V
-    .registers 3
+    .registers 4
     .param p1, "displayTime"    # J
 
     .prologue
@@ -288,7 +288,7 @@
 .end method
 
 .method public show()V
-    .registers 10
+    .registers 11
 
     .prologue
     const/high16 v7, -0x80000000
@@ -481,11 +481,11 @@
     invoke-direct {p0}, Lcom/facebook/widget/ToolTipPopup;->updateArrows()V
 
     .line 138
-    iget-wide v5, p0, Lcom/facebook/widget/ToolTipPopup;->mNuxDisplayTime:J
+    iget-wide v6, p0, Lcom/facebook/widget/ToolTipPopup;->mNuxDisplayTime:J
 
-    const-wide/16 v7, 0x0
+    const-wide/16 v8, 0x0
 
-    cmp-long v5, v5, v7
+    cmp-long v5, v6, v8
 
     if-lez v5, :cond_b1
 
@@ -497,10 +497,10 @@
     invoke-direct {v6, p0}, Lcom/facebook/widget/ToolTipPopup$2;-><init>(Lcom/facebook/widget/ToolTipPopup;)V
 
     .line 144
-    iget-wide v7, p0, Lcom/facebook/widget/ToolTipPopup;->mNuxDisplayTime:J
+    iget-wide v8, p0, Lcom/facebook/widget/ToolTipPopup;->mNuxDisplayTime:J
 
     .line 139
-    invoke-virtual {v5, v6, v7, v8}, Lcom/facebook/widget/ToolTipPopup$PopupContentView;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v5, v6, v8, v9}, Lcom/facebook/widget/ToolTipPopup$PopupContentView;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 146
     :cond_b1

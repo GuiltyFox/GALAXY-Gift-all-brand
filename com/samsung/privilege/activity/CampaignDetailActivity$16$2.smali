@@ -20,20 +20,20 @@
 # instance fields
 .field final synthetic this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$16;
 
-.field private final synthetic val$layoutButton:Landroid/widget/LinearLayout;
+.field private final synthetic val$imagePopupMyPoint:Landroid/widget/ImageView;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailActivity$16;Landroid/widget/LinearLayout;)V
+.method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailActivity$16;Landroid/widget/ImageView;)V
     .registers 3
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$16$2;->this$1:Lcom/samsung/privilege/activity/CampaignDetailActivity$16;
 
-    iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$16$2;->val$layoutButton:Landroid/widget/LinearLayout;
+    iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$16$2;->val$imagePopupMyPoint:Landroid/widget/ImageView;
 
-    .line 2440
+    .line 2577
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,13 +45,13 @@
     .registers 3
 
     .prologue
-    .line 2442
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$16$2;->val$layoutButton:Landroid/widget/LinearLayout;
+    .line 2579
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailActivity$16$2;->val$imagePopupMyPoint:Landroid/widget/ImageView;
 
-    const/16 v1, 0x8
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2443
+    .line 2580
     return-void
 .end method

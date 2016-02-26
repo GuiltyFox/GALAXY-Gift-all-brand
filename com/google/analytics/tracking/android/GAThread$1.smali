@@ -27,7 +27,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/analytics/tracking/android/GAThread;Ljava/util/Map;J)V
-    .registers 5
+    .registers 6
 
     .prologue
     .line 109

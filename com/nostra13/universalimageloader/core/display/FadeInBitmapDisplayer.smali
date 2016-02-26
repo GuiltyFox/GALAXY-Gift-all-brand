@@ -27,7 +27,7 @@
 .end method
 
 .method public static animate(Landroid/widget/ImageView;I)V
-    .registers 5
+    .registers 6
     .param p0, "imageView"    # Landroid/widget/ImageView;
     .param p1, "durationMillis"    # I
 
@@ -43,9 +43,9 @@
 
     .line 54
     .local v0, "fadeImage":Landroid/view/animation/AlphaAnimation;
-    int-to-long v1, p1
+    int-to-long v2, p1
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
 
     .line 55
     new-instance v1, Landroid/view/animation/DecelerateInterpolator;

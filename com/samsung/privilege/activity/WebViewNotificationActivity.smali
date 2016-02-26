@@ -200,7 +200,7 @@
     invoke-virtual {p0, v6}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->requestWindowFeature(I)Z
 
     .line 60
-    const v4, 0x7f030124
+    const v4, 0x7f030126
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->setContentView(I)V
 
@@ -213,7 +213,7 @@
     invoke-direct {p0}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->initialParam()V
 
     .line 66
-    const v4, 0x7f07009b
+    const v4, 0x7f0c009b
 
     :try_start_19
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->findViewById(I)Landroid/view/View;
@@ -263,7 +263,7 @@
     .line 76
     .end local v1    # "tvPageHeader":Landroid/widget/TextView;
     :goto_3d
-    const v4, 0x7f070297
+    const v4, 0x7f0c0297
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->findViewById(I)Landroid/view/View;
 

@@ -167,7 +167,7 @@
     .line 49
     sget-object v0, Lcom/samsung/privilege/adapter/KeyboardStickerSetAdapter;->inflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0300f5
+    const v1, 0x7f0300f7
 
     const/4 v3, 0x0
 
@@ -227,7 +227,7 @@
 
     const/4 v4, 0x1
 
-    const v5, 0x7f02039f
+    const v5, 0x7f0203a7
 
     move v3, v2
 

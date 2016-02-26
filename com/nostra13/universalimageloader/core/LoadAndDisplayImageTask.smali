@@ -294,7 +294,7 @@
 .end method
 
 .method private decodeWithOOMHandling(Ljava/net/URI;)Landroid/graphics/Bitmap;
-    .registers 9
+    .registers 10
     .param p1, "imageUri"    # Ljava/net/URI;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -380,9 +380,9 @@
     :goto_30
     mul-int/lit16 v5, v0, 0x3e8
 
-    int-to-long v5, v5
+    int-to-long v6, v5
 
-    invoke-static {v5, v6}, Landroid/os/SystemClock;->sleep(J)V
+    invoke-static {v6, v7}, Landroid/os/SystemClock;->sleep(J)V
 
     .line 282
     add-int/lit8 v0, v0, 0x1
@@ -1148,9 +1148,9 @@
 
     move-result v5
 
-    int-to-long v5, v5
+    int-to-long v6, v5
 
-    invoke-static {v5, v6}, Ljava/lang/Thread;->sleep(J)V
+    invoke-static {v6, v7}, Ljava/lang/Thread;->sleep(J)V
     :try_end_71
     .catch Ljava/lang/InterruptedException; {:try_start_67 .. :try_end_71} :catch_a4
 

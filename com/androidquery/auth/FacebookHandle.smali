@@ -1178,7 +1178,7 @@
 .end method
 
 .method public ajaxProfile(Lcom/androidquery/callback/AjaxCallback;J)V
-    .registers 11
+    .registers 12
     .param p2, "expire"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1193,31 +1193,31 @@
     .prologue
     .line 500
     .local p1, "cb":Lcom/androidquery/callback/AjaxCallback;, "Lcom/androidquery/callback/AjaxCallback<Lorg/json/JSONObject;>;"
-    const-string v1, "https://graph.facebook.com/me"
+    const-string v2, "https://graph.facebook.com/me"
 
     .line 502
-    .local v1, "url":Ljava/lang/String;
-    new-instance v6, Lcom/androidquery/AQuery;
+    .local v2, "url":Ljava/lang/String;
+    new-instance v0, Lcom/androidquery/AQuery;
 
-    iget-object v0, p0, Lcom/androidquery/auth/FacebookHandle;->act:Landroid/app/Activity;
+    iget-object v1, p0, Lcom/androidquery/auth/FacebookHandle;->act:Landroid/app/Activity;
 
-    invoke-direct {v6, v0}, Lcom/androidquery/AQuery;-><init>(Landroid/app/Activity;)V
+    invoke-direct {v0, v1}, Lcom/androidquery/AQuery;-><init>(Landroid/app/Activity;)V
 
     .line 503
-    .local v6, "aq":Lcom/androidquery/AQuery;
-    invoke-virtual {v6, p0}, Lcom/androidquery/AQuery;->auth(Lcom/androidquery/auth/AccountHandle;)Lcom/androidquery/AbstractAQuery;
+    .local v0, "aq":Lcom/androidquery/AQuery;
+    invoke-virtual {v0, p0}, Lcom/androidquery/AQuery;->auth(Lcom/androidquery/auth/AccountHandle;)Lcom/androidquery/AbstractAQuery;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Lcom/androidquery/AQuery;
+    check-cast v1, Lcom/androidquery/AQuery;
 
-    const-class v2, Lorg/json/JSONObject;
+    const-class v3, Lorg/json/JSONObject;
 
-    move-wide v3, p2
+    move-wide v4, p2
 
-    move-object v5, p1
+    move-object v6, p1
 
-    invoke-virtual/range {v0 .. v5}, Lcom/androidquery/AQuery;->ajax(Ljava/lang/String;Ljava/lang/Class;JLcom/androidquery/callback/AjaxCallback;)Lcom/androidquery/AbstractAQuery;
+    invoke-virtual/range {v1 .. v6}, Lcom/androidquery/AQuery;->ajax(Ljava/lang/String;Ljava/lang/Class;JLcom/androidquery/callback/AjaxCallback;)Lcom/androidquery/AbstractAQuery;
 
     .line 505
     return-void

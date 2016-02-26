@@ -1331,37 +1331,37 @@
 
     sub-float v0, p1, v0
 
-    div-float v6, v0, p4
+    div-float v7, v0, p4
 
     .line 344
-    .local v6, "incrementPerMs":F
+    .local v7, "incrementPerMs":F
     invoke-virtual {p0}, Lcom/control/imagecropper/ImageViewTouchBase;->getScale()F
 
-    move-result v5
+    move-result v6
 
     .line 345
-    .local v5, "oldScale":F
+    .local v6, "oldScale":F
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v3
+    move-result-wide v4
 
     .line 347
-    .local v3, "startTime":J
-    iget-object v9, p0, Lcom/control/imagecropper/ImageViewTouchBase;->mHandler:Landroid/os/Handler;
+    .local v4, "startTime":J
+    iget-object v0, p0, Lcom/control/imagecropper/ImageViewTouchBase;->mHandler:Landroid/os/Handler;
 
-    new-instance v0, Lcom/control/imagecropper/ImageViewTouchBase$2;
+    new-instance v1, Lcom/control/imagecropper/ImageViewTouchBase$2;
 
-    move-object v1, p0
+    move-object v2, p0
 
-    move v2, p4
+    move v3, p4
 
-    move v7, p2
+    move v8, p2
 
-    move v8, p3
+    move v9, p3
 
-    invoke-direct/range {v0 .. v8}, Lcom/control/imagecropper/ImageViewTouchBase$2;-><init>(Lcom/control/imagecropper/ImageViewTouchBase;FJFFFF)V
+    invoke-direct/range {v1 .. v9}, Lcom/control/imagecropper/ImageViewTouchBase$2;-><init>(Lcom/control/imagecropper/ImageViewTouchBase;FJFFFF)V
 
-    invoke-virtual {v9, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     .line 360
     return-void

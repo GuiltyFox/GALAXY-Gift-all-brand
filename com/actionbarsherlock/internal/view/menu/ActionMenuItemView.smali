@@ -106,9 +106,12 @@
 
     move-result-object v0
 
-    .line 78
+    .line 79
     .local v0, "a":Landroid/content/res/TypedArray;
-    invoke-virtual {v0, v2, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    sget v1, Lcom/actionbarsherlock/R$styleable;->SherlockActionMenuItemView_android_minWidth:I
+
+    .line 78
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result v1
 

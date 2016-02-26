@@ -224,9 +224,9 @@
 
     .line 1396
     .local v4, "wManager":Landroid/net/wifi/WifiManager;
-    const-wide/32 v5, 0xa00000
+    const-wide/32 v6, 0xa00000
 
-    cmp-long v5, v2, v5
+    cmp-long v5, v2, v6
 
     if-lez v5, :cond_e9
 

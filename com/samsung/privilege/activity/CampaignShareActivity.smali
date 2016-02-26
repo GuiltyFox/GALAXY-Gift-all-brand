@@ -234,7 +234,7 @@
 
     const/4 v3, 0x0
 
-    const v4, 0x7f02039f
+    const v4, 0x7f0203a7
 
     const/4 v5, 0x0
 
@@ -291,7 +291,7 @@
 
     const/4 v6, 0x0
 
-    const v7, 0x7f02039f
+    const v7, 0x7f0203a7
 
     const/4 v8, 0x0
 
@@ -588,7 +588,7 @@
     .local v6, "url":Ljava/lang/String;
     const-string v7, ""
 
-    const v8, 0x7f0a018d
+    const v8, 0x7f09018d
 
     invoke-virtual {p0, v8}, Lcom/samsung/privilege/activity/CampaignShareActivity;->getString(I)Ljava/lang/String;
 
@@ -817,7 +817,7 @@
     .line 78
     iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignShareActivity;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
 
-    const v7, 0x7f02039f
+    const v7, 0x7f0203a7
 
     invoke-virtual {v6, v7}, Lcom/bitmapfun/util/ImageFetcher;->setLoadingImage(I)V
 

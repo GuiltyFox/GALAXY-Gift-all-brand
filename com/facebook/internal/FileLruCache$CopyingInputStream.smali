@@ -243,7 +243,7 @@
 .end method
 
 .method public skip(J)J
-    .registers 12
+    .registers 14
     .param p1, "byteCount"    # J
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -276,17 +276,17 @@
     :cond_b
     const/4 v4, 0x0
 
-    sub-long v5, p1, v2
+    sub-long v6, p1, v2
 
-    array-length v7, v0
+    array-length v5, v0
 
-    int-to-long v7, v7
+    int-to-long v8, v5
 
-    invoke-static {v5, v6, v7, v8}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v6, v7, v8, v9}, Ljava/lang/Math;->min(JJ)J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    long-to-int v5, v5
+    long-to-int v5, v6
 
     invoke-virtual {p0, v0, v4, v5}, Lcom/facebook/internal/FileLruCache$CopyingInputStream;->read([BII)I
 

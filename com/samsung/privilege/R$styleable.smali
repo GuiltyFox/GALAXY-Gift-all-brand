@@ -469,18 +469,18 @@
 
     const/4 v2, 0x0
 
-    .line 7146
+    .line 7184
     new-array v0, v3, [I
 
-    .line 7147
+    .line 7185
     const v1, 0x101004c
 
     aput v1, v0, v2
 
-    .line 7146
+    .line 7184
     sput-object v0, Lcom/samsung/privilege/R$styleable;->GalleryTheme:[I
 
-    .line 7204
+    .line 7242
     const/16 v0, 0x13
 
     new-array v0, v0, [I
@@ -489,18 +489,18 @@
 
     sput-object v0, Lcom/samsung/privilege/R$styleable;->PullToRefresh:[I
 
-    .line 7487
+    .line 7525
     new-array v0, v3, [I
 
-    .line 7488
+    .line 7526
     const v1, 0x7f0100f3
 
     aput v1, v0, v2
 
-    .line 7487
+    .line 7525
     sput-object v0, Lcom/samsung/privilege/R$styleable;->RoundedImageView:[I
 
-    .line 7558
+    .line 7596
     const/16 v0, 0x13
 
     new-array v0, v0, [I
@@ -509,25 +509,25 @@
 
     sput-object v0, Lcom/samsung/privilege/R$styleable;->SherlockActionBar:[I
 
-    .line 7855
+    .line 7893
     new-array v0, v3, [I
 
-    .line 7856
+    .line 7894
     const v1, 0x101013f
 
     aput v1, v0, v2
 
-    .line 7855
+    .line 7893
     sput-object v0, Lcom/samsung/privilege/R$styleable;->SherlockActionMenuItemView:[I
 
-    .line 7882
+    .line 7920
     new-array v0, v4, [I
 
     fill-array-data v0, :array_106
 
     sput-object v0, Lcom/samsung/privilege/R$styleable;->SherlockActionMode:[I
 
-    .line 7970
+    .line 8008
     const/4 v0, 0x3
 
     new-array v0, v0, [I
@@ -536,7 +536,7 @@
 
     sput-object v0, Lcom/samsung/privilege/R$styleable;->SherlockActivityChooserView:[I
 
-    .line 8032
+    .line 8070
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -545,7 +545,7 @@
 
     sput-object v0, Lcom/samsung/privilege/R$styleable;->SherlockMenuGroup:[I
 
-    .line 8137
+    .line 8175
     const/16 v0, 0x11
 
     new-array v0, v0, [I
@@ -554,28 +554,28 @@
 
     sput-object v0, Lcom/samsung/privilege/R$styleable;->SherlockMenuItem:[I
 
-    .line 8336
+    .line 8374
     new-array v0, v6, [I
 
     fill-array-data v0, :array_154
 
     sput-object v0, Lcom/samsung/privilege/R$styleable;->SherlockMenuView:[I
 
-    .line 8466
+    .line 8504
     new-array v0, v4, [I
 
     fill-array-data v0, :array_168
 
     sput-object v0, Lcom/samsung/privilege/R$styleable;->SherlockSearchView:[I
 
-    .line 8557
+    .line 8595
     new-array v0, v6, [I
 
     fill-array-data v0, :array_176
 
     sput-object v0, Lcom/samsung/privilege/R$styleable;->SherlockSpinner:[I
 
-    .line 8782
+    .line 8820
     const/16 v0, 0x43
 
     new-array v0, v0, [I
@@ -584,18 +584,18 @@
 
     sput-object v0, Lcom/samsung/privilege/R$styleable;->SherlockTheme:[I
 
-    .line 9666
+    .line 9704
     new-array v0, v3, [I
 
-    .line 9667
+    .line 9705
     const v1, 0x10100da
 
     aput v1, v0, v2
 
-    .line 9666
+    .line 9704
     sput-object v0, Lcom/samsung/privilege/R$styleable;->SherlockView:[I
 
-    .line 9711
+    .line 9749
     const/16 v0, 0xe
 
     new-array v0, v0, [I
@@ -604,32 +604,32 @@
 
     sput-object v0, Lcom/samsung/privilege/R$styleable;->SlidingMenu:[I
 
-    .line 9922
+    .line 9960
     new-array v0, v3, [I
 
-    .line 9923
+    .line 9961
     const v1, 0x7f010007
 
     aput v1, v0, v2
 
-    .line 9922
+    .line 9960
     sput-object v0, Lcom/samsung/privilege/R$styleable;->com_facebook_friend_picker_fragment:[I
 
-    .line 9957
+    .line 9995
     new-array v0, v4, [I
 
     fill-array-data v0, :array_234
 
     sput-object v0, Lcom/samsung/privilege/R$styleable;->com_facebook_like_view:[I
 
-    .line 10060
+    .line 10098
     new-array v0, v5, [I
 
     fill-array-data v0, :array_242
 
     sput-object v0, Lcom/samsung/privilege/R$styleable;->com_facebook_login_view:[I
 
-    .line 10141
+    .line 10179
     const/4 v0, 0x7
 
     new-array v0, v0, [I
@@ -638,14 +638,14 @@
 
     sput-object v0, Lcom/samsung/privilege/R$styleable;->com_facebook_picker_fragment:[I
 
-    .line 10251
+    .line 10289
     new-array v0, v5, [I
 
     fill-array-data v0, :array_260
 
     sput-object v0, Lcom/samsung/privilege/R$styleable;->com_facebook_place_picker_fragment:[I
 
-    .line 10322
+    .line 10360
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -654,10 +654,10 @@
 
     sput-object v0, Lcom/samsung/privilege/R$styleable;->com_facebook_profile_picture_view:[I
 
-    .line 10356
+    .line 10394
     return-void
 
-    .line 7204
+    .line 7242
     :array_b2
     .array-data 4
         0x7f0100e0
@@ -681,7 +681,7 @@
         0x7f0100f2
     .end array-data
 
-    .line 7558
+    .line 7596
     :array_dc
     .array-data 4
         0x7f010017
@@ -705,7 +705,7 @@
         0x7f01006b
     .end array-data
 
-    .line 7882
+    .line 7920
     :array_106
     .array-data 4
         0x7f010017
@@ -715,7 +715,7 @@
         0x7f01001b
     .end array-data
 
-    .line 7970
+    .line 8008
     :array_114
     .array-data 4
         0x10100d4
@@ -723,7 +723,7 @@
         0x7f010075
     .end array-data
 
-    .line 8032
+    .line 8070
     :array_11e
     .array-data 4
         0x101000e
@@ -734,7 +734,7 @@
         0x10101e0
     .end array-data
 
-    .line 8137
+    .line 8175
     :array_12e
     .array-data 4
         0x1010002
@@ -756,7 +756,7 @@
         0x1010389
     .end array-data
 
-    .line 8336
+    .line 8374
     :array_154
     .array-data 4
         0x7f01006c
@@ -769,7 +769,7 @@
         0x7f010073
     .end array-data
 
-    .line 8466
+    .line 8504
     :array_168
     .array-data 4
         0x101011f
@@ -779,7 +779,7 @@
         0x7f010077
     .end array-data
 
-    .line 8557
+    .line 8595
     :array_176
     .array-data 4
         0x10100af
@@ -792,7 +792,7 @@
         0x1010411
     .end array-data
 
-    .line 8782
+    .line 8820
     :array_18a
     .array-data 4
         0x1010057
@@ -864,7 +864,7 @@
         0x7f01005e
     .end array-data
 
-    .line 9711
+    .line 9749
     :array_214
     .array-data 4
         0x7f010078
@@ -883,7 +883,7 @@
         0x7f010085
     .end array-data
 
-    .line 9957
+    .line 9995
     :array_234
     .array-data 4
         0x7f010012
@@ -893,7 +893,7 @@
         0x7f010016
     .end array-data
 
-    .line 10060
+    .line 10098
     :array_242
     .array-data 4
         0x7f01000c
@@ -902,7 +902,7 @@
         0x7f01000f
     .end array-data
 
-    .line 10141
+    .line 10179
     :array_24e
     .array-data 4
         0x7f010000
@@ -914,7 +914,7 @@
         0x7f010006
     .end array-data
 
-    .line 10251
+    .line 10289
     :array_260
     .array-data 4
         0x7f010008
@@ -923,7 +923,7 @@
         0x7f01000b
     .end array-data
 
-    .line 10322
+    .line 10360
     :array_26c
     .array-data 4
         0x7f010010
@@ -935,7 +935,7 @@
     .registers 1
 
     .prologue
-    .line 7135
+    .line 7173
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

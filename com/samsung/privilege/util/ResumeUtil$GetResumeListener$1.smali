@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener$1;->val$resume_message:Ljava/lang/String;
 
-    .line 247
+    .line 241
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 3
 
     .prologue
-    .line 311
+    .line 305
     iget-object v0, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener$1;->this$1:Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;
 
     # getter for: Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gAppContext:Landroid/content/Context;
@@ -62,7 +62,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/ResumeUtil;->handleTableVersion(Landroid/content/Context;Landroid/app/Activity;)V
 
-    .line 313
+    .line 307
     iget-object v0, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener$1;->val$resume_message:Ljava/lang/String;
 
     if-eqz v0, :cond_28
@@ -77,7 +77,7 @@
 
     if-nez v0, :cond_28
 
-    .line 314
+    .line 308
     iget-object v0, p0, Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener$1;->this$1:Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;
 
     # getter for: Lcom/samsung/privilege/util/ResumeUtil$GetResumeListener;->gActivity:Landroid/app/Activity;
@@ -89,7 +89,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/DialogUtil;->showDialogMessage(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 316
+    .line 310
     :cond_28
     return-void
 .end method

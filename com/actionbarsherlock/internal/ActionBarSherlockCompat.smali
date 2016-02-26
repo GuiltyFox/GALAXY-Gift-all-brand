@@ -289,20 +289,22 @@
 
     .line 1000
     .local v0, "a":Landroid/content/res/TypedArray;
-    invoke-virtual {v0, v7, v7}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockTheme_android_windowIsFloating:I
+
+    invoke-virtual {v0, v5, v7}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v5
 
     iput-boolean v5, p0, Lcom/actionbarsherlock/internal/ActionBarSherlockCompat;->mIsFloating:Z
 
     .line 1002
-    const/16 v5, 0x3c
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockTheme_windowActionBar:I
 
     invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-nez v5, :cond_29
+    if-nez v5, :cond_2b
 
     .line 1003
     new-instance v5, Ljava/lang/IllegalStateException;
@@ -314,47 +316,47 @@
     throw v5
 
     .line 1006
-    :cond_29
-    const/16 v5, 0x3b
+    :cond_2b
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockTheme_windowNoTitle:I
 
     invoke-virtual {v0, v5, v7}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v5
 
-    if-eqz v5, :cond_91
+    if-eqz v5, :cond_93
 
     .line 1007
     invoke-virtual {p0, v8}, Lcom/actionbarsherlock/internal/ActionBarSherlockCompat;->requestFeature(I)Z
 
     .line 1013
-    :cond_34
-    :goto_34
-    const/16 v5, 0x3d
+    :cond_36
+    :goto_36
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockTheme_windowActionBarOverlay:I
 
     invoke-virtual {v0, v5, v7}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v5
 
-    if-eqz v5, :cond_3f
+    if-eqz v5, :cond_41
 
     .line 1014
     invoke-virtual {p0, v10}, Lcom/actionbarsherlock/internal/ActionBarSherlockCompat;->requestFeature(I)Z
 
     .line 1017
-    :cond_3f
-    const/16 v5, 0x3e
+    :cond_41
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockTheme_windowActionModeOverlay:I
 
     invoke-virtual {v0, v5, v7}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v5
 
-    if-eqz v5, :cond_4a
+    if-eqz v5, :cond_4c
 
     .line 1018
     invoke-virtual {p0, v11}, Lcom/actionbarsherlock/internal/ActionBarSherlockCompat;->requestFeature(I)Z
 
     .line 1021
-    :cond_4a
+    :cond_4c
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 1024
@@ -362,12 +364,12 @@
 
     move-result v5
 
-    if-nez v5, :cond_ab
+    if-nez v5, :cond_ad
 
     .line 1025
     iget-boolean v5, p0, Lcom/actionbarsherlock/internal/ActionBarSherlockCompat;->mIsFloating:Z
 
-    if-eqz v5, :cond_9f
+    if-eqz v5, :cond_a1
 
     .line 1027
     iget-object v5, p0, Lcom/actionbarsherlock/internal/ActionBarSherlockCompat;->mDecor:Landroid/view/ViewGroup;
@@ -390,7 +392,7 @@
 
     .line 1045
     .local v3, "layoutResource":I
-    :goto_68
+    :goto_6a
     iget-object v5, p0, Lcom/actionbarsherlock/internal/ActionBarSherlockCompat;->mActivity:Landroid/app/Activity;
 
     invoke-virtual {v5}, Landroid/app/Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
@@ -426,7 +428,7 @@
 
     .line 1049
     .local v1, "contentParent":Landroid/view/ViewGroup;
-    if-nez v1, :cond_bd
+    if-nez v1, :cond_bf
 
     .line 1050
     new-instance v5, Ljava/lang/RuntimeException;
@@ -441,79 +443,79 @@
     .end local v1    # "contentParent":Landroid/view/ViewGroup;
     .end local v2    # "in":Landroid/view/View;
     .end local v3    # "layoutResource":I
-    :cond_91
-    const/16 v5, 0x3c
+    :cond_93
+    sget v5, Lcom/actionbarsherlock/R$styleable;->SherlockTheme_windowActionBar:I
 
     invoke-virtual {v0, v5, v7}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v5
 
-    if-eqz v5, :cond_34
+    if-eqz v5, :cond_36
 
     .line 1010
     const/16 v5, 0x8
 
     invoke-virtual {p0, v5}, Lcom/actionbarsherlock/internal/ActionBarSherlockCompat;->requestFeature(I)Z
 
-    goto :goto_34
+    goto :goto_36
 
     .line 1032
-    :cond_9f
+    :cond_a1
     invoke-virtual {p0, v10}, Lcom/actionbarsherlock/internal/ActionBarSherlockCompat;->hasFeature(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_a8
+    if-eqz v5, :cond_aa
 
     .line 1033
     sget v3, Lcom/actionbarsherlock/R$layout;->abs__screen_action_bar_overlay:I
 
     .line 1034
     .restart local v3    # "layoutResource":I
-    goto :goto_68
+    goto :goto_6a
 
     .line 1035
     .end local v3    # "layoutResource":I
-    :cond_a8
+    :cond_aa
     sget v3, Lcom/actionbarsherlock/R$layout;->abs__screen_action_bar:I
 
     .line 1038
     .restart local v3    # "layoutResource":I
-    goto :goto_68
+    goto :goto_6a
 
     .end local v3    # "layoutResource":I
-    :cond_ab
+    :cond_ad
     invoke-virtual {p0, v11}, Lcom/actionbarsherlock/internal/ActionBarSherlockCompat;->hasFeature(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_ba
+    if-eqz v5, :cond_bc
 
     invoke-virtual {p0, v8}, Lcom/actionbarsherlock/internal/ActionBarSherlockCompat;->hasFeature(I)Z
 
     move-result v5
 
-    if-nez v5, :cond_ba
+    if-nez v5, :cond_bc
 
     .line 1039
     sget v3, Lcom/actionbarsherlock/R$layout;->abs__screen_simple_overlay_action_mode:I
 
     .line 1040
     .restart local v3    # "layoutResource":I
-    goto :goto_68
+    goto :goto_6a
 
     .line 1041
     .end local v3    # "layoutResource":I
-    :cond_ba
+    :cond_bc
     sget v3, Lcom/actionbarsherlock/R$layout;->abs__screen_simple:I
 
     .restart local v3    # "layoutResource":I
-    goto :goto_68
+    goto :goto_6a
 
     .line 1054
     .restart local v1    # "contentParent":Landroid/view/ViewGroup;
     .restart local v2    # "in":Landroid/view/View;
-    :cond_bd
+    :cond_bf
     iget-object v5, p0, Lcom/actionbarsherlock/internal/ActionBarSherlockCompat;->mDecor:Landroid/view/ViewGroup;
 
     invoke-virtual {v5, v9}, Landroid/view/ViewGroup;->setId(I)V
@@ -530,7 +532,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_d8
+    if-eqz v5, :cond_da
 
     .line 1058
     invoke-direct {p0, v7}, Lcom/actionbarsherlock/internal/ActionBarSherlockCompat;->getCircularProgressBar(Z)Lcom/actionbarsherlock/internal/widget/IcsProgressBar;
@@ -539,14 +541,14 @@
 
     .line 1059
     .local v4, "progress":Lcom/actionbarsherlock/internal/widget/IcsProgressBar;
-    if-eqz v4, :cond_d8
+    if-eqz v4, :cond_da
 
     .line 1060
     invoke-virtual {v4, v8}, Lcom/actionbarsherlock/internal/widget/IcsProgressBar;->setIndeterminate(Z)V
 
     .line 1064
     .end local v4    # "progress":Lcom/actionbarsherlock/internal/widget/IcsProgressBar;
-    :cond_d8
+    :cond_da
     return-object v1
 .end method
 
@@ -1320,7 +1322,7 @@
     move-result-object v8
 
     .line 961
-    const/16 v10, 0x3f
+    sget v10, Lcom/actionbarsherlock/R$styleable;->SherlockTheme_windowSplitActionBar:I
 
     invoke-virtual {v8, v10, v9}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
