@@ -122,7 +122,7 @@
     const/4 v7, 0x0
 
     .line 271
-    sget-object v1, Landroid/os/Build;->BRAND:Ljava/lang/String;
+    const-string v1, "samsung"
 
     .line 272
     .local v1, "brand":Ljava/lang/String;

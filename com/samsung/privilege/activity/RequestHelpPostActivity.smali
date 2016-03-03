@@ -607,7 +607,7 @@
     .local v9, "AndroidVersion":Ljava/lang/String;
     new-instance v3, Ljava/lang/StringBuilder;
 
-    sget-object v4, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+    const-string v4, "samsung"
 
     invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -621,7 +621,7 @@
 
     move-result-object v3
 
-    sget-object v4, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v4, "GT-I9100"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1277,7 +1277,7 @@
     .local v4, "AndroidVersion":Ljava/lang/String;
     new-instance v19, Ljava/lang/StringBuilder;
 
-    sget-object v20, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+    const-string v20, "samsung"
 
     invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1291,7 +1291,7 @@
 
     move-result-object v19
 
-    sget-object v20, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v20, "GT-I9100"
 
     invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

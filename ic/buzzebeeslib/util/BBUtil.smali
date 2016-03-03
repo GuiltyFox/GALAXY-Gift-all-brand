@@ -1670,7 +1670,7 @@
     .line 408
     .local v3, "isCheckSamsung":Z
     :try_start_1
-    sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+    const-string v1, "samsung"
 
     .line 409
     .local v1, "MANUFACTURER":Ljava/lang/String;
@@ -1700,14 +1700,14 @@
     .line 413
     .restart local v1    # "MANUFACTURER":Ljava/lang/String;
     :cond_13
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
     .line 415
     goto :goto_12
 
     .line 416
     :cond_15
-    sget-object v0, Landroid/os/Build;->BRAND:Ljava/lang/String;
+    const-string v0, "samsung"
 
     .line 417
     .local v0, "BRAND":Ljava/lang/String;
@@ -1736,14 +1736,14 @@
 
     .line 421
     :cond_27
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
     .line 423
     goto :goto_12
 
     .line 424
     :cond_29
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
     goto :goto_12
 
@@ -1755,7 +1755,7 @@
 
     .line 428
     .local v2, "e":Ljava/lang/Exception;
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
     goto :goto_12
 .end method

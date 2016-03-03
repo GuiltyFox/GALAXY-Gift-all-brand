@@ -625,7 +625,7 @@
     .line 453
     new-instance v8, Ljava/lang/StringBuilder;
 
-    sget-object v9, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+    const-string v9, "samsung"
 
     invoke-static {v9}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -639,7 +639,7 @@
 
     move-result-object v8
 
-    sget-object v9, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v9, "GT-I9100"
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

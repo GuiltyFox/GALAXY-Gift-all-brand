@@ -1058,7 +1058,7 @@
     .line 501
     .local v3, "isCheckSamsung":Z
     :try_start_1
-    sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+    const-string v1, "samsung"
 
     .line 502
     .local v1, "MANUFACTURER":Ljava/lang/String;
@@ -1088,14 +1088,14 @@
     .line 506
     .restart local v1    # "MANUFACTURER":Ljava/lang/String;
     :cond_13
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
     .line 508
     goto :goto_12
 
     .line 509
     :cond_15
-    sget-object v0, Landroid/os/Build;->BRAND:Ljava/lang/String;
+    const-string v0, "samsung"
 
     .line 510
     .local v0, "BRAND":Ljava/lang/String;
@@ -1124,14 +1124,14 @@
 
     .line 514
     :cond_27
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
     .line 516
     goto :goto_12
 
     .line 517
     :cond_29
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
     goto :goto_12
 
@@ -1143,7 +1143,7 @@
 
     .line 521
     .local v2, "e":Ljava/lang/Exception;
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
     goto :goto_12
 .end method
@@ -1709,7 +1709,7 @@
     .line 656
     new-instance v10, Ljava/lang/StringBuilder;
 
-    sget-object v11, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+    const-string v11, "samsung"
 
     invoke-static {v11}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1723,7 +1723,7 @@
 
     move-result-object v10
 
-    sget-object v11, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v11, "GT-I9100"
 
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2150,7 +2150,7 @@
     .line 547
     new-instance v20, Ljava/lang/StringBuilder;
 
-    sget-object v21, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+    const-string v21, "samsung"
 
     invoke-static/range {v21 .. v21}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2164,7 +2164,7 @@
 
     move-result-object v20
 
-    sget-object v21, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v21, "GT-I9100"
 
     invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -257,7 +257,7 @@
     .line 55
     new-instance v22, Ljava/lang/StringBuilder;
 
-    sget-object v23, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+    const-string v23, "samsung"
 
     invoke-static/range {v23 .. v23}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -271,7 +271,7 @@
 
     move-result-object v22
 
-    sget-object v23, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v23, "GT-I9100"
 
     invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

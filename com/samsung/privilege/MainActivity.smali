@@ -1466,8 +1466,7 @@
     invoke-direct {v9, v0}, Lcom/samsung/privilege/util/DeviceHelper;-><init>(Landroid/content/Context;)V
 
     .line 858
-    .local v9, "deviceHelper":Lcom/samsung/privilege/util/DeviceHelper;
-    invoke-virtual {v9}, Lcom/samsung/privilege/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
+    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
 
     move-result-object v10
 
@@ -1571,7 +1570,7 @@
     .line 872
     new-instance v19, Ljava/lang/StringBuilder;
 
-    sget-object v20, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+    const-string v20, "samsung"
 
     invoke-static/range {v20 .. v20}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1585,7 +1584,7 @@
 
     move-result-object v19
 
-    sget-object v20, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v20, "GT-I9100"
 
     invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
