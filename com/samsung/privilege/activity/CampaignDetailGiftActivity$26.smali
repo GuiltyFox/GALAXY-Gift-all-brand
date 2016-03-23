@@ -247,8 +247,7 @@
     invoke-direct {v14, v2}, Lcom/bzbs/util/DeviceHelper;-><init>(Landroid/content/Context;)V
 
     .line 2531
-    .local v14, "deviceHelper":Lcom/bzbs/util/DeviceHelper;
-    invoke-virtual {v14}, Lcom/bzbs/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
+    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
 
     move-result-object v15
 
@@ -377,7 +376,7 @@
     .restart local v14    # "deviceHelper":Lcom/bzbs/util/DeviceHelper;
     const-string/jumbo v2, "<deviceId>"
 
-    invoke-virtual {v14}, Lcom/bzbs/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
+    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
 
     move-result-object v3
 

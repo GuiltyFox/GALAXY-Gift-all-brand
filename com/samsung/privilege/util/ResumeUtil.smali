@@ -325,8 +325,7 @@
     invoke-direct {v9, v0}, Lcom/bzbs/util/DeviceHelper;-><init>(Landroid/content/Context;)V
 
     .line 82
-    .local v9, "deviceHelper":Lcom/bzbs/util/DeviceHelper;
-    invoke-virtual {v9}, Lcom/bzbs/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
+    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
 
     move-result-object v10
 
@@ -345,7 +344,7 @@
 
     invoke-direct/range {v22 .. v22}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v23, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+    const-string v23, "samsung"
 
     invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -357,7 +356,7 @@
 
     move-result-object v22
 
-    sget-object v23, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v23, "GT-I9100"
 
     invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

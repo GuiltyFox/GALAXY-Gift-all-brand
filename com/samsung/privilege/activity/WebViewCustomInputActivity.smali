@@ -115,7 +115,7 @@
 
     const-string/jumbo v5, "{uuid}"
 
-    invoke-virtual {v1}, Lcom/bzbs/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
+    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
 
     move-result-object v6
 

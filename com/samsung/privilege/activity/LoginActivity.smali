@@ -355,8 +355,7 @@
     invoke-direct {v7, v14}, Lcom/bzbs/util/DeviceHelper;-><init>(Landroid/content/Context;)V
 
     .line 222
-    .local v7, "deviceHelper":Lcom/bzbs/util/DeviceHelper;
-    invoke-virtual {v7}, Lcom/bzbs/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
+    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
 
     move-result-object v8
 
@@ -454,7 +453,7 @@
 
     move-result-object v14
 
-    sget-object v15, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v15, "GT-I9100"
 
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
