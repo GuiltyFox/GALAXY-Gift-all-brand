@@ -69,40 +69,41 @@
     .param p6, "offset_y"    # I
 
     .prologue
-    .line 393
+    .line 394
     iput-object p1, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
     invoke-direct {p0}, Lcom/bitmapfun/util/AsyncTask;-><init>()V
 
-    .line 394
+    .line 395
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->imageViewReference:Ljava/lang/ref/WeakReference;
 
-    .line 395
+    .line 396
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p3}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->progressBarReference:Ljava/lang/ref/WeakReference;
 
-    .line 396
+    .line 397
     iput p4, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->g_image_loading:I
 
-    .line 397
+    .line 398
     iput-boolean p5, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->gIsPNG:Z
 
-    .line 398
+    .line 399
     iput p6, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->gOffsetY:I
 
-    .line 399
+    .line 400
     return-void
 .end method
 
-.method static synthetic access$3(Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;)Ljava/lang/Object;
+.method static synthetic access$000(Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;)Ljava/lang/Object;
     .registers 2
+    .param p0, "x0"    # Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;
 
     .prologue
     .line 386
@@ -115,7 +116,7 @@
     .registers 4
 
     .prologue
-    .line 522
+    .line 523
     iget-object v2, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->imageViewReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -124,18 +125,18 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    .line 523
+    .line 524
     .local v1, "imageView":Landroid/widget/ImageView;
     # invokes: Lcom/bitmapfun/util/ImageWorker;->getBitmapWorkerTask(Landroid/widget/ImageView;)Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;
-    invoke-static {v1}, Lcom/bitmapfun/util/ImageWorker;->access$4(Landroid/widget/ImageView;)Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;
+    invoke-static {v1}, Lcom/bitmapfun/util/ImageWorker;->access$500(Landroid/widget/ImageView;)Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;
 
     move-result-object v0
 
-    .line 525
+    .line 526
     .local v0, "bitmapWorkerTask":Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;
     if-ne p0, v0, :cond_f
 
-    .line 529
+    .line 530
     .end local v1    # "imageView":Landroid/widget/ImageView;
     :goto_e
     return-object v1
@@ -151,7 +152,7 @@
     .registers 5
 
     .prologue
-    .line 536
+    .line 537
     iget-object v3, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->imageViewReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v3}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -160,7 +161,7 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    .line 537
+    .line 538
     .local v1, "imageView":Landroid/widget/ImageView;
     iget-object v3, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->progressBarReference:Ljava/lang/ref/WeakReference;
 
@@ -170,18 +171,18 @@
 
     check-cast v2, Landroid/widget/ProgressBar;
 
-    .line 538
+    .line 539
     .local v2, "progressBar":Landroid/widget/ProgressBar;
     # invokes: Lcom/bitmapfun/util/ImageWorker;->getBitmapWorkerTask(Landroid/widget/ImageView;)Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;
-    invoke-static {v1}, Lcom/bitmapfun/util/ImageWorker;->access$4(Landroid/widget/ImageView;)Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;
+    invoke-static {v1}, Lcom/bitmapfun/util/ImageWorker;->access$500(Landroid/widget/ImageView;)Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;
 
     move-result-object v0
 
-    .line 540
+    .line 541
     .local v0, "bitmapWorkerTask":Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;
     if-ne p0, v0, :cond_17
 
-    .line 544
+    .line 545
     .end local v2    # "progressBar":Landroid/widget/ProgressBar;
     :goto_16
     return-object v2
@@ -204,95 +205,121 @@
 
     const/4 v5, 0x0
 
-    .line 410
+    .line 411
     aget-object v5, p1, v5
 
     iput-object v5, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->data:Ljava/lang/Object;
 
-    .line 411
+    .line 412
     iget-object v5, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->data:Ljava/lang/Object;
 
     invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 412
+    .line 413
     .local v1, "dataString":Ljava/lang/String;
     const/4 v0, 0x0
 
-    .line 416
+    .line 417
     .local v0, "bitmap":Landroid/graphics/Bitmap;
     :try_start_d
     iget-object v5, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
     # getter for: Lcom/bitmapfun/util/ImageWorker;->mPauseWorkLock:Ljava/lang/Object;
-    invoke-static {v5}, Lcom/bitmapfun/util/ImageWorker;->access$0(Lcom/bitmapfun/util/ImageWorker;)Ljava/lang/Object;
+    invoke-static {v5}, Lcom/bitmapfun/util/ImageWorker;->access$100(Lcom/bitmapfun/util/ImageWorker;)Ljava/lang/Object;
 
     move-result-object v6
 
     monitor-enter v6
     :try_end_14
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_d .. :try_end_14} :catch_f2
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_14} :catch_10c
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_d .. :try_end_14} :catch_100
+    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_14} :catch_122
+    .catchall {:try_start_d .. :try_end_14} :catchall_120
 
-    .line 417
+    .line 418
     :goto_14
     :try_start_14
     iget-object v5, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
     iget-boolean v5, v5, Lcom/bitmapfun/util/ImageWorker;->mPauseWork:Z
 
-    if-eqz v5, :cond_20
+    if-eqz v5, :cond_2c
 
     invoke-virtual {p0}, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->isCancelled()Z
+    :try_end_1d
+    .catchall {:try_start_14 .. :try_end_1d} :catchall_fd
 
     move-result v5
 
-    if-eqz v5, :cond_e1
+    if-nez v5, :cond_2c
 
-    .line 416
-    :cond_20
-    monitor-exit v6
-    :try_end_21
-    .catchall {:try_start_14 .. :try_end_21} :catchall_ef
-
-    .line 429
-    :try_start_21
+    .line 420
+    :try_start_20
     iget-object v5, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
-    # getter for: Lcom/bitmapfun/util/ImageWorker;->mImageCache:Lcom/bitmapfun/util/ImageCache;
-    invoke-static {v5}, Lcom/bitmapfun/util/ImageWorker;->access$1(Lcom/bitmapfun/util/ImageWorker;)Lcom/bitmapfun/util/ImageCache;
+    # getter for: Lcom/bitmapfun/util/ImageWorker;->mPauseWorkLock:Ljava/lang/Object;
+    invoke-static {v5}, Lcom/bitmapfun/util/ImageWorker;->access$100(Lcom/bitmapfun/util/ImageWorker;)Ljava/lang/Object;
 
     move-result-object v5
 
-    if-eqz v5, :cond_79
+    invoke-virtual {v5}, Ljava/lang/Object;->wait()V
+    :try_end_29
+    .catch Ljava/lang/InterruptedException; {:try_start_20 .. :try_end_29} :catch_2a
+    .catchall {:try_start_20 .. :try_end_29} :catchall_fd
+
+    goto :goto_14
+
+    .line 421
+    :catch_2a
+    move-exception v5
+
+    goto :goto_14
+
+    .line 424
+    :cond_2c
+    :try_start_2c
+    monitor-exit v6
+    :try_end_2d
+    .catchall {:try_start_2c .. :try_end_2d} :catchall_fd
+
+    .line 430
+    :try_start_2d
+    iget-object v5, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
+
+    # getter for: Lcom/bitmapfun/util/ImageWorker;->mImageCache:Lcom/bitmapfun/util/ImageCache;
+    invoke-static {v5}, Lcom/bitmapfun/util/ImageWorker;->access$200(Lcom/bitmapfun/util/ImageWorker;)Lcom/bitmapfun/util/ImageCache;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_8d
 
     invoke-virtual {p0}, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->isCancelled()Z
 
     move-result v5
 
-    if-nez v5, :cond_79
+    if-nez v5, :cond_8d
 
     invoke-direct {p0}, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->getAttachedImageView()Landroid/widget/ImageView;
 
     move-result-object v5
 
-    if-eqz v5, :cond_79
+    if-eqz v5, :cond_8d
 
     iget-object v5, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
     # getter for: Lcom/bitmapfun/util/ImageWorker;->mExitTasksEarly:Z
-    invoke-static {v5}, Lcom/bitmapfun/util/ImageWorker;->access$2(Lcom/bitmapfun/util/ImageWorker;)Z
+    invoke-static {v5}, Lcom/bitmapfun/util/ImageWorker;->access$300(Lcom/bitmapfun/util/ImageWorker;)Z
 
     move-result v5
 
-    if-nez v5, :cond_79
+    if-nez v5, :cond_8d
 
-    .line 430
+    .line 431
     iget-object v5, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
     # getter for: Lcom/bitmapfun/util/ImageWorker;->mImageCache:Lcom/bitmapfun/util/ImageCache;
-    invoke-static {v5}, Lcom/bitmapfun/util/ImageWorker;->access$1(Lcom/bitmapfun/util/ImageWorker;)Lcom/bitmapfun/util/ImageCache;
+    invoke-static {v5}, Lcom/bitmapfun/util/ImageWorker;->access$200(Lcom/bitmapfun/util/ImageWorker;)Lcom/bitmapfun/util/ImageCache;
 
     move-result-object v5
 
@@ -300,17 +327,21 @@
 
     move-result-object v0
 
-    .line 431
-    if-eqz v0, :cond_79
-
     .line 432
-    const-string v5, "ImageWorker"
+    if-eqz v0, :cond_8d
+
+    .line 433
+    const-string/jumbo v5, "ImageWorker"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v7, "found image in disk cache{"
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string/jumbo v7, "found image in disk cache{"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -320,7 +351,7 @@
 
     move-result-object v6
 
-    const-string v7, ","
+    const-string/jumbo v7, ","
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -334,7 +365,7 @@
 
     move-result-object v6
 
-    const-string v7, "}:"
+    const-string/jumbo v7, "}:"
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -348,34 +379,34 @@
 
     move-result-object v6
 
-    invoke-static {v5, v6}, Lic/buzzebeeslib/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v5, v6}, Lcom/bzbs/lib/survey/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 440
-    :cond_79
-    if-nez v0, :cond_ca
+    .line 441
+    :cond_8d
+    if-nez v0, :cond_e6
 
     invoke-virtual {p0}, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->isCancelled()Z
 
     move-result v5
 
-    if-nez v5, :cond_ca
+    if-nez v5, :cond_e6
 
     invoke-direct {p0}, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->getAttachedImageView()Landroid/widget/ImageView;
 
     move-result-object v5
 
-    if-eqz v5, :cond_ca
+    if-eqz v5, :cond_e6
 
     iget-object v5, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
     # getter for: Lcom/bitmapfun/util/ImageWorker;->mExitTasksEarly:Z
-    invoke-static {v5}, Lcom/bitmapfun/util/ImageWorker;->access$2(Lcom/bitmapfun/util/ImageWorker;)Z
+    invoke-static {v5}, Lcom/bitmapfun/util/ImageWorker;->access$300(Lcom/bitmapfun/util/ImageWorker;)Z
 
     move-result v5
 
-    if-nez v5, :cond_ca
+    if-nez v5, :cond_e6
 
-    .line 441
+    .line 442
     iget-object v5, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
     const/4 v6, 0x0
@@ -386,17 +417,21 @@
 
     move-result-object v0
 
-    .line 442
-    if-eqz v0, :cond_ca
-
     .line 443
-    const-string v5, "ImageWorker"
+    if-eqz v0, :cond_e6
+
+    .line 444
+    const-string/jumbo v5, "ImageWorker"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v7, "finished download new image{"
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string/jumbo v7, "finished download new image{"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -406,7 +441,7 @@
 
     move-result-object v6
 
-    const-string v7, ","
+    const-string/jumbo v7, ","
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -420,7 +455,7 @@
 
     move-result-object v6
 
-    const-string v7, "}:"
+    const-string/jumbo v7, "}:"
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -434,94 +469,78 @@
 
     move-result-object v6
 
-    invoke-static {v5, v6}, Lic/buzzebeeslib/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v5, v6}, Lcom/bzbs/lib/survey/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 451
-    :cond_ca
-    if-eqz v0, :cond_df
+    .line 452
+    :cond_e6
+    if-eqz v0, :cond_fb
 
     iget-object v5, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
     # getter for: Lcom/bitmapfun/util/ImageWorker;->mImageCache:Lcom/bitmapfun/util/ImageCache;
-    invoke-static {v5}, Lcom/bitmapfun/util/ImageWorker;->access$1(Lcom/bitmapfun/util/ImageWorker;)Lcom/bitmapfun/util/ImageCache;
+    invoke-static {v5}, Lcom/bitmapfun/util/ImageWorker;->access$200(Lcom/bitmapfun/util/ImageWorker;)Lcom/bitmapfun/util/ImageCache;
 
     move-result-object v5
 
-    if-eqz v5, :cond_df
+    if-eqz v5, :cond_fb
 
-    .line 452
+    .line 453
     iget-object v5, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
     # getter for: Lcom/bitmapfun/util/ImageWorker;->mImageCache:Lcom/bitmapfun/util/ImageCache;
-    invoke-static {v5}, Lcom/bitmapfun/util/ImageWorker;->access$1(Lcom/bitmapfun/util/ImageWorker;)Lcom/bitmapfun/util/ImageCache;
+    invoke-static {v5}, Lcom/bitmapfun/util/ImageWorker;->access$200(Lcom/bitmapfun/util/ImageWorker;)Lcom/bitmapfun/util/ImageCache;
 
     move-result-object v5
 
     iget-boolean v6, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->gIsPNG:Z
 
     invoke-virtual {v5, v1, v0, v6}, Lcom/bitmapfun/util/ImageCache;->addBitmapToCache(Ljava/lang/String;Landroid/graphics/Bitmap;Z)V
-    :try_end_df
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_21 .. :try_end_df} :catch_f2
-    .catch Ljava/lang/Exception; {:try_start_21 .. :try_end_df} :catch_10c
+    :try_end_fb
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_2d .. :try_end_fb} :catch_100
+    .catch Ljava/lang/Exception; {:try_start_2d .. :try_end_fb} :catch_122
+    .catchall {:try_start_2d .. :try_end_fb} :catchall_120
 
-    :cond_df
+    :cond_fb
     move-object v4, v0
 
-    .line 469
-    :goto_e0
+    .line 470
+    :goto_fc
     return-object v4
 
-    .line 419
-    :cond_e1
-    :try_start_e1
-    iget-object v5, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
-
-    # getter for: Lcom/bitmapfun/util/ImageWorker;->mPauseWorkLock:Ljava/lang/Object;
-    invoke-static {v5}, Lcom/bitmapfun/util/ImageWorker;->access$0(Lcom/bitmapfun/util/ImageWorker;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/Object;->wait()V
-    :try_end_ea
-    .catch Ljava/lang/InterruptedException; {:try_start_e1 .. :try_end_ea} :catch_ec
-    .catchall {:try_start_e1 .. :try_end_ea} :catchall_ef
-
-    goto/16 :goto_14
-
-    .line 420
-    :catch_ec
+    .line 424
+    :catchall_fd
     move-exception v5
 
-    goto/16 :goto_14
-
-    .line 416
-    :catchall_ef
-    move-exception v5
-
-    :try_start_f0
+    :try_start_fe
     monitor-exit v6
-    :try_end_f1
-    .catchall {:try_start_f0 .. :try_end_f1} :catchall_ef
+    :try_end_ff
+    .catchall {:try_start_fe .. :try_end_ff} :catchall_fd
 
-    :try_start_f1
+    :try_start_ff
     throw v5
-    :try_end_f2
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_f1 .. :try_end_f2} :catch_f2
-    .catch Ljava/lang/Exception; {:try_start_f1 .. :try_end_f2} :catch_10c
-
-    .line 464
-    :catch_f2
-    move-exception v3
+    :try_end_100
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_ff .. :try_end_100} :catch_100
+    .catch Ljava/lang/Exception; {:try_start_ff .. :try_end_100} :catch_122
+    .catchall {:try_start_ff .. :try_end_100} :catchall_120
 
     .line 465
+    :catch_100
+    move-exception v3
+
+    .line 466
     .local v3, "oom":Ljava/lang/OutOfMemoryError;
-    const-string v5, "ImageWorker"
+    :try_start_101
+    const-string/jumbo v5, "ImageWorker"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v7, "(OutOfMemoryError|BitmapWorkerTask.doInBackground):"
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string/jumbo v7, "(OutOfMemoryError|BitmapWorkerTask.doInBackground):"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
 
     invoke-virtual {v3}, Ljava/lang/OutOfMemoryError;->getMessage()Ljava/lang/String;
 
@@ -535,24 +554,37 @@
 
     move-result-object v6
 
-    invoke-static {v5, v6}, Lic/buzzebeeslib/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v5, v6}, Lcom/bzbs/lib/survey/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_11f
+    .catchall {:try_start_101 .. :try_end_11f} :catchall_120
 
-    goto :goto_e0
+    goto :goto_fc
 
-    .line 467
+    .line 471
     .end local v3    # "oom":Ljava/lang/OutOfMemoryError;
-    :catch_10c
-    move-exception v2
+    :catchall_120
+    move-exception v4
+
+    throw v4
 
     .line 468
+    :catch_122
+    move-exception v2
+
+    .line 469
     .local v2, "ex":Ljava/lang/Exception;
-    const-string v5, "ImageWorker"
+    :try_start_123
+    const-string/jumbo v5, "ImageWorker"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v7, "(Exception|BitmapWorkerTask.doInBackground):"
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string/jumbo v7, "(Exception|BitmapWorkerTask.doInBackground):"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
 
     invoke-virtual {v2}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
@@ -566,18 +598,18 @@
 
     move-result-object v6
 
-    invoke-static {v5, v6}, Lic/buzzebeeslib/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v5, v6}, Lcom/bzbs/lib/survey/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_141
+    .catchall {:try_start_123 .. :try_end_141} :catchall_120
 
-    goto :goto_e0
+    goto :goto_fc
 .end method
 
-.method protected bridge varargs synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+.method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
     .prologue
-    .line 1
-    check-cast p1, [Ljava/lang/Object;
-
+    .line 386
     invoke-virtual {p0, p1}, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->doInBackground([Ljava/lang/Object;)Landroid/graphics/Bitmap;
 
     move-result-object v0
@@ -590,37 +622,37 @@
     .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
-    .line 512
+    .line 513
     invoke-super {p0, p1}, Lcom/bitmapfun/util/AsyncTask;->onCancelled(Ljava/lang/Object;)V
 
-    .line 513
+    .line 514
     iget-object v0, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
     # getter for: Lcom/bitmapfun/util/ImageWorker;->mPauseWorkLock:Ljava/lang/Object;
-    invoke-static {v0}, Lcom/bitmapfun/util/ImageWorker;->access$0(Lcom/bitmapfun/util/ImageWorker;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/bitmapfun/util/ImageWorker;->access$100(Lcom/bitmapfun/util/ImageWorker;)Ljava/lang/Object;
 
     move-result-object v1
 
     monitor-enter v1
 
-    .line 514
+    .line 515
     :try_start_a
     iget-object v0, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
     # getter for: Lcom/bitmapfun/util/ImageWorker;->mPauseWorkLock:Ljava/lang/Object;
-    invoke-static {v0}, Lcom/bitmapfun/util/ImageWorker;->access$0(Lcom/bitmapfun/util/ImageWorker;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/bitmapfun/util/ImageWorker;->access$100(Lcom/bitmapfun/util/ImageWorker;)Ljava/lang/Object;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 513
+    .line 516
     monitor-exit v1
 
-    .line 516
+    .line 517
     return-void
 
-    .line 513
+    .line 516
     :catchall_15
     move-exception v0
 
@@ -635,7 +667,7 @@
     .registers 2
 
     .prologue
-    .line 1
+    .line 386
     check-cast p1, Landroid/graphics/Bitmap;
 
     invoke-virtual {p0, p1}, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->onCancelled(Landroid/graphics/Bitmap;)V
@@ -648,7 +680,7 @@
     .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
-    .line 483
+    .line 484
     invoke-virtual {p0}, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->isCancelled()Z
 
     move-result v4
@@ -658,74 +690,80 @@
     iget-object v4, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
     # getter for: Lcom/bitmapfun/util/ImageWorker;->mExitTasksEarly:Z
-    invoke-static {v4}, Lcom/bitmapfun/util/ImageWorker;->access$2(Lcom/bitmapfun/util/ImageWorker;)Z
+    invoke-static {v4}, Lcom/bitmapfun/util/ImageWorker;->access$300(Lcom/bitmapfun/util/ImageWorker;)Z
 
     move-result v4
 
     if-eqz v4, :cond_f
 
-    .line 484
+    .line 485
     :cond_e
     const/4 p1, 0x0
 
-    .line 488
+    .line 489
     :cond_f
     :try_start_f
     invoke-direct {p0}, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->getAttachedImageView()Landroid/widget/ImageView;
 
     move-result-object v1
 
-    .line 489
+    .line 490
     .local v1, "imageView":Landroid/widget/ImageView;
     invoke-direct {p0}, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->getAttachedProgressBar()Landroid/widget/ProgressBar;
 
     move-result-object v3
 
-    .line 490
+    .line 491
     .local v3, "progressBar":Landroid/widget/ProgressBar;
     if-eqz p1, :cond_29
 
     if-eqz v1, :cond_29
 
-    .line 494
+    .line 495
     iget-object v4, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
     iget v5, p0, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->g_image_loading:I
 
     # invokes: Lcom/bitmapfun/util/ImageWorker;->setImageBitmap(Landroid/widget/ImageView;Landroid/graphics/Bitmap;I)V
-    invoke-static {v4, v1, p1, v5}, Lcom/bitmapfun/util/ImageWorker;->access$3(Lcom/bitmapfun/util/ImageWorker;Landroid/widget/ImageView;Landroid/graphics/Bitmap;I)V
-
-    .line 495
-    if-eqz v3, :cond_29
+    invoke-static {v4, v1, p1, v5}, Lcom/bitmapfun/util/ImageWorker;->access$400(Lcom/bitmapfun/util/ImageWorker;Landroid/widget/ImageView;Landroid/graphics/Bitmap;I)V
 
     .line 496
+    if-eqz v3, :cond_29
+
+    .line 497
     const/16 v4, 0x8
 
     invoke-virtual {v3, v4}, Landroid/widget/ProgressBar;->setVisibility(I)V
     :try_end_29
     .catch Ljava/lang/OutOfMemoryError; {:try_start_f .. :try_end_29} :catch_2a
-    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_29} :catch_44
+    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_29} :catch_4c
+    .catchall {:try_start_f .. :try_end_29} :catchall_4a
 
-    .line 508
+    .line 509
     .end local v1    # "imageView":Landroid/widget/ImageView;
     .end local v3    # "progressBar":Landroid/widget/ProgressBar;
     :cond_29
     :goto_29
     return-void
 
-    .line 499
+    .line 500
     :catch_2a
     move-exception v2
 
-    .line 500
+    .line 501
     .local v2, "oom":Ljava/lang/OutOfMemoryError;
-    const-string v4, "ImageWorker"
+    :try_start_2b
+    const-string/jumbo v4, "ImageWorker"
 
     new-instance v5, Ljava/lang/StringBuilder;
 
-    const-string v6, "(OutOfMemoryError|BitmapWorkerTask.onPostExecute):"
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string/jumbo v6, "(OutOfMemoryError|BitmapWorkerTask.onPostExecute):"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
 
     invoke-virtual {v2}, Ljava/lang/OutOfMemoryError;->getMessage()Ljava/lang/String;
 
@@ -739,24 +777,37 @@
 
     move-result-object v5
 
-    invoke-static {v4, v5}, Lic/buzzebeeslib/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Lcom/bzbs/lib/survey/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_49
+    .catchall {:try_start_2b .. :try_end_49} :catchall_4a
 
     goto :goto_29
 
-    .line 501
+    .line 504
     .end local v2    # "oom":Ljava/lang/OutOfMemoryError;
-    :catch_44
-    move-exception v0
+    :catchall_4a
+    move-exception v4
+
+    throw v4
 
     .line 502
+    :catch_4c
+    move-exception v0
+
+    .line 503
     .local v0, "ex":Ljava/lang/Exception;
-    const-string v4, "ImageWorker"
+    :try_start_4d
+    const-string/jumbo v4, "ImageWorker"
 
     new-instance v5, Ljava/lang/StringBuilder;
 
-    const-string v6, "(Exception|BitmapWorkerTask.onPostExecute):"
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string/jumbo v6, "(Exception|BitmapWorkerTask.onPostExecute):"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
@@ -770,7 +821,9 @@
 
     move-result-object v5
 
-    invoke-static {v4, v5}, Lic/buzzebeeslib/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Lcom/bzbs/lib/survey/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_6b
+    .catchall {:try_start_4d .. :try_end_6b} :catchall_4a
 
     goto :goto_29
 .end method
@@ -779,7 +832,7 @@
     .registers 2
 
     .prologue
-    .line 1
+    .line 386
     check-cast p1, Landroid/graphics/Bitmap;
 
     invoke-virtual {p0, p1}, Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;->onPostExecute(Landroid/graphics/Bitmap;)V

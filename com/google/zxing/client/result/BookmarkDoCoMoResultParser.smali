@@ -18,7 +18,6 @@
 # virtual methods
 .method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .registers 3
-    .param p1, "x0"    # Lcom/google/zxing/Result;
 
     .prologue
     .line 24
@@ -45,22 +44,22 @@
 
     .line 29
     .local v0, "rawText":Ljava/lang/String;
-    const-string v5, "MEBKM:"
+    const-string/jumbo v5, "MEBKM:"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v5
 
-    if-nez v5, :cond_f
+    if-nez v5, :cond_10
 
     .line 38
-    :cond_e
-    :goto_e
+    :cond_f
+    :goto_f
     return-object v4
 
     .line 32
-    :cond_f
-    const-string v5, "TITLE:"
+    :cond_10
+    const-string/jumbo v5, "TITLE:"
 
     invoke-static {v5, v0, v6}, Lcom/google/zxing/client/result/BookmarkDoCoMoResultParser;->matchSingleDoCoMoPrefixedField(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
@@ -68,7 +67,7 @@
 
     .line 33
     .local v2, "title":Ljava/lang/String;
-    const-string v5, "URL:"
+    const-string/jumbo v5, "URL:"
 
     invoke-static {v5, v0, v6}, Lcom/google/zxing/client/result/BookmarkDoCoMoResultParser;->matchDoCoMoPrefixedField(Ljava/lang/String;Ljava/lang/String;Z)[Ljava/lang/String;
 
@@ -76,7 +75,7 @@
 
     .line 34
     .local v1, "rawUri":[Ljava/lang/String;
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_f
 
     .line 37
     const/4 v5, 0x0
@@ -89,11 +88,11 @@
 
     move-result v5
 
-    if-eqz v5, :cond_e
+    if-eqz v5, :cond_f
 
     new-instance v4, Lcom/google/zxing/client/result/URIParsedResult;
 
     invoke-direct {v4, v3, v2}, Lcom/google/zxing/client/result/URIParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_e
+    goto :goto_f
 .end method

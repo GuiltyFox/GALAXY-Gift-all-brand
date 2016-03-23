@@ -47,7 +47,7 @@
     .line 38
     new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState$State;
 
-    const-string v1, "NUMERIC"
+    const-string/jumbo v1, "NUMERIC"
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState$State;-><init>(Ljava/lang/String;I)V
 
@@ -56,7 +56,7 @@
     .line 39
     new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState$State;
 
-    const-string v1, "ALPHA"
+    const-string/jumbo v1, "ALPHA"
 
     invoke-direct {v0, v1, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState$State;-><init>(Ljava/lang/String;I)V
 
@@ -65,7 +65,7 @@
     .line 40
     new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState$State;
 
-    const-string v1, "ISO_IEC_646"
+    const-string/jumbo v1, "ISO_IEC_646"
 
     invoke-direct {v0, v1, v4}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState$State;-><init>(Ljava/lang/String;I)V
 

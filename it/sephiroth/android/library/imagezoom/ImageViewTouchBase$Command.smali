@@ -24,9 +24,9 @@
 
 
 # static fields
-.field public static final enum Center:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+.field private static final synthetic $VALUES:[Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
-.field private static final synthetic ENUM$VALUES:[Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+.field public static final enum Center:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
 .field public static final enum Layout:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
@@ -55,7 +55,7 @@
     .line 22
     new-instance v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
-    const-string v1, "Center"
+    const-string/jumbo v1, "Center"
 
     invoke-direct {v0, v1, v2}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;-><init>(Ljava/lang/String;I)V
 
@@ -63,7 +63,7 @@
 
     new-instance v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
-    const-string v1, "Move"
+    const-string/jumbo v1, "Move"
 
     invoke-direct {v0, v1, v3}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;-><init>(Ljava/lang/String;I)V
 
@@ -71,7 +71,7 @@
 
     new-instance v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
-    const-string v1, "Zoom"
+    const-string/jumbo v1, "Zoom"
 
     invoke-direct {v0, v1, v4}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;-><init>(Ljava/lang/String;I)V
 
@@ -79,7 +79,7 @@
 
     new-instance v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
-    const-string v1, "Layout"
+    const-string/jumbo v1, "Layout"
 
     invoke-direct {v0, v1, v5}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;-><init>(Ljava/lang/String;I)V
 
@@ -87,7 +87,7 @@
 
     new-instance v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
-    const-string v1, "Reset"
+    const-string/jumbo v1, "Reset"
 
     invoke-direct {v0, v1, v6}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;-><init>(Ljava/lang/String;I)V
 
@@ -118,13 +118,18 @@
 
     aput-object v1, v0, v6
 
-    sput-object v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->ENUM$VALUES:[Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+    sput-object v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->$VALUES:[Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
     return-void
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
 
     .prologue
     .line 21
@@ -135,9 +140,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
     .registers 2
+    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 1
+    .line 21
     const-class v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -150,19 +156,17 @@
 .end method
 
 .method public static values()[Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
-    .registers 4
+    .registers 1
 
     .prologue
-    const/4 v3, 0x0
+    .line 21
+    sget-object v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->$VALUES:[Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
-    .line 1
-    sget-object v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->ENUM$VALUES:[Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+    invoke-virtual {v0}, [Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->clone()Ljava/lang/Object;
 
-    array-length v1, v0
+    move-result-object v0
 
-    new-array v2, v1, [Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+    check-cast v0, [Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
-    invoke-static {v0, v3, v2, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    return-object v2
+    return-object v0
 .end method

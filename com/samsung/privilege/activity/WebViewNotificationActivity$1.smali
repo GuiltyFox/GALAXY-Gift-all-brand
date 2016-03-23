@@ -21,12 +21,12 @@
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/WebViewNotificationActivity;)V
     .registers 2
+    .param p1, "this$0"    # Lcom/samsung/privilege/activity/WebViewNotificationActivity;
 
     .prologue
-    .line 1
+    .line 94
     iput-object p1, p0, Lcom/samsung/privilege/activity/WebViewNotificationActivity$1;->this$0:Lcom/samsung/privilege/activity/WebViewNotificationActivity;
 
-    .line 90
     invoke-direct {p0}, Landroid/webkit/WebChromeClient;-><init>()V
 
     return-void
@@ -40,13 +40,13 @@
     .param p2, "progress"    # I
 
     .prologue
-    .line 94
+    .line 98
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewNotificationActivity$1;->this$0:Lcom/samsung/privilege/activity/WebViewNotificationActivity;
 
     mul-int/lit16 v1, p2, 0x3e8
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->setProgress(I)V
 
-    .line 95
+    .line 99
     return-void
 .end method

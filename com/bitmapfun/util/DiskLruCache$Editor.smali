@@ -31,6 +31,7 @@
 # direct methods
 .method private constructor <init>(Lcom/bitmapfun/util/DiskLruCache;Lcom/bitmapfun/util/DiskLruCache$Entry;)V
     .registers 3
+    .param p1, "this$0"    # Lcom/bitmapfun/util/DiskLruCache;
     .param p2, "entry"    # Lcom/bitmapfun/util/DiskLruCache$Entry;
 
     .prologue
@@ -46,34 +47,40 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/bitmapfun/util/DiskLruCache;Lcom/bitmapfun/util/DiskLruCache$Entry;Lcom/bitmapfun/util/DiskLruCache$Editor;)V
+.method synthetic constructor <init>(Lcom/bitmapfun/util/DiskLruCache;Lcom/bitmapfun/util/DiskLruCache$Entry;Lcom/bitmapfun/util/DiskLruCache$1;)V
     .registers 4
+    .param p1, "x0"    # Lcom/bitmapfun/util/DiskLruCache;
+    .param p2, "x1"    # Lcom/bitmapfun/util/DiskLruCache$Entry;
+    .param p3, "x2"    # Lcom/bitmapfun/util/DiskLruCache$1;
 
     .prologue
-    .line 778
+    .line 774
     invoke-direct {p0, p1, p2}, Lcom/bitmapfun/util/DiskLruCache$Editor;-><init>(Lcom/bitmapfun/util/DiskLruCache;Lcom/bitmapfun/util/DiskLruCache$Entry;)V
 
     return-void
 .end method
 
-.method static synthetic access$0(Lcom/bitmapfun/util/DiskLruCache$Editor;Z)V
+.method static synthetic access$1400(Lcom/bitmapfun/util/DiskLruCache$Editor;)Lcom/bitmapfun/util/DiskLruCache$Entry;
     .registers 2
+    .param p0, "x0"    # Lcom/bitmapfun/util/DiskLruCache$Editor;
 
     .prologue
-    .line 776
-    iput-boolean p1, p0, Lcom/bitmapfun/util/DiskLruCache$Editor;->hasErrors:Z
-
-    return-void
-.end method
-
-.method static synthetic access$2(Lcom/bitmapfun/util/DiskLruCache$Editor;)Lcom/bitmapfun/util/DiskLruCache$Entry;
-    .registers 2
-
-    .prologue
-    .line 775
+    .line 774
     iget-object v0, p0, Lcom/bitmapfun/util/DiskLruCache$Editor;->entry:Lcom/bitmapfun/util/DiskLruCache$Entry;
 
     return-object v0
+.end method
+
+.method static synthetic access$2002(Lcom/bitmapfun/util/DiskLruCache$Editor;Z)Z
+    .registers 2
+    .param p0, "x0"    # Lcom/bitmapfun/util/DiskLruCache$Editor;
+    .param p1, "x1"    # Z
+
+    .prologue
+    .line 774
+    iput-boolean p1, p0, Lcom/bitmapfun/util/DiskLruCache$Editor;->hasErrors:Z
+
+    return p1
 .end method
 
 
@@ -93,7 +100,7 @@
     const/4 v1, 0x0
 
     # invokes: Lcom/bitmapfun/util/DiskLruCache;->completeEdit(Lcom/bitmapfun/util/DiskLruCache$Editor;Z)V
-    invoke-static {v0, p0, v1}, Lcom/bitmapfun/util/DiskLruCache;->access$8(Lcom/bitmapfun/util/DiskLruCache;Lcom/bitmapfun/util/DiskLruCache$Editor;Z)V
+    invoke-static {v0, p0, v1}, Lcom/bitmapfun/util/DiskLruCache;->access$1900(Lcom/bitmapfun/util/DiskLruCache;Lcom/bitmapfun/util/DiskLruCache$Editor;Z)V
 
     .line 855
     return-void
@@ -119,7 +126,7 @@
     const/4 v1, 0x0
 
     # invokes: Lcom/bitmapfun/util/DiskLruCache;->completeEdit(Lcom/bitmapfun/util/DiskLruCache$Editor;Z)V
-    invoke-static {v0, p0, v1}, Lcom/bitmapfun/util/DiskLruCache;->access$8(Lcom/bitmapfun/util/DiskLruCache;Lcom/bitmapfun/util/DiskLruCache$Editor;Z)V
+    invoke-static {v0, p0, v1}, Lcom/bitmapfun/util/DiskLruCache;->access$1900(Lcom/bitmapfun/util/DiskLruCache;Lcom/bitmapfun/util/DiskLruCache$Editor;Z)V
 
     .line 843
     iget-object v0, p0, Lcom/bitmapfun/util/DiskLruCache$Editor;->this$0:Lcom/bitmapfun/util/DiskLruCache;
@@ -127,7 +134,7 @@
     iget-object v1, p0, Lcom/bitmapfun/util/DiskLruCache$Editor;->entry:Lcom/bitmapfun/util/DiskLruCache$Entry;
 
     # getter for: Lcom/bitmapfun/util/DiskLruCache$Entry;->key:Ljava/lang/String;
-    invoke-static {v1}, Lcom/bitmapfun/util/DiskLruCache$Entry;->access$2(Lcom/bitmapfun/util/DiskLruCache$Entry;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bitmapfun/util/DiskLruCache$Entry;->access$1100(Lcom/bitmapfun/util/DiskLruCache$Entry;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -144,7 +151,7 @@
     const/4 v1, 0x1
 
     # invokes: Lcom/bitmapfun/util/DiskLruCache;->completeEdit(Lcom/bitmapfun/util/DiskLruCache$Editor;Z)V
-    invoke-static {v0, p0, v1}, Lcom/bitmapfun/util/DiskLruCache;->access$8(Lcom/bitmapfun/util/DiskLruCache;Lcom/bitmapfun/util/DiskLruCache$Editor;Z)V
+    invoke-static {v0, p0, v1}, Lcom/bitmapfun/util/DiskLruCache;->access$1900(Lcom/bitmapfun/util/DiskLruCache;Lcom/bitmapfun/util/DiskLruCache$Editor;Z)V
 
     goto :goto_15
 .end method
@@ -169,7 +176,7 @@
     if-eqz v0, :cond_b
 
     # invokes: Lcom/bitmapfun/util/DiskLruCache;->inputStreamToString(Ljava/io/InputStream;)Ljava/lang/String;
-    invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache;->access$6(Ljava/io/InputStream;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache;->access$1600(Ljava/io/InputStream;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -202,7 +209,7 @@
     iget-object v0, p0, Lcom/bitmapfun/util/DiskLruCache$Editor;->entry:Lcom/bitmapfun/util/DiskLruCache$Entry;
 
     # getter for: Lcom/bitmapfun/util/DiskLruCache$Entry;->currentEditor:Lcom/bitmapfun/util/DiskLruCache$Editor;
-    invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache$Entry;->access$0(Lcom/bitmapfun/util/DiskLruCache$Entry;)Lcom/bitmapfun/util/DiskLruCache$Editor;
+    invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache$Entry;->access$700(Lcom/bitmapfun/util/DiskLruCache$Entry;)Lcom/bitmapfun/util/DiskLruCache$Editor;
 
     move-result-object v0
 
@@ -215,7 +222,7 @@
 
     throw v0
 
-    .line 787
+    .line 795
     :catchall_11
     move-exception v0
 
@@ -231,16 +238,16 @@
     iget-object v0, p0, Lcom/bitmapfun/util/DiskLruCache$Editor;->entry:Lcom/bitmapfun/util/DiskLruCache$Entry;
 
     # getter for: Lcom/bitmapfun/util/DiskLruCache$Entry;->readable:Z
-    invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache$Entry;->access$1(Lcom/bitmapfun/util/DiskLruCache$Entry;)Z
+    invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache$Entry;->access$600(Lcom/bitmapfun/util/DiskLruCache$Entry;)Z
 
     move-result v0
 
     if-nez v0, :cond_1f
 
     .line 792
-    monitor-exit v1
-
     const/4 v0, 0x0
+
+    monitor-exit v1
 
     .line 794
     :goto_1e
@@ -284,7 +291,7 @@
     iget-object v0, p0, Lcom/bitmapfun/util/DiskLruCache$Editor;->entry:Lcom/bitmapfun/util/DiskLruCache$Entry;
 
     # getter for: Lcom/bitmapfun/util/DiskLruCache$Entry;->currentEditor:Lcom/bitmapfun/util/DiskLruCache$Editor;
-    invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache$Entry;->access$0(Lcom/bitmapfun/util/DiskLruCache$Entry;)Lcom/bitmapfun/util/DiskLruCache$Editor;
+    invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache$Entry;->access$700(Lcom/bitmapfun/util/DiskLruCache$Entry;)Lcom/bitmapfun/util/DiskLruCache$Editor;
 
     move-result-object v0
 
@@ -297,7 +304,7 @@
 
     throw v0
 
-    .line 815
+    .line 820
     :catchall_11
     move-exception v0
 
@@ -324,7 +331,7 @@
 
     const/4 v3, 0x0
 
-    invoke-direct {v0, p0, v2, v3}, Lcom/bitmapfun/util/DiskLruCache$Editor$FaultHidingOutputStream;-><init>(Lcom/bitmapfun/util/DiskLruCache$Editor;Ljava/io/OutputStream;Lcom/bitmapfun/util/DiskLruCache$Editor$FaultHidingOutputStream;)V
+    invoke-direct {v0, p0, v2, v3}, Lcom/bitmapfun/util/DiskLruCache$Editor$FaultHidingOutputStream;-><init>(Lcom/bitmapfun/util/DiskLruCache$Editor;Ljava/io/OutputStream;Lcom/bitmapfun/util/DiskLruCache$1;)V
 
     monitor-exit v1
     :try_end_26
@@ -357,7 +364,7 @@
     move-result-object v2
 
     # getter for: Lcom/bitmapfun/util/DiskLruCache;->UTF_8:Ljava/nio/charset/Charset;
-    invoke-static {}, Lcom/bitmapfun/util/DiskLruCache;->access$7()Ljava/nio/charset/Charset;
+    invoke-static {}, Lcom/bitmapfun/util/DiskLruCache;->access$1800()Ljava/nio/charset/Charset;
 
     move-result-object v3
 
@@ -379,20 +386,17 @@
     .line 834
     return-void
 
-    .line 831
+    .line 832
     .end local v1    # "writer":Ljava/io/Writer;
     .restart local v0    # "writer":Ljava/io/Writer;
     :catchall_15
     move-exception v2
 
-    .line 832
     :goto_16
     invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache;->closeQuietly(Ljava/io/Closeable;)V
 
-    .line 833
     throw v2
 
-    .line 831
     .end local v0    # "writer":Ljava/io/Writer;
     .restart local v1    # "writer":Ljava/io/Writer;
     :catchall_1a

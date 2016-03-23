@@ -27,6 +27,19 @@
     return-object v0
 .end method
 
+.method public static getFitsSystemWindows(Landroid/view/View;)Z
+    .registers 2
+    .param p0, "view"    # Landroid/view/View;
+
+    .prologue
+    .line 86
+    invoke-virtual {p0}, Landroid/view/View;->getFitsSystemWindows()Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static getImportantForAccessibility(Landroid/view/View;)I
     .registers 2
     .param p0, "view"    # Landroid/view/View;
@@ -77,6 +90,19 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public static hasOverlappingRendering(Landroid/view/View;)Z
+    .registers 2
+    .param p0, "view"    # Landroid/view/View;
+
+    .prologue
+    .line 90
+    invoke-virtual {p0}, Landroid/view/View;->hasOverlappingRendering()Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public static hasTransientState(Landroid/view/View;)Z
@@ -159,6 +185,18 @@
     invoke-virtual {p0, p1, p2, p3}, Landroid/view/View;->postOnAnimationDelayed(Ljava/lang/Runnable;J)V
 
     .line 51
+    return-void
+.end method
+
+.method public static requestApplyInsets(Landroid/view/View;)V
+    .registers 1
+    .param p0, "view"    # Landroid/view/View;
+
+    .prologue
+    .line 82
+    invoke-virtual {p0}, Landroid/view/View;->requestFitSystemWindows()V
+
+    .line 83
     return-void
 .end method
 

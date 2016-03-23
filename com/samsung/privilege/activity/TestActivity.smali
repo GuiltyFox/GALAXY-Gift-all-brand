@@ -1,235 +1,133 @@
 .class public Lcom/samsung/privilege/activity/TestActivity;
-.super Landroid/support/v4/app/FragmentActivity;
+.super Landroid/support/v7/app/AppCompatActivity;
 .source "TestActivity.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/samsung/privilege/activity/TestActivity$GetPointsListener;,
-        Lcom/samsung/privilege/activity/TestActivity$TestAdapter;
-    }
-.end annotation
-
-
-# static fields
-.field private static final IMAGE_CACHE_DIR:Ljava/lang/String; = "cache_gift"
-
-
 # instance fields
-.field private final LOGCAT:Ljava/lang/String;
-
-.field private gScreenHeight:I
-
-.field private gScreenWidth:I
-
-.field private mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
+.field mHandler:Landroid/os/Handler;
 
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .registers 1
 
     .prologue
-    .line 31
-    invoke-direct {p0}, Landroid/support/v4/app/FragmentActivity;-><init>()V
+    .line 12
+    invoke-direct {p0}, Landroid/support/v7/app/AppCompatActivity;-><init>()V
 
-    .line 32
-    const-string v0, "test"
+    return-void
+.end method
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/TestActivity;->LOGCAT:Ljava/lang/String;
+.method private showToast(Ljava/lang/String;)V
+    .registers 4
+    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 31
+    .prologue
+    .line 35
+    iget-object v0, p0, Lcom/samsung/privilege/activity/TestActivity;->mHandler:Landroid/os/Handler;
+
+    new-instance v1, Lcom/samsung/privilege/activity/TestActivity$1;
+
+    invoke-direct {v1, p0, p1}, Lcom/samsung/privilege/activity/TestActivity$1;-><init>(Lcom/samsung/privilege/activity/TestActivity;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 42
     return-void
 .end method
 
 
 # virtual methods
-.method public onCreate(Landroid/os/Bundle;)V
-    .registers 11
+.method protected onCreate(Landroid/os/Bundle;)V
+    .registers 6
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 41
-    invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
+    .line 18
+    invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 42
-    const/4 v7, 0x1
+    .line 19
+    const v2, 0x7f04004d
 
-    invoke-virtual {p0, v7}, Lcom/samsung/privilege/activity/TestActivity;->requestWindowFeature(I)Z
+    invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/TestActivity;->setContentView(I)V
 
-    .line 45
-    new-instance v4, Landroid/util/DisplayMetrics;
+    .line 21
+    new-instance v2, Landroid/os/Handler;
 
-    invoke-direct {v4}, Landroid/util/DisplayMetrics;-><init>()V
+    invoke-direct {v2}, Landroid/os/Handler;-><init>()V
 
-    .line 46
-    .local v4, "metrics":Landroid/util/DisplayMetrics;
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/TestActivity;->getWindowManager()Landroid/view/WindowManager;
+    iput-object v2, p0, Lcom/samsung/privilege/activity/TestActivity;->mHandler:Landroid/os/Handler;
 
-    move-result-object v7
+    .line 23
+    invoke-static {}, Lcom/facebook/AccessToken;->getCurrentAccessToken()Lcom/facebook/AccessToken;
 
-    invoke-interface {v7}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    move-result-object v1
 
-    move-result-object v7
+    .line 24
+    .local v1, "token":Lcom/facebook/AccessToken;
+    if-eqz v1, :cond_31
 
-    invoke-virtual {v7, v4}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
+    .line 25
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    .line 48
-    new-instance v0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/TestActivity;->getApplicationContext()Landroid/content/Context;
+    const-string/jumbo v3, "token="
 
-    move-result-object v7
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v8, "cache_gift"
+    move-result-object v2
 
-    invoke-direct {v0, v7, v8}, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-virtual {v1}, Lcom/facebook/AccessToken;->getToken()Ljava/lang/String;
 
-    .line 49
-    .local v0, "cacheParams":Lcom/bitmapfun/util/ImageCache$ImageCacheParams;
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/TestActivity;->getApplicationContext()Landroid/content/Context;
+    move-result-object v3
 
-    move-result-object v7
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/high16 v8, 0x3e800000
+    move-result-object v2
 
-    invoke-virtual {v0, v7, v8}, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->setMemCacheSizePercent(Landroid/content/Context;F)V
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 50
-    new-instance v1, Landroid/util/DisplayMetrics;
+    move-result-object v2
 
-    invoke-direct {v1}, Landroid/util/DisplayMetrics;-><init>()V
+    invoke-direct {p0, v2}, Lcom/samsung/privilege/activity/TestActivity;->showToast(Ljava/lang/String;)V
 
-    .line 51
-    .local v1, "displayMetrics":Landroid/util/DisplayMetrics;
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/TestActivity;->getWindowManager()Landroid/view/WindowManager;
+    .line 28
+    :cond_31
+    invoke-static {}, Lcom/facebook/Profile;->getCurrentProfile()Lcom/facebook/Profile;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-interface {v7}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    .line 29
+    .local v0, "profile":Lcom/facebook/Profile;
+    if-eqz v0, :cond_52
 
-    move-result-object v7
+    .line 30
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v1}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 52
-    iget v7, v1, Landroid/util/DisplayMetrics;->heightPixels:I
+    const-string/jumbo v3, "profile="
 
-    iput v7, p0, Lcom/samsung/privilege/activity/TestActivity;->gScreenHeight:I
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 53
-    iget v7, v1, Landroid/util/DisplayMetrics;->widthPixels:I
+    move-result-object v2
 
-    iput v7, p0, Lcom/samsung/privilege/activity/TestActivity;->gScreenWidth:I
+    invoke-virtual {v0}, Lcom/facebook/Profile;->getName()Ljava/lang/String;
 
-    .line 55
-    iget v6, p0, Lcom/samsung/privilege/activity/TestActivity;->gScreenWidth:I
+    move-result-object v3
 
-    .line 56
-    .local v6, "width":I
-    iget v2, p0, Lcom/samsung/privilege/activity/TestActivity;->gScreenHeight:I
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 58
-    .local v2, "height":I
-    if-le v2, v6, :cond_9e
+    move-result-object v2
 
-    .end local v2    # "height":I
-    :goto_49
-    div-int/lit8 v3, v2, 0x2
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 59
-    .local v3, "longest":I
-    new-instance v7, Lcom/bitmapfun/util/ImageFetcher;
+    move-result-object v2
 
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/TestActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-direct {p0, v2}, Lcom/samsung/privilege/activity/TestActivity;->showToast(Ljava/lang/String;)V
 
-    move-result-object v8
-
-    invoke-direct {v7, v8, v3}, Lcom/bitmapfun/util/ImageFetcher;-><init>(Landroid/content/Context;I)V
-
-    iput-object v7, p0, Lcom/samsung/privilege/activity/TestActivity;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
-
-    .line 60
-    iget-object v7, p0, Lcom/samsung/privilege/activity/TestActivity;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
-
-    const v8, 0x7f0203a7
-
-    invoke-virtual {v7, v8}, Lcom/bitmapfun/util/ImageFetcher;->setLoadingImage(I)V
-
-    .line 61
-    iget-object v7, p0, Lcom/samsung/privilege/activity/TestActivity;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/TestActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8, v0}, Lcom/bitmapfun/util/ImageFetcher;->addImageCache(Landroid/support/v4/app/FragmentManager;Lcom/bitmapfun/util/ImageCache$ImageCacheParams;)V
-
-    .line 62
-    iget-object v7, p0, Lcom/samsung/privilege/activity/TestActivity;->mImageFetcher:Lcom/bitmapfun/util/ImageFetcher;
-
-    const/4 v8, 0x0
-
-    invoke-virtual {v7, v8}, Lcom/bitmapfun/util/ImageFetcher;->setImageFadeIn(Z)V
-
-    .line 65
-    const v7, 0x7f0300a7
-
-    invoke-virtual {p0, v7}, Lcom/samsung/privilege/activity/TestActivity;->setContentView(I)V
-
-    .line 67
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    sget-object v8, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
-
-    invoke-static {v8}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v8, "api/profile/me/point?token="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/TestActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v8
-
-    invoke-static {v8}, Lcom/samsung/privilege/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    .line 68
-    .local v5, "url":Ljava/lang/String;
-    new-instance v7, Lcom/samsung/privilege/activity/TestActivity$GetPointsListener;
-
-    invoke-direct {v7, p0}, Lcom/samsung/privilege/activity/TestActivity$GetPointsListener;-><init>(Lcom/samsung/privilege/activity/TestActivity;)V
-
-    const/4 v8, 0x0
-
-    invoke-static {v5, v7, v8}, Lcom/samsung/privilege/util/http/HttpCall;->RQ_GET(Ljava/lang/String;Lcom/samsung/privilege/util/http/RQListener;Ljava/lang/Object;)V
-
-    .line 69
+    .line 32
+    :cond_52
     return-void
-
-    .end local v3    # "longest":I
-    .end local v5    # "url":Ljava/lang/String;
-    .restart local v2    # "height":I
-    :cond_9e
-    move v2, v6
-
-    .line 58
-    goto :goto_49
 .end method

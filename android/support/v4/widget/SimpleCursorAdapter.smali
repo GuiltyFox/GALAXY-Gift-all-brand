@@ -192,7 +192,7 @@
 
     .local v4, "i":I
     :goto_a
-    if-ge v4, v2, :cond_66
+    if-ge v4, v2, :cond_69
 
     .line 127
     aget v8, v6, v4
@@ -203,7 +203,7 @@
 
     .line 128
     .local v7, "v":Landroid/view/View;
-    if-eqz v7, :cond_32
+    if-eqz v7, :cond_33
 
     .line 129
     const/4 v1, 0x0
@@ -221,7 +221,7 @@
 
     .line 134
     :cond_1d
-    if-nez v1, :cond_32
+    if-nez v1, :cond_33
 
     .line 135
     aget v8, v3, v4
@@ -232,16 +232,16 @@
 
     .line 136
     .local v5, "text":Ljava/lang/String;
-    if-nez v5, :cond_29
+    if-nez v5, :cond_2a
 
     .line 137
-    const-string v5, ""
+    const-string/jumbo v5, ""
 
     .line 140
-    :cond_29
+    :cond_2a
     instance-of v8, v7, Landroid/widget/TextView;
 
-    if-eqz v8, :cond_35
+    if-eqz v8, :cond_36
 
     .line 141
     check-cast v7, Landroid/widget/TextView;
@@ -252,8 +252,8 @@
     .line 126
     .end local v1    # "bound":Z
     .end local v5    # "text":Ljava/lang/String;
-    :cond_32
-    :goto_32
+    :cond_33
+    :goto_33
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_a
@@ -262,10 +262,10 @@
     .restart local v1    # "bound":Z
     .restart local v5    # "text":Ljava/lang/String;
     .restart local v7    # "v":Landroid/view/View;
-    :cond_35
+    :cond_36
     instance-of v8, v7, Landroid/widget/ImageView;
 
-    if-eqz v8, :cond_3f
+    if-eqz v8, :cond_40
 
     .line 143
     check-cast v7, Landroid/widget/ImageView;
@@ -273,11 +273,11 @@
     .end local v7    # "v":Landroid/view/View;
     invoke-virtual {p0, v7, v5}, Landroid/support/v4/widget/SimpleCursorAdapter;->setViewImage(Landroid/widget/ImageView;Ljava/lang/String;)V
 
-    goto :goto_32
+    goto :goto_33
 
     .line 145
     .restart local v7    # "v":Landroid/view/View;
-    :cond_3f
+    :cond_40
     new-instance v8, Ljava/lang/IllegalStateException;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -296,13 +296,13 @@
 
     move-result-object v9
 
-    const-string v10, " is not a "
+    const-string/jumbo v10, " is not a "
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
-    const-string v10, " view that can be bounds by this SimpleCursorAdapter"
+    const-string/jumbo v10, " view that can be bounds by this SimpleCursorAdapter"
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -320,7 +320,7 @@
     .end local v1    # "bound":Z
     .end local v5    # "text":Ljava/lang/String;
     .end local v7    # "v":Landroid/view/View;
-    :cond_66
+    :cond_69
     return-void
 .end method
 

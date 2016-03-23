@@ -21,12 +21,12 @@
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/WebViewBookingActivity;)V
     .registers 2
+    .param p1, "this$0"    # Lcom/samsung/privilege/activity/WebViewBookingActivity;
 
     .prologue
-    .line 1
+    .line 52
     iput-object p1, p0, Lcom/samsung/privilege/activity/WebViewBookingActivity$1;->this$0:Lcom/samsung/privilege/activity/WebViewBookingActivity;
 
-    .line 46
     invoke-direct {p0}, Landroid/webkit/WebChromeClient;-><init>()V
 
     return-void
@@ -40,13 +40,13 @@
     .param p2, "progress"    # I
 
     .prologue
-    .line 50
+    .line 56
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewBookingActivity$1;->this$0:Lcom/samsung/privilege/activity/WebViewBookingActivity;
 
     mul-int/lit16 v1, p2, 0x3e8
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/WebViewBookingActivity;->setProgress(I)V
 
-    .line 51
+    .line 57
     return-void
 .end method

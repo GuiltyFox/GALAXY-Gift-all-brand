@@ -180,7 +180,7 @@
     :cond_2f
     sub-int v13, v9, v3
 
-    shr-int/lit8 v14, v7, 0x4
+    div-int/lit8 v14, v7, 0x10
 
     if-gt v13, v14, :cond_3a
 
@@ -371,7 +371,7 @@
 
     .line 100
     .local v3, "localLuminances":[B
-    shl-int/lit8 v13, v10, 0x2
+    mul-int/lit8 v13, v10, 0x4
 
     div-int/lit8 v7, v13, 0x5
 
@@ -614,13 +614,13 @@
 
     .line 75
     .local v7, "right":I
-    shl-int/lit8 v11, v1, 0x2
+    mul-int/lit8 v11, v1, 0x4
 
     sub-int/2addr v11, v2
 
     sub-int/2addr v11, v7
 
-    shr-int/lit8 v5, v11, 0x1
+    div-int/lit8 v5, v11, 0x2
 
     .line 76
     .local v5, "luminance":I

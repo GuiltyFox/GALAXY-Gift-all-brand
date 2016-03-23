@@ -24,23 +24,24 @@
 
 .field final synthetic this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
-.field private final synthetic val$durationMs:F
+.field final synthetic val$durationMs:F
 
-.field private final synthetic val$dx:F
+.field final synthetic val$dx:F
 
-.field private final synthetic val$dy:F
+.field final synthetic val$dy:F
 
-.field private final synthetic val$startTime:J
+.field final synthetic val$startTime:J
 
 
 # direct methods
 .method constructor <init>(Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;FJFF)V
     .registers 8
+    .param p1, "this$0"    # Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
     .prologue
     const/4 v0, 0x0
 
-    .line 1
+    .line 346
     iput-object p1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
     iput p2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->val$durationMs:F
@@ -51,7 +52,6 @@
 
     iput p6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->val$dy:F
 
-    .line 346
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 348

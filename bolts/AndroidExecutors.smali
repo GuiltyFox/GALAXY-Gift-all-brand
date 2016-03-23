@@ -23,8 +23,6 @@
 
 .field static final MAX_POOL_SIZE:I
 
-.field static final MAX_QUEUE_SIZE:I = 0x80
-
 
 # instance fields
 .field private final uiThread:Ljava/util/concurrent/Executor;
@@ -103,17 +101,17 @@
     .end annotation
 
     .prologue
-    .line 121
+    .line 120
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x9
 
     if-lt v0, v1, :cond_9
 
-    .line 122
+    .line 121
     invoke-virtual {p0, p1}, Ljava/util/concurrent/ThreadPoolExecutor;->allowCoreThreadTimeOut(Z)V
 
-    .line 124
+    .line 123
     :cond_9
     return-void
 .end method
@@ -122,7 +120,7 @@
     .registers 8
 
     .prologue
-    .line 75
+    .line 74
     new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
 
     sget v2, Lbolts/AndroidExecutors;->CORE_POOL_SIZE:I
@@ -135,19 +133,17 @@
 
     new-instance v7, Ljava/util/concurrent/LinkedBlockingQueue;
 
-    const/16 v0, 0x80
-
-    invoke-direct {v7, v0}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>(I)V
+    invoke-direct {v7}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
 
     invoke-direct/range {v1 .. v7}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;)V
 
-    .line 81
+    .line 80
     .local v1, "executor":Ljava/util/concurrent/ThreadPoolExecutor;
     const/4 v0, 0x1
 
     invoke-static {v1, v0}, Lbolts/AndroidExecutors;->allowCoreThreadTimeout(Ljava/util/concurrent/ThreadPoolExecutor;Z)V
 
-    .line 83
+    .line 82
     return-object v1
 .end method
 
@@ -156,7 +152,7 @@
     .param p0, "threadFactory"    # Ljava/util/concurrent/ThreadFactory;
 
     .prologue
-    .line 98
+    .line 97
     new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
 
     sget v2, Lbolts/AndroidExecutors;->CORE_POOL_SIZE:I
@@ -169,21 +165,19 @@
 
     new-instance v7, Ljava/util/concurrent/LinkedBlockingQueue;
 
-    const/16 v0, 0x80
-
-    invoke-direct {v7, v0}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>(I)V
+    invoke-direct {v7}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
 
     move-object v8, p0
 
     invoke-direct/range {v1 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
 
-    .line 105
+    .line 104
     .local v1, "executor":Ljava/util/concurrent/ThreadPoolExecutor;
     const/4 v0, 0x1
 
     invoke-static {v1, v0}, Lbolts/AndroidExecutors;->allowCoreThreadTimeout(Ljava/util/concurrent/ThreadPoolExecutor;Z)V
 
-    .line 107
+    .line 106
     return-object v1
 .end method
 
@@ -191,7 +185,7 @@
     .registers 1
 
     .prologue
-    .line 130
+    .line 129
     sget-object v0, Lbolts/AndroidExecutors;->INSTANCE:Lbolts/AndroidExecutors;
 
     iget-object v0, v0, Lbolts/AndroidExecutors;->uiThread:Ljava/util/concurrent/Executor;

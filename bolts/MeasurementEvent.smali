@@ -76,10 +76,10 @@
 
     .line 141
     .local v6, "resolvedActivity":Landroid/content/ComponentName;
-    if-eqz v6, :cond_18
+    if-eqz v6, :cond_19
 
     .line 142
-    const-string v9, "class"
+    const-string/jumbo v9, "class"
 
     invoke-virtual {v6}, Landroid/content/ComponentName;->getShortClassName()Ljava/lang/String;
 
@@ -88,20 +88,20 @@
     invoke-virtual {v3, v9, v10}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 145
-    :cond_18
-    const-string v9, "al_nav_out"
+    :cond_19
+    const-string/jumbo v9, "al_nav_out"
 
     invoke-virtual {v9, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v9
 
-    if-eqz v9, :cond_a1
+    if-eqz v9, :cond_a9
 
     .line 146
-    if-eqz v6, :cond_2b
+    if-eqz v6, :cond_2e
 
     .line 147
-    const-string v9, "package"
+    const-string/jumbo v9, "package"
 
     invoke-virtual {v6}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
@@ -110,15 +110,15 @@
     invoke-virtual {v3, v9, v10}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 149
-    :cond_2b
+    :cond_2e
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v9
 
-    if-eqz v9, :cond_3e
+    if-eqz v9, :cond_42
 
     .line 150
-    const-string v9, "outputURL"
+    const-string/jumbo v9, "outputURL"
 
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
@@ -131,15 +131,15 @@
     invoke-virtual {v3, v9, v10}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 152
-    :cond_3e
+    :cond_42
     invoke-virtual {p3}, Landroid/content/Intent;->getScheme()Ljava/lang/String;
 
     move-result-object v9
 
-    if-eqz v9, :cond_4d
+    if-eqz v9, :cond_52
 
     .line 153
-    const-string v9, "outputURLScheme"
+    const-string/jumbo v9, "outputURLScheme"
 
     invoke-virtual {p3}, Landroid/content/Intent;->getScheme()Ljava/lang/String;
 
@@ -148,8 +148,8 @@
     invoke-virtual {v3, v9, v10}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 164
-    :cond_4d
-    :goto_4d
+    :cond_52
+    :goto_52
     invoke-virtual {p2}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
     move-result-object v9
@@ -158,13 +158,13 @@
 
     move-result-object v0
 
-    :cond_55
-    :goto_55
+    :cond_5a
+    :goto_5a
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v9
 
-    if-eqz v9, :cond_12d
+    if-eqz v9, :cond_141
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -182,7 +182,7 @@
     .local v5, "o":Ljava/lang/Object;
     instance-of v9, v5, Landroid/os/Bundle;
 
-    if-eqz v9, :cond_104
+    if-eqz v9, :cond_115
 
     move-object v9, v5
 
@@ -198,12 +198,12 @@
     move-result-object v1
 
     .local v1, "i$":Ljava/util/Iterator;
-    :goto_74
+    :goto_79
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v9
 
-    if-eqz v9, :cond_55
+    if-eqz v9, :cond_5a
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -227,29 +227,29 @@
 
     .line 169
     .local v4, "logValue":Ljava/lang/String;
-    const-string v9, "referer_app_link"
+    const-string/jumbo v9, "referer_app_link"
 
     invoke-virtual {v2, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v9
 
-    if-eqz v9, :cond_e8
+    if-eqz v9, :cond_f8
 
     .line 170
-    const-string v9, "url"
+    const-string/jumbo v9, "url"
 
     invoke-virtual {v7, v9}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v9
 
-    if-eqz v9, :cond_cc
+    if-eqz v9, :cond_d8
 
     .line 171
-    const-string v9, "refererURL"
+    const-string/jumbo v9, "refererURL"
 
     invoke-virtual {v3, v9, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_74
+    goto :goto_79
 
     .line 155
     .end local v1    # "i$":Ljava/util/Iterator;
@@ -257,24 +257,24 @@
     .end local v4    # "logValue":Ljava/lang/String;
     .end local v5    # "o":Ljava/lang/Object;
     .end local v7    # "subKey":Ljava/lang/String;
-    :cond_a1
-    const-string v9, "al_nav_in"
+    :cond_a9
+    const-string/jumbo v9, "al_nav_in"
 
     invoke-virtual {v9, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v9
 
-    if-eqz v9, :cond_4d
+    if-eqz v9, :cond_52
 
     .line 156
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v9
 
-    if-eqz v9, :cond_bc
+    if-eqz v9, :cond_c6
 
     .line 157
-    const-string v9, "inputURL"
+    const-string/jumbo v9, "inputURL"
 
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
@@ -287,15 +287,15 @@
     invoke-virtual {v3, v9, v10}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 159
-    :cond_bc
+    :cond_c6
     invoke-virtual {p3}, Landroid/content/Intent;->getScheme()Ljava/lang/String;
 
     move-result-object v9
 
-    if-eqz v9, :cond_4d
+    if-eqz v9, :cond_52
 
     .line 160
-    const-string v9, "inputURLScheme"
+    const-string/jumbo v9, "inputURLScheme"
 
     invoke-virtual {p3}, Landroid/content/Intent;->getScheme()Ljava/lang/String;
 
@@ -303,7 +303,7 @@
 
     invoke-virtual {v3, v9, v10}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_4d
+    goto/16 :goto_52
 
     .line 173
     .restart local v1    # "i$":Ljava/util/Iterator;
@@ -311,25 +311,8 @@
     .restart local v4    # "logValue":Ljava/lang/String;
     .restart local v5    # "o":Ljava/lang/Object;
     .restart local v7    # "subKey":Ljava/lang/String;
-    :cond_cc
-    const-string v9, "app_name"
-
-    invoke-virtual {v7, v9}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_da
-
-    .line 174
-    const-string v9, "refererAppName"
-
-    invoke-virtual {v3, v9, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_74
-
-    .line 176
-    :cond_da
-    const-string v9, "package"
+    :cond_d8
+    const-string/jumbo v9, "app_name"
 
     invoke-virtual {v7, v9}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
@@ -337,15 +320,32 @@
 
     if-eqz v9, :cond_e8
 
-    .line 177
-    const-string v9, "sourceApplication"
+    .line 174
+    const-string/jumbo v9, "refererAppName"
 
     invoke-virtual {v3, v9, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_74
+    goto :goto_79
+
+    .line 176
+    :cond_e8
+    const-string/jumbo v9, "package"
+
+    invoke-virtual {v7, v9}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_f8
+
+    .line 177
+    const-string/jumbo v9, "sourceApplication"
+
+    invoke-virtual {v3, v9, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_79
 
     .line 181
-    :cond_e8
+    :cond_f8
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -354,7 +354,7 @@
 
     move-result-object v9
 
-    const-string v10, "/"
+    const-string/jumbo v10, "/"
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -370,26 +370,26 @@
 
     invoke-virtual {v3, v9, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_74
+    goto/16 :goto_79
 
     .line 184
     .end local v1    # "i$":Ljava/util/Iterator;
     .end local v4    # "logValue":Ljava/lang/String;
     .end local v7    # "subKey":Ljava/lang/String;
-    :cond_104
+    :cond_115
     invoke-static {v5}, Lbolts/MeasurementEvent;->objectToJSONString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v4
 
     .line 185
     .restart local v4    # "logValue":Ljava/lang/String;
-    const-string v9, "target_url"
+    const-string/jumbo v9, "target_url"
 
     invoke-virtual {v2, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v9
 
-    if-eqz v9, :cond_128
+    if-eqz v9, :cond_13c
 
     .line 186
     invoke-static {v4}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -398,7 +398,7 @@
 
     .line 187
     .local v8, "targetURI":Landroid/net/Uri;
-    const-string v9, "targetURL"
+    const-string/jumbo v9, "targetURL"
 
     invoke-virtual {v8}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
@@ -407,7 +407,7 @@
     invoke-virtual {v3, v9, v10}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 188
-    const-string v9, "targetURLHost"
+    const-string/jumbo v9, "targetURLHost"
 
     invoke-virtual {v8}, Landroid/net/Uri;->getHost()Ljava/lang/String;
 
@@ -415,20 +415,20 @@
 
     invoke-virtual {v3, v9, v10}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_55
+    goto/16 :goto_5a
 
     .line 191
     .end local v8    # "targetURI":Landroid/net/Uri;
-    :cond_128
+    :cond_13c
     invoke-virtual {v3, v2, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_55
+    goto/16 :goto_5a
 
     .line 194
     .end local v2    # "key":Ljava/lang/String;
     .end local v4    # "logValue":Ljava/lang/String;
     .end local v5    # "o":Ljava/lang/Object;
-    :cond_12d
+    :cond_141
     return-object v3
 .end method
 
@@ -534,7 +534,7 @@
     .line 119
     iget-object v6, p0, Lbolts/MeasurementEvent;->name:Ljava/lang/String;
 
-    if-nez v6, :cond_11
+    if-nez v6, :cond_12
 
     .line 120
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -545,14 +545,14 @@
 
     move-result-object v6
 
-    const-string v7, "Event name is required"
+    const-string/jumbo v7, "Event name is required"
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 123
-    :cond_11
-    :try_start_11
-    const-string v6, "android.support.v4.content.LocalBroadcastManager"
+    :cond_12
+    :try_start_12
+    const-string/jumbo v6, "android.support.v4.content.LocalBroadcastManager"
 
     invoke-static {v6}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -560,7 +560,7 @@
 
     .line 124
     .local v0, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    const-string v6, "getInstance"
+    const-string/jumbo v6, "getInstance"
 
     const/4 v7, 0x1
 
@@ -578,7 +578,7 @@
 
     .line 125
     .local v4, "methodGetInstance":Ljava/lang/reflect/Method;
-    const-string v6, "sendBroadcast"
+    const-string/jumbo v6, "sendBroadcast"
 
     const/4 v7, 0x1
 
@@ -616,20 +616,20 @@
     .local v3, "localBroadcastManager":Ljava/lang/Object;
     new-instance v2, Landroid/content/Intent;
 
-    const-string v6, "com.parse.bolts.measurement_event"
+    const-string/jumbo v6, "com.parse.bolts.measurement_event"
 
     invoke-direct {v2, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 128
     .local v2, "event":Landroid/content/Intent;
-    const-string v6, "event_name"
+    const-string/jumbo v6, "event_name"
 
     iget-object v7, p0, Lbolts/MeasurementEvent;->name:Ljava/lang/String;
 
     invoke-virtual {v2, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 129
-    const-string v6, "event_args"
+    const-string/jumbo v6, "event_args"
 
     iget-object v7, p0, Lbolts/MeasurementEvent;->args:Landroid/os/Bundle;
 
@@ -645,8 +645,8 @@
     aput-object v2, v6, v7
 
     invoke-virtual {v5, v3, v6}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_5e
-    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_5e} :catch_5f
+    :try_end_65
+    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_65} :catch_66
 
     .line 135
     .end local v0    # "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
@@ -654,11 +654,11 @@
     .end local v3    # "localBroadcastManager":Ljava/lang/Object;
     .end local v4    # "methodGetInstance":Ljava/lang/reflect/Method;
     .end local v5    # "methodSendBroadcast":Ljava/lang/reflect/Method;
-    :goto_5e
+    :goto_65
     return-void
 
     .line 131
-    :catch_5f
+    :catch_66
     move-exception v1
 
     .line 132
@@ -671,11 +671,11 @@
 
     move-result-object v6
 
-    const-string v7, "LocalBroadcastManager in android support library is required to raise bolts event."
+    const-string/jumbo v7, "LocalBroadcastManager in android support library is required to raise bolts event."
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_5e
+    goto :goto_65
 .end method
 
 .method static sendBroadcastEvent(Landroid/content/Context;Ljava/lang/String;Landroid/content/Intent;Ljava/util/Map;)V
@@ -725,7 +725,7 @@
     .line 99
     .end local v0    # "applinkData":Landroid/os/Bundle;
     :cond_11
-    if-eqz p3, :cond_66
+    if-eqz p3, :cond_67
 
     .line 100
     invoke-interface {p3}, Ljava/util/Map;->keySet()Ljava/util/Set;
@@ -742,7 +742,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_66
+    if-eqz v9, :cond_67
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -773,10 +773,10 @@
 
     .line 85
     .local v4, "intentUri":Landroid/net/Uri;
-    if-eqz v4, :cond_40
+    if-eqz v4, :cond_41
 
     .line 86
-    const-string v9, "intentData"
+    const-string/jumbo v9, "intentData"
 
     invoke-virtual {v4}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
@@ -785,7 +785,7 @@
     invoke-virtual {v6, v9, v10}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 88
-    :cond_40
+    :cond_41
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v3
@@ -804,7 +804,7 @@
     move-result-object v2
 
     .restart local v2    # "i$":Ljava/util/Iterator;
-    :goto_4e
+    :goto_4f
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v9
@@ -833,7 +833,7 @@
     .local v7, "logValue":Ljava/lang/String;
     invoke-virtual {v6, v5, v7}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_4e
+    goto :goto_4f
 
     .line 104
     .end local v0    # "applinkData":Landroid/os/Bundle;
@@ -843,7 +843,7 @@
     .end local v5    # "key":Ljava/lang/String;
     .end local v7    # "logValue":Ljava/lang/String;
     .end local v8    # "o":Ljava/lang/Object;
-    :cond_66
+    :cond_67
     new-instance v1, Lbolts/MeasurementEvent;
 
     invoke-direct {v1, p0, p1, v6}, Lbolts/MeasurementEvent;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V

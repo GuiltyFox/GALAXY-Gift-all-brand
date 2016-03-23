@@ -124,12 +124,12 @@
 
     sget-object v3, Lcom/google/zxing/client/android/camera/FrontLightMode;->AUTO:Lcom/google/zxing/client/android/camera/FrontLightMode;
 
-    if-ne v2, v3, :cond_2b
+    if-ne v2, v3, :cond_2c
 
     .line 52
     iget-object v2, p0, Lcom/google/zxing/client/android/AmbientLightManager;->context:Landroid/content/Context;
 
-    const-string v3, "sensor"
+    const-string/jumbo v3, "sensor"
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -150,7 +150,7 @@
     .line 54
     iget-object v2, p0, Lcom/google/zxing/client/android/AmbientLightManager;->lightSensor:Landroid/hardware/Sensor;
 
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_2c
 
     .line 55
     iget-object v2, p0, Lcom/google/zxing/client/android/AmbientLightManager;->lightSensor:Landroid/hardware/Sensor;
@@ -161,7 +161,7 @@
 
     .line 58
     .end local v0    # "sensorManager":Landroid/hardware/SensorManager;
-    :cond_2b
+    :cond_2c
     return-void
 .end method
 
@@ -174,12 +174,12 @@
     .line 61
     iget-object v1, p0, Lcom/google/zxing/client/android/AmbientLightManager;->lightSensor:Landroid/hardware/Sensor;
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_17
 
     .line 62
     iget-object v1, p0, Lcom/google/zxing/client/android/AmbientLightManager;->context:Landroid/content/Context;
 
-    const-string v2, "sensor"
+    const-string/jumbo v2, "sensor"
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -199,6 +199,6 @@
 
     .line 67
     .end local v0    # "sensorManager":Landroid/hardware/SensorManager;
-    :cond_16
+    :cond_17
     return-void
 .end method

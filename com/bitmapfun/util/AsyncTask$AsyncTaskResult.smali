@@ -39,7 +39,6 @@
 .method varargs constructor <init>(Lcom/bitmapfun/util/AsyncTask;[Ljava/lang/Object;)V
     .registers 3
     .param p1, "task"    # Lcom/bitmapfun/util/AsyncTask;
-    .param p2, "data"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -49,16 +48,17 @@
     .end annotation
 
     .prologue
-    .line 689
-    .local p0, "this":Lcom/bitmapfun/util/AsyncTask$AsyncTaskResult;, "Lcom/bitmapfun/util/AsyncTask<TParams;TProgress;TResult;>.AsyncTaskResult<TData;>;"
+    .line 688
+    .local p0, "this":Lcom/bitmapfun/util/AsyncTask$AsyncTaskResult;, "Lcom/bitmapfun/util/AsyncTask$AsyncTaskResult<TData;>;"
+    .local p2, "data":[Ljava/lang/Object;, "[TData;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 690
+    .line 689
     iput-object p1, p0, Lcom/bitmapfun/util/AsyncTask$AsyncTaskResult;->mTask:Lcom/bitmapfun/util/AsyncTask;
 
-    .line 691
+    .line 690
     iput-object p2, p0, Lcom/bitmapfun/util/AsyncTask$AsyncTaskResult;->mData:[Ljava/lang/Object;
 
-    .line 692
+    .line 691
     return-void
 .end method

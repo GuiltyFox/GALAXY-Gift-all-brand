@@ -15,99 +15,163 @@
 
 
 # static fields
-.field public static final alpha:I = 0x7f040000
+.field public static final abc_fade_in:I = 0x7f050000
 
-.field public static final badge_zoom_in:I = 0x7f040001
+.field public static final abc_fade_out:I = 0x7f050001
 
-.field public static final badge_zoom_out:I = 0x7f040002
+.field public static final abc_grow_fade_in_from_bottom:I = 0x7f050002
 
-.field public static final bz_animation_enter:I = 0x7f040003
+.field public static final abc_popup_enter:I = 0x7f050003
 
-.field public static final bz_animation_leave:I = 0x7f040004
+.field public static final abc_popup_exit:I = 0x7f050004
 
-.field public static final bz_like_review_step_1:I = 0x7f040005
+.field public static final abc_shrink_fade_out_from_bottom:I = 0x7f050005
 
-.field public static final bz_like_review_step_2:I = 0x7f040006
+.field public static final abc_slide_in_bottom:I = 0x7f050006
 
-.field public static final bz_radius_points:I = 0x7f040007
+.field public static final abc_slide_in_top:I = 0x7f050007
 
-.field public static final from_middle:I = 0x7f040008
+.field public static final abc_slide_out_bottom:I = 0x7f050008
 
-.field public static final like_click:I = 0x7f040009
+.field public static final abc_slide_out_top:I = 0x7f050009
 
-.field public static final like_click_step_1:I = 0x7f04000a
+.field public static final alpha:I = 0x7f05000a
 
-.field public static final like_click_step_2:I = 0x7f04000b
+.field public static final anim_scale_in:I = 0x7f05000b
 
-.field public static final like_click_step_3:I = 0x7f04000c
+.field public static final anim_scale_out:I = 0x7f05000c
 
-.field public static final like_gplus_step_1:I = 0x7f04000d
+.field public static final animation_enter_from_right:I = 0x7f05000d
 
-.field public static final like_gplus_step_2:I = 0x7f04000e
+.field public static final animation_leave_right:I = 0x7f05000e
 
-.field public static final like_premium_step_1:I = 0x7f04000f
+.field public static final animation_slide_in_from_bottom:I = 0x7f05000f
 
-.field public static final like_premium_step_2:I = 0x7f040010
+.field public static final animation_slide_out_to_bottom:I = 0x7f050010
 
-.field public static final like_review_step_1:I = 0x7f040011
+.field public static final animation_zoom_in:I = 0x7f050011
 
-.field public static final like_review_step_2:I = 0x7f040012
+.field public static final animation_zoom_out:I = 0x7f050012
 
-.field public static final point_0:I = 0x7f040013
+.field public static final badge_zoom_in:I = 0x7f050013
 
-.field public static final point_0_gift:I = 0x7f040014
+.field public static final badge_zoom_out:I = 0x7f050014
 
-.field public static final point_1:I = 0x7f040015
+.field public static final blink:I = 0x7f050015
 
-.field public static final point_1_gift:I = 0x7f040016
+.field public static final bz_animation_enter:I = 0x7f050016
 
-.field public static final point_2:I = 0x7f040017
+.field public static final bz_animation_leave:I = 0x7f050017
 
-.field public static final point_2_gift:I = 0x7f040018
+.field public static final bz_radius_points:I = 0x7f050018
 
-.field public static final point_3:I = 0x7f040019
+.field public static final default_dialog_in:I = 0x7f050019
 
-.field public static final point_3_gift:I = 0x7f04001a
+.field public static final default_dialog_out:I = 0x7f05001a
 
-.field public static final point_4:I = 0x7f04001b
+.field public static final design_bottom_sheet_slide_in:I = 0x7f05001b
 
-.field public static final point_4_gift:I = 0x7f04001c
+.field public static final design_bottom_sheet_slide_out:I = 0x7f05001c
 
-.field public static final point_5:I = 0x7f04001d
+.field public static final design_fab_in:I = 0x7f05001d
 
-.field public static final point_5_gift:I = 0x7f04001e
+.field public static final design_fab_out:I = 0x7f05001e
 
-.field public static final point_6:I = 0x7f04001f
+.field public static final design_snackbar_in:I = 0x7f05001f
 
-.field public static final point_6_gift:I = 0x7f040020
+.field public static final design_snackbar_out:I = 0x7f050020
 
-.field public static final point_7:I = 0x7f040021
+.field public static final fade:I = 0x7f050021
 
-.field public static final point_7_gift:I = 0x7f040022
+.field public static final float_anim:I = 0x7f050022
 
-.field public static final point_8:I = 0x7f040023
+.field public static final from_middle:I = 0x7f050023
 
-.field public static final point_8_gift:I = 0x7f040024
+.field public static final grow_from_topleft_to_bottomright:I = 0x7f050024
 
-.field public static final point_9:I = 0x7f040025
+.field public static final point_0:I = 0x7f050025
 
-.field public static final point_9_gift:I = 0x7f040026
+.field public static final point_0_gift:I = 0x7f050026
 
-.field public static final shake_step_1:I = 0x7f040027
+.field public static final point_1:I = 0x7f050027
 
-.field public static final shake_step_2:I = 0x7f040028
+.field public static final point_1_gift:I = 0x7f050028
 
-.field public static final shake_step_3:I = 0x7f040029
+.field public static final point_2:I = 0x7f050029
 
-.field public static final slide_in_from_bottom:I = 0x7f04002a
+.field public static final point_2_gift:I = 0x7f05002a
 
-.field public static final slide_in_from_top:I = 0x7f04002b
+.field public static final point_3:I = 0x7f05002b
 
-.field public static final slide_out_to_bottom:I = 0x7f04002c
+.field public static final point_3_gift:I = 0x7f05002c
 
-.field public static final slide_out_to_top:I = 0x7f04002d
+.field public static final point_4:I = 0x7f05002d
 
-.field public static final to_middle:I = 0x7f04002e
+.field public static final point_4_gift:I = 0x7f05002e
+
+.field public static final point_5:I = 0x7f05002f
+
+.field public static final point_5_gift:I = 0x7f050030
+
+.field public static final point_6:I = 0x7f050031
+
+.field public static final point_6_gift:I = 0x7f050032
+
+.field public static final point_7:I = 0x7f050033
+
+.field public static final point_7_gift:I = 0x7f050034
+
+.field public static final point_8:I = 0x7f050035
+
+.field public static final point_8_gift:I = 0x7f050036
+
+.field public static final point_9:I = 0x7f050037
+
+.field public static final point_9_gift:I = 0x7f050038
+
+.field public static final rotate_down_to_right:I = 0x7f050039
+
+.field public static final rotate_left:I = 0x7f05003a
+
+.field public static final rotate_left_to_right:I = 0x7f05003b
+
+.field public static final rotate_right:I = 0x7f05003c
+
+.field public static final rotate_right_to_down:I = 0x7f05003d
+
+.field public static final shrink_from_bottomright_to_topleft:I = 0x7f05003e
+
+.field public static final slide_enter_from_right:I = 0x7f05003f
+
+.field public static final slide_in_from_bottom:I = 0x7f050040
+
+.field public static final slide_in_from_top:I = 0x7f050041
+
+.field public static final slide_leave_right:I = 0x7f050042
+
+.field public static final slide_out_down:I = 0x7f050043
+
+.field public static final slide_out_to_bottom:I = 0x7f050044
+
+.field public static final slide_out_to_top:I = 0x7f050045
+
+.field public static final slide_toleft_dialog:I = 0x7f050046
+
+.field public static final slide_toright_down:I = 0x7f050047
+
+.field public static final slide_up_dialog:I = 0x7f050048
+
+.field public static final to_middle:I = 0x7f050049
+
+.field public static final translate:I = 0x7f05004a
+
+.field public static final view_hide:I = 0x7f05004b
+
+.field public static final view_show:I = 0x7f05004c
+
+.field public static final zoom_in:I = 0x7f05004d
+
+.field public static final zoom_out:I = 0x7f05004e
 
 
 # direct methods

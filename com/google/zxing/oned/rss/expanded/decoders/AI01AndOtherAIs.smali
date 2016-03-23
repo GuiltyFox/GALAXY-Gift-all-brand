@@ -13,10 +13,10 @@
     .param p1, "information"    # Lcom/google/zxing/common/BitArray;
 
     .prologue
-    .line 41
+    .line 42
     invoke-direct {p0, p1}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01decoder;-><init>(Lcom/google/zxing/common/BitArray;)V
 
-    .line 42
+    .line 43
     return-void
 .end method
 
@@ -26,30 +26,31 @@
     .registers 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Lcom/google/zxing/NotFoundException;
+            Lcom/google/zxing/NotFoundException;,
+            Lcom/google/zxing/FormatException;
         }
     .end annotation
 
     .prologue
     const/4 v4, 0x4
 
-    .line 46
+    .line 47
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 48
+    .line 49
     .local v0, "buff":Ljava/lang/StringBuilder;
-    const-string v3, "(01)"
+    const-string/jumbo v3, "(01)"
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 49
+    .line 50
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v2
 
-    .line 50
+    .line 51
     .local v2, "initialGtinPosition":I
     invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01AndOtherAIs;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
 
@@ -59,16 +60,16 @@
 
     move-result v1
 
-    .line 51
+    .line 52
     .local v1, "firstGtinDigit":I
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 53
+    .line 54
     const/16 v3, 0x8
 
     invoke-virtual {p0, v0, v3, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01AndOtherAIs;->encodeCompressedGtinWithoutAI(Ljava/lang/StringBuilder;II)V
 
-    .line 55
+    .line 56
     invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01AndOtherAIs;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
 
     move-result-object v3

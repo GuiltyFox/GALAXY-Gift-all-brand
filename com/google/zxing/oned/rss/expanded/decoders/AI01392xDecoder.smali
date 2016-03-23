@@ -15,10 +15,10 @@
     .param p1, "information"    # Lcom/google/zxing/common/BitArray;
 
     .prologue
-    .line 41
+    .line 42
     invoke-direct {p0, p1}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01decoder;-><init>(Lcom/google/zxing/common/BitArray;)V
 
-    .line 42
+    .line 43
     return-void
 .end method
 
@@ -28,14 +28,15 @@
     .registers 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Lcom/google/zxing/NotFoundException;
+            Lcom/google/zxing/NotFoundException;,
+            Lcom/google/zxing/FormatException;
         }
     .end annotation
 
     .prologue
     const/16 v5, 0x30
 
-    .line 46
+    .line 47
     invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01392xDecoder;->getInformation()Lcom/google/zxing/common/BitArray;
 
     move-result-object v3
@@ -46,26 +47,26 @@
 
     if-ge v3, v5, :cond_11
 
-    .line 47
+    .line 48
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
     move-result-object v3
 
     throw v3
 
-    .line 50
+    .line 51
     :cond_11
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 52
+    .line 53
     .local v0, "buf":Ljava/lang/StringBuilder;
     const/16 v3, 0x8
 
     invoke-virtual {p0, v0, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01392xDecoder;->encodeCompressedGtin(Ljava/lang/StringBuilder;I)V
 
-    .line 54
+    .line 56
     invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01392xDecoder;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
 
     move-result-object v3
@@ -76,21 +77,21 @@
 
     move-result v2
 
-    .line 56
+    .line 57
     .local v2, "lastAIdigit":I
-    const-string v3, "(392"
+    const-string/jumbo v3, "(392"
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 57
+    .line 58
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 58
+    .line 59
     const/16 v3, 0x29
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 60
+    .line 62
     invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01392xDecoder;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
 
     move-result-object v3
@@ -103,7 +104,7 @@
 
     move-result-object v1
 
-    .line 62
+    .line 63
     .local v1, "decodedInformation":Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
     invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;->getNewString()Ljava/lang/String;
 
@@ -111,7 +112,7 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 64
+    .line 65
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3

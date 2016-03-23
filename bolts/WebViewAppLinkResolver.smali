@@ -186,7 +186,7 @@
 
     .line 241
     .local v18, "targets":Ljava/util/List;, "Ljava/util/List<Lbolts/AppLink$Target;>;"
-    const-string v26, "android"
+    const-string/jumbo v26, "android"
 
     move-object/from16 v0, p0
 
@@ -200,7 +200,7 @@
 
     .line 243
     .local v14, "platformMapList":Ljava/util/List;, "Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;"
-    if-nez v14, :cond_17
+    if-nez v14, :cond_18
 
     .line 244
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
@@ -208,18 +208,18 @@
     move-result-object v14
 
     .line 246
-    :cond_17
+    :cond_18
     invoke-interface {v14}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v9
 
     .local v9, "i$":Ljava/util/Iterator;
-    :cond_1b
+    :cond_1c
     invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v26
 
-    if-eqz v26, :cond_f4
+    if-eqz v26, :cond_fd
 
     invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -229,7 +229,7 @@
 
     .line 249
     .local v13, "platformMap":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
-    const-string v26, "url"
+    const-string/jumbo v26, "url"
 
     move-object/from16 v0, v26
 
@@ -239,7 +239,7 @@
 
     .line 250
     .local v21, "urls":Ljava/util/List;, "Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;"
-    const-string v26, "package"
+    const-string/jumbo v26, "package"
 
     move-object/from16 v0, v26
 
@@ -249,7 +249,7 @@
 
     .line 251
     .local v12, "packages":Ljava/util/List;, "Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;"
-    const-string v26, "class"
+    const-string/jumbo v26, "class"
 
     move-object/from16 v0, v26
 
@@ -259,7 +259,7 @@
 
     .line 252
     .local v7, "classes":Ljava/util/List;, "Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;"
-    const-string v26, "app_name"
+    const-string/jumbo v26, "app_name"
 
     move-object/from16 v0, v26
 
@@ -302,8 +302,8 @@
     const/4 v8, 0x0
 
     .local v8, "i":I
-    :goto_64
-    if-ge v8, v10, :cond_1b
+    :goto_69
+    if-ge v8, v10, :cond_1c
 
     .line 257
     invoke-interface/range {v21 .. v21}, Ljava/util/List;->size()I
@@ -312,7 +312,7 @@
 
     move/from16 v0, v26
 
-    if-le v0, v8, :cond_e8
+    if-le v0, v8, :cond_f1
 
     move-object/from16 v0, v21
 
@@ -322,13 +322,13 @@
 
     check-cast v26, Ljava/util/Map;
 
-    const-string v27, "value"
+    const-string/jumbo v27, "value"
 
     invoke-interface/range {v26 .. v27}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v26
 
-    :goto_7c
+    :goto_82
     check-cast v26, Ljava/lang/String;
 
     move-object/from16 v20, v26
@@ -349,7 +349,7 @@
 
     move/from16 v0, v26
 
-    if-le v0, v8, :cond_eb
+    if-le v0, v8, :cond_f4
 
     invoke-interface {v12, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -357,13 +357,13 @@
 
     check-cast v26, Ljava/util/Map;
 
-    const-string v27, "value"
+    const-string/jumbo v27, "value"
 
     invoke-interface/range {v26 .. v27}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v26
 
-    :goto_9a
+    :goto_a1
     check-cast v26, Ljava/lang/String;
 
     move-object/from16 v11, v26
@@ -378,7 +378,7 @@
 
     move/from16 v0, v26
 
-    if-le v0, v8, :cond_ee
+    if-le v0, v8, :cond_f7
 
     invoke-interface {v7, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -386,13 +386,13 @@
 
     check-cast v26, Ljava/util/Map;
 
-    const-string v27, "value"
+    const-string/jumbo v27, "value"
 
     invoke-interface/range {v26 .. v27}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v26
 
-    :goto_b4
+    :goto_bc
     check-cast v26, Ljava/lang/String;
 
     move-object/from16 v6, v26
@@ -407,7 +407,7 @@
 
     move/from16 v0, v26
 
-    if-le v0, v8, :cond_f1
+    if-le v0, v8, :cond_fa
 
     invoke-interface {v5, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -415,13 +415,13 @@
 
     check-cast v26, Ljava/util/Map;
 
-    const-string v27, "value"
+    const-string/jumbo v27, "value"
 
     invoke-interface/range {v26 .. v27}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v26
 
-    :goto_ce
+    :goto_d7
     check-cast v26, Ljava/lang/String;
 
     move-object/from16 v4, v26
@@ -449,7 +449,7 @@
     .line 256
     add-int/lit8 v8, v8, 0x1
 
-    goto/16 :goto_64
+    goto/16 :goto_69
 
     .line 257
     .end local v4    # "appName":Ljava/lang/String;
@@ -458,32 +458,32 @@
     .end local v17    # "target":Lbolts/AppLink$Target;
     .end local v19    # "url":Landroid/net/Uri;
     .end local v20    # "urlString":Ljava/lang/String;
-    :cond_e8
+    :cond_f1
     const/16 v26, 0x0
 
-    goto :goto_7c
+    goto :goto_82
 
     .line 260
     .restart local v19    # "url":Landroid/net/Uri;
     .restart local v20    # "urlString":Ljava/lang/String;
-    :cond_eb
+    :cond_f4
     const/16 v26, 0x0
 
-    goto :goto_9a
+    goto :goto_a1
 
     .line 262
     .restart local v11    # "packageName":Ljava/lang/String;
-    :cond_ee
+    :cond_f7
     const/16 v26, 0x0
 
-    goto :goto_b4
+    goto :goto_bc
 
     .line 264
     .restart local v6    # "className":Ljava/lang/String;
-    :cond_f1
+    :cond_fa
     const/16 v26, 0x0
 
-    goto :goto_ce
+    goto :goto_d7
 
     .line 271
     .end local v5    # "appNames":Ljava/util/List;, "Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;"
@@ -497,12 +497,12 @@
     .end local v19    # "url":Landroid/net/Uri;
     .end local v20    # "urlString":Ljava/lang/String;
     .end local v21    # "urls":Ljava/util/List;, "Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;"
-    :cond_f4
+    :cond_fd
     move-object/from16 v24, p1
 
     .line 272
     .local v24, "webUrl":Landroid/net/Uri;
-    const-string v26, "web"
+    const-string/jumbo v26, "web"
 
     move-object/from16 v0, p0
 
@@ -516,13 +516,13 @@
 
     .line 273
     .local v23, "webMapList":Ljava/util/List;, "Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;"
-    if-eqz v23, :cond_196
+    if-eqz v23, :cond_1a7
 
     invoke-interface/range {v23 .. v23}, Ljava/util/List;->size()I
 
     move-result v26
 
-    if-lez v26, :cond_196
+    if-lez v26, :cond_1a7
 
     .line 274
     const/16 v26, 0x0
@@ -539,7 +539,7 @@
 
     .line 275
     .local v22, "webMap":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
-    const-string v26, "url"
+    const-string/jumbo v26, "url"
 
     move-object/from16 v0, v22
 
@@ -553,7 +553,7 @@
 
     .line 276
     .restart local v21    # "urls":Ljava/util/List;, "Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;"
-    const-string v26, "should_fallback"
+    const-string/jumbo v26, "should_fallback"
 
     move-object/from16 v0, v22
 
@@ -567,13 +567,13 @@
 
     .line 278
     .local v16, "shouldFallbacks":Ljava/util/List;, "Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;"
-    if-eqz v16, :cond_174
+    if-eqz v16, :cond_184
 
     invoke-interface/range {v16 .. v16}, Ljava/util/List;->size()I
 
     move-result v26
 
-    if-lez v26, :cond_174
+    if-lez v26, :cond_184
 
     .line 279
     const/16 v26, 0x0
@@ -588,7 +588,7 @@
 
     check-cast v26, Ljava/util/Map;
 
-    const-string v27, "value"
+    const-string/jumbo v27, "value"
 
     invoke-interface/range {v26 .. v27}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -608,19 +608,19 @@
 
     const/16 v27, 0x0
 
-    const-string v28, "no"
+    const-string/jumbo v28, "no"
 
     aput-object v28, v26, v27
 
     const/16 v27, 0x1
 
-    const-string v28, "false"
+    const-string/jumbo v28, "false"
 
     aput-object v28, v26, v27
 
     const/16 v27, 0x2
 
-    const-string v28, "0"
+    const-string/jumbo v28, "0"
 
     aput-object v28, v26, v27
 
@@ -636,23 +636,23 @@
 
     move-result v26
 
-    if-eqz v26, :cond_174
+    if-eqz v26, :cond_184
 
     .line 281
     const/16 v24, 0x0
 
     .line 284
     .end local v15    # "shouldFallbackString":Ljava/lang/String;
-    :cond_174
-    if-eqz v24, :cond_196
+    :cond_184
+    if-eqz v24, :cond_1a7
 
-    if-eqz v21, :cond_196
+    if-eqz v21, :cond_1a7
 
     invoke-interface/range {v21 .. v21}, Ljava/util/List;->size()I
 
     move-result v26
 
-    if-lez v26, :cond_196
+    if-lez v26, :cond_1a7
 
     .line 285
     const/16 v26, 0x0
@@ -667,7 +667,7 @@
 
     check-cast v26, Ljava/util/Map;
 
-    const-string v27, "value"
+    const-string/jumbo v27, "value"
 
     invoke-interface/range {v26 .. v27}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -686,7 +686,7 @@
     .end local v21    # "urls":Ljava/util/List;, "Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;"
     .end local v22    # "webMap":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
     .end local v25    # "webUrlString":Ljava/lang/String;
-    :cond_196
+    :cond_1a7
     new-instance v26, Lbolts/AppLink;
 
     move-object/from16 v0, v26
@@ -742,7 +742,7 @@
 
     move-result v9
 
-    if-ge v3, v9, :cond_8e
+    if-ge v3, v9, :cond_96
 
     .line 196
     invoke-virtual {p0, v3}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
@@ -751,7 +751,7 @@
 
     .line 197
     .local v8, "tag":Lorg/json/JSONObject;
-    const-string v9, "property"
+    const-string/jumbo v9, "property"
 
     invoke-virtual {v8, v9}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -759,7 +759,7 @@
 
     .line 198
     .local v5, "name":Ljava/lang/String;
-    const-string v9, ":"
+    const-string/jumbo v9, ":"
 
     invoke-virtual {v5, v9}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
@@ -771,23 +771,23 @@
 
     aget-object v9, v6, v9
 
-    const-string v11, "al"
+    const-string/jumbo v11, "al"
 
     invoke-virtual {v9, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v9
 
-    if-nez v9, :cond_2b
+    if-nez v9, :cond_2e
 
     .line 195
-    :cond_28
-    :goto_28
+    :cond_2b
+    :goto_2b
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_7
 
     .line 202
-    :cond_2b
+    :cond_2e
     move-object v7, v0
 
     .line 203
@@ -795,10 +795,10 @@
     const/4 v4, 0x1
 
     .local v4, "j":I
-    :goto_2d
+    :goto_30
     array-length v9, v6
 
-    if-ge v4, v9, :cond_6c
+    if-ge v4, v9, :cond_6f
 
     .line 205
     aget-object v9, v6, v4
@@ -811,7 +811,7 @@
 
     .line 207
     .local v2, "children":Ljava/util/List;, "Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;"
-    if-nez v2, :cond_44
+    if-nez v2, :cond_47
 
     .line 208
     new-instance v2, Ljava/util/ArrayList;
@@ -826,12 +826,12 @@
     invoke-interface {v7, v9, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 211
-    :cond_44
+    :cond_47
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v9
 
-    if-lez v9, :cond_6a
+    if-lez v9, :cond_6d
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
@@ -849,17 +849,17 @@
 
     .line 212
     .local v1, "child":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
-    :goto_57
-    if-eqz v1, :cond_5e
+    :goto_5a
+    if-eqz v1, :cond_61
 
     array-length v9, v6
 
     add-int/lit8 v9, v9, -0x1
 
-    if-ne v4, v9, :cond_66
+    if-ne v4, v9, :cond_69
 
     .line 213
-    :cond_5e
+    :cond_61
     new-instance v1, Ljava/util/HashMap;
 
     .end local v1    # "child":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
@@ -870,53 +870,53 @@
     invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 216
-    :cond_66
+    :cond_69
     move-object v7, v1
 
     .line 203
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_2d
+    goto :goto_30
 
     .end local v1    # "child":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
-    :cond_6a
+    :cond_6d
     move-object v1, v10
 
     .line 211
-    goto :goto_57
+    goto :goto_5a
 
     .line 218
     .end local v2    # "children":Ljava/util/List;, "Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;"
-    :cond_6c
-    const-string v9, "content"
+    :cond_6f
+    const-string/jumbo v9, "content"
 
     invoke-virtual {v8, v9}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v9
 
-    if-eqz v9, :cond_28
+    if-eqz v9, :cond_2b
 
     .line 219
-    const-string v9, "content"
+    const-string/jumbo v9, "content"
 
     invoke-virtual {v8, v9}, Lorg/json/JSONObject;->isNull(Ljava/lang/String;)Z
 
     move-result v9
 
-    if-eqz v9, :cond_82
+    if-eqz v9, :cond_88
 
     .line 220
-    const-string v9, "value"
+    const-string/jumbo v9, "value"
 
     invoke-interface {v7, v9, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_28
+    goto :goto_2b
 
     .line 222
-    :cond_82
-    const-string v9, "value"
+    :cond_88
+    const-string/jumbo v9, "value"
 
-    const-string v11, "content"
+    const-string/jumbo v11, "content"
 
     invoke-virtual {v8, v11}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -924,7 +924,7 @@
 
     invoke-interface {v7, v9, v11}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_28
+    goto :goto_2b
 
     .line 226
     .end local v4    # "j":I
@@ -932,7 +932,7 @@
     .end local v6    # "nameComponents":[Ljava/lang/String;
     .end local v7    # "root":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
     .end local v8    # "tag":Lorg/json/JSONObject;
-    :cond_8e
+    :cond_96
     return-object v0
 .end method
 
@@ -1054,7 +1054,7 @@
 
     .line 323
     .local v2, "charset":Ljava/lang/String;
-    if-nez v2, :cond_62
+    if-nez v2, :cond_66
 
     .line 324
     invoke-virtual {p0}, Ljava/net/URLConnection;->getContentType()Ljava/lang/String;
@@ -1063,7 +1063,7 @@
 
     .line 325
     .local v7, "mimeType":Ljava/lang/String;
-    const-string v13, ";"
+    const-string/jumbo v13, ";"
 
     invoke-virtual {v7, v13}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
@@ -1080,8 +1080,8 @@
     const/4 v5, 0x0
 
     .local v5, "i$":I
-    :goto_44
-    if-ge v5, v6, :cond_5e
+    :goto_45
+    if-ge v5, v6, :cond_61
 
     aget-object v9, v0, v5
 
@@ -1092,16 +1092,16 @@
     move-result-object v9
 
     .line 328
-    const-string v13, "charset="
+    const-string/jumbo v13, "charset="
 
     invoke-virtual {v9, v13}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v13
 
-    if-eqz v13, :cond_6f
+    if-eqz v13, :cond_73
 
     .line 329
-    const-string v13, "charset="
+    const-string/jumbo v13, "charset="
 
     invoke-virtual {v13}, Ljava/lang/String;->length()I
 
@@ -1113,11 +1113,11 @@
 
     .line 333
     .end local v9    # "part":Ljava/lang/String;
-    :cond_5e
-    if-nez v2, :cond_62
+    :cond_61
+    if-nez v2, :cond_66
 
     .line 334
-    const-string v2, "UTF-8"
+    const-string/jumbo v2, "UTF-8"
 
     .line 337
     .end local v0    # "arr$":[Ljava/lang/String;
@@ -1125,7 +1125,7 @@
     .end local v6    # "len$":I
     .end local v7    # "mimeType":Ljava/lang/String;
     .end local v10    # "parts":[Ljava/lang/String;
-    :cond_62
+    :cond_66
     new-instance v13, Ljava/lang/String;
 
     invoke-virtual {v8}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
@@ -1133,8 +1133,8 @@
     move-result-object v14
 
     invoke-direct {v13, v14, v2}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
-    :try_end_6b
-    .catchall {:try_start_31 .. :try_end_6b} :catchall_21
+    :try_end_6f
+    .catchall {:try_start_31 .. :try_end_6f} :catchall_21
 
     .line 339
     invoke-virtual {v12}, Ljava/io/InputStream;->close()V
@@ -1148,10 +1148,10 @@
     .restart local v7    # "mimeType":Ljava/lang/String;
     .restart local v9    # "part":Ljava/lang/String;
     .restart local v10    # "parts":[Ljava/lang/String;
-    :cond_6f
+    :cond_73
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_44
+    goto :goto_45
 .end method
 
 .method private static tryCreateUrl(Ljava/lang/String;)Landroid/net/Uri;

@@ -18,7 +18,6 @@
 # virtual methods
 .method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .registers 3
-    .param p1, "x0"    # Lcom/google/zxing/Result;
 
     .prologue
     .line 28
@@ -45,29 +44,29 @@
 
     .line 33
     .local v0, "rawText":Ljava/lang/String;
-    const-string v4, "urlto:"
+    const-string/jumbo v4, "urlto:"
 
     invoke-virtual {v0, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v4
 
-    if-nez v4, :cond_17
+    if-nez v4, :cond_19
 
-    const-string v4, "URLTO:"
+    const-string/jumbo v4, "URLTO:"
 
     invoke-virtual {v0, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v4
 
-    if-nez v4, :cond_17
+    if-nez v4, :cond_19
 
     .line 42
-    :cond_16
-    :goto_16
+    :cond_18
+    :goto_18
     return-object v1
 
     .line 36
-    :cond_17
+    :cond_19
     const/16 v4, 0x3a
 
     invoke-virtual {v0, v4, v5}, Ljava/lang/String;->indexOf(II)I
@@ -76,14 +75,14 @@
 
     .line 37
     .local v2, "titleEnd":I
-    if-ltz v2, :cond_16
+    if-ltz v2, :cond_18
 
     .line 40
-    if-gt v2, v5, :cond_2e
+    if-gt v2, v5, :cond_30
 
     .line 41
     .local v1, "title":Ljava/lang/String;
-    :goto_21
+    :goto_23
     add-int/lit8 v4, v2, 0x1
 
     invoke-virtual {v0, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -98,15 +97,15 @@
 
     move-object v1, v4
 
-    goto :goto_16
+    goto :goto_18
 
     .line 40
     .end local v1    # "title":Ljava/lang/String;
     .end local v3    # "uri":Ljava/lang/String;
-    :cond_2e
+    :cond_30
     invoke-virtual {v0, v5, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
 
-    goto :goto_21
+    goto :goto_23
 .end method

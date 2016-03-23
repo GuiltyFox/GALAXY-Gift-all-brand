@@ -1,37 +1,46 @@
-.class final Lbolts/Task$2;
+.class Lbolts/Task$2;
 .super Ljava/lang/Object;
 .source "Task.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lbolts/Continuation;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lbolts/Task;->call(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)Lbolts/Task;
+    value = Lbolts/Task;->makeVoid()Lbolts/Task;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lbolts/Continuation",
+        "<TTResult;",
+        "Lbolts/Task",
+        "<",
+        "Ljava/lang/Void;",
+        ">;>;"
+    }
 .end annotation
 
 
 # instance fields
-.field final synthetic val$callable:Ljava/util/concurrent/Callable;
-
-.field final synthetic val$tcs:Lbolts/Task$TaskCompletionSource;
+.field final synthetic this$0:Lbolts/Task;
 
 
 # direct methods
-.method constructor <init>(Lbolts/Task$TaskCompletionSource;Ljava/util/concurrent/Callable;)V
-    .registers 3
+.method constructor <init>(Lbolts/Task;)V
+    .registers 2
 
     .prologue
-    .line 191
-    iput-object p1, p0, Lbolts/Task$2;->val$tcs:Lbolts/Task$TaskCompletionSource;
-
-    iput-object p2, p0, Lbolts/Task$2;->val$callable:Ljava/util/concurrent/Callable;
+    .line 193
+    .local p0, "this":Lbolts/Task$2;, "Lbolts/Task.2;"
+    iput-object p1, p0, Lbolts/Task$2;->this$0:Lbolts/Task;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,37 +49,90 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 4
+.method public then(Lbolts/Task;)Lbolts/Task;
+    .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbolts/Task",
+            "<TTResult;>;)",
+            "Lbolts/Task",
+            "<",
+            "Ljava/lang/Void;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .prologue
-    .line 195
-    :try_start_0
-    iget-object v1, p0, Lbolts/Task$2;->val$tcs:Lbolts/Task$TaskCompletionSource;
-
-    iget-object v2, p0, Lbolts/Task$2;->val$callable:Ljava/util/concurrent/Callable;
-
-    invoke-interface {v2}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lbolts/Task$TaskCompletionSource;->setResult(Ljava/lang/Object;)V
-    :try_end_b
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_b} :catch_c
-
-    .line 199
-    :goto_b
-    return-void
-
     .line 196
-    :catch_c
-    move-exception v0
+    .local p0, "this":Lbolts/Task$2;, "Lbolts/Task.2;"
+    .local p1, "task":Lbolts/Task;, "Lbolts/Task<TTResult;>;"
+    invoke-virtual {p1}, Lbolts/Task;->isCancelled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_b
 
     .line 197
-    .local v0, "e":Ljava/lang/Exception;
-    iget-object v1, p0, Lbolts/Task$2;->val$tcs:Lbolts/Task$TaskCompletionSource;
+    invoke-static {}, Lbolts/Task;->cancelled()Lbolts/Task;
 
-    invoke-virtual {v1, v0}, Lbolts/Task$TaskCompletionSource;->setError(Ljava/lang/Exception;)V
+    move-result-object v0
 
-    goto :goto_b
+    .line 202
+    :goto_a
+    return-object v0
+
+    .line 199
+    :cond_b
+    invoke-virtual {p1}, Lbolts/Task;->isFaulted()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1a
+
+    .line 200
+    invoke-virtual {p1}, Lbolts/Task;->getError()Ljava/lang/Exception;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lbolts/Task;->forError(Ljava/lang/Exception;)Lbolts/Task;
+
+    move-result-object v0
+
+    goto :goto_a
+
+    .line 202
+    :cond_1a
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Lbolts/Task;->forResult(Ljava/lang/Object;)Lbolts/Task;
+
+    move-result-object v0
+
+    goto :goto_a
+.end method
+
+.method public bridge synthetic then(Lbolts/Task;)Ljava/lang/Object;
+    .registers 3
+    .param p1, "x0"    # Lbolts/Task;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .prologue
+    .line 193
+    .local p0, "this":Lbolts/Task$2;, "Lbolts/Task.2;"
+    invoke-virtual {p0, p1}, Lbolts/Task$2;->then(Lbolts/Task;)Lbolts/Task;
+
+    move-result-object v0
+
+    return-object v0
 .end method

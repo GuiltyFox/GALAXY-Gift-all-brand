@@ -10,11 +10,11 @@
 
 .field static final CHARACTER_ENCODINGS:[I
 
-.field private static final MAX_ACCEPTABLE:I = 0x200
+.field private static final MAX_ACCEPTABLE:F = 2.0f
 
 .field private static final MIN_CHARACTER_LENGTH:I = 0x3
 
-.field private static final PADDING:I = 0x180
+.field private static final PADDING:F = 1.5f
 
 .field private static final STARTEND_ENCODING:[C
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 44
-    const-string v0, "0123456789-$:/.+ABCD"
+    const-string/jumbo v0, "0123456789-$:/.+ABCD"
 
     invoke-virtual {v0}, Ljava/lang/String;->toCharArray()[C
 
@@ -46,7 +46,7 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_1a
+    fill-array-data v0, :array_1c
 
     sput-object v0, Lcom/google/zxing/oned/CodaBarReader;->CHARACTER_ENCODINGS:[I
 
@@ -55,14 +55,16 @@
 
     new-array v0, v0, [C
 
-    fill-array-data v0, :array_46
+    fill-array-data v0, :array_48
 
     sput-object v0, Lcom/google/zxing/oned/CodaBarReader;->STARTEND_ENCODING:[C
 
     return-void
 
     .line 50
-    :array_1a
+    nop
+
+    :array_1c
     .array-data 4
         0x3
         0x6
@@ -87,7 +89,7 @@
     .end array-data
 
     .line 61
-    :array_46
+    :array_48
     .array-data 2
         0x41s
         0x42s
@@ -129,63 +131,44 @@
 .end method
 
 .method static arrayContains([CC)Z
-    .registers 7
+    .registers 6
     .param p0, "array"    # [C
     .param p1, "key"    # C
 
     .prologue
-    .line 280
-    if-eqz p0, :cond_10
-
-    .line 281
-    move-object v0, p0
-
-    .local v0, "arr$":[C
-    array-length v3, v0
-
-    .local v3, "len$":I
-    const/4 v2, 0x0
-
-    .local v2, "i$":I
-    :goto_5
-    if-ge v2, v3, :cond_10
-
-    aget-char v1, v0, v2
+    const/4 v1, 0x0
 
     .line 282
-    .local v1, "c":C
-    if-ne v1, p1, :cond_d
+    if-eqz p0, :cond_c
 
     .line 283
-    const/4 v4, 0x1
+    array-length v3, p0
 
-    .line 287
-    .end local v0    # "arr$":[C
-    .end local v1    # "c":C
-    .end local v2    # "i$":I
-    .end local v3    # "len$":I
-    :goto_c
-    return v4
+    move v2, v1
 
-    .line 281
-    .restart local v0    # "arr$":[C
-    .restart local v1    # "c":C
-    .restart local v2    # "i$":I
-    .restart local v3    # "len$":I
+    :goto_5
+    if-ge v2, v3, :cond_c
+
+    aget-char v0, p0, v2
+
+    .line 284
+    .local v0, "c":C
+    if-ne v0, p1, :cond_d
+
+    .line 285
+    const/4 v1, 0x1
+
+    .line 289
+    .end local v0    # "c":C
+    :cond_c
+    return v1
+
+    .line 283
+    .restart local v0    # "c":C
     :cond_d
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_5
-
-    .line 287
-    .end local v0    # "arr$":[C
-    .end local v1    # "c":C
-    .end local v2    # "i$":I
-    .end local v3    # "len$":I
-    :cond_10
-    const/4 v4, 0x0
-
-    goto :goto_c
 .end method
 
 .method private counterAppend(I)V
@@ -195,21 +178,21 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 252
+    .line 254
     iget-object v1, p0, Lcom/google/zxing/oned/CodaBarReader;->counters:[I
 
     iget v2, p0, Lcom/google/zxing/oned/CodaBarReader;->counterLength:I
 
     aput p1, v1, v2
 
-    .line 253
+    .line 255
     iget v1, p0, Lcom/google/zxing/oned/CodaBarReader;->counterLength:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/google/zxing/oned/CodaBarReader;->counterLength:I
 
-    .line 254
+    .line 256
     iget v1, p0, Lcom/google/zxing/oned/CodaBarReader;->counterLength:I
 
     iget-object v2, p0, Lcom/google/zxing/oned/CodaBarReader;->counters:[I
@@ -218,14 +201,14 @@
 
     if-lt v1, v2, :cond_23
 
-    .line 255
+    .line 257
     iget v1, p0, Lcom/google/zxing/oned/CodaBarReader;->counterLength:I
 
     mul-int/lit8 v1, v1, 0x2
 
     new-array v0, v1, [I
 
-    .line 256
+    .line 258
     .local v0, "temp":[I
     iget-object v1, p0, Lcom/google/zxing/oned/CodaBarReader;->counters:[I
 
@@ -233,10 +216,10 @@
 
     invoke-static {v1, v3, v0, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 257
+    .line 259
     iput-object v0, p0, Lcom/google/zxing/oned/CodaBarReader;->counters:[I
 
-    .line 259
+    .line 261
     .end local v0    # "temp":[I
     :cond_23
     return-void
@@ -251,7 +234,7 @@
     .end annotation
 
     .prologue
-    .line 262
+    .line 264
     const/4 v1, 0x1
 
     .local v1, "i":I
@@ -260,12 +243,12 @@
 
     if-ge v1, v4, :cond_37
 
-    .line 263
+    .line 265
     invoke-direct {p0, v1}, Lcom/google/zxing/oned/CodaBarReader;->toNarrowWidePattern(I)I
 
     move-result v0
 
-    .line 264
+    .line 266
     .local v0, "charOffset":I
     const/4 v4, -0x1
 
@@ -283,10 +266,10 @@
 
     if-eqz v4, :cond_34
 
-    .line 267
+    .line 269
     const/4 v3, 0x0
 
-    .line 268
+    .line 270
     .local v3, "patternSize":I
     move v2, v1
 
@@ -296,19 +279,19 @@
 
     if-ge v2, v4, :cond_26
 
-    .line 269
+    .line 271
     iget-object v4, p0, Lcom/google/zxing/oned/CodaBarReader;->counters:[I
 
     aget v4, v4, v2
 
     add-int/2addr v3, v4
 
-    .line 268
+    .line 270
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1a
 
-    .line 271
+    .line 273
     :cond_26
     const/4 v4, 0x1
 
@@ -324,11 +307,11 @@
 
     if-lt v4, v5, :cond_34
 
-    .line 272
+    .line 274
     :cond_33
     return v1
 
-    .line 262
+    .line 264
     .end local v2    # "j":I
     .end local v3    # "patternSize":I
     :cond_34
@@ -336,7 +319,7 @@
 
     goto :goto_1
 
-    .line 276
+    .line 278
     .end local v0    # "charOffset":I
     :cond_37
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
@@ -358,45 +341,45 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 230
+    .line 231
     iput v4, p0, Lcom/google/zxing/oned/CodaBarReader;->counterLength:I
 
-    .line 232
+    .line 233
     invoke-virtual {p1, v4}, Lcom/google/zxing/common/BitArray;->getNextUnset(I)I
 
     move-result v2
 
-    .line 233
+    .line 234
     .local v2, "i":I
     invoke-virtual {p1}, Lcom/google/zxing/common/BitArray;->getSize()I
 
     move-result v1
 
-    .line 234
+    .line 235
     .local v1, "end":I
     if-lt v2, v1, :cond_12
 
-    .line 235
+    .line 236
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
     move-result-object v4
 
     throw v4
 
-    .line 237
+    .line 238
     :cond_12
     const/4 v3, 0x1
 
-    .line 238
+    .line 239
     .local v3, "isWhite":Z
     const/4 v0, 0x0
 
-    .line 239
+    .line 240
     .local v0, "count":I
     :goto_14
     if-ge v2, v1, :cond_2c
 
-    .line 240
+    .line 241
     invoke-virtual {p1, v2}, Lcom/google/zxing/common/BitArray;->get(I)Z
 
     move-result v5
@@ -405,23 +388,23 @@
 
     if-eqz v5, :cond_22
 
-    .line 241
+    .line 242
     add-int/lit8 v0, v0, 0x1
 
-    .line 239
+    .line 248
     :goto_1f
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_14
 
-    .line 243
+    .line 244
     :cond_22
     invoke-direct {p0, v0}, Lcom/google/zxing/oned/CodaBarReader;->counterAppend(I)V
 
-    .line 244
+    .line 245
     const/4 v0, 0x1
 
-    .line 245
+    .line 246
     if-nez v3, :cond_2a
 
     const/4 v3, 0x1
@@ -434,11 +417,11 @@
 
     goto :goto_29
 
-    .line 248
+    .line 250
     :cond_2c
     invoke-direct {p0, v0}, Lcom/google/zxing/oned/CodaBarReader;->counterAppend(I)V
 
-    .line 249
+    .line 251
     return-void
 .end method
 
@@ -447,36 +430,36 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 292
+    .line 294
     add-int/lit8 v2, p1, 0x7
 
-    .line 293
+    .line 295
     .local v2, "end":I
     iget v14, p0, Lcom/google/zxing/oned/CodaBarReader;->counterLength:I
 
     if-lt v2, v14, :cond_8
 
-    .line 294
+    .line 296
     const/4 v3, -0x1
 
-    .line 340
+    .line 342
     :cond_7
     :goto_7
     return v3
 
-    .line 297
+    .line 299
     :cond_8
     iget-object v10, p0, Lcom/google/zxing/oned/CodaBarReader;->counters:[I
 
-    .line 299
+    .line 301
     .local v10, "theCounters":[I
     const/4 v5, 0x0
 
-    .line 300
+    .line 302
     .local v5, "maxBar":I
     const v7, 0x7fffffff
 
-    .line 301
+    .line 303
     .local v7, "minBar":I
     move/from16 v4, p1
 
@@ -484,90 +467,90 @@
     :goto_10
     if-ge v4, v2, :cond_1d
 
-    .line 302
+    .line 304
     aget v1, v10, v4
 
-    .line 303
+    .line 305
     .local v1, "currentCounter":I
     if-ge v1, v7, :cond_17
 
-    .line 304
+    .line 306
     move v7, v1
 
-    .line 306
+    .line 308
     :cond_17
     if-le v1, v5, :cond_1a
 
-    .line 307
+    .line 309
     move v5, v1
 
-    .line 301
+    .line 303
     :cond_1a
     add-int/lit8 v4, v4, 0x2
 
     goto :goto_10
 
-    .line 310
+    .line 312
     .end local v1    # "currentCounter":I
     :cond_1d
     add-int v14, v7, v5
 
     div-int/lit8 v12, v14, 0x2
 
-    .line 312
+    .line 314
     .local v12, "thresholdBar":I
     const/4 v6, 0x0
 
-    .line 313
+    .line 315
     .local v6, "maxSpace":I
     const v8, 0x7fffffff
 
-    .line 314
+    .line 316
     .local v8, "minSpace":I
     add-int/lit8 v4, p1, 0x1
 
     :goto_27
     if-ge v4, v2, :cond_34
 
-    .line 315
+    .line 317
     aget v1, v10, v4
 
-    .line 316
+    .line 318
     .restart local v1    # "currentCounter":I
     if-ge v1, v8, :cond_2e
 
-    .line 317
+    .line 319
     move v8, v1
 
-    .line 319
+    .line 321
     :cond_2e
     if-le v1, v6, :cond_31
 
-    .line 320
+    .line 322
     move v6, v1
 
-    .line 314
+    .line 316
     :cond_31
     add-int/lit8 v4, v4, 0x2
 
     goto :goto_27
 
-    .line 323
+    .line 325
     .end local v1    # "currentCounter":I
     :cond_34
     add-int v14, v8, v6
 
     div-int/lit8 v13, v14, 0x2
 
-    .line 325
+    .line 327
     .local v13, "thresholdSpace":I
     const/16 v0, 0x80
 
-    .line 326
+    .line 328
     .local v0, "bitmask":I
     const/4 v9, 0x0
 
-    .line 327
+    .line 329
     .local v9, "pattern":I
     const/4 v3, 0x0
 
@@ -577,29 +560,29 @@
 
     if-ge v3, v14, :cond_52
 
-    .line 328
+    .line 330
     and-int/lit8 v14, v3, 0x1
 
     if-nez v14, :cond_50
 
     move v11, v12
 
-    .line 329
+    .line 331
     .local v11, "threshold":I
     :goto_44
     shr-int/lit8 v0, v0, 0x1
 
-    .line 330
+    .line 332
     add-int v14, p1, v3
 
     aget v14, v10, v14
 
     if-le v14, v11, :cond_4d
 
-    .line 331
+    .line 333
     or-int/2addr v9, v0
 
-    .line 327
+    .line 329
     :cond_4d
     add-int/lit8 v3, v3, 0x1
 
@@ -609,10 +592,10 @@
     :cond_50
     move v11, v13
 
-    .line 328
+    .line 330
     goto :goto_44
 
-    .line 335
+    .line 337
     :cond_52
     const/4 v3, 0x0
 
@@ -623,19 +606,19 @@
 
     if-ge v3, v14, :cond_61
 
-    .line 336
+    .line 338
     sget-object v14, Lcom/google/zxing/oned/CodaBarReader;->CHARACTER_ENCODINGS:[I
 
     aget v14, v14, v3
 
     if-eq v14, v9, :cond_7
 
-    .line 335
+    .line 337
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_53
 
-    .line 340
+    .line 342
     :cond_61
     const/4 v3, -0x1
 
@@ -756,6 +739,7 @@
 
     aget-char v14, v14, v2
 
+    .line 100
     invoke-static {v13, v14}, Lcom/google/zxing/oned/CodaBarReader;->arrayContains([CC)Z
 
     move-result v13
@@ -970,6 +954,20 @@
 
     .line 141
     :cond_e5
+    if-eqz p3, :cond_f1
+
+    sget-object v13, Lcom/google/zxing/DecodeHintType;->RETURN_CODABAR_START_END:Lcom/google/zxing/DecodeHintType;
+
+    move-object/from16 v0, p3
+
+    invoke-interface {v0, v13}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v13
+
+    if-nez v13, :cond_10a
+
+    .line 142
+    :cond_f1
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/google/zxing/oned/CodaBarReader;->decodeRowResult:Ljava/lang/StringBuilder;
@@ -986,7 +984,7 @@
 
     invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->deleteCharAt(I)Ljava/lang/StringBuilder;
 
-    .line 142
+    .line 143
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/google/zxing/oned/CodaBarReader;->decodeRowResult:Ljava/lang/StringBuilder;
@@ -995,17 +993,18 @@
 
     invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->deleteCharAt(I)Ljava/lang/StringBuilder;
 
-    .line 144
+    .line 146
+    :cond_10a
     const/4 v9, 0x0
 
-    .line 145
+    .line 147
     .local v9, "runningCount":I
     const/4 v4, 0x0
 
-    :goto_100
-    if-ge v4, v10, :cond_10c
+    :goto_10c
+    if-ge v4, v10, :cond_118
 
-    .line 146
+    .line 148
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/google/zxing/oned/CodaBarReader;->counters:[I
@@ -1014,25 +1013,25 @@
 
     add-int/2addr v9, v13
 
-    .line 145
+    .line 147
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_100
+    goto :goto_10c
 
-    .line 148
-    :cond_10c
+    .line 150
+    :cond_118
     int-to-float v6, v9
 
-    .line 149
+    .line 151
     .local v6, "left":F
     move v4, v10
 
-    :goto_10e
+    :goto_11a
     add-int/lit8 v13, v7, -0x1
 
-    if-ge v4, v13, :cond_11c
+    if-ge v4, v13, :cond_128
 
-    .line 150
+    .line 152
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/google/zxing/oned/CodaBarReader;->counters:[I
@@ -1041,16 +1040,16 @@
 
     add-int/2addr v9, v13
 
-    .line 149
+    .line 151
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_10e
+    goto :goto_11a
 
-    .line 152
-    :cond_11c
+    .line 154
+    :cond_128
     int-to-float v8, v9
 
-    .line 153
+    .line 155
     .local v8, "right":F
     new-instance v13, Lcom/google/zxing/Result;
 
@@ -1058,6 +1057,7 @@
 
     iget-object v14, v0, Lcom/google/zxing/oned/CodaBarReader;->decodeRowResult:Ljava/lang/StringBuilder;
 
+    .line 156
     invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v14
@@ -1125,22 +1125,22 @@
     .end annotation
 
     .prologue
-    .line 164
+    .line 166
     const/4 v11, 0x4
 
     new-array v10, v11, [I
 
-    fill-array-data v10, :array_c4
+    fill-array-data v10, :array_cc
 
-    .line 165
+    .line 167
     .local v10, "sizes":[I
     const/4 v11, 0x4
 
     new-array v1, v11, [I
 
-    fill-array-data v1, :array_d0
+    fill-array-data v1, :array_d8
 
-    .line 166
+    .line 168
     .local v1, "counts":[I
     iget-object v11, p0, Lcom/google/zxing/oned/CodaBarReader;->decodeRowResult:Ljava/lang/StringBuilder;
 
@@ -1150,15 +1150,15 @@
 
     add-int/lit8 v2, v11, -0x1
 
-    .line 170
+    .line 172
     .local v2, "end":I
     move/from16 v8, p1
 
-    .line 171
+    .line 173
     .local v8, "pos":I
     const/4 v3, 0x0
 
-    .line 172
+    .line 174
     .local v3, "i":I
     :goto_17
     sget-object v11, Lcom/google/zxing/oned/CodaBarReader;->CHARACTER_ENCODINGS:[I
@@ -1171,7 +1171,7 @@
 
     aget v7, v11, v12
 
-    .line 173
+    .line 175
     .local v7, "pattern":I
     const/4 v4, 0x6
 
@@ -1179,7 +1179,7 @@
     :goto_22
     if-ltz v4, :cond_42
 
-    .line 176
+    .line 178
     and-int/lit8 v11, v4, 0x1
 
     and-int/lit8 v12, v7, 0x1
@@ -1188,7 +1188,7 @@
 
     add-int v0, v11, v12
 
-    .line 177
+    .line 179
     .local v0, "category":I
     aget v11, v10, v0
 
@@ -1202,133 +1202,147 @@
 
     aput v11, v10, v0
 
-    .line 178
+    .line 180
     aget v11, v1, v0
 
     add-int/lit8 v11, v11, 0x1
 
     aput v11, v1, v0
 
-    .line 179
+    .line 181
     shr-int/lit8 v7, v7, 0x1
 
-    .line 173
+    .line 175
     add-int/lit8 v4, v4, -0x1
 
     goto :goto_22
 
-    .line 181
+    .line 183
     .end local v0    # "category":I
     :cond_42
-    if-lt v3, v2, :cond_84
+    if-lt v3, v2, :cond_89
 
-    .line 189
+    .line 191
     const/4 v11, 0x4
 
-    new-array v5, v11, [I
+    new-array v5, v11, [F
 
-    .line 190
-    .local v5, "maxes":[I
+    .line 192
+    .local v5, "maxes":[F
     const/4 v11, 0x4
 
-    new-array v6, v11, [I
+    new-array v6, v11, [F
 
-    .line 194
-    .local v6, "mins":[I
+    .line 196
+    .local v6, "mins":[F
     const/4 v3, 0x0
 
     :goto_4b
     const/4 v11, 0x2
 
-    if-ge v3, v11, :cond_89
+    if-ge v3, v11, :cond_8e
 
-    .line 195
+    .line 197
     const/4 v11, 0x0
 
     aput v11, v6, v3
 
-    .line 196
+    .line 198
     add-int/lit8 v11, v3, 0x2
 
     aget v12, v10, v3
 
-    shl-int/lit8 v12, v12, 0x8
+    int-to-float v12, v12
 
     aget v13, v1, v3
 
-    div-int/2addr v12, v13
+    int-to-float v13, v13
+
+    div-float/2addr v12, v13
 
     add-int/lit8 v13, v3, 0x2
 
     aget v13, v10, v13
 
-    shl-int/lit8 v13, v13, 0x8
+    int-to-float v13, v13
 
     add-int/lit8 v14, v3, 0x2
 
     aget v14, v1, v14
 
-    div-int/2addr v13, v14
+    int-to-float v14, v14
 
-    add-int/2addr v12, v13
+    div-float/2addr v13, v14
 
-    shr-int/lit8 v12, v12, 0x1
+    add-float/2addr v12, v13
+
+    const/high16 v13, 0x40000000
+
+    div-float/2addr v12, v13
 
     aput v12, v6, v11
 
-    .line 198
+    .line 199
     add-int/lit8 v11, v3, 0x2
 
     aget v11, v6, v11
 
     aput v11, v5, v3
 
-    .line 199
+    .line 200
     add-int/lit8 v11, v3, 0x2
 
     add-int/lit8 v12, v3, 0x2
 
     aget v12, v10, v12
 
-    mul-int/lit16 v12, v12, 0x200
+    int-to-float v12, v12
 
-    add-int/lit16 v12, v12, 0x180
+    const/high16 v13, 0x40000000
+
+    mul-float/2addr v12, v13
+
+    const/high16 v13, 0x3fc00000
+
+    add-float/2addr v12, v13
 
     add-int/lit8 v13, v3, 0x2
 
     aget v13, v1, v13
 
-    div-int/2addr v12, v13
+    int-to-float v13, v13
+
+    div-float/2addr v12, v13
 
     aput v12, v5, v11
 
-    .line 194
+    .line 196
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_4b
 
-    .line 185
-    .end local v5    # "maxes":[I
-    .end local v6    # "mins":[I
-    :cond_84
+    .line 187
+    .end local v5    # "maxes":[F
+    .end local v6    # "mins":[F
+    :cond_89
     add-int/lit8 v8, v8, 0x8
 
-    .line 171
+    .line 173
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_17
 
-    .line 203
-    .restart local v5    # "maxes":[I
-    .restart local v6    # "mins":[I
-    :cond_89
+    .line 204
+    .restart local v5    # "maxes":[F
+    .restart local v6    # "mins":[F
+    :cond_8e
     move/from16 v8, p1
 
-    .line 204
+    .line 205
     const/4 v3, 0x0
 
-    .line 205
-    :goto_8c
+    .line 206
+    :goto_91
     sget-object v11, Lcom/google/zxing/oned/CodaBarReader;->CHARACTER_ENCODINGS:[I
 
     iget-object v12, p0, Lcom/google/zxing/oned/CodaBarReader;->decodeRowResult:Ljava/lang/StringBuilder;
@@ -1339,13 +1353,13 @@
 
     aget v7, v11, v12
 
-    .line 206
+    .line 207
     const/4 v4, 0x6
 
-    :goto_97
-    if-ltz v4, :cond_bb
+    :goto_9c
+    if-ltz v4, :cond_c4
 
-    .line 209
+    .line 210
     and-int/lit8 v11, v4, 0x1
 
     and-int/lit8 v12, v7, 0x1
@@ -1354,65 +1368,69 @@
 
     add-int v0, v11, v12
 
-    .line 210
+    .line 211
     .restart local v0    # "category":I
     iget-object v11, p0, Lcom/google/zxing/oned/CodaBarReader;->counters:[I
 
     add-int v12, v8, v4
 
-    aget v11, v11, v12
-
-    shl-int/lit8 v9, v11, 0x8
-
-    .line 211
-    .local v9, "size":I
-    aget v11, v6, v0
-
-    if-lt v9, v11, :cond_b1
-
-    aget v11, v5, v0
-
-    if-le v9, v11, :cond_b6
+    aget v9, v11, v12
 
     .line 212
-    :cond_b1
+    .local v9, "size":I
+    int-to-float v11, v9
+
+    aget v12, v6, v0
+
+    cmpg-float v11, v11, v12
+
+    if-ltz v11, :cond_ba
+
+    int-to-float v11, v9
+
+    aget v12, v5, v0
+
+    cmpl-float v11, v11, v12
+
+    if-lez v11, :cond_bf
+
+    .line 213
+    :cond_ba
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
     move-result-object v11
 
     throw v11
 
-    .line 214
-    :cond_b6
+    .line 215
+    :cond_bf
     shr-int/lit8 v7, v7, 0x1
 
-    .line 206
+    .line 207
     add-int/lit8 v4, v4, -0x1
 
-    goto :goto_97
+    goto :goto_9c
 
-    .line 216
+    .line 217
     .end local v0    # "category":I
     .end local v9    # "size":I
-    :cond_bb
-    if-lt v3, v2, :cond_be
+    :cond_c4
+    if-lt v3, v2, :cond_c7
 
-    .line 221
+    .line 222
     return-void
 
-    .line 219
-    :cond_be
+    .line 220
+    :cond_c7
     add-int/lit8 v8, v8, 0x8
 
-    .line 204
+    .line 205
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_8c
+    goto :goto_91
 
-    .line 164
-    nop
-
-    :array_c4
+    .line 166
+    :array_cc
     .array-data 4
         0x0
         0x0
@@ -1420,8 +1438,8 @@
         0x0
     .end array-data
 
-    .line 165
-    :array_d0
+    .line 167
+    :array_d8
     .array-data 4
         0x0
         0x0

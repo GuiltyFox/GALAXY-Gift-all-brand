@@ -4,11 +4,7 @@
 
 
 # static fields
-.field private static final DATE_FORMAT:Ljava/text/DateFormat;
-
 .field private static final DATE_TIME:Ljava/util/regex/Pattern;
-
-.field private static final DATE_TIME_FORMAT:Ljava/text/DateFormat;
 
 .field private static final RFC2445_DURATION:Ljava/util/regex/Pattern;
 
@@ -41,12 +37,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .registers 1
 
     .prologue
     .line 35
-    const-string v0, "P(?:(\\d+)W)?(?:(\\d+)D)?(?:T(?:(\\d+)H)?(?:(\\d+)M)?(?:(\\d+)S)?)?"
+    const-string/jumbo v0, "P(?:(\\d+)W)?(?:(\\d+)D)?(?:T(?:(\\d+)H)?(?:(\\d+)M)?(?:(\\d+)S)?)?"
 
+    .line 36
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -58,12 +55,12 @@
 
     new-array v0, v0, [J
 
-    fill-array-data v0, :array_3a
+    fill-array-data v0, :array_1c
 
     sput-object v0, Lcom/google/zxing/client/result/CalendarParsedResult;->RFC2445_DURATION_FIELD_UNITS:[J
 
     .line 45
-    const-string v0, "[0-9]{8}(T[0-9]{6}Z?)?"
+    const-string/jumbo v0, "[0-9]{8}(T[0-9]{6}Z?)?"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
@@ -71,43 +68,12 @@
 
     sput-object v0, Lcom/google/zxing/client/result/CalendarParsedResult;->DATE_TIME:Ljava/util/regex/Pattern;
 
-    .line 47
-    new-instance v0, Ljava/text/SimpleDateFormat;
-
-    const-string v1, "yyyyMMdd"
-
-    sget-object v2, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
-
-    invoke-direct {v0, v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
-
-    sput-object v0, Lcom/google/zxing/client/result/CalendarParsedResult;->DATE_FORMAT:Ljava/text/DateFormat;
-
-    .line 52
-    sget-object v0, Lcom/google/zxing/client/result/CalendarParsedResult;->DATE_FORMAT:Ljava/text/DateFormat;
-
-    const-string v1, "GMT"
-
-    invoke-static {v1}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
-
-    .line 54
-    new-instance v0, Ljava/text/SimpleDateFormat;
-
-    const-string v1, "yyyyMMdd\'T\'HHmmss"
-
-    sget-object v2, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
-
-    invoke-direct {v0, v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
-
-    sput-object v0, Lcom/google/zxing/client/result/CalendarParsedResult;->DATE_TIME_FORMAT:Ljava/text/DateFormat;
-
     return-void
 
     .line 37
-    :array_3a
+    nop
+
+    :array_1c
     .array-data 8
         0x240c8400
         0x5265c00
@@ -131,15 +97,15 @@
     .param p11, "longitude"    # D
 
     .prologue
-    .line 78
+    .line 69
     sget-object v5, Lcom/google/zxing/client/result/ParsedResultType;->CALENDAR:Lcom/google/zxing/client/result/ParsedResultType;
 
     invoke-direct {p0, v5}, Lcom/google/zxing/client/result/ParsedResult;-><init>(Lcom/google/zxing/client/result/ParsedResultType;)V
 
-    .line 79
+    .line 70
     iput-object p1, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->summary:Ljava/lang/String;
 
-    .line 82
+    .line 73
     :try_start_7
     invoke-static {p2}, Lcom/google/zxing/client/result/CalendarParsedResult;->parseDate(Ljava/lang/String;)Ljava/util/Date;
 
@@ -149,15 +115,15 @@
     :try_end_d
     .catch Ljava/text/ParseException; {:try_start_7 .. :try_end_d} :catch_49
 
-    .line 87
+    .line 78
     if-nez p3, :cond_61
 
-    .line 88
+    .line 79
     invoke-static {p4}, Lcom/google/zxing/client/result/CalendarParsedResult;->parseDurationMS(Ljava/lang/CharSequence;)J
 
     move-result-wide v2
 
-    .line 89
+    .line 80
     .local v2, "durationMS":J
     const-wide/16 v6, 0x0
 
@@ -170,7 +136,7 @@
     :goto_1a
     iput-object v5, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->end:Ljava/util/Date;
 
-    .line 98
+    .line 89
     .end local v2    # "durationMS":J
     :goto_1c
     invoke-virtual {p2}, Ljava/lang/String;->length()I
@@ -186,7 +152,7 @@
     :goto_25
     iput-boolean v5, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->startAllDay:Z
 
-    .line 99
+    .line 90
     if-eqz p3, :cond_75
 
     invoke-virtual {p3}, Ljava/lang/String;->length()I
@@ -202,40 +168,40 @@
     :goto_32
     iput-boolean v5, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->endAllDay:Z
 
-    .line 101
+    .line 92
     iput-object p5, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->location:Ljava/lang/String;
 
-    .line 102
+    .line 93
     iput-object p6, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->organizer:Ljava/lang/String;
 
-    .line 103
+    .line 94
     move-object/from16 v0, p7
 
     iput-object v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->attendees:[Ljava/lang/String;
 
-    .line 104
+    .line 95
     move-object/from16 v0, p8
 
     iput-object v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->description:Ljava/lang/String;
 
-    .line 105
+    .line 96
     move-wide/from16 v0, p9
 
     iput-wide v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->latitude:D
 
-    .line 106
+    .line 97
     move-wide/from16 v0, p11
 
     iput-wide v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->longitude:D
 
-    .line 107
+    .line 98
     return-void
 
-    .line 83
+    .line 74
     :catch_49
     move-exception v4
 
-    .line 84
+    .line 75
     .local v4, "pe":Ljava/text/ParseException;
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
@@ -247,7 +213,7 @@
 
     throw v5
 
-    .line 89
+    .line 80
     .end local v4    # "pe":Ljava/text/ParseException;
     .restart local v2    # "durationMS":J
     :cond_54
@@ -265,7 +231,7 @@
 
     goto :goto_1a
 
-    .line 92
+    .line 83
     .end local v2    # "durationMS":J
     :cond_61
     :try_start_61
@@ -279,11 +245,11 @@
 
     goto :goto_1c
 
-    .line 93
+    .line 84
     :catch_68
     move-exception v4
 
-    .line 94
+    .line 85
     .restart local v4    # "pe":Ljava/text/ParseException;
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
@@ -295,18 +261,61 @@
 
     throw v5
 
-    .line 98
+    .line 89
     .end local v4    # "pe":Ljava/text/ParseException;
     :cond_73
     const/4 v5, 0x0
 
     goto :goto_25
 
-    .line 99
+    .line 90
     :cond_75
     const/4 v5, 0x0
 
     goto :goto_32
+.end method
+
+.method private static buildDateFormat()Ljava/text/DateFormat;
+    .registers 3
+
+    .prologue
+    .line 234
+    new-instance v0, Ljava/text/SimpleDateFormat;
+
+    const-string/jumbo v1, "yyyyMMdd"
+
+    sget-object v2, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+
+    invoke-direct {v0, v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+
+    .line 238
+    .local v0, "format":Ljava/text/DateFormat;
+    const-string/jumbo v1, "GMT"
+
+    invoke-static {v1}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
+
+    .line 239
+    return-object v0
+.end method
+
+.method private static buildDateTimeFormat()Ljava/text/DateFormat;
+    .registers 3
+
+    .prologue
+    .line 243
+    new-instance v0, Ljava/text/SimpleDateFormat;
+
+    const-string/jumbo v1, "yyyyMMdd\'T\'HHmmss"
+
+    sget-object v2, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+
+    invoke-direct {v0, v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+
+    return-object v0
 .end method
 
 .method private static format(ZLjava/util/Date;)Ljava/lang/String;
@@ -317,25 +326,26 @@
     .prologue
     const/4 v1, 0x2
 
-    .line 215
+    .line 206
     if-nez p1, :cond_5
 
-    .line 216
+    .line 207
     const/4 v1, 0x0
 
-    .line 221
+    .line 212
     :goto_4
     return-object v1
 
-    .line 218
+    .line 209
     :cond_5
     if-eqz p0, :cond_10
 
+    .line 210
     invoke-static {v1}, Ljava/text/DateFormat;->getDateInstance(I)Ljava/text/DateFormat;
 
     move-result-object v0
 
-    .line 221
+    .line 212
     .local v0, "format":Ljava/text/DateFormat;
     :goto_b
     invoke-virtual {v0, p1}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
@@ -344,7 +354,7 @@
 
     goto :goto_4
 
-    .line 218
+    .line 211
     .end local v0    # "format":Ljava/text/DateFormat;
     :cond_10
     invoke-static {v1, v1}, Ljava/text/DateFormat;->getDateTimeInstance(II)Ljava/text/DateFormat;
@@ -370,7 +380,7 @@
 
     const/16 v6, 0xf
 
-    .line 187
+    .line 178
     sget-object v4, Lcom/google/zxing/client/result/CalendarParsedResult;->DATE_TIME:Ljava/util/regex/Pattern;
 
     invoke-virtual {v4, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -383,14 +393,14 @@
 
     if-nez v4, :cond_17
 
-    .line 188
+    .line 179
     new-instance v4, Ljava/text/ParseException;
 
     invoke-direct {v4, p0, v7}, Ljava/text/ParseException;-><init>(Ljava/lang/String;I)V
 
     throw v4
 
-    .line 190
+    .line 181
     :cond_17
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -398,26 +408,28 @@
 
     const/16 v5, 0x8
 
-    if-ne v4, v5, :cond_26
+    if-ne v4, v5, :cond_28
 
-    .line 192
-    sget-object v4, Lcom/google/zxing/client/result/CalendarParsedResult;->DATE_FORMAT:Ljava/text/DateFormat;
+    .line 183
+    invoke-static {}, Lcom/google/zxing/client/result/CalendarParsedResult;->buildDateFormat()Ljava/text/DateFormat;
+
+    move-result-object v4
 
     invoke-virtual {v4, p0}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
 
     move-result-object v1
 
-    .line 210
-    :goto_25
+    .line 201
+    :goto_27
     return-object v1
 
-    .line 196
-    :cond_26
+    .line 187
+    :cond_28
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v4
 
-    if-ne v4, v8, :cond_61
+    if-ne v4, v8, :cond_65
 
     invoke-virtual {p0, v6}, Ljava/lang/String;->charAt(I)C
 
@@ -425,10 +437,12 @@
 
     const/16 v5, 0x5a
 
-    if-ne v4, v5, :cond_61
+    if-ne v4, v5, :cond_65
 
-    .line 197
-    sget-object v4, Lcom/google/zxing/client/result/CalendarParsedResult;->DATE_TIME_FORMAT:Ljava/text/DateFormat;
+    .line 188
+    invoke-static {}, Lcom/google/zxing/client/result/CalendarParsedResult;->buildDateTimeFormat()Ljava/text/DateFormat;
+
+    move-result-object v4
 
     invoke-virtual {p0, v7, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
@@ -438,19 +452,19 @@
 
     move-result-object v1
 
-    .line 198
+    .line 189
     .local v1, "date":Ljava/util/Date;
     new-instance v0, Ljava/util/GregorianCalendar;
 
     invoke-direct {v0}, Ljava/util/GregorianCalendar;-><init>()V
 
-    .line 199
+    .line 190
     .local v0, "calendar":Ljava/util/Calendar;
     invoke-virtual {v1}, Ljava/util/Date;->getTime()J
 
     move-result-wide v2
 
-    .line 201
+    .line 192
     .local v2, "milliseconds":J
     invoke-virtual {v0, v6}, Ljava/util/Calendar;->get(I)I
 
@@ -460,14 +474,14 @@
 
     add-long/2addr v2, v4
 
-    .line 204
+    .line 195
     new-instance v4, Ljava/util/Date;
 
     invoke-direct {v4, v2, v3}, Ljava/util/Date;-><init>(J)V
 
     invoke-virtual {v0, v4}, Ljava/util/Calendar;->setTime(Ljava/util/Date;)V
 
-    .line 205
+    .line 196
     invoke-virtual {v0, v8}, Ljava/util/Calendar;->get(I)I
 
     move-result v4
@@ -476,29 +490,31 @@
 
     add-long/2addr v2, v4
 
-    .line 206
+    .line 197
     new-instance v1, Ljava/util/Date;
 
     .end local v1    # "date":Ljava/util/Date;
     invoke-direct {v1, v2, v3}, Ljava/util/Date;-><init>(J)V
 
-    .line 207
+    .line 198
     .restart local v1    # "date":Ljava/util/Date;
-    goto :goto_25
+    goto :goto_27
 
-    .line 208
+    .line 199
     .end local v0    # "calendar":Ljava/util/Calendar;
     .end local v1    # "date":Ljava/util/Date;
     .end local v2    # "milliseconds":J
-    :cond_61
-    sget-object v4, Lcom/google/zxing/client/result/CalendarParsedResult;->DATE_TIME_FORMAT:Ljava/text/DateFormat;
+    :cond_65
+    invoke-static {}, Lcom/google/zxing/client/result/CalendarParsedResult;->buildDateTimeFormat()Ljava/text/DateFormat;
+
+    move-result-object v4
 
     invoke-virtual {v4, p0}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
 
     move-result-object v1
 
     .restart local v1    # "date":Ljava/util/Date;
-    goto :goto_25
+    goto :goto_27
 .end method
 
 .method private static parseDurationMS(Ljava/lang/CharSequence;)J
@@ -508,14 +524,14 @@
     .prologue
     const-wide/16 v0, -0x1
 
-    .line 225
+    .line 216
     if-nez p0, :cond_5
 
-    .line 239
+    .line 230
     :cond_4
     return-wide v0
 
-    .line 228
+    .line 219
     :cond_5
     sget-object v5, Lcom/google/zxing/client/result/CalendarParsedResult;->RFC2445_DURATION:Ljava/util/regex/Pattern;
 
@@ -523,7 +539,7 @@
 
     move-result-object v4
 
-    .line 229
+    .line 220
     .local v4, "m":Ljava/util/regex/Matcher;
     invoke-virtual {v4}, Ljava/util/regex/Matcher;->matches()Z
 
@@ -531,10 +547,10 @@
 
     if-eqz v5, :cond_4
 
-    .line 232
+    .line 223
     const-wide/16 v0, 0x0
 
-    .line 233
+    .line 224
     .local v0, "durationMS":J
     const/4 v3, 0x0
 
@@ -546,18 +562,18 @@
 
     if-ge v3, v5, :cond_4
 
-    .line 234
+    .line 225
     add-int/lit8 v5, v3, 0x1
 
     invoke-virtual {v4, v5}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 235
+    .line 226
     .local v2, "fieldValue":Ljava/lang/String;
     if-eqz v2, :cond_2c
 
-    .line 236
+    .line 227
     sget-object v5, Lcom/google/zxing/client/result/CalendarParsedResult;->RFC2445_DURATION_FIELD_UNITS:[J
 
     aget-wide v6, v5, v3
@@ -572,7 +588,7 @@
 
     add-long/2addr v0, v6
 
-    .line 233
+    .line 224
     :cond_2c
     add-int/lit8 v3, v3, 0x1
 
@@ -585,7 +601,7 @@
     .registers 2
 
     .prologue
-    .line 151
+    .line 142
     iget-object v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->attendees:[Ljava/lang/String;
 
     return-object v0
@@ -595,7 +611,7 @@
     .registers 2
 
     .prologue
-    .line 155
+    .line 146
     iget-object v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->description:Ljava/lang/String;
 
     return-object v0
@@ -605,20 +621,20 @@
     .registers 4
 
     .prologue
-    .line 168
+    .line 159
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x64
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 169
+    .line 160
     .local v0, "result":Ljava/lang/StringBuilder;
     iget-object v1, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->summary:Ljava/lang/String;
 
     invoke-static {v1, v0}, Lcom/google/zxing/client/result/CalendarParsedResult;->maybeAppend(Ljava/lang/String;Ljava/lang/StringBuilder;)V
 
-    .line 170
+    .line 161
     iget-boolean v1, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->startAllDay:Z
 
     iget-object v2, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->start:Ljava/util/Date;
@@ -629,7 +645,7 @@
 
     invoke-static {v1, v0}, Lcom/google/zxing/client/result/CalendarParsedResult;->maybeAppend(Ljava/lang/String;Ljava/lang/StringBuilder;)V
 
-    .line 171
+    .line 162
     iget-boolean v1, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->endAllDay:Z
 
     iget-object v2, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->end:Ljava/util/Date;
@@ -640,27 +656,27 @@
 
     invoke-static {v1, v0}, Lcom/google/zxing/client/result/CalendarParsedResult;->maybeAppend(Ljava/lang/String;Ljava/lang/StringBuilder;)V
 
-    .line 172
+    .line 163
     iget-object v1, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->location:Ljava/lang/String;
 
     invoke-static {v1, v0}, Lcom/google/zxing/client/result/CalendarParsedResult;->maybeAppend(Ljava/lang/String;Ljava/lang/StringBuilder;)V
 
-    .line 173
+    .line 164
     iget-object v1, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->organizer:Ljava/lang/String;
 
     invoke-static {v1, v0}, Lcom/google/zxing/client/result/CalendarParsedResult;->maybeAppend(Ljava/lang/String;Ljava/lang/StringBuilder;)V
 
-    .line 174
+    .line 165
     iget-object v1, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->attendees:[Ljava/lang/String;
 
     invoke-static {v1, v0}, Lcom/google/zxing/client/result/CalendarParsedResult;->maybeAppend([Ljava/lang/String;Ljava/lang/StringBuilder;)V
 
-    .line 175
+    .line 166
     iget-object v1, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->description:Ljava/lang/String;
 
     invoke-static {v1, v0}, Lcom/google/zxing/client/result/CalendarParsedResult;->maybeAppend(Ljava/lang/String;Ljava/lang/StringBuilder;)V
 
-    .line 176
+    .line 167
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -672,7 +688,7 @@
     .registers 2
 
     .prologue
-    .line 132
+    .line 123
     iget-object v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->end:Ljava/util/Date;
 
     return-object v0
@@ -682,7 +698,7 @@
     .registers 3
 
     .prologue
-    .line 159
+    .line 150
     iget-wide v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->latitude:D
 
     return-wide v0
@@ -692,7 +708,7 @@
     .registers 2
 
     .prologue
-    .line 143
+    .line 134
     iget-object v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->location:Ljava/lang/String;
 
     return-object v0
@@ -702,7 +718,7 @@
     .registers 3
 
     .prologue
-    .line 163
+    .line 154
     iget-wide v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->longitude:D
 
     return-wide v0
@@ -712,7 +728,7 @@
     .registers 2
 
     .prologue
-    .line 147
+    .line 138
     iget-object v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->organizer:Ljava/lang/String;
 
     return-object v0
@@ -722,7 +738,7 @@
     .registers 2
 
     .prologue
-    .line 117
+    .line 108
     iget-object v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->start:Ljava/util/Date;
 
     return-object v0
@@ -732,7 +748,7 @@
     .registers 2
 
     .prologue
-    .line 110
+    .line 101
     iget-object v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->summary:Ljava/lang/String;
 
     return-object v0
@@ -742,7 +758,7 @@
     .registers 2
 
     .prologue
-    .line 139
+    .line 130
     iget-boolean v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->endAllDay:Z
 
     return v0
@@ -752,7 +768,7 @@
     .registers 2
 
     .prologue
-    .line 124
+    .line 115
     iget-boolean v0, p0, Lcom/google/zxing/client/result/CalendarParsedResult;->startAllDay:Z
 
     return v0

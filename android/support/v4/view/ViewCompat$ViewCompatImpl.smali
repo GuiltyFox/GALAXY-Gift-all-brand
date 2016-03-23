@@ -24,7 +24,25 @@
 .method public abstract canScrollVertically(Landroid/view/View;I)Z
 .end method
 
+.method public abstract combineMeasuredStates(II)I
+.end method
+
+.method public abstract dispatchApplyWindowInsets(Landroid/view/View;Landroid/support/v4/view/WindowInsetsCompat;)Landroid/support/v4/view/WindowInsetsCompat;
+.end method
+
 .method public abstract dispatchFinishTemporaryDetach(Landroid/view/View;)V
+.end method
+
+.method public abstract dispatchNestedFling(Landroid/view/View;FFZ)Z
+.end method
+
+.method public abstract dispatchNestedPreFling(Landroid/view/View;FF)Z
+.end method
+
+.method public abstract dispatchNestedPreScroll(Landroid/view/View;II[I[I)Z
+.end method
+
+.method public abstract dispatchNestedScroll(Landroid/view/View;IIII[I)Z
 .end method
 
 .method public abstract dispatchStartTemporaryDetach(Landroid/view/View;)V
@@ -37,6 +55,21 @@
 .end method
 
 .method public abstract getAlpha(Landroid/view/View;)F
+.end method
+
+.method public abstract getBackgroundTintList(Landroid/view/View;)Landroid/content/res/ColorStateList;
+.end method
+
+.method public abstract getBackgroundTintMode(Landroid/view/View;)Landroid/graphics/PorterDuff$Mode;
+.end method
+
+.method public abstract getClipBounds(Landroid/view/View;)Landroid/graphics/Rect;
+.end method
+
+.method public abstract getElevation(Landroid/view/View;)F
+.end method
+
+.method public abstract getFitsSystemWindows(Landroid/view/View;)Z
 .end method
 
 .method public abstract getImportantForAccessibility(Landroid/view/View;)I
@@ -99,10 +132,22 @@
 .method public abstract getScaleY(Landroid/view/View;)F
 .end method
 
+.method public abstract getScrollIndicators(Landroid/view/View;)I
+.end method
+
+.method public abstract getTransitionName(Landroid/view/View;)Ljava/lang/String;
+.end method
+
 .method public abstract getTranslationX(Landroid/view/View;)F
 .end method
 
 .method public abstract getTranslationY(Landroid/view/View;)F
+.end method
+
+.method public abstract getTranslationZ(Landroid/view/View;)F
+.end method
+
+.method public abstract getWindowSystemUiVisibility(Landroid/view/View;)I
 .end method
 
 .method public abstract getX(Landroid/view/View;)F
@@ -111,10 +156,52 @@
 .method public abstract getY(Landroid/view/View;)F
 .end method
 
+.method public abstract getZ(Landroid/view/View;)F
+.end method
+
+.method public abstract hasAccessibilityDelegate(Landroid/view/View;)Z
+.end method
+
+.method public abstract hasNestedScrollingParent(Landroid/view/View;)Z
+.end method
+
+.method public abstract hasOnClickListeners(Landroid/view/View;)Z
+.end method
+
+.method public abstract hasOverlappingRendering(Landroid/view/View;)Z
+.end method
+
 .method public abstract hasTransientState(Landroid/view/View;)Z
 .end method
 
+.method public abstract isAttachedToWindow(Landroid/view/View;)Z
+.end method
+
+.method public abstract isImportantForAccessibility(Landroid/view/View;)Z
+.end method
+
+.method public abstract isLaidOut(Landroid/view/View;)Z
+.end method
+
+.method public abstract isNestedScrollingEnabled(Landroid/view/View;)Z
+.end method
+
 .method public abstract isOpaque(Landroid/view/View;)Z
+.end method
+
+.method public abstract isPaddingRelative(Landroid/view/View;)Z
+.end method
+
+.method public abstract jumpDrawablesToCurrentState(Landroid/view/View;)V
+.end method
+
+.method public abstract offsetLeftAndRight(Landroid/view/View;I)V
+.end method
+
+.method public abstract offsetTopAndBottom(Landroid/view/View;I)V
+.end method
+
+.method public abstract onApplyWindowInsets(Landroid/view/View;Landroid/support/v4/view/WindowInsetsCompat;)Landroid/support/v4/view/WindowInsetsCompat;
 .end method
 
 .method public abstract onInitializeAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
@@ -141,16 +228,44 @@
 .method public abstract postOnAnimationDelayed(Landroid/view/View;Ljava/lang/Runnable;J)V
 .end method
 
+.method public abstract requestApplyInsets(Landroid/view/View;)V
+.end method
+
 .method public abstract resolveSizeAndState(III)I
 .end method
 
 .method public abstract setAccessibilityDelegate(Landroid/view/View;Landroid/support/v4/view/AccessibilityDelegateCompat;)V
+    .param p2    # Landroid/support/v4/view/AccessibilityDelegateCompat;
+        .annotation build Landroid/support/annotation/Nullable;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract setAccessibilityLiveRegion(Landroid/view/View;I)V
 .end method
 
+.method public abstract setActivated(Landroid/view/View;Z)V
+.end method
+
 .method public abstract setAlpha(Landroid/view/View;F)V
+.end method
+
+.method public abstract setBackgroundTintList(Landroid/view/View;Landroid/content/res/ColorStateList;)V
+.end method
+
+.method public abstract setBackgroundTintMode(Landroid/view/View;Landroid/graphics/PorterDuff$Mode;)V
+.end method
+
+.method public abstract setChildrenDrawingOrderEnabled(Landroid/view/ViewGroup;Z)V
+.end method
+
+.method public abstract setClipBounds(Landroid/view/View;Landroid/graphics/Rect;)V
+.end method
+
+.method public abstract setElevation(Landroid/view/View;F)V
+.end method
+
+.method public abstract setFitsSystemWindows(Landroid/view/View;Z)V
 .end method
 
 .method public abstract setHasTransientState(Landroid/view/View;Z)V
@@ -169,6 +284,12 @@
 .end method
 
 .method public abstract setLayoutDirection(Landroid/view/View;I)V
+.end method
+
+.method public abstract setNestedScrollingEnabled(Landroid/view/View;Z)V
+.end method
+
+.method public abstract setOnApplyWindowInsetsListener(Landroid/view/View;Landroid/support/v4/view/OnApplyWindowInsetsListener;)V
 .end method
 
 .method public abstract setOverScrollMode(Landroid/view/View;I)V
@@ -192,10 +313,22 @@
 .method public abstract setRotationY(Landroid/view/View;F)V
 .end method
 
+.method public abstract setSaveFromParentEnabled(Landroid/view/View;Z)V
+.end method
+
 .method public abstract setScaleX(Landroid/view/View;F)V
 .end method
 
 .method public abstract setScaleY(Landroid/view/View;F)V
+.end method
+
+.method public abstract setScrollIndicators(Landroid/view/View;I)V
+.end method
+
+.method public abstract setScrollIndicators(Landroid/view/View;II)V
+.end method
+
+.method public abstract setTransitionName(Landroid/view/View;Ljava/lang/String;)V
 .end method
 
 .method public abstract setTranslationX(Landroid/view/View;F)V
@@ -204,8 +337,17 @@
 .method public abstract setTranslationY(Landroid/view/View;F)V
 .end method
 
+.method public abstract setTranslationZ(Landroid/view/View;F)V
+.end method
+
 .method public abstract setX(Landroid/view/View;F)V
 .end method
 
 .method public abstract setY(Landroid/view/View;F)V
+.end method
+
+.method public abstract startNestedScroll(Landroid/view/View;I)Z
+.end method
+
+.method public abstract stopNestedScroll(Landroid/view/View;)V
 .end method

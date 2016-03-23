@@ -1,4 +1,4 @@
-.class Lbolts/Task$6;
+.class final Lbolts/Task$6;
 .super Ljava/lang/Object;
 .source "Task.java"
 
@@ -8,11 +8,11 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lbolts/Task;->continueWithTask(Lbolts/Continuation;Ljava/util/concurrent/Executor;)Lbolts/Task;
+    value = Lbolts/Task;->whenAllResult(Ljava/util/Collection;)Lbolts/Task;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x8
     name = null
 .end annotation
 
@@ -20,37 +20,25 @@
     value = {
         "Ljava/lang/Object;",
         "Lbolts/Continuation",
-        "<TTResult;",
+        "<",
         "Ljava/lang/Void;",
-        ">;"
+        "Ljava/util/List",
+        "<TTResult;>;>;"
     }
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lbolts/Task;
-
-.field final synthetic val$continuation:Lbolts/Continuation;
-
-.field final synthetic val$executor:Ljava/util/concurrent/Executor;
-
-.field final synthetic val$tcs:Lbolts/Task$TaskCompletionSource;
+.field final synthetic val$tasks:Ljava/util/Collection;
 
 
 # direct methods
-.method constructor <init>(Lbolts/Task;Lbolts/Task$TaskCompletionSource;Lbolts/Continuation;Ljava/util/concurrent/Executor;)V
-    .registers 5
+.method constructor <init>(Ljava/util/Collection;)V
+    .registers 2
 
     .prologue
-    .line 339
-    .local p0, "this":Lbolts/Task$6;, "Lbolts/Task.6;"
-    iput-object p1, p0, Lbolts/Task$6;->this$0:Lbolts/Task;
-
-    iput-object p2, p0, Lbolts/Task$6;->val$tcs:Lbolts/Task$TaskCompletionSource;
-
-    iput-object p3, p0, Lbolts/Task$6;->val$continuation:Lbolts/Continuation;
-
-    iput-object p4, p0, Lbolts/Task$6;->val$executor:Ljava/util/concurrent/Executor;
+    .line 372
+    iput-object p1, p0, Lbolts/Task$6;->val$tasks:Ljava/util/Collection;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -69,41 +57,89 @@
     .end annotation
 
     .prologue
-    .line 339
-    .local p0, "this":Lbolts/Task$6;, "Lbolts/Task.6;"
-    invoke-virtual {p0, p1}, Lbolts/Task$6;->then(Lbolts/Task;)Ljava/lang/Void;
+    .line 372
+    invoke-virtual {p0, p1}, Lbolts/Task$6;->then(Lbolts/Task;)Ljava/util/List;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public then(Lbolts/Task;)Ljava/lang/Void;
-    .registers 5
+.method public then(Lbolts/Task;)Ljava/util/List;
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lbolts/Task",
-            "<TTResult;>;)",
-            "Ljava/lang/Void;"
+            "<",
+            "Ljava/lang/Void;",
+            ">;)",
+            "Ljava/util/List",
+            "<TTResult;>;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
         }
     .end annotation
 
     .prologue
-    .line 342
-    .local p0, "this":Lbolts/Task$6;, "Lbolts/Task.6;"
-    .local p1, "task":Lbolts/Task;, "Lbolts/Task<TTResult;>;"
-    iget-object v0, p0, Lbolts/Task$6;->val$tcs:Lbolts/Task$TaskCompletionSource;
+    .line 375
+    .local p1, "task":Lbolts/Task;, "Lbolts/Task<Ljava/lang/Void;>;"
+    iget-object v3, p0, Lbolts/Task$6;->val$tasks:Ljava/util/Collection;
 
-    iget-object v1, p0, Lbolts/Task$6;->val$continuation:Lbolts/Continuation;
+    invoke-interface {v3}, Ljava/util/Collection;->size()I
 
-    iget-object v2, p0, Lbolts/Task$6;->val$executor:Ljava/util/concurrent/Executor;
+    move-result v3
 
-    # invokes: Lbolts/Task;->completeAfterTask(Lbolts/Task$TaskCompletionSource;Lbolts/Continuation;Lbolts/Task;Ljava/util/concurrent/Executor;)V
-    invoke-static {v0, v1, p1, v2}, Lbolts/Task;->access$200(Lbolts/Task$TaskCompletionSource;Lbolts/Continuation;Lbolts/Task;Ljava/util/concurrent/Executor;)V
+    if-nez v3, :cond_d
 
-    .line 343
-    const/4 v0, 0x0
+    .line 376
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
-    return-object v0
+    move-result-object v2
+
+    .line 383
+    :cond_c
+    return-object v2
+
+    .line 379
+    :cond_d
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 380
+    .local v2, "results":Ljava/util/List;, "Ljava/util/List<TTResult;>;"
+    iget-object v3, p0, Lbolts/Task$6;->val$tasks:Ljava/util/Collection;
+
+    invoke-interface {v3}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    .local v0, "i$":Ljava/util/Iterator;
+    :goto_18
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_c
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lbolts/Task;
+
+    .line 381
+    .local v1, "individualTask":Lbolts/Task;, "Lbolts/Task<TTResult;>;"
+    invoke-virtual {v1}, Lbolts/Task;->getResult()Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_18
 .end method

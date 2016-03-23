@@ -83,7 +83,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_34
+    if-eqz v10, :cond_36
 
     .line 31
     invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getCurrentChar()C
@@ -102,7 +102,9 @@
     iput v10, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->pos:I
 
     .line 36
-    iget-object v10, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->msg:Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getMessage()Ljava/lang/String;
+
+    move-result-object v10
 
     iget v11, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->pos:I
 
@@ -128,7 +130,7 @@
     .line 42
     .end local v1    # "c":C
     .end local v7    # "newMode":I
-    :cond_34
+    :cond_36
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v10
@@ -154,30 +156,34 @@
     invoke-virtual {p1, v2}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->updateSymbolInfo(I)V
 
     .line 46
-    iget-object v10, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->symbolInfo:Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
+    invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getSymbolInfo()Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
 
-    iget v10, v10, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->dataCapacity:I
+    move-result-object v10
+
+    invoke-virtual {v10}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getDataCapacity()I
+
+    move-result v10
 
     sub-int/2addr v10, v2
 
-    if-lez v10, :cond_76
+    if-lez v10, :cond_7c
 
     move v6, v8
 
     .line 47
     .local v6, "mustPad":Z
-    :goto_4d
+    :goto_53
     invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->hasMoreCharacters()Z
 
     move-result v10
 
-    if-nez v10, :cond_55
+    if-nez v10, :cond_5b
 
-    if-eqz v6, :cond_5b
+    if-eqz v6, :cond_61
 
     .line 48
-    :cond_55
-    if-gt v3, v13, :cond_78
+    :cond_5b
+    if-gt v3, v13, :cond_7e
 
     .line 49
     int-to-char v8, v3
@@ -185,8 +191,8 @@
     invoke-virtual {v0, v9, v8}, Ljava/lang/StringBuilder;->setCharAt(IC)V
 
     .line 58
-    :cond_5b
-    :goto_5b
+    :cond_61
+    :goto_61
     const/4 v4, 0x0
 
     .local v4, "i":I
@@ -195,10 +201,10 @@
     move-result v1
 
     .local v1, "c":I
-    :goto_60
-    if-ge v4, v1, :cond_a6
+    :goto_66
+    if-ge v4, v1, :cond_ad
 
-    .line 59
+    .line 60
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->charAt(I)C
 
     move-result v8
@@ -209,6 +215,7 @@
 
     add-int/lit8 v9, v9, 0x1
 
+    .line 59
     invoke-static {v8, v9}, Lcom/google/zxing/datamatrix/encoder/Base256Encoder;->randomize255State(CI)C
 
     move-result v8
@@ -218,25 +225,25 @@
     .line 58
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_60
+    goto :goto_66
 
     .end local v1    # "c":I
     .end local v4    # "i":I
     .end local v6    # "mustPad":Z
-    :cond_76
+    :cond_7c
     move v6, v9
 
     .line 46
-    goto :goto_4d
+    goto :goto_53
 
     .line 50
     .restart local v6    # "mustPad":Z
-    :cond_78
-    if-le v3, v13, :cond_8d
+    :cond_7e
+    if-le v3, v13, :cond_93
 
     const/16 v10, 0x613
 
-    if-gt v3, v10, :cond_8d
+    if-gt v3, v10, :cond_93
 
     .line 51
     div-int/lit16 v10, v3, 0xfa
@@ -254,17 +261,17 @@
 
     invoke-virtual {v0, v8, v9}, Ljava/lang/StringBuilder;->insert(IC)Ljava/lang/StringBuilder;
 
-    goto :goto_5b
+    goto :goto_61
 
     .line 54
-    :cond_8d
+    :cond_93
     new-instance v8, Ljava/lang/IllegalStateException;
 
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, "Message length not in valid ranges: "
+    const-string/jumbo v10, "Message length not in valid ranges: "
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -285,7 +292,7 @@
     .line 62
     .restart local v1    # "c":I
     .restart local v4    # "i":I
-    :cond_a6
+    :cond_ad
     return-void
 .end method
 

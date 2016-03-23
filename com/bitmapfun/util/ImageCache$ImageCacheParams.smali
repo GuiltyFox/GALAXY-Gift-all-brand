@@ -45,52 +45,52 @@
 
     const/4 v1, 0x0
 
-    .line 380
+    .line 379
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 370
+    .line 369
     const/high16 v0, 0x1900000
 
     iput v0, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->memCacheSize:I
 
-    .line 371
+    .line 370
     const/high16 v0, 0x3200000
 
     iput v0, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->diskCacheSize:I
 
-    .line 373
+    .line 372
     # getter for: Lcom/bitmapfun/util/ImageCache;->DEFAULT_COMPRESS_FORMAT:Landroid/graphics/Bitmap$CompressFormat;
-    invoke-static {}, Lcom/bitmapfun/util/ImageCache;->access$0()Landroid/graphics/Bitmap$CompressFormat;
+    invoke-static {}, Lcom/bitmapfun/util/ImageCache;->access$000()Landroid/graphics/Bitmap$CompressFormat;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->compressFormat:Landroid/graphics/Bitmap$CompressFormat;
 
-    .line 374
+    .line 373
     const/16 v0, 0x64
 
     iput v0, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->compressQuality:I
 
-    .line 375
+    .line 374
     iput-boolean v2, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->memoryCacheEnabled:Z
 
-    .line 376
+    .line 375
     iput-boolean v2, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->diskCacheEnabled:Z
 
-    .line 377
+    .line 376
     iput-boolean v1, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->clearDiskCacheOnStart:Z
 
-    .line 378
+    .line 377
     iput-boolean v1, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->initDiskCacheOnCreate:Z
 
-    .line 381
+    .line 380
     invoke-static {p1, p2}, Lcom/bitmapfun/util/ImageCache;->getDiskCacheDir(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->diskCacheDir:Ljava/io/File;
 
-    .line 382
+    .line 381
     return-void
 .end method
 
@@ -103,48 +103,48 @@
 
     const/4 v1, 0x0
 
-    .line 384
+    .line 383
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 370
+    .line 369
     const/high16 v0, 0x1900000
 
     iput v0, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->memCacheSize:I
 
-    .line 371
+    .line 370
     const/high16 v0, 0x3200000
 
     iput v0, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->diskCacheSize:I
 
-    .line 373
+    .line 372
     # getter for: Lcom/bitmapfun/util/ImageCache;->DEFAULT_COMPRESS_FORMAT:Landroid/graphics/Bitmap$CompressFormat;
-    invoke-static {}, Lcom/bitmapfun/util/ImageCache;->access$0()Landroid/graphics/Bitmap$CompressFormat;
+    invoke-static {}, Lcom/bitmapfun/util/ImageCache;->access$000()Landroid/graphics/Bitmap$CompressFormat;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->compressFormat:Landroid/graphics/Bitmap$CompressFormat;
 
-    .line 374
+    .line 373
     const/16 v0, 0x64
 
     iput v0, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->compressQuality:I
 
-    .line 375
+    .line 374
     iput-boolean v2, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->memoryCacheEnabled:Z
 
-    .line 376
+    .line 375
     iput-boolean v2, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->diskCacheEnabled:Z
 
-    .line 377
+    .line 376
     iput-boolean v1, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->clearDiskCacheOnStart:Z
 
-    .line 378
+    .line 377
     iput-boolean v1, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->initDiskCacheOnCreate:Z
 
-    .line 385
+    .line 384
     iput-object p1, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->diskCacheDir:Ljava/io/File;
 
-    .line 386
+    .line 385
     return-void
 .end method
 
@@ -153,8 +153,8 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 408
-    const-string v0, "activity"
+    .line 407
+    const-string/jumbo v0, "activity"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -179,7 +179,7 @@
     .prologue
     const/high16 v1, 0x44800000
 
-    .line 401
+    .line 400
     const v0, 0x3d4ccccd
 
     cmpg-float v0, p2, v0
@@ -190,20 +190,20 @@
 
     cmpl-float v0, p2, v0
 
-    if-lez v0, :cond_18
+    if-lez v0, :cond_19
 
-    .line 402
+    .line 401
     :cond_10
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "setMemCacheSizePercent - percent must be between 0.05 and 0.8 (inclusive)"
+    const-string/jumbo v1, "setMemCacheSizePercent - percent must be between 0.05 and 0.8 (inclusive)"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 404
-    :cond_18
+    .line 403
+    :cond_19
     invoke-static {p1}, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->getMemoryClass(Landroid/content/Context;)I
 
     move-result v0
@@ -222,6 +222,6 @@
 
     iput v0, p0, Lcom/bitmapfun/util/ImageCache$ImageCacheParams;->memCacheSize:I
 
-    .line 405
+    .line 404
     return-void
 .end method

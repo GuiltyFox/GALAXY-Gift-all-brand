@@ -47,20 +47,20 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 91
-    if-nez p1, :cond_d
+    if-nez p1, :cond_e
 
     .line 92
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "appLink must not be null."
+    const-string/jumbo v1, "appLink must not be null."
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 94
-    :cond_d
-    if-nez p2, :cond_14
+    :cond_e
+    if-nez p2, :cond_15
 
     .line 95
     new-instance p2, Landroid/os/Bundle;
@@ -70,8 +70,8 @@
 
     .line 97
     .restart local p2    # "extras":Landroid/os/Bundle;
-    :cond_14
-    if-nez p3, :cond_1b
+    :cond_15
+    if-nez p3, :cond_1c
 
     .line 98
     new-instance p3, Landroid/os/Bundle;
@@ -81,7 +81,7 @@
 
     .line 100
     .restart local p3    # "appLinkData":Landroid/os/Bundle;
-    :cond_1b
+    :cond_1c
     iput-object p1, p0, Lbolts/AppLinkNavigation;->appLink:Lbolts/AppLink;
 
     .line 101
@@ -112,7 +112,7 @@
 
     .line 140
     .local v2, "refererAppLinkData":Landroid/os/Bundle;
-    if-eqz p1, :cond_2a
+    if-eqz p1, :cond_2c
 
     .line 141
     invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
@@ -121,22 +121,22 @@
 
     .line 142
     .local v4, "refererAppPackage":Ljava/lang/String;
-    if-eqz v4, :cond_17
+    if-eqz v4, :cond_18
 
     .line 143
-    const-string v5, "package"
+    const-string/jumbo v5, "package"
 
     invoke-virtual {v2, v5, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 145
-    :cond_17
+    :cond_18
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v0
 
     .line 146
     .local v0, "appInfo":Landroid/content/pm/ApplicationInfo;
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_2c
 
     .line 147
     iget v5, v0, Landroid/content/pm/ApplicationInfo;->labelRes:I
@@ -147,10 +147,10 @@
 
     .line 148
     .local v3, "refererAppName":Ljava/lang/String;
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_2c
 
     .line 149
-    const-string v5, "app_name"
+    const-string/jumbo v5, "app_name"
 
     invoke-virtual {v2, v5, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -158,7 +158,7 @@
     .end local v0    # "appInfo":Landroid/content/pm/ApplicationInfo;
     .end local v3    # "refererAppName":Ljava/lang/String;
     .end local v4    # "refererAppPackage":Ljava/lang/String;
-    :cond_2a
+    :cond_2c
     invoke-virtual {p0}, Lbolts/AppLinkNavigation;->getAppLinkData()Landroid/os/Bundle;
 
     move-result-object v5
@@ -166,7 +166,7 @@
     invoke-virtual {v1, v5}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
     .line 154
-    const-string v5, "target_url"
+    const-string/jumbo v5, "target_url"
 
     invoke-virtual {p0}, Lbolts/AppLinkNavigation;->getAppLink()Lbolts/AppLink;
 
@@ -183,26 +183,26 @@
     invoke-virtual {v1, v5, v6}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 155
-    const-string v5, "version"
+    const-string/jumbo v5, "version"
 
-    const-string v6, "1.0"
+    const-string/jumbo v6, "1.0"
 
     invoke-virtual {v1, v5, v6}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 156
-    const-string v5, "user_agent"
+    const-string/jumbo v5, "user_agent"
 
-    const-string v6, "Bolts Android 1.1.2"
+    const-string/jumbo v6, "Bolts Android 1.2.0"
 
     invoke-virtual {v1, v5, v6}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 157
-    const-string v5, "referer_app_link"
+    const-string/jumbo v5, "referer_app_link"
 
     invoke-virtual {v1, v5, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 158
-    const-string v5, "extras"
+    const-string/jumbo v5, "extras"
 
     invoke-virtual {p0}, Lbolts/AppLinkNavigation;->getExtras()Landroid/os/Bundle;
 
@@ -1248,10 +1248,10 @@
 
     .line 326
     .local v0, "extraLoggingData":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
-    if-eqz p4, :cond_10
+    if-eqz p4, :cond_11
 
     .line 327
-    const-string v1, "error"
+    const-string/jumbo v1, "error"
 
     invoke-virtual {p4}, Lorg/json/JSONException;->getLocalizedMessage()Ljava/lang/String;
 
@@ -1260,22 +1260,22 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 330
-    :cond_10
-    const-string v2, "success"
+    :cond_11
+    const-string/jumbo v2, "success"
 
     invoke-virtual {p3}, Lbolts/AppLinkNavigation$NavigationResult;->isSucceeded()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_31
 
-    const-string v1, "1"
+    const-string/jumbo v1, "1"
 
-    :goto_1a
+    :goto_1d
     invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 331
-    const-string v1, "type"
+    const-string/jumbo v1, "type"
 
     invoke-virtual {p3}, Lbolts/AppLinkNavigation$NavigationResult;->getCode()Ljava/lang/String;
 
@@ -1284,7 +1284,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 333
-    const-string v1, "al_nav_out"
+    const-string/jumbo v1, "al_nav_out"
 
     invoke-static {p1, v1, p2, v0}, Lbolts/MeasurementEvent;->sendBroadcastEvent(Landroid/content/Context;Ljava/lang/String;Landroid/content/Intent;Ljava/util/Map;)V
 
@@ -1292,10 +1292,10 @@
     return-void
 
     .line 330
-    :cond_2c
-    const-string v1, "0"
+    :cond_31
+    const-string/jumbo v1, "0"
 
-    goto :goto_1a
+    goto :goto_1d
 .end method
 
 .method public static setDefaultResolver(Lbolts/AppLinkResolver;)V
@@ -1382,7 +1382,7 @@
 
     move-result v14
 
-    if-eqz v14, :cond_5b
+    if-eqz v14, :cond_5d
 
     invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1394,7 +1394,7 @@
     .local v11, "target":Lbolts/AppLink$Target;
     new-instance v12, Landroid/content/Intent;
 
-    const-string v14, "android.intent.action.VIEW"
+    const-string/jumbo v14, "android.intent.action.VIEW"
 
     invoke-direct {v12, v14}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
@@ -1404,7 +1404,7 @@
 
     move-result-object v14
 
-    if-eqz v14, :cond_73
+    if-eqz v14, :cond_75
 
     .line 276
     invoke-virtual {v11}, Lbolts/AppLink$Target;->getUrl()Landroid/net/Uri;
@@ -1414,7 +1414,7 @@
     invoke-virtual {v12, v14}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
     .line 280
-    :goto_35
+    :goto_36
     invoke-virtual {v11}, Lbolts/AppLink$Target;->getPackageName()Ljava/lang/String;
 
     move-result-object v14
@@ -1426,7 +1426,7 @@
 
     move-result-object v14
 
-    if-eqz v14, :cond_4d
+    if-eqz v14, :cond_4e
 
     .line 282
     invoke-virtual {v11}, Lbolts/AppLink$Target;->getPackageName()Ljava/lang/String;
@@ -1440,8 +1440,8 @@
     invoke-virtual {v12, v14, v15}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 284
-    :cond_4d
-    const-string v14, "al_applink_data"
+    :cond_4e
+    const-string/jumbo v14, "al_applink_data"
 
     invoke-virtual {v12, v14, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
 
@@ -1463,7 +1463,7 @@
     .end local v9    # "resolved":Landroid/content/pm/ResolveInfo;
     .end local v11    # "target":Lbolts/AppLink$Target;
     .end local v12    # "targetIntent":Landroid/content/Intent;
-    :cond_5b
+    :cond_5d
     const/4 v7, 0x0
 
     .line 294
@@ -1472,7 +1472,7 @@
 
     .line 295
     .local v10, "result":Lbolts/AppLinkNavigation$NavigationResult;
-    if-eqz v4, :cond_7f
+    if-eqz v4, :cond_81
 
     .line 296
     move-object v7, v4
@@ -1481,8 +1481,8 @@
     sget-object v10, Lbolts/AppLinkNavigation$NavigationResult;->APP:Lbolts/AppLinkNavigation$NavigationResult;
 
     .line 317
-    :cond_63
-    :goto_63
+    :cond_65
+    :goto_65
     const/4 v14, 0x0
 
     move-object/from16 v0, p0
@@ -1492,7 +1492,7 @@
     invoke-direct {v0, v1, v7, v10, v14}, Lbolts/AppLinkNavigation;->sendAppLinkNavigateEventBroadcast(Landroid/content/Context;Landroid/content/Intent;Lbolts/AppLinkNavigation$NavigationResult;Lorg/json/JSONException;)V
 
     .line 318
-    if-eqz v7, :cond_72
+    if-eqz v7, :cond_74
 
     .line 319
     move-object/from16 v0, p1
@@ -1500,7 +1500,7 @@
     invoke-virtual {v0, v7}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     .line 321
-    :cond_72
+    :cond_74
     return-object v10
 
     .line 278
@@ -1508,7 +1508,7 @@
     .end local v10    # "result":Lbolts/AppLinkNavigation$NavigationResult;
     .restart local v11    # "target":Lbolts/AppLink$Target;
     .restart local v12    # "targetIntent":Landroid/content/Intent;
-    :cond_73
+    :cond_75
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lbolts/AppLinkNavigation;->appLink:Lbolts/AppLink;
@@ -1519,14 +1519,14 @@
 
     invoke-virtual {v12, v14}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    goto :goto_35
+    goto :goto_36
 
     .line 300
     .end local v11    # "target":Lbolts/AppLink$Target;
     .end local v12    # "targetIntent":Landroid/content/Intent;
     .restart local v7    # "outIntent":Landroid/content/Intent;
     .restart local v10    # "result":Lbolts/AppLinkNavigation$NavigationResult;
-    :cond_7f
+    :cond_81
     invoke-virtual/range {p0 .. p0}, Lbolts/AppLinkNavigation;->getAppLink()Lbolts/AppLink;
 
     move-result-object v14
@@ -1537,15 +1537,15 @@
 
     .line 301
     .local v13, "webUrl":Landroid/net/Uri;
-    if-eqz v13, :cond_63
+    if-eqz v13, :cond_65
 
     .line 304
-    :try_start_89
+    :try_start_8b
     move-object/from16 v0, p0
 
     invoke-direct {v0, v5}, Lbolts/AppLinkNavigation;->getJSONForBundle(Landroid/os/Bundle;)Lorg/json/JSONObject;
-    :try_end_8e
-    .catch Lorg/json/JSONException; {:try_start_89 .. :try_end_8e} :catch_ab
+    :try_end_90
+    .catch Lorg/json/JSONException; {:try_start_8b .. :try_end_90} :catch_af
 
     move-result-object v2
 
@@ -1555,7 +1555,7 @@
 
     move-result-object v14
 
-    const-string v15, "al_applink_data"
+    const-string/jumbo v15, "al_applink_data"
 
     invoke-virtual {v2}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
@@ -1573,7 +1573,7 @@
     new-instance v7, Landroid/content/Intent;
 
     .end local v7    # "outIntent":Landroid/content/Intent;
-    const-string v14, "android.intent.action.VIEW"
+    const-string/jumbo v14, "android.intent.action.VIEW"
 
     invoke-direct {v7, v14, v13}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
@@ -1581,11 +1581,11 @@
     .restart local v7    # "outIntent":Landroid/content/Intent;
     sget-object v10, Lbolts/AppLinkNavigation$NavigationResult;->WEB:Lbolts/AppLinkNavigation$NavigationResult;
 
-    goto :goto_63
+    goto :goto_65
 
     .line 305
     .end local v2    # "appLinkDataJson":Lorg/json/JSONObject;
-    :catch_ab
+    :catch_af
     move-exception v3
 
     .line 306

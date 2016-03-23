@@ -1,4 +1,4 @@
-.class public Landroid/support/v4/app/NavUtils;
+.class public final Landroid/support/v4/app/NavUtils;
 .super Ljava/lang/Object;
 .source "NavUtils.java"
 
@@ -317,7 +317,7 @@
 
     .line 177
     .local v0, "upIntent":Landroid/content/Intent;
-    if-nez v0, :cond_39
+    if-nez v0, :cond_3d
 
     .line 178
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -326,7 +326,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "Activity "
+    const-string/jumbo v3, "Activity "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -344,19 +344,19 @@
 
     move-result-object v2
 
-    const-string v3, " does not have a parent activity name specified."
+    const-string/jumbo v3, " does not have a parent activity name specified."
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    const-string v3, " (Did you forget to add the android.support.PARENT_ACTIVITY <meta-data> "
+    const-string/jumbo v3, " (Did you forget to add the android.support.PARENT_ACTIVITY <meta-data> "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    const-string v3, " element in your manifest?)"
+    const-string/jumbo v3, " element in your manifest?)"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -371,7 +371,7 @@
     throw v1
 
     .line 185
-    :cond_39
+    :cond_3d
     invoke-static {p0, v0}, Landroid/support/v4/app/NavUtils;->navigateUpTo(Landroid/app/Activity;Landroid/content/Intent;)V
 
     .line 186

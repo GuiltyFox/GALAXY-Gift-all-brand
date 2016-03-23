@@ -23,11 +23,11 @@
 .method public constructor <init>(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;Landroid/content/res/TypedArray;)V
     .registers 12
     .param p1, "context"    # Landroid/content/Context;
+    .param p2, "mode"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    .param p3, "scrollDirection"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
     .param p4, "attrs"    # Landroid/content/res/TypedArray;
 
     .prologue
-    .local p2, "mode":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;"
-    .local p3, "scrollDirection":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;"
     const/high16 v4, 0x3f000000
 
     const/4 v3, 0x1
@@ -36,7 +36,7 @@
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;-><init>(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;Landroid/content/res/TypedArray;)V
 
     .line 44
-    sget v0, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrRotateDrawableWhilePulling:I
+    sget v0, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrRotateDrawableWhilePulling:I
 
     invoke-virtual {p4, v0, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
@@ -76,10 +76,8 @@
 
     move v6, v4
 
-    .line 51
     invoke-direct/range {v0 .. v6}, Landroid/view/animation/RotateAnimation;-><init>(FFIFIF)V
 
-    .line 50
     iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/RotateLoadingLayout;->mRotateAnimation:Landroid/view/animation/Animation;
 
     .line 52
@@ -145,7 +143,7 @@
 
     .prologue
     .line 107
-    sget v0, Lic/buzzebeeslib/R$drawable;->bz_default_ptr_rotate:I
+    sget v0, Lcom/bzbs/lib/survey/R$drawable;->bz_default_ptr_rotate:I
 
     return v0
 .end method

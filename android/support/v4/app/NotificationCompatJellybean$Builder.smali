@@ -48,9 +48,9 @@
     .param p8, "contentIntent"    # Landroid/app/PendingIntent;
     .param p9, "fullScreenIntent"    # Landroid/app/PendingIntent;
     .param p10, "largeIcon"    # Landroid/graphics/Bitmap;
-    .param p11, "mProgressMax"    # I
-    .param p12, "mProgress"    # I
-    .param p13, "mProgressIndeterminate"    # Z
+    .param p11, "progressMax"    # I
+    .param p12, "progress"    # I
+    .param p13, "progressIndeterminate"    # Z
     .param p14, "useChronometer"    # Z
     .param p15, "priority"    # I
     .param p16, "subText"    # Ljava/lang/CharSequence;
@@ -130,7 +130,7 @@
 
     and-int/lit8 v4, v4, 0x2
 
-    if-eqz v4, :cond_f0
+    if-eqz v4, :cond_f4
 
     const/4 v4, 0x1
 
@@ -143,7 +143,7 @@
 
     and-int/lit8 v4, v4, 0x8
 
-    if-eqz v4, :cond_f3
+    if-eqz v4, :cond_f7
 
     const/4 v4, 0x1
 
@@ -156,7 +156,7 @@
 
     and-int/lit8 v4, v4, 0x10
 
-    if-eqz v4, :cond_f6
+    if-eqz v4, :cond_fa
 
     const/4 v4, 0x1
 
@@ -205,7 +205,7 @@
 
     and-int/lit16 v4, v4, 0x80
 
-    if-eqz v4, :cond_f9
+    if-eqz v4, :cond_fd
 
     const/4 v4, 0x1
 
@@ -269,92 +269,92 @@
 
     .line 106
     :cond_c5
-    if-eqz p17, :cond_cf
+    if-eqz p17, :cond_d0
 
     .line 107
     iget-object v4, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mExtras:Landroid/os/Bundle;
 
-    const-string v5, "android.support.localOnly"
+    const-string/jumbo v5, "android.support.localOnly"
 
     const/4 v6, 0x1
 
     invoke-virtual {v4, v5, v6}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 109
-    :cond_cf
-    if-eqz p19, :cond_e4
+    :cond_d0
+    if-eqz p19, :cond_e7
 
     .line 110
     iget-object v4, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mExtras:Landroid/os/Bundle;
 
-    const-string v5, "android.support.groupKey"
+    const-string/jumbo v5, "android.support.groupKey"
 
     move-object/from16 v0, p19
 
     invoke-virtual {v4, v5, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 111
-    if-eqz p20, :cond_fb
+    if-eqz p20, :cond_ff
 
     .line 112
     iget-object v4, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mExtras:Landroid/os/Bundle;
 
-    const-string v5, "android.support.isGroupSummary"
+    const-string/jumbo v5, "android.support.isGroupSummary"
 
     const/4 v6, 0x1
 
     invoke-virtual {v4, v5, v6}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 117
-    :cond_e4
-    :goto_e4
-    if-eqz p21, :cond_ef
+    :cond_e7
+    :goto_e7
+    if-eqz p21, :cond_f3
 
     .line 118
     iget-object v4, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mExtras:Landroid/os/Bundle;
 
-    const-string v5, "android.support.sortKey"
+    const-string/jumbo v5, "android.support.sortKey"
 
     move-object/from16 v0, p21
 
     invoke-virtual {v4, v5, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 120
-    :cond_ef
+    :cond_f3
     return-void
 
     .line 77
-    :cond_f0
+    :cond_f4
     const/4 v4, 0x0
 
     goto/16 :goto_48
 
-    :cond_f3
+    :cond_f7
     const/4 v4, 0x0
 
     goto/16 :goto_53
 
-    :cond_f6
+    :cond_fa
     const/4 v4, 0x0
 
     goto/16 :goto_5e
 
-    :cond_f9
+    :cond_fd
     const/4 v4, 0x0
 
     goto :goto_8d
 
     .line 114
-    :cond_fb
+    :cond_ff
     iget-object v4, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mExtras:Landroid/os/Bundle;
 
-    const-string v5, "android.support.useSideChannel"
+    const-string/jumbo v5, "android.support.useSideChannel"
 
     const/4 v6, 0x1
 
     invoke-virtual {v4, v5, v6}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    goto :goto_e4
+    goto :goto_e7
 .end method
 
 
@@ -458,19 +458,19 @@
 
     .line 145
     .local v0, "actionExtrasMap":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/os/Bundle;>;"
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_46
 
     .line 147
     invoke-static {v5}, Landroid/support/v4/app/NotificationCompatJellybean;->getExtras(Landroid/app/Notification;)Landroid/os/Bundle;
 
     move-result-object v6
 
-    const-string v7, "android.support.actionExtras"
+    const-string/jumbo v7, "android.support.actionExtras"
 
     invoke-virtual {v6, v7, v0}, Landroid/os/Bundle;->putSparseParcelableArray(Ljava/lang/String;Landroid/util/SparseArray;)V
 
     .line 149
-    :cond_45
+    :cond_46
     return-object v5
 .end method
 

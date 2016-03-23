@@ -20,20 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/samsung/privilege/activity/MessageDialogActivity;
 
-.field private final synthetic val$dialogSerial:Landroid/app/Dialog;
+.field final synthetic val$dialogSerial:Landroid/app/Dialog;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/MessageDialogActivity;Landroid/app/Dialog;)V
     .registers 3
+    .param p1, "this$0"    # Lcom/samsung/privilege/activity/MessageDialogActivity;
 
     .prologue
-    .line 1
+    .line 78
     iput-object p1, p0, Lcom/samsung/privilege/activity/MessageDialogActivity$2;->this$0:Lcom/samsung/privilege/activity/MessageDialogActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MessageDialogActivity$2;->val$dialogSerial:Landroid/app/Dialog;
 
-    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,16 +46,16 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 73
+    .line 80
     iget-object v0, p0, Lcom/samsung/privilege/activity/MessageDialogActivity$2;->val$dialogSerial:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 74
+    .line 81
     iget-object v0, p0, Lcom/samsung/privilege/activity/MessageDialogActivity$2;->this$0:Lcom/samsung/privilege/activity/MessageDialogActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MessageDialogActivity;->finish()V
 
-    .line 75
+    .line 82
     return-void
 .end method

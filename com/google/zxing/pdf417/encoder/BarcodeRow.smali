@@ -15,20 +15,20 @@
     .param p1, "width"    # I
 
     .prologue
-    .line 33
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
+    .line 32
     new-array v0, p1, [B
 
     iput-object v0, p0, Lcom/google/zxing/pdf417/encoder/BarcodeRow;->row:[B
 
-    .line 35
+    .line 33
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/zxing/pdf417/encoder/BarcodeRow;->currentLocation:I
 
-    .line 36
+    .line 34
     return-void
 .end method
 
@@ -40,14 +40,14 @@
     .param p2, "width"    # I
 
     .prologue
-    .line 63
+    .line 61
     const/4 v0, 0x0
 
     .local v0, "ii":I
     :goto_1
     if-ge v0, p2, :cond_f
 
-    .line 64
+    .line 62
     iget v1, p0, Lcom/google/zxing/pdf417/encoder/BarcodeRow;->currentLocation:I
 
     add-int/lit8 v2, v1, 0x1
@@ -56,24 +56,14 @@
 
     invoke-virtual {p0, v1, p1}, Lcom/google/zxing/pdf417/encoder/BarcodeRow;->set(IZ)V
 
-    .line 63
+    .line 61
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 66
+    .line 64
     :cond_f
     return-void
-.end method
-
-.method getRow()[B
-    .registers 2
-
-    .prologue
-    .line 69
-    iget-object v0, p0, Lcom/google/zxing/pdf417/encoder/BarcodeRow;->row:[B
-
-    return-object v0
 .end method
 
 .method getScaledRow(I)[B
@@ -125,12 +115,12 @@
     .param p2, "value"    # B
 
     .prologue
-    .line 45
+    .line 43
     iget-object v0, p0, Lcom/google/zxing/pdf417/encoder/BarcodeRow;->row:[B
 
     aput-byte p2, v0, p1
 
-    .line 46
+    .line 44
     return-void
 .end method
 
@@ -140,7 +130,7 @@
     .param p2, "black"    # Z
 
     .prologue
-    .line 55
+    .line 53
     iget-object v1, p0, Lcom/google/zxing/pdf417/encoder/BarcodeRow;->row:[B
 
     if-eqz p2, :cond_9
@@ -152,10 +142,10 @@
 
     aput-byte v0, v1, p1
 
-    .line 56
+    .line 54
     return-void
 
-    .line 55
+    .line 53
     :cond_9
     const/4 v0, 0x0
 

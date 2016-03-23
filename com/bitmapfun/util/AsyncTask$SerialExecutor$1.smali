@@ -18,22 +18,22 @@
 
 
 # instance fields
-.field final synthetic this$1:Lcom/bitmapfun/util/AsyncTask$SerialExecutor;
+.field final synthetic this$0:Lcom/bitmapfun/util/AsyncTask$SerialExecutor;
 
-.field private final synthetic val$r:Ljava/lang/Runnable;
+.field final synthetic val$r:Ljava/lang/Runnable;
 
 
 # direct methods
 .method constructor <init>(Lcom/bitmapfun/util/AsyncTask$SerialExecutor;Ljava/lang/Runnable;)V
     .registers 3
+    .param p1, "this$0"    # Lcom/bitmapfun/util/AsyncTask$SerialExecutor;
 
     .prologue
-    .line 1
-    iput-object p1, p0, Lcom/bitmapfun/util/AsyncTask$SerialExecutor$1;->this$1:Lcom/bitmapfun/util/AsyncTask$SerialExecutor;
+    .line 253
+    iput-object p1, p0, Lcom/bitmapfun/util/AsyncTask$SerialExecutor$1;->this$0:Lcom/bitmapfun/util/AsyncTask$SerialExecutor;
 
     iput-object p2, p0, Lcom/bitmapfun/util/AsyncTask$SerialExecutor$1;->val$r:Ljava/lang/Runnable;
 
-    .line 254
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 3
 
     .prologue
-    .line 257
+    .line 256
     :try_start_0
     iget-object v0, p0, Lcom/bitmapfun/util/AsyncTask$SerialExecutor$1;->val$r:Ljava/lang/Runnable;
 
@@ -53,23 +53,21 @@
     :try_end_5
     .catchall {:try_start_0 .. :try_end_5} :catchall_b
 
-    .line 259
-    iget-object v0, p0, Lcom/bitmapfun/util/AsyncTask$SerialExecutor$1;->this$1:Lcom/bitmapfun/util/AsyncTask$SerialExecutor;
+    .line 258
+    iget-object v0, p0, Lcom/bitmapfun/util/AsyncTask$SerialExecutor$1;->this$0:Lcom/bitmapfun/util/AsyncTask$SerialExecutor;
 
     invoke-virtual {v0}, Lcom/bitmapfun/util/AsyncTask$SerialExecutor;->scheduleNext()V
 
-    .line 261
+    .line 260
     return-void
 
     .line 258
     :catchall_b
     move-exception v0
 
-    .line 259
-    iget-object v1, p0, Lcom/bitmapfun/util/AsyncTask$SerialExecutor$1;->this$1:Lcom/bitmapfun/util/AsyncTask$SerialExecutor;
+    iget-object v1, p0, Lcom/bitmapfun/util/AsyncTask$SerialExecutor$1;->this$0:Lcom/bitmapfun/util/AsyncTask$SerialExecutor;
 
     invoke-virtual {v1}, Lcom/bitmapfun/util/AsyncTask$SerialExecutor;->scheduleNext()V
 
-    .line 260
     throw v0
 .end method

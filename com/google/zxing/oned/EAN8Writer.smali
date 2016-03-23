@@ -51,7 +51,7 @@
     .local p5, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/EncodeHintType;*>;"
     sget-object v0, Lcom/google/zxing/BarcodeFormat;->EAN_8:Lcom/google/zxing/BarcodeFormat;
 
-    if-eq p2, v0, :cond_1d
+    if-eq p2, v0, :cond_1e
 
     .line 46
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -60,7 +60,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "Can only encode EAN_8, but got "
+    const-string/jumbo v2, "Can only encode EAN_8, but got "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -79,7 +79,7 @@
     throw v0
 
     .line 50
-    :cond_1d
+    :cond_1e
     invoke-super/range {p0 .. p5}, Lcom/google/zxing/oned/UPCEANWriter;->encode(Ljava/lang/String;Lcom/google/zxing/BarcodeFormat;IILjava/util/Map;)Lcom/google/zxing/common/BitMatrix;
 
     move-result-object v0
@@ -103,7 +103,7 @@
 
     const/16 v5, 0x8
 
-    if-eq v4, v5, :cond_27
+    if-eq v4, v5, :cond_28
 
     .line 59
     new-instance v4, Ljava/lang/IllegalArgumentException;
@@ -112,12 +112,13 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "Requested contents should be 8 digits long, but got "
+    const-string/jumbo v6, "Requested contents should be 8 digits long, but got "
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
+    .line 60
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v6
@@ -135,7 +136,7 @@
     throw v4
 
     .line 63
-    :cond_27
+    :cond_28
     const/16 v4, 0x43
 
     new-array v3, v4, [Z
@@ -158,10 +159,10 @@
     const/4 v1, 0x0
 
     .local v1, "i":I
-    :goto_34
+    :goto_35
     const/4 v4, 0x3
 
-    if-gt v1, v4, :cond_4d
+    if-gt v1, v4, :cond_4e
 
     .line 69
     add-int/lit8 v4, v1, 0x1
@@ -189,11 +190,11 @@
     .line 68
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_34
+    goto :goto_35
 
     .line 73
     .end local v0    # "digit":I
-    :cond_4d
+    :cond_4e
     sget-object v4, Lcom/google/zxing/oned/UPCEANReader;->MIDDLE_PATTERN:[I
 
     invoke-static {v3, v2, v4, v7}, Lcom/google/zxing/oned/EAN8Writer;->appendPattern([ZI[IZ)I
@@ -205,10 +206,10 @@
     .line 75
     const/4 v1, 0x4
 
-    :goto_55
+    :goto_56
     const/4 v4, 0x7
 
-    if-gt v1, v4, :cond_6e
+    if-gt v1, v4, :cond_6f
 
     .line 76
     add-int/lit8 v4, v1, 0x1
@@ -236,18 +237,14 @@
     .line 75
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_55
+    goto :goto_56
 
     .line 79
     .end local v0    # "digit":I
-    :cond_6e
+    :cond_6f
     sget-object v4, Lcom/google/zxing/oned/UPCEANReader;->START_END_PATTERN:[I
 
     invoke-static {v3, v2, v4, v6}, Lcom/google/zxing/oned/EAN8Writer;->appendPattern([ZI[IZ)I
-
-    move-result v4
-
-    add-int/2addr v2, v4
 
     .line 81
     return-object v3

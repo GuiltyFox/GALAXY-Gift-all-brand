@@ -35,17 +35,17 @@
     .param p3, "bitmapWorkerTask"    # Lcom/bitmapfun/util/ImageWorker$BitmapWorkerTask;
 
     .prologue
-    .line 555
+    .line 556
     invoke-direct {p0, p1, p2}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
 
-    .line 556
+    .line 557
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p3}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/bitmapfun/util/ImageWorker$AsyncDrawable;->bitmapWorkerTaskReference:Ljava/lang/ref/WeakReference;
 
-    .line 557
+    .line 558
     return-void
 .end method
 
@@ -55,7 +55,7 @@
     .registers 2
 
     .prologue
-    .line 560
+    .line 561
     iget-object v0, p0, Lcom/bitmapfun/util/ImageWorker$AsyncDrawable;->bitmapWorkerTaskReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;

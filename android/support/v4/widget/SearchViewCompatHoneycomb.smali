@@ -263,7 +263,7 @@
 
     move-result-object v2
 
-    const-string v3, "search"
+    const-string/jumbo v3, "search"
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

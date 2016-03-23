@@ -3,12 +3,12 @@
 .source "AboutUsActivity.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/AboutUsActivity;->showToast(Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/activity/AboutUsActivity;->initialLayout()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,28 @@
 # instance fields
 .field final synthetic this$0:Lcom/samsung/privilege/activity/AboutUsActivity;
 
-.field private final synthetic val$msg:Ljava/lang/String;
+.field final synthetic val$body_final:Ljava/lang/String;
+
+.field final synthetic val$email_final:Ljava/lang/String;
+
+.field final synthetic val$subject_final:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/AboutUsActivity;Ljava/lang/String;)V
-    .registers 3
+.method constructor <init>(Lcom/samsung/privilege/activity/AboutUsActivity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 5
+    .param p1, "this$0"    # Lcom/samsung/privilege/activity/AboutUsActivity;
 
     .prologue
-    .line 1
+    .line 112
     iput-object p1, p0, Lcom/samsung/privilege/activity/AboutUsActivity$1;->this$0:Lcom/samsung/privilege/activity/AboutUsActivity;
 
-    iput-object p2, p0, Lcom/samsung/privilege/activity/AboutUsActivity$1;->val$msg:Ljava/lang/String;
+    iput-object p2, p0, Lcom/samsung/privilege/activity/AboutUsActivity$1;->val$email_final:Ljava/lang/String;
 
-    .line 331
+    iput-object p3, p0, Lcom/samsung/privilege/activity/AboutUsActivity$1;->val$subject_final:Ljava/lang/String;
+
+    iput-object p4, p0, Lcom/samsung/privilege/activity/AboutUsActivity$1;->val$body_final:Ljava/lang/String;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,25 +49,56 @@
 
 
 # virtual methods
-.method public run()V
+.method public onClick(Landroid/view/View;)V
     .registers 5
+    .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 334
+    .line 115
+    new-instance v0, Landroid/content/Intent;
+
+    const-string/jumbo v1, "android.intent.action.SEND"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 116
+    .local v0, "intent":Landroid/content/Intent;
+    const-string/jumbo v1, "text/html"
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 117
+    const-string/jumbo v1, "android.intent.extra.EMAIL"
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/AboutUsActivity$1;->val$email_final:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 118
+    const-string/jumbo v1, "android.intent.extra.SUBJECT"
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/AboutUsActivity$1;->val$subject_final:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 119
+    const-string/jumbo v1, "android.intent.extra.TEXT"
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/AboutUsActivity$1;->val$body_final:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 121
     iget-object v1, p0, Lcom/samsung/privilege/activity/AboutUsActivity$1;->this$0:Lcom/samsung/privilege/activity/AboutUsActivity;
 
-    iget-object v2, p0, Lcom/samsung/privilege/activity/AboutUsActivity$1;->val$msg:Ljava/lang/String;
+    const-string/jumbo v2, "Send Email"
 
-    const/4 v3, 0x1
+    invoke-static {v0, v2}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
 
-    invoke-static {v1, v2, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    move-result-object v2
 
-    move-result-object v0
+    invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/AboutUsActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 335
-    .local v0, "toast":Landroid/widget/Toast;
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
-
-    .line 336
+    .line 122
     return-void
 .end method

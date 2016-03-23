@@ -13,16 +13,18 @@
 
     .prologue
     .line 34
-    const-string v0, "geo:([\\-0-9.]+),([\\-0-9.]+)(?:,([\\-0-9.]+))?(?:\\?(.*))?"
+    const-string/jumbo v0, "geo:([\\-0-9.]+),([\\-0-9.]+)(?:,([\\-0-9.]+))?(?:\\?(.*))?"
 
     const/4 v1, 0x2
 
+    .line 35
     invoke-static {v0, v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/zxing/client/result/GeoResultParser;->GEO_URL_PATTERN:Ljava/util/regex/Pattern;
 
+    .line 34
     return-void
 .end method
 
@@ -51,7 +53,7 @@
     move-result-object v10
 
     .line 40
-    .local v10, "rawText":Ljava/lang/String;
+    .local v10, "rawText":Ljava/lang/CharSequence;
     sget-object v11, Lcom/google/zxing/client/result/GeoResultParser;->GEO_URL_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v11, v10}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -194,7 +196,6 @@
 
 .method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .registers 3
-    .param p1, "x0"    # Lcom/google/zxing/Result;
 
     .prologue
     .line 32

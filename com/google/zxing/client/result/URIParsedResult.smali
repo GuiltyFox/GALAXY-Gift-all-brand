@@ -19,7 +19,7 @@
 
     .prologue
     .line 26
-    const-string v0, ":/*([^/@]+)@[^/]+"
+    const-string/jumbo v0, ":/*([^/@]+)@[^/]+"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
@@ -56,77 +56,40 @@
 .end method
 
 .method private static isColonFollowedByPortNumber(Ljava/lang/String;I)Z
-    .registers 7
+    .registers 5
     .param p0, "uri"    # Ljava/lang/String;
     .param p1, "protocolEnd"    # I
 
     .prologue
-    const/4 v2, 0x0
-
     .line 83
-    const/16 v3, 0x2f
+    add-int/lit8 v1, p1, 0x1
 
-    add-int/lit8 v4, p1, 0x1
+    .line 84
+    .local v1, "start":I
+    const/16 v2, 0x2f
 
-    invoke-virtual {p0, v3, v4}, Ljava/lang/String;->indexOf(II)I
+    invoke-virtual {p0, v2, v1}, Ljava/lang/String;->indexOf(II)I
 
     move-result v0
 
-    .line 84
-    .local v0, "nextSlash":I
-    if-gez v0, :cond_f
-
     .line 85
+    .local v0, "nextSlash":I
+    if-gez v0, :cond_e
+
+    .line 86
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    .line 87
-    :cond_f
-    add-int/lit8 v3, p1, 0x1
+    .line 88
+    :cond_e
+    sub-int v2, v0, v1
 
-    if-gt v0, v3, :cond_14
+    invoke-static {p0, v1, v2}, Lcom/google/zxing/client/result/ResultParser;->isSubstringOfDigits(Ljava/lang/CharSequence;II)Z
 
-    .line 95
-    :cond_13
-    :goto_13
+    move-result v2
+
     return v2
-
-    .line 90
-    :cond_14
-    add-int/lit8 v1, p1, 0x1
-
-    .local v1, "x":I
-    :goto_16
-    if-ge v1, v0, :cond_2b
-
-    .line 91
-    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v3
-
-    const/16 v4, 0x30
-
-    if-lt v3, v4, :cond_13
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v3
-
-    const/16 v4, 0x39
-
-    if-gt v3, v4, :cond_13
-
-    .line 90
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_16
-
-    .line 95
-    :cond_2b
-    const/4 v2, 0x1
-
-    goto :goto_13
 .end method
 
 .method private static massageURI(Ljava/lang/String;)Ljava/lang/String;
@@ -148,14 +111,14 @@
 
     .line 72
     .local v0, "protocolEnd":I
-    if-gez v0, :cond_20
+    if-gez v0, :cond_21
 
     .line 74
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "http://"
+    const-string/jumbo v2, "http://"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -170,24 +133,24 @@
     move-result-object p0
 
     .line 79
-    :cond_1f
-    :goto_1f
+    :cond_20
+    :goto_20
     return-object p0
 
     .line 75
-    :cond_20
+    :cond_21
     invoke-static {p0, v0}, Lcom/google/zxing/client/result/URIParsedResult;->isColonFollowedByPortNumber(Ljava/lang/String;I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_20
 
     .line 77
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "http://"
+    const-string/jumbo v2, "http://"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -201,7 +164,7 @@
 
     move-result-object p0
 
-    goto :goto_1f
+    goto :goto_20
 .end method
 
 

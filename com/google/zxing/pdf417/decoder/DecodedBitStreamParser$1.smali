@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 291
+    .line 300
     invoke-static {}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->values()[Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
     move-result-object v0

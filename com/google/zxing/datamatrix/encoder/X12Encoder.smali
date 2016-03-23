@@ -33,7 +33,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_38
+    if-eqz v4, :cond_3a
 
     .line 31
     invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getCurrentChar()C
@@ -66,7 +66,9 @@
     invoke-static {p1, v0}, Lcom/google/zxing/datamatrix/encoder/X12Encoder;->writeNextTriplet(Lcom/google/zxing/datamatrix/encoder/EncoderContext;Ljava/lang/StringBuilder;)V
 
     .line 40
-    iget-object v4, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->msg:Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getMessage()Ljava/lang/String;
+
+    move-result-object v4
 
     iget v5, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->pos:I
 
@@ -93,7 +95,7 @@
     .end local v1    # "c":C
     .end local v2    # "count":I
     .end local v3    # "newMode":I
-    :cond_38
+    :cond_3a
     invoke-virtual {p0, p1, v0}, Lcom/google/zxing/datamatrix/encoder/X12Encoder;->handleEOD(Lcom/google/zxing/datamatrix/encoder/EncoderContext;Ljava/lang/StringBuilder;)V
 
     .line 48
@@ -219,24 +221,24 @@
 .end method
 
 .method handleEOD(Lcom/google/zxing/datamatrix/encoder/EncoderContext;Ljava/lang/StringBuilder;)V
-    .registers 10
+    .registers 8
     .param p1, "context"    # Lcom/google/zxing/datamatrix/encoder/EncoderContext;
     .param p2, "buffer"    # Ljava/lang/StringBuilder;
 
     .prologue
-    const/16 v6, 0xfe
-
-    const/4 v5, 0x1
-
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
     .line 72
     invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->updateSymbolInfo()V
 
     .line 73
-    iget-object v2, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->symbolInfo:Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
+    invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getSymbolInfo()Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
 
-    iget v2, v2, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->dataCapacity:I
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getDataCapacity()I
+
+    move-result v2
 
     invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getCodewordCount()I
 
@@ -252,48 +254,48 @@
 
     .line 75
     .local v1, "count":I
-    const/4 v2, 0x2
+    iget v2, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->pos:I
 
-    if-ne v1, v2, :cond_25
+    sub-int/2addr v2, v1
+
+    iput v2, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->pos:I
 
     .line 76
-    invoke-virtual {p1, v6}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->writeCodeword(C)V
+    invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getRemainingCharacters()I
+
+    move-result v2
+
+    if-gt v2, v4, :cond_29
+
+    if-gt v0, v4, :cond_29
 
     .line 77
-    iget v2, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->pos:I
+    invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getRemainingCharacters()I
 
-    add-int/lit8 v2, v2, -0x2
+    move-result v2
 
-    iput v2, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->pos:I
+    if-eq v2, v0, :cond_2e
 
     .line 78
-    invoke-virtual {p1, v4}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->signalEncoderChange(I)V
+    :cond_29
+    const/16 v2, 0xfe
 
-    .line 87
-    :cond_24
-    :goto_24
-    return-void
-
-    .line 79
-    :cond_25
-    if-ne v1, v5, :cond_24
+    invoke-virtual {p1, v2}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->writeCodeword(C)V
 
     .line 80
-    iget v2, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->pos:I
+    :cond_2e
+    invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getNewEncoding()I
 
-    add-int/lit8 v2, v2, -0x1
+    move-result v2
 
-    iput v2, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->pos:I
+    if-gez v2, :cond_38
 
     .line 81
-    if-le v0, v5, :cond_32
+    const/4 v2, 0x0
 
-    .line 82
-    invoke-virtual {p1, v6}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->writeCodeword(C)V
+    invoke-virtual {p1, v2}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->signalEncoderChange(I)V
 
-    .line 85
-    :cond_32
-    invoke-virtual {p1, v4}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->signalEncoderChange(I)V
-
-    goto :goto_24
+    .line 83
+    :cond_38
+    return-void
 .end method

@@ -24,48 +24,54 @@
     .registers 2
 
     .prologue
-    .line 31
-    const-string v0, "file.encoding"
+    .line 32
+    invoke-static {}, Ljava/nio/charset/Charset;->defaultCharset()Ljava/nio/charset/Charset;
 
-    invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/zxing/common/StringUtils;->PLATFORM_DEFAULT_ENCODING:Ljava/lang/String;
 
     .line 38
-    const-string v0, "SJIS"
+    const-string/jumbo v0, "SJIS"
 
     sget-object v1, Lcom/google/zxing/common/StringUtils;->PLATFORM_DEFAULT_ENCODING:Ljava/lang/String;
 
+    .line 39
     invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_20
 
-    const-string v0, "EUC_JP"
+    const-string/jumbo v0, "EUC_JP"
 
     sget-object v1, Lcom/google/zxing/common/StringUtils;->PLATFORM_DEFAULT_ENCODING:Ljava/lang/String;
 
+    .line 40
     invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_20
-
-    :cond_1c
-    const/4 v0, 0x1
-
-    :goto_1d
-    sput-boolean v0, Lcom/google/zxing/common/StringUtils;->ASSUME_SHIFT_JIS:Z
-
-    return-void
+    if-eqz v0, :cond_24
 
     :cond_20
+    const/4 v0, 0x1
+
+    :goto_21
+    sput-boolean v0, Lcom/google/zxing/common/StringUtils;->ASSUME_SHIFT_JIS:Z
+
+    .line 38
+    return-void
+
+    .line 40
+    :cond_24
     const/4 v0, 0x0
 
-    goto :goto_1d
+    goto :goto_21
 .end method
 
 .method private constructor <init>()V
@@ -606,7 +612,7 @@
 
     .line 182
     :cond_154
-    if-eqz v4, :cond_162
+    if-eqz v4, :cond_163
 
     if-nez v19, :cond_15e
 
@@ -614,108 +620,108 @@
 
     add-int v21, v21, v17
 
-    if-lez v21, :cond_162
+    if-lez v21, :cond_163
 
     .line 183
     :cond_15e
-    const-string v5, "UTF8"
+    const-string/jumbo v5, "UTF8"
 
     goto/16 :goto_10
 
     .line 186
-    :cond_162
-    if-eqz v3, :cond_178
+    :cond_163
+    if-eqz v3, :cond_17a
 
     sget-boolean v21, Lcom/google/zxing/common/StringUtils;->ASSUME_SHIFT_JIS:Z
 
-    if-nez v21, :cond_174
+    if-nez v21, :cond_175
 
     const/16 v21, 0x3
 
     move/from16 v0, v21
 
-    if-ge v14, v0, :cond_174
+    if-ge v14, v0, :cond_175
 
     const/16 v21, 0x3
 
     move/from16 v0, v21
 
-    if-lt v13, v0, :cond_178
+    if-lt v13, v0, :cond_17a
 
     .line 187
-    :cond_174
-    const-string v5, "SJIS"
+    :cond_175
+    const-string/jumbo v5, "SJIS"
 
     goto/16 :goto_10
 
     .line 194
-    :cond_178
-    if-eqz v2, :cond_197
+    :cond_17a
+    if-eqz v2, :cond_19b
 
-    if-eqz v3, :cond_197
+    if-eqz v3, :cond_19b
 
     .line 195
     const/16 v21, 0x2
 
     move/from16 v0, v21
 
-    if-ne v14, v0, :cond_188
+    if-ne v14, v0, :cond_18a
 
     const/16 v21, 0x2
 
     move/from16 v0, v21
 
-    if-eq v12, v0, :cond_18e
+    if-eq v12, v0, :cond_190
 
-    :cond_188
+    :cond_18a
     mul-int/lit8 v21, v7, 0xa
 
     move/from16 v0, v21
 
-    if-lt v0, v8, :cond_194
+    if-lt v0, v8, :cond_197
 
-    :cond_18e
-    const-string v21, "SJIS"
+    :cond_190
+    const-string/jumbo v21, "SJIS"
 
-    :goto_190
+    :goto_193
     move-object/from16 v5, v21
 
     goto/16 :goto_10
 
-    :cond_194
-    const-string v21, "ISO8859_1"
+    :cond_197
+    const-string/jumbo v21, "ISO8859_1"
 
-    goto :goto_190
+    goto :goto_193
 
     .line 200
-    :cond_197
-    if-eqz v2, :cond_19d
+    :cond_19b
+    if-eqz v2, :cond_1a2
 
     .line 201
-    const-string v5, "ISO8859_1"
+    const-string/jumbo v5, "ISO8859_1"
 
     goto/16 :goto_10
 
     .line 203
-    :cond_19d
-    if-eqz v3, :cond_1a3
+    :cond_1a2
+    if-eqz v3, :cond_1a9
 
     .line 204
-    const-string v5, "SJIS"
+    const-string/jumbo v5, "SJIS"
 
     goto/16 :goto_10
 
     .line 206
-    :cond_1a3
-    if-eqz v4, :cond_1a9
+    :cond_1a9
+    if-eqz v4, :cond_1b0
 
     .line 207
-    const-string v5, "UTF8"
+    const-string/jumbo v5, "UTF8"
 
     goto/16 :goto_10
 
     .line 210
-    :cond_1a9
+    :cond_1b0
     sget-object v5, Lcom/google/zxing/common/StringUtils;->PLATFORM_DEFAULT_ENCODING:Ljava/lang/String;
 
     goto/16 :goto_10

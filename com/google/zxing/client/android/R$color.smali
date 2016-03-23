@@ -15,27 +15,27 @@
 
 
 # static fields
-.field public static final contents_text:I = 0x7f08000b
+.field public static final zxing_contents_text:I = 0x7f0f00bf
 
-.field public static final encode_view:I = 0x7f08000c
+.field public static final zxing_encode_view:I = 0x7f0f00c0
 
-.field public static final possible_result_points:I = 0x7f08000d
+.field public static final zxing_possible_result_points:I = 0x7f0f00c1
 
-.field public static final result_minor_text:I = 0x7f08000e
+.field public static final zxing_result_minor_text:I = 0x7f0f00c2
 
-.field public static final result_points:I = 0x7f08000f
+.field public static final zxing_result_points:I = 0x7f0f00c3
 
-.field public static final result_text:I = 0x7f080010
+.field public static final zxing_result_text:I = 0x7f0f00c4
 
-.field public static final result_view:I = 0x7f080011
+.field public static final zxing_result_view:I = 0x7f0f00c5
 
-.field public static final status_text:I = 0x7f080012
+.field public static final zxing_status_text:I = 0x7f0f00c6
 
-.field public static final transparent:I = 0x7f080013
+.field public static final zxing_transparent:I = 0x7f0f00c7
 
-.field public static final viewfinder_laser:I = 0x7f080014
+.field public static final zxing_viewfinder_laser:I = 0x7f0f00c8
 
-.field public static final viewfinder_mask:I = 0x7f080015
+.field public static final zxing_viewfinder_mask:I = 0x7f0f00c9
 
 
 # direct methods
@@ -43,7 +43,7 @@
     .registers 1
 
     .prologue
-    .line 15
+    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

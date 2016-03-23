@@ -97,7 +97,7 @@
     .local p5, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/EncodeHintType;*>;"
     sget-object v0, Lcom/google/zxing/BarcodeFormat;->ITF:Lcom/google/zxing/BarcodeFormat;
 
-    if-eq p2, v0, :cond_1d
+    if-eq p2, v0, :cond_1e
 
     .line 43
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -106,7 +106,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "Can only encode ITF, but got "
+    const-string/jumbo v2, "Can only encode ITF, but got "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -125,7 +125,7 @@
     throw v0
 
     .line 46
-    :cond_1d
+    :cond_1e
     invoke-super/range {p0 .. p5}, Lcom/google/zxing/oned/OneDimensionalCodeWriter;->encode(Ljava/lang/String;Lcom/google/zxing/BarcodeFormat;IILjava/util/Map;)Lcom/google/zxing/common/BitMatrix;
 
     move-result-object v0
@@ -151,22 +151,22 @@
     .local v3, "length":I
     rem-int/lit8 v8, v3, 0x2
 
-    if-eqz v8, :cond_13
+    if-eqz v8, :cond_14
 
     .line 53
     new-instance v8, Ljava/lang/IllegalArgumentException;
 
-    const-string v9, "The lenght of the input should be even"
+    const-string/jumbo v9, "The lenght of the input should be even"
 
     invoke-direct {v8, v9}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v8
 
     .line 55
-    :cond_13
+    :cond_14
     const/16 v8, 0x50
 
-    if-le v3, v8, :cond_30
+    if-le v3, v8, :cond_32
 
     .line 56
     new-instance v8, Ljava/lang/IllegalArgumentException;
@@ -175,7 +175,7 @@
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, "Requested contents should be less than 80 digits long, but got "
+    const-string/jumbo v10, "Requested contents should be less than 80 digits long, but got "
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -194,7 +194,7 @@
     throw v8
 
     .line 59
-    :cond_30
+    :cond_32
     mul-int/lit8 v8, v3, 0x9
 
     add-int/lit8 v8, v8, 0x9
@@ -216,8 +216,8 @@
     const/4 v1, 0x0
 
     .local v1, "i":I
-    :goto_3e
-    if-ge v1, v3, :cond_7b
+    :goto_40
+    if-ge v1, v3, :cond_7d
 
     .line 62
     invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
@@ -251,13 +251,13 @@
     const/4 v2, 0x0
 
     .local v2, "j":I
-    :goto_57
+    :goto_59
     const/4 v8, 0x5
 
-    if-ge v2, v8, :cond_73
+    if-ge v2, v8, :cond_75
 
     .line 66
-    shl-int/lit8 v8, v2, 0x1
+    mul-int/lit8 v8, v2, 0x2
 
     sget-object v9, Lcom/google/zxing/oned/ITFReader;->PATTERNS:[[I
 
@@ -268,7 +268,7 @@
     aput v9, v0, v8
 
     .line 67
-    shl-int/lit8 v8, v2, 0x1
+    mul-int/lit8 v8, v2, 0x2
 
     add-int/lit8 v8, v8, 0x1
 
@@ -283,10 +283,10 @@
     .line 65
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_57
+    goto :goto_59
 
     .line 69
-    :cond_73
+    :cond_75
     invoke-static {v6, v5, v0, v10}, Lcom/google/zxing/oned/ITFWriter;->appendPattern([ZI[IZ)I
 
     move-result v8
@@ -296,14 +296,14 @@
     .line 61
     add-int/lit8 v1, v1, 0x2
 
-    goto :goto_3e
+    goto :goto_40
 
     .line 71
     .end local v0    # "encoding":[I
     .end local v2    # "j":I
     .end local v4    # "one":I
     .end local v7    # "two":I
-    :cond_7b
+    :cond_7d
     sget-object v8, Lcom/google/zxing/oned/ITFWriter;->END_PATTERN:[I
 
     invoke-static {v6, v5, v8, v10}, Lcom/google/zxing/oned/ITFWriter;->appendPattern([ZI[IZ)I

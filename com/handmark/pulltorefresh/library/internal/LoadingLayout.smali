@@ -15,10 +15,6 @@
 
 
 # static fields
-.field private static synthetic $SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I = null
-
-.field private static synthetic $SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I = null
-
 .field static final ANIMATION_INTERPOLATOR:Landroid/view/animation/Interpolator;
 
 .field static final LOG_TAG:Ljava/lang/String; = "PullToRefresh-LoadingLayout"
@@ -49,191 +45,6 @@
 
 
 # direct methods
-.method static synthetic $SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode()[I
-    .registers 3
-
-    .prologue
-    .line 43
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->$SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
-
-    if-eqz v0, :cond_5
-
-    :goto_4
-    return-object v0
-
-    :cond_5
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->values()[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    move-result-object v0
-
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    :try_start_c
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->BOTH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_15
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_c .. :try_end_15} :catch_44
-
-    :goto_15
-    :try_start_15
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->DISABLED:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_1e
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_15 .. :try_end_1e} :catch_42
-
-    :goto_1e
-    :try_start_1e
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->MANUAL_REFRESH_ONLY:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_27
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1e .. :try_end_27} :catch_40
-
-    :goto_27
-    :try_start_27
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_END:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_30
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_27 .. :try_end_30} :catch_3e
-
-    :goto_30
-    :try_start_30
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_START:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_39
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_30 .. :try_end_39} :catch_3c
-
-    :goto_39
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->$SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
-
-    goto :goto_4
-
-    :catch_3c
-    move-exception v1
-
-    goto :goto_39
-
-    :catch_3e
-    move-exception v1
-
-    goto :goto_30
-
-    :catch_40
-    move-exception v1
-
-    goto :goto_27
-
-    :catch_42
-    move-exception v1
-
-    goto :goto_1e
-
-    :catch_44
-    move-exception v1
-
-    goto :goto_15
-.end method
-
-.method static synthetic $SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation()[I
-    .registers 3
-
-    .prologue
-    .line 43
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->$SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
-
-    if-eqz v0, :cond_5
-
-    :goto_4
-    return-object v0
-
-    :cond_5
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->values()[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
-
-    move-result-object v0
-
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    :try_start_c
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->HORIZONTAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_15
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_c .. :try_end_15} :catch_23
-
-    :goto_15
-    :try_start_15
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->VERTICAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_1e
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_15 .. :try_end_1e} :catch_21
-
-    :goto_1e
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->$SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
-
-    goto :goto_4
-
-    :catch_21
-    move-exception v1
-
-    goto :goto_1e
-
-    :catch_23
-    move-exception v1
-
-    goto :goto_15
-.end method
-
 .method static constructor <clinit>()V
     .registers 1
 
@@ -251,12 +62,12 @@
 .method public constructor <init>(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;Landroid/content/res/TypedArray;)V
     .registers 12
     .param p1, "context"    # Landroid/content/Context;
+    .param p2, "mode"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    .param p3, "scrollDirection"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
     .param p4, "attrs"    # Landroid/content/res/TypedArray;
 
     .prologue
     .line 67
-    .local p2, "mode":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;"
-    .local p3, "scrollDirection":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;"
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     .line 68
@@ -266,9 +77,7 @@
     iput-object p3, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mScrollDirection:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
     .line 71
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->$SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation()[I
-
-    move-result-object v5
+    sget-object v5, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
 
     invoke-virtual {p3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
 
@@ -276,20 +85,20 @@
 
     aget v5, v5, v6
 
-    packed-switch v5, :pswitch_data_1a0
+    packed-switch v5, :pswitch_data_19e
 
     .line 77
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v5
 
-    sget v6, Lic/buzzebeeslib/R$layout;->bz_pull_to_refresh_header_vertical:I
+    sget v6, Lcom/bzbs/lib/survey/R$layout;->bz_pull_to_refresh_header_vertical:I
 
     invoke-virtual {v5, v6, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     .line 81
-    :goto_1d
-    sget v5, Lic/buzzebeeslib/R$id;->fl_inner:I
+    :goto_1b
+    sget v5, Lcom/bzbs/lib/survey/R$id;->fl_inner:I
 
     invoke-virtual {p0, v5}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->findViewById(I)Landroid/view/View;
 
@@ -302,7 +111,7 @@
     .line 82
     iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mInnerLayout:Landroid/widget/FrameLayout;
 
-    sget v6, Lic/buzzebeeslib/R$id;->pull_to_refresh_text:I
+    sget v6, Lcom/bzbs/lib/survey/R$id;->pull_to_refresh_text:I
 
     invoke-virtual {v5, v6}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -315,7 +124,7 @@
     .line 83
     iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mInnerLayout:Landroid/widget/FrameLayout;
 
-    sget v6, Lic/buzzebeeslib/R$id;->pull_to_refresh_progress:I
+    sget v6, Lcom/bzbs/lib/survey/R$id;->pull_to_refresh_progress:I
 
     invoke-virtual {v5, v6}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -328,7 +137,7 @@
     .line 84
     iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mInnerLayout:Landroid/widget/FrameLayout;
 
-    sget v6, Lic/buzzebeeslib/R$id;->pull_to_refresh_sub_text:I
+    sget v6, Lcom/bzbs/lib/survey/R$id;->pull_to_refresh_sub_text:I
 
     invoke-virtual {v5, v6}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -341,7 +150,7 @@
     .line 85
     iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mInnerLayout:Landroid/widget/FrameLayout;
 
-    sget v6, Lic/buzzebeeslib/R$id;->pull_to_refresh_image:I
+    sget v6, Lcom/bzbs/lib/survey/R$id;->pull_to_refresh_image:I
 
     invoke-virtual {v5, v6}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -362,9 +171,7 @@
 
     .line 89
     .local v3, "lp":Landroid/widget/FrameLayout$LayoutParams;
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->$SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode()[I
-
-    move-result-object v5
+    sget-object v5, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
 
     invoke-virtual {p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
 
@@ -372,20 +179,20 @@
 
     aget v5, v5, v6
 
-    packed-switch v5, :pswitch_data_1a6
+    packed-switch v5, :pswitch_data_1a4
 
     .line 101
     sget-object v5, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->VERTICAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
-    if-ne p3, v5, :cond_161
+    if-ne p3, v5, :cond_15b
 
     const/16 v5, 0x50
 
-    :goto_72
+    :goto_6e
     iput v5, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     .line 104
-    sget v5, Lic/buzzebeeslib/R$string;->pull_to_refresh_pull_label:I
+    sget v5, Lcom/bzbs/lib/survey/R$string;->pull_to_refresh_pull_label:I
 
     invoke-virtual {p1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -394,7 +201,7 @@
     iput-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mPullLabel:Ljava/lang/CharSequence;
 
     .line 105
-    sget v5, Lic/buzzebeeslib/R$string;->pull_to_refresh_refreshing_label:I
+    sget v5, Lcom/bzbs/lib/survey/R$string;->pull_to_refresh_refreshing_label:I
 
     invoke-virtual {p1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -403,7 +210,7 @@
     iput-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mRefreshingLabel:Ljava/lang/CharSequence;
 
     .line 106
-    sget v5, Lic/buzzebeeslib/R$string;->pull_to_refresh_release_label:I
+    sget v5, Lcom/bzbs/lib/survey/R$string;->pull_to_refresh_release_label:I
 
     invoke-virtual {p1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -412,17 +219,17 @@
     iput-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mReleaseLabel:Ljava/lang/CharSequence;
 
     .line 110
-    :goto_8c
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrHeaderBackground:I
+    :goto_88
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderBackground:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_9f
+    if-eqz v5, :cond_9b
 
     .line 111
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrHeaderBackground:I
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderBackground:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -430,21 +237,21 @@
 
     .line 112
     .local v0, "background":Landroid/graphics/drawable/Drawable;
-    if-eqz v0, :cond_9f
+    if-eqz v0, :cond_9b
 
     .line 113
     invoke-static {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/ViewCompat;->setBackground(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
 
     .line 117
     .end local v0    # "background":Landroid/graphics/drawable/Drawable;
-    :cond_9f
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrHeaderTextAppearance:I
+    :cond_9b
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderTextAppearance:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_b6
+    if-eqz v5, :cond_b2
 
     .line 118
     new-instance v4, Landroid/util/TypedValue;
@@ -453,7 +260,7 @@
 
     .line 119
     .local v4, "styleID":Landroid/util/TypedValue;
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrHeaderTextAppearance:I
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderTextAppearance:I
 
     invoke-virtual {p4, v5, v4}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
 
@@ -464,14 +271,14 @@
 
     .line 122
     .end local v4    # "styleID":Landroid/util/TypedValue;
-    :cond_b6
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrSubHeaderTextAppearance:I
+    :cond_b2
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrSubHeaderTextAppearance:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_cd
+    if-eqz v5, :cond_c9
 
     .line 123
     new-instance v4, Landroid/util/TypedValue;
@@ -480,7 +287,7 @@
 
     .line 124
     .restart local v4    # "styleID":Landroid/util/TypedValue;
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrSubHeaderTextAppearance:I
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrSubHeaderTextAppearance:I
 
     invoke-virtual {p4, v5, v4}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
 
@@ -491,17 +298,17 @@
 
     .line 129
     .end local v4    # "styleID":Landroid/util/TypedValue;
-    :cond_cd
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrHeaderTextColor:I
+    :cond_c9
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderTextColor:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_e0
+    if-eqz v5, :cond_dc
 
     .line 130
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrHeaderTextColor:I
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderTextColor:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
@@ -509,24 +316,24 @@
 
     .line 131
     .local v1, "colors":Landroid/content/res/ColorStateList;
-    if-eqz v1, :cond_e0
+    if-eqz v1, :cond_dc
 
     .line 132
     invoke-direct {p0, v1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setTextColor(Landroid/content/res/ColorStateList;)V
 
     .line 135
     .end local v1    # "colors":Landroid/content/res/ColorStateList;
-    :cond_e0
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrHeaderSubTextColor:I
+    :cond_dc
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderSubTextColor:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_f3
+    if-eqz v5, :cond_ef
 
     .line 136
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrHeaderSubTextColor:I
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderSubTextColor:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
@@ -534,38 +341,36 @@
 
     .line 137
     .restart local v1    # "colors":Landroid/content/res/ColorStateList;
-    if-eqz v1, :cond_f3
+    if-eqz v1, :cond_ef
 
     .line 138
     invoke-direct {p0, v1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setSubTextColor(Landroid/content/res/ColorStateList;)V
 
     .line 143
     .end local v1    # "colors":Landroid/content/res/ColorStateList;
-    :cond_f3
+    :cond_ef
     const/4 v2, 0x0
 
     .line 144
     .local v2, "imageDrawable":Landroid/graphics/drawable/Drawable;
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawable:I
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawable:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_102
+    if-eqz v5, :cond_fe
 
     .line 145
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawable:I
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawable:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     .line 150
-    :cond_102
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->$SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode()[I
-
-    move-result-object v5
+    :cond_fe
+    sget-object v5, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
 
     invoke-virtual {p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
 
@@ -573,28 +378,28 @@
 
     aget v5, v5, v6
 
-    packed-switch v5, :pswitch_data_1ac
+    packed-switch v5, :pswitch_data_1aa
 
     .line 153
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawableStart:I
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableStart:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_164
+    if-eqz v5, :cond_15e
 
     .line 154
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawableStart:I
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableStart:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     .line 172
-    :cond_11d
-    :goto_11d
-    if-nez v2, :cond_12b
+    :cond_117
+    :goto_117
+    if-nez v2, :cond_125
 
     .line 173
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -610,7 +415,7 @@
     move-result-object v2
 
     .line 177
-    :cond_12b
+    :cond_125
     invoke-virtual {p0, v2}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setLoadingDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 179
@@ -622,31 +427,31 @@
     .line 73
     .end local v2    # "imageDrawable":Landroid/graphics/drawable/Drawable;
     .end local v3    # "lp":Landroid/widget/FrameLayout$LayoutParams;
-    :pswitch_132
+    :pswitch_12c
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v5
 
-    sget v6, Lic/buzzebeeslib/R$layout;->bz_pull_to_refresh_header_horizontal:I
+    sget v6, Lcom/bzbs/lib/survey/R$layout;->bz_pull_to_refresh_header_horizontal:I
 
     invoke-virtual {v5, v6, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    goto/16 :goto_1d
+    goto/16 :goto_1b
 
     .line 91
     .restart local v3    # "lp":Landroid/widget/FrameLayout$LayoutParams;
-    :pswitch_13d
+    :pswitch_137
     sget-object v5, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->VERTICAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
-    if-ne p3, v5, :cond_15f
+    if-ne p3, v5, :cond_159
 
     const/16 v5, 0x30
 
-    :goto_143
+    :goto_13d
     iput v5, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     .line 94
-    sget v5, Lic/buzzebeeslib/R$string;->pull_to_refresh_from_bottom_pull_label:I
+    sget v5, Lcom/bzbs/lib/survey/R$string;->pull_to_refresh_from_bottom_pull_label:I
 
     invoke-virtual {p1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -655,7 +460,7 @@
     iput-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mPullLabel:Ljava/lang/CharSequence;
 
     .line 95
-    sget v5, Lic/buzzebeeslib/R$string;->pull_to_refresh_from_bottom_refreshing_label:I
+    sget v5, Lcom/bzbs/lib/survey/R$string;->pull_to_refresh_from_bottom_refreshing_label:I
 
     invoke-virtual {p1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -664,7 +469,7 @@
     iput-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mRefreshingLabel:Ljava/lang/CharSequence;
 
     .line 96
-    sget v5, Lic/buzzebeeslib/R$string;->pull_to_refresh_from_bottom_release_label:I
+    sget v5, Lcom/bzbs/lib/survey/R$string;->pull_to_refresh_from_bottom_release_label:I
 
     invoke-virtual {p1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -672,109 +477,108 @@
 
     iput-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mReleaseLabel:Ljava/lang/CharSequence;
 
-    goto/16 :goto_8c
+    goto/16 :goto_88
 
     .line 91
-    :cond_15f
+    :cond_159
     const/4 v5, 0x3
 
-    goto :goto_143
+    goto :goto_13d
 
     .line 101
-    :cond_161
+    :cond_15b
     const/4 v5, 0x5
 
-    goto/16 :goto_72
+    goto/16 :goto_6e
 
     .line 155
     .restart local v2    # "imageDrawable":Landroid/graphics/drawable/Drawable;
-    :cond_164
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawableTop:I
+    :cond_15e
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableTop:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_11d
+    if-eqz v5, :cond_117
 
     .line 156
-    const-string v5, "ptrDrawableTop"
+    const-string/jumbo v5, "ptrDrawableTop"
 
-    const-string v6, "ptrDrawableStart"
+    const-string/jumbo v6, "ptrDrawableStart"
 
     invoke-static {v5, v6}, Lcom/handmark/pulltorefresh/library/internal/Utils;->warnDeprecation(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 157
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawableTop:I
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableTop:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    .line 159
-    goto :goto_11d
+    goto :goto_117
 
     .line 162
-    :pswitch_17a
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawableEnd:I
+    :pswitch_176
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableEnd:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_189
+    if-eqz v5, :cond_185
 
     .line 163
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawableEnd:I
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableEnd:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    .line 164
-    goto :goto_11d
+    goto :goto_117
 
-    :cond_189
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawableBottom:I
+    .line 164
+    :cond_185
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableBottom:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_11d
+    if-eqz v5, :cond_117
 
     .line 165
-    const-string v5, "ptrDrawableBottom"
+    const-string/jumbo v5, "ptrDrawableBottom"
 
-    const-string v6, "ptrDrawableEnd"
+    const-string/jumbo v6, "ptrDrawableEnd"
 
     invoke-static {v5, v6}, Lcom/handmark/pulltorefresh/library/internal/Utils;->warnDeprecation(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 166
-    sget v5, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrDrawableBottom:I
+    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableBottom:I
 
     invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    goto/16 :goto_11d
+    goto/16 :goto_117
 
     .line 71
-    :pswitch_data_1a0
-    .packed-switch 0x2
-        :pswitch_132
+    :pswitch_data_19e
+    .packed-switch 0x1
+        :pswitch_12c
     .end packed-switch
 
     .line 89
-    :pswitch_data_1a6
-    .packed-switch 0x3
-        :pswitch_13d
+    :pswitch_data_1a4
+    .packed-switch 0x1
+        :pswitch_137
     .end packed-switch
 
     .line 150
-    :pswitch_data_1ac
-    .packed-switch 0x3
-        :pswitch_17a
+    :pswitch_data_1aa
+    .packed-switch 0x1
+        :pswitch_176
     .end packed-switch
 .end method
 
@@ -953,9 +757,7 @@
 
     .prologue
     .line 195
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->$SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation()[I
-
-    move-result-object v0
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
 
     iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mScrollDirection:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
@@ -965,7 +767,7 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_1e
+    packed-switch v0, :pswitch_data_1c
 
     .line 200
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mInnerLayout:Landroid/widget/FrameLayout;
@@ -974,25 +776,25 @@
 
     move-result v0
 
-    :goto_15
+    :goto_13
     return v0
 
     .line 197
-    :pswitch_16
+    :pswitch_14
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mInnerLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v0
 
-    goto :goto_15
+    goto :goto_13
 
     .line 195
     nop
 
-    :pswitch_data_1e
-    .packed-switch 0x2
-        :pswitch_16
+    :pswitch_data_1c
+    .packed-switch 0x1
+        :pswitch_14
     .end packed-switch
 .end method
 

@@ -4,8 +4,6 @@
 
 
 # static fields
-.field private static final ALPHANUM_PART:Ljava/lang/String; = "[a-zA-Z0-9\\-]"
-
 .field private static final URL_WITHOUT_PROTOCOL_PATTERN:Ljava/util/regex/Pattern;
 
 .field private static final URL_WITH_PROTOCOL_PATTERN:Ljava/util/regex/Pattern;
@@ -17,7 +15,7 @@
 
     .prologue
     .line 32
-    const-string v0, "[a-zA-Z0-9]{2,}:"
+    const-string/jumbo v0, "[a-zA-Z][a-zA-Z0-9+-.]+:"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
@@ -26,7 +24,7 @@
     sput-object v0, Lcom/google/zxing/client/result/URIResultParser;->URL_WITH_PROTOCOL_PATTERN:Ljava/util/regex/Pattern;
 
     .line 33
-    const-string v0, "([a-zA-Z0-9\\-]+\\.)+[a-zA-Z0-9\\-]{2,}(:\\d{1,5})?(/|\\?|$)"
+    const-string/jumbo v0, "([a-zA-Z0-9\\-]+\\.)+[a-zA-Z]{2,}(:\\d{1,5})?(/|\\?|$)"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
@@ -57,23 +55,23 @@
     const/4 v2, 0x0
 
     .line 51
-    const-string v3, " "
+    const-string/jumbo v3, " "
 
     invoke-virtual {p0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_c
+    if-eqz v3, :cond_d
 
     move v1, v2
 
     .line 60
-    :cond_b
-    :goto_b
+    :cond_c
+    :goto_c
     return v1
 
     .line 55
-    :cond_c
+    :cond_d
     sget-object v3, Lcom/google/zxing/client/result/URIResultParser;->URL_WITH_PROTOCOL_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v3, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -86,16 +84,16 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1e
+    if-eqz v3, :cond_1f
 
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->start()I
 
     move-result v3
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_c
 
     .line 59
-    :cond_1e
+    :cond_1f
     sget-object v3, Lcom/google/zxing/client/result/URIResultParser;->URL_WITHOUT_PROTOCOL_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v3, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -107,25 +105,24 @@
 
     move-result v3
 
-    if-eqz v3, :cond_30
+    if-eqz v3, :cond_31
 
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->start()I
 
     move-result v3
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_c
 
-    :cond_30
+    :cond_31
     move v1, v2
 
-    goto :goto_b
+    goto :goto_c
 .end method
 
 
 # virtual methods
 .method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .registers 3
-    .param p1, "x0"    # Lcom/google/zxing/Result;
 
     .prologue
     .line 29
@@ -150,24 +147,24 @@
 
     .line 43
     .local v0, "rawText":Ljava/lang/String;
-    const-string v1, "URL:"
+    const-string/jumbo v1, "URL:"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-nez v1, :cond_15
+    if-nez v1, :cond_17
 
-    const-string v1, "URI:"
+    const-string/jumbo v1, "URI:"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_26
 
     .line 44
-    :cond_15
+    :cond_17
     new-instance v1, Lcom/google/zxing/client/result/URIParsedResult;
 
     const/4 v3, 0x4
@@ -183,11 +180,11 @@
     invoke-direct {v1, v3, v2}, Lcom/google/zxing/client/result/URIParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 47
-    :goto_23
+    :goto_25
     return-object v1
 
     .line 46
-    :cond_24
+    :cond_26
     invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v0
@@ -197,16 +194,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_36
 
     new-instance v1, Lcom/google/zxing/client/result/URIParsedResult;
 
     invoke-direct {v1, v0, v2}, Lcom/google/zxing/client/result/URIParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_23
+    goto :goto_25
 
-    :cond_34
+    :cond_36
     move-object v1, v2
 
-    goto :goto_23
+    goto :goto_25
 .end method

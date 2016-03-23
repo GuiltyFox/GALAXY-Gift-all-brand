@@ -25,91 +25,88 @@
     .param p3, "startColor"    # Z
 
     .prologue
-    .line 104
-    move v1, p3
+    const/4 v5, 0x0
 
     .line 105
-    .local v1, "color":Z
-    const/4 v6, 0x0
+    move v0, p3
 
     .line 106
-    .local v6, "numAdded":I
-    move-object v0, p2
-
-    .local v0, "arr$":[I
-    array-length v5, v0
-
-    .local v5, "len$":I
-    const/4 v2, 0x0
-
-    .local v2, "i$":I
-    :goto_5
-    if-ge v2, v5, :cond_1f
-
-    aget v4, v0, v2
-
-    .line 107
-    .local v4, "len":I
+    .local v0, "color":Z
     const/4 v3, 0x0
 
-    .local v3, "j":I
-    move v7, p1
+    .line 107
+    .local v3, "numAdded":I
+    array-length v7, p2
 
-    .end local p1    # "pos":I
-    .local v7, "pos":I
-    :goto_b
-    if-ge v3, v4, :cond_15
+    move v6, v5
+
+    :goto_5
+    if-ge v6, v7, :cond_1f
+
+    aget v2, p2, v6
 
     .line 108
-    add-int/lit8 p1, v7, 0x1
+    .local v2, "len":I
+    const/4 v1, 0x0
 
-    .end local v7    # "pos":I
-    .restart local p1    # "pos":I
-    aput-boolean v1, p0, v7
-
-    .line 107
-    add-int/lit8 v3, v3, 0x1
-
-    move v7, p1
+    .local v1, "j":I
+    move v4, p1
 
     .end local p1    # "pos":I
-    .restart local v7    # "pos":I
+    .local v4, "pos":I
+    :goto_b
+    if-ge v1, v2, :cond_15
+
+    .line 109
+    add-int/lit8 p1, v4, 0x1
+
+    .end local v4    # "pos":I
+    .restart local p1    # "pos":I
+    aput-boolean v0, p0, v4
+
+    .line 108
+    add-int/lit8 v1, v1, 0x1
+
+    move v4, p1
+
+    .end local p1    # "pos":I
+    .restart local v4    # "pos":I
     goto :goto_b
 
-    .line 110
-    :cond_15
-    add-int/2addr v6, v4
-
     .line 111
-    if-nez v1, :cond_1d
+    :cond_15
+    add-int/2addr v3, v2
 
-    const/4 v1, 0x1
+    .line 112
+    if-nez v0, :cond_1d
 
-    .line 106
+    const/4 v0, 0x1
+
+    .line 107
     :goto_19
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v6, v6, 0x1
 
-    move p1, v7
+    move p1, v4
 
-    .end local v7    # "pos":I
+    .end local v4    # "pos":I
     .restart local p1    # "pos":I
     goto :goto_5
 
-    .line 111
     .end local p1    # "pos":I
-    .restart local v7    # "pos":I
+    .restart local v4    # "pos":I
     :cond_1d
-    const/4 v1, 0x0
+    move v0, v5
 
+    .line 112
     goto :goto_19
 
-    .line 113
-    .end local v3    # "j":I
-    .end local v4    # "len":I
-    .end local v7    # "pos":I
+    .line 114
+    .end local v1    # "j":I
+    .end local v2    # "len":I
+    .end local v4    # "pos":I
     .restart local p1    # "pos":I
     :cond_1f
-    return v6
+    return v3
 .end method
 
 .method private static renderResult([ZIII)Lcom/google/zxing/common/BitMatrix;
@@ -257,36 +254,36 @@
     .prologue
     .line 53
     .local p5, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/EncodeHintType;*>;"
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
+    invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
     move-result v3
 
-    if-nez v3, :cond_e
+    if-eqz v3, :cond_f
 
     .line 54
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
-    const-string v4, "Found empty contents"
+    const-string/jumbo v4, "Found empty contents"
 
     invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v3
 
     .line 57
-    :cond_e
-    if-ltz p3, :cond_12
+    :cond_f
+    if-ltz p3, :cond_13
 
-    if-gez p4, :cond_35
+    if-gez p4, :cond_37
 
     .line 58
-    :cond_12
+    :cond_13
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "Negative size is not allowed. Input: "
+    const-string/jumbo v5, "Negative size is not allowed. Input: "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -315,14 +312,14 @@
     throw v3
 
     .line 62
-    :cond_35
+    :cond_37
     invoke-virtual {p0}, Lcom/google/zxing/oned/OneDimensionalCodeWriter;->getDefaultMargin()I
 
     move-result v1
 
     .line 63
     .local v1, "sidesMargin":I
-    if-eqz p5, :cond_49
+    if-eqz p5, :cond_4b
 
     .line 64
     sget-object v3, Lcom/google/zxing/EncodeHintType;->MARGIN:Lcom/google/zxing/EncodeHintType;
@@ -335,7 +332,7 @@
 
     .line 65
     .local v2, "sidesMarginInt":Ljava/lang/Integer;
-    if-eqz v2, :cond_49
+    if-eqz v2, :cond_4b
 
     .line 66
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
@@ -344,7 +341,7 @@
 
     .line 70
     .end local v2    # "sidesMarginInt":Ljava/lang/Integer;
-    :cond_49
+    :cond_4b
     invoke-virtual {p0, p1}, Lcom/google/zxing/oned/OneDimensionalCodeWriter;->encode(Ljava/lang/String;)[Z
 
     move-result-object v0
@@ -365,7 +362,7 @@
     .registers 2
 
     .prologue
-    .line 119
+    .line 120
     const/16 v0, 0xa
 
     return v0

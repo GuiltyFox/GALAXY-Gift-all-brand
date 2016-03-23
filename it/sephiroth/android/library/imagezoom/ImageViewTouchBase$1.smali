@@ -20,24 +20,24 @@
 # instance fields
 .field final synthetic this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
-.field private final synthetic val$bitmap:Lit/sephiroth/android/library/imagezoom/RotateBitmap;
+.field final synthetic val$bitmap:Lit/sephiroth/android/library/imagezoom/RotateBitmap;
 
-.field private final synthetic val$reset:Z
+.field final synthetic val$reset:Z
 
 
 # direct methods
 .method constructor <init>(Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;Lit/sephiroth/android/library/imagezoom/RotateBitmap;Z)V
     .registers 4
+    .param p1, "this$0"    # Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
     .prologue
-    .line 1
+    .line 100
     iput-object p1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$1;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
     iput-object p2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$1;->val$bitmap:Lit/sephiroth/android/library/imagezoom/RotateBitmap;
 
     iput-boolean p3, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$1;->val$reset:Z
 
-    .line 100
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

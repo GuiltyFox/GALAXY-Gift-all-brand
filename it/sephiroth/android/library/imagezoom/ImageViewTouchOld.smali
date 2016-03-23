@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;,
-        Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$ScaleListener;
+        Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$ScaleListener;,
+        Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;
     }
 .end annotation
 

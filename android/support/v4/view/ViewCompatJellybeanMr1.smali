@@ -66,6 +66,32 @@
     return v0
 .end method
 
+.method public static getWindowSystemUiVisibility(Landroid/view/View;)I
+    .registers 2
+    .param p0, "view"    # Landroid/view/View;
+
+    .prologue
+    .line 60
+    invoke-virtual {p0}, Landroid/view/View;->getWindowSystemUiVisibility()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static isPaddingRelative(Landroid/view/View;)Z
+    .registers 2
+    .param p0, "view"    # Landroid/view/View;
+
+    .prologue
+    .line 64
+    invoke-virtual {p0}, Landroid/view/View;->isPaddingRelative()Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static setLabelFor(Landroid/view/View;I)V
     .registers 2
     .param p0, "view"    # Landroid/view/View;

@@ -34,7 +34,7 @@
 
     .prologue
     .line 37
-    const-string v0, ""
+    const-string/jumbo v0, ""
 
     const/4 v1, 0x0
 

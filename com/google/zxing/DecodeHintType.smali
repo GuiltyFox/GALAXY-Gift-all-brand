@@ -17,6 +17,8 @@
 # static fields
 .field private static final synthetic $VALUES:[Lcom/google/zxing/DecodeHintType;
 
+.field public static final enum ALLOWED_EAN_EXTENSIONS:Lcom/google/zxing/DecodeHintType;
+
 .field public static final enum ALLOWED_LENGTHS:Lcom/google/zxing/DecodeHintType;
 
 .field public static final enum ASSUME_CODE_39_CHECK_DIGIT:Lcom/google/zxing/DecodeHintType;
@@ -32,6 +34,8 @@
 .field public static final enum POSSIBLE_FORMATS:Lcom/google/zxing/DecodeHintType;
 
 .field public static final enum PURE_BARCODE:Lcom/google/zxing/DecodeHintType;
+
+.field public static final enum RETURN_CODABAR_START_END:Lcom/google/zxing/DecodeHintType;
 
 .field public static final enum TRY_HARDER:Lcom/google/zxing/DecodeHintType;
 
@@ -65,7 +69,7 @@
     .line 35
     new-instance v0, Lcom/google/zxing/DecodeHintType;
 
-    const-string v1, "OTHER"
+    const-string/jumbo v1, "OTHER"
 
     const-class v2, Ljava/lang/Object;
 
@@ -76,7 +80,7 @@
     .line 41
     new-instance v0, Lcom/google/zxing/DecodeHintType;
 
-    const-string v1, "PURE_BARCODE"
+    const-string/jumbo v1, "PURE_BARCODE"
 
     const-class v2, Ljava/lang/Void;
 
@@ -87,7 +91,7 @@
     .line 47
     new-instance v0, Lcom/google/zxing/DecodeHintType;
 
-    const-string v1, "POSSIBLE_FORMATS"
+    const-string/jumbo v1, "POSSIBLE_FORMATS"
 
     const-class v2, Ljava/util/List;
 
@@ -98,7 +102,7 @@
     .line 53
     new-instance v0, Lcom/google/zxing/DecodeHintType;
 
-    const-string v1, "TRY_HARDER"
+    const-string/jumbo v1, "TRY_HARDER"
 
     const-class v2, Ljava/lang/Void;
 
@@ -109,7 +113,7 @@
     .line 58
     new-instance v0, Lcom/google/zxing/DecodeHintType;
 
-    const-string v1, "CHARACTER_SET"
+    const-string/jumbo v1, "CHARACTER_SET"
 
     const-class v2, Ljava/lang/String;
 
@@ -120,7 +124,7 @@
     .line 63
     new-instance v0, Lcom/google/zxing/DecodeHintType;
 
-    const-string v1, "ALLOWED_LENGTHS"
+    const-string/jumbo v1, "ALLOWED_LENGTHS"
 
     const/4 v2, 0x5
 
@@ -133,7 +137,7 @@
     .line 69
     new-instance v0, Lcom/google/zxing/DecodeHintType;
 
-    const-string v1, "ASSUME_CODE_39_CHECK_DIGIT"
+    const-string/jumbo v1, "ASSUME_CODE_39_CHECK_DIGIT"
 
     const/4 v2, 0x6
 
@@ -146,7 +150,7 @@
     .line 76
     new-instance v0, Lcom/google/zxing/DecodeHintType;
 
-    const-string v1, "ASSUME_GS1"
+    const-string/jumbo v1, "ASSUME_GS1"
 
     const/4 v2, 0x7
 
@@ -156,12 +160,25 @@
 
     sput-object v0, Lcom/google/zxing/DecodeHintType;->ASSUME_GS1:Lcom/google/zxing/DecodeHintType;
 
-    .line 82
+    .line 83
     new-instance v0, Lcom/google/zxing/DecodeHintType;
 
-    const-string v1, "NEED_RESULT_POINT_CALLBACK"
+    const-string/jumbo v1, "RETURN_CODABAR_START_END"
 
     const/16 v2, 0x8
+
+    const-class v3, Ljava/lang/Void;
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/zxing/DecodeHintType;-><init>(Ljava/lang/String;ILjava/lang/Class;)V
+
+    sput-object v0, Lcom/google/zxing/DecodeHintType;->RETURN_CODABAR_START_END:Lcom/google/zxing/DecodeHintType;
+
+    .line 89
+    new-instance v0, Lcom/google/zxing/DecodeHintType;
+
+    const-string/jumbo v1, "NEED_RESULT_POINT_CALLBACK"
+
+    const/16 v2, 0x9
 
     const-class v3, Lcom/google/zxing/ResultPointCallback;
 
@@ -169,8 +186,21 @@
 
     sput-object v0, Lcom/google/zxing/DecodeHintType;->NEED_RESULT_POINT_CALLBACK:Lcom/google/zxing/DecodeHintType;
 
+    .line 99
+    new-instance v0, Lcom/google/zxing/DecodeHintType;
+
+    const-string/jumbo v1, "ALLOWED_EAN_EXTENSIONS"
+
+    const/16 v2, 0xa
+
+    const-class v3, [I
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/zxing/DecodeHintType;-><init>(Ljava/lang/String;ILjava/lang/Class;)V
+
+    sput-object v0, Lcom/google/zxing/DecodeHintType;->ALLOWED_EAN_EXTENSIONS:Lcom/google/zxing/DecodeHintType;
+
     .line 30
-    const/16 v0, 0x9
+    const/16 v0, 0xb
 
     new-array v0, v0, [Lcom/google/zxing/DecodeHintType;
 
@@ -214,7 +244,19 @@
 
     const/16 v1, 0x8
 
+    sget-object v2, Lcom/google/zxing/DecodeHintType;->RETURN_CODABAR_START_END:Lcom/google/zxing/DecodeHintType;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x9
+
     sget-object v2, Lcom/google/zxing/DecodeHintType;->NEED_RESULT_POINT_CALLBACK:Lcom/google/zxing/DecodeHintType;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xa
+
+    sget-object v2, Lcom/google/zxing/DecodeHintType;->ALLOWED_EAN_EXTENSIONS:Lcom/google/zxing/DecodeHintType;
 
     aput-object v2, v0, v1
 
@@ -234,14 +276,14 @@
     .end annotation
 
     .prologue
-    .line 97
+    .line 114
     .local p3, "valueType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 98
+    .line 115
     iput-object p3, p0, Lcom/google/zxing/DecodeHintType;->valueType:Ljava/lang/Class;
 
-    .line 99
+    .line 116
     return-void
 .end method
 
@@ -291,7 +333,7 @@
     .end annotation
 
     .prologue
-    .line 102
+    .line 119
     iget-object v0, p0, Lcom/google/zxing/DecodeHintType;->valueType:Ljava/lang/Class;
 
     return-object v0

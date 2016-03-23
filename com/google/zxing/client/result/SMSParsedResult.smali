@@ -156,7 +156,7 @@
 
     .line 53
     .local v4, "result":Ljava/lang/StringBuilder;
-    const-string v7, "sms:"
+    const-string/jumbo v7, "sms:"
 
     invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -168,21 +168,21 @@
     const/4 v3, 0x0
 
     .local v3, "i":I
-    :goto_e
+    :goto_f
     iget-object v7, p0, Lcom/google/zxing/client/result/SMSParsedResult;->numbers:[Ljava/lang/String;
 
     array-length v7, v7
 
-    if-ge v3, v7, :cond_3c
+    if-ge v3, v7, :cond_3e
 
     .line 56
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_38
 
     .line 57
     const/4 v0, 0x0
 
     .line 61
-    :goto_16
+    :goto_17
     iget-object v7, p0, Lcom/google/zxing/client/result/SMSParsedResult;->numbers:[Ljava/lang/String;
 
     aget-object v7, v7, v3
@@ -192,16 +192,16 @@
     .line 62
     iget-object v7, p0, Lcom/google/zxing/client/result/SMSParsedResult;->vias:[Ljava/lang/String;
 
-    if-eqz v7, :cond_33
+    if-eqz v7, :cond_35
 
     iget-object v7, p0, Lcom/google/zxing/client/result/SMSParsedResult;->vias:[Ljava/lang/String;
 
     aget-object v7, v7, v3
 
-    if-eqz v7, :cond_33
+    if-eqz v7, :cond_35
 
     .line 63
-    const-string v7, ";via="
+    const-string/jumbo v7, ";via="
 
     invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -213,54 +213,54 @@
     invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 55
-    :cond_33
+    :cond_35
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_e
+    goto :goto_f
 
     .line 59
-    :cond_36
+    :cond_38
     const/16 v7, 0x2c
 
     invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_16
+    goto :goto_17
 
     .line 67
-    :cond_3c
+    :cond_3e
     iget-object v7, p0, Lcom/google/zxing/client/result/SMSParsedResult;->body:Ljava/lang/String;
 
-    if-eqz v7, :cond_73
+    if-eqz v7, :cond_77
 
     move v1, v5
 
     .line 68
     .local v1, "hasBody":Z
-    :goto_41
+    :goto_43
     iget-object v7, p0, Lcom/google/zxing/client/result/SMSParsedResult;->subject:Ljava/lang/String;
 
-    if-eqz v7, :cond_75
+    if-eqz v7, :cond_79
 
     move v2, v5
 
     .line 69
     .local v2, "hasSubject":Z
-    :goto_46
-    if-nez v1, :cond_4a
+    :goto_48
+    if-nez v1, :cond_4c
 
-    if-eqz v2, :cond_6e
+    if-eqz v2, :cond_72
 
     .line 70
-    :cond_4a
+    :cond_4c
     const/16 v5, 0x3f
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 71
-    if-eqz v1, :cond_5b
+    if-eqz v1, :cond_5e
 
     .line 72
-    const-string v5, "body="
+    const-string/jumbo v5, "body="
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -270,11 +270,11 @@
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 75
-    :cond_5b
-    if-eqz v2, :cond_6e
+    :cond_5e
+    if-eqz v2, :cond_72
 
     .line 76
-    if-eqz v1, :cond_64
+    if-eqz v1, :cond_67
 
     .line 77
     const/16 v5, 0x26
@@ -282,8 +282,8 @@
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 79
-    :cond_64
-    const-string v5, "subject="
+    :cond_67
+    const-string/jumbo v5, "subject="
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -293,7 +293,7 @@
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 83
-    :cond_6e
+    :cond_72
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
@@ -302,18 +302,18 @@
 
     .end local v1    # "hasBody":Z
     .end local v2    # "hasSubject":Z
-    :cond_73
+    :cond_77
     move v1, v6
 
     .line 67
-    goto :goto_41
+    goto :goto_43
 
     .restart local v1    # "hasBody":Z
-    :cond_75
+    :cond_79
     move v2, v6
 
     .line 68
-    goto :goto_46
+    goto :goto_48
 .end method
 
 .method public getSubject()Ljava/lang/String;

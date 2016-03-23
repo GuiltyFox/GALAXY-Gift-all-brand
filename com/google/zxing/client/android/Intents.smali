@@ -6,12 +6,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/zxing/client/android/Intents$Share;,
+        Lcom/google/zxing/client/android/Intents$WifiConnect;,
+        Lcom/google/zxing/client/android/Intents$SearchBookContents;,
         Lcom/google/zxing/client/android/Intents$Encode;,
         Lcom/google/zxing/client/android/Intents$History;,
-        Lcom/google/zxing/client/android/Intents$Scan;,
-        Lcom/google/zxing/client/android/Intents$SearchBookContents;,
-        Lcom/google/zxing/client/android/Intents$Share;,
-        Lcom/google/zxing/client/android/Intents$WifiConnect;
+        Lcom/google/zxing/client/android/Intents$Scan;
     }
 .end annotation
 

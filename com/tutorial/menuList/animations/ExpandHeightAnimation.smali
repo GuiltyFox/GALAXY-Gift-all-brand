@@ -106,11 +106,11 @@
 
     .prologue
     .line 37
-    const-string v1, "MyLog"
+    const-string/jumbo v1, "MyLog"
 
-    const-string v2, "onAnimationRepeat**************************************************"
+    const-string/jumbo v2, "onAnimationRepeat**************************************************"
 
-    invoke-static {v1, v2}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/bzbs/lib/survey/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 38
     iget-object v1, p0, Lcom/tutorial/menuList/animations/ExpandHeightAnimation;->view:Landroid/view/View;
@@ -150,11 +150,11 @@
     const/4 v3, 0x0
 
     .line 52
-    const-string v1, "MyLog"
+    const-string/jumbo v1, "MyLog"
 
-    const-string v2, "onAnimationStart**************************************************"
+    const-string/jumbo v2, "onAnimationStart**************************************************"
 
-    invoke-static {v1, v2}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/bzbs/lib/survey/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 53
     iget-object v1, p0, Lcom/tutorial/menuList/animations/ExpandHeightAnimation;->view:Landroid/view/View;

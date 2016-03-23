@@ -108,35 +108,19 @@
 .end method
 
 .method protected colIndexOfKey(Ljava/lang/Object;)I
-    .registers 4
+    .registers 3
     .param p1, "key"    # Ljava/lang/Object;
 
     .prologue
     .line 86
     .local p0, "this":Landroid/support/v4/util/ArrayMap$1;, "Landroid/support/v4/util/ArrayMap.1;"
-    if-nez p1, :cond_9
-
     iget-object v0, p0, Landroid/support/v4/util/ArrayMap$1;->this$0:Landroid/support/v4/util/ArrayMap;
 
-    invoke-virtual {v0}, Landroid/support/v4/util/ArrayMap;->indexOfNull()I
+    invoke-virtual {v0, p1}, Landroid/support/v4/util/ArrayMap;->indexOfKey(Ljava/lang/Object;)I
 
     move-result v0
 
-    :goto_8
     return v0
-
-    :cond_9
-    iget-object v0, p0, Landroid/support/v4/util/ArrayMap$1;->this$0:Landroid/support/v4/util/ArrayMap;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
-
-    invoke-virtual {v0, p1, v1}, Landroid/support/v4/util/ArrayMap;->indexOf(Ljava/lang/Object;I)I
-
-    move-result v0
-
-    goto :goto_8
 .end method
 
 .method protected colIndexOfValue(Ljava/lang/Object;)I

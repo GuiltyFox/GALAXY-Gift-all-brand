@@ -15,11 +15,17 @@
 
 
 # static fields
-.field public static final ecommerce_tracker:I = 0x7f050000
+.field public static final app_tracker_gift:I = 0x7f070000
 
-.field public static final global_tracker:I = 0x7f050001
+.field public static final app_tracker_rewards:I = 0x7f070001
 
-.field public static final preferences:I = 0x7f050002
+.field public static final app_tracker_rewards_production:I = 0x7f070002
+
+.field public static final app_tracker_rewards_staging:I = 0x7f070003
+
+.field public static final nav_states:I = 0x7f070004
+
+.field public static final zxing_preferences:I = 0x7f070005
 
 
 # direct methods
@@ -27,7 +33,7 @@
     .registers 1
 
     .prologue
-    .line 7168
+    .line 11249
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

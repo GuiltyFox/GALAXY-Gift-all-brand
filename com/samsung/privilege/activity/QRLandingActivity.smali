@@ -1,14 +1,6 @@
 .class public Lcom/samsung/privilege/activity/QRLandingActivity;
-.super Landroid/support/v4/app/FragmentActivity;
+.super Landroid/support/v7/app/AppCompatActivity;
 .source "QRLandingActivity.java"
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/samsung/privilege/activity/QRLandingActivity$PostNFCEncyptListener;
-    }
-.end annotation
 
 
 # instance fields
@@ -36,7 +28,7 @@
 
 .field private TAG:Ljava/lang/String;
 
-.field private callback:Lcom/facebook/Session$StatusCallback;
+.field private callbackManager:Lcom/facebook/CallbackManager;
 
 .field private gHandler:Landroid/os/Handler;
 
@@ -44,13 +36,7 @@
 
 .field private gIsNFCRedeem:Z
 
-.field private gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
-
-.field private mGaInstance:Lcom/google/analytics/tracking/android/GoogleAnalytics;
-
-.field private mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-.field private uiHelper:Lcom/facebook/UiLifecycleHelper;
+.field private gNfcResult:Lcom/bzbs/bean/NFCResult;
 
 
 # direct methods
@@ -58,10 +44,10 @@
     .registers 2
 
     .prologue
-    .line 46
-    invoke-direct {p0}, Landroid/support/v4/app/FragmentActivity;-><init>()V
+    .line 47
+    invoke-direct {p0}, Landroid/support/v7/app/AppCompatActivity;-><init>()V
 
-    .line 51
+    .line 50
     const-class v0, Lcom/samsung/privilege/activity/QRLandingActivity;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -70,650 +56,649 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
 
-    .line 55
+    .line 54
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gIsNFCRedeem:Z
 
-    .line 57
+    .line 56
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    .line 58
+    .line 57
     const/16 v0, 0x7b
 
     iput v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->RC_BARCODE_SCANNER:I
 
-    .line 110
-    new-instance v0, Lcom/samsung/privilege/activity/QRLandingActivity$1;
-
-    invoke-direct {v0, p0}, Lcom/samsung/privilege/activity/QRLandingActivity$1;-><init>(Lcom/samsung/privilege/activity/QRLandingActivity;)V
-
-    iput-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->callback:Lcom/facebook/Session$StatusCallback;
-
-    .line 436
+    .line 396
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_1:I
 
-    .line 437
+    .line 397
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_2:I
 
-    .line 438
+    .line 398
     const/4 v0, 0x3
 
     iput v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_3:I
 
-    .line 439
+    .line 399
     const/4 v0, 0x4
 
     iput v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_4:I
 
-    .line 440
+    .line 400
     const/4 v0, 0x5
 
     iput v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_5:I
 
-    .line 441
+    .line 401
     const/4 v0, 0x6
 
     iput v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_6:I
 
-    .line 442
+    .line 402
     const/4 v0, 0x7
 
     iput v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_7:I
 
-    .line 443
+    .line 403
     const/16 v0, 0x8
 
     iput v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_8:I
 
-    .line 444
+    .line 404
     const/16 v0, 0x9
 
     iput v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_9:I
 
-    .line 445
+    .line 405
     const/16 v0, 0xa
 
     iput v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_10:I
 
-    .line 46
     return-void
 .end method
 
-.method static synthetic access$0(Lcom/samsung/privilege/activity/QRLandingActivity;Lcom/facebook/Session;Lcom/facebook/SessionState;Ljava/lang/Exception;)V
-    .registers 4
-
-    .prologue
-    .line 564
-    invoke-direct {p0, p1, p2, p3}, Lcom/samsung/privilege/activity/QRLandingActivity;->onSessionStateChange(Lcom/facebook/Session;Lcom/facebook/SessionState;Ljava/lang/Exception;)V
-
-    return-void
-.end method
-
-.method static synthetic access$1(Lcom/samsung/privilege/activity/QRLandingActivity;)Ljava/lang/String;
+.method static synthetic access$000(Lcom/samsung/privilege/activity/QRLandingActivity;)Ljava/lang/String;
     .registers 2
+    .param p0, "x0"    # Lcom/samsung/privilege/activity/QRLandingActivity;
 
     .prologue
-    .line 51
+    .line 47
     iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method static synthetic access$2(Lcom/samsung/privilege/activity/QRLandingActivity;Lcom/samsung/privilege/bean/NFCResult;)V
+.method static synthetic access$100(Lcom/samsung/privilege/activity/QRLandingActivity;)Lcom/bzbs/bean/NFCResult;
     .registers 2
+    .param p0, "x0"    # Lcom/samsung/privilege/activity/QRLandingActivity;
 
     .prologue
-    .line 57
-    iput-object p1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
-
-    return-void
-.end method
-
-.method static synthetic access$3(Lcom/samsung/privilege/activity/QRLandingActivity;)Lcom/samsung/privilege/bean/NFCResult;
-    .registers 2
-
-    .prologue
-    .line 57
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    .line 47
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
     return-object v0
 .end method
 
-.method static synthetic access$4(Lcom/samsung/privilege/activity/QRLandingActivity;Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;)V
-    .registers 3
+.method static synthetic access$102(Lcom/samsung/privilege/activity/QRLandingActivity;Lcom/bzbs/bean/NFCResult;)Lcom/bzbs/bean/NFCResult;
+    .registers 2
+    .param p0, "x0"    # Lcom/samsung/privilege/activity/QRLandingActivity;
+    .param p1, "x1"    # Lcom/bzbs/bean/NFCResult;
 
     .prologue
-    .line 512
-    invoke-direct {p0, p1, p2}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;)V
+    .line 47
+    iput-object p1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
+
+    return-object p1
+.end method
+
+.method static synthetic access$200(Lcom/samsung/privilege/activity/QRLandingActivity;Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;)V
+    .registers 3
+    .param p0, "x0"    # Lcom/samsung/privilege/activity/QRLandingActivity;
+    .param p1, "x1"    # Lcom/bzbs/bean/NFCPlan;
+    .param p2, "x2"    # Lcom/bzbs/bean/NFCResult;
+
+    .prologue
+    .line 47
+    invoke-direct {p0, p1, p2}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;)V
 
     return-void
 .end method
 
-.method static synthetic access$5(Lcom/samsung/privilege/activity/QRLandingActivity;)Landroid/widget/ImageView;
+.method static synthetic access$300(Lcom/samsung/privilege/activity/QRLandingActivity;)Landroid/widget/ImageView;
     .registers 2
+    .param p0, "x0"    # Lcom/samsung/privilege/activity/QRLandingActivity;
 
     .prologue
-    .line 52
+    .line 47
     iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gImgNfc:Landroid/widget/ImageView;
 
     return-object v0
 .end method
 
-.method private doActionNFC(Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;)V
-    .registers 8
-    .param p1, "nfcPlan"    # Lcom/samsung/privilege/bean/NFCPlan;
-    .param p2, "nfcResult"    # Lcom/samsung/privilege/bean/NFCResult;
+.method private doActionNFC(Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;)V
+    .registers 9
+    .param p1, "nfcPlan"    # Lcom/bzbs/bean/NFCPlan;
+    .param p2, "nfcResult"    # Lcom/bzbs/bean/NFCResult;
 
     .prologue
-    const v4, 0x7f090360
+    const v5, 0x7f090243
 
-    .line 513
-    iget-object v2, p1, Lcom/samsung/privilege/bean/NFCPlan;->Type:Ljava/lang/String;
+    .line 473
+    iget-object v3, p1, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
 
-    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "checkin"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4c
-
-    .line 514
-    iget-object v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
-
-    const-string v3, "NFCType=checkin"
-
-    invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 515
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/samsung/privilege/UserLogin;->GetTokenFacebook(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, ""
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_42
-
-    .line 516
-    new-instance v2, Lcom/samsung/privilege/bean/NFCTag;
-
-    const-string v3, "qr"
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-direct {v2, v3, p1, p2, v4}, Lcom/samsung/privilege/bean/NFCTag;-><init>(Ljava/lang/String;Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;Ljava/lang/String;)V
-
-    sget-object v3, Lcom/samsung/privilege/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
-
-    iget-object v4, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gHandler:Landroid/os/Handler;
-
-    invoke-static {v2, v3, v4}, Lcom/samsung/privilege/util/NfcUtils;->Action_CheckIn(Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;Landroid/os/Handler;)V
-
-    .line 561
-    :goto_3e
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->finish()V
-
-    .line 562
-    return-void
-
-    .line 518
-    :cond_42
-    sget-object v2, Lcom/samsung/privilege/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
-
-    invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/QRLandingActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/samsung/privilege/util/DialogUtil;->showDialogMessage(Landroid/content/Context;Ljava/lang/String;)V
+    const-string/jumbo v4, "checkin"
 
-    goto :goto_3e
+    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    .line 520
-    :cond_4c
-    iget-object v2, p1, Lcom/samsung/privilege/bean/NFCPlan;->Type:Ljava/lang/String;
+    move-result v3
 
-    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    if-eqz v3, :cond_4e
+
+    .line 474
+    iget-object v3, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v4, "NFCType=checkin"
+
+    invoke-static {v3, v4}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 475
+    invoke-static {}, Lcom/facebook/AccessToken;->getCurrentAccessToken()Lcom/facebook/AccessToken;
 
     move-result-object v2
 
-    const-string v3, "post"
+    .line 476
+    .local v2, "token_facebook":Lcom/facebook/AccessToken;
+    if-eqz v2, :cond_44
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    const-string/jumbo v3, ""
 
-    move-result v2
+    invoke-virtual {v2, v3}, Lcom/facebook/AccessToken;->equals(Ljava/lang/Object;)Z
 
-    if-eqz v2, :cond_92
+    move-result v3
 
-    .line 521
-    iget-object v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
+    if-nez v3, :cond_44
 
-    const-string v3, "NFCType=post"
+    .line 477
+    new-instance v3, Lcom/bzbs/bean/NFCTag;
 
-    invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    const-string/jumbo v4, "qr"
 
-    .line 522
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-static {v2}, Lcom/samsung/privilege/UserLogin;->GetTokenFacebook(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v5}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v5
 
-    const-string v3, ""
+    invoke-direct {v3, v4, p1, p2, v5}, Lcom/bzbs/bean/NFCTag;-><init>(Ljava/lang/String;Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;Ljava/lang/String;)V
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    sget-object v4, Lcom/bzbs/data/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
 
-    move-result v2
+    iget-object v5, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->callbackManager:Lcom/facebook/CallbackManager;
 
-    if-nez v2, :cond_88
+    invoke-static {v3, v4, v5}, Lcom/bzbs/util/NfcUtils;->Action_CheckIn(Lcom/bzbs/bean/NFCTag;Landroid/content/Context;Lcom/facebook/CallbackManager;)V
 
     .line 523
-    new-instance v2, Lcom/samsung/privilege/bean/NFCTag;
+    .end local v2    # "token_facebook":Lcom/facebook/AccessToken;
+    :goto_40
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->finish()V
 
-    const-string v3, "qr"
+    .line 524
+    return-void
 
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
+    .line 479
+    .restart local v2    # "token_facebook":Lcom/facebook/AccessToken;
+    :cond_44
+    sget-object v3, Lcom/bzbs/data/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
+
+    invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/QRLandingActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v3, v4}, Lcom/bzbs/util/DialogUtil;->showDialogMessage(Landroid/content/Context;Ljava/lang/String;)V
 
-    move-result-object v4
+    goto :goto_40
 
-    invoke-direct {v2, v3, p1, p2, v4}, Lcom/samsung/privilege/bean/NFCTag;-><init>(Ljava/lang/String;Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;Ljava/lang/String;)V
+    .line 481
+    .end local v2    # "token_facebook":Lcom/facebook/AccessToken;
+    :cond_4e
+    iget-object v3, p1, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
 
-    sget-object v3, Lcom/samsung/privilege/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
-
-    iget-object v4, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gHandler:Landroid/os/Handler;
-
-    invoke-static {v2, v3, v4}, Lcom/samsung/privilege/util/NfcUtils;->Action_Status(Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;Landroid/os/Handler;)V
-
-    goto :goto_3e
-
-    .line 525
-    :cond_88
-    sget-object v2, Lcom/samsung/privilege/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
-
-    invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/QRLandingActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/samsung/privilege/util/DialogUtil;->showDialogMessage(Landroid/content/Context;Ljava/lang/String;)V
+    const-string/jumbo v4, "post"
 
-    goto :goto_3e
+    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    .line 527
-    :cond_92
-    iget-object v2, p1, Lcom/samsung/privilege/bean/NFCPlan;->Type:Ljava/lang/String;
+    move-result v3
 
-    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    if-eqz v3, :cond_96
+
+    .line 482
+    iget-object v3, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v4, "NFCType=post"
+
+    invoke-static {v3, v4}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 483
+    invoke-static {}, Lcom/facebook/AccessToken;->getCurrentAccessToken()Lcom/facebook/AccessToken;
 
     move-result-object v2
 
-    const-string v3, "share"
+    .line 484
+    .restart local v2    # "token_facebook":Lcom/facebook/AccessToken;
+    if-eqz v2, :cond_8c
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    const-string/jumbo v3, ""
 
-    move-result v2
+    invoke-virtual {v2, v3}, Lcom/facebook/AccessToken;->equals(Ljava/lang/Object;)Z
 
-    if-eqz v2, :cond_ed
+    move-result v3
 
-    .line 528
-    iget-object v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
+    if-nez v3, :cond_8c
 
-    const-string v3, "NFCType=share"
+    .line 485
+    new-instance v3, Lcom/bzbs/bean/NFCTag;
 
-    invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 529
-    new-instance v0, Lcom/samsung/privilege/bean/NFCTag;
-
-    const-string v2, "qr"
+    const-string/jumbo v4, "qr"
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
 
+    move-result-object v5
+
+    invoke-static {v5}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {v3, v4, p1, p2, v5}, Lcom/bzbs/bean/NFCTag;-><init>(Ljava/lang/String;Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;Ljava/lang/String;)V
+
+    sget-object v4, Lcom/bzbs/data/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
+
+    iget-object v5, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->callbackManager:Lcom/facebook/CallbackManager;
+
+    invoke-static {v3, v4, v5}, Lcom/bzbs/util/NfcUtils;->Action_Status(Lcom/bzbs/bean/NFCTag;Landroid/content/Context;Lcom/facebook/CallbackManager;)V
+
+    goto :goto_40
+
+    .line 487
+    :cond_8c
+    sget-object v3, Lcom/bzbs/data/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
+
+    invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/QRLandingActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lcom/bzbs/util/DialogUtil;->showDialogMessage(Landroid/content/Context;Ljava/lang/String;)V
+
+    goto :goto_40
+
+    .line 489
+    .end local v2    # "token_facebook":Lcom/facebook/AccessToken;
+    :cond_96
+    iget-object v3, p1, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
+
+    invoke-virtual {v3}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
     move-result-object v3
 
-    invoke-static {v3}, Lcom/samsung/privilege/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
+    const-string/jumbo v4, "share"
 
-    move-result-object v3
+    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    invoke-direct {v0, v2, p1, p2, v3}, Lcom/samsung/privilege/bean/NFCTag;-><init>(Ljava/lang/String;Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;Ljava/lang/String;)V
+    move-result v3
 
-    .line 530
-    .local v0, "objNFCTag":Lcom/samsung/privilege/bean/NFCTag;
+    if-eqz v3, :cond_f4
+
+    .line 490
+    iget-object v3, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v4, "NFCType=share"
+
+    invoke-static {v3, v4}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 491
+    new-instance v0, Lcom/bzbs/bean/NFCTag;
+
+    const-string/jumbo v3, "qr"
+
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v0, v3, p1, p2, v4}, Lcom/bzbs/bean/NFCTag;-><init>(Ljava/lang/String;Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;Ljava/lang/String;)V
+
+    .line 492
+    .local v0, "objNFCTag":Lcom/bzbs/bean/NFCTag;
     const/4 v1, 0x0
 
-    .line 531
-    .local v1, "objNFCTagReDeem":Lcom/samsung/privilege/bean/NFCTag;
-    iget-object v2, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
+    .line 493
+    .local v1, "objNFCTagReDeem":Lcom/bzbs/bean/NFCTag;
+    iget-object v3, v0, Lcom/bzbs/bean/NFCTag;->NextNFCTag:Lcom/bzbs/bean/NFCTag;
 
-    if-eqz v2, :cond_c9
+    if-eqz v3, :cond_d1
 
-    .line 532
-    iget-object v2, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
+    .line 494
+    iget-object v3, v0, Lcom/bzbs/bean/NFCTag;->NextNFCTag:Lcom/bzbs/bean/NFCTag;
 
-    iget-object v2, v2, Lcom/samsung/privilege/bean/NFCTag;->ActionName:Ljava/lang/String;
+    iget-object v3, v3, Lcom/bzbs/bean/NFCTag;->ActionName:Ljava/lang/String;
 
-    const-string v3, "ReDeem"
+    const-string/jumbo v4, "ReDeem"
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_c9
+    if-eqz v3, :cond_d1
 
-    .line 533
-    iget-object v1, v0, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
+    .line 495
+    iget-object v1, v0, Lcom/bzbs/bean/NFCTag;->NextNFCTag:Lcom/bzbs/bean/NFCTag;
 
-    .line 536
-    :cond_c9
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/samsung/privilege/UserLogin;->GetTokenFacebook(Landroid/content/Context;)Ljava/lang/String;
+    .line 498
+    :cond_d1
+    invoke-static {}, Lcom/facebook/AccessToken;->getCurrentAccessToken()Lcom/facebook/AccessToken;
 
     move-result-object v2
 
-    const-string v3, ""
+    .line 499
+    .restart local v2    # "token_facebook":Lcom/facebook/AccessToken;
+    if-eqz v2, :cond_e9
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v3, ""
 
-    move-result v2
+    invoke-virtual {v2, v3}, Lcom/facebook/AccessToken;->equals(Ljava/lang/Object;)Z
 
-    if-nez v2, :cond_e2
+    move-result v3
 
-    .line 538
-    sget-object v2, Lcom/samsung/privilege/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
+    if-nez v3, :cond_e9
 
-    iget-object v3, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gHandler:Landroid/os/Handler;
+    .line 500
+    sget-object v3, Lcom/bzbs/data/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
 
-    invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/util/NfcUtils;->Action_Share(Lcom/samsung/privilege/bean/NFCTag;Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;Landroid/os/Handler;)V
+    iget-object v4, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->callbackManager:Lcom/facebook/CallbackManager;
 
-    goto/16 :goto_3e
+    invoke-static {v0, v1, v3, v4}, Lcom/bzbs/util/NfcUtils;->Action_Share(Lcom/bzbs/bean/NFCTag;Lcom/bzbs/bean/NFCTag;Landroid/content/Context;Lcom/facebook/CallbackManager;)V
 
-    .line 540
-    :cond_e2
-    sget-object v2, Lcom/samsung/privilege/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
+    goto/16 :goto_40
 
-    invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/QRLandingActivity;->getString(I)Ljava/lang/String;
+    .line 502
+    :cond_e9
+    sget-object v3, Lcom/bzbs/data/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
+
+    invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/QRLandingActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lcom/bzbs/util/DialogUtil;->showDialogMessage(Landroid/content/Context;Ljava/lang/String;)V
+
+    goto/16 :goto_40
+
+    .line 504
+    .end local v0    # "objNFCTag":Lcom/bzbs/bean/NFCTag;
+    .end local v1    # "objNFCTagReDeem":Lcom/bzbs/bean/NFCTag;
+    .end local v2    # "token_facebook":Lcom/facebook/AccessToken;
+    :cond_f4
+    iget-object v3, p1, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
+
+    invoke-virtual {v3}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/samsung/privilege/util/DialogUtil;->showDialogMessage(Landroid/content/Context;Ljava/lang/String;)V
+    const-string/jumbo v4, "openapp"
 
-    goto/16 :goto_3e
+    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    .line 542
-    .end local v0    # "objNFCTag":Lcom/samsung/privilege/bean/NFCTag;
-    .end local v1    # "objNFCTagReDeem":Lcom/samsung/privilege/bean/NFCTag;
-    :cond_ed
-    iget-object v2, p1, Lcom/samsung/privilege/bean/NFCPlan;->Type:Ljava/lang/String;
+    move-result v3
 
-    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    if-eqz v3, :cond_122
 
-    move-result-object v2
+    .line 505
+    iget-object v3, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
 
-    const-string v3, "openapp"
+    const-string/jumbo v4, "NFCType=openapp"
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-static {v3, v4}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result v2
+    .line 506
+    new-instance v3, Lcom/bzbs/bean/NFCTag;
 
-    if-eqz v2, :cond_118
-
-    .line 543
-    iget-object v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
-
-    const-string v3, "NFCType=openapp"
-
-    invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 544
-    new-instance v2, Lcom/samsung/privilege/bean/NFCTag;
-
-    const-string v3, "qr"
+    const-string/jumbo v4, "qr"
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v5}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-direct {v2, v3, p1, p2, v4}, Lcom/samsung/privilege/bean/NFCTag;-><init>(Ljava/lang/String;Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;Ljava/lang/String;)V
+    invoke-direct {v3, v4, p1, p2, v5}, Lcom/bzbs/bean/NFCTag;-><init>(Ljava/lang/String;Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;Ljava/lang/String;)V
 
-    sget-object v3, Lcom/samsung/privilege/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
+    sget-object v4, Lcom/bzbs/data/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
 
-    invoke-static {v2, v3}, Lcom/samsung/privilege/util/NfcUtils;->Action_OpenApp(Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;)V
+    invoke-static {v3, v4}, Lcom/bzbs/util/NfcUtils;->Action_OpenApp(Lcom/bzbs/bean/NFCTag;Landroid/content/Context;)V
 
-    goto/16 :goto_3e
+    goto/16 :goto_40
 
-    .line 545
-    :cond_118
-    iget-object v2, p1, Lcom/samsung/privilege/bean/NFCPlan;->Type:Ljava/lang/String;
+    .line 507
+    :cond_122
+    iget-object v3, p1, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
 
-    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-string v3, "link"
+    const-string/jumbo v4, "link"
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_143
+    if-eqz v3, :cond_150
 
-    .line 546
-    iget-object v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
+    .line 508
+    iget-object v3, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
 
-    const-string v3, "NFCType=link"
+    const-string/jumbo v4, "NFCType=link"
 
-    invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 547
-    new-instance v2, Lcom/samsung/privilege/bean/NFCTag;
+    .line 509
+    new-instance v3, Lcom/bzbs/bean/NFCTag;
 
-    const-string v3, "qr"
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-direct {v2, v3, p1, p2, v4}, Lcom/samsung/privilege/bean/NFCTag;-><init>(Ljava/lang/String;Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;Ljava/lang/String;)V
-
-    sget-object v3, Lcom/samsung/privilege/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
-
-    invoke-static {v2, v3}, Lcom/samsung/privilege/util/NfcUtils;->Action_OpenUrl(Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;)V
-
-    goto/16 :goto_3e
-
-    .line 548
-    :cond_143
-    iget-object v2, p1, Lcom/samsung/privilege/bean/NFCPlan;->Type:Ljava/lang/String;
-
-    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "video"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_16e
-
-    .line 549
-    iget-object v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
-
-    const-string v3, "NFCType=video"
-
-    invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 550
-    new-instance v2, Lcom/samsung/privilege/bean/NFCTag;
-
-    const-string v3, "qr"
+    const-string/jumbo v4, "qr"
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v5}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-direct {v2, v3, p1, p2, v4}, Lcom/samsung/privilege/bean/NFCTag;-><init>(Ljava/lang/String;Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;Ljava/lang/String;)V
+    invoke-direct {v3, v4, p1, p2, v5}, Lcom/bzbs/bean/NFCTag;-><init>(Ljava/lang/String;Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;Ljava/lang/String;)V
 
-    sget-object v3, Lcom/samsung/privilege/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
+    sget-object v4, Lcom/bzbs/data/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
 
-    invoke-static {v2, v3}, Lcom/samsung/privilege/util/NfcUtils;->Action_OpenUrl(Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;)V
+    invoke-static {v3, v4}, Lcom/bzbs/util/NfcUtils;->Action_OpenUrl(Lcom/bzbs/bean/NFCTag;Landroid/content/Context;)V
 
-    goto/16 :goto_3e
+    goto/16 :goto_40
 
-    .line 551
-    :cond_16e
-    iget-object v2, p1, Lcom/samsung/privilege/bean/NFCPlan;->Type:Ljava/lang/String;
+    .line 510
+    :cond_150
+    iget-object v3, p1, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
 
-    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-string v3, "campaign"
+    const-string/jumbo v4, "video"
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_199
+    if-eqz v3, :cond_17e
 
-    .line 552
-    iget-object v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
+    .line 511
+    iget-object v3, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
 
-    const-string v3, "NFCType=campaign"
+    const-string/jumbo v4, "NFCType=video"
 
-    invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 553
-    new-instance v2, Lcom/samsung/privilege/bean/NFCTag;
+    .line 512
+    new-instance v3, Lcom/bzbs/bean/NFCTag;
 
-    const-string v3, "qr"
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-direct {v2, v3, p1, p2, v4}, Lcom/samsung/privilege/bean/NFCTag;-><init>(Ljava/lang/String;Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;Ljava/lang/String;)V
-
-    sget-object v3, Lcom/samsung/privilege/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
-
-    invoke-static {v2, v3}, Lcom/samsung/privilege/util/NfcUtils;->Action_ReDeem(Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;)V
-
-    goto/16 :goto_3e
-
-    .line 554
-    :cond_199
-    iget-object v2, p1, Lcom/samsung/privilege/bean/NFCPlan;->Type:Ljava/lang/String;
-
-    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "redeem"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1c4
-
-    .line 555
-    iget-object v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
-
-    const-string v3, "NFCType=redeem"
-
-    invoke-static {v2, v3}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 556
-    new-instance v2, Lcom/samsung/privilege/bean/NFCTag;
-
-    const-string v3, "qr"
+    const-string/jumbo v4, "qr"
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-static {v4}, Lcom/samsung/privilege/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v5}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-direct {v2, v3, p1, p2, v4}, Lcom/samsung/privilege/bean/NFCTag;-><init>(Ljava/lang/String;Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;Ljava/lang/String;)V
+    invoke-direct {v3, v4, p1, p2, v5}, Lcom/bzbs/bean/NFCTag;-><init>(Ljava/lang/String;Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;Ljava/lang/String;)V
 
-    sget-object v3, Lcom/samsung/privilege/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
+    sget-object v4, Lcom/bzbs/data/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
 
-    invoke-static {v2, v3}, Lcom/samsung/privilege/util/NfcUtils;->Action_ReDeem(Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;)V
+    invoke-static {v3, v4}, Lcom/bzbs/util/NfcUtils;->Action_OpenUrl(Lcom/bzbs/bean/NFCTag;Landroid/content/Context;)V
 
-    goto/16 :goto_3e
+    goto/16 :goto_40
 
-    .line 558
-    :cond_1c4
-    new-instance v2, Ljava/lang/StringBuilder;
+    .line 513
+    :cond_17e
+    iget-object v3, p1, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
 
-    const-string v3, "Invalid NFC Type:"
+    invoke-virtual {v3}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v3
 
-    iget-object v3, p1, Lcom/samsung/privilege/bean/NFCPlan;->Type:Ljava/lang/String;
+    const-string/jumbo v4, "campaign"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result-object v2
+    move-result v3
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-eqz v3, :cond_1ac
 
-    move-result-object v2
+    .line 514
+    iget-object v3, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
 
-    invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/QRLandingActivity;->showToast(Ljava/lang/String;)V
+    const-string/jumbo v4, "NFCType=campaign"
 
-    goto/16 :goto_3e
+    invoke-static {v3, v4}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 515
+    new-instance v3, Lcom/bzbs/bean/NFCTag;
+
+    const-string/jumbo v4, "qr"
+
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v5
+
+    invoke-static {v5}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {v3, v4, p1, p2, v5}, Lcom/bzbs/bean/NFCTag;-><init>(Ljava/lang/String;Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;Ljava/lang/String;)V
+
+    sget-object v4, Lcom/bzbs/data/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
+
+    invoke-static {v3, v4}, Lcom/bzbs/util/NfcUtils;->Action_ReDeem(Lcom/bzbs/bean/NFCTag;Landroid/content/Context;)V
+
+    goto/16 :goto_40
+
+    .line 516
+    :cond_1ac
+    iget-object v3, p1, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
+
+    invoke-virtual {v3}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string/jumbo v4, "redeem"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1da
+
+    .line 517
+    iget-object v3, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v4, "NFCType=redeem"
+
+    invoke-static {v3, v4}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 518
+    new-instance v3, Lcom/bzbs/bean/NFCTag;
+
+    const-string/jumbo v4, "qr"
+
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v5
+
+    invoke-static {v5}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {v3, v4, p1, p2, v5}, Lcom/bzbs/bean/NFCTag;-><init>(Ljava/lang/String;Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;Ljava/lang/String;)V
+
+    sget-object v4, Lcom/bzbs/data/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
+
+    invoke-static {v3, v4}, Lcom/bzbs/util/NfcUtils;->Action_ReDeem(Lcom/bzbs/bean/NFCTag;Landroid/content/Context;)V
+
+    goto/16 :goto_40
+
+    .line 520
+    :cond_1da
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "Invalid NFC Type:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, p1, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/QRLandingActivity;->showToast(Ljava/lang/String;)V
+
+    goto/16 :goto_40
 .end method
 
 .method private getZxingIntent(Landroid/content/Context;)Landroid/content/Intent;
@@ -721,20 +706,20 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 95
+    .line 98
     new-instance v4, Landroid/content/Intent;
 
-    const-string v5, "com.google.zxing.client.android.SCAN"
+    const-string/jumbo v5, "com.google.zxing.client.android.SCAN"
 
     invoke-direct {v4, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 96
+    .line 99
     .local v4, "zxingIntent":Landroid/content/Intent;
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v3
 
-    .line 97
+    .line 100
     .local v3, "pm":Landroid/content/pm/PackageManager;
     const/4 v5, 0x0
 
@@ -742,45 +727,40 @@
 
     move-result-object v0
 
-    .line 98
+    .line 101
     .local v0, "activityList":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     const/4 v2, 0x0
 
     .local v2, "i":I
-    :goto_11
+    :goto_12
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v5
 
-    if-lt v2, v5, :cond_18
+    if-ge v2, v5, :cond_48
 
-    .line 107
-    :goto_17
-    return-object v4
-
-    .line 99
-    :cond_18
+    .line 102
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/content/pm/ResolveInfo;
 
-    .line 100
+    .line 103
     .local v1, "app":Landroid/content/pm/ResolveInfo;
     iget-object v5, v1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v5, v5, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
-    const-string v6, "zxing"
+    const-string/jumbo v6, "zxing"
 
     invoke-virtual {v5, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_48
+    if-eqz v5, :cond_49
 
-    .line 101
+    .line 104
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v5
@@ -797,9 +777,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_48
+    if-eqz v5, :cond_49
 
-    .line 102
+    .line 105
     iget-object v5, v1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v5, v5, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
@@ -810,764 +790,715 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    goto :goto_17
-
-    .line 98
+    .line 110
+    .end local v1    # "app":Landroid/content/pm/ResolveInfo;
     :cond_48
+    return-object v4
+
+    .line 101
+    .restart local v1    # "app":Landroid/content/pm/ResolveInfo;
+    :cond_49
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_11
-.end method
-
-.method private onSessionStateChange(Lcom/facebook/Session;Lcom/facebook/SessionState;Ljava/lang/Exception;)V
-    .registers 7
-    .param p1, "session"    # Lcom/facebook/Session;
-    .param p2, "state"    # Lcom/facebook/SessionState;
-    .param p3, "exception"    # Ljava/lang/Exception;
-
-    .prologue
-    .line 567
-    sget-object v1, Lcom/facebook/SessionState;->OPENED:Lcom/facebook/SessionState;
-
-    invoke-virtual {p2, v1}, Lcom/facebook/SessionState;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_21
-
-    .line 569
-    invoke-virtual {p2}, Lcom/facebook/SessionState;->isClosed()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_21
-
-    .line 570
-    new-instance v0, Landroid/content/Intent;
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    const-class v2, Lcom/samsung/privilege/MainActivity;
-
-    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 571
-    .local v0, "intent":Landroid/content/Intent;
-    const/high16 v1, 0x4000000
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
-
-    .line 572
-    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/QRLandingActivity;->startActivity(Landroid/content/Intent;)V
-
-    .line 574
-    .end local v0    # "intent":Landroid/content/Intent;
-    :cond_21
-    return-void
+    goto :goto_12
 .end method
 
 .method private processNFC_QR(Ljava/lang/String;)V
-    .registers 21
+    .registers 23
     .param p1, "strTasks"    # Ljava/lang/String;
 
     .prologue
-    .line 164
+    .line 121
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/samsung/privilege/activity/QRLandingActivity;->gIsNFCRedeem:Z
 
-    move/from16 v16, v0
+    move/from16 v18, v0
 
-    if-nez v16, :cond_b6
+    if-nez v18, :cond_118
 
-    .line 165
-    const/16 v16, 0x1
+    .line 122
+    const/16 v18, 0x1
 
-    move/from16 v0, v16
+    move/from16 v0, v18
 
     move-object/from16 v1, p0
 
     iput-boolean v0, v1, Lcom/samsung/privilege/activity/QRLandingActivity;->gIsNFCRedeem:Z
 
-    .line 167
-    new-instance v5, Ljava/util/ArrayList;
+    .line 124
+    new-instance v6, Ljava/util/ArrayList;
 
-    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    .line 170
-    .local v5, "gArrayNFCTag":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/NFCTag;>;"
+    .line 127
+    .local v6, "gArrayNFCTag":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/NFCTag;>;"
     :try_start_15
-    new-instance v9, Lorg/json/JSONArray;
+    new-instance v10, Lorg/json/JSONArray;
 
     move-object/from16 v0, p1
 
-    invoke-direct {v9, v0}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
+    invoke-direct {v10, v0}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
 
-    .line 171
-    .local v9, "jsonRoot":Lorg/json/JSONArray;
-    const/4 v6, 0x0
+    .line 128
+    .local v10, "jsonRoot":Lorg/json/JSONArray;
+    const/4 v7, 0x0
 
-    .local v6, "i":I
+    .local v7, "i":I
     :goto_1d
-    invoke-virtual {v9}, Lorg/json/JSONArray;->length()I
+    invoke-virtual {v10}, Lorg/json/JSONArray;->length()I
     :try_end_20
-    .catch Lorg/json/JSONException; {:try_start_15 .. :try_end_20} :catch_f9
+    .catch Lorg/json/JSONException; {:try_start_15 .. :try_end_20} :catch_6d
 
-    move-result v16
+    move-result v18
 
-    move/from16 v0, v16
+    move/from16 v0, v18
 
-    if-lt v6, v0, :cond_b7
+    if-ge v7, v0, :cond_8f
 
-    .line 184
-    .end local v6    # "i":I
-    .end local v9    # "jsonRoot":Lorg/json/JSONArray;
-    :goto_25
-    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
+    .line 130
+    :try_start_25
+    invoke-virtual {v10, v7}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
-    move-result v16
+    move-result-object v9
 
-    if-nez v16, :cond_118
+    .line 131
+    .local v9, "jsonAction":Lorg/json/JSONObject;
+    new-instance v18, Lcom/bzbs/bean/NFCTag;
 
-    .line 186
-    const-string v16, "\""
+    const-string/jumbo v19, "qr"
 
-    const-string v17, ""
+    move-object/from16 v0, v18
 
-    move-object/from16 v0, p1
+    move-object/from16 v1, v19
 
-    move-object/from16 v1, v16
+    invoke-direct {v0, v1, v9}, Lcom/bzbs/bean/NFCTag;-><init>(Ljava/lang/String;Lorg/json/JSONObject;)V
 
-    move-object/from16 v2, v17
+    move-object/from16 v0, v18
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {v6, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :try_end_3a
+    .catch Lorg/json/JSONException; {:try_start_25 .. :try_end_3a} :catch_3d
 
-    move-result-object v14
+    .line 128
+    .end local v9    # "jsonAction":Lorg/json/JSONObject;
+    :goto_3a
+    add-int/lit8 v7, v7, 0x1
 
-    .line 187
-    .local v14, "strEncrpt":Ljava/lang/String;
-    new-instance v16, Ljava/lang/StringBuilder;
+    goto :goto_1d
 
-    sget-object v17, Lcom/samsung/privilege/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
+    .line 132
+    :catch_3d
+    move-exception v4
 
-    invoke-static/range {v17 .. v17}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    .line 133
+    .local v4, "e":Lorg/json/JSONException;
+    :try_start_3e
+    new-instance v18, Ljava/lang/StringBuilder;
 
-    move-result-object v17
+    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct/range {v16 .. v17}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string/jumbo v19, "Invalid NFC Action:"
 
-    const-string v17, "api/nfc?nfc_token="
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v18
 
-    move-result-object v16
+    move-object/from16 v0, v18
 
-    move-object/from16 v0, v16
+    move-object/from16 v1, p1
 
-    invoke-virtual {v0, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v16
+    move-result-object v18
 
-    const-string v17, "&token="
+    const-string/jumbo v19, "\r\n"
 
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v16
+    move-result-object v18
 
-    invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {v4}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
 
-    move-result-object v17
+    move-result-object v19
 
-    invoke-static/range {v17 .. v17}, Lcom/samsung/privilege/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v17
+    move-result-object v18
 
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v16
+    move-result-object v18
 
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-object/from16 v0, p0
 
-    move-result-object v15
+    move-object/from16 v1, v18
 
-    .line 188
-    .local v15, "url":Ljava/lang/String;
+    invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->showToast(Ljava/lang/String;)V
+    :try_end_6c
+    .catch Lorg/json/JSONException; {:try_start_3e .. :try_end_6c} :catch_6d
+
+    goto :goto_3a
+
+    .line 137
+    .end local v4    # "e":Lorg/json/JSONException;
+    .end local v7    # "i":I
+    .end local v10    # "jsonRoot":Lorg/json/JSONArray;
+    :catch_6d
+    move-exception v4
+
+    .line 138
+    .restart local v4    # "e":Lorg/json/JSONException;
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
 
-    move-object/from16 v16, v0
+    move-object/from16 v18, v0
 
-    new-instance v17, Ljava/lang/StringBuilder;
+    new-instance v19, Ljava/lang/StringBuilder;
 
-    const-string v18, "url="
+    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct/range {v17 .. v18}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string/jumbo v20, "Invalid NFC Task:"
 
-    move-object/from16 v0, v17
+    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v19
 
-    move-result-object v17
+    move-object/from16 v0, v19
 
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-object/from16 v1, p1
 
-    move-result-object v17
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static/range {v16 .. v17}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v19
 
-    .line 189
-    invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v19
+
+    invoke-static/range {v18 .. v19}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 141
+    .end local v4    # "e":Lorg/json/JSONException;
+    :cond_8f
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
+
+    move-result v18
+
+    if-nez v18, :cond_119
+
+    .line 143
+    const-string/jumbo v18, "\""
+
+    const-string/jumbo v19, ""
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v18
+
+    move-object/from16 v2, v19
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v16
 
-    invoke-static/range {v16 .. v16}, Lcom/samsung/privilege/UserLogin;->IS_ADMIN(Landroid/content/Context;)Z
+    .line 145
+    .local v16, "strEncrpt":Ljava/lang/String;
+    new-instance v18, Ljava/lang/StringBuilder;
 
-    move-result v16
+    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-eqz v16, :cond_a4
+    sget-object v19, Lcom/bzbs/data/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
 
-    .line 190
-    const-string v16, "NFC"
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-instance v17, Ljava/lang/StringBuilder;
+    move-result-object v18
 
-    const-string v18, "RQ="
+    const-string/jumbo v19, "api/nfc"
 
-    invoke-direct/range {v17 .. v18}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v0, v17
+    move-result-object v18
 
-    invoke-virtual {v0, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v17
 
+    .line 146
+    .local v17, "url":Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
+
+    move-object/from16 v18, v0
+
+    new-instance v19, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v20, "getNFCData="
+
+    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v19
+
+    move-object/from16 v0, v19
+
+    move-object/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v19
+
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v19
+
+    invoke-static/range {v18 .. v19}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 148
+    new-instance v15, Lcom/loopj/android/http/RequestParams;
+
+    invoke-direct {v15}, Lcom/loopj/android/http/RequestParams;-><init>()V
+
+    .line 149
+    .local v15, "params":Lcom/loopj/android/http/RequestParams;
+    const-string/jumbo v18, "token"
+
+    invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v19
+
+    invoke-static/range {v19 .. v19}, Lcom/bzbs/data/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v19
+
+    move-object/from16 v0, v18
+
+    move-object/from16 v1, v19
+
+    invoke-virtual {v15, v0, v1}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 150
+    const-string/jumbo v18, "nfc_token"
+
+    move-object/from16 v0, v18
+
+    move-object/from16 v1, v16
+
+    invoke-virtual {v15, v0, v1}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 152
+    new-instance v3, Lcom/loopj/android/http/AsyncHttpClient;
+
+    invoke-direct {v3}, Lcom/loopj/android/http/AsyncHttpClient;-><init>()V
+
+    .line 153
+    .local v3, "client":Lcom/loopj/android/http/AsyncHttpClient;
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v18
 
-    invoke-static/range {v16 .. v18}, Lcom/samsung/privilege/AppSetting;->LOG(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
+    new-instance v19, Lcom/samsung/privilege/activity/QRLandingActivity$1;
 
-    .line 194
-    :cond_a4
-    const/16 v16, 0x0
-
-    new-instance v17, Lcom/samsung/privilege/activity/QRLandingActivity$PostNFCEncyptListener;
-
-    const/16 v18, 0x0
-
-    move-object/from16 v0, v17
+    move-object/from16 v0, v19
 
     move-object/from16 v1, p0
 
-    move-object/from16 v2, v18
+    invoke-direct {v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity$1;-><init>(Lcom/samsung/privilege/activity/QRLandingActivity;)V
 
-    invoke-direct {v0, v1, v2}, Lcom/samsung/privilege/activity/QRLandingActivity$PostNFCEncyptListener;-><init>(Lcom/samsung/privilege/activity/QRLandingActivity;Lcom/samsung/privilege/activity/QRLandingActivity$PostNFCEncyptListener;)V
-
-    invoke-static/range {v15 .. v17}, Lcom/samsung/privilege/util/http/BuzzbeesRestClient;->post(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
-
-    .line 255
-    .end local v5    # "gArrayNFCTag":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/NFCTag;>;"
-    .end local v14    # "strEncrpt":Ljava/lang/String;
-    .end local v15    # "url":Ljava/lang/String;
-    :cond_b6
-    :goto_b6
-    return-void
-
-    .line 173
-    .restart local v5    # "gArrayNFCTag":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/samsung/privilege/bean/NFCTag;>;"
-    .restart local v6    # "i":I
-    .restart local v9    # "jsonRoot":Lorg/json/JSONArray;
-    :cond_b7
-    :try_start_b7
-    invoke-virtual {v9, v6}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
-
-    move-result-object v8
-
-    .line 174
-    .local v8, "jsonAction":Lorg/json/JSONObject;
-    new-instance v16, Lcom/samsung/privilege/bean/NFCTag;
-
-    const-string v17, "qr"
-
-    move-object/from16 v0, v16
+    move-object/from16 v0, v18
 
     move-object/from16 v1, v17
 
-    invoke-direct {v0, v1, v8}, Lcom/samsung/privilege/bean/NFCTag;-><init>(Ljava/lang/String;Lorg/json/JSONObject;)V
+    move-object/from16 v2, v19
 
-    move-object/from16 v0, v16
+    invoke-virtual {v3, v0, v1, v15, v2}, Lcom/loopj/android/http/AsyncHttpClient;->post(Landroid/content/Context;Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
 
-    invoke-virtual {v5, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_cb
-    .catch Lorg/json/JSONException; {:try_start_b7 .. :try_end_cb} :catch_cf
-
-    .line 171
-    .end local v8    # "jsonAction":Lorg/json/JSONObject;
-    :goto_cb
-    add-int/lit8 v6, v6, 0x1
-
-    goto/16 :goto_1d
-
-    .line 175
-    :catch_cf
-    move-exception v3
-
-    .line 176
-    .local v3, "e":Lorg/json/JSONException;
-    :try_start_d0
-    new-instance v16, Ljava/lang/StringBuilder;
-
-    const-string v17, "Invalid NFC Action:"
-
-    invoke-direct/range {v16 .. v17}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v16
-
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v16
-
-    const-string v17, "\r\n"
-
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v16
-
-    invoke-virtual {v3}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v16
-
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v16
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->showToast(Ljava/lang/String;)V
-    :try_end_f8
-    .catch Lorg/json/JSONException; {:try_start_d0 .. :try_end_f8} :catch_f9
-
-    goto :goto_cb
-
-    .line 180
-    .end local v3    # "e":Lorg/json/JSONException;
-    .end local v6    # "i":I
-    .end local v9    # "jsonRoot":Lorg/json/JSONArray;
-    :catch_f9
-    move-exception v3
-
-    .line 181
-    .restart local v3    # "e":Lorg/json/JSONException;
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
-
-    move-object/from16 v16, v0
-
-    new-instance v17, Ljava/lang/StringBuilder;
-
-    const-string v18, "Invalid NFC Task:"
-
-    invoke-direct/range {v17 .. v18}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v17
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-static/range {v16 .. v17}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_25
-
-    .line 196
-    .end local v3    # "e":Lorg/json/JSONException;
+    .line 262
+    .end local v3    # "client":Lcom/loopj/android/http/AsyncHttpClient;
+    .end local v6    # "gArrayNFCTag":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/NFCTag;>;"
+    .end local v15    # "params":Lcom/loopj/android/http/RequestParams;
+    .end local v16    # "strEncrpt":Ljava/lang/String;
+    .end local v17    # "url":Ljava/lang/String;
     :cond_118
-    const/4 v6, 0x0
+    :goto_118
+    return-void
 
-    .restart local v6    # "i":I
-    :goto_119
-    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
-
-    move-result v16
-
-    move/from16 v0, v16
-
-    if-ge v6, v0, :cond_b6
-
-    .line 197
-    invoke-virtual {v5, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Lcom/samsung/privilege/bean/NFCTag;
-
-    .line 199
-    .local v10, "objNFCTag":Lcom/samsung/privilege/bean/NFCTag;
+    .line 211
+    .restart local v6    # "gArrayNFCTag":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/NFCTag;>;"
+    :cond_119
     const/4 v7, 0x0
 
-    .line 200
-    .local v7, "isSkip":Z
-    if-lez v6, :cond_15d
+    .restart local v7    # "i":I
+    :goto_11a
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
-    iget-object v0, v10, Lcom/samsung/privilege/bean/NFCTag;->ActionName:Ljava/lang/String;
+    move-result v18
 
-    move-object/from16 v16, v0
+    move/from16 v0, v18
 
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    if-ge v7, v0, :cond_118
 
-    move-result-object v16
-
-    const-string v17, "ReDeem"
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v16
-
-    if-eqz v16, :cond_15d
-
-    .line 201
-    add-int/lit8 v16, v6, -0x1
-
-    move/from16 v0, v16
-
-    invoke-virtual {v5, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v12
-
-    check-cast v12, Lcom/samsung/privilege/bean/NFCTag;
-
-    .line 202
-    .local v12, "objNFCTagPrev":Lcom/samsung/privilege/bean/NFCTag;
-    iget-object v0, v12, Lcom/samsung/privilege/bean/NFCTag;->ActionName:Ljava/lang/String;
-
-    move-object/from16 v16, v0
-
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v16
-
-    const-string v17, "Share"
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v16
-
-    if-eqz v16, :cond_15d
-
-    .line 203
-    const/4 v7, 0x1
-
-    .line 207
-    .end local v12    # "objNFCTagPrev":Lcom/samsung/privilege/bean/NFCTag;
-    :cond_15d
-    if-nez v7, :cond_180
-
-    .line 214
-    iget-object v0, v10, Lcom/samsung/privilege/bean/NFCTag;->ActionName:Ljava/lang/String;
-
-    move-object/from16 v16, v0
-
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v16
-
-    const-string v17, "Status"
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v16
-
-    if-eqz v16, :cond_183
-
-    .line 215
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/QRLandingActivity;->gHandler:Landroid/os/Handler;
-
-    move-object/from16 v16, v0
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v16
-
-    invoke-static {v10, v0, v1}, Lcom/samsung/privilege/util/NfcUtils;->Action_Status(Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;Landroid/os/Handler;)V
-
-    .line 196
-    :cond_180
-    :goto_180
-    add-int/lit8 v6, v6, 0x1
-
-    goto :goto_119
-
-    .line 216
-    :cond_183
-    iget-object v0, v10, Lcom/samsung/privilege/bean/NFCTag;->ActionName:Ljava/lang/String;
-
-    move-object/from16 v16, v0
-
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v16
-
-    const-string v17, "Share"
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v16
-
-    if-eqz v16, :cond_1cb
-
-    .line 217
-    const/4 v13, 0x0
-
-    .line 219
-    .local v13, "objNFCTagReDeem":Lcom/samsung/privilege/bean/NFCTag;
-    add-int/lit8 v16, v6, 0x1
-
-    :try_start_19a
-    move/from16 v0, v16
-
-    invoke-virtual {v5, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v16
-
-    move-object/from16 v0, v16
-
-    check-cast v0, Lcom/samsung/privilege/bean/NFCTag;
-
-    move-object v13, v0
-
-    .line 220
-    iget-object v0, v13, Lcom/samsung/privilege/bean/NFCTag;->ActionName:Ljava/lang/String;
-
-    move-object/from16 v16, v0
-
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v16
-
-    const-string v17, "ReDeem"
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-    :try_end_1b6
-    .catch Ljava/lang/Exception; {:try_start_19a .. :try_end_1b6} :catch_1c8
-
-    move-result v16
-
-    if-nez v16, :cond_1ba
-
-    .line 223
-    const/4 v13, 0x0
-
-    .line 230
-    :cond_1ba
-    :goto_1ba
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/QRLandingActivity;->gHandler:Landroid/os/Handler;
-
-    move-object/from16 v16, v0
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v16
-
-    invoke-static {v10, v13, v0, v1}, Lcom/samsung/privilege/util/NfcUtils;->Action_Share(Lcom/samsung/privilege/bean/NFCTag;Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;Landroid/os/Handler;)V
-
-    goto :goto_180
-
-    .line 225
-    :catch_1c8
-    move-exception v4
-
-    .line 226
-    .local v4, "ex":Ljava/lang/Exception;
-    const/4 v13, 0x0
-
-    goto :goto_1ba
-
-    .line 231
-    .end local v4    # "ex":Ljava/lang/Exception;
-    .end local v13    # "objNFCTagReDeem":Lcom/samsung/privilege/bean/NFCTag;
-    :cond_1cb
-    iget-object v0, v10, Lcom/samsung/privilege/bean/NFCTag;->ActionName:Ljava/lang/String;
-
-    move-object/from16 v16, v0
-
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v16
-
-    const-string v17, "CheckIn"
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v16
-
-    if-eqz v16, :cond_1ed
-
-    .line 232
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/QRLandingActivity;->gHandler:Landroid/os/Handler;
-
-    move-object/from16 v16, v0
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v16
-
-    invoke-static {v10, v0, v1}, Lcom/samsung/privilege/util/NfcUtils;->Action_CheckIn(Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;Landroid/os/Handler;)V
-
-    goto :goto_180
-
-    .line 233
-    :cond_1ed
-    iget-object v0, v10, Lcom/samsung/privilege/bean/NFCTag;->ActionName:Ljava/lang/String;
-
-    move-object/from16 v16, v0
-
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v16
-
-    const-string v17, "ReDeem"
-
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v16
-
-    if-eqz v16, :cond_224
-
-    .line 235
-    add-int/lit8 v16, v6, 0x1
-
-    :try_start_203
-    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
-
-    move-result v17
-
-    add-int/lit8 v17, v17, -0x1
-
-    move/from16 v0, v16
-
-    move/from16 v1, v17
-
-    if-gt v0, v1, :cond_21d
-
-    .line 236
-    add-int/lit8 v16, v6, 0x1
-
-    move/from16 v0, v16
-
-    invoke-virtual {v5, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 212
+    invoke-virtual {v6, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v11
 
-    check-cast v11, Lcom/samsung/privilege/bean/NFCTag;
+    check-cast v11, Lcom/bzbs/bean/NFCTag;
+
+    .line 214
+    .local v11, "objNFCTag":Lcom/bzbs/bean/NFCTag;
+    const/4 v8, 0x0
+
+    .line 215
+    .local v8, "isSkip":Z
+    if-lez v7, :cond_160
+
+    iget-object v0, v11, Lcom/bzbs/bean/NFCTag;->ActionName:Ljava/lang/String;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v18
+
+    const-string/jumbo v19, "ReDeem"
+
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v19
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v18
+
+    if-eqz v18, :cond_160
+
+    .line 216
+    add-int/lit8 v18, v7, -0x1
+
+    move/from16 v0, v18
+
+    invoke-virtual {v6, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Lcom/bzbs/bean/NFCTag;
+
+    .line 217
+    .local v13, "objNFCTagPrev":Lcom/bzbs/bean/NFCTag;
+    iget-object v0, v13, Lcom/bzbs/bean/NFCTag;->ActionName:Ljava/lang/String;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v18
+
+    const-string/jumbo v19, "Share"
+
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v19
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v18
+
+    if-eqz v18, :cond_160
+
+    .line 218
+    const/4 v8, 0x1
+
+    .line 222
+    .end local v13    # "objNFCTagPrev":Lcom/bzbs/bean/NFCTag;
+    :cond_160
+    if-nez v8, :cond_184
+
+    .line 223
+    iget-object v0, v11, Lcom/bzbs/bean/NFCTag;->ActionName:Ljava/lang/String;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v18
+
+    const-string/jumbo v19, "Status"
+
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v19
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v18
+
+    if-eqz v18, :cond_187
+
+    .line 224
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/samsung/privilege/activity/QRLandingActivity;->callbackManager:Lcom/facebook/CallbackManager;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v18
+
+    invoke-static {v11, v0, v1}, Lcom/bzbs/util/NfcUtils;->Action_Status(Lcom/bzbs/bean/NFCTag;Landroid/content/Context;Lcom/facebook/CallbackManager;)V
+
+    .line 211
+    :cond_184
+    :goto_184
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_11a
+
+    .line 225
+    :cond_187
+    iget-object v0, v11, Lcom/bzbs/bean/NFCTag;->ActionName:Ljava/lang/String;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v18
+
+    const-string/jumbo v19, "Share"
+
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v19
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v18
+
+    if-eqz v18, :cond_1d2
+
+    .line 226
+    const/4 v14, 0x0
+
+    .line 228
+    .local v14, "objNFCTagReDeem":Lcom/bzbs/bean/NFCTag;
+    add-int/lit8 v18, v7, 0x1
+
+    :try_start_19f
+    move/from16 v0, v18
+
+    invoke-virtual {v6, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v18
+
+    move-object/from16 v0, v18
+
+    check-cast v0, Lcom/bzbs/bean/NFCTag;
+
+    move-object v14, v0
+
+    .line 229
+    iget-object v0, v14, Lcom/bzbs/bean/NFCTag;->ActionName:Ljava/lang/String;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v18
+
+    const-string/jumbo v19, "ReDeem"
+
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v19
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :try_end_1bc
+    .catch Ljava/lang/Exception; {:try_start_19f .. :try_end_1bc} :catch_1cf
+
+    move-result v18
+
+    if-eqz v18, :cond_1cd
 
     .line 237
-    .local v11, "objNFCTagNext":Lcom/samsung/privilege/bean/NFCTag;
-    if-eqz v11, :cond_21d
+    :goto_1bf
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/samsung/privilege/activity/QRLandingActivity;->callbackManager:Lcom/facebook/CallbackManager;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v18
+
+    invoke-static {v11, v14, v0, v1}, Lcom/bzbs/util/NfcUtils;->Action_Share(Lcom/bzbs/bean/NFCTag;Lcom/bzbs/bean/NFCTag;Landroid/content/Context;Lcom/facebook/CallbackManager;)V
+
+    goto :goto_184
+
+    .line 232
+    :cond_1cd
+    const/4 v14, 0x0
+
+    goto :goto_1bf
+
+    .line 234
+    :catch_1cf
+    move-exception v5
+
+    .line 235
+    .local v5, "ex":Ljava/lang/Exception;
+    const/4 v14, 0x0
+
+    goto :goto_1bf
 
     .line 238
-    iput-object v11, v10, Lcom/samsung/privilege/bean/NFCTag;->NextNFCTag:Lcom/samsung/privilege/bean/NFCTag;
-    :try_end_21d
-    .catch Ljava/lang/Exception; {:try_start_203 .. :try_end_21d} :catch_240
+    .end local v5    # "ex":Ljava/lang/Exception;
+    .end local v14    # "objNFCTagReDeem":Lcom/bzbs/bean/NFCTag;
+    :cond_1d2
+    iget-object v0, v11, Lcom/bzbs/bean/NFCTag;->ActionName:Ljava/lang/String;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v18
+
+    const-string/jumbo v19, "CheckIn"
+
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v19
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v18
+
+    if-eqz v18, :cond_1f5
+
+    .line 239
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/samsung/privilege/activity/QRLandingActivity;->callbackManager:Lcom/facebook/CallbackManager;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v18
+
+    invoke-static {v11, v0, v1}, Lcom/bzbs/util/NfcUtils;->Action_CheckIn(Lcom/bzbs/bean/NFCTag;Landroid/content/Context;Lcom/facebook/CallbackManager;)V
+
+    goto :goto_184
+
+    .line 240
+    :cond_1f5
+    iget-object v0, v11, Lcom/bzbs/bean/NFCTag;->ActionName:Ljava/lang/String;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v18
+
+    const-string/jumbo v19, "ReDeem"
+
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v19
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v18
+
+    if-eqz v18, :cond_22d
+
+    .line 242
+    add-int/lit8 v18, v7, 0x1
+
+    :try_start_20c
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
+
+    move-result v19
+
+    add-int/lit8 v19, v19, -0x1
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-gt v0, v1, :cond_226
+
+    .line 243
+    add-int/lit8 v18, v7, 0x1
+
+    move/from16 v0, v18
+
+    invoke-virtual {v6, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Lcom/bzbs/bean/NFCTag;
 
     .line 244
-    .end local v11    # "objNFCTagNext":Lcom/samsung/privilege/bean/NFCTag;
-    :cond_21d
-    :goto_21d
+    .local v12, "objNFCTagNext":Lcom/bzbs/bean/NFCTag;
+    if-eqz v12, :cond_226
+
+    .line 245
+    iput-object v12, v11, Lcom/bzbs/bean/NFCTag;->NextNFCTag:Lcom/bzbs/bean/NFCTag;
+    :try_end_226
+    .catch Ljava/lang/Exception; {:try_start_20c .. :try_end_226} :catch_24e
+
+    .line 251
+    .end local v12    # "objNFCTagNext":Lcom/bzbs/bean/NFCTag;
+    :cond_226
+    :goto_226
     move-object/from16 v0, p0
 
-    invoke-static {v10, v0}, Lcom/samsung/privilege/util/NfcUtils;->Action_ReDeem(Lcom/samsung/privilege/bean/NFCTag;Landroid/content/Context;)V
+    invoke-static {v11, v0}, Lcom/bzbs/util/NfcUtils;->Action_ReDeem(Lcom/bzbs/bean/NFCTag;Landroid/content/Context;)V
 
-    goto/16 :goto_b6
+    goto/16 :goto_118
 
-    .line 248
-    :cond_224
-    new-instance v16, Ljava/lang/StringBuilder;
+    .line 255
+    :cond_22d
+    new-instance v18, Ljava/lang/StringBuilder;
 
-    const-string v17, "Invalid NFC ActionName:"
+    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct/range {v16 .. v17}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string/jumbo v19, "Invalid NFC ActionName:"
 
-    iget-object v0, v10, Lcom/samsung/privilege/bean/NFCTag;->ActionName:Ljava/lang/String;
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v17, v0
+    move-result-object v18
 
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, v11, Lcom/bzbs/bean/NFCTag;->ActionName:Ljava/lang/String;
 
-    move-result-object v16
+    move-object/from16 v19, v0
 
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v16
+    move-result-object v18
+
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v18
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v16
+    move-object/from16 v1, v18
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->showToast(Ljava/lang/String;)V
 
-    goto/16 :goto_180
+    goto/16 :goto_184
 
-    .line 241
-    :catch_240
-    move-exception v16
+    .line 248
+    :catch_24e
+    move-exception v18
 
-    goto :goto_21d
+    goto :goto_226
 .end method
 
 .method private restoreInstanceState(Landroid/os/Bundle;)V
@@ -1575,117 +1506,104 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 308
-    const-string v0, "buzzebees.market"
+    .line 328
+    const-string/jumbo v0, "buzzebees.market"
 
-    const-string v1, "private void restoreInstanceState(Bundle savedInstanceState) {"
+    const-string/jumbo v1, "private void restoreInstanceState(Bundle savedInstanceState) {"
 
-    invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 309
-    const-string v0, "onSaveInstanceState"
+    .line 329
+    const-string/jumbo v0, "onSaveInstanceState"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1d
 
-    .line 310
-    const-string v0, "gNfcResult"
+    .line 330
+    const-string/jumbo v0, "gNfcResult"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getSerializable(Ljava/lang/String;)Ljava/io/Serializable;
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCResult;
+    check-cast v0, Lcom/bzbs/bean/NFCResult;
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    .line 312
-    :cond_19
+    .line 332
+    :cond_1d
     return-void
 .end method
 
 
 # virtual methods
 .method public onActivityResult(IILandroid/content/Intent;)V
-    .registers 8
+    .registers 7
     .param p1, "requestCode"    # I
     .param p2, "resultCode"    # I
     .param p3, "i"    # Landroid/content/Intent;
 
     .prologue
-    .line 259
-    invoke-super {p0, p1, p2, p3}, Landroid/support/v4/app/FragmentActivity;->onActivityResult(IILandroid/content/Intent;)V
+    .line 266
+    invoke-super {p0, p1, p2, p3}, Landroid/support/v7/app/AppCompatActivity;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 260
-    iget v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->RC_BARCODE_SCANNER:I
+    .line 267
+    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->callbackManager:Lcom/facebook/CallbackManager;
 
-    if-ne p1, v1, :cond_33
+    invoke-interface {v1, p1, p2, p3}, Lcom/facebook/CallbackManager;->onActivityResult(IILandroid/content/Intent;)Z
 
-    .line 261
-    const/4 v1, -0x1
-
-    if-ne p2, v1, :cond_28
-
-    .line 262
-    const-string v1, "SCAN_RESULT"
-
-    invoke-virtual {p3, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    .line 283
+    invoke-static {p1, p2, p3}, Lcom/google/zxing/integration/android/IntentIntegrator;->parseActivityResult(IILandroid/content/Intent;)Lcom/google/zxing/integration/android/IntentResult;
 
     move-result-object v0
 
-    .line 263
-    .local v0, "result":Ljava/lang/String;
-    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
+    .line 284
+    .local v0, "result":Lcom/google/zxing/integration/android/IntentResult;
+    if-eqz v0, :cond_2b
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    .line 285
+    invoke-virtual {v0}, Lcom/google/zxing/integration/android/IntentResult;->getContents()Ljava/lang/String;
 
-    const-string v3, "result : "
+    move-result-object v1
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    if-nez v1, :cond_23
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 287
+    const-string/jumbo v1, "Cancelled"
 
-    move-result-object v2
+    const/4 v2, 0x1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v1, v2}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    .line 267
-    invoke-direct {p0, v0}, Lcom/samsung/privilege/activity/QRLandingActivity;->processNFC_QR(Ljava/lang/String;)V
-
-    .line 276
-    .end local v0    # "result":Ljava/lang/String;
-    :goto_27
-    return-void
-
-    .line 269
-    :cond_28
-    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
-
-    const-string v2, "#5"
-
-    invoke-static {v1, v2}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 270
+    .line 289
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->finish()V
 
-    goto :goto_27
+    .line 301
+    :goto_22
+    return-void
 
-    .line 273
-    :cond_33
-    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
+    .line 294
+    :cond_23
+    invoke-virtual {v0}, Lcom/google/zxing/integration/android/IntentResult;->getContents()Ljava/lang/String;
 
-    const-string v2, "#4"
+    move-result-object v1
 
-    invoke-static {v1, v2}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->processNFC_QR(Ljava/lang/String;)V
 
-    goto :goto_27
+    goto :goto_22
+
+    .line 299
+    :cond_2b
+    invoke-super {p0, p1, p2, p3}, Landroid/support/v7/app/AppCompatActivity;->onActivityResult(IILandroid/content/Intent;)V
+
+    goto :goto_22
 .end method
 
 .method public onContextItemSelected(Landroid/view/MenuItem;)Z
@@ -1695,7 +1613,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 487
+    .line 447
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v0
@@ -1704,10 +1622,10 @@
 
     if-ne v0, v1, :cond_1a
 
-    .line 488
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    .line 448
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     const/4 v1, 0x0
 
@@ -1715,18 +1633,18 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;)V
+    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;)V
 
-    .line 509
+    .line 469
     :cond_19
     :goto_19
     return v2
 
-    .line 489
+    .line 449
     :cond_1a
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
@@ -1736,24 +1654,24 @@
 
     if-ne v0, v1, :cond_32
 
-    .line 490
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    .line 450
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;)V
+    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;)V
 
     goto :goto_19
 
-    .line 491
+    .line 451
     :cond_32
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
@@ -1763,10 +1681,10 @@
 
     if-ne v0, v1, :cond_4b
 
-    .line 492
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    .line 452
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     const/4 v1, 0x2
 
@@ -1774,15 +1692,15 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;)V
+    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;)V
 
     goto :goto_19
 
-    .line 493
+    .line 453
     :cond_4b
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
@@ -1792,10 +1710,10 @@
 
     if-ne v0, v1, :cond_64
 
-    .line 494
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    .line 454
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     const/4 v1, 0x3
 
@@ -1803,15 +1721,15 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;)V
+    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;)V
 
     goto :goto_19
 
-    .line 495
+    .line 455
     :cond_64
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
@@ -1821,10 +1739,10 @@
 
     if-ne v0, v1, :cond_7d
 
-    .line 496
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    .line 456
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     const/4 v1, 0x4
 
@@ -1832,15 +1750,15 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;)V
+    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;)V
 
     goto :goto_19
 
-    .line 497
+    .line 457
     :cond_7d
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
@@ -1850,10 +1768,10 @@
 
     if-ne v0, v1, :cond_96
 
-    .line 498
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    .line 458
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     const/4 v1, 0x5
 
@@ -1861,15 +1779,15 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;)V
+    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;)V
 
     goto :goto_19
 
-    .line 499
+    .line 459
     :cond_96
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
@@ -1879,10 +1797,10 @@
 
     if-ne v0, v1, :cond_b0
 
-    .line 500
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    .line 460
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     const/4 v1, 0x6
 
@@ -1890,15 +1808,15 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;)V
+    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;)V
 
     goto/16 :goto_19
 
-    .line 501
+    .line 461
     :cond_b0
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
@@ -1908,10 +1826,10 @@
 
     if-ne v0, v1, :cond_ca
 
-    .line 502
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    .line 462
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     const/4 v1, 0x7
 
@@ -1919,15 +1837,15 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;)V
+    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;)V
 
     goto/16 :goto_19
 
-    .line 503
+    .line 463
     :cond_ca
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
@@ -1937,10 +1855,10 @@
 
     if-ne v0, v1, :cond_e5
 
-    .line 504
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    .line 464
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     const/16 v1, 0x8
 
@@ -1948,15 +1866,15 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;)V
+    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;)V
 
     goto/16 :goto_19
 
-    .line 505
+    .line 465
     :cond_e5
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
@@ -1966,10 +1884,10 @@
 
     if-ne v0, v1, :cond_19
 
-    .line 506
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    .line 466
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     const/16 v1, 0x9
 
@@ -1977,70 +1895,44 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/samsung/privilege/bean/NFCPlan;Lcom/samsung/privilege/bean/NFCResult;)V
+    invoke-direct {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->doActionNFC(Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;)V
 
     goto/16 :goto_19
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .registers 5
+    .registers 4
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 67
-    invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
+    .line 66
+    invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 68
-    const/4 v1, 0x1
-
-    invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->requestWindowFeature(I)Z
-
-    .line 70
-    const v1, 0x7f030111
+    .line 69
+    const v1, 0x7f040046
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->setContentView(I)V
 
-    .line 72
+    .line 71
     new-instance v1, Landroid/os/Handler;
 
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
     iput-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gHandler:Landroid/os/Handler;
 
-    .line 75
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
+    .line 72
+    invoke-static {}, Lcom/facebook/CallbackManager$Factory;->create()Lcom/facebook/CallbackManager;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/analytics/tracking/android/GoogleAnalytics;->getInstance(Landroid/content/Context;)Lcom/google/analytics/tracking/android/GoogleAnalytics;
+    iput-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->callbackManager:Lcom/facebook/CallbackManager;
 
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->mGaInstance:Lcom/google/analytics/tracking/android/GoogleAnalytics;
-
-    .line 77
-    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->mGaInstance:Lcom/google/analytics/tracking/android/GoogleAnalytics;
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/samsung/privilege/AppSetting;->GA_TRACKING_ID(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lcom/google/analytics/tracking/android/GoogleAnalytics;->getTracker(Ljava/lang/String;)Lcom/google/analytics/tracking/android/Tracker;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->mGaTracker:Lcom/google/analytics/tracking/android/Tracker;
-
-    .line 78
-    const v1, 0x7f0c035f
+    .line 79
+    const v1, 0x7f1001b7
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->findViewById(I)Landroid/view/View;
 
@@ -2050,47 +1942,28 @@
 
     iput-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gImgNfc:Landroid/widget/ImageView;
 
-    .line 80
-    new-instance v1, Lcom/facebook/UiLifecycleHelper;
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->callback:Lcom/facebook/Session$StatusCallback;
-
-    invoke-direct {v1, p0, v2}, Lcom/facebook/UiLifecycleHelper;-><init>(Landroid/app/Activity;Lcom/facebook/Session$StatusCallback;)V
-
-    iput-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->uiHelper:Lcom/facebook/UiLifecycleHelper;
-
     .line 81
-    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->uiHelper:Lcom/facebook/UiLifecycleHelper;
+    if-nez p1, :cond_2c
 
-    invoke-virtual {v1, p1}, Lcom/facebook/UiLifecycleHelper;->onCreate(Landroid/os/Bundle;)V
+    .line 93
+    :goto_23
+    new-instance v0, Lcom/google/zxing/integration/android/IntentIntegrator;
 
-    .line 83
-    if-eqz p1, :cond_4c
+    invoke-direct {v0, p0}, Lcom/google/zxing/integration/android/IntentIntegrator;-><init>(Landroid/app/Activity;)V
 
-    .line 86
+    .line 94
+    .local v0, "integrator":Lcom/google/zxing/integration/android/IntentIntegrator;
+    invoke-virtual {v0}, Lcom/google/zxing/integration/android/IntentIntegrator;->initiateScan()V
+
+    .line 95
+    return-void
+
+    .line 84
+    .end local v0    # "integrator":Lcom/google/zxing/integration/android/IntentIntegrator;
+    :cond_2c
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/QRLandingActivity;->restoreInstanceState(Landroid/os/Bundle;)V
 
-    .line 89
-    :cond_4c
-    invoke-direct {p0, p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getZxingIntent(Landroid/content/Context;)Landroid/content/Intent;
-
-    move-result-object v0
-
-    .line 90
-    .local v0, "zxing":Landroid/content/Intent;
-    const-string v1, "com.google.zxing.client.android.SCAN.SCAN_MODE"
-
-    const-string v2, "QR_CODE_MODE"
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 91
-    iget v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->RC_BARCODE_SCANNER:I
-
-    invoke-virtual {p0, v0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->startActivityForResult(Landroid/content/Intent;I)V
-
-    .line 92
-    return-void
+    goto :goto_23
 .end method
 
 .method public onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V
@@ -2110,13 +1983,13 @@
 
     const/4 v4, 0x1
 
-    .line 449
+    .line 409
     invoke-interface {p1}, Landroid/view/ContextMenu;->clear()V
 
-    .line 450
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    .line 410
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2124,8 +1997,8 @@
 
     if-lez v0, :cond_14d
 
-    .line 451
-    const v0, 0x7f090353
+    .line 411
+    const v0, 0x7f090247
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getString(I)Ljava/lang/String;
 
@@ -2133,10 +2006,10 @@
 
     invoke-interface {p1, v0}, Landroid/view/ContextMenu;->setHeaderTitle(Ljava/lang/CharSequence;)Landroid/view/ContextMenu;
 
-    .line 452
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    .line 412
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2144,14 +2017,14 @@
 
     if-lt v0, v4, :cond_3a
 
-    .line 453
+    .line 413
     iget v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_1:I
 
     iget v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_1:I
 
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     const/4 v3, 0x0
 
@@ -2159,17 +2032,17 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
 
     invoke-interface {p1, v4, v1, v2, v0}, Landroid/view/ContextMenu;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
 
-    .line 455
+    .line 415
     :cond_3a
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2177,30 +2050,30 @@
 
     if-lt v0, v5, :cond_57
 
-    .line 456
+    .line 416
     iget v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_2:I
 
     iget v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_2:I
 
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
 
     invoke-interface {p1, v4, v1, v2, v0}, Landroid/view/ContextMenu;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
 
-    .line 458
+    .line 418
     :cond_57
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2208,30 +2081,30 @@
 
     if-lt v0, v6, :cond_74
 
-    .line 459
+    .line 419
     iget v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_3:I
 
     iget v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_3:I
 
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
 
     invoke-interface {p1, v4, v1, v2, v0}, Landroid/view/ContextMenu;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
 
-    .line 461
+    .line 421
     :cond_74
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2239,30 +2112,30 @@
 
     if-lt v0, v7, :cond_91
 
-    .line 462
+    .line 422
     iget v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_4:I
 
     iget v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_4:I
 
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
 
     invoke-interface {p1, v4, v1, v2, v0}, Landroid/view/ContextMenu;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
 
-    .line 464
+    .line 424
     :cond_91
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2270,30 +2143,30 @@
 
     if-lt v0, v8, :cond_ae
 
-    .line 465
+    .line 425
     iget v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_5:I
 
     iget v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_5:I
 
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
 
     invoke-interface {p1, v4, v1, v2, v0}, Landroid/view/ContextMenu;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
 
-    .line 467
+    .line 427
     :cond_ae
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2303,30 +2176,30 @@
 
     if-lt v0, v1, :cond_cc
 
-    .line 468
+    .line 428
     iget v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_6:I
 
     iget v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_6:I
 
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
 
     invoke-interface {p1, v4, v1, v2, v0}, Landroid/view/ContextMenu;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
 
-    .line 470
+    .line 430
     :cond_cc
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2336,14 +2209,14 @@
 
     if-lt v0, v1, :cond_eb
 
-    .line 471
+    .line 431
     iget v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_7:I
 
     iget v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_7:I
 
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     const/4 v3, 0x6
 
@@ -2351,17 +2224,17 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
 
     invoke-interface {p1, v4, v1, v2, v0}, Landroid/view/ContextMenu;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
 
-    .line 473
+    .line 433
     :cond_eb
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2371,14 +2244,14 @@
 
     if-lt v0, v1, :cond_10b
 
-    .line 474
+    .line 434
     iget v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_8:I
 
     iget v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_8:I
 
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     const/4 v3, 0x7
 
@@ -2386,17 +2259,17 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
 
     invoke-interface {p1, v4, v1, v2, v0}, Landroid/view/ContextMenu;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
 
-    .line 476
+    .line 436
     :cond_10b
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2406,14 +2279,14 @@
 
     if-lt v0, v1, :cond_12c
 
-    .line 477
+    .line 437
     iget v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_9:I
 
     iget v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_9:I
 
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     const/16 v3, 0x8
 
@@ -2421,17 +2294,17 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
 
     invoke-interface {p1, v4, v1, v2, v0}, Landroid/view/ContextMenu;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
 
-    .line 479
+    .line 439
     :cond_12c
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2441,14 +2314,14 @@
 
     if-lt v0, v1, :cond_14d
 
-    .line 480
+    .line 440
     iget v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_10:I
 
     iget v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->MENU_PLAN_10:I
 
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     const/16 v3, 0x9
 
@@ -2456,105 +2329,69 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/samsung/privilege/bean/NFCPlan;
+    check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    iget-object v0, v0, Lcom/samsung/privilege/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
+    iget-object v0, v0, Lcom/bzbs/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
 
     invoke-interface {p1, v4, v1, v2, v0}, Landroid/view/ContextMenu;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
 
-    .line 483
+    .line 443
     :cond_14d
     return-void
 .end method
 
 .method public onDestroy()V
-    .registers 2
+    .registers 1
 
     .prologue
-    .line 286
-    invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onDestroy()V
+    .line 310
+    invoke-super {p0}, Landroid/support/v7/app/AppCompatActivity;->onDestroy()V
 
-    .line 287
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->uiHelper:Lcom/facebook/UiLifecycleHelper;
-
-    invoke-virtual {v0}, Lcom/facebook/UiLifecycleHelper;->onDestroy()V
-
-    .line 289
-    const v0, 0x7f0c007c
-
-    invoke-static {p0, v0}, Lic/buzzebeeslib/util/OnDestroyView;->unbindReferences(Landroid/app/Activity;I)V
-
-    .line 290
+    .line 311
     return-void
 .end method
 
 .method public onKeyDown(ILandroid/view/KeyEvent;)Z
-    .registers 5
+    .registers 4
     .param p1, "keyCode"    # I
     .param p2, "event"    # Landroid/view/KeyEvent;
 
     .prologue
-    .line 588
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
-
-    const-string v1, "#1"
-
-    invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 589
+    .line 538
     const/4 v0, 0x4
 
-    if-ne p1, v0, :cond_16
+    if-ne p1, v0, :cond_8
 
-    .line 590
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
-
-    const-string v1, "#2"
-
-    invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 591
+    .line 539
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->finish()V
 
-    .line 592
+    .line 540
     const/4 v0, 0x1
 
-    .line 596
-    :goto_15
+    .line 543
+    :goto_7
     return v0
 
-    .line 594
-    :cond_16
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
-
-    const-string v1, "#3"
-
-    invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 595
+    .line 542
+    :cond_8
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/QRLandingActivity;->finish()V
 
-    .line 596
-    invoke-super {p0, p1, p2}, Landroid/support/v4/app/FragmentActivity;->onKeyDown(ILandroid/view/KeyEvent;)Z
+    .line 543
+    invoke-super {p0, p1, p2}, Landroid/support/v7/app/AppCompatActivity;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
     move-result v0
 
-    goto :goto_15
+    goto :goto_7
 .end method
 
 .method public onPause()V
-    .registers 2
+    .registers 1
 
     .prologue
-    .line 280
-    invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onPause()V
+    .line 305
+    invoke-super {p0}, Landroid/support/v7/app/AppCompatActivity;->onPause()V
 
-    .line 281
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->uiHelper:Lcom/facebook/UiLifecycleHelper;
-
-    invoke-virtual {v0}, Lcom/facebook/UiLifecycleHelper;->onPause()V
-
-    .line 282
+    .line 306
     return-void
 .end method
 
@@ -2563,40 +2400,31 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 303
-    invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onRestoreInstanceState(Landroid/os/Bundle;)V
+    .line 323
+    invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onRestoreInstanceState(Landroid/os/Bundle;)V
 
-    .line 304
+    .line 324
     iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
 
-    const-string v1, "public void onRestoreInstanceState(Bundle savedInstanceState) {"
+    const-string/jumbo v1, "public void onRestoreInstanceState(Bundle savedInstanceState) {"
 
-    invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 305
+    .line 325
     return-void
 .end method
 
 .method public onResume()V
-    .registers 3
+    .registers 1
 
     .prologue
-    .line 119
-    invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onResume()V
+    .line 115
+    invoke-super {p0}, Landroid/support/v7/app/AppCompatActivity;->onResume()V
 
-    .line 120
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->uiHelper:Lcom/facebook/UiLifecycleHelper;
+    .line 117
+    sput-object p0, Lcom/bzbs/data/AppSetting;->M_ACTIVITY:Landroid/app/Activity;
 
-    invoke-virtual {v0}, Lcom/facebook/UiLifecycleHelper;->onResume()V
-
-    .line 121
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->TAG:Ljava/lang/String;
-
-    const-string v1, "public void onResume() {"
-
-    invoke-static {v0, v1}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 155
+    .line 118
     return-void
 .end method
 
@@ -2605,29 +2433,24 @@
     .param p1, "outState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 294
-    invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onSaveInstanceState(Landroid/os/Bundle;)V
+    .line 315
+    invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 295
-    iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->uiHelper:Lcom/facebook/UiLifecycleHelper;
-
-    invoke-virtual {v0, p1}, Lcom/facebook/UiLifecycleHelper;->onSaveInstanceState(Landroid/os/Bundle;)V
-
-    .line 297
-    const-string v0, "onSaveInstanceState"
+    .line 317
+    const-string/jumbo v0, "onSaveInstanceState"
 
     const/4 v1, 0x1
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 298
-    const-string v0, "gNfcResult"
+    .line 318
+    const-string/jumbo v0, "gNfcResult"
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/samsung/privilege/bean/NFCResult;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gNfcResult:Lcom/bzbs/bean/NFCResult;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
 
-    .line 299
+    .line 319
     return-void
 .end method
 
@@ -2636,7 +2459,7 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 577
+    .line 527
     iget-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->gHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/samsung/privilege/activity/QRLandingActivity$2;
@@ -2645,6 +2468,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 584
+    .line 534
     return-void
 .end method

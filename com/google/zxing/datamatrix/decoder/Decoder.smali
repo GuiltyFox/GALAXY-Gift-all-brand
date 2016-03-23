@@ -120,7 +120,7 @@
 
 # virtual methods
 .method public decode(Lcom/google/zxing/common/BitMatrix;)Lcom/google/zxing/common/DecoderResult;
-    .registers 21
+    .registers 19
     .param p1, "bits"    # Lcom/google/zxing/common/BitMatrix;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -131,141 +131,134 @@
 
     .prologue
     .line 75
-    new-instance v13, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;
+    new-instance v10, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;
 
     move-object/from16 v0, p1
 
-    invoke-direct {v13, v0}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;-><init>(Lcom/google/zxing/common/BitMatrix;)V
+    invoke-direct {v10, v0}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;-><init>(Lcom/google/zxing/common/BitMatrix;)V
 
     .line 76
-    .local v13, "parser":Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;
-    invoke-virtual {v13}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->getVersion()Lcom/google/zxing/datamatrix/decoder/Version;
+    .local v10, "parser":Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;
+    invoke-virtual {v10}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->getVersion()Lcom/google/zxing/datamatrix/decoder/Version;
 
-    move-result-object v16
+    move-result-object v13
 
     .line 79
-    .local v16, "version":Lcom/google/zxing/datamatrix/decoder/Version;
-    invoke-virtual {v13}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->readCodewords()[B
-
-    move-result-object v3
-
-    .line 81
-    .local v3, "codewords":[B
-    move-object/from16 v0, v16
-
-    invoke-static {v3, v0}, Lcom/google/zxing/datamatrix/decoder/DataBlock;->getDataBlocks([BLcom/google/zxing/datamatrix/decoder/Version;)[Lcom/google/zxing/datamatrix/decoder/DataBlock;
-
-    move-result-object v5
-
-    .line 83
-    .local v5, "dataBlocks":[Lcom/google/zxing/datamatrix/decoder/DataBlock;
-    array-length v6, v5
-
-    .line 86
-    .local v6, "dataBlocksCount":I
-    const/4 v15, 0x0
-
-    .line 87
-    .local v15, "totalBytes":I
-    move-object v1, v5
-
-    .local v1, "arr$":[Lcom/google/zxing/datamatrix/decoder/DataBlock;
-    array-length v11, v1
-
-    .local v11, "len$":I
-    const/4 v9, 0x0
-
-    .local v9, "i$":I
-    :goto_1a
-    if-ge v9, v11, :cond_27
-
-    aget-object v7, v1, v9
-
-    .line 88
-    .local v7, "db":Lcom/google/zxing/datamatrix/decoder/DataBlock;
-    invoke-virtual {v7}, Lcom/google/zxing/datamatrix/decoder/DataBlock;->getNumDataCodewords()I
-
-    move-result v17
-
-    add-int v15, v15, v17
-
-    .line 87
-    add-int/lit8 v9, v9, 0x1
-
-    goto :goto_1a
-
-    .line 90
-    .end local v7    # "db":Lcom/google/zxing/datamatrix/decoder/DataBlock;
-    :cond_27
-    new-array v14, v15, [B
-
-    .line 93
-    .local v14, "resultBytes":[B
-    const/4 v10, 0x0
-
-    .local v10, "j":I
-    :goto_2a
-    if-ge v10, v6, :cond_4c
-
-    .line 94
-    aget-object v4, v5, v10
-
-    .line 95
-    .local v4, "dataBlock":Lcom/google/zxing/datamatrix/decoder/DataBlock;
-    invoke-virtual {v4}, Lcom/google/zxing/datamatrix/decoder/DataBlock;->getCodewords()[B
+    .local v13, "version":Lcom/google/zxing/datamatrix/decoder/Version;
+    invoke-virtual {v10}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->readCodewords()[B
 
     move-result-object v2
 
-    .line 96
-    .local v2, "codewordBytes":[B
-    invoke-virtual {v4}, Lcom/google/zxing/datamatrix/decoder/DataBlock;->getNumDataCodewords()I
+    .line 81
+    .local v2, "codewords":[B
+    invoke-static {v2, v13}, Lcom/google/zxing/datamatrix/decoder/DataBlock;->getDataBlocks([BLcom/google/zxing/datamatrix/decoder/Version;)[Lcom/google/zxing/datamatrix/decoder/DataBlock;
 
-    move-result v12
+    move-result-object v4
 
-    .line 97
-    .local v12, "numDataCodewords":I
-    move-object/from16 v0, p0
+    .line 83
+    .local v4, "dataBlocks":[Lcom/google/zxing/datamatrix/decoder/DataBlock;
+    array-length v5, v4
 
-    invoke-direct {v0, v2, v12}, Lcom/google/zxing/datamatrix/decoder/Decoder;->correctErrors([BI)V
+    .line 86
+    .local v5, "dataBlocksCount":I
+    const/4 v12, 0x0
 
-    .line 98
-    const/4 v8, 0x0
+    .line 87
+    .local v12, "totalBytes":I
+    array-length v15, v4
 
-    .local v8, "i":I
-    :goto_3c
-    if-ge v8, v12, :cond_49
+    const/4 v14, 0x0
 
-    .line 100
-    mul-int v17, v8, v6
+    :goto_17
+    if-ge v14, v15, :cond_24
 
-    add-int v17, v17, v10
+    aget-object v6, v4, v14
 
-    aget-byte v18, v2, v8
+    .line 88
+    .local v6, "db":Lcom/google/zxing/datamatrix/decoder/DataBlock;
+    invoke-virtual {v6}, Lcom/google/zxing/datamatrix/decoder/DataBlock;->getNumDataCodewords()I
 
-    aput-byte v18, v14, v17
+    move-result v16
 
-    .line 98
-    add-int/lit8 v8, v8, 0x1
+    add-int v12, v12, v16
 
-    goto :goto_3c
+    .line 87
+    add-int/lit8 v14, v14, 0x1
+
+    goto :goto_17
+
+    .line 90
+    .end local v6    # "db":Lcom/google/zxing/datamatrix/decoder/DataBlock;
+    :cond_24
+    new-array v11, v12, [B
 
     .line 93
-    :cond_49
-    add-int/lit8 v10, v10, 0x1
+    .local v11, "resultBytes":[B
+    const/4 v8, 0x0
 
-    goto :goto_2a
+    .local v8, "j":I
+    :goto_27
+    if-ge v8, v5, :cond_48
+
+    .line 94
+    aget-object v3, v4, v8
+
+    .line 95
+    .local v3, "dataBlock":Lcom/google/zxing/datamatrix/decoder/DataBlock;
+    invoke-virtual {v3}, Lcom/google/zxing/datamatrix/decoder/DataBlock;->getCodewords()[B
+
+    move-result-object v1
+
+    .line 96
+    .local v1, "codewordBytes":[B
+    invoke-virtual {v3}, Lcom/google/zxing/datamatrix/decoder/DataBlock;->getNumDataCodewords()I
+
+    move-result v9
+
+    .line 97
+    .local v9, "numDataCodewords":I
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v1, v9}, Lcom/google/zxing/datamatrix/decoder/Decoder;->correctErrors([BI)V
+
+    .line 98
+    const/4 v7, 0x0
+
+    .local v7, "i":I
+    :goto_39
+    if-ge v7, v9, :cond_45
+
+    .line 100
+    mul-int v14, v7, v5
+
+    add-int/2addr v14, v8
+
+    aget-byte v15, v1, v7
+
+    aput-byte v15, v11, v14
+
+    .line 98
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_39
+
+    .line 93
+    :cond_45
+    add-int/lit8 v8, v8, 0x1
+
+    goto :goto_27
 
     .line 105
-    .end local v2    # "codewordBytes":[B
-    .end local v4    # "dataBlock":Lcom/google/zxing/datamatrix/decoder/DataBlock;
-    .end local v8    # "i":I
-    .end local v12    # "numDataCodewords":I
-    :cond_4c
-    invoke-static {v14}, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser;->decode([B)Lcom/google/zxing/common/DecoderResult;
+    .end local v1    # "codewordBytes":[B
+    .end local v3    # "dataBlock":Lcom/google/zxing/datamatrix/decoder/DataBlock;
+    .end local v7    # "i":I
+    .end local v9    # "numDataCodewords":I
+    :cond_48
+    invoke-static {v11}, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser;->decode([B)Lcom/google/zxing/common/DecoderResult;
 
-    move-result-object v17
+    move-result-object v14
 
-    return-object v17
+    return-object v14
 .end method
 
 .method public decode([[Z)Lcom/google/zxing/common/DecoderResult;

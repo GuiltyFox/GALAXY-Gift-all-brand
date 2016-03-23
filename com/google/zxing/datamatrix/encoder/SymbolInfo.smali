@@ -4,17 +4,17 @@
 
 
 # static fields
-.field public static final PROD_SYMBOLS:[Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
+.field static final PROD_SYMBOLS:[Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
 
 .field private static symbols:[Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
 
 
 # instance fields
-.field final dataCapacity:I
+.field private final dataCapacity:I
 
 .field private final dataRegions:I
 
-.field final errorCodewords:I
+.field private final errorCodewords:I
 
 .field public final matrixHeight:I
 
@@ -22,9 +22,9 @@
 
 .field private final rectangular:Z
 
-.field rsBlockData:I
+.field private final rsBlockData:I
 
-.field rsBlockError:I
+.field private final rsBlockError:I
 
 
 # direct methods
@@ -706,7 +706,7 @@
     return-void
 .end method
 
-.method private constructor <init>(ZIIIIIII)V
+.method constructor <init>(ZIIIIIII)V
     .registers 9
     .param p1, "rectangular"    # Z
     .param p2, "dataCapacity"    # I
@@ -783,7 +783,7 @@
 .end method
 
 .method public static lookup(ILcom/google/zxing/datamatrix/encoder/SymbolShapeHint;Lcom/google/zxing/Dimension;Lcom/google/zxing/Dimension;Z)Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
-    .registers 12
+    .registers 11
     .param p0, "dataCodewords"    # I
     .param p1, "shape"    # Lcom/google/zxing/datamatrix/encoder/SymbolShapeHint;
     .param p2, "minSize"    # Lcom/google/zxing/Dimension;
@@ -792,27 +792,24 @@
 
     .prologue
     .line 126
-    sget-object v0, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->symbols:[Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
+    sget-object v2, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->symbols:[Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
 
-    .local v0, "arr$":[Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
-    array-length v2, v0
+    array-length v3, v2
 
-    .local v2, "len$":I
     const/4 v1, 0x0
 
-    .local v1, "i$":I
     :goto_4
-    if-ge v1, v2, :cond_4c
+    if-ge v1, v3, :cond_4c
 
-    aget-object v3, v0, v1
+    aget-object v0, v2, v1
 
     .line 127
-    .local v3, "symbol":Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
+    .local v0, "symbol":Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
     sget-object v4, Lcom/google/zxing/datamatrix/encoder/SymbolShapeHint;->FORCE_SQUARE:Lcom/google/zxing/datamatrix/encoder/SymbolShapeHint;
 
     if-ne p1, v4, :cond_13
 
-    iget-boolean v4, v3, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->rectangular:Z
+    iget-boolean v4, v0, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->rectangular:Z
 
     if-eqz v4, :cond_13
 
@@ -828,7 +825,7 @@
 
     if-ne p1, v4, :cond_1b
 
-    iget-boolean v4, v3, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->rectangular:Z
+    iget-boolean v4, v0, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->rectangular:Z
 
     if-eqz v4, :cond_10
 
@@ -836,7 +833,8 @@
     :cond_1b
     if-eqz p2, :cond_31
 
-    invoke-virtual {v3}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getSymbolWidth()I
+    .line 134
+    invoke-virtual {v0}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getSymbolWidth()I
 
     move-result v4
 
@@ -846,7 +844,8 @@
 
     if-lt v4, v5, :cond_10
 
-    invoke-virtual {v3}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getSymbolHeight()I
+    .line 135
+    invoke-virtual {v0}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getSymbolHeight()I
 
     move-result v4
 
@@ -860,7 +859,8 @@
     :cond_31
     if-eqz p3, :cond_47
 
-    invoke-virtual {v3}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getSymbolWidth()I
+    .line 139
+    invoke-virtual {v0}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getSymbolWidth()I
 
     move-result v4
 
@@ -870,7 +870,8 @@
 
     if-gt v4, v5, :cond_10
 
-    invoke-virtual {v3}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getSymbolHeight()I
+    .line 140
+    invoke-virtual {v0}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getSymbolHeight()I
 
     move-result v4
 
@@ -882,47 +883,47 @@
 
     .line 143
     :cond_47
-    iget v4, v3, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->dataCapacity:I
+    iget v4, v0, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->dataCapacity:I
 
     if-gt p0, v4, :cond_10
 
     .line 152
-    .end local v3    # "symbol":Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
+    .end local v0    # "symbol":Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
     :goto_4b
-    return-object v3
+    return-object v0
 
     .line 147
     :cond_4c
-    if-eqz p4, :cond_67
+    if-eqz p4, :cond_68
 
     .line 148
-    new-instance v4, Ljava/lang/IllegalArgumentException;
+    new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "Can\'t find a symbol arrangement that matches the message. Data codewords: "
+    const-string/jumbo v3, "Can\'t find a symbol arrangement that matches the message. Data codewords: "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-direct {v4, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v4
+    throw v1
 
     .line 152
-    :cond_67
-    const/4 v3, 0x0
+    :cond_68
+    const/4 v0, 0x0
 
     goto :goto_4b
 .end method
@@ -1001,13 +1002,33 @@
     return v0
 .end method
 
+.method public final getDataCapacity()I
+    .registers 2
+
+    .prologue
+    .line 214
+    iget v0, p0, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->dataCapacity:I
+
+    return v0
+.end method
+
 .method public getDataLengthForInterleavedBlock(I)I
     .registers 3
     .param p1, "index"    # I
 
     .prologue
-    .line 214
+    .line 222
     iget v0, p0, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->rsBlockData:I
+
+    return v0
+.end method
+
+.method public final getErrorCodewords()I
+    .registers 2
+
+    .prologue
+    .line 218
+    iget v0, p0, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->errorCodewords:I
 
     return v0
 .end method
@@ -1017,7 +1038,7 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 218
+    .line 226
     iget v0, p0, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->rsBlockError:I
 
     return v0
@@ -1032,46 +1053,48 @@
     .line 156
     iget v1, p0, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->dataRegions:I
 
-    sparse-switch v1, :sswitch_data_14
+    sparse-switch v1, :sswitch_data_16
 
     .line 168
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "Cannot handle this number of data regions"
+    const-string/jumbo v1, "Cannot handle this number of data regions"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 158
-    :sswitch_e
+    :sswitch_f
     const/4 v0, 0x1
 
     .line 166
-    :goto_f
-    :sswitch_f
+    :goto_10
+    :sswitch_10
     return v0
 
     .line 164
-    :sswitch_10
+    :sswitch_11
     const/4 v0, 0x4
 
-    goto :goto_f
+    goto :goto_10
 
     .line 166
-    :sswitch_12
+    :sswitch_13
     const/4 v0, 0x6
 
-    goto :goto_f
+    goto :goto_10
 
     .line 156
-    :sswitch_data_14
+    nop
+
+    :sswitch_data_16
     .sparse-switch
-        0x1 -> :sswitch_e
-        0x2 -> :sswitch_f
-        0x4 -> :sswitch_f
-        0x10 -> :sswitch_10
-        0x24 -> :sswitch_12
+        0x1 -> :sswitch_f
+        0x2 -> :sswitch_10
+        0x4 -> :sswitch_10
+        0x10 -> :sswitch_11
+        0x24 -> :sswitch_13
     .end sparse-switch
 .end method
 
@@ -1170,46 +1193,48 @@
     .line 173
     iget v1, p0, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->dataRegions:I
 
-    sparse-switch v1, :sswitch_data_14
+    sparse-switch v1, :sswitch_data_16
 
     .line 185
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "Cannot handle this number of data regions"
+    const-string/jumbo v1, "Cannot handle this number of data regions"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 179
-    :sswitch_e
+    :sswitch_f
     const/4 v0, 0x2
 
     .line 183
-    :goto_f
-    :sswitch_f
+    :goto_10
+    :sswitch_10
     return v0
 
     .line 181
-    :sswitch_10
+    :sswitch_11
     const/4 v0, 0x4
 
-    goto :goto_f
+    goto :goto_10
 
     .line 183
-    :sswitch_12
+    :sswitch_13
     const/4 v0, 0x6
 
-    goto :goto_f
+    goto :goto_10
 
     .line 173
-    :sswitch_data_14
+    nop
+
+    :sswitch_data_16
     .sparse-switch
-        0x1 -> :sswitch_f
-        0x2 -> :sswitch_f
-        0x4 -> :sswitch_e
-        0x10 -> :sswitch_10
-        0x24 -> :sswitch_12
+        0x1 -> :sswitch_10
+        0x2 -> :sswitch_10
+        0x4 -> :sswitch_f
+        0x10 -> :sswitch_11
+        0x24 -> :sswitch_13
     .end sparse-switch
 .end method
 
@@ -1219,24 +1244,24 @@
     .prologue
     const/16 v3, 0x78
 
-    .line 223
+    .line 231
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 224
+    .line 232
     .local v0, "sb":Ljava/lang/StringBuilder;
     iget-boolean v1, p0, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->rectangular:Z
 
-    if-eqz v1, :cond_73
+    if-eqz v1, :cond_78
 
-    const-string v1, "Rectangular Symbol:"
+    const-string/jumbo v1, "Rectangular Symbol:"
 
-    :goto_d
+    :goto_e
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 225
-    const-string v1, " data region "
+    .line 233
+    const-string/jumbo v1, " data region "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1256,8 +1281,8 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 226
-    const-string v1, ", symbol size "
+    .line 234
+    const-string/jumbo v1, ", symbol size "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1281,8 +1306,8 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 227
-    const-string v1, ", symbol data size "
+    .line 235
+    const-string/jumbo v1, ", symbol data size "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1306,8 +1331,8 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 228
-    const-string v1, ", codewords "
+    .line 236
+    const-string/jumbo v1, ", codewords "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1329,16 +1354,16 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 229
+    .line 237
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     return-object v1
 
-    .line 224
-    :cond_73
-    const-string v1, "Square Symbol:"
+    .line 232
+    :cond_78
+    const-string/jumbo v1, "Square Symbol:"
 
-    goto :goto_d
+    goto :goto_e
 .end method

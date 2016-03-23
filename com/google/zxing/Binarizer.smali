@@ -48,7 +48,7 @@
     .registers 2
 
     .prologue
-    .line 82
+    .line 84
     iget-object v0, p0, Lcom/google/zxing/Binarizer;->source:Lcom/google/zxing/LuminanceSource;
 
     invoke-virtual {v0}, Lcom/google/zxing/LuminanceSource;->getHeight()I
@@ -72,7 +72,7 @@
     .registers 2
 
     .prologue
-    .line 78
+    .line 80
     iget-object v0, p0, Lcom/google/zxing/Binarizer;->source:Lcom/google/zxing/LuminanceSource;
 
     invoke-virtual {v0}, Lcom/google/zxing/LuminanceSource;->getWidth()I

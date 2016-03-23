@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 92
+    .line 95
     invoke-static {}, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;->values()[Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;
 
     move-result-object v0

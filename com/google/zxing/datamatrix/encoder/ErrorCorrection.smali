@@ -224,7 +224,7 @@
     aput v0, v2, v1
 
     .line 84
-    shl-int/lit8 v1, v1, 0x1
+    mul-int/lit8 v1, v1, 0x2
 
     .line 85
     const/16 v2, 0x100
@@ -853,14 +853,14 @@
 
     aget v7, v7, v2
 
-    if-ne v7, p3, :cond_29
+    if-ne v7, p3, :cond_2a
 
     .line 149
     move v6, v2
 
     .line 153
     :cond_e
-    if-gez v6, :cond_2c
+    if-gez v6, :cond_2d
 
     .line 154
     new-instance v7, Ljava/lang/IllegalArgumentException;
@@ -869,7 +869,7 @@
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "Illegal number of error correction codewords specified: "
+    const-string/jumbo v9, "Illegal number of error correction codewords specified: "
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -888,13 +888,13 @@
     throw v7
 
     .line 147
-    :cond_29
+    :cond_2a
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
 
     .line 157
-    :cond_2c
+    :cond_2d
     sget-object v7, Lcom/google/zxing/datamatrix/encoder/ErrorCorrection;->FACTORS:[[I
 
     aget-object v5, v7, v6
@@ -907,8 +907,8 @@
     .local v0, "ecc":[C
     const/4 v2, 0x0
 
-    :goto_33
-    if-ge v2, p3, :cond_3b
+    :goto_34
+    if-ge v2, p3, :cond_3c
 
     .line 160
     const/4 v7, 0x0
@@ -918,16 +918,16 @@
     .line 159
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_33
+    goto :goto_34
 
     .line 162
-    :cond_3b
+    :cond_3c
     move v2, p1
 
-    :goto_3c
+    :goto_3d
     add-int v7, p1, p2
 
-    if-ge v2, v7, :cond_9c
+    if-ge v2, v7, :cond_9d
 
     .line 163
     add-int/lit8 v7, p3, -0x1
@@ -945,15 +945,15 @@
     add-int/lit8 v3, p3, -0x1
 
     .local v3, "k":I
-    :goto_4c
-    if-lez v3, :cond_77
+    :goto_4d
+    if-lez v3, :cond_78
 
     .line 165
-    if-eqz v4, :cond_70
+    if-eqz v4, :cond_71
 
     aget v7, v5, v3
 
-    if-eqz v7, :cond_70
+    if-eqz v7, :cond_71
 
     .line 166
     add-int/lit8 v7, v3, -0x1
@@ -985,30 +985,30 @@
     aput-char v7, v0, v3
 
     .line 164
-    :goto_6d
+    :goto_6e
     add-int/lit8 v3, v3, -0x1
 
-    goto :goto_4c
+    goto :goto_4d
 
     .line 168
-    :cond_70
+    :cond_71
     add-int/lit8 v7, v3, -0x1
 
     aget-char v7, v0, v7
 
     aput-char v7, v0, v3
 
-    goto :goto_6d
+    goto :goto_6e
 
     .line 171
-    :cond_77
-    if-eqz v4, :cond_97
+    :cond_78
+    if-eqz v4, :cond_98
 
     const/4 v7, 0x0
 
     aget v7, v5, v7
 
-    if-eqz v7, :cond_97
+    if-eqz v7, :cond_98
 
     .line 172
     const/4 v7, 0x0
@@ -1038,33 +1038,33 @@
     aput-char v8, v0, v7
 
     .line 162
-    :goto_94
+    :goto_95
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_3c
+    goto :goto_3d
 
     .line 174
-    :cond_97
+    :cond_98
     const/4 v7, 0x0
 
     const/4 v8, 0x0
 
     aput-char v8, v0, v7
 
-    goto :goto_94
+    goto :goto_95
 
     .line 177
     .end local v3    # "k":I
     .end local v4    # "m":I
-    :cond_9c
+    :cond_9d
     new-array v1, p3, [C
 
     .line 178
     .local v1, "eccReversed":[C
     const/4 v2, 0x0
 
-    :goto_9f
-    if-ge v2, p3, :cond_ac
+    :goto_a0
+    if-ge v2, p3, :cond_ad
 
     .line 179
     sub-int v7, p3, v2
@@ -1078,10 +1078,10 @@
     .line 178
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_9f
+    goto :goto_a0
 
     .line 181
-    :cond_ac
+    :cond_ad
     invoke-static {v1}, Ljava/lang/String;->valueOf([C)Ljava/lang/String;
 
     move-result-object v7
@@ -1100,32 +1100,32 @@
 
     move-result v14
 
-    move-object/from16 v0, p1
+    invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getDataCapacity()I
 
-    iget v15, v0, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->dataCapacity:I
+    move-result v15
 
-    if-eq v14, v15, :cond_12
+    if-eq v14, v15, :cond_13
 
     .line 103
     new-instance v14, Ljava/lang/IllegalArgumentException;
 
-    const-string v15, "The number of codewords does not match the selected symbol"
+    const-string/jumbo v15, "The number of codewords does not match the selected symbol"
 
     invoke-direct {v14, v15}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v14
 
     .line 106
-    :cond_12
+    :cond_13
     new-instance v11, Ljava/lang/StringBuilder;
 
-    move-object/from16 v0, p1
+    invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getDataCapacity()I
 
-    iget v14, v0, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->dataCapacity:I
+    move-result v14
 
-    move-object/from16 v0, p1
+    invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getErrorCodewords()I
 
-    iget v15, v0, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->errorCodewords:I
+    move-result v15
 
     add-int/2addr v14, v15
 
@@ -1146,12 +1146,12 @@
     .local v2, "blockCount":I
     const/4 v14, 0x1
 
-    if-ne v2, v14, :cond_3e
+    if-ne v2, v14, :cond_3f
 
     .line 110
-    move-object/from16 v0, p1
+    invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getErrorCodewords()I
 
-    iget v14, v0, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->errorCodewords:I
+    move-result v14
 
     move-object/from16 v0, p0
 
@@ -1165,7 +1165,7 @@
 
     .line 137
     .end local v6    # "ecc":Ljava/lang/String;
-    :cond_39
+    :cond_3a
     invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v14
@@ -1173,7 +1173,7 @@
     return-object v14
 
     .line 113
-    :cond_3e
+    :cond_3f
     invoke-virtual {v11}, Ljava/lang/StringBuilder;->capacity()I
 
     move-result v14
@@ -1196,8 +1196,8 @@
     const/4 v8, 0x0
 
     .local v8, "i":I
-    :goto_4c
-    if-ge v8, v2, :cond_73
+    :goto_4d
+    if-ge v8, v2, :cond_74
 
     .line 118
     add-int/lit8 v14, v8, 0x1
@@ -1227,7 +1227,7 @@
     aput v14, v12, v8
 
     .line 121
-    if-lez v8, :cond_70
+    if-lez v8, :cond_71
 
     .line 122
     add-int/lit8 v14, v8, -0x1
@@ -1241,18 +1241,18 @@
     aput v14, v12, v8
 
     .line 117
-    :cond_70
+    :cond_71
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_4c
+    goto :goto_4d
 
     .line 125
-    :cond_73
+    :cond_74
     const/4 v1, 0x0
 
     .local v1, "block":I
-    :goto_74
-    if-ge v1, v2, :cond_39
+    :goto_75
+    if-ge v1, v2, :cond_3a
 
     .line 126
     new-instance v13, Ljava/lang/StringBuilder;
@@ -1266,12 +1266,12 @@
     move v3, v1
 
     .local v3, "d":I
-    :goto_7e
-    move-object/from16 v0, p1
+    :goto_7f
+    invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getDataCapacity()I
 
-    iget v14, v0, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->dataCapacity:I
+    move-result v14
 
-    if-ge v3, v14, :cond_8f
+    if-ge v3, v14, :cond_90
 
     .line 128
     move-object/from16 v0, p0
@@ -1285,10 +1285,10 @@
     .line 127
     add-int/2addr v3, v2
 
-    goto :goto_7e
+    goto :goto_7f
 
     .line 130
-    :cond_8f
+    :cond_90
     invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v14
@@ -1308,17 +1308,17 @@
     move v5, v1
 
     .local v5, "e":I
-    :goto_9b
+    :goto_9c
     aget v14, v7, v1
 
     mul-int/2addr v14, v2
 
-    if-ge v5, v14, :cond_b1
+    if-ge v5, v14, :cond_b2
 
     .line 133
-    move-object/from16 v0, p1
+    invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getDataCapacity()I
 
-    iget v14, v0, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->dataCapacity:I
+    move-result v14
 
     add-int/2addr v14, v5
 
@@ -1339,11 +1339,11 @@
 
     .end local v10    # "pos":I
     .restart local v9    # "pos":I
-    goto :goto_9b
+    goto :goto_9c
 
     .line 125
-    :cond_b1
+    :cond_b2
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_74
+    goto :goto_75
 .end method

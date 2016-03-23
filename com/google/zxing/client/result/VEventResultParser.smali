@@ -23,12 +23,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 92
+    .line 95
     invoke-static {p0, p1, p2, v2}, Lcom/google/zxing/client/result/VCardResultParser;->matchSingleVCardPrefixedField(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)Ljava/util/List;
 
     move-result-object v0
 
-    .line 93
+    .line 96
     .local v0, "values":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     if-eqz v0, :cond_d
 
@@ -63,12 +63,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 97
+    .line 100
     invoke-static {p0, p1, p2, v5}, Lcom/google/zxing/client/result/VCardResultParser;->matchVCardPrefixedField(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)Ljava/util/List;
 
     move-result-object v3
 
-    .line 98
+    .line 101
     .local v3, "values":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
     if-eqz v3, :cond_d
 
@@ -78,25 +78,25 @@
 
     if-eqz v4, :cond_f
 
-    .line 99
+    .line 102
     :cond_d
     const/4 v1, 0x0
 
-    .line 106
+    .line 109
     :cond_e
     return-object v1
 
-    .line 101
+    .line 104
     :cond_f
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .line 102
+    .line 105
     .local v2, "size":I
     new-array v1, v2, [Ljava/lang/String;
 
-    .line 103
+    .line 106
     .local v1, "result":[Ljava/lang/String;
     const/4 v0, 0x0
 
@@ -104,7 +104,7 @@
     :goto_16
     if-ge v0, v2, :cond_e
 
-    .line 104
+    .line 107
     invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -119,7 +119,7 @@
 
     aput-object v4, v1, v0
 
-    .line 103
+    .line 106
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_16
@@ -130,35 +130,35 @@
     .param p0, "s"    # Ljava/lang/String;
 
     .prologue
-    .line 110
-    if-eqz p0, :cond_17
+    .line 113
+    if-eqz p0, :cond_19
 
-    const-string v0, "mailto:"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_12
-
-    const-string v0, "MAILTO:"
+    const-string/jumbo v0, "mailto:"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-nez v0, :cond_14
 
-    .line 111
-    :cond_12
+    const-string/jumbo v0, "MAILTO:"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_19
+
+    .line 114
+    :cond_14
     const/4 v0, 0x7
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 113
-    :cond_17
+    .line 116
+    :cond_19
     return-object p0
 .end method
 
@@ -176,7 +176,7 @@
 
     .line 34
     .local v18, "rawText":Ljava/lang/String;
-    const-string v3, "BEGIN:VEVENT"
+    const-string/jumbo v3, "BEGIN:VEVENT"
 
     move-object/from16 v0, v18
 
@@ -186,18 +186,18 @@
 
     .line 35
     .local v20, "vEventStart":I
-    if-gez v20, :cond_10
+    if-gez v20, :cond_11
 
     .line 36
     const/4 v3, 0x0
 
-    .line 85
-    :goto_f
+    .line 88
+    :goto_10
     return-object v3
 
     .line 39
-    :cond_10
-    const-string v3, "SUMMARY"
+    :cond_11
+    const-string/jumbo v3, "SUMMARY"
 
     const/16 v21, 0x1
 
@@ -211,7 +211,7 @@
 
     .line 40
     .local v4, "summary":Ljava/lang/String;
-    const-string v3, "DTSTART"
+    const-string/jumbo v3, "DTSTART"
 
     const/16 v21, 0x1
 
@@ -225,16 +225,16 @@
 
     .line 41
     .local v5, "start":Ljava/lang/String;
-    if-nez v5, :cond_2c
+    if-nez v5, :cond_2f
 
     .line 42
     const/4 v3, 0x0
 
-    goto :goto_f
+    goto :goto_10
 
     .line 44
-    :cond_2c
-    const-string v3, "DTEND"
+    :cond_2f
+    const-string/jumbo v3, "DTEND"
 
     const/16 v21, 0x1
 
@@ -248,7 +248,7 @@
 
     .line 45
     .local v6, "end":Ljava/lang/String;
-    const-string v3, "DURATION"
+    const-string/jumbo v3, "DURATION"
 
     const/16 v21, 0x1
 
@@ -262,7 +262,7 @@
 
     .line 46
     .local v7, "duration":Ljava/lang/String;
-    const-string v3, "LOCATION"
+    const-string/jumbo v3, "LOCATION"
 
     const/16 v21, 0x1
 
@@ -276,7 +276,7 @@
 
     .line 47
     .local v8, "location":Ljava/lang/String;
-    const-string v3, "ORGANIZER"
+    const-string/jumbo v3, "ORGANIZER"
 
     const/16 v21, 0x1
 
@@ -294,7 +294,7 @@
 
     .line 49
     .local v9, "organizer":Ljava/lang/String;
-    const-string v3, "ATTENDEE"
+    const-string/jumbo v3, "ATTENDEE"
 
     const/16 v21, 0x1
 
@@ -308,18 +308,18 @@
 
     .line 50
     .local v10, "attendees":[Ljava/lang/String;
-    if-eqz v10, :cond_80
+    if-eqz v10, :cond_88
 
     .line 51
     const/16 v16, 0x0
 
     .local v16, "i":I
-    :goto_70
+    :goto_78
     array-length v3, v10
 
     move/from16 v0, v16
 
-    if-ge v0, v3, :cond_80
+    if-ge v0, v3, :cond_88
 
     .line 52
     aget-object v3, v10, v16
@@ -333,12 +333,12 @@
     .line 51
     add-int/lit8 v16, v16, 0x1
 
-    goto :goto_70
+    goto :goto_78
 
     .line 55
     .end local v16    # "i":I
-    :cond_80
-    const-string v3, "DESCRIPTION"
+    :cond_88
+    const-string/jumbo v3, "DESCRIPTION"
 
     const/16 v21, 0x1
 
@@ -352,7 +352,7 @@
 
     .line 57
     .local v11, "description":Ljava/lang/String;
-    const-string v3, "GEO"
+    const-string/jumbo v3, "GEO"
 
     const/16 v21, 0x1
 
@@ -366,7 +366,7 @@
 
     .line 60
     .local v2, "geoString":Ljava/lang/String;
-    if-nez v2, :cond_a9
+    if-nez v2, :cond_b3
 
     .line 61
     const-wide/high16 v12, 0x7ff8000000000000L
@@ -375,44 +375,53 @@
     .local v12, "latitude":D
     const-wide/high16 v14, 0x7ff8000000000000L
 
-    .line 74
+    .line 77
     .local v14, "longitude":D
-    :goto_9e
-    :try_start_9e
+    :goto_a8
+    :try_start_a8
     new-instance v3, Lcom/google/zxing/client/result/CalendarParsedResult;
 
     invoke-direct/range {v3 .. v15}, Lcom/google/zxing/client/result/CalendarParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;DD)V
-    :try_end_a3
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_9e .. :try_end_a3} :catch_a5
+    :try_end_ad
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_a8 .. :try_end_ad} :catch_af
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
-    .line 84
-    :catch_a5
+    .line 87
+    :catch_af
     move-exception v17
 
-    .line 85
+    .line 88
     .local v17, "ignored":Ljava/lang/IllegalArgumentException;
     const/4 v3, 0x0
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
     .line 64
     .end local v12    # "latitude":D
     .end local v14    # "longitude":D
     .end local v17    # "ignored":Ljava/lang/IllegalArgumentException;
-    :cond_a9
+    :cond_b3
     const/16 v3, 0x3b
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->indexOf(I)I
 
     move-result v19
 
-    .line 66
+    .line 65
     .local v19, "semicolon":I
+    if-gez v19, :cond_be
+
+    .line 66
     const/4 v3, 0x0
 
-    :try_start_b0
+    goto/16 :goto_10
+
+    .line 69
+    :cond_be
+    const/4 v3, 0x0
+
+    :try_start_bf
     move/from16 v0, v19
 
     invoke-virtual {v2, v3, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
@@ -423,7 +432,7 @@
 
     move-result-wide v12
 
-    .line 67
+    .line 70
     .restart local v12    # "latitude":D
     add-int/lit8 v3, v19, 0x1
 
@@ -432,30 +441,29 @@
     move-result-object v3
 
     invoke-static {v3}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
-    :try_end_c3
-    .catch Ljava/lang/NumberFormatException; {:try_start_b0 .. :try_end_c3} :catch_c5
+    :try_end_d2
+    .catch Ljava/lang/NumberFormatException; {:try_start_bf .. :try_end_d2} :catch_d4
 
     move-result-wide v14
 
     .restart local v14    # "longitude":D
-    goto :goto_9e
+    goto :goto_a8
 
-    .line 68
+    .line 71
     .end local v12    # "latitude":D
     .end local v14    # "longitude":D
-    :catch_c5
+    :catch_d4
     move-exception v17
 
-    .line 69
+    .line 72
     .local v17, "ignored":Ljava/lang/NumberFormatException;
     const/4 v3, 0x0
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 .end method
 
 .method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .registers 3
-    .param p1, "x0"    # Lcom/google/zxing/Result;
 
     .prologue
     .line 29

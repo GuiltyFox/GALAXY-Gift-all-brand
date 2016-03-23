@@ -51,7 +51,7 @@
     .local p5, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/EncodeHintType;*>;"
     sget-object v0, Lcom/google/zxing/BarcodeFormat;->EAN_13:Lcom/google/zxing/BarcodeFormat;
 
-    if-eq p2, v0, :cond_1d
+    if-eq p2, v0, :cond_1e
 
     .line 47
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -60,7 +60,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "Can only encode EAN_13, but got "
+    const-string/jumbo v2, "Can only encode EAN_13, but got "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -79,7 +79,7 @@
     throw v0
 
     .line 50
-    :cond_1d
+    :cond_1e
     invoke-super/range {p0 .. p5}, Lcom/google/zxing/oned/UPCEANWriter;->encode(Ljava/lang/String;Lcom/google/zxing/BarcodeFormat;IILjava/util/Map;)Lcom/google/zxing/common/BitMatrix;
 
     move-result-object v0
@@ -103,7 +103,7 @@
 
     const/16 v8, 0xd
 
-    if-eq v7, v8, :cond_27
+    if-eq v7, v8, :cond_28
 
     .line 56
     new-instance v7, Ljava/lang/IllegalArgumentException;
@@ -112,12 +112,13 @@
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "Requested contents should be 13 digits long, but got "
+    const-string/jumbo v9, "Requested contents should be 13 digits long, but got "
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v8
 
+    .line 57
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v9
@@ -135,34 +136,34 @@
     throw v7
 
     .line 60
-    :cond_27
-    :try_start_27
+    :cond_28
+    :try_start_28
     invoke-static {p1}, Lcom/google/zxing/oned/UPCEANReader;->checkStandardUPCEANChecksum(Ljava/lang/CharSequence;)Z
 
     move-result v7
 
-    if-nez v7, :cond_3e
+    if-nez v7, :cond_41
 
     .line 61
     new-instance v7, Ljava/lang/IllegalArgumentException;
 
-    const-string v8, "Contents do not pass checksum"
+    const-string/jumbo v8, "Contents do not pass checksum"
 
     invoke-direct {v7, v8}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v7
-    :try_end_35
-    .catch Lcom/google/zxing/FormatException; {:try_start_27 .. :try_end_35} :catch_35
+    :try_end_37
+    .catch Lcom/google/zxing/FormatException; {:try_start_28 .. :try_end_37} :catch_37
 
     .line 63
-    :catch_35
+    :catch_37
     move-exception v3
 
     .line 64
     .local v3, "ignored":Lcom/google/zxing/FormatException;
     new-instance v7, Ljava/lang/IllegalArgumentException;
 
-    const-string v8, "Illegal contents"
+    const-string/jumbo v8, "Illegal contents"
 
     invoke-direct {v7, v8}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -170,7 +171,7 @@
 
     .line 67
     .end local v3    # "ignored":Lcom/google/zxing/FormatException;
-    :cond_3e
+    :cond_41
     invoke-virtual {p1, v10, v9}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v7
@@ -209,10 +210,10 @@
     const/4 v2, 0x1
 
     .local v2, "i":I
-    :goto_57
+    :goto_5a
     const/4 v7, 0x6
 
-    if-gt v2, v7, :cond_7a
+    if-gt v2, v7, :cond_7d
 
     .line 76
     add-int/lit8 v7, v2, 0x1
@@ -233,13 +234,13 @@
 
     and-int/lit8 v7, v7, 0x1
 
-    if-ne v7, v9, :cond_6e
+    if-ne v7, v9, :cond_71
 
     .line 78
     add-int/lit8 v0, v0, 0xa
 
     .line 80
-    :cond_6e
+    :cond_71
     sget-object v7, Lcom/google/zxing/oned/UPCEANReader;->L_AND_G_PATTERNS:[[I
 
     aget-object v7, v7, v0
@@ -253,11 +254,11 @@
     .line 75
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_57
+    goto :goto_5a
 
     .line 83
     .end local v0    # "digit":I
-    :cond_7a
+    :cond_7d
     sget-object v7, Lcom/google/zxing/oned/UPCEANReader;->MIDDLE_PATTERN:[I
 
     invoke-static {v6, v5, v7, v10}, Lcom/google/zxing/oned/EAN13Writer;->appendPattern([ZI[IZ)I
@@ -269,10 +270,10 @@
     .line 85
     const/4 v2, 0x7
 
-    :goto_82
+    :goto_85
     const/16 v7, 0xc
 
-    if-gt v2, v7, :cond_9c
+    if-gt v2, v7, :cond_9f
 
     .line 86
     add-int/lit8 v7, v2, 0x1
@@ -300,18 +301,14 @@
     .line 85
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_82
+    goto :goto_85
 
     .line 89
     .end local v0    # "digit":I
-    :cond_9c
+    :cond_9f
     sget-object v7, Lcom/google/zxing/oned/UPCEANReader;->START_END_PATTERN:[I
 
     invoke-static {v6, v5, v7, v9}, Lcom/google/zxing/oned/EAN13Writer;->appendPattern([ZI[IZ)I
-
-    move-result v7
-
-    add-int/2addr v5, v7
 
     .line 91
     return-object v6

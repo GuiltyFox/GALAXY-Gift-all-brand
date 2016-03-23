@@ -30,8 +30,8 @@
     .registers 2
 
     .prologue
-    .line 37
-    const-string v0, "BEGIN:VCARD"
+    .line 38
+    const-string/jumbo v0, "BEGIN:VCARD"
 
     const/4 v1, 0x2
 
@@ -41,8 +41,8 @@
 
     sput-object v0, Lcom/google/zxing/client/result/VCardResultParser;->BEGIN_VCARD:Ljava/util/regex/Pattern;
 
-    .line 38
-    const-string v0, "\\d{4}-?\\d{2}-?\\d{2}"
+    .line 39
+    const-string/jumbo v0, "\\d{4}-?\\d{2}-?\\d{2}"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
@@ -50,8 +50,8 @@
 
     sput-object v0, Lcom/google/zxing/client/result/VCardResultParser;->VCARD_LIKE_DATE:Ljava/util/regex/Pattern;
 
-    .line 39
-    const-string v0, "\r\n[ \t]"
+    .line 40
+    const-string/jumbo v0, "\r\n[ \t]"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
@@ -59,8 +59,8 @@
 
     sput-object v0, Lcom/google/zxing/client/result/VCardResultParser;->CR_LF_SPACE_TAB:Ljava/util/regex/Pattern;
 
-    .line 40
-    const-string v0, "\\\\[nN]"
+    .line 41
+    const-string/jumbo v0, "\\\\[nN]"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
@@ -68,8 +68,8 @@
 
     sput-object v0, Lcom/google/zxing/client/result/VCardResultParser;->NEWLINE_ESCAPE:Ljava/util/regex/Pattern;
 
-    .line 41
-    const-string v0, "\\\\([,;\\\\])"
+    .line 42
+    const-string/jumbo v0, "\\\\([,;\\\\])"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
@@ -77,8 +77,8 @@
 
     sput-object v0, Lcom/google/zxing/client/result/VCardResultParser;->VCARD_ESCAPES:Ljava/util/regex/Pattern;
 
-    .line 42
-    const-string v0, "="
+    .line 43
+    const-string/jumbo v0, "="
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
@@ -86,8 +86,8 @@
 
     sput-object v0, Lcom/google/zxing/client/result/VCardResultParser;->EQUALS:Ljava/util/regex/Pattern;
 
-    .line 43
-    const-string v0, ";"
+    .line 44
+    const-string/jumbo v0, ";"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
@@ -95,8 +95,8 @@
 
     sput-object v0, Lcom/google/zxing/client/result/VCardResultParser;->SEMICOLON:Ljava/util/regex/Pattern;
 
-    .line 44
-    const-string v0, "(?<!\\\\);+"
+    .line 45
+    const-string/jumbo v0, "(?<!\\\\);+"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
@@ -104,8 +104,8 @@
 
     sput-object v0, Lcom/google/zxing/client/result/VCardResultParser;->UNESCAPED_SEMICOLONS:Ljava/util/regex/Pattern;
 
-    .line 45
-    const-string v0, ","
+    .line 46
+    const-string/jumbo v0, ","
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
@@ -113,8 +113,8 @@
 
     sput-object v0, Lcom/google/zxing/client/result/VCardResultParser;->COMMA:Ljava/util/regex/Pattern;
 
-    .line 46
-    const-string v0, "[;,]"
+    .line 47
+    const-string/jumbo v0, "[;,]"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
@@ -129,7 +129,7 @@
     .registers 1
 
     .prologue
-    .line 35
+    .line 36
     invoke-direct {p0}, Lcom/google/zxing/client/result/ResultParser;-><init>()V
 
     return-void
@@ -141,24 +141,24 @@
     .param p1, "charset"    # Ljava/lang/String;
 
     .prologue
-    .line 209
+    .line 210
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v4
 
-    .line 210
+    .line 211
     .local v4, "length":I
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 211
+    .line 212
     .local v7, "result":Ljava/lang/StringBuilder;
     new-instance v2, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v2}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 212
+    .line 213
     .local v2, "fragmentBuffer":Ljava/io/ByteArrayOutputStream;
     const/4 v3, 0x0
 
@@ -166,22 +166,22 @@
     :goto_f
     if-ge v3, v4, :cond_4e
 
-    .line 213
+    .line 214
     invoke-interface {p0, v3}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v0
 
-    .line 214
+    .line 215
     .local v0, "c":C
     sparse-switch v0, :sswitch_data_56
 
-    .line 233
+    .line 234
     invoke-static {v2, p1, v7}, Lcom/google/zxing/client/result/VCardResultParser;->maybeAppendFragment(Ljava/io/ByteArrayOutputStream;Ljava/lang/String;Ljava/lang/StringBuilder;)V
 
-    .line 234
+    .line 235
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 212
+    .line 213
     :cond_1e
     :goto_1e
     :sswitch_1e
@@ -189,20 +189,20 @@
 
     goto :goto_f
 
-    .line 219
+    .line 220
     :sswitch_21
     add-int/lit8 v9, v4, -0x2
 
     if-ge v3, v9, :cond_1e
 
-    .line 220
+    .line 221
     add-int/lit8 v9, v3, 0x1
 
     invoke-interface {p0, v9}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v5
 
-    .line 221
+    .line 222
     .local v5, "nextChar":C
     const/16 v9, 0xd
 
@@ -212,45 +212,45 @@
 
     if-eq v5, v9, :cond_1e
 
-    .line 222
+    .line 223
     add-int/lit8 v9, v3, 0x2
 
     invoke-interface {p0, v9}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v6
 
-    .line 223
+    .line 224
     .local v6, "nextNextChar":C
     invoke-static {v5}, Lcom/google/zxing/client/result/VCardResultParser;->parseHexDigit(C)I
 
     move-result v1
 
-    .line 224
+    .line 225
     .local v1, "firstDigit":I
     invoke-static {v6}, Lcom/google/zxing/client/result/VCardResultParser;->parseHexDigit(C)I
 
     move-result v8
 
-    .line 225
+    .line 226
     .local v8, "secondDigit":I
     if-ltz v1, :cond_4b
 
     if-ltz v8, :cond_4b
 
-    .line 226
+    .line 227
     shl-int/lit8 v9, v1, 0x4
 
     add-int/2addr v9, v8
 
     invoke-virtual {v2, v9}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 228
+    .line 229
     :cond_4b
     add-int/lit8 v3, v3, 0x2
 
     goto :goto_1e
 
-    .line 237
+    .line 238
     .end local v0    # "c":C
     .end local v1    # "firstDigit":I
     .end local v5    # "nextChar":C
@@ -259,14 +259,14 @@
     :cond_4e
     invoke-static {v2, p1, v7}, Lcom/google/zxing/client/result/VCardResultParser;->maybeAppendFragment(Ljava/io/ByteArrayOutputStream;Ljava/lang/String;Ljava/lang/StringBuilder;)V
 
-    .line 238
+    .line 239
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v9
 
     return-object v9
 
-    .line 214
+    .line 215
     :sswitch_data_56
     .sparse-switch
         0xa -> :sswitch_1e
@@ -299,42 +299,41 @@
     .line 325
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v7
 
-    .local v3, "i$":Ljava/util/Iterator;
     :goto_7
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
     if-eqz v8, :cond_62
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/List;
+
+    .line 326
+    .local v3, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    invoke-interface {v3, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Ljava/util/List;
-
-    .line 326
-    .local v4, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    invoke-interface {v4, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Ljava/lang/String;
+    check-cast v4, Ljava/lang/String;
 
     .line 327
-    .local v5, "name":Ljava/lang/String;
+    .local v4, "name":Ljava/lang/String;
     const/4 v8, 0x5
 
     new-array v1, v8, [Ljava/lang/String;
 
     .line 328
     .local v1, "components":[Ljava/lang/String;
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
     .line 330
-    .local v7, "start":I
+    .local v6, "start":I
     const/4 v0, 0x0
 
     .line 331
@@ -348,15 +347,15 @@
 
     const/16 v8, 0x3b
 
-    invoke-virtual {v5, v8, v7}, Ljava/lang/String;->indexOf(II)I
+    invoke-virtual {v4, v8, v6}, Ljava/lang/String;->indexOf(II)I
 
     move-result v2
 
     .local v2, "end":I
-    if-lez v2, :cond_36
+    if-ltz v2, :cond_36
 
     .line 332
-    invoke-virtual {v5, v7, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v4, v6, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v8
 
@@ -366,52 +365,52 @@
     add-int/lit8 v0, v0, 0x1
 
     .line 334
-    add-int/lit8 v7, v2, 0x1
+    add-int/lit8 v6, v2, 0x1
 
     goto :goto_1e
 
     .line 336
     .end local v2    # "end":I
     :cond_36
-    invoke-virtual {v5, v7}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v4, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v8
 
     aput-object v8, v1, v0
 
     .line 337
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
     const/16 v8, 0x64
 
-    invoke-direct {v6, v8}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v5, v8}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 338
-    .local v6, "newName":Ljava/lang/StringBuilder;
+    .local v5, "newName":Ljava/lang/StringBuilder;
     const/4 v8, 0x3
 
-    invoke-static {v1, v8, v6}, Lcom/google/zxing/client/result/VCardResultParser;->maybeAppendComponent([Ljava/lang/String;ILjava/lang/StringBuilder;)V
+    invoke-static {v1, v8, v5}, Lcom/google/zxing/client/result/VCardResultParser;->maybeAppendComponent([Ljava/lang/String;ILjava/lang/StringBuilder;)V
 
     .line 339
     const/4 v8, 0x1
 
-    invoke-static {v1, v8, v6}, Lcom/google/zxing/client/result/VCardResultParser;->maybeAppendComponent([Ljava/lang/String;ILjava/lang/StringBuilder;)V
+    invoke-static {v1, v8, v5}, Lcom/google/zxing/client/result/VCardResultParser;->maybeAppendComponent([Ljava/lang/String;ILjava/lang/StringBuilder;)V
 
     .line 340
     const/4 v8, 0x2
 
-    invoke-static {v1, v8, v6}, Lcom/google/zxing/client/result/VCardResultParser;->maybeAppendComponent([Ljava/lang/String;ILjava/lang/StringBuilder;)V
+    invoke-static {v1, v8, v5}, Lcom/google/zxing/client/result/VCardResultParser;->maybeAppendComponent([Ljava/lang/String;ILjava/lang/StringBuilder;)V
 
     .line 341
-    invoke-static {v1, v9, v6}, Lcom/google/zxing/client/result/VCardResultParser;->maybeAppendComponent([Ljava/lang/String;ILjava/lang/StringBuilder;)V
+    invoke-static {v1, v9, v5}, Lcom/google/zxing/client/result/VCardResultParser;->maybeAppendComponent([Ljava/lang/String;ILjava/lang/StringBuilder;)V
 
     .line 342
     const/4 v8, 0x4
 
-    invoke-static {v1, v8, v6}, Lcom/google/zxing/client/result/VCardResultParser;->maybeAppendComponent([Ljava/lang/String;ILjava/lang/StringBuilder;)V
+    invoke-static {v1, v8, v5}, Lcom/google/zxing/client/result/VCardResultParser;->maybeAppendComponent([Ljava/lang/String;ILjava/lang/StringBuilder;)V
 
     .line 343
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v8
 
@@ -419,18 +418,17 @@
 
     move-result-object v8
 
-    invoke-interface {v4, v9, v8}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v3, v9, v8}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_7
 
     .line 346
     .end local v0    # "componentIndex":I
     .end local v1    # "components":[Ljava/lang/String;
-    .end local v3    # "i$":Ljava/util/Iterator;
-    .end local v4    # "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    .end local v5    # "name":Ljava/lang/String;
-    .end local v6    # "newName":Ljava/lang/StringBuilder;
-    .end local v7    # "start":I
+    .end local v3    # "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .end local v4    # "name":Ljava/lang/String;
+    .end local v5    # "newName":Ljava/lang/StringBuilder;
+    .end local v6    # "start":I
     :cond_62
     return-void
 .end method
@@ -542,164 +540,170 @@
     .end annotation
 
     .prologue
-    .line 105
-    const/4 v11, 0x0
-
     .line 106
-    .local v11, "matches":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
-    const/4 v4, 0x0
+    const/4 v8, 0x0
 
     .line 107
-    .local v4, "i":I
+    .local v8, "matches":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
+    const/4 v3, 0x0
+
+    .line 108
+    .local v3, "i":I
     invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
 
-    move-result v12
+    move-result v9
 
-    .line 109
-    .local v12, "max":I
+    .line 110
+    .local v9, "max":I
     :goto_6
-    if-ge v4, v12, :cond_3d
+    if-ge v3, v9, :cond_3f
 
-    .line 113
-    new-instance v20, Ljava/lang/StringBuilder;
+    .line 114
+    new-instance v17, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v21, "(?:^|\n)"
+    const-string/jumbo v18, "(?:^|\n)"
 
-    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v20
+    move-result-object v17
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v17
 
     move-object/from16 v1, p0
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v20
+    move-result-object v17
 
-    const-string v21, "(?:;([^:]*))?:"
+    const-string/jumbo v18, "(?:;([^:]*))?:"
 
-    invoke-virtual/range {v20 .. v21}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v20
+    move-result-object v17
 
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v20
+    move-result-object v17
 
-    const/16 v21, 0x2
+    const/16 v18, 0x2
 
-    invoke-static/range {v20 .. v21}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
+    invoke-static/range {v17 .. v18}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
 
-    move-result-object v20
+    move-result-object v17
 
-    move-object/from16 v0, v20
+    .line 115
+    move-object/from16 v0, v17
 
     move-object/from16 v1, p1
 
     invoke-virtual {v0, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    move-result-object v10
-
-    .line 115
-    .local v10, "matcher":Ljava/util/regex/Matcher;
-    if-lez v4, :cond_37
+    move-result-object v7
 
     .line 116
-    add-int/lit8 v4, v4, -0x1
+    .local v7, "matcher":Ljava/util/regex/Matcher;
+    if-lez v3, :cond_39
 
-    .line 118
-    :cond_37
-    invoke-virtual {v10, v4}, Ljava/util/regex/Matcher;->find(I)Z
+    .line 117
+    add-int/lit8 v3, v3, -0x1
 
-    move-result v20
+    .line 119
+    :cond_39
+    invoke-virtual {v7, v3}, Ljava/util/regex/Matcher;->find(I)Z
 
-    if-nez v20, :cond_3e
+    move-result v17
 
-    .line 205
-    .end local v10    # "matcher":Ljava/util/regex/Matcher;
-    :cond_3d
-    return-object v11
+    if-nez v17, :cond_40
 
-    .line 121
-    .restart local v10    # "matcher":Ljava/util/regex/Matcher;
-    :cond_3e
-    const/16 v20, 0x0
+    .line 206
+    .end local v7    # "matcher":Ljava/util/regex/Matcher;
+    :cond_3f
+    return-object v8
 
-    move/from16 v0, v20
-
-    invoke-virtual {v10, v0}, Ljava/util/regex/Matcher;->end(I)I
-
-    move-result v4
-
-    .line 123
-    const/16 v20, 0x1
-
-    move/from16 v0, v20
-
-    invoke-virtual {v10, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v14
-
-    .line 124
-    .local v14, "metadataString":Ljava/lang/String;
-    const/4 v13, 0x0
-
-    .line 125
-    .local v13, "metadata":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .line 122
+    .restart local v7    # "matcher":Ljava/util/regex/Matcher;
+    :cond_40
     const/16 v17, 0x0
 
+    move/from16 v0, v17
+
+    invoke-virtual {v7, v0}, Ljava/util/regex/Matcher;->end(I)I
+
+    move-result v3
+
+    .line 124
+    const/16 v17, 0x1
+
+    move/from16 v0, v17
+
+    invoke-virtual {v7, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    move-result-object v11
+
+    .line 125
+    .local v11, "metadataString":Ljava/lang/String;
+    const/4 v10, 0x0
+
     .line 126
-    .local v17, "quotedPrintable":Z
-    const/16 v18, 0x0
+    .local v10, "metadata":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    const/4 v14, 0x0
 
     .line 127
-    .local v18, "quotedPrintableCharset":Ljava/lang/String;
-    if-eqz v14, :cond_ba
+    .local v14, "quotedPrintable":Z
+    const/4 v15, 0x0
 
     .line 128
-    sget-object v20, Lcom/google/zxing/client/result/VCardResultParser;->SEMICOLON:Ljava/util/regex/Pattern;
-
-    move-object/from16 v0, v20
-
-    invoke-virtual {v0, v14}, Ljava/util/regex/Pattern;->split(Ljava/lang/CharSequence;)[Ljava/lang/String;
-
-    move-result-object v2
-
-    .local v2, "arr$":[Ljava/lang/String;
-    array-length v7, v2
-
-    .local v7, "len$":I
-    const/4 v5, 0x0
-
-    .local v5, "i$":I
-    :goto_5f
-    if-ge v5, v7, :cond_ba
-
-    aget-object v15, v2, v5
+    .local v15, "quotedPrintableCharset":Ljava/lang/String;
+    if-eqz v11, :cond_c3
 
     .line 129
-    .local v15, "metadatum":Ljava/lang/String;
-    if-nez v13, :cond_6e
+    sget-object v17, Lcom/google/zxing/client/result/VCardResultParser;->SEMICOLON:Ljava/util/regex/Pattern;
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v0, v11}, Ljava/util/regex/Pattern;->split(Ljava/lang/CharSequence;)[Ljava/lang/String;
+
+    move-result-object v18
+
+    move-object/from16 v0, v18
+
+    array-length v0, v0
+
+    move/from16 v19, v0
+
+    const/16 v17, 0x0
+
+    :goto_64
+    move/from16 v0, v17
+
+    move/from16 v1, v19
+
+    if-ge v0, v1, :cond_c3
+
+    aget-object v12, v18, v17
 
     .line 130
-    new-instance v13, Ljava/util/ArrayList;
+    .local v12, "metadatum":Ljava/lang/String;
+    if-nez v10, :cond_77
 
-    .end local v13    # "metadata":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .line 131
+    new-instance v10, Ljava/util/ArrayList;
+
+    .end local v10    # "metadata":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const/16 v20, 0x1
 
     move/from16 v0, v20
 
-    invoke-direct {v13, v0}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 132
-    .restart local v13    # "metadata":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    :cond_6e
-    invoke-interface {v13, v15}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-direct {v10, v0}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 133
+    .restart local v10    # "metadata":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    :cond_77
+    invoke-interface {v10, v12}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 134
     sget-object v20, Lcom/google/zxing/client/result/VCardResultParser;->EQUALS:Ljava/util/regex/Pattern;
 
     const/16 v21, 0x2
@@ -708,15 +712,13 @@
 
     move/from16 v1, v21
 
-    invoke-virtual {v0, v15, v1}, Ljava/util/regex/Pattern;->split(Ljava/lang/CharSequence;I)[Ljava/lang/String;
+    invoke-virtual {v0, v12, v1}, Ljava/util/regex/Pattern;->split(Ljava/lang/CharSequence;I)[Ljava/lang/String;
 
-    move-result-object v16
+    move-result-object v13
 
-    .line 134
-    .local v16, "metadatumTokens":[Ljava/lang/String;
-    move-object/from16 v0, v16
-
-    array-length v0, v0
+    .line 135
+    .local v13, "metadatumTokens":[Ljava/lang/String;
+    array-length v0, v13
 
     move/from16 v20, v0
 
@@ -726,435 +728,434 @@
 
     move/from16 v1, v21
 
-    if-le v0, v1, :cond_aa
-
-    .line 135
-    const/16 v20, 0x0
-
-    aget-object v6, v16, v20
+    if-le v0, v1, :cond_b2
 
     .line 136
-    .local v6, "key":Ljava/lang/String;
-    const/16 v20, 0x1
+    const/16 v20, 0x0
 
-    aget-object v19, v16, v20
+    aget-object v4, v13, v20
 
     .line 137
-    .local v19, "value":Ljava/lang/String;
-    const-string v20, "ENCODING"
+    .local v4, "key":Ljava/lang/String;
+    const/16 v20, 0x1
+
+    aget-object v16, v13, v20
+
+    .line 138
+    .local v16, "value":Ljava/lang/String;
+    const-string/jumbo v20, "ENCODING"
 
     move-object/from16 v0, v20
 
-    invoke-virtual {v0, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v0, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v20
 
-    if-eqz v20, :cond_ad
+    if-eqz v20, :cond_b5
 
-    const-string v20, "QUOTED-PRINTABLE"
+    const-string/jumbo v20, "QUOTED-PRINTABLE"
 
     move-object/from16 v0, v20
 
-    move-object/from16 v1, v19
+    move-object/from16 v1, v16
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v20
 
-    if-eqz v20, :cond_ad
-
-    .line 138
-    const/16 v17, 0x1
-
-    .line 128
-    .end local v6    # "key":Ljava/lang/String;
-    .end local v19    # "value":Ljava/lang/String;
-    :cond_aa
-    :goto_aa
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_5f
+    if-eqz v20, :cond_b5
 
     .line 139
-    .restart local v6    # "key":Ljava/lang/String;
-    .restart local v19    # "value":Ljava/lang/String;
-    :cond_ad
-    const-string v20, "CHARSET"
+    const/4 v14, 0x1
+
+    .line 129
+    .end local v4    # "key":Ljava/lang/String;
+    .end local v16    # "value":Ljava/lang/String;
+    :cond_b2
+    :goto_b2
+    add-int/lit8 v17, v17, 0x1
+
+    goto :goto_64
+
+    .line 140
+    .restart local v4    # "key":Ljava/lang/String;
+    .restart local v16    # "value":Ljava/lang/String;
+    :cond_b5
+    const-string/jumbo v20, "CHARSET"
 
     move-object/from16 v0, v20
 
-    invoke-virtual {v0, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v0, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v20
 
-    if-eqz v20, :cond_aa
+    if-eqz v20, :cond_b2
 
-    .line 140
-    move-object/from16 v18, v19
+    .line 141
+    move-object/from16 v15, v16
 
-    goto :goto_aa
+    goto :goto_b2
 
-    .line 146
-    .end local v2    # "arr$":[Ljava/lang/String;
-    .end local v5    # "i$":I
-    .end local v6    # "key":Ljava/lang/String;
-    .end local v7    # "len$":I
-    .end local v15    # "metadatum":Ljava/lang/String;
-    .end local v16    # "metadatumTokens":[Ljava/lang/String;
-    .end local v19    # "value":Ljava/lang/String;
-    :cond_ba
-    move v9, v4
-
-    .line 148
-    .local v9, "matchStart":I
-    :goto_bb
-    const/16 v20, 0xa
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v20
-
-    invoke-virtual {v0, v1, v4}, Ljava/lang/String;->indexOf(II)I
-
-    move-result v4
-
-    if-ltz v4, :cond_12d
+    .line 147
+    .end local v4    # "key":Ljava/lang/String;
+    .end local v12    # "metadatum":Ljava/lang/String;
+    .end local v13    # "metadatumTokens":[Ljava/lang/String;
+    .end local v16    # "value":Ljava/lang/String;
+    :cond_c3
+    move v6, v3
 
     .line 149
+    .local v6, "matchStart":I
+    :goto_c4
+    const/16 v17, 0xa
+
+    move-object/from16 v0, p1
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1, v3}, Ljava/lang/String;->indexOf(II)I
+
+    move-result v3
+
+    if-ltz v3, :cond_136
+
+    .line 150
     invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
 
-    move-result v20
+    move-result v17
 
-    add-int/lit8 v20, v20, -0x1
+    add-int/lit8 v17, v17, -0x1
 
-    move/from16 v0, v20
+    move/from16 v0, v17
 
-    if-ge v4, v0, :cond_f8
+    if-ge v3, v0, :cond_101
 
-    add-int/lit8 v20, v4, 0x1
+    add-int/lit8 v17, v3, 0x1
 
+    .line 151
     move-object/from16 v0, p1
 
-    move/from16 v1, v20
+    move/from16 v1, v17
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
 
-    move-result v20
+    move-result v17
 
-    const/16 v21, 0x20
+    const/16 v18, 0x20
 
-    move/from16 v0, v20
+    move/from16 v0, v17
 
-    move/from16 v1, v21
+    move/from16 v1, v18
 
-    if-eq v0, v1, :cond_f5
+    if-eq v0, v1, :cond_fe
 
-    add-int/lit8 v20, v4, 0x1
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v20
-
-    const/16 v21, 0x9
-
-    move/from16 v0, v20
-
-    move/from16 v1, v21
-
-    if-ne v0, v1, :cond_f8
+    add-int/lit8 v17, v3, 0x1
 
     .line 152
-    :cond_f5
-    add-int/lit8 v4, v4, 0x2
+    move-object/from16 v0, p1
 
-    goto :goto_bb
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
+
+    move-result v17
+
+    const/16 v18, 0x9
+
+    move/from16 v0, v17
+
+    move/from16 v1, v18
+
+    if-ne v0, v1, :cond_101
 
     .line 153
-    :cond_f8
-    if-eqz v17, :cond_12d
+    :cond_fe
+    add-int/lit8 v3, v3, 0x2
 
-    const/16 v20, 0x1
+    goto :goto_c4
 
-    move/from16 v0, v20
+    .line 154
+    :cond_101
+    if-eqz v14, :cond_136
 
-    if-lt v4, v0, :cond_112
+    const/16 v17, 0x1
 
-    add-int/lit8 v20, v4, -0x1
+    move/from16 v0, v17
 
+    if-lt v3, v0, :cond_11b
+
+    add-int/lit8 v17, v3, -0x1
+
+    .line 155
     move-object/from16 v0, p1
 
-    move/from16 v1, v20
+    move/from16 v1, v17
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
 
-    move-result v20
+    move-result v17
 
-    const/16 v21, 0x3d
+    const/16 v18, 0x3d
 
-    move/from16 v0, v20
+    move/from16 v0, v17
 
-    move/from16 v1, v21
+    move/from16 v1, v18
 
-    if-eq v0, v1, :cond_12a
+    if-eq v0, v1, :cond_133
 
-    :cond_112
-    const/16 v20, 0x2
+    :cond_11b
+    const/16 v17, 0x2
 
-    move/from16 v0, v20
+    move/from16 v0, v17
 
-    if-lt v4, v0, :cond_12d
+    if-lt v3, v0, :cond_136
 
-    add-int/lit8 v20, v4, -0x2
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v20
-
-    const/16 v21, 0x3d
-
-    move/from16 v0, v20
-
-    move/from16 v1, v21
-
-    if-ne v0, v1, :cond_12d
+    add-int/lit8 v17, v3, -0x2
 
     .line 156
-    :cond_12a
-    add-int/lit8 v4, v4, 0x1
+    move-object/from16 v0, p1
 
-    goto :goto_bb
+    move/from16 v1, v17
 
-    .line 162
-    :cond_12d
-    if-gez v4, :cond_132
+    invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
 
-    .line 164
-    move v4, v12
+    move-result v17
+
+    const/16 v18, 0x3d
+
+    move/from16 v0, v17
+
+    move/from16 v1, v18
+
+    if-ne v0, v1, :cond_136
+
+    .line 157
+    :cond_133
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_c4
+
+    .line 163
+    :cond_136
+    if-gez v3, :cond_13b
+
+    .line 165
+    move v3, v9
 
     goto/16 :goto_6
 
-    .line 165
-    :cond_132
-    if-le v4, v9, :cond_1e0
-
-    .line 167
-    if-nez v11, :cond_13f
+    .line 166
+    :cond_13b
+    if-le v3, v6, :cond_1ec
 
     .line 168
-    new-instance v11, Ljava/util/ArrayList;
+    if-nez v8, :cond_148
 
-    .end local v11    # "matches":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
-    const/16 v20, 0x1
-
-    move/from16 v0, v20
-
-    invoke-direct {v11, v0}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 170
-    .restart local v11    # "matches":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
-    :cond_13f
-    const/16 v20, 0x1
-
-    move/from16 v0, v20
-
-    if-lt v4, v0, :cond_159
-
-    add-int/lit8 v20, v4, -0x1
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v20
-
-    const/16 v21, 0xd
-
-    move/from16 v0, v20
-
-    move/from16 v1, v21
-
-    if-ne v0, v1, :cond_159
-
-    .line 171
-    add-int/lit8 v4, v4, -0x1
-
-    .line 173
-    :cond_159
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v9, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 174
-    .local v3, "element":Ljava/lang/String;
-    if-eqz p2, :cond_165
-
-    .line 175
-    invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 177
-    :cond_165
-    if-eqz v17, :cond_196
-
-    .line 178
-    move-object/from16 v0, v18
-
-    invoke-static {v3, v0}, Lcom/google/zxing/client/result/VCardResultParser;->decodeQuotedPrintable(Ljava/lang/CharSequence;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 179
-    if-eqz p3, :cond_181
-
-    .line 180
-    sget-object v20, Lcom/google/zxing/client/result/VCardResultParser;->UNESCAPED_SEMICOLONS:Ljava/util/regex/Pattern;
-
-    move-object/from16 v0, v20
-
-    invoke-virtual {v0, v3}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v20
-
-    const-string v21, "\n"
-
-    invoke-virtual/range {v20 .. v21}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v20
-
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 190
-    :cond_181
-    :goto_181
-    if-nez v13, :cond_1d5
-
-    .line 191
+    .line 169
     new-instance v8, Ljava/util/ArrayList;
 
-    const/16 v20, 0x1
+    .end local v8    # "matches":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
+    const/16 v17, 0x1
 
-    move/from16 v0, v20
+    move/from16 v0, v17
 
     invoke-direct {v8, v0}, Ljava/util/ArrayList;-><init>(I)V
 
+    .line 171
+    .restart local v8    # "matches":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
+    :cond_148
+    const/16 v17, 0x1
+
+    move/from16 v0, v17
+
+    if-lt v3, v0, :cond_162
+
+    add-int/lit8 v17, v3, -0x1
+
+    move-object/from16 v0, p1
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
+
+    move-result v17
+
+    const/16 v18, 0xd
+
+    move/from16 v0, v17
+
+    move/from16 v1, v18
+
+    if-ne v0, v1, :cond_162
+
+    .line 172
+    add-int/lit8 v3, v3, -0x1
+
+    .line 174
+    :cond_162
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v6, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 175
+    .local v2, "element":Ljava/lang/String;
+    if-eqz p2, :cond_16e
+
+    .line 176
+    invoke-virtual {v2}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 178
+    :cond_16e
+    if-eqz v14, :cond_19e
+
+    .line 179
+    invoke-static {v2, v15}, Lcom/google/zxing/client/result/VCardResultParser;->decodeQuotedPrintable(Ljava/lang/CharSequence;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 180
+    if-eqz p3, :cond_189
+
+    .line 181
+    sget-object v17, Lcom/google/zxing/client/result/VCardResultParser;->UNESCAPED_SEMICOLONS:Ljava/util/regex/Pattern;
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v0, v2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v17
+
+    const-string/jumbo v18, "\n"
+
+    invoke-virtual/range {v17 .. v18}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v17
+
+    invoke-virtual/range {v17 .. v17}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 191
+    :cond_189
+    :goto_189
+    if-nez v10, :cond_1e1
+
     .line 192
-    .local v8, "match":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    invoke-interface {v8, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    new-instance v5, Ljava/util/ArrayList;
+
+    const/16 v17, 0x1
+
+    move/from16 v0, v17
+
+    invoke-direct {v5, v0}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 193
-    invoke-interface {v11, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    .local v5, "match":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    invoke-interface {v5, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 198
-    .end local v8    # "match":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    :goto_192
-    add-int/lit8 v4, v4, 0x1
+    .line 194
+    invoke-interface {v8, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 199
-    goto/16 :goto_6
-
-    .line 183
-    :cond_196
-    if-eqz p3, :cond_1aa
-
-    .line 184
-    sget-object v20, Lcom/google/zxing/client/result/VCardResultParser;->UNESCAPED_SEMICOLONS:Ljava/util/regex/Pattern;
-
-    move-object/from16 v0, v20
-
-    invoke-virtual {v0, v3}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v20
-
-    const-string v21, "\n"
-
-    invoke-virtual/range {v20 .. v21}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v20
-
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 186
-    :cond_1aa
-    sget-object v20, Lcom/google/zxing/client/result/VCardResultParser;->CR_LF_SPACE_TAB:Ljava/util/regex/Pattern;
-
-    move-object/from16 v0, v20
-
-    invoke-virtual {v0, v3}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v20
-
-    const-string v21, ""
-
-    invoke-virtual/range {v20 .. v21}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 187
-    sget-object v20, Lcom/google/zxing/client/result/VCardResultParser;->NEWLINE_ESCAPE:Ljava/util/regex/Pattern;
-
-    move-object/from16 v0, v20
-
-    invoke-virtual {v0, v3}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v20
-
-    const-string v21, "\n"
-
-    invoke-virtual/range {v20 .. v21}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 188
-    sget-object v20, Lcom/google/zxing/client/result/VCardResultParser;->VCARD_ESCAPES:Ljava/util/regex/Pattern;
-
-    move-object/from16 v0, v20
-
-    invoke-virtual {v0, v3}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v20
-
-    const-string v21, "$1"
-
-    invoke-virtual/range {v20 .. v21}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto :goto_181
-
-    .line 195
-    :cond_1d5
-    const/16 v20, 0x0
-
-    move/from16 v0, v20
-
-    invoke-interface {v13, v0, v3}, Ljava/util/List;->add(ILjava/lang/Object;)V
-
-    .line 196
-    invoke-interface {v11, v13}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_192
+    .end local v5    # "match":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    :goto_19a
+    add-int/lit8 v3, v3, 0x1
 
     .line 200
-    .end local v3    # "element":Ljava/lang/String;
-    :cond_1e0
-    add-int/lit8 v4, v4, 0x1
+    goto/16 :goto_6
+
+    .line 184
+    :cond_19e
+    if-eqz p3, :cond_1b3
+
+    .line 185
+    sget-object v17, Lcom/google/zxing/client/result/VCardResultParser;->UNESCAPED_SEMICOLONS:Ljava/util/regex/Pattern;
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v0, v2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v17
+
+    const-string/jumbo v18, "\n"
+
+    invoke-virtual/range {v17 .. v18}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v17
+
+    invoke-virtual/range {v17 .. v17}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 187
+    :cond_1b3
+    sget-object v17, Lcom/google/zxing/client/result/VCardResultParser;->CR_LF_SPACE_TAB:Ljava/util/regex/Pattern;
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v0, v2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v17
+
+    const-string/jumbo v18, ""
+
+    invoke-virtual/range {v17 .. v18}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 188
+    sget-object v17, Lcom/google/zxing/client/result/VCardResultParser;->NEWLINE_ESCAPE:Ljava/util/regex/Pattern;
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v0, v2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v17
+
+    const-string/jumbo v18, "\n"
+
+    invoke-virtual/range {v17 .. v18}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 189
+    sget-object v17, Lcom/google/zxing/client/result/VCardResultParser;->VCARD_ESCAPES:Ljava/util/regex/Pattern;
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v0, v2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v17
+
+    const-string/jumbo v18, "$1"
+
+    invoke-virtual/range {v17 .. v18}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    goto :goto_189
+
+    .line 196
+    :cond_1e1
+    const/16 v17, 0x0
+
+    move/from16 v0, v17
+
+    invoke-interface {v10, v0, v2}, Ljava/util/List;->add(ILjava/lang/Object;)V
+
+    .line 197
+    invoke-interface {v8, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_19a
+
+    .line 201
+    .end local v2    # "element":Ljava/lang/String;
+    :cond_1ec
+    add-int/lit8 v3, v3, 0x1
 
     goto/16 :goto_6
 .end method
@@ -1169,20 +1170,36 @@
     .line 349
     aget-object v0, p0, p1
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_1c
+
+    aget-object v0, p0, p1
+
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1c
 
     .line 350
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->length()I
+
+    move-result v0
+
+    if-lez v0, :cond_17
+
+    .line 351
     const/16 v0, 0x20
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 351
+    .line 353
+    :cond_17
     aget-object v0, p0, p1
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 353
-    :cond_e
+    .line 355
+    :cond_1c
     return-void
 .end method
 
@@ -1193,30 +1210,36 @@
     .param p2, "result"    # Ljava/lang/StringBuilder;
 
     .prologue
-    .line 244
+    .line 245
     invoke-virtual {p0}, Ljava/io/ByteArrayOutputStream;->size()I
 
     move-result v3
 
-    if-lez v3, :cond_17
+    if-lez v3, :cond_1e
 
-    .line 245
+    .line 246
     invoke-virtual {p0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v2
 
-    .line 247
-    .local v2, "fragmentBytes":[B
-    if-nez p1, :cond_18
-
     .line 248
+    .local v2, "fragmentBytes":[B
+    if-nez p1, :cond_1f
+
+    .line 249
     new-instance v1, Ljava/lang/String;
 
-    invoke-direct {v1, v2}, Ljava/lang/String;-><init>([B)V
+    const-string/jumbo v3, "UTF-8"
+
+    invoke-static {v3}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+
+    move-result-object v3
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
 
     .line 257
     .local v1, "fragment":Ljava/lang/String;
-    :goto_11
+    :goto_18
     invoke-virtual {p0}, Ljava/io/ByteArrayOutputStream;->reset()V
 
     .line 258
@@ -1225,35 +1248,41 @@
     .line 260
     .end local v1    # "fragment":Ljava/lang/String;
     .end local v2    # "fragmentBytes":[B
-    :cond_17
+    :cond_1e
     return-void
 
-    .line 251
+    .line 252
     .restart local v2    # "fragmentBytes":[B
-    :cond_18
-    :try_start_18
+    :cond_1f
+    :try_start_1f
     new-instance v1, Ljava/lang/String;
 
     invoke-direct {v1, v2, p1}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
-    :try_end_1d
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_18 .. :try_end_1d} :catch_1e
+    :try_end_24
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_1f .. :try_end_24} :catch_25
 
     .restart local v1    # "fragment":Ljava/lang/String;
-    goto :goto_11
+    goto :goto_18
 
-    .line 252
+    .line 253
     .end local v1    # "fragment":Ljava/lang/String;
-    :catch_1e
+    :catch_25
     move-exception v0
 
     .line 254
     .local v0, "e":Ljava/io/UnsupportedEncodingException;
     new-instance v1, Ljava/lang/String;
 
-    invoke-direct {v1, v2}, Ljava/lang/String;-><init>([B)V
+    const-string/jumbo v3, "UTF-8"
+
+    invoke-static {v3}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+
+    move-result-object v3
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
 
     .restart local v1    # "fragment":Ljava/lang/String;
-    goto :goto_11
+    goto :goto_18
 .end method
 
 .method private static toPrimaryValue(Ljava/util/List;)Ljava/lang/String;
@@ -1320,89 +1349,88 @@
 
     invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_a
+    if-eqz v3, :cond_a
 
     .line 276
     :cond_8
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     .line 285
     :goto_9
-    return-object v4
+    return-object v3
 
     .line 278
     :cond_a
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
     invoke-interface {p0}, Ljava/util/Collection;->size()I
 
-    move-result v4
+    move-result v3
 
-    invoke-direct {v2, v4}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v1, v3}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 279
-    .local v2, "result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .local v1, "result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    move-result-object v0
+    move-result-object v3
 
-    .local v0, "i$":Ljava/util/Iterator;
     :cond_17
     :goto_17
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
     if-eqz v4, :cond_36
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Ljava/util/List;
+    check-cast v0, Ljava/util/List;
 
     .line 280
-    .local v1, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .local v0, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const/4 v4, 0x0
 
-    invoke-interface {v1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Ljava/lang/String;
+    check-cast v2, Ljava/lang/String;
 
     .line 281
-    .local v3, "value":Ljava/lang/String;
-    if-eqz v3, :cond_17
+    .local v2, "value":Ljava/lang/String;
+    if-eqz v2, :cond_17
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    invoke-virtual {v2}, Ljava/lang/String;->isEmpty()Z
 
     move-result v4
 
-    if-lez v4, :cond_17
+    if-nez v4, :cond_17
 
     .line 282
-    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_17
 
     .line 285
-    .end local v1    # "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    .end local v3    # "value":Ljava/lang/String;
+    .end local v0    # "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .end local v2    # "value":Ljava/lang/String;
     :cond_36
     invoke-interface {p0}, Ljava/util/Collection;->size()I
 
-    move-result v4
+    move-result v3
 
-    new-array v4, v4, [Ljava/lang/String;
+    new-array v3, v3, [Ljava/lang/String;
 
-    invoke-interface {v2, v4}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-interface {v1, v3}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v3
 
-    check-cast v4, [Ljava/lang/String;
+    check-cast v3, [Ljava/lang/String;
 
     goto :goto_9
 .end method
@@ -1429,76 +1457,75 @@
 
     invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
 
-    move-result v7
+    move-result v6
 
-    if-eqz v7, :cond_a
+    if-eqz v6, :cond_a
 
     .line 290
     :cond_8
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
     .line 310
     :goto_9
-    return-object v7
+    return-object v6
 
     .line 292
     :cond_a
-    new-instance v5, Ljava/util/ArrayList;
+    new-instance v4, Ljava/util/ArrayList;
 
     invoke-interface {p0}, Ljava/util/Collection;->size()I
 
-    move-result v7
+    move-result v6
 
-    invoke-direct {v5, v7}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v4, v6}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 293
-    .local v5, "result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .local v4, "result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v6
+
+    :goto_17
+    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_56
+
+    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
-    .local v2, "i$":Ljava/util/Iterator;
-    :goto_17
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_55
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/List;
+    check-cast v2, Ljava/util/List;
 
     .line 294
-    .local v3, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    const/4 v6, 0x0
+    .local v2, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    const/4 v5, 0x0
 
     .line 295
-    .local v6, "type":Ljava/lang/String;
+    .local v5, "type":Ljava/lang/String;
     const/4 v1, 0x1
 
     .local v1, "i":I
     :goto_25
-    invoke-interface {v3}, Ljava/util/List;->size()I
+    invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v7
 
     if-ge v1, v7, :cond_3a
 
     .line 296
-    invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v3
 
-    check-cast v4, Ljava/lang/String;
+    check-cast v3, Ljava/lang/String;
 
     .line 297
-    .local v4, "metadatum":Ljava/lang/String;
+    .local v3, "metadatum":Ljava/lang/String;
     const/16 v7, 0x3d
 
-    invoke-virtual {v4, v7}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {v3, v7}, Ljava/lang/String;->indexOf(I)I
 
     move-result v0
 
@@ -1507,26 +1534,26 @@
     if-gez v0, :cond_3e
 
     .line 300
-    move-object v6, v4
+    move-object v5, v3
 
     .line 308
     .end local v0    # "equals":I
-    .end local v4    # "metadatum":Ljava/lang/String;
+    .end local v3    # "metadatum":Ljava/lang/String;
     :cond_3a
     :goto_3a
-    invoke-interface {v5, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_17
 
     .line 303
     .restart local v0    # "equals":I
-    .restart local v4    # "metadatum":Ljava/lang/String;
+    .restart local v3    # "metadatum":Ljava/lang/String;
     :cond_3e
-    const-string v7, "TYPE"
+    const-string/jumbo v7, "TYPE"
 
     const/4 v8, 0x0
 
-    invoke-virtual {v4, v8, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v3, v8, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v8
 
@@ -1534,20 +1561,20 @@
 
     move-result v7
 
-    if-eqz v7, :cond_52
+    if-eqz v7, :cond_53
 
     .line 304
     add-int/lit8 v7, v0, 0x1
 
-    invoke-virtual {v4, v7}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v3, v7}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
     .line 305
     goto :goto_3a
 
     .line 295
-    :cond_52
+    :cond_53
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_25
@@ -1555,21 +1582,21 @@
     .line 310
     .end local v0    # "equals":I
     .end local v1    # "i":I
-    .end local v3    # "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    .end local v4    # "metadatum":Ljava/lang/String;
-    .end local v6    # "type":Ljava/lang/String;
-    :cond_55
+    .end local v2    # "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .end local v3    # "metadatum":Ljava/lang/String;
+    .end local v5    # "type":Ljava/lang/String;
+    :cond_56
     invoke-interface {p0}, Ljava/util/Collection;->size()I
 
-    move-result v7
+    move-result v6
 
-    new-array v7, v7, [Ljava/lang/String;
+    new-array v6, v6, [Ljava/lang/String;
 
-    invoke-interface {v5, v7}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-interface {v4, v6}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, [Ljava/lang/String;
+    check-cast v6, [Ljava/lang/String;
 
     goto :goto_9
 .end method
@@ -1581,12 +1608,12 @@
     .param p1, "result"    # Lcom/google/zxing/Result;
 
     .prologue
-    .line 53
+    .line 54
     invoke-static/range {p1 .. p1}, Lcom/google/zxing/client/result/VCardResultParser;->getMassagedText(Lcom/google/zxing/Result;)Ljava/lang/String;
 
     move-result-object v29
 
-    .line 54
+    .line 55
     .local v29, "rawText":Ljava/lang/String;
     sget-object v1, Lcom/google/zxing/client/result/VCardResultParser;->BEGIN_VCARD:Ljava/util/regex/Pattern;
 
@@ -1596,7 +1623,7 @@
 
     move-result-object v23
 
-    .line 55
+    .line 56
     .local v23, "m":Ljava/util/regex/Matcher;
     invoke-virtual/range {v23 .. v23}, Ljava/util/regex/Matcher;->find()Z
 
@@ -1610,34 +1637,17 @@
 
     if-eqz v1, :cond_1a
 
-    .line 56
+    .line 57
     :cond_18
     const/4 v1, 0x0
 
-    .line 83
+    .line 98
     :goto_19
     return-object v1
 
-    .line 58
-    :cond_1a
-    const-string v1, "FN"
-
-    const/4 v2, 0x1
-
-    const/4 v4, 0x0
-
-    move-object/from16 v0, v29
-
-    invoke-static {v1, v0, v2, v4}, Lcom/google/zxing/client/result/VCardResultParser;->matchVCardPrefixedField(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)Ljava/util/List;
-
-    move-result-object v24
-
     .line 59
-    .local v24, "names":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
-    if-nez v24, :cond_33
-
-    .line 61
-    const-string v1, "N"
+    :cond_1a
+    const-string/jumbo v1, "FN"
 
     const/4 v2, 0x1
 
@@ -1648,13 +1658,30 @@
     invoke-static {v1, v0, v2, v4}, Lcom/google/zxing/client/result/VCardResultParser;->matchVCardPrefixedField(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)Ljava/util/List;
 
     move-result-object v24
+
+    .line 60
+    .local v24, "names":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
+    if-nez v24, :cond_35
 
     .line 62
+    const-string/jumbo v1, "N"
+
+    const/4 v2, 0x1
+
+    const/4 v4, 0x0
+
+    move-object/from16 v0, v29
+
+    invoke-static {v1, v0, v2, v4}, Lcom/google/zxing/client/result/VCardResultParser;->matchVCardPrefixedField(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)Ljava/util/List;
+
+    move-result-object v24
+
+    .line 63
     invoke-static/range {v24 .. v24}, Lcom/google/zxing/client/result/VCardResultParser;->formatNames(Ljava/lang/Iterable;)V
 
-    .line 64
-    :cond_33
-    const-string v1, "NICKNAME"
+    .line 65
+    :cond_35
+    const-string/jumbo v1, "NICKNAME"
 
     const/4 v2, 0x1
 
@@ -1666,16 +1693,16 @@
 
     move-result-object v25
 
-    .line 65
+    .line 66
     .local v25, "nicknameString":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    if-nez v25, :cond_101
+    if-nez v25, :cond_10e
 
     const/4 v3, 0x0
 
-    .line 66
+    .line 67
     .local v3, "nicknames":[Ljava/lang/String;
-    :goto_40
-    const-string v1, "TEL"
+    :goto_43
+    const-string/jumbo v1, "TEL"
 
     const/4 v2, 0x1
 
@@ -1687,9 +1714,9 @@
 
     move-result-object v28
 
-    .line 67
+    .line 68
     .local v28, "phoneNumbers":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
-    const-string v1, "EMAIL"
+    const-string/jumbo v1, "EMAIL"
 
     const/4 v2, 0x1
 
@@ -1701,9 +1728,9 @@
 
     move-result-object v20
 
-    .line 68
+    .line 69
     .local v20, "emails":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
-    const-string v1, "NOTE"
+    const-string/jumbo v1, "NOTE"
 
     const/4 v2, 0x0
 
@@ -1715,9 +1742,9 @@
 
     move-result-object v26
 
-    .line 69
+    .line 70
     .local v26, "note":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    const-string v1, "ADR"
+    const-string/jumbo v1, "ADR"
 
     const/4 v2, 0x1
 
@@ -1729,9 +1756,9 @@
 
     move-result-object v18
 
-    .line 70
+    .line 71
     .local v18, "addresses":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
-    const-string v1, "ORG"
+    const-string/jumbo v1, "ORG"
 
     const/4 v2, 0x1
 
@@ -1743,9 +1770,9 @@
 
     move-result-object v27
 
-    .line 71
+    .line 72
     .local v27, "org":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    const-string v1, "BDAY"
+    const-string/jumbo v1, "BDAY"
 
     const/4 v2, 0x1
 
@@ -1757,9 +1784,9 @@
 
     move-result-object v19
 
-    .line 72
+    .line 73
     .local v19, "birthday":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    if-eqz v19, :cond_8f
+    if-eqz v19, :cond_98
 
     const/4 v1, 0x0
 
@@ -1775,14 +1802,14 @@
 
     move-result v1
 
-    if-nez v1, :cond_8f
+    if-nez v1, :cond_98
 
-    .line 73
+    .line 74
     const/16 v19, 0x0
 
-    .line 75
-    :cond_8f
-    const-string v1, "TITLE"
+    .line 76
+    :cond_98
+    const-string/jumbo v1, "TITLE"
 
     const/4 v2, 0x1
 
@@ -1794,9 +1821,9 @@
 
     move-result-object v30
 
-    .line 76
+    .line 77
     .local v30, "title":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    const-string v1, "URL"
+    const-string/jumbo v1, "URL"
 
     const/4 v2, 0x1
 
@@ -1808,9 +1835,9 @@
 
     move-result-object v31
 
-    .line 77
+    .line 78
     .local v31, "urls":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
-    const-string v1, "IMPP"
+    const-string/jumbo v1, "IMPP"
 
     const/4 v2, 0x1
 
@@ -1822,9 +1849,9 @@
 
     move-result-object v22
 
-    .line 78
+    .line 79
     .local v22, "instantMessenger":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    const-string v1, "GEO"
+    const-string/jumbo v1, "GEO"
 
     const/4 v2, 0x1
 
@@ -1836,16 +1863,16 @@
 
     move-result-object v21
 
-    .line 79
+    .line 80
     .local v21, "geoString":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    if-nez v21, :cond_112
+    if-nez v21, :cond_11f
 
     const/16 v17, 0x0
 
-    .line 80
+    .line 81
     .local v17, "geo":[Ljava/lang/String;
-    :goto_bb
-    if-eqz v17, :cond_c5
+    :goto_c8
+    if-eqz v17, :cond_d2
 
     move-object/from16 v0, v17
 
@@ -1853,13 +1880,13 @@
 
     const/4 v2, 0x2
 
-    if-eq v1, v2, :cond_c5
+    if-eq v1, v2, :cond_d2
 
-    .line 81
+    .line 82
     const/16 v17, 0x0
 
-    .line 83
-    :cond_c5
+    .line 84
+    :cond_d2
     new-instance v1, Lcom/google/zxing/client/result/AddressBookParsedResult;
 
     invoke-static/range {v24 .. v24}, Lcom/google/zxing/client/result/VCardResultParser;->toPrimaryValues(Ljava/util/Collection;)[Ljava/lang/String;
@@ -1868,50 +1895,62 @@
 
     const/4 v4, 0x0
 
+    .line 87
     invoke-static/range {v28 .. v28}, Lcom/google/zxing/client/result/VCardResultParser;->toPrimaryValues(Ljava/util/Collection;)[Ljava/lang/String;
 
     move-result-object v5
 
+    .line 88
     invoke-static/range {v28 .. v28}, Lcom/google/zxing/client/result/VCardResultParser;->toTypes(Ljava/util/Collection;)[Ljava/lang/String;
 
     move-result-object v6
 
+    .line 89
     invoke-static/range {v20 .. v20}, Lcom/google/zxing/client/result/VCardResultParser;->toPrimaryValues(Ljava/util/Collection;)[Ljava/lang/String;
 
     move-result-object v7
 
+    .line 90
     invoke-static/range {v20 .. v20}, Lcom/google/zxing/client/result/VCardResultParser;->toTypes(Ljava/util/Collection;)[Ljava/lang/String;
 
     move-result-object v8
 
+    .line 91
     invoke-static/range {v22 .. v22}, Lcom/google/zxing/client/result/VCardResultParser;->toPrimaryValue(Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v9
 
+    .line 92
     invoke-static/range {v26 .. v26}, Lcom/google/zxing/client/result/VCardResultParser;->toPrimaryValue(Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v10
 
+    .line 93
     invoke-static/range {v18 .. v18}, Lcom/google/zxing/client/result/VCardResultParser;->toPrimaryValues(Ljava/util/Collection;)[Ljava/lang/String;
 
     move-result-object v11
 
+    .line 94
     invoke-static/range {v18 .. v18}, Lcom/google/zxing/client/result/VCardResultParser;->toTypes(Ljava/util/Collection;)[Ljava/lang/String;
 
     move-result-object v12
 
+    .line 95
     invoke-static/range {v27 .. v27}, Lcom/google/zxing/client/result/VCardResultParser;->toPrimaryValue(Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v13
 
+    .line 96
     invoke-static/range {v19 .. v19}, Lcom/google/zxing/client/result/VCardResultParser;->toPrimaryValue(Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v14
 
+    .line 97
     invoke-static/range {v30 .. v30}, Lcom/google/zxing/client/result/VCardResultParser;->toPrimaryValue(Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v15
 
+    .line 98
     invoke-static/range {v31 .. v31}, Lcom/google/zxing/client/result/VCardResultParser;->toPrimaryValues(Ljava/util/Collection;)[Ljava/lang/String;
 
     move-result-object v16
@@ -1920,7 +1959,7 @@
 
     goto/16 :goto_19
 
-    .line 65
+    .line 66
     .end local v3    # "nicknames":[Ljava/lang/String;
     .end local v17    # "geo":[Ljava/lang/String;
     .end local v18    # "addresses":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
@@ -1933,7 +1972,7 @@
     .end local v28    # "phoneNumbers":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
     .end local v30    # "title":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .end local v31    # "urls":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
-    :cond_101
+    :cond_10e
     sget-object v2, Lcom/google/zxing/client/result/VCardResultParser;->COMMA:Ljava/util/regex/Pattern;
 
     const/4 v1, 0x0
@@ -1950,9 +1989,9 @@
 
     move-result-object v3
 
-    goto/16 :goto_40
+    goto/16 :goto_43
 
-    .line 79
+    .line 80
     .restart local v3    # "nicknames":[Ljava/lang/String;
     .restart local v18    # "addresses":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
     .restart local v19    # "birthday":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
@@ -1964,7 +2003,7 @@
     .restart local v28    # "phoneNumbers":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
     .restart local v30    # "title":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .restart local v31    # "urls":Ljava/util/List;, "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;"
-    :cond_112
+    :cond_11f
     sget-object v2, Lcom/google/zxing/client/result/VCardResultParser;->SEMICOLON_OR_COMMA:Ljava/util/regex/Pattern;
 
     const/4 v1, 0x0
@@ -1981,15 +2020,14 @@
 
     move-result-object v17
 
-    goto :goto_bb
+    goto :goto_c8
 .end method
 
 .method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .registers 3
-    .param p1, "x0"    # Lcom/google/zxing/Result;
 
     .prologue
-    .line 35
+    .line 36
     invoke-virtual {p0, p1}, Lcom/google/zxing/client/result/VCardResultParser;->parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/AddressBookParsedResult;
 
     move-result-object v0

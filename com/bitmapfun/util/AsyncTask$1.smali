@@ -1,4 +1,4 @@
-.class Lcom/bitmapfun/util/AsyncTask$1;
+.class final Lcom/bitmapfun/util/AsyncTask$1;
 .super Ljava/lang/Object;
 .source "AsyncTask.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x8
     name = null
 .end annotation
 
@@ -26,10 +26,10 @@
     .registers 3
 
     .prologue
-    .line 205
+    .line 204
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 206
+    .line 205
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v1, 0x1
@@ -38,7 +38,6 @@
 
     iput-object v0, p0, Lcom/bitmapfun/util/AsyncTask$1;->mCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 1
     return-void
 .end method
 
@@ -49,14 +48,18 @@
     .param p1, "r"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 209
+    .line 208
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "AsyncTask #"
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string/jumbo v2, "AsyncTask #"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-object v2, p0, Lcom/bitmapfun/util/AsyncTask$1;->mCount:Ljava/util/concurrent/atomic/AtomicInteger;
 

@@ -37,7 +37,7 @@
 
     .prologue
     .line 24
-    const-string v0, "display"
+    const-string/jumbo v0, "display"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

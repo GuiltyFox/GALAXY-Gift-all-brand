@@ -351,10 +351,10 @@
     :try_start_7
     sget-object v3, Landroid/support/v4/app/NotificationCompatJellybean;->sActionsField:Ljava/lang/reflect/Field;
 
-    if-nez v3, :cond_41
+    if-nez v3, :cond_46
 
     .line 323
-    const-string v3, "android.app.Notification$Action"
+    const-string/jumbo v3, "android.app.Notification$Action"
 
     invoke-static {v3}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -365,7 +365,7 @@
     .line 324
     sget-object v3, Landroid/support/v4/app/NotificationCompatJellybean;->sActionClass:Ljava/lang/Class;
 
-    const-string v4, "icon"
+    const-string/jumbo v4, "icon"
 
     invoke-virtual {v3, v4}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
@@ -376,7 +376,7 @@
     .line 325
     sget-object v3, Landroid/support/v4/app/NotificationCompatJellybean;->sActionClass:Ljava/lang/Class;
 
-    const-string v4, "title"
+    const-string/jumbo v4, "title"
 
     invoke-virtual {v3, v4}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
@@ -387,7 +387,7 @@
     .line 326
     sget-object v3, Landroid/support/v4/app/NotificationCompatJellybean;->sActionClass:Ljava/lang/Class;
 
-    const-string v4, "actionIntent"
+    const-string/jumbo v4, "actionIntent"
 
     invoke-virtual {v3, v4}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
@@ -398,7 +398,7 @@
     .line 327
     const-class v3, Landroid/app/Notification;
 
-    const-string v4, "actions"
+    const-string/jumbo v4, "actions"
 
     invoke-virtual {v3, v4}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
@@ -412,63 +412,63 @@
     const/4 v4, 0x1
 
     invoke-virtual {v3, v4}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-    :try_end_41
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_7 .. :try_end_41} :catch_47
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_7 .. :try_end_41} :catch_52
+    :try_end_46
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_7 .. :try_end_46} :catch_4c
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_7 .. :try_end_46} :catch_59
 
     .line 337
-    :cond_41
-    :goto_41
+    :cond_46
+    :goto_46
     sget-boolean v3, Landroid/support/v4/app/NotificationCompatJellybean;->sActionsAccessFailed:Z
 
-    if-nez v3, :cond_5d
+    if-nez v3, :cond_66
 
-    :goto_45
+    :goto_4a
     move v2, v1
 
     goto :goto_6
 
     .line 330
-    :catch_47
+    :catch_4c
     move-exception v0
 
     .line 331
     .local v0, "e":Ljava/lang/ClassNotFoundException;
-    const-string v3, "NotificationCompat"
+    const-string/jumbo v3, "NotificationCompat"
 
-    const-string v4, "Unable to access notification actions"
+    const-string/jumbo v4, "Unable to access notification actions"
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 332
     sput-boolean v1, Landroid/support/v4/app/NotificationCompatJellybean;->sActionsAccessFailed:Z
 
-    goto :goto_41
+    goto :goto_46
 
     .line 333
     .end local v0    # "e":Ljava/lang/ClassNotFoundException;
-    :catch_52
+    :catch_59
     move-exception v0
 
     .line 334
     .local v0, "e":Ljava/lang/NoSuchFieldException;
-    const-string v3, "NotificationCompat"
+    const-string/jumbo v3, "NotificationCompat"
 
-    const-string v4, "Unable to access notification actions"
+    const-string/jumbo v4, "Unable to access notification actions"
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 335
     sput-boolean v1, Landroid/support/v4/app/NotificationCompatJellybean;->sActionsAccessFailed:Z
 
-    goto :goto_41
+    goto :goto_46
 
     .end local v0    # "e":Ljava/lang/NoSuchFieldException;
-    :cond_5d
+    :cond_66
     move v1, v2
 
     .line 337
-    goto :goto_45
+    goto :goto_4a
 .end method
 
 .method public static getAction(Landroid/app/Notification;ILandroid/support/v4/app/NotificationCompatBase$Action$Factory;Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput$Factory;)Landroid/support/v4/app/NotificationCompatBase$Action;
@@ -504,10 +504,10 @@
 
     .line 282
     .local v9, "extras":Landroid/os/Bundle;
-    if-eqz v9, :cond_1e
+    if-eqz v9, :cond_1f
 
     .line 283
-    const-string v0, "android.support.actionExtras"
+    const-string/jumbo v0, "android.support.actionExtras"
 
     invoke-virtual {v9, v0}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
 
@@ -515,7 +515,7 @@
 
     .line 285
     .local v6, "actionExtrasMap":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/os/Bundle;>;"
-    if-eqz v6, :cond_1e
+    if-eqz v6, :cond_1f
 
     .line 286
     invoke-virtual {v6, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -528,7 +528,7 @@
     .line 289
     .end local v6    # "actionExtrasMap":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/os/Bundle;>;"
     .restart local v5    # "actionExtras":Landroid/os/Bundle;
-    :cond_1e
+    :cond_1f
     sget-object v0, Landroid/support/v4/app/NotificationCompatJellybean;->sActionIconField:Ljava/lang/reflect/Field;
 
     invoke-virtual {v0, v7}, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
@@ -556,31 +556,31 @@
     move-object v1, p3
 
     invoke-static/range {v0 .. v5}, Landroid/support/v4/app/NotificationCompatJellybean;->readAction(Landroid/support/v4/app/NotificationCompatBase$Action$Factory;Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput$Factory;ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;)Landroid/support/v4/app/NotificationCompatBase$Action;
-    :try_end_39
-    .catch Ljava/lang/IllegalAccessException; {:try_start_3 .. :try_end_39} :catch_3c
-    .catchall {:try_start_3 .. :try_end_39} :catchall_4a
+    :try_end_3a
+    .catch Ljava/lang/IllegalAccessException; {:try_start_3 .. :try_end_3a} :catch_3d
+    .catchall {:try_start_3 .. :try_end_3a} :catchall_4d
 
     move-result-object v0
 
-    :try_start_3a
+    :try_start_3b
     monitor-exit v10
 
     .line 299
     .end local v5    # "actionExtras":Landroid/os/Bundle;
     .end local v7    # "actionObject":Ljava/lang/Object;
     .end local v9    # "extras":Landroid/os/Bundle;
-    :goto_3b
+    :goto_3c
     return-object v0
 
     .line 294
-    :catch_3c
+    :catch_3d
     move-exception v8
 
     .line 295
     .local v8, "e":Ljava/lang/IllegalAccessException;
-    const-string v0, "NotificationCompat"
+    const-string/jumbo v0, "NotificationCompat"
 
-    const-string v1, "Unable to access notification actions"
+    const-string/jumbo v1, "Unable to access notification actions"
 
     invoke-static {v0, v1, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -595,16 +595,16 @@
     .line 299
     const/4 v0, 0x0
 
-    goto :goto_3b
+    goto :goto_3c
 
     .line 298
     .end local v8    # "e":Ljava/lang/IllegalAccessException;
-    :catchall_4a
+    :catchall_4d
     move-exception v0
 
     monitor-exit v10
-    :try_end_4c
-    .catchall {:try_start_3a .. :try_end_4c} :catchall_4a
+    :try_end_4f
+    .catchall {:try_start_3b .. :try_end_4f} :catchall_4d
 
     throw v0
 .end method
@@ -661,19 +661,19 @@
 
     .prologue
     .line 358
-    const-string v0, "icon"
+    const-string/jumbo v0, "icon"
 
     invoke-virtual {p0, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v1
 
-    const-string v0, "title"
+    const-string/jumbo v0, "title"
 
     invoke-virtual {p0, v0}, Landroid/os/Bundle;->getCharSequence(Ljava/lang/String;)Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    const-string v0, "actionIntent"
+    const-string/jumbo v0, "actionIntent"
 
     invoke-virtual {p0, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
@@ -681,13 +681,13 @@
 
     check-cast v3, Landroid/app/PendingIntent;
 
-    const-string v0, "extras"
+    const-string/jumbo v0, "extras"
 
     invoke-virtual {p0, v0}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object v4
 
-    const-string v0, "remoteInputs"
+    const-string/jumbo v0, "remoteInputs"
 
     invoke-static {p0, v0}, Landroid/support/v4/app/BundleUtil;->getBundleArrayFromBundle(Landroid/os/Bundle;Ljava/lang/String;)[Landroid/os/Bundle;
 
@@ -775,9 +775,9 @@
     .line 310
     .local v0, "e":Ljava/lang/IllegalAccessException;
     :try_start_1d
-    const-string v1, "NotificationCompat"
+    const-string/jumbo v1, "NotificationCompat"
 
-    const-string v4, "Unable to access notification actions"
+    const-string/jumbo v4, "Unable to access notification actions"
 
     invoke-static {v1, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -788,8 +788,8 @@
 
     .line 312
     monitor-exit v3
-    :try_end_28
-    .catchall {:try_start_1d .. :try_end_28} :catchall_19
+    :try_end_2a
+    .catchall {:try_start_1d .. :try_end_2a} :catchall_19
 
     move-object v1, v2
 
@@ -877,7 +877,7 @@
 
     .line 382
     .local v0, "bundle":Landroid/os/Bundle;
-    const-string v1, "icon"
+    const-string/jumbo v1, "icon"
 
     invoke-virtual {p0}, Landroid/support/v4/app/NotificationCompatBase$Action;->getIcon()I
 
@@ -886,7 +886,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     .line 383
-    const-string v1, "title"
+    const-string/jumbo v1, "title"
 
     invoke-virtual {p0}, Landroid/support/v4/app/NotificationCompatBase$Action;->getTitle()Ljava/lang/CharSequence;
 
@@ -895,7 +895,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
     .line 384
-    const-string v1, "actionIntent"
+    const-string/jumbo v1, "actionIntent"
 
     invoke-virtual {p0}, Landroid/support/v4/app/NotificationCompatBase$Action;->getActionIntent()Landroid/app/PendingIntent;
 
@@ -904,7 +904,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     .line 385
-    const-string v1, "extras"
+    const-string/jumbo v1, "extras"
 
     invoke-virtual {p0}, Landroid/support/v4/app/NotificationCompatBase$Action;->getExtras()Landroid/os/Bundle;
 
@@ -913,7 +913,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 386
-    const-string v1, "remoteInputs"
+    const-string/jumbo v1, "remoteInputs"
 
     invoke-virtual {p0}, Landroid/support/v4/app/NotificationCompatBase$Action;->getRemoteInputs()[Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;
 
@@ -950,7 +950,7 @@
     .line 214
     monitor-exit v4
     :try_end_9
-    .catchall {:try_start_4 .. :try_end_9} :catchall_4c
+    .catchall {:try_start_4 .. :try_end_9} :catchall_4f
 
     move-object v1, v3
 
@@ -963,12 +963,12 @@
     :try_start_b
     sget-object v5, Landroid/support/v4/app/NotificationCompatJellybean;->sExtrasField:Ljava/lang/reflect/Field;
 
-    if-nez v5, :cond_36
+    if-nez v5, :cond_39
 
     .line 218
     const-class v5, Landroid/app/Notification;
 
-    const-string v6, "extras"
+    const-string/jumbo v6, "extras"
 
     invoke-virtual {v5, v6}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
@@ -986,12 +986,12 @@
 
     move-result v5
 
-    if-nez v5, :cond_30
+    if-nez v5, :cond_33
 
     .line 220
-    const-string v5, "NotificationCompat"
+    const-string/jumbo v5, "NotificationCompat"
 
-    const-string v6, "Notification.extras field is not of type Bundle"
+    const-string/jumbo v6, "Notification.extras field is not of type Bundle"
 
     invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -999,26 +999,26 @@
     const/4 v5, 0x1
 
     sput-boolean v5, Landroid/support/v4/app/NotificationCompatJellybean;->sExtrasFieldAccessFailed:Z
-    :try_end_2d
-    .catch Ljava/lang/IllegalAccessException; {:try_start_b .. :try_end_2d} :catch_4f
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_b .. :try_end_2d} :catch_5d
-    .catchall {:try_start_b .. :try_end_2d} :catchall_4c
+    :try_end_30
+    .catch Ljava/lang/IllegalAccessException; {:try_start_b .. :try_end_30} :catch_52
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_b .. :try_end_30} :catch_62
+    .catchall {:try_start_b .. :try_end_30} :catchall_4f
 
     .line 222
-    :try_start_2d
+    :try_start_30
     monitor-exit v4
-    :try_end_2e
-    .catchall {:try_start_2d .. :try_end_2e} :catchall_4c
+    :try_end_31
+    .catchall {:try_start_30 .. :try_end_31} :catchall_4f
 
     move-object v1, v3
 
     goto :goto_a
 
     .line 224
-    :cond_30
+    :cond_33
     const/4 v5, 0x1
 
-    :try_start_31
+    :try_start_34
     invoke-virtual {v2, v5}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
     .line 225
@@ -1026,7 +1026,7 @@
 
     .line 227
     .end local v2    # "extrasField":Ljava/lang/reflect/Field;
-    :cond_36
+    :cond_39
     sget-object v5, Landroid/support/v4/app/NotificationCompatJellybean;->sExtrasField:Ljava/lang/reflect/Field;
 
     invoke-virtual {v5, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1037,7 +1037,7 @@
 
     .line 228
     .local v1, "extras":Landroid/os/Bundle;
-    if-nez v1, :cond_4a
+    if-nez v1, :cond_4d
 
     .line 229
     new-instance v1, Landroid/os/Bundle;
@@ -1050,45 +1050,45 @@
     sget-object v5, Landroid/support/v4/app/NotificationCompatJellybean;->sExtrasField:Ljava/lang/reflect/Field;
 
     invoke-virtual {v5, p0, v1}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_4a
-    .catch Ljava/lang/IllegalAccessException; {:try_start_31 .. :try_end_4a} :catch_4f
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_31 .. :try_end_4a} :catch_5d
-    .catchall {:try_start_31 .. :try_end_4a} :catchall_4c
+    :try_end_4d
+    .catch Ljava/lang/IllegalAccessException; {:try_start_34 .. :try_end_4d} :catch_52
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_34 .. :try_end_4d} :catch_62
+    .catchall {:try_start_34 .. :try_end_4d} :catchall_4f
 
     .line 232
-    :cond_4a
-    :try_start_4a
+    :cond_4d
+    :try_start_4d
     monitor-exit v4
 
     goto :goto_a
 
     .line 240
     .end local v1    # "extras":Landroid/os/Bundle;
-    :catchall_4c
+    :catchall_4f
     move-exception v3
 
     monitor-exit v4
-    :try_end_4e
-    .catchall {:try_start_4a .. :try_end_4e} :catchall_4c
+    :try_end_51
+    .catchall {:try_start_4d .. :try_end_51} :catchall_4f
 
     throw v3
 
     .line 233
-    :catch_4f
+    :catch_52
     move-exception v0
 
     .line 234
     .local v0, "e":Ljava/lang/IllegalAccessException;
-    :try_start_50
-    const-string v5, "NotificationCompat"
+    :try_start_53
+    const-string/jumbo v5, "NotificationCompat"
 
-    const-string v6, "Unable to access notification extras"
+    const-string/jumbo v6, "Unable to access notification extras"
 
     invoke-static {v5, v6, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 238
     .end local v0    # "e":Ljava/lang/IllegalAccessException;
-    :goto_57
+    :goto_5c
     const/4 v5, 0x1
 
     sput-boolean v5, Landroid/support/v4/app/NotificationCompatJellybean;->sExtrasFieldAccessFailed:Z
@@ -1101,20 +1101,20 @@
     goto :goto_a
 
     .line 235
-    :catch_5d
+    :catch_62
     move-exception v0
 
     .line 236
     .local v0, "e":Ljava/lang/NoSuchFieldException;
-    const-string v5, "NotificationCompat"
+    const-string/jumbo v5, "NotificationCompat"
 
-    const-string v6, "Unable to access notification extras"
+    const-string/jumbo v6, "Unable to access notification extras"
 
     invoke-static {v5, v6, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_65
-    .catchall {:try_start_50 .. :try_end_65} :catchall_4c
+    :try_end_6c
+    .catchall {:try_start_53 .. :try_end_6c} :catchall_4f
 
-    goto :goto_57
+    goto :goto_5c
 .end method
 
 .method public static getGroup(Landroid/app/Notification;)Ljava/lang/String;
@@ -1127,7 +1127,7 @@
 
     move-result-object v0
 
-    const-string v1, "android.support.groupKey"
+    const-string/jumbo v1, "android.support.groupKey"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -1146,7 +1146,7 @@
 
     move-result-object v0
 
-    const-string v1, "android.support.localOnly"
+    const-string/jumbo v1, "android.support.localOnly"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
@@ -1229,7 +1229,7 @@
 
     move-result-object v0
 
-    const-string v1, "android.support.sortKey"
+    const-string/jumbo v1, "android.support.sortKey"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -1248,7 +1248,7 @@
 
     move-result-object v0
 
-    const-string v1, "android.support.isGroupSummary"
+    const-string/jumbo v1, "android.support.isGroupSummary"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
@@ -1272,10 +1272,10 @@
 
     .line 248
     .local v5, "remoteInputs":[Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;
-    if-eqz p5, :cond_d
+    if-eqz p5, :cond_e
 
     .line 249
-    const-string v0, "android.support.remoteInputs"
+    const-string/jumbo v0, "android.support.remoteInputs"
 
     invoke-static {p5, v0}, Landroid/support/v4/app/BundleUtil;->getBundleArrayFromBundle(Landroid/os/Bundle;Ljava/lang/String;)[Landroid/os/Bundle;
 
@@ -1285,7 +1285,7 @@
 
     move-result-object v5
 
-    :cond_d
+    :cond_e
     move-object v0, p0
 
     move v1, p2
@@ -1340,10 +1340,10 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_2c
 
     .line 261
-    const-string v1, "android.support.remoteInputs"
+    const-string/jumbo v1, "android.support.remoteInputs"
 
     invoke-virtual {p1}, Landroid/support/v4/app/NotificationCompatBase$Action;->getRemoteInputs()[Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;
 
@@ -1356,6 +1356,6 @@
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putParcelableArray(Ljava/lang/String;[Landroid/os/Parcelable;)V
 
     .line 264
-    :cond_2b
+    :cond_2c
     return-object v0
 .end method

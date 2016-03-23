@@ -16,13 +16,6 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;"
-    }
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
@@ -31,12 +24,13 @@
 # direct methods
 .method constructor <init>(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;)V
     .registers 2
+    .param p1, "this$0"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
 
     .prologue
-    .line 1
+    .line 1277
+    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$3;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$3;"
     iput-object p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$3;->this$0:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
 
-    .line 1277
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,6 +43,7 @@
 
     .prologue
     .line 1281
+    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$3;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$3;"
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$3;->this$0:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
 
     const/4 v1, 0x0
@@ -60,7 +55,7 @@
     const/4 v6, 0x0
 
     # invokes: Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->smoothScrollTo(IJJLcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
-    invoke-static/range {v0 .. v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->access$5(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;IJJLcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
+    invoke-static/range {v0 .. v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->access$100(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;IJJLcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
 
     .line 1282
     return-void

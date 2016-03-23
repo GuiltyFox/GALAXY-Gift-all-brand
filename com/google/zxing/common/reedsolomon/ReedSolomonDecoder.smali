@@ -115,7 +115,7 @@
     .line 158
     new-instance v4, Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
 
-    const-string v5, "Error locator degree does not match number of roots"
+    const-string/jumbo v5, "Error locator degree does not match number of roots"
 
     invoke-direct {v4, v5}, Lcom/google/zxing/common/reedsolomon/ReedSolomonException;-><init>(Ljava/lang/String;)V
 
@@ -219,10 +219,12 @@
 
     iget-object v10, p0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
+    .line 182
     invoke-virtual {v10, v0}, Lcom/google/zxing/common/reedsolomon/GenericGF;->inverse(I)I
 
     move-result v10
 
+    .line 181
     invoke-virtual {v8, v9, v10}, Lcom/google/zxing/common/reedsolomon/GenericGF;->multiply(II)I
 
     move-result v8
@@ -261,6 +263,371 @@
     .end local v7    # "xiInverse":I
     :cond_55
     return-object v3
+.end method
+
+.method private runEuclideanAlgorithm(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;Lcom/google/zxing/common/reedsolomon/GenericGFPoly;I)[Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .registers 24
+    .param p1, "a"    # Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .param p2, "b"    # Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .param p3, "R"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
+        }
+    .end annotation
+
+    .prologue
+    .line 91
+    invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
+
+    move-result v18
+
+    invoke-virtual/range {p2 .. p2}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
+
+    move-result v19
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-ge v0, v1, :cond_14
+
+    .line 92
+    move-object/from16 v17, p1
+
+    .line 93
+    .local v17, "temp":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    move-object/from16 p1, p2
+
+    .line 94
+    move-object/from16 p2, v17
+
+    .line 97
+    .end local v17    # "temp":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    :cond_14
+    move-object/from16 v9, p1
+
+    .line 98
+    .local v9, "rLast":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    move-object/from16 v8, p2
+
+    .line 99
+    .local v8, "r":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Lcom/google/zxing/common/reedsolomon/GenericGF;->getZero()Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+
+    move-result-object v15
+
+    .line 100
+    .local v15, "tLast":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Lcom/google/zxing/common/reedsolomon/GenericGF;->getOne()Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+
+    move-result-object v14
+
+    .line 103
+    .local v14, "t":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    :cond_2c
+    invoke-virtual {v8}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
+
+    move-result v18
+
+    div-int/lit8 v19, p3, 0x2
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-lt v0, v1, :cond_e3
+
+    .line 104
+    move-object v10, v9
+
+    .line 105
+    .local v10, "rLastLast":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    move-object/from16 v16, v15
+
+    .line 106
+    .local v16, "tLastLast":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    move-object v9, v8
+
+    .line 107
+    move-object v15, v14
+
+    .line 110
+    invoke-virtual {v9}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->isZero()Z
+
+    move-result v18
+
+    if-eqz v18, :cond_4c
+
+    .line 112
+    new-instance v18, Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
+
+    const-string/jumbo v19, "r_{i-1} was zero"
+
+    invoke-direct/range {v18 .. v19}, Lcom/google/zxing/common/reedsolomon/ReedSolomonException;-><init>(Ljava/lang/String;)V
+
+    throw v18
+
+    .line 114
+    :cond_4c
+    move-object v8, v10
+
+    .line 115
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Lcom/google/zxing/common/reedsolomon/GenericGF;->getZero()Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+
+    move-result-object v7
+
+    .line 116
+    .local v7, "q":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    invoke-virtual {v9}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
+
+    move-result v18
+
+    move/from16 v0, v18
+
+    invoke-virtual {v9, v0}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getCoefficient(I)I
+
+    move-result v3
+
+    .line 117
+    .local v3, "denominatorLeadingTerm":I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v3}, Lcom/google/zxing/common/reedsolomon/GenericGF;->inverse(I)I
+
+    move-result v4
+
+    .line 118
+    .local v4, "dltInverse":I
+    :goto_6d
+    invoke-virtual {v8}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
+
+    move-result v18
+
+    invoke-virtual {v9}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
+
+    move-result v19
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-lt v0, v1, :cond_c0
+
+    invoke-virtual {v8}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->isZero()Z
+
+    move-result v18
+
+    if-nez v18, :cond_c0
+
+    .line 119
+    invoke-virtual {v8}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
+
+    move-result v18
+
+    invoke-virtual {v9}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
+
+    move-result v19
+
+    sub-int v2, v18, v19
+
+    .line 120
+    .local v2, "degreeDiff":I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual {v8}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
+
+    move-result v19
+
+    move/from16 v0, v19
+
+    invoke-virtual {v8, v0}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getCoefficient(I)I
+
+    move-result v19
+
+    move-object/from16 v0, v18
+
+    move/from16 v1, v19
+
+    invoke-virtual {v0, v1, v4}, Lcom/google/zxing/common/reedsolomon/GenericGF;->multiply(II)I
+
+    move-result v11
+
+    .line 121
+    .local v11, "scale":I
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v2, v11}, Lcom/google/zxing/common/reedsolomon/GenericGF;->buildMonomial(II)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+
+    move-result-object v18
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v7, v0}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->addOrSubtract(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+
+    move-result-object v7
+
+    .line 122
+    invoke-virtual {v9, v2, v11}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->multiplyByMonomial(II)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+
+    move-result-object v18
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v8, v0}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->addOrSubtract(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+
+    move-result-object v8
+
+    .line 123
+    goto :goto_6d
+
+    .line 125
+    .end local v2    # "degreeDiff":I
+    .end local v11    # "scale":I
+    :cond_c0
+    invoke-virtual {v7, v15}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->multiply(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+
+    move-result-object v18
+
+    move-object/from16 v0, v18
+
+    move-object/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->addOrSubtract(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+
+    move-result-object v14
+
+    .line 127
+    invoke-virtual {v8}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
+
+    move-result v18
+
+    invoke-virtual {v9}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
+
+    move-result v19
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-lt v0, v1, :cond_2c
+
+    .line 128
+    new-instance v18, Ljava/lang/IllegalStateException;
+
+    const-string/jumbo v19, "Division algorithm failed to reduce polynomial?"
+
+    invoke-direct/range {v18 .. v19}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v18
+
+    .line 132
+    .end local v3    # "denominatorLeadingTerm":I
+    .end local v4    # "dltInverse":I
+    .end local v7    # "q":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .end local v10    # "rLastLast":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .end local v16    # "tLastLast":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    :cond_e3
+    const/16 v18, 0x0
+
+    move/from16 v0, v18
+
+    invoke-virtual {v14, v0}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getCoefficient(I)I
+
+    move-result v13
+
+    .line 133
+    .local v13, "sigmaTildeAtZero":I
+    if-nez v13, :cond_f6
+
+    .line 134
+    new-instance v18, Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
+
+    const-string/jumbo v19, "sigmaTilde(0) was zero"
+
+    invoke-direct/range {v18 .. v19}, Lcom/google/zxing/common/reedsolomon/ReedSolomonException;-><init>(Ljava/lang/String;)V
+
+    throw v18
+
+    .line 137
+    :cond_f6
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v13}, Lcom/google/zxing/common/reedsolomon/GenericGF;->inverse(I)I
+
+    move-result v5
+
+    .line 138
+    .local v5, "inverse":I
+    invoke-virtual {v14, v5}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->multiply(I)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+
+    move-result-object v12
+
+    .line 139
+    .local v12, "sigma":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    invoke-virtual {v8, v5}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->multiply(I)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+
+    move-result-object v6
+
+    .line 140
+    .local v6, "omega":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    const/16 v18, 0x2
+
+    move/from16 v0, v18
+
+    new-array v0, v0, [Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+
+    move-object/from16 v18, v0
+
+    const/16 v19, 0x0
+
+    aput-object v12, v18, v19
+
+    const/16 v19, 0x1
+
+    aput-object v6, v18, v19
+
+    return-object v18
 .end method
 
 
@@ -379,6 +746,7 @@
 
     const/4 v15, 0x1
 
+    .line 74
     move/from16 v0, p2
 
     invoke-virtual {v14, v0, v15}, Lcom/google/zxing/common/reedsolomon/GenericGF;->buildMonomial(II)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
@@ -389,7 +757,7 @@
 
     move/from16 v1, p2
 
-    invoke-virtual {v0, v14, v12, v1}, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->runEuclideanAlgorithm(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;Lcom/google/zxing/common/reedsolomon/GenericGFPoly;I)[Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    invoke-direct {v0, v14, v12, v1}, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->runEuclideanAlgorithm(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;Lcom/google/zxing/common/reedsolomon/GenericGFPoly;I)[Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
     move-result-object v11
 
@@ -451,19 +819,19 @@
 
     .line 81
     .local v9, "position":I
-    if-gez v9, :cond_86
+    if-gez v9, :cond_87
 
     .line 82
     new-instance v14, Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
 
-    const-string v15, "Bad error location"
+    const-string/jumbo v15, "Bad error location"
 
     invoke-direct {v14, v15}, Lcom/google/zxing/common/reedsolomon/ReedSolomonException;-><init>(Ljava/lang/String;)V
 
     throw v14
 
     .line 84
-    :cond_86
+    :cond_87
     aget v14, p1, v9
 
     aget v15, v3, v5
@@ -478,369 +846,4 @@
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_68
-.end method
-
-.method public runEuclideanAlgorithm(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;Lcom/google/zxing/common/reedsolomon/GenericGFPoly;I)[Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    .registers 24
-    .param p1, "a"    # Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    .param p2, "b"    # Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    .param p3, "R"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
-        }
-    .end annotation
-
-    .prologue
-    .line 91
-    invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
-
-    move-result v18
-
-    invoke-virtual/range {p2 .. p2}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
-
-    move-result v19
-
-    move/from16 v0, v18
-
-    move/from16 v1, v19
-
-    if-ge v0, v1, :cond_14
-
-    .line 92
-    move-object/from16 v17, p1
-
-    .line 93
-    .local v17, "temp":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    move-object/from16 p1, p2
-
-    .line 94
-    move-object/from16 p2, v17
-
-    .line 97
-    .end local v17    # "temp":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    :cond_14
-    move-object/from16 v9, p1
-
-    .line 98
-    .local v9, "rLast":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    move-object/from16 v8, p2
-
-    .line 99
-    .local v8, "r":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
-    move-object/from16 v18, v0
-
-    invoke-virtual/range {v18 .. v18}, Lcom/google/zxing/common/reedsolomon/GenericGF;->getZero()Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-
-    move-result-object v15
-
-    .line 100
-    .local v15, "tLast":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
-    move-object/from16 v18, v0
-
-    invoke-virtual/range {v18 .. v18}, Lcom/google/zxing/common/reedsolomon/GenericGF;->getOne()Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-
-    move-result-object v14
-
-    .line 103
-    .local v14, "t":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    :cond_2c
-    invoke-virtual {v8}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
-
-    move-result v18
-
-    div-int/lit8 v19, p3, 0x2
-
-    move/from16 v0, v18
-
-    move/from16 v1, v19
-
-    if-lt v0, v1, :cond_e1
-
-    .line 104
-    move-object v10, v9
-
-    .line 105
-    .local v10, "rLastLast":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    move-object/from16 v16, v15
-
-    .line 106
-    .local v16, "tLastLast":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    move-object v9, v8
-
-    .line 107
-    move-object v15, v14
-
-    .line 110
-    invoke-virtual {v9}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->isZero()Z
-
-    move-result v18
-
-    if-eqz v18, :cond_4b
-
-    .line 112
-    new-instance v18, Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
-
-    const-string v19, "r_{i-1} was zero"
-
-    invoke-direct/range {v18 .. v19}, Lcom/google/zxing/common/reedsolomon/ReedSolomonException;-><init>(Ljava/lang/String;)V
-
-    throw v18
-
-    .line 114
-    :cond_4b
-    move-object v8, v10
-
-    .line 115
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
-    move-object/from16 v18, v0
-
-    invoke-virtual/range {v18 .. v18}, Lcom/google/zxing/common/reedsolomon/GenericGF;->getZero()Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-
-    move-result-object v7
-
-    .line 116
-    .local v7, "q":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    invoke-virtual {v9}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
-
-    move-result v18
-
-    move/from16 v0, v18
-
-    invoke-virtual {v9, v0}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getCoefficient(I)I
-
-    move-result v3
-
-    .line 117
-    .local v3, "denominatorLeadingTerm":I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, v18
-
-    invoke-virtual {v0, v3}, Lcom/google/zxing/common/reedsolomon/GenericGF;->inverse(I)I
-
-    move-result v4
-
-    .line 118
-    .local v4, "dltInverse":I
-    :goto_6c
-    invoke-virtual {v8}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
-
-    move-result v18
-
-    invoke-virtual {v9}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
-
-    move-result v19
-
-    move/from16 v0, v18
-
-    move/from16 v1, v19
-
-    if-lt v0, v1, :cond_bf
-
-    invoke-virtual {v8}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->isZero()Z
-
-    move-result v18
-
-    if-nez v18, :cond_bf
-
-    .line 119
-    invoke-virtual {v8}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
-
-    move-result v18
-
-    invoke-virtual {v9}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
-
-    move-result v19
-
-    sub-int v2, v18, v19
-
-    .line 120
-    .local v2, "degreeDiff":I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
-    move-object/from16 v18, v0
-
-    invoke-virtual {v8}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
-
-    move-result v19
-
-    move/from16 v0, v19
-
-    invoke-virtual {v8, v0}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getCoefficient(I)I
-
-    move-result v19
-
-    move-object/from16 v0, v18
-
-    move/from16 v1, v19
-
-    invoke-virtual {v0, v1, v4}, Lcom/google/zxing/common/reedsolomon/GenericGF;->multiply(II)I
-
-    move-result v11
-
-    .line 121
-    .local v11, "scale":I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, v18
-
-    invoke-virtual {v0, v2, v11}, Lcom/google/zxing/common/reedsolomon/GenericGF;->buildMonomial(II)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-
-    move-result-object v18
-
-    move-object/from16 v0, v18
-
-    invoke-virtual {v7, v0}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->addOrSubtract(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-
-    move-result-object v7
-
-    .line 122
-    invoke-virtual {v9, v2, v11}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->multiplyByMonomial(II)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-
-    move-result-object v18
-
-    move-object/from16 v0, v18
-
-    invoke-virtual {v8, v0}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->addOrSubtract(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-
-    move-result-object v8
-
-    .line 123
-    goto :goto_6c
-
-    .line 125
-    .end local v2    # "degreeDiff":I
-    .end local v11    # "scale":I
-    :cond_bf
-    invoke-virtual {v7, v15}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->multiply(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-
-    move-result-object v18
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->addOrSubtract(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-
-    move-result-object v14
-
-    .line 127
-    invoke-virtual {v8}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
-
-    move-result v18
-
-    invoke-virtual {v9}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
-
-    move-result v19
-
-    move/from16 v0, v18
-
-    move/from16 v1, v19
-
-    if-lt v0, v1, :cond_2c
-
-    .line 128
-    new-instance v18, Ljava/lang/IllegalStateException;
-
-    const-string v19, "Division algorithm failed to reduce polynomial?"
-
-    invoke-direct/range {v18 .. v19}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v18
-
-    .line 132
-    .end local v3    # "denominatorLeadingTerm":I
-    .end local v4    # "dltInverse":I
-    .end local v7    # "q":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    .end local v10    # "rLastLast":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    .end local v16    # "tLastLast":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    :cond_e1
-    const/16 v18, 0x0
-
-    move/from16 v0, v18
-
-    invoke-virtual {v14, v0}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getCoefficient(I)I
-
-    move-result v13
-
-    .line 133
-    .local v13, "sigmaTildeAtZero":I
-    if-nez v13, :cond_f3
-
-    .line 134
-    new-instance v18, Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
-
-    const-string v19, "sigmaTilde(0) was zero"
-
-    invoke-direct/range {v18 .. v19}, Lcom/google/zxing/common/reedsolomon/ReedSolomonException;-><init>(Ljava/lang/String;)V
-
-    throw v18
-
-    .line 137
-    :cond_f3
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, v18
-
-    invoke-virtual {v0, v13}, Lcom/google/zxing/common/reedsolomon/GenericGF;->inverse(I)I
-
-    move-result v5
-
-    .line 138
-    .local v5, "inverse":I
-    invoke-virtual {v14, v5}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->multiply(I)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-
-    move-result-object v12
-
-    .line 139
-    .local v12, "sigma":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    invoke-virtual {v8, v5}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->multiply(I)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-
-    move-result-object v6
-
-    .line 140
-    .local v6, "omega":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    const/16 v18, 0x2
-
-    move/from16 v0, v18
-
-    new-array v0, v0, [Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-
-    move-object/from16 v18, v0
-
-    const/16 v19, 0x0
-
-    aput-object v12, v18, v19
-
-    const/16 v19, 0x1
-
-    aput-object v6, v18, v19
-
-    return-object v18
 .end method

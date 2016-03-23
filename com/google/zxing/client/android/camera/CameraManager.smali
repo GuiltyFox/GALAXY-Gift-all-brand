@@ -4,9 +4,9 @@
 
 
 # static fields
-.field private static final MAX_FRAME_HEIGHT:I = 0x21c
+.field private static final MAX_FRAME_HEIGHT:I = 0x2a3
 
-.field private static final MAX_FRAME_WIDTH:I = 0x3c0
+.field private static final MAX_FRAME_WIDTH:I = 0x4b0
 
 .field private static final MIN_FRAME_HEIGHT:I = 0xf0
 
@@ -34,6 +34,8 @@
 
 .field private previewing:Z
 
+.field private requestedCameraId:I
+
 .field private requestedFramingRectHeight:I
 
 .field private requestedFramingRectWidth:I
@@ -53,7 +55,6 @@
 
     sput-object v0, Lcom/google/zxing/client/android/camera/CameraManager;->TAG:Ljava/lang/String;
 
-    .line 45
     return-void
 .end method
 
@@ -62,20 +63,25 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 63
+    .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 64
-    iput-object p1, p0, Lcom/google/zxing/client/android/camera/CameraManager;->context:Landroid/content/Context;
+    .line 55
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->requestedCameraId:I
 
     .line 65
+    iput-object p1, p0, Lcom/google/zxing/client/android/camera/CameraManager;->context:Landroid/content/Context;
+
+    .line 66
     new-instance v0, Lcom/google/zxing/client/android/camera/CameraConfigurationManager;
 
     invoke-direct {v0, p1}, Lcom/google/zxing/client/android/camera/CameraConfigurationManager;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->configManager:Lcom/google/zxing/client/android/camera/CameraConfigurationManager;
 
-    .line 66
+    .line 67
     new-instance v0, Lcom/google/zxing/client/android/camera/PreviewCallback;
 
     iget-object v1, p0, Lcom/google/zxing/client/android/camera/CameraManager;->configManager:Lcom/google/zxing/client/android/camera/CameraConfigurationManager;
@@ -84,44 +90,46 @@
 
     iput-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->previewCallback:Lcom/google/zxing/client/android/camera/PreviewCallback;
 
-    .line 67
+    .line 68
     return-void
 .end method
 
 .method private static findDesiredDimensionInRange(III)I
-    .registers 4
+    .registers 5
     .param p0, "resolution"    # I
     .param p1, "hardMin"    # I
     .param p2, "hardMax"    # I
 
     .prologue
-    .line 228
-    div-int/lit8 v0, p0, 0x2
+    .line 237
+    mul-int/lit8 v1, p0, 0x5
 
-    .line 229
+    div-int/lit8 v0, v1, 0x8
+
+    .line 238
     .local v0, "dim":I
-    if-ge v0, p1, :cond_5
+    if-ge v0, p1, :cond_7
 
-    .line 235
+    .line 244
     .end local p1    # "hardMin":I
-    :goto_4
+    :goto_6
     return p1
 
-    .line 232
+    .line 241
     .restart local p1    # "hardMin":I
-    :cond_5
-    if-le v0, p2, :cond_9
+    :cond_7
+    if-le v0, p2, :cond_b
 
     move p1, p2
 
-    .line 233
-    goto :goto_4
+    .line 242
+    goto :goto_6
 
-    :cond_9
+    :cond_b
     move p1, v0
 
-    .line 235
-    goto :goto_4
+    .line 244
+    goto :goto_6
 .end method
 
 
@@ -133,19 +141,19 @@
     .param p3, "height"    # I
 
     .prologue
-    .line 301
+    .line 327
     invoke-virtual {p0}, Lcom/google/zxing/client/android/camera/CameraManager;->getFramingRectInPreview()Landroid/graphics/Rect;
 
     move-result-object v9
 
-    .line 302
+    .line 328
     .local v9, "rect":Landroid/graphics/Rect;
     if-nez v9, :cond_8
 
-    .line 303
+    .line 329
     const/4 v0, 0x0
 
-    .line 306
+    .line 332
     :goto_7
     return-object v0
 
@@ -156,7 +164,6 @@
 
     iget v5, v9, Landroid/graphics/Rect;->top:I
 
-    .line 307
     invoke-virtual {v9}, Landroid/graphics/Rect;->width()I
 
     move-result v6
@@ -173,7 +180,6 @@
 
     move v3, p3
 
-    .line 306
     invoke-direct/range {v0 .. v8}, Lcom/google/zxing/PlanarYUVLuminanceSource;-><init>([BIIIIIIZ)V
 
     goto :goto_7
@@ -183,7 +189,7 @@
     .registers 2
 
     .prologue
-    .line 128
+    .line 135
     monitor-enter p0
 
     :try_start_1
@@ -191,35 +197,35 @@
 
     if-eqz v0, :cond_13
 
-    .line 129
+    .line 136
     iget-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->camera:Landroid/hardware/Camera;
 
     invoke-virtual {v0}, Landroid/hardware/Camera;->release()V
 
-    .line 130
+    .line 137
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->camera:Landroid/hardware/Camera;
 
-    .line 133
+    .line 140
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->framingRect:Landroid/graphics/Rect;
 
-    .line 134
+    .line 141
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->framingRectInPreview:Landroid/graphics/Rect;
     :try_end_13
     .catchall {:try_start_1 .. :try_end_13} :catchall_15
 
-    .line 136
+    .line 143
     :cond_13
     monitor-exit p0
 
     return-void
 
-    .line 128
+    .line 135
     :catchall_15
     move-exception v0
 
@@ -234,29 +240,29 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 206
+    .line 215
     monitor-enter p0
 
     :try_start_2
     iget-object v6, p0, Lcom/google/zxing/client/android/camera/CameraManager;->framingRect:Landroid/graphics/Rect;
 
-    if-nez v6, :cond_53
+    if-nez v6, :cond_58
 
-    .line 207
+    .line 216
     iget-object v6, p0, Lcom/google/zxing/client/android/camera/CameraManager;->camera:Landroid/hardware/Camera;
     :try_end_8
-    .catchall {:try_start_2 .. :try_end_8} :catchall_56
+    .catchall {:try_start_2 .. :try_end_8} :catchall_5b
 
     if-nez v6, :cond_c
 
-    .line 224
+    .line 233
     :cond_a
     :goto_a
     monitor-exit p0
 
     return-object v5
 
-    .line 210
+    .line 219
     :cond_c
     :try_start_c
     iget-object v6, p0, Lcom/google/zxing/client/android/camera/CameraManager;->configManager:Lcom/google/zxing/client/android/camera/CameraConfigurationManager;
@@ -265,34 +271,34 @@
 
     move-result-object v2
 
-    .line 211
+    .line 220
     .local v2, "screenResolution":Landroid/graphics/Point;
     if-eqz v2, :cond_a
 
-    .line 216
+    .line 225
     iget v5, v2, Landroid/graphics/Point;->x:I
 
     const/16 v6, 0xf0
 
-    const/16 v7, 0x3c0
+    const/16 v7, 0x4b0
 
     invoke-static {v5, v6, v7}, Lcom/google/zxing/client/android/camera/CameraManager;->findDesiredDimensionInRange(III)I
 
     move-result v4
 
-    .line 217
+    .line 226
     .local v4, "width":I
     iget v5, v2, Landroid/graphics/Point;->y:I
 
     const/16 v6, 0xf0
 
-    const/16 v7, 0x21c
+    const/16 v7, 0x2a3
 
     invoke-static {v5, v6, v7}, Lcom/google/zxing/client/android/camera/CameraManager;->findDesiredDimensionInRange(III)I
 
     move-result v0
 
-    .line 219
+    .line 228
     .local v0, "height":I
     iget v5, v2, Landroid/graphics/Point;->x:I
 
@@ -300,7 +306,7 @@
 
     div-int/lit8 v1, v5, 0x2
 
-    .line 220
+    .line 229
     .local v1, "leftOffset":I
     iget v5, v2, Landroid/graphics/Point;->y:I
 
@@ -308,7 +314,7 @@
 
     div-int/lit8 v3, v5, 0x2
 
-    .line 221
+    .line 230
     .local v3, "topOffset":I
     new-instance v5, Landroid/graphics/Rect;
 
@@ -320,14 +326,18 @@
 
     iput-object v5, p0, Lcom/google/zxing/client/android/camera/CameraManager;->framingRect:Landroid/graphics/Rect;
 
-    .line 222
+    .line 231
     sget-object v5, Lcom/google/zxing/client/android/camera/CameraManager;->TAG:Ljava/lang/String;
 
     new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v7, "Calculated framing rect: "
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string/jumbo v7, "Calculated framing rect: "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
 
     iget-object v7, p0, Lcom/google/zxing/client/android/camera/CameraManager;->framingRect:Landroid/graphics/Rect;
 
@@ -341,21 +351,21 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 224
+    .line 233
     .end local v0    # "height":I
     .end local v1    # "leftOffset":I
     .end local v2    # "screenResolution":Landroid/graphics/Point;
     .end local v3    # "topOffset":I
     .end local v4    # "width":I
-    :cond_53
+    :cond_58
     iget-object v5, p0, Lcom/google/zxing/client/android/camera/CameraManager;->framingRect:Landroid/graphics/Rect;
-    :try_end_55
-    .catchall {:try_start_c .. :try_end_55} :catchall_56
+    :try_end_5a
+    .catchall {:try_start_c .. :try_end_5a} :catchall_5b
 
     goto :goto_a
 
-    .line 206
-    :catchall_56
+    .line 215
+    :catchall_5b
     move-exception v5
 
     monitor-exit p0
@@ -369,7 +379,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 243
+    .line 254
     monitor-enter p0
 
     :try_start_2
@@ -377,18 +387,18 @@
 
     if-nez v5, :cond_4d
 
-    .line 244
+    .line 255
     invoke-virtual {p0}, Lcom/google/zxing/client/android/camera/CameraManager;->getFramingRect()Landroid/graphics/Rect;
     :try_end_9
     .catchall {:try_start_2 .. :try_end_9} :catchall_50
 
     move-result-object v1
 
-    .line 245
+    .line 256
     .local v1, "framingRect":Landroid/graphics/Rect;
     if-nez v1, :cond_e
 
-    .line 261
+    .line 272
     .end local v1    # "framingRect":Landroid/graphics/Rect;
     :cond_c
     :goto_c
@@ -396,7 +406,7 @@
 
     return-object v4
 
-    .line 248
+    .line 259
     .restart local v1    # "framingRect":Landroid/graphics/Rect;
     :cond_e
     :try_start_e
@@ -404,7 +414,7 @@
 
     invoke-direct {v2, v1}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
 
-    .line 249
+    .line 260
     .local v2, "rect":Landroid/graphics/Rect;
     iget-object v5, p0, Lcom/google/zxing/client/android/camera/CameraManager;->configManager:Lcom/google/zxing/client/android/camera/CameraConfigurationManager;
 
@@ -412,7 +422,7 @@
 
     move-result-object v0
 
-    .line 250
+    .line 261
     .local v0, "cameraResolution":Landroid/graphics/Point;
     iget-object v5, p0, Lcom/google/zxing/client/android/camera/CameraManager;->configManager:Lcom/google/zxing/client/android/camera/CameraConfigurationManager;
 
@@ -420,13 +430,13 @@
 
     move-result-object v3
 
-    .line 251
+    .line 262
     .local v3, "screenResolution":Landroid/graphics/Point;
     if-eqz v0, :cond_c
 
     if-eqz v3, :cond_c
 
-    .line 255
+    .line 266
     iget v4, v2, Landroid/graphics/Rect;->left:I
 
     iget v5, v0, Landroid/graphics/Point;->x:I
@@ -439,7 +449,7 @@
 
     iput v4, v2, Landroid/graphics/Rect;->left:I
 
-    .line 256
+    .line 267
     iget v4, v2, Landroid/graphics/Rect;->right:I
 
     iget v5, v0, Landroid/graphics/Point;->x:I
@@ -452,7 +462,7 @@
 
     iput v4, v2, Landroid/graphics/Rect;->right:I
 
-    .line 257
+    .line 268
     iget v4, v2, Landroid/graphics/Rect;->top:I
 
     iget v5, v0, Landroid/graphics/Point;->y:I
@@ -465,7 +475,7 @@
 
     iput v4, v2, Landroid/graphics/Rect;->top:I
 
-    .line 258
+    .line 269
     iget v4, v2, Landroid/graphics/Rect;->bottom:I
 
     iget v5, v0, Landroid/graphics/Point;->y:I
@@ -478,10 +488,10 @@
 
     iput v4, v2, Landroid/graphics/Rect;->bottom:I
 
-    .line 259
+    .line 270
     iput-object v2, p0, Lcom/google/zxing/client/android/camera/CameraManager;->framingRectInPreview:Landroid/graphics/Rect;
 
-    .line 261
+    .line 272
     .end local v0    # "cameraResolution":Landroid/graphics/Point;
     .end local v1    # "framingRect":Landroid/graphics/Rect;
     .end local v2    # "rect":Landroid/graphics/Rect;
@@ -493,7 +503,7 @@
 
     goto :goto_c
 
-    .line 243
+    .line 254
     :catchall_50
     move-exception v4
 
@@ -506,7 +516,7 @@
     .registers 2
 
     .prologue
-    .line 121
+    .line 128
     monitor-enter p0
 
     :try_start_1
@@ -546,78 +556,84 @@
     .end annotation
 
     .prologue
-    .line 76
+    .line 77
     monitor-enter p0
 
     :try_start_1
     iget-object v4, p0, Lcom/google/zxing/client/android/camera/CameraManager;->camera:Landroid/hardware/Camera;
 
-    .line 77
+    .line 78
     .local v4, "theCamera":Landroid/hardware/Camera;
     if-nez v4, :cond_21
 
-    .line 78
-    new-instance v5, Lcom/google/zxing/client/android/camera/open/OpenCameraManager;
+    .line 80
+    iget v5, p0, Lcom/google/zxing/client/android/camera/CameraManager;->requestedCameraId:I
 
-    invoke-direct {v5}, Lcom/google/zxing/client/android/camera/open/OpenCameraManager;-><init>()V
+    if-ltz v5, :cond_1a
 
-    invoke-virtual {v5}, Lcom/google/zxing/client/android/camera/open/OpenCameraManager;->build()Ljava/lang/Object;
+    .line 81
+    iget v5, p0, Lcom/google/zxing/client/android/camera/CameraManager;->requestedCameraId:I
 
-    move-result-object v5
-
-    check-cast v5, Lcom/google/zxing/client/android/camera/open/OpenCameraInterface;
-
-    invoke-interface {v5}, Lcom/google/zxing/client/android/camera/open/OpenCameraInterface;->open()Landroid/hardware/Camera;
+    invoke-static {v5}, Lcom/google/zxing/client/android/camera/open/OpenCameraInterface;->open(I)Landroid/hardware/Camera;
 
     move-result-object v4
 
-    .line 79
+    .line 86
+    :goto_f
     if-nez v4, :cond_1f
 
-    .line 80
+    .line 87
     new-instance v5, Ljava/io/IOException;
 
     invoke-direct {v5}, Ljava/io/IOException;-><init>()V
 
     throw v5
-    :try_end_1c
-    .catchall {:try_start_1 .. :try_end_1c} :catchall_1c
+    :try_end_17
+    .catchall {:try_start_1 .. :try_end_17} :catchall_17
 
-    .line 76
+    .line 77
     .end local v4    # "theCamera":Landroid/hardware/Camera;
-    :catchall_1c
+    :catchall_17
     move-exception v5
 
     monitor-exit p0
 
     throw v5
 
-    .line 82
+    .line 83
     .restart local v4    # "theCamera":Landroid/hardware/Camera;
+    :cond_1a
+    :try_start_1a
+    invoke-static {}, Lcom/google/zxing/client/android/camera/open/OpenCameraInterface;->open()Landroid/hardware/Camera;
+
+    move-result-object v4
+
+    goto :goto_f
+
+    .line 89
     :cond_1f
-    :try_start_1f
     iput-object v4, p0, Lcom/google/zxing/client/android/camera/CameraManager;->camera:Landroid/hardware/Camera;
 
-    .line 84
+    .line 91
     :cond_21
     invoke-virtual {v4, p1}, Landroid/hardware/Camera;->setPreviewDisplay(Landroid/view/SurfaceHolder;)V
 
-    .line 86
+    .line 93
     iget-boolean v5, p0, Lcom/google/zxing/client/android/camera/CameraManager;->initialized:Z
 
     if-nez v5, :cond_45
 
-    .line 87
+    .line 94
     const/4 v5, 0x1
 
     iput-boolean v5, p0, Lcom/google/zxing/client/android/camera/CameraManager;->initialized:Z
 
-    .line 88
+    .line 95
     iget-object v5, p0, Lcom/google/zxing/client/android/camera/CameraManager;->configManager:Lcom/google/zxing/client/android/camera/CameraConfigurationManager;
 
     invoke-virtual {v5, v4}, Lcom/google/zxing/client/android/camera/CameraConfigurationManager;->initFromCameraParameters(Landroid/hardware/Camera;)V
 
-    .line 89
+    .line 96
     iget v5, p0, Lcom/google/zxing/client/android/camera/CameraManager;->requestedFramingRectWidth:I
 
     if-lez v5, :cond_45
@@ -626,38 +642,38 @@
 
     if-lez v5, :cond_45
 
-    .line 90
+    .line 97
     iget v5, p0, Lcom/google/zxing/client/android/camera/CameraManager;->requestedFramingRectWidth:I
 
     iget v6, p0, Lcom/google/zxing/client/android/camera/CameraManager;->requestedFramingRectHeight:I
 
     invoke-virtual {p0, v5, v6}, Lcom/google/zxing/client/android/camera/CameraManager;->setManualFramingRect(II)V
 
-    .line 91
+    .line 98
     const/4 v5, 0x0
 
     iput v5, p0, Lcom/google/zxing/client/android/camera/CameraManager;->requestedFramingRectWidth:I
 
-    .line 92
+    .line 99
     const/4 v5, 0x0
 
     iput v5, p0, Lcom/google/zxing/client/android/camera/CameraManager;->requestedFramingRectHeight:I
 
-    .line 96
+    .line 103
     :cond_45
     invoke-virtual {v4}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
     :try_end_48
-    .catchall {:try_start_1f .. :try_end_48} :catchall_1c
+    .catchall {:try_start_1a .. :try_end_48} :catchall_17
 
     move-result-object v0
 
-    .line 97
+    .line 104
     .local v0, "parameters":Landroid/hardware/Camera$Parameters;
     if-nez v0, :cond_54
 
     const/4 v1, 0x0
 
-    .line 99
+    .line 106
     .local v1, "parametersFlattened":Ljava/lang/String;
     :goto_4c
     :try_start_4c
@@ -668,16 +684,16 @@
     invoke-virtual {v5, v4, v6}, Lcom/google/zxing/client/android/camera/CameraConfigurationManager;->setDesiredCameraParameters(Landroid/hardware/Camera;Z)V
     :try_end_52
     .catch Ljava/lang/RuntimeException; {:try_start_4c .. :try_end_52} :catch_59
-    .catchall {:try_start_4c .. :try_end_52} :catchall_1c
+    .catchall {:try_start_4c .. :try_end_52} :catchall_17
 
-    .line 118
+    .line 125
     :cond_52
     :goto_52
     monitor-exit p0
 
     return-void
 
-    .line 97
+    .line 104
     .end local v1    # "parametersFlattened":Ljava/lang/String;
     :cond_54
     :try_start_54
@@ -687,27 +703,31 @@
 
     goto :goto_4c
 
-    .line 100
+    .line 107
     .restart local v1    # "parametersFlattened":Ljava/lang/String;
     :catch_59
     move-exception v2
 
-    .line 102
+    .line 109
     .local v2, "re":Ljava/lang/RuntimeException;
     sget-object v5, Lcom/google/zxing/client/android/camera/CameraManager;->TAG:Ljava/lang/String;
 
-    const-string v6, "Camera rejected parameters. Setting only minimal safe-mode parameters"
+    const-string/jumbo v6, "Camera rejected parameters. Setting only minimal safe-mode parameters"
 
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 103
+    .line 110
     sget-object v5, Lcom/google/zxing/client/android/camera/CameraManager;->TAG:Ljava/lang/String;
 
     new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v7, "Resetting to saved camera params: "
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string/jumbo v7, "Resetting to saved camera params: "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
 
     invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -719,49 +739,49 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 105
+    .line 112
     if-eqz v1, :cond_52
 
-    .line 106
+    .line 113
     invoke-virtual {v4}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
 
     move-result-object v0
 
-    .line 107
+    .line 114
     invoke-virtual {v0, v1}, Landroid/hardware/Camera$Parameters;->unflatten(Ljava/lang/String;)V
-    :try_end_7e
-    .catchall {:try_start_54 .. :try_end_7e} :catchall_1c
+    :try_end_84
+    .catchall {:try_start_54 .. :try_end_84} :catchall_17
 
-    .line 109
-    :try_start_7e
+    .line 116
+    :try_start_84
     invoke-virtual {v4, v0}, Landroid/hardware/Camera;->setParameters(Landroid/hardware/Camera$Parameters;)V
 
-    .line 110
+    .line 117
     iget-object v5, p0, Lcom/google/zxing/client/android/camera/CameraManager;->configManager:Lcom/google/zxing/client/android/camera/CameraConfigurationManager;
 
     const/4 v6, 0x1
 
     invoke-virtual {v5, v4, v6}, Lcom/google/zxing/client/android/camera/CameraConfigurationManager;->setDesiredCameraParameters(Landroid/hardware/Camera;Z)V
-    :try_end_87
-    .catch Ljava/lang/RuntimeException; {:try_start_7e .. :try_end_87} :catch_88
-    .catchall {:try_start_7e .. :try_end_87} :catchall_1c
+    :try_end_8d
+    .catch Ljava/lang/RuntimeException; {:try_start_84 .. :try_end_8d} :catch_8e
+    .catchall {:try_start_84 .. :try_end_8d} :catchall_17
 
     goto :goto_52
 
-    .line 111
-    :catch_88
+    .line 118
+    :catch_8e
     move-exception v3
 
-    .line 113
+    .line 120
     .local v3, "re2":Ljava/lang/RuntimeException;
-    :try_start_89
+    :try_start_8f
     sget-object v5, Lcom/google/zxing/client/android/camera/CameraManager;->TAG:Ljava/lang/String;
 
-    const-string v6, "Camera rejected even safe-mode parameters! No configuration"
+    const-string/jumbo v6, "Camera rejected even safe-mode parameters! No configuration"
 
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_90
-    .catchall {:try_start_89 .. :try_end_90} :catchall_1c
+    :try_end_97
+    .catchall {:try_start_8f .. :try_end_97} :catchall_17
 
     goto :goto_52
 .end method
@@ -772,13 +792,13 @@
     .param p2, "message"    # I
 
     .prologue
-    .line 191
+    .line 200
     monitor-enter p0
 
     :try_start_1
     iget-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->camera:Landroid/hardware/Camera;
 
-    .line 192
+    .line 201
     .local v0, "theCamera":Landroid/hardware/Camera;
     if-eqz v0, :cond_13
 
@@ -786,25 +806,25 @@
 
     if-eqz v1, :cond_13
 
-    .line 193
+    .line 202
     iget-object v1, p0, Lcom/google/zxing/client/android/camera/CameraManager;->previewCallback:Lcom/google/zxing/client/android/camera/PreviewCallback;
 
     invoke-virtual {v1, p1, p2}, Lcom/google/zxing/client/android/camera/PreviewCallback;->setHandler(Landroid/os/Handler;I)V
 
-    .line 194
+    .line 203
     iget-object v1, p0, Lcom/google/zxing/client/android/camera/CameraManager;->previewCallback:Lcom/google/zxing/client/android/camera/PreviewCallback;
 
     invoke-virtual {v0, v1}, Landroid/hardware/Camera;->setOneShotPreviewCallback(Landroid/hardware/Camera$PreviewCallback;)V
     :try_end_13
     .catchall {:try_start_1 .. :try_end_13} :catchall_15
 
-    .line 196
+    .line 205
     :cond_13
     monitor-exit p0
 
     return-void
 
-    .line 191
+    .line 200
     .end local v0    # "theCamera":Landroid/hardware/Camera;
     :catchall_15
     move-exception v1
@@ -814,46 +834,89 @@
     throw v1
 .end method
 
+.method public declared-synchronized setManualCameraId(I)V
+    .registers 3
+    .param p1, "cameraId"    # I
+
+    .prologue
+    .line 283
+    monitor-enter p0
+
+    :try_start_1
+    iget-boolean v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->initialized:Z
+
+    if-eqz v0, :cond_e
+
+    .line 284
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw v0
+    :try_end_b
+    .catchall {:try_start_1 .. :try_end_b} :catchall_b
+
+    .line 283
+    :catchall_b
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    .line 286
+    :cond_e
+    :try_start_e
+    iput p1, p0, Lcom/google/zxing/client/android/camera/CameraManager;->requestedCameraId:I
+    :try_end_10
+    .catchall {:try_start_e .. :try_end_10} :catchall_b
+
+    .line 288
+    monitor-exit p0
+
+    return-void
+.end method
+
 .method public declared-synchronized setManualFramingRect(II)V
     .registers 9
     .param p1, "width"    # I
     .param p2, "height"    # I
 
     .prologue
-    .line 272
+    .line 298
     monitor-enter p0
 
     :try_start_1
     iget-boolean v3, p0, Lcom/google/zxing/client/android/camera/CameraManager;->initialized:Z
 
-    if-eqz v3, :cond_47
+    if-eqz v3, :cond_4c
 
-    .line 273
+    .line 299
     iget-object v3, p0, Lcom/google/zxing/client/android/camera/CameraManager;->configManager:Lcom/google/zxing/client/android/camera/CameraConfigurationManager;
 
     invoke-virtual {v3}, Lcom/google/zxing/client/android/camera/CameraConfigurationManager;->getScreenResolution()Landroid/graphics/Point;
 
     move-result-object v1
 
-    .line 274
+    .line 300
     .local v1, "screenResolution":Landroid/graphics/Point;
     iget v3, v1, Landroid/graphics/Point;->x:I
 
     if-le p1, v3, :cond_11
 
-    .line 275
+    .line 301
     iget p1, v1, Landroid/graphics/Point;->x:I
 
-    .line 277
+    .line 303
     :cond_11
     iget v3, v1, Landroid/graphics/Point;->y:I
 
     if-le p2, v3, :cond_17
 
-    .line 278
+    .line 304
     iget p2, v1, Landroid/graphics/Point;->y:I
 
-    .line 280
+    .line 306
     :cond_17
     iget v3, v1, Landroid/graphics/Point;->x:I
 
@@ -861,7 +924,7 @@
 
     div-int/lit8 v0, v3, 0x2
 
-    .line 281
+    .line 307
     .local v0, "leftOffset":I
     iget v3, v1, Landroid/graphics/Point;->y:I
 
@@ -869,7 +932,7 @@
 
     div-int/lit8 v2, v3, 0x2
 
-    .line 282
+    .line 308
     .local v2, "topOffset":I
     new-instance v3, Landroid/graphics/Rect;
 
@@ -881,14 +944,18 @@
 
     iput-object v3, p0, Lcom/google/zxing/client/android/camera/CameraManager;->framingRect:Landroid/graphics/Rect;
 
-    .line 283
+    .line 309
     sget-object v3, Lcom/google/zxing/client/android/camera/CameraManager;->TAG:Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v5, "Calculated manual framing rect: "
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string/jumbo v5, "Calculated manual framing rect: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
 
     iget-object v5, p0, Lcom/google/zxing/client/android/camera/CameraManager;->framingRect:Landroid/graphics/Rect;
 
@@ -902,36 +969,36 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 284
+    .line 310
     const/4 v3, 0x0
 
     iput-object v3, p0, Lcom/google/zxing/client/android/camera/CameraManager;->framingRectInPreview:Landroid/graphics/Rect;
-    :try_end_45
-    .catchall {:try_start_1 .. :try_end_45} :catchall_4c
+    :try_end_4a
+    .catchall {:try_start_1 .. :try_end_4a} :catchall_51
 
-    .line 289
+    .line 315
     .end local v0    # "leftOffset":I
     .end local v1    # "screenResolution":Landroid/graphics/Point;
     .end local v2    # "topOffset":I
-    :goto_45
+    :goto_4a
     monitor-exit p0
 
     return-void
 
-    .line 286
-    :cond_47
-    :try_start_47
+    .line 312
+    :cond_4c
+    :try_start_4c
     iput p1, p0, Lcom/google/zxing/client/android/camera/CameraManager;->requestedFramingRectWidth:I
 
-    .line 287
+    .line 313
     iput p2, p0, Lcom/google/zxing/client/android/camera/CameraManager;->requestedFramingRectHeight:I
-    :try_end_4b
-    .catchall {:try_start_47 .. :try_end_4b} :catchall_4c
+    :try_end_50
+    .catchall {:try_start_4c .. :try_end_50} :catchall_51
 
-    goto :goto_45
+    goto :goto_4a
 
-    .line 272
-    :catchall_4c
+    .line 298
+    :catchall_51
     move-exception v3
 
     monitor-exit p0
@@ -944,7 +1011,7 @@
     .param p1, "newSetting"    # Z
 
     .prologue
-    .line 169
+    .line 178
     monitor-enter p0
 
     :try_start_1
@@ -958,22 +1025,22 @@
 
     if-eq p1, v0, :cond_28
 
-    .line 170
+    .line 179
     iget-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->camera:Landroid/hardware/Camera;
 
     if-eqz v0, :cond_28
 
-    .line 171
+    .line 180
     iget-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->autoFocusManager:Lcom/google/zxing/client/android/camera/AutoFocusManager;
 
     if-eqz v0, :cond_18
 
-    .line 172
+    .line 181
     iget-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->autoFocusManager:Lcom/google/zxing/client/android/camera/AutoFocusManager;
 
     invoke-virtual {v0}, Lcom/google/zxing/client/android/camera/AutoFocusManager;->stop()V
 
-    .line 174
+    .line 183
     :cond_18
     iget-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->configManager:Lcom/google/zxing/client/android/camera/CameraConfigurationManager;
 
@@ -981,25 +1048,25 @@
 
     invoke-virtual {v0, v1, p1}, Lcom/google/zxing/client/android/camera/CameraConfigurationManager;->setTorch(Landroid/hardware/Camera;Z)V
 
-    .line 175
+    .line 184
     iget-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->autoFocusManager:Lcom/google/zxing/client/android/camera/AutoFocusManager;
 
     if-eqz v0, :cond_28
 
-    .line 176
+    .line 185
     iget-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->autoFocusManager:Lcom/google/zxing/client/android/camera/AutoFocusManager;
 
     invoke-virtual {v0}, Lcom/google/zxing/client/android/camera/AutoFocusManager;->start()V
     :try_end_28
     .catchall {:try_start_1 .. :try_end_28} :catchall_2a
 
-    .line 180
+    .line 189
     :cond_28
     monitor-exit p0
 
     return-void
 
-    .line 169
+    .line 178
     :catchall_2a
     move-exception v0
 
@@ -1012,13 +1079,13 @@
     .registers 5
 
     .prologue
-    .line 142
+    .line 149
     monitor-enter p0
 
     :try_start_1
     iget-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->camera:Landroid/hardware/Camera;
 
-    .line 143
+    .line 150
     .local v0, "theCamera":Landroid/hardware/Camera;
     if-eqz v0, :cond_1a
 
@@ -1026,15 +1093,15 @@
 
     if-nez v1, :cond_1a
 
-    .line 144
+    .line 151
     invoke-virtual {v0}, Landroid/hardware/Camera;->startPreview()V
 
-    .line 145
+    .line 152
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/google/zxing/client/android/camera/CameraManager;->previewing:Z
 
-    .line 146
+    .line 153
     new-instance v1, Lcom/google/zxing/client/android/camera/AutoFocusManager;
 
     iget-object v2, p0, Lcom/google/zxing/client/android/camera/CameraManager;->context:Landroid/content/Context;
@@ -1047,13 +1114,13 @@
     :try_end_1a
     .catchall {:try_start_1 .. :try_end_1a} :catchall_1c
 
-    .line 148
+    .line 155
     :cond_1a
     monitor-exit p0
 
     return-void
 
-    .line 142
+    .line 149
     .end local v0    # "theCamera":Landroid/hardware/Camera;
     :catchall_1c
     move-exception v1
@@ -1067,7 +1134,7 @@
     .registers 4
 
     .prologue
-    .line 154
+    .line 161
     monitor-enter p0
 
     :try_start_1
@@ -1075,17 +1142,17 @@
 
     if-eqz v0, :cond_d
 
-    .line 155
+    .line 162
     iget-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->autoFocusManager:Lcom/google/zxing/client/android/camera/AutoFocusManager;
 
     invoke-virtual {v0}, Lcom/google/zxing/client/android/camera/AutoFocusManager;->stop()V
 
-    .line 156
+    .line 163
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->autoFocusManager:Lcom/google/zxing/client/android/camera/AutoFocusManager;
 
-    .line 158
+    .line 165
     :cond_d
     iget-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->camera:Landroid/hardware/Camera;
 
@@ -1095,12 +1162,12 @@
 
     if-eqz v0, :cond_24
 
-    .line 159
+    .line 166
     iget-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->camera:Landroid/hardware/Camera;
 
     invoke-virtual {v0}, Landroid/hardware/Camera;->stopPreview()V
 
-    .line 160
+    .line 167
     iget-object v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->previewCallback:Lcom/google/zxing/client/android/camera/PreviewCallback;
 
     const/4 v1, 0x0
@@ -1109,20 +1176,20 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/zxing/client/android/camera/PreviewCallback;->setHandler(Landroid/os/Handler;I)V
 
-    .line 161
+    .line 168
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/zxing/client/android/camera/CameraManager;->previewing:Z
     :try_end_24
     .catchall {:try_start_1 .. :try_end_24} :catchall_26
 
-    .line 163
+    .line 170
     :cond_24
     monitor-exit p0
 
     return-void
 
-    .line 154
+    .line 161
     :catchall_26
     move-exception v0
 

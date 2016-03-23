@@ -28,7 +28,7 @@
 
     .prologue
     .line 36
-    const-string v0, "al_applink_data"
+    const-string/jumbo v0, "al_applink_data"
 
     invoke-virtual {p0, v0}, Landroid/content/Intent;->getBundleExtra(Ljava/lang/String;)Landroid/os/Bundle;
 
@@ -59,7 +59,7 @@
     return-object v1
 
     :cond_8
-    const-string v1, "extras"
+    const-string/jumbo v1, "extras"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
@@ -80,10 +80,10 @@
 
     .line 64
     .local v0, "appLinkData":Landroid/os/Bundle;
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_14
 
     .line 65
-    const-string v2, "target_url"
+    const-string/jumbo v2, "target_url"
 
     invoke-virtual {v0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -91,7 +91,7 @@
 
     .line 66
     .local v1, "targetString":Ljava/lang/String;
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_14
 
     .line 67
     invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -100,15 +100,15 @@
 
     .line 70
     .end local v1    # "targetString":Ljava/lang/String;
-    :goto_12
+    :goto_13
     return-object v2
 
-    :cond_13
+    :cond_14
     invoke-virtual {p0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v2
 
-    goto :goto_12
+    goto :goto_13
 .end method
 
 .method public static getTargetUrlFromInboundIntent(Landroid/content/Context;Landroid/content/Intent;)Landroid/net/Uri;
@@ -126,10 +126,10 @@
 
     .line 83
     .local v0, "appLinkData":Landroid/os/Bundle;
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1a
 
     .line 84
-    const-string v3, "target_url"
+    const-string/jumbo v3, "target_url"
 
     invoke-virtual {v0, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -137,10 +137,10 @@
 
     .line 85
     .local v1, "targetString":Ljava/lang/String;
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_1a
 
     .line 86
-    const-string v3, "al_nav_in"
+    const-string/jumbo v3, "al_nav_in"
 
     invoke-static {p0, v3, p1, v2}, Lbolts/MeasurementEvent;->sendBroadcastEvent(Landroid/content/Context;Ljava/lang/String;Landroid/content/Intent;Ljava/util/Map;)V
 
@@ -151,6 +151,6 @@
 
     .line 90
     .end local v1    # "targetString":Ljava/lang/String;
-    :cond_18
+    :cond_1a
     return-object v2
 .end method

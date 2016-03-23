@@ -32,9 +32,10 @@
 # direct methods
 .method protected constructor <init>(Lcom/bitmapfun/util/ImageWorker;)V
     .registers 2
+    .param p1, "this$0"    # Lcom/bitmapfun/util/ImageWorker;
 
     .prologue
-    .line 622
+    .line 623
     iput-object p1, p0, Lcom/bitmapfun/util/ImageWorker$CacheAsyncTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
     invoke-direct {p0}, Lcom/bitmapfun/util/AsyncTask;-><init>()V
@@ -44,13 +45,11 @@
 
 
 # virtual methods
-.method protected bridge varargs synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+.method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
     .prologue
-    .line 1
-    check-cast p1, [Ljava/lang/Object;
-
+    .line 623
     invoke-virtual {p0, p1}, Lcom/bitmapfun/util/ImageWorker$CacheAsyncTask;->doInBackground([Ljava/lang/Object;)Ljava/lang/Void;
 
     move-result-object v0
@@ -63,7 +62,7 @@
     .param p1, "params"    # [Ljava/lang/Object;
 
     .prologue
-    .line 625
+    .line 626
     const/4 v0, 0x0
 
     aget-object v0, p1, v0
@@ -76,13 +75,13 @@
 
     packed-switch v0, :pswitch_data_26
 
-    .line 639
+    .line 640
     :goto_c
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 627
+    .line 628
     :pswitch_e
     iget-object v0, p0, Lcom/bitmapfun/util/ImageWorker$CacheAsyncTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
@@ -90,7 +89,7 @@
 
     goto :goto_c
 
-    .line 630
+    .line 631
     :pswitch_14
     iget-object v0, p0, Lcom/bitmapfun/util/ImageWorker$CacheAsyncTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
@@ -98,7 +97,7 @@
 
     goto :goto_c
 
-    .line 633
+    .line 634
     :pswitch_1a
     iget-object v0, p0, Lcom/bitmapfun/util/ImageWorker$CacheAsyncTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
@@ -106,7 +105,7 @@
 
     goto :goto_c
 
-    .line 636
+    .line 637
     :pswitch_20
     iget-object v0, p0, Lcom/bitmapfun/util/ImageWorker$CacheAsyncTask;->this$0:Lcom/bitmapfun/util/ImageWorker;
 
@@ -114,7 +113,7 @@
 
     goto :goto_c
 
-    .line 625
+    .line 626
     :pswitch_data_26
     .packed-switch 0x0
         :pswitch_e

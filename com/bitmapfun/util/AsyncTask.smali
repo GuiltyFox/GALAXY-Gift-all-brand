@@ -7,10 +7,10 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/bitmapfun/util/AsyncTask$AsyncTaskResult;,
+        Lcom/bitmapfun/util/AsyncTask$WorkerRunnable;,
         Lcom/bitmapfun/util/AsyncTask$InternalHandler;,
-        Lcom/bitmapfun/util/AsyncTask$SerialExecutor;,
         Lcom/bitmapfun/util/AsyncTask$Status;,
-        Lcom/bitmapfun/util/AsyncTask$WorkerRunnable;
+        Lcom/bitmapfun/util/AsyncTask$SerialExecutor;
     }
 .end annotation
 
@@ -29,8 +29,6 @@
 
 
 # static fields
-.field private static synthetic $SWITCH_TABLE$com$bitmapfun$util$AsyncTask$Status:[I = null
-
 .field private static final CORE_POOL_SIZE:I = 0x5
 
 .field public static final DUAL_THREAD_EXECUTOR:Ljava/util/concurrent/Executor;
@@ -94,113 +92,29 @@
 
 
 # direct methods
-.method static synthetic $SWITCH_TABLE$com$bitmapfun$util$AsyncTask$Status()[I
-    .registers 3
-
-    .prologue
-    .line 198
-    sget-object v0, Lcom/bitmapfun/util/AsyncTask;->$SWITCH_TABLE$com$bitmapfun$util$AsyncTask$Status:[I
-
-    if-eqz v0, :cond_5
-
-    :goto_4
-    return-object v0
-
-    :cond_5
-    invoke-static {}, Lcom/bitmapfun/util/AsyncTask$Status;->values()[Lcom/bitmapfun/util/AsyncTask$Status;
-
-    move-result-object v0
-
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    :try_start_c
-    sget-object v1, Lcom/bitmapfun/util/AsyncTask$Status;->FINISHED:Lcom/bitmapfun/util/AsyncTask$Status;
-
-    invoke-virtual {v1}, Lcom/bitmapfun/util/AsyncTask$Status;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_15
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_c .. :try_end_15} :catch_2e
-
-    :goto_15
-    :try_start_15
-    sget-object v1, Lcom/bitmapfun/util/AsyncTask$Status;->PENDING:Lcom/bitmapfun/util/AsyncTask$Status;
-
-    invoke-virtual {v1}, Lcom/bitmapfun/util/AsyncTask$Status;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_1e
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_15 .. :try_end_1e} :catch_2c
-
-    :goto_1e
-    :try_start_1e
-    sget-object v1, Lcom/bitmapfun/util/AsyncTask$Status;->RUNNING:Lcom/bitmapfun/util/AsyncTask$Status;
-
-    invoke-virtual {v1}, Lcom/bitmapfun/util/AsyncTask$Status;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_27
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1e .. :try_end_27} :catch_2a
-
-    :goto_27
-    sput-object v0, Lcom/bitmapfun/util/AsyncTask;->$SWITCH_TABLE$com$bitmapfun$util$AsyncTask$Status:[I
-
-    goto :goto_4
-
-    :catch_2a
-    move-exception v1
-
-    goto :goto_27
-
-    :catch_2c
-    move-exception v1
-
-    goto :goto_1e
-
-    :catch_2e
-    move-exception v1
-
-    goto :goto_15
-.end method
-
 .method static constructor <clinit>()V
     .registers 11
 
     .prologue
     const/4 v10, 0x0
 
-    .line 205
+    .line 204
     new-instance v0, Lcom/bitmapfun/util/AsyncTask$1;
 
     invoke-direct {v0}, Lcom/bitmapfun/util/AsyncTask$1;-><init>()V
 
     sput-object v0, Lcom/bitmapfun/util/AsyncTask;->sThreadFactory:Ljava/util/concurrent/ThreadFactory;
 
-    .line 214
+    .line 212
     new-instance v0, Ljava/util/concurrent/LinkedBlockingQueue;
 
     const/16 v1, 0xa
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>(I)V
 
-    .line 213
     sput-object v0, Lcom/bitmapfun/util/AsyncTask;->sPoolWorkQueue:Ljava/util/concurrent/BlockingQueue;
 
-    .line 220
+    .line 218
     new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
 
     const/4 v2, 0x5
@@ -209,25 +123,21 @@
 
     const-wide/16 v4, 0x1
 
-    .line 221
     sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     sget-object v7, Lcom/bitmapfun/util/AsyncTask;->sPoolWorkQueue:Ljava/util/concurrent/BlockingQueue;
 
     sget-object v8, Lcom/bitmapfun/util/AsyncTask;->sThreadFactory:Ljava/util/concurrent/ThreadFactory;
 
-    .line 222
     new-instance v9, Ljava/util/concurrent/ThreadPoolExecutor$DiscardOldestPolicy;
 
     invoke-direct {v9}, Ljava/util/concurrent/ThreadPoolExecutor$DiscardOldestPolicy;-><init>()V
 
-    .line 220
     invoke-direct/range {v1 .. v9}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;Ljava/util/concurrent/RejectedExecutionHandler;)V
 
-    .line 219
     sput-object v1, Lcom/bitmapfun/util/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
-    .line 228
+    .line 227
     invoke-static {}, Lcom/bitmapfun/util/Utils;->hasHoneycomb()Z
 
     move-result v0
@@ -236,41 +146,43 @@
 
     new-instance v0, Lcom/bitmapfun/util/AsyncTask$SerialExecutor;
 
-    invoke-direct {v0, v10}, Lcom/bitmapfun/util/AsyncTask$SerialExecutor;-><init>(Lcom/bitmapfun/util/AsyncTask$SerialExecutor;)V
+    invoke-direct {v0, v10}, Lcom/bitmapfun/util/AsyncTask$SerialExecutor;-><init>(Lcom/bitmapfun/util/AsyncTask$1;)V
 
+    .line 228
     :goto_33
     sput-object v0, Lcom/bitmapfun/util/AsyncTask;->SERIAL_EXECUTOR:Ljava/util/concurrent/Executor;
 
-    .line 232
+    .line 230
     const/4 v0, 0x2
 
     sget-object v1, Lcom/bitmapfun/util/AsyncTask;->sThreadFactory:Ljava/util/concurrent/ThreadFactory;
 
+    .line 231
     invoke-static {v0, v1}, Ljava/util/concurrent/Executors;->newFixedThreadPool(ILjava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
 
-    .line 231
     sput-object v0, Lcom/bitmapfun/util/AsyncTask;->DUAL_THREAD_EXECUTOR:Ljava/util/concurrent/Executor;
 
-    .line 237
+    .line 236
     new-instance v0, Lcom/bitmapfun/util/AsyncTask$InternalHandler;
 
-    invoke-direct {v0, v10}, Lcom/bitmapfun/util/AsyncTask$InternalHandler;-><init>(Lcom/bitmapfun/util/AsyncTask$InternalHandler;)V
+    invoke-direct {v0, v10}, Lcom/bitmapfun/util/AsyncTask$InternalHandler;-><init>(Lcom/bitmapfun/util/AsyncTask$1;)V
 
     sput-object v0, Lcom/bitmapfun/util/AsyncTask;->sHandler:Lcom/bitmapfun/util/AsyncTask$InternalHandler;
 
-    .line 239
+    .line 238
     sget-object v0, Lcom/bitmapfun/util/AsyncTask;->SERIAL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     sput-object v0, Lcom/bitmapfun/util/AsyncTask;->sDefaultExecutor:Ljava/util/concurrent/Executor;
 
     return-void
 
-    .line 229
+    .line 227
     :cond_4a
     sget-object v0, Lcom/bitmapfun/util/AsyncTask;->sThreadFactory:Ljava/util/concurrent/ThreadFactory;
 
+    .line 228
     invoke-static {v0}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
@@ -282,37 +194,37 @@
     .registers 3
 
     .prologue
-    .line 307
+    .line 306
     .local p0, "this":Lcom/bitmapfun/util/AsyncTask;, "Lcom/bitmapfun/util/AsyncTask<TParams;TProgress;TResult;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 243
+    .line 242
     sget-object v0, Lcom/bitmapfun/util/AsyncTask$Status;->PENDING:Lcom/bitmapfun/util/AsyncTask$Status;
 
     iput-object v0, p0, Lcom/bitmapfun/util/AsyncTask;->mStatus:Lcom/bitmapfun/util/AsyncTask$Status;
 
-    .line 245
+    .line 244
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
 
     iput-object v0, p0, Lcom/bitmapfun/util/AsyncTask;->mCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 246
+    .line 245
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
 
     iput-object v0, p0, Lcom/bitmapfun/util/AsyncTask;->mTaskInvoked:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 308
+    .line 307
     new-instance v0, Lcom/bitmapfun/util/AsyncTask$2;
 
     invoke-direct {v0, p0}, Lcom/bitmapfun/util/AsyncTask$2;-><init>(Lcom/bitmapfun/util/AsyncTask;)V
 
     iput-object v0, p0, Lcom/bitmapfun/util/AsyncTask;->mWorker:Lcom/bitmapfun/util/AsyncTask$WorkerRunnable;
 
-    .line 318
+    .line 317
     new-instance v0, Lcom/bitmapfun/util/AsyncTask$3;
 
     iget-object v1, p0, Lcom/bitmapfun/util/AsyncTask;->mWorker:Lcom/bitmapfun/util/AsyncTask$WorkerRunnable;
@@ -321,35 +233,28 @@
 
     iput-object v0, p0, Lcom/bitmapfun/util/AsyncTask;->mFuture:Ljava/util/concurrent/FutureTask;
 
-    .line 333
+    .line 332
     return-void
 .end method
 
-.method static synthetic access$0(Lcom/bitmapfun/util/AsyncTask;Ljava/lang/Object;)V
+.method static synthetic access$300(Lcom/bitmapfun/util/AsyncTask;)Ljava/util/concurrent/atomic/AtomicBoolean;
     .registers 2
+    .param p0, "x0"    # Lcom/bitmapfun/util/AsyncTask;
 
     .prologue
-    .line 654
-    invoke-direct {p0, p1}, Lcom/bitmapfun/util/AsyncTask;->finish(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method static synthetic access$1(Lcom/bitmapfun/util/AsyncTask;)Ljava/util/concurrent/atomic/AtomicBoolean;
-    .registers 2
-
-    .prologue
-    .line 246
+    .line 197
     iget-object v0, p0, Lcom/bitmapfun/util/AsyncTask;->mTaskInvoked:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-object v0
 .end method
 
-.method static synthetic access$2(Lcom/bitmapfun/util/AsyncTask;Ljava/lang/Object;)Ljava/lang/Object;
+.method static synthetic access$400(Lcom/bitmapfun/util/AsyncTask;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
+    .param p0, "x0"    # Lcom/bitmapfun/util/AsyncTask;
+    .param p1, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 342
+    .line 197
     invoke-direct {p0, p1}, Lcom/bitmapfun/util/AsyncTask;->postResult(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -357,12 +262,26 @@
     return-object v0
 .end method
 
-.method static synthetic access$3(Lcom/bitmapfun/util/AsyncTask;Ljava/lang/Object;)V
+.method static synthetic access$500(Lcom/bitmapfun/util/AsyncTask;Ljava/lang/Object;)V
     .registers 2
+    .param p0, "x0"    # Lcom/bitmapfun/util/AsyncTask;
+    .param p1, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 335
+    .line 197
     invoke-direct {p0, p1}, Lcom/bitmapfun/util/AsyncTask;->postResultIfNotInvoked(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method static synthetic access$600(Lcom/bitmapfun/util/AsyncTask;Ljava/lang/Object;)V
+    .registers 2
+    .param p0, "x0"    # Lcom/bitmapfun/util/AsyncTask;
+    .param p1, "x1"    # Ljava/lang/Object;
+
+    .prologue
+    .line 197
+    invoke-direct {p0, p1}, Lcom/bitmapfun/util/AsyncTask;->finish(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -372,12 +291,12 @@
     .param p0, "runnable"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 630
+    .line 629
     sget-object v0, Lcom/bitmapfun/util/AsyncTask;->sDefaultExecutor:Ljava/util/concurrent/Executor;
 
     invoke-interface {v0, p0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 631
+    .line 630
     return-void
 .end method
 
@@ -390,7 +309,7 @@
     .end annotation
 
     .prologue
-    .line 655
+    .line 654
     .local p0, "this":Lcom/bitmapfun/util/AsyncTask;, "Lcom/bitmapfun/util/AsyncTask<TParams;TProgress;TResult;>;"
     .local p1, "result":Ljava/lang/Object;, "TResult;"
     invoke-virtual {p0}, Lcom/bitmapfun/util/AsyncTask;->isCancelled()Z
@@ -399,19 +318,19 @@
 
     if-eqz v0, :cond_e
 
-    .line 656
+    .line 655
     invoke-virtual {p0, p1}, Lcom/bitmapfun/util/AsyncTask;->onCancelled(Ljava/lang/Object;)V
 
-    .line 660
+    .line 659
     :goto_9
     sget-object v0, Lcom/bitmapfun/util/AsyncTask$Status;->FINISHED:Lcom/bitmapfun/util/AsyncTask$Status;
 
     iput-object v0, p0, Lcom/bitmapfun/util/AsyncTask;->mStatus:Lcom/bitmapfun/util/AsyncTask$Status;
 
-    .line 661
+    .line 660
     return-void
 
-    .line 658
+    .line 657
     :cond_e
     invoke-virtual {p0, p1}, Lcom/bitmapfun/util/AsyncTask;->onPostExecute(Ljava/lang/Object;)V
 
@@ -422,12 +341,12 @@
     .registers 1
 
     .prologue
-    .line 296
+    .line 295
     sget-object v0, Lcom/bitmapfun/util/AsyncTask;->sHandler:Lcom/bitmapfun/util/AsyncTask$InternalHandler;
 
     invoke-virtual {v0}, Lcom/bitmapfun/util/AsyncTask$InternalHandler;->getLooper()Landroid/os/Looper;
 
-    .line 297
+    .line 296
     return-void
 .end method
 
@@ -444,10 +363,9 @@
     .local p1, "result":Ljava/lang/Object;, "TResult;"
     const/4 v5, 0x1
 
-    .line 344
+    .line 343
     sget-object v1, Lcom/bitmapfun/util/AsyncTask;->sHandler:Lcom/bitmapfun/util/AsyncTask$InternalHandler;
 
-    .line 345
     new-instance v2, Lcom/bitmapfun/util/AsyncTask$AsyncTaskResult;
 
     new-array v3, v5, [Ljava/lang/Object;
@@ -458,16 +376,15 @@
 
     invoke-direct {v2, p0, v3}, Lcom/bitmapfun/util/AsyncTask$AsyncTaskResult;-><init>(Lcom/bitmapfun/util/AsyncTask;[Ljava/lang/Object;)V
 
-    .line 344
     invoke-virtual {v1, v5, v2}, Lcom/bitmapfun/util/AsyncTask$InternalHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 346
+    .line 345
     .local v0, "message":Landroid/os/Message;
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 347
+    .line 346
     return-object p1
 .end method
 
@@ -480,7 +397,7 @@
     .end annotation
 
     .prologue
-    .line 336
+    .line 335
     .local p0, "this":Lcom/bitmapfun/util/AsyncTask;, "Lcom/bitmapfun/util/AsyncTask<TParams;TProgress;TResult;>;"
     .local p1, "result":Ljava/lang/Object;, "TResult;"
     iget-object v1, p0, Lcom/bitmapfun/util/AsyncTask;->mTaskInvoked:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -489,14 +406,14 @@
 
     move-result v0
 
-    .line 337
+    .line 336
     .local v0, "wasTaskInvoked":Z
     if-nez v0, :cond_b
 
-    .line 338
+    .line 337
     invoke-direct {p0, p1}, Lcom/bitmapfun/util/AsyncTask;->postResult(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 340
+    .line 339
     :cond_b
     return-void
 .end method
@@ -506,10 +423,10 @@
     .param p0, "exec"    # Ljava/util/concurrent/Executor;
 
     .prologue
-    .line 301
+    .line 300
     sput-object p0, Lcom/bitmapfun/util/AsyncTask;->sDefaultExecutor:Ljava/util/concurrent/Executor;
 
-    .line 302
+    .line 301
     return-void
 .end method
 
@@ -520,7 +437,7 @@
     .param p1, "mayInterruptIfRunning"    # Z
 
     .prologue
-    .line 493
+    .line 492
     .local p0, "this":Lcom/bitmapfun/util/AsyncTask;, "Lcom/bitmapfun/util/AsyncTask<TParams;TProgress;TResult;>;"
     iget-object v0, p0, Lcom/bitmapfun/util/AsyncTask;->mCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -528,7 +445,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 494
+    .line 493
     iget-object v0, p0, Lcom/bitmapfun/util/AsyncTask;->mFuture:Ljava/util/concurrent/FutureTask;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/FutureTask;->cancel(Z)Z
@@ -548,7 +465,6 @@
 
 .method public final varargs execute([Ljava/lang/Object;)Lcom/bitmapfun/util/AsyncTask;
     .registers 3
-    .param p1, "params"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([TParams;)",
@@ -558,8 +474,9 @@
     .end annotation
 
     .prologue
-    .line 561
+    .line 560
     .local p0, "this":Lcom/bitmapfun/util/AsyncTask;, "Lcom/bitmapfun/util/AsyncTask<TParams;TProgress;TResult;>;"
+    .local p1, "params":[Ljava/lang/Object;, "[TParams;"
     sget-object v0, Lcom/bitmapfun/util/AsyncTask;->sDefaultExecutor:Ljava/util/concurrent/Executor;
 
     invoke-virtual {p0, v0, p1}, Lcom/bitmapfun/util/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Lcom/bitmapfun/util/AsyncTask;
@@ -572,7 +489,6 @@
 .method public final varargs executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Lcom/bitmapfun/util/AsyncTask;
     .registers 5
     .param p1, "exec"    # Ljava/util/concurrent/Executor;
-    .param p2, "params"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -584,18 +500,17 @@
     .end annotation
 
     .prologue
-    .line 599
+    .line 598
     .local p0, "this":Lcom/bitmapfun/util/AsyncTask;, "Lcom/bitmapfun/util/AsyncTask<TParams;TProgress;TResult;>;"
+    .local p2, "params":[Ljava/lang/Object;, "[TParams;"
     iget-object v0, p0, Lcom/bitmapfun/util/AsyncTask;->mStatus:Lcom/bitmapfun/util/AsyncTask$Status;
 
     sget-object v1, Lcom/bitmapfun/util/AsyncTask$Status;->PENDING:Lcom/bitmapfun/util/AsyncTask$Status;
 
-    if-eq v0, v1, :cond_15
+    if-eq v0, v1, :cond_13
 
-    .line 600
-    invoke-static {}, Lcom/bitmapfun/util/AsyncTask;->$SWITCH_TABLE$com$bitmapfun$util$AsyncTask$Status()[I
-
-    move-result-object v0
+    .line 599
+    sget-object v0, Lcom/bitmapfun/util/AsyncTask$4;->$SwitchMap$com$bitmapfun$util$AsyncTask$Status:[I
 
     iget-object v1, p0, Lcom/bitmapfun/util/AsyncTask;->mStatus:Lcom/bitmapfun/util/AsyncTask$Status;
 
@@ -607,53 +522,53 @@
 
     packed-switch v0, :pswitch_data_36
 
-    .line 611
-    :cond_15
+    .line 610
+    :cond_13
     sget-object v0, Lcom/bitmapfun/util/AsyncTask$Status;->RUNNING:Lcom/bitmapfun/util/AsyncTask$Status;
 
     iput-object v0, p0, Lcom/bitmapfun/util/AsyncTask;->mStatus:Lcom/bitmapfun/util/AsyncTask$Status;
 
-    .line 613
+    .line 612
     invoke-virtual {p0}, Lcom/bitmapfun/util/AsyncTask;->onPreExecute()V
 
-    .line 615
+    .line 614
     iget-object v0, p0, Lcom/bitmapfun/util/AsyncTask;->mWorker:Lcom/bitmapfun/util/AsyncTask$WorkerRunnable;
 
     iput-object p2, v0, Lcom/bitmapfun/util/AsyncTask$WorkerRunnable;->mParams:[Ljava/lang/Object;
 
-    .line 616
+    .line 615
     iget-object v0, p0, Lcom/bitmapfun/util/AsyncTask;->mFuture:Ljava/util/concurrent/FutureTask;
 
     invoke-interface {p1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 618
+    .line 617
     return-object p0
 
-    .line 602
-    :pswitch_26
+    .line 601
+    :pswitch_24
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "Cannot execute task: the task is already running."
+    const-string/jumbo v1, "Cannot execute task: the task is already running."
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 605
-    :pswitch_2e
+    .line 604
+    :pswitch_2d
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "Cannot execute task: the task has already been executed (a task can be executed only once)"
+    const-string/jumbo v1, "Cannot execute task: the task has already been executed (a task can be executed only once)"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 600
+    .line 599
     :pswitch_data_36
-    .packed-switch 0x2
-        :pswitch_26
-        :pswitch_2e
+    .packed-switch 0x1
+        :pswitch_24
+        :pswitch_2d
     .end packed-switch
 .end method
 
@@ -673,7 +588,7 @@
     .end annotation
 
     .prologue
-    .line 509
+    .line 508
     .local p0, "this":Lcom/bitmapfun/util/AsyncTask;, "Lcom/bitmapfun/util/AsyncTask<TParams;TProgress;TResult;>;"
     iget-object v0, p0, Lcom/bitmapfun/util/AsyncTask;->mFuture:Ljava/util/concurrent/FutureTask;
 
@@ -705,7 +620,7 @@
     .end annotation
 
     .prologue
-    .line 529
+    .line 528
     .local p0, "this":Lcom/bitmapfun/util/AsyncTask;, "Lcom/bitmapfun/util/AsyncTask<TParams;TProgress;TResult;>;"
     iget-object v0, p0, Lcom/bitmapfun/util/AsyncTask;->mFuture:Ljava/util/concurrent/FutureTask;
 
@@ -720,7 +635,7 @@
     .registers 2
 
     .prologue
-    .line 356
+    .line 355
     .local p0, "this":Lcom/bitmapfun/util/AsyncTask;, "Lcom/bitmapfun/util/AsyncTask<TParams;TProgress;TResult;>;"
     iget-object v0, p0, Lcom/bitmapfun/util/AsyncTask;->mStatus:Lcom/bitmapfun/util/AsyncTask$Status;
 
@@ -731,7 +646,7 @@
     .registers 2
 
     .prologue
-    .line 460
+    .line 459
     .local p0, "this":Lcom/bitmapfun/util/AsyncTask;, "Lcom/bitmapfun/util/AsyncTask<TParams;TProgress;TResult;>;"
     iget-object v0, p0, Lcom/bitmapfun/util/AsyncTask;->mCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -746,7 +661,7 @@
     .registers 1
 
     .prologue
-    .line 447
+    .line 446
     .local p0, "this":Lcom/bitmapfun/util/AsyncTask;, "Lcom/bitmapfun/util/AsyncTask<TParams;TProgress;TResult;>;"
     return-void
 .end method
@@ -760,12 +675,12 @@
     .end annotation
 
     .prologue
-    .line 431
+    .line 430
     .local p0, "this":Lcom/bitmapfun/util/AsyncTask;, "Lcom/bitmapfun/util/AsyncTask<TParams;TProgress;TResult;>;"
     .local p1, "result":Ljava/lang/Object;, "TResult;"
     invoke-virtual {p0}, Lcom/bitmapfun/util/AsyncTask;->onCancelled()V
 
-    .line 432
+    .line 431
     return-void
 .end method
 
@@ -778,7 +693,7 @@
     .end annotation
 
     .prologue
-    .line 400
+    .line 399
     .local p0, "this":Lcom/bitmapfun/util/AsyncTask;, "Lcom/bitmapfun/util/AsyncTask<TParams;TProgress;TResult;>;"
     .local p1, "result":Ljava/lang/Object;, "TResult;"
     return-void
@@ -788,14 +703,13 @@
     .registers 1
 
     .prologue
-    .line 384
+    .line 383
     .local p0, "this":Lcom/bitmapfun/util/AsyncTask;, "Lcom/bitmapfun/util/AsyncTask<TParams;TProgress;TResult;>;"
     return-void
 .end method
 
 .method protected varargs onProgressUpdate([Ljava/lang/Object;)V
     .registers 2
-    .param p1, "values"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([TProgress;)V"
@@ -803,14 +717,14 @@
     .end annotation
 
     .prologue
-    .line 413
+    .line 412
     .local p0, "this":Lcom/bitmapfun/util/AsyncTask;, "Lcom/bitmapfun/util/AsyncTask<TParams;TProgress;TResult;>;"
+    .local p1, "values":[Ljava/lang/Object;, "[TProgress;"
     return-void
 .end method
 
 .method protected final varargs publishProgress([Ljava/lang/Object;)V
     .registers 5
-    .param p1, "values"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([TProgress;)V"
@@ -818,33 +732,32 @@
     .end annotation
 
     .prologue
-    .line 648
+    .line 647
     .local p0, "this":Lcom/bitmapfun/util/AsyncTask;, "Lcom/bitmapfun/util/AsyncTask<TParams;TProgress;TResult;>;"
+    .local p1, "values":[Ljava/lang/Object;, "[TProgress;"
     invoke-virtual {p0}, Lcom/bitmapfun/util/AsyncTask;->isCancelled()Z
 
     move-result v0
 
     if-nez v0, :cond_15
 
-    .line 649
+    .line 648
     sget-object v0, Lcom/bitmapfun/util/AsyncTask;->sHandler:Lcom/bitmapfun/util/AsyncTask$InternalHandler;
 
     const/4 v1, 0x2
 
-    .line 650
     new-instance v2, Lcom/bitmapfun/util/AsyncTask$AsyncTaskResult;
 
     invoke-direct {v2, p0, p1}, Lcom/bitmapfun/util/AsyncTask$AsyncTaskResult;-><init>(Lcom/bitmapfun/util/AsyncTask;[Ljava/lang/Object;)V
 
-    .line 649
     invoke-virtual {v0, v1, v2}, Lcom/bitmapfun/util/AsyncTask$InternalHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 650
+    .line 649
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 652
+    .line 651
     :cond_15
     return-void
 .end method

@@ -25,19 +25,23 @@
 
     .prologue
     .line 10
-    const-string v0, "PullToRefresh"
+    const-string/jumbo v0, "PullToRefresh"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "You\'re using the deprecated "
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string/jumbo v2, "You\'re using the deprecated "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    const-string v2, " attr, please switch over to "
+    const-string/jumbo v2, " attr, please switch over to "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

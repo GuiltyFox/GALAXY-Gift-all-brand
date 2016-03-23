@@ -104,17 +104,13 @@
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .registers 4
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
     .line 79
     check-cast p1, Lcom/google/zxing/qrcode/detector/FinderPattern;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     check-cast p2, Lcom/google/zxing/qrcode/detector/FinderPattern;
 
-    .end local p2    # "x1":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2}, Lcom/google/zxing/multi/qrcode/detector/MultiFinderPatternFinder$ModuleSizeComparator;->compare(Lcom/google/zxing/qrcode/detector/FinderPattern;Lcom/google/zxing/qrcode/detector/FinderPattern;)I
 
     move-result v0

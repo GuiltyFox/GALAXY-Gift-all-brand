@@ -24,7 +24,7 @@
     sput-object v0, Lcom/google/zxing/client/android/DecodeHintManager;->TAG:Ljava/lang/String;
 
     .line 39
-    const-string v0, ","
+    const-string/jumbo v0, ","
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
@@ -65,111 +65,89 @@
     .line 202
     invoke-virtual {p0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 203
-    .local v0, "extras":Landroid/os/Bundle;
-    if-eqz v0, :cond_c
+    .local v1, "extras":Landroid/os/Bundle;
+    if-eqz v1, :cond_c
 
-    invoke-virtual {v0}, Landroid/os/Bundle;->isEmpty()Z
+    invoke-virtual {v1}, Landroid/os/Bundle;->isEmpty()Z
 
-    move-result v5
+    move-result v8
 
-    if-eqz v5, :cond_e
+    if-eqz v8, :cond_e
 
     .line 204
     :cond_c
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     .line 233
     :goto_d
-    return-object v4
+    return-object v5
 
     .line 206
     :cond_e
-    new-instance v4, Ljava/util/EnumMap;
+    new-instance v5, Ljava/util/EnumMap;
 
-    const-class v5, Lcom/google/zxing/DecodeHintType;
+    const-class v8, Lcom/google/zxing/DecodeHintType;
 
-    invoke-direct {v4, v5}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
+    invoke-direct {v5, v8}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
 
     .line 208
-    .local v4, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;Ljava/lang/Object;>;"
+    .local v5, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;Ljava/lang/Object;>;"
     invoke-static {}, Lcom/google/zxing/DecodeHintType;->values()[Lcom/google/zxing/DecodeHintType;
 
-    move-result-object v6
+    move-result-object v0
 
-    array-length v7, v6
+    .local v0, "arr$":[Lcom/google/zxing/DecodeHintType;
+    array-length v7, v0
 
-    const/4 v5, 0x0
+    .local v7, "len$":I
+    const/4 v6, 0x0
 
+    .local v6, "i$":I
     :goto_1b
-    if-lt v5, v7, :cond_32
+    if-ge v6, v7, :cond_81
 
-    .line 232
-    sget-object v5, Lcom/google/zxing/client/android/DecodeHintManager;->TAG:Ljava/lang/String;
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    const-string v7, "Hints from the Intent: "
-
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_d
-
-    .line 208
-    :cond_32
-    aget-object v3, v6, v5
+    aget-object v4, v0, v6
 
     .line 210
-    .local v3, "hintType":Lcom/google/zxing/DecodeHintType;
+    .local v4, "hintType":Lcom/google/zxing/DecodeHintType;
     sget-object v8, Lcom/google/zxing/DecodeHintType;->CHARACTER_SET:Lcom/google/zxing/DecodeHintType;
 
-    if-eq v3, v8, :cond_40
+    if-eq v4, v8, :cond_2b
 
-    .line 211
     sget-object v8, Lcom/google/zxing/DecodeHintType;->NEED_RESULT_POINT_CALLBACK:Lcom/google/zxing/DecodeHintType;
 
-    if-eq v3, v8, :cond_40
+    if-eq v4, v8, :cond_2b
 
-    .line 212
     sget-object v8, Lcom/google/zxing/DecodeHintType;->POSSIBLE_FORMATS:Lcom/google/zxing/DecodeHintType;
 
-    if-ne v3, v8, :cond_43
+    if-ne v4, v8, :cond_2e
 
     .line 208
-    :cond_40
-    :goto_40
-    add-int/lit8 v5, v5, 0x1
+    :cond_2b
+    :goto_2b
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_1b
 
     .line 216
-    :cond_43
-    invoke-virtual {v3}, Lcom/google/zxing/DecodeHintType;->name()Ljava/lang/String;
+    :cond_2e
+    invoke-virtual {v4}, Lcom/google/zxing/DecodeHintType;->name()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
     .line 217
-    .local v2, "hintName":Ljava/lang/String;
-    invoke-virtual {v0, v2}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+    .local v3, "hintName":Ljava/lang/String;
+    invoke-virtual {v1, v3}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_40
+    if-eqz v8, :cond_2b
 
     .line 218
-    invoke-virtual {v3}, Lcom/google/zxing/DecodeHintType;->getValueType()Ljava/lang/Class;
+    invoke-virtual {v4}, Lcom/google/zxing/DecodeHintType;->getValueType()Ljava/lang/Class;
 
     move-result-object v8
 
@@ -179,59 +157,63 @@
 
     move-result v8
 
-    if-eqz v8, :cond_5f
+    if-eqz v8, :cond_4a
 
     .line 220
     sget-object v8, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-interface {v4, v3, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v5, v4, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_40
+    goto :goto_2b
 
     .line 222
-    :cond_5f
-    invoke-virtual {v0, v2}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+    :cond_4a
+    invoke-virtual {v1, v3}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 223
-    .local v1, "hintData":Ljava/lang/Object;
-    invoke-virtual {v3}, Lcom/google/zxing/DecodeHintType;->getValueType()Ljava/lang/Class;
+    .local v2, "hintData":Ljava/lang/Object;
+    invoke-virtual {v4}, Lcom/google/zxing/DecodeHintType;->getValueType()Ljava/lang/Class;
 
     move-result-object v8
 
-    invoke-virtual {v8, v1}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v2}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_71
+    if-eqz v8, :cond_5c
 
     .line 224
-    invoke-interface {v4, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v5, v4, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_40
+    goto :goto_2b
 
     .line 226
-    :cond_71
+    :cond_5c
     sget-object v8, Lcom/google/zxing/client/android/DecodeHintManager;->TAG:Ljava/lang/String;
 
     new-instance v9, Ljava/lang/StringBuilder;
 
-    const-string v10, "Ignoring hint "
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    const-string v10, " because it is not assignable from "
+    const-string/jumbo v10, "Ignoring hint "
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
-    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    const-string/jumbo v10, " because it is not assignable from "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
@@ -241,7 +223,36 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_40
+    goto :goto_2b
+
+    .line 232
+    .end local v2    # "hintData":Ljava/lang/Object;
+    .end local v3    # "hintName":Ljava/lang/String;
+    .end local v4    # "hintType":Lcom/google/zxing/DecodeHintType;
+    :cond_81
+    sget-object v8, Lcom/google/zxing/client/android/DecodeHintManager;->TAG:Ljava/lang/String;
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v10, "Hints from the Intent: "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_d
 .end method
 
 .method static parseDecodeHints(Landroid/net/Uri;)Ljava/util/Map;
@@ -263,121 +274,99 @@
     .line 118
     invoke-virtual/range {p0 .. p0}, Landroid/net/Uri;->getEncodedQuery()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v11
 
     .line 119
-    .local v8, "query":Ljava/lang/String;
-    if-eqz v8, :cond_c
+    .local v11, "query":Ljava/lang/String;
+    if-eqz v11, :cond_c
 
-    invoke-virtual {v8}, Ljava/lang/String;->length()I
+    invoke-virtual {v11}, Ljava/lang/String;->isEmpty()Z
 
-    move-result v10
+    move-result v13
 
-    if-nez v10, :cond_e
+    if-eqz v13, :cond_e
 
     .line 120
     :cond_c
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     .line 198
     :goto_d
-    return-object v2
+    return-object v3
 
     .line 124
     :cond_e
-    invoke-static {v8}, Lcom/google/zxing/client/android/DecodeHintManager;->splitQuery(Ljava/lang/String;)Ljava/util/Map;
+    invoke-static {v11}, Lcom/google/zxing/client/android/DecodeHintManager;->splitQuery(Ljava/lang/String;)Ljava/util/Map;
 
-    move-result-object v7
+    move-result-object v10
 
     .line 126
-    .local v7, "parameters":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
-    new-instance v2, Ljava/util/EnumMap;
+    .local v10, "parameters":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+    new-instance v3, Ljava/util/EnumMap;
 
-    const-class v10, Lcom/google/zxing/DecodeHintType;
+    const-class v13, Lcom/google/zxing/DecodeHintType;
 
-    invoke-direct {v2, v10}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
+    invoke-direct {v3, v13}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
 
     .line 128
-    .local v2, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;Ljava/lang/Object;>;"
+    .local v3, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;Ljava/lang/Object;>;"
     invoke-static {}, Lcom/google/zxing/DecodeHintType;->values()[Lcom/google/zxing/DecodeHintType;
 
-    move-result-object v11
+    move-result-object v0
 
-    array-length v12, v11
+    .local v0, "arr$":[Lcom/google/zxing/DecodeHintType;
+    array-length v7, v0
 
-    const/4 v10, 0x0
+    .local v7, "len$":I
+    const/4 v5, 0x0
 
+    .local v5, "i$":I
     :goto_1f
-    if-lt v10, v12, :cond_36
+    if-ge v5, v7, :cond_151
 
-    .line 197
-    sget-object v10, Lcom/google/zxing/client/android/DecodeHintManager;->TAG:Ljava/lang/String;
-
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    const-string v12, "Hints from the URI: "
-
-    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v11, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v10, v11}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_d
-
-    .line 128
-    :cond_36
-    aget-object v1, v11, v10
+    aget-object v2, v0, v5
 
     .line 130
-    .local v1, "hintType":Lcom/google/zxing/DecodeHintType;
+    .local v2, "hintType":Lcom/google/zxing/DecodeHintType;
     sget-object v13, Lcom/google/zxing/DecodeHintType;->CHARACTER_SET:Lcom/google/zxing/DecodeHintType;
 
-    if-eq v1, v13, :cond_44
+    if-eq v2, v13, :cond_2f
 
-    .line 131
     sget-object v13, Lcom/google/zxing/DecodeHintType;->NEED_RESULT_POINT_CALLBACK:Lcom/google/zxing/DecodeHintType;
 
-    if-eq v1, v13, :cond_44
+    if-eq v2, v13, :cond_2f
 
-    .line 132
     sget-object v13, Lcom/google/zxing/DecodeHintType;->POSSIBLE_FORMATS:Lcom/google/zxing/DecodeHintType;
 
-    if-ne v1, v13, :cond_47
+    if-ne v2, v13, :cond_32
 
     .line 128
-    :cond_44
-    :goto_44
-    add-int/lit8 v10, v10, 0x1
+    :cond_2f
+    :goto_2f
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_1f
 
     .line 136
-    :cond_47
-    invoke-virtual {v1}, Lcom/google/zxing/DecodeHintType;->name()Ljava/lang/String;
+    :cond_32
+    invoke-virtual {v2}, Lcom/google/zxing/DecodeHintType;->name()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v8
 
     .line 137
-    .local v5, "parameterName":Ljava/lang/String;
-    invoke-interface {v7, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .local v8, "parameterName":Ljava/lang/String;
+    invoke-interface {v10, v8}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v9
 
-    check-cast v6, Ljava/lang/String;
+    check-cast v9, Ljava/lang/String;
 
     .line 138
-    .local v6, "parameterText":Ljava/lang/String;
-    if-eqz v6, :cond_44
+    .local v9, "parameterText":Ljava/lang/String;
+    if-eqz v9, :cond_2f
 
     .line 141
-    invoke-virtual {v1}, Lcom/google/zxing/DecodeHintType;->getValueType()Ljava/lang/Class;
+    invoke-virtual {v2}, Lcom/google/zxing/DecodeHintType;->getValueType()Ljava/lang/Class;
 
     move-result-object v13
 
@@ -387,16 +376,16 @@
 
     move-result v13
 
-    if-eqz v13, :cond_63
+    if-eqz v13, :cond_4e
 
     .line 144
-    invoke-interface {v2, v1, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v3, v2, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_44
+    goto :goto_2f
 
     .line 147
-    :cond_63
-    invoke-virtual {v1}, Lcom/google/zxing/DecodeHintType;->getValueType()Ljava/lang/Class;
+    :cond_4e
+    invoke-virtual {v2}, Lcom/google/zxing/DecodeHintType;->getValueType()Ljava/lang/Class;
 
     move-result-object v13
 
@@ -406,18 +395,18 @@
 
     move-result v13
 
-    if-eqz v13, :cond_75
+    if-eqz v13, :cond_60
 
     .line 149
     sget-object v13, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-interface {v2, v1, v13}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v3, v2, v13}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_44
+    goto :goto_2f
 
     .line 152
-    :cond_75
-    invoke-virtual {v1}, Lcom/google/zxing/DecodeHintType;->getValueType()Ljava/lang/Class;
+    :cond_60
+    invoke-virtual {v2}, Lcom/google/zxing/DecodeHintType;->getValueType()Ljava/lang/Class;
 
     move-result-object v13
 
@@ -427,16 +416,16 @@
 
     move-result v13
 
-    if-eqz v13, :cond_85
+    if-eqz v13, :cond_70
 
     .line 154
-    invoke-interface {v2, v1, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v3, v2, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_44
+    goto :goto_2f
 
     .line 157
-    :cond_85
-    invoke-virtual {v1}, Lcom/google/zxing/DecodeHintType;->getValueType()Ljava/lang/Class;
+    :cond_70
+    invoke-virtual {v2}, Lcom/google/zxing/DecodeHintType;->getValueType()Ljava/lang/Class;
 
     move-result-object v13
 
@@ -446,69 +435,67 @@
 
     move-result v13
 
-    if-eqz v13, :cond_c1
+    if-eqz v13, :cond_af
 
     .line 160
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
+    invoke-virtual {v9}, Ljava/lang/String;->isEmpty()Z
 
     move-result v13
 
-    if-nez v13, :cond_9d
+    if-eqz v13, :cond_88
 
     .line 161
     sget-object v13, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-interface {v2, v1, v13}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v3, v2, v13}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_44
+    goto :goto_2f
 
     .line 162
-    :cond_9d
-    const-string v13, "0"
+    :cond_88
+    const-string/jumbo v13, "0"
 
-    invoke-virtual {v13, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v13
-
-    if-nez v13, :cond_b5
-
-    .line 163
-    const-string v13, "false"
-
-    invoke-virtual {v13, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v13, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v13
 
-    if-nez v13, :cond_b5
+    if-nez v13, :cond_a3
 
-    .line 164
-    const-string v13, "no"
+    const-string/jumbo v13, "false"
 
-    invoke-virtual {v13, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v13, v9}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v13
 
-    if-eqz v13, :cond_bb
+    if-nez v13, :cond_a3
+
+    const-string/jumbo v13, "no"
+
+    invoke-virtual {v13, v9}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v13
+
+    if-eqz v13, :cond_a9
 
     .line 165
-    :cond_b5
+    :cond_a3
     sget-object v13, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    invoke-interface {v2, v1, v13}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v3, v2, v13}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_44
+    goto :goto_2f
 
     .line 167
-    :cond_bb
+    :cond_a9
     sget-object v13, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-interface {v2, v1, v13}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v3, v2, v13}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_44
+    goto :goto_2f
 
     .line 172
-    :cond_c1
-    invoke-virtual {v1}, Lcom/google/zxing/DecodeHintType;->getValueType()Ljava/lang/Class;
+    :cond_af
+    invoke-virtual {v2}, Lcom/google/zxing/DecodeHintType;->getValueType()Ljava/lang/Class;
 
     move-result-object v13
 
@@ -518,118 +505,112 @@
 
     move-result v13
 
-    if-eqz v13, :cond_134
+    if-eqz v13, :cond_127
 
     .line 175
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
+    invoke-virtual {v9}, Ljava/lang/String;->isEmpty()Z
 
     move-result v13
 
-    if-lez v13, :cond_ec
+    if-nez v13, :cond_da
 
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
+    invoke-virtual {v9}, Ljava/lang/String;->length()I
 
     move-result v13
 
     add-int/lit8 v13, v13, -0x1
 
-    invoke-virtual {v6, v13}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v9, v13}, Ljava/lang/String;->charAt(I)C
 
     move-result v13
 
     const/16 v14, 0x2c
 
-    if-ne v13, v14, :cond_ec
+    if-ne v13, v14, :cond_da
 
     .line 176
     const/4 v13, 0x0
 
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
+    invoke-virtual {v9}, Ljava/lang/String;->length()I
 
     move-result v14
 
     add-int/lit8 v14, v14, -0x1
 
-    invoke-virtual {v6, v13, v14}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 178
-    :cond_ec
-    sget-object v13, Lcom/google/zxing/client/android/DecodeHintManager;->COMMA:Ljava/util/regex/Pattern;
-
-    invoke-virtual {v13, v6}, Ljava/util/regex/Pattern;->split(Ljava/lang/CharSequence;)[Ljava/lang/String;
+    invoke-virtual {v9, v13, v14}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 179
-    .local v9, "values":[Ljava/lang/String;
-    array-length v13, v9
+    .line 178
+    :cond_da
+    sget-object v13, Lcom/google/zxing/client/android/DecodeHintManager;->COMMA:Ljava/util/regex/Pattern;
 
-    new-array v0, v13, [I
+    invoke-virtual {v13, v9}, Ljava/util/regex/Pattern;->split(Ljava/lang/CharSequence;)[Ljava/lang/String;
+
+    move-result-object v12
+
+    .line 179
+    .local v12, "values":[Ljava/lang/String;
+    array-length v13, v12
+
+    new-array v1, v13, [I
 
     .line 180
-    .local v0, "array":[I
-    const/4 v3, 0x0
+    .local v1, "array":[I
+    const/4 v4, 0x0
 
-    .local v3, "i":I
-    :goto_f6
-    array-length v13, v9
+    .local v4, "i":I
+    :goto_e4
+    array-length v13, v12
 
-    if-lt v3, v13, :cond_100
-
-    .line 189
-    :goto_f9
-    if-eqz v0, :cond_44
-
-    .line 190
-    invoke-interface {v2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto/16 :goto_44
+    if-ge v4, v13, :cond_120
 
     .line 182
-    :cond_100
-    :try_start_100
-    aget-object v13, v9, v3
+    :try_start_e7
+    aget-object v13, v12, v4
 
     invoke-static {v13}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v13
 
-    aput v13, v0, v3
-    :try_end_108
-    .catch Ljava/lang/NumberFormatException; {:try_start_100 .. :try_end_108} :catch_10b
+    aput v13, v1, v4
+    :try_end_ef
+    .catch Ljava/lang/NumberFormatException; {:try_start_e7 .. :try_end_ef} :catch_f2
 
     .line 180
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v4, v4, 0x1
 
-    goto :goto_f6
+    goto :goto_e4
 
     .line 183
-    :catch_10b
-    move-exception v4
+    :catch_f2
+    move-exception v6
 
     .line 184
-    .local v4, "ignored":Ljava/lang/NumberFormatException;
+    .local v6, "ignored":Ljava/lang/NumberFormatException;
     sget-object v13, Lcom/google/zxing/client/android/DecodeHintManager;->TAG:Ljava/lang/String;
 
     new-instance v14, Ljava/lang/StringBuilder;
 
-    const-string v15, "Skipping array of integers hint "
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v14, v15}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v14, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    const-string v15, " due to invalid numeric value: \'"
+    const-string/jumbo v15, "Skipping array of integers hint "
 
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v14
 
-    aget-object v15, v9, v3
+    invoke-virtual {v14, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    const-string/jumbo v15, " due to invalid numeric value: \'"
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    aget-object v15, v12, v4
 
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -648,36 +629,46 @@
     invoke-static {v13, v14}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 185
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    .line 186
-    goto :goto_f9
+    .line 189
+    .end local v6    # "ignored":Ljava/lang/NumberFormatException;
+    :cond_120
+    if-eqz v1, :cond_2f
+
+    .line 190
+    invoke-interface {v3, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto/16 :goto_2f
 
     .line 194
-    .end local v0    # "array":[I
-    .end local v3    # "i":I
-    .end local v4    # "ignored":Ljava/lang/NumberFormatException;
-    .end local v9    # "values":[Ljava/lang/String;
-    :cond_134
+    .end local v1    # "array":[I
+    .end local v4    # "i":I
+    .end local v12    # "values":[Ljava/lang/String;
+    :cond_127
     sget-object v13, Lcom/google/zxing/client/android/DecodeHintManager;->TAG:Ljava/lang/String;
 
     new-instance v14, Ljava/lang/StringBuilder;
 
-    const-string v15, "Unsupported hint type \'"
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v14, v15}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v14, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    const-string v15, "\' of type "
+    const-string/jumbo v15, "Unsupported hint type \'"
 
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v14
 
-    invoke-virtual {v1}, Lcom/google/zxing/DecodeHintType;->getValueType()Ljava/lang/Class;
+    invoke-virtual {v14, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    const-string/jumbo v15, "\' of type "
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v2}, Lcom/google/zxing/DecodeHintType;->getValueType()Ljava/lang/Class;
 
     move-result-object v15
 
@@ -691,7 +682,36 @@
 
     invoke-static {v13, v14}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_44
+    goto/16 :goto_2f
+
+    .line 197
+    .end local v2    # "hintType":Lcom/google/zxing/DecodeHintType;
+    .end local v8    # "parameterName":Ljava/lang/String;
+    .end local v9    # "parameterText":Ljava/lang/String;
+    :cond_151
+    sget-object v13, Lcom/google/zxing/client/android/DecodeHintManager;->TAG:Ljava/lang/String;
+
+    new-instance v14, Ljava/lang/StringBuilder;
+
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v15, "Hints from the URI: "
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-static {v13, v14}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_d
 .end method
 
 .method private static splitQuery(Ljava/lang/String;)Ljava/util/Map;
@@ -733,20 +753,14 @@
 
     move-result v6
 
-    if-lt v4, v6, :cond_13
-
-    .line 114
-    :cond_12
-    :goto_12
-    return-object v2
+    if-ge v4, v6, :cond_41
 
     .line 61
-    :cond_13
     invoke-virtual {p0, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v6
 
-    if-ne v6, v9, :cond_1c
+    if-ne v6, v9, :cond_1b
 
     .line 63
     add-int/lit8 v4, v4, 0x1
@@ -755,7 +769,7 @@
     goto :goto_c
 
     .line 66
-    :cond_1c
+    :cond_1b
     invoke-virtual {p0, v9, v4}, Ljava/lang/String;->indexOf(II)I
 
     move-result v0
@@ -792,7 +806,7 @@
     move-result-object v3
 
     .line 77
-    const-string v5, ""
+    const-string/jumbo v5, ""
 
     .line 87
     .local v5, "text":Ljava/lang/String;
@@ -801,16 +815,22 @@
 
     move-result v6
 
-    if-nez v6, :cond_12
+    if-nez v6, :cond_41
 
     .line 88
     invoke-interface {v2, v3, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_12
-
-    .line 80
+    .line 114
+    .end local v0    # "amp":I
+    .end local v1    # "equ":I
     .end local v3    # "name":Ljava/lang/String;
     .end local v5    # "text":Ljava/lang/String;
+    :cond_41
+    return-object v2
+
+    .line 80
+    .restart local v0    # "amp":I
+    .restart local v1    # "equ":I
     :cond_42
     invoke-virtual {p0, v4, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
@@ -853,7 +873,7 @@
     :cond_5d
     if-ltz v1, :cond_61
 
-    if-le v1, v0, :cond_7b
+    if-le v1, v0, :cond_7c
 
     .line 94
     :cond_61
@@ -877,15 +897,15 @@
 
     move-result v6
 
-    if-nez v6, :cond_78
+    if-nez v6, :cond_79
 
     .line 98
-    const-string v6, ""
+    const-string/jumbo v6, ""
 
     invoke-interface {v2, v3, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 100
-    :cond_78
+    :cond_79
     add-int/lit8 v4, v0, 0x1
 
     .line 101
@@ -893,7 +913,7 @@
 
     .line 103
     .end local v3    # "name":Ljava/lang/String;
-    :cond_7b
+    :cond_7c
     invoke-virtual {p0, v4, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v3
@@ -932,14 +952,15 @@
 
     move-result v6
 
-    if-nez v6, :cond_9e
+    if-nez v6, :cond_9f
 
     .line 110
     invoke-interface {v2, v3, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 112
-    :cond_9e
+    :cond_9f
     add-int/lit8 v4, v0, 0x1
 
+    .line 113
     goto/16 :goto_c
 .end method

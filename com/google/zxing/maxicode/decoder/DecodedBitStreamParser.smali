@@ -51,7 +51,7 @@
     .line 48
     new-instance v0, Ljava/text/DecimalFormat;
 
-    const-string v1, "000000000"
+    const-string/jumbo v1, "000000000"
 
     invoke-direct {v0, v1}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;)V
 
@@ -60,7 +60,7 @@
     .line 49
     new-instance v0, Ljava/text/DecimalFormat;
 
-    const-string v1, "000"
+    const-string/jumbo v1, "000"
 
     invoke-direct {v0, v1}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;)V
 
@@ -73,37 +73,37 @@
 
     const/4 v1, 0x0
 
-    const-string v2, "\nABCDEFGHIJKLMNOPQRSTUVWXYZ\ufffa\u001c\u001d\u001e\ufffb \ufffc\"#$%&\'()*+,-./0123456789:\ufff1\ufff2\ufff3\ufff4\ufff8"
+    const-string/jumbo v2, "\nABCDEFGHIJKLMNOPQRSTUVWXYZ\ufffa\u001c\u001d\u001e\ufffb \ufffc\"#$%&\'()*+,-./0123456789:\ufff1\ufff2\ufff3\ufff4\ufff8"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x1
 
-    const-string v2, "`abcdefghijklmnopqrstuvwxyz\ufffa\u001c\u001d\u001e\ufffb{\ufffc}~\u007f;<=>?[\\]^_ ,./:@!|\ufffc\ufff5\ufff6\ufffc\ufff0\ufff2\ufff3\ufff4\ufff7"
+    const-string/jumbo v2, "`abcdefghijklmnopqrstuvwxyz\ufffa\u001c\u001d\u001e\ufffb{\ufffc}~\u007f;<=>?[\\]^_ ,./:@!|\ufffc\ufff5\ufff6\ufffc\ufff0\ufff2\ufff3\ufff4\ufff7"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x2
 
-    const-string v2, "\u00c0\u00c1\u00c2\u00c3\u00c4\u00c5\u00c6\u00c7\u00c8\u00c9\u00ca\u00cb\u00cc\u00cd\u00ce\u00cf\u00d0\u00d1\u00d2\u00d3\u00d4\u00d5\u00d6\u00d7\u00d8\u00d9\u00da\ufffa\u001c\u001d\u001e\u00db\u00dc\u00dd\u00de\u00df\u00aa\u00ac\u00b1\u00b2\u00b3\u00b5\u00b9\u00ba\u00bc\u00bd\u00be\u0080\u0081\u0082\u0083\u0084\u0085\u0086\u0087\u0088\u0089\ufff7 \ufff9\ufff3\ufff4\ufff8"
+    const-string/jumbo v2, "\u00c0\u00c1\u00c2\u00c3\u00c4\u00c5\u00c6\u00c7\u00c8\u00c9\u00ca\u00cb\u00cc\u00cd\u00ce\u00cf\u00d0\u00d1\u00d2\u00d3\u00d4\u00d5\u00d6\u00d7\u00d8\u00d9\u00da\ufffa\u001c\u001d\u001e\u00db\u00dc\u00dd\u00de\u00df\u00aa\u00ac\u00b1\u00b2\u00b3\u00b5\u00b9\u00ba\u00bc\u00bd\u00be\u0080\u0081\u0082\u0083\u0084\u0085\u0086\u0087\u0088\u0089\ufff7 \ufff9\ufff3\ufff4\ufff8"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x3
 
-    const-string v2, "\u00e0\u00e1\u00e2\u00e3\u00e4\u00e5\u00e6\u00e7\u00e8\u00e9\u00ea\u00eb\u00ec\u00ed\u00ee\u00ef\u00f0\u00f1\u00f2\u00f3\u00f4\u00f5\u00f6\u00f7\u00f8\u00f9\u00fa\ufffa\u001c\u001d\u001e\ufffb\u00fb\u00fc\u00fd\u00fe\u00ff\u00a1\u00a8\u00ab\u00af\u00b0\u00b4\u00b7\u00b8\u00bb\u00bf\u008a\u008b\u008c\u008d\u008e\u008f\u0090\u0091\u0092\u0093\u0094\ufff7 \ufff2\ufff9\ufff4\ufff8"
+    const-string/jumbo v2, "\u00e0\u00e1\u00e2\u00e3\u00e4\u00e5\u00e6\u00e7\u00e8\u00e9\u00ea\u00eb\u00ec\u00ed\u00ee\u00ef\u00f0\u00f1\u00f2\u00f3\u00f4\u00f5\u00f6\u00f7\u00f8\u00f9\u00fa\ufffa\u001c\u001d\u001e\ufffb\u00fb\u00fc\u00fd\u00fe\u00ff\u00a1\u00a8\u00ab\u00af\u00b0\u00b4\u00b7\u00b8\u00bb\u00bf\u008a\u008b\u008c\u008d\u008e\u008f\u0090\u0091\u0092\u0093\u0094\ufff7 \ufff2\ufff9\ufff4\ufff8"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x4
 
-    const-string v2, "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0008\t\n\u000b\u000c\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\ufffa\ufffc\ufffc\u001b\ufffb\u001c\u001d\u001e\u001f\u009f\u00a0\u00a2\u00a3\u00a4\u00a5\u00a6\u00a7\u00a9\u00ad\u00ae\u00b6\u0095\u0096\u0097\u0098\u0099\u009a\u009b\u009c\u009d\u009e\ufff7 \ufff2\ufff3\ufff9\ufff8"
+    const-string/jumbo v2, "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0008\t\n\u000b\u000c\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\ufffa\ufffc\ufffc\u001b\ufffb\u001c\u001d\u001e\u001f\u009f\u00a0\u00a2\u00a3\u00a4\u00a5\u00a6\u00a7\u00a9\u00ad\u00ae\u00b6\u0095\u0096\u0097\u0098\u0099\u009a\u009b\u009c\u009d\u009e\ufff7 \ufff2\ufff3\ufff9\ufff8"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x5
 
-    const-string v2, "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0008\t\n\u000b\u000c\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#$%&\'()*+,-./0123456789:;<=>?"
+    const-string/jumbo v2, "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0008\t\n\u000b\u000c\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#$%&\'()*+,-./0123456789:;<=>?"
 
     aput-object v2, v0, v1
 
@@ -144,7 +144,7 @@
 
     .line 65
     .local v4, "result":Ljava/lang/StringBuilder;
-    packed-switch p1, :pswitch_data_ce
+    packed-switch p1, :pswitch_data_d0
 
     .line 92
     :goto_e
@@ -168,7 +168,7 @@
     :pswitch_1d
     const/4 v6, 0x2
 
-    if-ne p1, v6, :cond_8c
+    if-ne p1, v6, :cond_8e
 
     .line 70
     invoke-static {p0}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getPostCode2([B)I
@@ -179,7 +179,7 @@
     .local v2, "pc":I
     new-instance v1, Ljava/text/DecimalFormat;
 
-    const-string v6, "0000000000"
+    const-string/jumbo v6, "0000000000"
 
     invoke-static {p0}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getPostCode2Length([B)I
 
@@ -203,7 +203,7 @@
     .end local v1    # "df":Ljava/text/NumberFormat;
     .end local v2    # "pc":I
     .local v3, "postcode":Ljava/lang/String;
-    :goto_38
+    :goto_39
     sget-object v6, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->THREE_DIGITS:Ljava/text/NumberFormat;
 
     invoke-static {p0}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getCountry([B)I
@@ -247,13 +247,13 @@
 
     move-result-object v6
 
-    const-string v7, "[)>\u001e01\u001d"
+    const-string/jumbo v7, "[)>\u001e01\u001d"
 
     invoke-virtual {v6, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_91
+    if-eqz v6, :cond_93
 
     .line 80
     const/16 v6, 0x9
@@ -298,18 +298,18 @@
     .end local v0    # "country":Ljava/lang/String;
     .end local v3    # "postcode":Ljava/lang/String;
     .end local v5    # "service":Ljava/lang/String;
-    :cond_8c
+    :cond_8e
     invoke-static {p0}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getPostCode3([B)Ljava/lang/String;
 
     move-result-object v3
 
     .restart local v3    # "postcode":Ljava/lang/String;
-    goto :goto_38
+    goto :goto_39
 
     .line 82
     .restart local v0    # "country":Ljava/lang/String;
     .restart local v5    # "service":Ljava/lang/String;
-    :cond_91
+    :cond_93
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -350,7 +350,7 @@
     .end local v0    # "country":Ljava/lang/String;
     .end local v3    # "postcode":Ljava/lang/String;
     .end local v5    # "service":Ljava/lang/String;
-    :pswitch_b7
+    :pswitch_b9
     const/16 v6, 0x5d
 
     invoke-static {p0, v7, v6}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getMessage([BII)Ljava/lang/String;
@@ -362,7 +362,7 @@
     goto/16 :goto_e
 
     .line 89
-    :pswitch_c2
+    :pswitch_c4
     const/16 v6, 0x4d
 
     invoke-static {p0, v7, v6}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getMessage([BII)Ljava/lang/String;
@@ -376,12 +376,12 @@
     .line 65
     nop
 
-    :pswitch_data_ce
+    :pswitch_data_d0
     .packed-switch 0x2
         :pswitch_1d
         :pswitch_1d
-        :pswitch_b7
-        :pswitch_c2
+        :pswitch_b9
+        :pswitch_c4
     .end packed-switch
 .end method
 
@@ -422,7 +422,7 @@
     .param p0, "bytes"    # [B
 
     .prologue
-    .line 109
+    .line 112
     const/16 v0, 0xa
 
     new-array v0, v0, [B
@@ -457,19 +457,32 @@
 
     .prologue
     .line 101
-    const/4 v1, 0x0
+    array-length v2, p1
+
+    if-nez v2, :cond_9
 
     .line 102
+    new-instance v2, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v2}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw v2
+
+    .line 104
+    :cond_9
+    const/4 v1, 0x0
+
+    .line 105
     .local v1, "val":I
     const/4 v0, 0x0
 
     .local v0, "i":I
-    :goto_2
+    :goto_b
     array-length v2, p1
 
-    if-ge v0, v2, :cond_14
+    if-ge v0, v2, :cond_1d
 
-    .line 103
+    .line 106
     aget-byte v2, p1, v0
 
     invoke-static {v2, p0}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getBit(I[B)I
@@ -486,13 +499,13 @@
 
     add-int/2addr v1, v2
 
-    .line 102
+    .line 105
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_2
+    goto :goto_b
 
-    .line 105
-    :cond_14
+    .line 108
+    :cond_1d
     return v1
 .end method
 
@@ -503,24 +516,24 @@
     .param p2, "len"    # I
 
     .prologue
-    .line 139
+    .line 142
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 140
+    .line 143
     .local v4, "sb":Ljava/lang/StringBuilder;
     const/4 v6, -0x1
 
-    .line 141
+    .line 144
     .local v6, "shift":I
     const/4 v5, 0x0
 
-    .line 142
+    .line 145
     .local v5, "set":I
     const/4 v2, 0x0
 
-    .line 143
+    .line 146
     .local v2, "lastset":I
     move v1, p1
 
@@ -530,7 +543,7 @@
 
     if-ge v1, v8, :cond_71
 
-    .line 144
+    .line 147
     sget-object v8, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->SETS:[Ljava/lang/String;
 
     aget-object v8, v8, v5
@@ -541,17 +554,17 @@
 
     move-result v0
 
-    .line 145
+    .line 148
     .local v0, "c":C
     packed-switch v0, :pswitch_data_96
 
-    .line 181
+    .line 184
     :pswitch_1a
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move v7, v6
 
-    .line 183
+    .line 186
     .end local v6    # "shift":I
     .local v7, "shift":I
     :goto_1e
@@ -561,105 +574,105 @@
     .restart local v6    # "shift":I
     if-nez v7, :cond_23
 
-    .line 184
+    .line 187
     move v5, v2
 
-    .line 143
+    .line 146
     :cond_23
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_9
 
-    .line 147
+    .line 150
     :pswitch_26
     const/4 v5, 0x0
 
-    .line 148
+    .line 151
     const/4 v6, -0x1
 
     move v7, v6
 
-    .line 149
+    .line 152
     .end local v6    # "shift":I
     .restart local v7    # "shift":I
     goto :goto_1e
 
-    .line 151
+    .line 154
     .end local v7    # "shift":I
     .restart local v6    # "shift":I
     :pswitch_2a
     const/4 v5, 0x1
 
-    .line 152
+    .line 155
     const/4 v6, -0x1
 
     move v7, v6
 
-    .line 153
+    .line 156
     .end local v6    # "shift":I
     .restart local v7    # "shift":I
     goto :goto_1e
 
-    .line 159
+    .line 162
     .end local v7    # "shift":I
     .restart local v6    # "shift":I
     :pswitch_2e
     move v2, v5
 
-    .line 160
+    .line 163
     const v8, 0xfff0
 
     sub-int v5, v0, v8
 
-    .line 161
+    .line 164
     const/4 v6, 0x1
 
     move v7, v6
 
-    .line 162
+    .line 165
     .end local v6    # "shift":I
     .restart local v7    # "shift":I
     goto :goto_1e
 
-    .line 164
+    .line 167
     .end local v7    # "shift":I
     .restart local v6    # "shift":I
     :pswitch_37
     move v2, v5
 
-    .line 165
+    .line 168
     const/4 v5, 0x0
 
-    .line 166
+    .line 169
     const/4 v6, 0x2
 
     move v7, v6
 
-    .line 167
+    .line 170
     .end local v6    # "shift":I
     .restart local v7    # "shift":I
     goto :goto_1e
 
-    .line 169
+    .line 172
     .end local v7    # "shift":I
     .restart local v6    # "shift":I
     :pswitch_3c
     move v2, v5
 
-    .line 170
+    .line 173
     const/4 v5, 0x0
 
-    .line 171
+    .line 174
     const/4 v6, 0x3
 
     move v7, v6
 
-    .line 172
+    .line 175
     .end local v6    # "shift":I
     .restart local v7    # "shift":I
     goto :goto_1e
 
-    .line 174
+    .line 177
     .end local v7    # "shift":I
     .restart local v6    # "shift":I
     :pswitch_41
@@ -699,7 +712,7 @@
 
     add-int v3, v8, v9
 
-    .line 175
+    .line 178
     .local v3, "nsval":I
     sget-object v8, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->NINE_DIGITS:Ljava/text/NumberFormat;
 
@@ -713,12 +726,12 @@
 
     move v7, v6
 
-    .line 176
+    .line 179
     .end local v6    # "shift":I
     .restart local v7    # "shift":I
     goto :goto_1e
 
-    .line 178
+    .line 181
     .end local v3    # "nsval":I
     .end local v7    # "shift":I
     .restart local v6    # "shift":I
@@ -727,12 +740,12 @@
 
     move v7, v6
 
-    .line 179
+    .line 182
     .end local v6    # "shift":I
     .restart local v7    # "shift":I
     goto :goto_1e
 
-    .line 187
+    .line 190
     .end local v0    # "c":C
     .end local v7    # "shift":I
     .restart local v6    # "shift":I
@@ -758,7 +771,7 @@
 
     if-ne v8, v9, :cond_90
 
-    .line 188
+    .line 191
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->length()I
 
     move-result v8
@@ -769,7 +782,7 @@
 
     goto :goto_71
 
-    .line 190
+    .line 193
     :cond_90
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -777,7 +790,7 @@
 
     return-object v8
 
-    .line 145
+    .line 148
     nop
 
     :pswitch_data_96
@@ -802,7 +815,7 @@
     .param p0, "bytes"    # [B
 
     .prologue
-    .line 121
+    .line 124
     const/16 v0, 0x1e
 
     new-array v0, v0, [B
@@ -855,7 +868,7 @@
     .param p0, "bytes"    # [B
 
     .prologue
-    .line 117
+    .line 120
     const/4 v0, 0x6
 
     new-array v0, v0, [B
@@ -890,7 +903,7 @@
 
     const/4 v4, 0x0
 
-    .line 126
+    .line 129
     new-array v0, v5, [C
 
     sget-object v1, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->SETS:[Ljava/lang/String;
@@ -901,6 +914,7 @@
 
     fill-array-data v2, :array_80
 
+    .line 131
     invoke-static {p0, v2}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getInt([B[B)I
 
     move-result v2
@@ -921,6 +935,7 @@
 
     fill-array-data v3, :array_88
 
+    .line 132
     invoke-static {p0, v3}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getInt([B[B)I
 
     move-result v3
@@ -941,6 +956,7 @@
 
     fill-array-data v3, :array_90
 
+    .line 133
     invoke-static {p0, v3}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getInt([B[B)I
 
     move-result v3
@@ -961,6 +977,7 @@
 
     fill-array-data v3, :array_98
 
+    .line 134
     invoke-static {p0, v3}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getInt([B[B)I
 
     move-result v3
@@ -981,6 +998,7 @@
 
     fill-array-data v3, :array_a0
 
+    .line 135
     invoke-static {p0, v3}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getInt([B[B)I
 
     move-result v3
@@ -1001,6 +1019,7 @@
 
     fill-array-data v3, :array_a8
 
+    .line 136
     invoke-static {p0, v3}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getInt([B[B)I
 
     move-result v3
@@ -1011,6 +1030,7 @@
 
     aput-char v2, v0, v1
 
+    .line 129
     invoke-static {v0}, Ljava/lang/String;->valueOf([C)Ljava/lang/String;
 
     move-result-object v0
@@ -1027,6 +1047,7 @@
         0x20t
     .end array-data
 
+    .line 131
     nop
 
     :array_88
@@ -1039,6 +1060,7 @@
         0x1at
     .end array-data
 
+    .line 132
     nop
 
     :array_90
@@ -1051,6 +1073,7 @@
         0x14t
     .end array-data
 
+    .line 133
     nop
 
     :array_98
@@ -1063,6 +1086,7 @@
         0xet
     .end array-data
 
+    .line 134
     nop
 
     :array_a0
@@ -1075,6 +1099,7 @@
         0x8t
     .end array-data
 
+    .line 135
     nop
 
     :array_a8
@@ -1093,7 +1118,7 @@
     .param p0, "bytes"    # [B
 
     .prologue
-    .line 113
+    .line 116
     const/16 v0, 0xa
 
     new-array v0, v0, [B

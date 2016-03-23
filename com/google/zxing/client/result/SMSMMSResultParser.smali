@@ -78,13 +78,13 @@
 
     .line 100
     .local v0, "maybeVia":Ljava/lang/String;
-    const-string v3, "via="
+    const-string/jumbo v3, "via="
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_2f
+    if-eqz v3, :cond_30
 
     .line 101
     const/4 v3, 0x4
@@ -95,25 +95,24 @@
 
     .line 105
     .local v2, "via":Ljava/lang/String;
-    :goto_2b
+    :goto_2c
     invoke-interface {p1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_f
 
     .line 103
     .end local v2    # "via":Ljava/lang/String;
-    :cond_2f
+    :cond_30
     const/4 v2, 0x0
 
     .restart local v2    # "via":Ljava/lang/String;
-    goto :goto_2b
+    goto :goto_2c
 .end method
 
 
 # virtual methods
 .method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .registers 3
-    .param p1, "x0"    # Lcom/google/zxing/Result;
 
     .prologue
     .line 41
@@ -136,47 +135,48 @@
 
     .line 46
     .local v8, "rawText":Ljava/lang/String;
-    const-string v12, "sms:"
+    const-string/jumbo v12, "sms:"
 
     invoke-virtual {v8, v12}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v12
 
-    if-nez v12, :cond_26
+    if-nez v12, :cond_2a
 
-    const-string v12, "SMS:"
-
-    invoke-virtual {v8, v12}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v12
-
-    if-nez v12, :cond_26
-
-    const-string v12, "mms:"
+    const-string/jumbo v12, "SMS:"
 
     invoke-virtual {v8, v12}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v12
 
-    if-nez v12, :cond_26
+    if-nez v12, :cond_2a
 
-    const-string v12, "MMS:"
+    const-string/jumbo v12, "mms:"
+
+    .line 47
+    invoke-virtual {v8, v12}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v12
+
+    if-nez v12, :cond_2a
+
+    const-string/jumbo v12, "MMS:"
 
     invoke-virtual {v8, v12}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v12
 
-    if-nez v12, :cond_26
+    if-nez v12, :cond_2a
 
     .line 48
     const/4 v12, 0x0
 
-    .line 83
-    :goto_25
+    .line 84
+    :goto_29
     return-object v12
 
     .line 52
-    :cond_26
+    :cond_2a
     invoke-static {v8}, Lcom/google/zxing/client/result/SMSMMSResultParser;->parseNameValuePairs(Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v3
@@ -195,16 +195,16 @@
 
     .line 56
     .local v7, "querySyntax":Z
-    if-eqz v3, :cond_46
+    if-eqz v3, :cond_4c
 
     invoke-interface {v3}, Ljava/util/Map;->isEmpty()Z
 
     move-result v12
 
-    if-nez v12, :cond_46
+    if-nez v12, :cond_4c
 
     .line 57
-    const-string v12, "subject"
+    const-string/jumbo v12, "subject"
 
     invoke-interface {v3, v12}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -215,7 +215,7 @@
 
     .line 58
     .restart local v10    # "subject":Ljava/lang/String;
-    const-string v12, "body"
+    const-string/jumbo v12, "body"
 
     invoke-interface {v3, v12}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -229,7 +229,7 @@
     const/4 v7, 0x1
 
     .line 63
-    :cond_46
+    :cond_4c
     const/16 v12, 0x3f
 
     const/4 v13, 0x4
@@ -240,12 +240,12 @@
 
     .line 66
     .local v6, "queryStart":I
-    if-ltz v6, :cond_51
+    if-ltz v6, :cond_57
 
-    if-nez v7, :cond_78
+    if-nez v7, :cond_7e
 
     .line 67
-    :cond_51
+    :cond_57
     const/4 v12, 0x4
 
     invoke-virtual {v8, v12}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -254,7 +254,7 @@
 
     .line 72
     .local v9, "smsURIWithoutQuery":Ljava/lang/String;
-    :goto_56
+    :goto_5c
     const/4 v2, -0x1
 
     .line 74
@@ -275,7 +275,7 @@
 
     .line 76
     .local v11, "vias":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    :goto_63
+    :goto_69
     const/16 v12, 0x2c
 
     add-int/lit8 v13, v2, 0x1
@@ -285,7 +285,7 @@
     move-result v1
 
     .local v1, "comma":I
-    if-le v1, v2, :cond_7e
+    if-le v1, v2, :cond_84
 
     .line 77
     add-int/lit8 v12, v2, 0x1
@@ -302,7 +302,7 @@
     move v2, v1
 
     .line 80
-    goto :goto_63
+    goto :goto_69
 
     .line 69
     .end local v1    # "comma":I
@@ -311,7 +311,7 @@
     .end local v5    # "numbers":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .end local v9    # "smsURIWithoutQuery":Ljava/lang/String;
     .end local v11    # "vias":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    :cond_78
+    :cond_7e
     const/4 v12, 0x4
 
     invoke-virtual {v8, v12, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
@@ -319,14 +319,14 @@
     move-result-object v9
 
     .restart local v9    # "smsURIWithoutQuery":Ljava/lang/String;
-    goto :goto_56
+    goto :goto_5c
 
     .line 81
     .restart local v1    # "comma":I
     .restart local v2    # "lastComma":I
     .restart local v5    # "numbers":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .restart local v11    # "vias":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    :cond_7e
+    :cond_84
     add-int/lit8 v12, v2, 0x1
 
     invoke-virtual {v9, v12}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -350,6 +350,7 @@
 
     check-cast v12, [Ljava/lang/String;
 
+    .line 84
     invoke-interface {v11}, Ljava/util/List;->size()I
 
     move-result v13
@@ -366,5 +367,5 @@
 
     move-object v12, v14
 
-    goto :goto_25
+    goto/16 :goto_29
 .end method

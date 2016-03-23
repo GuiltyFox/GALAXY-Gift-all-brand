@@ -34,11 +34,14 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/bitmapfun/util/DiskLruCache$Editor;Ljava/io/OutputStream;Lcom/bitmapfun/util/DiskLruCache$Editor$FaultHidingOutputStream;)V
+.method synthetic constructor <init>(Lcom/bitmapfun/util/DiskLruCache$Editor;Ljava/io/OutputStream;Lcom/bitmapfun/util/DiskLruCache$1;)V
     .registers 4
+    .param p1, "x0"    # Lcom/bitmapfun/util/DiskLruCache$Editor;
+    .param p2, "x1"    # Ljava/io/OutputStream;
+    .param p3, "x2"    # Lcom/bitmapfun/util/DiskLruCache$1;
 
     .prologue
-    .line 858
+    .line 857
     invoke-direct {p0, p1, p2}, Lcom/bitmapfun/util/DiskLruCache$Editor$FaultHidingOutputStream;-><init>(Lcom/bitmapfun/util/DiskLruCache$Editor;Ljava/io/OutputStream;)V
 
     return-void
@@ -72,7 +75,8 @@
 
     const/4 v2, 0x1
 
-    invoke-static {v1, v2}, Lcom/bitmapfun/util/DiskLruCache$Editor;->access$0(Lcom/bitmapfun/util/DiskLruCache$Editor;Z)V
+    # setter for: Lcom/bitmapfun/util/DiskLruCache$Editor;->hasErrors:Z
+    invoke-static {v1, v2}, Lcom/bitmapfun/util/DiskLruCache$Editor;->access$2002(Lcom/bitmapfun/util/DiskLruCache$Editor;Z)Z
 
     goto :goto_5
 .end method
@@ -103,7 +107,8 @@
 
     const/4 v2, 0x1
 
-    invoke-static {v1, v2}, Lcom/bitmapfun/util/DiskLruCache$Editor;->access$0(Lcom/bitmapfun/util/DiskLruCache$Editor;Z)V
+    # setter for: Lcom/bitmapfun/util/DiskLruCache$Editor;->hasErrors:Z
+    invoke-static {v1, v2}, Lcom/bitmapfun/util/DiskLruCache$Editor;->access$2002(Lcom/bitmapfun/util/DiskLruCache$Editor;Z)Z
 
     goto :goto_5
 .end method
@@ -135,7 +140,8 @@
 
     const/4 v2, 0x1
 
-    invoke-static {v1, v2}, Lcom/bitmapfun/util/DiskLruCache$Editor;->access$0(Lcom/bitmapfun/util/DiskLruCache$Editor;Z)V
+    # setter for: Lcom/bitmapfun/util/DiskLruCache$Editor;->hasErrors:Z
+    invoke-static {v1, v2}, Lcom/bitmapfun/util/DiskLruCache$Editor;->access$2002(Lcom/bitmapfun/util/DiskLruCache$Editor;Z)Z
 
     goto :goto_5
 .end method
@@ -169,7 +175,8 @@
 
     const/4 v2, 0x1
 
-    invoke-static {v1, v2}, Lcom/bitmapfun/util/DiskLruCache$Editor;->access$0(Lcom/bitmapfun/util/DiskLruCache$Editor;Z)V
+    # setter for: Lcom/bitmapfun/util/DiskLruCache$Editor;->hasErrors:Z
+    invoke-static {v1, v2}, Lcom/bitmapfun/util/DiskLruCache$Editor;->access$2002(Lcom/bitmapfun/util/DiskLruCache$Editor;Z)Z
 
     goto :goto_5
 .end method

@@ -30,6 +30,7 @@
 # direct methods
 .method private constructor <init>(Lcom/bitmapfun/util/DiskLruCache;Ljava/lang/String;J[Ljava/io/InputStream;)V
     .registers 7
+    .param p1, "this$0"    # Lcom/bitmapfun/util/DiskLruCache;
     .param p2, "key"    # Ljava/lang/String;
     .param p3, "sequenceNumber"    # J
     .param p5, "ins"    # [Ljava/io/InputStream;
@@ -53,11 +54,16 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/bitmapfun/util/DiskLruCache;Ljava/lang/String;J[Ljava/io/InputStream;Lcom/bitmapfun/util/DiskLruCache$Snapshot;)V
+.method synthetic constructor <init>(Lcom/bitmapfun/util/DiskLruCache;Ljava/lang/String;J[Ljava/io/InputStream;Lcom/bitmapfun/util/DiskLruCache$1;)V
     .registers 8
+    .param p1, "x0"    # Lcom/bitmapfun/util/DiskLruCache;
+    .param p2, "x1"    # Ljava/lang/String;
+    .param p3, "x2"    # J
+    .param p5, "x3"    # [Ljava/io/InputStream;
+    .param p6, "x4"    # Lcom/bitmapfun/util/DiskLruCache$1;
 
     .prologue
-    .line 735
+    .line 730
     invoke-direct/range {p0 .. p5}, Lcom/bitmapfun/util/DiskLruCache$Snapshot;-><init>(Lcom/bitmapfun/util/DiskLruCache;Ljava/lang/String;J[Ljava/io/InputStream;)V
 
     return-void
@@ -77,13 +83,8 @@
     const/4 v1, 0x0
 
     :goto_4
-    if-lt v1, v3, :cond_7
+    if-ge v1, v3, :cond_e
 
-    .line 768
-    return-void
-
-    .line 765
-    :cond_7
     aget-object v0, v2, v1
 
     .line 766
@@ -94,6 +95,11 @@
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_4
+
+    .line 768
+    .end local v0    # "in":Ljava/io/InputStream;
+    :cond_e
+    return-void
 .end method
 
 .method public edit()Lcom/bitmapfun/util/DiskLruCache$Editor;
@@ -113,7 +119,7 @@
     iget-wide v2, p0, Lcom/bitmapfun/util/DiskLruCache$Snapshot;->sequenceNumber:J
 
     # invokes: Lcom/bitmapfun/util/DiskLruCache;->edit(Ljava/lang/String;J)Lcom/bitmapfun/util/DiskLruCache$Editor;
-    invoke-static {v0, v1, v2, v3}, Lcom/bitmapfun/util/DiskLruCache;->access$5(Lcom/bitmapfun/util/DiskLruCache;Ljava/lang/String;J)Lcom/bitmapfun/util/DiskLruCache$Editor;
+    invoke-static {v0, v1, v2, v3}, Lcom/bitmapfun/util/DiskLruCache;->access$1500(Lcom/bitmapfun/util/DiskLruCache;Ljava/lang/String;J)Lcom/bitmapfun/util/DiskLruCache$Editor;
 
     move-result-object v0
 
@@ -149,7 +155,7 @@
     move-result-object v0
 
     # invokes: Lcom/bitmapfun/util/DiskLruCache;->inputStreamToString(Ljava/io/InputStream;)Ljava/lang/String;
-    invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache;->access$6(Ljava/io/InputStream;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache;->access$1600(Ljava/io/InputStream;)Ljava/lang/String;
 
     move-result-object v0
 

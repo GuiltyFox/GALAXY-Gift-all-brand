@@ -510,9 +510,9 @@
 
     neg-float v1, v7
 
-    .line 252
     goto :goto_31
 
+    .line 252
     :cond_53
     iget v7, v3, Landroid/graphics/RectF;->bottom:F
 
@@ -550,9 +550,9 @@
 
     neg-float v0, v7
 
-    .line 262
     goto :goto_43
 
+    .line 262
     :cond_6e
     iget v7, v3, Landroid/graphics/RectF;->right:F
 
@@ -1165,11 +1165,11 @@
 
     .prologue
     .line 96
-    const-string v1, "image"
+    const-string/jumbo v1, "image"
 
-    const-string v2, "setImageRotateBitmapReset"
+    const-string/jumbo v2, "setImageRotateBitmapReset"
 
-    invoke-static {v1, v2}, Lic/buzzebeeslib/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/bzbs/lib/survey/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 98
     invoke-virtual {p0}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->getWidth()I
@@ -1178,7 +1178,7 @@
 
     .line 99
     .local v0, "viewWidth":I
-    if-gtz v0, :cond_15
+    if-gtz v0, :cond_17
 
     .line 100
     new-instance v1, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$1;
@@ -1188,17 +1188,17 @@
     iput-object v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->mOnLayoutRunnable:Ljava/lang/Runnable;
 
     .line 128
-    :cond_14
-    :goto_14
+    :cond_16
+    :goto_16
     return-void
 
     .line 110
-    :cond_15
+    :cond_17
     invoke-virtual {p1}, Lit/sephiroth/android/library/imagezoom/RotateBitmap;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    if-eqz v1, :cond_4f
+    if-eqz v1, :cond_51
 
     .line 111
     iget-object v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->mBaseMatrix:Landroid/graphics/Matrix;
@@ -1217,8 +1217,8 @@
     invoke-virtual {p0, v1, v2}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->setImageBitmap(Landroid/graphics/Bitmap;I)V
 
     .line 118
-    :goto_2b
-    if-eqz p2, :cond_32
+    :goto_2d
+    if-eqz p2, :cond_34
 
     .line 119
     iget-object v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->mSuppMatrix:Landroid/graphics/Matrix;
@@ -1226,7 +1226,7 @@
     invoke-virtual {v1}, Landroid/graphics/Matrix;->reset()V
 
     .line 122
-    :cond_32
+    :cond_34
     sget-object v1, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->Reset:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
     invoke-virtual {p0}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->getImageViewMatrix()Landroid/graphics/Matrix;
@@ -1245,7 +1245,7 @@
     .line 125
     iget-object v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->mListener:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$OnBitmapChangedListener;
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_16
 
     .line 126
     iget-object v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->mListener:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$OnBitmapChangedListener;
@@ -1256,10 +1256,10 @@
 
     invoke-interface {v1, v2}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$OnBitmapChangedListener;->onBitmapChanged(Landroid/graphics/Bitmap;)V
 
-    goto :goto_14
+    goto :goto_16
 
     .line 114
-    :cond_4f
+    :cond_51
     iget-object v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->mBaseMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1}, Landroid/graphics/Matrix;->reset()V
@@ -1269,7 +1269,7 @@
 
     invoke-virtual {p0, v1}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    goto :goto_2b
+    goto :goto_2d
 .end method
 
 .method public setOnBitmapChangedListener(Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$OnBitmapChangedListener;)V
@@ -1465,13 +1465,17 @@
 
     .line 337
     .local v0, "ex":Ljava/lang/Exception;
-    const-string v3, "MyLog"
+    const-string/jumbo v3, "MyLog"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v5, "Error while updateRect:"
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string/jumbo v5, "Error while updateRect:"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
@@ -1485,7 +1489,7 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Lic/buzzebeeslib/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lcom/bzbs/lib/survey/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_7f
 .end method

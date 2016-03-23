@@ -64,53 +64,53 @@
 
     const/16 v12, 0x1e
 
-    .line 100
+    .line 102
     invoke-virtual {p0}, Lcom/google/zxing/common/BitMatrix;->getEnclosingRectangle()[I
 
     move-result-object v1
 
-    .line 101
+    .line 103
     .local v1, "enclosingRectangle":[I
     if-nez v1, :cond_f
 
-    .line 102
+    .line 104
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
     move-result-object v10
 
     throw v10
 
-    .line 105
+    .line 107
     :cond_f
     const/4 v10, 0x0
 
     aget v5, v1, v10
 
-    .line 106
+    .line 108
     .local v5, "left":I
     const/4 v10, 0x1
 
     aget v6, v1, v10
 
-    .line 107
+    .line 109
     .local v6, "top":I
     const/4 v10, 0x2
 
     aget v7, v1, v10
 
-    .line 108
+    .line 110
     .local v7, "width":I
     const/4 v10, 0x3
 
     aget v2, v1, v10
 
-    .line 111
+    .line 113
     .local v2, "height":I
     new-instance v0, Lcom/google/zxing/common/BitMatrix;
 
     invoke-direct {v0, v12, v13}, Lcom/google/zxing/common/BitMatrix;-><init>(II)V
 
-    .line 112
+    .line 114
     .local v0, "bits":Lcom/google/zxing/common/BitMatrix;
     const/4 v9, 0x0
 
@@ -118,7 +118,7 @@
     :goto_21
     if-ge v9, v13, :cond_4d
 
-    .line 113
+    .line 115
     mul-int v10, v9, v2
 
     div-int/lit8 v11, v2, 0x2
@@ -129,7 +129,7 @@
 
     add-int v4, v6, v10
 
-    .line 114
+    .line 116
     .local v4, "iy":I
     const/4 v8, 0x0
 
@@ -137,7 +137,7 @@
     :goto_2d
     if-ge v8, v12, :cond_4a
 
-    .line 115
+    .line 117
     mul-int v10, v8, v7
 
     div-int/lit8 v11, v7, 0x2
@@ -156,7 +156,7 @@
 
     add-int v3, v5, v10
 
-    .line 116
+    .line 118
     .local v3, "ix":I
     invoke-virtual {p0, v3, v4}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
@@ -164,23 +164,23 @@
 
     if-eqz v10, :cond_47
 
-    .line 117
+    .line 119
     invoke-virtual {v0, v8, v9}, Lcom/google/zxing/common/BitMatrix;->set(II)V
 
-    .line 114
+    .line 116
     :cond_47
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_2d
 
-    .line 112
+    .line 114
     .end local v3    # "ix":I
     :cond_4a
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_21
 
-    .line 121
+    .line 123
     .end local v4    # "iy":I
     .end local v8    # "x":I
     :cond_4d
@@ -201,7 +201,7 @@
     .end annotation
 
     .prologue
-    .line 60
+    .line 62
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/google/zxing/maxicode/MaxiCodeReader;->decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
@@ -235,7 +235,7 @@
     .end annotation
 
     .prologue
-    .line 67
+    .line 69
     .local p2, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     if-eqz p2, :cond_35
 
@@ -247,7 +247,7 @@
 
     if-eqz v5, :cond_35
 
-    .line 68
+    .line 70
     invoke-virtual {p1}, Lcom/google/zxing/BinaryBitmap;->getBlackMatrix()Lcom/google/zxing/common/BitMatrix;
 
     move-result-object v5
@@ -256,7 +256,7 @@
 
     move-result-object v0
 
-    .line 69
+    .line 71
     .local v0, "bits":Lcom/google/zxing/common/BitMatrix;
     iget-object v5, p0, Lcom/google/zxing/maxicode/MaxiCodeReader;->decoder:Lcom/google/zxing/maxicode/decoder/Decoder;
 
@@ -264,11 +264,11 @@
 
     move-result-object v1
 
-    .line 74
+    .line 76
     .local v1, "decoderResult":Lcom/google/zxing/common/DecoderResult;
     sget-object v3, Lcom/google/zxing/maxicode/MaxiCodeReader;->NO_POINTS:[Lcom/google/zxing/ResultPoint;
 
-    .line 75
+    .line 77
     .local v3, "points":[Lcom/google/zxing/ResultPoint;
     new-instance v4, Lcom/google/zxing/Result;
 
@@ -284,26 +284,26 @@
 
     invoke-direct {v4, v5, v6, v3, v7}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
 
-    .line 77
+    .line 79
     .local v4, "result":Lcom/google/zxing/Result;
     invoke-virtual {v1}, Lcom/google/zxing/common/DecoderResult;->getECLevel()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 78
+    .line 80
     .local v2, "ecLevel":Ljava/lang/String;
     if-eqz v2, :cond_34
 
-    .line 79
+    .line 81
     sget-object v5, Lcom/google/zxing/ResultMetadataType;->ERROR_CORRECTION_LEVEL:Lcom/google/zxing/ResultMetadataType;
 
     invoke-virtual {v4, v5, v2}, Lcom/google/zxing/Result;->putMetadata(Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;)V
 
-    .line 81
+    .line 83
     :cond_34
     return-object v4
 
-    .line 71
+    .line 73
     .end local v0    # "bits":Lcom/google/zxing/common/BitMatrix;
     .end local v1    # "decoderResult":Lcom/google/zxing/common/DecoderResult;
     .end local v2    # "ecLevel":Ljava/lang/String;
@@ -317,20 +317,10 @@
     throw v5
 .end method
 
-.method getDecoder()Lcom/google/zxing/maxicode/decoder/Decoder;
-    .registers 2
-
-    .prologue
-    .line 47
-    iget-object v0, p0, Lcom/google/zxing/maxicode/MaxiCodeReader;->decoder:Lcom/google/zxing/maxicode/decoder/Decoder;
-
-    return-object v0
-.end method
-
 .method public reset()V
     .registers 1
 
     .prologue
-    .line 87
+    .line 89
     return-void
 .end method

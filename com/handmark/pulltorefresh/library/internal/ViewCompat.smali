@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/handmark/pulltorefresh/library/internal/ViewCompat$SDK11;,
-        Lcom/handmark/pulltorefresh/library/internal/ViewCompat$SDK16;
+        Lcom/handmark/pulltorefresh/library/internal/ViewCompat$SDK16;,
+        Lcom/handmark/pulltorefresh/library/internal/ViewCompat$SDK11;
     }
 .end annotation
 

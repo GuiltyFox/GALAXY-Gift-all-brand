@@ -54,55 +54,55 @@
 
     const/4 v3, 0x0
 
-    .line 35
+    .line 38
     new-instance v0, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
-    const-string v1, "ALPHA"
+    const-string/jumbo v1, "ALPHA"
 
     invoke-direct {v0, v1, v3}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->ALPHA:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
-    .line 36
+    .line 39
     new-instance v0, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
-    const-string v1, "LOWER"
+    const-string/jumbo v1, "LOWER"
 
     invoke-direct {v0, v1, v4}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->LOWER:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
-    .line 37
+    .line 40
     new-instance v0, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
-    const-string v1, "MIXED"
+    const-string/jumbo v1, "MIXED"
 
     invoke-direct {v0, v1, v5}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->MIXED:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
-    .line 38
+    .line 41
     new-instance v0, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
-    const-string v1, "PUNCT"
+    const-string/jumbo v1, "PUNCT"
 
     invoke-direct {v0, v1, v6}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->PUNCT:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
-    .line 39
+    .line 42
     new-instance v0, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
-    const-string v1, "ALPHA_SHIFT"
+    const-string/jumbo v1, "ALPHA_SHIFT"
 
     invoke-direct {v0, v1, v7}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->ALPHA_SHIFT:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
-    .line 40
+    .line 43
     new-instance v0, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
-    const-string v1, "PUNCT_SHIFT"
+    const-string/jumbo v1, "PUNCT_SHIFT"
 
     const/4 v2, 0x5
 
@@ -110,7 +110,7 @@
 
     sput-object v0, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->PUNCT_SHIFT:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
-    .line 34
+    .line 37
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
@@ -155,7 +155,7 @@
     .end annotation
 
     .prologue
-    .line 34
+    .line 37
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -166,7 +166,7 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 34
+    .line 37
     const-class v0, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -182,7 +182,7 @@
     .registers 1
 
     .prologue
-    .line 34
+    .line 37
     sget-object v0, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->$VALUES:[Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
     invoke-virtual {v0}, [Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->clone()Ljava/lang/Object;

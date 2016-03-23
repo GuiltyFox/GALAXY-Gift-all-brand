@@ -94,7 +94,7 @@
 
     .line 55
     .local v1, "bits":Lcom/google/zxing/common/BitMatrix;
-    shl-int/lit8 v7, p2, 0x1
+    mul-int/lit8 v7, p2, 0x2
 
     new-array v4, v7, [F
 
@@ -124,7 +124,7 @@
     if-ge v5, v3, :cond_2b
 
     .line 60
-    shr-int/lit8 v7, v5, 0x1
+    div-int/lit8 v7, v5, 0x2
 
     int-to-float v7, v7
 
@@ -174,7 +174,7 @@
     if-eqz v7, :cond_47
 
     .line 71
-    shr-int/lit8 v7, v5, 0x1
+    div-int/lit8 v7, v5, 0x2
 
     invoke-virtual {v1, v7, v6}, Lcom/google/zxing/common/BitMatrix;->set(II)V
     :try_end_47

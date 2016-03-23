@@ -59,7 +59,7 @@
     .local v2, "version":I
     const/16 v3, 0x8
 
-    if-ge v2, v3, :cond_25
+    if-ge v2, v3, :cond_27
 
     .line 91
     new-instance v3, Ljava/lang/UnsupportedOperationException;
@@ -68,7 +68,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "Device must be at least API Level 8 (instead of "
+    const-string/jumbo v5, "Device must be at least API Level 8 (instead of "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -78,7 +78,7 @@
 
     move-result-object v4
 
-    const-string v5, ")"
+    const-string/jumbo v5, ")"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -93,34 +93,34 @@
     throw v3
 
     .line 94
-    :cond_25
+    :cond_27
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
 
     .line 96
     .local v1, "packageManager":Landroid/content/pm/PackageManager;
-    :try_start_29
-    const-string v3, "com.google.android.gsf"
+    :try_start_2b
+    const-string/jumbo v3, "com.google.android.gsf"
 
     const/4 v4, 0x0
 
     invoke-virtual {v1, v3, v4}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-    :try_end_2f
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_29 .. :try_end_2f} :catch_30
+    :try_end_32
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2b .. :try_end_32} :catch_33
 
     .line 101
     return-void
 
     .line 97
-    :catch_30
+    :catch_33
     move-exception v0
 
     .line 98
     .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     new-instance v3, Ljava/lang/UnsupportedOperationException;
 
-    const-string v4, "Device does not have package com.google.android.gsf"
+    const-string/jumbo v4, "Device does not have package com.google.android.gsf"
 
     invoke-direct {v3, v4}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
@@ -155,7 +155,7 @@
 
     move-result-object v11
 
-    const-string v12, ".permission.C2D_MESSAGE"
+    const-string/jumbo v12, ".permission.C2D_MESSAGE"
 
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -169,18 +169,18 @@
     .local v7, "permissionName":Ljava/lang/String;
     const/16 v11, 0x1000
 
-    :try_start_1e
+    :try_start_1f
     invoke-virtual {v5, v7, v11}, Landroid/content/pm/PackageManager;->getPermissionInfo(Ljava/lang/String;I)Landroid/content/pm/PermissionInfo;
-    :try_end_21
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1e .. :try_end_21} :catch_46
+    :try_end_22
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1f .. :try_end_22} :catch_48
 
     .line 143
     const/4 v11, 0x2
 
-    :try_start_22
+    :try_start_23
     invoke-virtual {v5, v6, v11}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-    :try_end_25
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_22 .. :try_end_25} :catch_60
+    :try_end_26
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_23 .. :try_end_26} :catch_63
 
     move-result-object v10
 
@@ -190,21 +190,21 @@
 
     .line 150
     .local v9, "receivers":[Landroid/content/pm/ActivityInfo;
-    if-eqz v9, :cond_2d
+    if-eqz v9, :cond_2e
 
     array-length v11, v9
 
-    if-nez v11, :cond_7a
+    if-nez v11, :cond_7e
 
     .line 151
-    :cond_2d
+    :cond_2e
     new-instance v11, Ljava/lang/IllegalStateException;
 
     new-instance v12, Ljava/lang/StringBuilder;
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v13, "No receiver for package "
+    const-string/jumbo v13, "No receiver for package "
 
     invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -225,7 +225,7 @@
     .line 136
     .end local v9    # "receivers":[Landroid/content/pm/ActivityInfo;
     .end local v10    # "receiversInfo":Landroid/content/pm/PackageInfo;
-    :catch_46
+    :catch_48
     move-exception v2
 
     .line 137
@@ -236,7 +236,7 @@
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v13, "Application does not define permission "
+    const-string/jumbo v13, "Application does not define permission "
 
     invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -256,7 +256,7 @@
 
     .line 145
     .end local v2    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
-    :catch_60
+    :catch_63
     move-exception v2
 
     .line 146
@@ -267,7 +267,7 @@
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v13, "Could not get receivers for package "
+    const-string/jumbo v13, "Could not get receivers for package "
 
     invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -289,23 +289,23 @@
     .end local v2    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     .restart local v9    # "receivers":[Landroid/content/pm/ActivityInfo;
     .restart local v10    # "receiversInfo":Landroid/content/pm/PackageInfo;
-    :cond_7a
-    const-string v11, "GCMRegistrar"
+    :cond_7e
+    const-string/jumbo v11, "GCMRegistrar"
 
     invoke-static {v11, v13}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v11
 
-    if-eqz v11, :cond_a5
+    if-eqz v11, :cond_ad
 
     .line 155
-    const-string v11, "GCMRegistrar"
+    const-string/jumbo v11, "GCMRegistrar"
 
     new-instance v12, Ljava/lang/StringBuilder;
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v13, "number of receivers for "
+    const-string/jumbo v13, "number of receivers for "
 
     invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -315,7 +315,7 @@
 
     move-result-object v12
 
-    const-string v13, ": "
+    const-string/jumbo v13, ": "
 
     invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -334,7 +334,7 @@
     invoke-static {v11, v12}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 158
-    :cond_a5
+    :cond_ad
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
@@ -350,14 +350,14 @@
     const/4 v3, 0x0
 
     .local v3, "i$":I
-    :goto_ad
-    if-ge v3, v4, :cond_c3
+    :goto_b5
+    if-ge v3, v4, :cond_cc
 
     aget-object v8, v1, v3
 
     .line 160
     .local v8, "receiver":Landroid/content/pm/ActivityInfo;
-    const-string v11, "com.google.android.c2dm.permission.SEND"
+    const-string/jumbo v11, "com.google.android.c2dm.permission.SEND"
 
     iget-object v12, v8, Landroid/content/pm/ActivityInfo;->permission:Ljava/lang/String;
 
@@ -365,7 +365,7 @@
 
     move-result v11
 
-    if-eqz v11, :cond_c0
+    if-eqz v11, :cond_c9
 
     .line 162
     iget-object v11, v8, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
@@ -373,37 +373,37 @@
     invoke-interface {v0, v11}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     .line 159
-    :cond_c0
+    :cond_c9
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_ad
+    goto :goto_b5
 
     .line 165
     .end local v8    # "receiver":Landroid/content/pm/ActivityInfo;
-    :cond_c3
+    :cond_cc
     invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
 
     move-result v11
 
-    if-eqz v11, :cond_d1
+    if-eqz v11, :cond_db
 
     .line 166
     new-instance v11, Ljava/lang/IllegalStateException;
 
-    const-string v12, "No receiver allowed to receive com.google.android.c2dm.permission.SEND"
+    const-string/jumbo v12, "No receiver allowed to receive com.google.android.c2dm.permission.SEND"
 
     invoke-direct {v11, v12}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v11
 
     .line 169
-    :cond_d1
-    const-string v11, "com.google.android.c2dm.intent.REGISTRATION"
+    :cond_db
+    const-string/jumbo v11, "com.google.android.c2dm.intent.REGISTRATION"
 
     invoke-static {p0, v0, v11}, Lcom/google/android/gcm/GCMRegistrar;->checkReceiver(Landroid/content/Context;Ljava/util/Set;Ljava/lang/String;)V
 
     .line 171
-    const-string v11, "com.google.android.c2dm.intent.RECEIVE"
+    const-string/jumbo v11, "com.google.android.c2dm.intent.RECEIVE"
 
     invoke-static {p0, v0, v11}, Lcom/google/android/gcm/GCMRegistrar;->checkReceiver(Landroid/content/Context;Ljava/util/Set;Ljava/lang/String;)V
 
@@ -464,7 +464,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_35
+    if-eqz v7, :cond_36
 
     .line 184
     new-instance v7, Ljava/lang/IllegalStateException;
@@ -473,7 +473,7 @@
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "No receivers for action "
+    const-string/jumbo v9, "No receivers for action "
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -492,8 +492,8 @@
     throw v7
 
     .line 187
-    :cond_35
-    const-string v7, "GCMRegistrar"
+    :cond_36
+    const-string/jumbo v7, "GCMRegistrar"
 
     const/4 v8, 0x2
 
@@ -501,16 +501,16 @@
 
     move-result v7
 
-    if-eqz v7, :cond_64
+    if-eqz v7, :cond_69
 
     .line 188
-    const-string v7, "GCMRegistrar"
+    const-string/jumbo v7, "GCMRegistrar"
 
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "Found "
+    const-string/jumbo v9, "Found "
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -524,7 +524,7 @@
 
     move-result-object v8
 
-    const-string v9, " receivers for action "
+    const-string/jumbo v9, " receivers for action "
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -541,18 +541,18 @@
     invoke-static {v7, v8}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 192
-    :cond_64
+    :cond_69
     invoke-interface {v6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
     .local v0, "i$":Ljava/util/Iterator;
-    :cond_68
+    :cond_6d
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v7
 
-    if-eqz v7, :cond_a3
+    if-eqz v7, :cond_ab
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -572,7 +572,7 @@
 
     move-result v7
 
-    if-nez v7, :cond_68
+    if-nez v7, :cond_6d
 
     .line 195
     new-instance v7, Ljava/lang/IllegalStateException;
@@ -581,7 +581,7 @@
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "Receiver "
+    const-string/jumbo v9, "Receiver "
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -591,13 +591,13 @@
 
     move-result-object v8
 
-    const-string v9, " is not set with permission "
+    const-string/jumbo v9, " is not set with permission "
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v8
 
-    const-string v9, "com.google.android.c2dm.permission.SEND"
+    const-string/jumbo v9, "com.google.android.c2dm.permission.SEND"
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -614,7 +614,7 @@
     .line 200
     .end local v2    # "name":Ljava/lang/String;
     .end local v5    # "receiver":Landroid/content/pm/ResolveInfo;
-    :cond_a3
+    :cond_ab
     return-void
 .end method
 
@@ -624,7 +624,7 @@
 
     .prologue
     .line 360
-    const-string v0, ""
+    const-string/jumbo v0, ""
 
     invoke-static {p0, v0}, Lcom/google/android/gcm/GCMRegistrar;->setRegistrationId(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
 
@@ -675,7 +675,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "Coult not get package name: "
+    const-string/jumbo v4, "Coult not get package name: "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -706,7 +706,7 @@
 
     .line 482
     .local v0, "prefs":Landroid/content/SharedPreferences;
-    const-string v1, "backoff_ms"
+    const-string/jumbo v1, "backoff_ms"
 
     const/16 v2, 0xbb8
 
@@ -727,20 +727,20 @@
 
     array-length v2, p0
 
-    if-nez v2, :cond_d
+    if-nez v2, :cond_e
 
     .line 235
     :cond_5
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
-    const-string v3, "No senderIds"
+    const-string/jumbo v3, "No senderIds"
 
     invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
     .line 237
-    :cond_d
+    :cond_e
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/4 v2, 0x0
@@ -754,10 +754,10 @@
     const/4 v1, 0x1
 
     .local v1, "i":I
-    :goto_16
+    :goto_17
     array-length v2, p0
 
-    if-ge v1, v2, :cond_27
+    if-ge v1, v2, :cond_28
 
     .line 239
     const/16 v2, 0x2c
@@ -773,10 +773,10 @@
     .line 238
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_16
+    goto :goto_17
 
     .line 241
-    :cond_27
+    :cond_28
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -790,7 +790,7 @@
 
     .prologue
     .line 502
-    const-string v0, "com.google.android.gcm"
+    const-string/jumbo v0, "com.google.android.gcm"
 
     const/4 v1, 0x0
 
@@ -813,7 +813,7 @@
 
     .line 431
     .local v2, "prefs":Landroid/content/SharedPreferences;
-    const-string v3, "onServerLifeSpan"
+    const-string/jumbo v3, "onServerLifeSpan"
 
     const-wide/32 v4, 0x240c8400
 
@@ -840,9 +840,9 @@
 
     .line 331
     .local v2, "prefs":Landroid/content/SharedPreferences;
-    const-string v4, "regId"
+    const-string/jumbo v4, "regId"
 
-    const-string v5, ""
+    const-string/jumbo v5, ""
 
     invoke-interface {v2, v4, v5}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -850,7 +850,7 @@
 
     .line 334
     .local v3, "registrationId":Ljava/lang/String;
-    const-string v4, "appVersion"
+    const-string/jumbo v4, "appVersion"
 
     invoke-interface {v2, v4, v6}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
@@ -864,18 +864,18 @@
 
     .line 336
     .local v0, "newVersion":I
-    if-eq v1, v6, :cond_49
+    if-eq v1, v6, :cond_51
 
-    if-eq v1, v0, :cond_49
+    if-eq v1, v0, :cond_51
 
     .line 337
-    const-string v4, "GCMRegistrar"
+    const-string/jumbo v4, "GCMRegistrar"
 
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "App version changed from "
+    const-string/jumbo v6, "App version changed from "
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -885,7 +885,7 @@
 
     move-result-object v5
 
-    const-string v6, " to "
+    const-string/jumbo v6, " to "
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -895,7 +895,7 @@
 
     move-result-object v5
 
-    const-string v6, "; resetting registration id"
+    const-string/jumbo v6, "; resetting registration id"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -911,10 +911,10 @@
     invoke-static {p0}, Lcom/google/android/gcm/GCMRegistrar;->clearRegistrationId(Landroid/content/Context;)Ljava/lang/String;
 
     .line 340
-    const-string v3, ""
+    const-string/jumbo v3, ""
 
     .line 342
-    :cond_49
+    :cond_51
     return-object v3
 .end method
 
@@ -933,13 +933,13 @@
 
     .line 223
     .local v0, "flatSenderIds":Ljava/lang/String;
-    const-string v2, "GCMRegistrar"
+    const-string/jumbo v2, "GCMRegistrar"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "Registering app "
+    const-string/jumbo v4, "Registering app "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -953,7 +953,7 @@
 
     move-result-object v3
 
-    const-string v4, " of senders "
+    const-string/jumbo v4, " of senders "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -972,18 +972,18 @@
     .line 225
     new-instance v1, Landroid/content/Intent;
 
-    const-string v2, "com.google.android.c2dm.intent.REGISTER"
+    const-string/jumbo v2, "com.google.android.c2dm.intent.REGISTER"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 226
     .local v1, "intent":Landroid/content/Intent;
-    const-string v2, "com.google.android.gsf"
+    const-string/jumbo v2, "com.google.android.gsf"
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
     .line 227
-    const-string v2, "app"
+    const-string/jumbo v2, "app"
 
     new-instance v3, Landroid/content/Intent;
 
@@ -996,7 +996,7 @@
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
     .line 229
-    const-string v2, "sender"
+    const-string/jumbo v2, "sender"
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
@@ -1015,13 +1015,13 @@
     const/4 v4, 0x0
 
     .line 272
-    const-string v1, "GCMRegistrar"
+    const-string/jumbo v1, "GCMRegistrar"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "Unregistering app "
+    const-string/jumbo v3, "Unregistering app "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1044,18 +1044,18 @@
     .line 273
     new-instance v0, Landroid/content/Intent;
 
-    const-string v1, "com.google.android.c2dm.intent.UNREGISTER"
+    const-string/jumbo v1, "com.google.android.c2dm.intent.UNREGISTER"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 274
     .local v0, "intent":Landroid/content/Intent;
-    const-string v1, "com.google.android.gsf"
+    const-string/jumbo v1, "com.google.android.gsf"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
     .line 275
-    const-string v1, "app"
+    const-string/jumbo v1, "app"
 
     new-instance v2, Landroid/content/Intent;
 
@@ -1115,7 +1115,7 @@
 
     .line 408
     .local v3, "prefs":Landroid/content/SharedPreferences;
-    const-string v5, "onServer"
+    const-string/jumbo v5, "onServer"
 
     invoke-interface {v3, v5, v4}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -1123,13 +1123,13 @@
 
     .line 409
     .local v2, "isRegistered":Z
-    const-string v5, "GCMRegistrar"
+    const-string/jumbo v5, "GCMRegistrar"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "Is registered on server: "
+    const-string/jumbo v7, "Is registered on server: "
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1146,10 +1146,10 @@
     invoke-static {v5, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 410
-    if-eqz v2, :cond_53
+    if-eqz v2, :cond_59
 
     .line 412
-    const-string v5, "onServerExpirationTime"
+    const-string/jumbo v5, "onServerExpirationTime"
 
     const-wide/16 v6, -0x1
 
@@ -1165,16 +1165,16 @@
 
     cmp-long v5, v6, v0
 
-    if-lez v5, :cond_53
+    if-lez v5, :cond_59
 
     .line 415
-    const-string v5, "GCMRegistrar"
+    const-string/jumbo v5, "GCMRegistrar"
 
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "flag expired on: "
+    const-string/jumbo v7, "flag expired on: "
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1199,7 +1199,7 @@
     .line 419
     .end local v0    # "expirationTime":J
     .end local v2    # "isRegistered":Z
-    :cond_53
+    :cond_59
     return v2
 .end method
 
@@ -1216,12 +1216,12 @@
     :try_start_3
     sget-object v0, Lcom/google/android/gcm/GCMRegistrar;->sRetryReceiver:Lcom/google/android/gcm/GCMBroadcastReceiver;
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_18
 
     .line 265
-    const-string v0, "GCMRegistrar"
+    const-string/jumbo v0, "GCMRegistrar"
 
-    const-string v2, "Unregistering receiver"
+    const-string/jumbo v2, "Unregistering receiver"
 
     invoke-static {v0, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -1234,17 +1234,17 @@
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/android/gcm/GCMRegistrar;->sRetryReceiver:Lcom/google/android/gcm/GCMBroadcastReceiver;
-    :try_end_16
-    .catchall {:try_start_3 .. :try_end_16} :catchall_18
+    :try_end_18
+    .catchall {:try_start_3 .. :try_end_18} :catchall_1a
 
     .line 269
-    :cond_16
+    :cond_18
     monitor-exit v1
 
     return-void
 
     .line 264
-    :catchall_18
+    :catchall_1a
     move-exception v0
 
     monitor-exit v1
@@ -1274,13 +1274,13 @@
 
     .prologue
     .line 470
-    const-string v0, "GCMRegistrar"
+    const-string/jumbo v0, "GCMRegistrar"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "resetting backoff for "
+    const-string/jumbo v2, "resetting backoff for "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1328,7 +1328,7 @@
 
     .line 497
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
-    const-string v2, "backoff_ms"
+    const-string/jumbo v2, "backoff_ms"
 
     invoke-interface {v0, v2, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
@@ -1358,7 +1358,7 @@
 
     .line 444
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
-    const-string v2, "onServerLifeSpan"
+    const-string/jumbo v2, "onServerLifeSpan"
 
     invoke-interface {v0, v2, p1, p2}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
@@ -1388,7 +1388,7 @@
 
     .line 387
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
-    const-string v6, "onServer"
+    const-string/jumbo v6, "onServer"
 
     invoke-interface {v0, v6, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -1407,13 +1407,13 @@
 
     .line 391
     .local v2, "expirationTime":J
-    const-string v6, "GCMRegistrar"
+    const-string/jumbo v6, "GCMRegistrar"
 
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "Setting registeredOnServer status as "
+    const-string/jumbo v8, "Setting registeredOnServer status as "
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1423,7 +1423,7 @@
 
     move-result-object v7
 
-    const-string v8, " until "
+    const-string/jumbo v8, " until "
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1444,7 +1444,7 @@
     invoke-static {v6, v7}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 393
-    const-string v6, "onServerExpirationTime"
+    const-string/jumbo v6, "onServerExpirationTime"
 
     invoke-interface {v0, v6, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
@@ -1468,9 +1468,9 @@
 
     .line 371
     .local v3, "prefs":Landroid/content/SharedPreferences;
-    const-string v4, "regId"
+    const-string/jumbo v4, "regId"
 
-    const-string v5, ""
+    const-string/jumbo v5, ""
 
     invoke-interface {v3, v4, v5}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -1484,13 +1484,13 @@
 
     .line 373
     .local v0, "appVersion":I
-    const-string v4, "GCMRegistrar"
+    const-string/jumbo v4, "GCMRegistrar"
 
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "Saving regId on app version "
+    const-string/jumbo v6, "Saving regId on app version "
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1513,12 +1513,12 @@
 
     .line 375
     .local v1, "editor":Landroid/content/SharedPreferences$Editor;
-    const-string v4, "regId"
+    const-string/jumbo v4, "regId"
 
     invoke-interface {v1, v4, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     .line 376
-    const-string v4, "appVersion"
+    const-string/jumbo v4, "appVersion"
 
     invoke-interface {v1, v4, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
@@ -1542,17 +1542,17 @@
     :try_start_3
     sget-object v5, Lcom/google/android/gcm/GCMRegistrar;->sRetryReceiver:Lcom/google/android/gcm/GCMBroadcastReceiver;
 
-    if-nez v5, :cond_47
+    if-nez v5, :cond_4d
 
     .line 285
     sget-object v5, Lcom/google/android/gcm/GCMRegistrar;->sRetryReceiverClassName:Ljava/lang/String;
 
-    if-nez v5, :cond_49
+    if-nez v5, :cond_4f
 
     .line 287
-    const-string v5, "GCMRegistrar"
+    const-string/jumbo v5, "GCMRegistrar"
 
-    const-string v7, "internal error: retry receiver class not set yet"
+    const-string/jumbo v7, "internal error: retry receiver class not set yet"
 
     invoke-static {v5, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -1564,7 +1564,7 @@
     sput-object v5, Lcom/google/android/gcm/GCMRegistrar;->sRetryReceiver:Lcom/google/android/gcm/GCMBroadcastReceiver;
 
     .line 302
-    :goto_19
+    :goto_1b
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
@@ -1573,7 +1573,7 @@
     .local v0, "category":Ljava/lang/String;
     new-instance v3, Landroid/content/IntentFilter;
 
-    const-string v5, "com.google.android.gcm.intent.RETRY"
+    const-string/jumbo v5, "com.google.android.gcm.intent.RETRY"
 
     invoke-direct {v3, v5}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
@@ -1590,7 +1590,7 @@
 
     move-result-object v5
 
-    const-string v7, ".permission.C2D_MESSAGE"
+    const-string/jumbo v7, ".permission.C2D_MESSAGE"
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1602,9 +1602,9 @@
 
     .line 308
     .local v4, "permission":Ljava/lang/String;
-    const-string v5, "GCMRegistrar"
+    const-string/jumbo v5, "GCMRegistrar"
 
-    const-string v7, "Registering receiver"
+    const-string/jumbo v7, "Registering receiver"
 
     invoke-static {v5, v7}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -1614,21 +1614,21 @@
     const/4 v7, 0x0
 
     invoke-virtual {p0, v5, v3, v4, v7}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
-    :try_end_47
-    .catchall {:try_start_3 .. :try_end_47} :catchall_91
+    :try_end_4d
+    .catchall {:try_start_3 .. :try_end_4d} :catchall_9b
 
     .line 311
     .end local v0    # "category":Ljava/lang/String;
     .end local v3    # "filter":Landroid/content/IntentFilter;
     .end local v4    # "permission":Ljava/lang/String;
-    :cond_47
+    :cond_4d
     monitor-exit v6
 
     return-void
 
     .line 292
-    :cond_49
-    :try_start_49
+    :cond_4f
+    :try_start_4f
     sget-object v5, Lcom/google/android/gcm/GCMRegistrar;->sRetryReceiverClassName:Ljava/lang/String;
 
     invoke-static {v5}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
@@ -1644,27 +1644,27 @@
     check-cast v5, Lcom/google/android/gcm/GCMBroadcastReceiver;
 
     sput-object v5, Lcom/google/android/gcm/GCMRegistrar;->sRetryReceiver:Lcom/google/android/gcm/GCMBroadcastReceiver;
-    :try_end_57
-    .catch Ljava/lang/Exception; {:try_start_49 .. :try_end_57} :catch_58
-    .catchall {:try_start_49 .. :try_end_57} :catchall_91
+    :try_end_5d
+    .catch Ljava/lang/Exception; {:try_start_4f .. :try_end_5d} :catch_5e
+    .catchall {:try_start_4f .. :try_end_5d} :catchall_9b
 
-    goto :goto_19
+    goto :goto_1b
 
     .line 294
     .end local v1    # "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :catch_58
+    :catch_5e
     move-exception v2
 
     .line 295
     .local v2, "e":Ljava/lang/Exception;
-    :try_start_59
-    const-string v5, "GCMRegistrar"
+    :try_start_5f
+    const-string/jumbo v5, "GCMRegistrar"
 
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "Could not create instance of "
+    const-string/jumbo v8, "Could not create instance of "
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1676,7 +1676,7 @@
 
     move-result-object v7
 
-    const-string v8, ". Using "
+    const-string/jumbo v8, ". Using "
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1692,7 +1692,7 @@
 
     move-result-object v7
 
-    const-string v8, " directly."
+    const-string/jumbo v8, " directly."
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1710,14 +1710,14 @@
     invoke-direct {v5}, Lcom/google/android/gcm/GCMBroadcastReceiver;-><init>()V
 
     sput-object v5, Lcom/google/android/gcm/GCMRegistrar;->sRetryReceiver:Lcom/google/android/gcm/GCMBroadcastReceiver;
-    :try_end_90
-    .catchall {:try_start_59 .. :try_end_90} :catchall_91
+    :try_end_9a
+    .catchall {:try_start_5f .. :try_end_9a} :catchall_9b
 
-    goto :goto_19
+    goto :goto_1b
 
     .line 284
     .end local v2    # "e":Ljava/lang/Exception;
-    :catchall_91
+    :catchall_9b
     move-exception v5
 
     monitor-exit v6
@@ -1731,13 +1731,13 @@
 
     .prologue
     .line 317
-    const-string v0, "GCMRegistrar"
+    const-string/jumbo v0, "GCMRegistrar"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "Setting the name of retry receiver class to "
+    const-string/jumbo v2, "Setting the name of retry receiver class to "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

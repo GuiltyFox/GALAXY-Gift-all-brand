@@ -176,7 +176,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_82
+    if-eqz v9, :cond_88
 
     .line 31
     invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getCurrentChar()C
@@ -219,9 +219,13 @@
     invoke-virtual {p1, v4}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->updateSymbolInfo(I)V
 
     .line 40
-    iget-object v9, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->symbolInfo:Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
+    invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getSymbolInfo()Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
 
-    iget v9, v9, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->dataCapacity:I
+    move-result-object v9
+
+    invoke-virtual {v9}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getDataCapacity()I
+
+    move-result v9
 
     sub-int v0, v9, v4
 
@@ -231,7 +235,7 @@
 
     move-result v9
 
-    if-nez v9, :cond_65
+    if-nez v9, :cond_69
 
     .line 44
     new-instance v7, Ljava/lang/StringBuilder;
@@ -248,26 +252,26 @@
 
     const/4 v10, 0x2
 
-    if-ne v9, v10, :cond_4e
+    if-ne v9, v10, :cond_52
 
     .line 46
     const/4 v9, 0x2
 
-    if-lt v0, v9, :cond_4a
+    if-lt v0, v9, :cond_4e
 
     const/4 v9, 0x2
 
-    if-le v0, v9, :cond_4e
+    if-le v0, v9, :cond_52
 
     .line 47
-    :cond_4a
+    :cond_4e
     invoke-direct {p0, p1, v1, v7, v5}, Lcom/google/zxing/datamatrix/encoder/C40Encoder;->backtrackOneCharacter(Lcom/google/zxing/datamatrix/encoder/EncoderContext;Ljava/lang/StringBuilder;Ljava/lang/StringBuilder;I)I
 
     move-result v5
 
     .line 51
-    :cond_4e
-    :goto_4e
+    :cond_52
+    :goto_52
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v9
@@ -276,32 +280,32 @@
 
     const/4 v10, 0x1
 
-    if-ne v9, v10, :cond_82
+    if-ne v9, v10, :cond_88
 
     const/4 v9, 0x3
 
-    if-gt v5, v9, :cond_5d
+    if-gt v5, v9, :cond_61
 
     const/4 v9, 0x1
 
-    if-ne v0, v9, :cond_60
+    if-ne v0, v9, :cond_64
 
-    :cond_5d
+    :cond_61
     const/4 v9, 0x3
 
-    if-le v5, v9, :cond_82
+    if-le v5, v9, :cond_88
 
     .line 53
-    :cond_60
+    :cond_64
     invoke-direct {p0, p1, v1, v7, v5}, Lcom/google/zxing/datamatrix/encoder/C40Encoder;->backtrackOneCharacter(Lcom/google/zxing/datamatrix/encoder/EncoderContext;Ljava/lang/StringBuilder;Ljava/lang/StringBuilder;I)I
 
     move-result v5
 
-    goto :goto_4e
+    goto :goto_52
 
     .line 58
     .end local v7    # "removed":Ljava/lang/StringBuilder;
-    :cond_65
+    :cond_69
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v3
@@ -313,7 +317,9 @@
     if-nez v9, :cond_5
 
     .line 60
-    iget-object v9, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->msg:Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getMessage()Ljava/lang/String;
+
+    move-result-object v9
 
     iget v10, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->pos:I
 
@@ -344,7 +350,7 @@
     .end local v5    # "lastCharSize":I
     .end local v6    # "newMode":I
     .end local v8    # "unwritten":I
-    :cond_82
+    :cond_88
     invoke-virtual {p0, p1, v1}, Lcom/google/zxing/datamatrix/encoder/C40Encoder;->handleEOD(Lcom/google/zxing/datamatrix/encoder/EncoderContext;Ljava/lang/StringBuilder;)V
 
     .line 68
@@ -546,10 +552,10 @@
     :cond_8d
     const/16 v1, 0x80
 
-    if-lt p1, v1, :cond_a1
+    if-lt p1, v1, :cond_a2
 
     .line 161
-    const-string v1, "\u0001\u001e"
+    const-string/jumbo v1, "\u0001\u001e"
 
     invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -573,14 +579,14 @@
 
     .line 166
     .end local v0    # "len":I
-    :cond_a1
+    :cond_a2
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "Illegal character: "
+    const-string/jumbo v3, "Illegal character: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -653,9 +659,13 @@
     invoke-virtual {p1, v1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->updateSymbolInfo(I)V
 
     .line 98
-    iget-object v4, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->symbolInfo:Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
+    invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getSymbolInfo()Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
 
-    iget v4, v4, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->dataCapacity:I
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getDataCapacity()I
+
+    move-result v4
 
     sub-int v0, v4, v1
 
@@ -663,121 +673,121 @@
     .local v0, "available":I
     const/4 v4, 0x2
 
-    if-ne v2, v4, :cond_3f
+    if-ne v2, v4, :cond_43
 
     .line 101
     invoke-virtual {p2, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 102
-    :goto_28
+    :goto_2c
     invoke-virtual {p2}, Ljava/lang/StringBuilder;->length()I
 
     move-result v4
 
-    if-lt v4, v5, :cond_32
+    if-lt v4, v5, :cond_36
 
     .line 103
     invoke-static {p1, p2}, Lcom/google/zxing/datamatrix/encoder/C40Encoder;->writeNextTriplet(Lcom/google/zxing/datamatrix/encoder/EncoderContext;Ljava/lang/StringBuilder;)V
 
-    goto :goto_28
+    goto :goto_2c
 
     .line 105
-    :cond_32
+    :cond_36
     invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->hasMoreCharacters()Z
 
     move-result v4
 
-    if-eqz v4, :cond_3b
+    if-eqz v4, :cond_3f
 
     .line 106
     invoke-virtual {p1, v6}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->writeCodeword(C)V
 
     .line 127
-    :cond_3b
-    :goto_3b
+    :cond_3f
+    :goto_3f
     invoke-virtual {p1, v7}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->signalEncoderChange(I)V
 
     .line 128
     return-void
 
     .line 108
-    :cond_3f
-    if-ne v0, v8, :cond_5d
+    :cond_43
+    if-ne v0, v8, :cond_61
 
-    if-ne v2, v8, :cond_5d
+    if-ne v2, v8, :cond_61
 
     .line 109
-    :goto_43
+    :goto_47
     invoke-virtual {p2}, Ljava/lang/StringBuilder;->length()I
 
     move-result v4
 
-    if-lt v4, v5, :cond_4d
+    if-lt v4, v5, :cond_51
 
     .line 110
     invoke-static {p1, p2}, Lcom/google/zxing/datamatrix/encoder/C40Encoder;->writeNextTriplet(Lcom/google/zxing/datamatrix/encoder/EncoderContext;Ljava/lang/StringBuilder;)V
 
-    goto :goto_43
+    goto :goto_47
 
     .line 112
-    :cond_4d
+    :cond_51
     invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->hasMoreCharacters()Z
 
     move-result v4
 
-    if-eqz v4, :cond_56
+    if-eqz v4, :cond_5a
 
     .line 113
     invoke-virtual {p1, v6}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->writeCodeword(C)V
 
     .line 116
-    :cond_56
+    :cond_5a
     iget v4, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->pos:I
 
     add-int/lit8 v4, v4, -0x1
 
     iput v4, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->pos:I
 
-    goto :goto_3b
+    goto :goto_3f
 
     .line 117
-    :cond_5d
-    if-nez v2, :cond_75
+    :cond_61
+    if-nez v2, :cond_79
 
     .line 118
-    :goto_5f
+    :goto_63
     invoke-virtual {p2}, Ljava/lang/StringBuilder;->length()I
 
     move-result v4
 
-    if-lt v4, v5, :cond_69
+    if-lt v4, v5, :cond_6d
 
     .line 119
     invoke-static {p1, p2}, Lcom/google/zxing/datamatrix/encoder/C40Encoder;->writeNextTriplet(Lcom/google/zxing/datamatrix/encoder/EncoderContext;Ljava/lang/StringBuilder;)V
 
-    goto :goto_5f
+    goto :goto_63
 
     .line 121
-    :cond_69
-    if-gtz v0, :cond_71
+    :cond_6d
+    if-gtz v0, :cond_75
 
     invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->hasMoreCharacters()Z
 
     move-result v4
 
-    if-eqz v4, :cond_3b
+    if-eqz v4, :cond_3f
 
     .line 122
-    :cond_71
+    :cond_75
     invoke-virtual {p1, v6}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->writeCodeword(C)V
 
-    goto :goto_3b
+    goto :goto_3f
 
     .line 125
-    :cond_75
+    :cond_79
     new-instance v4, Ljava/lang/IllegalStateException;
 
-    const-string v5, "Unexpected case. Please report!"
+    const-string/jumbo v5, "Unexpected case. Please report!"
 
     invoke-direct {v4, v5}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

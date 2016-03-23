@@ -102,7 +102,7 @@
     .line 90
     .local v0, "connection":Ljava/net/URLConnection;
     :goto_c
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_54
 
     .line 92
     invoke-virtual {v1}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
@@ -125,9 +125,9 @@
 
     .line 98
     :cond_1d
-    const-string v3, "Prefer-Html-Meta-Tags"
+    const-string/jumbo v3, "Prefer-Html-Meta-Tags"
 
-    const-string v4, "al"
+    const-string/jumbo v4, "al"
 
     invoke-virtual {v0, v3, v4}, Ljava/net/URLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -137,7 +137,7 @@
     .line 101
     instance-of v3, v0, Ljava/net/HttpURLConnection;
 
-    if-eqz v3, :cond_4f
+    if-eqz v3, :cond_52
 
     move-object v2, v0
 
@@ -152,7 +152,7 @@
 
     const/16 v4, 0x12c
 
-    if-lt v3, v4, :cond_4d
+    if-lt v3, v4, :cond_50
 
     invoke-virtual {v2}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
@@ -160,13 +160,13 @@
 
     const/16 v4, 0x190
 
-    if-ge v3, v4, :cond_4d
+    if-ge v3, v4, :cond_50
 
     .line 104
     new-instance v1, Ljava/net/URL;
 
     .end local v1    # "currentURL":Ljava/net/URL;
-    const-string v3, "Location"
+    const-string/jumbo v3, "Location"
 
     invoke-virtual {v2, v3}, Ljava/net/HttpURLConnection;->getHeaderField(Ljava/lang/String;)Ljava/lang/String;
 
@@ -181,21 +181,21 @@
     goto :goto_c
 
     .line 107
-    :cond_4d
+    :cond_50
     const/4 v1, 0x0
 
     goto :goto_c
 
     .line 110
     .end local v2    # "httpConnection":Ljava/net/HttpURLConnection;
-    :cond_4f
+    :cond_52
     const/4 v1, 0x0
 
     goto :goto_c
 
     .line 115
-    :cond_51
-    :try_start_51
+    :cond_54
+    :try_start_54
     iget-object v3, p0, Lbolts/WebViewAppLinkResolver$3;->val$content:Lbolts/Capture;
 
     # invokes: Lbolts/WebViewAppLinkResolver;->readFromConnection(Ljava/net/URLConnection;)Ljava/lang/String;
@@ -213,13 +213,13 @@
     move-result-object v4
 
     invoke-virtual {v3, v4}, Lbolts/Capture;->set(Ljava/lang/Object;)V
-    :try_end_63
-    .catchall {:try_start_51 .. :try_end_63} :catchall_6e
+    :try_end_66
+    .catchall {:try_start_54 .. :try_end_66} :catchall_71
 
     .line 118
     instance-of v3, v0, Ljava/net/HttpURLConnection;
 
-    if-eqz v3, :cond_6c
+    if-eqz v3, :cond_6f
 
     .line 119
     check-cast v0, Ljava/net/HttpURLConnection;
@@ -228,19 +228,19 @@
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->disconnect()V
 
     .line 122
-    :cond_6c
+    :cond_6f
     const/4 v3, 0x0
 
     return-object v3
 
     .line 118
     .restart local v0    # "connection":Ljava/net/URLConnection;
-    :catchall_6e
+    :catchall_71
     move-exception v3
 
     instance-of v4, v0, Ljava/net/HttpURLConnection;
 
-    if-eqz v4, :cond_78
+    if-eqz v4, :cond_7b
 
     .line 119
     check-cast v0, Ljava/net/HttpURLConnection;
@@ -248,6 +248,6 @@
     .end local v0    # "connection":Ljava/net/URLConnection;
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->disconnect()V
 
-    :cond_78
+    :cond_7b
     throw v3
 .end method

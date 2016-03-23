@@ -21,12 +21,12 @@
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/WebViewNotificationActivity;)V
     .registers 2
+    .param p1, "this$0"    # Lcom/samsung/privilege/activity/WebViewNotificationActivity;
 
     .prologue
-    .line 1
+    .line 102
     iput-object p1, p0, Lcom/samsung/privilege/activity/WebViewNotificationActivity$2;->this$0:Lcom/samsung/privilege/activity/WebViewNotificationActivity;
 
-    .line 98
     invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
 
     return-void
@@ -42,6 +42,6 @@
     .param p4, "failingUrl"    # Ljava/lang/String;
 
     .prologue
-    .line 102
+    .line 106
     return-void
 .end method

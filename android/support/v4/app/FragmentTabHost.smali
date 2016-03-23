@@ -126,7 +126,6 @@
 
     .line 325
     .local v2, "tab":Landroid/support/v4/app/FragmentTabHost$TabInfo;
-    # getter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->tag:Ljava/lang/String;
     invoke-static {v2}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$200(Landroid/support/v4/app/FragmentTabHost$TabInfo;)Ljava/lang/String;
 
     move-result-object v3
@@ -149,7 +148,7 @@
     .line 329
     .end local v2    # "tab":Landroid/support/v4/app/FragmentTabHost$TabInfo;
     :cond_20
-    if-nez v1, :cond_3b
+    if-nez v1, :cond_3c
 
     .line 330
     new-instance v3, Ljava/lang/IllegalStateException;
@@ -158,7 +157,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "No tab known for tag "
+    const-string/jumbo v5, "No tab known for tag "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -177,13 +176,13 @@
     throw v3
 
     .line 332
-    :cond_3b
+    :cond_3c
     iget-object v3, p0, Landroid/support/v4/app/FragmentTabHost;->mLastTab:Landroid/support/v4/app/FragmentTabHost$TabInfo;
 
-    if-eq v3, v1, :cond_88
+    if-eq v3, v1, :cond_89
 
     .line 333
-    if-nez p2, :cond_47
+    if-nez p2, :cond_48
 
     .line 334
     iget-object v3, p0, Landroid/support/v4/app/FragmentTabHost;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
@@ -193,25 +192,23 @@
     move-result-object p2
 
     .line 336
-    :cond_47
+    :cond_48
     iget-object v3, p0, Landroid/support/v4/app/FragmentTabHost;->mLastTab:Landroid/support/v4/app/FragmentTabHost$TabInfo;
 
-    if-eqz v3, :cond_5c
+    if-eqz v3, :cond_5d
 
     .line 337
     iget-object v3, p0, Landroid/support/v4/app/FragmentTabHost;->mLastTab:Landroid/support/v4/app/FragmentTabHost$TabInfo;
 
-    # getter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->fragment:Landroid/support/v4/app/Fragment;
     invoke-static {v3}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$100(Landroid/support/v4/app/FragmentTabHost$TabInfo;)Landroid/support/v4/app/Fragment;
 
     move-result-object v3
 
-    if-eqz v3, :cond_5c
+    if-eqz v3, :cond_5d
 
     .line 338
     iget-object v3, p0, Landroid/support/v4/app/FragmentTabHost;->mLastTab:Landroid/support/v4/app/FragmentTabHost$TabInfo;
 
-    # getter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->fragment:Landroid/support/v4/app/Fragment;
     invoke-static {v3}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$100(Landroid/support/v4/app/FragmentTabHost$TabInfo;)Landroid/support/v4/app/Fragment;
 
     move-result-object v3
@@ -219,21 +216,19 @@
     invoke-virtual {p2, v3}, Landroid/support/v4/app/FragmentTransaction;->detach(Landroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
 
     .line 341
-    :cond_5c
-    if-eqz v1, :cond_86
+    :cond_5d
+    if-eqz v1, :cond_87
 
     .line 342
-    # getter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->fragment:Landroid/support/v4/app/Fragment;
     invoke-static {v1}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$100(Landroid/support/v4/app/FragmentTabHost$TabInfo;)Landroid/support/v4/app/Fragment;
 
     move-result-object v3
 
-    if-nez v3, :cond_89
+    if-nez v3, :cond_8a
 
     .line 343
     iget-object v3, p0, Landroid/support/v4/app/FragmentTabHost;->mContext:Landroid/content/Context;
 
-    # getter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->clss:Ljava/lang/Class;
     invoke-static {v1}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$300(Landroid/support/v4/app/FragmentTabHost$TabInfo;)Ljava/lang/Class;
 
     move-result-object v4
@@ -242,7 +237,6 @@
 
     move-result-object v4
 
-    # getter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->args:Landroid/os/Bundle;
     invoke-static {v1}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$400(Landroid/support/v4/app/FragmentTabHost$TabInfo;)Landroid/os/Bundle;
 
     move-result-object v5
@@ -251,18 +245,15 @@
 
     move-result-object v3
 
-    # setter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->fragment:Landroid/support/v4/app/Fragment;
     invoke-static {v1, v3}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$102(Landroid/support/v4/app/FragmentTabHost$TabInfo;Landroid/support/v4/app/Fragment;)Landroid/support/v4/app/Fragment;
 
     .line 345
     iget v3, p0, Landroid/support/v4/app/FragmentTabHost;->mContainerId:I
 
-    # getter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->fragment:Landroid/support/v4/app/Fragment;
     invoke-static {v1}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$100(Landroid/support/v4/app/FragmentTabHost$TabInfo;)Landroid/support/v4/app/Fragment;
 
     move-result-object v4
 
-    # getter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->tag:Ljava/lang/String;
     invoke-static {v1}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$200(Landroid/support/v4/app/FragmentTabHost$TabInfo;)Ljava/lang/String;
 
     move-result-object v5
@@ -270,24 +261,23 @@
     invoke-virtual {p2, v3, v4, v5}, Landroid/support/v4/app/FragmentTransaction;->add(ILandroid/support/v4/app/Fragment;Ljava/lang/String;)Landroid/support/v4/app/FragmentTransaction;
 
     .line 351
-    :cond_86
-    :goto_86
+    :cond_87
+    :goto_87
     iput-object v1, p0, Landroid/support/v4/app/FragmentTabHost;->mLastTab:Landroid/support/v4/app/FragmentTabHost$TabInfo;
 
     .line 353
-    :cond_88
+    :cond_89
     return-object p2
 
     .line 347
-    :cond_89
-    # getter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->fragment:Landroid/support/v4/app/Fragment;
+    :cond_8a
     invoke-static {v1}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$100(Landroid/support/v4/app/FragmentTabHost$TabInfo;)Landroid/support/v4/app/Fragment;
 
     move-result-object v3
 
     invoke-virtual {p2, v3}, Landroid/support/v4/app/FragmentTransaction;->attach(Landroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
 
-    goto :goto_86
+    goto :goto_87
 .end method
 
 .method private ensureContent()V
@@ -297,7 +287,7 @@
     .line 212
     iget-object v0, p0, Landroid/support/v4/app/FragmentTabHost;->mRealTabContent:Landroid/widget/FrameLayout;
 
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_2e
 
     .line 213
     iget v0, p0, Landroid/support/v4/app/FragmentTabHost;->mContainerId:I
@@ -313,7 +303,7 @@
     .line 214
     iget-object v0, p0, Landroid/support/v4/app/FragmentTabHost;->mRealTabContent:Landroid/widget/FrameLayout;
 
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_2e
 
     .line 215
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -322,7 +312,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "No tab content FrameLayout found for id "
+    const-string/jumbo v2, "No tab content FrameLayout found for id "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -343,7 +333,7 @@
     throw v0
 
     .line 219
-    :cond_2d
+    :cond_2e
     return-void
 .end method
 
@@ -548,18 +538,15 @@
 
     move-result-object v3
 
-    # setter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->fragment:Landroid/support/v4/app/Fragment;
     invoke-static {v1, v3}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$102(Landroid/support/v4/app/FragmentTabHost$TabInfo;Landroid/support/v4/app/Fragment;)Landroid/support/v4/app/Fragment;
 
     .line 237
-    # getter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->fragment:Landroid/support/v4/app/Fragment;
     invoke-static {v1}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$100(Landroid/support/v4/app/FragmentTabHost$TabInfo;)Landroid/support/v4/app/Fragment;
 
     move-result-object v3
 
     if-eqz v3, :cond_40
 
-    # getter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->fragment:Landroid/support/v4/app/Fragment;
     invoke-static {v1}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$100(Landroid/support/v4/app/FragmentTabHost$TabInfo;)Landroid/support/v4/app/Fragment;
 
     move-result-object v3
@@ -579,7 +566,6 @@
 
     .line 239
     .local v0, "ft":Landroid/support/v4/app/FragmentTransaction;
-    # getter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->fragment:Landroid/support/v4/app/Fragment;
     invoke-static {v1}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$100(Landroid/support/v4/app/FragmentTabHost$TabInfo;)Landroid/support/v4/app/Fragment;
 
     move-result-object v3
@@ -646,7 +632,6 @@
     .local v3, "tab":Landroid/support/v4/app/FragmentTabHost$TabInfo;
     iget-object v4, p0, Landroid/support/v4/app/FragmentTabHost;->mFragmentManager:Landroid/support/v4/app/FragmentManager;
 
-    # getter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->tag:Ljava/lang/String;
     invoke-static {v3}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$200(Landroid/support/v4/app/FragmentTabHost$TabInfo;)Ljava/lang/String;
 
     move-result-object v5
@@ -655,18 +640,15 @@
 
     move-result-object v4
 
-    # setter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->fragment:Landroid/support/v4/app/Fragment;
     invoke-static {v3, v4}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$102(Landroid/support/v4/app/FragmentTabHost$TabInfo;Landroid/support/v4/app/Fragment;)Landroid/support/v4/app/Fragment;
 
     .line 260
-    # getter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->fragment:Landroid/support/v4/app/Fragment;
     invoke-static {v3}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$100(Landroid/support/v4/app/FragmentTabHost$TabInfo;)Landroid/support/v4/app/Fragment;
 
     move-result-object v4
 
     if-eqz v4, :cond_42
 
-    # getter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->fragment:Landroid/support/v4/app/Fragment;
     invoke-static {v3}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$100(Landroid/support/v4/app/FragmentTabHost$TabInfo;)Landroid/support/v4/app/Fragment;
 
     move-result-object v4
@@ -678,7 +660,6 @@
     if-nez v4, :cond_42
 
     .line 261
-    # getter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->tag:Ljava/lang/String;
     invoke-static {v3}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$200(Landroid/support/v4/app/FragmentTabHost$TabInfo;)Ljava/lang/String;
 
     move-result-object v4
@@ -712,7 +693,6 @@
 
     .line 272
     :cond_4d
-    # getter for: Landroid/support/v4/app/FragmentTabHost$TabInfo;->fragment:Landroid/support/v4/app/Fragment;
     invoke-static {v3}, Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$100(Landroid/support/v4/app/FragmentTabHost$TabInfo;)Landroid/support/v4/app/Fragment;
 
     move-result-object v4
@@ -881,7 +861,7 @@
     .line 183
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "Must call setup() that takes a Context and FragmentManager"
+    const-string/jumbo v1, "Must call setup() that takes a Context and FragmentManager"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

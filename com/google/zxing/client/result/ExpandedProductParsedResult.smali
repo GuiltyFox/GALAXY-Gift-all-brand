@@ -217,7 +217,7 @@
 
     if-nez v2, :cond_6
 
-    .line 98
+    .line 110
     :cond_5
     :goto_5
     return v1
@@ -244,6 +244,7 @@
 
     iget-object v3, v0, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->sscc:Ljava/lang/String;
 
+    .line 99
     invoke-static {v2, v3}, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->equalsOrNull(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -254,6 +255,7 @@
 
     iget-object v3, v0, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->lotNumber:Ljava/lang/String;
 
+    .line 100
     invoke-static {v2, v3}, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->equalsOrNull(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -264,6 +266,7 @@
 
     iget-object v3, v0, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->productionDate:Ljava/lang/String;
 
+    .line 101
     invoke-static {v2, v3}, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->equalsOrNull(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -274,6 +277,7 @@
 
     iget-object v3, v0, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->bestBeforeDate:Ljava/lang/String;
 
+    .line 102
     invoke-static {v2, v3}, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->equalsOrNull(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -284,6 +288,7 @@
 
     iget-object v3, v0, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->expirationDate:Ljava/lang/String;
 
+    .line 103
     invoke-static {v2, v3}, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->equalsOrNull(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -294,6 +299,7 @@
 
     iget-object v3, v0, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->weight:Ljava/lang/String;
 
+    .line 104
     invoke-static {v2, v3}, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->equalsOrNull(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -304,6 +310,7 @@
 
     iget-object v3, v0, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->weightType:Ljava/lang/String;
 
+    .line 105
     invoke-static {v2, v3}, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->equalsOrNull(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -314,6 +321,7 @@
 
     iget-object v3, v0, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->weightIncrement:Ljava/lang/String;
 
+    .line 106
     invoke-static {v2, v3}, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->equalsOrNull(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -324,6 +332,7 @@
 
     iget-object v3, v0, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->price:Ljava/lang/String;
 
+    .line 107
     invoke-static {v2, v3}, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->equalsOrNull(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -334,6 +343,7 @@
 
     iget-object v3, v0, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->priceIncrement:Ljava/lang/String;
 
+    .line 108
     invoke-static {v2, v3}, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->equalsOrNull(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -344,6 +354,7 @@
 
     iget-object v3, v0, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->priceCurrency:Ljava/lang/String;
 
+    .line 109
     invoke-static {v2, v3}, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->equalsOrNull(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -354,6 +365,7 @@
 
     iget-object v3, v0, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->uncommonAIs:Ljava/util/Map;
 
+    .line 110
     invoke-static {v2, v3}, Lcom/google/zxing/client/result/ExpandedProductParsedResult;->equalsOrNull(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2

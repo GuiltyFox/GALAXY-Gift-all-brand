@@ -132,7 +132,7 @@
 
     invoke-direct {v1, p0, v6}, Lbolts/WebViewAppLinkResolver$2$2;-><init>(Lbolts/WebViewAppLinkResolver$2;Lbolts/Task$TaskCompletionSource;)V
 
-    const-string v2, "boltsWebViewAppLinkResolverResult"
+    const-string/jumbo v2, "boltsWebViewAppLinkResolverResult"
 
     invoke-virtual {v0, v1, v2}, Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -147,7 +147,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_47
+    if-eqz v1, :cond_49
 
     .line 169
     iget-object v1, p0, Lbolts/WebViewAppLinkResolver$2;->val$contentType:Lbolts/Capture;
@@ -158,7 +158,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    const-string v2, ";"
+    const-string/jumbo v2, ";"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
@@ -167,7 +167,7 @@
     aget-object v3, v1, v5
 
     .line 171
-    :cond_47
+    :cond_49
     iget-object v1, p0, Lbolts/WebViewAppLinkResolver$2;->val$url:Landroid/net/Uri;
 
     invoke-virtual {v1}, Landroid/net/Uri;->toString()Ljava/lang/String;

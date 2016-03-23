@@ -99,12 +99,12 @@
 
     .line 104
     .local v1, "clipIntent":Landroid/content/Intent;
-    const-string v7, "android.remoteinput.resultsData"
+    const-string/jumbo v7, "android.remoteinput.resultsData"
 
     invoke-virtual {v1, v7, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
 
     .line 105
-    const-string v7, "android.remoteinput.results"
+    const-string/jumbo v7, "android.remoteinput.results"
 
     invoke-static {v7, v1}, Landroid/content/ClipData;->newIntent(Ljava/lang/CharSequence;Landroid/content/Intent;)Landroid/content/ClipData;
 
@@ -123,31 +123,31 @@
 
     .prologue
     .line 39
-    const-string v0, "resultKey"
+    const-string/jumbo v0, "resultKey"
 
     invoke-virtual {p0, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v0, "label"
+    const-string/jumbo v0, "label"
 
     invoke-virtual {p0, v0}, Landroid/os/Bundle;->getCharSequence(Ljava/lang/String;)Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    const-string v0, "choices"
+    const-string/jumbo v0, "choices"
 
     invoke-virtual {p0, v0}, Landroid/os/Bundle;->getCharSequenceArray(Ljava/lang/String;)[Ljava/lang/CharSequence;
 
     move-result-object v3
 
-    const-string v0, "allowFreeFormInput"
+    const-string/jumbo v0, "allowFreeFormInput"
 
     invoke-virtual {p0, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v4
 
-    const-string v0, "extras"
+    const-string/jumbo v0, "extras"
 
     invoke-virtual {p0, v0}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
@@ -240,7 +240,7 @@
 
     .line 85
     .local v1, "clipDescription":Landroid/content/ClipDescription;
-    const-string v3, "text/vnd.android.intent"
+    const-string/jumbo v3, "text/vnd.android.intent"
 
     invoke-virtual {v1, v3}, Landroid/content/ClipDescription;->hasMimeType(Ljava/lang/String;)Z
 
@@ -253,7 +253,7 @@
 
     move-result-object v3
 
-    const-string v4, "android.remoteinput.results"
+    const-string/jumbo v4, "android.remoteinput.results"
 
     invoke-virtual {v3, v4}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -276,7 +276,7 @@
 
     move-result-object v2
 
-    const-string v3, "android.remoteinput.resultsData"
+    const-string/jumbo v3, "android.remoteinput.resultsData"
 
     invoke-virtual {v2, v3}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
@@ -299,7 +299,7 @@
 
     .line 48
     .local v0, "data":Landroid/os/Bundle;
-    const-string v1, "resultKey"
+    const-string/jumbo v1, "resultKey"
 
     invoke-virtual {p0}, Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;->getResultKey()Ljava/lang/String;
 
@@ -308,7 +308,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 49
-    const-string v1, "label"
+    const-string/jumbo v1, "label"
 
     invoke-virtual {p0}, Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;->getLabel()Ljava/lang/CharSequence;
 
@@ -317,7 +317,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
     .line 50
-    const-string v1, "choices"
+    const-string/jumbo v1, "choices"
 
     invoke-virtual {p0}, Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;->getChoices()[Ljava/lang/CharSequence;
 
@@ -326,7 +326,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putCharSequenceArray(Ljava/lang/String;[Ljava/lang/CharSequence;)V
 
     .line 51
-    const-string v1, "allowFreeFormInput"
+    const-string/jumbo v1, "allowFreeFormInput"
 
     invoke-virtual {p0}, Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;->getAllowFreeFormInput()Z
 
@@ -335,7 +335,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 52
-    const-string v1, "extras"
+    const-string/jumbo v1, "extras"
 
     invoke-virtual {p0}, Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;->getExtras()Landroid/os/Bundle;
 

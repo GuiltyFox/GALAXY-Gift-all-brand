@@ -18,7 +18,6 @@
 # virtual methods
 .method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .registers 3
-    .param p1, "x0"    # Lcom/google/zxing/Result;
 
     .prologue
     .line 31
@@ -47,22 +46,22 @@
 
     .line 36
     .local v2, "rawText":Ljava/lang/String;
-    const-string v6, "WIFI:"
+    const-string/jumbo v6, "WIFI:"
 
     invoke-virtual {v2, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v6
 
-    if-nez v6, :cond_11
+    if-nez v6, :cond_12
 
     .line 49
-    :cond_10
-    :goto_10
+    :cond_11
+    :goto_11
     return-object v5
 
     .line 39
-    :cond_11
-    const-string v6, "S:"
+    :cond_12
+    const-string/jumbo v6, "S:"
 
     invoke-static {v6, v2, v8, v7}, Lcom/google/zxing/client/result/WifiResultParser;->matchSinglePrefixedField(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
 
@@ -70,16 +69,16 @@
 
     .line 40
     .local v3, "ssid":Ljava/lang/String;
-    if-eqz v3, :cond_10
+    if-eqz v3, :cond_11
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    invoke-virtual {v3}, Ljava/lang/String;->isEmpty()Z
 
     move-result v6
 
-    if-eqz v6, :cond_10
+    if-nez v6, :cond_11
 
     .line 43
-    const-string v5, "P:"
+    const-string/jumbo v5, "P:"
 
     invoke-static {v5, v2, v8, v7}, Lcom/google/zxing/client/result/WifiResultParser;->matchSinglePrefixedField(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
 
@@ -87,7 +86,7 @@
 
     .line 44
     .local v1, "pass":Ljava/lang/String;
-    const-string v5, "T:"
+    const-string/jumbo v5, "T:"
 
     invoke-static {v5, v2, v8, v7}, Lcom/google/zxing/client/result/WifiResultParser;->matchSinglePrefixedField(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
 
@@ -95,14 +94,14 @@
 
     .line 45
     .local v4, "type":Ljava/lang/String;
-    if-nez v4, :cond_2f
+    if-nez v4, :cond_34
 
     .line 46
-    const-string v4, "nopass"
+    const-string/jumbo v4, "nopass"
 
     .line 48
-    :cond_2f
-    const-string v5, "H:"
+    :cond_34
+    const-string/jumbo v5, "H:"
 
     invoke-static {v5, v2, v8, v7}, Lcom/google/zxing/client/result/WifiResultParser;->matchSinglePrefixedField(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
 
@@ -118,5 +117,5 @@
 
     invoke-direct {v5, v4, v3, v1, v0}, Lcom/google/zxing/client/result/WifiParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    goto :goto_10
+    goto :goto_11
 .end method

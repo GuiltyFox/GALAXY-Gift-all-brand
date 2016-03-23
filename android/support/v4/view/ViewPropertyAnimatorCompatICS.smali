@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 26
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,14 +20,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 33
+    .line 30
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 34
+    .line 31
     return-void
 .end method
 
@@ -37,14 +37,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 61
+    .line 58
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->alphaBy(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 62
+    .line 59
     return-void
 .end method
 
@@ -53,14 +53,14 @@
     .param p0, "view"    # Landroid/view/View;
 
     .prologue
-    .line 105
+    .line 102
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 106
+    .line 103
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .param p0, "view"    # Landroid/view/View;
 
     .prologue
-    .line 45
+    .line 42
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -86,7 +86,7 @@
     .param p0, "view"    # Landroid/view/View;
 
     .prologue
-    .line 57
+    .line 54
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -104,14 +104,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 65
+    .line 62
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->rotation(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 66
+    .line 63
     return-void
 .end method
 
@@ -121,14 +121,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 69
+    .line 66
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->rotationBy(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 70
+    .line 67
     return-void
 .end method
 
@@ -138,14 +138,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 73
+    .line 70
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->rotationX(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 74
+    .line 71
     return-void
 .end method
 
@@ -155,14 +155,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 77
+    .line 74
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->rotationXBy(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 78
+    .line 75
     return-void
 .end method
 
@@ -172,14 +172,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 81
+    .line 78
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->rotationY(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 82
+    .line 79
     return-void
 .end method
 
@@ -189,14 +189,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 85
+    .line 82
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->rotationYBy(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 86
+    .line 83
     return-void
 .end method
 
@@ -206,14 +206,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 89
+    .line 86
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 90
+    .line 87
     return-void
 .end method
 
@@ -223,14 +223,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 93
+    .line 90
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->scaleXBy(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 94
+    .line 91
     return-void
 .end method
 
@@ -240,14 +240,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 97
+    .line 94
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 98
+    .line 95
     return-void
 .end method
 
@@ -257,14 +257,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 101
+    .line 98
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->scaleYBy(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 102
+    .line 99
     return-void
 .end method
 
@@ -274,14 +274,14 @@
     .param p1, "value"    # J
 
     .prologue
-    .line 29
+    .line 26
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1, p2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    .line 30
+    .line 27
     return-void
 .end method
 
@@ -291,14 +291,14 @@
     .param p1, "value"    # Landroid/view/animation/Interpolator;
 
     .prologue
-    .line 49
+    .line 46
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
-    .line 50
+    .line 47
     return-void
 .end method
 
@@ -308,7 +308,10 @@
     .param p1, "listener"    # Landroid/support/v4/view/ViewPropertyAnimatorListener;
 
     .prologue
-    .line 138
+    .line 135
+    if-eqz p1, :cond_f
+
+    .line 136
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -319,8 +322,21 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 154
+    .line 155
+    :goto_e
     return-void
+
+    .line 153
+    :cond_f
+    invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+
+    goto :goto_e
 .end method
 
 .method public static setStartDelay(Landroid/view/View;J)V
@@ -329,14 +345,14 @@
     .param p1, "value"    # J
 
     .prologue
-    .line 53
+    .line 50
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1, p2}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
 
-    .line 54
+    .line 51
     return-void
 .end method
 
@@ -345,14 +361,14 @@
     .param p0, "view"    # Landroid/view/View;
 
     .prologue
-    .line 133
+    .line 130
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 134
+    .line 131
     return-void
 .end method
 
@@ -362,14 +378,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 37
+    .line 34
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 38
+    .line 35
     return-void
 .end method
 
@@ -379,14 +395,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 125
+    .line 122
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->translationXBy(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 126
+    .line 123
     return-void
 .end method
 
@@ -396,14 +412,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 41
+    .line 38
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 42
+    .line 39
     return-void
 .end method
 
@@ -413,14 +429,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 129
+    .line 126
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->translationYBy(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 130
+    .line 127
     return-void
 .end method
 
@@ -430,14 +446,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 109
+    .line 106
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->x(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 110
+    .line 107
     return-void
 .end method
 
@@ -447,14 +463,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 113
+    .line 110
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->xBy(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 114
+    .line 111
     return-void
 .end method
 
@@ -464,14 +480,14 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 117
+    .line 114
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->y(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 118
+    .line 115
     return-void
 .end method
 
@@ -481,13 +497,13 @@
     .param p1, "value"    # F
 
     .prologue
-    .line 121
+    .line 118
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->yBy(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 122
+    .line 119
     return-void
 .end method

@@ -10,17 +10,13 @@
 
 .field private static final INDEXES_STOP_PATTERN:[I
 
-.field private static final INTEGER_MATH_SHIFT:I = 0x8
+.field private static final MAX_AVG_VARIANCE:F = 0.42f
 
-.field private static final MAX_AVG_VARIANCE:I = 0x6b
-
-.field private static final MAX_INDIVIDUAL_VARIANCE:I = 0xcc
+.field private static final MAX_INDIVIDUAL_VARIANCE:F = 0.8f
 
 .field private static final MAX_PATTERN_DRIFT:I = 0x5
 
 .field private static final MAX_PIXEL_DRIFT:I = 0x3
-
-.field private static final PATTERN_MATCH_RESULT_SCALE_FACTOR:I = 0x100
 
 .field private static final ROW_STEP:I = 0x5
 
@@ -38,21 +34,21 @@
     .prologue
     const/4 v1, 0x4
 
-    .line 41
+    .line 40
     new-array v0, v1, [I
 
     fill-array-data v0, :array_22
 
     sput-object v0, Lcom/google/zxing/pdf417/detector/Detector;->INDEXES_START_PATTERN:[I
 
-    .line 42
+    .line 41
     new-array v0, v1, [I
 
     fill-array-data v0, :array_2e
 
     sput-object v0, Lcom/google/zxing/pdf417/detector/Detector;->INDEXES_STOP_PATTERN:[I
 
-    .line 50
+    .line 47
     const/16 v0, 0x8
 
     new-array v0, v0, [I
@@ -61,7 +57,7 @@
 
     sput-object v0, Lcom/google/zxing/pdf417/detector/Detector;->START_PATTERN:[I
 
-    .line 52
+    .line 49
     const/16 v0, 0x9
 
     new-array v0, v0, [I
@@ -72,7 +68,7 @@
 
     return-void
 
-    .line 41
+    .line 40
     :array_22
     .array-data 4
         0x0
@@ -81,7 +77,7 @@
         0x5
     .end array-data
 
-    .line 42
+    .line 41
     :array_2e
     .array-data 4
         0x6
@@ -90,7 +86,7 @@
         0x3
     .end array-data
 
-    .line 50
+    .line 47
     :array_3a
     .array-data 4
         0x8
@@ -103,7 +99,7 @@
         0x3
     .end array-data
 
-    .line 52
+    .line 49
     :array_4e
     .array-data 4
         0x7
@@ -122,10 +118,10 @@
     .registers 1
 
     .prologue
-    .line 63
+    .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 64
+    .line 61
     return-void
 .end method
 
@@ -136,7 +132,7 @@
     .param p2, "destinationIndexes"    # [I
 
     .prologue
-    .line 210
+    .line 176
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -145,19 +141,19 @@
 
     if-ge v0, v1, :cond_d
 
-    .line 211
+    .line 177
     aget v1, p2, v0
 
     aget-object v2, p1, v0
 
     aput-object v2, p0, v1
 
-    .line 210
+    .line 176
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 213
+    .line 179
     :cond_d
     return-void
 .end method
@@ -185,36 +181,41 @@
     .end annotation
 
     .prologue
-    .line 81
+    .line 79
     .local p1, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     invoke-virtual {p0}, Lcom/google/zxing/BinaryBitmap;->getBlackMatrix()Lcom/google/zxing/common/BitMatrix;
 
     move-result-object v1
 
-    .line 83
+    .line 81
     .local v1, "bitMatrix":Lcom/google/zxing/common/BitMatrix;
     invoke-static {p2, v1}, Lcom/google/zxing/pdf417/detector/Detector;->detect(ZLcom/google/zxing/common/BitMatrix;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 84
+    .line 82
     .local v0, "barcodeCoordinates":Ljava/util/List;, "Ljava/util/List<[Lcom/google/zxing/ResultPoint;>;"
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v2
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_19
+
+    .line 83
+    invoke-virtual {v1}, Lcom/google/zxing/common/BitMatrix;->clone()Lcom/google/zxing/common/BitMatrix;
+
+    move-result-object v1
+
+    .line 84
+    invoke-virtual {v1}, Lcom/google/zxing/common/BitMatrix;->rotate180()V
 
     .line 85
-    invoke-static {v1}, Lcom/google/zxing/pdf417/detector/Detector;->rotate180(Lcom/google/zxing/common/BitMatrix;)V
-
-    .line 86
     invoke-static {p2, v1}, Lcom/google/zxing/pdf417/detector/Detector;->detect(ZLcom/google/zxing/common/BitMatrix;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 88
-    :cond_15
+    .line 87
+    :cond_19
     new-instance v2, Lcom/google/zxing/pdf417/detector/PDF417DetectorResult;
 
     invoke-direct {v2, v1, v0}, Lcom/google/zxing/pdf417/detector/PDF417DetectorResult;-><init>(Lcom/google/zxing/common/BitMatrix;Ljava/util/List;)V
@@ -247,93 +248,92 @@
 
     const/4 v9, 0x2
 
-    .line 99
+    .line 98
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 100
+    .line 99
     .local v1, "barcodeCoordinates":Ljava/util/List;, "Ljava/util/List<[Lcom/google/zxing/ResultPoint;>;"
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    .line 101
-    .local v5, "row":I
+    .line 100
+    .local v4, "row":I
     const/4 v2, 0x0
 
-    .line 102
+    .line 101
     .local v2, "column":I
     const/4 v3, 0x0
 
-    .line 103
+    .line 102
     .local v3, "foundBarcodeInRow":Z
     :goto_c
     invoke-virtual {p1}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
 
-    move-result v7
+    move-result v6
 
-    if-ge v5, v7, :cond_21
+    if-ge v4, v6, :cond_21
 
-    .line 104
-    invoke-static {p1, v5, v2}, Lcom/google/zxing/pdf417/detector/Detector;->findVertices(Lcom/google/zxing/common/BitMatrix;II)[Lcom/google/zxing/ResultPoint;
+    .line 103
+    invoke-static {p1, v4, v2}, Lcom/google/zxing/pdf417/detector/Detector;->findVertices(Lcom/google/zxing/common/BitMatrix;II)[Lcom/google/zxing/ResultPoint;
 
-    move-result-object v6
+    move-result-object v5
+
+    .line 105
+    .local v5, "vertices":[Lcom/google/zxing/ResultPoint;
+    const/4 v6, 0x0
+
+    aget-object v6, v5, v6
+
+    if-nez v6, :cond_57
+
+    aget-object v6, v5, v10
+
+    if-nez v6, :cond_57
 
     .line 106
-    .local v6, "vertices":[Lcom/google/zxing/ResultPoint;
-    const/4 v7, 0x0
-
-    aget-object v7, v6, v7
-
-    if-nez v7, :cond_57
-
-    aget-object v7, v6, v10
-
-    if-nez v7, :cond_57
-
-    .line 107
     if-nez v3, :cond_22
 
-    .line 141
-    .end local v6    # "vertices":[Lcom/google/zxing/ResultPoint;
+    .line 140
+    .end local v5    # "vertices":[Lcom/google/zxing/ResultPoint;
     :cond_21
     return-object v1
 
-    .line 113
-    .restart local v6    # "vertices":[Lcom/google/zxing/ResultPoint;
+    .line 112
+    .restart local v5    # "vertices":[Lcom/google/zxing/ResultPoint;
     :cond_22
     const/4 v3, 0x0
 
-    .line 114
+    .line 113
     const/4 v2, 0x0
 
-    .line 115
+    .line 114
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v4
+    move-result-object v6
 
-    .local v4, "i$":Ljava/util/Iterator;
     :cond_28
     :goto_28
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v7
 
     if-eqz v7, :cond_54
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [Lcom/google/zxing/ResultPoint;
 
-    .line 116
+    .line 115
     .local v0, "barcodeCoordinate":[Lcom/google/zxing/ResultPoint;
     aget-object v7, v0, v11
 
     if-eqz v7, :cond_44
 
-    .line 117
-    int-to-float v7, v5
+    .line 116
+    int-to-float v7, v4
 
     aget-object v8, v0, v11
 
@@ -345,15 +345,15 @@
 
     move-result v7
 
-    float-to-int v5, v7
+    float-to-int v4, v7
 
-    .line 119
+    .line 118
     :cond_44
     aget-object v7, v0, v10
 
     if-eqz v7, :cond_28
 
-    .line 120
+    .line 119
     aget-object v7, v0, v10
 
     invoke-virtual {v7}, Lcom/google/zxing/ResultPoint;->getY()F
@@ -362,74 +362,73 @@
 
     float-to-int v7, v7
 
-    invoke-static {v5, v7}, Ljava/lang/Math;->max(II)I
+    invoke-static {v4, v7}, Ljava/lang/Math;->max(II)I
 
-    move-result v5
+    move-result v4
 
     goto :goto_28
 
-    .line 123
+    .line 122
     .end local v0    # "barcodeCoordinate":[Lcom/google/zxing/ResultPoint;
     :cond_54
-    add-int/lit8 v5, v5, 0x5
+    add-int/lit8 v4, v4, 0x5
 
-    .line 124
+    .line 123
     goto :goto_c
 
-    .line 126
-    .end local v4    # "i$":Ljava/util/Iterator;
+    .line 125
     :cond_57
     const/4 v3, 0x1
 
-    .line 127
-    invoke-interface {v1, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    .line 126
+    invoke-interface {v1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 128
+    .line 127
     if-eqz p0, :cond_21
 
-    .line 133
-    aget-object v7, v6, v9
+    .line 132
+    aget-object v6, v5, v9
 
-    if-eqz v7, :cond_70
+    if-eqz v6, :cond_70
+
+    .line 133
+    aget-object v6, v5, v9
+
+    invoke-virtual {v6}, Lcom/google/zxing/ResultPoint;->getX()F
+
+    move-result v6
+
+    float-to-int v2, v6
 
     .line 134
-    aget-object v7, v6, v9
+    aget-object v6, v5, v9
 
-    invoke-virtual {v7}, Lcom/google/zxing/ResultPoint;->getX()F
+    invoke-virtual {v6}, Lcom/google/zxing/ResultPoint;->getY()F
 
-    move-result v7
+    move-result v6
 
-    float-to-int v2, v7
-
-    .line 135
-    aget-object v7, v6, v9
-
-    invoke-virtual {v7}, Lcom/google/zxing/ResultPoint;->getY()F
-
-    move-result v7
-
-    float-to-int v5, v7
+    float-to-int v4, v6
 
     goto :goto_c
 
-    .line 137
+    .line 136
     :cond_70
-    aget-object v7, v6, v12
+    aget-object v6, v5, v12
 
-    invoke-virtual {v7}, Lcom/google/zxing/ResultPoint;->getX()F
+    invoke-virtual {v6}, Lcom/google/zxing/ResultPoint;->getX()F
 
-    move-result v7
+    move-result v6
 
-    float-to-int v2, v7
+    float-to-int v2, v6
 
-    .line 138
-    aget-object v7, v6, v12
+    .line 137
+    aget-object v6, v5, v12
 
-    invoke-virtual {v7}, Lcom/google/zxing/ResultPoint;->getY()F
+    invoke-virtual {v6}, Lcom/google/zxing/ResultPoint;->getY()F
 
-    move-result v7
+    move-result v6
 
-    float-to-int v5, v7
+    float-to-int v4, v6
 
     goto :goto_c
 .end method
@@ -445,7 +444,7 @@
     .param p6, "counters"    # [I
 
     .prologue
-    .line 295
+    .line 261
     const/4 v10, 0x0
 
     move-object/from16 v0, p6
@@ -458,24 +457,24 @@
 
     invoke-static {v0, v10, v11, v12}, Ljava/util/Arrays;->fill([IIII)V
 
-    .line 296
+    .line 262
     move-object/from16 v0, p5
 
     array-length v4, v0
 
-    .line 297
+    .line 263
     .local v4, "patternLength":I
     move/from16 v3, p4
 
-    .line 298
+    .line 264
     .local v3, "isWhite":Z
     move v5, p1
 
-    .line 299
+    .line 265
     .local v5, "patternStart":I
     const/4 v7, 0x0
 
-    .line 302
+    .line 268
     .local v7, "pixelDrift":I
     :goto_11
     invoke-virtual {p0, v5, p2}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
@@ -494,7 +493,7 @@
 
     if-ge v7, v10, :cond_22
 
-    .line 303
+    .line 269
     add-int/lit8 v5, v5, -0x1
 
     move v7, v8
@@ -508,69 +507,71 @@
     :cond_22
     move v7, v8
 
-    .line 305
+    .line 271
     .end local v8    # "pixelDrift":I
     .restart local v7    # "pixelDrift":I
     :cond_23
     move v9, v5
 
-    .line 306
+    .line 272
     .local v9, "x":I
     const/4 v2, 0x0
 
-    .line 307
+    .line 273
     .local v2, "counterPosition":I
     :goto_25
     move/from16 v0, p3
 
-    if-ge v9, v0, :cond_81
+    if-ge v9, v0, :cond_85
 
-    .line 308
+    .line 274
     invoke-virtual {p0, v9, p2}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
     move-result v6
 
-    .line 309
+    .line 275
     .local v6, "pixel":Z
     xor-int v10, v6, v3
 
     if-eqz v10, :cond_3a
 
-    .line 310
+    .line 276
     aget v10, p6, v2
 
     add-int/lit8 v10, v10, 0x1
 
     aput v10, p6, v2
 
-    .line 307
+    .line 273
     :goto_37
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_25
 
-    .line 312
+    .line 278
     :cond_3a
     add-int/lit8 v10, v4, -0x1
 
-    if-ne v2, v10, :cond_7c
+    if-ne v2, v10, :cond_80
 
-    .line 313
-    const/16 v10, 0xcc
+    .line 279
+    const v10, 0x3f4ccccd
 
     move-object/from16 v0, p6
 
     move-object/from16 v1, p5
 
-    invoke-static {v0, v1, v10}, Lcom/google/zxing/pdf417/detector/Detector;->patternMatchVariance([I[II)I
+    invoke-static {v0, v1, v10}, Lcom/google/zxing/pdf417/detector/Detector;->patternMatchVariance([I[IF)F
 
     move-result v10
 
-    const/16 v11, 0x6b
+    const v11, 0x3ed70a3d
 
-    if-ge v10, v11, :cond_56
+    cmpg-float v10, v10, v11
 
-    .line 314
+    if-gez v10, :cond_5a
+
+    .line 280
     const/4 v10, 0x2
 
     new-array v10, v10, [I
@@ -583,14 +584,14 @@
 
     aput v9, v10, v11
 
-    .line 333
+    .line 299
     .end local v6    # "pixel":Z
-    :goto_55
+    :goto_59
     return-object v10
 
-    .line 316
+    .line 282
     .restart local v6    # "pixel":Z
-    :cond_56
+    :cond_5a
     const/4 v10, 0x0
 
     aget v10, p6, v10
@@ -603,7 +604,7 @@
 
     add-int/2addr v5, v10
 
-    .line 317
+    .line 283
     const/4 v10, 0x2
 
     const/4 v11, 0x0
@@ -616,72 +617,74 @@
 
     invoke-static {v0, v10, v1, v11, v12}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 318
+    .line 284
     add-int/lit8 v10, v4, -0x2
 
     const/4 v11, 0x0
 
     aput v11, p6, v10
 
-    .line 319
+    .line 285
     add-int/lit8 v10, v4, -0x1
 
     const/4 v11, 0x0
 
     aput v11, p6, v10
 
-    .line 320
+    .line 286
     add-int/lit8 v2, v2, -0x1
 
-    .line 324
-    :goto_75
+    .line 290
+    :goto_79
     const/4 v10, 0x1
 
     aput v10, p6, v2
 
-    .line 325
-    if-nez v3, :cond_7f
+    .line 291
+    if-nez v3, :cond_83
 
     const/4 v3, 0x1
 
-    :goto_7b
+    :goto_7f
     goto :goto_37
 
-    .line 322
-    :cond_7c
+    .line 288
+    :cond_80
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_75
+    goto :goto_79
 
-    .line 325
-    :cond_7f
+    .line 291
+    :cond_83
     const/4 v3, 0x0
 
-    goto :goto_7b
+    goto :goto_7f
 
-    .line 328
+    .line 294
     .end local v6    # "pixel":Z
-    :cond_81
+    :cond_85
     add-int/lit8 v10, v4, -0x1
 
-    if-ne v2, v10, :cond_9f
+    if-ne v2, v10, :cond_a7
 
-    .line 329
-    const/16 v10, 0xcc
+    .line 295
+    const v10, 0x3f4ccccd
 
     move-object/from16 v0, p6
 
     move-object/from16 v1, p5
 
-    invoke-static {v0, v1, v10}, Lcom/google/zxing/pdf417/detector/Detector;->patternMatchVariance([I[II)I
+    invoke-static {v0, v1, v10}, Lcom/google/zxing/pdf417/detector/Detector;->patternMatchVariance([I[IF)F
 
     move-result v10
 
-    const/16 v11, 0x6b
+    const v11, 0x3ed70a3d
 
-    if-ge v10, v11, :cond_9f
+    cmpg-float v10, v10, v11
 
-    .line 330
+    if-gez v10, :cond_a7
+
+    .line 296
     const/4 v10, 0x2
 
     new-array v10, v10, [I
@@ -696,13 +699,13 @@
 
     aput v12, v10, v11
 
-    goto :goto_55
+    goto :goto_59
 
-    .line 333
-    :cond_9f
+    .line 299
+    :cond_a7
     const/4 v10, 0x0
 
-    goto :goto_55
+    goto :goto_59
 .end method
 
 .method private static findRowsWithPattern(Lcom/google/zxing/common/BitMatrix;IIII[I)[Lcom/google/zxing/ResultPoint;
@@ -715,16 +718,16 @@
     .param p5, "pattern"    # [I
 
     .prologue
-    .line 221
+    .line 187
     const/4 v1, 0x4
 
     new-array v12, v1, [Lcom/google/zxing/ResultPoint;
 
-    .line 222
+    .line 188
     .local v12, "result":[Lcom/google/zxing/ResultPoint;
     const/4 v8, 0x0
 
-    .line 223
+    .line 189
     .local v8, "found":Z
     move-object/from16 v0, p5
 
@@ -732,14 +735,14 @@
 
     new-array v7, v1, [I
 
-    .line 224
+    .line 190
     .local v7, "counters":[I
     :goto_9
     move/from16 v0, p3
 
     if-ge v0, p1, :cond_54
 
-    .line 225
+    .line 191
     const/4 v5, 0x0
 
     move-object v1, p0
@@ -756,15 +759,15 @@
 
     move-result-object v10
 
-    .line 226
+    .line 192
     .local v10, "loc":[I
     if-eqz v10, :cond_a4
 
-    .line 227
+    .line 193
     :goto_1d
     if-lez p3, :cond_35
 
-    .line 228
+    .line 194
     add-int/lit8 p3, p3, -0x1
 
     const/4 v5, 0x0
@@ -783,20 +786,20 @@
 
     move-result-object v11
 
-    .line 229
+    .line 195
     .local v11, "previousRowLoc":[I
     if-eqz v11, :cond_33
 
-    .line 230
+    .line 196
     move-object v10, v11
 
     goto :goto_1d
 
-    .line 232
+    .line 198
     :cond_33
     add-int/lit8 p3, p3, 0x1
 
-    .line 236
+    .line 202
     .end local v11    # "previousRowLoc":[I
     :cond_35
     const/4 v1, 0x0
@@ -817,7 +820,7 @@
 
     aput-object v2, v12, v1
 
-    .line 237
+    .line 203
     const/4 v1, 0x1
 
     new-instance v2, Lcom/google/zxing/ResultPoint;
@@ -836,22 +839,22 @@
 
     aput-object v2, v12, v1
 
-    .line 238
+    .line 204
     const/4 v8, 0x1
 
-    .line 242
+    .line 208
     .end local v10    # "loc":[I
     :cond_54
     add-int/lit8 v3, p3, 0x1
 
-    .line 244
+    .line 210
     .local v3, "stopRow":I
     if-eqz v8, :cond_c9
 
-    .line 245
+    .line 211
     const/4 v13, 0x0
 
-    .line 246
+    .line 212
     .local v13, "skippedRowCount":I
     const/4 v1, 0x2
 
@@ -885,12 +888,12 @@
 
     aput v2, v11, v1
 
-    .line 247
+    .line 213
     .restart local v11    # "previousRowLoc":[I
     :goto_72
     if-ge v3, p1, :cond_ac
 
-    .line 248
+    .line 214
     const/4 v1, 0x0
 
     aget v2, v11, v1
@@ -907,7 +910,7 @@
 
     move-result-object v10
 
-    .line 253
+    .line 219
     .restart local v10    # "loc":[I
     if-eqz v10, :cond_a8
 
@@ -921,6 +924,7 @@
 
     sub-int/2addr v1, v2
 
+    .line 220
     invoke-static {v1}, Ljava/lang/Math;->abs(I)I
 
     move-result v1
@@ -939,6 +943,7 @@
 
     sub-int/2addr v1, v2
 
+    .line 221
     invoke-static {v1}, Ljava/lang/Math;->abs(I)I
 
     move-result v1
@@ -947,19 +952,19 @@
 
     if-ge v1, v2, :cond_a8
 
-    .line 256
+    .line 222
     move-object v11, v10
 
-    .line 257
+    .line 223
     const/4 v13, 0x0
 
-    .line 247
+    .line 213
     :goto_a1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_72
 
-    .line 224
+    .line 190
     .end local v3    # "stopRow":I
     .end local v11    # "previousRowLoc":[I
     .end local v13    # "skippedRowCount":I
@@ -968,7 +973,7 @@
 
     goto/16 :goto_9
 
-    .line 259
+    .line 225
     .restart local v3    # "stopRow":I
     .restart local v11    # "previousRowLoc":[I
     .restart local v13    # "skippedRowCount":I
@@ -977,14 +982,14 @@
 
     if-le v13, v1, :cond_d9
 
-    .line 266
+    .line 232
     .end local v10    # "loc":[I
     :cond_ac
     add-int/lit8 v1, v13, 0x1
 
     sub-int/2addr v3, v1
 
-    .line 267
+    .line 233
     const/4 v1, 0x2
 
     new-instance v2, Lcom/google/zxing/ResultPoint;
@@ -1001,7 +1006,7 @@
 
     aput-object v2, v12, v1
 
-    .line 268
+    .line 234
     const/4 v1, 0x3
 
     new-instance v2, Lcom/google/zxing/ResultPoint;
@@ -1018,7 +1023,7 @@
 
     aput-object v2, v12, v1
 
-    .line 270
+    .line 236
     .end local v11    # "previousRowLoc":[I
     .end local v13    # "skippedRowCount":I
     :cond_c9
@@ -1028,7 +1033,7 @@
 
     if-ge v1, v2, :cond_dc
 
-    .line 271
+    .line 237
     const/4 v9, 0x0
 
     .local v9, "i":I
@@ -1037,17 +1042,17 @@
 
     if-ge v9, v1, :cond_dc
 
-    .line 272
+    .line 238
     const/4 v1, 0x0
 
     aput-object v1, v12, v9
 
-    .line 271
+    .line 237
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_d0
 
-    .line 262
+    .line 228
     .end local v9    # "i":I
     .restart local v10    # "loc":[I
     .restart local v11    # "previousRowLoc":[I
@@ -1057,7 +1062,7 @@
 
     goto :goto_a1
 
-    .line 275
+    .line 241
     .end local v10    # "loc":[I
     .end local v11    # "previousRowLoc":[I
     .end local v13    # "skippedRowCount":I
@@ -1074,24 +1079,24 @@
     .prologue
     const/4 v7, 0x4
 
-    .line 193
+    .line 159
     invoke-virtual {p0}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
 
     move-result v1
 
-    .line 194
+    .line 160
     .local v1, "height":I
     invoke-virtual {p0}, Lcom/google/zxing/common/BitMatrix;->getWidth()I
 
     move-result v2
 
-    .line 196
+    .line 162
     .local v2, "width":I
     const/16 v0, 0x8
 
     new-array v6, v0, [Lcom/google/zxing/ResultPoint;
 
-    .line 197
+    .line 163
     .local v6, "result":[Lcom/google/zxing/ResultPoint;
     sget-object v5, Lcom/google/zxing/pdf417/detector/Detector;->START_PATTERN:[I
 
@@ -1109,12 +1114,12 @@
 
     invoke-static {v6, v0, v3}, Lcom/google/zxing/pdf417/detector/Detector;->copyToResult([Lcom/google/zxing/ResultPoint;[Lcom/google/zxing/ResultPoint;[I)V
 
-    .line 200
+    .line 166
     aget-object v0, v6, v7
 
     if-eqz v0, :cond_2d
 
-    .line 201
+    .line 167
     aget-object v0, v6, v7
 
     invoke-virtual {v0}, Lcom/google/zxing/ResultPoint;->getX()F
@@ -1123,7 +1128,7 @@
 
     float-to-int p2, v0
 
-    .line 202
+    .line 168
     aget-object v0, v6, v7
 
     invoke-virtual {v0}, Lcom/google/zxing/ResultPoint;->getY()F
@@ -1132,7 +1137,7 @@
 
     float-to-int p1, v0
 
-    .line 204
+    .line 170
     :cond_2d
     sget-object v5, Lcom/google/zxing/pdf417/detector/Detector;->STOP_PATTERN:[I
 
@@ -1150,261 +1155,139 @@
 
     invoke-static {v6, v0, v3}, Lcom/google/zxing/pdf417/detector/Detector;->copyToResult([Lcom/google/zxing/ResultPoint;[Lcom/google/zxing/ResultPoint;[I)V
 
-    .line 206
+    .line 172
     return-object v6
 .end method
 
-.method static mirror(Lcom/google/zxing/common/BitArray;Lcom/google/zxing/common/BitArray;)Lcom/google/zxing/common/BitArray;
-    .registers 5
-    .param p0, "input"    # Lcom/google/zxing/common/BitArray;
-    .param p1, "result"    # Lcom/google/zxing/common/BitArray;
-
-    .prologue
-    .line 167
-    invoke-virtual {p1}, Lcom/google/zxing/common/BitArray;->clear()V
-
-    .line 168
-    invoke-virtual {p0}, Lcom/google/zxing/common/BitArray;->getSize()I
-
-    move-result v1
-
-    .line 169
-    .local v1, "size":I
-    const/4 v0, 0x0
-
-    .local v0, "i":I
-    :goto_8
-    if-ge v0, v1, :cond_19
-
-    .line 170
-    invoke-virtual {p0, v0}, Lcom/google/zxing/common/BitArray;->get(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_16
-
-    .line 171
-    add-int/lit8 v2, v1, -0x1
-
-    sub-int/2addr v2, v0
-
-    invoke-virtual {p1, v2}, Lcom/google/zxing/common/BitArray;->set(I)V
-
-    .line 169
-    :cond_16
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_8
-
-    .line 174
-    :cond_19
-    return-object p1
-.end method
-
-.method private static patternMatchVariance([I[II)I
-    .registers 15
+.method private static patternMatchVariance([I[IF)F
+    .registers 16
     .param p0, "counters"    # [I
     .param p1, "pattern"    # [I
-    .param p2, "maxIndividualVariance"    # I
+    .param p2, "maxIndividualVariance"    # F
 
     .prologue
-    const v10, 0x7fffffff
+    const/high16 v10, 0x7f800000
 
-    .line 352
+    .line 314
     array-length v2, p0
 
-    .line 353
+    .line 315
     .local v2, "numCounters":I
     const/4 v5, 0x0
 
-    .line 354
+    .line 316
     .local v5, "total":I
     const/4 v3, 0x0
 
-    .line 355
+    .line 317
     .local v3, "patternLength":I
     const/4 v1, 0x0
 
     .local v1, "i":I
-    :goto_7
-    if-ge v1, v2, :cond_12
+    :goto_6
+    if-ge v1, v2, :cond_11
 
-    .line 356
+    .line 318
     aget v11, p0, v1
 
     add-int/2addr v5, v11
 
-    .line 357
+    .line 319
     aget v11, p1, v1
 
     add-int/2addr v3, v11
 
-    .line 355
+    .line 317
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_7
+    goto :goto_6
 
-    .line 359
-    :cond_12
-    if-ge v5, v3, :cond_15
+    .line 321
+    :cond_11
+    if-ge v5, v3, :cond_14
 
-    .line 380
-    :cond_14
-    :goto_14
+    .line 342
+    :cond_13
+    :goto_13
     return v10
 
-    .line 367
-    :cond_15
-    shl-int/lit8 v11, v5, 0x8
+    .line 329
+    :cond_14
+    int-to-float v11, v5
 
-    div-int v7, v11, v3
+    int-to-float v12, v3
 
-    .line 368
-    .local v7, "unitBarWidth":I
-    mul-int v11, p2, v7
+    div-float v7, v11, v12
 
-    shr-int/lit8 p2, v11, 0x8
+    .line 330
+    .local v7, "unitBarWidth":F
+    mul-float/2addr p2, v7
 
-    .line 370
+    .line 332
     const/4 v6, 0x0
 
-    .line 371
-    .local v6, "totalVariance":I
+    .line 333
+    .local v6, "totalVariance":F
     const/4 v9, 0x0
 
     .local v9, "x":I
-    :goto_1f
-    if-ge v9, v2, :cond_36
+    :goto_1b
+    if-ge v9, v2, :cond_38
 
-    .line 372
-    aget v11, p0, v9
+    .line 334
+    aget v0, p0, v9
 
-    shl-int/lit8 v0, v11, 0x8
-
-    .line 373
+    .line 335
     .local v0, "counter":I
     aget v11, p1, v9
 
-    mul-int v4, v11, v7
+    int-to-float v11, v11
 
-    .line 374
-    .local v4, "scaledPattern":I
-    if-le v0, v4, :cond_33
+    mul-float v4, v11, v7
 
-    sub-int v8, v0, v4
+    .line 336
+    .local v4, "scaledPattern":F
+    int-to-float v11, v0
 
-    .line 375
-    .local v8, "variance":I
-    :goto_2d
-    if-gt v8, p2, :cond_14
+    cmpl-float v11, v11, v4
 
-    .line 378
-    add-int/2addr v6, v8
+    if-lez v11, :cond_34
 
-    .line 371
+    int-to-float v11, v0
+
+    sub-float v8, v11, v4
+
+    .line 337
+    .local v8, "variance":F
+    :goto_2c
+    cmpl-float v11, v8, p2
+
+    if-gtz v11, :cond_13
+
+    .line 340
+    add-float/2addr v6, v8
+
+    .line 333
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_1f
+    goto :goto_1b
 
-    .line 374
-    .end local v8    # "variance":I
-    :cond_33
-    sub-int v8, v4, v0
+    .line 336
+    .end local v8    # "variance":F
+    :cond_34
+    int-to-float v11, v0
 
-    goto :goto_2d
+    sub-float v8, v4, v11
 
-    .line 380
+    goto :goto_2c
+
+    .line 342
     .end local v0    # "counter":I
-    .end local v4    # "scaledPattern":I
-    :cond_36
-    div-int v10, v6, v5
+    .end local v4    # "scaledPattern":F
+    :cond_38
+    int-to-float v10, v5
 
-    goto :goto_14
-.end method
+    div-float v10, v6, v10
 
-.method static rotate180(Lcom/google/zxing/common/BitMatrix;)V
-    .registers 9
-    .param p0, "bitMatrix"    # Lcom/google/zxing/common/BitMatrix;
-
-    .prologue
-    .line 151
-    invoke-virtual {p0}, Lcom/google/zxing/common/BitMatrix;->getWidth()I
-
-    move-result v4
-
-    .line 152
-    .local v4, "width":I
-    invoke-virtual {p0}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
-
-    move-result v1
-
-    .line 153
-    .local v1, "height":I
-    new-instance v0, Lcom/google/zxing/common/BitArray;
-
-    invoke-direct {v0, v4}, Lcom/google/zxing/common/BitArray;-><init>(I)V
-
-    .line 154
-    .local v0, "firstRowBitArray":Lcom/google/zxing/common/BitArray;
-    new-instance v2, Lcom/google/zxing/common/BitArray;
-
-    invoke-direct {v2, v4}, Lcom/google/zxing/common/BitArray;-><init>(I)V
-
-    .line 155
-    .local v2, "secondRowBitArray":Lcom/google/zxing/common/BitArray;
-    new-instance v3, Lcom/google/zxing/common/BitArray;
-
-    invoke-direct {v3, v4}, Lcom/google/zxing/common/BitArray;-><init>(I)V
-
-    .line 156
-    .local v3, "tmpBitArray":Lcom/google/zxing/common/BitArray;
-    const/4 v5, 0x0
-
-    .local v5, "y":I
-    :goto_18
-    add-int/lit8 v6, v1, 0x1
-
-    shr-int/lit8 v6, v6, 0x1
-
-    if-ge v5, v6, :cond_3d
-
-    .line 157
-    invoke-virtual {p0, v5, v0}, Lcom/google/zxing/common/BitMatrix;->getRow(ILcom/google/zxing/common/BitArray;)Lcom/google/zxing/common/BitArray;
-
-    move-result-object v0
-
-    .line 158
-    add-int/lit8 v6, v1, -0x1
-
-    sub-int/2addr v6, v5
-
-    invoke-virtual {p0, v6, v2}, Lcom/google/zxing/common/BitMatrix;->getRow(ILcom/google/zxing/common/BitArray;)Lcom/google/zxing/common/BitArray;
-
-    move-result-object v6
-
-    invoke-static {v6, v3}, Lcom/google/zxing/pdf417/detector/Detector;->mirror(Lcom/google/zxing/common/BitArray;Lcom/google/zxing/common/BitArray;)Lcom/google/zxing/common/BitArray;
-
-    move-result-object v6
-
-    invoke-virtual {p0, v5, v6}, Lcom/google/zxing/common/BitMatrix;->setRow(ILcom/google/zxing/common/BitArray;)V
-
-    .line 159
-    add-int/lit8 v6, v1, -0x1
-
-    sub-int/2addr v6, v5
-
-    invoke-static {v0, v3}, Lcom/google/zxing/pdf417/detector/Detector;->mirror(Lcom/google/zxing/common/BitArray;Lcom/google/zxing/common/BitArray;)Lcom/google/zxing/common/BitArray;
-
-    move-result-object v7
-
-    invoke-virtual {p0, v6, v7}, Lcom/google/zxing/common/BitMatrix;->setRow(ILcom/google/zxing/common/BitArray;)V
-
-    .line 156
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_18
-
-    .line 161
-    :cond_3d
-    return-void
+    goto :goto_13
 .end method

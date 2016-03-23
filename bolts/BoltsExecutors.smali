@@ -21,13 +21,15 @@
 
 .field private final immediate:Ljava/util/concurrent/Executor;
 
+.field private final scheduled:Ljava/util/concurrent/ScheduledExecutorService;
+
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 1
 
     .prologue
-    .line 12
+    .line 14
     new-instance v0, Lbolts/BoltsExecutors;
 
     invoke-direct {v0}, Lbolts/BoltsExecutors;-><init>()V
@@ -41,15 +43,15 @@
     .registers 3
 
     .prologue
-    .line 25
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 26
+    .line 29
     invoke-static {}, Lbolts/BoltsExecutors;->isAndroidRuntime()Z
 
     move-result v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_1e
 
     invoke-static {}, Ljava/util/concurrent/Executors;->newCachedThreadPool()Ljava/util/concurrent/ExecutorService;
 
@@ -58,7 +60,14 @@
     :goto_d
     iput-object v0, p0, Lbolts/BoltsExecutors;->background:Ljava/util/concurrent/ExecutorService;
 
-    .line 29
+    .line 32
+    invoke-static {}, Ljava/util/concurrent/Executors;->newSingleThreadScheduledExecutor()Ljava/util/concurrent/ScheduledExecutorService;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbolts/BoltsExecutors;->scheduled:Ljava/util/concurrent/ScheduledExecutorService;
+
+    .line 33
     new-instance v0, Lbolts/BoltsExecutors$ImmediateExecutor;
 
     const/4 v1, 0x0
@@ -67,11 +76,11 @@
 
     iput-object v0, p0, Lbolts/BoltsExecutors;->immediate:Ljava/util/concurrent/Executor;
 
-    .line 30
+    .line 34
     return-void
 
-    .line 26
-    :cond_18
+    .line 29
+    :cond_1e
     invoke-static {}, Lbolts/AndroidExecutors;->newCachedThreadPool()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
@@ -83,7 +92,7 @@
     .registers 1
 
     .prologue
-    .line 36
+    .line 40
     sget-object v0, Lbolts/BoltsExecutors;->INSTANCE:Lbolts/BoltsExecutors;
 
     iget-object v0, v0, Lbolts/BoltsExecutors;->background:Ljava/util/concurrent/ExecutorService;
@@ -95,7 +104,7 @@
     .registers 1
 
     .prologue
-    .line 45
+    .line 53
     sget-object v0, Lbolts/BoltsExecutors;->INSTANCE:Lbolts/BoltsExecutors;
 
     iget-object v0, v0, Lbolts/BoltsExecutors;->immediate:Ljava/util/concurrent/Executor;
@@ -107,36 +116,48 @@
     .registers 3
 
     .prologue
-    .line 15
-    const-string v1, "java.runtime.name"
+    .line 17
+    const-string/jumbo v1, "java.runtime.name"
 
     invoke-static {v1}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 16
+    .line 18
     .local v0, "javaRuntimeName":Ljava/lang/String;
-    if-nez v0, :cond_a
-
-    .line 17
-    const/4 v1, 0x0
+    if-nez v0, :cond_b
 
     .line 19
-    :goto_9
+    const/4 v1, 0x0
+
+    .line 21
+    :goto_a
     return v1
 
-    :cond_a
+    :cond_b
     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, "android"
+    const-string/jumbo v2, "android"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    goto :goto_9
+    goto :goto_a
+.end method
+
+.method static scheduled()Ljava/util/concurrent/ScheduledExecutorService;
+    .registers 1
+
+    .prologue
+    .line 44
+    sget-object v0, Lbolts/BoltsExecutors;->INSTANCE:Lbolts/BoltsExecutors;
+
+    iget-object v0, v0, Lbolts/BoltsExecutors;->scheduled:Ljava/util/concurrent/ScheduledExecutorService;
+
+    return-object v0
 .end method

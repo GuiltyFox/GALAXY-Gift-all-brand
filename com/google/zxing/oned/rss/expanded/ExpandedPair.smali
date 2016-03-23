@@ -105,7 +105,7 @@
 
     if-nez v2, :cond_6
 
-    .line 85
+    .line 88
     :cond_5
     :goto_5
     return v1
@@ -122,6 +122,7 @@
 
     iget-object v3, v0, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->leftChar:Lcom/google/zxing/oned/rss/DataCharacter;
 
+    .line 86
     invoke-static {v2, v3}, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->equalsOrNull(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -132,6 +133,7 @@
 
     iget-object v3, v0, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->rightChar:Lcom/google/zxing/oned/rss/DataCharacter;
 
+    .line 87
     invoke-static {v2, v3}, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->equalsOrNull(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -142,6 +144,7 @@
 
     iget-object v3, v0, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->finderPattern:Lcom/google/zxing/oned/rss/FinderPattern;
 
+    .line 88
     invoke-static {v2, v3}, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->equalsOrNull(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -252,7 +255,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "[ "
+    const-string/jumbo v1, "[ "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -264,7 +267,7 @@
 
     move-result-object v0
 
-    const-string v1, " , "
+    const-string/jumbo v1, " , "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -276,7 +279,7 @@
 
     move-result-object v0
 
-    const-string v1, " : "
+    const-string/jumbo v1, " : "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -284,16 +287,17 @@
 
     iget-object v0, p0, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->finderPattern:Lcom/google/zxing/oned/rss/FinderPattern;
 
-    if-nez v0, :cond_38
+    if-nez v0, :cond_3d
 
-    const-string v0, "null"
+    const-string/jumbo v0, "null"
 
-    :goto_29
+    .line 76
+    :goto_2d
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, " ]"
+    const-string/jumbo v1, " ]"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -305,9 +309,11 @@
 
     return-object v0
 
-    :cond_38
+    .line 74
+    :cond_3d
     iget-object v0, p0, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->finderPattern:Lcom/google/zxing/oned/rss/FinderPattern;
 
+    .line 76
     invoke-virtual {v0}, Lcom/google/zxing/oned/rss/FinderPattern;->getValue()I
 
     move-result v0
@@ -316,5 +322,5 @@
 
     move-result-object v0
 
-    goto :goto_29
+    goto :goto_2d
 .end method

@@ -17,6 +17,8 @@
 # static fields
 .field private static final synthetic $VALUES:[Lcom/google/zxing/EncodeHintType;
 
+.field public static final enum AZTEC_LAYERS:Lcom/google/zxing/EncodeHintType;
+
 .field public static final enum CHARACTER_SET:Lcom/google/zxing/EncodeHintType;
 
 .field public static final enum DATA_MATRIX_SHAPE:Lcom/google/zxing/EncodeHintType;
@@ -26,8 +28,14 @@
 .field public static final enum MARGIN:Lcom/google/zxing/EncodeHintType;
 
 .field public static final enum MAX_SIZE:Lcom/google/zxing/EncodeHintType;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final enum MIN_SIZE:Lcom/google/zxing/EncodeHintType;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final enum PDF417_COMPACT:Lcom/google/zxing/EncodeHintType;
 
@@ -54,7 +62,7 @@
     .line 33
     new-instance v0, Lcom/google/zxing/EncodeHintType;
 
-    const-string v1, "ERROR_CORRECTION"
+    const-string/jumbo v1, "ERROR_CORRECTION"
 
     invoke-direct {v0, v1, v3}, Lcom/google/zxing/EncodeHintType;-><init>(Ljava/lang/String;I)V
 
@@ -63,7 +71,7 @@
     .line 38
     new-instance v0, Lcom/google/zxing/EncodeHintType;
 
-    const-string v1, "CHARACTER_SET"
+    const-string/jumbo v1, "CHARACTER_SET"
 
     invoke-direct {v0, v1, v4}, Lcom/google/zxing/EncodeHintType;-><init>(Ljava/lang/String;I)V
 
@@ -72,34 +80,34 @@
     .line 43
     new-instance v0, Lcom/google/zxing/EncodeHintType;
 
-    const-string v1, "DATA_MATRIX_SHAPE"
+    const-string/jumbo v1, "DATA_MATRIX_SHAPE"
 
     invoke-direct {v0, v1, v5}, Lcom/google/zxing/EncodeHintType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/zxing/EncodeHintType;->DATA_MATRIX_SHAPE:Lcom/google/zxing/EncodeHintType;
 
-    .line 48
+    .line 51
     new-instance v0, Lcom/google/zxing/EncodeHintType;
 
-    const-string v1, "MIN_SIZE"
+    const-string/jumbo v1, "MIN_SIZE"
 
     invoke-direct {v0, v1, v6}, Lcom/google/zxing/EncodeHintType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/zxing/EncodeHintType;->MIN_SIZE:Lcom/google/zxing/EncodeHintType;
 
-    .line 53
+    .line 59
     new-instance v0, Lcom/google/zxing/EncodeHintType;
 
-    const-string v1, "MAX_SIZE"
+    const-string/jumbo v1, "MAX_SIZE"
 
     invoke-direct {v0, v1, v7}, Lcom/google/zxing/EncodeHintType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/zxing/EncodeHintType;->MAX_SIZE:Lcom/google/zxing/EncodeHintType;
 
-    .line 60
+    .line 67
     new-instance v0, Lcom/google/zxing/EncodeHintType;
 
-    const-string v1, "MARGIN"
+    const-string/jumbo v1, "MARGIN"
 
     const/4 v2, 0x5
 
@@ -107,10 +115,10 @@
 
     sput-object v0, Lcom/google/zxing/EncodeHintType;->MARGIN:Lcom/google/zxing/EncodeHintType;
 
-    .line 65
+    .line 72
     new-instance v0, Lcom/google/zxing/EncodeHintType;
 
-    const-string v1, "PDF417_COMPACT"
+    const-string/jumbo v1, "PDF417_COMPACT"
 
     const/4 v2, 0x6
 
@@ -118,10 +126,10 @@
 
     sput-object v0, Lcom/google/zxing/EncodeHintType;->PDF417_COMPACT:Lcom/google/zxing/EncodeHintType;
 
-    .line 71
+    .line 78
     new-instance v0, Lcom/google/zxing/EncodeHintType;
 
-    const-string v1, "PDF417_COMPACTION"
+    const-string/jumbo v1, "PDF417_COMPACTION"
 
     const/4 v2, 0x7
 
@@ -129,10 +137,10 @@
 
     sput-object v0, Lcom/google/zxing/EncodeHintType;->PDF417_COMPACTION:Lcom/google/zxing/EncodeHintType;
 
-    .line 77
+    .line 84
     new-instance v0, Lcom/google/zxing/EncodeHintType;
 
-    const-string v1, "PDF417_DIMENSIONS"
+    const-string/jumbo v1, "PDF417_DIMENSIONS"
 
     const/16 v2, 0x8
 
@@ -140,8 +148,19 @@
 
     sput-object v0, Lcom/google/zxing/EncodeHintType;->PDF417_DIMENSIONS:Lcom/google/zxing/EncodeHintType;
 
+    .line 92
+    new-instance v0, Lcom/google/zxing/EncodeHintType;
+
+    const-string/jumbo v1, "AZTEC_LAYERS"
+
+    const/16 v2, 0x9
+
+    invoke-direct {v0, v1, v2}, Lcom/google/zxing/EncodeHintType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/zxing/EncodeHintType;->AZTEC_LAYERS:Lcom/google/zxing/EncodeHintType;
+
     .line 24
-    const/16 v0, 0x9
+    const/16 v0, 0xa
 
     new-array v0, v0, [Lcom/google/zxing/EncodeHintType;
 
@@ -186,6 +205,12 @@
     const/16 v1, 0x8
 
     sget-object v2, Lcom/google/zxing/EncodeHintType;->PDF417_DIMENSIONS:Lcom/google/zxing/EncodeHintType;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x9
+
+    sget-object v2, Lcom/google/zxing/EncodeHintType;->AZTEC_LAYERS:Lcom/google/zxing/EncodeHintType;
 
     aput-object v2, v0, v1
 

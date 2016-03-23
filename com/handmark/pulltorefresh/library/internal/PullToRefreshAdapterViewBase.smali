@@ -19,10 +19,6 @@
 .end annotation
 
 
-# static fields
-.field private static synthetic $SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
-
-
 # instance fields
 .field private mEmptyView:Landroid/view/View;
 
@@ -42,127 +38,6 @@
 
 
 # direct methods
-.method static synthetic $SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode()[I
-    .registers 3
-
-    .prologue
-    .line 36
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->$SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
-
-    if-eqz v0, :cond_5
-
-    :goto_4
-    return-object v0
-
-    :cond_5
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->values()[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    move-result-object v0
-
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    :try_start_c
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->BOTH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_15
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_c .. :try_end_15} :catch_44
-
-    :goto_15
-    :try_start_15
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->DISABLED:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_1e
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_15 .. :try_end_1e} :catch_42
-
-    :goto_1e
-    :try_start_1e
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->MANUAL_REFRESH_ONLY:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_27
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1e .. :try_end_27} :catch_40
-
-    :goto_27
-    :try_start_27
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_END:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_30
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_27 .. :try_end_30} :catch_3e
-
-    :goto_30
-    :try_start_30
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_START:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_39
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_30 .. :try_end_39} :catch_3c
-
-    :goto_39
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->$SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
-
-    goto :goto_4
-
-    :catch_3c
-    move-exception v1
-
-    goto :goto_39
-
-    :catch_3e
-    move-exception v1
-
-    goto :goto_30
-
-    :catch_40
-    move-exception v1
-
-    goto :goto_27
-
-    :catch_42
-    move-exception v1
-
-    goto :goto_1e
-
-    :catch_44
-    move-exception v1
-
-    goto :goto_15
-.end method
-
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 3
     .param p1, "context"    # Landroid/content/Context;
@@ -217,11 +92,11 @@
 .method public constructor <init>(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
     .registers 4
     .param p1, "context"    # Landroid/content/Context;
+    .param p2, "mode"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .prologue
     .line 77
     .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase<TT;>;"
-    .local p2, "mode":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;"
     invoke-direct {p0, p1, p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;-><init>(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
 
     .line 64
@@ -243,12 +118,12 @@
 .method public constructor <init>(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;)V
     .registers 5
     .param p1, "context"    # Landroid/content/Context;
+    .param p2, "mode"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    .param p3, "animStyle"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     .prologue
     .line 82
     .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase<TT;>;"
-    .local p2, "mode":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;"
-    .local p3, "animStyle":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;"
     invoke-direct {p0, p1, p2, p3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;-><init>(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;)V
 
     .line 64
@@ -282,7 +157,7 @@
     move-result-object v0
 
     .line 334
-    .local v0, "mode":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;"
+    .local v0, "mode":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
     invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->getRefreshableViewWrapper()Landroid/widget/FrameLayout;
 
     move-result-object v2
@@ -323,7 +198,7 @@
 
     move-result-object v3
 
-    sget v4, Lic/buzzebeeslib/R$dimen;->indicator_right_padding:I
+    sget v4, Lcom/bzbs/lib/survey/R$dimen;->indicator_right_padding:I
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -379,7 +254,7 @@
 
     move-result-object v3
 
-    sget v4, Lic/buzzebeeslib/R$dimen;->indicator_right_padding:I
+    sget v4, Lcom/bzbs/lib/survey/R$dimen;->indicator_right_padding:I
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -548,24 +423,24 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_1d
 
     .line 376
     :cond_12
-    const-string v2, "PullToRefresh"
+    const-string/jumbo v2, "PullToRefresh"
 
-    const-string v4, "isFirstItemVisible. Empty View."
+    const-string/jumbo v4, "isFirstItemVisible. Empty View."
 
     invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     move v2, v3
 
     .line 397
-    :goto_1a
+    :goto_1c
     return v2
 
     .line 389
-    :cond_1b
+    :cond_1d
     iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->mRefreshableView:Landroid/view/View;
 
     check-cast v2, Landroid/widget/AbsListView;
@@ -574,7 +449,7 @@
 
     move-result v2
 
-    if-gt v2, v3, :cond_41
+    if-gt v2, v3, :cond_43
 
     .line 390
     iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->mRefreshableView:Landroid/view/View;
@@ -587,7 +462,7 @@
 
     .line 391
     .local v1, "firstVisibleChild":Landroid/view/View;
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_43
 
     .line 392
     invoke-virtual {v1}, Landroid/view/View;->getTop()I
@@ -602,23 +477,23 @@
 
     move-result v2
 
-    if-lt v5, v2, :cond_3f
+    if-lt v5, v2, :cond_41
 
     move v2, v3
 
-    goto :goto_1a
+    goto :goto_1c
 
-    :cond_3f
-    move v2, v4
-
-    goto :goto_1a
-
-    .end local v1    # "firstVisibleChild":Landroid/view/View;
     :cond_41
     move v2, v4
 
+    goto :goto_1c
+
+    .end local v1    # "firstVisibleChild":Landroid/view/View;
+    :cond_43
+    move v2, v4
+
     .line 397
-    goto :goto_1a
+    goto :goto_1c
 .end method
 
 .method private isLastItemVisible()Z
@@ -647,24 +522,24 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1b
+    if-eqz v5, :cond_1d
 
     .line 405
     :cond_12
-    const-string v5, "PullToRefresh"
+    const-string/jumbo v5, "PullToRefresh"
 
-    const-string v7, "isLastItemVisible. Empty View."
+    const-string/jumbo v7, "isLastItemVisible. Empty View."
 
     invoke-static {v5, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     move v5, v6
 
     .line 433
-    :goto_1a
+    :goto_1c
     return v5
 
     .line 409
-    :cond_1b
+    :cond_1d
     iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->mRefreshableView:Landroid/view/View;
 
     check-cast v5, Landroid/widget/AbsListView;
@@ -687,25 +562,28 @@
 
     .line 413
     .local v4, "lastVisiblePosition":I
-    const-string v5, "PullToRefresh"
+    const-string/jumbo v5, "PullToRefresh"
 
     new-instance v8, Ljava/lang/StringBuilder;
 
-    const-string v9, "isLastItemVisible. Last Item Position: "
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v8, v9}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v9, " Last Visible Pos: "
+    const-string/jumbo v9, "isLastItemVisible. Last Item Position: "
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v8
 
-    .line 414
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string/jumbo v9, " Last Visible Pos: "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
     invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v8
@@ -714,13 +592,12 @@
 
     move-result-object v8
 
-    .line 413
     invoke-static {v5, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 424
     add-int/lit8 v5, v2, -0x1
 
-    if-lt v4, v5, :cond_75
+    if-lt v4, v5, :cond_7e
 
     .line 425
     iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->mRefreshableView:Landroid/view/View;
@@ -745,7 +622,7 @@
 
     .line 427
     .local v3, "lastVisibleChild":Landroid/view/View;
-    if-eqz v3, :cond_75
+    if-eqz v3, :cond_7e
 
     .line 428
     invoke-virtual {v3}, Landroid/view/View;->getBottom()I
@@ -760,24 +637,24 @@
 
     move-result v5
 
-    if-gt v8, v5, :cond_73
+    if-gt v8, v5, :cond_7c
 
     move v5, v6
 
-    goto :goto_1a
+    goto :goto_1c
 
-    :cond_73
+    :cond_7c
     move v5, v7
 
-    goto :goto_1a
+    goto :goto_1c
 
     .end local v1    # "childIndex":I
     .end local v3    # "lastVisibleChild":Landroid/view/View;
-    :cond_75
+    :cond_7e
     move v5, v7
 
     .line 433
-    goto :goto_1a
+    goto :goto_1c
 .end method
 
 .method private removeIndicatorViews()V
@@ -958,15 +835,15 @@
     .prologue
     .line 301
     .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase<TT;>;"
-    sget v1, Lic/buzzebeeslib/R$styleable;->PullToRefresh_ptrShowIndicator:I
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrShowIndicator:I
 
     invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->isPullToRefreshOverScrollEnabled()Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-nez v0, :cond_10
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     :goto_9
     invoke-virtual {p1, v1, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
@@ -980,7 +857,7 @@
 
     .line 301
     :cond_10
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     goto :goto_9
 .end method
@@ -1024,12 +901,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_18
 
     .line 248
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->$SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode()[I
-
-    move-result-object v0
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase$1;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
 
     invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->getCurrentMode()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
@@ -1041,36 +916,36 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_28
+    packed-switch v0, :pswitch_data_26
 
     .line 260
-    :cond_1a
-    :goto_1a
+    :cond_18
+    :goto_18
     return-void
 
     .line 250
-    :pswitch_1b
+    :pswitch_19
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->mIndicatorIvBottom:Lcom/handmark/pulltorefresh/library/internal/IndicatorLayout;
 
     invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/IndicatorLayout;->pullToRefresh()V
 
-    goto :goto_1a
+    goto :goto_18
 
     .line 253
-    :pswitch_21
+    :pswitch_1f
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->mIndicatorIvTop:Lcom/handmark/pulltorefresh/library/internal/IndicatorLayout;
 
     invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/IndicatorLayout;->pullToRefresh()V
 
-    goto :goto_1a
+    goto :goto_18
 
     .line 248
     nop
 
-    :pswitch_data_28
-    .packed-switch 0x2
-        :pswitch_21
-        :pswitch_1b
+    :pswitch_data_26
+    .packed-switch 0x1
+        :pswitch_19
+        :pswitch_1f
     .end packed-switch
 .end method
 
@@ -1111,12 +986,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_18
 
     .line 275
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->$SWITCH_TABLE$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode()[I
-
-    move-result-object v0
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase$1;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
 
     invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->getCurrentMode()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
@@ -1128,36 +1001,36 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_28
+    packed-switch v0, :pswitch_data_26
 
     .line 287
-    :cond_1a
-    :goto_1a
+    :cond_18
+    :goto_18
     return-void
 
     .line 277
-    :pswitch_1b
+    :pswitch_19
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->mIndicatorIvBottom:Lcom/handmark/pulltorefresh/library/internal/IndicatorLayout;
 
     invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/IndicatorLayout;->releaseToRefresh()V
 
-    goto :goto_1a
+    goto :goto_18
 
     .line 280
-    :pswitch_21
+    :pswitch_1f
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->mIndicatorIvTop:Lcom/handmark/pulltorefresh/library/internal/IndicatorLayout;
 
     invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/IndicatorLayout;->releaseToRefresh()V
 
-    goto :goto_1a
+    goto :goto_18
 
     .line 275
     nop
 
-    :pswitch_data_28
-    .packed-switch 0x2
-        :pswitch_21
-        :pswitch_1b
+    :pswitch_data_26
+    .packed-switch 0x1
+        :pswitch_19
+        :pswitch_1f
     .end packed-switch
 .end method
 
@@ -1194,19 +1067,23 @@
     .prologue
     .line 104
     .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase<TT;>;"
-    const-string v0, "PullToRefresh"
+    const-string/jumbo v0, "PullToRefresh"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "First Visible: "
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string/jumbo v2, "First Visible: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    const-string v2, ". Visible Count: "
+    const-string/jumbo v2, ". Visible Count: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1216,8 +1093,7 @@
 
     move-result-object v1
 
-    .line 105
-    const-string v2, ". Total Items:"
+    const-string/jumbo v2, ". Total Items:"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1231,44 +1107,43 @@
 
     move-result-object v1
 
-    .line 104
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 112
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->mOnLastItemVisibleListener:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnLastItemVisibleListener;
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_3f
 
     .line 113
-    if-lez p4, :cond_4a
+    if-lez p4, :cond_52
 
     add-int v0, p2, p3
 
     add-int/lit8 v1, p4, -0x1
 
-    if-lt v0, v1, :cond_4a
+    if-lt v0, v1, :cond_52
 
     const/4 v0, 0x1
 
-    :goto_35
+    :goto_3d
     iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->mLastItemVisible:Z
 
     .line 117
-    :cond_37
+    :cond_3f
     invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->getShowIndicatorInternal()Z
 
     move-result v0
 
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_48
 
     .line 118
     invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->updateIndicatorViewsVisibility()V
 
     .line 122
-    :cond_40
+    :cond_48
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->mOnScrollListener:Landroid/widget/AbsListView$OnScrollListener;
 
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_51
 
     .line 123
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->mOnScrollListener:Landroid/widget/AbsListView$OnScrollListener;
@@ -1276,14 +1151,14 @@
     invoke-interface {v0, p1, p2, p3, p4}, Landroid/widget/AbsListView$OnScrollListener;->onScroll(Landroid/widget/AbsListView;III)V
 
     .line 125
-    :cond_49
+    :cond_51
     return-void
 
     .line 113
-    :cond_4a
+    :cond_52
     const/4 v0, 0x0
 
-    goto :goto_35
+    goto :goto_3d
 .end method
 
 .method protected onScrollChanged(IIII)V
@@ -1478,11 +1353,11 @@
 
 .method public setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
     .registers 3
+    .param p1, "listener"    # Landroid/widget/AdapterView$OnItemClickListener;
 
     .prologue
     .line 206
     .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase<TT;>;"
-    .local p1, "listener":Landroid/widget/AdapterView$OnItemClickListener;, "Landroid/widget/AdapterView$OnItemClickListener;"
     iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->mRefreshableView:Landroid/view/View;
 
     check-cast v0, Landroid/widget/AbsListView;
@@ -1495,11 +1370,11 @@
 
 .method public final setOnLastItemVisibleListener(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnLastItemVisibleListener;)V
     .registers 2
+    .param p1, "listener"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnLastItemVisibleListener;
 
     .prologue
     .line 210
     .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase<TT;>;"
-    .local p1, "listener":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnLastItemVisibleListener;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnLastItemVisibleListener;"
     iput-object p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase;->mOnLastItemVisibleListener:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnLastItemVisibleListener;
 
     .line 211

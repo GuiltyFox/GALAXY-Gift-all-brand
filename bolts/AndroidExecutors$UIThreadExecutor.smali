@@ -22,7 +22,7 @@
     .registers 1
 
     .prologue
-    .line 136
+    .line 135
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +33,7 @@
     .param p1, "x0"    # Lbolts/AndroidExecutors$1;
 
     .prologue
-    .line 136
+    .line 135
     invoke-direct {p0}, Lbolts/AndroidExecutors$UIThreadExecutor;-><init>()V
 
     return-void
@@ -46,7 +46,7 @@
     .param p1, "command"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 139
+    .line 138
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -57,6 +57,6 @@
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 140
+    .line 139
     return-void
 .end method

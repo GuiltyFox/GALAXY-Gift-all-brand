@@ -1,5 +1,5 @@
 .class Landroid/support/v4/view/ViewCompat$JBViewCompatImpl;
-.super Landroid/support/v4/view/ViewCompat$ICSViewCompatImpl;
+.super Landroid/support/v4/view/ViewCompat$ICSMr1ViewCompatImpl;
 .source "ViewCompat.java"
 
 
@@ -19,8 +19,8 @@
     .registers 1
 
     .prologue
-    .line 851
-    invoke-direct {p0}, Landroid/support/v4/view/ViewCompat$ICSViewCompatImpl;-><init>()V
+    .line 1345
+    invoke-direct {p0}, Landroid/support/v4/view/ViewCompat$ICSMr1ViewCompatImpl;-><init>()V
 
     return-void
 .end method
@@ -32,21 +32,21 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 896
+    .line 1390
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatJB;->getAccessibilityNodeProvider(Landroid/view/View;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 897
+    .line 1391
     .local v0, "compat":Ljava/lang/Object;
     if-eqz v0, :cond_c
 
-    .line 898
+    .line 1392
     new-instance v1, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
 
     invoke-direct {v1, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;-><init>(Ljava/lang/Object;)V
 
-    .line 900
+    .line 1394
     :goto_b
     return-object v1
 
@@ -56,12 +56,25 @@
     goto :goto_b
 .end method
 
+.method public getFitsSystemWindows(Landroid/view/View;)Z
+    .registers 3
+    .param p1, "view"    # Landroid/view/View;
+
+    .prologue
+    .line 1419
+    invoke-static {p1}, Landroid/support/v4/view/ViewCompatJB;->getFitsSystemWindows(Landroid/view/View;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getImportantForAccessibility(Landroid/view/View;)I
     .registers 3
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 878
+    .line 1372
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatJB;->getImportantForAccessibility(Landroid/view/View;)I
 
     move-result v0
@@ -74,7 +87,7 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 915
+    .line 1409
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatJB;->getMinimumHeight(Landroid/view/View;)I
 
     move-result v0
@@ -87,7 +100,7 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 910
+    .line 1404
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatJB;->getMinimumWidth(Landroid/view/View;)I
 
     move-result v0
@@ -100,7 +113,7 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 905
+    .line 1399
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatJB;->getParentForAccessibility(Landroid/view/View;)Landroid/view/ViewParent;
 
     move-result-object v0
@@ -108,12 +121,25 @@
     return-object v0
 .end method
 
+.method public hasOverlappingRendering(Landroid/view/View;)Z
+    .registers 3
+    .param p1, "view"    # Landroid/view/View;
+
+    .prologue
+    .line 1424
+    invoke-static {p1}, Landroid/support/v4/view/ViewCompatJB;->hasOverlappingRendering(Landroid/view/View;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public hasTransientState(Landroid/view/View;)Z
     .registers 3
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 854
+    .line 1348
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatJB;->hasTransientState(Landroid/view/View;)Z
 
     move-result v0
@@ -128,7 +154,7 @@
     .param p3, "arguments"    # Landroid/os/Bundle;
 
     .prologue
-    .line 892
+    .line 1386
     invoke-static {p1, p2, p3}, Landroid/support/v4/view/ViewCompatJB;->performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
 
     move-result v0
@@ -141,10 +167,10 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 862
+    .line 1356
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatJB;->postInvalidateOnAnimation(Landroid/view/View;)V
 
-    .line 863
+    .line 1357
     return-void
 .end method
 
@@ -157,10 +183,10 @@
     .param p5, "bottom"    # I
 
     .prologue
-    .line 866
+    .line 1360
     invoke-static {p1, p2, p3, p4, p5}, Landroid/support/v4/view/ViewCompatJB;->postInvalidateOnAnimation(Landroid/view/View;IIII)V
 
-    .line 867
+    .line 1361
     return-void
 .end method
 
@@ -170,10 +196,10 @@
     .param p2, "action"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 870
+    .line 1364
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatJB;->postOnAnimation(Landroid/view/View;Ljava/lang/Runnable;)V
 
-    .line 871
+    .line 1365
     return-void
 .end method
 
@@ -184,10 +210,22 @@
     .param p3, "delayMillis"    # J
 
     .prologue
-    .line 874
+    .line 1368
     invoke-static {p1, p2, p3, p4}, Landroid/support/v4/view/ViewCompatJB;->postOnAnimationDelayed(Landroid/view/View;Ljava/lang/Runnable;J)V
 
-    .line 875
+    .line 1369
+    return-void
+.end method
+
+.method public requestApplyInsets(Landroid/view/View;)V
+    .registers 2
+    .param p1, "view"    # Landroid/view/View;
+
+    .prologue
+    .line 1414
+    invoke-static {p1}, Landroid/support/v4/view/ViewCompatJB;->requestApplyInsets(Landroid/view/View;)V
+
+    .line 1415
     return-void
 .end method
 
@@ -197,10 +235,10 @@
     .param p2, "hasTransientState"    # Z
 
     .prologue
-    .line 858
+    .line 1352
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatJB;->setHasTransientState(Landroid/view/View;Z)V
 
-    .line 859
+    .line 1353
     return-void
 .end method
 
@@ -210,18 +248,18 @@
     .param p2, "mode"    # I
 
     .prologue
-    .line 885
+    .line 1379
     const/4 v0, 0x4
 
     if-ne p2, v0, :cond_4
 
-    .line 886
+    .line 1380
     const/4 p2, 0x2
 
-    .line 888
+    .line 1382
     :cond_4
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatJB;->setImportantForAccessibility(Landroid/view/View;I)V
 
-    .line 889
+    .line 1383
     return-void
 .end method

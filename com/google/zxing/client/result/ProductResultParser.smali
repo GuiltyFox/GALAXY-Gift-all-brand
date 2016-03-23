@@ -18,7 +18,6 @@
 # virtual methods
 .method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .registers 3
-    .param p1, "x0"    # Lcom/google/zxing/Result;
 
     .prologue
     .line 28
@@ -30,106 +29,90 @@
 .end method
 
 .method public parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ProductParsedResult;
-    .registers 10
+    .registers 7
     .param p1, "result"    # Lcom/google/zxing/Result;
 
     .prologue
-    const/4 v6, 0x0
+    const/4 v3, 0x0
 
     .line 33
     invoke-virtual {p1}, Lcom/google/zxing/Result;->getBarcodeFormat()Lcom/google/zxing/BarcodeFormat;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 34
-    .local v1, "format":Lcom/google/zxing/BarcodeFormat;
-    sget-object v7, Lcom/google/zxing/BarcodeFormat;->UPC_A:Lcom/google/zxing/BarcodeFormat;
+    .local v0, "format":Lcom/google/zxing/BarcodeFormat;
+    sget-object v4, Lcom/google/zxing/BarcodeFormat;->UPC_A:Lcom/google/zxing/BarcodeFormat;
 
-    if-eq v1, v7, :cond_16
+    if-eq v0, v4, :cond_16
 
-    sget-object v7, Lcom/google/zxing/BarcodeFormat;->UPC_E:Lcom/google/zxing/BarcodeFormat;
+    sget-object v4, Lcom/google/zxing/BarcodeFormat;->UPC_E:Lcom/google/zxing/BarcodeFormat;
 
-    if-eq v1, v7, :cond_16
+    if-eq v0, v4, :cond_16
 
-    sget-object v7, Lcom/google/zxing/BarcodeFormat;->EAN_8:Lcom/google/zxing/BarcodeFormat;
+    sget-object v4, Lcom/google/zxing/BarcodeFormat;->EAN_8:Lcom/google/zxing/BarcodeFormat;
 
-    if-eq v1, v7, :cond_16
+    if-eq v0, v4, :cond_16
 
-    sget-object v7, Lcom/google/zxing/BarcodeFormat;->EAN_13:Lcom/google/zxing/BarcodeFormat;
+    sget-object v4, Lcom/google/zxing/BarcodeFormat;->EAN_13:Lcom/google/zxing/BarcodeFormat;
 
-    if-eq v1, v7, :cond_16
+    if-eq v0, v4, :cond_16
 
-    .line 56
+    .line 52
     :cond_15
     :goto_15
-    return-object v6
+    return-object v3
 
     .line 38
     :cond_16
     invoke-static {p1}, Lcom/google/zxing/client/result/ProductResultParser;->getMassagedText(Lcom/google/zxing/Result;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
     .line 39
-    .local v4, "rawText":Ljava/lang/String;
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
+    .local v2, "rawText":Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v4
 
-    .line 40
-    .local v2, "length":I
-    const/4 v5, 0x0
+    invoke-static {v2, v4}, Lcom/google/zxing/client/result/ProductResultParser;->isStringOfDigits(Ljava/lang/CharSequence;I)Z
 
-    .local v5, "x":I
-    :goto_1f
-    if-ge v5, v2, :cond_30
+    move-result v4
 
-    .line 41
-    invoke-virtual {v4, v5}, Ljava/lang/String;->charAt(I)C
+    if-eqz v4, :cond_15
 
-    move-result v0
+    .line 46
+    sget-object v3, Lcom/google/zxing/BarcodeFormat;->UPC_E:Lcom/google/zxing/BarcodeFormat;
 
-    .line 42
-    .local v0, "c":C
-    const/16 v7, 0x30
+    if-ne v0, v3, :cond_3a
 
-    if-lt v0, v7, :cond_15
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    const/16 v7, 0x39
+    move-result v3
 
-    if-gt v0, v7, :cond_15
+    const/16 v4, 0x8
 
-    .line 40
-    add-int/lit8 v5, v5, 0x1
+    if-ne v3, v4, :cond_3a
 
-    goto :goto_1f
+    .line 47
+    invoke-static {v2}, Lcom/google/zxing/oned/UPCEReader;->convertUPCEtoUPCA(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 50
-    .end local v0    # "c":C
-    :cond_30
-    sget-object v6, Lcom/google/zxing/BarcodeFormat;->UPC_E:Lcom/google/zxing/BarcodeFormat;
+    move-result-object v1
 
-    if-ne v1, v6, :cond_3e
+    .line 52
+    .local v1, "normalizedProductID":Ljava/lang/String;
+    :goto_34
+    new-instance v3, Lcom/google/zxing/client/result/ProductParsedResult;
 
-    .line 51
-    invoke-static {v4}, Lcom/google/zxing/oned/UPCEReader;->convertUPCEtoUPCA(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 56
-    .local v3, "normalizedProductID":Ljava/lang/String;
-    :goto_38
-    new-instance v6, Lcom/google/zxing/client/result/ProductParsedResult;
-
-    invoke-direct {v6, v4, v3}, Lcom/google/zxing/client/result/ProductParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v3, v2, v1}, Lcom/google/zxing/client/result/ProductParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_15
 
-    .line 53
-    .end local v3    # "normalizedProductID":Ljava/lang/String;
-    :cond_3e
-    move-object v3, v4
+    .line 49
+    .end local v1    # "normalizedProductID":Ljava/lang/String;
+    :cond_3a
+    move-object v1, v2
 
-    .restart local v3    # "normalizedProductID":Ljava/lang/String;
-    goto :goto_38
+    .restart local v1    # "normalizedProductID":Ljava/lang/String;
+    goto :goto_34
 .end method

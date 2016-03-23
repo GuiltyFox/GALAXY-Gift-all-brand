@@ -6,7 +6,7 @@
 # instance fields
 .field private final bits:[B
 
-.field private final codewords:Ljava/lang/String;
+.field private final codewords:Ljava/lang/CharSequence;
 
 .field private final numcols:I
 
@@ -14,9 +14,9 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;II)V
+.method public constructor <init>(Ljava/lang/CharSequence;II)V
     .registers 6
-    .param p1, "codewords"    # Ljava/lang/String;
+    .param p1, "codewords"    # Ljava/lang/CharSequence;
     .param p2, "numcols"    # I
     .param p3, "numrows"    # I
 
@@ -25,7 +25,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 39
-    iput-object p1, p0, Lcom/google/zxing/datamatrix/encoder/DefaultPlacement;->codewords:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/zxing/datamatrix/encoder/DefaultPlacement;->codewords:Ljava/lang/CharSequence;
 
     .line 40
     iput p2, p0, Lcom/google/zxing/datamatrix/encoder/DefaultPlacement;->numcols:I
@@ -438,9 +438,9 @@
 
     .line 131
     :cond_1d
-    iget-object v2, p0, Lcom/google/zxing/datamatrix/encoder/DefaultPlacement;->codewords:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/zxing/datamatrix/encoder/DefaultPlacement;->codewords:Ljava/lang/CharSequence;
 
-    invoke-virtual {v2, p3}, Ljava/lang/String;->charAt(I)C
+    invoke-interface {v2, p3}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v0
 

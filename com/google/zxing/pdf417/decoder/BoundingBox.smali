@@ -558,7 +558,7 @@
     .registers 2
 
     .prologue
-    .line 169
+    .line 171
     iget-object v0, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->bottomLeft:Lcom/google/zxing/ResultPoint;
 
     return-object v0
@@ -568,7 +568,7 @@
     .registers 2
 
     .prologue
-    .line 173
+    .line 175
     iget-object v0, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->bottomRight:Lcom/google/zxing/ResultPoint;
 
     return-object v0
@@ -578,7 +578,7 @@
     .registers 2
 
     .prologue
-    .line 149
+    .line 151
     iget v0, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->maxX:I
 
     return v0
@@ -588,7 +588,7 @@
     .registers 2
 
     .prologue
-    .line 157
+    .line 159
     iget v0, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->maxY:I
 
     return v0
@@ -598,7 +598,7 @@
     .registers 2
 
     .prologue
-    .line 145
+    .line 147
     iget v0, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->minX:I
 
     return v0
@@ -608,7 +608,7 @@
     .registers 2
 
     .prologue
-    .line 153
+    .line 155
     iget v0, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->minY:I
 
     return v0
@@ -618,7 +618,7 @@
     .registers 2
 
     .prologue
-    .line 161
+    .line 163
     iget-object v0, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->topLeft:Lcom/google/zxing/ResultPoint;
 
     return-object v0
@@ -628,38 +628,8 @@
     .registers 2
 
     .prologue
-    .line 165
+    .line 167
     iget-object v0, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->topRight:Lcom/google/zxing/ResultPoint;
 
     return-object v0
-.end method
-
-.method setBottomRight(Lcom/google/zxing/ResultPoint;)V
-    .registers 2
-    .param p1, "bottomRight"    # Lcom/google/zxing/ResultPoint;
-
-    .prologue
-    .line 140
-    iput-object p1, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->bottomRight:Lcom/google/zxing/ResultPoint;
-
-    .line 141
-    invoke-direct {p0}, Lcom/google/zxing/pdf417/decoder/BoundingBox;->calculateMinMaxValues()V
-
-    .line 142
-    return-void
-.end method
-
-.method setTopRight(Lcom/google/zxing/ResultPoint;)V
-    .registers 2
-    .param p1, "topRight"    # Lcom/google/zxing/ResultPoint;
-
-    .prologue
-    .line 135
-    iput-object p1, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->topRight:Lcom/google/zxing/ResultPoint;
-
-    .line 136
-    invoke-direct {p0}, Lcom/google/zxing/pdf417/decoder/BoundingBox;->calculateMinMaxValues()V
-
-    .line 137
-    return-void
 .end method

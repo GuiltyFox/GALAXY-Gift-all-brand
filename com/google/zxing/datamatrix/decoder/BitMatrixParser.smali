@@ -160,19 +160,19 @@
 
     move/from16 v1, v18
 
-    if-eq v0, v1, :cond_26
+    if-eq v0, v1, :cond_27
 
     .line 407
     new-instance v21, Ljava/lang/IllegalArgumentException;
 
-    const-string v22, "Dimension of bitMarix must match the version size"
+    const-string/jumbo v22, "Dimension of bitMarix must match the version size"
 
     invoke-direct/range {v21 .. v22}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v21
 
     .line 410
-    :cond_26
+    :cond_27
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->version:Lcom/google/zxing/datamatrix/decoder/Version;
@@ -224,8 +224,8 @@
     const/4 v5, 0x0
 
     .local v5, "dataRegionRow":I
-    :goto_4a
-    if-ge v5, v12, :cond_88
+    :goto_4b
+    if-ge v5, v12, :cond_89
 
     .line 421
     mul-int v6, v5, v8
@@ -235,8 +235,8 @@
     const/4 v3, 0x0
 
     .local v3, "dataRegionColumn":I
-    :goto_4f
-    if-ge v3, v11, :cond_85
+    :goto_50
+    if-ge v3, v11, :cond_86
 
     .line 423
     mul-int v4, v3, v7
@@ -246,8 +246,8 @@
     const/4 v9, 0x0
 
     .local v9, "i":I
-    :goto_54
-    if-ge v9, v8, :cond_82
+    :goto_55
+    if-ge v9, v8, :cond_83
 
     .line 425
     add-int/lit8 v21, v8, 0x2
@@ -267,8 +267,8 @@
     const/4 v10, 0x0
 
     .local v10, "j":I
-    :goto_61
-    if-ge v10, v7, :cond_7f
+    :goto_62
+    if-ge v10, v7, :cond_80
 
     .line 428
     add-int/lit8 v21, v7, 0x2
@@ -287,7 +287,7 @@
 
     move-result v21
 
-    if-eqz v21, :cond_7c
+    if-eqz v21, :cond_7d
 
     .line 430
     add-int v19, v4, v10
@@ -302,39 +302,39 @@
 
     .line 427
     .end local v19    # "writeColumnOffset":I
-    :cond_7c
+    :cond_7d
     add-int/lit8 v10, v10, 0x1
 
-    goto :goto_61
+    goto :goto_62
 
     .line 424
     .end local v13    # "readColumnOffset":I
-    :cond_7f
+    :cond_80
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_54
+    goto :goto_55
 
     .line 422
     .end local v10    # "j":I
     .end local v14    # "readRowOffset":I
     .end local v20    # "writeRowOffset":I
-    :cond_82
+    :cond_83
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_4f
+    goto :goto_50
 
     .line 420
     .end local v4    # "dataRegionColumnOffset":I
     .end local v9    # "i":I
-    :cond_85
+    :cond_86
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_4a
+    goto :goto_4b
 
     .line 437
     .end local v3    # "dataRegionColumn":I
     .end local v6    # "dataRegionRowOffset":I
-    :cond_88
+    :cond_89
     return-object v2
 .end method
 

@@ -28,15 +28,16 @@
 # direct methods
 .method constructor <init>(Lcom/bitmapfun/util/AsyncTask;)V
     .registers 3
+    .param p1, "this$0"    # Lcom/bitmapfun/util/AsyncTask;
 
     .prologue
-    .line 1
+    .line 307
+    .local p0, "this":Lcom/bitmapfun/util/AsyncTask$2;, "Lcom/bitmapfun/util/AsyncTask$2;"
     iput-object p1, p0, Lcom/bitmapfun/util/AsyncTask$2;->this$0:Lcom/bitmapfun/util/AsyncTask;
 
-    .line 308
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lcom/bitmapfun/util/AsyncTask$WorkerRunnable;-><init>(Lcom/bitmapfun/util/AsyncTask$WorkerRunnable;)V
+    invoke-direct {p0, v0}, Lcom/bitmapfun/util/AsyncTask$WorkerRunnable;-><init>(Lcom/bitmapfun/util/AsyncTask$1;)V
 
     return-void
 .end method
@@ -58,11 +59,12 @@
     .end annotation
 
     .prologue
-    .line 310
+    .line 309
+    .local p0, "this":Lcom/bitmapfun/util/AsyncTask$2;, "Lcom/bitmapfun/util/AsyncTask$2;"
     iget-object v0, p0, Lcom/bitmapfun/util/AsyncTask$2;->this$0:Lcom/bitmapfun/util/AsyncTask;
 
     # getter for: Lcom/bitmapfun/util/AsyncTask;->mTaskInvoked:Ljava/util/concurrent/atomic/AtomicBoolean;
-    invoke-static {v0}, Lcom/bitmapfun/util/AsyncTask;->access$1(Lcom/bitmapfun/util/AsyncTask;)Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-static {v0}, Lcom/bitmapfun/util/AsyncTask;->access$300(Lcom/bitmapfun/util/AsyncTask;)Ljava/util/concurrent/atomic/AtomicBoolean;
 
     move-result-object v0
 
@@ -70,12 +72,12 @@
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 312
+    .line 311
     const/16 v0, 0xa
 
     invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
-    .line 314
+    .line 313
     iget-object v0, p0, Lcom/bitmapfun/util/AsyncTask$2;->this$0:Lcom/bitmapfun/util/AsyncTask;
 
     iget-object v1, p0, Lcom/bitmapfun/util/AsyncTask$2;->this$0:Lcom/bitmapfun/util/AsyncTask;
@@ -87,7 +89,7 @@
     move-result-object v1
 
     # invokes: Lcom/bitmapfun/util/AsyncTask;->postResult(Ljava/lang/Object;)Ljava/lang/Object;
-    invoke-static {v0, v1}, Lcom/bitmapfun/util/AsyncTask;->access$2(Lcom/bitmapfun/util/AsyncTask;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/bitmapfun/util/AsyncTask;->access$400(Lcom/bitmapfun/util/AsyncTask;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 

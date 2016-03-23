@@ -21,19 +21,19 @@
 
     .prologue
     .line 28
-    if-nez p0, :cond_8
+    if-nez p0, :cond_9
 
     .line 29
-    const-string v2, "null"
+    const-string/jumbo v2, "null"
 
     invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 43
-    :goto_7
+    :goto_8
     return-void
 
     .line 31
-    :cond_8
+    :cond_9
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
@@ -44,16 +44,16 @@
 
     .line 32
     .local v1, "simpleName":Ljava/lang/String;
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_19
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    if-gtz v2, :cond_2e
+    if-gtz v2, :cond_2f
 
     .line 33
-    :cond_18
+    :cond_19
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
@@ -71,7 +71,7 @@
 
     .line 35
     .local v0, "end":I
-    if-lez v0, :cond_2e
+    if-lez v0, :cond_2f
 
     .line 36
     add-int/lit8 v2, v0, 0x1
@@ -82,7 +82,7 @@
 
     .line 39
     .end local v0    # "end":I
-    :cond_2e
+    :cond_2f
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 40
@@ -101,5 +101,5 @@
 
     invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_7
+    goto :goto_8
 .end method

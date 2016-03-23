@@ -143,12 +143,13 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "Requested contents should be 11 or 12 digits long, but got "
+    const-string/jumbo v5, "Requested contents should be 11 or 12 digits long, but got "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
+    .line 69
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v5
@@ -232,7 +233,7 @@
     .local p5, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/EncodeHintType;*>;"
     sget-object v0, Lcom/google/zxing/BarcodeFormat;->UPC_A:Lcom/google/zxing/BarcodeFormat;
 
-    if-eq p2, v0, :cond_1d
+    if-eq p2, v0, :cond_1e
 
     .line 49
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -241,7 +242,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "Can only encode UPC-A, but got "
+    const-string/jumbo v2, "Can only encode UPC-A, but got "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -260,7 +261,7 @@
     throw v0
 
     .line 51
-    :cond_1d
+    :cond_1e
     iget-object v0, p0, Lcom/google/zxing/oned/UPCAWriter;->subWriter:Lcom/google/zxing/oned/EAN13Writer;
 
     invoke-static {p1}, Lcom/google/zxing/oned/UPCAWriter;->preencode(Ljava/lang/String;)Ljava/lang/String;

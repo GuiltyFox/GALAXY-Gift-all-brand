@@ -29,7 +29,7 @@
 
     .prologue
     .line 40
-    const-string v0, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. *$/+%"
+    const-string/jumbo v0, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. *$/+%"
 
     invoke-virtual {v0}, Ljava/lang/String;->toCharArray()[C
 
@@ -42,7 +42,7 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_1a
+    fill-array-data v0, :array_1c
 
     sput-object v0, Lcom/google/zxing/oned/Code39Reader;->CHARACTER_ENCODINGS:[I
 
@@ -58,7 +58,9 @@
     return-void
 
     .line 47
-    :array_1a
+    nop
+
+    :array_1c
     .array-data 4
         0x34
         0x121
@@ -490,10 +492,11 @@
 
     sub-int v9, v1, v4
 
-    shr-int/lit8 v9, v9, 0x1
+    div-int/lit8 v9, v9, 0x2
 
     sub-int v9, v4, v9
 
+    .line 195
     invoke-static {v8, v9}, Ljava/lang/Math;->max(II)I
 
     move-result v9
@@ -625,171 +628,166 @@
 .end method
 
 .method private static toNarrowWidePattern([I)I
-    .registers 16
+    .registers 13
     .param p0, "counters"    # [I
 
     .prologue
-    const/4 v14, 0x3
+    const/4 v11, 0x3
 
-    const/4 v11, -0x1
+    const/4 v8, -0x1
 
     .line 216
-    array-length v7, p0
+    array-length v4, p0
 
     .line 217
-    .local v7, "numCounters":I
-    const/4 v5, 0x0
+    .local v4, "numCounters":I
+    const/4 v2, 0x0
 
     .line 220
-    .local v5, "maxNarrowCounter":I
+    .local v2, "maxNarrowCounter":I
     :cond_4
-    const v6, 0x7fffffff
+    const v3, 0x7fffffff
 
     .line 221
-    .local v6, "minCounter":I
-    move-object v0, p0
+    .local v3, "minCounter":I
+    array-length v10, p0
 
-    .local v0, "arr$":[I
-    array-length v4, v0
-
-    .local v4, "len$":I
-    const/4 v3, 0x0
-
-    .local v3, "i$":I
-    :goto_a
-    if-ge v3, v4, :cond_16
-
-    aget v1, v0, v3
-
-    .line 222
-    .local v1, "counter":I
-    if-ge v1, v6, :cond_13
-
-    if-le v1, v5, :cond_13
-
-    .line 223
-    move v6, v1
-
-    .line 221
-    :cond_13
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_a
-
-    .line 226
-    .end local v1    # "counter":I
-    :cond_16
-    move v5, v6
-
-    .line 227
-    const/4 v10, 0x0
-
-    .line 228
-    .local v10, "wideCounters":I
     const/4 v9, 0x0
 
+    :goto_9
+    if-ge v9, v10, :cond_15
+
+    aget v0, p0, v9
+
+    .line 222
+    .local v0, "counter":I
+    if-ge v0, v3, :cond_12
+
+    if-le v0, v2, :cond_12
+
+    .line 223
+    move v3, v0
+
+    .line 221
+    :cond_12
+    add-int/lit8 v9, v9, 0x1
+
+    goto :goto_9
+
+    .line 226
+    .end local v0    # "counter":I
+    :cond_15
+    move v2, v3
+
+    .line 227
+    const/4 v7, 0x0
+
+    .line 228
+    .local v7, "wideCounters":I
+    const/4 v6, 0x0
+
     .line 229
-    .local v9, "totalWideCountersWidth":I
-    const/4 v8, 0x0
+    .local v6, "totalWideCountersWidth":I
+    const/4 v5, 0x0
 
     .line 230
-    .local v8, "pattern":I
-    const/4 v2, 0x0
+    .local v5, "pattern":I
+    const/4 v1, 0x0
 
-    .local v2, "i":I
-    :goto_1b
-    if-ge v2, v7, :cond_2d
+    .local v1, "i":I
+    :goto_1a
+    if-ge v1, v4, :cond_2c
 
     .line 231
-    aget v1, p0, v2
+    aget v0, p0, v1
 
     .line 232
-    .restart local v1    # "counter":I
-    if-le v1, v5, :cond_2a
+    .restart local v0    # "counter":I
+    if-le v0, v2, :cond_29
 
     .line 233
-    const/4 v12, 0x1
+    const/4 v9, 0x1
 
-    add-int/lit8 v13, v7, -0x1
+    add-int/lit8 v10, v4, -0x1
 
-    sub-int/2addr v13, v2
+    sub-int/2addr v10, v1
 
-    shl-int/2addr v12, v13
+    shl-int/2addr v9, v10
 
-    or-int/2addr v8, v12
+    or-int/2addr v5, v9
 
     .line 234
-    add-int/lit8 v10, v10, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     .line 235
-    add-int/2addr v9, v1
+    add-int/2addr v6, v0
 
     .line 230
-    :cond_2a
-    add-int/lit8 v2, v2, 0x1
+    :cond_29
+    add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1b
+    goto :goto_1a
 
     .line 238
-    .end local v1    # "counter":I
-    :cond_2d
-    if-ne v10, v14, :cond_43
+    .end local v0    # "counter":I
+    :cond_2c
+    if-ne v7, v11, :cond_42
 
     .line 242
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    :goto_30
-    if-ge v2, v7, :cond_3f
+    :goto_2f
+    if-ge v1, v4, :cond_3e
 
-    if-lez v10, :cond_3f
+    if-lez v7, :cond_3e
 
     .line 243
-    aget v1, p0, v2
+    aget v0, p0, v1
 
     .line 244
-    .restart local v1    # "counter":I
-    if-le v1, v5, :cond_40
+    .restart local v0    # "counter":I
+    if-le v0, v2, :cond_3f
 
     .line 245
-    add-int/lit8 v10, v10, -0x1
+    add-int/lit8 v7, v7, -0x1
 
     .line 247
-    shl-int/lit8 v12, v1, 0x1
+    mul-int/lit8 v9, v0, 0x2
 
-    if-lt v12, v9, :cond_40
+    if-lt v9, v6, :cond_3f
 
-    move v8, v11
+    move v5, v8
 
     .line 255
-    .end local v1    # "counter":I
-    .end local v8    # "pattern":I
-    :cond_3f
-    :goto_3f
-    return v8
+    .end local v0    # "counter":I
+    .end local v5    # "pattern":I
+    :cond_3e
+    :goto_3e
+    return v5
 
     .line 242
-    .restart local v1    # "counter":I
-    .restart local v8    # "pattern":I
-    :cond_40
-    add-int/lit8 v2, v2, 0x1
+    .restart local v0    # "counter":I
+    .restart local v5    # "pattern":I
+    :cond_3f
+    add-int/lit8 v1, v1, 0x1
 
-    goto :goto_30
+    goto :goto_2f
 
     .line 254
-    .end local v1    # "counter":I
-    :cond_43
-    if-gt v10, v14, :cond_4
+    .end local v0    # "counter":I
+    :cond_42
+    if-gt v7, v11, :cond_4
 
-    move v8, v11
+    move v5, v8
 
     .line 255
-    goto :goto_3f
+    goto :goto_3e
 .end method
 
 
 # virtual methods
 .method public decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
-    .registers 35
+    .registers 31
     .param p1, "rowNumber"    # I
     .param p2, "row"    # Lcom/google/zxing/common/BitArray;
     .annotation system Ldalvik/annotation/Signature;
@@ -819,448 +817,439 @@
 
     iget-object v0, v0, Lcom/google/zxing/oned/Code39Reader;->counters:[I
 
-    move-object/from16 v22, v0
+    move-object/from16 v18, v0
 
     .line 103
-    .local v22, "theCounters":[I
-    const/16 v25, 0x0
+    .local v18, "theCounters":[I
+    const/16 v21, 0x0
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v18
 
-    move/from16 v1, v25
+    move/from16 v1, v21
 
     invoke-static {v0, v1}, Ljava/util/Arrays;->fill([II)V
 
     .line 104
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/google/zxing/oned/Code39Reader;->decodeRowResult:Ljava/lang/StringBuilder;
-
-    move-object/from16 v18, v0
+    iget-object v14, v0, Lcom/google/zxing/oned/Code39Reader;->decodeRowResult:Ljava/lang/StringBuilder;
 
     .line 105
-    .local v18, "result":Ljava/lang/StringBuilder;
-    const/16 v25, 0x0
+    .local v14, "result":Ljava/lang/StringBuilder;
+    const/16 v21, 0x0
 
-    move-object/from16 v0, v18
+    move/from16 v0, v21
 
-    move/from16 v1, v25
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->setLength(I)V
+    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
     .line 107
     move-object/from16 v0, p2
 
-    move-object/from16 v1, v22
+    move-object/from16 v1, v18
 
     invoke-static {v0, v1}, Lcom/google/zxing/oned/Code39Reader;->findAsteriskPattern(Lcom/google/zxing/common/BitArray;[I)[I
 
-    move-result-object v21
+    move-result-object v17
 
     .line 109
-    .local v21, "start":[I
-    const/16 v25, 0x1
+    .local v17, "start":[I
+    const/16 v21, 0x1
 
-    aget v25, v21, v25
+    aget v21, v17, v21
 
     move-object/from16 v0, p2
 
-    move/from16 v1, v25
+    move/from16 v1, v21
 
     invoke-virtual {v0, v1}, Lcom/google/zxing/common/BitArray;->getNextSet(I)I
 
-    move-result v16
+    move-result v12
 
     .line 110
-    .local v16, "nextStart":I
+    .local v12, "nextStart":I
     invoke-virtual/range {p2 .. p2}, Lcom/google/zxing/common/BitArray;->getSize()I
 
-    move-result v8
+    move-result v6
 
     .line 115
-    .local v8, "end":I
-    :cond_36
+    .local v6, "end":I
+    :cond_32
     move-object/from16 v0, p2
 
-    move/from16 v1, v16
+    move-object/from16 v1, v18
 
-    move-object/from16 v2, v22
-
-    invoke-static {v0, v1, v2}, Lcom/google/zxing/oned/Code39Reader;->recordPattern(Lcom/google/zxing/common/BitArray;I[I)V
+    invoke-static {v0, v12, v1}, Lcom/google/zxing/oned/Code39Reader;->recordPattern(Lcom/google/zxing/common/BitArray;I[I)V
 
     .line 116
-    invoke-static/range {v22 .. v22}, Lcom/google/zxing/oned/Code39Reader;->toNarrowWidePattern([I)I
+    invoke-static/range {v18 .. v18}, Lcom/google/zxing/oned/Code39Reader;->toNarrowWidePattern([I)I
 
-    move-result v17
+    move-result v13
 
     .line 117
-    .local v17, "pattern":I
-    if-gez v17, :cond_4a
+    .local v13, "pattern":I
+    if-gez v13, :cond_44
 
     .line 118
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v25
+    move-result-object v21
 
-    throw v25
+    throw v21
 
     .line 120
-    :cond_4a
-    invoke-static/range {v17 .. v17}, Lcom/google/zxing/oned/Code39Reader;->patternToChar(I)C
+    :cond_44
+    invoke-static {v13}, Lcom/google/zxing/oned/Code39Reader;->patternToChar(I)C
 
-    move-result v7
+    move-result v5
 
     .line 121
-    .local v7, "decodedChar":C
-    move-object/from16 v0, v18
-
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    .local v5, "decodedChar":C
+    invoke-virtual {v14, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 122
-    move/from16 v12, v16
+    move v9, v12
 
     .line 123
-    .local v12, "lastStart":I
-    move-object/from16 v5, v22
-
-    .local v5, "arr$":[I
-    array-length v14, v5
-
-    .local v14, "len$":I
-    const/4 v10, 0x0
-
-    .local v10, "i$":I
-    :goto_59
-    if-ge v10, v14, :cond_62
-
-    aget v6, v5, v10
-
-    .line 124
-    .local v6, "counter":I
-    add-int v16, v16, v6
-
-    .line 123
-    add-int/lit8 v10, v10, 0x1
-
-    goto :goto_59
-
-    .line 127
-    .end local v6    # "counter":I
-    :cond_62
-    move-object/from16 v0, p2
-
-    move/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Lcom/google/zxing/common/BitArray;->getNextSet(I)I
-
-    move-result v16
-
-    .line 128
-    const/16 v25, 0x2a
-
-    move/from16 v0, v25
-
-    if-ne v7, v0, :cond_36
-
-    .line 129
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->length()I
-
-    move-result v25
-
-    add-int/lit8 v25, v25, -0x1
-
+    .local v9, "lastStart":I
     move-object/from16 v0, v18
 
-    move/from16 v1, v25
+    array-length v0, v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->setLength(I)V
+    move/from16 v22, v0
+
+    const/16 v21, 0x0
+
+    :goto_53
+    move/from16 v0, v21
+
+    move/from16 v1, v22
+
+    if-ge v0, v1, :cond_5f
+
+    aget v4, v18, v21
+
+    .line 124
+    .local v4, "counter":I
+    add-int/2addr v12, v4
+
+    .line 123
+    add-int/lit8 v21, v21, 0x1
+
+    goto :goto_53
+
+    .line 127
+    .end local v4    # "counter":I
+    :cond_5f
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v12}, Lcom/google/zxing/common/BitArray;->getNextSet(I)I
+
+    move-result v12
+
+    .line 128
+    const/16 v21, 0x2a
+
+    move/from16 v0, v21
+
+    if-ne v5, v0, :cond_32
+
+    .line 129
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->length()I
+
+    move-result v21
+
+    add-int/lit8 v21, v21, -0x1
+
+    move/from16 v0, v21
+
+    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
     .line 132
-    const/4 v11, 0x0
+    const/4 v8, 0x0
 
     .line 133
-    .local v11, "lastPatternSize":I
-    move-object/from16 v5, v22
+    .local v8, "lastPatternSize":I
+    move-object/from16 v0, v18
 
-    array-length v14, v5
+    array-length v0, v0
 
-    const/4 v10, 0x0
+    move/from16 v22, v0
 
-    :goto_82
-    if-ge v10, v14, :cond_8a
+    const/16 v21, 0x0
 
-    aget v6, v5, v10
+    :goto_7e
+    move/from16 v0, v21
+
+    move/from16 v1, v22
+
+    if-ge v0, v1, :cond_8a
+
+    aget v4, v18, v21
 
     .line 134
-    .restart local v6    # "counter":I
-    add-int/2addr v11, v6
+    .restart local v4    # "counter":I
+    add-int/2addr v8, v4
 
     .line 133
-    add-int/lit8 v10, v10, 0x1
+    add-int/lit8 v21, v21, 0x1
 
-    goto :goto_82
+    goto :goto_7e
 
     .line 136
-    .end local v6    # "counter":I
+    .end local v4    # "counter":I
     :cond_8a
-    sub-int v25, v16, v12
+    sub-int v21, v12, v9
 
-    sub-int v24, v25, v11
+    sub-int v20, v21, v8
 
     .line 139
-    .local v24, "whiteSpaceAfterEnd":I
-    move/from16 v0, v16
+    .local v20, "whiteSpaceAfterEnd":I
+    if-eq v12, v6, :cond_9b
 
-    if-eq v0, v8, :cond_9d
+    mul-int/lit8 v21, v20, 0x2
 
-    shr-int/lit8 v25, v24, 0x1
+    move/from16 v0, v21
 
-    move/from16 v0, v25
-
-    if-ge v0, v11, :cond_9d
+    if-ge v0, v8, :cond_9b
 
     .line 140
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v25
+    move-result-object v21
 
-    throw v25
+    throw v21
 
     .line 143
-    :cond_9d
+    :cond_9b
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/google/zxing/oned/Code39Reader;->usingCheckDigit:Z
 
-    move/from16 v25, v0
+    move/from16 v21, v0
 
-    if-eqz v25, :cond_e3
+    if-eqz v21, :cond_de
 
     .line 144
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->length()I
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->length()I
 
-    move-result v25
+    move-result v21
 
-    add-int/lit8 v15, v25, -0x1
+    add-int/lit8 v11, v21, -0x1
 
     .line 145
-    .local v15, "max":I
-    const/16 v23, 0x0
+    .local v11, "max":I
+    const/16 v19, 0x0
 
     .line 146
-    .local v23, "total":I
-    const/4 v9, 0x0
+    .local v19, "total":I
+    const/4 v7, 0x0
 
-    .local v9, "i":I
-    :goto_ae
-    if-ge v9, v15, :cond_c7
+    .local v7, "i":I
+    :goto_ac
+    if-ge v7, v11, :cond_c6
 
     .line 147
-    const-string v25, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. *$/+%"
+    const-string/jumbo v21, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. *$/+%"
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/oned/Code39Reader;->decodeRowResult:Ljava/lang/StringBuilder;
 
-    move-object/from16 v26, v0
+    move-object/from16 v22, v0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v22
 
-    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->charAt(I)C
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->charAt(I)C
 
-    move-result v26
+    move-result v22
 
-    invoke-virtual/range {v25 .. v26}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->indexOf(I)I
 
-    move-result v25
+    move-result v21
 
-    add-int v23, v23, v25
+    add-int v19, v19, v21
 
     .line 146
-    add-int/lit8 v9, v9, 0x1
+    add-int/lit8 v7, v7, 0x1
 
-    goto :goto_ae
+    goto :goto_ac
 
     .line 149
-    :cond_c7
-    move-object/from16 v0, v18
+    :cond_c6
+    invoke-virtual {v14, v11}, Ljava/lang/StringBuilder;->charAt(I)C
 
-    invoke-virtual {v0, v15}, Ljava/lang/StringBuilder;->charAt(I)C
+    move-result v21
 
-    move-result v25
+    sget-object v22, Lcom/google/zxing/oned/Code39Reader;->ALPHABET:[C
 
-    sget-object v26, Lcom/google/zxing/oned/Code39Reader;->ALPHABET:[C
+    rem-int/lit8 v23, v19, 0x2b
 
-    rem-int/lit8 v27, v23, 0x2b
+    aget-char v22, v22, v23
 
-    aget-char v26, v26, v27
+    move/from16 v0, v21
 
-    move/from16 v0, v25
+    move/from16 v1, v22
 
-    move/from16 v1, v26
-
-    if-eq v0, v1, :cond_de
+    if-eq v0, v1, :cond_db
 
     .line 150
     invoke-static {}, Lcom/google/zxing/ChecksumException;->getChecksumInstance()Lcom/google/zxing/ChecksumException;
 
-    move-result-object v25
+    move-result-object v21
 
-    throw v25
+    throw v21
 
     .line 152
-    :cond_de
-    move-object/from16 v0, v18
-
-    invoke-virtual {v0, v15}, Ljava/lang/StringBuilder;->setLength(I)V
+    :cond_db
+    invoke-virtual {v14, v11}, Ljava/lang/StringBuilder;->setLength(I)V
 
     .line 155
-    .end local v9    # "i":I
-    .end local v15    # "max":I
-    .end local v23    # "total":I
-    :cond_e3
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->length()I
+    .end local v7    # "i":I
+    .end local v11    # "max":I
+    .end local v19    # "total":I
+    :cond_de
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->length()I
 
-    move-result v25
+    move-result v21
 
-    if-nez v25, :cond_ee
+    if-nez v21, :cond_e9
 
     .line 157
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v25
+    move-result-object v21
 
-    throw v25
+    throw v21
 
     .line 161
-    :cond_ee
+    :cond_e9
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/google/zxing/oned/Code39Reader;->extendedMode:Z
 
-    move/from16 v25, v0
+    move/from16 v21, v0
 
-    if-eqz v25, :cond_15a
+    if-eqz v21, :cond_154
 
     .line 162
-    invoke-static/range {v18 .. v18}, Lcom/google/zxing/oned/Code39Reader;->decodeExtended(Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-static {v14}, Lcom/google/zxing/oned/Code39Reader;->decodeExtended(Ljava/lang/CharSequence;)Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v15
 
     .line 167
-    .local v19, "resultString":Ljava/lang/String;
-    :goto_fa
-    const/16 v25, 0x1
+    .local v15, "resultString":Ljava/lang/String;
+    :goto_f5
+    const/16 v21, 0x1
 
-    aget v25, v21, v25
+    aget v21, v17, v21
 
-    const/16 v26, 0x0
+    const/16 v22, 0x0
 
-    aget v26, v21, v26
+    aget v22, v17, v22
 
-    add-int v25, v25, v26
+    add-int v21, v21, v22
 
-    move/from16 v0, v25
+    move/from16 v0, v21
 
     int-to-float v0, v0
 
-    move/from16 v25, v0
+    move/from16 v21, v0
 
-    const/high16 v26, 0x40000000
+    const/high16 v22, 0x40000000
 
-    div-float v13, v25, v26
+    div-float v10, v21, v22
 
     .line 168
-    .local v13, "left":F
-    add-int v25, v16, v12
+    .local v10, "left":F
+    int-to-float v0, v9
 
-    move/from16 v0, v25
+    move/from16 v21, v0
 
-    int-to-float v0, v0
+    int-to-float v0, v8
 
-    move/from16 v25, v0
+    move/from16 v22, v0
 
-    const/high16 v26, 0x40000000
+    const/high16 v23, 0x40000000
 
-    div-float v20, v25, v26
+    div-float v22, v22, v23
+
+    add-float v16, v21, v22
 
     .line 169
-    .local v20, "right":F
-    new-instance v25, Lcom/google/zxing/Result;
+    .local v16, "right":F
+    new-instance v21, Lcom/google/zxing/Result;
 
-    const/16 v26, 0x0
+    const/16 v22, 0x0
 
-    const/16 v27, 0x2
+    const/16 v23, 0x2
 
-    move/from16 v0, v27
+    move/from16 v0, v23
 
     new-array v0, v0, [Lcom/google/zxing/ResultPoint;
 
-    move-object/from16 v27, v0
+    move-object/from16 v23, v0
 
-    const/16 v28, 0x0
+    const/16 v24, 0x0
 
-    new-instance v29, Lcom/google/zxing/ResultPoint;
-
-    move/from16 v0, p1
-
-    int-to-float v0, v0
-
-    move/from16 v30, v0
-
-    move-object/from16 v0, v29
-
-    move/from16 v1, v30
-
-    invoke-direct {v0, v13, v1}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
-
-    aput-object v29, v27, v28
-
-    const/16 v28, 0x1
-
-    new-instance v29, Lcom/google/zxing/ResultPoint;
+    new-instance v25, Lcom/google/zxing/ResultPoint;
 
     move/from16 v0, p1
 
     int-to-float v0, v0
 
-    move/from16 v30, v0
-
-    move-object/from16 v0, v29
-
-    move/from16 v1, v20
-
-    move/from16 v2, v30
-
-    invoke-direct {v0, v1, v2}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
-
-    aput-object v29, v27, v28
-
-    sget-object v28, Lcom/google/zxing/BarcodeFormat;->CODE_39:Lcom/google/zxing/BarcodeFormat;
+    move/from16 v26, v0
 
     move-object/from16 v0, v25
 
-    move-object/from16 v1, v19
+    move/from16 v1, v26
 
-    move-object/from16 v2, v26
+    invoke-direct {v0, v10, v1}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
-    move-object/from16 v3, v27
+    aput-object v25, v23, v24
 
-    move-object/from16 v4, v28
+    const/16 v24, 0x1
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
+    new-instance v25, Lcom/google/zxing/ResultPoint;
 
-    return-object v25
+    move/from16 v0, p1
+
+    int-to-float v0, v0
+
+    move/from16 v26, v0
+
+    move-object/from16 v0, v25
+
+    move/from16 v1, v16
+
+    move/from16 v2, v26
+
+    invoke-direct {v0, v1, v2}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
+
+    aput-object v25, v23, v24
+
+    sget-object v24, Lcom/google/zxing/BarcodeFormat;->CODE_39:Lcom/google/zxing/BarcodeFormat;
+
+    move-object/from16 v0, v21
+
+    move-object/from16 v1, v22
+
+    move-object/from16 v2, v23
+
+    move-object/from16 v3, v24
+
+    invoke-direct {v0, v15, v1, v2, v3}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
+
+    return-object v21
 
     .line 164
-    .end local v13    # "left":F
-    .end local v19    # "resultString":Ljava/lang/String;
-    .end local v20    # "right":F
-    :cond_15a
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .end local v10    # "left":F
+    .end local v15    # "resultString":Ljava/lang/String;
+    .end local v16    # "right":F
+    :cond_154
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v15
 
-    .restart local v19    # "resultString":Ljava/lang/String;
-    goto :goto_fa
+    .restart local v15    # "resultString":Ljava/lang/String;
+    goto :goto_f5
 .end method

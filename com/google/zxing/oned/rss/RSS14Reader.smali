@@ -360,25 +360,24 @@
     .local v0, "found":Z
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    move-result-object v1
+    move-result-object v2
 
-    .local v1, "i$":Ljava/util/Iterator;
     :cond_8
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
     if-eqz v3, :cond_22
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Lcom/google/zxing/oned/rss/Pair;
+    check-cast v1, Lcom/google/zxing/oned/rss/Pair;
 
     .line 98
-    .local v2, "other":Lcom/google/zxing/oned/rss/Pair;
-    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/Pair;->getValue()I
+    .local v1, "other":Lcom/google/zxing/oned/rss/Pair;
+    invoke-virtual {v1}, Lcom/google/zxing/oned/rss/Pair;->getValue()I
 
     move-result v3
 
@@ -389,13 +388,13 @@
     if-ne v3, v4, :cond_8
 
     .line 99
-    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/Pair;->incrementCount()V
+    invoke-virtual {v1}, Lcom/google/zxing/oned/rss/Pair;->incrementCount()V
 
     .line 100
     const/4 v0, 0x1
 
     .line 104
-    .end local v2    # "other":Lcom/google/zxing/oned/rss/Pair;
+    .end local v1    # "other":Lcom/google/zxing/oned/rss/Pair;
     :cond_22
     if-nez v0, :cond_2
 
@@ -847,7 +846,7 @@
 
     rem-int/lit8 v0, v2, 0x4f
 
-    .line 152
+    .line 153
     .local v0, "checkValue":I
     invoke-virtual {p0}, Lcom/google/zxing/oned/rss/Pair;->getFinderPattern()Lcom/google/zxing/oned/rss/FinderPattern;
 
@@ -1044,6 +1043,7 @@
     .local v5, "rightPoints":[Lcom/google/zxing/ResultPoint;
     new-instance v9, Lcom/google/zxing/Result;
 
+    .line 139
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v10
@@ -1289,7 +1289,7 @@
     .line 231
     :cond_88
     :goto_88
-    shr-int/lit8 v22, v14, 0x1
+    div-int/lit8 v22, v14, 0x2
 
     .line 232
     .local v22, "offset":I
@@ -1846,6 +1846,7 @@
 
     add-int/2addr v8, v9
 
+    .line 183
     invoke-virtual {v3}, Lcom/google/zxing/oned/rss/DataCharacter;->getChecksumPortion()I
 
     move-result v9
@@ -1875,6 +1876,7 @@
     :cond_54
     sget-object v7, Lcom/google/zxing/DecodeHintType;->NEED_RESULT_POINT_CALLBACK:Lcom/google/zxing/DecodeHintType;
 
+    .line 169
     invoke-interface {p4, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v7

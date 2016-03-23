@@ -21,10 +21,10 @@
     .registers 1
 
     .prologue
-    .line 64
+    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 121
+    .line 128
     return-void
 .end method
 
@@ -33,10 +33,10 @@
     .param p0, "enabled"    # Z
 
     .prologue
-    .line 355
+    .line 362
     sput-boolean p0, Landroid/support/v4/app/FragmentManagerImpl;->DEBUG:Z
 
-    .line 356
+    .line 363
     return-void
 .end method
 
@@ -55,6 +55,10 @@
 .end method
 
 .method public abstract findFragmentById(I)Landroid/support/v4/app/Fragment;
+    .param p1    # I
+        .annotation build Landroid/support/annotation/IdRes;
+        .end annotation
+    .end param
 .end method
 
 .method public abstract findFragmentByTag(Ljava/lang/String;)Landroid/support/v4/app/Fragment;
@@ -90,7 +94,7 @@
     .end annotation
 
     .prologue
-    .line 146
+    .line 153
     invoke-virtual {p0}, Landroid/support/v4/app/FragmentManager;->beginTransaction()Landroid/support/v4/app/FragmentTransaction;
 
     move-result-object v0

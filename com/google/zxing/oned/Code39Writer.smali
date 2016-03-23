@@ -22,43 +22,45 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 80
+    .line 83
     const/4 v0, 0x0
 
     .local v0, "i":I
     :goto_2
     const/16 v2, 0x9
 
-    if-ge v0, v2, :cond_14
+    if-ge v0, v2, :cond_16
 
-    .line 81
-    shl-int v2, v3, v0
+    .line 84
+    rsub-int/lit8 v2, v0, 0x8
+
+    shl-int v2, v3, v2
 
     and-int v1, p0, v2
 
-    .line 82
+    .line 85
     .local v1, "temp":I
-    if-nez v1, :cond_12
+    if-nez v1, :cond_14
 
     move v2, v3
 
-    :goto_d
+    :goto_f
     aput v2, p1, v0
 
-    .line 80
+    .line 83
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 82
-    :cond_12
+    .line 85
+    :cond_14
     const/4 v2, 0x2
 
-    goto :goto_d
+    goto :goto_f
 
-    .line 84
+    .line 87
     .end local v1    # "temp":I
-    :cond_14
+    :cond_16
     return-void
 .end method
 
@@ -95,7 +97,7 @@
     .local p5, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/EncodeHintType;*>;"
     sget-object v0, Lcom/google/zxing/BarcodeFormat;->CODE_39:Lcom/google/zxing/BarcodeFormat;
 
-    if-eq p2, v0, :cond_1d
+    if-eq p2, v0, :cond_1e
 
     .line 40
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -104,7 +106,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "Can only encode CODE_39, but got "
+    const-string/jumbo v2, "Can only encode CODE_39, but got "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -123,7 +125,7 @@
     throw v0
 
     .line 42
-    :cond_1d
+    :cond_1e
     invoke-super/range {p0 .. p5}, Lcom/google/zxing/oned/OneDimensionalCodeWriter;->encode(Ljava/lang/String;Lcom/google/zxing/BarcodeFormat;IILjava/util/Map;)Lcom/google/zxing/common/BitMatrix;
 
     move-result-object v0
@@ -132,235 +134,232 @@
 .end method
 
 .method public encode(Ljava/lang/String;)[Z
-    .registers 18
+    .registers 16
     .param p1, "contents"    # Ljava/lang/String;
 
     .prologue
-    .line 47
-    invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
+    const/16 v13, 0x27
 
-    move-result v7
+    const/4 v12, 0x1
+
+    const/4 v10, 0x0
+
+    .line 47
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v3
 
     .line 48
-    .local v7, "length":I
-    const/16 v13, 0x50
+    .local v3, "length":I
+    const/16 v9, 0x50
 
-    if-le v7, v13, :cond_21
+    if-le v3, v9, :cond_26
 
     .line 49
-    new-instance v13, Ljava/lang/IllegalArgumentException;
+    new-instance v9, Ljava/lang/IllegalArgumentException;
 
-    new-instance v14, Ljava/lang/StringBuilder;
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v15, "Requested contents should be less than 80 digits long, but got "
+    const-string/jumbo v11, "Requested contents should be less than 80 digits long, but got "
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v14
+    move-result-object v10
 
-    invoke-virtual {v14, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v14
+    move-result-object v10
 
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v10
 
-    invoke-direct {v13, v14}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v9, v10}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v13
+    throw v9
 
     .line 53
-    :cond_21
-    const/16 v13, 0x9
+    :cond_26
+    const/16 v9, 0x9
 
-    new-array v12, v13, [I
+    new-array v8, v9, [I
 
     .line 54
-    .local v12, "widths":[I
-    add-int/lit8 v2, v7, 0x19
+    .local v8, "widths":[I
+    add-int/lit8 v0, v3, 0x19
 
     .line 55
-    .local v2, "codeWidth":I
-    const/4 v3, 0x0
+    .local v0, "codeWidth":I
+    const/4 v1, 0x0
 
-    .local v3, "i":I
-    :goto_28
-    if-ge v3, v7, :cond_4b
+    .local v1, "i":I
+    :goto_2d
+    if-ge v1, v3, :cond_6a
 
     .line 56
-    const-string v13, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. *$/+%"
+    const-string/jumbo v9, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. *$/+%"
 
-    move-object/from16 v0, p1
+    invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->charAt(I)C
+    move-result v11
 
-    move-result v14
+    invoke-virtual {v9, v11}, Ljava/lang/String;->indexOf(I)I
 
-    invoke-virtual {v13, v14}, Ljava/lang/String;->indexOf(I)I
+    move-result v2
+
+    .line 57
+    .local v2, "indexInString":I
+    if-gez v2, :cond_56
+
+    .line 58
+    new-instance v9, Ljava/lang/IllegalArgumentException;
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v11, "Bad contents: "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-direct {v9, v10}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v9
+
+    .line 60
+    :cond_56
+    sget-object v9, Lcom/google/zxing/oned/Code39Reader;->CHARACTER_ENCODINGS:[I
+
+    aget v9, v9, v2
+
+    invoke-static {v9, v8}, Lcom/google/zxing/oned/Code39Writer;->toIntArray(I[I)V
+
+    .line 61
+    array-length v11, v8
+
+    move v9, v10
+
+    :goto_5f
+    if-ge v9, v11, :cond_67
+
+    aget v7, v8, v9
+
+    .line 62
+    .local v7, "width":I
+    add-int/2addr v0, v7
+
+    .line 61
+    add-int/lit8 v9, v9, 0x1
+
+    goto :goto_5f
+
+    .line 55
+    .end local v7    # "width":I
+    :cond_67
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_2d
+
+    .line 65
+    .end local v2    # "indexInString":I
+    :cond_6a
+    new-array v6, v0, [Z
+
+    .line 66
+    .local v6, "result":[Z
+    sget-object v9, Lcom/google/zxing/oned/Code39Reader;->CHARACTER_ENCODINGS:[I
+
+    aget v9, v9, v13
+
+    invoke-static {v9, v8}, Lcom/google/zxing/oned/Code39Writer;->toIntArray(I[I)V
+
+    .line 67
+    invoke-static {v6, v10, v8, v12}, Lcom/google/zxing/oned/Code39Writer;->appendPattern([ZI[IZ)I
 
     move-result v5
 
-    .line 57
-    .local v5, "indexInString":I
-    sget-object v13, Lcom/google/zxing/oned/Code39Reader;->CHARACTER_ENCODINGS:[I
+    .line 68
+    .local v5, "pos":I
+    new-array v4, v12, [I
 
-    aget v13, v13, v5
+    aput v12, v4, v10
 
-    invoke-static {v13, v12}, Lcom/google/zxing/oned/Code39Writer;->toIntArray(I[I)V
-
-    .line 58
-    move-object v1, v12
-
-    .local v1, "arr$":[I
-    array-length v6, v1
-
-    .local v6, "len$":I
-    const/4 v4, 0x0
-
-    .local v4, "i$":I
-    :goto_40
-    if-ge v4, v6, :cond_48
-
-    aget v11, v1, v4
-
-    .line 59
-    .local v11, "width":I
-    add-int/2addr v2, v11
-
-    .line 58
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_40
-
-    .line 55
-    .end local v11    # "width":I
-    :cond_48
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_28
-
-    .line 62
-    .end local v1    # "arr$":[I
-    .end local v4    # "i$":I
-    .end local v5    # "indexInString":I
-    .end local v6    # "len$":I
-    :cond_4b
-    new-array v10, v2, [Z
-
-    .line 63
-    .local v10, "result":[Z
-    sget-object v13, Lcom/google/zxing/oned/Code39Reader;->CHARACTER_ENCODINGS:[I
-
-    const/16 v14, 0x27
-
-    aget v13, v13, v14
-
-    invoke-static {v13, v12}, Lcom/google/zxing/oned/Code39Writer;->toIntArray(I[I)V
-
-    .line 64
-    const/4 v13, 0x0
-
-    const/4 v14, 0x1
-
-    invoke-static {v10, v13, v12, v14}, Lcom/google/zxing/oned/Code39Writer;->appendPattern([ZI[IZ)I
+    .line 69
+    .local v4, "narrowWhite":[I
+    invoke-static {v6, v5, v4, v10}, Lcom/google/zxing/oned/Code39Writer;->appendPattern([ZI[IZ)I
 
     move-result v9
 
-    .line 65
-    .local v9, "pos":I
-    const/4 v13, 0x1
-
-    new-array v8, v13, [I
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x1
-
-    aput v14, v8, v13
-
-    .line 66
-    .local v8, "narrowWhite":[I
-    const/4 v13, 0x0
-
-    invoke-static {v10, v9, v8, v13}, Lcom/google/zxing/oned/Code39Writer;->appendPattern([ZI[IZ)I
-
-    move-result v13
-
-    add-int/2addr v9, v13
-
-    .line 68
-    add-int/lit8 v3, v7, -0x1
-
-    :goto_6b
-    if-ltz v3, :cond_8f
-
-    .line 69
-    const-string v13, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. *$/+%"
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->charAt(I)C
-
-    move-result v14
-
-    invoke-virtual {v13, v14}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v5
-
-    .line 70
-    .restart local v5    # "indexInString":I
-    sget-object v13, Lcom/google/zxing/oned/Code39Reader;->CHARACTER_ENCODINGS:[I
-
-    aget v13, v13, v5
-
-    invoke-static {v13, v12}, Lcom/google/zxing/oned/Code39Writer;->toIntArray(I[I)V
+    add-int/2addr v5, v9
 
     .line 71
-    const/4 v13, 0x1
+    const/4 v1, 0x0
 
-    invoke-static {v10, v9, v12, v13}, Lcom/google/zxing/oned/Code39Writer;->appendPattern([ZI[IZ)I
-
-    move-result v13
-
-    add-int/2addr v9, v13
+    :goto_81
+    if-ge v1, v3, :cond_a2
 
     .line 72
-    const/4 v13, 0x0
+    const-string/jumbo v9, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. *$/+%"
 
-    invoke-static {v10, v9, v8, v13}, Lcom/google/zxing/oned/Code39Writer;->appendPattern([ZI[IZ)I
+    invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
 
-    move-result v13
+    move-result v11
 
-    add-int/2addr v9, v13
+    invoke-virtual {v9, v11}, Ljava/lang/String;->indexOf(I)I
 
-    .line 68
-    add-int/lit8 v3, v3, -0x1
+    move-result v2
 
-    goto :goto_6b
+    .line 73
+    .restart local v2    # "indexInString":I
+    sget-object v9, Lcom/google/zxing/oned/Code39Reader;->CHARACTER_ENCODINGS:[I
+
+    aget v9, v9, v2
+
+    invoke-static {v9, v8}, Lcom/google/zxing/oned/Code39Writer;->toIntArray(I[I)V
 
     .line 74
-    .end local v5    # "indexInString":I
-    :cond_8f
-    sget-object v13, Lcom/google/zxing/oned/Code39Reader;->CHARACTER_ENCODINGS:[I
+    invoke-static {v6, v5, v8, v12}, Lcom/google/zxing/oned/Code39Writer;->appendPattern([ZI[IZ)I
 
-    const/16 v14, 0x27
+    move-result v9
 
-    aget v13, v13, v14
-
-    invoke-static {v13, v12}, Lcom/google/zxing/oned/Code39Writer;->toIntArray(I[I)V
+    add-int/2addr v5, v9
 
     .line 75
-    const/4 v13, 0x1
+    invoke-static {v6, v5, v4, v10}, Lcom/google/zxing/oned/Code39Writer;->appendPattern([ZI[IZ)I
 
-    invoke-static {v10, v9, v12, v13}, Lcom/google/zxing/oned/Code39Writer;->appendPattern([ZI[IZ)I
+    move-result v9
 
-    move-result v13
+    add-int/2addr v5, v9
 
-    add-int/2addr v9, v13
+    .line 71
+    add-int/lit8 v1, v1, 0x1
 
-    .line 76
-    return-object v10
+    goto :goto_81
+
+    .line 77
+    .end local v2    # "indexInString":I
+    :cond_a2
+    sget-object v9, Lcom/google/zxing/oned/Code39Reader;->CHARACTER_ENCODINGS:[I
+
+    aget v9, v9, v13
+
+    invoke-static {v9, v8}, Lcom/google/zxing/oned/Code39Writer;->toIntArray(I[I)V
+
+    .line 78
+    invoke-static {v6, v5, v8, v12}, Lcom/google/zxing/oned/Code39Writer;->appendPattern([ZI[IZ)I
+
+    .line 79
+    return-object v6
 .end method

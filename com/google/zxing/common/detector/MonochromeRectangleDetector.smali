@@ -39,7 +39,7 @@
     .line 170
     add-int v5, p3, p4
 
-    shr-int/lit8 v0, v5, 0x1
+    div-int/lit8 v0, v5, 0x2
 
     .line 173
     .local v0, "center":I
@@ -153,6 +153,7 @@
     :cond_44
     iget-object v5, p0, Lcom/google/zxing/common/detector/MonochromeRectangleDetector;->image:Lcom/google/zxing/common/BitMatrix;
 
+    .line 182
     invoke-virtual {v5, p1, v2}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
     move-result v5
@@ -239,6 +240,7 @@
     :cond_79
     iget-object v5, p0, Lcom/google/zxing/common/detector/MonochromeRectangleDetector;->image:Lcom/google/zxing/common/BitMatrix;
 
+    .line 202
     invoke-virtual {v5, p1, v1}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
     move-result v5
@@ -584,11 +586,11 @@
 
     .line 53
     .local v18, "width":I
-    shr-int/lit8 v6, v13, 0x1
+    div-int/lit8 v6, v13, 0x2
 
     .line 54
     .local v6, "halfHeight":I
-    shr-int/lit8 v2, v18, 0x1
+    div-int/lit8 v2, v18, 0x2
 
     .line 55
     .local v2, "halfWidth":I
@@ -634,7 +636,7 @@
 
     neg-int v7, v12
 
-    shr-int/lit8 v10, v2, 0x1
+    div-int/lit8 v10, v2, 0x2
 
     move-object/from16 v1, p0
 
@@ -657,7 +659,7 @@
 
     const/4 v7, 0x0
 
-    shr-int/lit8 v10, v6, 0x1
+    div-int/lit8 v10, v6, 0x2
 
     move-object/from16 v1, p0
 
@@ -678,7 +680,7 @@
     .line 68
     const/4 v7, 0x0
 
-    shr-int/lit8 v10, v6, 0x1
+    div-int/lit8 v10, v6, 0x2
 
     move-object/from16 v1, p0
 
@@ -701,7 +703,7 @@
     .line 71
     const/4 v3, 0x0
 
-    shr-int/lit8 v10, v2, 0x1
+    div-int/lit8 v10, v2, 0x2
 
     move-object/from16 v1, p0
 
@@ -726,7 +728,7 @@
 
     neg-int v7, v12
 
-    shr-int/lit8 v10, v2, 0x2
+    div-int/lit8 v10, v2, 0x4
 
     move-object/from16 v1, p0
 

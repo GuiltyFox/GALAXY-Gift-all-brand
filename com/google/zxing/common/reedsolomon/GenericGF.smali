@@ -16,29 +16,25 @@
 
 .field public static final DATA_MATRIX_FIELD_256:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
-.field private static final INITIALIZATION_THRESHOLD:I
-
 .field public static final MAXICODE_FIELD_64:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
 .field public static final QR_CODE_FIELD_256:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
 
 # instance fields
-.field private expTable:[I
+.field private final expTable:[I
 
 .field private final generatorBase:I
 
-.field private initialized:Z
+.field private final logTable:[I
 
-.field private logTable:[I
-
-.field private one:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+.field private final one:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
 .field private final primitive:I
 
 .field private final size:I
 
-.field private zero:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+.field private final zero:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
 
 # direct methods
@@ -128,37 +124,121 @@
 .end method
 
 .method public constructor <init>(III)V
-    .registers 5
+    .registers 10
     .param p1, "primitive"    # I
     .param p2, "size"    # I
     .param p3, "b"    # I
 
     .prologue
-    .line 63
+    const/4 v5, 0x1
+
+    const/4 v4, 0x0
+
+    .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 50
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->initialized:Z
-
-    .line 64
+    .line 61
     iput p1, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->primitive:I
 
-    .line 65
+    .line 62
     iput p2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->size:I
 
-    .line 66
+    .line 63
     iput p3, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->generatorBase:I
 
+    .line 65
+    new-array v2, p2, [I
+
+    iput-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->expTable:[I
+
+    .line 66
+    new-array v2, p2, [I
+
+    iput-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->logTable:[I
+
+    .line 67
+    const/4 v1, 0x1
+
     .line 68
-    if-gtz p2, :cond_11
+    .local v1, "x":I
+    const/4 v0, 0x0
+
+    .local v0, "i":I
+    :goto_15
+    if-ge v0, p2, :cond_26
 
     .line 69
-    invoke-direct {p0}, Lcom/google/zxing/common/reedsolomon/GenericGF;->initialize()V
+    iget-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->expTable:[I
+
+    aput v1, v2, v0
+
+    .line 70
+    mul-int/lit8 v1, v1, 0x2
 
     .line 71
-    :cond_11
+    if-lt v1, p2, :cond_23
+
+    .line 72
+    xor-int/2addr v1, p1
+
+    .line 73
+    add-int/lit8 v2, p2, -0x1
+
+    and-int/2addr v1, v2
+
+    .line 68
+    :cond_23
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_15
+
+    .line 76
+    :cond_26
+    const/4 v0, 0x0
+
+    :goto_27
+    add-int/lit8 v2, p2, -0x1
+
+    if-ge v0, v2, :cond_36
+
+    .line 77
+    iget-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->logTable:[I
+
+    iget-object v3, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->expTable:[I
+
+    aget v3, v3, v0
+
+    aput v0, v2, v3
+
+    .line 76
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_27
+
+    .line 80
+    :cond_36
+    new-instance v2, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+
+    new-array v3, v5, [I
+
+    aput v4, v3, v4
+
+    invoke-direct {v2, p0, v3}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;-><init>(Lcom/google/zxing/common/reedsolomon/GenericGF;[I)V
+
+    iput-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->zero:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+
+    .line 81
+    new-instance v2, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+
+    new-array v3, v5, [I
+
+    aput v5, v3, v4
+
+    invoke-direct {v2, p0, v3}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;-><init>(Lcom/google/zxing/common/reedsolomon/GenericGF;[I)V
+
+    iput-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->one:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+
+    .line 82
     return-void
 .end method
 
@@ -168,148 +248,10 @@
     .param p1, "b"    # I
 
     .prologue
-    .line 135
+    .line 113
     xor-int v0, p0, p1
 
     return v0
-.end method
-
-.method private checkInit()V
-    .registers 2
-
-    .prologue
-    .line 95
-    iget-boolean v0, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->initialized:Z
-
-    if-nez v0, :cond_7
-
-    .line 96
-    invoke-direct {p0}, Lcom/google/zxing/common/reedsolomon/GenericGF;->initialize()V
-
-    .line 98
-    :cond_7
-    return-void
-.end method
-
-.method private initialize()V
-    .registers 7
-
-    .prologue
-    const/4 v5, 0x0
-
-    const/4 v4, 0x1
-
-    .line 74
-    iget v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->size:I
-
-    new-array v2, v2, [I
-
-    iput-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->expTable:[I
-
-    .line 75
-    iget v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->size:I
-
-    new-array v2, v2, [I
-
-    iput-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->logTable:[I
-
-    .line 76
-    const/4 v1, 0x1
-
-    .line 77
-    .local v1, "x":I
-    const/4 v0, 0x0
-
-    .local v0, "i":I
-    :goto_10
-    iget v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->size:I
-
-    if-ge v0, v2, :cond_29
-
-    .line 78
-    iget-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->expTable:[I
-
-    aput v1, v2, v0
-
-    .line 79
-    shl-int/lit8 v1, v1, 0x1
-
-    .line 80
-    iget v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->size:I
-
-    if-lt v1, v2, :cond_26
-
-    .line 81
-    iget v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->primitive:I
-
-    xor-int/2addr v1, v2
-
-    .line 82
-    iget v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->size:I
-
-    add-int/lit8 v2, v2, -0x1
-
-    and-int/2addr v1, v2
-
-    .line 77
-    :cond_26
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_10
-
-    .line 85
-    :cond_29
-    const/4 v0, 0x0
-
-    :goto_2a
-    iget v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->size:I
-
-    add-int/lit8 v2, v2, -0x1
-
-    if-ge v0, v2, :cond_3b
-
-    .line 86
-    iget-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->logTable:[I
-
-    iget-object v3, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->expTable:[I
-
-    aget v3, v3, v0
-
-    aput v0, v2, v3
-
-    .line 85
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_2a
-
-    .line 89
-    :cond_3b
-    new-instance v2, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-
-    new-array v3, v4, [I
-
-    aput v5, v3, v5
-
-    invoke-direct {v2, p0, v3}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;-><init>(Lcom/google/zxing/common/reedsolomon/GenericGF;[I)V
-
-    iput-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->zero:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-
-    .line 90
-    new-instance v2, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-
-    new-array v3, v4, [I
-
-    aput v4, v3, v5
-
-    invoke-direct {v2, p0, v3}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;-><init>(Lcom/google/zxing/common/reedsolomon/GenericGF;[I)V
-
-    iput-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->one:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-
-    .line 91
-    iput-boolean v4, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->initialized:Z
-
-    .line 92
-    return-void
 .end method
 
 
@@ -320,48 +262,45 @@
     .param p2, "coefficient"    # I
 
     .prologue
-    .line 116
-    invoke-direct {p0}, Lcom/google/zxing/common/reedsolomon/GenericGF;->checkInit()V
+    .line 96
+    if-gez p1, :cond_8
 
-    .line 118
-    if-gez p1, :cond_b
-
-    .line 119
+    .line 97
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v1}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v1
 
-    .line 121
-    :cond_b
-    if-nez p2, :cond_10
+    .line 99
+    :cond_8
+    if-nez p2, :cond_d
 
-    .line 122
+    .line 100
     iget-object v1, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->zero:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
-    .line 126
-    :goto_f
+    .line 104
+    :goto_c
     return-object v1
 
-    .line 124
-    :cond_10
+    .line 102
+    :cond_d
     add-int/lit8 v1, p1, 0x1
 
     new-array v0, v1, [I
 
-    .line 125
+    .line 103
     .local v0, "coefficients":[I
     const/4 v1, 0x0
 
     aput p2, v0, v1
 
-    .line 126
+    .line 104
     new-instance v1, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
     invoke-direct {v1, p0, v0}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;-><init>(Lcom/google/zxing/common/reedsolomon/GenericGF;[I)V
 
-    goto :goto_f
+    goto :goto_c
 .end method
 
 .method exp(I)I
@@ -369,10 +308,7 @@
     .param p1, "a"    # I
 
     .prologue
-    .line 142
-    invoke-direct {p0}, Lcom/google/zxing/common/reedsolomon/GenericGF;->checkInit()V
-
-    .line 144
+    .line 120
     iget-object v0, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->expTable:[I
 
     aget v0, v0, p1
@@ -384,7 +320,7 @@
     .registers 2
 
     .prologue
-    .line 188
+    .line 158
     iget v0, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->generatorBase:I
 
     return v0
@@ -394,10 +330,7 @@
     .registers 2
 
     .prologue
-    .line 107
-    invoke-direct {p0}, Lcom/google/zxing/common/reedsolomon/GenericGF;->checkInit()V
-
-    .line 109
+    .line 89
     iget-object v0, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->one:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
     return-object v0
@@ -407,7 +340,7 @@
     .registers 2
 
     .prologue
-    .line 184
+    .line 154
     iget v0, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->size:I
 
     return v0
@@ -417,10 +350,7 @@
     .registers 2
 
     .prologue
-    .line 101
-    invoke-direct {p0}, Lcom/google/zxing/common/reedsolomon/GenericGF;->checkInit()V
-
-    .line 103
+    .line 85
     iget-object v0, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->zero:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
     return-object v0
@@ -431,21 +361,18 @@
     .param p1, "a"    # I
 
     .prologue
-    .line 163
-    invoke-direct {p0}, Lcom/google/zxing/common/reedsolomon/GenericGF;->checkInit()V
+    .line 137
+    if-nez p1, :cond_8
 
-    .line 165
-    if-nez p1, :cond_b
-
-    .line 166
+    .line 138
     new-instance v0, Ljava/lang/ArithmeticException;
 
     invoke-direct {v0}, Ljava/lang/ArithmeticException;-><init>()V
 
     throw v0
 
-    .line 168
-    :cond_b
+    .line 140
+    :cond_8
     iget-object v0, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->expTable:[I
 
     iget v1, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->size:I
@@ -468,21 +395,18 @@
     .param p1, "a"    # I
 
     .prologue
-    .line 151
-    invoke-direct {p0}, Lcom/google/zxing/common/reedsolomon/GenericGF;->checkInit()V
+    .line 127
+    if-nez p1, :cond_8
 
-    .line 153
-    if-nez p1, :cond_b
-
-    .line 154
+    .line 128
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v0
 
-    .line 156
-    :cond_b
+    .line 130
+    :cond_8
     iget-object v0, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->logTable:[I
 
     aget v0, v0, p1
@@ -496,23 +420,20 @@
     .param p2, "b"    # I
 
     .prologue
-    .line 175
-    invoke-direct {p0}, Lcom/google/zxing/common/reedsolomon/GenericGF;->checkInit()V
+    .line 147
+    if-eqz p1, :cond_4
 
-    .line 177
-    if-eqz p1, :cond_7
+    if-nez p2, :cond_6
 
-    if-nez p2, :cond_9
-
-    .line 178
-    :cond_7
+    .line 148
+    :cond_4
     const/4 v0, 0x0
 
-    .line 180
-    :goto_8
+    .line 150
+    :goto_5
     return v0
 
-    :cond_9
+    :cond_6
     iget-object v0, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->expTable:[I
 
     iget-object v1, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->logTable:[I
@@ -533,19 +454,19 @@
 
     aget v0, v0, v1
 
-    goto :goto_8
+    goto :goto_5
 .end method
 
 .method public toString()Ljava/lang/String;
     .registers 3
 
     .prologue
-    .line 193
+    .line 163
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "GF(0x"
+    const-string/jumbo v1, "GF(0x"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

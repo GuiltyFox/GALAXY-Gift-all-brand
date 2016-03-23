@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 29
+    .line 27
     invoke-direct {p0}, Lcom/google/zxing/client/result/ResultParser;-><init>()V
 
     return-void
@@ -21,133 +21,121 @@
     .param p1, "result"    # Lcom/google/zxing/Result;
 
     .prologue
-    const/16 v8, 0x3a
+    const/16 v1, 0x3a
 
-    const/4 v7, 0x0
+    const/4 v2, 0x0
 
-    .line 33
+    const/4 v3, 0x0
+
+    .line 31
     invoke-static {p1}, Lcom/google/zxing/client/result/SMTPResultParser;->getMassagedText(Lcom/google/zxing/Result;)Ljava/lang/String;
+
+    move-result-object v8
+
+    .line 32
+    .local v8, "rawText":Ljava/lang/String;
+    const-string/jumbo v0, "smtp:"
+
+    invoke-virtual {v8, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1b
+
+    const-string/jumbo v0, "SMTP:"
+
+    invoke-virtual {v8, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1b
+
+    .line 48
+    :goto_1a
+    return-object v2
+
+    .line 35
+    :cond_1b
+    const/4 v0, 0x5
+
+    invoke-virtual {v8, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 36
+    .local v7, "emailAddress":Ljava/lang/String;
+    const/4 v4, 0x0
+
+    .line 37
+    .local v4, "subject":Ljava/lang/String;
+    const/4 v5, 0x0
+
+    .line 38
+    .local v5, "body":Ljava/lang/String;
+    invoke-virtual {v7, v1}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v6
+
+    .line 39
+    .local v6, "colon":I
+    if-ltz v6, :cond_42
+
+    .line 40
+    add-int/lit8 v0, v6, 0x1
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 34
-    .local v4, "rawText":Ljava/lang/String;
-    const-string v6, "smtp:"
-
-    invoke-virtual {v4, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_19
-
-    const-string v6, "SMTP:"
-
-    invoke-virtual {v4, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_19
-
-    .line 35
-    const/4 v6, 0x0
-
-    .line 51
-    :goto_18
-    return-object v6
-
-    .line 37
-    :cond_19
-    const/4 v6, 0x5
-
-    invoke-virtual {v4, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 38
-    .local v2, "emailAddress":Ljava/lang/String;
-    const/4 v5, 0x0
-
-    .line 39
-    .local v5, "subject":Ljava/lang/String;
-    const/4 v0, 0x0
-
-    .line 40
-    .local v0, "body":Ljava/lang/String;
-    invoke-virtual {v2, v8}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v1
-
     .line 41
-    .local v1, "colon":I
-    if-ltz v1, :cond_40
+    invoke-virtual {v7, v3, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v7
 
     .line 42
-    add-int/lit8 v6, v1, 0x1
+    invoke-virtual {v4, v1}, Ljava/lang/String;->indexOf(I)I
 
-    invoke-virtual {v2, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v5
+    move-result v6
 
     .line 43
-    invoke-virtual {v2, v7, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v2
+    if-ltz v6, :cond_42
 
     .line 44
-    invoke-virtual {v5, v8}, Ljava/lang/String;->indexOf(I)I
+    add-int/lit8 v0, v6, 0x1
 
-    move-result v1
-
-    .line 45
-    if-ltz v1, :cond_40
-
-    .line 46
-    add-int/lit8 v6, v1, 0x1
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 47
-    invoke-virtual {v5, v7, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v4, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 50
-    :cond_40
-    new-instance v6, Ljava/lang/StringBuilder;
+    .line 45
+    invoke-virtual {v4, v3, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v4
 
-    const-string v7, "mailto:"
+    .line 48
+    :cond_42
+    new-instance v0, Lcom/google/zxing/client/result/EmailAddressParsedResult;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v1, 0x1
 
-    move-result-object v6
+    new-array v1, v1, [Ljava/lang/String;
 
-    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    aput-object v7, v1, v3
 
-    move-result-object v6
+    move-object v3, v2
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct/range {v0 .. v5}, Lcom/google/zxing/client/result/EmailAddressParsedResult;-><init>([Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v3
+    move-object v2, v0
 
-    .line 51
-    .local v3, "mailtoURI":Ljava/lang/String;
-    new-instance v6, Lcom/google/zxing/client/result/EmailAddressParsedResult;
-
-    invoke-direct {v6, v2, v5, v0, v3}, Lcom/google/zxing/client/result/EmailAddressParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_18
+    goto :goto_1a
 .end method
 
 .method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .registers 3
-    .param p1, "x0"    # Lcom/google/zxing/Result;
 
     .prologue
-    .line 29
+    .line 27
     invoke-virtual {p0, p1}, Lcom/google/zxing/client/result/SMTPResultParser;->parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/EmailAddressParsedResult;
 
     move-result-object v0

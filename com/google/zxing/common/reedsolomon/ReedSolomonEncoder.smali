@@ -122,6 +122,7 @@
 
     iget-object v8, p0, Lcom/google/zxing/common/reedsolomon/ReedSolomonEncoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
+    .line 44
     invoke-virtual {v8}, Lcom/google/zxing/common/reedsolomon/GenericGF;->getGeneratorBase()I
 
     move-result v8
@@ -136,6 +137,7 @@
 
     invoke-direct {v3, v4, v5}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;-><init>(Lcom/google/zxing/common/reedsolomon/GenericGF;[I)V
 
+    .line 43
     invoke-virtual {v1, v3}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->multiply(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
     move-result-object v2
@@ -183,38 +185,38 @@
     const/4 v10, 0x0
 
     .line 53
-    if-nez p2, :cond_c
+    if-nez p2, :cond_d
 
     .line 54
     new-instance v8, Ljava/lang/IllegalArgumentException;
 
-    const-string v9, "No error correction bytes"
+    const-string/jumbo v9, "No error correction bytes"
 
     invoke-direct {v8, v9}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v8
 
     .line 56
-    :cond_c
+    :cond_d
     array-length v8, p1
 
     sub-int v1, v8, p2
 
     .line 57
     .local v1, "dataBytes":I
-    if-gtz v1, :cond_19
+    if-gtz v1, :cond_1b
 
     .line 58
     new-instance v8, Ljava/lang/IllegalArgumentException;
 
-    const-string v9, "No data bytes provided"
+    const-string/jumbo v9, "No data bytes provided"
 
     invoke-direct {v8, v9}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v8
 
     .line 60
-    :cond_19
+    :cond_1b
     invoke-direct {p0, p2}, Lcom/google/zxing/common/reedsolomon/ReedSolomonEncoder;->buildGenerator(I)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
     move-result-object v2
@@ -264,8 +266,8 @@
     const/4 v3, 0x0
 
     .local v3, "i":I
-    :goto_3b
-    if-ge v3, v6, :cond_44
+    :goto_3d
+    if-ge v3, v6, :cond_46
 
     .line 69
     add-int v8, v1, v3
@@ -275,10 +277,10 @@
     .line 68
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_3b
+    goto :goto_3d
 
     .line 71
-    :cond_44
+    :cond_46
     add-int v8, v1, v6
 
     array-length v9, v0

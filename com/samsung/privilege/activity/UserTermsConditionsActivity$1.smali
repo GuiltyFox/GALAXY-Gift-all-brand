@@ -20,20 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/samsung/privilege/activity/UserTermsConditionsActivity;
 
-.field private final synthetic val$msg:Ljava/lang/String;
+.field final synthetic val$msg:Ljava/lang/String;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/UserTermsConditionsActivity;Ljava/lang/String;)V
     .registers 3
+    .param p1, "this$0"    # Lcom/samsung/privilege/activity/UserTermsConditionsActivity;
 
     .prologue
-    .line 1
+    .line 79
     iput-object p1, p0, Lcom/samsung/privilege/activity/UserTermsConditionsActivity$1;->this$0:Lcom/samsung/privilege/activity/UserTermsConditionsActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/UserTermsConditionsActivity$1;->val$msg:Ljava/lang/String;
 
-    .line 97
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 5
 
     .prologue
-    .line 100
+    .line 82
     iget-object v1, p0, Lcom/samsung/privilege/activity/UserTermsConditionsActivity$1;->this$0:Lcom/samsung/privilege/activity/UserTermsConditionsActivity;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/UserTermsConditionsActivity$1;->val$msg:Ljava/lang/String;
@@ -56,10 +56,10 @@
 
     move-result-object v0
 
-    .line 101
+    .line 83
     .local v0, "toast":Landroid/widget/Toast;
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 102
+    .line 84
     return-void
 .end method

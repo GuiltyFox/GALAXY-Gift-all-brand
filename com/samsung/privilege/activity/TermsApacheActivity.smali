@@ -1,12 +1,10 @@
 .class public Lcom/samsung/privilege/activity/TermsApacheActivity;
-.super Landroid/support/v4/app/FragmentActivity;
+.super Landroid/support/v7/app/AppCompatActivity;
 .source "TermsApacheActivity.java"
 
 
 # instance fields
-.field private final LOGCAT:Ljava/lang/String;
-
-.field private gFont:Landroid/graphics/Typeface;
+.field private final TAG:Ljava/lang/String;
 
 .field private gHandler:Landroid/os/Handler;
 
@@ -16,130 +14,96 @@
     .registers 2
 
     .prologue
-    .line 22
-    invoke-direct {p0}, Landroid/support/v4/app/FragmentActivity;-><init>()V
+    .line 16
+    invoke-direct {p0}, Landroid/support/v7/app/AppCompatActivity;-><init>()V
 
-    .line 23
-    const-string v0, "TermsApacheActivity"
+    .line 17
+    const-class v0, Lcom/samsung/privilege/activity/TermsApacheActivity;
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/TermsApacheActivity;->LOGCAT:Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    .line 22
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/samsung/privilege/activity/TermsApacheActivity;->TAG:Ljava/lang/String;
+
     return-void
 .end method
 
 .method private initialLayout()V
-    .registers 10
+    .registers 9
 
     .prologue
-    .line 62
-    const v6, 0x7f540003
+    .line 40
+    const v5, 0x7f1001c5
 
-    invoke-virtual {p0, v6}, Lcom/samsung/privilege/activity/TermsApacheActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/TermsApacheActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v4
 
-    check-cast v4, Landroid/widget/TextView;
+    check-cast v4, Landroid/webkit/WebView;
 
-    .line 63
-    .local v4, "tvHeaderCaption":Landroid/widget/TextView;
-    const v6, 0x7f540007
-
-    invoke-virtual {p0, v6}, Lcom/samsung/privilege/activity/TermsApacheActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/webkit/WebView;
-
-    .line 66
-    .local v5, "webView1":Landroid/webkit/WebView;
-    :try_start_12
-    iget-object v6, p0, Lcom/samsung/privilege/activity/TermsApacheActivity;->gFont:Landroid/graphics/Typeface;
-
-    invoke-virtual {v4, v6}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 67
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/TermsApacheActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v6
-
-    invoke-static {v6}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v6
-
-    invoke-virtual {v4, v6}, Landroid/widget/TextView;->setTextSize(F)V
-    :try_end_22
-    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_22} :catch_4e
-
-    .line 79
-    :goto_22
-    :try_start_22
+    .line 49
+    .local v4, "webView1":Landroid/webkit/WebView;
+    :try_start_9
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/TermsApacheActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    .line 80
+    .line 50
     .local v3, "res":Landroid/content/res/Resources;
-    const v6, 0x7f060002
+    const v5, 0x7f080002
 
-    invoke-virtual {v3, v6}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
+    invoke-virtual {v3, v5}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
 
     move-result-object v2
 
-    .line 82
+    .line 52
     .local v2, "in_s":Ljava/io/InputStream;
     invoke-virtual {v2}, Ljava/io/InputStream;->available()I
 
-    move-result v6
+    move-result v5
 
-    new-array v0, v6, [B
+    new-array v0, v5, [B
 
-    .line 83
+    .line 53
     .local v0, "b":[B
     invoke-virtual {v2, v0}, Ljava/io/InputStream;->read([B)I
 
-    .line 86
-    new-instance v6, Ljava/lang/String;
+    .line 56
+    new-instance v5, Ljava/lang/String;
 
-    invoke-direct {v6, v0}, Ljava/lang/String;-><init>([B)V
+    invoke-direct {v5, v0}, Ljava/lang/String;-><init>([B)V
 
-    const-string v7, "text/html"
+    const-string/jumbo v6, "text/html"
 
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
-    invoke-virtual {v5, v6, v7, v8}, Landroid/webkit/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_41
-    .catch Ljava/lang/Exception; {:try_start_22 .. :try_end_41} :catch_42
+    invoke-virtual {v4, v5, v6, v7}, Landroid/webkit/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_29
+    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_29} :catch_2a
 
-    .line 90
+    .line 60
     .end local v0    # "b":[B
     .end local v2    # "in_s":Ljava/io/InputStream;
     .end local v3    # "res":Landroid/content/res/Resources;
-    :goto_41
+    :goto_29
     return-void
 
-    .line 87
-    :catch_42
+    .line 57
+    :catch_2a
     move-exception v1
 
-    .line 88
+    .line 58
     .local v1, "e":Ljava/lang/Exception;
-    const v6, 0x7f0902ef
+    const v5, 0x7f090069
 
-    invoke-virtual {p0, v6}, Lcom/samsung/privilege/activity/TermsApacheActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/TermsApacheActivity;->getString(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-direct {p0, v6}, Lcom/samsung/privilege/activity/TermsApacheActivity;->showToast(Ljava/lang/String;)V
+    invoke-direct {p0, v5}, Lcom/samsung/privilege/activity/TermsApacheActivity;->showToast(Ljava/lang/String;)V
 
-    goto :goto_41
-
-    .line 68
-    .end local v1    # "e":Ljava/lang/Exception;
-    :catch_4e
-    move-exception v6
-
-    goto :goto_22
+    goto :goto_29
 .end method
 
 .method private showToast(Ljava/lang/String;)V
@@ -147,7 +111,7 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 93
+    .line 63
     iget-object v0, p0, Lcom/samsung/privilege/activity/TermsApacheActivity;->gHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/samsung/privilege/activity/TermsApacheActivity$1;
@@ -156,7 +120,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 100
+    .line 70
     return-void
 .end method
 
@@ -167,146 +131,54 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 103
+    .line 73
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/TermsApacheActivity;->finish()V
 
-    .line 104
+    .line 74
     return-void
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .registers 5
+    .registers 3
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 30
-    invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
+    .line 23
+    invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 31
-    if-eqz p1, :cond_4f
-
-    .line 32
-    const-string v1, "TermsApacheActivity"
-
-    const-string v2, "public void onCreate(Bundle savedInstanceState != null) {"
-
-    invoke-static {v1, v2}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 37
-    :goto_c
+    .line 25
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/TermsApacheActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/samsung/privilege/util/LanguageSetting;->SetLanguage(Landroid/content/Context;)V
-
-    .line 39
-    const v1, 0x7f030120
-
-    invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/TermsApacheActivity;->setContentView(I)V
-
-    .line 41
-    new-instance v1, Landroid/os/Handler;
-
-    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
-
-    iput-object v1, p0, Lcom/samsung/privilege/activity/TermsApacheActivity;->gHandler:Landroid/os/Handler;
-
-    .line 42
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/TermsApacheActivity;->getAssets()Landroid/content/res/AssetManager;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/TermsApacheActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/samsung/privilege/AppSetting;->FONTS_DEFAULT(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/samsung/privilege/activity/TermsApacheActivity;->gFont:Landroid/graphics/Typeface;
-
-    .line 44
-    const v1, 0x7f540002
-
-    invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/TermsApacheActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/ImageView;
+    invoke-static {v0}, Lcom/bzbs/util/LanguageSetting;->SetLanguage(Landroid/content/Context;)V
 
-    .line 45
-    .local v0, "imgLogo":Landroid/widget/ImageView;
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/TermsApacheActivity;->getApplicationContext()Landroid/content/Context;
+    .line 27
+    const v0, 0x7f04004c
 
-    move-result-object v1
+    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/TermsApacheActivity;->setContentView(I)V
 
-    invoke-static {v1}, Lcom/samsung/privilege/UserLogin;->GetIsPremium(Landroid/content/Context;)Z
+    .line 29
+    new-instance v0, Landroid/os/Handler;
 
-    move-result v1
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    if-eqz v1, :cond_57
+    iput-object v0, p0, Lcom/samsung/privilege/activity/TermsApacheActivity;->gHandler:Landroid/os/Handler;
 
-    .line 46
-    const v1, 0x7f0202bc
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    .line 51
-    :goto_4b
+    .line 31
     invoke-direct {p0}, Lcom/samsung/privilege/activity/TermsApacheActivity;->initialLayout()V
 
-    .line 52
+    .line 32
     return-void
-
-    .line 34
-    .end local v0    # "imgLogo":Landroid/widget/ImageView;
-    :cond_4f
-    const-string v1, "TermsApacheActivity"
-
-    const-string v2, "public void onCreate(Bundle savedInstanceState == null) {"
-
-    invoke-static {v1, v2}, Lcom/samsung/privilege/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_c
-
-    .line 48
-    .restart local v0    # "imgLogo":Landroid/widget/ImageView;
-    :cond_57
-    const v1, 0x7f0202bb
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    goto :goto_4b
 .end method
 
 .method public onResume()V
-    .registers 3
+    .registers 1
 
     .prologue
-    .line 56
-    invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onResume()V
+    .line 36
+    invoke-super {p0}, Landroid/support/v7/app/AppCompatActivity;->onResume()V
 
-    .line 58
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/TermsApacheActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/TermsApacheActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/samsung/privilege/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/facebook/AppEventsLogger;->activateApp(Landroid/content/Context;Ljava/lang/String;)V
-
-    .line 59
+    .line 37
     return-void
 .end method

@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final VERSION:Ljava/lang/String; = "1.1.2"
+.field public static final VERSION:Ljava/lang/String; = "1.2.0"
 
 
 # direct methods

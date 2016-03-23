@@ -1008,17 +1008,17 @@
 
     move-result v4
 
-    if-gtz v4, :cond_9
+    if-gtz v4, :cond_a
 
     .line 364
-    const-string v4, "{}"
+    const-string/jumbo v4, "{}"
 
     .line 384
-    :goto_8
+    :goto_9
     return-object v4
 
     .line 367
-    :cond_9
+    :cond_a
     new-instance v0, Ljava/lang/StringBuilder;
 
     iget v4, p0, Landroid/support/v4/util/SparseArrayCompat;->mSize:I
@@ -1037,21 +1037,21 @@
     const/4 v1, 0x0
 
     .local v1, "i":I
-    :goto_18
+    :goto_19
     iget v4, p0, Landroid/support/v4/util/SparseArrayCompat;->mSize:I
 
-    if-ge v1, v4, :cond_41
+    if-ge v1, v4, :cond_44
 
     .line 370
-    if-lez v1, :cond_23
+    if-lez v1, :cond_25
 
     .line 371
-    const-string v4, ", "
+    const-string/jumbo v4, ", "
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 373
-    :cond_23
+    :cond_25
     invoke-virtual {p0, v1}, Landroid/support/v4/util/SparseArrayCompat;->keyAt(I)I
 
     move-result v2
@@ -1072,29 +1072,29 @@
 
     .line 377
     .local v3, "value":Ljava/lang/Object;
-    if-eq v3, p0, :cond_3b
+    if-eq v3, p0, :cond_3d
 
     .line 378
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 369
-    :goto_38
+    :goto_3a
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_18
+    goto :goto_19
 
     .line 380
-    :cond_3b
-    const-string v4, "(this Map)"
+    :cond_3d
+    const-string/jumbo v4, "(this Map)"
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_38
+    goto :goto_3a
 
     .line 383
     .end local v2    # "key":I
     .end local v3    # "value":Ljava/lang/Object;
-    :cond_41
+    :cond_44
     const/16 v4, 0x7d
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -1104,7 +1104,7 @@
 
     move-result-object v4
 
-    goto :goto_8
+    goto :goto_9
 .end method
 
 .method public valueAt(I)Ljava/lang/Object;

@@ -38,7 +38,7 @@
     .line 25
     new-instance v0, Lcom/google/zxing/datamatrix/encoder/SymbolShapeHint;
 
-    const-string v1, "FORCE_NONE"
+    const-string/jumbo v1, "FORCE_NONE"
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/datamatrix/encoder/SymbolShapeHint;-><init>(Ljava/lang/String;I)V
 
@@ -47,7 +47,7 @@
     .line 26
     new-instance v0, Lcom/google/zxing/datamatrix/encoder/SymbolShapeHint;
 
-    const-string v1, "FORCE_SQUARE"
+    const-string/jumbo v1, "FORCE_SQUARE"
 
     invoke-direct {v0, v1, v3}, Lcom/google/zxing/datamatrix/encoder/SymbolShapeHint;-><init>(Ljava/lang/String;I)V
 
@@ -56,7 +56,7 @@
     .line 27
     new-instance v0, Lcom/google/zxing/datamatrix/encoder/SymbolShapeHint;
 
-    const-string v1, "FORCE_RECTANGLE"
+    const-string/jumbo v1, "FORCE_RECTANGLE"
 
     invoke-direct {v0, v1, v4}, Lcom/google/zxing/datamatrix/encoder/SymbolShapeHint;-><init>(Ljava/lang/String;I)V
 

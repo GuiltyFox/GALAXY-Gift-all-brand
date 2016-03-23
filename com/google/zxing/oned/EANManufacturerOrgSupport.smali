@@ -82,7 +82,7 @@
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
     :try_end_6
-    .catchall {:try_start_1 .. :try_end_6} :catchall_53b
+    .catchall {:try_start_1 .. :try_end_6} :catchall_5a5
 
     move-result v0
 
@@ -101,9 +101,9 @@
     :try_start_c
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_53e
+    fill-array-data v0, :array_5a8
 
-    const-string v1, "US/CA"
+    const-string/jumbo v1, "US/CA"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -112,9 +112,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_546
+    fill-array-data v0, :array_5b0
 
-    const-string v1, "US"
+    const-string/jumbo v1, "US"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -123,9 +123,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_54e
+    fill-array-data v0, :array_5b8
 
-    const-string v1, "US/CA"
+    const-string/jumbo v1, "US/CA"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -134,9 +134,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_556
+    fill-array-data v0, :array_5c0
 
-    const-string v1, "FR"
+    const-string/jumbo v1, "FR"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -151,7 +151,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "BG"
+    const-string/jumbo v1, "BG"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -166,7 +166,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "SI"
+    const-string/jumbo v1, "SI"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -181,7 +181,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "HR"
+    const-string/jumbo v1, "HR"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -196,7 +196,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "BA"
+    const-string/jumbo v1, "BA"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -205,9 +205,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_55e
+    fill-array-data v0, :array_5c8
 
-    const-string v1, "DE"
+    const-string/jumbo v1, "DE"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -216,9 +216,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_566
+    fill-array-data v0, :array_5d0
 
-    const-string v1, "JP"
+    const-string/jumbo v1, "JP"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -227,9 +227,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_56e
+    fill-array-data v0, :array_5d8
 
-    const-string v1, "RU"
+    const-string/jumbo v1, "RU"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -244,7 +244,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "TW"
+    const-string/jumbo v1, "TW"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -259,7 +259,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "EE"
+    const-string/jumbo v1, "EE"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -274,7 +274,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "LV"
+    const-string/jumbo v1, "LV"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -289,7 +289,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "AZ"
+    const-string/jumbo v1, "AZ"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -304,7 +304,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "LT"
+    const-string/jumbo v1, "LT"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -319,7 +319,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "UZ"
+    const-string/jumbo v1, "UZ"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -334,7 +334,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "LK"
+    const-string/jumbo v1, "LK"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -349,7 +349,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "PH"
+    const-string/jumbo v1, "PH"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -364,7 +364,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "BY"
+    const-string/jumbo v1, "BY"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -379,7 +379,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "UA"
+    const-string/jumbo v1, "UA"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -394,7 +394,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "MD"
+    const-string/jumbo v1, "MD"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -409,7 +409,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "AM"
+    const-string/jumbo v1, "AM"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -424,7 +424,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "GE"
+    const-string/jumbo v1, "GE"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -439,7 +439,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "KZ"
+    const-string/jumbo v1, "KZ"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -454,7 +454,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "HK"
+    const-string/jumbo v1, "HK"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -463,9 +463,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_576
+    fill-array-data v0, :array_5e0
 
-    const-string v1, "JP"
+    const-string/jumbo v1, "JP"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -474,9 +474,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_57e
+    fill-array-data v0, :array_5e8
 
-    const-string v1, "GB"
+    const-string/jumbo v1, "GB"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -491,7 +491,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "GR"
+    const-string/jumbo v1, "GR"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -506,7 +506,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "LB"
+    const-string/jumbo v1, "LB"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -521,7 +521,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "CY"
+    const-string/jumbo v1, "CY"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -536,7 +536,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "MK"
+    const-string/jumbo v1, "MK"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -551,7 +551,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "MT"
+    const-string/jumbo v1, "MT"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -566,7 +566,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "IE"
+    const-string/jumbo v1, "IE"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -575,9 +575,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_586
+    fill-array-data v0, :array_5f0
 
-    const-string v1, "BE/LU"
+    const-string/jumbo v1, "BE/LU"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -592,7 +592,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "PT"
+    const-string/jumbo v1, "PT"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -607,7 +607,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "IS"
+    const-string/jumbo v1, "IS"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -616,9 +616,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_58e
+    fill-array-data v0, :array_5f8
 
-    const-string v1, "DK"
+    const-string/jumbo v1, "DK"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -633,7 +633,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "PL"
+    const-string/jumbo v1, "PL"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -648,7 +648,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "RO"
+    const-string/jumbo v1, "RO"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -663,7 +663,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "HU"
+    const-string/jumbo v1, "HU"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -672,9 +672,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_596
+    fill-array-data v0, :array_600
 
-    const-string v1, "ZA"
+    const-string/jumbo v1, "ZA"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -689,7 +689,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "GH"
+    const-string/jumbo v1, "GH"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -704,7 +704,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "BH"
+    const-string/jumbo v1, "BH"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -719,7 +719,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "MU"
+    const-string/jumbo v1, "MU"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -734,7 +734,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "MA"
+    const-string/jumbo v1, "MA"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -749,7 +749,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "DZ"
+    const-string/jumbo v1, "DZ"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -764,7 +764,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "KE"
+    const-string/jumbo v1, "KE"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -779,7 +779,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "CI"
+    const-string/jumbo v1, "CI"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -794,7 +794,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "TN"
+    const-string/jumbo v1, "TN"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -809,7 +809,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "SY"
+    const-string/jumbo v1, "SY"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -824,7 +824,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "EG"
+    const-string/jumbo v1, "EG"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -839,7 +839,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "LY"
+    const-string/jumbo v1, "LY"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -854,7 +854,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "JO"
+    const-string/jumbo v1, "JO"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -869,7 +869,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "IR"
+    const-string/jumbo v1, "IR"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -884,7 +884,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "KW"
+    const-string/jumbo v1, "KW"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -899,7 +899,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "SA"
+    const-string/jumbo v1, "SA"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -914,7 +914,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "AE"
+    const-string/jumbo v1, "AE"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -923,9 +923,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_59e
+    fill-array-data v0, :array_608
 
-    const-string v1, "FI"
+    const-string/jumbo v1, "FI"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -934,9 +934,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5a6
+    fill-array-data v0, :array_610
 
-    const-string v1, "CN"
+    const-string/jumbo v1, "CN"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -945,9 +945,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5ae
+    fill-array-data v0, :array_618
 
-    const-string v1, "NO"
+    const-string/jumbo v1, "NO"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -962,7 +962,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "IL"
+    const-string/jumbo v1, "IL"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -971,9 +971,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5b6
+    fill-array-data v0, :array_620
 
-    const-string v1, "SE"
+    const-string/jumbo v1, "SE"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -988,7 +988,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "GT"
+    const-string/jumbo v1, "GT"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1003,7 +1003,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "SV"
+    const-string/jumbo v1, "SV"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1018,7 +1018,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "HN"
+    const-string/jumbo v1, "HN"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1033,7 +1033,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "NI"
+    const-string/jumbo v1, "NI"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1048,7 +1048,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "CR"
+    const-string/jumbo v1, "CR"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1063,7 +1063,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "PA"
+    const-string/jumbo v1, "PA"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1078,7 +1078,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "DO"
+    const-string/jumbo v1, "DO"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1093,7 +1093,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "MX"
+    const-string/jumbo v1, "MX"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1102,9 +1102,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5be
+    fill-array-data v0, :array_628
 
-    const-string v1, "CA"
+    const-string/jumbo v1, "CA"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1119,7 +1119,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "VE"
+    const-string/jumbo v1, "VE"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1128,9 +1128,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5c6
+    fill-array-data v0, :array_630
 
-    const-string v1, "CH"
+    const-string/jumbo v1, "CH"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1145,7 +1145,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "CO"
+    const-string/jumbo v1, "CO"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1160,7 +1160,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "UY"
+    const-string/jumbo v1, "UY"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1175,7 +1175,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "PE"
+    const-string/jumbo v1, "PE"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1190,7 +1190,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "BO"
+    const-string/jumbo v1, "BO"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1205,7 +1205,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "AR"
+    const-string/jumbo v1, "AR"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1220,7 +1220,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "CL"
+    const-string/jumbo v1, "CL"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1235,7 +1235,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "PY"
+    const-string/jumbo v1, "PY"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1250,7 +1250,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "PE"
+    const-string/jumbo v1, "PE"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1265,7 +1265,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "EC"
+    const-string/jumbo v1, "EC"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1274,9 +1274,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5ce
+    fill-array-data v0, :array_638
 
-    const-string v1, "BR"
+    const-string/jumbo v1, "BR"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1285,9 +1285,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5d6
+    fill-array-data v0, :array_640
 
-    const-string v1, "IT"
+    const-string/jumbo v1, "IT"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1296,9 +1296,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5de
+    fill-array-data v0, :array_648
 
-    const-string v1, "ES"
+    const-string/jumbo v1, "ES"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1313,7 +1313,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "CU"
+    const-string/jumbo v1, "CU"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1328,7 +1328,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "SK"
+    const-string/jumbo v1, "SK"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1343,7 +1343,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "CZ"
+    const-string/jumbo v1, "CZ"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1358,7 +1358,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "YU"
+    const-string/jumbo v1, "YU"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1373,7 +1373,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "MN"
+    const-string/jumbo v1, "MN"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1388,7 +1388,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "KP"
+    const-string/jumbo v1, "KP"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1397,9 +1397,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5e6
+    fill-array-data v0, :array_650
 
-    const-string v1, "TR"
+    const-string/jumbo v1, "TR"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1408,9 +1408,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5ee
+    fill-array-data v0, :array_658
 
-    const-string v1, "NL"
+    const-string/jumbo v1, "NL"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1425,7 +1425,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "KR"
+    const-string/jumbo v1, "KR"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1440,7 +1440,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "TH"
+    const-string/jumbo v1, "TH"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1455,7 +1455,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "SG"
+    const-string/jumbo v1, "SG"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1470,7 +1470,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "IN"
+    const-string/jumbo v1, "IN"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1485,7 +1485,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "VN"
+    const-string/jumbo v1, "VN"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1500,7 +1500,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "PK"
+    const-string/jumbo v1, "PK"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1515,7 +1515,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "ID"
+    const-string/jumbo v1, "ID"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1524,9 +1524,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5f6
+    fill-array-data v0, :array_660
 
-    const-string v1, "AT"
+    const-string/jumbo v1, "AT"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1535,9 +1535,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5fe
+    fill-array-data v0, :array_668
 
-    const-string v1, "AU"
+    const-string/jumbo v1, "AU"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1546,9 +1546,9 @@
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_606
+    fill-array-data v0, :array_670
 
-    const-string v1, "AZ"
+    const-string/jumbo v1, "AZ"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1563,7 +1563,7 @@
 
     aput v2, v0, v1
 
-    const-string v1, "MY"
+    const-string/jumbo v1, "MY"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
@@ -1578,16 +1578,16 @@
 
     aput v2, v0, v1
 
-    const-string v1, "MO"
+    const-string/jumbo v1, "MO"
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
-    :try_end_539
-    .catchall {:try_start_c .. :try_end_539} :catchall_53b
+    :try_end_5a3
+    .catchall {:try_start_c .. :try_end_5a3} :catchall_5a5
 
     goto/16 :goto_9
 
     .line 60
-    :catchall_53b
+    :catchall_5a5
     move-exception v0
 
     monitor-exit p0
@@ -1595,182 +1595,182 @@
     throw v0
 
     .line 63
-    :array_53e
+    :array_5a8
     .array-data 4
         0x0
         0x13
     .end array-data
 
     .line 64
-    :array_546
+    :array_5b0
     .array-data 4
         0x1e
         0x27
     .end array-data
 
     .line 65
-    :array_54e
+    :array_5b8
     .array-data 4
         0x3c
         0x8b
     .end array-data
 
     .line 66
-    :array_556
+    :array_5c0
     .array-data 4
         0x12c
         0x17b
     .end array-data
 
     .line 71
-    :array_55e
+    :array_5c8
     .array-data 4
         0x190
         0x1b8
     .end array-data
 
     .line 72
-    :array_566
+    :array_5d0
     .array-data 4
         0x1c2
         0x1cb
     .end array-data
 
     .line 73
-    :array_56e
+    :array_5d8
     .array-data 4
         0x1cc
         0x1d5
     .end array-data
 
     .line 89
-    :array_576
+    :array_5e0
     .array-data 4
         0x1ea
         0x1f3
     .end array-data
 
     .line 90
-    :array_57e
+    :array_5e8
     .array-data 4
         0x1f4
         0x1fd
     .end array-data
 
     .line 97
-    :array_586
+    :array_5f0
     .array-data 4
         0x21c
         0x225
     .end array-data
 
     .line 100
-    :array_58e
+    :array_5f8
     .array-data 4
         0x23a
         0x243
     .end array-data
 
     .line 104
-    :array_596
+    :array_600
     .array-data 4
         0x258
         0x259
     .end array-data
 
     .line 121
-    :array_59e
+    :array_608
     .array-data 4
         0x280
         0x289
     .end array-data
 
     .line 122
-    :array_5a6
+    :array_610
     .array-data 4
         0x2b2
         0x2b7
     .end array-data
 
     .line 123
-    :array_5ae
+    :array_618
     .array-data 4
         0x2bc
         0x2c5
     .end array-data
 
     .line 125
-    :array_5b6
+    :array_620
     .array-data 4
         0x2da
         0x2e3
     .end array-data
 
     .line 134
-    :array_5be
+    :array_628
     .array-data 4
         0x2f2
         0x2f3
     .end array-data
 
     .line 136
-    :array_5c6
+    :array_630
     .array-data 4
         0x2f8
         0x301
     .end array-data
 
     .line 146
-    :array_5ce
+    :array_638
     .array-data 4
         0x315
         0x316
     .end array-data
 
     .line 147
-    :array_5d6
+    :array_640
     .array-data 4
         0x320
         0x347
     .end array-data
 
     .line 148
-    :array_5de
+    :array_648
     .array-data 4
         0x348
         0x351
     .end array-data
 
     .line 155
-    :array_5e6
+    :array_650
     .array-data 4
         0x364
         0x365
     .end array-data
 
     .line 156
-    :array_5ee
+    :array_658
     .array-data 4
         0x366
         0x36f
     .end array-data
 
     .line 164
-    :array_5f6
+    :array_660
     .array-data 4
         0x384
         0x397
     .end array-data
 
     .line 165
-    :array_5fe
+    :array_668
     .array-data 4
         0x3a2
         0x3ab
     .end array-data
 
     .line 166
-    :array_606
+    :array_670
     .array-data 4
         0x3ac
         0x3b5

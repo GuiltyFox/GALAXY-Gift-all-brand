@@ -36,14 +36,14 @@
     .param p2, "pointC"    # Lcom/google/zxing/ResultPoint;
 
     .prologue
-    .line 128
+    .line 132
     iget v0, p1, Lcom/google/zxing/ResultPoint;->x:F
 
-    .line 129
+    .line 133
     .local v0, "bX":F
     iget v1, p1, Lcom/google/zxing/ResultPoint;->y:F
 
-    .line 130
+    .line 134
     .local v1, "bY":F
     iget v2, p2, Lcom/google/zxing/ResultPoint;->x:F
 
@@ -76,7 +76,7 @@
     .param p1, "pattern2"    # Lcom/google/zxing/ResultPoint;
 
     .prologue
-    .line 119
+    .line 123
     iget v0, p0, Lcom/google/zxing/ResultPoint;->x:F
 
     iget v1, p0, Lcom/google/zxing/ResultPoint;->y:F
@@ -103,7 +103,7 @@
 
     const/4 v9, 0x0
 
-    .line 77
+    .line 79
     aget-object v7, p0, v9
 
     aget-object v8, p0, v10
@@ -112,7 +112,7 @@
 
     move-result v5
 
-    .line 78
+    .line 80
     .local v5, "zeroOneDistance":F
     aget-object v7, p0, v10
 
@@ -122,7 +122,7 @@
 
     move-result v0
 
-    .line 79
+    .line 81
     .local v0, "oneTwoDistance":F
     aget-object v7, p0, v9
 
@@ -132,7 +132,7 @@
 
     move-result v6
 
-    .line 85
+    .line 87
     .local v6, "zeroTwoDistance":F
     cmpl-float v7, v0, v5
 
@@ -142,18 +142,18 @@
 
     if-ltz v7, :cond_3c
 
-    .line 86
+    .line 88
     aget-object v2, p0, v9
 
-    .line 87
+    .line 89
     .local v2, "pointB":Lcom/google/zxing/ResultPoint;
     aget-object v1, p0, v10
 
-    .line 88
+    .line 90
     .local v1, "pointA":Lcom/google/zxing/ResultPoint;
     aget-object v3, p0, v11
 
-    .line 103
+    .line 105
     .local v3, "pointC":Lcom/google/zxing/ResultPoint;
     :goto_29
     invoke-static {v1, v2, v3}, Lcom/google/zxing/ResultPoint;->crossProductZ(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
@@ -166,31 +166,31 @@
 
     if-gez v7, :cond_35
 
-    .line 104
+    .line 106
     move-object v4, v1
 
-    .line 105
+    .line 107
     .local v4, "temp":Lcom/google/zxing/ResultPoint;
     move-object v1, v3
 
-    .line 106
+    .line 108
     move-object v3, v4
 
-    .line 109
+    .line 111
     .end local v4    # "temp":Lcom/google/zxing/ResultPoint;
     :cond_35
     aput-object v1, p0, v9
 
-    .line 110
+    .line 112
     aput-object v2, p0, v10
 
-    .line 111
+    .line 113
     aput-object v3, p0, v11
 
-    .line 112
+    .line 114
     return-void
 
-    .line 89
+    .line 91
     .end local v1    # "pointA":Lcom/google/zxing/ResultPoint;
     .end local v2    # "pointB":Lcom/google/zxing/ResultPoint;
     .end local v3    # "pointC":Lcom/google/zxing/ResultPoint;
@@ -203,32 +203,32 @@
 
     if-ltz v7, :cond_4b
 
-    .line 90
+    .line 92
     aget-object v2, p0, v10
 
-    .line 91
+    .line 93
     .restart local v2    # "pointB":Lcom/google/zxing/ResultPoint;
     aget-object v1, p0, v9
 
-    .line 92
+    .line 94
     .restart local v1    # "pointA":Lcom/google/zxing/ResultPoint;
     aget-object v3, p0, v11
 
     .restart local v3    # "pointC":Lcom/google/zxing/ResultPoint;
     goto :goto_29
 
-    .line 94
+    .line 96
     .end local v1    # "pointA":Lcom/google/zxing/ResultPoint;
     .end local v2    # "pointB":Lcom/google/zxing/ResultPoint;
     .end local v3    # "pointC":Lcom/google/zxing/ResultPoint;
     :cond_4b
     aget-object v2, p0, v11
 
-    .line 95
+    .line 97
     .restart local v2    # "pointB":Lcom/google/zxing/ResultPoint;
     aget-object v1, p0, v9
 
-    .line 96
+    .line 98
     .restart local v1    # "pointA":Lcom/google/zxing/ResultPoint;
     aget-object v3, p0, v10
 

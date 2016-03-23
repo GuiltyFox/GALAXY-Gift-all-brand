@@ -275,7 +275,7 @@
     if-gt v0, v1, :cond_c1
 
     .line 214
-    shr-int/lit8 v2, v8, 0x1
+    div-int/lit8 v2, v8, 0x2
 
     .line 216
     if-lez v15, :cond_c1
@@ -309,7 +309,7 @@
 
     add-int v18, v18, v19
 
-    shr-int/lit8 v3, v18, 0x2
+    div-int/lit8 v3, v18, 0x4
 
     .line 226
     .local v3, "averageNeighborBlackPoint":I

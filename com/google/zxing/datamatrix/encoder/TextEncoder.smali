@@ -261,10 +261,10 @@
     :cond_b4
     const/16 v1, 0x80
 
-    if-lt p1, v1, :cond_c8
+    if-lt p1, v1, :cond_c9
 
     .line 76
-    const-string v1, "\u0001\u001e"
+    const-string/jumbo v1, "\u0001\u001e"
 
     invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -288,7 +288,7 @@
 
     .line 81
     .end local v0    # "len":I
-    :cond_c8
+    :cond_c9
     invoke-static {p1}, Lcom/google/zxing/datamatrix/encoder/HighLevelEncoder;->illegalCharacter(C)V
 
     .line 82

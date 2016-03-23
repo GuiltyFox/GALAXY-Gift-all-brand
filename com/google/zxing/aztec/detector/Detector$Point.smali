@@ -27,16 +27,16 @@
     .param p2, "y"    # I
 
     .prologue
-    .line 619
+    .line 582
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 620
+    .line 583
     iput p1, p0, Lcom/google/zxing/aztec/detector/Detector$Point;->x:I
 
-    .line 621
+    .line 584
     iput p2, p0, Lcom/google/zxing/aztec/detector/Detector$Point;->y:I
 
-    .line 622
+    .line 585
     return-void
 .end method
 
@@ -46,7 +46,7 @@
     .registers 2
 
     .prologue
-    .line 625
+    .line 588
     iget v0, p0, Lcom/google/zxing/aztec/detector/Detector$Point;->x:I
 
     return v0
@@ -56,7 +56,7 @@
     .registers 2
 
     .prologue
-    .line 629
+    .line 592
     iget v0, p0, Lcom/google/zxing/aztec/detector/Detector$Point;->y:I
 
     return v0
@@ -66,7 +66,7 @@
     .registers 4
 
     .prologue
-    .line 616
+    .line 579
     new-instance v0, Lcom/google/zxing/ResultPoint;
 
     invoke-virtual {p0}, Lcom/google/zxing/aztec/detector/Detector$Point;->getX()I
@@ -82,6 +82,52 @@
     int-to-float v2, v2
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
+
+    return-object v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .registers 3
+
+    .prologue
+    .line 597
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v1, "<"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/google/zxing/aztec/detector/Detector$Point;->x:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const/16 v1, 0x20
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/google/zxing/aztec/detector/Detector$Point;->y:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const/16 v1, 0x3e
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

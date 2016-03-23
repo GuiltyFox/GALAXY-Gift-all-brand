@@ -6,7 +6,6 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/zxing/datamatrix/detector/Detector$1;,
         Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitionsComparator;,
         Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
     }
@@ -248,6 +247,7 @@
 
     move-result v9
 
+    .line 298
     invoke-direct {p0, p2, v1}, Lcom/google/zxing/datamatrix/detector/Detector;->transitionsBetween(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
 
     move-result-object v10
@@ -258,6 +258,7 @@
 
     sub-int/2addr v9, v10
 
+    .line 297
     invoke-static {v9}, Ljava/lang/Math;->abs(I)I
 
     move-result v5
@@ -272,6 +273,7 @@
 
     move-result v9
 
+    .line 300
     invoke-direct {p0, p2, v2}, Lcom/google/zxing/datamatrix/detector/Detector;->transitionsBetween(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
 
     move-result-object v10
@@ -282,6 +284,7 @@
 
     sub-int/2addr v9, v10
 
+    .line 299
     invoke-static {v9}, Ljava/lang/Math;->abs(I)I
 
     move-result v6
@@ -507,6 +510,7 @@
 
     move-result v9
 
+    .line 252
     invoke-direct {p0, p2, v1}, Lcom/google/zxing/datamatrix/detector/Detector;->transitionsBetween(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
 
     move-result-object v10
@@ -539,6 +543,7 @@
 
     move-result v9
 
+    .line 254
     invoke-direct {p0, p2, v2}, Lcom/google/zxing/datamatrix/detector/Detector;->transitionsBetween(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
 
     move-result-object v10
@@ -765,34 +770,42 @@
 
     sub-float v12, v2, v3
 
+    .line 342
     invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/ResultPoint;->getX()F
 
     move-result v13
 
+    .line 343
     invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v14
 
+    .line 344
     invoke-virtual/range {p4 .. p4}, Lcom/google/zxing/ResultPoint;->getX()F
 
     move-result v15
 
+    .line 345
     invoke-virtual/range {p4 .. p4}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v16
 
+    .line 346
     invoke-virtual/range {p3 .. p3}, Lcom/google/zxing/ResultPoint;->getX()F
 
     move-result v17
 
+    .line 347
     invoke-virtual/range {p3 .. p3}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v18
 
+    .line 348
     invoke-virtual/range {p2 .. p2}, Lcom/google/zxing/ResultPoint;->getX()F
 
     move-result v19
 
+    .line 349
     invoke-virtual/range {p2 .. p2}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v20
@@ -803,6 +816,7 @@
 
     move/from16 v4, p6
 
+    .line 331
     invoke-virtual/range {v1 .. v20}, Lcom/google/zxing/common/GridSampler;->sampleGrid(Lcom/google/zxing/common/BitMatrix;IIFFFFFFFFFFFFFFFF)Lcom/google/zxing/common/BitMatrix;
 
     move-result-object v2
@@ -924,7 +938,7 @@
 
     move/from16 v20, v0
 
-    shr-int/lit8 v6, v20, 0x1
+    div-int/lit8 v6, v20, 0x2
 
     .line 374
     .local v6, "error":I
@@ -1131,7 +1145,7 @@
 
 # virtual methods
 .method public detect()Lcom/google/zxing/common/DetectorResult;
-    .registers 39
+    .registers 38
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -1152,41 +1166,56 @@
     .local v22, "cornerPoints":[Lcom/google/zxing/ResultPoint;
     const/4 v3, 0x0
 
-    aget-object v31, v22, v3
+    aget-object v30, v22, v3
 
     .line 61
-    .local v31, "pointA":Lcom/google/zxing/ResultPoint;
+    .local v30, "pointA":Lcom/google/zxing/ResultPoint;
     const/4 v3, 0x1
+
+    aget-object v31, v22, v3
+
+    .line 62
+    .local v31, "pointB":Lcom/google/zxing/ResultPoint;
+    const/4 v3, 0x2
 
     aget-object v32, v22, v3
 
-    .line 62
-    .local v32, "pointB":Lcom/google/zxing/ResultPoint;
-    const/4 v3, 0x2
-
-    aget-object v33, v22, v3
-
     .line 63
-    .local v33, "pointC":Lcom/google/zxing/ResultPoint;
+    .local v32, "pointC":Lcom/google/zxing/ResultPoint;
     const/4 v3, 0x3
 
-    aget-object v35, v22, v3
+    aget-object v34, v22, v3
 
     .line 68
-    .local v35, "pointD":Lcom/google/zxing/ResultPoint;
-    new-instance v36, Ljava/util/ArrayList;
+    .local v34, "pointD":Lcom/google/zxing/ResultPoint;
+    new-instance v35, Ljava/util/ArrayList;
 
     const/4 v3, 0x4
 
-    move-object/from16 v0, v36
+    move-object/from16 v0, v35
 
     invoke-direct {v0, v3}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 69
-    .local v36, "transitions":Ljava/util/List;, "Ljava/util/List<Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;>;"
+    .local v35, "transitions":Ljava/util/List;, "Ljava/util/List<Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;>;"
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v31
+    move-object/from16 v1, v30
+
+    move-object/from16 v2, v31
+
+    invoke-direct {v0, v1, v2}, Lcom/google/zxing/datamatrix/detector/Detector;->transitionsBetween(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
+
+    move-result-object v3
+
+    move-object/from16 v0, v35
+
+    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 70
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v30
 
     move-object/from16 v2, v32
 
@@ -1194,52 +1223,37 @@
 
     move-result-object v3
 
-    move-object/from16 v0, v36
-
-    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 70
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v31
-
-    move-object/from16 v2, v33
-
-    invoke-direct {v0, v1, v2}, Lcom/google/zxing/datamatrix/detector/Detector;->transitionsBetween(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
-
-    move-result-object v3
-
-    move-object/from16 v0, v36
+    move-object/from16 v0, v35
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 71
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v32
+    move-object/from16 v1, v31
 
-    move-object/from16 v2, v35
+    move-object/from16 v2, v34
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/datamatrix/detector/Detector;->transitionsBetween(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
 
     move-result-object v3
 
-    move-object/from16 v0, v36
+    move-object/from16 v0, v35
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 72
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v33
+    move-object/from16 v1, v32
 
-    move-object/from16 v2, v35
+    move-object/from16 v2, v34
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/datamatrix/detector/Detector;->transitionsBetween(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
 
     move-result-object v3
 
-    move-object/from16 v0, v36
+    move-object/from16 v0, v35
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -1250,14 +1264,26 @@
 
     invoke-direct {v3, v10}, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitionsComparator;-><init>(Lcom/google/zxing/datamatrix/detector/Detector$1;)V
 
-    move-object/from16 v0, v36
+    move-object/from16 v0, v35
 
     invoke-static {v0, v3}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
     .line 77
     const/4 v3, 0x0
 
-    move-object/from16 v0, v36
+    move-object/from16 v0, v35
+
+    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v25
+
+    check-cast v25, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
+
+    .line 78
+    .local v25, "lSideOne":Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
+    const/4 v3, 0x1
+
+    move-object/from16 v0, v35
 
     invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1265,91 +1291,78 @@
 
     check-cast v26, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
 
-    .line 78
-    .local v26, "lSideOne":Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
-    const/4 v3, 0x1
-
-    move-object/from16 v0, v36
-
-    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v27
-
-    check-cast v27, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
-
     .line 82
-    .local v27, "lSideTwo":Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
-    new-instance v34, Ljava/util/HashMap;
+    .local v26, "lSideTwo":Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
+    new-instance v33, Ljava/util/HashMap;
 
-    invoke-direct/range {v34 .. v34}, Ljava/util/HashMap;-><init>()V
+    invoke-direct/range {v33 .. v33}, Ljava/util/HashMap;-><init>()V
 
     .line 83
-    .local v34, "pointCount":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/ResultPoint;Ljava/lang/Integer;>;"
-    invoke-virtual/range {v26 .. v26}, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;->getFrom()Lcom/google/zxing/ResultPoint;
+    .local v33, "pointCount":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/ResultPoint;Ljava/lang/Integer;>;"
+    invoke-virtual/range {v25 .. v25}, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;->getFrom()Lcom/google/zxing/ResultPoint;
 
     move-result-object v3
 
-    move-object/from16 v0, v34
+    move-object/from16 v0, v33
 
     invoke-static {v0, v3}, Lcom/google/zxing/datamatrix/detector/Detector;->increment(Ljava/util/Map;Lcom/google/zxing/ResultPoint;)V
 
     .line 84
-    invoke-virtual/range {v26 .. v26}, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;->getTo()Lcom/google/zxing/ResultPoint;
+    invoke-virtual/range {v25 .. v25}, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;->getTo()Lcom/google/zxing/ResultPoint;
 
     move-result-object v3
 
-    move-object/from16 v0, v34
+    move-object/from16 v0, v33
 
     invoke-static {v0, v3}, Lcom/google/zxing/datamatrix/detector/Detector;->increment(Ljava/util/Map;Lcom/google/zxing/ResultPoint;)V
 
     .line 85
-    invoke-virtual/range {v27 .. v27}, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;->getFrom()Lcom/google/zxing/ResultPoint;
+    invoke-virtual/range {v26 .. v26}, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;->getFrom()Lcom/google/zxing/ResultPoint;
 
     move-result-object v3
 
-    move-object/from16 v0, v34
+    move-object/from16 v0, v33
 
     invoke-static {v0, v3}, Lcom/google/zxing/datamatrix/detector/Detector;->increment(Ljava/util/Map;Lcom/google/zxing/ResultPoint;)V
 
     .line 86
-    invoke-virtual/range {v27 .. v27}, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;->getTo()Lcom/google/zxing/ResultPoint;
+    invoke-virtual/range {v26 .. v26}, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;->getTo()Lcom/google/zxing/ResultPoint;
 
     move-result-object v3
 
-    move-object/from16 v0, v34
+    move-object/from16 v0, v33
 
     invoke-static {v0, v3}, Lcom/google/zxing/datamatrix/detector/Detector;->increment(Ljava/util/Map;Lcom/google/zxing/ResultPoint;)V
 
     .line 88
-    const/16 v29, 0x0
+    const/16 v28, 0x0
 
     .line 89
-    .local v29, "maybeTopLeft":Lcom/google/zxing/ResultPoint;
+    .local v28, "maybeTopLeft":Lcom/google/zxing/ResultPoint;
     const/4 v4, 0x0
 
     .line 90
     .local v4, "bottomLeft":Lcom/google/zxing/ResultPoint;
-    const/16 v28, 0x0
+    const/16 v27, 0x0
 
     .line 91
-    .local v28, "maybeBottomRight":Lcom/google/zxing/ResultPoint;
-    invoke-interface/range {v34 .. v34}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    .local v27, "maybeBottomRight":Lcom/google/zxing/ResultPoint;
+    invoke-interface/range {v33 .. v33}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v3
 
     invoke-interface {v3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v25
+    move-result-object v3
 
-    .local v25, "i$":Ljava/util/Iterator;
     :goto_ab
-    invoke-interface/range {v25 .. v25}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v10
 
-    if-eqz v3, :cond_d5
+    if-eqz v10, :cond_d5
 
-    invoke-interface/range {v25 .. v25}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v24
 
@@ -1359,58 +1372,58 @@
     .local v24, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/google/zxing/ResultPoint;Ljava/lang/Integer;>;"
     invoke-interface/range {v24 .. v24}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v30
+    move-result-object v29
 
-    check-cast v30, Lcom/google/zxing/ResultPoint;
+    check-cast v29, Lcom/google/zxing/ResultPoint;
 
     .line 93
-    .local v30, "point":Lcom/google/zxing/ResultPoint;
+    .local v29, "point":Lcom/google/zxing/ResultPoint;
     invoke-interface/range {v24 .. v24}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v37
+    move-result-object v36
 
-    check-cast v37, Ljava/lang/Integer;
+    check-cast v36, Ljava/lang/Integer;
 
     .line 94
-    .local v37, "value":Ljava/lang/Integer;
-    invoke-virtual/range {v37 .. v37}, Ljava/lang/Integer;->intValue()I
+    .local v36, "value":Ljava/lang/Integer;
+    invoke-virtual/range {v36 .. v36}, Ljava/lang/Integer;->intValue()I
 
-    move-result v3
+    move-result v10
 
-    const/4 v10, 0x2
+    const/4 v11, 0x2
 
-    if-ne v3, v10, :cond_cd
+    if-ne v10, v11, :cond_cd
 
     .line 95
-    move-object/from16 v4, v30
+    move-object/from16 v4, v29
 
     goto :goto_ab
 
     .line 98
     :cond_cd
-    if-nez v29, :cond_d2
+    if-nez v28, :cond_d2
 
     .line 99
-    move-object/from16 v29, v30
+    move-object/from16 v28, v29
 
     goto :goto_ab
 
     .line 101
     :cond_d2
-    move-object/from16 v28, v30
+    move-object/from16 v27, v29
 
     goto :goto_ab
 
     .line 106
     .end local v24    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/google/zxing/ResultPoint;Ljava/lang/Integer;>;"
-    .end local v30    # "point":Lcom/google/zxing/ResultPoint;
-    .end local v37    # "value":Ljava/lang/Integer;
+    .end local v29    # "point":Lcom/google/zxing/ResultPoint;
+    .end local v36    # "value":Ljava/lang/Integer;
     :cond_d5
-    if-eqz v29, :cond_db
+    if-eqz v28, :cond_db
 
     if-eqz v4, :cond_db
 
-    if-nez v28, :cond_e0
+    if-nez v27, :cond_e0
 
     .line 107
     :cond_db
@@ -1430,7 +1443,7 @@
 
     const/4 v3, 0x0
 
-    aput-object v29, v23, v3
+    aput-object v28, v23, v3
 
     const/4 v3, 0x1
 
@@ -1438,7 +1451,7 @@
 
     const/4 v3, 0x2
 
-    aput-object v28, v23, v3
+    aput-object v27, v23, v3
 
     .line 113
     .local v23, "corners":[Lcom/google/zxing/ResultPoint;
@@ -1462,9 +1475,9 @@
 
     .line 122
     .local v6, "topLeft":Lcom/google/zxing/ResultPoint;
-    move-object/from16 v0, v34
+    move-object/from16 v0, v33
 
-    move-object/from16 v1, v31
+    move-object/from16 v1, v30
 
     invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -1473,7 +1486,7 @@
     if-nez v3, :cond_188
 
     .line 123
-    move-object/from16 v7, v31
+    move-object/from16 v7, v30
 
     .line 141
     .local v7, "topRight":Lcom/google/zxing/ResultPoint;
@@ -1545,7 +1558,7 @@
     :cond_138
     move-object/from16 v3, p0
 
-    .line 165
+    .line 166
     invoke-direct/range {v3 .. v9}, Lcom/google/zxing/datamatrix/detector/Detector;->correctTopRightRectangular(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;II)Lcom/google/zxing/ResultPoint;
 
     move-result-object v14
@@ -1659,9 +1672,9 @@
     .end local v14    # "correctedTopRight":Lcom/google/zxing/ResultPoint;
     .end local v21    # "bits":Lcom/google/zxing/common/BitMatrix;
     :cond_188
-    move-object/from16 v0, v34
+    move-object/from16 v0, v33
 
-    move-object/from16 v1, v32
+    move-object/from16 v1, v31
 
     invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -1670,7 +1683,7 @@
     if-nez v3, :cond_196
 
     .line 125
-    move-object/from16 v7, v32
+    move-object/from16 v7, v31
 
     .restart local v7    # "topRight":Lcom/google/zxing/ResultPoint;
     goto/16 :goto_106
@@ -1678,9 +1691,9 @@
     .line 126
     .end local v7    # "topRight":Lcom/google/zxing/ResultPoint;
     :cond_196
-    move-object/from16 v0, v34
+    move-object/from16 v0, v33
 
-    move-object/from16 v1, v33
+    move-object/from16 v1, v32
 
     invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -1689,7 +1702,7 @@
     if-nez v3, :cond_1a4
 
     .line 127
-    move-object/from16 v7, v33
+    move-object/from16 v7, v32
 
     .restart local v7    # "topRight":Lcom/google/zxing/ResultPoint;
     goto/16 :goto_106
@@ -1697,7 +1710,7 @@
     .line 129
     .end local v7    # "topRight":Lcom/google/zxing/ResultPoint;
     :cond_1a4
-    move-object/from16 v7, v35
+    move-object/from16 v7, v34
 
     .restart local v7    # "topRight":Lcom/google/zxing/ResultPoint;
     goto/16 :goto_106
@@ -1745,6 +1758,7 @@
 
     move-result v3
 
+    .line 198
     move-object/from16 v0, p0
 
     invoke-direct {v0, v5, v14}, Lcom/google/zxing/datamatrix/detector/Detector;->transitionsBetween(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
@@ -1755,6 +1769,7 @@
 
     move-result v10
 
+    .line 197
     invoke-static {v3, v10}, Ljava/lang/Math;->max(II)I
 
     move-result v15

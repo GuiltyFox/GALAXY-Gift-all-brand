@@ -47,22 +47,22 @@
 
     const/4 v8, -0x1
 
-    .line 102
+    .line 121
     invoke-virtual {p0}, Lcom/google/zxing/common/BitMatrix;->getWidth()I
 
     move-result v3
 
-    .line 103
+    .line 122
     .local v3, "width":I
     invoke-virtual {p0}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
 
     move-result v0
 
-    .line 105
+    .line 124
     .local v0, "height":I
     const/4 v1, 0x1
 
-    .line 106
+    .line 125
     .local v1, "nudged":Z
     const/4 v2, 0x0
 
@@ -74,12 +74,12 @@
 
     if-eqz v1, :cond_4a
 
-    .line 107
+    .line 126
     aget v6, p1, v2
 
     float-to-int v4, v6
 
-    .line 108
+    .line 127
     .local v4, "x":I
     add-int/lit8 v6, v2, 0x1
 
@@ -87,7 +87,7 @@
 
     float-to-int v5, v6
 
-    .line 109
+    .line 128
     .local v5, "y":I
     if-lt v4, v8, :cond_21
 
@@ -97,7 +97,7 @@
 
     if-le v5, v0, :cond_26
 
-    .line 110
+    .line 129
     :cond_21
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
@@ -105,60 +105,60 @@
 
     throw v6
 
-    .line 112
+    .line 131
     :cond_26
     const/4 v1, 0x0
 
-    .line 113
+    .line 132
     if-ne v4, v8, :cond_36
 
-    .line 114
+    .line 133
     aput v9, p1, v2
 
-    .line 115
+    .line 134
     const/4 v1, 0x1
 
-    .line 120
+    .line 139
     :cond_2c
     :goto_2c
     if-ne v5, v8, :cond_3f
 
-    .line 121
+    .line 140
     add-int/lit8 v6, v2, 0x1
 
     aput v9, p1, v6
 
-    .line 122
+    .line 141
     const/4 v1, 0x1
 
-    .line 106
+    .line 125
     :cond_33
     :goto_33
     add-int/lit8 v2, v2, 0x2
 
     goto :goto_c
 
-    .line 116
+    .line 135
     :cond_36
     if-ne v4, v3, :cond_2c
 
-    .line 117
+    .line 136
     add-int/lit8 v6, v3, -0x1
 
     int-to-float v6, v6
 
     aput v6, p1, v2
 
-    .line 118
+    .line 137
     const/4 v1, 0x1
 
     goto :goto_2c
 
-    .line 123
+    .line 142
     :cond_3f
     if-ne v5, v0, :cond_33
 
-    .line 124
+    .line 143
     add-int/lit8 v6, v2, 0x1
 
     add-int/lit8 v7, v0, -0x1
@@ -167,18 +167,18 @@
 
     aput v7, p1, v6
 
-    .line 125
+    .line 144
     const/4 v1, 0x1
 
     goto :goto_33
 
-    .line 129
+    .line 148
     .end local v4    # "x":I
     .end local v5    # "y":I
     :cond_4a
     const/4 v1, 0x1
 
-    .line 130
+    .line 149
     array-length v6, p1
 
     add-int/lit8 v2, v6, -0x2
@@ -188,12 +188,12 @@
 
     if-eqz v1, :cond_8b
 
-    .line 131
+    .line 150
     aget v6, p1, v2
 
     float-to-int v4, v6
 
-    .line 132
+    .line 151
     .restart local v4    # "x":I
     add-int/lit8 v6, v2, 0x1
 
@@ -201,7 +201,7 @@
 
     float-to-int v5, v6
 
-    .line 133
+    .line 152
     .restart local v5    # "y":I
     if-lt v4, v8, :cond_62
 
@@ -211,7 +211,7 @@
 
     if-le v5, v0, :cond_67
 
-    .line 134
+    .line 153
     :cond_62
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
@@ -219,60 +219,60 @@
 
     throw v6
 
-    .line 136
+    .line 155
     :cond_67
     const/4 v1, 0x0
 
-    .line 137
+    .line 156
     if-ne v4, v8, :cond_77
 
-    .line 138
+    .line 157
     aput v9, p1, v2
 
-    .line 139
+    .line 158
     const/4 v1, 0x1
 
-    .line 144
+    .line 163
     :cond_6d
     :goto_6d
     if-ne v5, v8, :cond_80
 
-    .line 145
+    .line 164
     add-int/lit8 v6, v2, 0x1
 
     aput v9, p1, v6
 
-    .line 146
+    .line 165
     const/4 v1, 0x1
 
-    .line 130
+    .line 149
     :cond_74
     :goto_74
     add-int/lit8 v2, v2, -0x2
 
     goto :goto_4e
 
-    .line 140
+    .line 159
     :cond_77
     if-ne v4, v3, :cond_6d
 
-    .line 141
+    .line 160
     add-int/lit8 v6, v3, -0x1
 
     int-to-float v6, v6
 
     aput v6, p1, v2
 
-    .line 142
+    .line 161
     const/4 v1, 0x1
 
     goto :goto_6d
 
-    .line 147
+    .line 166
     :cond_80
     if-ne v5, v0, :cond_74
 
-    .line 148
+    .line 167
     add-int/lit8 v6, v2, 0x1
 
     add-int/lit8 v7, v0, -0x1
@@ -281,12 +281,12 @@
 
     aput v7, p1, v6
 
-    .line 149
+    .line 168
     const/4 v1, 0x1
 
     goto :goto_74
 
-    .line 152
+    .line 171
     .end local v4    # "x":I
     .end local v5    # "y":I
     :cond_8b

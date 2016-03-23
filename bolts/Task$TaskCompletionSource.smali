@@ -23,13 +23,13 @@
     .registers 2
 
     .prologue
-    .line 524
+    .line 850
     .local p0, "this":Lbolts/Task$TaskCompletionSource;, "Lbolts/Task<TTResult;>.TaskCompletionSource;"
     iput-object p1, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 525
+    .line 851
     return-void
 .end method
 
@@ -39,7 +39,7 @@
     .param p2, "x1"    # Lbolts/Task$1;
 
     .prologue
-    .line 523
+    .line 849
     .local p0, "this":Lbolts/Task$TaskCompletionSource;, "Lbolts/Task<TTResult;>.TaskCompletionSource;"
     invoke-direct {p0, p1}, Lbolts/Task$TaskCompletionSource;-><init>(Lbolts/Task;)V
 
@@ -59,7 +59,7 @@
     .end annotation
 
     .prologue
-    .line 531
+    .line 857
     .local p0, "this":Lbolts/Task$TaskCompletionSource;, "Lbolts/Task<TTResult;>.TaskCompletionSource;"
     iget-object v0, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
@@ -70,25 +70,25 @@
     .registers 3
 
     .prologue
-    .line 586
+    .line 912
     .local p0, "this":Lbolts/Task$TaskCompletionSource;, "Lbolts/Task<TTResult;>.TaskCompletionSource;"
     invoke-virtual {p0}, Lbolts/Task$TaskCompletionSource;->trySetCancelled()Z
 
     move-result v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_f
 
-    .line 587
+    .line 913
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "Cannot cancel a completed task."
+    const-string/jumbo v1, "Cannot cancel a completed task."
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 589
-    :cond_e
+    .line 915
+    :cond_f
     return-void
 .end method
 
@@ -97,25 +97,25 @@
     .param p1, "error"    # Ljava/lang/Exception;
 
     .prologue
-    .line 604
+    .line 930
     .local p0, "this":Lbolts/Task$TaskCompletionSource;, "Lbolts/Task<TTResult;>.TaskCompletionSource;"
     invoke-virtual {p0, p1}, Lbolts/Task$TaskCompletionSource;->trySetError(Ljava/lang/Exception;)Z
 
     move-result v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_f
 
-    .line 605
+    .line 931
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "Cannot set the error on a completed task."
+    const-string/jumbo v1, "Cannot set the error on a completed task."
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 607
-    :cond_e
+    .line 933
+    :cond_f
     return-void
 .end method
 
@@ -128,26 +128,26 @@
     .end annotation
 
     .prologue
-    .line 595
+    .line 921
     .local p0, "this":Lbolts/Task$TaskCompletionSource;, "Lbolts/Task<TTResult;>.TaskCompletionSource;"
     .local p1, "result":Ljava/lang/Object;, "TTResult;"
     invoke-virtual {p0, p1}, Lbolts/Task$TaskCompletionSource;->trySetResult(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_f
 
-    .line 596
+    .line 922
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "Cannot set the result of a completed task."
+    const-string/jumbo v1, "Cannot set the result of a completed task."
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 598
-    :cond_e
+    .line 924
+    :cond_f
     return-void
 .end method
 
@@ -158,7 +158,7 @@
     .local p0, "this":Lbolts/Task$TaskCompletionSource;, "Lbolts/Task<TTResult;>.TaskCompletionSource;"
     const/4 v0, 0x1
 
-    .line 538
+    .line 864
     iget-object v1, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
     # getter for: Lbolts/Task;->lock:Ljava/lang/Object;
@@ -168,7 +168,7 @@
 
     monitor-enter v1
 
-    .line 539
+    .line 865
     :try_start_8
     iget-object v2, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
@@ -179,16 +179,16 @@
 
     if-eqz v2, :cond_13
 
-    .line 540
+    .line 866
     const/4 v0, 0x0
 
     monitor-exit v1
 
-    .line 546
+    .line 872
     :goto_12
     return v0
 
-    .line 542
+    .line 868
     :cond_13
     iget-object v2, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
@@ -197,7 +197,7 @@
     # setter for: Lbolts/Task;->complete:Z
     invoke-static {v2, v3}, Lbolts/Task;->access$402(Lbolts/Task;Z)Z
 
-    .line 543
+    .line 869
     iget-object v2, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
     const/4 v3, 0x1
@@ -205,7 +205,7 @@
     # setter for: Lbolts/Task;->cancelled:Z
     invoke-static {v2, v3}, Lbolts/Task;->access$502(Lbolts/Task;Z)Z
 
-    .line 544
+    .line 870
     iget-object v2, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
     # getter for: Lbolts/Task;->lock:Ljava/lang/Object;
@@ -215,18 +215,18 @@
 
     invoke-virtual {v2}, Ljava/lang/Object;->notifyAll()V
 
-    .line 545
+    .line 871
     iget-object v2, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
     # invokes: Lbolts/Task;->runContinuations()V
     invoke-static {v2}, Lbolts/Task;->access$600(Lbolts/Task;)V
 
-    .line 546
+    .line 872
     monitor-exit v1
 
     goto :goto_12
 
-    .line 547
+    .line 873
     :catchall_2f
     move-exception v0
 
@@ -245,7 +245,7 @@
     .local p0, "this":Lbolts/Task$TaskCompletionSource;, "Lbolts/Task<TTResult;>.TaskCompletionSource;"
     const/4 v0, 0x1
 
-    .line 570
+    .line 896
     iget-object v1, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
     # getter for: Lbolts/Task;->lock:Ljava/lang/Object;
@@ -255,7 +255,7 @@
 
     monitor-enter v1
 
-    .line 571
+    .line 897
     :try_start_8
     iget-object v2, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
@@ -266,16 +266,16 @@
 
     if-eqz v2, :cond_13
 
-    .line 572
+    .line 898
     const/4 v0, 0x0
 
     monitor-exit v1
 
-    .line 578
+    .line 904
     :goto_12
     return v0
 
-    .line 574
+    .line 900
     :cond_13
     iget-object v2, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
@@ -284,13 +284,13 @@
     # setter for: Lbolts/Task;->complete:Z
     invoke-static {v2, v3}, Lbolts/Task;->access$402(Lbolts/Task;Z)Z
 
-    .line 575
+    .line 901
     iget-object v2, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
     # setter for: Lbolts/Task;->error:Ljava/lang/Exception;
     invoke-static {v2, p1}, Lbolts/Task;->access$802(Lbolts/Task;Ljava/lang/Exception;)Ljava/lang/Exception;
 
-    .line 576
+    .line 902
     iget-object v2, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
     # getter for: Lbolts/Task;->lock:Ljava/lang/Object;
@@ -300,18 +300,18 @@
 
     invoke-virtual {v2}, Ljava/lang/Object;->notifyAll()V
 
-    .line 577
+    .line 903
     iget-object v2, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
     # invokes: Lbolts/Task;->runContinuations()V
     invoke-static {v2}, Lbolts/Task;->access$600(Lbolts/Task;)V
 
-    .line 578
+    .line 904
     monitor-exit v1
 
     goto :goto_12
 
-    .line 579
+    .line 905
     :catchall_2e
     move-exception v0
 
@@ -335,7 +335,7 @@
     .local p1, "result":Ljava/lang/Object;, "TTResult;"
     const/4 v0, 0x1
 
-    .line 554
+    .line 880
     iget-object v1, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
     # getter for: Lbolts/Task;->lock:Ljava/lang/Object;
@@ -345,7 +345,7 @@
 
     monitor-enter v1
 
-    .line 555
+    .line 881
     :try_start_8
     iget-object v2, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
@@ -356,16 +356,16 @@
 
     if-eqz v2, :cond_13
 
-    .line 556
+    .line 882
     const/4 v0, 0x0
 
     monitor-exit v1
 
-    .line 562
+    .line 888
     :goto_12
     return v0
 
-    .line 558
+    .line 884
     :cond_13
     iget-object v2, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
@@ -374,13 +374,13 @@
     # setter for: Lbolts/Task;->complete:Z
     invoke-static {v2, v3}, Lbolts/Task;->access$402(Lbolts/Task;Z)Z
 
-    .line 559
+    .line 885
     iget-object v2, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
     # setter for: Lbolts/Task;->result:Ljava/lang/Object;
     invoke-static {v2, p1}, Lbolts/Task;->access$702(Lbolts/Task;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 560
+    .line 886
     iget-object v2, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
     # getter for: Lbolts/Task;->lock:Ljava/lang/Object;
@@ -390,18 +390,18 @@
 
     invoke-virtual {v2}, Ljava/lang/Object;->notifyAll()V
 
-    .line 561
+    .line 887
     iget-object v2, p0, Lbolts/Task$TaskCompletionSource;->this$0:Lbolts/Task;
 
     # invokes: Lbolts/Task;->runContinuations()V
     invoke-static {v2}, Lbolts/Task;->access$600(Lbolts/Task;)V
 
-    .line 562
+    .line 888
     monitor-exit v1
 
     goto :goto_12
 
-    .line 563
+    .line 889
     :catchall_2e
     move-exception v0
 

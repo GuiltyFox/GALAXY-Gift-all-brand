@@ -15,7 +15,7 @@
 
 
 # static fields
-.field public static final preferences:I = 0x7f050002
+.field public static final zxing_preferences:I = 0x7f070005
 
 
 # direct methods
@@ -23,7 +23,7 @@
     .registers 1
 
     .prologue
-    .line 234
+    .line 99
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

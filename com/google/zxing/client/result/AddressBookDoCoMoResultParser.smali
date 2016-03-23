@@ -85,7 +85,7 @@
 
     .line 41
     .local v20, "rawText":Ljava/lang/String;
-    const-string v1, "MECARD:"
+    const-string/jumbo v1, "MECARD:"
 
     move-object/from16 v0, v20
 
@@ -93,18 +93,18 @@
 
     move-result v1
 
-    if-nez v1, :cond_10
+    if-nez v1, :cond_11
 
     .line 42
     const/4 v1, 0x0
 
     .line 65
-    :goto_f
+    :goto_10
     return-object v1
 
     .line 44
-    :cond_10
-    const-string v1, "N:"
+    :cond_11
+    const-string/jumbo v1, "N:"
 
     const/4 v2, 0x1
 
@@ -116,15 +116,15 @@
 
     .line 45
     .local v19, "rawName":[Ljava/lang/String;
-    if-nez v19, :cond_1d
+    if-nez v19, :cond_1f
 
     .line 46
     const/4 v1, 0x0
 
-    goto :goto_f
+    goto :goto_10
 
     .line 48
-    :cond_1d
+    :cond_1f
     const/4 v1, 0x0
 
     aget-object v1, v19, v1
@@ -135,7 +135,7 @@
 
     .line 49
     .local v18, "name":Ljava/lang/String;
-    const-string v1, "SOUND:"
+    const-string/jumbo v1, "SOUND:"
 
     const/4 v2, 0x1
 
@@ -147,7 +147,7 @@
 
     .line 50
     .local v4, "pronunciation":Ljava/lang/String;
-    const-string v1, "TEL:"
+    const-string/jumbo v1, "TEL:"
 
     const/4 v2, 0x1
 
@@ -159,7 +159,7 @@
 
     .line 51
     .local v5, "phoneNumbers":[Ljava/lang/String;
-    const-string v1, "EMAIL:"
+    const-string/jumbo v1, "EMAIL:"
 
     const/4 v2, 0x1
 
@@ -171,7 +171,7 @@
 
     .line 52
     .local v7, "emails":[Ljava/lang/String;
-    const-string v1, "NOTE:"
+    const-string/jumbo v1, "NOTE:"
 
     const/4 v2, 0x0
 
@@ -183,7 +183,7 @@
 
     .line 53
     .local v10, "note":Ljava/lang/String;
-    const-string v1, "ADR:"
+    const-string/jumbo v1, "ADR:"
 
     const/4 v2, 0x1
 
@@ -195,7 +195,7 @@
 
     .line 54
     .local v11, "addresses":[Ljava/lang/String;
-    const-string v1, "BDAY:"
+    const-string/jumbo v1, "BDAY:"
 
     const/4 v2, 0x1
 
@@ -207,22 +207,20 @@
 
     .line 55
     .local v14, "birthday":Ljava/lang/String;
-    if-eqz v14, :cond_65
-
     const/16 v1, 0x8
 
     invoke-static {v14, v1}, Lcom/google/zxing/client/result/AddressBookDoCoMoResultParser;->isStringOfDigits(Ljava/lang/CharSequence;I)Z
 
     move-result v1
 
-    if-nez v1, :cond_65
+    if-nez v1, :cond_6b
 
     .line 57
     const/4 v14, 0x0
 
     .line 59
-    :cond_65
-    const-string v1, "URL:"
+    :cond_6b
+    const-string/jumbo v1, "URL:"
 
     const/4 v2, 0x1
 
@@ -234,7 +232,7 @@
 
     .line 63
     .local v16, "urls":[Ljava/lang/String;
-    const-string v1, "ORG:"
+    const-string/jumbo v1, "ORG:"
 
     const/4 v2, 0x1
 
@@ -268,12 +266,11 @@
 
     invoke-direct/range {v1 .. v17}, Lcom/google/zxing/client/result/AddressBookParsedResult;-><init>([Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
-    goto :goto_f
+    goto :goto_10
 .end method
 
 .method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .registers 3
-    .param p1, "x0"    # Lcom/google/zxing/Result;
 
     .prologue
     .line 36

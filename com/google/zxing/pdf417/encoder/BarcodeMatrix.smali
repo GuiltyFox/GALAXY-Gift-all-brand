@@ -24,9 +24,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 36
-    add-int/lit8 v2, p1, 0x2
-
-    new-array v2, v2, [Lcom/google/zxing/pdf417/encoder/BarcodeRow;
+    new-array v2, p1, [Lcom/google/zxing/pdf417/encoder/BarcodeRow;
 
     iput-object v2, p0, Lcom/google/zxing/pdf417/encoder/BarcodeMatrix;->matrix:[Lcom/google/zxing/pdf417/encoder/BarcodeRow;
 
@@ -39,8 +37,8 @@
     array-length v1, v2
 
     .local v1, "matrixLength":I
-    :goto_d
-    if-ge v0, v1, :cond_21
+    :goto_b
+    if-ge v0, v1, :cond_1f
 
     .line 39
     iget-object v2, p0, Lcom/google/zxing/pdf417/encoder/BarcodeMatrix;->matrix:[Lcom/google/zxing/pdf417/encoder/BarcodeRow;
@@ -60,21 +58,19 @@
     .line 38
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_d
+    goto :goto_b
 
     .line 41
-    :cond_21
+    :cond_1f
     mul-int/lit8 v2, p2, 0x11
 
     iput v2, p0, Lcom/google/zxing/pdf417/encoder/BarcodeMatrix;->width:I
 
     .line 42
-    add-int/lit8 v2, p1, 0x2
-
-    iput v2, p0, Lcom/google/zxing/pdf417/encoder/BarcodeMatrix;->height:I
+    iput p1, p0, Lcom/google/zxing/pdf417/encoder/BarcodeMatrix;->height:I
 
     .line 43
-    const/4 v2, 0x0
+    const/4 v2, -0x1
 
     iput v2, p0, Lcom/google/zxing/pdf417/encoder/BarcodeMatrix;->currentRow:I
 
@@ -88,7 +84,7 @@
     .registers 3
 
     .prologue
-    .line 59
+    .line 61
     iget-object v0, p0, Lcom/google/zxing/pdf417/encoder/BarcodeMatrix;->matrix:[Lcom/google/zxing/pdf417/encoder/BarcodeRow;
 
     iget v1, p0, Lcom/google/zxing/pdf417/encoder/BarcodeMatrix;->currentRow:I
@@ -104,21 +100,8 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 63
+    .line 65
     invoke-virtual {p0, v0, v0}, Lcom/google/zxing/pdf417/encoder/BarcodeMatrix;->getScaledMatrix(II)[[B
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getScaledMatrix(I)[[B
-    .registers 3
-    .param p1, "scale"    # I
-
-    .prologue
-    .line 67
-    invoke-virtual {p0, p1, p1}, Lcom/google/zxing/pdf417/encoder/BarcodeMatrix;->getScaledMatrix(II)[[B
 
     move-result-object v0
 
@@ -131,7 +114,7 @@
     .param p2, "yScale"    # I
 
     .prologue
-    .line 71
+    .line 75
     iget v3, p0, Lcom/google/zxing/pdf417/encoder/BarcodeMatrix;->height:I
 
     mul-int/2addr v3, p2
@@ -152,13 +135,13 @@
 
     check-cast v1, [[B
 
-    .line 72
+    .line 76
     .local v1, "matrixOut":[[B
     iget v3, p0, Lcom/google/zxing/pdf417/encoder/BarcodeMatrix;->height:I
 
     mul-int v2, v3, p2
 
-    .line 73
+    .line 77
     .local v2, "yMax":I
     const/4 v0, 0x0
 
@@ -166,7 +149,7 @@
     :goto_17
     if-ge v0, v2, :cond_2c
 
-    .line 74
+    .line 78
     sub-int v3, v2, v0
 
     add-int/lit8 v3, v3, -0x1
@@ -183,12 +166,12 @@
 
     aput-object v4, v1, v3
 
-    .line 73
+    .line 77
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_17
 
-    .line 76
+    .line 80
     :cond_2c
     return-object v1
 .end method
@@ -211,44 +194,17 @@
     return-void
 .end method
 
-.method setMatrix(IIZ)V
-    .registers 5
-    .param p1, "x"    # I
-    .param p2, "y"    # I
-    .param p3, "black"    # Z
-
-    .prologue
-    .line 51
-    if-eqz p3, :cond_8
-
-    const/4 v0, 0x1
-
-    :goto_3
-    int-to-byte v0, v0
-
-    invoke-virtual {p0, p1, p2, v0}, Lcom/google/zxing/pdf417/encoder/BarcodeMatrix;->set(IIB)V
-
-    .line 52
-    return-void
-
-    .line 51
-    :cond_8
-    const/4 v0, 0x0
-
-    goto :goto_3
-.end method
-
 .method startRow()V
     .registers 2
 
     .prologue
-    .line 55
+    .line 57
     iget v0, p0, Lcom/google/zxing/pdf417/encoder/BarcodeMatrix;->currentRow:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/zxing/pdf417/encoder/BarcodeMatrix;->currentRow:I
 
-    .line 56
+    .line 58
     return-void
 .end method

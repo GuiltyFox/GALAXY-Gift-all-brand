@@ -34,12 +34,12 @@
 # direct methods
 .method constructor <init>(Lcom/bitmapfun/util/DiskLruCache;)V
     .registers 2
+    .param p1, "this$0"    # Lcom/bitmapfun/util/DiskLruCache;
 
     .prologue
-    .line 1
+    .line 272
     iput-object p1, p0, Lcom/bitmapfun/util/DiskLruCache$1;->this$0:Lcom/bitmapfun/util/DiskLruCache;
 
-    .line 272
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -56,7 +56,7 @@
     .end annotation
 
     .prologue
-    .line 1
+    .line 272
     invoke-virtual {p0}, Lcom/bitmapfun/util/DiskLruCache$1;->call()Ljava/lang/Void;
 
     move-result-object v0
@@ -85,7 +85,7 @@
     iget-object v0, p0, Lcom/bitmapfun/util/DiskLruCache$1;->this$0:Lcom/bitmapfun/util/DiskLruCache;
 
     # getter for: Lcom/bitmapfun/util/DiskLruCache;->journalWriter:Ljava/io/Writer;
-    invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache;->access$0(Lcom/bitmapfun/util/DiskLruCache;)Ljava/io/Writer;
+    invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache;->access$000(Lcom/bitmapfun/util/DiskLruCache;)Ljava/io/Writer;
 
     move-result-object v0
 
@@ -103,13 +103,13 @@
     iget-object v0, p0, Lcom/bitmapfun/util/DiskLruCache$1;->this$0:Lcom/bitmapfun/util/DiskLruCache;
 
     # invokes: Lcom/bitmapfun/util/DiskLruCache;->trimToSize()V
-    invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache;->access$1(Lcom/bitmapfun/util/DiskLruCache;)V
+    invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache;->access$100(Lcom/bitmapfun/util/DiskLruCache;)V
 
     .line 279
     iget-object v0, p0, Lcom/bitmapfun/util/DiskLruCache$1;->this$0:Lcom/bitmapfun/util/DiskLruCache;
 
     # invokes: Lcom/bitmapfun/util/DiskLruCache;->journalRebuildRequired()Z
-    invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache;->access$2(Lcom/bitmapfun/util/DiskLruCache;)Z
+    invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache;->access$200(Lcom/bitmapfun/util/DiskLruCache;)Z
 
     move-result v0
 
@@ -119,16 +119,17 @@
     iget-object v0, p0, Lcom/bitmapfun/util/DiskLruCache$1;->this$0:Lcom/bitmapfun/util/DiskLruCache;
 
     # invokes: Lcom/bitmapfun/util/DiskLruCache;->rebuildJournal()V
-    invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache;->access$3(Lcom/bitmapfun/util/DiskLruCache;)V
+    invoke-static {v0}, Lcom/bitmapfun/util/DiskLruCache;->access$300(Lcom/bitmapfun/util/DiskLruCache;)V
 
     .line 281
     iget-object v0, p0, Lcom/bitmapfun/util/DiskLruCache$1;->this$0:Lcom/bitmapfun/util/DiskLruCache;
 
     const/4 v2, 0x0
 
-    invoke-static {v0, v2}, Lcom/bitmapfun/util/DiskLruCache;->access$4(Lcom/bitmapfun/util/DiskLruCache;I)V
+    # setter for: Lcom/bitmapfun/util/DiskLruCache;->redundantOpCount:I
+    invoke-static {v0, v2}, Lcom/bitmapfun/util/DiskLruCache;->access$402(Lcom/bitmapfun/util/DiskLruCache;I)I
 
-    .line 274
+    .line 283
     :cond_26
     monitor-exit v1
 

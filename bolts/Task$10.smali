@@ -1,41 +1,60 @@
-.class final Lbolts/Task$10;
+.class Lbolts/Task$10;
 .super Ljava/lang/Object;
 .source "Task.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lbolts/Continuation;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lbolts/Task;->completeAfterTask(Lbolts/Task$TaskCompletionSource;Lbolts/Continuation;Lbolts/Task;Ljava/util/concurrent/Executor;)V
+    value = Lbolts/Task;->continueWithTask(Lbolts/Continuation;Ljava/util/concurrent/Executor;Lbolts/CancellationToken;)Lbolts/Task;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lbolts/Continuation",
+        "<TTResult;",
+        "Ljava/lang/Void;",
+        ">;"
+    }
 .end annotation
 
 
 # instance fields
+.field final synthetic this$0:Lbolts/Task;
+
 .field final synthetic val$continuation:Lbolts/Continuation;
 
-.field final synthetic val$task:Lbolts/Task;
+.field final synthetic val$ct:Lbolts/CancellationToken;
+
+.field final synthetic val$executor:Ljava/util/concurrent/Executor;
 
 .field final synthetic val$tcs:Lbolts/Task$TaskCompletionSource;
 
 
 # direct methods
-.method constructor <init>(Lbolts/Continuation;Lbolts/Task;Lbolts/Task$TaskCompletionSource;)V
-    .registers 4
+.method constructor <init>(Lbolts/Task;Lbolts/Task$TaskCompletionSource;Lbolts/Continuation;Ljava/util/concurrent/Executor;Lbolts/CancellationToken;)V
+    .registers 6
 
     .prologue
-    .line 473
-    iput-object p1, p0, Lbolts/Task$10;->val$continuation:Lbolts/Continuation;
+    .line 589
+    .local p0, "this":Lbolts/Task$10;, "Lbolts/Task.10;"
+    iput-object p1, p0, Lbolts/Task$10;->this$0:Lbolts/Task;
 
-    iput-object p2, p0, Lbolts/Task$10;->val$task:Lbolts/Task;
+    iput-object p2, p0, Lbolts/Task$10;->val$tcs:Lbolts/Task$TaskCompletionSource;
 
-    iput-object p3, p0, Lbolts/Task$10;->val$tcs:Lbolts/Task$TaskCompletionSource;
+    iput-object p3, p0, Lbolts/Task$10;->val$continuation:Lbolts/Continuation;
+
+    iput-object p4, p0, Lbolts/Task$10;->val$executor:Ljava/util/concurrent/Executor;
+
+    iput-object p5, p0, Lbolts/Task$10;->val$ct:Lbolts/CancellationToken;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,61 +63,53 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 5
+.method public bridge synthetic then(Lbolts/Task;)Ljava/lang/Object;
+    .registers 3
+    .param p1, "x0"    # Lbolts/Task;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .prologue
-    .line 477
-    :try_start_0
-    iget-object v2, p0, Lbolts/Task$10;->val$continuation:Lbolts/Continuation;
+    .line 589
+    .local p0, "this":Lbolts/Task$10;, "Lbolts/Task.10;"
+    invoke-virtual {p0, p1}, Lbolts/Task$10;->then(Lbolts/Task;)Ljava/lang/Void;
 
-    iget-object v3, p0, Lbolts/Task$10;->val$task:Lbolts/Task;
+    move-result-object v0
 
-    invoke-interface {v2, v3}, Lbolts/Continuation;->then(Lbolts/Task;)Ljava/lang/Object;
+    return-object v0
+.end method
 
-    move-result-object v1
+.method public then(Lbolts/Task;)Ljava/lang/Void;
+    .registers 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbolts/Task",
+            "<TTResult;>;)",
+            "Ljava/lang/Void;"
+        }
+    .end annotation
 
-    check-cast v1, Lbolts/Task;
+    .prologue
+    .line 592
+    .local p0, "this":Lbolts/Task$10;, "Lbolts/Task.10;"
+    .local p1, "task":Lbolts/Task;, "Lbolts/Task<TTResult;>;"
+    iget-object v0, p0, Lbolts/Task$10;->val$tcs:Lbolts/Task$TaskCompletionSource;
 
-    .line 478
-    .local v1, "result":Lbolts/Task;, "Lbolts/Task<TTContinuationResult;>;"
-    if-nez v1, :cond_13
+    iget-object v1, p0, Lbolts/Task$10;->val$continuation:Lbolts/Continuation;
 
-    .line 479
-    iget-object v2, p0, Lbolts/Task$10;->val$tcs:Lbolts/Task$TaskCompletionSource;
+    iget-object v2, p0, Lbolts/Task$10;->val$executor:Ljava/util/concurrent/Executor;
 
-    const/4 v3, 0x0
+    iget-object v3, p0, Lbolts/Task$10;->val$ct:Lbolts/CancellationToken;
 
-    invoke-virtual {v2, v3}, Lbolts/Task$TaskCompletionSource;->setResult(Ljava/lang/Object;)V
+    # invokes: Lbolts/Task;->completeAfterTask(Lbolts/Task$TaskCompletionSource;Lbolts/Continuation;Lbolts/Task;Ljava/util/concurrent/Executor;Lbolts/CancellationToken;)V
+    invoke-static {v0, v1, p1, v2, v3}, Lbolts/Task;->access$200(Lbolts/Task$TaskCompletionSource;Lbolts/Continuation;Lbolts/Task;Ljava/util/concurrent/Executor;Lbolts/CancellationToken;)V
 
-    .line 498
-    .end local v1    # "result":Lbolts/Task;, "Lbolts/Task<TTContinuationResult;>;"
-    :goto_12
-    return-void
+    .line 593
+    const/4 v0, 0x0
 
-    .line 481
-    .restart local v1    # "result":Lbolts/Task;, "Lbolts/Task<TTContinuationResult;>;"
-    :cond_13
-    new-instance v2, Lbolts/Task$10$1;
-
-    invoke-direct {v2, p0}, Lbolts/Task$10$1;-><init>(Lbolts/Task$10;)V
-
-    invoke-virtual {v1, v2}, Lbolts/Task;->continueWith(Lbolts/Continuation;)Lbolts/Task;
-    :try_end_1b
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1b} :catch_1c
-
-    goto :goto_12
-
-    .line 495
-    .end local v1    # "result":Lbolts/Task;, "Lbolts/Task<TTContinuationResult;>;"
-    :catch_1c
-    move-exception v0
-
-    .line 496
-    .local v0, "e":Ljava/lang/Exception;
-    iget-object v2, p0, Lbolts/Task$10;->val$tcs:Lbolts/Task$TaskCompletionSource;
-
-    invoke-virtual {v2, v0}, Lbolts/Task$TaskCompletionSource;->setError(Ljava/lang/Exception;)V
-
-    goto :goto_12
+    return-object v0
 .end method

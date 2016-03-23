@@ -75,13 +75,8 @@
 
     move-result v2
 
-    if-nez v2, :cond_d
+    if-eqz v2, :cond_16
 
-    .line 36
-    return-void
-
-    .line 33
-    :cond_d
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -93,6 +88,11 @@
     invoke-virtual {v0, p1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setLastUpdatedLabel(Ljava/lang/CharSequence;)V
 
     goto :goto_6
+
+    .line 36
+    .end local v0    # "layout":Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    :cond_16
+    return-void
 .end method
 
 .method public setLoadingDrawable(Landroid/graphics/drawable/Drawable;)V
@@ -112,13 +112,8 @@
 
     move-result v2
 
-    if-nez v2, :cond_d
+    if-eqz v2, :cond_16
 
-    .line 43
-    return-void
-
-    .line 40
-    :cond_d
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -130,6 +125,11 @@
     invoke-virtual {v0, p1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setLoadingDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_6
+
+    .line 43
+    .end local v0    # "layout":Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    :cond_16
+    return-void
 .end method
 
 .method public setPullLabel(Ljava/lang/CharSequence;)V
@@ -149,13 +149,8 @@
 
     move-result v2
 
-    if-nez v2, :cond_d
+    if-eqz v2, :cond_16
 
-    .line 57
-    return-void
-
-    .line 54
-    :cond_d
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -167,6 +162,11 @@
     invoke-virtual {v0, p1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setPullLabel(Ljava/lang/CharSequence;)V
 
     goto :goto_6
+
+    .line 57
+    .end local v0    # "layout":Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    :cond_16
+    return-void
 .end method
 
 .method public setRefreshingLabel(Ljava/lang/CharSequence;)V
@@ -186,13 +186,8 @@
 
     move-result v2
 
-    if-nez v2, :cond_d
+    if-eqz v2, :cond_16
 
-    .line 50
-    return-void
-
-    .line 47
-    :cond_d
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -204,6 +199,11 @@
     invoke-virtual {v0, p1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setRefreshingLabel(Ljava/lang/CharSequence;)V
 
     goto :goto_6
+
+    .line 50
+    .end local v0    # "layout":Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    :cond_16
+    return-void
 .end method
 
 .method public setReleaseLabel(Ljava/lang/CharSequence;)V
@@ -223,13 +223,8 @@
 
     move-result v2
 
-    if-nez v2, :cond_d
+    if-eqz v2, :cond_16
 
-    .line 64
-    return-void
-
-    .line 61
-    :cond_d
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -241,6 +236,11 @@
     invoke-virtual {v0, p1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setReleaseLabel(Ljava/lang/CharSequence;)V
 
     goto :goto_6
+
+    .line 64
+    .end local v0    # "layout":Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    :cond_16
+    return-void
 .end method
 
 .method public setTextTypeface(Landroid/graphics/Typeface;)V
@@ -260,13 +260,8 @@
 
     move-result v2
 
-    if-nez v2, :cond_d
+    if-eqz v2, :cond_16
 
-    .line 70
-    return-void
-
-    .line 67
-    :cond_d
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -278,4 +273,9 @@
     invoke-virtual {v0, p1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setTextTypeface(Landroid/graphics/Typeface;)V
 
     goto :goto_6
+
+    .line 70
+    .end local v0    # "layout":Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    :cond_16
+    return-void
 .end method

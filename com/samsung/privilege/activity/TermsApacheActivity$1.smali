@@ -20,20 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/samsung/privilege/activity/TermsApacheActivity;
 
-.field private final synthetic val$msg:Ljava/lang/String;
+.field final synthetic val$msg:Ljava/lang/String;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/TermsApacheActivity;Ljava/lang/String;)V
     .registers 3
+    .param p1, "this$0"    # Lcom/samsung/privilege/activity/TermsApacheActivity;
 
     .prologue
-    .line 1
+    .line 63
     iput-object p1, p0, Lcom/samsung/privilege/activity/TermsApacheActivity$1;->this$0:Lcom/samsung/privilege/activity/TermsApacheActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/TermsApacheActivity$1;->val$msg:Ljava/lang/String;
 
-    .line 93
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 5
 
     .prologue
-    .line 96
+    .line 66
     iget-object v1, p0, Lcom/samsung/privilege/activity/TermsApacheActivity$1;->this$0:Lcom/samsung/privilege/activity/TermsApacheActivity;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/TermsApacheActivity$1;->val$msg:Ljava/lang/String;
@@ -56,10 +56,10 @@
 
     move-result-object v0
 
-    .line 97
+    .line 67
     .local v0, "toast":Landroid/widget/Toast;
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 98
+    .line 68
     return-void
 .end method

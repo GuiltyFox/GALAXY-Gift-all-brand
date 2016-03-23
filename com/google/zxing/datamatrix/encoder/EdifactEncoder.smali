@@ -86,26 +86,26 @@
 
     .line 114
     .local v7, "len":I
-    if-nez v7, :cond_13
+    if-nez v7, :cond_14
 
     .line 115
     new-instance v10, Ljava/lang/IllegalStateException;
 
-    const-string v11, "StringBuilder must not be empty"
+    const-string/jumbo v11, "StringBuilder must not be empty"
 
     invoke-direct {v10, v11}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v10
 
     .line 117
-    :cond_13
+    :cond_14
     invoke-interface {p0, p1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v0
 
     .line 118
     .local v0, "c1":C
-    if-lt v7, v13, :cond_5e
+    if-lt v7, v13, :cond_5f
 
     add-int/lit8 v10, p1, 0x1
 
@@ -115,8 +115,8 @@
 
     .line 119
     .local v1, "c2":C
-    :goto_1f
-    if-lt v7, v12, :cond_60
+    :goto_20
+    if-lt v7, v12, :cond_61
 
     add-int/lit8 v10, p1, 0x2
 
@@ -126,10 +126,10 @@
 
     .line 120
     .local v2, "c3":C
-    :goto_27
+    :goto_28
     const/4 v10, 0x4
 
-    if-lt v7, v10, :cond_30
+    if-lt v7, v10, :cond_31
 
     add-int/lit8 v10, p1, 0x3
 
@@ -139,7 +139,7 @@
 
     .line 122
     .local v3, "c4":C
-    :cond_30
+    :cond_31
     shl-int/lit8 v10, v0, 0x12
 
     shl-int/lit8 v11, v1, 0xc
@@ -185,20 +185,20 @@
     invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 128
-    if-lt v7, v13, :cond_54
+    if-lt v7, v13, :cond_55
 
     .line 129
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 131
-    :cond_54
-    if-lt v7, v12, :cond_59
+    :cond_55
+    if-lt v7, v12, :cond_5a
 
     .line 132
     invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 134
-    :cond_59
+    :cond_5a
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v10
@@ -213,18 +213,18 @@
     .end local v6    # "cw3":C
     .end local v8    # "res":Ljava/lang/StringBuilder;
     .end local v9    # "v":I
-    :cond_5e
+    :cond_5f
     move v1, v3
 
     .line 118
-    goto :goto_1f
+    goto :goto_20
 
     .restart local v1    # "c2":C
-    :cond_60
+    :cond_61
     move v2, v3
 
     .line 119
-    goto :goto_27
+    goto :goto_28
 .end method
 
 .method private static handleEOD(Lcom/google/zxing/datamatrix/encoder/EncoderContext;Ljava/lang/CharSequence;)V
@@ -243,7 +243,7 @@
     :try_start_3
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
     :try_end_6
-    .catchall {:try_start_3 .. :try_end_6} :catchall_33
+    .catchall {:try_start_3 .. :try_end_6} :catchall_38
 
     move-result v1
 
@@ -260,16 +260,20 @@
 
     .line 63
     :cond_d
-    if-ne v1, v6, :cond_28
+    if-ne v1, v6, :cond_2c
 
     .line 65
     :try_start_f
     invoke-virtual {p0}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->updateSymbolInfo()V
 
     .line 66
-    iget-object v7, p0, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->symbolInfo:Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
+    invoke-virtual {p0}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getSymbolInfo()Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
 
-    iget v7, v7, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->dataCapacity:I
+    move-result-object v7
+
+    invoke-virtual {v7}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getDataCapacity()I
+
+    move-result v7
 
     invoke-virtual {p0}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getCodewordCount()I
 
@@ -280,16 +284,16 @@
     .line 67
     .local v0, "available":I
     invoke-virtual {p0}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getRemainingCharacters()I
-    :try_end_1f
-    .catchall {:try_start_f .. :try_end_1f} :catchall_33
+    :try_end_23
+    .catchall {:try_start_f .. :try_end_23} :catchall_38
 
     move-result v4
 
     .line 68
     .local v4, "remaining":I
-    if-nez v4, :cond_28
+    if-nez v4, :cond_2c
 
-    if-gt v0, v10, :cond_28
+    if-gt v0, v10, :cond_2c
 
     .line 98
     invoke-virtual {p0, v8}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->signalEncoderChange(I)V
@@ -299,26 +303,26 @@
     .line 73
     .end local v0    # "available":I
     .end local v4    # "remaining":I
-    :cond_28
+    :cond_2c
     const/4 v7, 0x4
 
-    if-le v1, v7, :cond_38
+    if-le v1, v7, :cond_3d
 
     .line 74
-    :try_start_2b
+    :try_start_2f
     new-instance v7, Ljava/lang/IllegalStateException;
 
-    const-string v9, "Count must not exceed 4"
+    const-string/jumbo v9, "Count must not exceed 4"
 
     invoke-direct {v7, v9}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v7
-    :try_end_33
-    .catchall {:try_start_2b .. :try_end_33} :catchall_33
+    :try_end_38
+    .catchall {:try_start_2f .. :try_end_38} :catchall_38
 
     .line 98
     .end local v1    # "count":I
-    :catchall_33
+    :catchall_38
     move-exception v7
 
     invoke-virtual {p0, v8}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->signalEncoderChange(I)V
@@ -327,14 +331,14 @@
 
     .line 76
     .restart local v1    # "count":I
-    :cond_38
+    :cond_3d
     add-int/lit8 v5, v1, -0x1
 
     .line 77
     .local v5, "restChars":I
     const/4 v7, 0x0
 
-    :try_start_3b
+    :try_start_40
     invoke-static {p1, v7}, Lcom/google/zxing/datamatrix/encoder/EdifactEncoder;->encodeToCodewords(Ljava/lang/CharSequence;I)Ljava/lang/String;
 
     move-result-object v2
@@ -345,21 +349,21 @@
 
     move-result v7
 
-    if-nez v7, :cond_7c
+    if-nez v7, :cond_85
 
     move v3, v6
 
     .line 79
     .local v3, "endOfSymbolReached":Z
-    :goto_46
-    if-eqz v3, :cond_7e
+    :goto_4b
+    if-eqz v3, :cond_87
 
-    if-gt v5, v10, :cond_7e
+    if-gt v5, v10, :cond_87
 
     .line 81
     .local v6, "restInAscii":Z
-    :goto_4a
-    if-gt v5, v10, :cond_6e
+    :goto_4f
+    if-gt v5, v10, :cond_77
 
     .line 82
     invoke-virtual {p0}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getCodewordCount()I
@@ -371,9 +375,13 @@
     invoke-virtual {p0, v7}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->updateSymbolInfo(I)V
 
     .line 83
-    iget-object v7, p0, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->symbolInfo:Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
+    invoke-virtual {p0}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getSymbolInfo()Lcom/google/zxing/datamatrix/encoder/SymbolInfo;
 
-    iget v7, v7, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->dataCapacity:I
+    move-result-object v7
+
+    invoke-virtual {v7}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;->getDataCapacity()I
+
+    move-result v7
 
     invoke-virtual {p0}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getCodewordCount()I
 
@@ -385,7 +393,7 @@
     .restart local v0    # "available":I
     const/4 v7, 0x3
 
-    if-lt v0, v7, :cond_6e
+    if-lt v0, v7, :cond_77
 
     .line 85
     const/4 v6, 0x0
@@ -405,8 +413,8 @@
 
     .line 91
     .end local v0    # "available":I
-    :cond_6e
-    if-eqz v6, :cond_80
+    :cond_77
+    if-eqz v6, :cond_89
 
     .line 92
     invoke-virtual {p0}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->resetSymbolInfo()V
@@ -417,39 +425,39 @@
     sub-int/2addr v7, v5
 
     iput v7, p0, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->pos:I
-    :try_end_78
-    .catchall {:try_start_3b .. :try_end_78} :catchall_33
+    :try_end_81
+    .catchall {:try_start_40 .. :try_end_81} :catchall_38
 
     .line 98
-    :goto_78
+    :goto_81
     invoke-virtual {p0, v8}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->signalEncoderChange(I)V
 
     goto :goto_c
 
     .end local v3    # "endOfSymbolReached":Z
     .end local v6    # "restInAscii":Z
-    :cond_7c
+    :cond_85
     move v3, v8
 
     .line 78
-    goto :goto_46
+    goto :goto_4b
 
     .restart local v3    # "endOfSymbolReached":Z
-    :cond_7e
+    :cond_87
     move v6, v8
 
     .line 79
-    goto :goto_4a
+    goto :goto_4f
 
     .line 95
     .restart local v6    # "restInAscii":Z
-    :cond_80
-    :try_start_80
+    :cond_89
+    :try_start_89
     invoke-virtual {p0, v2}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->writeCodewords(Ljava/lang/String;)V
-    :try_end_83
-    .catchall {:try_start_80 .. :try_end_83} :catchall_33
+    :try_end_8c
+    .catchall {:try_start_89 .. :try_end_8c} :catchall_38
 
-    goto :goto_78
+    goto :goto_81
 .end method
 
 
@@ -475,7 +483,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_3f
+    if-eqz v4, :cond_41
 
     .line 31
     invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getCurrentChar()C
@@ -513,7 +521,9 @@
     invoke-virtual {v0, v7, v8}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
     .line 40
-    iget-object v4, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->msg:Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->getMessage()Ljava/lang/String;
+
+    move-result-object v4
 
     iget v5, p1, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->pos:I
 
@@ -540,7 +550,7 @@
     .end local v1    # "c":C
     .end local v2    # "count":I
     .end local v3    # "newMode":I
-    :cond_3f
+    :cond_41
     const/16 v4, 0x1f
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;

@@ -53,9 +53,9 @@
     .line 55
     new-instance v0, Lbolts/AppLinkNavigation$NavigationResult;
 
-    const-string v1, "FAILED"
+    const-string/jumbo v1, "FAILED"
 
-    const-string v2, "failed"
+    const-string/jumbo v2, "failed"
 
     invoke-direct {v0, v1, v4, v2, v4}, Lbolts/AppLinkNavigation$NavigationResult;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
@@ -64,9 +64,9 @@
     .line 59
     new-instance v0, Lbolts/AppLinkNavigation$NavigationResult;
 
-    const-string v1, "WEB"
+    const-string/jumbo v1, "WEB"
 
-    const-string v2, "web"
+    const-string/jumbo v2, "web"
 
     invoke-direct {v0, v1, v3, v2, v3}, Lbolts/AppLinkNavigation$NavigationResult;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
@@ -75,9 +75,9 @@
     .line 63
     new-instance v0, Lbolts/AppLinkNavigation$NavigationResult;
 
-    const-string v1, "APP"
+    const-string/jumbo v1, "APP"
 
-    const-string v2, "app"
+    const-string/jumbo v2, "app"
 
     invoke-direct {v0, v1, v5, v2, v3}, Lbolts/AppLinkNavigation$NavigationResult;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 

@@ -1,4 +1,4 @@
-.class public Landroid/support/v4/app/TaskStackBuilder;
+.class public final Landroid/support/v4/app/TaskStackBuilder;
 .super Ljava/lang/Object;
 .source "TaskStackBuilder.java"
 
@@ -280,7 +280,7 @@
     .line 241
     .local v2, "parent":Landroid/content/Intent;
     :goto_c
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_2e
 
     .line 242
     iget-object v3, p0, Landroid/support/v4/app/TaskStackBuilder;->mIntents:Ljava/util/ArrayList;
@@ -309,9 +309,9 @@
 
     .line 246
     .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
-    const-string v3, "TaskStackBuilder"
+    const-string/jumbo v3, "TaskStackBuilder"
 
-    const-string v4, "Bad ComponentName while traversing activity parent metadata"
+    const-string/jumbo v4, "Bad ComponentName while traversing activity parent metadata"
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -325,7 +325,7 @@
     .line 249
     .end local v0    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     .restart local v2    # "parent":Landroid/content/Intent;
-    :cond_2c
+    :cond_2e
     return-object p0
 .end method
 
@@ -509,19 +509,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_12
 
     .line 362
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "No intents added to TaskStackBuilder; cannot getPendingIntent"
+    const-string/jumbo v1, "No intents added to TaskStackBuilder; cannot getPendingIntent"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 366
-    :cond_11
+    :cond_12
     iget-object v0, p0, Landroid/support/v4/app/TaskStackBuilder;->mIntents:Ljava/util/ArrayList;
 
     iget-object v1, p0, Landroid/support/v4/app/TaskStackBuilder;->mIntents:Ljava/util/ArrayList;
@@ -622,19 +622,19 @@
 
     move-result v2
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_12
 
     .line 317
     new-instance v2, Ljava/lang/IllegalStateException;
 
-    const-string v3, "No intents added to TaskStackBuilder; cannot startActivities"
+    const-string/jumbo v3, "No intents added to TaskStackBuilder; cannot startActivities"
 
     invoke-direct {v2, v3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
     .line 321
-    :cond_11
+    :cond_12
     iget-object v2, p0, Landroid/support/v4/app/TaskStackBuilder;->mIntents:Ljava/util/ArrayList;
 
     iget-object v3, p0, Landroid/support/v4/app/TaskStackBuilder;->mIntents:Ljava/util/ArrayList;
@@ -674,7 +674,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_4d
+    if-nez v2, :cond_4e
 
     .line 326
     new-instance v1, Landroid/content/Intent;
@@ -700,6 +700,6 @@
 
     .line 330
     .end local v1    # "topIntent":Landroid/content/Intent;
-    :cond_4d
+    :cond_4e
     return-void
 .end method

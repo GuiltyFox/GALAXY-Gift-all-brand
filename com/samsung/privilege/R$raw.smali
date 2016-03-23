@@ -15,15 +15,17 @@
 
 
 # static fields
-.field public static final beep:I = 0x7f060000
+.field public static final gtm_analytics:I = 0x7f080000
 
-.field public static final jingle:I = 0x7f060001
+.field public static final jingle:I = 0x7f080001
 
-.field public static final terms:I = 0x7f060002
+.field public static final terms:I = 0x7f080002
 
-.field public static final terms_apache:I = 0x7f060003
+.field public static final terms_apache:I = 0x7f080003
 
-.field public static final user_terms_condition2:I = 0x7f060004
+.field public static final user_terms_condition2:I = 0x7f080004
+
+.field public static final zxing_beep:I = 0x7f080005
 
 
 # direct methods
@@ -31,7 +33,7 @@
     .registers 1
 
     .prologue
-    .line 5142
+    .line 9370
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

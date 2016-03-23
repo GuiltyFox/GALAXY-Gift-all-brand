@@ -28,13 +28,14 @@
 # direct methods
 .method constructor <init>(Lcom/bitmapfun/util/AsyncTask;Ljava/util/concurrent/Callable;)V
     .registers 3
+    .param p1, "this$0"    # Lcom/bitmapfun/util/AsyncTask;
 
     .prologue
-    .line 1
-    .local p2, "$anonymous0":Ljava/util/concurrent/Callable;, "Ljava/util/concurrent/Callable<TResult;>;"
+    .line 317
+    .local p0, "this":Lcom/bitmapfun/util/AsyncTask$3;, "Lcom/bitmapfun/util/AsyncTask$3;"
+    .local p2, "x0":Ljava/util/concurrent/Callable;, "Ljava/util/concurrent/Callable<TResult;>;"
     iput-object p1, p0, Lcom/bitmapfun/util/AsyncTask$3;->this$0:Lcom/bitmapfun/util/AsyncTask;
 
-    .line 318
     invoke-direct {p0, p2}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/util/concurrent/Callable;)V
 
     return-void
@@ -46,7 +47,8 @@
     .registers 4
 
     .prologue
-    .line 322
+    .line 321
+    .local p0, "this":Lcom/bitmapfun/util/AsyncTask$3;, "Lcom/bitmapfun/util/AsyncTask$3;"
     :try_start_0
     iget-object v1, p0, Lcom/bitmapfun/util/AsyncTask$3;->this$0:Lcom/bitmapfun/util/AsyncTask;
 
@@ -55,60 +57,41 @@
     move-result-object v2
 
     # invokes: Lcom/bitmapfun/util/AsyncTask;->postResultIfNotInvoked(Ljava/lang/Object;)V
-    invoke-static {v1, v2}, Lcom/bitmapfun/util/AsyncTask;->access$3(Lcom/bitmapfun/util/AsyncTask;Ljava/lang/Object;)V
+    invoke-static {v1, v2}, Lcom/bitmapfun/util/AsyncTask;->access$500(Lcom/bitmapfun/util/AsyncTask;Ljava/lang/Object;)V
     :try_end_9
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_9} :catch_a
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_9} :catch_15
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_9} :catch_1e
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_9} :catch_14
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_9} :catch_12
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_9} :catch_a
 
-    .line 331
+    .line 330
     :goto_9
     return-void
 
-    .line 323
+    .line 327
     :catch_a
     move-exception v0
 
-    .line 324
-    .local v0, "e":Ljava/lang/InterruptedException;
-    const-string v1, "AsyncTask"
-
-    invoke-virtual {v0}, Ljava/lang/InterruptedException;->getMessage()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lic/buzzebeeslib/util/LogUtil;->LogW(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_9
-
-    .line 325
-    .end local v0    # "e":Ljava/lang/InterruptedException;
-    :catch_15
-    move-exception v0
-
-    .line 327
-    .local v0, "e":Ljava/util/concurrent/ExecutionException;
-    const-string v1, "AsyncTask"
-
-    const-string v2, "An error occured while executing doInBackground()"
-
-    invoke-static {v1, v2}, Lic/buzzebeeslib/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_9
-
     .line 328
-    .end local v0    # "e":Ljava/util/concurrent/ExecutionException;
-    :catch_1e
-    move-exception v0
-
-    .line 329
     .local v0, "e":Ljava/util/concurrent/CancellationException;
     iget-object v1, p0, Lcom/bitmapfun/util/AsyncTask$3;->this$0:Lcom/bitmapfun/util/AsyncTask;
 
     const/4 v2, 0x0
 
     # invokes: Lcom/bitmapfun/util/AsyncTask;->postResultIfNotInvoked(Ljava/lang/Object;)V
-    invoke-static {v1, v2}, Lcom/bitmapfun/util/AsyncTask;->access$3(Lcom/bitmapfun/util/AsyncTask;Ljava/lang/Object;)V
+    invoke-static {v1, v2}, Lcom/bitmapfun/util/AsyncTask;->access$500(Lcom/bitmapfun/util/AsyncTask;Ljava/lang/Object;)V
+
+    goto :goto_9
+
+    .line 324
+    .end local v0    # "e":Ljava/util/concurrent/CancellationException;
+    :catch_12
+    move-exception v1
+
+    goto :goto_9
+
+    .line 322
+    :catch_14
+    move-exception v1
 
     goto :goto_9
 .end method

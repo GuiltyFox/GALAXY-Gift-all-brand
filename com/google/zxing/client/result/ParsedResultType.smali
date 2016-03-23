@@ -37,6 +37,8 @@
 
 .field public static final enum URI:Lcom/google/zxing/client/result/ParsedResultType;
 
+.field public static final enum VIN:Lcom/google/zxing/client/result/ParsedResultType;
+
 .field public static final enum WIFI:Lcom/google/zxing/client/result/ParsedResultType;
 
 
@@ -58,7 +60,7 @@
     .line 27
     new-instance v0, Lcom/google/zxing/client/result/ParsedResultType;
 
-    const-string v1, "ADDRESSBOOK"
+    const-string/jumbo v1, "ADDRESSBOOK"
 
     invoke-direct {v0, v1, v3}, Lcom/google/zxing/client/result/ParsedResultType;-><init>(Ljava/lang/String;I)V
 
@@ -67,7 +69,7 @@
     .line 28
     new-instance v0, Lcom/google/zxing/client/result/ParsedResultType;
 
-    const-string v1, "EMAIL_ADDRESS"
+    const-string/jumbo v1, "EMAIL_ADDRESS"
 
     invoke-direct {v0, v1, v4}, Lcom/google/zxing/client/result/ParsedResultType;-><init>(Ljava/lang/String;I)V
 
@@ -76,7 +78,7 @@
     .line 29
     new-instance v0, Lcom/google/zxing/client/result/ParsedResultType;
 
-    const-string v1, "PRODUCT"
+    const-string/jumbo v1, "PRODUCT"
 
     invoke-direct {v0, v1, v5}, Lcom/google/zxing/client/result/ParsedResultType;-><init>(Ljava/lang/String;I)V
 
@@ -85,7 +87,7 @@
     .line 30
     new-instance v0, Lcom/google/zxing/client/result/ParsedResultType;
 
-    const-string v1, "URI"
+    const-string/jumbo v1, "URI"
 
     invoke-direct {v0, v1, v6}, Lcom/google/zxing/client/result/ParsedResultType;-><init>(Ljava/lang/String;I)V
 
@@ -94,7 +96,7 @@
     .line 31
     new-instance v0, Lcom/google/zxing/client/result/ParsedResultType;
 
-    const-string v1, "TEXT"
+    const-string/jumbo v1, "TEXT"
 
     invoke-direct {v0, v1, v7}, Lcom/google/zxing/client/result/ParsedResultType;-><init>(Ljava/lang/String;I)V
 
@@ -103,7 +105,7 @@
     .line 32
     new-instance v0, Lcom/google/zxing/client/result/ParsedResultType;
 
-    const-string v1, "GEO"
+    const-string/jumbo v1, "GEO"
 
     const/4 v2, 0x5
 
@@ -114,7 +116,7 @@
     .line 33
     new-instance v0, Lcom/google/zxing/client/result/ParsedResultType;
 
-    const-string v1, "TEL"
+    const-string/jumbo v1, "TEL"
 
     const/4 v2, 0x6
 
@@ -125,7 +127,7 @@
     .line 34
     new-instance v0, Lcom/google/zxing/client/result/ParsedResultType;
 
-    const-string v1, "SMS"
+    const-string/jumbo v1, "SMS"
 
     const/4 v2, 0x7
 
@@ -136,7 +138,7 @@
     .line 35
     new-instance v0, Lcom/google/zxing/client/result/ParsedResultType;
 
-    const-string v1, "CALENDAR"
+    const-string/jumbo v1, "CALENDAR"
 
     const/16 v2, 0x8
 
@@ -147,7 +149,7 @@
     .line 36
     new-instance v0, Lcom/google/zxing/client/result/ParsedResultType;
 
-    const-string v1, "WIFI"
+    const-string/jumbo v1, "WIFI"
 
     const/16 v2, 0x9
 
@@ -158,7 +160,7 @@
     .line 37
     new-instance v0, Lcom/google/zxing/client/result/ParsedResultType;
 
-    const-string v1, "ISBN"
+    const-string/jumbo v1, "ISBN"
 
     const/16 v2, 0xa
 
@@ -166,8 +168,19 @@
 
     sput-object v0, Lcom/google/zxing/client/result/ParsedResultType;->ISBN:Lcom/google/zxing/client/result/ParsedResultType;
 
+    .line 38
+    new-instance v0, Lcom/google/zxing/client/result/ParsedResultType;
+
+    const-string/jumbo v1, "VIN"
+
+    const/16 v2, 0xb
+
+    invoke-direct {v0, v1, v2}, Lcom/google/zxing/client/result/ParsedResultType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/zxing/client/result/ParsedResultType;->VIN:Lcom/google/zxing/client/result/ParsedResultType;
+
     .line 25
-    const/16 v0, 0xb
+    const/16 v0, 0xc
 
     new-array v0, v0, [Lcom/google/zxing/client/result/ParsedResultType;
 
@@ -224,6 +237,12 @@
     const/16 v1, 0xa
 
     sget-object v2, Lcom/google/zxing/client/result/ParsedResultType;->ISBN:Lcom/google/zxing/client/result/ParsedResultType;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xb
+
+    sget-object v2, Lcom/google/zxing/client/result/ParsedResultType;->VIN:Lcom/google/zxing/client/result/ParsedResultType;
 
     aput-object v2, v0, v1
 

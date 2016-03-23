@@ -1,431 +1,405 @@
-.class public Lcom/loopj/android/http/BinaryHttpResponseHandler;
+.class public abstract Lcom/loopj/android/http/BinaryHttpResponseHandler;
 .super Lcom/loopj/android/http/AsyncHttpResponseHandler;
 .source "BinaryHttpResponseHandler.java"
 
 
 # static fields
-.field private static mAllowedContentTypes:[Ljava/lang/String;
+.field private static final LOG_TAG:Ljava/lang/String; = "BinaryHttpRH"
+
+
+# instance fields
+.field private mAllowedContentTypes:[Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method public constructor <init>()V
+    .registers 4
 
     .prologue
-    .line 58
-    const/4 v0, 0x2
+    .line 67
+    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
+
+    .line 56
+    const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/String;
 
     const/4 v1, 0x0
 
-    const-string v2, "image/jpeg"
+    const-string/jumbo v2, "application/octet-stream"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x1
 
-    const-string v2, "image/png"
+    const-string/jumbo v2, "image/jpeg"
 
     aput-object v2, v0, v1
 
-    sput-object v0, Lcom/loopj/android/http/BinaryHttpResponseHandler;->mAllowedContentTypes:[Ljava/lang/String;
+    const/4 v1, 0x2
 
-    return-void
-.end method
+    const-string/jumbo v2, "image/png"
 
-.method public constructor <init>()V
-    .registers 1
+    aput-object v2, v0, v1
 
-    .prologue
-    .line 67
-    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
+    const/4 v1, 0x3
+
+    const-string/jumbo v2, "image/gif"
+
+    aput-object v2, v0, v1
+
+    iput-object v0, p0, Lcom/loopj/android/http/BinaryHttpResponseHandler;->mAllowedContentTypes:[Ljava/lang/String;
 
     .line 68
     return-void
 .end method
 
 .method public constructor <init>([Ljava/lang/String;)V
-    .registers 2
+    .registers 5
+    .param p1, "allowedContentTypes"    # [Ljava/lang/String;
 
     .prologue
-    .line 75
-    invoke-direct {p0}, Lcom/loopj/android/http/BinaryHttpResponseHandler;-><init>()V
-
-    .line 76
-    sput-object p1, Lcom/loopj/android/http/BinaryHttpResponseHandler;->mAllowedContentTypes:[Ljava/lang/String;
-
     .line 77
+    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
+
+    .line 56
+    const/4 v0, 0x4
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    const-string/jumbo v2, "application/octet-stream"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    const-string/jumbo v2, "image/jpeg"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x2
+
+    const-string/jumbo v2, "image/png"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x3
+
+    const-string/jumbo v2, "image/gif"
+
+    aput-object v2, v0, v1
+
+    iput-object v0, p0, Lcom/loopj/android/http/BinaryHttpResponseHandler;->mAllowedContentTypes:[Ljava/lang/String;
+
+    .line 78
+    if-eqz p1, :cond_25
+
+    .line 79
+    iput-object p1, p0, Lcom/loopj/android/http/BinaryHttpResponseHandler;->mAllowedContentTypes:[Ljava/lang/String;
+
+    .line 83
+    :goto_24
     return-void
+
+    .line 81
+    :cond_25
+    sget-object v0, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
+
+    const-string/jumbo v1, "BinaryHttpRH"
+
+    const-string/jumbo v2, "Constructor passed allowedContentTypes was null !"
+
+    invoke-interface {v0, v1, v2}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_24
+.end method
+
+.method public constructor <init>([Ljava/lang/String;Landroid/os/Looper;)V
+    .registers 6
+    .param p1, "allowedContentTypes"    # [Ljava/lang/String;
+    .param p2, "looper"    # Landroid/os/Looper;
+
+    .prologue
+    .line 93
+    invoke-direct {p0, p2}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>(Landroid/os/Looper;)V
+
+    .line 56
+    const/4 v0, 0x4
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    const-string/jumbo v2, "application/octet-stream"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    const-string/jumbo v2, "image/jpeg"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x2
+
+    const-string/jumbo v2, "image/png"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x3
+
+    const-string/jumbo v2, "image/gif"
+
+    aput-object v2, v0, v1
+
+    iput-object v0, p0, Lcom/loopj/android/http/BinaryHttpResponseHandler;->mAllowedContentTypes:[Ljava/lang/String;
+
+    .line 94
+    if-eqz p1, :cond_25
+
+    .line 95
+    iput-object p1, p0, Lcom/loopj/android/http/BinaryHttpResponseHandler;->mAllowedContentTypes:[Ljava/lang/String;
+
+    .line 99
+    :goto_24
+    return-void
+
+    .line 97
+    :cond_25
+    sget-object v0, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
+
+    const-string/jumbo v1, "BinaryHttpRH"
+
+    const-string/jumbo v2, "Constructor passed allowedContentTypes was null !"
+
+    invoke-interface {v0, v1, v2}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_24
 .end method
 
 
 # virtual methods
-.method protected handleFailureMessage(Ljava/lang/Throwable;[B)V
-    .registers 3
-
-    .prologue
-    .line 132
-    invoke-virtual {p0, p1, p2}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->onFailure(Ljava/lang/Throwable;[B)V
-
-    .line 133
-    return-void
-.end method
-
-.method protected handleMessage(Landroid/os/Message;)V
-    .registers 5
-
-    .prologue
-    const/4 v2, 0x1
-
-    const/4 v1, 0x0
-
-    .line 138
-    iget v0, p1, Landroid/os/Message;->what:I
-
-    packed-switch v0, :pswitch_data_38
-
-    .line 148
-    invoke-super {p0, p1}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->handleMessage(Landroid/os/Message;)V
-
-    .line 151
-    :goto_a
-    return-void
-
-    .line 140
-    :pswitch_b
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, [Ljava/lang/Object;
-
-    check-cast v0, [Ljava/lang/Object;
-
-    .line 141
-    aget-object v1, v0, v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    aget-object v0, v0, v2
-
-    check-cast v0, [B
-
-    check-cast v0, [B
-
-    invoke-virtual {p0, v1, v0}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->handleSuccessMessage(I[B)V
-
-    goto :goto_a
-
-    .line 144
-    :pswitch_23
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, [Ljava/lang/Object;
-
-    check-cast v0, [Ljava/lang/Object;
-
-    .line 145
-    aget-object v1, v0, v1
-
-    check-cast v1, Ljava/lang/Throwable;
-
-    aget-object v0, v0, v2
-
-    check-cast v0, [B
-
-    check-cast v0, [B
-
-    invoke-virtual {p0, v1, v0}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->handleFailureMessage(Ljava/lang/Throwable;[B)V
-
-    goto :goto_a
-
-    .line 138
-    nop
-
-    :pswitch_data_38
-    .packed-switch 0x0
-        :pswitch_b
-        :pswitch_23
-    .end packed-switch
-.end method
-
-.method protected handleSuccessMessage(I[B)V
-    .registers 3
-
-    .prologue
-    .line 128
-    invoke-virtual {p0, p1, p2}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->onSuccess(I[B)V
-
-    .line 129
-    return-void
-.end method
-
-.method public onFailure(Ljava/lang/Throwable;[B)V
-    .registers 3
-
-    .prologue
-    .line 107
-    invoke-virtual {p0, p1}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->onFailure(Ljava/lang/Throwable;)V
-
-    .line 108
-    return-void
-.end method
-
-.method public onSuccess(I[B)V
-    .registers 3
-
-    .prologue
-    .line 96
-    invoke-virtual {p0, p2}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->onSuccess([B)V
-
-    .line 97
-    return-void
-.end method
-
-.method public onSuccess([B)V
+.method public getAllowedContentTypes()[Ljava/lang/String;
     .registers 2
 
     .prologue
-    .line 88
-    return-void
+    .line 108
+    iget-object v0, p0, Lcom/loopj/android/http/BinaryHttpResponseHandler;->mAllowedContentTypes:[Ljava/lang/String;
+
+    return-object v0
 .end method
 
-.method protected sendFailureMessage(Ljava/lang/Throwable;[B)V
-    .registers 6
+.method public abstract onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
+.end method
+
+.method public abstract onSuccess(I[Lcz/msebera/android/httpclient/Header;[B)V
+.end method
+
+.method public final sendResponseMessage(Lcz/msebera/android/httpclient/HttpResponse;)V
+    .registers 16
+    .param p1, "response"    # Lcz/msebera/android/httpclient/HttpResponse;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v13, 0x0
+
+    const/4 v6, 0x0
+
+    .line 119
+    invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpResponse;->getStatusLine()Lcz/msebera/android/httpclient/StatusLine;
+
+    move-result-object v5
 
     .line 120
-    const/4 v0, 0x2
+    .local v5, "status":Lcz/msebera/android/httpclient/StatusLine;
+    const-string/jumbo v7, "Content-Type"
 
-    new-array v0, v0, [Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    aput-object p1, v0, v1
-
-    aput-object p2, v0, v2
-
-    invoke-virtual {p0, v2, v0}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->sendMessage(Landroid/os/Message;)V
-
-    .line 121
-    return-void
-.end method
-
-.method sendResponseMessage(Lorg/apache/http/HttpResponse;)V
-    .registers 12
-
-    .prologue
-    const/4 v2, 0x1
-
-    const/4 v1, 0x0
-
-    const/4 v0, 0x0
-
-    .line 155
-    invoke-interface {p1}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
-
-    move-result-object v4
-
-    .line 156
-    const-string v3, "Content-Type"
-
-    invoke-interface {p1, v3}, Lorg/apache/http/HttpResponse;->getHeaders(Ljava/lang/String;)[Lorg/apache/http/Header;
-
-    move-result-object v3
-
-    .line 158
-    array-length v5, v3
-
-    if-eq v5, v2, :cond_1f
-
-    .line 160
-    new-instance v0, Lorg/apache/http/client/HttpResponseException;
-
-    invoke-interface {v4}, Lorg/apache/http/StatusLine;->getStatusCode()I
-
-    move-result v2
-
-    const-string v3, "None, or more than one, Content-Type Header found!"
-
-    invoke-direct {v0, v2, v3}, Lorg/apache/http/client/HttpResponseException;-><init>(ILjava/lang/String;)V
-
-    invoke-virtual {p0, v0, v1}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->sendFailureMessage(Ljava/lang/Throwable;[B)V
-
-    .line 191
-    :goto_1e
-    return-void
-
-    .line 163
-    :cond_1f
-    aget-object v5, v3, v0
-
-    .line 165
-    sget-object v6, Lcom/loopj/android/http/BinaryHttpResponseHandler;->mAllowedContentTypes:[Ljava/lang/String;
-
-    array-length v7, v6
-
-    move v3, v0
-
-    :goto_25
-    if-ge v3, v7, :cond_37
-
-    aget-object v8, v6, v3
-
-    .line 166
-    invoke-interface {v5}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_34
-
-    move v0, v2
-
-    .line 165
-    :cond_34
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_25
-
-    .line 170
-    :cond_37
-    if-nez v0, :cond_48
-
-    .line 172
-    new-instance v0, Lorg/apache/http/client/HttpResponseException;
-
-    invoke-interface {v4}, Lorg/apache/http/StatusLine;->getStatusCode()I
-
-    move-result v2
-
-    const-string v3, "Content-Type not allowed!"
-
-    invoke-direct {v0, v2, v3}, Lorg/apache/http/client/HttpResponseException;-><init>(ILjava/lang/String;)V
-
-    invoke-virtual {p0, v0, v1}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->sendFailureMessage(Ljava/lang/Throwable;[B)V
-
-    goto :goto_1e
-
-    .line 177
-    :cond_48
-    :try_start_48
-    invoke-interface {p1}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+    invoke-interface {p1, v7}, Lcz/msebera/android/httpclient/HttpResponse;->getHeaders(Ljava/lang/String;)[Lcz/msebera/android/httpclient/Header;
 
     move-result-object v2
 
-    .line 178
-    if-eqz v2, :cond_81
+    .line 121
+    .local v2, "contentTypeHeaders":[Lcz/msebera/android/httpclient/Header;
+    array-length v7, v2
 
-    .line 179
-    new-instance v0, Lorg/apache/http/entity/BufferedHttpEntity;
+    const/4 v8, 0x1
 
-    invoke-direct {v0, v2}, Lorg/apache/http/entity/BufferedHttpEntity;-><init>(Lorg/apache/http/HttpEntity;)V
+    if-eq v7, v8, :cond_29
 
-    .line 181
-    :goto_53
-    invoke-static {v0}, Lorg/apache/http/util/EntityUtils;->toByteArray(Lorg/apache/http/HttpEntity;)[B
-    :try_end_56
-    .catch Ljava/io/IOException; {:try_start_48 .. :try_end_56} :catch_70
+    .line 124
+    invoke-interface {v5}, Lcz/msebera/android/httpclient/StatusLine;->getStatusCode()I
 
-    move-result-object v1
+    move-result v6
 
-    .line 186
-    :goto_57
-    invoke-interface {v4}, Lorg/apache/http/StatusLine;->getStatusCode()I
+    .line 125
+    invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpResponse;->getAllHeaders()[Lcz/msebera/android/httpclient/Header;
 
-    move-result v0
+    move-result-object v7
 
-    const/16 v2, 0x12c
+    new-instance v8, Lcz/msebera/android/httpclient/client/HttpResponseException;
 
-    if-lt v0, v2, :cond_79
+    .line 128
+    invoke-interface {v5}, Lcz/msebera/android/httpclient/StatusLine;->getStatusCode()I
 
-    .line 187
-    new-instance v0, Lorg/apache/http/client/HttpResponseException;
+    move-result v9
 
-    invoke-interface {v4}, Lorg/apache/http/StatusLine;->getStatusCode()I
+    const-string/jumbo v10, "None, or more than one, Content-Type Header found!"
 
-    move-result v2
+    invoke-direct {v8, v9, v10}, Lcz/msebera/android/httpclient/client/HttpResponseException;-><init>(ILjava/lang/String;)V
 
-    invoke-interface {v4}, Lorg/apache/http/StatusLine;->getReasonPhrase()Ljava/lang/String;
+    .line 123
+    invoke-virtual {p0, v6, v7, v13, v8}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->sendFailureMessage(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
 
-    move-result-object v3
-
-    invoke-direct {v0, v2, v3}, Lorg/apache/http/client/HttpResponseException;-><init>(ILjava/lang/String;)V
-
-    invoke-virtual {p0, v0, v1}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->sendFailureMessage(Ljava/lang/Throwable;[B)V
-
-    goto :goto_1e
-
-    .line 182
-    :catch_70
-    move-exception v0
-
-    move-object v2, v0
-
-    move-object v0, v1
-
-    .line 183
-    check-cast v0, [B
-
-    invoke-virtual {p0, v2, v0}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->sendFailureMessage(Ljava/lang/Throwable;[B)V
-
-    goto :goto_57
-
-    .line 189
-    :cond_79
-    invoke-interface {v4}, Lorg/apache/http/StatusLine;->getStatusCode()I
-
-    move-result v0
-
-    invoke-virtual {p0, v0, v1}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->sendSuccessMessage(I[B)V
-
-    goto :goto_1e
-
-    :cond_81
-    move-object v0, v1
-
-    goto :goto_53
-.end method
-
-.method protected sendSuccessMessage(I[B)V
-    .registers 6
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 116
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v0, v2
-
-    const/4 v1, 0x1
-
-    aput-object p2, v0, v1
-
-    invoke-virtual {p0, v2, v0}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->sendMessage(Landroid/os/Message;)V
-
-    .line 117
+    .line 159
+    :goto_28
     return-void
+
+    .line 134
+    :cond_29
+    aget-object v1, v2, v6
+
+    .line 135
+    .local v1, "contentTypeHeader":Lcz/msebera/android/httpclient/Header;
+    const/4 v4, 0x0
+
+    .line 136
+    .local v4, "foundAllowedContentType":Z
+    invoke-virtual {p0}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->getAllowedContentTypes()[Ljava/lang/String;
+
+    move-result-object v7
+
+    array-length v8, v7
+
+    :goto_31
+    if-ge v6, v8, :cond_61
+
+    aget-object v0, v7, v6
+
+    .line 138
+    .local v0, "anAllowedContentType":Ljava/lang/String;
+    :try_start_35
+    invoke-interface {v1}, Lcz/msebera/android/httpclient/Header;->getValue()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v0, v9}, Ljava/util/regex/Pattern;->matches(Ljava/lang/String;Ljava/lang/CharSequence;)Z
+    :try_end_3c
+    .catch Ljava/util/regex/PatternSyntaxException; {:try_start_35 .. :try_end_3c} :catch_43
+
+    move-result v9
+
+    if-eqz v9, :cond_40
+
+    .line 139
+    const/4 v4, 0x1
+
+    .line 136
+    :cond_40
+    :goto_40
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_31
+
+    .line 141
+    :catch_43
+    move-exception v3
+
+    .line 142
+    .local v3, "e":Ljava/util/regex/PatternSyntaxException;
+    sget-object v9, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
+
+    const-string/jumbo v10, "BinaryHttpRH"
+
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v12, "Given pattern is not valid: "
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-interface {v9, v10, v11, v3}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_40
+
+    .line 145
+    .end local v0    # "anAllowedContentType":Ljava/lang/String;
+    .end local v3    # "e":Ljava/util/regex/PatternSyntaxException;
+    :cond_61
+    if-nez v4, :cond_97
+
+    .line 148
+    invoke-interface {v5}, Lcz/msebera/android/httpclient/StatusLine;->getStatusCode()I
+
+    move-result v6
+
+    .line 149
+    invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpResponse;->getAllHeaders()[Lcz/msebera/android/httpclient/Header;
+
+    move-result-object v7
+
+    new-instance v8, Lcz/msebera/android/httpclient/client/HttpResponseException;
+
+    .line 152
+    invoke-interface {v5}, Lcz/msebera/android/httpclient/StatusLine;->getStatusCode()I
+
+    move-result v9
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v11, "Content-Type ("
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    .line 153
+    invoke-interface {v1}, Lcz/msebera/android/httpclient/Header;->getValue()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string/jumbo v11, ") not allowed!"
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-direct {v8, v9, v10}, Lcz/msebera/android/httpclient/client/HttpResponseException;-><init>(ILjava/lang/String;)V
+
+    .line 147
+    invoke-virtual {p0, v6, v7, v13, v8}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->sendFailureMessage(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
+
+    goto :goto_28
+
+    .line 158
+    :cond_97
+    invoke-super {p0, p1}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->sendResponseMessage(Lcz/msebera/android/httpclient/HttpResponse;)V
+
+    goto :goto_28
 .end method

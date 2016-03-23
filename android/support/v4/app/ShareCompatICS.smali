@@ -38,7 +38,7 @@
     .local v1, "provider":Landroid/widget/ShareActionProvider;
     instance-of v2, v0, Landroid/widget/ShareActionProvider;
 
-    if-nez v2, :cond_33
+    if-nez v2, :cond_34
 
     .line 32
     new-instance v1, Landroid/widget/ShareActionProvider;
@@ -53,7 +53,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, ".sharecompat_"
+    const-string/jumbo v3, ".sharecompat_"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -86,7 +86,7 @@
     .line 40
     return-void
 
-    :cond_33
+    :cond_34
     move-object v1, v0
 
     .line 34

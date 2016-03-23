@@ -145,7 +145,7 @@
 
     .line 40
     .local v26, "rawText":Ljava/lang/String;
-    const-string v2, "BIZCARD:"
+    const-string/jumbo v2, "BIZCARD:"
 
     move-object/from16 v0, v26
 
@@ -153,18 +153,18 @@
 
     move-result v2
 
-    if-nez v2, :cond_10
+    if-nez v2, :cond_11
 
     .line 41
     const/4 v2, 0x0
 
-    .line 54
-    :goto_f
+    .line 59
+    :goto_10
     return-object v2
 
     .line 43
-    :cond_10
-    const-string v2, "N:"
+    :cond_11
+    const-string/jumbo v2, "N:"
 
     const/4 v3, 0x1
 
@@ -176,7 +176,7 @@
 
     .line 44
     .local v20, "firstName":Ljava/lang/String;
-    const-string v2, "X:"
+    const-string/jumbo v2, "X:"
 
     const/4 v3, 0x1
 
@@ -198,7 +198,7 @@
 
     .line 46
     .local v21, "fullName":Ljava/lang/String;
-    const-string v2, "T:"
+    const-string/jumbo v2, "T:"
 
     const/4 v3, 0x1
 
@@ -210,7 +210,7 @@
 
     .line 47
     .local v16, "title":Ljava/lang/String;
-    const-string v2, "C:"
+    const-string/jumbo v2, "C:"
 
     const/4 v3, 0x1
 
@@ -222,7 +222,7 @@
 
     .line 48
     .local v14, "org":Ljava/lang/String;
-    const-string v2, "A:"
+    const-string/jumbo v2, "A:"
 
     const/4 v3, 0x1
 
@@ -234,7 +234,7 @@
 
     .line 49
     .local v12, "addresses":[Ljava/lang/String;
-    const-string v2, "B:"
+    const-string/jumbo v2, "B:"
 
     const/4 v3, 0x1
 
@@ -246,7 +246,7 @@
 
     .line 50
     .local v23, "phoneNumber1":Ljava/lang/String;
-    const-string v2, "M:"
+    const-string/jumbo v2, "M:"
 
     const/4 v3, 0x1
 
@@ -258,7 +258,7 @@
 
     .line 51
     .local v24, "phoneNumber2":Ljava/lang/String;
-    const-string v2, "F:"
+    const-string/jumbo v2, "F:"
 
     const/4 v3, 0x1
 
@@ -270,7 +270,7 @@
 
     .line 52
     .local v25, "phoneNumber3":Ljava/lang/String;
-    const-string v2, "E:"
+    const-string/jumbo v2, "E:"
 
     const/4 v3, 0x1
 
@@ -292,12 +292,14 @@
 
     const/4 v5, 0x0
 
+    .line 57
     invoke-static/range {v23 .. v25}, Lcom/google/zxing/client/result/BizcardResultParser;->buildPhoneNumbers(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v6
 
     const/4 v7, 0x0
 
+    .line 59
     invoke-static/range {v19 .. v19}, Lcom/google/zxing/client/result/BizcardResultParser;->maybeWrap(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v8
@@ -318,12 +320,11 @@
 
     invoke-direct/range {v2 .. v18}, Lcom/google/zxing/client/result/AddressBookParsedResult;-><init>([Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
-    goto :goto_f
+    goto :goto_10
 .end method
 
 .method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .registers 3
-    .param p1, "x0"    # Lcom/google/zxing/Result;
 
     .prologue
     .line 31

@@ -4,11 +4,11 @@
 
 
 # static fields
-.field private static final MAX_AVG_VARIANCE:I = 0x33
+.field private static final MAX_AVG_VARIANCE:F = 0.2f
 
 .field private static final MAX_FINDER_PATTERN_RATIO:F = 0.89285713f
 
-.field private static final MAX_INDIVIDUAL_VARIANCE:I = 0x73
+.field private static final MAX_INDIVIDUAL_VARIANCE:F = 0.45f
 
 .field private static final MIN_FINDER_PATTERN_RATIO:F = 0.7916667f
 
@@ -86,42 +86,37 @@
 .end method
 
 .method protected static count([I)I
-    .registers 6
+    .registers 5
     .param p0, "array"    # [I
 
     .prologue
     .line 82
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 83
-    .local v2, "count":I
-    move-object v1, p0
+    .local v1, "count":I
+    array-length v3, p0
 
-    .local v1, "arr$":[I
-    array-length v4, v1
+    const/4 v2, 0x0
 
-    .local v4, "len$":I
-    const/4 v3, 0x0
+    :goto_3
+    if-ge v2, v3, :cond_b
 
-    .local v3, "i$":I
-    :goto_4
-    if-ge v3, v4, :cond_c
-
-    aget v0, v1, v3
+    aget v0, p0, v2
 
     .line 84
     .local v0, "a":I
-    add-int/2addr v2, v0
+    add-int/2addr v1, v0
 
     .line 83
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_3
 
     .line 86
     .end local v0    # "a":I
-    :cond_c
-    return v2
+    :cond_b
+    return v1
 .end method
 
 .method protected static decrement([I[F)V
@@ -237,137 +232,123 @@
 .end method
 
 .method protected static isFinderPattern([I)Z
-    .registers 14
+    .registers 11
     .param p0, "counters"    # [I
 
     .prologue
-    const/4 v9, 0x1
+    const/4 v6, 0x1
 
-    const/4 v10, 0x0
+    const/4 v7, 0x0
 
     .line 114
-    aget v11, p0, v10
+    aget v8, p0, v7
 
-    aget v12, p0, v9
+    aget v9, p0, v6
 
-    add-int v2, v11, v12
+    add-int v1, v8, v9
 
     .line 115
-    .local v2, "firstTwoSum":I
-    const/4 v11, 0x2
+    .local v1, "firstTwoSum":I
+    const/4 v8, 0x2
 
-    aget v11, p0, v11
+    aget v8, p0, v8
 
-    add-int/2addr v11, v2
+    add-int/2addr v8, v1
 
-    const/4 v12, 0x3
+    const/4 v9, 0x3
 
-    aget v12, p0, v12
+    aget v9, p0, v9
 
-    add-int v8, v11, v12
+    add-int v5, v8, v9
 
     .line 116
-    .local v8, "sum":I
-    int-to-float v11, v2
+    .local v5, "sum":I
+    int-to-float v8, v1
 
-    int-to-float v12, v8
+    int-to-float v9, v5
 
-    div-float v7, v11, v12
+    div-float v4, v8, v9
 
     .line 117
-    .local v7, "ratio":F
-    const v11, 0x3f4aaaab
+    .local v4, "ratio":F
+    const v8, 0x3f4aaaab
 
-    cmpl-float v11, v7, v11
+    cmpl-float v8, v4, v8
 
-    if-ltz v11, :cond_3f
+    if-ltz v8, :cond_3e
 
-    const v11, 0x3f649249
+    const v8, 0x3f649249
 
-    cmpg-float v11, v7, v11
+    cmpg-float v8, v4, v8
 
-    if-gtz v11, :cond_3f
+    if-gtz v8, :cond_3e
 
     .line 119
-    const v6, 0x7fffffff
+    const v3, 0x7fffffff
 
     .line 120
-    .local v6, "minCounter":I
-    const/high16 v5, -0x80000000
+    .local v3, "minCounter":I
+    const/high16 v2, -0x80000000
 
     .line 121
-    .local v5, "maxCounter":I
-    move-object v0, p0
+    .local v2, "maxCounter":I
+    array-length v9, p0
 
-    .local v0, "arr$":[I
-    array-length v4, v0
+    move v8, v7
 
-    .local v4, "len$":I
-    const/4 v3, 0x0
+    :goto_2a
+    if-ge v8, v9, :cond_37
 
-    .local v3, "i$":I
-    :goto_2b
-    if-ge v3, v4, :cond_38
-
-    aget v1, v0, v3
+    aget v0, p0, v8
 
     .line 122
-    .local v1, "counter":I
-    if-le v1, v5, :cond_32
+    .local v0, "counter":I
+    if-le v0, v2, :cond_31
 
     .line 123
-    move v5, v1
+    move v2, v0
 
     .line 125
-    :cond_32
-    if-ge v1, v6, :cond_35
+    :cond_31
+    if-ge v0, v3, :cond_34
 
     .line 126
-    move v6, v1
+    move v3, v0
 
     .line 121
-    :cond_35
-    add-int/lit8 v3, v3, 0x1
+    :cond_34
+    add-int/lit8 v8, v8, 0x1
 
-    goto :goto_2b
-
-    .line 129
-    .end local v1    # "counter":I
-    :cond_38
-    mul-int/lit8 v11, v6, 0xa
-
-    if-ge v5, v11, :cond_3d
-
-    .line 131
-    .end local v0    # "arr$":[I
-    .end local v3    # "i$":I
-    .end local v4    # "len$":I
-    .end local v5    # "maxCounter":I
-    .end local v6    # "minCounter":I
-    :goto_3c
-    return v9
-
-    .restart local v0    # "arr$":[I
-    .restart local v3    # "i$":I
-    .restart local v4    # "len$":I
-    .restart local v5    # "maxCounter":I
-    .restart local v6    # "minCounter":I
-    :cond_3d
-    move v9, v10
+    goto :goto_2a
 
     .line 129
-    goto :goto_3c
+    .end local v0    # "counter":I
+    :cond_37
+    mul-int/lit8 v8, v3, 0xa
 
-    .end local v0    # "arr$":[I
-    .end local v3    # "i$":I
-    .end local v4    # "len$":I
-    .end local v5    # "maxCounter":I
-    .end local v6    # "minCounter":I
-    :cond_3f
-    move v9, v10
+    if-ge v2, v8, :cond_3c
 
     .line 131
-    goto :goto_3c
+    .end local v2    # "maxCounter":I
+    .end local v3    # "minCounter":I
+    :goto_3b
+    return v6
+
+    .restart local v2    # "maxCounter":I
+    .restart local v3    # "minCounter":I
+    :cond_3c
+    move v6, v7
+
+    .line 129
+    goto :goto_3b
+
+    .end local v2    # "maxCounter":I
+    .end local v3    # "minCounter":I
+    :cond_3e
+    move v6, v7
+
+    .line 131
+    goto :goto_3b
 .end method
 
 .method protected static parseFinderValue([I[[I)I
@@ -388,32 +369,34 @@
     :goto_1
     array-length v1, p1
 
-    if-ge v0, v1, :cond_14
+    if-ge v0, v1, :cond_18
 
     .line 73
     aget-object v1, p1, v0
 
-    const/16 v2, 0x73
+    const v2, 0x3ee66666
 
-    invoke-static {p0, v1, v2}, Lcom/google/zxing/oned/rss/AbstractRSSReader;->patternMatchVariance([I[II)I
+    invoke-static {p0, v1, v2}, Lcom/google/zxing/oned/rss/AbstractRSSReader;->patternMatchVariance([I[IF)F
 
     move-result v1
 
-    const/16 v2, 0x33
+    const v2, 0x3e4ccccd
 
-    if-ge v1, v2, :cond_11
+    cmpg-float v1, v1, v2
+
+    if-gez v1, :cond_15
 
     .line 75
     return v0
 
     .line 72
-    :cond_11
+    :cond_15
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
     .line 78
-    :cond_14
+    :cond_18
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
     move-result-object v1

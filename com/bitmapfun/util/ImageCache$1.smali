@@ -1,5 +1,5 @@
 .class Lcom/bitmapfun/util/ImageCache$1;
-.super Landroid/support/v4/util/LruCache;
+.super Landroid/util/LruCache;
 .source "ImageCache.java"
 
 
@@ -15,7 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroid/support/v4/util/LruCache",
+        "Landroid/util/LruCache",
         "<",
         "Ljava/lang/String;",
         "Landroid/graphics/Bitmap;",
@@ -31,14 +31,14 @@
 # direct methods
 .method constructor <init>(Lcom/bitmapfun/util/ImageCache;I)V
     .registers 3
-    .param p2, "$anonymous0"    # I
+    .param p1, "this$0"    # Lcom/bitmapfun/util/ImageCache;
+    .param p2, "x0"    # I
 
     .prologue
-    .line 1
+    .line 129
     iput-object p1, p0, Lcom/bitmapfun/util/ImageCache$1;->this$0:Lcom/bitmapfun/util/ImageCache;
 
-    .line 130
-    invoke-direct {p0, p2}, Landroid/support/v4/util/LruCache;-><init>(I)V
+    invoke-direct {p0, p2}, Landroid/util/LruCache;-><init>(I)V
 
     return-void
 .end method
@@ -49,7 +49,7 @@
     .registers 4
 
     .prologue
-    .line 1
+    .line 129
     check-cast p1, Ljava/lang/String;
 
     check-cast p2, Landroid/graphics/Bitmap;
@@ -67,7 +67,7 @@
     .param p2, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
-    .line 137
+    .line 136
     invoke-static {p2}, Lcom/bitmapfun/util/ImageCache;->getBitmapSize(Landroid/graphics/Bitmap;)I
 
     move-result v0

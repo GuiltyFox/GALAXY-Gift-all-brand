@@ -19,7 +19,7 @@
     .registers 1
 
     .prologue
-    .line 651
+    .line 1071
     invoke-direct {p0}, Landroid/support/v4/view/ViewCompat$BaseViewCompatImpl;-><init>()V
 
     return-void
@@ -32,10 +32,23 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 654
+    .line 1074
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatEclairMr1;->isOpaque(Landroid/view/View;)Z
 
     move-result v0
 
     return v0
+.end method
+
+.method public setChildrenDrawingOrderEnabled(Landroid/view/ViewGroup;Z)V
+    .registers 3
+    .param p1, "viewGroup"    # Landroid/view/ViewGroup;
+    .param p2, "enabled"    # Z
+
+    .prologue
+    .line 1079
+    invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatEclairMr1;->setChildrenDrawingOrderEnabled(Landroid/view/ViewGroup;Z)V
+
+    .line 1080
+    return-void
 .end method

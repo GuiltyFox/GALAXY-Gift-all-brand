@@ -20,20 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/samsung/privilege/activity/QRLandingActivity;
 
-.field private final synthetic val$msg:Ljava/lang/String;
+.field final synthetic val$msg:Ljava/lang/String;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/QRLandingActivity;Ljava/lang/String;)V
     .registers 3
+    .param p1, "this$0"    # Lcom/samsung/privilege/activity/QRLandingActivity;
 
     .prologue
-    .line 1
+    .line 527
     iput-object p1, p0, Lcom/samsung/privilege/activity/QRLandingActivity$2;->this$0:Lcom/samsung/privilege/activity/QRLandingActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/QRLandingActivity$2;->val$msg:Ljava/lang/String;
 
-    .line 577
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .registers 5
 
     .prologue
-    .line 580
+    .line 530
     iget-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity$2;->this$0:Lcom/samsung/privilege/activity/QRLandingActivity;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/QRLandingActivity$2;->val$msg:Ljava/lang/String;
@@ -56,10 +56,10 @@
 
     move-result-object v0
 
-    .line 581
+    .line 531
     .local v0, "toast":Landroid/widget/Toast;
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 582
+    .line 532
     return-void
 .end method

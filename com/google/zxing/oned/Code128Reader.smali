@@ -32,9 +32,9 @@
 
 .field private static final CODE_STOP:I = 0x6a
 
-.field private static final MAX_AVG_VARIANCE:I = 0x40
+.field private static final MAX_AVG_VARIANCE:F = 0.25f
 
-.field private static final MAX_INDIVIDUAL_VARIANCE:I = 0xb3
+.field private static final MAX_INDIVIDUAL_VARIANCE:F = 0.7f
 
 
 # direct methods
@@ -2005,10 +2005,10 @@
     invoke-static {p0, p2, p1}, Lcom/google/zxing/oned/Code128Reader;->recordPattern(Lcom/google/zxing/common/BitArray;I[I)V
 
     .line 217
-    const/16 v1, 0x40
+    const/high16 v1, 0x3e800000
 
     .line 218
-    .local v1, "bestVariance":I
+    .local v1, "bestVariance":F
     const/4 v0, -0x1
 
     .line 219
@@ -2021,7 +2021,7 @@
 
     array-length v5, v5
 
-    if-ge v2, v5, :cond_1d
+    if-ge v2, v5, :cond_20
 
     .line 220
     sget-object v5, Lcom/google/zxing/oned/Code128Reader;->CODE_PATTERNS:[[I
@@ -2030,15 +2030,17 @@
 
     .line 221
     .local v3, "pattern":[I
-    const/16 v5, 0xb3
+    const v5, 0x3f333333
 
-    invoke-static {p1, v3, v5}, Lcom/google/zxing/oned/Code128Reader;->patternMatchVariance([I[II)I
+    invoke-static {p1, v3, v5}, Lcom/google/zxing/oned/Code128Reader;->patternMatchVariance([I[IF)F
 
     move-result v4
 
     .line 222
-    .local v4, "variance":I
-    if-ge v4, v1, :cond_1a
+    .local v4, "variance":F
+    cmpg-float v5, v4, v1
+
+    if-gez v5, :cond_1d
 
     .line 223
     move v1, v4
@@ -2047,22 +2049,22 @@
     move v0, v2
 
     .line 219
-    :cond_1a
+    :cond_1d
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_7
 
     .line 228
     .end local v3    # "pattern":[I
-    .end local v4    # "variance":I
-    :cond_1d
-    if-ltz v0, :cond_20
+    .end local v4    # "variance":F
+    :cond_20
+    if-ltz v0, :cond_23
 
     .line 229
     return v0
 
     .line 231
-    :cond_20
+    :cond_23
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
     move-result-object v5
@@ -2121,7 +2123,7 @@
 
     .local v4, "i":I
     :goto_11
-    if-ge v4, v11, :cond_89
+    if-ge v4, v11, :cond_8c
 
     .line 180
     invoke-virtual {p0, v4}, Lcom/google/zxing/common/BitArray;->get(I)Z
@@ -2149,13 +2151,13 @@
     :cond_23
     add-int/lit8 v12, v6, -0x1
 
-    if-ne v2, v12, :cond_84
+    if-ne v2, v12, :cond_87
 
     .line 184
-    const/16 v1, 0x40
+    const/high16 v1, 0x3e800000
 
     .line 185
-    .local v1, "bestVariance":I
+    .local v1, "bestVariance":F
     const/4 v0, -0x1
 
     .line 186
@@ -2166,22 +2168,24 @@
     :goto_2c
     const/16 v12, 0x69
 
-    if-gt v9, v12, :cond_41
+    if-gt v9, v12, :cond_44
 
     .line 187
     sget-object v12, Lcom/google/zxing/oned/Code128Reader;->CODE_PATTERNS:[[I
 
     aget-object v12, v12, v9
 
-    const/16 v13, 0xb3
+    const v13, 0x3f333333
 
-    invoke-static {v3, v12, v13}, Lcom/google/zxing/oned/Code128Reader;->patternMatchVariance([I[II)I
+    invoke-static {v3, v12, v13}, Lcom/google/zxing/oned/Code128Reader;->patternMatchVariance([I[IF)F
 
     move-result v10
 
     .line 189
-    .local v10, "variance":I
-    if-ge v10, v1, :cond_3e
+    .local v10, "variance":F
+    cmpg-float v12, v10, v1
+
+    if-gez v12, :cond_41
 
     .line 190
     move v1, v10
@@ -2190,15 +2194,15 @@
     move v0, v9
 
     .line 186
-    :cond_3e
+    :cond_41
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_2c
 
     .line 195
-    .end local v10    # "variance":I
-    :cond_41
-    if-ltz v0, :cond_62
+    .end local v10    # "variance":F
+    :cond_44
+    if-ltz v0, :cond_65
 
     const/4 v12, 0x0
 
@@ -2208,6 +2212,7 @@
 
     sub-int v13, v7, v13
 
+    .line 196
     invoke-static {v12, v13}, Ljava/lang/Math;->max(II)I
 
     move-result v12
@@ -2218,7 +2223,7 @@
 
     move-result v12
 
-    if-eqz v12, :cond_62
+    if-eqz v12, :cond_65
 
     .line 197
     const/4 v12, 0x3
@@ -2240,7 +2245,7 @@
     return-object v12
 
     .line 199
-    :cond_62
+    :cond_65
     const/4 v12, 0x0
 
     aget v12, v3, v12
@@ -2281,35 +2286,35 @@
 
     .line 207
     .end local v0    # "bestMatch":I
-    .end local v1    # "bestVariance":I
+    .end local v1    # "bestVariance":F
     .end local v9    # "startCode":I
-    :goto_7d
+    :goto_80
     const/4 v12, 0x1
 
     aput v12, v3, v2
 
     .line 208
-    if-nez v5, :cond_87
+    if-nez v5, :cond_8a
 
     const/4 v5, 0x1
 
-    :goto_83
+    :goto_86
     goto :goto_20
 
     .line 205
-    :cond_84
+    :cond_87
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_7d
+    goto :goto_80
 
     .line 208
-    :cond_87
+    :cond_8a
     const/4 v5, 0x0
 
-    goto :goto_83
+    goto :goto_86
 
     .line 211
-    :cond_89
+    :cond_8c
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
     move-result-object v12
@@ -2346,7 +2351,7 @@
     .prologue
     .line 239
     .local p3, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
-    if-eqz p3, :cond_1f
+    if-eqz p3, :cond_3a
 
     sget-object v32, Lcom/google/zxing/DecodeHintType;->ASSUME_GS1:Lcom/google/zxing/DecodeHintType;
 
@@ -2358,150 +2363,40 @@
 
     move-result v32
 
-    if-eqz v32, :cond_1f
+    if-eqz v32, :cond_3a
 
-    const/4 v9, 0x1
+    const/4 v8, 0x1
 
     .line 241
-    .local v9, "convertFNC1":Z
+    .local v8, "convertFNC1":Z
     :goto_f
     invoke-static/range {p2 .. p2}, Lcom/google/zxing/oned/Code128Reader;->findStartPattern(Lcom/google/zxing/common/BitArray;)[I
 
-    move-result-object v30
+    move-result-object v29
 
     .line 242
-    .local v30, "startPatternInfo":[I
+    .local v29, "startPatternInfo":[I
     const/16 v32, 0x2
 
-    aget v29, v30, v32
+    aget v28, v29, v32
 
     .line 244
-    .local v29, "startCode":I
-    packed-switch v29, :pswitch_data_2a2
-
-    .line 255
-    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
-
-    move-result-object v32
-
-    throw v32
-
-    .line 239
-    .end local v9    # "convertFNC1":Z
-    .end local v29    # "startCode":I
-    .end local v30    # "startPatternInfo":[I
-    :cond_1f
-    const/4 v9, 0x0
-
-    goto :goto_f
-
-    .line 246
-    .restart local v9    # "convertFNC1":Z
-    .restart local v29    # "startCode":I
-    .restart local v30    # "startPatternInfo":[I
-    :pswitch_21
-    const/16 v8, 0x65
-
-    .line 258
-    .local v8, "codeSet":I
-    :goto_23
-    const/4 v12, 0x0
-
-    .line 259
-    .local v12, "done":Z
-    const/4 v15, 0x0
-
-    .line 261
-    .local v15, "isNextShifted":Z
-    new-instance v26, Ljava/lang/StringBuilder;
+    .local v28, "startCode":I
+    new-instance v22, Ljava/util/ArrayList;
 
     const/16 v32, 0x14
 
-    move-object/from16 v0, v26
-
-    move/from16 v1, v32
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    .line 262
-    .local v26, "result":Ljava/lang/StringBuilder;
-    new-instance v24, Ljava/util/ArrayList;
-
-    const/16 v32, 0x14
-
-    move-object/from16 v0, v24
+    move-object/from16 v0, v22
 
     move/from16 v1, v32
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 264
-    .local v24, "rawCodes":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Byte;>;"
-    const/16 v32, 0x0
+    .line 245
+    .local v22, "rawCodes":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Byte;>;"
+    move/from16 v0, v28
 
-    aget v18, v30, v32
-
-    .line 265
-    .local v18, "lastStart":I
-    const/16 v32, 0x1
-
-    aget v22, v30, v32
-
-    .line 266
-    .local v22, "nextStart":I
-    const/16 v32, 0x6
-
-    move/from16 v0, v32
-
-    new-array v11, v0, [I
-
-    .line 268
-    .local v11, "counters":[I
-    const/16 v17, 0x0
-
-    .line 269
-    .local v17, "lastCode":I
-    const/4 v7, 0x0
-
-    .line 270
-    .local v7, "code":I
-    move/from16 v6, v29
-
-    .line 271
-    .local v6, "checksumTotal":I
-    const/16 v21, 0x0
-
-    .line 272
-    .local v21, "multiplier":I
-    const/16 v16, 0x1
-
-    .line 274
-    .local v16, "lastCharacterWasPrintable":Z
-    :cond_52
-    :goto_52
-    if-nez v12, :cond_1b6
-
-    .line 276
-    move/from16 v31, v15
-
-    .line 277
-    .local v31, "unshift":Z
-    const/4 v15, 0x0
-
-    .line 280
-    move/from16 v17, v7
-
-    .line 283
-    move-object/from16 v0, p2
-
-    move/from16 v1, v22
-
-    invoke-static {v0, v11, v1}, Lcom/google/zxing/oned/Code128Reader;->decodeCode(Lcom/google/zxing/common/BitArray;[II)I
-
-    move-result v7
-
-    .line 285
-    int-to-byte v0, v7
+    int-to-byte v0, v0
 
     move/from16 v32, v0
 
@@ -2509,296 +2404,301 @@
 
     move-result-object v32
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v22
 
     move-object/from16 v1, v32
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 288
-    const/16 v32, 0x6a
+    .line 248
+    packed-switch v28, :pswitch_data_340
 
-    move/from16 v0, v32
-
-    if-eq v7, v0, :cond_77
-
-    .line 289
-    const/16 v16, 0x1
-
-    .line 293
-    :cond_77
-    const/16 v32, 0x6a
-
-    move/from16 v0, v32
-
-    if-eq v7, v0, :cond_83
-
-    .line 294
-    add-int/lit8 v21, v21, 0x1
-
-    .line 295
-    mul-int v32, v21, v7
-
-    add-int v6, v6, v32
-
-    .line 299
-    :cond_83
-    move/from16 v18, v22
-
-    .line 300
-    move-object v5, v11
-
-    .local v5, "arr$":[I
-    array-length v0, v5
-
-    move/from16 v20, v0
-
-    .local v20, "len$":I
-    const/4 v14, 0x0
-
-    .local v14, "i$":I
-    :goto_8a
-    move/from16 v0, v20
-
-    if-ge v14, v0, :cond_9b
-
-    aget v10, v5, v14
-
-    .line 301
-    .local v10, "counter":I
-    add-int v22, v22, v10
-
-    .line 300
-    add-int/lit8 v14, v14, 0x1
-
-    goto :goto_8a
-
-    .line 249
-    .end local v5    # "arr$":[I
-    .end local v6    # "checksumTotal":I
-    .end local v7    # "code":I
-    .end local v8    # "codeSet":I
-    .end local v10    # "counter":I
-    .end local v11    # "counters":[I
-    .end local v12    # "done":Z
-    .end local v14    # "i$":I
-    .end local v15    # "isNextShifted":Z
-    .end local v16    # "lastCharacterWasPrintable":Z
-    .end local v17    # "lastCode":I
-    .end local v18    # "lastStart":I
-    .end local v20    # "len$":I
-    .end local v21    # "multiplier":I
-    .end local v22    # "nextStart":I
-    .end local v24    # "rawCodes":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Byte;>;"
-    .end local v26    # "result":Ljava/lang/StringBuilder;
-    .end local v31    # "unshift":Z
-    :pswitch_95
-    const/16 v8, 0x64
-
-    .line 250
-    .restart local v8    # "codeSet":I
-    goto :goto_23
-
-    .line 252
-    .end local v8    # "codeSet":I
-    :pswitch_98
-    const/16 v8, 0x63
-
-    .line 253
-    .restart local v8    # "codeSet":I
-    goto :goto_23
-
-    .line 305
-    .restart local v5    # "arr$":[I
-    .restart local v6    # "checksumTotal":I
-    .restart local v7    # "code":I
-    .restart local v11    # "counters":[I
-    .restart local v12    # "done":Z
-    .restart local v14    # "i$":I
-    .restart local v15    # "isNextShifted":Z
-    .restart local v16    # "lastCharacterWasPrintable":Z
-    .restart local v17    # "lastCode":I
-    .restart local v18    # "lastStart":I
-    .restart local v20    # "len$":I
-    .restart local v21    # "multiplier":I
-    .restart local v22    # "nextStart":I
-    .restart local v24    # "rawCodes":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Byte;>;"
-    .restart local v26    # "result":Ljava/lang/StringBuilder;
-    .restart local v31    # "unshift":Z
-    :cond_9b
-    packed-switch v7, :pswitch_data_2ac
-
-    .line 312
-    packed-switch v8, :pswitch_data_2b6
-
-    .line 438
-    :cond_a1
-    :goto_a1
-    :pswitch_a1
-    if-eqz v31, :cond_52
-
-    .line 439
-    const/16 v32, 0x65
-
-    move/from16 v0, v32
-
-    if-ne v8, v0, :cond_1b2
-
-    const/16 v8, 0x64
-
-    :goto_ab
-    goto :goto_52
-
-    .line 309
-    :pswitch_ac
+    .line 259
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
     move-result-object v32
 
     throw v32
 
-    .line 315
-    :pswitch_b1
+    .line 239
+    .end local v8    # "convertFNC1":Z
+    .end local v22    # "rawCodes":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Byte;>;"
+    .end local v28    # "startCode":I
+    .end local v29    # "startPatternInfo":[I
+    :cond_3a
+    const/4 v8, 0x0
+
+    goto :goto_f
+
+    .line 250
+    .restart local v8    # "convertFNC1":Z
+    .restart local v22    # "rawCodes":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Byte;>;"
+    .restart local v28    # "startCode":I
+    .restart local v29    # "startPatternInfo":[I
+    :pswitch_3c
+    const/16 v7, 0x65
+
+    .line 262
+    .local v7, "codeSet":I
+    :goto_3e
+    const/4 v11, 0x0
+
+    .line 263
+    .local v11, "done":Z
+    const/4 v13, 0x0
+
+    .line 265
+    .local v13, "isNextShifted":Z
+    new-instance v24, Ljava/lang/StringBuilder;
+
+    const/16 v32, 0x14
+
+    move-object/from16 v0, v24
+
+    move/from16 v1, v32
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    .line 267
+    .local v24, "result":Ljava/lang/StringBuilder;
+    const/16 v32, 0x0
+
+    aget v17, v29, v32
+
+    .line 268
+    .local v17, "lastStart":I
+    const/16 v32, 0x1
+
+    aget v20, v29, v32
+
+    .line 269
+    .local v20, "nextStart":I
+    const/16 v32, 0x6
+
+    move/from16 v0, v32
+
+    new-array v10, v0, [I
+
+    .line 271
+    .local v10, "counters":[I
+    const/4 v15, 0x0
+
+    .line 272
+    .local v15, "lastCode":I
+    const/4 v6, 0x0
+
+    .line 273
+    .local v6, "code":I
+    move/from16 v5, v28
+
+    .line 274
+    .local v5, "checksumTotal":I
+    const/16 v19, 0x0
+
+    .line 275
+    .local v19, "multiplier":I
+    const/4 v14, 0x1
+
+    .line 276
+    .local v14, "lastCharacterWasPrintable":Z
+    const/16 v31, 0x0
+
+    .line 277
+    .local v31, "upperMode":Z
+    const/16 v27, 0x0
+
+    .line 279
+    .local v27, "shiftUpperMode":Z
+    :cond_64
+    :goto_64
+    if-nez v11, :cond_24e
+
+    .line 281
+    move/from16 v30, v13
+
+    .line 282
+    .local v30, "unshift":Z
+    const/4 v13, 0x0
+
+    .line 285
+    move v15, v6
+
+    .line 288
+    move-object/from16 v0, p2
+
+    move/from16 v1, v20
+
+    invoke-static {v0, v10, v1}, Lcom/google/zxing/oned/Code128Reader;->decodeCode(Lcom/google/zxing/common/BitArray;[II)I
+
+    move-result v6
+
+    .line 290
+    int-to-byte v0, v6
+
+    move/from16 v32, v0
+
+    invoke-static/range {v32 .. v32}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object v32
+
+    move-object/from16 v0, v22
+
+    move-object/from16 v1, v32
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 293
+    const/16 v32, 0x6a
+
+    move/from16 v0, v32
+
+    if-eq v6, v0, :cond_87
+
+    .line 294
+    const/4 v14, 0x1
+
+    .line 298
+    :cond_87
+    const/16 v32, 0x6a
+
+    move/from16 v0, v32
+
+    if-eq v6, v0, :cond_93
+
+    .line 299
+    add-int/lit8 v19, v19, 0x1
+
+    .line 300
+    mul-int v32, v19, v6
+
+    add-int v5, v5, v32
+
+    .line 304
+    :cond_93
+    move/from16 v17, v20
+
+    .line 305
+    array-length v0, v10
+
+    move/from16 v33, v0
+
+    const/16 v32, 0x0
+
+    :goto_9a
+    move/from16 v0, v32
+
+    move/from16 v1, v33
+
+    if-ge v0, v1, :cond_ad
+
+    aget v9, v10, v32
+
+    .line 306
+    .local v9, "counter":I
+    add-int v20, v20, v9
+
+    .line 305
+    add-int/lit8 v32, v32, 0x1
+
+    goto :goto_9a
+
+    .line 253
+    .end local v5    # "checksumTotal":I
+    .end local v6    # "code":I
+    .end local v7    # "codeSet":I
+    .end local v9    # "counter":I
+    .end local v10    # "counters":[I
+    .end local v11    # "done":Z
+    .end local v13    # "isNextShifted":Z
+    .end local v14    # "lastCharacterWasPrintable":Z
+    .end local v15    # "lastCode":I
+    .end local v17    # "lastStart":I
+    .end local v19    # "multiplier":I
+    .end local v20    # "nextStart":I
+    .end local v24    # "result":Ljava/lang/StringBuilder;
+    .end local v27    # "shiftUpperMode":Z
+    .end local v30    # "unshift":Z
+    .end local v31    # "upperMode":Z
+    :pswitch_a7
+    const/16 v7, 0x64
+
+    .line 254
+    .restart local v7    # "codeSet":I
+    goto :goto_3e
+
+    .line 256
+    .end local v7    # "codeSet":I
+    :pswitch_aa
+    const/16 v7, 0x63
+
+    .line 257
+    .restart local v7    # "codeSet":I
+    goto :goto_3e
+
+    .line 310
+    .restart local v5    # "checksumTotal":I
+    .restart local v6    # "code":I
+    .restart local v10    # "counters":[I
+    .restart local v11    # "done":Z
+    .restart local v13    # "isNextShifted":Z
+    .restart local v14    # "lastCharacterWasPrintable":Z
+    .restart local v15    # "lastCode":I
+    .restart local v17    # "lastStart":I
+    .restart local v19    # "multiplier":I
+    .restart local v20    # "nextStart":I
+    .restart local v24    # "result":Ljava/lang/StringBuilder;
+    .restart local v27    # "shiftUpperMode":Z
+    .restart local v30    # "unshift":Z
+    .restart local v31    # "upperMode":Z
+    :cond_ad
+    packed-switch v6, :pswitch_data_34a
+
+    .line 317
+    packed-switch v7, :pswitch_data_354
+
+    .line 478
+    :cond_b3
+    :goto_b3
+    :pswitch_b3
+    if-eqz v30, :cond_64
+
+    .line 479
+    const/16 v32, 0x65
+
+    move/from16 v0, v32
+
+    if-ne v7, v0, :cond_24a
+
+    const/16 v7, 0x64
+
+    :goto_bd
+    goto :goto_64
+
+    .line 314
+    :pswitch_be
+    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
+
+    move-result-object v32
+
+    throw v32
+
+    .line 320
+    :pswitch_c3
     const/16 v32, 0x40
 
     move/from16 v0, v32
 
-    if-ge v7, v0, :cond_c6
+    if-ge v6, v0, :cond_f5
 
-    .line 316
-    add-int/lit8 v32, v7, 0x20
+    .line 321
+    move/from16 v0, v27
 
-    move/from16 v0, v32
+    move/from16 v1, v31
 
-    int-to-char v0, v0
-
-    move/from16 v32, v0
-
-    move-object/from16 v0, v26
-
-    move/from16 v1, v32
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto :goto_a1
-
-    .line 317
-    :cond_c6
-    const/16 v32, 0x60
-
-    move/from16 v0, v32
-
-    if-ge v7, v0, :cond_db
-
-    .line 318
-    add-int/lit8 v32, v7, -0x40
-
-    move/from16 v0, v32
-
-    int-to-char v0, v0
-
-    move/from16 v32, v0
-
-    move-object/from16 v0, v26
-
-    move/from16 v1, v32
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto :goto_a1
+    if-ne v0, v1, :cond_e0
 
     .line 322
-    :cond_db
-    const/16 v32, 0x6a
-
-    move/from16 v0, v32
-
-    if-eq v7, v0, :cond_e3
-
-    .line 323
-    const/16 v16, 0x0
-
-    .line 325
-    :cond_e3
-    packed-switch v7, :pswitch_data_2c0
-
-    :pswitch_e6
-    goto :goto_a1
-
-    .line 344
-    :pswitch_e7
-    const/4 v15, 0x1
-
-    .line 345
-    const/16 v8, 0x64
-
-    .line 346
-    goto :goto_a1
-
-    .line 327
-    :pswitch_eb
-    if-eqz v9, :cond_a1
-
-    .line 328
-    invoke-virtual/range {v26 .. v26}, Ljava/lang/StringBuilder;->length()I
-
-    move-result v32
-
-    if-nez v32, :cond_fd
-
-    .line 331
-    const-string v32, "]C1"
-
-    move-object/from16 v0, v26
-
-    move-object/from16 v1, v32
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_a1
-
-    .line 334
-    :cond_fd
-    const/16 v32, 0x1d
-
-    move-object/from16 v0, v26
-
-    move/from16 v1, v32
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto :goto_a1
-
-    .line 348
-    :pswitch_107
-    const/16 v8, 0x64
-
-    .line 349
-    goto :goto_a1
-
-    .line 351
-    :pswitch_10a
-    const/16 v8, 0x63
-
-    .line 352
-    goto :goto_a1
-
-    .line 354
-    :pswitch_10d
-    const/4 v12, 0x1
-
-    goto :goto_a1
-
-    .line 360
-    :pswitch_10f
-    const/16 v32, 0x60
-
-    move/from16 v0, v32
-
-    if-ge v7, v0, :cond_125
-
-    .line 361
-    add-int/lit8 v32, v7, 0x20
+    add-int/lit8 v32, v6, 0x20
 
     move/from16 v0, v32
 
@@ -2806,230 +2706,525 @@
 
     move/from16 v32, v0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v24
 
     move/from16 v1, v32
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_a1
+    .line 326
+    :goto_dd
+    const/16 v27, 0x0
 
-    .line 363
-    :cond_125
+    goto :goto_b3
+
+    .line 324
+    :cond_e0
+    add-int/lit8 v32, v6, 0x20
+
+    move/from16 v0, v32
+
+    add-int/lit16 v0, v0, 0x80
+
+    move/from16 v32, v0
+
+    move/from16 v0, v32
+
+    int-to-char v0, v0
+
+    move/from16 v32, v0
+
+    move-object/from16 v0, v24
+
+    move/from16 v1, v32
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_dd
+
+    .line 327
+    :cond_f5
+    const/16 v32, 0x60
+
+    move/from16 v0, v32
+
+    if-ge v6, v0, :cond_121
+
+    .line 328
+    move/from16 v0, v27
+
+    move/from16 v1, v31
+
+    if-ne v0, v1, :cond_112
+
+    .line 329
+    add-int/lit8 v32, v6, -0x40
+
+    move/from16 v0, v32
+
+    int-to-char v0, v0
+
+    move/from16 v32, v0
+
+    move-object/from16 v0, v24
+
+    move/from16 v1, v32
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 333
+    :goto_10f
+    const/16 v27, 0x0
+
+    goto :goto_b3
+
+    .line 331
+    :cond_112
+    add-int/lit8 v32, v6, 0x40
+
+    move/from16 v0, v32
+
+    int-to-char v0, v0
+
+    move/from16 v32, v0
+
+    move-object/from16 v0, v24
+
+    move/from16 v1, v32
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_10f
+
+    .line 337
+    :cond_121
     const/16 v32, 0x6a
 
     move/from16 v0, v32
 
-    if-eq v7, v0, :cond_12d
+    if-eq v6, v0, :cond_128
 
-    .line 364
-    const/16 v16, 0x0
+    .line 338
+    const/4 v14, 0x0
 
-    .line 366
-    :cond_12d
-    packed-switch v7, :pswitch_data_2da
+    .line 340
+    :cond_128
+    packed-switch v6, :pswitch_data_35e
 
-    :pswitch_130
-    goto/16 :goto_a1
-
-    .line 385
-    :pswitch_132
-    const/4 v15, 0x1
-
-    .line 386
-    const/16 v8, 0x65
-
-    .line 387
-    goto/16 :goto_a1
-
-    .line 368
-    :pswitch_137
-    if-eqz v9, :cond_a1
+    :pswitch_12b
+    goto :goto_b3
 
     .line 369
-    invoke-virtual/range {v26 .. v26}, Ljava/lang/StringBuilder;->length()I
+    :pswitch_12c
+    const/4 v13, 0x1
+
+    .line 370
+    const/16 v7, 0x64
+
+    .line 371
+    goto :goto_b3
+
+    .line 342
+    :pswitch_130
+    if-eqz v8, :cond_b3
+
+    .line 343
+    invoke-virtual/range {v24 .. v24}, Ljava/lang/StringBuilder;->length()I
 
     move-result v32
 
-    if-nez v32, :cond_14a
+    if-nez v32, :cond_144
 
-    .line 372
-    const-string v32, "]C1"
+    .line 346
+    const-string/jumbo v32, "]C1"
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v24
 
     move-object/from16 v1, v32
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_a1
+    goto/16 :goto_b3
 
-    .line 375
-    :cond_14a
+    .line 349
+    :cond_144
     const/16 v32, 0x1d
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v24
 
     move/from16 v1, v32
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_a1
+    goto/16 :goto_b3
+
+    .line 358
+    :pswitch_14f
+    if-nez v31, :cond_159
+
+    if-eqz v27, :cond_159
+
+    .line 359
+    const/16 v31, 0x1
+
+    .line 360
+    const/16 v27, 0x0
+
+    goto/16 :goto_b3
+
+    .line 361
+    :cond_159
+    if-eqz v31, :cond_163
+
+    if-eqz v27, :cond_163
+
+    .line 362
+    const/16 v31, 0x0
+
+    .line 363
+    const/16 v27, 0x0
+
+    goto/16 :goto_b3
+
+    .line 365
+    :cond_163
+    const/16 v27, 0x1
+
+    .line 367
+    goto/16 :goto_b3
+
+    .line 373
+    :pswitch_167
+    const/16 v7, 0x64
+
+    .line 374
+    goto/16 :goto_b3
+
+    .line 376
+    :pswitch_16b
+    const/16 v7, 0x63
+
+    .line 377
+    goto/16 :goto_b3
+
+    .line 379
+    :pswitch_16f
+    const/4 v11, 0x1
+
+    goto/16 :goto_b3
+
+    .line 385
+    :pswitch_172
+    const/16 v32, 0x60
+
+    move/from16 v0, v32
+
+    if-ge v6, v0, :cond_1a5
+
+    .line 386
+    move/from16 v0, v27
+
+    move/from16 v1, v31
+
+    if-ne v0, v1, :cond_190
+
+    .line 387
+    add-int/lit8 v32, v6, 0x20
+
+    move/from16 v0, v32
+
+    int-to-char v0, v0
+
+    move/from16 v32, v0
+
+    move-object/from16 v0, v24
+
+    move/from16 v1, v32
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 391
+    :goto_18c
+    const/16 v27, 0x0
+
+    goto/16 :goto_b3
 
     .line 389
-    :pswitch_155
-    const/16 v8, 0x65
+    :cond_190
+    add-int/lit8 v32, v6, 0x20
 
-    .line 390
-    goto/16 :goto_a1
+    move/from16 v0, v32
 
-    .line 392
-    :pswitch_159
-    const/16 v8, 0x63
+    add-int/lit16 v0, v0, 0x80
+
+    move/from16 v32, v0
+
+    move/from16 v0, v32
+
+    int-to-char v0, v0
+
+    move/from16 v32, v0
+
+    move-object/from16 v0, v24
+
+    move/from16 v1, v32
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_18c
 
     .line 393
-    goto/16 :goto_a1
+    :cond_1a5
+    const/16 v32, 0x6a
 
-    .line 395
-    :pswitch_15d
-    const/4 v12, 0x1
+    move/from16 v0, v32
 
-    goto/16 :goto_a1
+    if-eq v6, v0, :cond_1ac
 
-    .line 401
-    :pswitch_160
+    .line 394
+    const/4 v14, 0x0
+
+    .line 396
+    :cond_1ac
+    packed-switch v6, :pswitch_data_378
+
+    :pswitch_1af
+    goto/16 :goto_b3
+
+    .line 425
+    :pswitch_1b1
+    const/4 v13, 0x1
+
+    .line 426
+    const/16 v7, 0x65
+
+    .line 427
+    goto/16 :goto_b3
+
+    .line 398
+    :pswitch_1b6
+    if-eqz v8, :cond_b3
+
+    .line 399
+    invoke-virtual/range {v24 .. v24}, Ljava/lang/StringBuilder;->length()I
+
+    move-result v32
+
+    if-nez v32, :cond_1ca
+
+    .line 402
+    const-string/jumbo v32, "]C1"
+
+    move-object/from16 v0, v24
+
+    move-object/from16 v1, v32
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto/16 :goto_b3
+
+    .line 405
+    :cond_1ca
+    const/16 v32, 0x1d
+
+    move-object/from16 v0, v24
+
+    move/from16 v1, v32
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto/16 :goto_b3
+
+    .line 414
+    :pswitch_1d5
+    if-nez v31, :cond_1df
+
+    if-eqz v27, :cond_1df
+
+    .line 415
+    const/16 v31, 0x1
+
+    .line 416
+    const/16 v27, 0x0
+
+    goto/16 :goto_b3
+
+    .line 417
+    :cond_1df
+    if-eqz v31, :cond_1e9
+
+    if-eqz v27, :cond_1e9
+
+    .line 418
+    const/16 v31, 0x0
+
+    .line 419
+    const/16 v27, 0x0
+
+    goto/16 :goto_b3
+
+    .line 421
+    :cond_1e9
+    const/16 v27, 0x1
+
+    .line 423
+    goto/16 :goto_b3
+
+    .line 429
+    :pswitch_1ed
+    const/16 v7, 0x65
+
+    .line 430
+    goto/16 :goto_b3
+
+    .line 432
+    :pswitch_1f1
+    const/16 v7, 0x63
+
+    .line 433
+    goto/16 :goto_b3
+
+    .line 435
+    :pswitch_1f5
+    const/4 v11, 0x1
+
+    goto/16 :goto_b3
+
+    .line 441
+    :pswitch_1f8
     const/16 v32, 0x64
 
     move/from16 v0, v32
 
-    if-ge v7, v0, :cond_17c
+    if-ge v6, v0, :cond_214
 
-    .line 402
+    .line 442
     const/16 v32, 0xa
 
     move/from16 v0, v32
 
-    if-ge v7, v0, :cond_175
+    if-ge v6, v0, :cond_20d
 
-    .line 403
+    .line 443
     const/16 v32, 0x30
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v24
 
     move/from16 v1, v32
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 405
-    :cond_175
-    move-object/from16 v0, v26
+    .line 445
+    :cond_20d
+    move-object/from16 v0, v24
 
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_a1
+    goto/16 :goto_b3
 
-    .line 407
-    :cond_17c
+    .line 447
+    :cond_214
     const/16 v32, 0x6a
 
     move/from16 v0, v32
 
-    if-eq v7, v0, :cond_184
+    if-eq v6, v0, :cond_21b
 
-    .line 408
-    const/16 v16, 0x0
+    .line 448
+    const/4 v14, 0x0
 
-    .line 410
-    :cond_184
-    packed-switch v7, :pswitch_data_2f4
+    .line 450
+    :cond_21b
+    packed-switch v6, :pswitch_data_392
 
-    :pswitch_187
-    goto/16 :goto_a1
+    :pswitch_21e
+    goto/16 :goto_b3
 
-    .line 427
-    :pswitch_189
-    const/16 v8, 0x64
+    .line 467
+    :pswitch_220
+    const/16 v7, 0x64
 
-    .line 428
-    goto/16 :goto_a1
+    .line 468
+    goto/16 :goto_b3
 
-    .line 412
-    :pswitch_18d
-    if-eqz v9, :cond_a1
+    .line 452
+    :pswitch_224
+    if-eqz v8, :cond_b3
 
-    .line 413
-    invoke-virtual/range {v26 .. v26}, Ljava/lang/StringBuilder;->length()I
+    .line 453
+    invoke-virtual/range {v24 .. v24}, Ljava/lang/StringBuilder;->length()I
 
     move-result v32
 
-    if-nez v32, :cond_1a0
+    if-nez v32, :cond_238
 
-    .line 416
-    const-string v32, "]C1"
+    .line 456
+    const-string/jumbo v32, "]C1"
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v24
 
     move-object/from16 v1, v32
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_a1
+    goto/16 :goto_b3
 
-    .line 419
-    :cond_1a0
+    .line 459
+    :cond_238
     const/16 v32, 0x1d
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v24
 
     move/from16 v1, v32
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_a1
+    goto/16 :goto_b3
 
-    .line 424
-    :pswitch_1ab
-    const/16 v8, 0x65
+    .line 464
+    :pswitch_243
+    const/16 v7, 0x65
 
-    .line 425
-    goto/16 :goto_a1
+    .line 465
+    goto/16 :goto_b3
 
-    .line 430
-    :pswitch_1af
-    const/4 v12, 0x1
+    .line 470
+    :pswitch_247
+    const/4 v11, 0x1
 
-    goto/16 :goto_a1
+    goto/16 :goto_b3
 
-    .line 439
-    :cond_1b2
-    const/16 v8, 0x65
+    .line 479
+    :cond_24a
+    const/16 v7, 0x65
 
-    goto/16 :goto_ab
+    goto/16 :goto_bd
 
-    .line 447
-    .end local v5    # "arr$":[I
-    .end local v14    # "i$":I
-    .end local v20    # "len$":I
-    .end local v31    # "unshift":Z
-    :cond_1b6
+    .line 484
+    .end local v30    # "unshift":Z
+    :cond_24e
+    sub-int v16, v20, v17
+
+    .line 489
+    .local v16, "lastPatternSize":I
     move-object/from16 v0, p2
 
-    move/from16 v1, v22
+    move/from16 v1, v20
 
     invoke-virtual {v0, v1}, Lcom/google/zxing/common/BitArray;->getNextUnset(I)I
 
-    move-result v22
+    move-result v20
 
-    .line 448
+    .line 491
     invoke-virtual/range {p2 .. p2}, Lcom/google/zxing/common/BitArray;->getSize()I
 
     move-result v32
 
-    sub-int v33, v22, v18
+    sub-int v33, v20, v17
 
     div-int/lit8 v33, v33, 0x2
 
-    add-int v33, v33, v22
+    add-int v33, v33, v20
 
     invoke-static/range {v32 .. v33}, Ljava/lang/Math;->min(II)I
 
@@ -3037,9 +3232,10 @@
 
     const/16 v33, 0x0
 
+    .line 490
     move-object/from16 v0, p2
 
-    move/from16 v1, v22
+    move/from16 v1, v20
 
     move/from16 v2, v32
 
@@ -3049,88 +3245,86 @@
 
     move-result v32
 
-    if-nez v32, :cond_1e1
+    if-nez v32, :cond_27b
 
-    .line 451
+    .line 493
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
     move-result-object v32
 
     throw v32
 
-    .line 455
-    :cond_1e1
-    mul-int v32, v21, v17
+    .line 497
+    :cond_27b
+    mul-int v32, v19, v15
 
-    sub-int v6, v6, v32
+    sub-int v5, v5, v32
 
-    .line 457
-    rem-int/lit8 v32, v6, 0x67
+    .line 499
+    rem-int/lit8 v32, v5, 0x67
 
     move/from16 v0, v32
 
-    move/from16 v1, v17
+    if-eq v0, v15, :cond_28a
 
-    if-eq v0, v1, :cond_1f2
-
-    .line 458
+    .line 500
     invoke-static {}, Lcom/google/zxing/ChecksumException;->getChecksumInstance()Lcom/google/zxing/ChecksumException;
 
     move-result-object v32
 
     throw v32
 
-    .line 462
-    :cond_1f2
-    invoke-virtual/range {v26 .. v26}, Ljava/lang/StringBuilder;->length()I
+    .line 504
+    :cond_28a
+    invoke-virtual/range {v24 .. v24}, Ljava/lang/StringBuilder;->length()I
 
-    move-result v27
+    move-result v25
 
-    .line 463
-    .local v27, "resultLength":I
-    if-nez v27, :cond_1fd
+    .line 505
+    .local v25, "resultLength":I
+    if-nez v25, :cond_295
 
-    .line 465
+    .line 507
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
     move-result-object v32
 
     throw v32
 
-    .line 470
-    :cond_1fd
-    if-lez v27, :cond_212
+    .line 512
+    :cond_295
+    if-lez v25, :cond_2aa
 
-    if-eqz v16, :cond_212
+    if-eqz v14, :cond_2aa
 
-    .line 471
+    .line 513
     const/16 v32, 0x63
 
     move/from16 v0, v32
 
-    if-ne v8, v0, :cond_250
+    if-ne v7, v0, :cond_2ed
 
-    .line 472
-    add-int/lit8 v32, v27, -0x2
+    .line 514
+    add-int/lit8 v32, v25, -0x2
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v24
 
     move/from16 v1, v32
 
-    move/from16 v2, v27
+    move/from16 v2, v25
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
-    .line 478
-    :cond_212
-    :goto_212
+    .line 520
+    :cond_2aa
+    :goto_2aa
     const/16 v32, 0x1
 
-    aget v32, v30, v32
+    aget v32, v29, v32
 
     const/16 v33, 0x0
 
-    aget v33, v30, v33
+    aget v33, v29, v33
 
     add-int v32, v32, v33
 
@@ -3142,50 +3336,56 @@
 
     const/high16 v33, 0x40000000
 
-    div-float v19, v32, v33
+    div-float v18, v32, v33
 
-    .line 479
-    .local v19, "left":F
-    add-int v32, v22, v18
-
-    move/from16 v0, v32
+    .line 521
+    .local v18, "left":F
+    move/from16 v0, v17
 
     int-to-float v0, v0
 
     move/from16 v32, v0
 
-    const/high16 v33, 0x40000000
+    move/from16 v0, v16
 
-    div-float v28, v32, v33
+    int-to-float v0, v0
 
-    .line 481
-    .local v28, "right":F
-    invoke-interface/range {v24 .. v24}, Ljava/util/List;->size()I
+    move/from16 v33, v0
 
-    move-result v25
+    const/high16 v34, 0x40000000
 
-    .line 482
-    .local v25, "rawCodesSize":I
-    move/from16 v0, v25
+    div-float v33, v33, v34
+
+    add-float v26, v32, v33
+
+    .line 523
+    .local v26, "right":F
+    invoke-interface/range {v22 .. v22}, Ljava/util/List;->size()I
+
+    move-result v23
+
+    .line 524
+    .local v23, "rawCodesSize":I
+    move/from16 v0, v23
 
     new-array v0, v0, [B
 
-    move-object/from16 v23, v0
+    move-object/from16 v21, v0
 
-    .line 483
-    .local v23, "rawBytes":[B
-    const/4 v13, 0x0
+    .line 525
+    .local v21, "rawBytes":[B
+    const/4 v12, 0x0
 
-    .local v13, "i":I
-    :goto_23b
-    move/from16 v0, v25
+    .local v12, "i":I
+    :goto_2d8
+    move/from16 v0, v23
 
-    if-ge v13, v0, :cond_25c
+    if-ge v12, v0, :cond_2f9
 
-    .line 484
-    move-object/from16 v0, v24
+    .line 526
+    move-object/from16 v0, v22
 
-    invoke-interface {v0, v13}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v32
 
@@ -3195,42 +3395,43 @@
 
     move-result v32
 
-    aput-byte v32, v23, v13
+    aput-byte v32, v21, v12
 
-    .line 483
-    add-int/lit8 v13, v13, 0x1
+    .line 525
+    add-int/lit8 v12, v12, 0x1
 
-    goto :goto_23b
+    goto :goto_2d8
 
-    .line 474
-    .end local v13    # "i":I
-    .end local v19    # "left":F
-    .end local v23    # "rawBytes":[B
-    .end local v25    # "rawCodesSize":I
-    .end local v28    # "right":F
-    :cond_250
-    add-int/lit8 v32, v27, -0x1
+    .line 516
+    .end local v12    # "i":I
+    .end local v18    # "left":F
+    .end local v21    # "rawBytes":[B
+    .end local v23    # "rawCodesSize":I
+    .end local v26    # "right":F
+    :cond_2ed
+    add-int/lit8 v32, v25, -0x1
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v24
 
     move/from16 v1, v32
 
-    move/from16 v2, v27
+    move/from16 v2, v25
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
-    goto :goto_212
+    goto :goto_2aa
 
-    .line 487
-    .restart local v13    # "i":I
-    .restart local v19    # "left":F
-    .restart local v23    # "rawBytes":[B
-    .restart local v25    # "rawCodesSize":I
-    .restart local v28    # "right":F
-    :cond_25c
+    .line 529
+    .restart local v12    # "i":I
+    .restart local v18    # "left":F
+    .restart local v21    # "rawBytes":[B
+    .restart local v23    # "rawCodesSize":I
+    .restart local v26    # "right":F
+    :cond_2f9
     new-instance v32, Lcom/google/zxing/Result;
 
-    invoke-virtual/range {v26 .. v26}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 530
+    invoke-virtual/range {v24 .. v24}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v33
 
@@ -3254,7 +3455,7 @@
 
     move-object/from16 v0, v36
 
-    move/from16 v1, v19
+    move/from16 v1, v18
 
     move/from16 v2, v37
 
@@ -3274,7 +3475,7 @@
 
     move-object/from16 v0, v36
 
-    move/from16 v1, v28
+    move/from16 v1, v26
 
     move/from16 v2, v37
 
@@ -3288,7 +3489,7 @@
 
     move-object/from16 v1, v33
 
-    move-object/from16 v2, v23
+    move-object/from16 v2, v21
 
     move-object/from16 v3, v34
 
@@ -3298,71 +3499,73 @@
 
     return-object v32
 
-    .line 244
-    :pswitch_data_2a2
+    .line 248
+    nop
+
+    :pswitch_data_340
     .packed-switch 0x67
-        :pswitch_21
-        :pswitch_95
-        :pswitch_98
+        :pswitch_3c
+        :pswitch_a7
+        :pswitch_aa
     .end packed-switch
 
-    .line 305
-    :pswitch_data_2ac
+    .line 310
+    :pswitch_data_34a
     .packed-switch 0x67
-        :pswitch_ac
-        :pswitch_ac
-        :pswitch_ac
+        :pswitch_be
+        :pswitch_be
+        :pswitch_be
     .end packed-switch
 
-    .line 312
-    :pswitch_data_2b6
+    .line 317
+    :pswitch_data_354
     .packed-switch 0x63
-        :pswitch_160
-        :pswitch_10f
-        :pswitch_b1
+        :pswitch_1f8
+        :pswitch_172
+        :pswitch_c3
     .end packed-switch
 
-    .line 325
-    :pswitch_data_2c0
+    .line 340
+    :pswitch_data_35e
     .packed-switch 0x60
-        :pswitch_a1
-        :pswitch_a1
-        :pswitch_e7
-        :pswitch_10a
-        :pswitch_107
-        :pswitch_a1
-        :pswitch_eb
-        :pswitch_e6
-        :pswitch_e6
-        :pswitch_e6
-        :pswitch_10d
+        :pswitch_b3
+        :pswitch_b3
+        :pswitch_12c
+        :pswitch_16b
+        :pswitch_167
+        :pswitch_14f
+        :pswitch_130
+        :pswitch_12b
+        :pswitch_12b
+        :pswitch_12b
+        :pswitch_16f
     .end packed-switch
 
-    .line 366
-    :pswitch_data_2da
+    .line 396
+    :pswitch_data_378
     .packed-switch 0x60
-        :pswitch_a1
-        :pswitch_a1
-        :pswitch_132
-        :pswitch_159
-        :pswitch_a1
-        :pswitch_155
-        :pswitch_137
-        :pswitch_130
-        :pswitch_130
-        :pswitch_130
-        :pswitch_15d
-    .end packed-switch
-
-    .line 410
-    :pswitch_data_2f4
-    .packed-switch 0x64
-        :pswitch_189
-        :pswitch_1ab
-        :pswitch_18d
-        :pswitch_187
-        :pswitch_187
-        :pswitch_187
+        :pswitch_b3
+        :pswitch_b3
+        :pswitch_1b1
+        :pswitch_1f1
+        :pswitch_1d5
+        :pswitch_1ed
+        :pswitch_1b6
         :pswitch_1af
+        :pswitch_1af
+        :pswitch_1af
+        :pswitch_1f5
+    .end packed-switch
+
+    .line 450
+    :pswitch_data_392
+    .packed-switch 0x64
+        :pswitch_220
+        :pswitch_243
+        :pswitch_224
+        :pswitch_21e
+        :pswitch_21e
+        :pswitch_21e
+        :pswitch_247
     .end packed-switch
 .end method

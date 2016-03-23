@@ -124,8 +124,6 @@
 
 .field private mGutterSize:I
 
-.field private mIgnoreGutter:Z
-
 .field private mInLayout:Z
 
 .field private mInitialMotionX:F
@@ -135,6 +133,8 @@
 .field private mInternalPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
 
 .field private mIsBeingDragged:Z
+
+.field private mIsScrollStarted:Z
 
 .field private mIsUnableToDrag:Z
 
@@ -170,6 +170,17 @@
 .field private mOffscreenPageLimit:I
 
 .field private mOnPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+.field private mOnPageChangeListeners:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Landroid/support/v4/view/ViewPager$OnPageChangeListener;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field private mPageMargin:I
 
@@ -209,7 +220,7 @@
     .registers 3
 
     .prologue
-    .line 103
+    .line 105
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -222,21 +233,21 @@
 
     sput-object v0, Landroid/support/v4/view/ViewPager;->LAYOUT_ATTRS:[I
 
-    .line 121
+    .line 123
     new-instance v0, Landroid/support/v4/view/ViewPager$1;
 
     invoke-direct {v0}, Landroid/support/v4/view/ViewPager$1;-><init>()V
 
     sput-object v0, Landroid/support/v4/view/ViewPager;->COMPARATOR:Ljava/util/Comparator;
 
-    .line 128
+    .line 130
     new-instance v0, Landroid/support/v4/view/ViewPager$2;
 
     invoke-direct {v0}, Landroid/support/v4/view/ViewPager$2;-><init>()V
 
     sput-object v0, Landroid/support/v4/view/ViewPager;->sInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 228
+    .line 233
     new-instance v0, Landroid/support/v4/view/ViewPager$ViewPositionComparator;
 
     invoke-direct {v0}, Landroid/support/v4/view/ViewPager$ViewPositionComparator;-><init>()V
@@ -259,75 +270,75 @@
 
     const/4 v1, -0x1
 
-    .line 349
+    .line 354
     invoke-direct {p0, p1}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
 
-    .line 135
+    .line 137
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
-    .line 136
+    .line 138
     new-instance v0, Landroid/support/v4/view/ViewPager$ItemInfo;
 
     invoke-direct {v0}, Landroid/support/v4/view/ViewPager$ItemInfo;-><init>()V
 
     iput-object v0, p0, Landroid/support/v4/view/ViewPager;->mTempItem:Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 138
+    .line 140
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/support/v4/view/ViewPager;->mTempRect:Landroid/graphics/Rect;
 
-    .line 142
+    .line 144
     iput v1, p0, Landroid/support/v4/view/ViewPager;->mRestoredCurItem:I
 
-    .line 143
+    .line 145
     iput-object v4, p0, Landroid/support/v4/view/ViewPager;->mRestoredAdapterState:Landroid/os/Parcelable;
 
-    .line 144
+    .line 146
     iput-object v4, p0, Landroid/support/v4/view/ViewPager;->mRestoredClassLoader:Ljava/lang/ClassLoader;
 
-    .line 156
+    .line 161
     const v0, -0x800001
 
     iput v0, p0, Landroid/support/v4/view/ViewPager;->mFirstOffset:F
 
-    .line 157
+    .line 162
     const v0, 0x7f7fffff
 
     iput v0, p0, Landroid/support/v4/view/ViewPager;->mLastOffset:F
 
-    .line 166
+    .line 171
     iput v3, p0, Landroid/support/v4/view/ViewPager;->mOffscreenPageLimit:I
 
-    .line 185
+    .line 189
     iput v1, p0, Landroid/support/v4/view/ViewPager;->mActivePointerId:I
 
-    .line 212
+    .line 216
     iput-boolean v3, p0, Landroid/support/v4/view/ViewPager;->mFirstLayout:Z
 
-    .line 213
+    .line 217
     iput-boolean v2, p0, Landroid/support/v4/view/ViewPager;->mNeedCalculatePageOffsets:Z
 
-    .line 246
+    .line 251
     new-instance v0, Landroid/support/v4/view/ViewPager$3;
 
     invoke-direct {v0, p0}, Landroid/support/v4/view/ViewPager$3;-><init>(Landroid/support/v4/view/ViewPager;)V
 
     iput-object v0, p0, Landroid/support/v4/view/ViewPager;->mEndScrollRunnable:Ljava/lang/Runnable;
 
-    .line 253
+    .line 258
     iput v2, p0, Landroid/support/v4/view/ViewPager;->mScrollState:I
 
-    .line 350
+    .line 355
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->initViewPager()V
 
-    .line 351
+    .line 356
     return-void
 .end method
 
@@ -345,75 +356,75 @@
 
     const/4 v1, -0x1
 
-    .line 354
+    .line 359
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 135
+    .line 137
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
-    .line 136
+    .line 138
     new-instance v0, Landroid/support/v4/view/ViewPager$ItemInfo;
 
     invoke-direct {v0}, Landroid/support/v4/view/ViewPager$ItemInfo;-><init>()V
 
     iput-object v0, p0, Landroid/support/v4/view/ViewPager;->mTempItem:Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 138
+    .line 140
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/support/v4/view/ViewPager;->mTempRect:Landroid/graphics/Rect;
 
-    .line 142
+    .line 144
     iput v1, p0, Landroid/support/v4/view/ViewPager;->mRestoredCurItem:I
 
-    .line 143
+    .line 145
     iput-object v4, p0, Landroid/support/v4/view/ViewPager;->mRestoredAdapterState:Landroid/os/Parcelable;
 
-    .line 144
+    .line 146
     iput-object v4, p0, Landroid/support/v4/view/ViewPager;->mRestoredClassLoader:Ljava/lang/ClassLoader;
 
-    .line 156
+    .line 161
     const v0, -0x800001
 
     iput v0, p0, Landroid/support/v4/view/ViewPager;->mFirstOffset:F
 
-    .line 157
+    .line 162
     const v0, 0x7f7fffff
 
     iput v0, p0, Landroid/support/v4/view/ViewPager;->mLastOffset:F
 
-    .line 166
+    .line 171
     iput v3, p0, Landroid/support/v4/view/ViewPager;->mOffscreenPageLimit:I
 
-    .line 185
+    .line 189
     iput v1, p0, Landroid/support/v4/view/ViewPager;->mActivePointerId:I
 
-    .line 212
+    .line 216
     iput-boolean v3, p0, Landroid/support/v4/view/ViewPager;->mFirstLayout:Z
 
-    .line 213
+    .line 217
     iput-boolean v2, p0, Landroid/support/v4/view/ViewPager;->mNeedCalculatePageOffsets:Z
 
-    .line 246
+    .line 251
     new-instance v0, Landroid/support/v4/view/ViewPager$3;
 
     invoke-direct {v0, p0}, Landroid/support/v4/view/ViewPager$3;-><init>(Landroid/support/v4/view/ViewPager;)V
 
     iput-object v0, p0, Landroid/support/v4/view/ViewPager;->mEndScrollRunnable:Ljava/lang/Runnable;
 
-    .line 253
+    .line 258
     iput v2, p0, Landroid/support/v4/view/ViewPager;->mScrollState:I
 
-    .line 355
+    .line 360
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->initViewPager()V
 
-    .line 356
+    .line 361
     return-void
 .end method
 
@@ -423,7 +434,7 @@
     .param p1, "x1"    # I
 
     .prologue
-    .line 89
+    .line 91
     invoke-direct {p0, p1}, Landroid/support/v4/view/ViewPager;->setScrollState(I)V
 
     return-void
@@ -434,7 +445,7 @@
     .param p0, "x0"    # Landroid/support/v4/view/ViewPager;
 
     .prologue
-    .line 89
+    .line 91
     iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     return-object v0
@@ -445,7 +456,7 @@
     .param p0, "x0"    # Landroid/support/v4/view/ViewPager;
 
     .prologue
-    .line 89
+    .line 91
     iget v0, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
     return v0
@@ -455,7 +466,7 @@
     .registers 1
 
     .prologue
-    .line 89
+    .line 91
     sget-object v0, Landroid/support/v4/view/ViewPager;->LAYOUT_ATTRS:[I
 
     return-object v0
@@ -468,20 +479,20 @@
     .param p3, "oldCurInfo"    # Landroid/support/v4/view/ViewPager$ItemInfo;
 
     .prologue
-    .line 1127
+    .line 1231
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     invoke-virtual {v12}, Landroid/support/v4/view/PagerAdapter;->getCount()I
 
     move-result v1
 
-    .line 1128
+    .line 1232
     .local v1, "N":I
     invoke-direct {p0}, Landroid/support/v4/view/ViewPager;->getClientWidth()I
 
     move-result v11
 
-    .line 1129
+    .line 1233
     .local v11, "width":I
     if-lez v11, :cond_58
 
@@ -493,30 +504,30 @@
 
     div-float v6, v12, v13
 
-    .line 1131
+    .line 1235
     .local v6, "marginOffset":F
     :goto_12
     if-eqz p3, :cond_bc
 
-    .line 1132
+    .line 1236
     move-object/from16 v0, p3
 
     iget v8, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
-    .line 1134
+    .line 1238
     .local v8, "oldCurPosition":I
     iget v12, p1, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
     if-ge v8, v12, :cond_72
 
-    .line 1135
+    .line 1239
     const/4 v5, 0x0
 
-    .line 1136
+    .line 1240
     .local v5, "itemIndex":I
     const/4 v3, 0x0
 
-    .line 1137
+    .line 1241
     .local v3, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     move-object/from16 v0, p3
 
@@ -530,11 +541,11 @@
 
     add-float v7, v12, v6
 
-    .line 1138
+    .line 1242
     .local v7, "offset":F
     add-int/lit8 v9, v8, 0x1
 
-    .line 1139
+    .line 1243
     .local v9, "pos":I
     :goto_2b
     iget v12, p1, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
@@ -549,7 +560,7 @@
 
     if-ge v5, v12, :cond_bc
 
-    .line 1140
+    .line 1244
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v12, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -559,7 +570,7 @@
     .end local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     check-cast v3, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 1141
+    .line 1245
     .restart local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     :goto_3f
     iget v12, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
@@ -576,10 +587,10 @@
 
     if-ge v5, v12, :cond_5a
 
-    .line 1142
+    .line 1246
     add-int/lit8 v5, v5, 0x1
 
-    .line 1143
+    .line 1247
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v12, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -592,7 +603,7 @@
     .restart local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     goto :goto_3f
 
-    .line 1129
+    .line 1233
     .end local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     .end local v5    # "itemIndex":I
     .end local v6    # "marginOffset":F
@@ -604,7 +615,7 @@
 
     goto :goto_12
 
-    .line 1145
+    .line 1249
     .restart local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     .restart local v5    # "itemIndex":I
     .restart local v6    # "marginOffset":F
@@ -617,7 +628,7 @@
 
     if-ge v9, v12, :cond_69
 
-    .line 1148
+    .line 1252
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     invoke-virtual {v12, v9}, Landroid/support/v4/view/PagerAdapter;->getPageWidth(I)F
@@ -628,28 +639,28 @@
 
     add-float/2addr v7, v12
 
-    .line 1149
+    .line 1253
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_5a
 
-    .line 1151
+    .line 1255
     :cond_69
     iput v7, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
 
-    .line 1152
+    .line 1256
     iget v12, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
 
     add-float/2addr v12, v6
 
     add-float/2addr v7, v12
 
-    .line 1139
+    .line 1243
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_2b
 
-    .line 1154
+    .line 1258
     .end local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     .end local v5    # "itemIndex":I
     .end local v7    # "offset":F
@@ -659,7 +670,7 @@
 
     if-le v8, v12, :cond_bc
 
-    .line 1155
+    .line 1259
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v12}, Ljava/util/ArrayList;->size()I
@@ -668,21 +679,21 @@
 
     add-int/lit8 v5, v12, -0x1
 
-    .line 1156
+    .line 1260
     .restart local v5    # "itemIndex":I
     const/4 v3, 0x0
 
-    .line 1157
+    .line 1261
     .restart local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     move-object/from16 v0, p3
 
     iget v7, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
 
-    .line 1158
+    .line 1262
     .restart local v7    # "offset":F
     add-int/lit8 v9, v8, -0x1
 
-    .line 1159
+    .line 1263
     .restart local v9    # "pos":I
     :goto_85
     iget v12, p1, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
@@ -691,7 +702,7 @@
 
     if-ltz v5, :cond_bc
 
-    .line 1160
+    .line 1264
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v12, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -701,7 +712,7 @@
     .end local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     check-cast v3, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 1161
+    .line 1265
     .restart local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     :goto_93
     iget v12, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
@@ -710,10 +721,10 @@
 
     if-lez v5, :cond_a4
 
-    .line 1162
+    .line 1266
     add-int/lit8 v5, v5, -0x1
 
-    .line 1163
+    .line 1267
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v12, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -726,14 +737,14 @@
     .restart local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     goto :goto_93
 
-    .line 1165
+    .line 1269
     :cond_a4
     :goto_a4
     iget v12, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
     if-le v9, v12, :cond_b3
 
-    .line 1168
+    .line 1272
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     invoke-virtual {v12, v9}, Landroid/support/v4/view/PagerAdapter;->getPageWidth(I)F
@@ -744,12 +755,12 @@
 
     sub-float/2addr v7, v12
 
-    .line 1169
+    .line 1273
     add-int/lit8 v9, v9, -0x1
 
     goto :goto_a4
 
-    .line 1171
+    .line 1275
     :cond_b3
     iget v12, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
 
@@ -757,15 +768,15 @@
 
     sub-float/2addr v7, v12
 
-    .line 1172
+    .line 1276
     iput v7, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
 
-    .line 1159
+    .line 1263
     add-int/lit8 v9, v9, -0x1
 
     goto :goto_85
 
-    .line 1178
+    .line 1282
     .end local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     .end local v5    # "itemIndex":I
     .end local v7    # "offset":F
@@ -778,17 +789,17 @@
 
     move-result v4
 
-    .line 1179
+    .line 1283
     .local v4, "itemCount":I
     iget v7, p1, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
 
-    .line 1180
+    .line 1284
     .restart local v7    # "offset":F
     iget v12, p1, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
     add-int/lit8 v9, v12, -0x1
 
-    .line 1181
+    .line 1285
     .restart local v9    # "pos":I
     iget v12, p1, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
@@ -799,7 +810,7 @@
     :goto_ce
     iput v12, p0, Landroid/support/v4/view/ViewPager;->mFirstOffset:F
 
-    .line 1182
+    .line 1286
     iget v12, p1, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
     add-int/lit8 v13, v1, -0x1
@@ -819,14 +830,14 @@
     :goto_de
     iput v12, p0, Landroid/support/v4/view/ViewPager;->mLastOffset:F
 
-    .line 1185
+    .line 1289
     add-int/lit8 v2, p2, -0x1
 
     .local v2, "i":I
     :goto_e2
     if-ltz v2, :cond_115
 
-    .line 1186
+    .line 1290
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v12, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -835,14 +846,14 @@
 
     check-cast v3, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 1187
+    .line 1291
     .restart local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     :goto_ec
     iget v12, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
     if-le v9, v12, :cond_104
 
-    .line 1188
+    .line 1292
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     add-int/lit8 v10, v9, -0x1
@@ -863,7 +874,7 @@
     .restart local v9    # "pos":I
     goto :goto_ec
 
-    .line 1181
+    .line 1285
     .end local v2    # "i":I
     .end local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     :cond_fc
@@ -871,13 +882,13 @@
 
     goto :goto_ce
 
-    .line 1182
+    .line 1286
     :cond_100
     const v12, 0x7f7fffff
 
     goto :goto_de
 
-    .line 1190
+    .line 1294
     .restart local v2    # "i":I
     .restart local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     :cond_104
@@ -887,17 +898,17 @@
 
     sub-float/2addr v7, v12
 
-    .line 1191
+    .line 1295
     iput v7, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
 
-    .line 1192
+    .line 1296
     iget v12, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
     if-nez v12, :cond_110
 
     iput v7, p0, Landroid/support/v4/view/ViewPager;->mFirstOffset:F
 
-    .line 1185
+    .line 1289
     :cond_110
     add-int/lit8 v2, v2, -0x1
 
@@ -905,7 +916,7 @@
 
     goto :goto_e2
 
-    .line 1194
+    .line 1298
     .end local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     :cond_115
     iget v12, p1, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
@@ -916,18 +927,18 @@
 
     add-float v7, v12, v6
 
-    .line 1195
+    .line 1299
     iget v12, p1, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
     add-int/lit8 v9, v12, 0x1
 
-    .line 1197
+    .line 1301
     add-int/lit8 v2, p2, 0x1
 
     :goto_122
     if-ge v2, v4, :cond_155
 
-    .line 1198
+    .line 1302
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v12, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -936,14 +947,14 @@
 
     check-cast v3, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 1199
+    .line 1303
     .restart local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     :goto_12c
     iget v12, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
     if-ge v9, v12, :cond_13c
 
-    .line 1200
+    .line 1304
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     add-int/lit8 v10, v9, 0x1
@@ -964,7 +975,7 @@
     .restart local v9    # "pos":I
     goto :goto_12c
 
-    .line 1202
+    .line 1306
     :cond_13c
     iget v12, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
@@ -972,7 +983,7 @@
 
     if-ne v12, v13, :cond_14a
 
-    .line 1203
+    .line 1307
     iget v12, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
 
     add-float/2addr v12, v7
@@ -983,184 +994,213 @@
 
     iput v12, p0, Landroid/support/v4/view/ViewPager;->mLastOffset:F
 
-    .line 1205
+    .line 1309
     :cond_14a
     iput v7, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
 
-    .line 1206
+    .line 1310
     iget v12, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
 
     add-float/2addr v12, v6
 
     add-float/2addr v7, v12
 
-    .line 1197
+    .line 1301
     add-int/lit8 v2, v2, 0x1
 
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_122
 
-    .line 1209
+    .line 1313
     .end local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     :cond_155
     const/4 v12, 0x0
 
     iput-boolean v12, p0, Landroid/support/v4/view/ViewPager;->mNeedCalculatePageOffsets:Z
 
-    .line 1210
+    .line 1314
     return-void
 .end method
 
 .method private completeScroll(Z)V
-    .registers 12
+    .registers 13
     .param p1, "postEvents"    # Z
 
     .prologue
-    const/4 v7, 0x0
+    const/4 v5, 0x1
 
-    .line 1741
-    iget v8, p0, Landroid/support/v4/view/ViewPager;->mScrollState:I
+    const/4 v8, 0x0
 
-    const/4 v9, 0x2
+    .line 1879
+    iget v9, p0, Landroid/support/v4/view/ViewPager;->mScrollState:I
 
-    if-ne v8, v9, :cond_49
+    const/4 v10, 0x2
 
-    const/4 v2, 0x1
+    if-ne v9, v10, :cond_59
 
-    .line 1742
+    move v2, v5
+
+    .line 1880
     .local v2, "needPopulate":Z
-    :goto_7
-    if-eqz v2, :cond_2c
+    :goto_8
+    if-eqz v2, :cond_3c
 
-    .line 1744
-    invoke-direct {p0, v7}, Landroid/support/v4/view/ViewPager;->setScrollingCacheEnabled(Z)V
+    .line 1882
+    invoke-direct {p0, v8}, Landroid/support/v4/view/ViewPager;->setScrollingCacheEnabled(Z)V
 
-    .line 1745
-    iget-object v8, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
+    .line 1883
+    iget-object v9, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
 
-    invoke-virtual {v8}, Landroid/widget/Scroller;->abortAnimation()V
+    invoke-virtual {v9}, Landroid/widget/Scroller;->isFinished()Z
 
-    .line 1746
+    move-result v9
+
+    if-nez v9, :cond_5b
+
+    .line 1884
+    .local v5, "wasScrolling":Z
+    :goto_15
+    if-eqz v5, :cond_3c
+
+    .line 1885
+    iget-object v9, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
+
+    invoke-virtual {v9}, Landroid/widget/Scroller;->abortAnimation()V
+
+    .line 1886
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
 
     move-result v3
 
-    .line 1747
+    .line 1887
     .local v3, "oldX":I
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getScrollY()I
 
     move-result v4
 
-    .line 1748
+    .line 1888
     .local v4, "oldY":I
-    iget-object v8, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
+    iget-object v9, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
 
-    invoke-virtual {v8}, Landroid/widget/Scroller;->getCurrX()I
-
-    move-result v5
-
-    .line 1749
-    .local v5, "x":I
-    iget-object v8, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
-
-    invoke-virtual {v8}, Landroid/widget/Scroller;->getCurrY()I
+    invoke-virtual {v9}, Landroid/widget/Scroller;->getCurrX()I
 
     move-result v6
 
-    .line 1750
-    .local v6, "y":I
-    if-ne v3, v5, :cond_29
+    .line 1889
+    .local v6, "x":I
+    iget-object v9, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
 
-    if-eq v4, v6, :cond_2c
+    invoke-virtual {v9}, Landroid/widget/Scroller;->getCurrY()I
 
-    .line 1751
-    :cond_29
-    invoke-virtual {p0, v5, v6}, Landroid/support/v4/view/ViewPager;->scrollTo(II)V
+    move-result v7
 
-    .line 1754
+    .line 1890
+    .local v7, "y":I
+    if-ne v3, v6, :cond_34
+
+    if-eq v4, v7, :cond_3c
+
+    .line 1891
+    :cond_34
+    invoke-virtual {p0, v6, v7}, Landroid/support/v4/view/ViewPager;->scrollTo(II)V
+
+    .line 1892
+    if-eq v6, v3, :cond_3c
+
+    .line 1893
+    invoke-direct {p0, v6}, Landroid/support/v4/view/ViewPager;->pageScrolled(I)Z
+
+    .line 1898
     .end local v3    # "oldX":I
     .end local v4    # "oldY":I
-    .end local v5    # "x":I
-    .end local v6    # "y":I
-    :cond_2c
-    iput-boolean v7, p0, Landroid/support/v4/view/ViewPager;->mPopulatePending:Z
+    .end local v5    # "wasScrolling":Z
+    .end local v6    # "x":I
+    .end local v7    # "y":I
+    :cond_3c
+    iput-boolean v8, p0, Landroid/support/v4/view/ViewPager;->mPopulatePending:Z
 
-    .line 1755
+    .line 1899
     const/4 v0, 0x0
 
     .local v0, "i":I
-    :goto_2f
-    iget-object v8, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
+    :goto_3f
+    iget-object v9, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
-    move-result v8
+    move-result v9
 
-    if-ge v0, v8, :cond_4b
+    if-ge v0, v9, :cond_5d
 
-    .line 1756
-    iget-object v8, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
+    .line 1900
+    iget-object v9, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v8, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v9, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 1757
+    .line 1901
     .local v1, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
-    iget-boolean v8, v1, Landroid/support/v4/view/ViewPager$ItemInfo;->scrolling:Z
+    iget-boolean v9, v1, Landroid/support/v4/view/ViewPager$ItemInfo;->scrolling:Z
 
-    if-eqz v8, :cond_46
+    if-eqz v9, :cond_56
 
-    .line 1758
+    .line 1902
     const/4 v2, 0x1
 
-    .line 1759
-    iput-boolean v7, v1, Landroid/support/v4/view/ViewPager$ItemInfo;->scrolling:Z
+    .line 1903
+    iput-boolean v8, v1, Landroid/support/v4/view/ViewPager$ItemInfo;->scrolling:Z
 
-    .line 1755
-    :cond_46
+    .line 1899
+    :cond_56
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_2f
+    goto :goto_3f
 
     .end local v0    # "i":I
     .end local v1    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     .end local v2    # "needPopulate":Z
-    :cond_49
-    move v2, v7
+    :cond_59
+    move v2, v8
 
-    .line 1741
-    goto :goto_7
+    .line 1879
+    goto :goto_8
 
-    .line 1762
-    .restart local v0    # "i":I
     .restart local v2    # "needPopulate":Z
-    :cond_4b
-    if-eqz v2, :cond_54
+    :cond_5b
+    move v5, v8
 
-    .line 1763
-    if-eqz p1, :cond_55
+    .line 1883
+    goto :goto_15
 
-    .line 1764
-    iget-object v7, p0, Landroid/support/v4/view/ViewPager;->mEndScrollRunnable:Ljava/lang/Runnable;
+    .line 1906
+    .restart local v0    # "i":I
+    :cond_5d
+    if-eqz v2, :cond_66
 
-    invoke-static {p0, v7}, Landroid/support/v4/view/ViewCompat;->postOnAnimation(Landroid/view/View;Ljava/lang/Runnable;)V
+    .line 1907
+    if-eqz p1, :cond_67
 
-    .line 1769
-    :cond_54
-    :goto_54
+    .line 1908
+    iget-object v8, p0, Landroid/support/v4/view/ViewPager;->mEndScrollRunnable:Ljava/lang/Runnable;
+
+    invoke-static {p0, v8}, Landroid/support/v4/view/ViewCompat;->postOnAnimation(Landroid/view/View;Ljava/lang/Runnable;)V
+
+    .line 1913
+    :cond_66
+    :goto_66
     return-void
 
-    .line 1766
-    :cond_55
-    iget-object v7, p0, Landroid/support/v4/view/ViewPager;->mEndScrollRunnable:Ljava/lang/Runnable;
+    .line 1910
+    :cond_67
+    iget-object v8, p0, Landroid/support/v4/view/ViewPager;->mEndScrollRunnable:Ljava/lang/Runnable;
 
-    invoke-interface {v7}, Ljava/lang/Runnable;->run()V
+    invoke-interface {v8}, Ljava/lang/Runnable;->run()V
 
-    goto :goto_54
+    goto :goto_66
 .end method
 
 .method private determineTargetPage(IFII)I
@@ -1171,7 +1211,7 @@
     .param p4, "deltaX"    # I
 
     .prologue
-    .line 2156
+    .line 2304
     invoke-static {p4}, Ljava/lang/Math;->abs(I)I
 
     move-result v4
@@ -1188,12 +1228,12 @@
 
     if-le v4, v5, :cond_44
 
-    .line 2157
+    .line 2305
     if-lez p3, :cond_41
 
     move v2, p1
 
-    .line 2163
+    .line 2311
     .local v2, "targetPage":I
     :goto_13
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
@@ -1204,7 +1244,7 @@
 
     if-lez v4, :cond_40
 
-    .line 2164
+    .line 2312
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     const/4 v5, 0x0
@@ -1215,7 +1255,7 @@
 
     check-cast v0, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 2165
+    .line 2313
     .local v0, "firstItem":Landroid/support/v4/view/ViewPager$ItemInfo;
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
@@ -1233,7 +1273,7 @@
 
     check-cast v1, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 2168
+    .line 2316
     .local v1, "lastItem":Landroid/support/v4/view/ViewPager$ItemInfo;
     iget v4, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
@@ -1247,20 +1287,20 @@
 
     move-result v2
 
-    .line 2171
+    .line 2319
     .end local v0    # "firstItem":Landroid/support/v4/view/ViewPager$ItemInfo;
     .end local v1    # "lastItem":Landroid/support/v4/view/ViewPager$ItemInfo;
     :cond_40
     return v2
 
-    .line 2157
+    .line 2305
     .end local v2    # "targetPage":I
     :cond_41
     add-int/lit8 v2, p1, 0x1
 
     goto :goto_13
 
-    .line 2159
+    .line 2307
     :cond_44
     iget v4, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
@@ -1268,7 +1308,7 @@
 
     const v3, 0x3ecccccd
 
-    .line 2160
+    .line 2308
     .local v3, "truncator":F
     :goto_4b
     int-to-float v4, p1
@@ -1282,7 +1322,7 @@
     .restart local v2    # "targetPage":I
     goto :goto_13
 
-    .line 2159
+    .line 2307
     .end local v2    # "targetPage":I
     .end local v3    # "truncator":F
     :cond_50
@@ -1291,17 +1331,247 @@
     goto :goto_4b
 .end method
 
+.method private dispatchOnPageScrolled(IFI)V
+    .registers 8
+    .param p1, "position"    # I
+    .param p2, "offset"    # F
+    .param p3, "offsetPixels"    # I
+
+    .prologue
+    .line 1828
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+    if-eqz v3, :cond_9
+
+    .line 1829
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+    invoke-interface {v3, p1, p2, p3}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageScrolled(IFI)V
+
+    .line 1831
+    :cond_9
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListeners:Ljava/util/List;
+
+    if-eqz v3, :cond_26
+
+    .line 1832
+    const/4 v0, 0x0
+
+    .local v0, "i":I
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListeners:Ljava/util/List;
+
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    .local v2, "z":I
+    :goto_14
+    if-ge v0, v2, :cond_26
+
+    .line 1833
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListeners:Ljava/util/List;
+
+    invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+    .line 1834
+    .local v1, "listener":Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+    if-eqz v1, :cond_23
+
+    .line 1835
+    invoke-interface {v1, p1, p2, p3}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageScrolled(IFI)V
+
+    .line 1832
+    :cond_23
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_14
+
+    .line 1839
+    .end local v0    # "i":I
+    .end local v1    # "listener":Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+    .end local v2    # "z":I
+    :cond_26
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mInternalPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+    if-eqz v3, :cond_2f
+
+    .line 1840
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mInternalPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+    invoke-interface {v3, p1, p2, p3}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageScrolled(IFI)V
+
+    .line 1842
+    :cond_2f
+    return-void
+.end method
+
+.method private dispatchOnPageSelected(I)V
+    .registers 6
+    .param p1, "position"    # I
+
+    .prologue
+    .line 1845
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+    if-eqz v3, :cond_9
+
+    .line 1846
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+    invoke-interface {v3, p1}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageSelected(I)V
+
+    .line 1848
+    :cond_9
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListeners:Ljava/util/List;
+
+    if-eqz v3, :cond_26
+
+    .line 1849
+    const/4 v0, 0x0
+
+    .local v0, "i":I
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListeners:Ljava/util/List;
+
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    .local v2, "z":I
+    :goto_14
+    if-ge v0, v2, :cond_26
+
+    .line 1850
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListeners:Ljava/util/List;
+
+    invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+    .line 1851
+    .local v1, "listener":Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+    if-eqz v1, :cond_23
+
+    .line 1852
+    invoke-interface {v1, p1}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageSelected(I)V
+
+    .line 1849
+    :cond_23
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_14
+
+    .line 1856
+    .end local v0    # "i":I
+    .end local v1    # "listener":Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+    .end local v2    # "z":I
+    :cond_26
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mInternalPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+    if-eqz v3, :cond_2f
+
+    .line 1857
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mInternalPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+    invoke-interface {v3, p1}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageSelected(I)V
+
+    .line 1859
+    :cond_2f
+    return-void
+.end method
+
+.method private dispatchOnScrollStateChanged(I)V
+    .registers 6
+    .param p1, "state"    # I
+
+    .prologue
+    .line 1862
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+    if-eqz v3, :cond_9
+
+    .line 1863
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+    invoke-interface {v3, p1}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageScrollStateChanged(I)V
+
+    .line 1865
+    :cond_9
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListeners:Ljava/util/List;
+
+    if-eqz v3, :cond_26
+
+    .line 1866
+    const/4 v0, 0x0
+
+    .local v0, "i":I
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListeners:Ljava/util/List;
+
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    .local v2, "z":I
+    :goto_14
+    if-ge v0, v2, :cond_26
+
+    .line 1867
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListeners:Ljava/util/List;
+
+    invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+    .line 1868
+    .local v1, "listener":Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+    if-eqz v1, :cond_23
+
+    .line 1869
+    invoke-interface {v1, p1}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageScrollStateChanged(I)V
+
+    .line 1866
+    :cond_23
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_14
+
+    .line 1873
+    .end local v0    # "i":I
+    .end local v1    # "listener":Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+    .end local v2    # "z":I
+    :cond_26
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mInternalPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+    if-eqz v3, :cond_2f
+
+    .line 1874
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mInternalPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+    invoke-interface {v3, p1}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageScrollStateChanged(I)V
+
+    .line 1876
+    :cond_2f
+    return-void
+.end method
+
 .method private enableLayers(Z)V
     .registers 7
     .param p1, "enable"    # Z
 
     .prologue
-    .line 1776
+    .line 1920
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getChildCount()I
 
     move-result v0
 
-    .line 1777
+    .line 1921
     .local v0, "childCount":I
     const/4 v1, 0x0
 
@@ -1309,12 +1579,12 @@
     :goto_5
     if-ge v1, v0, :cond_17
 
-    .line 1778
+    .line 1922
     if-eqz p1, :cond_15
 
     const/4 v2, 0x2
 
-    .line 1780
+    .line 1924
     .local v2, "layerType":I
     :goto_a
     invoke-virtual {p0, v1}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
@@ -1325,19 +1595,19 @@
 
     invoke-static {v3, v2, v4}, Landroid/support/v4/view/ViewCompat;->setLayerType(Landroid/view/View;ILandroid/graphics/Paint;)V
 
-    .line 1777
+    .line 1921
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_5
 
-    .line 1778
+    .line 1922
     .end local v2    # "layerType":I
     :cond_15
     const/4 v2, 0x0
 
     goto :goto_a
 
-    .line 1782
+    .line 1926
     :cond_17
     return-void
 .end method
@@ -1348,28 +1618,28 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 2404
+    .line 2558
     iput-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mIsBeingDragged:Z
 
-    .line 2405
+    .line 2559
     iput-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mIsUnableToDrag:Z
 
-    .line 2407
+    .line 2561
     iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v0, :cond_11
 
-    .line 2408
+    .line 2562
     iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->recycle()V
 
-    .line 2409
+    .line 2563
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/support/v4/view/ViewPager;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 2411
+    .line 2565
     :cond_11
     return-void
 .end method
@@ -1382,28 +1652,28 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2585
+    .line 2739
     if-nez p1, :cond_8
 
-    .line 2586
+    .line 2740
     new-instance p1, Landroid/graphics/Rect;
 
     .end local p1    # "outRect":Landroid/graphics/Rect;
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
-    .line 2588
+    .line 2742
     .restart local p1    # "outRect":Landroid/graphics/Rect;
     :cond_8
     if-nez p2, :cond_e
 
-    .line 2589
+    .line 2743
     invoke-virtual {p1, v2, v2, v2, v2}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 2607
+    .line 2761
     :cond_d
     return-object p1
 
-    .line 2592
+    .line 2746
     :cond_e
     invoke-virtual {p2}, Landroid/view/View;->getLeft()I
 
@@ -1411,33 +1681,33 @@
 
     iput v2, p1, Landroid/graphics/Rect;->left:I
 
-    .line 2593
+    .line 2747
     invoke-virtual {p2}, Landroid/view/View;->getRight()I
 
     move-result v2
 
     iput v2, p1, Landroid/graphics/Rect;->right:I
 
-    .line 2594
+    .line 2748
     invoke-virtual {p2}, Landroid/view/View;->getTop()I
 
     move-result v2
 
     iput v2, p1, Landroid/graphics/Rect;->top:I
 
-    .line 2595
+    .line 2749
     invoke-virtual {p2}, Landroid/view/View;->getBottom()I
 
     move-result v2
 
     iput v2, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 2597
+    .line 2751
     invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
 
-    .line 2598
+    .line 2752
     .local v1, "parent":Landroid/view/ViewParent;
     :goto_2a
     instance-of v2, v1, Landroid/view/ViewGroup;
@@ -1448,10 +1718,10 @@
 
     move-object v0, v1
 
-    .line 2599
+    .line 2753
     check-cast v0, Landroid/view/ViewGroup;
 
-    .line 2600
+    .line 2754
     .local v0, "group":Landroid/view/ViewGroup;
     iget v2, p1, Landroid/graphics/Rect;->left:I
 
@@ -1463,7 +1733,7 @@
 
     iput v2, p1, Landroid/graphics/Rect;->left:I
 
-    .line 2601
+    .line 2755
     iget v2, p1, Landroid/graphics/Rect;->right:I
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getRight()I
@@ -1474,7 +1744,7 @@
 
     iput v2, p1, Landroid/graphics/Rect;->right:I
 
-    .line 2602
+    .line 2756
     iget v2, p1, Landroid/graphics/Rect;->top:I
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getTop()I
@@ -1485,7 +1755,7 @@
 
     iput v2, p1, Landroid/graphics/Rect;->top:I
 
-    .line 2603
+    .line 2757
     iget v2, p1, Landroid/graphics/Rect;->bottom:I
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getBottom()I
@@ -1496,12 +1766,12 @@
 
     iput v2, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 2605
+    .line 2759
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
 
-    .line 2606
+    .line 2760
     goto :goto_2a
 .end method
 
@@ -1509,7 +1779,7 @@
     .registers 3
 
     .prologue
-    .line 483
+    .line 539
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getMeasuredWidth()I
 
     move-result v0
@@ -1535,12 +1805,12 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 2113
+    .line 2261
     invoke-direct {p0}, Landroid/support/v4/view/ViewPager;->getClientWidth()I
 
     move-result v12
 
-    .line 2114
+    .line 2262
     .local v12, "width":I
     if-lez v12, :cond_6a
 
@@ -1554,7 +1824,7 @@
 
     div-float v11, v13, v14
 
-    .line 2115
+    .line 2263
     .local v11, "scrollOffset":F
     :goto_f
     if-lez v12, :cond_17
@@ -1567,28 +1837,28 @@
 
     div-float v8, v13, v14
 
-    .line 2116
+    .line 2264
     .local v8, "marginOffset":F
     :cond_17
     const/4 v5, -0x1
 
-    .line 2117
+    .line 2265
     .local v5, "lastPos":I
     const/4 v4, 0x0
 
-    .line 2118
+    .line 2266
     .local v4, "lastOffset":F
     const/4 v6, 0x0
 
-    .line 2119
+    .line 2267
     .local v6, "lastWidth":F
     const/4 v0, 0x1
 
-    .line 2121
+    .line 2269
     .local v0, "first":Z
     const/4 v3, 0x0
 
-    .line 2122
+    .line 2270
     .local v3, "lastItem":Landroid/support/v4/view/ViewPager$ItemInfo;
     const/4 v1, 0x0
 
@@ -1602,7 +1872,7 @@
 
     if-ge v1, v13, :cond_69
 
-    .line 2123
+    .line 2271
     iget-object v13, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v13, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1611,7 +1881,7 @@
 
     check-cast v2, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 2125
+    .line 2273
     .local v2, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     if-nez v0, :cond_4c
 
@@ -1621,22 +1891,22 @@
 
     if-eq v13, v14, :cond_4c
 
-    .line 2127
+    .line 2275
     iget-object v2, p0, Landroid/support/v4/view/ViewPager;->mTempItem:Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 2128
+    .line 2276
     add-float v13, v4, v6
 
     add-float/2addr v13, v8
 
     iput v13, v2, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
 
-    .line 2129
+    .line 2277
     add-int/lit8 v13, v5, 0x1
 
     iput v13, v2, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
-    .line 2130
+    .line 2278
     iget-object v13, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     iget v14, v2, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
@@ -1647,18 +1917,18 @@
 
     iput v13, v2, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
 
-    .line 2131
+    .line 2279
     add-int/lit8 v1, v1, -0x1
 
-    .line 2133
+    .line 2281
     :cond_4c
     iget v9, v2, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
 
-    .line 2135
+    .line 2283
     .local v9, "offset":F
     move v7, v9
 
-    .line 2136
+    .line 2284
     .local v7, "leftBound":F
     iget v13, v2, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
 
@@ -1666,7 +1936,7 @@
 
     add-float v10, v13, v8
 
-    .line 2137
+    .line 2285
     .local v10, "rightBound":F
     if-nez v0, :cond_5a
 
@@ -1674,7 +1944,7 @@
 
     if-ltz v13, :cond_69
 
-    .line 2138
+    .line 2286
     :cond_5a
     cmpg-float v13, v11, v10
 
@@ -1693,7 +1963,7 @@
     :cond_68
     move-object v3, v2
 
-    .line 2151
+    .line 2299
     .end local v2    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     .end local v3    # "lastItem":Landroid/support/v4/view/ViewPager$ItemInfo;
     .end local v7    # "leftBound":F
@@ -1712,10 +1982,10 @@
     :cond_6a
     move v11, v8
 
-    .line 2114
+    .line 2262
     goto :goto_f
 
-    .line 2144
+    .line 2292
     .restart local v0    # "first":Z
     .restart local v1    # "i":I
     .restart local v2    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
@@ -1731,19 +2001,19 @@
     :cond_6c
     const/4 v0, 0x0
 
-    .line 2145
+    .line 2293
     iget v5, v2, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
-    .line 2146
+    .line 2294
     move v4, v9
 
-    .line 2147
+    .line 2295
     iget v6, v2, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
 
-    .line 2148
+    .line 2296
     move-object v3, v2
 
-    .line 2122
+    .line 2270
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1d
@@ -1757,7 +2027,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1772
+    .line 1916
     iget v0, p0, Landroid/support/v4/view/ViewPager;->mGutterSize:I
 
     int-to-float v0, v0
@@ -1806,29 +2076,29 @@
     .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 2389
+    .line 2543
     invoke-static {p1}, Landroid/support/v4/view/MotionEventCompat;->getActionIndex(Landroid/view/MotionEvent;)I
 
     move-result v2
 
-    .line 2390
+    .line 2544
     .local v2, "pointerIndex":I
     invoke-static {p1, v2}, Landroid/support/v4/view/MotionEventCompat;->getPointerId(Landroid/view/MotionEvent;I)I
 
     move-result v1
 
-    .line 2391
+    .line 2545
     .local v1, "pointerId":I
     iget v3, p0, Landroid/support/v4/view/ViewPager;->mActivePointerId:I
 
     if-ne v1, v3, :cond_24
 
-    .line 2394
+    .line 2548
     if-nez v2, :cond_25
 
     const/4 v0, 0x1
 
-    .line 2395
+    .line 2549
     .local v0, "newPointerIndex":I
     :goto_f
     invoke-static {p1, v0}, Landroid/support/v4/view/MotionEventCompat;->getX(Landroid/view/MotionEvent;I)F
@@ -1837,29 +2107,29 @@
 
     iput v3, p0, Landroid/support/v4/view/ViewPager;->mLastMotionX:F
 
-    .line 2396
+    .line 2550
     invoke-static {p1, v0}, Landroid/support/v4/view/MotionEventCompat;->getPointerId(Landroid/view/MotionEvent;I)I
 
     move-result v3
 
     iput v3, p0, Landroid/support/v4/view/ViewPager;->mActivePointerId:I
 
-    .line 2397
+    .line 2551
     iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v3, :cond_24
 
-    .line 2398
+    .line 2552
     iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v3}, Landroid/view/VelocityTracker;->clear()V
 
-    .line 2401
+    .line 2555
     .end local v0    # "newPointerIndex":I
     :cond_24
     return-void
 
-    .line 2394
+    .line 2548
     :cond_25
     const/4 v0, 0x0
 
@@ -1873,56 +2143,56 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 1636
+    .line 1727
     iget-object v8, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
 
     move-result v8
 
-    if-nez v8, :cond_1b
+    if-nez v8, :cond_1c
 
-    .line 1637
+    .line 1728
     iput-boolean v7, p0, Landroid/support/v4/view/ViewPager;->mCalledSuper:Z
 
-    .line 1638
+    .line 1729
     const/4 v8, 0x0
 
     invoke-virtual {p0, v7, v8, v7}, Landroid/support/v4/view/ViewPager;->onPageScrolled(IFI)V
 
-    .line 1639
+    .line 1730
     iget-boolean v8, p0, Landroid/support/v4/view/ViewPager;->mCalledSuper:Z
 
-    if-nez v8, :cond_4f
+    if-nez v8, :cond_51
 
-    .line 1640
+    .line 1731
     new-instance v7, Ljava/lang/IllegalStateException;
 
-    const-string v8, "onPageScrolled did not call superclass implementation"
+    const-string/jumbo v8, "onPageScrolled did not call superclass implementation"
 
     invoke-direct {v7, v8}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v7
 
-    .line 1645
-    :cond_1b
+    .line 1736
+    :cond_1c
     invoke-direct {p0}, Landroid/support/v4/view/ViewPager;->infoForCurrentScrollPosition()Landroid/support/v4/view/ViewPager$ItemInfo;
 
     move-result-object v1
 
-    .line 1646
+    .line 1737
     .local v1, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     invoke-direct {p0}, Landroid/support/v4/view/ViewPager;->getClientWidth()I
 
     move-result v5
 
-    .line 1647
+    .line 1738
     .local v5, "width":I
     iget v8, p0, Landroid/support/v4/view/ViewPager;->mPageMargin:I
 
     add-int v6, v5, v8
 
-    .line 1648
+    .line 1739
     .local v6, "widthWithMargin":I
     iget v8, p0, Landroid/support/v4/view/ViewPager;->mPageMargin:I
 
@@ -1932,11 +2202,11 @@
 
     div-float v2, v8, v9
 
-    .line 1649
+    .line 1740
     .local v2, "marginOffset":F
     iget v0, v1, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
-    .line 1650
+    .line 1741
     .local v0, "currentPage":I
     int-to-float v8, p1
 
@@ -1954,7 +2224,7 @@
 
     div-float v4, v8, v9
 
-    .line 1652
+    .line 1743
     .local v4, "pageOffset":F
     int-to-float v8, v6
 
@@ -1962,29 +2232,29 @@
 
     float-to-int v3, v8
 
-    .line 1654
+    .line 1745
     .local v3, "offsetPixels":I
     iput-boolean v7, p0, Landroid/support/v4/view/ViewPager;->mCalledSuper:Z
 
-    .line 1655
+    .line 1746
     invoke-virtual {p0, v0, v4, v3}, Landroid/support/v4/view/ViewPager;->onPageScrolled(IFI)V
 
-    .line 1656
+    .line 1747
     iget-boolean v7, p0, Landroid/support/v4/view/ViewPager;->mCalledSuper:Z
 
-    if-nez v7, :cond_4e
+    if-nez v7, :cond_50
 
-    .line 1657
+    .line 1748
     new-instance v7, Ljava/lang/IllegalStateException;
 
-    const-string v8, "onPageScrolled did not call superclass implementation"
+    const-string/jumbo v8, "onPageScrolled did not call superclass implementation"
 
     invoke-direct {v7, v8}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v7
 
-    .line 1660
-    :cond_4e
+    .line 1751
+    :cond_50
     const/4 v7, 0x1
 
     .end local v0    # "currentPage":I
@@ -1994,7 +2264,7 @@
     .end local v4    # "pageOffset":F
     .end local v5    # "width":I
     .end local v6    # "widthWithMargin":I
-    :cond_4f
+    :cond_51
     return v7
 .end method
 
@@ -2003,10 +2273,10 @@
     .param p1, "x"    # F
 
     .prologue
-    .line 2062
+    .line 2210
     const/4 v7, 0x0
 
-    .line 2064
+    .line 2212
     .local v7, "needsInvalidate":Z
     move-object/from16 v0, p0
 
@@ -2014,7 +2284,7 @@
 
     sub-float v2, v14, p1
 
-    .line 2065
+    .line 2213
     .local v2, "deltaX":F
     move/from16 v0, p1
 
@@ -2022,24 +2292,24 @@
 
     iput v0, v1, Landroid/support/v4/view/ViewPager;->mLastMotionX:F
 
-    .line 2067
+    .line 2215
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
 
     move-result v14
 
     int-to-float v8, v14
 
-    .line 2068
+    .line 2216
     .local v8, "oldScrollX":F
     add-float v12, v8, v2
 
-    .line 2069
+    .line 2217
     .local v12, "scrollX":F
     invoke-direct/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getClientWidth()I
 
     move-result v13
 
-    .line 2071
+    .line 2219
     .local v13, "width":I
     int-to-float v14, v13
 
@@ -2049,7 +2319,7 @@
 
     mul-float v6, v14, v15
 
-    .line 2072
+    .line 2220
     .local v6, "leftBound":F
     int-to-float v14, v13
 
@@ -2059,15 +2329,15 @@
 
     mul-float v11, v14, v15
 
-    .line 2073
+    .line 2221
     .local v11, "rightBound":F
     const/4 v5, 0x1
 
-    .line 2074
+    .line 2222
     .local v5, "leftAbsolute":Z
     const/4 v10, 0x1
 
-    .line 2076
+    .line 2224
     .local v10, "rightAbsolute":Z
     move-object/from16 v0, p0
 
@@ -2081,7 +2351,7 @@
 
     check-cast v3, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 2077
+    .line 2225
     .local v3, "firstItem":Landroid/support/v4/view/ViewPager$ItemInfo;
     move-object/from16 v0, p0
 
@@ -2103,23 +2373,23 @@
 
     check-cast v4, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 2078
+    .line 2226
     .local v4, "lastItem":Landroid/support/v4/view/ViewPager$ItemInfo;
     iget v14, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
     if-eqz v14, :cond_51
 
-    .line 2079
+    .line 2227
     const/4 v5, 0x0
 
-    .line 2080
+    .line 2228
     iget v14, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
 
     int-to-float v15, v13
 
     mul-float v6, v14, v15
 
-    .line 2082
+    .line 2230
     :cond_51
     iget v14, v4, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
@@ -2135,29 +2405,29 @@
 
     if-eq v14, v15, :cond_65
 
-    .line 2083
+    .line 2231
     const/4 v10, 0x0
 
-    .line 2084
+    .line 2232
     iget v14, v4, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
 
     int-to-float v15, v13
 
     mul-float v11, v14, v15
 
-    .line 2087
+    .line 2235
     :cond_65
     cmpg-float v14, v12, v6
 
     if-gez v14, :cond_9d
 
-    .line 2088
+    .line 2236
     if-eqz v5, :cond_7e
 
-    .line 2089
+    .line 2237
     sub-float v9, v6, v12
 
-    .line 2090
+    .line 2238
     .local v9, "over":F
     move-object/from16 v0, p0
 
@@ -2177,12 +2447,12 @@
 
     move-result v7
 
-    .line 2092
+    .line 2240
     .end local v9    # "over":F
     :cond_7e
     move v12, v6
 
-    .line 2101
+    .line 2249
     :cond_7f
     :goto_7f
     move-object/from16 v0, p0
@@ -2201,7 +2471,7 @@
 
     iput v14, v0, Landroid/support/v4/view/ViewPager;->mLastMotionX:F
 
-    .line 2102
+    .line 2250
     float-to-int v14, v12
 
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getScrollY()I
@@ -2212,29 +2482,29 @@
 
     invoke-virtual {v0, v14, v15}, Landroid/support/v4/view/ViewPager;->scrollTo(II)V
 
-    .line 2103
+    .line 2251
     float-to-int v14, v12
 
     move-object/from16 v0, p0
 
     invoke-direct {v0, v14}, Landroid/support/v4/view/ViewPager;->pageScrolled(I)Z
 
-    .line 2105
+    .line 2253
     return v7
 
-    .line 2093
+    .line 2241
     :cond_9d
     cmpl-float v14, v12, v11
 
     if-lez v14, :cond_7f
 
-    .line 2094
+    .line 2242
     if-eqz v10, :cond_b6
 
-    .line 2095
+    .line 2243
     sub-float v9, v12, v11
 
-    .line 2096
+    .line 2244
     .restart local v9    # "over":F
     move-object/from16 v0, p0
 
@@ -2254,7 +2524,7 @@
 
     move-result v7
 
-    .line 2098
+    .line 2246
     .end local v9    # "over":F
     :cond_b6
     move v12, v11
@@ -2263,224 +2533,111 @@
 .end method
 
 .method private recomputeScrollPosition(IIII)V
-    .registers 19
+    .registers 11
     .param p1, "width"    # I
     .param p2, "oldWidth"    # I
     .param p3, "margin"    # I
     .param p4, "oldMargin"    # I
 
     .prologue
-    .line 1473
-    if-lez p2, :cond_5f
+    const/4 v5, 0x0
 
-    iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
+    .line 1577
+    if-lez p2, :cond_11
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
-    move-result v0
+    invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
 
-    if-nez v0, :cond_5f
+    move-result v3
 
-    .line 1474
-    invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getPaddingLeft()I
+    if-nez v3, :cond_11
 
-    move-result v0
+    .line 1578
+    iget v3, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
-    sub-int v0, p1, v0
+    invoke-direct {p0, v3, v5, v5, v5}, Landroid/support/v4/view/ViewPager;->scrollToItem(IZIZ)V
 
-    invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getPaddingRight()I
-
-    move-result v2
-
-    sub-int/2addr v0, v2
-
-    add-int v12, v0, p3
-
-    .line 1475
-    .local v12, "widthWithMargin":I
-    invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getPaddingLeft()I
-
-    move-result v0
-
-    sub-int v0, p2, v0
-
-    invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getPaddingRight()I
-
-    move-result v2
-
-    sub-int/2addr v0, v2
-
-    add-int v7, v0, p4
-
-    .line 1477
-    .local v7, "oldWidthWithMargin":I
-    invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
-
-    move-result v13
-
-    .line 1478
-    .local v13, "xpos":I
-    int-to-float v0, v13
-
-    int-to-float v2, v7
-
-    div-float v8, v0, v2
-
-    .line 1479
-    .local v8, "pageOffset":F
-    int-to-float v0, v12
-
-    mul-float/2addr v0, v8
-
-    float-to-int v1, v0
-
-    .line 1481
-    .local v1, "newOffsetPixels":I
-    invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getScrollY()I
-
-    move-result v0
-
-    invoke-virtual {p0, v1, v0}, Landroid/support/v4/view/ViewPager;->scrollTo(II)V
-
-    .line 1482
-    iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
-
-    invoke-virtual {v0}, Landroid/widget/Scroller;->isFinished()Z
-
-    move-result v0
-
-    if-nez v0, :cond_5e
-
-    .line 1484
-    iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
-
-    invoke-virtual {v0}, Landroid/widget/Scroller;->getDuration()I
-
-    move-result v0
-
-    iget-object v2, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
-
-    invoke-virtual {v2}, Landroid/widget/Scroller;->timePassed()I
-
-    move-result v2
-
-    sub-int v5, v0, v2
-
-    .line 1485
-    .local v5, "newDuration":I
-    iget v0, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
-
-    invoke-virtual {p0, v0}, Landroid/support/v4/view/ViewPager;->infoForPosition(I)Landroid/support/v4/view/ViewPager$ItemInfo;
-
-    move-result-object v11
-
-    .line 1486
-    .local v11, "targetInfo":Landroid/support/v4/view/ViewPager$ItemInfo;
-    iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
-
-    const/4 v2, 0x0
-
-    iget v3, v11, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
-
-    int-to-float v4, p1
-
-    mul-float/2addr v3, v4
-
-    float-to-int v3, v3
-
-    const/4 v4, 0x0
-
-    invoke-virtual/range {v0 .. v5}, Landroid/widget/Scroller;->startScroll(IIIII)V
-
-    .line 1499
-    .end local v1    # "newOffsetPixels":I
-    .end local v5    # "newDuration":I
-    .end local v7    # "oldWidthWithMargin":I
-    .end local v8    # "pageOffset":F
-    .end local v11    # "targetInfo":Landroid/support/v4/view/ViewPager$ItemInfo;
-    .end local v12    # "widthWithMargin":I
-    .end local v13    # "xpos":I
-    :cond_5e
-    :goto_5e
+    .line 1589
+    :cond_10
+    :goto_10
     return-void
 
-    .line 1490
-    :cond_5f
-    iget v0, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
+    .line 1580
+    :cond_11
+    iget v3, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
-    invoke-virtual {p0, v0}, Landroid/support/v4/view/ViewPager;->infoForPosition(I)Landroid/support/v4/view/ViewPager$ItemInfo;
+    invoke-virtual {p0, v3}, Landroid/support/v4/view/ViewPager;->infoForPosition(I)Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    move-result-object v6
+    move-result-object v0
 
-    .line 1491
-    .local v6, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
-    if-eqz v6, :cond_8f
+    .line 1581
+    .local v0, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
+    if-eqz v0, :cond_40
 
-    iget v0, v6, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
+    iget v3, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
 
-    iget v2, p0, Landroid/support/v4/view/ViewPager;->mLastOffset:F
+    iget v4, p0, Landroid/support/v4/view/ViewPager;->mLastOffset:F
 
-    invoke-static {v0, v2}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v3, v4}, Ljava/lang/Math;->min(FF)F
 
-    move-result v9
+    move-result v1
 
-    .line 1492
-    .local v9, "scrollOffset":F
-    :goto_6f
+    .line 1582
+    .local v1, "scrollOffset":F
+    :goto_21
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getPaddingLeft()I
 
-    move-result v0
+    move-result v3
 
-    sub-int v0, p1, v0
+    sub-int v3, p1, v3
 
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getPaddingRight()I
 
-    move-result v2
+    move-result v4
 
-    sub-int/2addr v0, v2
+    sub-int/2addr v3, v4
 
-    int-to-float v0, v0
+    int-to-float v3, v3
 
-    mul-float/2addr v0, v9
+    mul-float/2addr v3, v1
 
-    float-to-int v10, v0
+    float-to-int v2, v3
 
-    .line 1494
-    .local v10, "scrollPos":I
+    .line 1584
+    .local v2, "scrollPos":I
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
 
-    move-result v0
+    move-result v3
 
-    if-eq v10, v0, :cond_5e
+    if-eq v2, v3, :cond_10
 
-    .line 1495
-    const/4 v0, 0x0
+    .line 1585
+    invoke-direct {p0, v5}, Landroid/support/v4/view/ViewPager;->completeScroll(Z)V
 
-    invoke-direct {p0, v0}, Landroid/support/v4/view/ViewPager;->completeScroll(Z)V
-
-    .line 1496
+    .line 1586
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getScrollY()I
 
-    move-result v0
+    move-result v3
 
-    invoke-virtual {p0, v10, v0}, Landroid/support/v4/view/ViewPager;->scrollTo(II)V
+    invoke-virtual {p0, v2, v3}, Landroid/support/v4/view/ViewPager;->scrollTo(II)V
 
-    goto :goto_5e
+    goto :goto_10
 
-    .line 1491
-    .end local v9    # "scrollOffset":F
-    .end local v10    # "scrollPos":I
-    :cond_8f
-    const/4 v9, 0x0
+    .line 1581
+    .end local v1    # "scrollOffset":F
+    .end local v2    # "scrollPos":I
+    :cond_40
+    const/4 v1, 0x0
 
-    goto :goto_6f
+    goto :goto_21
 .end method
 
 .method private removeNonDecorViews()V
     .registers 5
 
     .prologue
-    .line 459
+    .line 515
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -2491,12 +2648,12 @@
 
     if-ge v1, v3, :cond_1d
 
-    .line 460
+    .line 516
     invoke-virtual {p0, v1}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 461
+    .line 517
     .local v0, "child":Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -2504,25 +2661,25 @@
 
     check-cast v2, Landroid/support/v4/view/ViewPager$LayoutParams;
 
-    .line 462
+    .line 518
     .local v2, "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
     iget-boolean v3, v2, Landroid/support/v4/view/ViewPager$LayoutParams;->isDecor:Z
 
     if-nez v3, :cond_1a
 
-    .line 463
+    .line 519
     invoke-virtual {p0, v1}, Landroid/support/v4/view/ViewPager;->removeViewAt(I)V
 
-    .line 464
+    .line 520
     add-int/lit8 v1, v1, -0x1
 
-    .line 459
+    .line 515
     :cond_1a
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 467
+    .line 523
     .end local v0    # "child":Landroid/view/View;
     .end local v2    # "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
     :cond_1d
@@ -2534,21 +2691,53 @@
     .param p1, "disallowIntercept"    # Z
 
     .prologue
-    .line 2055
+    .line 2203
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
-    .line 2056
+    .line 2204
     .local v0, "parent":Landroid/view/ViewParent;
     if-eqz v0, :cond_9
 
-    .line 2057
+    .line 2205
     invoke-interface {v0, p1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 2059
+    .line 2207
     :cond_9
     return-void
+.end method
+
+.method private resetTouch()Z
+    .registers 4
+
+    .prologue
+    .line 2196
+    const/4 v1, -0x1
+
+    iput v1, p0, Landroid/support/v4/view/ViewPager;->mActivePointerId:I
+
+    .line 2197
+    invoke-direct {p0}, Landroid/support/v4/view/ViewPager;->endDrag()V
+
+    .line 2198
+    iget-object v1, p0, Landroid/support/v4/view/ViewPager;->mLeftEdge:Landroid/support/v4/widget/EdgeEffectCompat;
+
+    invoke-virtual {v1}, Landroid/support/v4/widget/EdgeEffectCompat;->onRelease()Z
+
+    move-result v1
+
+    iget-object v2, p0, Landroid/support/v4/view/ViewPager;->mRightEdge:Landroid/support/v4/widget/EdgeEffectCompat;
+
+    invoke-virtual {v2}, Landroid/support/v4/widget/EdgeEffectCompat;->onRelease()Z
+
+    move-result v2
+
+    or-int v0, v1, v2
+
+    .line 2199
+    .local v0, "needsInvalidate":Z
+    return v0
 .end method
 
 .method private scrollToItem(IZIZ)V
@@ -2561,25 +2750,25 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 562
+    .line 615
     invoke-virtual {p0, p1}, Landroid/support/v4/view/ViewPager;->infoForPosition(I)Landroid/support/v4/view/ViewPager$ItemInfo;
 
     move-result-object v0
 
-    .line 563
+    .line 616
     .local v0, "curInfo":Landroid/support/v4/view/ViewPager$ItemInfo;
     const/4 v1, 0x0
 
-    .line 564
+    .line 617
     .local v1, "destX":I
     if-eqz v0, :cond_1d
 
-    .line 565
+    .line 618
     invoke-direct {p0}, Landroid/support/v4/view/ViewPager;->getClientWidth()I
 
     move-result v2
 
-    .line 566
+    .line 619
     .local v2, "width":I
     int-to-float v3, v2
 
@@ -2601,81 +2790,43 @@
 
     float-to-int v1, v3
 
-    .line 569
+    .line 622
     .end local v2    # "width":I
     :cond_1d
-    if-eqz p2, :cond_39
+    if-eqz p2, :cond_28
 
-    .line 570
+    .line 623
     invoke-virtual {p0, v1, v7, p3}, Landroid/support/v4/view/ViewPager;->smoothScrollTo(III)V
 
-    .line 571
-    if-eqz p4, :cond_2d
+    .line 624
+    if-eqz p4, :cond_27
 
-    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+    .line 625
+    invoke-direct {p0, p1}, Landroid/support/v4/view/ViewPager;->dispatchOnPageSelected(I)V
 
-    if-eqz v3, :cond_2d
-
-    .line 572
-    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    invoke-interface {v3, p1}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageSelected(I)V
-
-    .line 574
-    :cond_2d
-    if-eqz p4, :cond_38
-
-    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mInternalPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    if-eqz v3, :cond_38
-
-    .line 575
-    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mInternalPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    invoke-interface {v3, p1}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageSelected(I)V
-
-    .line 588
-    :cond_38
-    :goto_38
+    .line 635
+    :cond_27
+    :goto_27
     return-void
 
-    .line 578
-    :cond_39
-    if-eqz p4, :cond_44
+    .line 628
+    :cond_28
+    if-eqz p4, :cond_2d
 
-    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+    .line 629
+    invoke-direct {p0, p1}, Landroid/support/v4/view/ViewPager;->dispatchOnPageSelected(I)V
 
-    if-eqz v3, :cond_44
-
-    .line 579
-    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    invoke-interface {v3, p1}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageSelected(I)V
-
-    .line 581
-    :cond_44
-    if-eqz p4, :cond_4f
-
-    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mInternalPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    if-eqz v3, :cond_4f
-
-    .line 582
-    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mInternalPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    invoke-interface {v3, p1}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageSelected(I)V
-
-    .line 584
-    :cond_4f
+    .line 631
+    :cond_2d
     invoke-direct {p0, v7}, Landroid/support/v4/view/ViewPager;->completeScroll(Z)V
 
-    .line 585
+    .line 632
     invoke-virtual {p0, v1, v7}, Landroid/support/v4/view/ViewPager;->scrollTo(II)V
 
-    .line 586
+    .line 633
     invoke-direct {p0, v1}, Landroid/support/v4/view/ViewPager;->pageScrolled(I)Z
 
-    goto :goto_38
+    goto :goto_27
 .end method
 
 .method private setScrollState(I)V
@@ -2683,48 +2834,40 @@
     .param p1, "newState"    # I
 
     .prologue
-    .line 393
+    .line 451
     iget v0, p0, Landroid/support/v4/view/ViewPager;->mScrollState:I
 
     if-ne v0, p1, :cond_5
 
-    .line 405
-    :cond_4
+    .line 461
     :goto_4
     return-void
 
-    .line 397
+    .line 455
     :cond_5
     iput p1, p0, Landroid/support/v4/view/ViewPager;->mScrollState:I
 
-    .line 398
+    .line 456
     iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mPageTransformer:Landroid/support/v4/view/ViewPager$PageTransformer;
 
     if-eqz v0, :cond_11
 
-    .line 400
-    if-eqz p1, :cond_1b
+    .line 458
+    if-eqz p1, :cond_15
 
     const/4 v0, 0x1
 
     :goto_e
     invoke-direct {p0, v0}, Landroid/support/v4/view/ViewPager;->enableLayers(Z)V
 
-    .line 402
+    .line 460
     :cond_11
-    iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    if-eqz v0, :cond_4
-
-    .line 403
-    iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    invoke-interface {v0, p1}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageScrollStateChanged(I)V
+    invoke-direct {p0, p1}, Landroid/support/v4/view/ViewPager;->dispatchOnScrollStateChanged(I)V
 
     goto :goto_4
 
-    .line 400
-    :cond_1b
+    .line 458
+    :cond_15
     const/4 v0, 0x0
 
     goto :goto_e
@@ -2735,15 +2878,15 @@
     .param p1, "enabled"    # Z
 
     .prologue
-    .line 2414
+    .line 2568
     iget-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mScrollingCacheEnabled:Z
 
     if-eq v0, p1, :cond_6
 
-    .line 2415
+    .line 2569
     iput-boolean p1, p0, Landroid/support/v4/view/ViewPager;->mScrollingCacheEnabled:Z
 
-    .line 2426
+    .line 2580
     :cond_6
     return-void
 .end method
@@ -2752,30 +2895,30 @@
     .registers 6
 
     .prologue
-    .line 1111
+    .line 1215
     iget v3, p0, Landroid/support/v4/view/ViewPager;->mDrawingOrder:I
 
     if-eqz v3, :cond_2f
 
-    .line 1112
+    .line 1216
     iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mDrawingOrderedChildren:Ljava/util/ArrayList;
 
     if-nez v3, :cond_22
 
-    .line 1113
+    .line 1217
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v3, p0, Landroid/support/v4/view/ViewPager;->mDrawingOrderedChildren:Ljava/util/ArrayList;
 
-    .line 1117
+    .line 1221
     :goto_f
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getChildCount()I
 
     move-result v1
 
-    .line 1118
+    .line 1222
     .local v1, "childCount":I
     const/4 v2, 0x0
 
@@ -2783,23 +2926,23 @@
     :goto_14
     if-ge v2, v1, :cond_28
 
-    .line 1119
+    .line 1223
     invoke-virtual {p0, v2}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 1120
+    .line 1224
     .local v0, "child":Landroid/view/View;
     iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mDrawingOrderedChildren:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1118
+    .line 1222
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_14
 
-    .line 1115
+    .line 1219
     .end local v0    # "child":Landroid/view/View;
     .end local v1    # "childCount":I
     .end local v2    # "i":I
@@ -2810,7 +2953,7 @@
 
     goto :goto_f
 
-    .line 1122
+    .line 1226
     .restart local v1    # "childCount":I
     .restart local v2    # "i":I
     :cond_28
@@ -2820,7 +2963,7 @@
 
     invoke-static {v3, v4}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 1124
+    .line 1228
     .end local v1    # "childCount":I
     .end local v2    # "i":I
     :cond_2f
@@ -2844,25 +2987,25 @@
     .end annotation
 
     .prologue
-    .line 2631
+    .line 2785
     .local p1, "views":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/View;>;"
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    .line 2633
+    .line 2787
     .local v2, "focusableCount":I
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getDescendantFocusability()I
 
     move-result v1
 
-    .line 2635
+    .line 2789
     .local v1, "descendantFocusability":I
     const/high16 v5, 0x60000
 
     if-eq v1, v5, :cond_2f
 
-    .line 2636
+    .line 2790
     const/4 v3, 0x0
 
     .local v3, "i":I
@@ -2873,12 +3016,12 @@
 
     if-ge v3, v5, :cond_2f
 
-    .line 2637
+    .line 2791
     invoke-virtual {p0, v3}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2638
+    .line 2792
     .local v0, "child":Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
@@ -2886,12 +3029,12 @@
 
     if-nez v5, :cond_2c
 
-    .line 2639
+    .line 2793
     invoke-virtual {p0, v0}, Landroid/support/v4/view/ViewPager;->infoForChild(Landroid/view/View;)Landroid/support/v4/view/ViewPager$ItemInfo;
 
     move-result-object v4
 
-    .line 2640
+    .line 2794
     .local v4, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     if-eqz v4, :cond_2c
 
@@ -2901,17 +3044,17 @@
 
     if-ne v5, v6, :cond_2c
 
-    .line 2641
+    .line 2795
     invoke-virtual {v0, p1, p2, p3}, Landroid/view/View;->addFocusables(Ljava/util/ArrayList;II)V
 
-    .line 2636
+    .line 2790
     .end local v4    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     :cond_2c
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_d
 
-    .line 2651
+    .line 2805
     .end local v0    # "child":Landroid/view/View;
     .end local v3    # "i":I
     :cond_2f
@@ -2925,7 +3068,7 @@
 
     if-ne v2, v5, :cond_3f
 
-    .line 2657
+    .line 2811
     :cond_39
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->isFocusable()Z
 
@@ -2933,12 +3076,12 @@
 
     if-nez v5, :cond_40
 
-    .line 2668
+    .line 2822
     :cond_3f
     :goto_3f
     return-void
 
-    .line 2660
+    .line 2814
     :cond_40
     and-int/lit8 v5, p3, 0x1
 
@@ -2958,11 +3101,11 @@
 
     if-eqz v5, :cond_3f
 
-    .line 2664
+    .line 2818
     :cond_51
     if-eqz p1, :cond_3f
 
-    .line 2665
+    .line 2819
     invoke-virtual {p1, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_3f
@@ -2974,16 +3117,16 @@
     .param p2, "index"    # I
 
     .prologue
-    .line 835
+    .line 941
     new-instance v0, Landroid/support/v4/view/ViewPager$ItemInfo;
 
     invoke-direct {v0}, Landroid/support/v4/view/ViewPager$ItemInfo;-><init>()V
 
-    .line 836
+    .line 942
     .local v0, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     iput p1, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
-    .line 837
+    .line 943
     iget-object v1, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     invoke-virtual {v1, p0, p1}, Landroid/support/v4/view/PagerAdapter;->instantiateItem(Landroid/view/ViewGroup;I)Ljava/lang/Object;
@@ -2992,7 +3135,7 @@
 
     iput-object v1, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->object:Ljava/lang/Object;
 
-    .line 838
+    .line 944
     iget-object v1, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     invoke-virtual {v1, p1}, Landroid/support/v4/view/PagerAdapter;->getPageWidth(I)F
@@ -3001,7 +3144,7 @@
 
     iput v1, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
 
-    .line 839
+    .line 945
     if-ltz p2, :cond_21
 
     iget-object v1, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
@@ -3012,23 +3155,50 @@
 
     if-lt p2, v1, :cond_27
 
-    .line 840
+    .line 946
     :cond_21
     iget-object v1, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 844
+    .line 950
     :goto_26
     return-object v0
 
-    .line 842
+    .line 948
     :cond_27
     iget-object v1, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p2, v0}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     goto :goto_26
+.end method
+
+.method public addOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
+    .registers 3
+    .param p1, "listener"    # Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+    .prologue
+    .line 662
+    iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListeners:Ljava/util/List;
+
+    if-nez v0, :cond_b
+
+    .line 663
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListeners:Ljava/util/List;
+
+    .line 665
+    :cond_b
+    iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListeners:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 666
+    return-void
 .end method
 
 .method public addTouchables(Ljava/util/ArrayList;)V
@@ -3044,7 +3214,7 @@
     .end annotation
 
     .prologue
-    .line 2678
+    .line 2832
     .local p1, "views":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/View;>;"
     const/4 v1, 0x0
 
@@ -3056,12 +3226,12 @@
 
     if-ge v1, v3, :cond_23
 
-    .line 2679
+    .line 2833
     invoke-virtual {p0, v1}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2680
+    .line 2834
     .local v0, "child":Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
@@ -3069,12 +3239,12 @@
 
     if-nez v3, :cond_20
 
-    .line 2681
+    .line 2835
     invoke-virtual {p0, v0}, Landroid/support/v4/view/ViewPager;->infoForChild(Landroid/view/View;)Landroid/support/v4/view/ViewPager$ItemInfo;
 
     move-result-object v2
 
-    .line 2682
+    .line 2836
     .local v2, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     if-eqz v2, :cond_20
 
@@ -3084,17 +3254,17 @@
 
     if-ne v3, v4, :cond_20
 
-    .line 2683
+    .line 2837
     invoke-virtual {v0, p1}, Landroid/view/View;->addTouchables(Ljava/util/ArrayList;)V
 
-    .line 2678
+    .line 2832
     .end local v2    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     :cond_20
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 2687
+    .line 2841
     .end local v0    # "child":Landroid/view/View;
     :cond_23
     return-void
@@ -3107,14 +3277,14 @@
     .param p3, "params"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
-    .line 1297
+    .line 1401
     invoke-virtual {p0, p3}, Landroid/support/v4/view/ViewPager;->checkLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Z
 
     move-result v1
 
     if-nez v1, :cond_a
 
-    .line 1298
+    .line 1402
     invoke-virtual {p0, p3}, Landroid/support/v4/view/ViewPager;->generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p3
@@ -3122,10 +3292,10 @@
     :cond_a
     move-object v0, p3
 
-    .line 1300
+    .line 1404
     check-cast v0, Landroid/support/v4/view/ViewPager$LayoutParams;
 
-    .line 1301
+    .line 1405
     .local v0, "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
     iget-boolean v1, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->isDecor:Z
 
@@ -3135,45 +3305,45 @@
 
     iput-boolean v1, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->isDecor:Z
 
-    .line 1302
+    .line 1406
     iget-boolean v1, p0, Landroid/support/v4/view/ViewPager;->mInLayout:Z
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_2e
 
-    .line 1303
-    if-eqz v0, :cond_26
+    .line 1407
+    if-eqz v0, :cond_27
 
     iget-boolean v1, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->isDecor:Z
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_27
 
-    .line 1304
+    .line 1408
     new-instance v1, Ljava/lang/IllegalStateException;
 
-    const-string v2, "Cannot add pager decor view during layout"
+    const-string/jumbo v2, "Cannot add pager decor view during layout"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
-    .line 1306
-    :cond_26
+    .line 1410
+    :cond_27
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->needsMeasure:Z
 
-    .line 1307
+    .line 1411
     invoke-virtual {p0, p1, p2, p3}, Landroid/support/v4/view/ViewPager;->addViewInLayout(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)Z
 
-    .line 1319
-    :goto_2c
+    .line 1423
+    :goto_2d
     return-void
 
-    .line 1309
-    :cond_2d
+    .line 1413
+    :cond_2e
     invoke-super {p0, p1, p2, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    goto :goto_2c
+    goto :goto_2d
 .end method
 
 .method public arrowScroll(I)Z
@@ -3185,24 +3355,24 @@
 
     const/16 v11, 0x11
 
-    .line 2519
+    .line 2673
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->findFocus()Landroid/view/View;
 
     move-result-object v1
 
-    .line 2520
+    .line 2674
     .local v1, "currentFocused":Landroid/view/View;
     if-ne v1, p0, :cond_3c
 
-    .line 2521
+    .line 2675
     const/4 v1, 0x0
 
-    .line 2545
+    .line 2699
     :cond_b
     :goto_b
     const/4 v2, 0x0
 
-    .line 2547
+    .line 2701
     .local v2, "handled":Z
     invoke-static {}, Landroid/view/FocusFinder;->getInstance()Landroid/view/FocusFinder;
 
@@ -3212,16 +3382,16 @@
 
     move-result-object v4
 
-    .line 2549
+    .line 2703
     .local v4, "nextFocused":Landroid/view/View;
-    if-eqz v4, :cond_c5
+    if-eqz v4, :cond_c8
 
-    if-eq v4, v1, :cond_c5
+    if-eq v4, v1, :cond_c8
 
-    .line 2550
-    if-ne p1, v11, :cond_a3
+    .line 2704
+    if-ne p1, v11, :cond_a6
 
-    .line 2553
+    .line 2707
     iget-object v8, p0, Landroid/support/v4/view/ViewPager;->mTempRect:Landroid/graphics/Rect;
 
     invoke-direct {p0, v8, v4}, Landroid/support/v4/view/ViewPager;->getChildRectInPagerCoordinates(Landroid/graphics/Rect;Landroid/view/View;)Landroid/graphics/Rect;
@@ -3230,7 +3400,7 @@
 
     iget v5, v8, Landroid/graphics/Rect;->left:I
 
-    .line 2554
+    .line 2708
     .local v5, "nextLeft":I
     iget-object v8, p0, Landroid/support/v4/view/ViewPager;->mTempRect:Landroid/graphics/Rect;
 
@@ -3240,45 +3410,45 @@
 
     iget v0, v8, Landroid/graphics/Rect;->left:I
 
-    .line 2555
+    .line 2709
     .local v0, "currLeft":I
-    if-eqz v1, :cond_9e
+    if-eqz v1, :cond_a1
 
-    if-lt v5, v0, :cond_9e
+    if-lt v5, v0, :cond_a1
 
-    .line 2556
+    .line 2710
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->pageLeft()Z
 
     move-result v2
 
-    .line 2578
+    .line 2732
     .end local v0    # "currLeft":I
     .end local v5    # "nextLeft":I
     :cond_32
     :goto_32
     if-eqz v2, :cond_3b
 
-    .line 2579
+    .line 2733
     invoke-static {p1}, Landroid/view/SoundEffectConstants;->getContantForFocusDirection(I)I
 
     move-result v8
 
     invoke-virtual {p0, v8}, Landroid/support/v4/view/ViewPager;->playSoundEffect(I)V
 
-    .line 2581
+    .line 2735
     :cond_3b
     return v2
 
-    .line 2522
+    .line 2676
     .end local v2    # "handled":Z
     .end local v4    # "nextFocused":Landroid/view/View;
     :cond_3c
     if-eqz v1, :cond_b
 
-    .line 2523
+    .line 2677
     const/4 v3, 0x0
 
-    .line 2524
+    .line 2678
     .local v3, "isChild":Z
     invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -3290,22 +3460,22 @@
 
     if-eqz v8, :cond_4a
 
-    .line 2526
-    if-ne v6, p0, :cond_7a
+    .line 2680
+    if-ne v6, p0, :cond_7b
 
-    .line 2527
+    .line 2681
     const/4 v3, 0x1
 
-    .line 2531
+    .line 2685
     :cond_4a
     if-nez v3, :cond_b
 
-    .line 2533
+    .line 2687
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 2534
+    .line 2688
     .local v7, "sb":Ljava/lang/StringBuilder;
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -3317,7 +3487,7 @@
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2535
+    .line 2689
     invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v6
@@ -3325,10 +3495,10 @@
     :goto_60
     instance-of v8, v6, Landroid/view/ViewGroup;
 
-    if-eqz v8, :cond_7f
+    if-eqz v8, :cond_80
 
-    .line 2537
-    const-string v8, " => "
+    .line 2691
+    const-string/jumbo v8, " => "
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3344,32 +3514,32 @@
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2536
+    .line 2690
     invoke-interface {v6}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
 
     move-result-object v6
 
     goto :goto_60
 
-    .line 2525
+    .line 2679
     .end local v7    # "sb":Ljava/lang/StringBuilder;
-    :cond_7a
+    :cond_7b
     invoke-interface {v6}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
 
     move-result-object v6
 
     goto :goto_43
 
-    .line 2539
+    .line 2693
     .restart local v7    # "sb":Ljava/lang/StringBuilder;
-    :cond_7f
-    const-string v8, "ViewPager"
+    :cond_80
+    const-string/jumbo v8, "ViewPager"
 
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, "arrowScroll tried to find focus based on non-child current focused view "
+    const-string/jumbo v10, "arrowScroll tried to find focus based on non-child current focused view "
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3389,12 +3559,12 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2541
+    .line 2695
     const/4 v1, 0x0
 
     goto/16 :goto_b
 
-    .line 2558
+    .line 2712
     .end local v3    # "isChild":Z
     .end local v6    # "parent":Landroid/view/ViewParent;
     .end local v7    # "sb":Ljava/lang/StringBuilder;
@@ -3402,20 +3572,20 @@
     .restart local v2    # "handled":Z
     .restart local v4    # "nextFocused":Landroid/view/View;
     .restart local v5    # "nextLeft":I
-    :cond_9e
+    :cond_a1
     invoke-virtual {v4}, Landroid/view/View;->requestFocus()Z
 
     move-result v2
 
     goto :goto_32
 
-    .line 2560
+    .line 2714
     .end local v0    # "currLeft":I
     .end local v5    # "nextLeft":I
-    :cond_a3
+    :cond_a6
     if-ne p1, v12, :cond_32
 
-    .line 2563
+    .line 2717
     iget-object v8, p0, Landroid/support/v4/view/ViewPager;->mTempRect:Landroid/graphics/Rect;
 
     invoke-direct {p0, v8, v4}, Landroid/support/v4/view/ViewPager;->getChildRectInPagerCoordinates(Landroid/graphics/Rect;Landroid/view/View;)Landroid/graphics/Rect;
@@ -3424,7 +3594,7 @@
 
     iget v5, v8, Landroid/graphics/Rect;->left:I
 
-    .line 2564
+    .line 2718
     .restart local v5    # "nextLeft":I
     iget-object v8, p0, Landroid/support/v4/view/ViewPager;->mTempRect:Landroid/graphics/Rect;
 
@@ -3434,55 +3604,55 @@
 
     iget v0, v8, Landroid/graphics/Rect;->left:I
 
-    .line 2565
+    .line 2719
     .restart local v0    # "currLeft":I
-    if-eqz v1, :cond_bf
+    if-eqz v1, :cond_c2
 
-    if-gt v5, v0, :cond_bf
+    if-gt v5, v0, :cond_c2
 
-    .line 2566
+    .line 2720
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->pageRight()Z
 
     move-result v2
 
     goto/16 :goto_32
 
-    .line 2568
-    :cond_bf
+    .line 2722
+    :cond_c2
     invoke-virtual {v4}, Landroid/view/View;->requestFocus()Z
 
     move-result v2
 
     goto/16 :goto_32
 
-    .line 2571
+    .line 2725
     .end local v0    # "currLeft":I
     .end local v5    # "nextLeft":I
-    :cond_c5
-    if-eq p1, v11, :cond_ca
+    :cond_c8
+    if-eq p1, v11, :cond_cd
 
     const/4 v8, 0x1
 
-    if-ne p1, v8, :cond_d0
+    if-ne p1, v8, :cond_d3
 
-    .line 2573
-    :cond_ca
+    .line 2727
+    :cond_cd
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->pageLeft()Z
 
     move-result v2
 
     goto/16 :goto_32
 
-    .line 2574
-    :cond_d0
-    if-eq p1, v12, :cond_d5
+    .line 2728
+    :cond_d3
+    if-eq p1, v12, :cond_d8
 
     const/4 v8, 0x2
 
     if-ne p1, v8, :cond_32
 
-    .line 2576
-    :cond_d5
+    .line 2730
+    :cond_d8
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->pageRight()Z
 
     move-result v2
@@ -3500,40 +3670,40 @@
 
     const/4 v5, 0x0
 
-    .line 2278
+    .line 2426
     iget-boolean v2, p0, Landroid/support/v4/view/ViewPager;->mIsBeingDragged:Z
 
     if-eqz v2, :cond_8
 
-    .line 2294
+    .line 2442
     :goto_7
     return v4
 
-    .line 2281
+    .line 2429
     :cond_8
     iput-boolean v9, p0, Landroid/support/v4/view/ViewPager;->mFakeDragging:Z
 
-    .line 2282
+    .line 2430
     invoke-direct {p0, v9}, Landroid/support/v4/view/ViewPager;->setScrollState(I)V
 
-    .line 2283
+    .line 2431
     iput v5, p0, Landroid/support/v4/view/ViewPager;->mLastMotionX:F
 
     iput v5, p0, Landroid/support/v4/view/ViewPager;->mInitialMotionX:F
 
-    .line 2284
+    .line 2432
     iget-object v2, p0, Landroid/support/v4/view/ViewPager;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-nez v2, :cond_32
 
-    .line 2285
+    .line 2433
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v2
 
     iput-object v2, p0, Landroid/support/v4/view/ViewPager;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 2289
+    .line 2437
     :goto_1b
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -3546,29 +3716,29 @@
 
     move v7, v4
 
-    .line 2290
+    .line 2438
     invoke-static/range {v0 .. v7}, Landroid/view/MotionEvent;->obtain(JJIFFI)Landroid/view/MotionEvent;
 
     move-result-object v8
 
-    .line 2291
+    .line 2439
     .local v8, "ev":Landroid/view/MotionEvent;
     iget-object v2, p0, Landroid/support/v4/view/ViewPager;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v2, v8}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 2292
+    .line 2440
     invoke-virtual {v8}, Landroid/view/MotionEvent;->recycle()V
 
-    .line 2293
+    .line 2441
     iput-wide v0, p0, Landroid/support/v4/view/ViewPager;->mFakeDragBeginTime:J
 
     move v4, v9
 
-    .line 2294
+    .line 2442
     goto :goto_7
 
-    .line 2287
+    .line 2435
     .end local v0    # "time":J
     .end local v8    # "ev":Landroid/view/MotionEvent;
     :cond_32
@@ -3588,35 +3758,35 @@
     .param p5, "y"    # I
 
     .prologue
-    .line 2456
+    .line 2610
     instance-of v0, p1, Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_59
 
     move-object v7, p1
 
-    .line 2457
+    .line 2611
     check-cast v7, Landroid/view/ViewGroup;
 
-    .line 2458
+    .line 2612
     .local v7, "group":Landroid/view/ViewGroup;
     invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
 
     move-result v9
 
-    .line 2459
+    .line 2613
     .local v9, "scrollX":I
     invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
 
     move-result v10
 
-    .line 2460
+    .line 2614
     .local v10, "scrollY":I
     invoke-virtual {v7}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v6
 
-    .line 2462
+    .line 2616
     .local v6, "count":I
     add-int/lit8 v8, v6, -0x1
 
@@ -3624,12 +3794,12 @@
     :goto_15
     if-ltz v8, :cond_59
 
-    .line 2465
+    .line 2619
     invoke-virtual {v7, v8}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 2466
+    .line 2620
     .local v1, "child":Landroid/view/View;
     add-int v0, p4, v9
 
@@ -3691,10 +3861,10 @@
 
     if-eqz v0, :cond_56
 
-    .line 2470
+    .line 2624
     const/4 v0, 0x1
 
-    .line 2475
+    .line 2629
     .end local v1    # "child":Landroid/view/View;
     .end local v6    # "count":I
     .end local v7    # "group":Landroid/view/ViewGroup;
@@ -3704,7 +3874,7 @@
     :goto_55
     return v0
 
-    .line 2462
+    .line 2616
     .restart local v1    # "child":Landroid/view/View;
     .restart local v6    # "count":I
     .restart local v7    # "group":Landroid/view/ViewGroup;
@@ -3716,7 +3886,7 @@
 
     goto :goto_15
 
-    .line 2475
+    .line 2629
     .end local v1    # "child":Landroid/view/View;
     .end local v6    # "count":I
     .end local v7    # "group":Landroid/view/ViewGroup;
@@ -3753,33 +3923,33 @@
 
     const/4 v3, 0x0
 
-    .line 2429
+    .line 2583
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     if-nez v4, :cond_7
 
-    .line 2440
+    .line 2594
     :cond_6
     :goto_6
     return v3
 
-    .line 2433
+    .line 2587
     :cond_7
     invoke-direct {p0}, Landroid/support/v4/view/ViewPager;->getClientWidth()I
 
     move-result v1
 
-    .line 2434
+    .line 2588
     .local v1, "width":I
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
 
     move-result v0
 
-    .line 2435
+    .line 2589
     .local v0, "scrollX":I
     if-gez p1, :cond_1c
 
-    .line 2436
+    .line 2590
     int-to-float v4, v1
 
     iget v5, p0, Landroid/support/v4/view/ViewPager;->mFirstOffset:F
@@ -3800,11 +3970,11 @@
 
     goto :goto_18
 
-    .line 2437
+    .line 2591
     :cond_1c
     if-lez p1, :cond_6
 
-    .line 2438
+    .line 2592
     int-to-float v4, v1
 
     iget v5, p0, Landroid/support/v4/view/ViewPager;->mLastOffset:F
@@ -3831,7 +4001,7 @@
     .param p1, "p"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
-    .line 2757
+    .line 2911
     instance-of v0, p1, Landroid/support/v4/view/ViewPager$LayoutParams;
 
     if-eqz v0, :cond_c
@@ -3853,18 +4023,42 @@
     goto :goto_b
 .end method
 
-.method public computeScroll()V
-    .registers 6
+.method public clearOnPageChangeListeners()V
+    .registers 2
 
     .prologue
-    .line 1612
+    .line 684
+    iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListeners:Ljava/util/List;
+
+    if-eqz v0, :cond_9
+
+    .line 685
+    iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListeners:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    .line 687
+    :cond_9
+    return-void
+.end method
+
+.method public computeScroll()V
+    .registers 7
+
+    .prologue
+    const/4 v5, 0x1
+
+    .line 1702
+    iput-boolean v5, p0, Landroid/support/v4/view/ViewPager;->mIsScrollStarted:Z
+
+    .line 1703
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v4}, Landroid/widget/Scroller;->isFinished()Z
 
     move-result v4
 
-    if-nez v4, :cond_3e
+    if-nez v4, :cond_41
 
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
 
@@ -3872,20 +4066,20 @@
 
     move-result v4
 
-    if-eqz v4, :cond_3e
+    if-eqz v4, :cond_41
 
-    .line 1613
+    .line 1704
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
 
     move-result v0
 
-    .line 1614
+    .line 1705
     .local v0, "oldX":I
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getScrollY()I
 
     move-result v1
 
-    .line 1615
+    .line 1706
     .local v1, "oldY":I
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
 
@@ -3893,7 +4087,7 @@
 
     move-result v2
 
-    .line 1616
+    .line 1707
     .local v2, "x":I
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
 
@@ -3901,52 +4095,50 @@
 
     move-result v3
 
-    .line 1618
+    .line 1709
     .local v3, "y":I
-    if-ne v0, v2, :cond_28
+    if-ne v0, v2, :cond_2b
 
-    if-eq v1, v3, :cond_3a
+    if-eq v1, v3, :cond_3d
 
-    .line 1619
-    :cond_28
+    .line 1710
+    :cond_2b
     invoke-virtual {p0, v2, v3}, Landroid/support/v4/view/ViewPager;->scrollTo(II)V
 
-    .line 1620
+    .line 1711
     invoke-direct {p0, v2}, Landroid/support/v4/view/ViewPager;->pageScrolled(I)Z
 
     move-result v4
 
-    if-nez v4, :cond_3a
+    if-nez v4, :cond_3d
 
-    .line 1621
+    .line 1712
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v4}, Landroid/widget/Scroller;->abortAnimation()V
 
-    .line 1622
+    .line 1713
     const/4 v4, 0x0
 
     invoke-virtual {p0, v4, v3}, Landroid/support/v4/view/ViewPager;->scrollTo(II)V
 
-    .line 1627
-    :cond_3a
+    .line 1718
+    :cond_3d
     invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->postInvalidateOnAnimation(Landroid/view/View;)V
 
-    .line 1633
+    .line 1724
     .end local v0    # "oldX":I
     .end local v1    # "oldY":I
     .end local v2    # "x":I
     .end local v3    # "y":I
-    :goto_3d
+    :goto_40
     return-void
 
-    .line 1632
-    :cond_3e
-    const/4 v4, 0x1
+    .line 1723
+    :cond_41
+    invoke-direct {p0, v5}, Landroid/support/v4/view/ViewPager;->completeScroll(Z)V
 
-    invoke-direct {p0, v4}, Landroid/support/v4/view/ViewPager;->completeScroll(Z)V
-
-    goto :goto_3d
+    goto :goto_40
 .end method
 
 .method dataSetChanged()V
@@ -3957,18 +4149,18 @@
 
     const/4 v11, 0x0
 
-    .line 850
+    .line 956
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     invoke-virtual {v12}, Landroid/support/v4/view/PagerAdapter;->getCount()I
 
     move-result v0
 
-    .line 851
+    .line 957
     .local v0, "adapterCount":I
     iput v0, p0, Landroid/support/v4/view/ViewPager;->mExpectedAdapterCount:I
 
-    .line 852
+    .line 958
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v12}, Ljava/util/ArrayList;->size()I
@@ -3993,16 +4185,16 @@
 
     move v7, v10
 
-    .line 854
+    .line 960
     .local v7, "needPopulate":Z
     :goto_21
     iget v8, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
-    .line 856
+    .line 962
     .local v8, "newCurrItem":I
     const/4 v5, 0x0
 
-    .line 857
+    .line 963
     .local v5, "isUpdating":Z
     const/4 v3, 0x0
 
@@ -4016,7 +4208,7 @@
 
     if-ge v3, v12, :cond_84
 
-    .line 858
+    .line 964
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v12, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4025,7 +4217,7 @@
 
     check-cast v4, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 859
+    .line 965
     .local v4, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
@@ -4035,13 +4227,13 @@
 
     move-result v9
 
-    .line 861
+    .line 967
     .local v9, "newPos":I
     const/4 v12, -0x1
 
     if-ne v9, v12, :cond_45
 
-    .line 857
+    .line 963
     :cond_40
     :goto_40
     add-int/lit8 v3, v3, 0x1
@@ -4057,10 +4249,10 @@
     :cond_43
     move v7, v11
 
-    .line 852
+    .line 958
     goto :goto_21
 
-    .line 865
+    .line 971
     .restart local v3    # "i":I
     .restart local v4    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     .restart local v5    # "isUpdating":Z
@@ -4072,26 +4264,26 @@
 
     if-ne v9, v12, :cond_75
 
-    .line 866
+    .line 972
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v12, v3}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 867
+    .line 973
     add-int/lit8 v3, v3, -0x1
 
-    .line 869
+    .line 975
     if-nez v5, :cond_57
 
-    .line 870
+    .line 976
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     invoke-virtual {v12, p0}, Landroid/support/v4/view/PagerAdapter;->startUpdate(Landroid/view/ViewGroup;)V
 
-    .line 871
+    .line 977
     const/4 v5, 0x1
 
-    .line 874
+    .line 980
     :cond_57
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
@@ -4101,17 +4293,17 @@
 
     invoke-virtual {v12, p0, v13, v14}, Landroid/support/v4/view/PagerAdapter;->destroyItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
 
-    .line 875
+    .line 981
     const/4 v7, 0x1
 
-    .line 877
+    .line 983
     iget v12, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
     iget v13, v4, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
     if-ne v12, v13, :cond_40
 
-    .line 879
+    .line 985
     iget v12, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
     add-int/lit8 v13, v0, -0x1
@@ -4124,48 +4316,48 @@
 
     move-result v8
 
-    .line 880
+    .line 986
     const/4 v7, 0x1
 
     goto :goto_40
 
-    .line 885
+    .line 991
     :cond_75
     iget v12, v4, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
     if-eq v12, v9, :cond_40
 
-    .line 886
+    .line 992
     iget v12, v4, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
     iget v13, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
     if-ne v12, v13, :cond_80
 
-    .line 888
+    .line 994
     move v8, v9
 
-    .line 891
+    .line 997
     :cond_80
     iput v9, v4, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
-    .line 892
+    .line 998
     const/4 v7, 0x1
 
     goto :goto_40
 
-    .line 896
+    .line 1002
     .end local v4    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     .end local v9    # "newPos":I
     :cond_84
     if-eqz v5, :cond_8b
 
-    .line 897
+    .line 1003
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     invoke-virtual {v12, p0}, Landroid/support/v4/view/PagerAdapter;->finishUpdate(Landroid/view/ViewGroup;)V
 
-    .line 900
+    .line 1006
     :cond_8b
     iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
@@ -4173,27 +4365,27 @@
 
     invoke-static {v12, v13}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 902
+    .line 1008
     if-eqz v7, :cond_b5
 
-    .line 904
+    .line 1010
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getChildCount()I
 
     move-result v2
 
-    .line 905
+    .line 1011
     .local v2, "childCount":I
     const/4 v3, 0x0
 
     :goto_99
     if-ge v3, v2, :cond_af
 
-    .line 906
+    .line 1012
     invoke-virtual {p0, v3}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 907
+    .line 1013
     .local v1, "child":Landroid/view/View;
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -4201,33 +4393,33 @@
 
     check-cast v6, Landroid/support/v4/view/ViewPager$LayoutParams;
 
-    .line 908
+    .line 1014
     .local v6, "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
     iget-boolean v12, v6, Landroid/support/v4/view/ViewPager$LayoutParams;->isDecor:Z
 
     if-nez v12, :cond_ac
 
-    .line 909
+    .line 1015
     const/4 v12, 0x0
 
     iput v12, v6, Landroid/support/v4/view/ViewPager$LayoutParams;->widthFactor:F
 
-    .line 905
+    .line 1011
     :cond_ac
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_99
 
-    .line 913
+    .line 1019
     .end local v1    # "child":Landroid/view/View;
     .end local v6    # "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
     :cond_af
     invoke-virtual {p0, v8, v11, v10}, Landroid/support/v4/view/ViewPager;->setCurrentItemInternal(IZZ)V
 
-    .line 914
+    .line 1020
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->requestLayout()V
 
-    .line 916
+    .line 1022
     .end local v2    # "childCount":I
     :cond_b5
     return-void
@@ -4238,7 +4430,7 @@
     .param p1, "event"    # Landroid/view/KeyEvent;
 
     .prologue
-    .line 2481
+    .line 2635
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v0
@@ -4268,7 +4460,7 @@
     .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
     .prologue
-    .line 2725
+    .line 2879
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getEventType()I
 
     move-result v4
@@ -4277,22 +4469,22 @@
 
     if-ne v4, v5, :cond_d
 
-    .line 2726
+    .line 2880
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
 
     move-result v4
 
-    .line 2742
+    .line 2896
     :goto_c
     return v4
 
-    .line 2730
+    .line 2884
     :cond_d
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getChildCount()I
 
     move-result v1
 
-    .line 2731
+    .line 2885
     .local v1, "childCount":I
     const/4 v2, 0x0
 
@@ -4300,12 +4492,12 @@
     :goto_12
     if-ge v2, v1, :cond_35
 
-    .line 2732
+    .line 2886
     invoke-virtual {p0, v2}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2733
+    .line 2887
     .local v0, "child":Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
@@ -4313,12 +4505,12 @@
 
     if-nez v4, :cond_32
 
-    .line 2734
+    .line 2888
     invoke-virtual {p0, v0}, Landroid/support/v4/view/ViewPager;->infoForChild(Landroid/view/View;)Landroid/support/v4/view/ViewPager$ItemInfo;
 
     move-result-object v3
 
-    .line 2735
+    .line 2889
     .local v3, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     if-eqz v3, :cond_32
 
@@ -4334,19 +4526,19 @@
 
     if-eqz v4, :cond_32
 
-    .line 2737
+    .line 2891
     const/4 v4, 0x1
 
     goto :goto_c
 
-    .line 2731
+    .line 2885
     .end local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     :cond_32
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_12
 
-    .line 2742
+    .line 2896
     .end local v0    # "child":Landroid/view/View;
     :cond_35
     const/4 v4, 0x0
@@ -4359,12 +4551,12 @@
     .param p1, "f"    # F
 
     .prologue
-    .line 771
+    .line 860
     const/high16 v0, 0x3f000000
 
     sub-float/2addr p1, v0
 
-    .line 772
+    .line 861
     float-to-double v0, p1
 
     const-wide v2, 0x3fde28c7460698c7L
@@ -4373,7 +4565,7 @@
 
     double-to-float p1, v0
 
-    .line 773
+    .line 862
     float-to-double v0, p1
 
     invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
@@ -4392,19 +4584,19 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 2176
+    .line 2324
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2177
+    .line 2325
     const/4 v1, 0x0
 
-    .line 2179
+    .line 2327
     .local v1, "needsInvalidate":Z
     invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->getOverScrollMode(Landroid/view/View;)I
 
     move-result v2
 
-    .line 2180
+    .line 2328
     .local v2, "overScrollMode":I
     if-eqz v2, :cond_19
 
@@ -4422,7 +4614,7 @@
 
     if-le v5, v6, :cond_a4
 
-    .line 2183
+    .line 2331
     :cond_19
     iget-object v5, p0, Landroid/support/v4/view/ViewPager;->mLeftEdge:Landroid/support/v4/widget/EdgeEffectCompat;
 
@@ -4432,12 +4624,12 @@
 
     if-nez v5, :cond_5a
 
-    .line 2184
+    .line 2332
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v3
 
-    .line 2185
+    .line 2333
     .local v3, "restoreCount":I
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getHeight()I
 
@@ -4455,19 +4647,19 @@
 
     sub-int v0, v5, v6
 
-    .line 2186
+    .line 2334
     .local v0, "height":I
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getWidth()I
 
     move-result v4
 
-    .line 2188
+    .line 2336
     .local v4, "width":I
     const/high16 v5, 0x43870000
 
     invoke-virtual {p1, v5}, Landroid/graphics/Canvas;->rotate(F)V
 
-    .line 2189
+    .line 2337
     neg-int v5, v0
 
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getPaddingTop()I
@@ -4486,12 +4678,12 @@
 
     invoke-virtual {p1, v5, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2190
+    .line 2338
     iget-object v5, p0, Landroid/support/v4/view/ViewPager;->mLeftEdge:Landroid/support/v4/widget/EdgeEffectCompat;
 
     invoke-virtual {v5, v0, v4}, Landroid/support/v4/widget/EdgeEffectCompat;->setSize(II)V
 
-    .line 2191
+    .line 2339
     iget-object v5, p0, Landroid/support/v4/view/ViewPager;->mLeftEdge:Landroid/support/v4/widget/EdgeEffectCompat;
 
     invoke-virtual {v5, p1}, Landroid/support/v4/widget/EdgeEffectCompat;->draw(Landroid/graphics/Canvas;)Z
@@ -4500,10 +4692,10 @@
 
     or-int/2addr v1, v5
 
-    .line 2192
+    .line 2340
     invoke-virtual {p1, v3}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .line 2194
+    .line 2342
     .end local v0    # "height":I
     .end local v3    # "restoreCount":I
     .end local v4    # "width":I
@@ -4516,18 +4708,18 @@
 
     if-nez v5, :cond_9e
 
-    .line 2195
+    .line 2343
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v3
 
-    .line 2196
+    .line 2344
     .restart local v3    # "restoreCount":I
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getWidth()I
 
     move-result v4
 
-    .line 2197
+    .line 2345
     .restart local v4    # "width":I
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getHeight()I
 
@@ -4545,13 +4737,13 @@
 
     sub-int v0, v5, v6
 
-    .line 2199
+    .line 2347
     .restart local v0    # "height":I
     const/high16 v5, 0x42b40000
 
     invoke-virtual {p1, v5}, Landroid/graphics/Canvas;->rotate(F)V
 
-    .line 2200
+    .line 2348
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getPaddingTop()I
 
     move-result v5
@@ -4574,12 +4766,12 @@
 
     invoke-virtual {p1, v5, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2201
+    .line 2349
     iget-object v5, p0, Landroid/support/v4/view/ViewPager;->mRightEdge:Landroid/support/v4/widget/EdgeEffectCompat;
 
     invoke-virtual {v5, v0, v4}, Landroid/support/v4/widget/EdgeEffectCompat;->setSize(II)V
 
-    .line 2202
+    .line 2350
     iget-object v5, p0, Landroid/support/v4/view/ViewPager;->mRightEdge:Landroid/support/v4/widget/EdgeEffectCompat;
 
     invoke-virtual {v5, p1}, Landroid/support/v4/widget/EdgeEffectCompat;->draw(Landroid/graphics/Canvas;)Z
@@ -4588,10 +4780,10 @@
 
     or-int/2addr v1, v5
 
-    .line 2203
+    .line 2351
     invoke-virtual {p1, v3}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .line 2210
+    .line 2358
     .end local v0    # "height":I
     .end local v3    # "restoreCount":I
     .end local v4    # "width":I
@@ -4599,20 +4791,20 @@
     :goto_9e
     if-eqz v1, :cond_a3
 
-    .line 2212
+    .line 2360
     invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->postInvalidateOnAnimation(Landroid/view/View;)V
 
-    .line 2214
+    .line 2362
     :cond_a3
     return-void
 
-    .line 2206
+    .line 2354
     :cond_a4
     iget-object v5, p0, Landroid/support/v4/view/ViewPager;->mLeftEdge:Landroid/support/v4/widget/EdgeEffectCompat;
 
     invoke-virtual {v5}, Landroid/support/v4/widget/EdgeEffectCompat;->finish()V
 
-    .line 2207
+    .line 2355
     iget-object v5, p0, Landroid/support/v4/view/ViewPager;->mRightEdge:Landroid/support/v4/widget/EdgeEffectCompat;
 
     invoke-virtual {v5}, Landroid/support/v4/widget/EdgeEffectCompat;->finish()V
@@ -4624,13 +4816,13 @@
     .registers 3
 
     .prologue
-    .line 759
+    .line 848
     invoke-super {p0}, Landroid/view/ViewGroup;->drawableStateChanged()V
 
-    .line 760
+    .line 849
     iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mMarginDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 761
+    .line 850
     .local v0, "d":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_14
 
@@ -4640,14 +4832,14 @@
 
     if-eqz v1, :cond_14
 
-    .line 762
+    .line 851
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getDrawableState()[I
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 764
+    .line 853
     :cond_14
     return-void
 .end method
@@ -4658,25 +4850,30 @@
     .prologue
     const/4 v11, 0x1
 
-    .line 2304
+    .line 2452
     iget-boolean v9, p0, Landroid/support/v4/view/ViewPager;->mFakeDragging:Z
 
-    if-nez v9, :cond_d
+    if-nez v9, :cond_e
 
-    .line 2305
+    .line 2453
     new-instance v9, Ljava/lang/IllegalStateException;
 
-    const-string v10, "No fake drag in progress. Call beginFakeDrag first."
+    const-string/jumbo v10, "No fake drag in progress. Call beginFakeDrag first."
 
     invoke-direct {v9, v10}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v9
 
-    .line 2308
-    :cond_d
+    .line 2456
+    :cond_e
+    iget-object v9, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
+
+    if-eqz v9, :cond_4a
+
+    .line 2457
     iget-object v7, p0, Landroid/support/v4/view/ViewPager;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 2309
+    .line 2458
     .local v7, "velocityTracker":Landroid/view/VelocityTracker;
     const/16 v9, 0x3e8
 
@@ -4686,7 +4883,7 @@
 
     invoke-virtual {v7, v9, v10}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
 
-    .line 2310
+    .line 2459
     iget v9, p0, Landroid/support/v4/view/ViewPager;->mActivePointerId:I
 
     invoke-static {v7, v9}, Landroid/support/v4/view/VelocityTrackerCompat;->getXVelocity(Landroid/view/VelocityTracker;I)F
@@ -4695,32 +4892,32 @@
 
     float-to-int v2, v9
 
-    .line 2312
+    .line 2461
     .local v2, "initialVelocity":I
     iput-boolean v11, p0, Landroid/support/v4/view/ViewPager;->mPopulatePending:Z
 
-    .line 2313
+    .line 2462
     invoke-direct {p0}, Landroid/support/v4/view/ViewPager;->getClientWidth()I
 
     move-result v8
 
-    .line 2314
+    .line 2463
     .local v8, "width":I
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
 
     move-result v5
 
-    .line 2315
+    .line 2464
     .local v5, "scrollX":I
     invoke-direct {p0}, Landroid/support/v4/view/ViewPager;->infoForCurrentScrollPosition()Landroid/support/v4/view/ViewPager$ItemInfo;
 
     move-result-object v1
 
-    .line 2316
+    .line 2465
     .local v1, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     iget v0, v1, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
-    .line 2317
+    .line 2466
     .local v0, "currentPage":I
     int-to-float v9, v5
 
@@ -4736,7 +4933,7 @@
 
     div-float v4, v9, v10
 
-    .line 2318
+    .line 2467
     .local v4, "pageOffset":F
     iget v9, p0, Landroid/support/v4/view/ViewPager;->mLastMotionX:F
 
@@ -4746,25 +4943,35 @@
 
     float-to-int v6, v9
 
-    .line 2319
+    .line 2468
     .local v6, "totalDelta":I
     invoke-direct {p0, v0, v4, v2, v6}, Landroid/support/v4/view/ViewPager;->determineTargetPage(IFII)I
 
     move-result v3
 
-    .line 2321
+    .line 2470
     .local v3, "nextPage":I
     invoke-virtual {p0, v3, v11, v11, v2}, Landroid/support/v4/view/ViewPager;->setCurrentItemInternal(IZZI)V
 
-    .line 2322
+    .line 2472
+    .end local v0    # "currentPage":I
+    .end local v1    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
+    .end local v2    # "initialVelocity":I
+    .end local v3    # "nextPage":I
+    .end local v4    # "pageOffset":F
+    .end local v5    # "scrollX":I
+    .end local v6    # "totalDelta":I
+    .end local v7    # "velocityTracker":Landroid/view/VelocityTracker;
+    .end local v8    # "width":I
+    :cond_4a
     invoke-direct {p0}, Landroid/support/v4/view/ViewPager;->endDrag()V
 
-    .line 2324
+    .line 2474
     const/4 v9, 0x0
 
     iput-boolean v9, p0, Landroid/support/v4/view/ViewPager;->mFakeDragging:Z
 
-    .line 2325
+    .line 2475
     return-void
 .end method
 
@@ -4775,10 +4982,10 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 2493
+    .line 2647
     const/4 v0, 0x0
 
-    .line 2494
+    .line 2648
     .local v0, "handled":Z
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
@@ -4786,19 +4993,19 @@
 
     if-nez v1, :cond_f
 
-    .line 2495
+    .line 2649
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v1
 
     sparse-switch v1, :sswitch_data_3c
 
-    .line 2515
+    .line 2669
     :cond_f
     :goto_f
     return v0
 
-    .line 2497
+    .line 2651
     :sswitch_10
     const/16 v1, 0x11
 
@@ -4806,10 +5013,10 @@
 
     move-result v0
 
-    .line 2498
+    .line 2652
     goto :goto_f
 
-    .line 2500
+    .line 2654
     :sswitch_17
     const/16 v1, 0x42
 
@@ -4817,10 +5024,10 @@
 
     move-result v0
 
-    .line 2501
+    .line 2655
     goto :goto_f
 
-    .line 2503
+    .line 2657
     :sswitch_1e
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -4828,14 +5035,14 @@
 
     if-lt v1, v2, :cond_f
 
-    .line 2506
+    .line 2660
     invoke-static {p1}, Landroid/support/v4/view/KeyEventCompat;->hasNoModifiers(Landroid/view/KeyEvent;)Z
 
     move-result v1
 
     if-eqz v1, :cond_30
 
-    .line 2507
+    .line 2661
     const/4 v1, 0x2
 
     invoke-virtual {p0, v1}, Landroid/support/v4/view/ViewPager;->arrowScroll(I)Z
@@ -4844,7 +5051,7 @@
 
     goto :goto_f
 
-    .line 2508
+    .line 2662
     :cond_30
     invoke-static {p1, v3}, Landroid/support/v4/view/KeyEventCompat;->hasModifiers(Landroid/view/KeyEvent;I)Z
 
@@ -4852,14 +5059,14 @@
 
     if-eqz v1, :cond_f
 
-    .line 2509
+    .line 2663
     invoke-virtual {p0, v3}, Landroid/support/v4/view/ViewPager;->arrowScroll(I)Z
 
     move-result v0
 
     goto :goto_f
 
-    .line 2495
+    .line 2649
     nop
 
     :sswitch_data_3c
@@ -4875,24 +5082,36 @@
     .param p1, "xOffset"    # F
 
     .prologue
-    .line 2335
+    .line 2485
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Landroid/support/v4/view/ViewPager;->mFakeDragging:Z
 
-    if-nez v2, :cond_e
+    if-nez v2, :cond_f
 
-    .line 2336
+    .line 2486
     new-instance v2, Ljava/lang/IllegalStateException;
 
-    const-string v3, "No fake drag in progress. Call beginFakeDrag first."
+    const-string/jumbo v3, "No fake drag in progress. Call beginFakeDrag first."
 
     invoke-direct {v2, v3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
-    .line 2339
-    :cond_e
+    .line 2489
+    :cond_f
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
+
+    if-nez v2, :cond_16
+
+    .line 2527
+    :goto_15
+    return-void
+
+    .line 2493
+    :cond_16
     move-object/from16 v0, p0
 
     iget v2, v0, Landroid/support/v4/view/ViewPager;->mLastMotionX:F
@@ -4903,24 +5122,24 @@
 
     iput v2, v0, Landroid/support/v4/view/ViewPager;->mLastMotionX:F
 
-    .line 2341
+    .line 2495
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
 
     move-result v2
 
     int-to-float v14, v2
 
-    .line 2342
+    .line 2496
     .local v14, "oldScrollX":F
     sub-float v16, v14, p1
 
-    .line 2343
+    .line 2497
     .local v16, "scrollX":F
     invoke-direct/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getClientWidth()I
 
     move-result v17
 
-    .line 2345
+    .line 2499
     .local v17, "width":I
     move/from16 v0, v17
 
@@ -4932,7 +5151,7 @@
 
     mul-float v13, v2, v3
 
-    .line 2346
+    .line 2500
     .local v13, "leftBound":F
     move/from16 v0, v17
 
@@ -4944,7 +5163,7 @@
 
     mul-float v15, v2, v3
 
-    .line 2348
+    .line 2502
     .local v15, "rightBound":F
     move-object/from16 v0, p0
 
@@ -4958,7 +5177,7 @@
 
     check-cast v11, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 2349
+    .line 2503
     .local v11, "firstItem":Landroid/support/v4/view/ViewPager$ItemInfo;
     move-object/from16 v0, p0
 
@@ -4980,13 +5199,13 @@
 
     check-cast v12, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 2350
+    .line 2504
     .local v12, "lastItem":Landroid/support/v4/view/ViewPager$ItemInfo;
     iget v2, v11, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
-    if-eqz v2, :cond_5f
+    if-eqz v2, :cond_67
 
-    .line 2351
+    .line 2505
     iget v2, v11, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
 
     move/from16 v0, v17
@@ -4995,8 +5214,8 @@
 
     mul-float v13, v2, v3
 
-    .line 2353
-    :cond_5f
+    .line 2507
+    :cond_67
     iget v2, v12, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
     move-object/from16 v0, p0
@@ -5009,9 +5228,9 @@
 
     add-int/lit8 v3, v3, -0x1
 
-    if-eq v2, v3, :cond_74
+    if-eq v2, v3, :cond_7c
 
-    .line 2354
+    .line 2508
     iget v2, v12, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
 
     move/from16 v0, v17
@@ -5020,18 +5239,18 @@
 
     mul-float v15, v2, v3
 
-    .line 2357
-    :cond_74
+    .line 2511
+    :cond_7c
     cmpg-float v2, v16, v13
 
-    if-gez v2, :cond_bb
+    if-gez v2, :cond_c4
 
-    .line 2358
+    .line 2512
     move/from16 v16, v13
 
-    .line 2363
-    :cond_7a
-    :goto_7a
+    .line 2517
+    :cond_82
+    :goto_82
     move-object/from16 v0, p0
 
     iget v2, v0, Landroid/support/v4/view/ViewPager;->mLastMotionX:F
@@ -5050,7 +5269,7 @@
 
     iput v2, v0, Landroid/support/v4/view/ViewPager;->mLastMotionX:F
 
-    .line 2364
+    .line 2518
     move/from16 v0, v16
 
     float-to-int v2, v0
@@ -5063,7 +5282,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/support/v4/view/ViewPager;->scrollTo(II)V
 
-    .line 2365
+    .line 2519
     move/from16 v0, v16
 
     float-to-int v2, v0
@@ -5072,12 +5291,12 @@
 
     invoke-direct {v0, v2}, Landroid/support/v4/view/ViewPager;->pageScrolled(I)Z
 
-    .line 2368
+    .line 2522
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v4
 
-    .line 2369
+    .line 2523
     .local v4, "time":J
     move-object/from16 v0, p0
 
@@ -5097,7 +5316,7 @@
 
     move-result-object v10
 
-    .line 2371
+    .line 2525
     .local v10, "ev":Landroid/view/MotionEvent;
     move-object/from16 v0, p0
 
@@ -5105,31 +5324,30 @@
 
     invoke-virtual {v2, v10}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 2372
+    .line 2526
     invoke-virtual {v10}, Landroid/view/MotionEvent;->recycle()V
 
-    .line 2373
-    return-void
+    goto/16 :goto_15
 
-    .line 2359
+    .line 2513
     .end local v4    # "time":J
     .end local v10    # "ev":Landroid/view/MotionEvent;
-    :cond_bb
+    :cond_c4
     cmpl-float v2, v16, v15
 
-    if-lez v2, :cond_7a
+    if-lez v2, :cond_82
 
-    .line 2360
+    .line 2514
     move/from16 v16, v15
 
-    goto :goto_7a
+    goto :goto_82
 .end method
 
 .method protected generateDefaultLayoutParams()Landroid/view/ViewGroup$LayoutParams;
     .registers 2
 
     .prologue
-    .line 2747
+    .line 2901
     new-instance v0, Landroid/support/v4/view/ViewPager$LayoutParams;
 
     invoke-direct {v0}, Landroid/support/v4/view/ViewPager$LayoutParams;-><init>()V
@@ -5142,7 +5360,7 @@
     .param p1, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 2762
+    .line 2916
     new-instance v0, Landroid/support/v4/view/ViewPager$LayoutParams;
 
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getContext()Landroid/content/Context;
@@ -5159,7 +5377,7 @@
     .param p1, "p"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
-    .line 2752
+    .line 2906
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->generateDefaultLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -5171,7 +5389,7 @@
     .registers 2
 
     .prologue
-    .line 475
+    .line 531
     iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     return-object v0
@@ -5183,7 +5401,7 @@
     .param p2, "i"    # I
 
     .prologue
-    .line 647
+    .line 736
     iget v2, p0, Landroid/support/v4/view/ViewPager;->mDrawingOrder:I
 
     const/4 v3, 0x2
@@ -5194,7 +5412,7 @@
 
     sub-int v0, v2, p2
 
-    .line 648
+    .line 737
     .local v0, "index":I
     :goto_9
     iget-object v2, p0, Landroid/support/v4/view/ViewPager;->mDrawingOrderedChildren:Ljava/util/ArrayList;
@@ -5213,7 +5431,7 @@
 
     iget v1, v2, Landroid/support/v4/view/ViewPager$LayoutParams;->childIndex:I
 
-    .line 649
+    .line 738
     .local v1, "result":I
     return v1
 
@@ -5222,7 +5440,7 @@
     :cond_1a
     move v0, p2
 
-    .line 647
+    .line 736
     goto :goto_9
 .end method
 
@@ -5230,7 +5448,7 @@
     .registers 2
 
     .prologue
-    .line 510
+    .line 566
     iget v0, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
     return v0
@@ -5240,7 +5458,7 @@
     .registers 2
 
     .prologue
-    .line 672
+    .line 761
     iget v0, p0, Landroid/support/v4/view/ViewPager;->mOffscreenPageLimit:I
 
     return v0
@@ -5250,7 +5468,7 @@
     .registers 2
 
     .prologue
-    .line 728
+    .line 817
     iget v0, p0, Landroid/support/v4/view/ViewPager;->mPageMargin:I
 
     return v0
@@ -5261,7 +5479,7 @@
     .param p1, "child"    # Landroid/view/View;
 
     .prologue
-    .line 1342
+    .line 1446
     :goto_0
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -5270,30 +5488,30 @@
     .local v0, "parent":Landroid/view/ViewParent;
     if-eq v0, p0, :cond_12
 
-    .line 1343
+    .line 1447
     if-eqz v0, :cond_c
 
     instance-of v1, v0, Landroid/view/View;
 
     if-nez v1, :cond_e
 
-    .line 1344
+    .line 1448
     :cond_c
     const/4 v1, 0x0
 
-    .line 1348
+    .line 1452
     :goto_d
     return-object v1
 
     :cond_e
     move-object p1, v0
 
-    .line 1346
+    .line 1450
     check-cast p1, Landroid/view/View;
 
     goto :goto_0
 
-    .line 1348
+    .line 1452
     :cond_12
     invoke-virtual {p0, p1}, Landroid/support/v4/view/ViewPager;->infoForChild(Landroid/view/View;)Landroid/support/v4/view/ViewPager$ItemInfo;
 
@@ -5307,7 +5525,7 @@
     .param p1, "child"    # Landroid/view/View;
 
     .prologue
-    .line 1331
+    .line 1435
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -5320,7 +5538,7 @@
 
     if-ge v0, v2, :cond_1f
 
-    .line 1332
+    .line 1436
     iget-object v2, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5329,7 +5547,7 @@
 
     check-cast v1, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 1333
+    .line 1437
     .local v1, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     iget-object v2, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
@@ -5341,19 +5559,19 @@
 
     if-eqz v2, :cond_1c
 
-    .line 1337
+    .line 1441
     .end local v1    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     :goto_1b
     return-object v1
 
-    .line 1331
+    .line 1435
     .restart local v1    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     :cond_1c
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 1337
+    .line 1441
     .end local v1    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     :cond_1f
     const/4 v1, 0x0
@@ -5366,7 +5584,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 1352
+    .line 1456
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -5379,7 +5597,7 @@
 
     if-ge v0, v2, :cond_19
 
-    .line 1353
+    .line 1457
     iget-object v2, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5388,25 +5606,25 @@
 
     check-cast v1, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 1354
+    .line 1458
     .local v1, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     iget v2, v1, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
     if-ne v2, p1, :cond_16
 
-    .line 1358
+    .line 1462
     .end local v1    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     :goto_15
     return-object v1
 
-    .line 1352
+    .line 1456
     .restart local v1    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     :cond_16
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 1358
+    .line 1462
     .end local v1    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     :cond_19
     const/4 v1, 0x0
@@ -5420,25 +5638,25 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 359
+    .line 364
     const/4 v3, 0x0
 
     invoke-virtual {p0, v3}, Landroid/support/v4/view/ViewPager;->setWillNotDraw(Z)V
 
-    .line 360
+    .line 365
     const/high16 v3, 0x40000
 
     invoke-virtual {p0, v3}, Landroid/support/v4/view/ViewPager;->setDescendantFocusability(I)V
 
-    .line 361
+    .line 366
     invoke-virtual {p0, v5}, Landroid/support/v4/view/ViewPager;->setFocusable(Z)V
 
-    .line 362
+    .line 367
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 363
+    .line 368
     .local v1, "context":Landroid/content/Context;
     new-instance v3, Landroid/widget/Scroller;
 
@@ -5448,12 +5666,12 @@
 
     iput-object v3, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
 
-    .line 364
+    .line 369
     invoke-static {v1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v0
 
-    .line 365
+    .line 370
     .local v0, "configuration":Landroid/view/ViewConfiguration;
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -5465,7 +5683,7 @@
 
     iget v2, v3, Landroid/util/DisplayMetrics;->density:F
 
-    .line 367
+    .line 372
     .local v2, "density":F
     invoke-static {v0}, Landroid/support/v4/view/ViewConfigurationCompat;->getScaledPagingTouchSlop(Landroid/view/ViewConfiguration;)I
 
@@ -5473,7 +5691,7 @@
 
     iput v3, p0, Landroid/support/v4/view/ViewPager;->mTouchSlop:I
 
-    .line 368
+    .line 373
     const/high16 v3, 0x43c80000
 
     mul-float/2addr v3, v2
@@ -5482,28 +5700,28 @@
 
     iput v3, p0, Landroid/support/v4/view/ViewPager;->mMinimumVelocity:I
 
-    .line 369
+    .line 374
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledMaximumFlingVelocity()I
 
     move-result v3
 
     iput v3, p0, Landroid/support/v4/view/ViewPager;->mMaximumVelocity:I
 
-    .line 370
+    .line 375
     new-instance v3, Landroid/support/v4/widget/EdgeEffectCompat;
 
     invoke-direct {v3, v1}, Landroid/support/v4/widget/EdgeEffectCompat;-><init>(Landroid/content/Context;)V
 
     iput-object v3, p0, Landroid/support/v4/view/ViewPager;->mLeftEdge:Landroid/support/v4/widget/EdgeEffectCompat;
 
-    .line 371
+    .line 376
     new-instance v3, Landroid/support/v4/widget/EdgeEffectCompat;
 
     invoke-direct {v3, v1}, Landroid/support/v4/widget/EdgeEffectCompat;-><init>(Landroid/content/Context;)V
 
     iput-object v3, p0, Landroid/support/v4/view/ViewPager;->mRightEdge:Landroid/support/v4/widget/EdgeEffectCompat;
 
-    .line 373
+    .line 378
     const/high16 v3, 0x41c80000
 
     mul-float/2addr v3, v2
@@ -5512,7 +5730,7 @@
 
     iput v3, p0, Landroid/support/v4/view/ViewPager;->mFlingDistance:I
 
-    .line 374
+    .line 379
     const/high16 v3, 0x40000000
 
     mul-float/2addr v3, v2
@@ -5521,7 +5739,7 @@
 
     iput v3, p0, Landroid/support/v4/view/ViewPager;->mCloseEnough:I
 
-    .line 375
+    .line 380
     const/high16 v3, 0x41800000
 
     mul-float/2addr v3, v2
@@ -5530,25 +5748,32 @@
 
     iput v3, p0, Landroid/support/v4/view/ViewPager;->mDefaultGutterSize:I
 
-    .line 377
+    .line 382
     new-instance v3, Landroid/support/v4/view/ViewPager$MyAccessibilityDelegate;
 
     invoke-direct {v3, p0}, Landroid/support/v4/view/ViewPager$MyAccessibilityDelegate;-><init>(Landroid/support/v4/view/ViewPager;)V
 
     invoke-static {p0, v3}, Landroid/support/v4/view/ViewCompat;->setAccessibilityDelegate(Landroid/view/View;Landroid/support/v4/view/AccessibilityDelegateCompat;)V
 
-    .line 379
+    .line 384
     invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->getImportantForAccessibility(Landroid/view/View;)I
 
     move-result v3
 
     if-nez v3, :cond_6b
 
-    .line 381
+    .line 386
     invoke-static {p0, v5}, Landroid/support/v4/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View;I)V
 
-    .line 384
+    .line 390
     :cond_6b
+    new-instance v3, Landroid/support/v4/view/ViewPager$4;
+
+    invoke-direct {v3, p0}, Landroid/support/v4/view/ViewPager$4;-><init>(Landroid/support/v4/view/ViewPager;)V
+
+    invoke-static {p0, v3}, Landroid/support/v4/view/ViewCompat;->setOnApplyWindowInsetsListener(Landroid/view/View;Landroid/support/v4/view/OnApplyWindowInsetsListener;)V
+
+    .line 438
     return-void
 .end method
 
@@ -5556,7 +5781,7 @@
     .registers 2
 
     .prologue
-    .line 2385
+    .line 2539
     iget-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mFakeDragging:Z
 
     return v0
@@ -5566,15 +5791,15 @@
     .registers 2
 
     .prologue
-    .line 1363
+    .line 1467
     invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
 
-    .line 1364
+    .line 1468
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mFirstLayout:Z
 
-    .line 1365
+    .line 1469
     return-void
 .end method
 
@@ -5582,15 +5807,34 @@
     .registers 2
 
     .prologue
-    .line 388
+    .line 442
     iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mEndScrollRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Landroid/support/v4/view/ViewPager;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 389
+    .line 444
+    iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
+
+    if-eqz v0, :cond_16
+
+    iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
+
+    invoke-virtual {v0}, Landroid/widget/Scroller;->isFinished()Z
+
+    move-result v0
+
+    if-nez v0, :cond_16
+
+    .line 445
+    iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
+
+    invoke-virtual {v0}, Landroid/widget/Scroller;->abortAnimation()V
+
+    .line 447
+    :cond_16
     invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V
 
-    .line 390
+    .line 448
     return-void
 .end method
 
@@ -5599,10 +5843,10 @@
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    .line 2218
+    .line 2366
     invoke-super/range {p0 .. p1}, Landroid/view/ViewGroup;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 2221
+    .line 2369
     move-object/from16 v0, p0
 
     iget v13, v0, Landroid/support/v4/view/ViewPager;->mPageMargin:I
@@ -5631,18 +5875,18 @@
 
     if-eqz v13, :cond_c1
 
-    .line 2222
+    .line 2370
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
 
     move-result v10
 
-    .line 2223
+    .line 2371
     .local v10, "scrollX":I
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getWidth()I
 
     move-result v11
 
-    .line 2225
+    .line 2373
     .local v11, "width":I
     move-object/from16 v0, p0
 
@@ -5654,11 +5898,11 @@
 
     div-float v7, v13, v14
 
-    .line 2226
+    .line 2374
     .local v7, "marginOffset":F
     const/4 v5, 0x0
 
-    .line 2227
+    .line 2375
     .local v5, "itemIndex":I
     move-object/from16 v0, p0
 
@@ -5672,11 +5916,11 @@
 
     check-cast v3, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 2228
+    .line 2376
     .local v3, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     iget v8, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
 
-    .line 2229
+    .line 2377
     .local v8, "offset":F
     move-object/from16 v0, p0
 
@@ -5686,11 +5930,11 @@
 
     move-result v4
 
-    .line 2230
+    .line 2378
     .local v4, "itemCount":I
     iget v2, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
-    .line 2231
+    .line 2379
     .local v2, "firstPos":I
     move-object/from16 v0, p0
 
@@ -5706,7 +5950,7 @@
 
     iget v6, v13, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
-    .line 2232
+    .line 2380
     .local v6, "lastPos":I
     move v9, v2
 
@@ -5714,7 +5958,7 @@
     :goto_56
     if-ge v9, v6, :cond_c1
 
-    .line 2233
+    .line 2381
     :goto_58
     iget v13, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
@@ -5722,7 +5966,7 @@
 
     if-ge v5, v4, :cond_6b
 
-    .line 2234
+    .line 2382
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
@@ -5739,13 +5983,13 @@
     .restart local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     goto :goto_58
 
-    .line 2238
+    .line 2386
     :cond_6b
     iget v13, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
     if-ne v9, v13, :cond_c2
 
-    .line 2239
+    .line 2387
     iget v13, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
 
     iget v14, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
@@ -5756,7 +6000,7 @@
 
     mul-float v1, v13, v14
 
-    .line 2240
+    .line 2388
     .local v1, "drawAt":F
     iget v13, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->offset:F
 
@@ -5766,7 +6010,7 @@
 
     add-float v8, v13, v7
 
-    .line 2247
+    .line 2395
     :goto_7e
     move-object/from16 v0, p0
 
@@ -5782,7 +6026,7 @@
 
     if-lez v13, :cond_ba
 
-    .line 2248
+    .line 2396
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/support/v4/view/ViewPager;->mMarginDrawable:Landroid/graphics/drawable/Drawable;
@@ -5825,7 +6069,7 @@
 
     invoke-virtual/range {v13 .. v17}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 2250
+    .line 2398
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/support/v4/view/ViewPager;->mMarginDrawable:Landroid/graphics/drawable/Drawable;
@@ -5834,7 +6078,7 @@
 
     invoke-virtual {v13, v0}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2253
+    .line 2401
     :cond_ba
     add-int v13, v10, v11
 
@@ -5844,7 +6088,7 @@
 
     if-lez v13, :cond_d3
 
-    .line 2258
+    .line 2406
     .end local v1    # "drawAt":F
     .end local v2    # "firstPos":I
     .end local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
@@ -5859,7 +6103,7 @@
     :cond_c1
     return-void
 
-    .line 2242
+    .line 2390
     .restart local v2    # "firstPos":I
     .restart local v3    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     .restart local v4    # "itemCount":I
@@ -5879,7 +6123,7 @@
 
     move-result v12
 
-    .line 2243
+    .line 2391
     .local v12, "widthFactor":F
     add-float v13, v8, v12
 
@@ -5887,7 +6131,7 @@
 
     mul-float v1, v13, v14
 
-    .line 2244
+    .line 2392
     .restart local v1    # "drawAt":F
     add-float v13, v12, v7
 
@@ -5895,7 +6139,7 @@
 
     goto :goto_7e
 
-    .line 2232
+    .line 2380
     .end local v12    # "widthFactor":F
     :cond_d3
     add-int/lit8 v9, v9, 0x1
@@ -5908,14 +6152,14 @@
     .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 1792
+    .line 1936
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     and-int/lit16 v6, v0, 0xff
 
-    .line 1795
+    .line 1939
     .local v6, "action":I
     const/4 v0, 0x3
 
@@ -5923,141 +6167,113 @@
 
     const/4 v0, 0x1
 
-    if-ne v6, v0, :cond_23
+    if-ne v6, v0, :cond_11
 
-    .line 1798
+    .line 1942
     :cond_c
+    invoke-direct {p0}, Landroid/support/v4/view/ViewPager;->resetTouch()Z
+
+    .line 1943
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mIsBeingDragged:Z
-
-    .line 1799
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mIsUnableToDrag:Z
-
-    .line 1800
-    const/4 v0, -0x1
-
-    iput v0, p0, Landroid/support/v4/view/ViewPager;->mActivePointerId:I
-
-    .line 1801
-    iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mVelocityTracker:Landroid/view/VelocityTracker;
-
-    if-eqz v0, :cond_21
-
-    .line 1802
-    iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mVelocityTracker:Landroid/view/VelocityTracker;
-
-    invoke-virtual {v0}, Landroid/view/VelocityTracker;->recycle()V
-
-    .line 1803
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Landroid/support/v4/view/ViewPager;->mVelocityTracker:Landroid/view/VelocityTracker;
-
-    .line 1805
-    :cond_21
-    const/4 v0, 0x0
-
-    .line 1925
-    :goto_22
+    .line 2064
+    :goto_10
     return v0
 
-    .line 1810
-    :cond_23
-    if-eqz v6, :cond_31
+    .line 1948
+    :cond_11
+    if-eqz v6, :cond_1f
 
-    .line 1811
+    .line 1949
     iget-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mIsBeingDragged:Z
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_19
 
-    .line 1813
+    .line 1951
     const/4 v0, 0x1
 
-    goto :goto_22
+    goto :goto_10
 
-    .line 1815
-    :cond_2b
+    .line 1953
+    :cond_19
     iget-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mIsUnableToDrag:Z
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_1f
 
-    .line 1817
+    .line 1955
     const/4 v0, 0x0
 
-    goto :goto_22
+    goto :goto_10
 
-    .line 1821
-    :cond_31
-    sparse-switch v6, :sswitch_data_136
+    .line 1959
+    :cond_1f
+    sparse-switch v6, :sswitch_data_126
 
-    .line 1916
-    :cond_34
-    :goto_34
+    .line 2055
+    :cond_22
+    :goto_22
     iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    if-nez v0, :cond_3e
+    if-nez v0, :cond_2c
 
-    .line 1917
+    .line 2056
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/support/v4/view/ViewPager;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 1919
-    :cond_3e
+    .line 2058
+    :cond_2c
     iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 1925
+    .line 2064
     iget-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mIsBeingDragged:Z
 
-    goto :goto_22
+    goto :goto_10
 
-    .line 1832
-    :sswitch_46
+    .line 1970
+    :sswitch_34
     iget v7, p0, Landroid/support/v4/view/ViewPager;->mActivePointerId:I
 
-    .line 1833
+    .line 1971
     .local v7, "activePointerId":I
     const/4 v0, -0x1
 
-    if-eq v7, v0, :cond_34
+    if-eq v7, v0, :cond_22
 
-    .line 1838
+    .line 1976
     invoke-static {p1, v7}, Landroid/support/v4/view/MotionEventCompat;->findPointerIndex(Landroid/view/MotionEvent;I)I
 
     move-result v9
 
-    .line 1839
+    .line 1977
     .local v9, "pointerIndex":I
     invoke-static {p1, v9}, Landroid/support/v4/view/MotionEventCompat;->getX(Landroid/view/MotionEvent;I)F
 
     move-result v10
 
-    .line 1840
+    .line 1978
     .local v10, "x":F
     iget v0, p0, Landroid/support/v4/view/ViewPager;->mLastMotionX:F
 
     sub-float v8, v10, v0
 
-    .line 1841
+    .line 1979
     .local v8, "dx":F
     invoke-static {v8}, Ljava/lang/Math;->abs(F)F
 
     move-result v11
 
-    .line 1842
+    .line 1980
     .local v11, "xDiff":F
     invoke-static {p1, v9}, Landroid/support/v4/view/MotionEventCompat;->getY(Landroid/view/MotionEvent;I)F
 
     move-result v12
 
-    .line 1843
+    .line 1981
     .local v12, "y":F
     iget v0, p0, Landroid/support/v4/view/ViewPager;->mInitialMotionY:F
 
@@ -6067,13 +6283,13 @@
 
     move-result v13
 
-    .line 1846
+    .line 1984
     .local v13, "yDiff":F
     const/4 v0, 0x0
 
     cmpl-float v0, v8, v0
 
-    if-eqz v0, :cond_89
+    if-eqz v0, :cond_77
 
     iget v0, p0, Landroid/support/v4/view/ViewPager;->mLastMotionX:F
 
@@ -6081,7 +6297,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_89
+    if-nez v0, :cond_77
 
     const/4 v2, 0x0
 
@@ -6099,33 +6315,33 @@
 
     move-result v0
 
-    if-eqz v0, :cond_89
+    if-eqz v0, :cond_77
 
-    .line 1849
+    .line 1987
     iput v10, p0, Landroid/support/v4/view/ViewPager;->mLastMotionX:F
 
-    .line 1850
+    .line 1988
     iput v12, p0, Landroid/support/v4/view/ViewPager;->mLastMotionY:F
 
-    .line 1851
+    .line 1989
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mIsUnableToDrag:Z
 
-    .line 1852
+    .line 1990
     const/4 v0, 0x0
 
-    goto :goto_22
+    goto :goto_10
 
-    .line 1854
-    :cond_89
+    .line 1992
+    :cond_77
     iget v0, p0, Landroid/support/v4/view/ViewPager;->mTouchSlop:I
 
     int-to-float v0, v0
 
     cmpl-float v0, v11, v0
 
-    if-lez v0, :cond_cb
+    if-lez v0, :cond_b9
 
     const/high16 v0, 0x3f000000
 
@@ -6133,29 +6349,29 @@
 
     cmpl-float v0, v0, v13
 
-    if-lez v0, :cond_cb
+    if-lez v0, :cond_b9
 
-    .line 1856
+    .line 1994
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mIsBeingDragged:Z
 
-    .line 1857
+    .line 1995
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Landroid/support/v4/view/ViewPager;->requestParentDisallowInterceptTouchEvent(Z)V
 
-    .line 1858
+    .line 1996
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Landroid/support/v4/view/ViewPager;->setScrollState(I)V
 
-    .line 1859
+    .line 1997
     const/4 v0, 0x0
 
     cmpl-float v0, v8, v0
 
-    if-lez v0, :cond_c4
+    if-lez v0, :cond_b2
 
     iget v0, p0, Landroid/support/v4/view/ViewPager;->mInitialMotionX:F
 
@@ -6165,38 +6381,38 @@
 
     add-float/2addr v0, v1
 
-    :goto_ad
+    :goto_9b
     iput v0, p0, Landroid/support/v4/view/ViewPager;->mLastMotionX:F
 
-    .line 1861
+    .line 1999
     iput v12, p0, Landroid/support/v4/view/ViewPager;->mLastMotionY:F
 
-    .line 1862
+    .line 2000
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Landroid/support/v4/view/ViewPager;->setScrollingCacheEnabled(Z)V
 
-    .line 1871
-    :cond_b5
-    :goto_b5
+    .line 2009
+    :cond_a3
+    :goto_a3
     iget-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mIsBeingDragged:Z
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_22
 
-    .line 1873
+    .line 2011
     invoke-direct {p0, v10}, Landroid/support/v4/view/ViewPager;->performDrag(F)Z
 
     move-result v0
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_22
 
-    .line 1874
+    .line 2012
     invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->postInvalidateOnAnimation(Landroid/view/View;)V
 
-    goto/16 :goto_34
+    goto/16 :goto_22
 
-    .line 1859
-    :cond_c4
+    .line 1997
+    :cond_b2
     iget v0, p0, Landroid/support/v4/view/ViewPager;->mInitialMotionX:F
 
     iget v1, p0, Landroid/support/v4/view/ViewPager;->mTouchSlop:I
@@ -6205,26 +6421,26 @@
 
     sub-float/2addr v0, v1
 
-    goto :goto_ad
+    goto :goto_9b
 
-    .line 1863
-    :cond_cb
+    .line 2001
+    :cond_b9
     iget v0, p0, Landroid/support/v4/view/ViewPager;->mTouchSlop:I
 
     int-to-float v0, v0
 
     cmpl-float v0, v13, v0
 
-    if-lez v0, :cond_b5
+    if-lez v0, :cond_a3
 
-    .line 1869
+    .line 2007
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mIsUnableToDrag:Z
 
-    goto :goto_b5
+    goto :goto_a3
 
-    .line 1885
+    .line 2023
     .end local v7    # "activePointerId":I
     .end local v8    # "dx":F
     .end local v9    # "pointerIndex":I
@@ -6232,7 +6448,7 @@
     .end local v11    # "xDiff":F
     .end local v12    # "y":F
     .end local v13    # "yDiff":F
-    :sswitch_d6
+    :sswitch_c4
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -6241,7 +6457,7 @@
 
     iput v0, p0, Landroid/support/v4/view/ViewPager;->mLastMotionX:F
 
-    .line 1886
+    .line 2024
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
@@ -6250,7 +6466,7 @@
 
     iput v0, p0, Landroid/support/v4/view/ViewPager;->mLastMotionY:F
 
-    .line 1887
+    .line 2025
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Landroid/support/v4/view/MotionEventCompat;->getPointerId(Landroid/view/MotionEvent;I)I
@@ -6259,22 +6475,27 @@
 
     iput v0, p0, Landroid/support/v4/view/ViewPager;->mActivePointerId:I
 
-    .line 1888
+    .line 2026
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mIsUnableToDrag:Z
 
-    .line 1890
+    .line 2028
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mIsScrollStarted:Z
+
+    .line 2029
     iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v0}, Landroid/widget/Scroller;->computeScrollOffset()Z
 
-    .line 1891
+    .line 2030
     iget v0, p0, Landroid/support/v4/view/ViewPager;->mScrollState:I
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_127
+    if-ne v0, v1, :cond_118
 
     iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
 
@@ -6296,65 +6517,63 @@
 
     iget v1, p0, Landroid/support/v4/view/ViewPager;->mCloseEnough:I
 
-    if-le v0, v1, :cond_127
+    if-le v0, v1, :cond_118
 
-    .line 1894
+    .line 2033
     iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v0}, Landroid/widget/Scroller;->abortAnimation()V
 
-    .line 1895
+    .line 2034
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mPopulatePending:Z
 
-    .line 1896
+    .line 2035
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->populate()V
 
-    .line 1897
+    .line 2036
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mIsBeingDragged:Z
 
-    .line 1898
+    .line 2037
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Landroid/support/v4/view/ViewPager;->requestParentDisallowInterceptTouchEvent(Z)V
 
-    .line 1899
+    .line 2038
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Landroid/support/v4/view/ViewPager;->setScrollState(I)V
 
-    goto/16 :goto_34
+    goto/16 :goto_22
 
-    .line 1901
-    :cond_127
+    .line 2040
+    :cond_118
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/support/v4/view/ViewPager;->completeScroll(Z)V
 
-    .line 1902
+    .line 2041
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mIsBeingDragged:Z
 
-    goto/16 :goto_34
+    goto/16 :goto_22
 
-    .line 1912
-    :sswitch_130
+    .line 2051
+    :sswitch_121
     invoke-direct {p0, p1}, Landroid/support/v4/view/ViewPager;->onSecondaryPointerUp(Landroid/view/MotionEvent;)V
 
-    goto/16 :goto_34
+    goto/16 :goto_22
 
-    .line 1821
-    nop
-
-    :sswitch_data_136
+    .line 1959
+    :sswitch_data_126
     .sparse-switch
-        0x0 -> :sswitch_d6
-        0x2 -> :sswitch_46
-        0x6 -> :sswitch_130
+        0x0 -> :sswitch_c4
+        0x2 -> :sswitch_34
+        0x6 -> :sswitch_121
     .end sparse-switch
 .end method
 
@@ -6367,54 +6586,54 @@
     .param p5, "b"    # I
 
     .prologue
-    .line 1503
+    .line 1593
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getChildCount()I
 
     move-result v9
 
-    .line 1504
+    .line 1594
     .local v9, "count":I
     sub-int v24, p4, p2
 
-    .line 1505
+    .line 1595
     .local v24, "width":I
     sub-int v11, p5, p3
 
-    .line 1506
+    .line 1596
     .local v11, "height":I
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getPaddingLeft()I
 
     move-result v19
 
-    .line 1507
+    .line 1597
     .local v19, "paddingLeft":I
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getPaddingTop()I
 
     move-result v21
 
-    .line 1508
+    .line 1598
     .local v21, "paddingTop":I
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getPaddingRight()I
 
     move-result v20
 
-    .line 1509
+    .line 1599
     .local v20, "paddingRight":I
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getPaddingBottom()I
 
     move-result v18
 
-    .line 1510
+    .line 1600
     .local v18, "paddingBottom":I
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
 
     move-result v22
 
-    .line 1512
+    .line 1602
     .local v22, "scrollX":I
     const/4 v10, 0x0
 
-    .line 1516
+    .line 1606
     .local v10, "decorCount":I
     const/4 v14, 0x0
 
@@ -6422,14 +6641,14 @@
     :goto_1e
     if-ge v14, v9, :cond_c8
 
-    .line 1517
+    .line 1607
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v14}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
-    .line 1518
+    .line 1608
     .local v5, "child":Landroid/view/View;
     invoke-virtual {v5}, Landroid/view/View;->getVisibility()I
 
@@ -6443,22 +6662,22 @@
 
     if-eq v0, v1, :cond_73
 
-    .line 1519
+    .line 1609
     invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v17
 
     check-cast v17, Landroid/support/v4/view/ViewPager$LayoutParams;
 
-    .line 1520
+    .line 1610
     .local v17, "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
     const/4 v6, 0x0
 
-    .line 1521
+    .line 1611
     .local v6, "childLeft":I
     const/4 v7, 0x0
 
-    .line 1522
+    .line 1612
     .local v7, "childTop":I
     move-object/from16 v0, v17
 
@@ -6468,7 +6687,7 @@
 
     if-eqz v26, :cond_73
 
-    .line 1523
+    .line 1613
     move-object/from16 v0, v17
 
     iget v0, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->gravity:I
@@ -6477,7 +6696,7 @@
 
     and-int/lit8 v13, v26, 0x7
 
-    .line 1524
+    .line 1614
     .local v13, "hgrav":I
     move-object/from16 v0, v17
 
@@ -6487,26 +6706,26 @@
 
     and-int/lit8 v23, v26, 0x70
 
-    .line 1525
+    .line 1615
     .local v23, "vgrav":I
     packed-switch v13, :pswitch_data_192
 
-    .line 1527
+    .line 1617
     :pswitch_55
     move/from16 v6, v19
 
-    .line 1542
+    .line 1632
     :goto_57
     sparse-switch v23, :sswitch_data_1a0
 
-    .line 1544
+    .line 1634
     move/from16 v7, v21
 
-    .line 1559
+    .line 1649
     :goto_5c
     add-int v6, v6, v22
 
-    .line 1560
+    .line 1650
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v26
@@ -6525,10 +6744,10 @@
 
     invoke-virtual {v5, v6, v7, v0, v1}, Landroid/view/View;->layout(IIII)V
 
-    .line 1563
+    .line 1653
     add-int/lit8 v10, v10, 0x1
 
-    .line 1516
+    .line 1606
     .end local v6    # "childLeft":I
     .end local v7    # "childTop":I
     .end local v13    # "hgrav":I
@@ -6539,7 +6758,7 @@
 
     goto :goto_1e
 
-    .line 1530
+    .line 1620
     .restart local v6    # "childLeft":I
     .restart local v7    # "childTop":I
     .restart local v13    # "hgrav":I
@@ -6548,17 +6767,17 @@
     :pswitch_76
     move/from16 v6, v19
 
-    .line 1531
+    .line 1621
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v26
 
     add-int v19, v19, v26
 
-    .line 1532
+    .line 1622
     goto :goto_57
 
-    .line 1534
+    .line 1624
     :pswitch_7f
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -6576,10 +6795,10 @@
 
     move-result v6
 
-    .line 1536
+    .line 1626
     goto :goto_57
 
-    .line 1538
+    .line 1628
     :pswitch_90
     sub-int v26, v24, v20
 
@@ -6589,7 +6808,7 @@
 
     sub-int v6, v26, v27
 
-    .line 1539
+    .line 1629
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v26
@@ -6598,21 +6817,21 @@
 
     goto :goto_57
 
-    .line 1547
+    .line 1637
     :sswitch_9f
     move/from16 v7, v21
 
-    .line 1548
+    .line 1638
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v26
 
     add-int v21, v21, v26
 
-    .line 1549
+    .line 1639
     goto :goto_5c
 
-    .line 1551
+    .line 1641
     :sswitch_a8
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredHeight()I
 
@@ -6630,10 +6849,10 @@
 
     move-result v7
 
-    .line 1553
+    .line 1643
     goto :goto_5c
 
-    .line 1555
+    .line 1645
     :sswitch_b9
     sub-int v26, v11, v18
 
@@ -6643,7 +6862,7 @@
 
     sub-int v7, v26, v27
 
-    .line 1556
+    .line 1646
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v26
@@ -6652,7 +6871,7 @@
 
     goto :goto_5c
 
-    .line 1568
+    .line 1658
     .end local v5    # "child":Landroid/view/View;
     .end local v6    # "childLeft":I
     .end local v7    # "childTop":I
@@ -6664,21 +6883,21 @@
 
     sub-int v8, v26, v20
 
-    .line 1570
+    .line 1660
     .local v8, "childWidth":I
     const/4 v14, 0x0
 
     :goto_cd
     if-ge v14, v9, :cond_155
 
-    .line 1571
+    .line 1661
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v14}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
-    .line 1572
+    .line 1662
     .restart local v5    # "child":Landroid/view/View;
     invoke-virtual {v5}, Landroid/view/View;->getVisibility()I
 
@@ -6692,14 +6911,14 @@
 
     if-eq v0, v1, :cond_151
 
-    .line 1573
+    .line 1663
     invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v17
 
     check-cast v17, Landroid/support/v4/view/ViewPager$LayoutParams;
 
-    .line 1575
+    .line 1665
     .restart local v17    # "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
     move-object/from16 v0, v17
 
@@ -6718,7 +6937,7 @@
     .local v15, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     if-eqz v15, :cond_151
 
-    .line 1576
+    .line 1666
     int-to-float v0, v8
 
     move/from16 v26, v0
@@ -6735,15 +6954,15 @@
 
     move/from16 v16, v0
 
-    .line 1577
+    .line 1667
     .local v16, "loff":I
     add-int v6, v19, v16
 
-    .line 1578
+    .line 1668
     .restart local v6    # "childLeft":I
     move/from16 v7, v21
 
-    .line 1579
+    .line 1669
     .restart local v7    # "childTop":I
     move-object/from16 v0, v17
 
@@ -6753,7 +6972,7 @@
 
     if-eqz v26, :cond_13e
 
-    .line 1582
+    .line 1672
     const/16 v26, 0x0
 
     move/from16 v0, v26
@@ -6762,7 +6981,7 @@
 
     iput-boolean v0, v1, Landroid/support/v4/view/ViewPager$LayoutParams;->needsMeasure:Z
 
-    .line 1583
+    .line 1673
     int-to-float v0, v8
 
     move/from16 v26, v0
@@ -6787,7 +7006,7 @@
 
     move-result v25
 
-    .line 1586
+    .line 1676
     .local v25, "widthSpec":I
     sub-int v26, v11, v21
 
@@ -6799,13 +7018,13 @@
 
     move-result v12
 
-    .line 1589
+    .line 1679
     .local v12, "heightSpec":I
     move/from16 v0, v25
 
     invoke-virtual {v5, v0, v12}, Landroid/view/View;->measure(II)V
 
-    .line 1594
+    .line 1684
     .end local v12    # "heightSpec":I
     .end local v25    # "widthSpec":I
     :cond_13e
@@ -6827,7 +7046,7 @@
 
     invoke-virtual {v5, v6, v7, v0, v1}, Landroid/view/View;->layout(IIII)V
 
-    .line 1570
+    .line 1660
     .end local v6    # "childLeft":I
     .end local v7    # "childTop":I
     .end local v15    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
@@ -6838,7 +7057,7 @@
 
     goto/16 :goto_cd
 
-    .line 1600
+    .line 1690
     .end local v5    # "child":Landroid/view/View;
     :cond_155
     move/from16 v0, v21
@@ -6847,7 +7066,7 @@
 
     iput v0, v1, Landroid/support/v4/view/ViewPager;->mTopPageBounds:I
 
-    .line 1601
+    .line 1691
     sub-int v26, v11, v18
 
     move/from16 v0, v26
@@ -6856,12 +7075,12 @@
 
     iput v0, v1, Landroid/support/v4/view/ViewPager;->mBottomPageBounds:I
 
-    .line 1602
+    .line 1692
     move-object/from16 v0, p0
 
     iput v10, v0, Landroid/support/v4/view/ViewPager;->mDecorChildCount:I
 
-    .line 1604
+    .line 1694
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Landroid/support/v4/view/ViewPager;->mFirstLayout:Z
@@ -6870,7 +7089,7 @@
 
     if-eqz v26, :cond_188
 
-    .line 1605
+    .line 1695
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mCurItem:I
@@ -6895,7 +7114,7 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/support/v4/view/ViewPager;->scrollToItem(IZIZ)V
 
-    .line 1607
+    .line 1697
     :cond_188
     const/16 v26, 0x0
 
@@ -6905,10 +7124,10 @@
 
     iput-boolean v0, v1, Landroid/support/v4/view/ViewPager;->mFirstLayout:Z
 
-    .line 1608
+    .line 1698
     return-void
 
-    .line 1525
+    .line 1615
     nop
 
     :pswitch_data_192
@@ -6920,7 +7139,7 @@
         :pswitch_90
     .end packed-switch
 
-    .line 1542
+    .line 1632
     :sswitch_data_1a0
     .sparse-switch
         0x10 -> :sswitch_a8
@@ -6935,7 +7154,7 @@
     .param p2, "heightMeasureSpec"    # I
 
     .prologue
-    .line 1374
+    .line 1478
     const/16 v21, 0x0
 
     move/from16 v0, v21
@@ -6964,16 +7183,16 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/view/ViewPager;->setMeasuredDimension(II)V
 
-    .line 1377
+    .line 1481
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getMeasuredWidth()I
 
     move-result v15
 
-    .line 1378
+    .line 1482
     .local v15, "measuredWidth":I
     div-int/lit8 v14, v15, 0xa
 
-    .line 1379
+    .line 1483
     .local v14, "maxGutterSize":I
     move-object/from16 v0, p0
 
@@ -6993,7 +7212,7 @@
 
     iput v0, v1, Landroid/support/v4/view/ViewPager;->mGutterSize:I
 
-    .line 1382
+    .line 1486
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getPaddingLeft()I
 
     move-result v21
@@ -7006,7 +7225,7 @@
 
     sub-int v5, v21, v22
 
-    .line 1383
+    .line 1487
     .local v5, "childWidthSize":I
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getMeasuredHeight()I
 
@@ -7024,13 +7243,13 @@
 
     sub-int v4, v21, v22
 
-    .line 1390
+    .line 1494
     .local v4, "childHeightSize":I
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getChildCount()I
 
     move-result v16
 
-    .line 1391
+    .line 1495
     .local v16, "size":I
     const/4 v12, 0x0
 
@@ -7040,14 +7259,14 @@
 
     if-ge v12, v0, :cond_118
 
-    .line 1392
+    .line 1496
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v12}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 1393
+    .line 1497
     .local v3, "child":Landroid/view/View;
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
 
@@ -7061,14 +7280,14 @@
 
     if-eq v0, v1, :cond_102
 
-    .line 1394
+    .line 1498
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v13
 
     check-cast v13, Landroid/support/v4/view/ViewPager$LayoutParams;
 
-    .line 1395
+    .line 1499
     .local v13, "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
     if-eqz v13, :cond_102
 
@@ -7078,14 +7297,14 @@
 
     if-eqz v21, :cond_102
 
-    .line 1396
+    .line 1500
     iget v0, v13, Landroid/support/v4/view/ViewPager$LayoutParams;->gravity:I
 
     move/from16 v21, v0
 
     and-int/lit8 v11, v21, 0x7
 
-    .line 1397
+    .line 1501
     .local v11, "hgrav":I
     iget v0, v13, Landroid/support/v4/view/ViewPager$LayoutParams;->gravity:I
 
@@ -7093,15 +7312,15 @@
 
     and-int/lit8 v17, v21, 0x70
 
-    .line 1398
+    .line 1502
     .local v17, "vgrav":I
     const/high16 v18, -0x80000000
 
-    .line 1399
+    .line 1503
     .local v18, "widthMode":I
     const/high16 v8, -0x80000000
 
-    .line 1400
+    .line 1504
     .local v8, "heightMode":I
     const/16 v21, 0x30
 
@@ -7122,7 +7341,7 @@
     :cond_9a
     const/4 v7, 0x1
 
-    .line 1401
+    .line 1505
     .local v7, "consumeVertical":Z
     :goto_9b
     const/16 v21, 0x3
@@ -7140,24 +7359,24 @@
     :cond_a7
     const/4 v6, 0x1
 
-    .line 1403
+    .line 1507
     .local v6, "consumeHorizontal":Z
     :goto_a8
     if-eqz v7, :cond_10a
 
-    .line 1404
+    .line 1508
     const/high16 v18, 0x40000000
 
-    .line 1409
+    .line 1513
     :cond_ac
     :goto_ac
     move/from16 v19, v5
 
-    .line 1410
+    .line 1514
     .local v19, "widthSize":I
     move v9, v4
 
-    .line 1411
+    .line 1515
     .local v9, "heightSize":I
     iget v0, v13, Landroid/support/v4/view/ViewPager$LayoutParams;->width:I
 
@@ -7171,10 +7390,10 @@
 
     if-eq v0, v1, :cond_cd
 
-    .line 1412
+    .line 1516
     const/high16 v18, 0x40000000
 
-    .line 1413
+    .line 1517
     iget v0, v13, Landroid/support/v4/view/ViewPager$LayoutParams;->width:I
 
     move/from16 v21, v0
@@ -7187,12 +7406,12 @@
 
     if-eq v0, v1, :cond_cd
 
-    .line 1414
+    .line 1518
     iget v0, v13, Landroid/support/v4/view/ViewPager$LayoutParams;->width:I
 
     move/from16 v19, v0
 
-    .line 1417
+    .line 1521
     :cond_cd
     iget v0, v13, Landroid/support/v4/view/ViewPager$LayoutParams;->height:I
 
@@ -7206,10 +7425,10 @@
 
     if-eq v0, v1, :cond_e9
 
-    .line 1418
+    .line 1522
     const/high16 v8, 0x40000000
 
-    .line 1419
+    .line 1523
     iget v0, v13, Landroid/support/v4/view/ViewPager$LayoutParams;->height:I
 
     move/from16 v21, v0
@@ -7222,10 +7441,10 @@
 
     if-eq v0, v1, :cond_e9
 
-    .line 1420
+    .line 1524
     iget v9, v13, Landroid/support/v4/view/ViewPager$LayoutParams;->height:I
 
-    .line 1423
+    .line 1527
     :cond_e9
     move/from16 v0, v19
 
@@ -7235,29 +7454,29 @@
 
     move-result v20
 
-    .line 1424
+    .line 1528
     .local v20, "widthSpec":I
     invoke-static {v9, v8}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v10
 
-    .line 1425
+    .line 1529
     .local v10, "heightSpec":I
     move/from16 v0, v20
 
     invoke-virtual {v3, v0, v10}, Landroid/view/View;->measure(II)V
 
-    .line 1427
+    .line 1531
     if-eqz v7, :cond_10f
 
-    .line 1428
+    .line 1532
     invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v21
 
     sub-int v4, v4, v21
 
-    .line 1391
+    .line 1495
     .end local v6    # "consumeHorizontal":Z
     .end local v7    # "consumeVertical":Z
     .end local v8    # "heightMode":I
@@ -7275,7 +7494,7 @@
 
     goto/16 :goto_56
 
-    .line 1400
+    .line 1504
     .restart local v8    # "heightMode":I
     .restart local v11    # "hgrav":I
     .restart local v13    # "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
@@ -7286,24 +7505,24 @@
 
     goto :goto_9b
 
-    .line 1401
+    .line 1505
     .restart local v7    # "consumeVertical":Z
     :cond_108
     const/4 v6, 0x0
 
     goto :goto_a8
 
-    .line 1405
+    .line 1509
     .restart local v6    # "consumeHorizontal":Z
     :cond_10a
     if-eqz v6, :cond_ac
 
-    .line 1406
+    .line 1510
     const/high16 v8, 0x40000000
 
     goto :goto_ac
 
-    .line 1429
+    .line 1533
     .restart local v9    # "heightSize":I
     .restart local v10    # "heightSpec":I
     .restart local v19    # "widthSize":I
@@ -7311,7 +7530,7 @@
     :cond_10f
     if-eqz v6, :cond_102
 
-    .line 1430
+    .line 1534
     invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v21
@@ -7320,7 +7539,7 @@
 
     goto :goto_102
 
-    .line 1436
+    .line 1540
     .end local v3    # "child":Landroid/view/View;
     .end local v6    # "consumeHorizontal":Z
     .end local v7    # "consumeVertical":Z
@@ -7348,7 +7567,7 @@
 
     iput v0, v1, Landroid/support/v4/view/ViewPager;->mChildWidthMeasureSpec:I
 
-    .line 1437
+    .line 1541
     const/high16 v21, 0x40000000
 
     move/from16 v0, v21
@@ -7363,7 +7582,7 @@
 
     iput v0, v1, Landroid/support/v4/view/ViewPager;->mChildHeightMeasureSpec:I
 
-    .line 1440
+    .line 1544
     const/16 v21, 0x1
 
     move/from16 v0, v21
@@ -7372,10 +7591,10 @@
 
     iput-boolean v0, v1, Landroid/support/v4/view/ViewPager;->mInLayout:Z
 
-    .line 1441
+    .line 1545
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->populate()V
 
-    .line 1442
+    .line 1546
     const/16 v21, 0x0
 
     move/from16 v0, v21
@@ -7384,12 +7603,12 @@
 
     iput-boolean v0, v1, Landroid/support/v4/view/ViewPager;->mInLayout:Z
 
-    .line 1445
+    .line 1549
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getChildCount()I
 
     move-result v16
 
-    .line 1446
+    .line 1550
     const/4 v12, 0x0
 
     :goto_14c
@@ -7397,14 +7616,14 @@
 
     if-ge v12, v0, :cond_194
 
-    .line 1447
+    .line 1551
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v12}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 1448
+    .line 1552
     .restart local v3    # "child":Landroid/view/View;
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
 
@@ -7418,14 +7637,14 @@
 
     if-eq v0, v1, :cond_191
 
-    .line 1452
+    .line 1556
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v13
 
     check-cast v13, Landroid/support/v4/view/ViewPager$LayoutParams;
 
-    .line 1453
+    .line 1557
     .restart local v13    # "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
     if-eqz v13, :cond_170
 
@@ -7435,7 +7654,7 @@
 
     if-nez v21, :cond_191
 
-    .line 1454
+    .line 1558
     :cond_170
     int-to-float v0, v5
 
@@ -7459,7 +7678,7 @@
 
     move-result v20
 
-    .line 1456
+    .line 1560
     .restart local v20    # "widthSpec":I
     move-object/from16 v0, p0
 
@@ -7473,7 +7692,7 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/view/View;->measure(II)V
 
-    .line 1446
+    .line 1550
     .end local v13    # "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
     .end local v20    # "widthSpec":I
     :cond_191
@@ -7481,345 +7700,290 @@
 
     goto :goto_14c
 
-    .line 1460
+    .line 1564
     .end local v3    # "child":Landroid/view/View;
     :cond_194
     return-void
 .end method
 
 .method protected onPageScrolled(IFI)V
-    .registers 21
+    .registers 18
     .param p1, "position"    # I
     .param p2, "offset"    # F
     .param p3, "offsetPixels"    # I
+    .annotation build Landroid/support/annotation/CallSuper;
+    .end annotation
 
     .prologue
-    .line 1677
-    move-object/from16 v0, p0
+    .line 1769
+    iget v12, p0, Landroid/support/v4/view/ViewPager;->mDecorChildCount:I
 
-    iget v15, v0, Landroid/support/v4/view/ViewPager;->mDecorChildCount:I
+    if-lez v12, :cond_64
 
-    if-lez v15, :cond_68
+    .line 1770
+    invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
 
-    .line 1678
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
+    move-result v9
 
-    move-result v12
+    .line 1771
+    .local v9, "scrollX":I
+    invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getPaddingLeft()I
 
-    .line 1679
-    .local v12, "scrollX":I
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getPaddingLeft()I
+    move-result v7
 
-    move-result v10
+    .line 1772
+    .local v7, "paddingLeft":I
+    invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getPaddingRight()I
 
-    .line 1680
-    .local v10, "paddingLeft":I
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getPaddingRight()I
+    move-result v8
+
+    .line 1773
+    .local v8, "paddingRight":I
+    invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getWidth()I
 
     move-result v11
 
-    .line 1681
-    .local v11, "paddingRight":I
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getWidth()I
+    .line 1774
+    .local v11, "width":I
+    invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getChildCount()I
 
-    move-result v14
+    move-result v1
 
-    .line 1682
-    .local v14, "width":I
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getChildCount()I
-
-    move-result v4
-
-    .line 1683
-    .local v4, "childCount":I
-    const/4 v8, 0x0
-
-    .local v8, "i":I
-    :goto_1b
-    if-ge v8, v4, :cond_68
-
-    .line 1684
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v8}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v3
-
-    .line 1685
-    .local v3, "child":Landroid/view/View;
-    invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v9
-
-    check-cast v9, Landroid/support/v4/view/ViewPager$LayoutParams;
-
-    .line 1686
-    .local v9, "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
-    iget-boolean v15, v9, Landroid/support/v4/view/ViewPager$LayoutParams;->isDecor:Z
-
-    if-nez v15, :cond_30
-
-    .line 1683
-    :cond_2d
-    :goto_2d
-    add-int/lit8 v8, v8, 0x1
-
-    goto :goto_1b
-
-    .line 1688
-    :cond_30
-    iget v15, v9, Landroid/support/v4/view/ViewPager$LayoutParams;->gravity:I
-
-    and-int/lit8 v7, v15, 0x7
-
-    .line 1689
-    .local v7, "hgrav":I
+    .line 1775
+    .local v1, "childCount":I
     const/4 v5, 0x0
 
-    .line 1690
-    .local v5, "childLeft":I
-    packed-switch v7, :pswitch_data_d2
+    .local v5, "i":I
+    :goto_19
+    if-ge v5, v1, :cond_64
 
-    .line 1692
-    :pswitch_38
-    move v5, v10
+    .line 1776
+    invoke-virtual {p0, v5}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
 
-    .line 1707
-    :goto_39
-    add-int/2addr v5, v12
+    move-result-object v0
 
-    .line 1709
-    invoke-virtual {v3}, Landroid/view/View;->getLeft()I
+    .line 1777
+    .local v0, "child":Landroid/view/View;
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result v15
+    move-result-object v6
 
-    sub-int v6, v5, v15
+    check-cast v6, Landroid/support/v4/view/ViewPager$LayoutParams;
 
-    .line 1710
-    .local v6, "childOffset":I
-    if-eqz v6, :cond_2d
+    .line 1778
+    .local v6, "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
+    iget-boolean v12, v6, Landroid/support/v4/view/ViewPager$LayoutParams;->isDecor:Z
 
-    .line 1711
-    invoke-virtual {v3, v6}, Landroid/view/View;->offsetLeftAndRight(I)V
+    if-nez v12, :cond_2c
 
-    goto :goto_2d
+    .line 1775
+    :cond_29
+    :goto_29
+    add-int/lit8 v5, v5, 0x1
 
-    .line 1695
-    .end local v6    # "childOffset":I
-    :pswitch_46
-    move v5, v10
+    goto :goto_19
 
-    .line 1696
-    invoke-virtual {v3}, Landroid/view/View;->getWidth()I
+    .line 1780
+    :cond_2c
+    iget v12, v6, Landroid/support/v4/view/ViewPager$LayoutParams;->gravity:I
 
-    move-result v15
+    and-int/lit8 v4, v12, 0x7
 
-    add-int/2addr v10, v15
+    .line 1781
+    .local v4, "hgrav":I
+    const/4 v2, 0x0
 
-    .line 1697
-    goto :goto_39
+    .line 1782
+    .local v2, "childLeft":I
+    packed-switch v4, :pswitch_data_9e
 
-    .line 1699
-    :pswitch_4d
-    invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
+    .line 1784
+    :pswitch_34
+    move v2, v7
 
-    move-result v15
+    .line 1799
+    :goto_35
+    add-int/2addr v2, v9
 
-    sub-int v15, v14, v15
-
-    div-int/lit8 v15, v15, 0x2
-
-    invoke-static {v15, v10}, Ljava/lang/Math;->max(II)I
-
-    move-result v5
-
-    .line 1701
-    goto :goto_39
-
-    .line 1703
-    :pswitch_5a
-    sub-int v15, v14, v11
-
-    invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v16
-
-    sub-int v5, v15, v16
-
-    .line 1704
-    invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v15
-
-    add-int/2addr v11, v15
-
-    goto :goto_39
-
-    .line 1716
-    .end local v3    # "child":Landroid/view/View;
-    .end local v4    # "childCount":I
-    .end local v5    # "childLeft":I
-    .end local v7    # "hgrav":I
-    .end local v8    # "i":I
-    .end local v9    # "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
-    .end local v10    # "paddingLeft":I
-    .end local v11    # "paddingRight":I
-    .end local v12    # "scrollX":I
-    .end local v14    # "width":I
-    :cond_68
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    if-eqz v15, :cond_7b
-
-    .line 1717
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    move/from16 v0, p1
-
-    move/from16 v1, p2
-
-    move/from16 v2, p3
-
-    invoke-interface {v15, v0, v1, v2}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageScrolled(IFI)V
-
-    .line 1719
-    :cond_7b
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Landroid/support/v4/view/ViewPager;->mInternalPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    if-eqz v15, :cond_8e
-
-    .line 1720
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Landroid/support/v4/view/ViewPager;->mInternalPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    move/from16 v0, p1
-
-    move/from16 v1, p2
-
-    move/from16 v2, p3
-
-    invoke-interface {v15, v0, v1, v2}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageScrolled(IFI)V
-
-    .line 1723
-    :cond_8e
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Landroid/support/v4/view/ViewPager;->mPageTransformer:Landroid/support/v4/view/ViewPager$PageTransformer;
-
-    if-eqz v15, :cond_cb
-
-    .line 1724
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
+    .line 1801
+    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
 
     move-result v12
 
-    .line 1725
-    .restart local v12    # "scrollX":I
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getChildCount()I
+    sub-int v3, v2, v12
 
-    move-result v4
+    .line 1802
+    .local v3, "childOffset":I
+    if-eqz v3, :cond_29
 
-    .line 1726
-    .restart local v4    # "childCount":I
-    const/4 v8, 0x0
+    .line 1803
+    invoke-virtual {v0, v3}, Landroid/view/View;->offsetLeftAndRight(I)V
 
-    .restart local v8    # "i":I
-    :goto_9d
-    if-ge v8, v4, :cond_cb
+    goto :goto_29
 
-    .line 1727
-    move-object/from16 v0, p0
+    .line 1787
+    .end local v3    # "childOffset":I
+    :pswitch_42
+    move v2, v7
 
-    invoke-virtual {v0, v8}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
+    .line 1788
+    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
-    move-result-object v3
+    move-result v12
 
-    .line 1728
-    .restart local v3    # "child":Landroid/view/View;
-    invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    add-int/2addr v7, v12
 
-    move-result-object v9
+    .line 1789
+    goto :goto_35
 
-    check-cast v9, Landroid/support/v4/view/ViewPager$LayoutParams;
+    .line 1791
+    :pswitch_49
+    invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
-    .line 1730
-    .restart local v9    # "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
-    iget-boolean v15, v9, Landroid/support/v4/view/ViewPager$LayoutParams;->isDecor:Z
+    move-result v12
 
-    if-eqz v15, :cond_b2
+    sub-int v12, v11, v12
 
-    .line 1726
-    :goto_af
-    add-int/lit8 v8, v8, 0x1
+    div-int/lit8 v12, v12, 0x2
 
-    goto :goto_9d
+    invoke-static {v12, v7}, Ljava/lang/Math;->max(II)I
 
-    .line 1732
-    :cond_b2
-    invoke-virtual {v3}, Landroid/view/View;->getLeft()I
+    move-result v2
 
-    move-result v15
+    .line 1793
+    goto :goto_35
 
-    sub-int/2addr v15, v12
+    .line 1795
+    :pswitch_56
+    sub-int v12, v11, v8
 
-    int-to-float v15, v15
+    invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
-    invoke-direct/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getClientWidth()I
+    move-result v13
 
-    move-result v16
+    sub-int v2, v12, v13
 
-    move/from16 v0, v16
+    .line 1796
+    invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
-    int-to-float v0, v0
+    move-result v12
 
-    move/from16 v16, v0
+    add-int/2addr v8, v12
 
-    div-float v13, v15, v16
+    goto :goto_35
 
-    .line 1733
-    .local v13, "transformPos":F
-    move-object/from16 v0, p0
+    .line 1808
+    .end local v0    # "child":Landroid/view/View;
+    .end local v1    # "childCount":I
+    .end local v2    # "childLeft":I
+    .end local v4    # "hgrav":I
+    .end local v5    # "i":I
+    .end local v6    # "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
+    .end local v7    # "paddingLeft":I
+    .end local v8    # "paddingRight":I
+    .end local v9    # "scrollX":I
+    .end local v11    # "width":I
+    :cond_64
+    invoke-direct/range {p0 .. p3}, Landroid/support/v4/view/ViewPager;->dispatchOnPageScrolled(IFI)V
 
-    iget-object v15, v0, Landroid/support/v4/view/ViewPager;->mPageTransformer:Landroid/support/v4/view/ViewPager$PageTransformer;
+    .line 1810
+    iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mPageTransformer:Landroid/support/v4/view/ViewPager$PageTransformer;
 
-    invoke-interface {v15, v3, v13}, Landroid/support/v4/view/ViewPager$PageTransformer;->transformPage(Landroid/view/View;F)V
+    if-eqz v12, :cond_9a
 
-    goto :goto_af
+    .line 1811
+    invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
 
-    .line 1737
-    .end local v3    # "child":Landroid/view/View;
-    .end local v4    # "childCount":I
-    .end local v8    # "i":I
-    .end local v9    # "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
-    .end local v12    # "scrollX":I
-    .end local v13    # "transformPos":F
-    :cond_cb
-    const/4 v15, 0x1
+    move-result v9
 
-    move-object/from16 v0, p0
+    .line 1812
+    .restart local v9    # "scrollX":I
+    invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getChildCount()I
 
-    iput-boolean v15, v0, Landroid/support/v4/view/ViewPager;->mCalledSuper:Z
+    move-result v1
 
-    .line 1738
+    .line 1813
+    .restart local v1    # "childCount":I
+    const/4 v5, 0x0
+
+    .restart local v5    # "i":I
+    :goto_74
+    if-ge v5, v1, :cond_9a
+
+    .line 1814
+    invoke-virtual {p0, v5}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    .line 1815
+    .restart local v0    # "child":Landroid/view/View;
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v6
+
+    check-cast v6, Landroid/support/v4/view/ViewPager$LayoutParams;
+
+    .line 1817
+    .restart local v6    # "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
+    iget-boolean v12, v6, Landroid/support/v4/view/ViewPager$LayoutParams;->isDecor:Z
+
+    if-eqz v12, :cond_87
+
+    .line 1813
+    :goto_84
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_74
+
+    .line 1819
+    :cond_87
+    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
+
+    move-result v12
+
+    sub-int/2addr v12, v9
+
+    int-to-float v12, v12
+
+    invoke-direct {p0}, Landroid/support/v4/view/ViewPager;->getClientWidth()I
+
+    move-result v13
+
+    int-to-float v13, v13
+
+    div-float v10, v12, v13
+
+    .line 1820
+    .local v10, "transformPos":F
+    iget-object v12, p0, Landroid/support/v4/view/ViewPager;->mPageTransformer:Landroid/support/v4/view/ViewPager$PageTransformer;
+
+    invoke-interface {v12, v0, v10}, Landroid/support/v4/view/ViewPager$PageTransformer;->transformPage(Landroid/view/View;F)V
+
+    goto :goto_84
+
+    .line 1824
+    .end local v0    # "child":Landroid/view/View;
+    .end local v1    # "childCount":I
+    .end local v5    # "i":I
+    .end local v6    # "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
+    .end local v9    # "scrollX":I
+    .end local v10    # "transformPos":F
+    :cond_9a
+    const/4 v12, 0x1
+
+    iput-boolean v12, p0, Landroid/support/v4/view/ViewPager;->mCalledSuper:Z
+
+    .line 1825
     return-void
 
-    .line 1690
-    nop
-
-    :pswitch_data_d2
+    .line 1782
+    :pswitch_data_9e
     .packed-switch 0x1
-        :pswitch_4d
-        :pswitch_38
-        :pswitch_46
-        :pswitch_38
-        :pswitch_5a
+        :pswitch_49
+        :pswitch_34
+        :pswitch_42
+        :pswitch_34
+        :pswitch_56
     .end packed-switch
 .end method
 
@@ -7829,29 +7993,29 @@
     .param p2, "previouslyFocusedRect"    # Landroid/graphics/Rect;
 
     .prologue
-    .line 2698
+    .line 2852
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getChildCount()I
 
     move-result v1
 
-    .line 2699
+    .line 2853
     .local v1, "count":I
     and-int/lit8 v7, p1, 0x2
 
     if-eqz v7, :cond_2c
 
-    .line 2700
+    .line 2854
     const/4 v6, 0x0
 
-    .line 2701
+    .line 2855
     .local v6, "index":I
     const/4 v5, 0x1
 
-    .line 2702
+    .line 2856
     .local v5, "increment":I
     move v2, v1
 
-    .line 2708
+    .line 2862
     .local v2, "end":I
     :goto_b
     move v3, v6
@@ -7860,12 +8024,12 @@
     :goto_c
     if-eq v3, v2, :cond_33
 
-    .line 2709
+    .line 2863
     invoke-virtual {p0, v3}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2710
+    .line 2864
     .local v0, "child":Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
@@ -7873,12 +8037,12 @@
 
     if-nez v7, :cond_31
 
-    .line 2711
+    .line 2865
     invoke-virtual {p0, v0}, Landroid/support/v4/view/ViewPager;->infoForChild(Landroid/view/View;)Landroid/support/v4/view/ViewPager$ItemInfo;
 
     move-result-object v4
 
-    .line 2712
+    .line 2866
     .local v4, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     if-eqz v4, :cond_31
 
@@ -7888,23 +8052,23 @@
 
     if-ne v7, v8, :cond_31
 
-    .line 2713
+    .line 2867
     invoke-virtual {v0, p1, p2}, Landroid/view/View;->requestFocus(ILandroid/graphics/Rect;)Z
 
     move-result v7
 
     if-eqz v7, :cond_31
 
-    .line 2714
+    .line 2868
     const/4 v7, 0x1
 
-    .line 2719
+    .line 2873
     .end local v0    # "child":Landroid/view/View;
     .end local v4    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     :goto_2b
     return v7
 
-    .line 2704
+    .line 2858
     .end local v2    # "end":I
     .end local v3    # "i":I
     .end local v5    # "increment":I
@@ -7912,18 +8076,18 @@
     :cond_2c
     add-int/lit8 v6, v1, -0x1
 
-    .line 2705
+    .line 2859
     .restart local v6    # "index":I
     const/4 v5, -0x1
 
-    .line 2706
+    .line 2860
     .restart local v5    # "increment":I
     const/4 v2, -0x1
 
     .restart local v2    # "end":I
     goto :goto_b
 
-    .line 2708
+    .line 2862
     .restart local v0    # "child":Landroid/view/View;
     .restart local v3    # "i":I
     :cond_31
@@ -7931,7 +8095,7 @@
 
     goto :goto_c
 
-    .line 2719
+    .line 2873
     .end local v0    # "child":Landroid/view/View;
     :cond_33
     const/4 v7, 0x0
@@ -7944,25 +8108,25 @@
     .param p1, "state"    # Landroid/os/Parcelable;
 
     .prologue
-    .line 1277
+    .line 1381
     instance-of v1, p1, Landroid/support/v4/view/ViewPager$SavedState;
 
     if-nez v1, :cond_8
 
-    .line 1278
+    .line 1382
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    .line 1293
+    .line 1397
     :goto_7
     return-void
 
     :cond_8
     move-object v0, p1
 
-    .line 1282
+    .line 1386
     check-cast v0, Landroid/support/v4/view/ViewPager$SavedState;
 
-    .line 1283
+    .line 1387
     .local v0, "ss":Landroid/support/v4/view/ViewPager$SavedState;
     invoke-virtual {v0}, Landroid/support/v4/view/ViewPager$SavedState;->getSuperState()Landroid/os/Parcelable;
 
@@ -7970,12 +8134,12 @@
 
     invoke-super {p0, v1}, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    .line 1285
+    .line 1389
     iget-object v1, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     if-eqz v1, :cond_27
 
-    .line 1286
+    .line 1390
     iget-object v1, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     iget-object v2, v0, Landroid/support/v4/view/ViewPager$SavedState;->adapterState:Landroid/os/Parcelable;
@@ -7984,7 +8148,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/support/v4/view/PagerAdapter;->restoreState(Landroid/os/Parcelable;Ljava/lang/ClassLoader;)V
 
-    .line 1287
+    .line 1391
     iget v1, v0, Landroid/support/v4/view/ViewPager$SavedState;->position:I
 
     const/4 v2, 0x0
@@ -7995,18 +8159,18 @@
 
     goto :goto_7
 
-    .line 1289
+    .line 1393
     :cond_27
     iget v1, v0, Landroid/support/v4/view/ViewPager$SavedState;->position:I
 
     iput v1, p0, Landroid/support/v4/view/ViewPager;->mRestoredCurItem:I
 
-    .line 1290
+    .line 1394
     iget-object v1, v0, Landroid/support/v4/view/ViewPager$SavedState;->adapterState:Landroid/os/Parcelable;
 
     iput-object v1, p0, Landroid/support/v4/view/ViewPager;->mRestoredAdapterState:Landroid/os/Parcelable;
 
-    .line 1291
+    .line 1395
     iget-object v1, v0, Landroid/support/v4/view/ViewPager$SavedState;->loader:Ljava/lang/ClassLoader;
 
     iput-object v1, p0, Landroid/support/v4/view/ViewPager;->mRestoredClassLoader:Ljava/lang/ClassLoader;
@@ -8018,29 +8182,29 @@
     .registers 4
 
     .prologue
-    .line 1266
+    .line 1370
     invoke-super {p0}, Landroid/view/ViewGroup;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v1
 
-    .line 1267
+    .line 1371
     .local v1, "superState":Landroid/os/Parcelable;
     new-instance v0, Landroid/support/v4/view/ViewPager$SavedState;
 
     invoke-direct {v0, v1}, Landroid/support/v4/view/ViewPager$SavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 1268
+    .line 1372
     .local v0, "ss":Landroid/support/v4/view/ViewPager$SavedState;
     iget v2, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
     iput v2, v0, Landroid/support/v4/view/ViewPager$SavedState;->position:I
 
-    .line 1269
+    .line 1373
     iget-object v2, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     if-eqz v2, :cond_19
 
-    .line 1270
+    .line 1374
     iget-object v2, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     invoke-virtual {v2}, Landroid/support/v4/view/PagerAdapter;->saveState()Landroid/os/Parcelable;
@@ -8049,7 +8213,7 @@
 
     iput-object v2, v0, Landroid/support/v4/view/ViewPager$SavedState;->adapterState:Landroid/os/Parcelable;
 
-    .line 1272
+    .line 1376
     :cond_19
     return-object v0
 .end method
@@ -8062,20 +8226,20 @@
     .param p4, "oldh"    # I
 
     .prologue
-    .line 1464
+    .line 1568
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/ViewGroup;->onSizeChanged(IIII)V
 
-    .line 1467
+    .line 1571
     if-eq p1, p3, :cond_c
 
-    .line 1468
+    .line 1572
     iget v0, p0, Landroid/support/v4/view/ViewPager;->mPageMargin:I
 
     iget v1, p0, Landroid/support/v4/view/ViewPager;->mPageMargin:I
 
     invoke-direct {p0, p1, p3, v0, v1}, Landroid/support/v4/view/ViewPager;->recomputeScrollPosition(IIII)V
 
-    .line 1470
+    .line 1574
     :cond_c
     return-void
 .end method
@@ -8085,7 +8249,7 @@
     .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 1930
+    .line 2069
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Landroid/support/v4/view/ViewPager;->mFakeDragging:Z
@@ -8094,14 +8258,14 @@
 
     if-eqz v24, :cond_b
 
-    .line 1934
+    .line 2073
     const/16 v24, 0x1
 
-    .line 2051
+    .line 2191
     :goto_a
     return v24
 
-    .line 1937
+    .line 2076
     :cond_b
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -8115,12 +8279,12 @@
 
     if-eqz v24, :cond_1a
 
-    .line 1940
+    .line 2079
     const/16 v24, 0x0
 
     goto :goto_a
 
-    .line 1943
+    .line 2082
     :cond_1a
     move-object/from16 v0, p0
 
@@ -8142,13 +8306,13 @@
 
     if-nez v24, :cond_31
 
-    .line 1945
+    .line 2084
     :cond_2e
     const/16 v24, 0x0
 
     goto :goto_a
 
-    .line 1948
+    .line 2087
     :cond_31
     move-object/from16 v0, p0
 
@@ -8158,7 +8322,7 @@
 
     if-nez v24, :cond_43
 
-    .line 1949
+    .line 2088
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v24
@@ -8169,7 +8333,7 @@
 
     iput-object v0, v1, Landroid/support/v4/view/ViewPager;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 1951
+    .line 2090
     :cond_43
     move-object/from16 v0, p0
 
@@ -8183,39 +8347,39 @@
 
     invoke-virtual {v0, v1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 1953
+    .line 2092
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v5
 
-    .line 1954
+    .line 2093
     .local v5, "action":I
     const/4 v11, 0x0
 
-    .line 1956
+    .line 2095
     .local v11, "needsInvalidate":Z
     and-int/lit16 v0, v5, 0xff
 
     move/from16 v24, v0
 
-    packed-switch v24, :pswitch_data_2ce
+    packed-switch v24, :pswitch_data_2a0
 
-    .line 2048
+    .line 2188
     :cond_5c
     :goto_5c
     :pswitch_5c
     if-eqz v11, :cond_61
 
-    .line 2049
+    .line 2189
     invoke-static/range {p0 .. p0}, Landroid/support/v4/view/ViewCompat;->postInvalidateOnAnimation(Landroid/view/View;)V
 
-    .line 2051
+    .line 2191
     :cond_61
     const/16 v24, 0x1
 
     goto :goto_a
 
-    .line 1958
+    .line 2097
     :pswitch_64
     move-object/from16 v0, p0
 
@@ -8225,7 +8389,7 @@
 
     invoke-virtual/range {v24 .. v24}, Landroid/widget/Scroller;->abortAnimation()V
 
-    .line 1959
+    .line 2098
     const/16 v24, 0x0
 
     move/from16 v0, v24
@@ -8234,10 +8398,10 @@
 
     iput-boolean v0, v1, Landroid/support/v4/view/ViewPager;->mPopulatePending:Z
 
-    .line 1960
+    .line 2099
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->populate()V
 
-    .line 1963
+    .line 2102
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v24
@@ -8254,7 +8418,7 @@
 
     iput v0, v1, Landroid/support/v4/view/ViewPager;->mLastMotionX:F
 
-    .line 1964
+    .line 2103
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v24
@@ -8271,7 +8435,7 @@
 
     iput v0, v1, Landroid/support/v4/view/ViewPager;->mLastMotionY:F
 
-    .line 1965
+    .line 2104
     const/16 v24, 0x0
 
     move-object/from16 v0, p1
@@ -8290,7 +8454,7 @@
 
     goto :goto_5c
 
-    .line 1969
+    .line 2108
     :pswitch_a9
     move-object/from16 v0, p0
 
@@ -8298,9 +8462,9 @@
 
     move/from16 v24, v0
 
-    if-nez v24, :cond_153
+    if-nez v24, :cond_15e
 
-    .line 1970
+    .line 2109
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mActivePointerId:I
@@ -8315,15 +8479,31 @@
 
     move-result v15
 
-    .line 1971
+    .line 2110
     .local v15, "pointerIndex":I
+    const/16 v24, -0x1
+
+    move/from16 v0, v24
+
+    if-ne v15, v0, :cond_ca
+
+    .line 2112
+    invoke-direct/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->resetTouch()Z
+
+    move-result v11
+
+    .line 2113
+    goto :goto_5c
+
+    .line 2115
+    :cond_ca
     move-object/from16 v0, p1
 
     invoke-static {v0, v15}, Landroid/support/v4/view/MotionEventCompat;->getX(Landroid/view/MotionEvent;I)F
 
     move-result v20
 
-    .line 1972
+    .line 2116
     .local v20, "x":F
     move-object/from16 v0, p0
 
@@ -8337,7 +8517,7 @@
 
     move-result v21
 
-    .line 1973
+    .line 2117
     .local v21, "xDiff":F
     move-object/from16 v0, p1
 
@@ -8345,7 +8525,7 @@
 
     move-result v22
 
-    .line 1974
+    .line 2118
     .local v22, "y":F
     move-object/from16 v0, p0
 
@@ -8359,7 +8539,7 @@
 
     move-result v23
 
-    .line 1976
+    .line 2120
     .local v23, "yDiff":F
     move-object/from16 v0, p0
 
@@ -8375,13 +8555,13 @@
 
     cmpl-float v24, v21, v24
 
-    if-lez v24, :cond_153
+    if-lez v24, :cond_15e
 
     cmpl-float v24, v21, v23
 
-    if-lez v24, :cond_153
+    if-lez v24, :cond_15e
 
-    .line 1978
+    .line 2122
     const/16 v24, 0x1
 
     move/from16 v0, v24
@@ -8390,7 +8570,7 @@
 
     iput-boolean v0, v1, Landroid/support/v4/view/ViewPager;->mIsBeingDragged:Z
 
-    .line 1979
+    .line 2123
     const/16 v24, 0x1
 
     move-object/from16 v0, p0
@@ -8399,7 +8579,7 @@
 
     invoke-direct {v0, v1}, Landroid/support/v4/view/ViewPager;->requestParentDisallowInterceptTouchEvent(Z)V
 
-    .line 1980
+    .line 2124
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mInitialMotionX:F
@@ -8412,7 +8592,7 @@
 
     cmpl-float v24, v24, v25
 
-    if-lez v24, :cond_17b
+    if-lez v24, :cond_186
 
     move-object/from16 v0, p0
 
@@ -8434,21 +8614,21 @@
 
     add-float v24, v24, v25
 
-    :goto_128
+    :goto_133
     move/from16 v0, v24
 
     move-object/from16 v1, p0
 
     iput v0, v1, Landroid/support/v4/view/ViewPager;->mLastMotionX:F
 
-    .line 1982
+    .line 2126
     move/from16 v0, v22
 
     move-object/from16 v1, p0
 
     iput v0, v1, Landroid/support/v4/view/ViewPager;->mLastMotionY:F
 
-    .line 1983
+    .line 2127
     const/16 v24, 0x1
 
     move-object/from16 v0, p0
@@ -8457,7 +8637,7 @@
 
     invoke-direct {v0, v1}, Landroid/support/v4/view/ViewPager;->setScrollState(I)V
 
-    .line 1984
+    .line 2128
     const/16 v24, 0x1
 
     move-object/from16 v0, p0
@@ -8466,30 +8646,30 @@
 
     invoke-direct {v0, v1}, Landroid/support/v4/view/ViewPager;->setScrollingCacheEnabled(Z)V
 
-    .line 1987
+    .line 2131
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getParent()Landroid/view/ViewParent;
 
     move-result-object v14
 
-    .line 1988
+    .line 2132
     .local v14, "parent":Landroid/view/ViewParent;
-    if-eqz v14, :cond_153
+    if-eqz v14, :cond_15e
 
-    .line 1989
+    .line 2133
     const/16 v24, 0x1
 
     move/from16 v0, v24
 
     invoke-interface {v14, v0}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 1994
+    .line 2138
     .end local v14    # "parent":Landroid/view/ViewParent;
     .end local v15    # "pointerIndex":I
     .end local v20    # "x":F
     .end local v21    # "xDiff":F
     .end local v22    # "y":F
     .end local v23    # "yDiff":F
-    :cond_153
+    :cond_15e
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Landroid/support/v4/view/ViewPager;->mIsBeingDragged:Z
@@ -8498,7 +8678,7 @@
 
     if-eqz v24, :cond_5c
 
-    .line 1996
+    .line 2140
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mActivePointerId:I
@@ -8513,7 +8693,7 @@
 
     move-result v6
 
-    .line 1998
+    .line 2142
     .local v6, "activePointerIndex":I
     move-object/from16 v0, p1
 
@@ -8521,7 +8701,7 @@
 
     move-result v20
 
-    .line 1999
+    .line 2143
     .restart local v20    # "x":F
     move-object/from16 v0, p0
 
@@ -8533,16 +8713,16 @@
 
     or-int v11, v11, v24
 
-    .line 2000
+    .line 2144
     goto/16 :goto_5c
 
-    .line 1980
+    .line 2124
     .end local v6    # "activePointerIndex":I
     .restart local v15    # "pointerIndex":I
     .restart local v21    # "xDiff":F
     .restart local v22    # "y":F
     .restart local v23    # "yDiff":F
-    :cond_17b
+    :cond_186
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mInitialMotionX:F
@@ -8563,15 +8743,15 @@
 
     sub-float v24, v24, v25
 
-    goto :goto_128
+    goto :goto_133
 
-    .line 2003
+    .line 2147
     .end local v15    # "pointerIndex":I
     .end local v20    # "x":F
     .end local v21    # "xDiff":F
     .end local v22    # "y":F
     .end local v23    # "yDiff":F
-    :pswitch_18f
+    :pswitch_19a
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Landroid/support/v4/view/ViewPager;->mIsBeingDragged:Z
@@ -8580,14 +8760,14 @@
 
     if-eqz v24, :cond_5c
 
-    .line 2004
+    .line 2148
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     move-object/from16 v18, v0
 
-    .line 2005
+    .line 2149
     .local v18, "velocityTracker":Landroid/view/VelocityTracker;
     const/16 v24, 0x3e8
 
@@ -8611,7 +8791,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
 
-    .line 2006
+    .line 2150
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mActivePointerId:I
@@ -8630,7 +8810,7 @@
 
     float-to-int v10, v0
 
-    .line 2008
+    .line 2152
     .local v10, "initialVelocity":I
     const/16 v24, 0x1
 
@@ -8640,28 +8820,28 @@
 
     iput-boolean v0, v1, Landroid/support/v4/view/ViewPager;->mPopulatePending:Z
 
-    .line 2009
+    .line 2153
     invoke-direct/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getClientWidth()I
 
     move-result v19
 
-    .line 2010
+    .line 2154
     .local v19, "width":I
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
 
     move-result v16
 
-    .line 2011
+    .line 2155
     .local v16, "scrollX":I
     invoke-direct/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->infoForCurrentScrollPosition()Landroid/support/v4/view/ViewPager$ItemInfo;
 
     move-result-object v8
 
-    .line 2012
+    .line 2156
     .local v8, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     iget v7, v8, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
-    .line 2013
+    .line 2157
     .local v7, "currentPage":I
     move/from16 v0, v16
 
@@ -8689,7 +8869,7 @@
 
     div-float v13, v24, v25
 
-    .line 2014
+    .line 2158
     .local v13, "pageOffset":F
     move-object/from16 v0, p0
 
@@ -8705,7 +8885,7 @@
 
     move-result v6
 
-    .line 2016
+    .line 2160
     .restart local v6    # "activePointerIndex":I
     move-object/from16 v0, p1
 
@@ -8713,7 +8893,7 @@
 
     move-result v20
 
-    .line 2017
+    .line 2161
     .restart local v20    # "x":F
     move-object/from16 v0, p0
 
@@ -8729,7 +8909,7 @@
 
     move/from16 v17, v0
 
-    .line 2018
+    .line 2162
     .local v17, "totalDelta":I
     move-object/from16 v0, p0
 
@@ -8739,7 +8919,7 @@
 
     move-result v12
 
-    .line 2020
+    .line 2164
     .local v12, "nextPage":I
     const/16 v24, 0x1
 
@@ -8753,45 +8933,15 @@
 
     invoke-virtual {v0, v12, v1, v2, v10}, Landroid/support/v4/view/ViewPager;->setCurrentItemInternal(IZZI)V
 
-    .line 2022
-    const/16 v24, -0x1
+    .line 2166
+    invoke-direct/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->resetTouch()Z
 
-    move/from16 v0, v24
+    move-result v11
 
-    move-object/from16 v1, p0
-
-    iput v0, v1, Landroid/support/v4/view/ViewPager;->mActivePointerId:I
-
-    .line 2023
-    invoke-direct/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->endDrag()V
-
-    .line 2024
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mLeftEdge:Landroid/support/v4/widget/EdgeEffectCompat;
-
-    move-object/from16 v24, v0
-
-    invoke-virtual/range {v24 .. v24}, Landroid/support/v4/widget/EdgeEffectCompat;->onRelease()Z
-
-    move-result v24
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mRightEdge:Landroid/support/v4/widget/EdgeEffectCompat;
-
-    move-object/from16 v25, v0
-
-    invoke-virtual/range {v25 .. v25}, Landroid/support/v4/widget/EdgeEffectCompat;->onRelease()Z
-
-    move-result v25
-
-    or-int v11, v24, v25
-
-    .line 2025
+    .line 2167
     goto/16 :goto_5c
 
-    .line 2028
+    .line 2170
     .end local v6    # "activePointerIndex":I
     .end local v7    # "currentPage":I
     .end local v8    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
@@ -8803,7 +8953,7 @@
     .end local v18    # "velocityTracker":Landroid/view/VelocityTracker;
     .end local v19    # "width":I
     .end local v20    # "x":F
-    :pswitch_24b
+    :pswitch_239
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Landroid/support/v4/view/ViewPager;->mIsBeingDragged:Z
@@ -8812,7 +8962,7 @@
 
     if-eqz v24, :cond_5c
 
-    .line 2029
+    .line 2171
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mCurItem:I
@@ -8837,50 +8987,20 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/support/v4/view/ViewPager;->scrollToItem(IZIZ)V
 
-    .line 2030
-    const/16 v24, -0x1
+    .line 2172
+    invoke-direct/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->resetTouch()Z
 
-    move/from16 v0, v24
-
-    move-object/from16 v1, p0
-
-    iput v0, v1, Landroid/support/v4/view/ViewPager;->mActivePointerId:I
-
-    .line 2031
-    invoke-direct/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->endDrag()V
-
-    .line 2032
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mLeftEdge:Landroid/support/v4/widget/EdgeEffectCompat;
-
-    move-object/from16 v24, v0
-
-    invoke-virtual/range {v24 .. v24}, Landroid/support/v4/widget/EdgeEffectCompat;->onRelease()Z
-
-    move-result v24
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mRightEdge:Landroid/support/v4/widget/EdgeEffectCompat;
-
-    move-object/from16 v25, v0
-
-    invoke-virtual/range {v25 .. v25}, Landroid/support/v4/widget/EdgeEffectCompat;->onRelease()Z
-
-    move-result v25
-
-    or-int v11, v24, v25
+    move-result v11
 
     goto/16 :goto_5c
 
-    .line 2036
-    :pswitch_28f
+    .line 2176
+    :pswitch_260
     invoke-static/range {p1 .. p1}, Landroid/support/v4/view/MotionEventCompat;->getActionIndex(Landroid/view/MotionEvent;)I
 
     move-result v9
 
-    .line 2037
+    .line 2177
     .local v9, "index":I
     move-object/from16 v0, p1
 
@@ -8888,7 +9008,7 @@
 
     move-result v20
 
-    .line 2038
+    .line 2178
     .restart local v20    # "x":F
     move/from16 v0, v20
 
@@ -8896,7 +9016,7 @@
 
     iput v0, v1, Landroid/support/v4/view/ViewPager;->mLastMotionX:F
 
-    .line 2039
+    .line 2179
     move-object/from16 v0, p1
 
     invoke-static {v0, v9}, Landroid/support/v4/view/MotionEventCompat;->getPointerId(Landroid/view/MotionEvent;I)I
@@ -8911,13 +9031,13 @@
 
     goto/16 :goto_5c
 
-    .line 2043
+    .line 2183
     .end local v9    # "index":I
     .end local v20    # "x":F
-    :pswitch_2ad
+    :pswitch_27e
     invoke-direct/range {p0 .. p1}, Landroid/support/v4/view/ViewPager;->onSecondaryPointerUp(Landroid/view/MotionEvent;)V
 
-    .line 2044
+    .line 2184
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mActivePointerId:I
@@ -8948,16 +9068,18 @@
 
     goto/16 :goto_5c
 
-    .line 1956
-    :pswitch_data_2ce
+    .line 2095
+    nop
+
+    :pswitch_data_2a0
     .packed-switch 0x0
         :pswitch_64
-        :pswitch_18f
+        :pswitch_19a
         :pswitch_a9
-        :pswitch_24b
+        :pswitch_239
         :pswitch_5c
-        :pswitch_28f
-        :pswitch_2ad
+        :pswitch_260
+        :pswitch_27e
     .end packed-switch
 .end method
 
@@ -8967,19 +9089,19 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 2611
+    .line 2765
     iget v1, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
     if-lez v1, :cond_d
 
-    .line 2612
+    .line 2766
     iget v1, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
     add-int/lit8 v1, v1, -0x1
 
     invoke-virtual {p0, v1, v0}, Landroid/support/v4/view/ViewPager;->setCurrentItem(IZ)V
 
-    .line 2615
+    .line 2769
     :goto_c
     return v0
 
@@ -8995,7 +9117,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 2619
+    .line 2773
     iget-object v1, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     if-eqz v1, :cond_19
@@ -9012,14 +9134,14 @@
 
     if-ge v1, v2, :cond_19
 
-    .line 2620
+    .line 2774
     iget v1, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
     add-int/lit8 v1, v1, 0x1
 
     invoke-virtual {p0, v1, v0}, Landroid/support/v4/view/ViewPager;->setCurrentItem(IZ)V
 
-    .line 2623
+    .line 2777
     :goto_18
     return v0
 
@@ -9033,1034 +9155,761 @@
     .registers 2
 
     .prologue
-    .line 919
+    .line 1025
     iget v0, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
     invoke-virtual {p0, v0}, Landroid/support/v4/view/ViewPager;->populate(I)V
 
-    .line 920
+    .line 1026
     return-void
 .end method
 
 .method populate(I)V
-    .registers 32
+    .registers 31
     .param p1, "newCurrentItem"    # I
 
     .prologue
-    .line 923
-    const/16 v21, 0x0
+    .line 1029
+    const/16 v20, 0x0
 
-    .line 924
-    .local v21, "oldCurInfo":Landroid/support/v4/view/ViewPager$ItemInfo;
-    const/4 v15, 0x2
-
-    .line 925
-    .local v15, "focusDirection":I
+    .line 1030
+    .local v20, "oldCurInfo":Landroid/support/v4/view/ViewPager$ItemInfo;
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
-    move/from16 v27, v0
+    move/from16 v26, v0
 
-    move/from16 v0, v27
+    move/from16 v0, v26
 
     move/from16 v1, p1
 
-    if-eq v0, v1, :cond_31
+    if-eq v0, v1, :cond_22
 
-    .line 926
+    .line 1031
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
-    move/from16 v27, v0
-
-    move/from16 v0, v27
-
-    move/from16 v1, p1
-
-    if-ge v0, v1, :cond_3d
-
-    const/16 v15, 0x42
-
-    .line 927
-    :goto_1d
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/support/v4/view/ViewPager;->mCurItem:I
-
-    move/from16 v27, v0
+    move/from16 v26, v0
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v27
+    move/from16 v1, v26
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->infoForPosition(I)Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    move-result-object v21
+    move-result-object v20
 
-    .line 928
+    .line 1032
     move/from16 v0, p1
 
     move-object/from16 v1, p0
 
     iput v0, v1, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
-    .line 931
-    :cond_31
+    .line 1035
+    :cond_22
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
-    move-object/from16 v27, v0
+    move-object/from16 v26, v0
 
-    if-nez v27, :cond_40
+    if-nez v26, :cond_2e
 
-    .line 932
+    .line 1036
     invoke-direct/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->sortChildDrawingOrder()V
 
-    .line 1108
-    :cond_3c
-    :goto_3c
+    .line 1212
+    :cond_2d
+    :goto_2d
     return-void
 
-    .line 926
-    :cond_3d
-    const/16 v15, 0x11
-
-    goto :goto_1d
-
-    .line 940
-    :cond_40
+    .line 1044
+    :cond_2e
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Landroid/support/v4/view/ViewPager;->mPopulatePending:Z
 
-    move/from16 v27, v0
+    move/from16 v26, v0
 
-    if-eqz v27, :cond_4c
+    if-eqz v26, :cond_3a
 
-    .line 942
+    .line 1046
     invoke-direct/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->sortChildDrawingOrder()V
 
-    goto :goto_3c
+    goto :goto_2d
 
-    .line 949
-    :cond_4c
+    .line 1053
+    :cond_3a
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getWindowToken()Landroid/os/IBinder;
 
-    move-result-object v27
+    move-result-object v26
 
-    if-eqz v27, :cond_3c
+    if-eqz v26, :cond_2d
 
-    .line 953
+    .line 1057
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
-    move-object/from16 v27, v0
+    move-object/from16 v26, v0
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v26
 
     move-object/from16 v1, p0
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/PagerAdapter;->startUpdate(Landroid/view/ViewGroup;)V
 
-    .line 955
+    .line 1059
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mOffscreenPageLimit:I
 
-    move/from16 v22, v0
+    move/from16 v21, v0
 
-    .line 956
-    .local v22, "pageLimit":I
-    const/16 v27, 0x0
+    .line 1060
+    .local v21, "pageLimit":I
+    const/16 v26, 0x0
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
-    move/from16 v28, v0
+    move/from16 v27, v0
 
-    sub-int v28, v28, v22
+    sub-int v27, v27, v21
 
-    invoke-static/range {v27 .. v28}, Ljava/lang/Math;->max(II)I
+    invoke-static/range {v26 .. v27}, Ljava/lang/Math;->max(II)I
 
-    move-result v26
+    move-result v25
 
-    .line 957
-    .local v26, "startPos":I
+    .line 1061
+    .local v25, "startPos":I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
-    move-object/from16 v27, v0
+    move-object/from16 v26, v0
 
-    invoke-virtual/range {v27 .. v27}, Landroid/support/v4/view/PagerAdapter;->getCount()I
+    invoke-virtual/range {v26 .. v26}, Landroid/support/v4/view/PagerAdapter;->getCount()I
 
     move-result v4
 
-    .line 958
+    .line 1062
     .local v4, "N":I
-    add-int/lit8 v27, v4, -0x1
+    add-int/lit8 v26, v4, -0x1
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
-    move/from16 v28, v0
+    move/from16 v27, v0
 
-    add-int v28, v28, v22
+    add-int v27, v27, v21
 
-    invoke-static/range {v27 .. v28}, Ljava/lang/Math;->min(II)I
+    invoke-static/range {v26 .. v27}, Ljava/lang/Math;->min(II)I
 
     move-result v12
 
-    .line 960
+    .line 1064
     .local v12, "endPos":I
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mExpectedAdapterCount:I
 
-    move/from16 v27, v0
+    move/from16 v26, v0
 
-    move/from16 v0, v27
+    move/from16 v0, v26
 
-    if-eq v4, v0, :cond_106
+    if-eq v4, v0, :cond_f9
 
-    .line 963
-    :try_start_95
+    .line 1067
+    :try_start_83
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v27
+    move-result-object v26
 
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getId()I
 
-    move-result v28
+    move-result v27
 
-    invoke-virtual/range {v27 .. v28}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
-    :try_end_a0
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_95 .. :try_end_a0} :catch_fc
+    invoke-virtual/range {v26 .. v27}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
+    :try_end_8e
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_83 .. :try_end_8e} :catch_ef
 
-    move-result-object v24
+    move-result-object v23
 
-    .line 967
-    .local v24, "resName":Ljava/lang/String;
-    :goto_a1
-    new-instance v27, Ljava/lang/IllegalStateException;
+    .line 1071
+    .local v23, "resName":Ljava/lang/String;
+    :goto_8f
+    new-instance v26, Ljava/lang/IllegalStateException;
 
-    new-instance v28, Ljava/lang/StringBuilder;
+    new-instance v27, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v28 .. v28}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v29, "The application\'s PagerAdapter changed the adapter\'s contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: "
+    const-string/jumbo v28, "The application\'s PagerAdapter changed the adapter\'s contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: "
 
-    invoke-virtual/range {v28 .. v29}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v28
+    move-result-object v27
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mExpectedAdapterCount:I
 
-    move/from16 v29, v0
+    move/from16 v28, v0
 
-    invoke-virtual/range {v28 .. v29}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v28
+    move-result-object v27
 
-    const-string v29, ", found: "
+    const-string/jumbo v28, ", found: "
 
-    invoke-virtual/range {v28 .. v29}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v28
+    move-result-object v27
 
-    move-object/from16 v0, v28
+    move-object/from16 v0, v27
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v28
+    move-result-object v27
 
-    const-string v29, " Pager id: "
+    const-string/jumbo v28, " Pager id: "
 
-    invoke-virtual/range {v28 .. v29}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v28
+    move-result-object v27
 
-    move-object/from16 v0, v28
+    move-object/from16 v0, v27
 
-    move-object/from16 v1, v24
+    move-object/from16 v1, v23
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v28
+    move-result-object v27
 
-    const-string v29, " Pager class: "
+    const-string/jumbo v28, " Pager class: "
 
-    invoke-virtual/range {v28 .. v29}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v28
+    move-result-object v27
 
     invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v29
-
-    invoke-virtual/range {v28 .. v29}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
     move-result-object v28
 
-    const-string v29, " Problematic adapter: "
+    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {v28 .. v29}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v27
 
-    move-result-object v28
+    const-string/jumbo v28, " Problematic adapter: "
+
+    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v27
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
-    move-object/from16 v29, v0
+    move-object/from16 v28, v0
 
-    invoke-virtual/range {v29 .. v29}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v29
-
-    invoke-virtual/range {v28 .. v29}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v28 .. v28}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v28
 
-    invoke-virtual/range {v28 .. v28}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v28
+    move-result-object v27
 
-    invoke-direct/range {v27 .. v28}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    throw v27
+    move-result-object v27
 
-    .line 964
-    .end local v24    # "resName":Ljava/lang/String;
-    :catch_fc
+    invoke-direct/range {v26 .. v27}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v26
+
+    .line 1068
+    .end local v23    # "resName":Ljava/lang/String;
+    :catch_ef
     move-exception v11
 
-    .line 965
+    .line 1069
     .local v11, "e":Landroid/content/res/Resources$NotFoundException;
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getId()I
 
-    move-result v27
+    move-result v26
 
-    invoke-static/range {v27 .. v27}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+    invoke-static/range {v26 .. v26}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    move-result-object v24
+    move-result-object v23
 
-    .restart local v24    # "resName":Ljava/lang/String;
-    goto :goto_a1
+    .restart local v23    # "resName":Ljava/lang/String;
+    goto :goto_8f
 
-    .line 976
+    .line 1080
     .end local v11    # "e":Landroid/content/res/Resources$NotFoundException;
-    .end local v24    # "resName":Ljava/lang/String;
-    :cond_106
+    .end local v23    # "resName":Ljava/lang/String;
+    :cond_f9
     const/4 v8, -0x1
 
-    .line 977
+    .line 1081
     .local v8, "curIndex":I
     const/4 v9, 0x0
 
-    .line 978
+    .line 1082
     .local v9, "curItem":Landroid/support/v4/view/ViewPager$ItemInfo;
     const/4 v8, 0x0
 
-    :goto_109
+    :goto_fc
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
-    move-object/from16 v27, v0
+    move-object/from16 v26, v0
 
-    invoke-virtual/range {v27 .. v27}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
 
-    move-result v27
+    move-result v26
 
-    move/from16 v0, v27
+    move/from16 v0, v26
 
-    if-ge v8, v0, :cond_14b
+    if-ge v8, v0, :cond_13e
 
-    .line 979
+    .line 1083
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
-    move-object/from16 v27, v0
+    move-object/from16 v26, v0
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v26
 
     invoke-virtual {v0, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v17
+    move-result-object v16
 
-    check-cast v17, Landroid/support/v4/view/ViewPager$ItemInfo;
+    check-cast v16, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 980
-    .local v17, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
-    move-object/from16 v0, v17
-
-    iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
-
-    move/from16 v27, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/support/v4/view/ViewPager;->mCurItem:I
-
-    move/from16 v28, v0
-
-    move/from16 v0, v27
-
-    move/from16 v1, v28
-
-    if-lt v0, v1, :cond_260
-
-    .line 981
-    move-object/from16 v0, v17
+    .line 1084
+    .local v16, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
+    move-object/from16 v0, v16
 
     iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
-    move/from16 v27, v0
+    move/from16 v26, v0
 
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/support/v4/view/ViewPager;->mCurItem:I
-
-    move/from16 v28, v0
-
-    move/from16 v0, v27
-
-    move/from16 v1, v28
-
-    if-ne v0, v1, :cond_14b
-
-    move-object/from16 v9, v17
-
-    .line 986
-    .end local v17    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
-    :cond_14b
-    if-nez v9, :cond_15d
-
-    if-lez v4, :cond_15d
-
-    .line 987
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
     move/from16 v27, v0
 
-    move-object/from16 v0, p0
+    move/from16 v0, v26
 
     move/from16 v1, v27
+
+    if-lt v0, v1, :cond_24c
+
+    .line 1085
+    move-object/from16 v0, v16
+
+    iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
+
+    move/from16 v26, v0
+
+    move-object/from16 v0, p0
+
+    iget v0, v0, Landroid/support/v4/view/ViewPager;->mCurItem:I
+
+    move/from16 v27, v0
+
+    move/from16 v0, v26
+
+    move/from16 v1, v27
+
+    if-ne v0, v1, :cond_13e
+
+    move-object/from16 v9, v16
+
+    .line 1090
+    .end local v16    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
+    :cond_13e
+    if-nez v9, :cond_150
+
+    if-lez v4, :cond_150
+
+    .line 1091
+    move-object/from16 v0, p0
+
+    iget v0, v0, Landroid/support/v4/view/ViewPager;->mCurItem:I
+
+    move/from16 v26, v0
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v26
 
     invoke-virtual {v0, v1, v8}, Landroid/support/v4/view/ViewPager;->addNewItem(II)Landroid/support/v4/view/ViewPager$ItemInfo;
 
     move-result-object v9
 
-    .line 993
-    :cond_15d
-    if-eqz v9, :cond_1e1
+    .line 1097
+    :cond_150
+    if-eqz v9, :cond_1d4
 
-    .line 994
+    .line 1098
     const/4 v13, 0x0
 
-    .line 995
+    .line 1099
     .local v13, "extraWidthLeft":F
-    add-int/lit8 v18, v8, -0x1
+    add-int/lit8 v17, v8, -0x1
 
-    .line 996
-    .local v18, "itemIndex":I
-    if-ltz v18, :cond_264
+    .line 1100
+    .local v17, "itemIndex":I
+    if-ltz v17, :cond_250
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
-    move-object/from16 v27, v0
+    move-object/from16 v26, v0
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v26
 
-    move/from16 v1, v18
+    move/from16 v1, v17
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v27
+    move-result-object v26
 
-    check-cast v27, Landroid/support/v4/view/ViewPager$ItemInfo;
+    check-cast v26, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    move-object/from16 v17, v27
+    move-object/from16 v16, v26
 
-    .line 997
-    .restart local v17    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
-    :goto_176
+    .line 1101
+    .restart local v16    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
+    :goto_169
     invoke-direct/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getClientWidth()I
 
     move-result v7
 
-    .line 998
+    .line 1102
     .local v7, "clientWidth":I
-    if-gtz v7, :cond_268
+    if-gtz v7, :cond_254
 
-    const/16 v19, 0x0
+    const/16 v18, 0x0
 
-    .line 1000
-    .local v19, "leftWidthNeeded":F
-    :goto_17e
+    .line 1104
+    .local v18, "leftWidthNeeded":F
+    :goto_171
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
-    move/from16 v27, v0
+    move/from16 v26, v0
 
-    add-int/lit8 v23, v27, -0x1
+    add-int/lit8 v22, v26, -0x1
 
-    .local v23, "pos":I
-    :goto_186
-    if-ltz v23, :cond_194
+    .local v22, "pos":I
+    :goto_179
+    if-ltz v22, :cond_187
 
-    .line 1001
-    cmpl-float v27, v13, v19
+    .line 1105
+    cmpl-float v26, v13, v18
 
-    if-ltz v27, :cond_2d9
+    if-ltz v26, :cond_2c5
 
-    move/from16 v0, v23
+    move/from16 v0, v22
+
+    move/from16 v1, v25
+
+    if-ge v0, v1, :cond_2c5
+
+    .line 1106
+    if-nez v16, :cond_26e
+
+    .line 1132
+    :cond_187
+    iget v14, v9, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
+
+    .line 1133
+    .local v14, "extraWidthRight":F
+    add-int/lit8 v17, v8, 0x1
+
+    .line 1134
+    const/high16 v26, 0x40000000
+
+    cmpg-float v26, v14, v26
+
+    if-gez v26, :cond_1cd
+
+    .line 1135
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
+
+    move-object/from16 v26, v0
+
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
+
+    move-result v26
+
+    move/from16 v0, v17
 
     move/from16 v1, v26
 
-    if-ge v0, v1, :cond_2d9
-
-    .line 1002
-    if-nez v17, :cond_282
-
-    .line 1028
-    :cond_194
-    iget v14, v9, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
-
-    .line 1029
-    .local v14, "extraWidthRight":F
-    add-int/lit8 v18, v8, 0x1
-
-    .line 1030
-    const/high16 v27, 0x40000000
-
-    cmpg-float v27, v14, v27
-
-    if-gez v27, :cond_1da
-
-    .line 1031
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
-
-    move-object/from16 v27, v0
-
-    invoke-virtual/range {v27 .. v27}, Ljava/util/ArrayList;->size()I
-
-    move-result v27
-
-    move/from16 v0, v18
-
-    move/from16 v1, v27
-
-    if-ge v0, v1, :cond_337
+    if-ge v0, v1, :cond_323
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
-    move-object/from16 v27, v0
+    move-object/from16 v26, v0
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v26
 
-    move/from16 v1, v18
+    move/from16 v1, v17
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v27
+    move-result-object v26
 
-    check-cast v27, Landroid/support/v4/view/ViewPager$ItemInfo;
+    check-cast v26, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    move-object/from16 v17, v27
+    move-object/from16 v16, v26
 
-    .line 1032
-    :goto_1c0
-    if-gtz v7, :cond_33b
+    .line 1136
+    :goto_1b3
+    if-gtz v7, :cond_327
 
-    const/16 v25, 0x0
+    const/16 v24, 0x0
 
-    .line 1034
-    .local v25, "rightWidthNeeded":F
-    :goto_1c4
+    .line 1138
+    .local v24, "rightWidthNeeded":F
+    :goto_1b7
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
-    move/from16 v27, v0
+    move/from16 v26, v0
 
-    add-int/lit8 v23, v27, 0x1
+    add-int/lit8 v22, v26, 0x1
 
-    :goto_1cc
-    move/from16 v0, v23
+    :goto_1bf
+    move/from16 v0, v22
 
-    if-ge v0, v4, :cond_1da
+    if-ge v0, v4, :cond_1cd
 
-    .line 1035
-    cmpl-float v27, v14, v25
+    .line 1139
+    cmpl-float v26, v14, v24
 
-    if-ltz v27, :cond_3b0
+    if-ltz v26, :cond_39c
 
-    move/from16 v0, v23
+    move/from16 v0, v22
 
-    if-le v0, v12, :cond_3b0
+    if-le v0, v12, :cond_39c
 
-    .line 1036
-    if-nez v17, :cond_34f
+    .line 1140
+    if-nez v16, :cond_33b
 
-    .line 1061
-    .end local v25    # "rightWidthNeeded":F
-    :cond_1da
+    .line 1165
+    .end local v24    # "rightWidthNeeded":F
+    :cond_1cd
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v21
+    move-object/from16 v1, v20
 
     invoke-direct {v0, v9, v8, v1}, Landroid/support/v4/view/ViewPager;->calculatePageOffsets(Landroid/support/v4/view/ViewPager$ItemInfo;ILandroid/support/v4/view/ViewPager$ItemInfo;)V
 
-    .line 1071
+    .line 1175
     .end local v7    # "clientWidth":I
     .end local v13    # "extraWidthLeft":F
     .end local v14    # "extraWidthRight":F
-    .end local v17    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
-    .end local v18    # "itemIndex":I
-    .end local v19    # "leftWidthNeeded":F
-    .end local v23    # "pos":I
-    :cond_1e1
+    .end local v16    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
+    .end local v17    # "itemIndex":I
+    .end local v18    # "leftWidthNeeded":F
+    .end local v22    # "pos":I
+    :cond_1d4
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
-    move-object/from16 v28, v0
+    move-object/from16 v27, v0
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
-    move/from16 v29, v0
+    move/from16 v28, v0
 
-    if-eqz v9, :cond_428
+    if-eqz v9, :cond_414
 
     iget-object v0, v9, Landroid/support/v4/view/ViewPager$ItemInfo;->object:Ljava/lang/Object;
 
-    move-object/from16 v27, v0
+    move-object/from16 v26, v0
 
-    :goto_1f3
-    move-object/from16 v0, v28
+    :goto_1e6
+    move-object/from16 v0, v27
 
     move-object/from16 v1, p0
 
-    move/from16 v2, v29
+    move/from16 v2, v28
 
-    move-object/from16 v3, v27
+    move-object/from16 v3, v26
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/support/v4/view/PagerAdapter;->setPrimaryItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
 
-    .line 1073
+    .line 1177
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
-    move-object/from16 v27, v0
+    move-object/from16 v26, v0
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v26
 
     move-object/from16 v1, p0
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/PagerAdapter;->finishUpdate(Landroid/view/ViewGroup;)V
 
-    .line 1077
+    .line 1181
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getChildCount()I
 
     move-result v6
 
-    .line 1078
+    .line 1182
     .local v6, "childCount":I
-    const/16 v16, 0x0
+    const/4 v15, 0x0
 
-    .local v16, "i":I
-    :goto_211
-    move/from16 v0, v16
+    .local v15, "i":I
+    :goto_203
+    if-ge v15, v6, :cond_418
 
-    if-ge v0, v6, :cond_42c
-
-    .line 1079
+    .line 1183
     move-object/from16 v0, p0
 
-    move/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v15}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
-    .line 1080
+    .line 1184
     .local v5, "child":Landroid/view/View;
     invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v20
+    move-result-object v19
 
-    check-cast v20, Landroid/support/v4/view/ViewPager$LayoutParams;
+    check-cast v19, Landroid/support/v4/view/ViewPager$LayoutParams;
 
-    .line 1081
-    .local v20, "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
-    move/from16 v0, v16
+    .line 1185
+    .local v19, "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
+    move-object/from16 v0, v19
 
-    move-object/from16 v1, v20
+    iput v15, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->childIndex:I
 
-    iput v0, v1, Landroid/support/v4/view/ViewPager$LayoutParams;->childIndex:I
-
-    .line 1082
-    move-object/from16 v0, v20
+    .line 1186
+    move-object/from16 v0, v19
 
     iget-boolean v0, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->isDecor:Z
 
-    move/from16 v27, v0
+    move/from16 v26, v0
 
-    if-nez v27, :cond_25d
+    if-nez v26, :cond_249
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v19
 
     iget v0, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->widthFactor:F
 
-    move/from16 v27, v0
+    move/from16 v26, v0
 
-    const/16 v28, 0x0
+    const/16 v27, 0x0
 
-    cmpl-float v27, v27, v28
+    cmpl-float v26, v26, v27
 
-    if-nez v27, :cond_25d
+    if-nez v26, :cond_249
 
-    .line 1084
+    .line 1188
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v5}, Landroid/support/v4/view/ViewPager;->infoForChild(Landroid/view/View;)Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    move-result-object v17
+    move-result-object v16
 
-    .line 1085
-    .restart local v17    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
-    if-eqz v17, :cond_25d
+    .line 1189
+    .restart local v16    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
+    if-eqz v16, :cond_249
 
-    .line 1086
-    move-object/from16 v0, v17
+    .line 1190
+    move-object/from16 v0, v16
 
     iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
 
-    move/from16 v27, v0
+    move/from16 v26, v0
 
-    move/from16 v0, v27
+    move/from16 v0, v26
 
-    move-object/from16 v1, v20
+    move-object/from16 v1, v19
 
     iput v0, v1, Landroid/support/v4/view/ViewPager$LayoutParams;->widthFactor:F
 
-    .line 1087
-    move-object/from16 v0, v17
+    .line 1191
+    move-object/from16 v0, v16
 
     iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
-    move/from16 v27, v0
+    move/from16 v26, v0
 
-    move/from16 v0, v27
+    move/from16 v0, v26
 
-    move-object/from16 v1, v20
+    move-object/from16 v1, v19
 
     iput v0, v1, Landroid/support/v4/view/ViewPager$LayoutParams;->position:I
 
-    .line 1078
-    .end local v17    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
-    :cond_25d
-    add-int/lit8 v16, v16, 0x1
+    .line 1182
+    .end local v16    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
+    :cond_249
+    add-int/lit8 v15, v15, 0x1
 
-    goto :goto_211
+    goto :goto_203
 
-    .line 978
+    .line 1082
     .end local v5    # "child":Landroid/view/View;
     .end local v6    # "childCount":I
-    .end local v16    # "i":I
-    .end local v20    # "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
-    .restart local v17    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
-    :cond_260
+    .end local v15    # "i":I
+    .end local v19    # "lp":Landroid/support/v4/view/ViewPager$LayoutParams;
+    .restart local v16    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
+    :cond_24c
     add-int/lit8 v8, v8, 0x1
 
-    goto/16 :goto_109
+    goto/16 :goto_fc
 
-    .line 996
-    .end local v17    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
+    .line 1100
+    .end local v16    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     .restart local v13    # "extraWidthLeft":F
-    .restart local v18    # "itemIndex":I
-    :cond_264
-    const/16 v17, 0x0
+    .restart local v17    # "itemIndex":I
+    :cond_250
+    const/16 v16, 0x0
 
-    goto/16 :goto_176
+    goto/16 :goto_169
 
-    .line 998
+    .line 1102
     .restart local v7    # "clientWidth":I
-    .restart local v17    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
-    :cond_268
-    const/high16 v27, 0x40000000
+    .restart local v16    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
+    :cond_254
+    const/high16 v26, 0x40000000
 
     iget v0, v9, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
 
-    move/from16 v28, v0
+    move/from16 v27, v0
 
-    sub-float v27, v27, v28
+    sub-float v26, v26, v27
 
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getPaddingLeft()I
-
-    move-result v28
-
-    move/from16 v0, v28
-
-    int-to-float v0, v0
-
-    move/from16 v28, v0
-
-    int-to-float v0, v7
-
-    move/from16 v29, v0
-
-    div-float v28, v28, v29
-
-    add-float v19, v27, v28
-
-    goto/16 :goto_17e
-
-    .line 1005
-    .restart local v19    # "leftWidthNeeded":F
-    .restart local v23    # "pos":I
-    :cond_282
-    move-object/from16 v0, v17
-
-    iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
-
-    move/from16 v27, v0
-
-    move/from16 v0, v23
-
-    move/from16 v1, v27
-
-    if-ne v0, v1, :cond_2d2
-
-    move-object/from16 v0, v17
-
-    iget-boolean v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->scrolling:Z
-
-    move/from16 v27, v0
-
-    if-nez v27, :cond_2d2
-
-    .line 1006
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
-
-    move-object/from16 v27, v0
-
-    move-object/from16 v0, v27
-
-    move/from16 v1, v18
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
-
-    .line 1007
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
-
-    move-object/from16 v27, v0
-
-    move-object/from16 v0, v17
-
-    iget-object v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->object:Ljava/lang/Object;
-
-    move-object/from16 v28, v0
-
-    move-object/from16 v0, v27
-
-    move-object/from16 v1, p0
-
-    move/from16 v2, v23
-
-    move-object/from16 v3, v28
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/support/v4/view/PagerAdapter;->destroyItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
-
-    .line 1012
-    add-int/lit8 v18, v18, -0x1
-
-    .line 1013
-    add-int/lit8 v8, v8, -0x1
-
-    .line 1014
-    if-ltz v18, :cond_2d6
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
-
-    move-object/from16 v27, v0
-
-    move-object/from16 v0, v27
-
-    move/from16 v1, v18
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v27
-
-    check-cast v27, Landroid/support/v4/view/ViewPager$ItemInfo;
-
-    move-object/from16 v17, v27
-
-    .line 1000
-    :cond_2d2
-    :goto_2d2
-    add-int/lit8 v23, v23, -0x1
-
-    goto/16 :goto_186
-
-    .line 1014
-    :cond_2d6
-    const/16 v17, 0x0
-
-    goto :goto_2d2
-
-    .line 1016
-    :cond_2d9
-    if-eqz v17, :cond_309
-
-    move-object/from16 v0, v17
-
-    iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
-
-    move/from16 v27, v0
-
-    move/from16 v0, v23
-
-    move/from16 v1, v27
-
-    if-ne v0, v1, :cond_309
-
-    .line 1017
-    move-object/from16 v0, v17
-
-    iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
-
-    move/from16 v27, v0
-
-    add-float v13, v13, v27
-
-    .line 1018
-    add-int/lit8 v18, v18, -0x1
-
-    .line 1019
-    if-ltz v18, :cond_306
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
-
-    move-object/from16 v27, v0
-
-    move-object/from16 v0, v27
-
-    move/from16 v1, v18
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v27
-
-    check-cast v27, Landroid/support/v4/view/ViewPager$ItemInfo;
-
-    move-object/from16 v17, v27
-
-    :goto_305
-    goto :goto_2d2
-
-    :cond_306
-    const/16 v17, 0x0
-
-    goto :goto_305
-
-    .line 1021
-    :cond_309
-    add-int/lit8 v27, v18, 0x1
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, v23
-
-    move/from16 v2, v27
-
-    invoke-virtual {v0, v1, v2}, Landroid/support/v4/view/ViewPager;->addNewItem(II)Landroid/support/v4/view/ViewPager$ItemInfo;
-
-    move-result-object v17
-
-    .line 1022
-    move-object/from16 v0, v17
-
-    iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
-
-    move/from16 v27, v0
-
-    add-float v13, v13, v27
-
-    .line 1023
-    add-int/lit8 v8, v8, 0x1
-
-    .line 1024
-    if-ltz v18, :cond_334
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
-
-    move-object/from16 v27, v0
-
-    move-object/from16 v0, v27
-
-    move/from16 v1, v18
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v27
-
-    check-cast v27, Landroid/support/v4/view/ViewPager$ItemInfo;
-
-    move-object/from16 v17, v27
-
-    :goto_333
-    goto :goto_2d2
-
-    :cond_334
-    const/16 v17, 0x0
-
-    goto :goto_333
-
-    .line 1031
-    .restart local v14    # "extraWidthRight":F
-    :cond_337
-    const/16 v17, 0x0
-
-    goto/16 :goto_1c0
-
-    .line 1032
-    :cond_33b
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getPaddingRight()I
 
     move-result v27
 
@@ -10076,395 +9925,656 @@
 
     div-float v27, v27, v28
 
-    const/high16 v28, 0x40000000
+    add-float v18, v26, v27
 
-    add-float v25, v27, v28
+    goto/16 :goto_171
 
-    goto/16 :goto_1c4
-
-    .line 1039
-    .restart local v25    # "rightWidthNeeded":F
-    :cond_34f
-    move-object/from16 v0, v17
+    .line 1109
+    .restart local v18    # "leftWidthNeeded":F
+    .restart local v22    # "pos":I
+    :cond_26e
+    move-object/from16 v0, v16
 
     iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
-    move/from16 v27, v0
+    move/from16 v26, v0
 
-    move/from16 v0, v23
+    move/from16 v0, v22
 
-    move/from16 v1, v27
+    move/from16 v1, v26
 
-    if-ne v0, v1, :cond_3a9
+    if-ne v0, v1, :cond_2be
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v16
 
     iget-boolean v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->scrolling:Z
 
-    move/from16 v27, v0
+    move/from16 v26, v0
 
-    if-nez v27, :cond_3a9
+    if-nez v26, :cond_2be
 
-    .line 1040
+    .line 1110
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
-    move-object/from16 v27, v0
+    move-object/from16 v26, v0
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v26
 
-    move/from16 v1, v18
+    move/from16 v1, v17
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 1041
+    .line 1111
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
-    move-object/from16 v27, v0
+    move-object/from16 v26, v0
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v16
 
     iget-object v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->object:Ljava/lang/Object;
 
-    move-object/from16 v28, v0
+    move-object/from16 v27, v0
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v26
 
     move-object/from16 v1, p0
 
-    move/from16 v2, v23
+    move/from16 v2, v22
 
-    move-object/from16 v3, v28
+    move-object/from16 v3, v27
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/support/v4/view/PagerAdapter;->destroyItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
 
-    .line 1046
-    move-object/from16 v0, p0
+    .line 1116
+    add-int/lit8 v17, v17, -0x1
 
-    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
+    .line 1117
+    add-int/lit8 v8, v8, -0x1
 
-    move-object/from16 v27, v0
-
-    invoke-virtual/range {v27 .. v27}, Ljava/util/ArrayList;->size()I
-
-    move-result v27
-
-    move/from16 v0, v18
-
-    move/from16 v1, v27
-
-    if-ge v0, v1, :cond_3ad
+    .line 1118
+    if-ltz v17, :cond_2c2
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
-    move-object/from16 v27, v0
+    move-object/from16 v26, v0
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v26
 
-    move/from16 v1, v18
+    move/from16 v1, v17
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v27
+    move-result-object v26
 
-    check-cast v27, Landroid/support/v4/view/ViewPager$ItemInfo;
+    check-cast v26, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    move-object/from16 v17, v27
+    move-object/from16 v16, v26
 
-    .line 1034
-    :cond_3a9
-    :goto_3a9
-    add-int/lit8 v23, v23, 0x1
+    .line 1104
+    :cond_2be
+    :goto_2be
+    add-int/lit8 v22, v22, -0x1
 
-    goto/16 :goto_1cc
+    goto/16 :goto_179
 
-    .line 1046
-    :cond_3ad
-    const/16 v17, 0x0
+    .line 1118
+    :cond_2c2
+    const/16 v16, 0x0
 
-    goto :goto_3a9
+    goto :goto_2be
 
-    .line 1048
-    :cond_3b0
-    if-eqz v17, :cond_3ee
+    .line 1120
+    :cond_2c5
+    if-eqz v16, :cond_2f5
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v16
 
     iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
-    move/from16 v27, v0
+    move/from16 v26, v0
 
-    move/from16 v0, v23
+    move/from16 v0, v22
 
-    move/from16 v1, v27
+    move/from16 v1, v26
 
-    if-ne v0, v1, :cond_3ee
+    if-ne v0, v1, :cond_2f5
 
-    .line 1049
-    move-object/from16 v0, v17
+    .line 1121
+    move-object/from16 v0, v16
 
     iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
 
-    move/from16 v27, v0
+    move/from16 v26, v0
 
-    add-float v14, v14, v27
+    add-float v13, v13, v26
 
-    .line 1050
-    add-int/lit8 v18, v18, 0x1
+    .line 1122
+    add-int/lit8 v17, v17, -0x1
 
-    .line 1051
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
-
-    move-object/from16 v27, v0
-
-    invoke-virtual/range {v27 .. v27}, Ljava/util/ArrayList;->size()I
-
-    move-result v27
-
-    move/from16 v0, v18
-
-    move/from16 v1, v27
-
-    if-ge v0, v1, :cond_3eb
+    .line 1123
+    if-ltz v17, :cond_2f2
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
-    move-object/from16 v27, v0
+    move-object/from16 v26, v0
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v26
 
-    move/from16 v1, v18
+    move/from16 v1, v17
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v27
+    move-result-object v26
 
-    check-cast v27, Landroid/support/v4/view/ViewPager$ItemInfo;
+    check-cast v26, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    move-object/from16 v17, v27
+    move-object/from16 v16, v26
 
-    :goto_3ea
-    goto :goto_3a9
+    :goto_2f1
+    goto :goto_2be
 
-    :cond_3eb
-    const/16 v17, 0x0
+    :cond_2f2
+    const/16 v16, 0x0
 
-    goto :goto_3ea
+    goto :goto_2f1
 
-    .line 1053
-    :cond_3ee
+    .line 1125
+    :cond_2f5
+    add-int/lit8 v26, v17, 0x1
+
     move-object/from16 v0, p0
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
-    move/from16 v2, v18
+    move/from16 v2, v26
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/view/ViewPager;->addNewItem(II)Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    move-result-object v17
+    move-result-object v16
 
-    .line 1054
-    add-int/lit8 v18, v18, 0x1
-
-    .line 1055
-    move-object/from16 v0, v17
+    .line 1126
+    move-object/from16 v0, v16
 
     iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
 
-    move/from16 v27, v0
+    move/from16 v26, v0
 
-    add-float v14, v14, v27
+    add-float v13, v13, v26
 
-    .line 1056
-    move-object/from16 v0, p0
+    .line 1127
+    add-int/lit8 v8, v8, 0x1
 
-    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
-
-    move-object/from16 v27, v0
-
-    invoke-virtual/range {v27 .. v27}, Ljava/util/ArrayList;->size()I
-
-    move-result v27
-
-    move/from16 v0, v18
-
-    move/from16 v1, v27
-
-    if-ge v0, v1, :cond_425
+    .line 1128
+    if-ltz v17, :cond_320
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
-    move-object/from16 v27, v0
+    move-object/from16 v26, v0
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v26
 
-    move/from16 v1, v18
+    move/from16 v1, v17
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v27
+    move-result-object v26
 
-    check-cast v27, Landroid/support/v4/view/ViewPager$ItemInfo;
+    check-cast v26, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    move-object/from16 v17, v27
+    move-object/from16 v16, v26
 
-    :goto_424
-    goto :goto_3a9
+    :goto_31f
+    goto :goto_2be
 
-    :cond_425
-    const/16 v17, 0x0
+    :cond_320
+    const/16 v16, 0x0
 
-    goto :goto_424
+    goto :goto_31f
 
-    .line 1071
+    .line 1135
+    .restart local v14    # "extraWidthRight":F
+    :cond_323
+    const/16 v16, 0x0
+
+    goto/16 :goto_1b3
+
+    .line 1136
+    :cond_327
+    invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getPaddingRight()I
+
+    move-result v26
+
+    move/from16 v0, v26
+
+    int-to-float v0, v0
+
+    move/from16 v26, v0
+
+    int-to-float v0, v7
+
+    move/from16 v27, v0
+
+    div-float v26, v26, v27
+
+    const/high16 v27, 0x40000000
+
+    add-float v24, v26, v27
+
+    goto/16 :goto_1b7
+
+    .line 1143
+    .restart local v24    # "rightWidthNeeded":F
+    :cond_33b
+    move-object/from16 v0, v16
+
+    iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
+
+    move/from16 v26, v0
+
+    move/from16 v0, v22
+
+    move/from16 v1, v26
+
+    if-ne v0, v1, :cond_395
+
+    move-object/from16 v0, v16
+
+    iget-boolean v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->scrolling:Z
+
+    move/from16 v26, v0
+
+    if-nez v26, :cond_395
+
+    .line 1144
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+
+    .line 1145
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v16
+
+    iget-object v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->object:Ljava/lang/Object;
+
+    move-object/from16 v27, v0
+
+    move-object/from16 v0, v26
+
+    move-object/from16 v1, p0
+
+    move/from16 v2, v22
+
+    move-object/from16 v3, v27
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/support/v4/view/PagerAdapter;->destroyItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
+
+    .line 1150
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
+
+    move-object/from16 v26, v0
+
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
+
+    move-result v26
+
+    move/from16 v0, v17
+
+    move/from16 v1, v26
+
+    if-ge v0, v1, :cond_399
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v26
+
+    check-cast v26, Landroid/support/v4/view/ViewPager$ItemInfo;
+
+    move-object/from16 v16, v26
+
+    .line 1138
+    :cond_395
+    :goto_395
+    add-int/lit8 v22, v22, 0x1
+
+    goto/16 :goto_1bf
+
+    .line 1150
+    :cond_399
+    const/16 v16, 0x0
+
+    goto :goto_395
+
+    .line 1152
+    :cond_39c
+    if-eqz v16, :cond_3da
+
+    move-object/from16 v0, v16
+
+    iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
+
+    move/from16 v26, v0
+
+    move/from16 v0, v22
+
+    move/from16 v1, v26
+
+    if-ne v0, v1, :cond_3da
+
+    .line 1153
+    move-object/from16 v0, v16
+
+    iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
+
+    move/from16 v26, v0
+
+    add-float v14, v14, v26
+
+    .line 1154
+    add-int/lit8 v17, v17, 0x1
+
+    .line 1155
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
+
+    move-object/from16 v26, v0
+
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
+
+    move-result v26
+
+    move/from16 v0, v17
+
+    move/from16 v1, v26
+
+    if-ge v0, v1, :cond_3d7
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v26
+
+    check-cast v26, Landroid/support/v4/view/ViewPager$ItemInfo;
+
+    move-object/from16 v16, v26
+
+    :goto_3d6
+    goto :goto_395
+
+    :cond_3d7
+    const/16 v16, 0x0
+
+    goto :goto_3d6
+
+    .line 1157
+    :cond_3da
+    move-object/from16 v0, p0
+
+    move/from16 v1, v22
+
+    move/from16 v2, v17
+
+    invoke-virtual {v0, v1, v2}, Landroid/support/v4/view/ViewPager;->addNewItem(II)Landroid/support/v4/view/ViewPager$ItemInfo;
+
+    move-result-object v16
+
+    .line 1158
+    add-int/lit8 v17, v17, 0x1
+
+    .line 1159
+    move-object/from16 v0, v16
+
+    iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
+
+    move/from16 v26, v0
+
+    add-float v14, v14, v26
+
+    .line 1160
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
+
+    move-object/from16 v26, v0
+
+    invoke-virtual/range {v26 .. v26}, Ljava/util/ArrayList;->size()I
+
+    move-result v26
+
+    move/from16 v0, v17
+
+    move/from16 v1, v26
+
+    if-ge v0, v1, :cond_411
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
+
+    move-object/from16 v26, v0
+
+    move-object/from16 v0, v26
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v26
+
+    check-cast v26, Landroid/support/v4/view/ViewPager$ItemInfo;
+
+    move-object/from16 v16, v26
+
+    :goto_410
+    goto :goto_395
+
+    :cond_411
+    const/16 v16, 0x0
+
+    goto :goto_410
+
+    .line 1175
     .end local v7    # "clientWidth":I
     .end local v13    # "extraWidthLeft":F
     .end local v14    # "extraWidthRight":F
-    .end local v17    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
-    .end local v18    # "itemIndex":I
-    .end local v19    # "leftWidthNeeded":F
-    .end local v23    # "pos":I
-    .end local v25    # "rightWidthNeeded":F
-    :cond_428
-    const/16 v27, 0x0
+    .end local v16    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
+    .end local v17    # "itemIndex":I
+    .end local v18    # "leftWidthNeeded":F
+    .end local v22    # "pos":I
+    .end local v24    # "rightWidthNeeded":F
+    :cond_414
+    const/16 v26, 0x0
 
-    goto/16 :goto_1f3
+    goto/16 :goto_1e6
 
-    .line 1091
+    .line 1195
     .restart local v6    # "childCount":I
-    .restart local v16    # "i":I
-    :cond_42c
+    .restart local v15    # "i":I
+    :cond_418
     invoke-direct/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->sortChildDrawingOrder()V
 
-    .line 1093
+    .line 1197
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->hasFocus()Z
 
-    move-result v27
+    move-result v26
 
-    if-eqz v27, :cond_3c
+    if-eqz v26, :cond_2d
 
-    .line 1094
+    .line 1198
     invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->findFocus()Landroid/view/View;
 
     move-result-object v10
 
-    .line 1095
+    .line 1199
     .local v10, "currentFocused":Landroid/view/View;
-    if-eqz v10, :cond_48c
+    if-eqz v10, :cond_477
 
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v10}, Landroid/support/v4/view/ViewPager;->infoForAnyChild(Landroid/view/View;)Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    move-result-object v17
+    move-result-object v16
 
-    .line 1096
-    .restart local v17    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
-    :goto_441
-    if-eqz v17, :cond_455
+    .line 1200
+    .restart local v16    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
+    :goto_42d
+    if-eqz v16, :cond_441
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v16
 
     iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
-    move/from16 v27, v0
+    move/from16 v26, v0
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
-    move/from16 v28, v0
+    move/from16 v27, v0
 
-    move/from16 v0, v27
-
-    move/from16 v1, v28
-
-    if-eq v0, v1, :cond_3c
-
-    .line 1097
-    :cond_455
-    const/16 v16, 0x0
-
-    :goto_457
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getChildCount()I
-
-    move-result v27
-
-    move/from16 v0, v16
+    move/from16 v0, v26
 
     move/from16 v1, v27
 
-    if-ge v0, v1, :cond_3c
+    if-eq v0, v1, :cond_2d
 
-    .line 1098
+    .line 1201
+    :cond_441
+    const/4 v15, 0x0
+
+    :goto_442
+    invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getChildCount()I
+
+    move-result v26
+
+    move/from16 v0, v26
+
+    if-ge v15, v0, :cond_2d
+
+    .line 1202
     move-object/from16 v0, p0
 
-    move/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v15}, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
-    .line 1099
+    .line 1203
     .restart local v5    # "child":Landroid/view/View;
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v5}, Landroid/support/v4/view/ViewPager;->infoForChild(Landroid/view/View;)Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    move-result-object v17
+    move-result-object v16
 
-    .line 1100
-    if-eqz v17, :cond_489
+    .line 1204
+    if-eqz v16, :cond_474
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v16
 
     iget v0, v0, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
 
-    move/from16 v27, v0
+    move/from16 v26, v0
 
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
-    move/from16 v28, v0
+    move/from16 v27, v0
 
-    move/from16 v0, v27
+    move/from16 v0, v26
 
-    move/from16 v1, v28
+    move/from16 v1, v27
 
-    if-ne v0, v1, :cond_489
+    if-ne v0, v1, :cond_474
 
-    .line 1101
-    invoke-virtual {v5, v15}, Landroid/view/View;->requestFocus(I)Z
+    .line 1205
+    const/16 v26, 0x2
 
-    move-result v27
+    move/from16 v0, v26
 
-    if-nez v27, :cond_3c
+    invoke-virtual {v5, v0}, Landroid/view/View;->requestFocus(I)Z
 
-    .line 1097
-    :cond_489
-    add-int/lit8 v16, v16, 0x1
+    move-result v26
 
-    goto :goto_457
+    if-nez v26, :cond_2d
 
-    .line 1095
+    .line 1201
+    :cond_474
+    add-int/lit8 v15, v15, 0x1
+
+    goto :goto_442
+
+    .line 1199
     .end local v5    # "child":Landroid/view/View;
-    .end local v17    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
-    :cond_48c
-    const/16 v17, 0x0
+    .end local v16    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
+    :cond_477
+    const/16 v16, 0x0
 
-    goto :goto_441
+    goto :goto_42d
+.end method
+
+.method public removeOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
+    .registers 3
+    .param p1, "listener"    # Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+
+    .prologue
+    .line 675
+    iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListeners:Ljava/util/List;
+
+    if-eqz v0, :cond_9
+
+    .line 676
+    iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListeners:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    .line 678
+    :cond_9
+    return-void
 .end method
 
 .method public removeView(Landroid/view/View;)V
@@ -10472,19 +10582,19 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 1323
+    .line 1427
     iget-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mInLayout:Z
 
     if-eqz v0, :cond_8
 
-    .line 1324
+    .line 1428
     invoke-virtual {p0, p1}, Landroid/support/v4/view/ViewPager;->removeViewInLayout(Landroid/view/View;)V
 
-    .line 1328
+    .line 1432
     :goto_7
     return-void
 
-    .line 1326
+    .line 1430
     :cond_8
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
@@ -10502,37 +10612,35 @@
 
     const/4 v7, 0x0
 
-    .line 413
+    .line 469
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
-    if-eqz v4, :cond_42
+    if-eqz v4, :cond_40
 
-    .line 414
+    .line 470
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
-    iget-object v5, p0, Landroid/support/v4/view/ViewPager;->mObserver:Landroid/support/v4/view/ViewPager$PagerObserver;
+    invoke-virtual {v4, v8}, Landroid/support/v4/view/PagerAdapter;->setViewPagerObserver(Landroid/database/DataSetObserver;)V
 
-    invoke-virtual {v4, v5}, Landroid/support/v4/view/PagerAdapter;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
-
-    .line 415
+    .line 471
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     invoke-virtual {v4, p0}, Landroid/support/v4/view/PagerAdapter;->startUpdate(Landroid/view/ViewGroup;)V
 
-    .line 416
+    .line 472
     const/4 v0, 0x0
 
     .local v0, "i":I
-    :goto_14
+    :goto_12
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    if-ge v0, v4, :cond_30
+    if-ge v0, v4, :cond_2e
 
-    .line 417
+    .line 473
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -10541,7 +10649,7 @@
 
     check-cast v1, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    .line 418
+    .line 474
     .local v1, "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
@@ -10551,80 +10659,80 @@
 
     invoke-virtual {v4, p0, v5, v6}, Landroid/support/v4/view/PagerAdapter;->destroyItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
 
-    .line 416
+    .line 472
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_14
+    goto :goto_12
 
-    .line 420
+    .line 476
     .end local v1    # "ii":Landroid/support/v4/view/ViewPager$ItemInfo;
-    :cond_30
+    :cond_2e
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     invoke-virtual {v4, p0}, Landroid/support/v4/view/PagerAdapter;->finishUpdate(Landroid/view/ViewGroup;)V
 
-    .line 421
+    .line 477
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 422
+    .line 478
     invoke-direct {p0}, Landroid/support/v4/view/ViewPager;->removeNonDecorViews()V
 
-    .line 423
+    .line 479
     iput v7, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
-    .line 424
+    .line 480
     invoke-virtual {p0, v7, v7}, Landroid/support/v4/view/ViewPager;->scrollTo(II)V
 
-    .line 427
+    .line 483
     .end local v0    # "i":I
-    :cond_42
+    :cond_40
     iget-object v2, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
-    .line 428
+    .line 484
     .local v2, "oldAdapter":Landroid/support/v4/view/PagerAdapter;
     iput-object p1, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
-    .line 429
+    .line 485
     iput v7, p0, Landroid/support/v4/view/ViewPager;->mExpectedAdapterCount:I
 
-    .line 431
+    .line 487
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
-    if-eqz v4, :cond_85
+    if-eqz v4, :cond_83
 
-    .line 432
+    .line 488
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mObserver:Landroid/support/v4/view/ViewPager$PagerObserver;
 
-    if-nez v4, :cond_57
+    if-nez v4, :cond_55
 
-    .line 433
+    .line 489
     new-instance v4, Landroid/support/v4/view/ViewPager$PagerObserver;
 
     invoke-direct {v4, p0, v8}, Landroid/support/v4/view/ViewPager$PagerObserver;-><init>(Landroid/support/v4/view/ViewPager;Landroid/support/v4/view/ViewPager$1;)V
 
     iput-object v4, p0, Landroid/support/v4/view/ViewPager;->mObserver:Landroid/support/v4/view/ViewPager$PagerObserver;
 
-    .line 435
-    :cond_57
+    .line 491
+    :cond_55
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     iget-object v5, p0, Landroid/support/v4/view/ViewPager;->mObserver:Landroid/support/v4/view/ViewPager$PagerObserver;
 
-    invoke-virtual {v4, v5}, Landroid/support/v4/view/PagerAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
+    invoke-virtual {v4, v5}, Landroid/support/v4/view/PagerAdapter;->setViewPagerObserver(Landroid/database/DataSetObserver;)V
 
-    .line 436
+    .line 492
     iput-boolean v7, p0, Landroid/support/v4/view/ViewPager;->mPopulatePending:Z
 
-    .line 437
+    .line 493
     iget-boolean v3, p0, Landroid/support/v4/view/ViewPager;->mFirstLayout:Z
 
-    .line 438
+    .line 494
     .local v3, "wasFirstLayout":Z
     iput-boolean v9, p0, Landroid/support/v4/view/ViewPager;->mFirstLayout:Z
 
-    .line 439
+    .line 495
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     invoke-virtual {v4}, Landroid/support/v4/view/PagerAdapter;->getCount()I
@@ -10633,12 +10741,12 @@
 
     iput v4, p0, Landroid/support/v4/view/ViewPager;->mExpectedAdapterCount:I
 
-    .line 440
+    .line 496
     iget v4, p0, Landroid/support/v4/view/ViewPager;->mRestoredCurItem:I
 
-    if-ltz v4, :cond_91
+    if-ltz v4, :cond_8f
 
-    .line 441
+    .line 497
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     iget-object v5, p0, Landroid/support/v4/view/ViewPager;->mRestoredAdapterState:Landroid/os/Parcelable;
@@ -10647,56 +10755,56 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/support/v4/view/PagerAdapter;->restoreState(Landroid/os/Parcelable;Ljava/lang/ClassLoader;)V
 
-    .line 442
+    .line 498
     iget v4, p0, Landroid/support/v4/view/ViewPager;->mRestoredCurItem:I
 
     invoke-virtual {p0, v4, v7, v9}, Landroid/support/v4/view/ViewPager;->setCurrentItemInternal(IZZ)V
 
-    .line 443
+    .line 499
     const/4 v4, -0x1
 
     iput v4, p0, Landroid/support/v4/view/ViewPager;->mRestoredCurItem:I
 
-    .line 444
+    .line 500
     iput-object v8, p0, Landroid/support/v4/view/ViewPager;->mRestoredAdapterState:Landroid/os/Parcelable;
 
-    .line 445
+    .line 501
     iput-object v8, p0, Landroid/support/v4/view/ViewPager;->mRestoredClassLoader:Ljava/lang/ClassLoader;
 
-    .line 453
+    .line 509
     .end local v3    # "wasFirstLayout":Z
-    :cond_85
-    :goto_85
+    :cond_83
+    :goto_83
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mAdapterChangeListener:Landroid/support/v4/view/ViewPager$OnAdapterChangeListener;
 
-    if-eqz v4, :cond_90
+    if-eqz v4, :cond_8e
 
-    if-eq v2, p1, :cond_90
+    if-eq v2, p1, :cond_8e
 
-    .line 454
+    .line 510
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mAdapterChangeListener:Landroid/support/v4/view/ViewPager$OnAdapterChangeListener;
 
     invoke-interface {v4, v2, p1}, Landroid/support/v4/view/ViewPager$OnAdapterChangeListener;->onAdapterChanged(Landroid/support/v4/view/PagerAdapter;Landroid/support/v4/view/PagerAdapter;)V
 
-    .line 456
-    :cond_90
+    .line 512
+    :cond_8e
     return-void
 
-    .line 446
+    .line 502
     .restart local v3    # "wasFirstLayout":Z
-    :cond_91
-    if-nez v3, :cond_97
+    :cond_8f
+    if-nez v3, :cond_95
 
-    .line 447
+    .line 503
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->populate()V
 
-    goto :goto_85
+    goto :goto_83
 
-    .line 449
-    :cond_97
+    .line 505
+    :cond_95
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->requestLayout()V
 
-    goto :goto_85
+    goto :goto_83
 .end method
 
 .method setChildrenDrawingOrderEnabledCompat(Z)V
@@ -10704,23 +10812,23 @@
     .param p1, "enable"    # Z
 
     .prologue
-    .line 628
+    .line 717
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v2, 0x7
 
-    if-lt v1, v2, :cond_2a
+    if-lt v1, v2, :cond_2b
 
-    .line 629
+    .line 718
     iget-object v1, p0, Landroid/support/v4/view/ViewPager;->mSetChildrenDrawingOrderEnabled:Ljava/lang/reflect/Method;
 
-    if-nez v1, :cond_1b
+    if-nez v1, :cond_1c
 
-    .line 631
+    .line 720
     :try_start_9
     const-class v1, Landroid/view/ViewGroup;
 
-    const-string v2, "setChildrenDrawingOrderEnabled"
+    const-string/jumbo v2, "setChildrenDrawingOrderEnabled"
 
     const/4 v3, 0x1
 
@@ -10737,13 +10845,13 @@
     move-result-object v1
 
     iput-object v1, p0, Landroid/support/v4/view/ViewPager;->mSetChildrenDrawingOrderEnabled:Ljava/lang/reflect/Method;
-    :try_end_1b
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_9 .. :try_end_1b} :catch_2b
+    :try_end_1c
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_9 .. :try_end_1c} :catch_2c
 
-    .line 638
-    :cond_1b
-    :goto_1b
-    :try_start_1b
+    .line 727
+    :cond_1c
+    :goto_1c
+    :try_start_1c
     iget-object v1, p0, Landroid/support/v4/view/ViewPager;->mSetChildrenDrawingOrderEnabled:Ljava/lang/reflect/Method;
 
     const/4 v2, 0x1
@@ -10759,42 +10867,42 @@
     aput-object v4, v2, v3
 
     invoke-virtual {v1, p0, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_2a
-    .catch Ljava/lang/Exception; {:try_start_1b .. :try_end_2a} :catch_34
+    :try_end_2b
+    .catch Ljava/lang/Exception; {:try_start_1c .. :try_end_2b} :catch_37
 
-    .line 643
-    :cond_2a
-    :goto_2a
+    .line 732
+    :cond_2b
+    :goto_2b
     return-void
 
-    .line 633
-    :catch_2b
+    .line 722
+    :catch_2c
     move-exception v0
 
-    .line 634
+    .line 723
     .local v0, "e":Ljava/lang/NoSuchMethodException;
-    const-string v1, "ViewPager"
+    const-string/jumbo v1, "ViewPager"
 
-    const-string v2, "Can\'t find setChildrenDrawingOrderEnabled"
+    const-string/jumbo v2, "Can\'t find setChildrenDrawingOrderEnabled"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1b
+    goto :goto_1c
 
-    .line 639
+    .line 728
     .end local v0    # "e":Ljava/lang/NoSuchMethodException;
-    :catch_34
+    :catch_37
     move-exception v0
 
-    .line 640
+    .line 729
     .local v0, "e":Ljava/lang/Exception;
-    const-string v1, "ViewPager"
+    const-string/jumbo v1, "ViewPager"
 
-    const-string v2, "Error changing children drawing order"
+    const-string/jumbo v2, "Error changing children drawing order"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_2a
+    goto :goto_2b
 .end method
 
 .method public setCurrentItem(I)V
@@ -10804,10 +10912,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 494
+    .line 550
     iput-boolean v1, p0, Landroid/support/v4/view/ViewPager;->mPopulatePending:Z
 
-    .line 495
+    .line 551
     iget-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mFirstLayout:Z
 
     if-nez v0, :cond_c
@@ -10817,13 +10925,13 @@
     :goto_8
     invoke-virtual {p0, p1, v0, v1}, Landroid/support/v4/view/ViewPager;->setCurrentItemInternal(IZZ)V
 
-    .line 496
+    .line 552
     return-void
 
     :cond_c
     move v0, v1
 
-    .line 495
+    .line 551
     goto :goto_8
 .end method
 
@@ -10835,13 +10943,13 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 505
+    .line 561
     iput-boolean v0, p0, Landroid/support/v4/view/ViewPager;->mPopulatePending:Z
 
-    .line 506
+    .line 562
     invoke-virtual {p0, p1, p2, v0}, Landroid/support/v4/view/ViewPager;->setCurrentItemInternal(IZZ)V
 
-    .line 507
+    .line 563
     return-void
 .end method
 
@@ -10852,12 +10960,12 @@
     .param p3, "always"    # Z
 
     .prologue
-    .line 514
+    .line 570
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, p3, v0}, Landroid/support/v4/view/ViewPager;->setCurrentItemInternal(IZZI)V
 
-    .line 515
+    .line 571
     return-void
 .end method
 
@@ -10873,7 +10981,7 @@
 
     const/4 v4, 0x0
 
-    .line 518
+    .line 574
     iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     if-eqz v3, :cond_e
@@ -10886,15 +10994,15 @@
 
     if-gtz v3, :cond_12
 
-    .line 519
+    .line 575
     :cond_e
     invoke-direct {p0, v4}, Landroid/support/v4/view/ViewPager;->setScrollingCacheEnabled(Z)V
 
-    .line 558
+    .line 611
     :goto_11
     return-void
 
-    .line 522
+    .line 578
     :cond_12
     if-nez p3, :cond_24
 
@@ -10910,24 +11018,24 @@
 
     if-eqz v3, :cond_24
 
-    .line 523
+    .line 579
     invoke-direct {p0, v4}, Landroid/support/v4/view/ViewPager;->setScrollingCacheEnabled(Z)V
 
     goto :goto_11
 
-    .line 527
+    .line 583
     :cond_24
     if-gez p1, :cond_49
 
-    .line 528
+    .line 584
     const/4 p1, 0x0
 
-    .line 532
+    .line 588
     :cond_27
     :goto_27
     iget v2, p0, Landroid/support/v4/view/ViewPager;->mOffscreenPageLimit:I
 
-    .line 533
+    .line 589
     .local v2, "pageLimit":I
     iget v3, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
@@ -10941,7 +11049,7 @@
 
     if-ge p1, v3, :cond_5a
 
-    .line 537
+    .line 593
     :cond_33
     const/4 v1, 0x0
 
@@ -10955,7 +11063,7 @@
 
     if-ge v1, v3, :cond_5a
 
-    .line 538
+    .line 594
     iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -10966,12 +11074,12 @@
 
     iput-boolean v0, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->scrolling:Z
 
-    .line 537
+    .line 593
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_34
 
-    .line 529
+    .line 585
     .end local v1    # "i":I
     .end local v2    # "pageLimit":I
     :cond_49
@@ -10983,7 +11091,7 @@
 
     if-lt p1, v3, :cond_27
 
-    .line 530
+    .line 586
     iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
     invoke-virtual {v3}, Landroid/support/v4/view/PagerAdapter;->getCount()I
@@ -10994,67 +11102,48 @@
 
     goto :goto_27
 
-    .line 541
+    .line 597
     .restart local v2    # "pageLimit":I
     :cond_5a
     iget v3, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
-    if-eq v3, p1, :cond_7e
+    if-eq v3, p1, :cond_6d
 
-    .line 543
+    .line 599
     .local v0, "dispatchSelected":Z
     :goto_5e
     iget-boolean v3, p0, Landroid/support/v4/view/ViewPager;->mFirstLayout:Z
 
-    if-eqz v3, :cond_80
-
-    .line 546
-    iput p1, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
-
-    .line 547
-    if-eqz v0, :cond_6f
-
-    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
     if-eqz v3, :cond_6f
 
-    .line 548
-    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+    .line 602
+    iput p1, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
-    invoke-interface {v3, p1}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageSelected(I)V
+    .line 603
+    if-eqz v0, :cond_69
 
-    .line 550
-    :cond_6f
-    if-eqz v0, :cond_7a
+    .line 604
+    invoke-direct {p0, p1}, Landroid/support/v4/view/ViewPager;->dispatchOnPageSelected(I)V
 
-    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mInternalPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    if-eqz v3, :cond_7a
-
-    .line 551
-    iget-object v3, p0, Landroid/support/v4/view/ViewPager;->mInternalPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
-
-    invoke-interface {v3, p1}, Landroid/support/v4/view/ViewPager$OnPageChangeListener;->onPageSelected(I)V
-
-    .line 553
-    :cond_7a
+    .line 606
+    :cond_69
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->requestLayout()V
 
     goto :goto_11
 
     .end local v0    # "dispatchSelected":Z
-    :cond_7e
+    :cond_6d
     move v0, v4
 
-    .line 541
+    .line 597
     goto :goto_5e
 
-    .line 555
+    .line 608
     .restart local v0    # "dispatchSelected":Z
-    :cond_80
+    :cond_6f
     invoke-virtual {p0, p1}, Landroid/support/v4/view/ViewPager;->populate(I)V
 
-    .line 556
+    .line 609
     invoke-direct {p0, p1, p2, p4, v0}, Landroid/support/v4/view/ViewPager;->scrollToItem(IZIZ)V
 
     goto :goto_11
@@ -11065,14 +11154,14 @@
     .param p1, "listener"    # Landroid/support/v4/view/ViewPager$OnPageChangeListener;
 
     .prologue
-    .line 659
+    .line 748
     iget-object v0, p0, Landroid/support/v4/view/ViewPager;->mInternalPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
 
-    .line 660
+    .line 749
     .local v0, "oldListener":Landroid/support/v4/view/ViewPager$OnPageChangeListener;
     iput-object p1, p0, Landroid/support/v4/view/ViewPager;->mInternalPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
 
-    .line 661
+    .line 750
     return-object v0
 .end method
 
@@ -11083,17 +11172,17 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 693
-    if-ge p1, v3, :cond_26
+    .line 782
+    if-ge p1, v3, :cond_29
 
-    .line 694
-    const-string v0, "ViewPager"
+    .line 783
+    const-string/jumbo v0, "ViewPager"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "Requested offscreen page limit "
+    const-string/jumbo v2, "Requested offscreen page limit "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -11103,7 +11192,7 @@
 
     move-result-object v1
 
-    const-string v2, " too small; defaulting to "
+    const-string/jumbo v2, " too small; defaulting to "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -11119,23 +11208,23 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 696
+    .line 785
     const/4 p1, 0x1
 
-    .line 698
-    :cond_26
+    .line 787
+    :cond_29
     iget v0, p0, Landroid/support/v4/view/ViewPager;->mOffscreenPageLimit:I
 
-    if-eq p1, v0, :cond_2f
+    if-eq p1, v0, :cond_32
 
-    .line 699
+    .line 788
     iput p1, p0, Landroid/support/v4/view/ViewPager;->mOffscreenPageLimit:I
 
-    .line 700
+    .line 789
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->populate()V
 
-    .line 702
-    :cond_2f
+    .line 791
+    :cond_32
     return-void
 .end method
 
@@ -11144,22 +11233,24 @@
     .param p1, "listener"    # Landroid/support/v4/view/ViewPager$OnAdapterChangeListener;
 
     .prologue
-    .line 479
+    .line 535
     iput-object p1, p0, Landroid/support/v4/view/ViewPager;->mAdapterChangeListener:Landroid/support/v4/view/ViewPager$OnAdapterChangeListener;
 
-    .line 480
+    .line 536
     return-void
 .end method
 
 .method public setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
     .registers 2
     .param p1, "listener"    # Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 597
+    .line 648
     iput-object p1, p0, Landroid/support/v4/view/ViewPager;->mOnPageChangeListener:Landroid/support/v4/view/ViewPager$OnPageChangeListener;
 
-    .line 598
+    .line 649
     return-void
 .end method
 
@@ -11168,35 +11259,38 @@
     .param p1, "marginPixels"    # I
 
     .prologue
-    .line 713
+    .line 802
     iget v0, p0, Landroid/support/v4/view/ViewPager;->mPageMargin:I
 
-    .line 714
+    .line 803
     .local v0, "oldMargin":I
     iput p1, p0, Landroid/support/v4/view/ViewPager;->mPageMargin:I
 
-    .line 716
+    .line 805
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getWidth()I
 
     move-result v1
 
-    .line 717
+    .line 806
     .local v1, "width":I
     invoke-direct {p0, v1, v1, p1, v0}, Landroid/support/v4/view/ViewPager;->recomputeScrollPosition(IIII)V
 
-    .line 719
+    .line 808
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->requestLayout()V
 
-    .line 720
+    .line 809
     return-void
 .end method
 
 .method public setPageMarginDrawable(I)V
     .registers 3
     .param p1, "resId"    # I
+        .annotation build Landroid/support/annotation/DrawableRes;
+        .end annotation
+    .end param
 
     .prologue
-    .line 749
+    .line 838
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -11211,7 +11305,7 @@
 
     invoke-virtual {p0, v0}, Landroid/support/v4/view/ViewPager;->setPageMarginDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 750
+    .line 839
     return-void
 .end method
 
@@ -11220,15 +11314,15 @@
     .param p1, "d"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 737
+    .line 826
     iput-object p1, p0, Landroid/support/v4/view/ViewPager;->mMarginDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 738
+    .line 827
     if-eqz p1, :cond_7
 
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->refreshDrawableState()V
 
-    .line 739
+    .line 828
     :cond_7
     if-nez p1, :cond_11
 
@@ -11237,13 +11331,13 @@
     :goto_a
     invoke-virtual {p0, v0}, Landroid/support/v4/view/ViewPager;->setWillNotDraw(Z)V
 
-    .line 740
+    .line 829
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->invalidate()V
 
-    .line 741
+    .line 830
     return-void
 
-    .line 739
+    .line 828
     :cond_11
     const/4 v0, 0x0
 
@@ -11260,19 +11354,19 @@
 
     const/4 v3, 0x0
 
-    .line 613
+    .line 702
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v5, 0xb
 
     if-lt v4, v5, :cond_24
 
-    .line 614
+    .line 703
     if-eqz p2, :cond_25
 
     move v0, v2
 
-    .line 615
+    .line 704
     .local v0, "hasTransformer":Z
     :goto_b
     iget-object v4, p0, Landroid/support/v4/view/ViewPager;->mPageTransformer:Landroid/support/v4/view/ViewPager$PageTransformer;
@@ -11286,18 +11380,18 @@
 
     move v1, v2
 
-    .line 616
+    .line 705
     .local v1, "needsPopulate":Z
     :goto_13
     iput-object p2, p0, Landroid/support/v4/view/ViewPager;->mPageTransformer:Landroid/support/v4/view/ViewPager$PageTransformer;
 
-    .line 617
+    .line 706
     invoke-virtual {p0, v0}, Landroid/support/v4/view/ViewPager;->setChildrenDrawingOrderEnabledCompat(Z)V
 
-    .line 618
+    .line 707
     if-eqz v0, :cond_2b
 
-    .line 619
+    .line 708
     if-eqz p1, :cond_1d
 
     const/4 v2, 0x2
@@ -11305,13 +11399,13 @@
     :cond_1d
     iput v2, p0, Landroid/support/v4/view/ViewPager;->mDrawingOrder:I
 
-    .line 623
+    .line 712
     :goto_1f
     if-eqz v1, :cond_24
 
     invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->populate()V
 
-    .line 625
+    .line 714
     .end local v0    # "hasTransformer":Z
     .end local v1    # "needsPopulate":Z
     :cond_24
@@ -11320,14 +11414,14 @@
     :cond_25
     move v0, v3
 
-    .line 614
+    .line 703
     goto :goto_b
 
     .restart local v0    # "hasTransformer":Z
     :cond_27
     move v4, v3
 
-    .line 615
+    .line 704
     goto :goto_10
 
     :cond_29
@@ -11335,7 +11429,7 @@
 
     goto :goto_13
 
-    .line 621
+    .line 710
     .restart local v1    # "needsPopulate":Z
     :cond_2b
     iput v3, p0, Landroid/support/v4/view/ViewPager;->mDrawingOrder:I
@@ -11349,162 +11443,256 @@
     .param p2, "y"    # I
 
     .prologue
-    .line 783
+    .line 872
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Landroid/support/v4/view/ViewPager;->smoothScrollTo(III)V
 
-    .line 784
+    .line 873
     return-void
 .end method
 
 .method smoothScrollTo(III)V
-    .registers 19
+    .registers 20
     .param p1, "x"    # I
     .param p2, "y"    # I
     .param p3, "velocity"    # I
 
     .prologue
-    .line 794
-    invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getChildCount()I
+    .line 883
+    invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getChildCount()I
 
     move-result v1
 
-    if-nez v1, :cond_b
+    if-nez v1, :cond_d
 
-    .line 796
+    .line 885
     const/4 v1, 0x0
 
-    invoke-direct {p0, v1}, Landroid/support/v4/view/ViewPager;->setScrollingCacheEnabled(Z)V
+    move-object/from16 v0, p0
 
-    .line 832
-    :goto_a
+    invoke-direct {v0, v1}, Landroid/support/v4/view/ViewPager;->setScrollingCacheEnabled(Z)V
+
+    .line 938
+    :goto_c
     return-void
 
-    .line 799
-    :cond_b
-    invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
+    .line 890
+    :cond_d
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
+
+    if-eqz v1, :cond_57
+
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
+
+    invoke-virtual {v1}, Landroid/widget/Scroller;->isFinished()Z
+
+    move-result v1
+
+    if-nez v1, :cond_57
+
+    const/4 v12, 0x1
+
+    .line 891
+    .local v12, "wasScrolling":Z
+    :goto_1e
+    if-eqz v12, :cond_62
+
+    .line 896
+    move-object/from16 v0, p0
+
+    iget-boolean v1, v0, Landroid/support/v4/view/ViewPager;->mIsScrollStarted:Z
+
+    if-eqz v1, :cond_59
+
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
+
+    invoke-virtual {v1}, Landroid/widget/Scroller;->getCurrX()I
 
     move-result v2
 
-    .line 800
+    .line 898
     .local v2, "sx":I
-    invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->getScrollY()I
+    :goto_2e
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
+
+    invoke-virtual {v1}, Landroid/widget/Scroller;->abortAnimation()V
+
+    .line 899
+    const/4 v1, 0x0
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v1}, Landroid/support/v4/view/ViewPager;->setScrollingCacheEnabled(Z)V
+
+    .line 903
+    :goto_3b
+    invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getScrollY()I
 
     move-result v3
 
-    .line 801
+    .line 904
     .local v3, "sy":I
     sub-int v4, p1, v2
 
-    .line 802
+    .line 905
     .local v4, "dx":I
     sub-int v5, p2, v3
 
-    .line 803
+    .line 906
     .local v5, "dy":I
-    if-nez v4, :cond_27
+    if-nez v4, :cond_67
 
-    if-nez v5, :cond_27
+    if-nez v5, :cond_67
 
-    .line 804
+    .line 907
     const/4 v1, 0x0
 
-    invoke-direct {p0, v1}, Landroid/support/v4/view/ViewPager;->completeScroll(Z)V
+    move-object/from16 v0, p0
 
-    .line 805
-    invoke-virtual {p0}, Landroid/support/v4/view/ViewPager;->populate()V
+    invoke-direct {v0, v1}, Landroid/support/v4/view/ViewPager;->completeScroll(Z)V
 
-    .line 806
+    .line 908
+    invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->populate()V
+
+    .line 909
     const/4 v1, 0x0
 
-    invoke-direct {p0, v1}, Landroid/support/v4/view/ViewPager;->setScrollState(I)V
+    move-object/from16 v0, p0
 
-    goto :goto_a
+    invoke-direct {v0, v1}, Landroid/support/v4/view/ViewPager;->setScrollState(I)V
 
-    .line 810
-    :cond_27
+    goto :goto_c
+
+    .line 890
+    .end local v2    # "sx":I
+    .end local v3    # "sy":I
+    .end local v4    # "dx":I
+    .end local v5    # "dy":I
+    .end local v12    # "wasScrolling":Z
+    :cond_57
+    const/4 v12, 0x0
+
+    goto :goto_1e
+
+    .line 896
+    .restart local v12    # "wasScrolling":Z
+    :cond_59
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
+
+    invoke-virtual {v1}, Landroid/widget/Scroller;->getStartX()I
+
+    move-result v2
+
+    goto :goto_2e
+
+    .line 901
+    :cond_62
+    invoke-virtual/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getScrollX()I
+
+    move-result v2
+
+    .restart local v2    # "sx":I
+    goto :goto_3b
+
+    .line 913
+    .restart local v3    # "sy":I
+    .restart local v4    # "dx":I
+    .restart local v5    # "dy":I
+    :cond_67
     const/4 v1, 0x1
 
-    invoke-direct {p0, v1}, Landroid/support/v4/view/ViewPager;->setScrollingCacheEnabled(Z)V
+    move-object/from16 v0, p0
 
-    .line 811
+    invoke-direct {v0, v1}, Landroid/support/v4/view/ViewPager;->setScrollingCacheEnabled(Z)V
+
+    .line 914
     const/4 v1, 0x2
 
-    invoke-direct {p0, v1}, Landroid/support/v4/view/ViewPager;->setScrollState(I)V
+    move-object/from16 v0, p0
 
-    .line 813
-    invoke-direct {p0}, Landroid/support/v4/view/ViewPager;->getClientWidth()I
+    invoke-direct {v0, v1}, Landroid/support/v4/view/ViewPager;->setScrollState(I)V
 
-    move-result v12
+    .line 916
+    invoke-direct/range {p0 .. p0}, Landroid/support/v4/view/ViewPager;->getClientWidth()I
 
-    .line 814
-    .local v12, "width":I
-    div-int/lit8 v9, v12, 0x2
+    move-result v13
 
-    .line 815
+    .line 917
+    .local v13, "width":I
+    div-int/lit8 v9, v13, 0x2
+
+    .line 918
     .local v9, "halfWidth":I
     const/high16 v1, 0x3f800000
 
-    const/high16 v13, 0x3f800000
+    const/high16 v14, 0x3f800000
 
     invoke-static {v4}, Ljava/lang/Math;->abs(I)I
 
-    move-result v14
+    move-result v15
 
-    int-to-float v14, v14
+    int-to-float v15, v15
 
-    mul-float/2addr v13, v14
+    mul-float/2addr v14, v15
 
-    int-to-float v14, v12
+    int-to-float v15, v13
 
-    div-float/2addr v13, v14
+    div-float/2addr v14, v15
 
-    invoke-static {v1, v13}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v1, v14}, Ljava/lang/Math;->min(FF)F
 
     move-result v8
 
-    .line 816
+    .line 919
     .local v8, "distanceRatio":F
     int-to-float v1, v9
 
-    int-to-float v13, v9
+    int-to-float v14, v9
 
-    invoke-virtual {p0, v8}, Landroid/support/v4/view/ViewPager;->distanceInfluenceForSnapDuration(F)F
+    move-object/from16 v0, p0
 
-    move-result v14
+    invoke-virtual {v0, v8}, Landroid/support/v4/view/ViewPager;->distanceInfluenceForSnapDuration(F)F
 
-    mul-float/2addr v13, v14
+    move-result v15
 
-    add-float v7, v1, v13
+    mul-float/2addr v14, v15
 
-    .line 819
+    add-float v7, v1, v14
+
+    .line 923
     .local v7, "distance":F
-    const/4 v6, 0x0
-
-    .line 820
-    .local v6, "duration":I
     invoke-static/range {p3 .. p3}, Ljava/lang/Math;->abs(I)I
 
     move-result p3
 
-    .line 821
-    if-lez p3, :cond_76
+    .line 924
+    if-lez p3, :cond_c3
 
-    .line 822
+    .line 925
     const/high16 v1, 0x447a0000
 
     move/from16 v0, p3
 
-    int-to-float v13, v0
+    int-to-float v14, v0
 
-    div-float v13, v7, v13
+    div-float v14, v7, v14
 
-    invoke-static {v13}, Ljava/lang/Math;->abs(F)F
+    invoke-static {v14}, Ljava/lang/Math;->abs(F)F
 
-    move-result v13
+    move-result v14
 
-    mul-float/2addr v1, v13
+    mul-float/2addr v1, v14
 
     invoke-static {v1}, Ljava/lang/Math;->round(F)I
 
@@ -11512,39 +11700,54 @@
 
     mul-int/lit8 v6, v1, 0x4
 
-    .line 828
-    :goto_67
+    .line 931
+    .local v6, "duration":I
+    :goto_ac
     const/16 v1, 0x258
 
     invoke-static {v6, v1}, Ljava/lang/Math;->min(II)I
 
     move-result v6
 
-    .line 830
-    iget-object v1, p0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
+    .line 935
+    const/4 v1, 0x0
+
+    move-object/from16 v0, p0
+
+    iput-boolean v1, v0, Landroid/support/v4/view/ViewPager;->mIsScrollStarted:Z
+
+    .line 936
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Landroid/support/v4/view/ViewPager;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual/range {v1 .. v6}, Landroid/widget/Scroller;->startScroll(IIIII)V
 
-    .line 831
-    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->postInvalidateOnAnimation(Landroid/view/View;)V
+    .line 937
+    invoke-static/range {p0 .. p0}, Landroid/support/v4/view/ViewCompat;->postInvalidateOnAnimation(Landroid/view/View;)V
 
-    goto :goto_a
+    goto/16 :goto_c
 
-    .line 824
-    :cond_76
-    int-to-float v1, v12
+    .line 927
+    .end local v6    # "duration":I
+    :cond_c3
+    int-to-float v1, v13
 
-    iget-object v13, p0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
+    move-object/from16 v0, p0
 
-    iget v14, p0, Landroid/support/v4/view/ViewPager;->mCurItem:I
+    iget-object v14, v0, Landroid/support/v4/view/ViewPager;->mAdapter:Landroid/support/v4/view/PagerAdapter;
 
-    invoke-virtual {v13, v14}, Landroid/support/v4/view/PagerAdapter;->getPageWidth(I)F
+    move-object/from16 v0, p0
 
-    move-result v13
+    iget v15, v0, Landroid/support/v4/view/ViewPager;->mCurItem:I
 
-    mul-float v11, v1, v13
+    invoke-virtual {v14, v15}, Landroid/support/v4/view/PagerAdapter;->getPageWidth(I)F
 
-    .line 825
+    move-result v14
+
+    mul-float v11, v1, v14
+
+    .line 928
     .local v11, "pageWidth":F
     invoke-static {v4}, Ljava/lang/Math;->abs(I)I
 
@@ -11552,27 +11755,30 @@
 
     int-to-float v1, v1
 
-    iget v13, p0, Landroid/support/v4/view/ViewPager;->mPageMargin:I
+    move-object/from16 v0, p0
 
-    int-to-float v13, v13
+    iget v14, v0, Landroid/support/v4/view/ViewPager;->mPageMargin:I
 
-    add-float/2addr v13, v11
+    int-to-float v14, v14
 
-    div-float v10, v1, v13
+    add-float/2addr v14, v11
 
-    .line 826
+    div-float v10, v1, v14
+
+    .line 929
     .local v10, "pageDelta":F
     const/high16 v1, 0x3f800000
 
     add-float/2addr v1, v10
 
-    const/high16 v13, 0x42c80000
+    const/high16 v14, 0x42c80000
 
-    mul-float/2addr v1, v13
+    mul-float/2addr v1, v14
 
     float-to-int v6, v1
 
-    goto :goto_67
+    .restart local v6    # "duration":I
+    goto :goto_ac
 .end method
 
 .method protected verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
@@ -11580,7 +11786,7 @@
     .param p1, "who"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 754
+    .line 843
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
 
     move-result v0

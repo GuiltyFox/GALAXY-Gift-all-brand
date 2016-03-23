@@ -96,7 +96,7 @@
 
     .prologue
     .line 44
-    const-string v1, "(01)"
+    const-string/jumbo v1, "(01)"
 
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

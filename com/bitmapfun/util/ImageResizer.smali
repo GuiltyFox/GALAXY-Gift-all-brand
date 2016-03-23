@@ -20,13 +20,13 @@
     .param p2, "imageSize"    # I
 
     .prologue
-    .line 58
+    .line 59
     invoke-direct {p0, p1}, Lcom/bitmapfun/util/ImageWorker;-><init>(Landroid/content/Context;)V
 
-    .line 59
+    .line 60
     invoke-virtual {p0, p2}, Lcom/bitmapfun/util/ImageResizer;->setImageSize(I)V
 
-    .line 60
+    .line 61
     return-void
 .end method
 
@@ -37,13 +37,13 @@
     .param p3, "imageHeight"    # I
 
     .prologue
-    .line 47
+    .line 48
     invoke-direct {p0, p1}, Lcom/bitmapfun/util/ImageWorker;-><init>(Landroid/content/Context;)V
 
-    .line 48
+    .line 49
     invoke-virtual {p0, p2, p3}, Lcom/bitmapfun/util/ImageResizer;->setImageSize(II)V
 
-    .line 49
+    .line 50
     return-void
 .end method
 
@@ -54,28 +54,28 @@
     .param p2, "reqHeight"    # I
 
     .prologue
-    .line 194
+    .line 195
     iget v0, p0, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
-    .line 195
+    .line 196
     .local v0, "height":I
     iget v4, p0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
-    .line 196
+    .line 197
     .local v4, "width":I
     const/4 v1, 0x1
 
-    .line 198
+    .line 199
     .local v1, "inSampleSize":I
     if-gt v0, p2, :cond_9
 
-    if-le v4, p1, :cond_23
-
-    .line 199
-    :cond_9
-    if-le v4, v0, :cond_24
+    if-le v4, p1, :cond_2e
 
     .line 200
+    :cond_9
+    if-le v4, v0, :cond_26
+
+    .line 201
     int-to-float v5, v0
 
     int-to-float v6, p2
@@ -86,13 +86,13 @@
 
     move-result v1
 
-    .line 212
+    .line 213
     :goto_12
     mul-int v5, v4, v0
 
     int-to-float v2, v5
 
-    .line 216
+    .line 217
     .local v2, "totalPixels":F
     mul-int v5, p1, p2
 
@@ -100,7 +100,7 @@
 
     int-to-float v3, v5
 
-    .line 218
+    .line 219
     .local v3, "totalReqPixelsCap":F
     :goto_1a
     mul-int v5, v1, v1
@@ -111,16 +111,17 @@
 
     cmpl-float v5, v5, v3
 
-    if-gtz v5, :cond_2c
+    if-lez v5, :cond_2e
 
-    .line 222
+    .line 220
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1a
+
+    .line 203
     .end local v2    # "totalPixels":F
     .end local v3    # "totalReqPixelsCap":F
-    :cond_23
-    return v1
-
-    .line 202
-    :cond_24
+    :cond_26
     int-to-float v5, v4
 
     int-to-float v6, p1
@@ -133,13 +134,9 @@
 
     goto :goto_12
 
-    .line 219
-    .restart local v2    # "totalPixels":F
-    .restart local v3    # "totalReqPixelsCap":F
-    :cond_2c
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_1a
+    .line 223
+    :cond_2e
+    return v1
 .end method
 
 .method public static decodeSampledBitmapFromDescriptor(Ljava/io/FileDescriptor;II)Landroid/graphics/Bitmap;
@@ -151,33 +148,33 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 165
+    .line 166
     new-instance v0, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 166
+    .line 167
     .local v0, "options":Landroid/graphics/BitmapFactory$Options;
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 167
+    .line 168
     invoke-static {p0, v2, v0}, Landroid/graphics/BitmapFactory;->decodeFileDescriptor(Ljava/io/FileDescriptor;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 170
+    .line 171
     invoke-static {v0, p1, p2}, Lcom/bitmapfun/util/ImageResizer;->calculateInSampleSize(Landroid/graphics/BitmapFactory$Options;II)I
 
     move-result v1
 
     iput v1, v0, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 173
+    .line 174
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 174
+    .line 175
     invoke-static {p0, v2, v0}, Landroid/graphics/BitmapFactory;->decodeFileDescriptor(Ljava/io/FileDescriptor;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v1
@@ -192,33 +189,33 @@
     .param p2, "reqHeight"    # I
 
     .prologue
-    .line 140
+    .line 141
     new-instance v0, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 141
+    .line 142
     .local v0, "options":Landroid/graphics/BitmapFactory$Options;
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 142
+    .line 143
     invoke-static {p0, v0}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 145
+    .line 146
     invoke-static {v0, p1, p2}, Lcom/bitmapfun/util/ImageResizer;->calculateInSampleSize(Landroid/graphics/BitmapFactory$Options;II)I
 
     move-result v1
 
     iput v1, v0, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 148
+    .line 149
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 149
+    .line 150
     invoke-static {p0, v0}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v1
@@ -234,33 +231,33 @@
     .param p3, "reqHeight"    # I
 
     .prologue
-    .line 115
+    .line 116
     new-instance v0, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 116
+    .line 117
     .local v0, "options":Landroid/graphics/BitmapFactory$Options;
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 117
+    .line 118
     invoke-static {p0, p1, v0}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;ILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 120
+    .line 121
     invoke-static {v0, p2, p3}, Lcom/bitmapfun/util/ImageResizer;->calculateInSampleSize(Landroid/graphics/BitmapFactory$Options;II)I
 
     move-result v1
 
     iput v1, v0, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 123
+    .line 124
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 124
+    .line 125
     invoke-static {p0, p1, v0}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;ILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v1
@@ -273,7 +270,7 @@
     .param p1, "resId"    # I
 
     .prologue
-    .line 93
+    .line 94
     iget-object v0, p0, Lcom/bitmapfun/util/ImageResizer;->mResources:Landroid/content/res/Resources;
 
     iget v1, p0, Lcom/bitmapfun/util/ImageResizer;->mImageWidth:I
@@ -294,12 +291,12 @@
     .param p1, "data"    # Ljava/lang/Object;
 
     .prologue
-    .line 98
+    .line 99
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Lic/buzzebeeslib/util/BBUtil;->CTypeInteger(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {v0}, Lcom/bzbs/lib/survey/util/BBUtil;->CTypeInteger(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v0
 
@@ -315,10 +312,10 @@
     .param p1, "size"    # I
 
     .prologue
-    .line 79
+    .line 80
     invoke-virtual {p0, p1, p1}, Lcom/bitmapfun/util/ImageResizer;->setImageSize(II)V
 
-    .line 80
+    .line 81
     return-void
 .end method
 
@@ -328,12 +325,12 @@
     .param p2, "height"    # I
 
     .prologue
-    .line 69
+    .line 70
     iput p1, p0, Lcom/bitmapfun/util/ImageResizer;->mImageWidth:I
 
-    .line 70
+    .line 71
     iput p2, p0, Lcom/bitmapfun/util/ImageResizer;->mImageHeight:I
 
-    .line 71
+    .line 72
     return-void
 .end method

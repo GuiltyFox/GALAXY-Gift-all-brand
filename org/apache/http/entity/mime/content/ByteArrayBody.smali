@@ -16,45 +16,57 @@
     .param p2, "filename"    # Ljava/lang/String;
 
     .prologue
-    .line 75
-    const-string v0, "application/octet-stream"
+    .line 87
+    const-string/jumbo v0, "application/octet-stream"
 
     invoke-direct {p0, p1, v0, p2}, Lorg/apache/http/entity/mime/content/ByteArrayBody;-><init>([BLjava/lang/String;Ljava/lang/String;)V
 
-    .line 76
+    .line 88
     return-void
 .end method
 
 .method public constructor <init>([BLjava/lang/String;Ljava/lang/String;)V
-    .registers 6
+    .registers 5
     .param p1, "data"    # [B
     .param p2, "mimeType"    # Ljava/lang/String;
     .param p3, "filename"    # Ljava/lang/String;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 60
-    invoke-direct {p0, p2}, Lorg/apache/http/entity/mime/content/AbstractContentBody;-><init>(Ljava/lang/String;)V
+    .line 67
+    invoke-static {p2}, Lorg/apache/http/entity/ContentType;->create(Ljava/lang/String;)Lorg/apache/http/entity/ContentType;
 
-    .line 61
-    if-nez p1, :cond_d
+    move-result-object v0
 
-    .line 62
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    invoke-direct {p0, p1, v0, p3}, Lorg/apache/http/entity/mime/content/ByteArrayBody;-><init>([BLorg/apache/http/entity/ContentType;Ljava/lang/String;)V
 
-    const-string v1, "byte[] may not be null"
+    .line 68
+    return-void
+.end method
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+.method public constructor <init>([BLorg/apache/http/entity/ContentType;Ljava/lang/String;)V
+    .registers 5
+    .param p1, "data"    # [B
+    .param p2, "contentType"    # Lorg/apache/http/entity/ContentType;
+    .param p3, "filename"    # Ljava/lang/String;
 
-    throw v0
+    .prologue
+    .line 74
+    invoke-direct {p0, p2}, Lorg/apache/http/entity/mime/content/AbstractContentBody;-><init>(Lorg/apache/http/entity/ContentType;)V
 
-    .line 64
-    :cond_d
+    .line 75
+    const-string/jumbo v0, "byte[]"
+
+    invoke-static {p1, v0}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 76
     iput-object p1, p0, Lorg/apache/http/entity/mime/content/ByteArrayBody;->data:[B
 
-    .line 65
+    .line 77
     iput-object p3, p0, Lorg/apache/http/entity/mime/content/ByteArrayBody;->filename:Ljava/lang/String;
 
-    .line 66
+    .line 78
     return-void
 .end method
 
@@ -64,7 +76,7 @@
     .registers 2
 
     .prologue
-    .line 87
+    .line 100
     const/4 v0, 0x0
 
     return-object v0
@@ -74,7 +86,7 @@
     .registers 3
 
     .prologue
-    .line 95
+    .line 108
     iget-object v0, p0, Lorg/apache/http/entity/mime/content/ByteArrayBody;->data:[B
 
     array-length v0, v0
@@ -88,7 +100,7 @@
     .registers 2
 
     .prologue
-    .line 79
+    .line 91
     iget-object v0, p0, Lorg/apache/http/entity/mime/content/ByteArrayBody;->filename:Ljava/lang/String;
 
     return-object v0
@@ -98,8 +110,8 @@
     .registers 2
 
     .prologue
-    .line 91
-    const-string v0, "binary"
+    .line 104
+    const-string/jumbo v0, "binary"
 
     return-object v0
 .end method
@@ -114,11 +126,11 @@
     .end annotation
 
     .prologue
-    .line 83
+    .line 95
     iget-object v0, p0, Lorg/apache/http/entity/mime/content/ByteArrayBody;->data:[B
 
     invoke-virtual {p1, v0}, Ljava/io/OutputStream;->write([B)V
 
-    .line 84
+    .line 96
     return-void
 .end method

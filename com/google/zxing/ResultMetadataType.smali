@@ -31,6 +31,10 @@
 
 .field public static final enum POSSIBLE_COUNTRY:Lcom/google/zxing/ResultMetadataType;
 
+.field public static final enum STRUCTURED_APPEND_PARITY:Lcom/google/zxing/ResultMetadataType;
+
+.field public static final enum STRUCTURED_APPEND_SEQUENCE:Lcom/google/zxing/ResultMetadataType;
+
 .field public static final enum SUGGESTED_PRICE:Lcom/google/zxing/ResultMetadataType;
 
 .field public static final enum UPC_EAN_EXTENSION:Lcom/google/zxing/ResultMetadataType;
@@ -54,7 +58,7 @@
     .line 30
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
 
-    const-string v1, "OTHER"
+    const-string/jumbo v1, "OTHER"
 
     invoke-direct {v0, v1, v3}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
@@ -63,7 +67,7 @@
     .line 39
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
 
-    const-string v1, "ORIENTATION"
+    const-string/jumbo v1, "ORIENTATION"
 
     invoke-direct {v0, v1, v4}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
@@ -72,7 +76,7 @@
     .line 50
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
 
-    const-string v1, "BYTE_SEGMENTS"
+    const-string/jumbo v1, "BYTE_SEGMENTS"
 
     invoke-direct {v0, v1, v5}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
@@ -81,7 +85,7 @@
     .line 56
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
 
-    const-string v1, "ERROR_CORRECTION_LEVEL"
+    const-string/jumbo v1, "ERROR_CORRECTION_LEVEL"
 
     invoke-direct {v0, v1, v6}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
@@ -90,7 +94,7 @@
     .line 61
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
 
-    const-string v1, "ISSUE_NUMBER"
+    const-string/jumbo v1, "ISSUE_NUMBER"
 
     invoke-direct {v0, v1, v7}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
@@ -99,7 +103,7 @@
     .line 67
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
 
-    const-string v1, "SUGGESTED_PRICE"
+    const-string/jumbo v1, "SUGGESTED_PRICE"
 
     const/4 v2, 0x5
 
@@ -110,7 +114,7 @@
     .line 73
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
 
-    const-string v1, "POSSIBLE_COUNTRY"
+    const-string/jumbo v1, "POSSIBLE_COUNTRY"
 
     const/4 v2, 0x6
 
@@ -121,7 +125,7 @@
     .line 78
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
 
-    const-string v1, "UPC_EAN_EXTENSION"
+    const-string/jumbo v1, "UPC_EAN_EXTENSION"
 
     const/4 v2, 0x7
 
@@ -132,7 +136,7 @@
     .line 83
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
 
-    const-string v1, "PDF417_EXTRA_METADATA"
+    const-string/jumbo v1, "PDF417_EXTRA_METADATA"
 
     const/16 v2, 0x8
 
@@ -140,8 +144,30 @@
 
     sput-object v0, Lcom/google/zxing/ResultMetadataType;->PDF417_EXTRA_METADATA:Lcom/google/zxing/ResultMetadataType;
 
+    .line 89
+    new-instance v0, Lcom/google/zxing/ResultMetadataType;
+
+    const-string/jumbo v1, "STRUCTURED_APPEND_SEQUENCE"
+
+    const/16 v2, 0x9
+
+    invoke-direct {v0, v1, v2}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/zxing/ResultMetadataType;->STRUCTURED_APPEND_SEQUENCE:Lcom/google/zxing/ResultMetadataType;
+
+    .line 95
+    new-instance v0, Lcom/google/zxing/ResultMetadataType;
+
+    const-string/jumbo v1, "STRUCTURED_APPEND_PARITY"
+
+    const/16 v2, 0xa
+
+    invoke-direct {v0, v1, v2}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/zxing/ResultMetadataType;->STRUCTURED_APPEND_PARITY:Lcom/google/zxing/ResultMetadataType;
+
     .line 25
-    const/16 v0, 0x9
+    const/16 v0, 0xb
 
     new-array v0, v0, [Lcom/google/zxing/ResultMetadataType;
 
@@ -186,6 +212,18 @@
     const/16 v1, 0x8
 
     sget-object v2, Lcom/google/zxing/ResultMetadataType;->PDF417_EXTRA_METADATA:Lcom/google/zxing/ResultMetadataType;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x9
+
+    sget-object v2, Lcom/google/zxing/ResultMetadataType;->STRUCTURED_APPEND_SEQUENCE:Lcom/google/zxing/ResultMetadataType;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xa
+
+    sget-object v2, Lcom/google/zxing/ResultMetadataType;->STRUCTURED_APPEND_PARITY:Lcom/google/zxing/ResultMetadataType;
 
     aput-object v2, v0, v1
 

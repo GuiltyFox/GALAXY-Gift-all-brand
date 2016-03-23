@@ -102,189 +102,163 @@
     .end annotation
 
     .prologue
-    .line 61
-    iget-object v4, p0, Lcom/google/zxing/oned/UPCEANExtension2Support;->decodeMiddleCounters:[I
+    const/4 v11, 0x2
 
-    .line 62
-    .local v4, "counters":[I
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    aput v11, v4, v10
-
-    .line 63
     const/4 v10, 0x1
 
-    const/4 v11, 0x0
+    const/4 v8, 0x0
 
-    aput v11, v4, v10
+    .line 61
+    iget-object v3, p0, Lcom/google/zxing/oned/UPCEANExtension2Support;->decodeMiddleCounters:[I
+
+    .line 62
+    .local v3, "counters":[I
+    aput v8, v3, v8
+
+    .line 63
+    aput v8, v3, v10
 
     .line 64
-    const/4 v10, 0x2
-
-    const/4 v11, 0x0
-
-    aput v11, v4, v10
+    aput v8, v3, v11
 
     .line 65
-    const/4 v10, 0x3
+    const/4 v7, 0x3
 
-    const/4 v11, 0x0
-
-    aput v11, v4, v10
+    aput v8, v3, v7
 
     .line 66
     invoke-virtual {p1}, Lcom/google/zxing/common/BitArray;->getSize()I
 
-    move-result v5
+    move-result v4
 
     .line 67
-    .local v5, "end":I
-    const/4 v10, 0x1
-
-    aget v8, p2, v10
+    .local v4, "end":I
+    aget v5, p2, v10
 
     .line 69
-    .local v8, "rowOffset":I
-    const/4 v2, 0x0
+    .local v5, "rowOffset":I
+    const/4 v1, 0x0
 
     .line 71
-    .local v2, "checkParity":I
-    const/4 v9, 0x0
-
-    .local v9, "x":I
-    :goto_1b
-    const/4 v10, 0x2
-
-    if-ge v9, v10, :cond_50
-
-    if-ge v8, v5, :cond_50
-
-    .line 72
-    sget-object v10, Lcom/google/zxing/oned/UPCEANReader;->L_AND_G_PATTERNS:[[I
-
-    invoke-static {p1, v4, v8, v10}, Lcom/google/zxing/oned/UPCEANReader;->decodeDigit(Lcom/google/zxing/common/BitArray;[II[[I)I
-
-    move-result v1
-
-    .line 73
-    .local v1, "bestMatch":I
-    rem-int/lit8 v10, v1, 0xa
-
-    add-int/lit8 v10, v10, 0x30
-
-    int-to-char v10, v10
-
-    invoke-virtual {p3, v10}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 74
-    move-object v0, v4
-
-    .local v0, "arr$":[I
-    array-length v7, v0
-
-    .local v7, "len$":I
+    .local v1, "checkParity":I
     const/4 v6, 0x0
 
-    .local v6, "i$":I
-    :goto_31
-    if-ge v6, v7, :cond_39
+    .local v6, "x":I
+    :goto_16
+    if-ge v6, v11, :cond_48
 
-    aget v3, v0, v6
+    if-ge v5, v4, :cond_48
 
-    .line 75
-    .local v3, "counter":I
-    add-int/2addr v8, v3
+    .line 72
+    sget-object v7, Lcom/google/zxing/oned/UPCEANReader;->L_AND_G_PATTERNS:[[I
+
+    invoke-static {p1, v3, v5, v7}, Lcom/google/zxing/oned/UPCEANReader;->decodeDigit(Lcom/google/zxing/common/BitArray;[II[[I)I
+
+    move-result v0
+
+    .line 73
+    .local v0, "bestMatch":I
+    rem-int/lit8 v7, v0, 0xa
+
+    add-int/lit8 v7, v7, 0x30
+
+    int-to-char v7, v7
+
+    invoke-virtual {p3, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 74
-    add-int/lit8 v6, v6, 0x1
+    array-length v9, v3
 
-    goto :goto_31
+    move v7, v8
+
+    :goto_2a
+    if-ge v7, v9, :cond_32
+
+    aget v2, v3, v7
+
+    .line 75
+    .local v2, "counter":I
+    add-int/2addr v5, v2
+
+    .line 74
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_2a
 
     .line 77
-    .end local v3    # "counter":I
-    :cond_39
-    const/16 v10, 0xa
+    .end local v2    # "counter":I
+    :cond_32
+    const/16 v7, 0xa
 
-    if-lt v1, v10, :cond_42
+    if-lt v0, v7, :cond_3b
 
     .line 78
-    const/4 v10, 0x1
+    rsub-int/lit8 v7, v6, 0x1
 
-    rsub-int/lit8 v11, v9, 0x1
+    shl-int v7, v10, v7
 
-    shl-int/2addr v10, v11
-
-    or-int/2addr v2, v10
+    or-int/2addr v1, v7
 
     .line 80
-    :cond_42
-    const/4 v10, 0x1
-
-    if-eq v9, v10, :cond_4d
+    :cond_3b
+    if-eq v6, v10, :cond_45
 
     .line 82
-    invoke-virtual {p1, v8}, Lcom/google/zxing/common/BitArray;->getNextSet(I)I
+    invoke-virtual {p1, v5}, Lcom/google/zxing/common/BitArray;->getNextSet(I)I
 
-    move-result v8
+    move-result v5
 
     .line 83
-    invoke-virtual {p1, v8}, Lcom/google/zxing/common/BitArray;->getNextUnset(I)I
+    invoke-virtual {p1, v5}, Lcom/google/zxing/common/BitArray;->getNextUnset(I)I
 
-    move-result v8
+    move-result v5
 
     .line 71
-    :cond_4d
-    add-int/lit8 v9, v9, 0x1
+    :cond_45
+    add-int/lit8 v6, v6, 0x1
 
-    goto :goto_1b
+    goto :goto_16
 
     .line 87
-    .end local v0    # "arr$":[I
-    .end local v1    # "bestMatch":I
-    .end local v6    # "i$":I
-    .end local v7    # "len$":I
-    :cond_50
+    .end local v0    # "bestMatch":I
+    :cond_48
     invoke-virtual {p3}, Ljava/lang/StringBuilder;->length()I
 
-    move-result v10
+    move-result v7
 
-    const/4 v11, 0x2
-
-    if-eq v10, v11, :cond_5c
+    if-eq v7, v11, :cond_53
 
     .line 88
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v10
+    move-result-object v7
 
-    throw v10
+    throw v7
 
     .line 91
-    :cond_5c
+    :cond_53
     invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v7
 
-    invoke-static {v10}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v7}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v10
+    move-result v7
 
-    rem-int/lit8 v10, v10, 0x4
+    rem-int/lit8 v7, v7, 0x4
 
-    if-eq v10, v2, :cond_6d
+    if-eq v7, v1, :cond_64
 
     .line 92
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v10
+    move-result-object v7
 
-    throw v10
+    throw v7
 
     .line 95
-    :cond_6d
-    return v8
+    :cond_64
+    return v5
 .end method
 
 .method decodeRow(ILcom/google/zxing/common/BitArray;[I)Lcom/google/zxing/Result;

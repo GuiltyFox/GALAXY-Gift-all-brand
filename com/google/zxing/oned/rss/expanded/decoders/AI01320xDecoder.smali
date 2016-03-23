@@ -27,24 +27,24 @@
     .line 42
     const/16 v0, 0x2710
 
-    if-ge p2, v0, :cond_a
+    if-ge p2, v0, :cond_b
 
     .line 43
-    const-string v0, "(3202)"
+    const-string/jumbo v0, "(3202)"
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 47
-    :goto_9
+    :goto_a
     return-void
 
     .line 45
-    :cond_a
-    const-string v0, "(3203)"
+    :cond_b
+    const-string/jumbo v0, "(3203)"
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_9
+    goto :goto_a
 .end method
 
 .method protected checkWeight(I)I

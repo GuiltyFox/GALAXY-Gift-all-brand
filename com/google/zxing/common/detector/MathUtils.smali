@@ -23,14 +23,14 @@
     .param p3, "bY"    # F
 
     .prologue
-    .line 33
+    .line 38
     sub-float v0, p0, p2
 
-    .line 34
+    .line 39
     .local v0, "xDiff":F
     sub-float v1, p1, p3
 
-    .line 35
+    .line 40
     .local v1, "yDiff":F
     mul-float v2, v0, v0
 
@@ -57,14 +57,14 @@
     .param p3, "bY"    # I
 
     .prologue
-    .line 39
+    .line 44
     sub-int v0, p0, p2
 
-    .line 40
+    .line 45
     .local v0, "xDiff":I
     sub-int v1, p1, p3
 
-    .line 41
+    .line 46
     .local v1, "yDiff":I
     mul-int v2, v0, v0
 
@@ -88,12 +88,24 @@
     .param p0, "d"    # F
 
     .prologue
-    .line 29
-    const/high16 v0, 0x3f000000
+    .line 34
+    const/4 v0, 0x0
 
+    cmpg-float v0, p0, v0
+
+    if-gez v0, :cond_a
+
+    const/high16 v0, -0x41000000
+
+    :goto_7
     add-float/2addr v0, p0
 
     float-to-int v0, v0
 
     return v0
+
+    :cond_a
+    const/high16 v0, 0x3f000000
+
+    goto :goto_7
 .end method

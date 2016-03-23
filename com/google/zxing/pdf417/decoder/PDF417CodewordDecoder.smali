@@ -200,11 +200,11 @@
 .end method
 
 .method private static getClosestDecodedValue([I)I
-    .registers 13
+    .registers 14
     .param p0, "moduleBitCount"    # [I
 
     .prologue
-    const/16 v11, 0x8
+    const/16 v12, 0x8
 
     .line 92
     invoke-static {p0}, Lcom/google/zxing/pdf417/PDF417Common;->getBitCountSum([I)I
@@ -213,7 +213,7 @@
 
     .line 93
     .local v3, "bitCountSum":I
-    new-array v2, v11, [F
+    new-array v2, v12, [F
 
     .line 94
     .local v2, "bitCountRatios":[F
@@ -221,20 +221,20 @@
 
     .local v6, "i":I
     :goto_9
-    array-length v9, v2
+    array-length v10, v2
 
-    if-ge v6, v9, :cond_16
+    if-ge v6, v10, :cond_16
 
     .line 95
-    aget v9, p0, v6
+    aget v10, p0, v6
 
-    int-to-float v9, v9
+    int-to-float v10, v10
 
-    int-to-float v10, v3
+    int-to-float v11, v3
 
-    div-float/2addr v9, v10
+    div-float/2addr v10, v11
 
-    aput v9, v2, v6
+    aput v10, v2, v6
 
     .line 94
     add-int/lit8 v6, v6, 0x1
@@ -255,75 +255,86 @@
 
     .local v7, "j":I
     :goto_1b
-    sget-object v9, Lcom/google/zxing/pdf417/decoder/PDF417CodewordDecoder;->RATIOS_TABLE:[[F
+    sget-object v10, Lcom/google/zxing/pdf417/decoder/PDF417CodewordDecoder;->RATIOS_TABLE:[[F
 
-    array-length v9, v9
+    array-length v10, v10
 
-    if-ge v7, v9, :cond_40
+    if-ge v7, v10, :cond_44
 
     .line 100
     const/4 v5, 0x0
 
     .line 101
     .local v5, "error":F
+    sget-object v10, Lcom/google/zxing/pdf417/decoder/PDF417CodewordDecoder;->RATIOS_TABLE:[[F
+
+    aget-object v9, v10, v7
+
+    .line 102
+    .local v9, "ratioTableRow":[F
     const/4 v8, 0x0
 
     .local v8, "k":I
-    :goto_22
-    if-ge v8, v11, :cond_34
-
-    .line 102
-    sget-object v9, Lcom/google/zxing/pdf417/decoder/PDF417CodewordDecoder;->RATIOS_TABLE:[[F
-
-    aget-object v9, v9, v7
-
-    aget v9, v9, v8
-
-    aget v10, v2, v8
-
-    sub-float v4, v9, v10
+    :goto_26
+    if-ge v8, v12, :cond_35
 
     .line 103
+    aget v10, v9, v8
+
+    aget v11, v2, v8
+
+    sub-float v4, v10, v11
+
+    .line 104
     .local v4, "diff":F
-    mul-float v9, v4, v4
+    mul-float v10, v4, v4
 
-    add-float/2addr v5, v9
-
-    .line 101
-    add-int/lit8 v8, v8, 0x1
-
-    goto :goto_22
+    add-float/2addr v5, v10
 
     .line 105
+    cmpl-float v10, v5, v1
+
+    if-ltz v10, :cond_41
+
+    .line 109
     .end local v4    # "diff":F
-    :cond_34
-    cmpg-float v9, v5, v1
+    :cond_35
+    cmpg-float v10, v5, v1
 
-    if-gez v9, :cond_3d
+    if-gez v10, :cond_3e
 
-    .line 106
+    .line 110
     move v1, v5
 
-    .line 107
-    sget-object v9, Lcom/google/zxing/pdf417/PDF417Common;->SYMBOL_TABLE:[I
+    .line 111
+    sget-object v10, Lcom/google/zxing/pdf417/PDF417Common;->SYMBOL_TABLE:[I
 
-    aget v0, v9, v7
+    aget v0, v10, v7
 
     .line 99
-    :cond_3d
+    :cond_3e
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_1b
 
-    .line 110
+    .line 102
+    .restart local v4    # "diff":F
+    :cond_41
+    add-int/lit8 v8, v8, 0x1
+
+    goto :goto_26
+
+    .line 114
+    .end local v4    # "diff":F
     .end local v5    # "error":F
     .end local v8    # "k":I
-    :cond_40
+    .end local v9    # "ratioTableRow":[F
+    :cond_44
     return v0
 .end method
 
 .method private static getDecodedCodewordValue([I)I
-    .registers 5
+    .registers 4
     .param p0, "moduleBitCount"    # [I
 
     .prologue
@@ -336,18 +347,16 @@
 
     .line 78
     .local v0, "decodedValue":I
-    int-to-long v2, v0
-
-    invoke-static {v2, v3}, Lcom/google/zxing/pdf417/PDF417Common;->getCodeword(J)I
+    invoke-static {v0}, Lcom/google/zxing/pdf417/PDF417Common;->getCodeword(I)I
 
     move-result v2
 
-    if-ne v2, v1, :cond_d
+    if-ne v2, v1, :cond_c
 
     move v0, v1
 
     .end local v0    # "decodedValue":I
-    :cond_d
+    :cond_c
     return v0
 .end method
 

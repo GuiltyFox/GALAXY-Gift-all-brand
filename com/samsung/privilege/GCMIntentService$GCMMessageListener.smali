@@ -15,5 +15,5 @@
 
 
 # virtual methods
-.method public abstract onGCMMessage(Lcom/samsung/privilege/bean/MessageGCM;)V
+.method public abstract onGCMMessage(Lcom/bzbs/bean/MessageGCM;)V
 .end method

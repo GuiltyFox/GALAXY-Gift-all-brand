@@ -30,7 +30,7 @@
     iput p2, p0, Landroid/support/v4/widget/ResourceCursorAdapter;->mLayout:I
 
     .line 56
-    const-string v0, "layout_inflater"
+    const-string/jumbo v0, "layout_inflater"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -61,7 +61,7 @@
     iput p2, p0, Landroid/support/v4/widget/ResourceCursorAdapter;->mLayout:I
 
     .line 95
-    const-string v0, "layout_inflater"
+    const-string/jumbo v0, "layout_inflater"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -92,7 +92,7 @@
     iput p2, p0, Landroid/support/v4/widget/ResourceCursorAdapter;->mLayout:I
 
     .line 78
-    const-string v0, "layout_inflater"
+    const-string/jumbo v0, "layout_inflater"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

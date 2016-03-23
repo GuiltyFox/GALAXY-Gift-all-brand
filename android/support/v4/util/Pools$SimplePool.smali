@@ -45,19 +45,19 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 91
-    if-gtz p1, :cond_d
+    if-gtz p1, :cond_e
 
     .line 92
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "The max pool size must be > 0"
+    const-string/jumbo v1, "The max pool size must be > 0"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 94
-    :cond_d
+    :cond_e
     new-array v0, p1, [Ljava/lang/Object;
 
     iput-object v0, p0, Landroid/support/v4/util/Pools$SimplePool;->mPool:[Ljava/lang/Object;
@@ -184,26 +184,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_f
 
     .line 113
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "Already in the pool!"
+    const-string/jumbo v1, "Already in the pool!"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 115
-    :cond_e
+    :cond_f
     iget v0, p0, Landroid/support/v4/util/Pools$SimplePool;->mPoolSize:I
 
     iget-object v1, p0, Landroid/support/v4/util/Pools$SimplePool;->mPool:[Ljava/lang/Object;
 
     array-length v1, v1
 
-    if-ge v0, v1, :cond_23
+    if-ge v0, v1, :cond_24
 
     .line 116
     iget-object v0, p0, Landroid/support/v4/util/Pools$SimplePool;->mPool:[Ljava/lang/Object;
@@ -223,11 +223,11 @@
     const/4 v0, 0x1
 
     .line 120
-    :goto_22
+    :goto_23
     return v0
 
-    :cond_23
+    :cond_24
     const/4 v0, 0x0
 
-    goto :goto_22
+    goto :goto_23
 .end method

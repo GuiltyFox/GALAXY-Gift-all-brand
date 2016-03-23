@@ -19,17 +19,18 @@
     .registers 1
 
     .prologue
-    .line 663
+    .line 662
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/bitmapfun/util/AsyncTask$InternalHandler;)V
+.method synthetic constructor <init>(Lcom/bitmapfun/util/AsyncTask$1;)V
     .registers 2
+    .param p1, "x0"    # Lcom/bitmapfun/util/AsyncTask$1;
 
     .prologue
-    .line 663
+    .line 662
     invoke-direct {p0}, Lcom/bitmapfun/util/AsyncTask$InternalHandler;-><init>()V
 
     return-void
@@ -42,22 +43,22 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 667
+    .line 666
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/bitmapfun/util/AsyncTask$AsyncTaskResult;
 
-    .line 668
+    .line 667
     .local v0, "result":Lcom/bitmapfun/util/AsyncTask$AsyncTaskResult;
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_1e
 
-    .line 677
+    .line 676
     :goto_9
     return-void
 
-    .line 671
+    .line 670
     :pswitch_a
     iget-object v1, v0, Lcom/bitmapfun/util/AsyncTask$AsyncTaskResult;->mTask:Lcom/bitmapfun/util/AsyncTask;
 
@@ -68,11 +69,11 @@
     aget-object v2, v2, v3
 
     # invokes: Lcom/bitmapfun/util/AsyncTask;->finish(Ljava/lang/Object;)V
-    invoke-static {v1, v2}, Lcom/bitmapfun/util/AsyncTask;->access$0(Lcom/bitmapfun/util/AsyncTask;Ljava/lang/Object;)V
+    invoke-static {v1, v2}, Lcom/bitmapfun/util/AsyncTask;->access$600(Lcom/bitmapfun/util/AsyncTask;Ljava/lang/Object;)V
 
     goto :goto_9
 
-    .line 674
+    .line 673
     :pswitch_15
     iget-object v1, v0, Lcom/bitmapfun/util/AsyncTask$AsyncTaskResult;->mTask:Lcom/bitmapfun/util/AsyncTask;
 
@@ -82,7 +83,7 @@
 
     goto :goto_9
 
-    .line 668
+    .line 667
     nop
 
     :pswitch_data_1e

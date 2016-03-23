@@ -6,14 +6,6 @@
 .implements Lcom/google/zxing/Writer;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/zxing/MultiFormatWriter$1;
-    }
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -107,7 +99,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "No encoder available for format "
+    const-string/jumbo v3, "No encoder available for format "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -126,13 +118,13 @@
     throw v1
 
     .line 59
-    :pswitch_24
+    :pswitch_25
     new-instance v0, Lcom/google/zxing/oned/EAN8Writer;
 
     invoke-direct {v0}, Lcom/google/zxing/oned/EAN8Writer;-><init>()V
 
     .local v0, "writer":Lcom/google/zxing/Writer;
-    :goto_29
+    :goto_2a
     move-object v1, p1
 
     move-object v2, p2
@@ -152,129 +144,127 @@
 
     .line 62
     .end local v0    # "writer":Lcom/google/zxing/Writer;
-    :pswitch_33
+    :pswitch_34
     new-instance v0, Lcom/google/zxing/oned/EAN13Writer;
 
     invoke-direct {v0}, Lcom/google/zxing/oned/EAN13Writer;-><init>()V
 
     .line 63
     .restart local v0    # "writer":Lcom/google/zxing/Writer;
-    goto :goto_29
+    goto :goto_2a
 
     .line 65
     .end local v0    # "writer":Lcom/google/zxing/Writer;
-    :pswitch_39
+    :pswitch_3a
     new-instance v0, Lcom/google/zxing/oned/UPCAWriter;
 
     invoke-direct {v0}, Lcom/google/zxing/oned/UPCAWriter;-><init>()V
 
     .line 66
     .restart local v0    # "writer":Lcom/google/zxing/Writer;
-    goto :goto_29
+    goto :goto_2a
 
     .line 68
     .end local v0    # "writer":Lcom/google/zxing/Writer;
-    :pswitch_3f
+    :pswitch_40
     new-instance v0, Lcom/google/zxing/qrcode/QRCodeWriter;
 
     invoke-direct {v0}, Lcom/google/zxing/qrcode/QRCodeWriter;-><init>()V
 
     .line 69
     .restart local v0    # "writer":Lcom/google/zxing/Writer;
-    goto :goto_29
+    goto :goto_2a
 
     .line 71
     .end local v0    # "writer":Lcom/google/zxing/Writer;
-    :pswitch_45
+    :pswitch_46
     new-instance v0, Lcom/google/zxing/oned/Code39Writer;
 
     invoke-direct {v0}, Lcom/google/zxing/oned/Code39Writer;-><init>()V
 
     .line 72
     .restart local v0    # "writer":Lcom/google/zxing/Writer;
-    goto :goto_29
+    goto :goto_2a
 
     .line 74
     .end local v0    # "writer":Lcom/google/zxing/Writer;
-    :pswitch_4b
+    :pswitch_4c
     new-instance v0, Lcom/google/zxing/oned/Code128Writer;
 
     invoke-direct {v0}, Lcom/google/zxing/oned/Code128Writer;-><init>()V
 
     .line 75
     .restart local v0    # "writer":Lcom/google/zxing/Writer;
-    goto :goto_29
+    goto :goto_2a
 
     .line 77
     .end local v0    # "writer":Lcom/google/zxing/Writer;
-    :pswitch_51
+    :pswitch_52
     new-instance v0, Lcom/google/zxing/oned/ITFWriter;
 
     invoke-direct {v0}, Lcom/google/zxing/oned/ITFWriter;-><init>()V
 
     .line 78
     .restart local v0    # "writer":Lcom/google/zxing/Writer;
-    goto :goto_29
+    goto :goto_2a
 
     .line 80
     .end local v0    # "writer":Lcom/google/zxing/Writer;
-    :pswitch_57
+    :pswitch_58
     new-instance v0, Lcom/google/zxing/pdf417/PDF417Writer;
 
     invoke-direct {v0}, Lcom/google/zxing/pdf417/PDF417Writer;-><init>()V
 
     .line 81
     .restart local v0    # "writer":Lcom/google/zxing/Writer;
-    goto :goto_29
+    goto :goto_2a
 
     .line 83
     .end local v0    # "writer":Lcom/google/zxing/Writer;
-    :pswitch_5d
+    :pswitch_5e
     new-instance v0, Lcom/google/zxing/oned/CodaBarWriter;
 
     invoke-direct {v0}, Lcom/google/zxing/oned/CodaBarWriter;-><init>()V
 
     .line 84
     .restart local v0    # "writer":Lcom/google/zxing/Writer;
-    goto :goto_29
+    goto :goto_2a
 
     .line 86
     .end local v0    # "writer":Lcom/google/zxing/Writer;
-    :pswitch_63
+    :pswitch_64
     new-instance v0, Lcom/google/zxing/datamatrix/DataMatrixWriter;
 
     invoke-direct {v0}, Lcom/google/zxing/datamatrix/DataMatrixWriter;-><init>()V
 
     .line 87
     .restart local v0    # "writer":Lcom/google/zxing/Writer;
-    goto :goto_29
+    goto :goto_2a
 
     .line 89
     .end local v0    # "writer":Lcom/google/zxing/Writer;
-    :pswitch_69
+    :pswitch_6a
     new-instance v0, Lcom/google/zxing/aztec/AztecWriter;
 
     invoke-direct {v0}, Lcom/google/zxing/aztec/AztecWriter;-><init>()V
 
     .line 90
     .restart local v0    # "writer":Lcom/google/zxing/Writer;
-    goto :goto_29
+    goto :goto_2a
 
     .line 57
-    nop
-
     :pswitch_data_70
     .packed-switch 0x1
-        :pswitch_24
-        :pswitch_33
-        :pswitch_39
-        :pswitch_3f
-        :pswitch_45
-        :pswitch_4b
-        :pswitch_51
-        :pswitch_57
-        :pswitch_5d
-        :pswitch_63
-        :pswitch_69
+        :pswitch_25
+        :pswitch_34
+        :pswitch_3a
+        :pswitch_40
+        :pswitch_46
+        :pswitch_4c
+        :pswitch_52
+        :pswitch_58
+        :pswitch_5e
+        :pswitch_64
+        :pswitch_6a
     .end packed-switch
 .end method

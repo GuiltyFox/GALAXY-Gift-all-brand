@@ -3,12 +3,12 @@
 .source "AsyncHttpClient.java"
 
 # interfaces
-.implements Lorg/apache/http/HttpResponseInterceptor;
+.implements Lcz/msebera/android/httpclient/HttpResponseInterceptor;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/loopj/android/http/AsyncHttpClient;-><init>()V
+    value = Lcom/loopj/android/http/AsyncHttpClient;-><init>(Lcz/msebera/android/httpclient/conn/scheme/SchemeRegistry;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,9 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/loopj/android/http/AsyncHttpClient;)V
     .registers 2
+    .param p1, "this$0"    # Lcom/loopj/android/http/AsyncHttpClient;
 
     .prologue
-    .line 148
+    .line 232
     iput-object p1, p0, Lcom/loopj/android/http/AsyncHttpClient$2;->this$0:Lcom/loopj/android/http/AsyncHttpClient;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,75 +37,76 @@
 
 
 # virtual methods
-.method public process(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)V
-    .registers 8
+.method public process(Lcz/msebera/android/httpclient/HttpResponse;Lcz/msebera/android/httpclient/protocol/HttpContext;)V
+    .registers 11
+    .param p1, "response"    # Lcz/msebera/android/httpclient/HttpResponse;
+    .param p2, "context"    # Lcz/msebera/android/httpclient/protocol/HttpContext;
 
     .prologue
-    .line 150
-    invoke-interface {p1}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+    .line 235
+    invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpResponse;->getEntity()Lcz/msebera/android/httpclient/HttpEntity;
 
-    move-result-object v0
+    move-result-object v2
 
-    .line 151
-    if-nez v0, :cond_7
+    .line 236
+    .local v2, "entity":Lcz/msebera/android/httpclient/HttpEntity;
+    if-nez v2, :cond_7
 
-    .line 163
+    .line 248
     :cond_6
     :goto_6
     return-void
 
-    .line 154
+    .line 239
     :cond_7
-    invoke-interface {v0}, Lorg/apache/http/HttpEntity;->getContentEncoding()Lorg/apache/http/Header;
-
-    move-result-object v0
-
-    .line 155
-    if-eqz v0, :cond_6
-
-    .line 156
-    invoke-interface {v0}, Lorg/apache/http/Header;->getElements()[Lorg/apache/http/HeaderElement;
+    invoke-interface {v2}, Lcz/msebera/android/httpclient/HttpEntity;->getContentEncoding()Lcz/msebera/android/httpclient/Header;
 
     move-result-object v1
 
-    array-length v2, v1
+    .line 240
+    .local v1, "encoding":Lcz/msebera/android/httpclient/Header;
+    if-eqz v1, :cond_6
 
-    const/4 v0, 0x0
+    .line 241
+    invoke-interface {v1}, Lcz/msebera/android/httpclient/Header;->getElements()[Lcz/msebera/android/httpclient/HeaderElement;
+
+    move-result-object v4
+
+    array-length v5, v4
+
+    const/4 v3, 0x0
 
     :goto_13
-    if-ge v0, v2, :cond_6
+    if-ge v3, v5, :cond_6
 
-    aget-object v3, v1, v0
+    aget-object v0, v4, v3
 
-    .line 157
-    invoke-interface {v3}, Lorg/apache/http/HeaderElement;->getName()Ljava/lang/String;
+    .line 242
+    .local v0, "element":Lcz/msebera/android/httpclient/HeaderElement;
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/HeaderElement;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v6
 
-    const-string v4, "gzip"
+    const-string/jumbo v7, "gzip"
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v6, v7}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v6
 
-    if-eqz v3, :cond_30
+    if-eqz v6, :cond_2d
 
-    .line 158
-    new-instance v0, Lcom/loopj/android/http/AsyncHttpClient$InflatingEntity;
+    .line 243
+    new-instance v3, Lcom/loopj/android/http/AsyncHttpClient$InflatingEntity;
 
-    invoke-interface {p1}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+    invoke-direct {v3, v2}, Lcom/loopj/android/http/AsyncHttpClient$InflatingEntity;-><init>(Lcz/msebera/android/httpclient/HttpEntity;)V
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/loopj/android/http/AsyncHttpClient$InflatingEntity;-><init>(Lorg/apache/http/HttpEntity;)V
-
-    invoke-interface {p1, v0}, Lorg/apache/http/HttpResponse;->setEntity(Lorg/apache/http/HttpEntity;)V
+    invoke-interface {p1, v3}, Lcz/msebera/android/httpclient/HttpResponse;->setEntity(Lcz/msebera/android/httpclient/HttpEntity;)V
 
     goto :goto_6
 
-    .line 156
-    :cond_30
-    add-int/lit8 v0, v0, 0x1
+    .line 241
+    :cond_2d
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_13
 .end method

@@ -1,274 +1,386 @@
 .class public Lcom/loopj/android/http/JsonHttpResponseHandler;
-.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
+.super Lcom/loopj/android/http/TextHttpResponseHandler;
 .source "JsonHttpResponseHandler.java"
 
 
 # static fields
-.field protected static final SUCCESS_JSON_MESSAGE:I = 0x64
+.field private static final LOG_TAG:Ljava/lang/String; = "JsonHttpRH"
+
+
+# instance fields
+.field private useRFC5179CompatibilityMode:Z
 
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .registers 2
 
     .prologue
-    .line 41
-    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
+    .line 48
+    const-string/jumbo v0, "UTF-8"
 
+    invoke-direct {p0, v0}, Lcom/loopj/android/http/TextHttpResponseHandler;-><init>(Ljava/lang/String;)V
+
+    .line 42
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/loopj/android/http/JsonHttpResponseHandler;->useRFC5179CompatibilityMode:Z
+
+    .line 49
     return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;)V
+    .registers 3
+    .param p1, "encoding"    # Ljava/lang/String;
+
+    .prologue
+    .line 57
+    invoke-direct {p0, p1}, Lcom/loopj/android/http/TextHttpResponseHandler;-><init>(Ljava/lang/String;)V
+
+    .line 42
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/loopj/android/http/JsonHttpResponseHandler;->useRFC5179CompatibilityMode:Z
+
+    .line 58
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Z)V
+    .registers 4
+    .param p1, "encoding"    # Ljava/lang/String;
+    .param p2, "useRFC5179CompatibilityMode"    # Z
+
+    .prologue
+    .line 77
+    invoke-direct {p0, p1}, Lcom/loopj/android/http/TextHttpResponseHandler;-><init>(Ljava/lang/String;)V
+
+    .line 42
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/loopj/android/http/JsonHttpResponseHandler;->useRFC5179CompatibilityMode:Z
+
+    .line 78
+    iput-boolean p2, p0, Lcom/loopj/android/http/JsonHttpResponseHandler;->useRFC5179CompatibilityMode:Z
+
+    .line 79
+    return-void
+.end method
+
+.method public constructor <init>(Z)V
+    .registers 3
+    .param p1, "useRFC5179CompatibilityMode"    # Z
+
+    .prologue
+    .line 66
+    const-string/jumbo v0, "UTF-8"
+
+    invoke-direct {p0, v0}, Lcom/loopj/android/http/TextHttpResponseHandler;-><init>(Ljava/lang/String;)V
+
+    .line 42
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/loopj/android/http/JsonHttpResponseHandler;->useRFC5179CompatibilityMode:Z
+
+    .line 67
+    iput-boolean p1, p0, Lcom/loopj/android/http/JsonHttpResponseHandler;->useRFC5179CompatibilityMode:Z
+
+    .line 68
+    return-void
+.end method
+
+.method static synthetic access$000(Lcom/loopj/android/http/JsonHttpResponseHandler;)Z
+    .registers 2
+    .param p0, "x0"    # Lcom/loopj/android/http/JsonHttpResponseHandler;
+
+    .prologue
+    .line 37
+    iget-boolean v0, p0, Lcom/loopj/android/http/JsonHttpResponseHandler;->useRFC5179CompatibilityMode:Z
+
+    return v0
 .end method
 
 
 # virtual methods
-.method protected handleFailureMessage(Ljava/lang/Throwable;Ljava/lang/String;)V
-    .registers 5
+.method public isUseRFC5179CompatibilityMode()Z
+    .registers 2
 
     .prologue
-    .line 153
-    if-eqz p2, :cond_23
+    .line 278
+    iget-boolean v0, p0, Lcom/loopj/android/http/JsonHttpResponseHandler;->useRFC5179CompatibilityMode:Z
 
-    .line 154
-    :try_start_2
-    invoke-virtual {p0, p2}, Lcom/loopj/android/http/JsonHttpResponseHandler;->parseResponse(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 155
-    instance-of v1, v0, Lorg/json/JSONObject;
-
-    if-eqz v1, :cond_10
-
-    .line 156
-    check-cast v0, Lorg/json/JSONObject;
-
-    invoke-virtual {p0, p1, v0}, Lcom/loopj/android/http/JsonHttpResponseHandler;->onFailure(Ljava/lang/Throwable;Lorg/json/JSONObject;)V
-
-    .line 168
-    :goto_f
-    return-void
-
-    .line 157
-    :cond_10
-    instance-of v1, v0, Lorg/json/JSONArray;
-
-    if-eqz v1, :cond_1f
-
-    .line 158
-    check-cast v0, Lorg/json/JSONArray;
-
-    invoke-virtual {p0, p1, v0}, Lcom/loopj/android/http/JsonHttpResponseHandler;->onFailure(Ljava/lang/Throwable;Lorg/json/JSONArray;)V
-    :try_end_19
-    .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_19} :catch_1a
-
-    goto :goto_f
-
-    .line 165
-    :catch_1a
-    move-exception v0
-
-    .line 166
-    invoke-virtual {p0, p1, p2}, Lcom/loopj/android/http/JsonHttpResponseHandler;->onFailure(Ljava/lang/Throwable;Ljava/lang/String;)V
-
-    goto :goto_f
-
-    .line 160
-    :cond_1f
-    :try_start_1f
-    invoke-virtual {p0, p1, p2}, Lcom/loopj/android/http/JsonHttpResponseHandler;->onFailure(Ljava/lang/Throwable;Ljava/lang/String;)V
-
-    goto :goto_f
-
-    .line 163
-    :cond_23
-    const-string v0, ""
-
-    invoke-virtual {p0, p1, v0}, Lcom/loopj/android/http/JsonHttpResponseHandler;->onFailure(Ljava/lang/Throwable;Ljava/lang/String;)V
-    :try_end_28
-    .catch Lorg/json/JSONException; {:try_start_1f .. :try_end_28} :catch_1a
-
-    goto :goto_f
+    return v0
 .end method
 
-.method protected handleMessage(Landroid/os/Message;)V
-    .registers 5
+.method public onFailure(I[Lcz/msebera/android/httpclient/Header;Ljava/lang/String;Ljava/lang/Throwable;)V
+    .registers 8
+    .param p1, "statusCode"    # I
+    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
+    .param p3, "responseString"    # Ljava/lang/String;
+    .param p4, "throwable"    # Ljava/lang/Throwable;
 
     .prologue
-    .line 117
-    iget v0, p1, Landroid/os/Message;->what:I
+    .line 129
+    sget-object v0, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
 
-    packed-switch v0, :pswitch_data_20
+    const-string/jumbo v1, "JsonHttpRH"
 
-    .line 123
-    invoke-super {p0, p1}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->handleMessage(Landroid/os/Message;)V
+    const-string/jumbo v2, "onFailure(int, Header[], String, Throwable) was not overriden, but callback was received"
+
+    invoke-interface {v0, v1, v2, p4}, Lcom/loopj/android/http/LogInterface;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 130
+    return-void
+.end method
+
+.method public onFailure(I[Lcz/msebera/android/httpclient/Header;Ljava/lang/Throwable;Lorg/json/JSONArray;)V
+    .registers 8
+    .param p1, "statusCode"    # I
+    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
+    .param p3, "throwable"    # Ljava/lang/Throwable;
+    .param p4, "errorResponse"    # Lorg/json/JSONArray;
+
+    .prologue
+    .line 124
+    sget-object v0, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
+
+    const-string/jumbo v1, "JsonHttpRH"
+
+    const-string/jumbo v2, "onFailure(int, Header[], Throwable, JSONArray) was not overriden, but callback was received"
+
+    invoke-interface {v0, v1, v2, p3}, Lcom/loopj/android/http/LogInterface;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 125
-    :goto_8
     return-void
+.end method
 
-    .line 119
-    :pswitch_9
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+.method public onFailure(I[Lcz/msebera/android/httpclient/Header;Ljava/lang/Throwable;Lorg/json/JSONObject;)V
+    .registers 8
+    .param p1, "statusCode"    # I
+    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
+    .param p3, "throwable"    # Ljava/lang/Throwable;
+    .param p4, "errorResponse"    # Lorg/json/JSONObject;
 
-    check-cast v0, [Ljava/lang/Object;
+    .prologue
+    .line 112
+    sget-object v0, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
 
-    check-cast v0, [Ljava/lang/Object;
+    const-string/jumbo v1, "JsonHttpRH"
 
-    .line 120
-    const/4 v1, 0x0
+    const-string/jumbo v2, "onFailure(int, Header[], Throwable, JSONObject) was not overriden, but callback was received"
 
-    aget-object v1, v0, v1
+    invoke-interface {v0, v1, v2, p3}, Lcom/loopj/android/http/LogInterface;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    check-cast v1, Ljava/lang/Integer;
+    .line 113
+    return-void
+.end method
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+.method public final onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
+    .registers 11
+    .param p1, "statusCode"    # I
+    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
+    .param p3, "responseBytes"    # [B
+    .param p4, "throwable"    # Ljava/lang/Throwable;
+
+    .prologue
+    .line 190
+    if-eqz p3, :cond_25
+
+    .line 191
+    new-instance v0, Lcom/loopj/android/http/JsonHttpResponseHandler$2;
+
+    move-object v1, p0
+
+    move-object v2, p3
+
+    move v3, p1
+
+    move-object v4, p2
+
+    move-object v5, p4
+
+    invoke-direct/range {v0 .. v5}, Lcom/loopj/android/http/JsonHttpResponseHandler$2;-><init>(Lcom/loopj/android/http/JsonHttpResponseHandler;[BI[Lcz/msebera/android/httpclient/Header;Ljava/lang/Throwable;)V
+
+    .line 225
+    .local v0, "parser":Ljava/lang/Runnable;
+    invoke-virtual {p0}, Lcom/loopj/android/http/JsonHttpResponseHandler;->getUseSynchronousMode()Z
 
     move-result v1
 
-    const/4 v2, 0x1
+    if-nez v1, :cond_21
 
-    aget-object v0, v0, v2
+    invoke-virtual {p0}, Lcom/loopj/android/http/JsonHttpResponseHandler;->getUsePoolThread()Z
 
-    invoke-virtual {p0, v1, v0}, Lcom/loopj/android/http/JsonHttpResponseHandler;->handleSuccessJsonMessage(ILjava/lang/Object;)V
+    move-result v1
 
-    goto :goto_8
+    if-nez v1, :cond_21
 
-    .line 117
-    nop
+    .line 226
+    new-instance v1, Ljava/lang/Thread;
 
-    :pswitch_data_20
-    .packed-switch 0x64
-        :pswitch_9
-    .end packed-switch
-.end method
+    invoke-direct {v1, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
-.method protected handleSuccessJsonMessage(ILjava/lang/Object;)V
-    .registers 6
+    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
 
-    .prologue
-    .line 128
-    instance-of v0, p2, Lorg/json/JSONObject;
-
-    if-eqz v0, :cond_a
-
-    .line 129
-    check-cast p2, Lorg/json/JSONObject;
-
-    invoke-virtual {p0, p1, p2}, Lcom/loopj/android/http/JsonHttpResponseHandler;->onSuccess(ILorg/json/JSONObject;)V
-
-    .line 135
-    :goto_9
+    .line 235
+    .end local v0    # "parser":Ljava/lang/Runnable;
+    :goto_20
     return-void
 
-    .line 130
-    :cond_a
-    instance-of v0, p2, Lorg/json/JSONArray;
+    .line 229
+    .restart local v0    # "parser":Ljava/lang/Runnable;
+    :cond_21
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    if-eqz v0, :cond_14
+    goto :goto_20
 
-    .line 131
-    check-cast p2, Lorg/json/JSONArray;
+    .line 232
+    .end local v0    # "parser":Ljava/lang/Runnable;
+    :cond_25
+    sget-object v1, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
 
-    invoke-virtual {p0, p1, p2}, Lcom/loopj/android/http/JsonHttpResponseHandler;->onSuccess(ILorg/json/JSONArray;)V
+    const-string/jumbo v2, "JsonHttpRH"
 
-    goto :goto_9
+    const-string/jumbo v3, "response body is null, calling onFailure(Throwable, JSONObject)"
 
-    .line 133
-    :cond_14
-    new-instance v1, Lorg/json/JSONException;
+    invoke-interface {v1, v2, v3}, Lcom/loopj/android/http/LogInterface;->v(Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 233
+    const/4 v1, 0x0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    check-cast v1, Lorg/json/JSONObject;
 
-    const-string v2, "Unexpected type "
+    invoke-virtual {p0, p1, p2, p4, v1}, Lcom/loopj/android/http/JsonHttpResponseHandler;->onFailure(I[Lcz/msebera/android/httpclient/Header;Ljava/lang/Throwable;Lorg/json/JSONObject;)V
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Lorg/json/JSONException;-><init>(Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    check-cast v0, Lorg/json/JSONObject;
-
-    invoke-virtual {p0, v1, v0}, Lcom/loopj/android/http/JsonHttpResponseHandler;->onFailure(Ljava/lang/Throwable;Lorg/json/JSONObject;)V
-
-    goto :goto_9
+    goto :goto_20
 .end method
 
-.method public onFailure(Ljava/lang/Throwable;Lorg/json/JSONArray;)V
-    .registers 3
+.method public onSuccess(I[Lcz/msebera/android/httpclient/Header;Ljava/lang/String;)V
+    .registers 7
+    .param p1, "statusCode"    # I
+    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
+    .param p3, "responseString"    # Ljava/lang/String;
+
+    .prologue
+    .line 134
+    sget-object v0, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
+
+    const-string/jumbo v1, "JsonHttpRH"
+
+    const-string/jumbo v2, "onSuccess(int, Header[], String) was not overriden, but callback was received"
+
+    invoke-interface {v0, v1, v2}, Lcom/loopj/android/http/LogInterface;->w(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 135
+    return-void
+.end method
+
+.method public onSuccess(I[Lcz/msebera/android/httpclient/Header;Lorg/json/JSONArray;)V
+    .registers 7
+    .param p1, "statusCode"    # I
+    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
+    .param p3, "response"    # Lorg/json/JSONArray;
+
+    .prologue
+    .line 100
+    sget-object v0, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
+
+    const-string/jumbo v1, "JsonHttpRH"
+
+    const-string/jumbo v2, "onSuccess(int, Header[], JSONArray) was not overriden, but callback was received"
+
+    invoke-interface {v0, v1, v2}, Lcom/loopj/android/http/LogInterface;->w(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 101
+    return-void
+.end method
+
+.method public onSuccess(I[Lcz/msebera/android/httpclient/Header;Lorg/json/JSONObject;)V
+    .registers 7
+    .param p1, "statusCode"    # I
+    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
+    .param p3, "response"    # Lorg/json/JSONObject;
 
     .prologue
     .line 89
+    sget-object v0, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
+
+    const-string/jumbo v1, "JsonHttpRH"
+
+    const-string/jumbo v2, "onSuccess(int, Header[], JSONObject) was not overriden, but callback was received"
+
+    invoke-interface {v0, v1, v2}, Lcom/loopj/android/http/LogInterface;->w(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 90
     return-void
 .end method
 
-.method public onFailure(Ljava/lang/Throwable;Lorg/json/JSONObject;)V
-    .registers 3
+.method public final onSuccess(I[Lcz/msebera/android/httpclient/Header;[B)V
+    .registers 6
+    .param p1, "statusCode"    # I
+    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
+    .param p3, "responseBytes"    # [B
 
     .prologue
-    .line 88
+    .line 139
+    const/16 v1, 0xcc
+
+    if-eq p1, v1, :cond_22
+
+    .line 140
+    new-instance v0, Lcom/loopj/android/http/JsonHttpResponseHandler$1;
+
+    invoke-direct {v0, p0, p3, p1, p2}, Lcom/loopj/android/http/JsonHttpResponseHandler$1;-><init>(Lcom/loopj/android/http/JsonHttpResponseHandler;[BI[Lcz/msebera/android/httpclient/Header;)V
+
+    .line 177
+    .local v0, "parser":Ljava/lang/Runnable;
+    invoke-virtual {p0}, Lcom/loopj/android/http/JsonHttpResponseHandler;->getUseSynchronousMode()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1e
+
+    invoke-virtual {p0}, Lcom/loopj/android/http/JsonHttpResponseHandler;->getUsePoolThread()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1e
+
+    .line 178
+    new-instance v1, Ljava/lang/Thread;
+
+    invoke-direct {v1, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+
+    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
+
+    .line 186
+    .end local v0    # "parser":Ljava/lang/Runnable;
+    :goto_1d
     return-void
+
+    .line 181
+    .restart local v0    # "parser":Ljava/lang/Runnable;
+    :cond_1e
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    goto :goto_1d
+
+    .line 184
+    .end local v0    # "parser":Ljava/lang/Runnable;
+    :cond_22
+    new-instance v1, Lorg/json/JSONObject;
+
+    invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
+
+    invoke-virtual {p0, p1, p2, v1}, Lcom/loopj/android/http/JsonHttpResponseHandler;->onSuccess(I[Lcz/msebera/android/httpclient/Header;Lorg/json/JSONObject;)V
+
+    goto :goto_1d
 .end method
 
-.method public onSuccess(ILorg/json/JSONArray;)V
-    .registers 3
-
-    .prologue
-    .line 85
-    invoke-virtual {p0, p2}, Lcom/loopj/android/http/JsonHttpResponseHandler;->onSuccess(Lorg/json/JSONArray;)V
-
-    .line 86
-    return-void
-.end method
-
-.method public onSuccess(ILorg/json/JSONObject;)V
-    .registers 3
-
-    .prologue
-    .line 73
-    invoke-virtual {p0, p2}, Lcom/loopj/android/http/JsonHttpResponseHandler;->onSuccess(Lorg/json/JSONObject;)V
-
-    .line 74
-    return-void
-.end method
-
-.method public onSuccess(Lorg/json/JSONArray;)V
-    .registers 2
-
-    .prologue
-    .line 63
-    return-void
-.end method
-
-.method public onSuccess(Lorg/json/JSONObject;)V
-    .registers 2
-
-    .prologue
-    .line 54
-    return-void
-.end method
-
-.method protected parseResponse(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 5
+.method protected parseResponse([B)Ljava/lang/Object;
+    .registers 6
+    .param p1, "responseBody"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/json/JSONException;
@@ -276,139 +388,176 @@
     .end annotation
 
     .prologue
-    .line 138
+    .line 246
+    if-nez p1, :cond_4
+
+    .line 247
     const/4 v1, 0x0
 
-    .line 140
-    invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
+    .line 274
+    :cond_3
+    :goto_3
+    return-object v1
+
+    .line 248
+    :cond_4
+    const/4 v1, 0x0
+
+    .line 250
+    .local v1, "result":Ljava/lang/Object;
+    invoke-virtual {p0}, Lcom/loopj/android/http/JsonHttpResponseHandler;->getCharset()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {p1, v2}, Lcom/loopj/android/http/JsonHttpResponseHandler;->getResponseString([BLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 141
-    const-string v2, "{"
+    .line 251
+    .local v0, "jsonString":Ljava/lang/String;
+    if-eqz v0, :cond_32
+
+    .line 252
+    invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 253
+    iget-boolean v2, p0, Lcom/loopj/android/http/JsonHttpResponseHandler;->useRFC5179CompatibilityMode:Z
+
+    if-eqz v2, :cond_36
+
+    .line 254
+    const-string/jumbo v2, "{"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-nez v2, :cond_15
+    if-nez v2, :cond_29
 
-    const-string v2, "["
+    const-string/jumbo v2, "["
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_32
 
-    .line 142
-    :cond_15
-    new-instance v1, Lorg/json/JSONTokener;
+    .line 255
+    :cond_29
+    new-instance v2, Lorg/json/JSONTokener;
 
-    invoke-direct {v1, v0}, Lorg/json/JSONTokener;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v0}, Lorg/json/JSONTokener;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Lorg/json/JSONTokener;->nextValue()Ljava/lang/Object;
+    invoke-virtual {v2}, Lorg/json/JSONTokener;->nextValue()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 144
-    :cond_1e
-    if-nez v1, :cond_21
+    .line 271
+    .end local v1    # "result":Ljava/lang/Object;
+    :cond_32
+    :goto_32
+    if-nez v1, :cond_3
 
-    .line 147
-    :goto_20
-    return-object v0
+    .line 272
+    move-object v1, v0
 
-    :cond_21
-    move-object v0, v1
+    .local v1, "result":Ljava/lang/String;
+    goto :goto_3
 
-    goto :goto_20
+    .line 260
+    .local v1, "result":Ljava/lang/Object;
+    :cond_36
+    const-string/jumbo v2, "{"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_48
+
+    const-string/jumbo v2, "}"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_5a
+
+    :cond_48
+    const-string/jumbo v2, "["
+
+    .line 261
+    invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_64
+
+    const-string/jumbo v2, "]"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_64
+
+    .line 262
+    :cond_5a
+    new-instance v2, Lorg/json/JSONTokener;
+
+    invoke-direct {v2, v0}, Lorg/json/JSONTokener;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Lorg/json/JSONTokener;->nextValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    goto :goto_32
+
+    .line 266
+    :cond_64
+    const-string/jumbo v2, "\""
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_32
+
+    const-string/jumbo v2, "\""
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_32
+
+    .line 267
+    const/4 v2, 0x1
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, -0x1
+
+    invoke-virtual {v0, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v1
+
+    .local v1, "result":Ljava/lang/String;
+    goto :goto_32
 .end method
 
-.method protected sendSuccessMessage(ILjava/lang/String;)V
-    .registers 8
+.method public setUseRFC5179CompatibilityMode(Z)V
+    .registers 2
+    .param p1, "useRFC5179CompatibilityMode"    # Z
 
     .prologue
-    const/16 v4, 0x64
+    .line 282
+    iput-boolean p1, p0, Lcom/loopj/android/http/JsonHttpResponseHandler;->useRFC5179CompatibilityMode:Z
 
-    const/4 v1, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    .line 98
-    const/16 v0, 0xcc
-
-    if-eq p1, v0, :cond_29
-
-    .line 100
-    :try_start_9
-    invoke-virtual {p0, p2}, Lcom/loopj/android/http/JsonHttpResponseHandler;->parseResponse(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 101
-    const/16 v1, 0x64
-
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x1
-
-    aput-object v0, v2, v3
-
-    invoke-virtual {p0, v1, v2}, Lcom/loopj/android/http/JsonHttpResponseHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/loopj/android/http/JsonHttpResponseHandler;->sendMessage(Landroid/os/Message;)V
-    :try_end_23
-    .catch Lorg/json/JSONException; {:try_start_9 .. :try_end_23} :catch_24
-
-    .line 108
-    :goto_23
+    .line 283
     return-void
-
-    .line 102
-    :catch_24
-    move-exception v0
-
-    .line 103
-    invoke-virtual {p0, v0, p2}, Lcom/loopj/android/http/JsonHttpResponseHandler;->sendFailureMessage(Ljava/lang/Throwable;Ljava/lang/String;)V
-
-    goto :goto_23
-
-    .line 106
-    :cond_29
-    new-array v0, v1, [Ljava/lang/Object;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    aput-object v1, v0, v2
-
-    new-instance v1, Lorg/json/JSONObject;
-
-    invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
-
-    aput-object v1, v0, v3
-
-    invoke-virtual {p0, v4, v0}, Lcom/loopj/android/http/JsonHttpResponseHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/loopj/android/http/JsonHttpResponseHandler;->sendMessage(Landroid/os/Message;)V
-
-    goto :goto_23
 .end method

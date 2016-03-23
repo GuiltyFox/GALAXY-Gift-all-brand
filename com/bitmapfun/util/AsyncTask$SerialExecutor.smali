@@ -41,25 +41,25 @@
     .registers 2
 
     .prologue
-    .line 249
+    .line 248
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 250
+    .line 249
     new-instance v0, Ljava/util/ArrayDeque;
 
     invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
 
     iput-object v0, p0, Lcom/bitmapfun/util/AsyncTask$SerialExecutor;->mTasks:Ljava/util/ArrayDeque;
 
-    .line 249
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/bitmapfun/util/AsyncTask$SerialExecutor;)V
+.method synthetic constructor <init>(Lcom/bitmapfun/util/AsyncTask$1;)V
     .registers 2
+    .param p1, "x0"    # Lcom/bitmapfun/util/AsyncTask$1;
 
     .prologue
-    .line 249
+    .line 248
     invoke-direct {p0}, Lcom/bitmapfun/util/AsyncTask$SerialExecutor;-><init>()V
 
     return-void
@@ -72,7 +72,7 @@
     .param p1, "r"    # Ljava/lang/Runnable;
 
     .prologue
-    .line 254
+    .line 253
     monitor-enter p0
 
     :try_start_1
@@ -84,23 +84,23 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayDeque;->offer(Ljava/lang/Object;)Z
 
-    .line 263
+    .line 262
     iget-object v0, p0, Lcom/bitmapfun/util/AsyncTask$SerialExecutor;->mActive:Ljava/lang/Runnable;
 
     if-nez v0, :cond_12
 
-    .line 264
+    .line 263
     invoke-virtual {p0}, Lcom/bitmapfun/util/AsyncTask$SerialExecutor;->scheduleNext()V
     :try_end_12
     .catchall {:try_start_1 .. :try_end_12} :catchall_14
 
-    .line 266
+    .line 265
     :cond_12
     monitor-exit p0
 
     return-void
 
-    .line 254
+    .line 253
     :catchall_14
     move-exception v0
 
@@ -113,7 +113,7 @@
     .registers 3
 
     .prologue
-    .line 269
+    .line 268
     monitor-enter p0
 
     :try_start_1
@@ -129,7 +129,7 @@
 
     if-eqz v0, :cond_14
 
-    .line 270
+    .line 269
     sget-object v0, Lcom/bitmapfun/util/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     iget-object v1, p0, Lcom/bitmapfun/util/AsyncTask$SerialExecutor;->mActive:Ljava/lang/Runnable;
@@ -138,13 +138,13 @@
     :try_end_14
     .catchall {:try_start_1 .. :try_end_14} :catchall_16
 
-    .line 272
+    .line 271
     :cond_14
     monitor-exit p0
 
     return-void
 
-    .line 269
+    .line 268
     :catchall_16
     move-exception v0
 

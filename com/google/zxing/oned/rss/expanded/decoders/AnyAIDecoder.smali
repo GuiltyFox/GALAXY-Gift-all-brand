@@ -13,10 +13,10 @@
     .param p1, "information"    # Lcom/google/zxing/common/BitArray;
 
     .prologue
-    .line 41
+    .line 42
     invoke-direct {p0, p1}, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;-><init>(Lcom/google/zxing/common/BitArray;)V
 
-    .line 42
+    .line 43
     return-void
 .end method
 
@@ -26,17 +26,18 @@
     .registers 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Lcom/google/zxing/NotFoundException;
+            Lcom/google/zxing/NotFoundException;,
+            Lcom/google/zxing/FormatException;
         }
     .end annotation
 
     .prologue
-    .line 46
+    .line 47
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 47
+    .line 48
     .local v0, "buf":Ljava/lang/StringBuilder;
     invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AnyAIDecoder;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
 

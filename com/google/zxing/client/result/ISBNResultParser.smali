@@ -58,15 +58,15 @@
     if-ne v1, v4, :cond_9
 
     .line 43
-    const-string v4, "978"
+    const-string/jumbo v4, "978"
 
     invoke-virtual {v2, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v4
 
-    if-nez v4, :cond_26
+    if-nez v4, :cond_28
 
-    const-string v4, "979"
+    const-string/jumbo v4, "979"
 
     invoke-virtual {v2, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -75,7 +75,7 @@
     if-eqz v4, :cond_9
 
     .line 47
-    :cond_26
+    :cond_28
     new-instance v3, Lcom/google/zxing/client/result/ISBNParsedResult;
 
     invoke-direct {v3, v2}, Lcom/google/zxing/client/result/ISBNParsedResult;-><init>(Ljava/lang/String;)V
@@ -85,7 +85,6 @@
 
 .method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .registers 3
-    .param p1, "x0"    # Lcom/google/zxing/Result;
 
     .prologue
     .line 27

@@ -3,13 +3,11 @@
 .source "RetryHandler.java"
 
 # interfaces
-.implements Lorg/apache/http/client/HttpRequestRetryHandler;
+.implements Lcz/msebera/android/httpclient/client/HttpRequestRetryHandler;
 
 
 # static fields
-.field private static final RETRY_SLEEP_TIME_MILLIS:I = 0x5dc
-
-.field private static exceptionBlacklist:Ljava/util/HashSet;
+.field private static final exceptionBlacklist:Ljava/util/HashSet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashSet",
@@ -20,7 +18,7 @@
     .end annotation
 .end field
 
-.field private static exceptionWhitelist:Ljava/util/HashSet;
+.field private static final exceptionWhitelist:Ljava/util/HashSet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashSet",
@@ -35,83 +33,133 @@
 # instance fields
 .field private final maxRetries:I
 
+.field private final retrySleepTimeMS:I
+
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 2
 
     .prologue
-    .line 45
+    .line 43
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     sput-object v0, Lcom/loopj/android/http/RetryHandler;->exceptionWhitelist:Ljava/util/HashSet;
 
-    .line 46
+    .line 44
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     sput-object v0, Lcom/loopj/android/http/RetryHandler;->exceptionBlacklist:Ljava/util/HashSet;
 
-    .line 50
+    .line 48
     sget-object v0, Lcom/loopj/android/http/RetryHandler;->exceptionWhitelist:Ljava/util/HashSet;
 
-    const-class v1, Lorg/apache/http/NoHttpResponseException;
+    const-class v1, Lcz/msebera/android/httpclient/NoHttpResponseException;
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 52
+    .line 50
     sget-object v0, Lcom/loopj/android/http/RetryHandler;->exceptionWhitelist:Ljava/util/HashSet;
 
     const-class v1, Ljava/net/UnknownHostException;
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 54
+    .line 52
     sget-object v0, Lcom/loopj/android/http/RetryHandler;->exceptionWhitelist:Ljava/util/HashSet;
 
     const-class v1, Ljava/net/SocketException;
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 57
+    .line 55
     sget-object v0, Lcom/loopj/android/http/RetryHandler;->exceptionBlacklist:Ljava/util/HashSet;
 
     const-class v1, Ljava/io/InterruptedIOException;
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 59
+    .line 57
     sget-object v0, Lcom/loopj/android/http/RetryHandler;->exceptionBlacklist:Ljava/util/HashSet;
 
-    const-class v1, Ljavax/net/ssl/SSLHandshakeException;
+    const-class v1, Ljavax/net/ssl/SSLException;
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 60
+    .line 58
     return-void
 .end method
 
-.method public constructor <init>(I)V
-    .registers 2
+.method public constructor <init>(II)V
+    .registers 3
+    .param p1, "maxRetries"    # I
+    .param p2, "retrySleepTimeMS"    # I
 
     .prologue
-    .line 64
+    .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 65
+    .line 64
     iput p1, p0, Lcom/loopj/android/http/RetryHandler;->maxRetries:I
 
+    .line 65
+    iput p2, p0, Lcom/loopj/android/http/RetryHandler;->retrySleepTimeMS:I
+
     .line 66
+    return-void
+.end method
+
+.method static addClassToBlacklist(Ljava/lang/Class;)V
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class",
+            "<*>;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 73
+    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
+    sget-object v0, Lcom/loopj/android/http/RetryHandler;->exceptionBlacklist:Ljava/util/HashSet;
+
+    invoke-virtual {v0, p0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    .line 74
+    return-void
+.end method
+
+.method static addClassToWhitelist(Ljava/lang/Class;)V
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Class",
+            "<*>;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 69
+    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
+    sget-object v0, Lcom/loopj/android/http/RetryHandler;->exceptionWhitelist:Ljava/util/HashSet;
+
+    invoke-virtual {v0, p0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    .line 70
     return-void
 .end method
 
 
 # virtual methods
 .method protected isInList(Ljava/util/HashSet;Ljava/lang/Throwable;)Z
-    .registers 5
+    .registers 6
+    .param p2, "error"    # Ljava/lang/Throwable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -125,186 +173,181 @@
     .end annotation
 
     .prologue
-    .line 105
+    .line 115
+    .local p1, "list":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/Class<*>;>;"
     invoke-virtual {p1}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .line 106
     :cond_4
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_18
+    if-eqz v2, :cond_18
 
-    .line 107
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/Class;
 
+    .line 116
+    .local v0, "aList":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {v0, p2}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_4
+    if-eqz v2, :cond_4
 
-    .line 108
-    const/4 v0, 0x1
+    .line 117
+    const/4 v1, 0x1
 
-    .line 111
+    .line 120
+    .end local v0    # "aList":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :goto_17
-    return v0
+    return v1
 
     :cond_18
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     goto :goto_17
 .end method
 
-.method public retryRequest(Ljava/io/IOException;ILorg/apache/http/protocol/HttpContext;)Z
-    .registers 8
+.method public retryRequest(Ljava/io/IOException;ILcz/msebera/android/httpclient/protocol/HttpContext;)Z
+    .registers 10
+    .param p1, "exception"    # Ljava/io/IOException;
+    .param p2, "executionCount"    # I
+    .param p3, "context"    # Lcz/msebera/android/httpclient/protocol/HttpContext;
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v4, 0x0
 
-    const/4 v1, 0x1
+    .line 78
+    const/4 v2, 0x1
 
-    .line 69
-    .line 71
-    const-string v0, "http.request_sent"
+    .line 80
+    .local v2, "retry":Z
+    const-string/jumbo v5, "http.request_sent"
 
-    invoke-interface {p3, v0}, Lorg/apache/http/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {p3, v5}, Lcz/msebera/android/httpclient/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/Boolean;
 
-    .line 72
-    if-eqz v0, :cond_36
+    .line 81
+    .local v0, "b":Ljava/lang/Boolean;
+    if-eqz v0, :cond_27
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v0
+    move-result v5
 
-    if-eqz v0, :cond_36
+    if-eqz v5, :cond_27
 
-    move v0, v1
-
-    .line 74
-    :goto_13
-    iget v3, p0, Lcom/loopj/android/http/RetryHandler;->maxRetries:I
-
-    if-le p2, v3, :cond_38
-
-    move v0, v2
-
-    .line 88
-    :goto_18
-    if-eqz v0, :cond_56
-
-    .line 90
-    const-string v0, "http.request"
-
-    invoke-interface {p3, v0}, Lorg/apache/http/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lorg/apache/http/client/methods/HttpUriRequest;
-
-    .line 91
-    invoke-interface {v0}, Lorg/apache/http/client/methods/HttpUriRequest;->getMethod()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 92
-    const-string v3, "POST"
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_50
-
-    .line 95
-    :goto_2e
-    if-eqz v1, :cond_52
-
-    .line 96
-    const-wide/16 v2, 0x5dc
-
-    invoke-static {v2, v3}, Landroid/os/SystemClock;->sleep(J)V
-
-    .line 101
-    :goto_35
-    return v1
-
-    :cond_36
-    move v0, v2
-
-    .line 72
-    goto :goto_13
-
-    .line 77
-    :cond_38
-    sget-object v3, Lcom/loopj/android/http/RetryHandler;->exceptionBlacklist:Ljava/util/HashSet;
-
-    invoke-virtual {p0, v3, p1}, Lcom/loopj/android/http/RetryHandler;->isInList(Ljava/util/HashSet;Ljava/lang/Throwable;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_42
-
-    move v0, v2
-
-    .line 79
-    goto :goto_18
-
-    .line 80
-    :cond_42
-    sget-object v3, Lcom/loopj/android/http/RetryHandler;->exceptionWhitelist:Ljava/util/HashSet;
-
-    invoke-virtual {p0, v3, p1}, Lcom/loopj/android/http/RetryHandler;->isInList(Ljava/util/HashSet;Ljava/lang/Throwable;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_4c
-
-    move v0, v1
-
-    .line 82
-    goto :goto_18
+    const/4 v3, 0x1
 
     .line 83
-    :cond_4c
-    if-nez v0, :cond_58
+    .local v3, "sent":Z
+    :goto_14
+    iget v5, p0, Lcom/loopj/android/http/RetryHandler;->maxRetries:I
 
-    move v0, v1
+    if-le p2, v5, :cond_29
 
     .line 85
-    goto :goto_18
+    const/4 v2, 0x0
 
-    :cond_50
-    move v1, v2
+    .line 97
+    :cond_19
+    :goto_19
+    if-eqz v2, :cond_41
+
+    .line 99
+    const-string/jumbo v5, "http.request"
+
+    invoke-interface {p3, v5}, Lcz/msebera/android/httpclient/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcz/msebera/android/httpclient/client/methods/HttpUriRequest;
+
+    .line 100
+    .local v1, "currentReq":Lcz/msebera/android/httpclient/client/methods/HttpUriRequest;
+    if-nez v1, :cond_41
+
+    .line 111
+    .end local v1    # "currentReq":Lcz/msebera/android/httpclient/client/methods/HttpUriRequest;
+    :goto_26
+    return v4
+
+    .end local v3    # "sent":Z
+    :cond_27
+    move v3, v4
+
+    .line 81
+    goto :goto_14
+
+    .line 86
+    .restart local v3    # "sent":Z
+    :cond_29
+    sget-object v5, Lcom/loopj/android/http/RetryHandler;->exceptionWhitelist:Ljava/util/HashSet;
+
+    invoke-virtual {p0, v5, p1}, Lcom/loopj/android/http/RetryHandler;->isInList(Ljava/util/HashSet;Ljava/lang/Throwable;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_33
+
+    .line 88
+    const/4 v2, 0x1
+
+    goto :goto_19
+
+    .line 89
+    :cond_33
+    sget-object v5, Lcom/loopj/android/http/RetryHandler;->exceptionBlacklist:Ljava/util/HashSet;
+
+    invoke-virtual {p0, v5, p1}, Lcom/loopj/android/http/RetryHandler;->isInList(Ljava/util/HashSet;Ljava/lang/Throwable;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_3d
+
+    .line 91
+    const/4 v2, 0x0
+
+    goto :goto_19
 
     .line 92
-    goto :goto_2e
+    :cond_3d
+    if-nez v3, :cond_19
 
-    .line 98
-    :cond_52
+    .line 94
+    const/4 v2, 0x1
+
+    goto :goto_19
+
+    .line 105
+    :cond_41
+    if-eqz v2, :cond_4b
+
+    .line 106
+    iget v4, p0, Lcom/loopj/android/http/RetryHandler;->retrySleepTimeMS:I
+
+    int-to-long v4, v4
+
+    invoke-static {v4, v5}, Landroid/os/SystemClock;->sleep(J)V
+
+    :goto_49
+    move v4, v2
+
+    .line 111
+    goto :goto_26
+
+    .line 108
+    :cond_4b
     invoke-virtual {p1}, Ljava/io/IOException;->printStackTrace()V
 
-    goto :goto_35
-
-    :cond_56
-    move v1, v0
-
-    goto :goto_2e
-
-    :cond_58
-    move v0, v1
-
-    goto :goto_18
+    goto :goto_49
 .end method

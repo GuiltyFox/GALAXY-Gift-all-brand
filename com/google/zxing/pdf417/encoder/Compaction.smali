@@ -42,7 +42,7 @@
     .line 21
     new-instance v0, Lcom/google/zxing/pdf417/encoder/Compaction;
 
-    const-string v1, "AUTO"
+    const-string/jumbo v1, "AUTO"
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/pdf417/encoder/Compaction;-><init>(Ljava/lang/String;I)V
 
@@ -51,7 +51,7 @@
     .line 22
     new-instance v0, Lcom/google/zxing/pdf417/encoder/Compaction;
 
-    const-string v1, "TEXT"
+    const-string/jumbo v1, "TEXT"
 
     invoke-direct {v0, v1, v3}, Lcom/google/zxing/pdf417/encoder/Compaction;-><init>(Ljava/lang/String;I)V
 
@@ -60,7 +60,7 @@
     .line 23
     new-instance v0, Lcom/google/zxing/pdf417/encoder/Compaction;
 
-    const-string v1, "BYTE"
+    const-string/jumbo v1, "BYTE"
 
     invoke-direct {v0, v1, v4}, Lcom/google/zxing/pdf417/encoder/Compaction;-><init>(Ljava/lang/String;I)V
 
@@ -69,7 +69,7 @@
     .line 24
     new-instance v0, Lcom/google/zxing/pdf417/encoder/Compaction;
 
-    const-string v1, "NUMERIC"
+    const-string/jumbo v1, "NUMERIC"
 
     invoke-direct {v0, v1, v5}, Lcom/google/zxing/pdf417/encoder/Compaction;-><init>(Ljava/lang/String;I)V
 

@@ -40,13 +40,15 @@
 # direct methods
 .method public constructor <init>(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;IIJLcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
     .registers 9
+    .param p1, "this$0"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
     .param p2, "fromY"    # I
     .param p3, "toY"    # I
     .param p4, "duration"    # J
+    .param p6, "listener"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;
 
     .prologue
     .line 1597
-    .local p6, "listener":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;"
+    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>.SmoothScrollRunnable;"
     iput-object p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->this$0:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -74,7 +76,7 @@
 
     .line 1600
     # getter for: Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mScrollAnimationInterpolator:Landroid/view/animation/Interpolator;
-    invoke-static {p1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->access$0(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;)Landroid/view/animation/Interpolator;
+    invoke-static {p1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->access$200(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;)Landroid/view/animation/Interpolator;
 
     move-result-object v0
 
@@ -96,6 +98,7 @@
     .registers 11
 
     .prologue
+    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>.SmoothScrollRunnable;"
     const-wide/16 v8, 0x3e8
 
     .line 1612
@@ -173,7 +176,6 @@
 
     int-to-float v1, v1
 
-    .line 1625
     iget-object v4, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mInterpolator:Landroid/view/animation/Interpolator;
 
     long-to-float v5, v2
@@ -182,13 +184,14 @@
 
     div-float/2addr v5, v6
 
+    .line 1625
     invoke-interface {v4, v5}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
 
     move-result v4
 
-    .line 1624
     mul-float/2addr v1, v4
 
+    .line 1624
     invoke-static {v1}, Ljava/lang/Math;->round(F)I
 
     move-result v0
@@ -231,6 +234,7 @@
 
     .prologue
     .line 1641
+    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>.SmoothScrollRunnable;"
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->mContinueRunning:Z

@@ -143,7 +143,7 @@
 
     .line 126
     :cond_36
-    shr-int/lit8 v8, v7, 0x1
+    div-int/lit8 v8, v7, 0x2
 
     .line 127
     .local v8, "nudge":I

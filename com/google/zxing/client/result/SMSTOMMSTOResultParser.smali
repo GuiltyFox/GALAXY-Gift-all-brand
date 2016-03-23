@@ -18,7 +18,6 @@
 # virtual methods
 .method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .registers 3
-    .param p1, "x0"    # Lcom/google/zxing/Result;
 
     .prologue
     .line 31
@@ -43,44 +42,45 @@
 
     .line 36
     .local v3, "rawText":Ljava/lang/String;
-    const-string v5, "smsto:"
+    const-string/jumbo v5, "smsto:"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v5
 
-    if-nez v5, :cond_26
+    if-nez v5, :cond_2a
 
-    const-string v5, "SMSTO:"
-
-    invoke-virtual {v3, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_26
-
-    const-string v5, "mmsto:"
+    const-string/jumbo v5, "SMSTO:"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v5
 
-    if-nez v5, :cond_26
+    if-nez v5, :cond_2a
 
-    const-string v5, "MMSTO:"
+    const-string/jumbo v5, "mmsto:"
+
+    .line 37
+    invoke-virtual {v3, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_2a
+
+    const-string/jumbo v5, "MMSTO:"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v5
 
-    if-nez v5, :cond_26
+    if-nez v5, :cond_2a
 
     .line 49
-    :goto_25
+    :goto_29
     return-object v4
 
     .line 42
-    :cond_26
+    :cond_2a
     const/4 v5, 0x6
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -101,7 +101,7 @@
 
     .line 45
     .local v1, "bodyStart":I
-    if-ltz v1, :cond_3f
+    if-ltz v1, :cond_43
 
     .line 46
     add-int/lit8 v5, v1, 0x1
@@ -118,12 +118,12 @@
     move-result-object v2
 
     .line 49
-    :cond_3f
+    :cond_43
     new-instance v5, Lcom/google/zxing/client/result/SMSParsedResult;
 
     invoke-direct {v5, v2, v4, v4, v0}, Lcom/google/zxing/client/result/SMSParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     move-object v4, v5
 
-    goto :goto_25
+    goto :goto_29
 .end method

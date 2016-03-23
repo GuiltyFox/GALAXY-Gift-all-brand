@@ -1,6 +1,5 @@
 .class final Lcom/google/android/gms/analytics/internal/Command$1;
 .super Ljava/lang/Object;
-.source "Command.java"
 
 # interfaces
 .implements Landroid/os/Parcelable$Creator;
@@ -31,8 +30,6 @@
 .method constructor <init>()V
     .registers 1
 
-    .prologue
-    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,52 +37,48 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Lcom/google/android/gms/analytics/internal/Command;
-    .registers 3
-    .param p1, "in"    # Landroid/os/Parcel;
-
-    .prologue
-    .line 57
-    new-instance v0, Lcom/google/android/gms/analytics/internal/Command;
-
-    invoke-direct {v0, p1}, Lcom/google/android/gms/analytics/internal/Command;-><init>(Landroid/os/Parcel;)V
-
-    return-object v0
-.end method
-
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .registers 3
     .param p1, "x0"    # Landroid/os/Parcel;
 
     .prologue
-    .line 54
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/analytics/internal/Command$1;->createFromParcel(Landroid/os/Parcel;)Lcom/google/android/gms/analytics/internal/Command;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/analytics/internal/Command$1;->zzq(Landroid/os/Parcel;)Lcom/google/android/gms/analytics/internal/Command;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public newArray(I)[Lcom/google/android/gms/analytics/internal/Command;
+.method public synthetic newArray(I)[Ljava/lang/Object;
     .registers 3
-    .param p1, "size"    # I
+    .param p1, "x0"    # I
 
     .prologue
-    .line 62
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/analytics/internal/Command$1;->zzag(I)[Lcom/google/android/gms/analytics/internal/Command;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public zzag(I)[Lcom/google/android/gms/analytics/internal/Command;
+    .registers 3
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     new-array v0, p1, [Lcom/google/android/gms/analytics/internal/Command;
 
     return-object v0
 .end method
 
-.method public bridge synthetic newArray(I)[Ljava/lang/Object;
+.method public zzq(Landroid/os/Parcel;)Lcom/google/android/gms/analytics/internal/Command;
     .registers 3
-    .param p1, "x0"    # I
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    .prologue
-    .line 54
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/analytics/internal/Command$1;->newArray(I)[Lcom/google/android/gms/analytics/internal/Command;
+    new-instance v0, Lcom/google/android/gms/analytics/internal/Command;
 
-    move-result-object v0
+    invoke-direct {v0, p1}, Lcom/google/android/gms/analytics/internal/Command;-><init>(Landroid/os/Parcel;)V
 
     return-object v0
 .end method

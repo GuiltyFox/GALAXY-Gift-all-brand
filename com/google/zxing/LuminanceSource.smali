@@ -42,7 +42,7 @@
     .line 94
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    const-string v1, "This luminance source does not support cropping."
+    const-string/jumbo v1, "This luminance source does not support cropping."
 
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
@@ -114,7 +114,7 @@
     .line 119
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    const-string v1, "This luminance source does not support rotation by 90 degrees."
+    const-string/jumbo v1, "This luminance source does not support rotation by 90 degrees."
 
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
@@ -128,7 +128,7 @@
     .line 129
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    const-string v1, "This luminance source does not support rotation by 45 degrees."
+    const-string/jumbo v1, "This luminance source does not support rotation by 45 degrees."
 
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 

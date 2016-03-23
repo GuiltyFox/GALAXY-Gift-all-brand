@@ -45,18 +45,20 @@
     .registers 1
 
     .prologue
-    .line 680
-    .local p0, "this":Lcom/bitmapfun/util/AsyncTask$WorkerRunnable;, "Lcom/bitmapfun/util/AsyncTask<TParams;TProgress;TResult;>.WorkerRunnable<TParams;TResult;>;"
+    .line 679
+    .local p0, "this":Lcom/bitmapfun/util/AsyncTask$WorkerRunnable;, "Lcom/bitmapfun/util/AsyncTask$WorkerRunnable<TParams;TResult;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/bitmapfun/util/AsyncTask$WorkerRunnable;)V
+.method synthetic constructor <init>(Lcom/bitmapfun/util/AsyncTask$1;)V
     .registers 2
+    .param p1, "x0"    # Lcom/bitmapfun/util/AsyncTask$1;
 
     .prologue
-    .line 680
+    .line 679
+    .local p0, "this":Lcom/bitmapfun/util/AsyncTask$WorkerRunnable;, "Lcom/bitmapfun/util/AsyncTask$WorkerRunnable<TParams;TResult;>;"
     invoke-direct {p0}, Lcom/bitmapfun/util/AsyncTask$WorkerRunnable;-><init>()V
 
     return-void

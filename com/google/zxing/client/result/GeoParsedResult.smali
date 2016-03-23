@@ -73,7 +73,7 @@
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
     .line 86
-    const-string v1, ", "
+    const-string/jumbo v1, ", "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -89,10 +89,10 @@
 
     cmpl-double v1, v2, v4
 
-    if-lez v1, :cond_2d
+    if-lez v1, :cond_2f
 
     .line 89
-    const-string v1, ", "
+    const-string/jumbo v1, ", "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -107,13 +107,13 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 93
-    :cond_2d
+    :cond_2f
     iget-object v1, p0, Lcom/google/zxing/client/result/GeoParsedResult;->query:Ljava/lang/String;
 
-    if-eqz v1, :cond_40
+    if-eqz v1, :cond_43
 
     .line 94
-    const-string v1, " ("
+    const-string/jumbo v1, " ("
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -128,7 +128,7 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 98
-    :cond_40
+    :cond_43
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -149,7 +149,7 @@
 
     .line 39
     .local v0, "result":Ljava/lang/StringBuilder;
-    const-string v1, "geo:"
+    const-string/jumbo v1, "geo:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -173,7 +173,7 @@
 
     cmpl-double v1, v2, v4
 
-    if-lez v1, :cond_29
+    if-lez v1, :cond_2a
 
     .line 44
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -184,10 +184,10 @@
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
     .line 47
-    :cond_29
+    :cond_2a
     iget-object v1, p0, Lcom/google/zxing/client/result/GeoParsedResult;->query:Ljava/lang/String;
 
-    if-eqz v1, :cond_37
+    if-eqz v1, :cond_38
 
     .line 48
     const/16 v1, 0x3f
@@ -200,7 +200,7 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 51
-    :cond_37
+    :cond_38
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

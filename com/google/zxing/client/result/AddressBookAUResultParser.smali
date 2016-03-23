@@ -131,7 +131,7 @@
 
     .line 38
     .local v20, "rawText":Ljava/lang/String;
-    const-string v1, "MEMORY"
+    const-string/jumbo v1, "MEMORY"
 
     move-object/from16 v0, v20
 
@@ -139,9 +139,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_1a
 
-    const-string v1, "\r\n"
+    const-string/jumbo v1, "\r\n"
 
     move-object/from16 v0, v20
 
@@ -149,19 +149,19 @@
 
     move-result v1
 
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_1c
 
     .line 39
-    :cond_18
+    :cond_1a
     const/4 v1, 0x0
 
     .line 52
-    :goto_19
+    :goto_1b
     return-object v1
 
     .line 44
-    :cond_1a
-    const-string v1, "NAME1:"
+    :cond_1c
+    const-string/jumbo v1, "NAME1:"
 
     const/16 v2, 0xd
 
@@ -175,7 +175,7 @@
 
     .line 45
     .local v19, "name":Ljava/lang/String;
-    const-string v1, "NAME2:"
+    const-string/jumbo v1, "NAME2:"
 
     const/16 v2, 0xd
 
@@ -189,7 +189,7 @@
 
     .line 47
     .local v4, "pronunciation":Ljava/lang/String;
-    const-string v1, "TEL"
+    const-string/jumbo v1, "TEL"
 
     const/4 v2, 0x3
 
@@ -203,7 +203,7 @@
 
     .line 48
     .local v5, "phoneNumbers":[Ljava/lang/String;
-    const-string v1, "MAIL"
+    const-string/jumbo v1, "MAIL"
 
     const/4 v2, 0x3
 
@@ -217,7 +217,7 @@
 
     .line 49
     .local v7, "emails":[Ljava/lang/String;
-    const-string v1, "MEMORY:"
+    const-string/jumbo v1, "MEMORY:"
 
     const/16 v2, 0xd
 
@@ -231,7 +231,7 @@
 
     .line 50
     .local v10, "note":Ljava/lang/String;
-    const-string v1, "ADD:"
+    const-string/jumbo v1, "ADD:"
 
     const/16 v2, 0xd
 
@@ -245,13 +245,13 @@
 
     .line 51
     .local v18, "address":Ljava/lang/String;
-    if-nez v18, :cond_73
+    if-nez v18, :cond_7b
 
     const/4 v11, 0x0
 
     .line 52
     .local v11, "addresses":[Ljava/lang/String;
-    :goto_5d
+    :goto_65
     new-instance v1, Lcom/google/zxing/client/result/AddressBookParsedResult;
 
     invoke-static/range {v19 .. v19}, Lcom/google/zxing/client/result/AddressBookAUResultParser;->maybeWrap(Ljava/lang/String;)[Ljava/lang/String;
@@ -280,11 +280,11 @@
 
     invoke-direct/range {v1 .. v17}, Lcom/google/zxing/client/result/AddressBookParsedResult;-><init>([Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
-    goto :goto_19
+    goto :goto_1b
 
     .line 51
     .end local v11    # "addresses":[Ljava/lang/String;
-    :cond_73
+    :cond_7b
     const/4 v1, 0x1
 
     new-array v11, v1, [Ljava/lang/String;
@@ -293,12 +293,11 @@
 
     aput-object v18, v11, v1
 
-    goto :goto_5d
+    goto :goto_65
 .end method
 
 .method public bridge synthetic parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
     .registers 3
-    .param p1, "x0"    # Lcom/google/zxing/Result;
 
     .prologue
     .line 32

@@ -34,14 +34,14 @@
 
     const/4 v11, 0x0
 
-    .line 103
+    .line 104
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 105
+    .line 106
     :try_start_8
     const-class v6, Landroid/app/ActionBar;
 
-    const-string v7, "setHomeAsUpIndicator"
+    const-string/jumbo v7, "setHomeAsUpIndicator"
 
     const/4 v8, 0x1
 
@@ -59,10 +59,10 @@
 
     iput-object v6, p0, Landroid/support/v4/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;->setHomeAsUpIndicator:Ljava/lang/reflect/Method;
 
-    .line 107
+    .line 108
     const-class v6, Landroid/app/ActionBar;
 
-    const-string v7, "setHomeActionContentDescription"
+    const-string/jumbo v7, "setHomeActionContentDescription"
 
     const/4 v8, 0x1
 
@@ -79,85 +79,85 @@
     move-result-object v6
 
     iput-object v6, p0, Landroid/support/v4/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;->setHomeActionContentDescription:Ljava/lang/reflect/Method;
-    :try_end_2c
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_8 .. :try_end_2c} :catch_2d
+    :try_end_2e
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_8 .. :try_end_2e} :catch_2f
 
-    .line 137
-    :cond_2c
-    :goto_2c
+    .line 138
+    :cond_2e
+    :goto_2e
     return-void
 
-    .line 112
-    :catch_2d
+    .line 113
+    :catch_2f
     move-exception v6
 
-    .line 116
+    .line 117
     invoke-virtual {p1, v13}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 117
+    .line 118
     .local v2, "home":Landroid/view/View;
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_2e
 
-    .line 122
+    .line 123
     invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v3
 
     check-cast v3, Landroid/view/ViewGroup;
 
-    .line 123
+    .line 124
     .local v3, "parent":Landroid/view/ViewGroup;
     invoke-virtual {v3}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
-    .line 124
+    .line 125
     .local v0, "childCount":I
     const/4 v6, 0x2
 
-    if-ne v0, v6, :cond_2c
+    if-ne v0, v6, :cond_2e
 
-    .line 129
+    .line 130
     invoke-virtual {v3, v11}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 130
+    .line 131
     .local v1, "first":Landroid/view/View;
     invoke-virtual {v3, v12}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 131
+    .line 132
     .local v4, "second":Landroid/view/View;
     invoke-virtual {v1}, Landroid/view/View;->getId()I
 
     move-result v6
 
-    if-ne v6, v13, :cond_59
+    if-ne v6, v13, :cond_5b
 
     move-object v5, v4
 
-    .line 133
+    .line 134
     .local v5, "up":Landroid/view/View;
-    :goto_50
+    :goto_52
     instance-of v6, v5, Landroid/widget/ImageView;
 
-    if-eqz v6, :cond_2c
+    if-eqz v6, :cond_2e
 
-    .line 135
+    .line 136
     check-cast v5, Landroid/widget/ImageView;
 
     .end local v5    # "up":Landroid/view/View;
     iput-object v5, p0, Landroid/support/v4/app/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;->upIndicatorView:Landroid/widget/ImageView;
 
-    goto :goto_2c
+    goto :goto_2e
 
-    :cond_59
+    :cond_5b
     move-object v5, v1
 
-    .line 131
-    goto :goto_50
+    .line 132
+    goto :goto_52
 .end method

@@ -21,6 +21,7 @@
 # direct methods
 .method constructor <init>(Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;)V
     .registers 2
+    .param p1, "this$0"    # Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
 
     .prologue
     .line 82

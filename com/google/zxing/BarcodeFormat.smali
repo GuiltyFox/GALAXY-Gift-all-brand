@@ -70,7 +70,7 @@
     .line 27
     new-instance v0, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "AZTEC"
+    const-string/jumbo v1, "AZTEC"
 
     invoke-direct {v0, v1, v3}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
@@ -79,7 +79,7 @@
     .line 30
     new-instance v0, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "CODABAR"
+    const-string/jumbo v1, "CODABAR"
 
     invoke-direct {v0, v1, v4}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
@@ -88,7 +88,7 @@
     .line 33
     new-instance v0, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "CODE_39"
+    const-string/jumbo v1, "CODE_39"
 
     invoke-direct {v0, v1, v5}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
@@ -97,7 +97,7 @@
     .line 36
     new-instance v0, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "CODE_93"
+    const-string/jumbo v1, "CODE_93"
 
     invoke-direct {v0, v1, v6}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
@@ -106,7 +106,7 @@
     .line 39
     new-instance v0, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "CODE_128"
+    const-string/jumbo v1, "CODE_128"
 
     invoke-direct {v0, v1, v7}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
@@ -115,7 +115,7 @@
     .line 42
     new-instance v0, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "DATA_MATRIX"
+    const-string/jumbo v1, "DATA_MATRIX"
 
     const/4 v2, 0x5
 
@@ -126,7 +126,7 @@
     .line 45
     new-instance v0, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "EAN_8"
+    const-string/jumbo v1, "EAN_8"
 
     const/4 v2, 0x6
 
@@ -137,7 +137,7 @@
     .line 48
     new-instance v0, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "EAN_13"
+    const-string/jumbo v1, "EAN_13"
 
     const/4 v2, 0x7
 
@@ -148,7 +148,7 @@
     .line 51
     new-instance v0, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "ITF"
+    const-string/jumbo v1, "ITF"
 
     const/16 v2, 0x8
 
@@ -159,7 +159,7 @@
     .line 54
     new-instance v0, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "MAXICODE"
+    const-string/jumbo v1, "MAXICODE"
 
     const/16 v2, 0x9
 
@@ -170,7 +170,7 @@
     .line 57
     new-instance v0, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "PDF_417"
+    const-string/jumbo v1, "PDF_417"
 
     const/16 v2, 0xa
 
@@ -181,7 +181,7 @@
     .line 60
     new-instance v0, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "QR_CODE"
+    const-string/jumbo v1, "QR_CODE"
 
     const/16 v2, 0xb
 
@@ -192,7 +192,7 @@
     .line 63
     new-instance v0, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "RSS_14"
+    const-string/jumbo v1, "RSS_14"
 
     const/16 v2, 0xc
 
@@ -203,7 +203,7 @@
     .line 66
     new-instance v0, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "RSS_EXPANDED"
+    const-string/jumbo v1, "RSS_EXPANDED"
 
     const/16 v2, 0xd
 
@@ -214,7 +214,7 @@
     .line 69
     new-instance v0, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "UPC_A"
+    const-string/jumbo v1, "UPC_A"
 
     const/16 v2, 0xe
 
@@ -225,7 +225,7 @@
     .line 72
     new-instance v0, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "UPC_E"
+    const-string/jumbo v1, "UPC_E"
 
     const/16 v2, 0xf
 
@@ -236,7 +236,7 @@
     .line 75
     new-instance v0, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "UPC_EAN_EXTENSION"
+    const-string/jumbo v1, "UPC_EAN_EXTENSION"
 
     const/16 v2, 0x10
 

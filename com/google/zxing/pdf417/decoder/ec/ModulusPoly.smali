@@ -16,6 +16,8 @@
     .param p2, "coefficients"    # [I
 
     .prologue
+    const/4 v3, 0x1
+
     const/4 v4, 0x0
 
     .line 28
@@ -24,7 +26,7 @@
     .line 29
     array-length v2, p2
 
-    if-nez v2, :cond_d
+    if-nez v2, :cond_e
 
     .line 30
     new-instance v2, Ljava/lang/IllegalArgumentException;
@@ -34,7 +36,7 @@
     throw v2
 
     .line 32
-    :cond_d
+    :cond_e
     iput-object p1, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->field:Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;
 
     .line 33
@@ -42,13 +44,11 @@
 
     .line 34
     .local v0, "coefficientsLength":I
-    const/4 v2, 0x1
-
-    if-le v0, v2, :cond_3b
+    if-le v0, v3, :cond_39
 
     aget v2, p2, v4
 
-    if-nez v2, :cond_3b
+    if-nez v2, :cond_39
 
     .line 36
     const/4 v1, 0x1
@@ -69,25 +69,23 @@
 
     .line 40
     :cond_21
-    if-ne v1, v0, :cond_2c
+    if-ne v1, v0, :cond_2a
 
     .line 41
-    invoke-virtual {p1}, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->getZero()Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
+    new-array v2, v3, [I
 
-    move-result-object v2
-
-    iget-object v2, v2, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->coefficients:[I
+    aput v4, v2, v4
 
     iput-object v2, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->coefficients:[I
 
     .line 53
     .end local v1    # "firstNonZero":I
-    :goto_2b
+    :goto_29
     return-void
 
     .line 43
     .restart local v1    # "firstNonZero":I
-    :cond_2c
+    :cond_2a
     sub-int v2, v0, v1
 
     new-array v2, v2, [I
@@ -103,14 +101,14 @@
 
     invoke-static {p2, v1, v2, v4, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    goto :goto_2b
+    goto :goto_29
 
     .line 51
     .end local v1    # "firstNonZero":I
-    :cond_3b
+    :cond_39
     iput-object p2, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->coefficients:[I
 
-    goto :goto_2b
+    goto :goto_29
 .end method
 
 
@@ -131,46 +129,46 @@
 
     move-result v6
 
-    if-nez v6, :cond_13
+    if-nez v6, :cond_14
 
     .line 106
     new-instance v6, Ljava/lang/IllegalArgumentException;
 
-    const-string v7, "ModulusPolys do not have same ModulusGF field"
+    const-string/jumbo v7, "ModulusPolys do not have same ModulusGF field"
 
     invoke-direct {v6, v7}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v6
 
     .line 108
-    :cond_13
+    :cond_14
     invoke-virtual {p0}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->isZero()Z
 
     move-result v6
 
-    if-eqz v6, :cond_1a
+    if-eqz v6, :cond_1b
 
     .line 131
     .end local p1    # "other":Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
-    :goto_19
+    :goto_1a
     return-object p1
 
     .line 111
     .restart local p1    # "other":Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
-    :cond_1a
+    :cond_1b
     invoke-virtual {p1}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->isZero()Z
 
     move-result v6
 
-    if-eqz v6, :cond_22
+    if-eqz v6, :cond_23
 
     move-object p1, p0
 
     .line 112
-    goto :goto_19
+    goto :goto_1a
 
     .line 115
-    :cond_22
+    :cond_23
     iget-object v3, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->coefficients:[I
 
     .line 116
@@ -183,7 +181,7 @@
 
     array-length v7, v1
 
-    if-le v6, v7, :cond_2d
+    if-le v6, v7, :cond_2e
 
     .line 118
     move-object v5, v3
@@ -197,7 +195,7 @@
 
     .line 122
     .end local v5    # "temp":[I
-    :cond_2d
+    :cond_2e
     array-length v6, v1
 
     new-array v4, v6, [I
@@ -218,10 +216,10 @@
     move v0, v2
 
     .local v0, "i":I
-    :goto_38
+    :goto_39
     array-length v6, v1
 
-    if-ge v0, v6, :cond_4c
+    if-ge v0, v6, :cond_4d
 
     .line 128
     iget-object v6, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->field:Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;
@@ -241,10 +239,10 @@
     .line 127
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_38
+    goto :goto_39
 
     .line 131
-    :cond_4c
+    :cond_4d
     new-instance p1, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
 
     .end local p1    # "other":Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
@@ -252,7 +250,7 @@
 
     invoke-direct {p1, v6, v4}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;-><init>(Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;[I)V
 
-    goto :goto_19
+    goto :goto_1a
 .end method
 
 .method divide(Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;)[Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
@@ -269,36 +267,36 @@
 
     move-result v8
 
-    if-nez v8, :cond_12
+    if-nez v8, :cond_13
 
     .line 206
     new-instance v8, Ljava/lang/IllegalArgumentException;
 
-    const-string v9, "ModulusPolys do not have same ModulusGF field"
+    const-string/jumbo v9, "ModulusPolys do not have same ModulusGF field"
 
     invoke-direct {v8, v9}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v8
 
     .line 208
-    :cond_12
+    :cond_13
     invoke-virtual {p1}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->isZero()Z
 
     move-result v8
 
-    if-eqz v8, :cond_20
+    if-eqz v8, :cond_22
 
     .line 209
     new-instance v8, Ljava/lang/IllegalArgumentException;
 
-    const-string v9, "Divide by 0"
+    const-string/jumbo v9, "Divide by 0"
 
     invoke-direct {v8, v9}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v8
 
     .line 212
-    :cond_20
+    :cond_22
     iget-object v8, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->field:Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;
 
     invoke-virtual {v8}, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->getZero()Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
@@ -329,7 +327,7 @@
 
     .line 218
     .local v2, "inverseDenominatorLeadingTerm":I
-    :goto_35
+    :goto_37
     invoke-virtual {v5}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->getDegree()I
 
     move-result v8
@@ -338,13 +336,13 @@
 
     move-result v9
 
-    if-lt v8, v9, :cond_70
+    if-lt v8, v9, :cond_72
 
     invoke-virtual {v5}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->isZero()Z
 
     move-result v8
 
-    if-nez v8, :cond_70
+    if-nez v8, :cond_72
 
     .line 219
     invoke-virtual {v5}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->getDegree()I
@@ -399,14 +397,14 @@
     move-result-object v5
 
     .line 225
-    goto :goto_35
+    goto :goto_37
 
     .line 227
     .end local v0    # "degreeDifference":I
     .end local v3    # "iterationQuotient":Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
     .end local v6    # "scale":I
     .end local v7    # "term":Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
-    :cond_70
+    :cond_72
     const/4 v8, 0x2
 
     new-array v8, v8, [Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
@@ -423,108 +421,100 @@
 .end method
 
 .method evaluateAt(I)I
-    .registers 12
+    .registers 10
     .param p1, "a"    # I
 
     .prologue
-    const/4 v8, 0x0
+    const/4 v4, 0x0
 
     .line 84
     if-nez p1, :cond_8
 
     .line 86
-    invoke-virtual {p0, v8}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->getCoefficient(I)I
+    invoke-virtual {p0, v4}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->getCoefficient(I)I
 
-    move-result v5
+    move-result v2
 
     .line 101
     :cond_7
-    return v5
+    return v2
 
     .line 88
     :cond_8
-    iget-object v7, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->coefficients:[I
+    iget-object v5, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->coefficients:[I
 
-    array-length v6, v7
+    array-length v3, v5
 
     .line 89
-    .local v6, "size":I
-    const/4 v7, 0x1
+    .local v3, "size":I
+    const/4 v5, 0x1
 
-    if-ne p1, v7, :cond_20
+    if-ne p1, v5, :cond_1f
 
     .line 91
-    const/4 v5, 0x0
+    const/4 v2, 0x0
 
     .line 92
-    .local v5, "result":I
-    iget-object v0, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->coefficients:[I
+    .local v2, "result":I
+    iget-object v5, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->coefficients:[I
 
-    .local v0, "arr$":[I
-    array-length v4, v0
+    array-length v6, v5
 
-    .local v4, "len$":I
-    const/4 v3, 0x0
+    :goto_12
+    if-ge v4, v6, :cond_7
 
-    .local v3, "i$":I
-    :goto_13
-    if-ge v3, v4, :cond_7
-
-    aget v1, v0, v3
+    aget v0, v5, v4
 
     .line 93
-    .local v1, "coefficient":I
+    .local v0, "coefficient":I
     iget-object v7, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->field:Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;
 
-    invoke-virtual {v7, v5, v1}, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->add(II)I
+    invoke-virtual {v7, v2, v0}, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->add(II)I
 
-    move-result v5
+    move-result v2
 
     .line 92
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v4, v4, 0x1
 
-    goto :goto_13
+    goto :goto_12
 
     .line 97
-    .end local v0    # "arr$":[I
-    .end local v1    # "coefficient":I
-    .end local v3    # "i$":I
-    .end local v4    # "len$":I
-    .end local v5    # "result":I
-    :cond_20
-    iget-object v7, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->coefficients:[I
+    .end local v0    # "coefficient":I
+    .end local v2    # "result":I
+    :cond_1f
+    iget-object v5, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->coefficients:[I
 
-    aget v5, v7, v8
+    aget v2, v5, v4
 
     .line 98
-    .restart local v5    # "result":I
-    const/4 v2, 0x1
+    .restart local v2    # "result":I
+    const/4 v1, 0x1
 
-    .local v2, "i":I
-    :goto_25
-    if-ge v2, v6, :cond_7
+    .local v1, "i":I
+    :goto_24
+    if-ge v1, v3, :cond_7
 
     .line 99
-    iget-object v7, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->field:Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;
+    iget-object v4, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->field:Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;
 
-    iget-object v8, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->field:Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;
+    iget-object v5, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->field:Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;
 
-    invoke-virtual {v8, p1, v5}, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->multiply(II)I
-
-    move-result v8
-
-    iget-object v9, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->coefficients:[I
-
-    aget v9, v9, v2
-
-    invoke-virtual {v7, v8, v9}, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->add(II)I
+    invoke-virtual {v5, p1, v2}, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->multiply(II)I
 
     move-result v5
 
-    .line 98
-    add-int/lit8 v2, v2, 0x1
+    iget-object v6, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->coefficients:[I
 
-    goto :goto_25
+    aget v6, v6, v1
+
+    invoke-virtual {v4, v5, v6}, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->add(II)I
+
+    move-result v2
+
+    .line 98
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_24
 .end method
 
 .method getCoefficient(I)I
@@ -681,33 +671,33 @@
 
     move-result v8
 
-    if-nez v8, :cond_12
+    if-nez v8, :cond_13
 
     .line 146
     new-instance v8, Ljava/lang/IllegalArgumentException;
 
-    const-string v9, "ModulusPolys do not have same ModulusGF field"
+    const-string/jumbo v9, "ModulusPolys do not have same ModulusGF field"
 
     invoke-direct {v8, v9}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v8
 
     .line 148
-    :cond_12
+    :cond_13
     invoke-virtual {p0}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->isZero()Z
 
     move-result v8
 
-    if-nez v8, :cond_1e
+    if-nez v8, :cond_1f
 
     invoke-virtual {p1}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->isZero()Z
 
     move-result v8
 
-    if-eqz v8, :cond_25
+    if-eqz v8, :cond_26
 
     .line 149
-    :cond_1e
+    :cond_1f
     iget-object v8, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->field:Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;
 
     invoke-virtual {v8}, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->getZero()Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
@@ -715,11 +705,11 @@
     move-result-object v8
 
     .line 162
-    :goto_24
+    :goto_25
     return-object v8
 
     .line 151
-    :cond_25
+    :cond_26
     iget-object v1, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->coefficients:[I
 
     .line 152
@@ -747,8 +737,8 @@
     const/4 v5, 0x0
 
     .local v5, "i":I
-    :goto_32
-    if-ge v5, v2, :cond_55
+    :goto_33
+    if-ge v5, v2, :cond_56
 
     .line 157
     aget v0, v1, v5
@@ -758,8 +748,8 @@
     const/4 v6, 0x0
 
     .local v6, "j":I
-    :goto_37
-    if-ge v6, v4, :cond_52
+    :goto_38
+    if-ge v6, v4, :cond_53
 
     .line 159
     add-int v8, v5, v6
@@ -787,25 +777,25 @@
     .line 158
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_37
+    goto :goto_38
 
     .line 156
-    :cond_52
+    :cond_53
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_32
+    goto :goto_33
 
     .line 162
     .end local v0    # "aCoeff":I
     .end local v6    # "j":I
-    :cond_55
+    :cond_56
     new-instance v8, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
 
     iget-object v9, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->field:Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;
 
     invoke-direct {v8, v9, v7}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;-><init>(Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;[I)V
 
-    goto :goto_24
+    goto :goto_25
 .end method
 
 .method multiplyByMonomial(II)Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
@@ -954,32 +944,32 @@
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_13
 
     .line 136
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "ModulusPolys do not have same ModulusGF field"
+    const-string/jumbo v1, "ModulusPolys do not have same ModulusGF field"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 138
-    :cond_12
+    :cond_13
     invoke-virtual {p1}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->isZero()Z
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1a
 
     .line 141
     .end local p0    # "this":Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
-    :goto_18
+    :goto_19
     return-object p0
 
     .restart local p0    # "this":Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
-    :cond_19
+    :cond_1a
     invoke-virtual {p1}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->negative()Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
 
     move-result-object v0
@@ -988,7 +978,7 @@
 
     move-result-object p0
 
-    goto :goto_18
+    goto :goto_19
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -1016,7 +1006,7 @@
 
     .local v1, "degree":I
     :goto_10
-    if-ltz v1, :cond_48
+    if-ltz v1, :cond_4b
 
     .line 234
     invoke-virtual {p0, v1}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;->getCoefficient(I)I
@@ -1025,13 +1015,13 @@
 
     .line 235
     .local v0, "coefficient":I
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_31
 
     .line 236
-    if-gez v0, :cond_33
+    if-gez v0, :cond_34
 
     .line 237
-    const-string v3, " - "
+    const-string/jumbo v3, " - "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1039,22 +1029,22 @@
     neg-int v0, v0
 
     .line 244
-    :cond_20
-    :goto_20
-    if-eqz v1, :cond_24
+    :cond_21
+    :goto_21
+    if-eqz v1, :cond_25
 
-    if-eq v0, v4, :cond_27
+    if-eq v0, v4, :cond_28
 
     .line 245
-    :cond_24
+    :cond_25
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 247
-    :cond_27
-    if-eqz v1, :cond_30
+    :cond_28
+    if-eqz v1, :cond_31
 
     .line 248
-    if-ne v1, v4, :cond_3f
+    if-ne v1, v4, :cond_41
 
     .line 249
     const/16 v3, 0x78
@@ -1062,41 +1052,41 @@
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 233
-    :cond_30
-    :goto_30
+    :cond_31
+    :goto_31
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_10
 
     .line 240
-    :cond_33
+    :cond_34
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
     move-result v3
 
-    if-lez v3, :cond_20
+    if-lez v3, :cond_21
 
     .line 241
-    const-string v3, " + "
+    const-string/jumbo v3, " + "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_20
+    goto :goto_21
 
     .line 251
-    :cond_3f
-    const-string v3, "x^"
+    :cond_41
+    const-string/jumbo v3, "x^"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 252
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    goto :goto_30
+    goto :goto_31
 
     .line 257
     .end local v0    # "coefficient":I
-    :cond_48
+    :cond_4b
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3

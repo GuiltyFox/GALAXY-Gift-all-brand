@@ -1,4 +1,4 @@
-.class Lbolts/Task$5;
+.class final Lbolts/Task$5;
 .super Ljava/lang/Object;
 .source "Task.java"
 
@@ -8,11 +8,11 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lbolts/Task;->continueWith(Lbolts/Continuation;Ljava/util/concurrent/Executor;)Lbolts/Task;
+    value = Lbolts/Task;->whenAny(Ljava/util/Collection;)Lbolts/Task;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x8
     name = null
 .end annotation
 
@@ -20,7 +20,8 @@
     value = {
         "Ljava/lang/Object;",
         "Lbolts/Continuation",
-        "<TTResult;",
+        "<",
+        "Ljava/lang/Object;",
         "Ljava/lang/Void;",
         ">;"
     }
@@ -28,29 +29,20 @@
 
 
 # instance fields
-.field final synthetic this$0:Lbolts/Task;
+.field final synthetic val$firstCompleted:Lbolts/Task$TaskCompletionSource;
 
-.field final synthetic val$continuation:Lbolts/Continuation;
-
-.field final synthetic val$executor:Ljava/util/concurrent/Executor;
-
-.field final synthetic val$tcs:Lbolts/Task$TaskCompletionSource;
+.field final synthetic val$isAnyTaskComplete:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method constructor <init>(Lbolts/Task;Lbolts/Task$TaskCompletionSource;Lbolts/Continuation;Ljava/util/concurrent/Executor;)V
-    .registers 5
+.method constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;Lbolts/Task$TaskCompletionSource;)V
+    .registers 3
 
     .prologue
-    .line 304
-    .local p0, "this":Lbolts/Task$5;, "Lbolts/Task.5;"
-    iput-object p1, p0, Lbolts/Task$5;->this$0:Lbolts/Task;
+    .line 333
+    iput-object p1, p0, Lbolts/Task$5;->val$isAnyTaskComplete:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iput-object p2, p0, Lbolts/Task$5;->val$tcs:Lbolts/Task$TaskCompletionSource;
-
-    iput-object p3, p0, Lbolts/Task$5;->val$continuation:Lbolts/Continuation;
-
-    iput-object p4, p0, Lbolts/Task$5;->val$executor:Ljava/util/concurrent/Executor;
+    iput-object p2, p0, Lbolts/Task$5;->val$firstCompleted:Lbolts/Task$TaskCompletionSource;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -69,8 +61,7 @@
     .end annotation
 
     .prologue
-    .line 304
-    .local p0, "this":Lbolts/Task$5;, "Lbolts/Task.5;"
+    .line 333
     invoke-virtual {p0, p1}, Lbolts/Task$5;->then(Lbolts/Task;)Ljava/lang/Void;
 
     move-result-object v0
@@ -84,25 +75,35 @@
         value = {
             "(",
             "Lbolts/Task",
-            "<TTResult;>;)",
+            "<",
+            "Ljava/lang/Object;",
+            ">;)",
             "Ljava/lang/Void;"
         }
     .end annotation
 
     .prologue
-    .line 307
-    .local p0, "this":Lbolts/Task$5;, "Lbolts/Task.5;"
-    .local p1, "task":Lbolts/Task;, "Lbolts/Task<TTResult;>;"
-    iget-object v0, p0, Lbolts/Task$5;->val$tcs:Lbolts/Task$TaskCompletionSource;
+    .line 336
+    .local p1, "task":Lbolts/Task;, "Lbolts/Task<Ljava/lang/Object;>;"
+    iget-object v0, p0, Lbolts/Task$5;->val$isAnyTaskComplete:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iget-object v1, p0, Lbolts/Task$5;->val$continuation:Lbolts/Continuation;
+    const/4 v1, 0x0
 
-    iget-object v2, p0, Lbolts/Task$5;->val$executor:Ljava/util/concurrent/Executor;
+    const/4 v2, 0x1
 
-    # invokes: Lbolts/Task;->completeImmediately(Lbolts/Task$TaskCompletionSource;Lbolts/Continuation;Lbolts/Task;Ljava/util/concurrent/Executor;)V
-    invoke-static {v0, v1, p1, v2}, Lbolts/Task;->access$100(Lbolts/Task$TaskCompletionSource;Lbolts/Continuation;Lbolts/Task;Ljava/util/concurrent/Executor;)V
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-    .line 308
+    move-result v0
+
+    if-eqz v0, :cond_f
+
+    .line 337
+    iget-object v0, p0, Lbolts/Task$5;->val$firstCompleted:Lbolts/Task$TaskCompletionSource;
+
+    invoke-virtual {v0, p1}, Lbolts/Task$TaskCompletionSource;->setResult(Ljava/lang/Object;)V
+
+    .line 339
+    :cond_f
     const/4 v0, 0x0
 
     return-object v0

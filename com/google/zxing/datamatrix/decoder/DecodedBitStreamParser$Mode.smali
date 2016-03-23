@@ -59,7 +59,7 @@
     .line 40
     new-instance v0, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;
 
-    const-string v1, "PAD_ENCODE"
+    const-string/jumbo v1, "PAD_ENCODE"
 
     invoke-direct {v0, v1, v3}, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;-><init>(Ljava/lang/String;I)V
 
@@ -68,7 +68,7 @@
     .line 41
     new-instance v0, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;
 
-    const-string v1, "ASCII_ENCODE"
+    const-string/jumbo v1, "ASCII_ENCODE"
 
     invoke-direct {v0, v1, v4}, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;-><init>(Ljava/lang/String;I)V
 
@@ -77,7 +77,7 @@
     .line 42
     new-instance v0, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;
 
-    const-string v1, "C40_ENCODE"
+    const-string/jumbo v1, "C40_ENCODE"
 
     invoke-direct {v0, v1, v5}, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;-><init>(Ljava/lang/String;I)V
 
@@ -86,7 +86,7 @@
     .line 43
     new-instance v0, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;
 
-    const-string v1, "TEXT_ENCODE"
+    const-string/jumbo v1, "TEXT_ENCODE"
 
     invoke-direct {v0, v1, v6}, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;-><init>(Ljava/lang/String;I)V
 
@@ -95,7 +95,7 @@
     .line 44
     new-instance v0, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;
 
-    const-string v1, "ANSIX12_ENCODE"
+    const-string/jumbo v1, "ANSIX12_ENCODE"
 
     invoke-direct {v0, v1, v7}, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;-><init>(Ljava/lang/String;I)V
 
@@ -104,7 +104,7 @@
     .line 45
     new-instance v0, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;
 
-    const-string v1, "EDIFACT_ENCODE"
+    const-string/jumbo v1, "EDIFACT_ENCODE"
 
     const/4 v2, 0x5
 
@@ -115,7 +115,7 @@
     .line 46
     new-instance v0, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;
 
-    const-string v1, "BASE256_ENCODE"
+    const-string/jumbo v1, "BASE256_ENCODE"
 
     const/4 v2, 0x6
 

@@ -50,7 +50,7 @@
 
     move-result-object v1
 
-    const-string v2, ".GCMIntentService"
+    const-string/jumbo v2, ".GCMIntentService"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -89,13 +89,13 @@
     const/4 v5, 0x0
 
     .line 43
-    const-string v2, "GCMBroadcastReceiver"
+    const-string/jumbo v2, "GCMBroadcastReceiver"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "onReceive: "
+    const-string/jumbo v4, "onReceive: "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -118,7 +118,7 @@
     .line 45
     sget-boolean v2, Lcom/google/android/gcm/GCMBroadcastReceiver;->mReceiverSet:Z
 
-    if-nez v2, :cond_3b
+    if-nez v2, :cond_3d
 
     .line 46
     const/4 v2, 0x1
@@ -146,27 +146,27 @@
 
     move-result v2
 
-    if-nez v2, :cond_3b
+    if-nez v2, :cond_3d
 
     .line 49
     invoke-static {v1}, Lcom/google/android/gcm/GCMRegistrar;->setRetryReceiverClassName(Ljava/lang/String;)V
 
     .line 52
     .end local v1    # "myClass":Ljava/lang/String;
-    :cond_3b
+    :cond_3d
     invoke-virtual {p0, p1}, Lcom/google/android/gcm/GCMBroadcastReceiver;->getGCMIntentServiceClassName(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     .line 53
     .local v0, "className":Ljava/lang/String;
-    const-string v2, "GCMBroadcastReceiver"
+    const-string/jumbo v2, "GCMBroadcastReceiver"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "GCM IntentService class: "
+    const-string/jumbo v4, "GCM IntentService class: "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

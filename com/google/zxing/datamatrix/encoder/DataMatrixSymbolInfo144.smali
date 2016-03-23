@@ -5,7 +5,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 8
+    .registers 10
 
     .prologue
     const/16 v4, 0x16
@@ -19,23 +19,17 @@
 
     const/16 v6, 0x24
 
+    const/4 v7, -0x1
+
+    const/16 v8, 0x3e
+
     move-object v0, p0
 
     move v5, v4
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;-><init>(ZIIIII)V
+    invoke-direct/range {v0 .. v8}, Lcom/google/zxing/datamatrix/encoder/SymbolInfo;-><init>(ZIIIIIII)V
 
     .line 23
-    const/4 v0, -0x1
-
-    iput v0, p0, Lcom/google/zxing/datamatrix/encoder/DataMatrixSymbolInfo144;->rsBlockData:I
-
-    .line 24
-    const/16 v0, 0x3e
-
-    iput v0, p0, Lcom/google/zxing/datamatrix/encoder/DataMatrixSymbolInfo144;->rsBlockError:I
-
-    .line 25
     return-void
 .end method
 
@@ -46,7 +40,7 @@
     .param p1, "index"    # I
 
     .prologue
-    .line 34
+    .line 32
     const/16 v0, 0x8
 
     if-gt p1, v0, :cond_7
@@ -66,7 +60,7 @@
     .registers 2
 
     .prologue
-    .line 29
+    .line 27
     const/16 v0, 0xa
 
     return v0
