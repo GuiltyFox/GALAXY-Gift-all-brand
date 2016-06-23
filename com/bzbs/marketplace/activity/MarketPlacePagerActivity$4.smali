@@ -29,7 +29,7 @@
     .param p1, "this$0"    # Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     .prologue
-    .line 218
+    .line 229
     iput-object p1, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$4;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     iput p2, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$4;->val$finalPositionCat:I
@@ -45,7 +45,7 @@
     .registers 4
 
     .prologue
-    .line 221
+    .line 232
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$4;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->vpMain:Landroid/support/v4/view/ViewPager;
@@ -56,6 +56,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/view/ViewPager;->setCurrentItem(IZ)V
 
-    .line 222
+    .line 233
     return-void
 .end method

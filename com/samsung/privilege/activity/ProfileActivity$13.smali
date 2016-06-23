@@ -31,7 +31,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/ProfileActivity;
 
     .prologue
-    .line 500
+    .line 521
     iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$13;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$13;->val$layoutAdditionalChild:Landroid/widget/LinearLayout;
@@ -52,7 +52,7 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 503
+    .line 524
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileActivity$13;->val$layoutAdditionalChild:Landroid/widget/LinearLayout;
 
     invoke-virtual {v4}, Landroid/widget/LinearLayout;->getVisibility()I
@@ -61,7 +61,7 @@
 
     if-nez v4, :cond_31
 
-    .line 507
+    .line 528
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileActivity$13;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
 
     const v5, 0x7f05004b
@@ -70,7 +70,7 @@
 
     move-result-object v0
 
-    .line 508
+    .line 529
     .local v0, "animHide":Landroid/view/animation/Animation;
     new-instance v4, Lcom/samsung/privilege/activity/ProfileActivity$13$1;
 
@@ -78,12 +78,12 @@
 
     invoke-virtual {v0, v4}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 525
+    .line 546
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileActivity$13;->val$layoutAdditionalChild:Landroid/widget/LinearLayout;
 
     invoke-virtual {v4, v0}, Landroid/widget/LinearLayout;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 527
+    .line 548
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileActivity$13;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
 
     const v5, 0x7f050039
@@ -92,22 +92,22 @@
 
     move-result-object v1
 
-    .line 528
+    .line 549
     .local v1, "animRotateDownToRight":Landroid/view/animation/Animation;
     invoke-virtual {v1, v6}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
-    .line 529
+    .line 550
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileActivity$13;->val$imageAdditionalButtonArrow:Landroid/widget/ImageView;
 
     invoke-virtual {v4, v1}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 557
+    .line 578
     .end local v0    # "animHide":Landroid/view/animation/Animation;
     .end local v1    # "animRotateDownToRight":Landroid/view/animation/Animation;
     :goto_30
     return-void
 
-    .line 534
+    .line 555
     :cond_31
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileActivity$13;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
 
@@ -117,7 +117,7 @@
 
     move-result-object v3
 
-    .line 535
+    .line 556
     .local v3, "animShow":Landroid/view/animation/Animation;
     new-instance v4, Lcom/samsung/privilege/activity/ProfileActivity$13$2;
 
@@ -125,12 +125,12 @@
 
     invoke-virtual {v3, v4}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 551
+    .line 572
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileActivity$13;->val$layoutAdditionalChild:Landroid/widget/LinearLayout;
 
     invoke-virtual {v4, v3}, Landroid/widget/LinearLayout;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 553
+    .line 574
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileActivity$13;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
 
     const v5, 0x7f05003d
@@ -139,11 +139,11 @@
 
     move-result-object v2
 
-    .line 554
+    .line 575
     .local v2, "animRotateRightToDown":Landroid/view/animation/Animation;
     invoke-virtual {v2, v6}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
-    .line 555
+    .line 576
     iget-object v4, p0, Lcom/samsung/privilege/activity/ProfileActivity$13;->val$imageAdditionalButtonArrow:Landroid/widget/ImageView;
 
     invoke-virtual {v4, v2}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V

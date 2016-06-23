@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 2882
+    .line 2998
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -38,16 +38,16 @@
     .registers 11
 
     .prologue
-    const v4, 0x7f090197
+    const v4, 0x7f090198
 
-    .line 2885
+    .line 3001
     invoke-static {}, Landroid/os/Looper;->prepare()V
 
-    .line 2887
+    .line 3003
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$900(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
 
     move-result-object v0
 
@@ -57,14 +57,14 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 2896
+    .line 3012
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->lm:Landroid/location/LocationManager;
 
     if-nez v0, :cond_29
 
-    .line 2897
+    .line 3013
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -79,7 +79,7 @@
 
     iput-object v0, v2, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->lm:Landroid/location/LocationManager;
 
-    .line 2900
+    .line 3016
     :cond_29
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
@@ -87,7 +87,7 @@
 
     if-nez v0, :cond_3a
 
-    .line 2901
+    .line 3017
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     new-instance v2, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$MyLocationListener;
@@ -98,19 +98,19 @@
 
     iput-object v2, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->locationListener:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$MyLocationListener;
 
-    .line 2904
+    .line 3020
     :cond_3a
     new-instance v7, Landroid/location/Criteria;
 
     invoke-direct {v7}, Landroid/location/Criteria;-><init>()V
 
-    .line 2905
+    .line 3021
     .local v7, "criteria":Landroid/location/Criteria;
     const/4 v0, 0x2
 
     invoke-virtual {v7, v0}, Landroid/location/Criteria;->setAccuracy(I)V
 
-    .line 2907
+    .line 3023
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->lm:Landroid/location/LocationManager;
@@ -121,7 +121,7 @@
 
     move-result-object v1
 
-    .line 2908
+    .line 3024
     .local v1, "provider":Ljava/lang/String;
     if-eqz v1, :cond_96
 
@@ -135,7 +135,7 @@
 
     if-eqz v0, :cond_96
 
-    .line 2909
+    .line 3025
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     const-string/jumbo v2, "android.permission.ACCESS_FINE_LOCATION"
@@ -150,14 +150,14 @@
 
     const-string/jumbo v2, "android.permission.ACCESS_COARSE_LOCATION"
 
-    .line 2910
+    .line 3026
     invoke-static {v0, v2}, Landroid/support/v4/content/ContextCompat;->checkSelfPermission(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v0
 
     if-nez v0, :cond_92
 
-    .line 2912
+    .line 3028
     :cond_6e
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
@@ -177,12 +177,12 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;Landroid/os/Looper;)V
 
-    .line 2913
+    .line 3029
     new-instance v8, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30$2;
 
     invoke-direct {v8, p0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30$2;-><init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30;)V
 
-    .line 2947
+    .line 3063
     .local v8, "runnable":Ljava/lang/Runnable;
     new-instance v9, Ljava/lang/Thread;
 
@@ -192,21 +192,21 @@
 
     invoke-direct {v9, v0, v8, v2}, Ljava/lang/Thread;-><init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;)V
 
-    .line 2948
+    .line 3064
     .local v9, "thread":Ljava/lang/Thread;
     invoke-virtual {v9}, Ljava/lang/Thread;->start()V
 
-    .line 2973
+    .line 3089
     .end local v8    # "runnable":Ljava/lang/Runnable;
     .end local v9    # "thread":Ljava/lang/Thread;
     :cond_92
     :goto_92
     invoke-static {}, Landroid/os/Looper;->loop()V
 
-    .line 2974
+    .line 3090
     return-void
 
-    .line 2959
+    .line 3075
     :cond_96
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
@@ -217,16 +217,16 @@
     move-result-object v2
 
     # invokes: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->showToast(Ljava/lang/String;)V
-    invoke-static {v0, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$2100(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$2300(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;)V
 
-    .line 2960
+    .line 3076
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {v0, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f090198
+    const v2, 0x7f090199
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -242,7 +242,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f09019f
+    const v2, 0x7f0901a0
 
     new-instance v3, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30$4;
 
@@ -252,18 +252,18 @@
 
     move-result-object v0
 
-    const v2, 0x7f0900f1
+    const v2, 0x7f0900f2
 
     new-instance v3, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30$3;
 
     invoke-direct {v3, p0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30$3;-><init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$30;)V
 
-    .line 2965
+    .line 3081
     invoke-virtual {v0, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    .line 2971
+    .line 3087
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
     goto :goto_92

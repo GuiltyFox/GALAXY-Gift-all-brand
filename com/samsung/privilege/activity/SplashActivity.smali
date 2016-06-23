@@ -58,10 +58,12 @@
 .end method
 
 .method private gotoCampaignDetail(I)V
-    .registers 6
+    .registers 7
     .param p1, "campaign_id"    # I
 
     .prologue
+    const/high16 v4, 0x40000000
+
     .line 93
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/SplashActivity;->getIntent()Landroid/content/Intent;
 
@@ -75,7 +77,7 @@
 
     .line 94
     .local v1, "mode":Ljava/lang/String;
-    if-eqz v1, :cond_5d
+    if-eqz v1, :cond_65
 
     const-string/jumbo v2, ""
 
@@ -83,7 +85,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_5d
+    if-nez v2, :cond_65
 
     .line 95
     invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -96,7 +98,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3b
+    if-eqz v2, :cond_40
 
     .line 96
     new-instance v0, Landroid/content/Intent;
@@ -111,24 +113,27 @@
 
     .line 97
     .local v0, "intent":Landroid/content/Intent;
+    invoke-virtual {v0, v4}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    .line 98
     const-string/jumbo v2, "campaign_id"
 
     invoke-virtual {v0, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 98
+    .line 99
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/SplashActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 113
+    .line 116
     .end local v0    # "intent":Landroid/content/Intent;
-    :cond_37
-    :goto_37
+    :cond_3c
+    :goto_3c
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/SplashActivity;->finish()V
 
-    .line 114
+    .line 117
     return-void
 
-    .line 99
-    :cond_3b
+    .line 100
+    :cond_40
     invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v2
@@ -139,33 +144,9 @@
 
     move-result v2
 
-    if-nez v2, :cond_37
-
-    .line 104
-    new-instance v0, Landroid/content/Intent;
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/SplashActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    const-class v3, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-direct {v0, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    if-nez v2, :cond_3c
 
     .line 105
-    .restart local v0    # "intent":Landroid/content/Intent;
-    const-string/jumbo v2, "campaign_id"
-
-    invoke-virtual {v0, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    .line 106
-    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/SplashActivity;->startActivity(Landroid/content/Intent;)V
-
-    goto :goto_37
-
-    .line 109
-    .end local v0    # "intent":Landroid/content/Intent;
-    :cond_5d
     new-instance v0, Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/SplashActivity;->getApplicationContext()Landroid/content/Context;
@@ -176,16 +157,46 @@
 
     invoke-direct {v0, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 110
+    .line 106
     .restart local v0    # "intent":Landroid/content/Intent;
+    invoke-virtual {v0, v4}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    .line 107
     const-string/jumbo v2, "campaign_id"
 
     invoke-virtual {v0, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 111
+    .line 108
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/SplashActivity;->startActivity(Landroid/content/Intent;)V
 
-    goto :goto_37
+    goto :goto_3c
+
+    .line 111
+    .end local v0    # "intent":Landroid/content/Intent;
+    :cond_65
+    new-instance v0, Landroid/content/Intent;
+
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/SplashActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    const-class v3, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-direct {v0, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 112
+    .restart local v0    # "intent":Landroid/content/Intent;
+    invoke-virtual {v0, v4}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    .line 113
+    const-string/jumbo v2, "campaign_id"
+
+    invoke-virtual {v0, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    .line 114
+    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/SplashActivity;->startActivity(Landroid/content/Intent;)V
+
+    goto :goto_3c
 .end method
 
 .method private showToast(Ljava/lang/String;)V

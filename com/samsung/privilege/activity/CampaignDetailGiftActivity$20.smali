@@ -37,7 +37,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 2203
+    .line 2317
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
     .registers 1
 
     .prologue
-    .line 2261
+    .line 2375
     return-void
 .end method
 
@@ -60,7 +60,7 @@
     .param p1, "e"    # Lcom/facebook/FacebookException;
 
     .prologue
-    .line 2266
+    .line 2380
     return-void
 .end method
 
@@ -69,17 +69,15 @@
     .param p1, "result"    # Lcom/facebook/share/Sharer$Result;
 
     .prologue
-    .line 2206
+    .line 2320
     invoke-virtual {p1}, Lcom/facebook/share/Sharer$Result;->getPostId()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 2207
+    .line 2321
     .local v3, "post_id":Ljava/lang/String;
-    iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->TAG:Ljava/lang/String;
-    invoke-static {v6}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Ljava/lang/String;
+    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000()Ljava/lang/String;
 
     move-result-object v6
 
@@ -103,8 +101,8 @@
 
     invoke-static {v6, v7}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2208
-    if-eqz v3, :cond_2c
+    .line 2322
+    if-eqz v3, :cond_2a
 
     const-string/jumbo v6, ""
 
@@ -112,15 +110,15 @@
 
     move-result v6
 
-    if-eqz v6, :cond_56
+    if-eqz v6, :cond_52
 
-    .line 2209
-    :cond_2c
+    .line 2323
+    :cond_2a
     new-instance v1, Ljava/util/Date;
 
     invoke-direct {v1}, Ljava/util/Date;-><init>()V
 
-    .line 2210
+    .line 2324
     .local v1, "dateNow":Ljava/util/Date;
     invoke-virtual {v1}, Ljava/util/Date;->getTime()J
 
@@ -130,11 +128,9 @@
 
     move-result-object v3
 
-    .line 2211
-    iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
+    .line 2325
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->TAG:Ljava/lang/String;
-    invoke-static {v6}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Ljava/lang/String;
+    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000()Ljava/lang/String;
 
     move-result-object v6
 
@@ -158,10 +154,10 @@
 
     invoke-static {v6, v7}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2213
+    .line 2327
     .end local v1    # "dateNow":Ljava/util/Date;
-    :cond_56
-    if-eqz v3, :cond_d2
+    :cond_52
+    if-eqz v3, :cond_cc
 
     const-string/jumbo v6, ""
 
@@ -169,23 +165,23 @@
 
     move-result v6
 
-    if-nez v6, :cond_d2
+    if-nez v6, :cond_cc
 
-    .line 2214
+    .line 2328
     invoke-static {}, Lcom/facebook/AccessToken;->getCurrentAccessToken()Lcom/facebook/AccessToken;
 
     move-result-object v5
 
-    .line 2215
+    .line 2329
     .local v5, "token":Lcom/facebook/AccessToken;
-    if-eqz v5, :cond_d2
+    if-eqz v5, :cond_cc
 
-    .line 2216
+    .line 2330
     new-instance v2, Lcom/loopj/android/http/RequestParams;
 
     invoke-direct {v2}, Lcom/loopj/android/http/RequestParams;-><init>()V
 
-    .line 2217
+    .line 2331
     .local v2, "params":Lcom/loopj/android/http/RequestParams;
     const-string/jumbo v6, "token"
 
@@ -201,12 +197,12 @@
 
     invoke-virtual {v2, v6, v7}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2218
+    .line 2332
     const-string/jumbo v6, "post_id"
 
     invoke-virtual {v2, v6, v3}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2219
+    .line 2333
     const-string/jumbo v6, "access_token"
 
     invoke-virtual {v5}, Lcom/facebook/AccessToken;->getToken()Ljava/lang/String;
@@ -215,7 +211,7 @@
 
     invoke-virtual {v2, v6, v7}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2220
+    .line 2334
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -236,12 +232,10 @@
 
     move-result-object v4
 
-    .line 2221
+    .line 2335
     .local v4, "strUrl":Ljava/lang/String;
-    iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->TAG:Ljava/lang/String;
-    invoke-static {v6}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Ljava/lang/String;
+    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000()Ljava/lang/String;
 
     move-result-object v6
 
@@ -265,12 +259,12 @@
 
     invoke-static {v6, v7}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2222
+    .line 2336
     new-instance v0, Lcom/loopj/android/http/AsyncHttpClient;
 
     invoke-direct {v0}, Lcom/loopj/android/http/AsyncHttpClient;-><init>()V
 
-    .line 2223
+    .line 2337
     .local v0, "client":Lcom/loopj/android/http/AsyncHttpClient;
     iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
@@ -284,12 +278,12 @@
 
     invoke-virtual {v0, v6, v4, v2, v7}, Lcom/loopj/android/http/AsyncHttpClient;->post(Landroid/content/Context;Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
 
-    .line 2256
+    .line 2370
     .end local v0    # "client":Lcom/loopj/android/http/AsyncHttpClient;
     .end local v2    # "params":Lcom/loopj/android/http/RequestParams;
     .end local v4    # "strUrl":Ljava/lang/String;
     .end local v5    # "token":Lcom/facebook/AccessToken;
-    :cond_d2
+    :cond_cc
     return-void
 .end method
 
@@ -297,7 +291,7 @@
     .registers 2
 
     .prologue
-    .line 2203
+    .line 2317
     check-cast p1, Lcom/facebook/share/Sharer$Result;
 
     invoke-virtual {p0, p1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20;->onSuccess(Lcom/facebook/share/Sharer$Result;)V

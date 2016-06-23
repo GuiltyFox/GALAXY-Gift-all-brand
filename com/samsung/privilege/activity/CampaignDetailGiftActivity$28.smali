@@ -26,7 +26,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 2735
+    .line 2851
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iput-wide p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$28;->val$startTime:J
@@ -46,7 +46,7 @@
     .param p4, "error"    # Ljava/lang/Throwable;
 
     .prologue
-    .line 2774
+    .line 2890
     :try_start_0
     new-instance v5, Ljava/util/Date;
 
@@ -56,7 +56,7 @@
 
     move-result-wide v0
 
-    .line 2775
+    .line 2891
     .local v0, "endTime":J
     const-string/jumbo v5, "Campaign"
 
@@ -70,30 +70,28 @@
 
     invoke-static {v5, v6, v7, v8, v9}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsTiming(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
     :try_end_19
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_19} :catch_7b
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_19} :catch_77
 
-    .line 2780
+    .line 2896
     .end local v0    # "endTime":J
     :goto_19
     const-string/jumbo v3, ""
 
-    .line 2782
+    .line 2898
     .local v3, "response_text":Ljava/lang/String;
     :try_start_1c
     new-instance v4, Ljava/lang/String;
 
     invoke-direct {v4, p3}, Ljava/lang/String;-><init>([B)V
     :try_end_21
-    .catch Ljava/lang/Exception; {:try_start_1c .. :try_end_21} :catch_59
+    .catch Ljava/lang/Exception; {:try_start_1c .. :try_end_21} :catch_57
 
-    .line 2783
+    .line 2899
     .end local v3    # "response_text":Ljava/lang/String;
     .local v4, "response_text":Ljava/lang/String;
     :try_start_21
-    iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->TAG:Ljava/lang/String;
-    invoke-static {v5}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Ljava/lang/String;
+    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000()Ljava/lang/String;
 
     move-result-object v5
 
@@ -126,15 +124,15 @@
     move-result-object v6
 
     invoke-static {v5, v6}, Lcom/bzbs/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_49
-    .catch Ljava/lang/Exception; {:try_start_21 .. :try_end_49} :catch_78
+    :try_end_47
+    .catch Ljava/lang/Exception; {:try_start_21 .. :try_end_47} :catch_74
 
     move-object v3, v4
 
-    .line 2788
+    .line 2904
     .end local v4    # "response_text":Ljava/lang/String;
     .restart local v3    # "response_text":Ljava/lang/String;
-    :goto_4a
+    :goto_48
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->gDialog:Landroid/app/ProgressDialog;
@@ -144,25 +142,23 @@
 
     invoke-virtual {v5}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 2790
+    .line 2906
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v5, p1, p2, p3, p4}, Lcom/bzbs/util/DialogUtil;->showDialogHttpFailure(Landroid/content/Context;I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
 
-    .line 2791
+    .line 2907
     return-void
 
-    .line 2784
-    :catch_59
+    .line 2900
+    :catch_57
     move-exception v2
 
-    .line 2785
+    .line 2901
     .local v2, "ex":Ljava/lang/Exception;
-    :goto_5a
-    iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
+    :goto_58
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->TAG:Ljava/lang/String;
-    invoke-static {v5}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Ljava/lang/String;
+    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000()Ljava/lang/String;
 
     move-result-object v5
 
@@ -186,24 +182,24 @@
 
     invoke-static {v5, v6}, Lcom/bzbs/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_4a
+    goto :goto_48
 
-    .line 2784
+    .line 2900
     .end local v2    # "ex":Ljava/lang/Exception;
     .end local v3    # "response_text":Ljava/lang/String;
     .restart local v4    # "response_text":Ljava/lang/String;
-    :catch_78
+    :catch_74
     move-exception v2
 
     move-object v3, v4
 
     .end local v4    # "response_text":Ljava/lang/String;
     .restart local v3    # "response_text":Ljava/lang/String;
-    goto :goto_5a
+    goto :goto_58
 
-    .line 2776
+    .line 2892
     .end local v3    # "response_text":Ljava/lang/String;
-    :catch_7b
+    :catch_77
     move-exception v5
 
     goto :goto_19
@@ -216,7 +212,7 @@
     .param p3, "responseBody"    # [B
 
     .prologue
-    .line 2739
+    .line 2855
     :try_start_0
     new-instance v3, Ljava/util/Date;
 
@@ -226,7 +222,7 @@
 
     move-result-wide v0
 
-    .line 2740
+    .line 2856
     .local v0, "endTime":J
     const-string/jumbo v3, "Campaign"
 
@@ -240,21 +236,19 @@
 
     invoke-static {v3, v4, v5, v6, v7}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsTiming(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
     :try_end_19
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_19} :catch_5e
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_19} :catch_5c
 
-    .line 2745
+    .line 2861
     .end local v0    # "endTime":J
     :goto_19
     new-instance v2, Ljava/lang/String;
 
     invoke-direct {v2, p3}, Ljava/lang/String;-><init>([B)V
 
-    .line 2746
+    .line 2862
     .local v2, "response_text":Ljava/lang/String;
-    iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->TAG:Ljava/lang/String;
-    invoke-static {v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Ljava/lang/String;
+    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000()Ljava/lang/String;
 
     move-result-object v3
 
@@ -288,7 +282,7 @@
 
     invoke-static {v3, v4}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2748
+    .line 2864
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->gDialog:Landroid/app/ProgressDialog;
@@ -298,11 +292,11 @@
 
     invoke-virtual {v3}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 2751
+    .line 2867
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$28;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->mHandler:Landroid/os/Handler;
-    invoke-static {v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$900(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
+    invoke-static {v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
 
     move-result-object v3
 
@@ -312,12 +306,12 @@
 
     invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 2769
+    .line 2885
     return-void
 
-    .line 2741
+    .line 2857
     .end local v2    # "response_text":Ljava/lang/String;
-    :catch_5e
+    :catch_5c
     move-exception v3
 
     goto :goto_19

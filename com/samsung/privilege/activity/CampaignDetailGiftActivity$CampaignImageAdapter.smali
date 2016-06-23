@@ -59,16 +59,16 @@
     .end annotation
 
     .prologue
-    .line 1835
+    .line 1938
     .local p2, "campaignGalleries":Ljava/util/List;, "Ljava/util/List<Lcom/bzbs/bean/CampaignGallery;>;"
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$Adapter;-><init>()V
 
-    .line 1836
+    .line 1939
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageAdapter;->campaignGalleries:Ljava/util/List;
 
-    .line 1837
+    .line 1940
     return-void
 .end method
 
@@ -87,13 +87,13 @@
     .end annotation
 
     .prologue
-    .line 1848
+    .line 1951
     .local p1, "new_items":Ljava/util/List;, "Ljava/util/List<Lcom/bzbs/bean/CampaignGallery;>;"
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageAdapter;->campaignGalleries:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 1849
+    .line 1952
     return-void
 .end method
 
@@ -102,7 +102,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 1841
+    .line 1944
     :try_start_0
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageAdapter;->campaignGalleries:Ljava/util/List;
 
@@ -114,15 +114,15 @@
     :try_end_8
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_8} :catch_9
 
-    .line 1843
+    .line 1946
     :goto_8
     return-object v1
 
-    .line 1842
+    .line 1945
     :catch_9
     move-exception v0
 
-    .line 1843
+    .line 1946
     .local v0, "ex":Ljava/lang/Exception;
     const/4 v1, 0x0
 
@@ -133,7 +133,7 @@
     .registers 2
 
     .prologue
-    .line 1878
+    .line 1981
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageAdapter;->campaignGalleries:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -148,10 +148,10 @@
     .param p1, "recyclerView"    # Landroid/support/v7/widget/RecyclerView;
 
     .prologue
-    .line 1883
+    .line 1986
     invoke-super {p0, p1}, Landroid/support/v7/widget/RecyclerView$Adapter;->onAttachedToRecyclerView(Landroid/support/v7/widget/RecyclerView;)V
 
-    .line 1884
+    .line 1987
     return-void
 .end method
 
@@ -159,7 +159,7 @@
     .registers 3
 
     .prologue
-    .line 1831
+    .line 1934
     check-cast p1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageAdapter$CampaignImageViewHolder;
 
     invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageAdapter;->onBindViewHolder(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageAdapter$CampaignImageViewHolder;I)V
@@ -173,7 +173,7 @@
     .param p2, "position"    # I
 
     .prologue
-    .line 1860
+    .line 1963
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageAdapter;->campaignGalleries:Ljava/util/List;
 
     invoke-interface {v1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -182,7 +182,7 @@
 
     check-cast v0, Lcom/bzbs/bean/CampaignGallery;
 
-    .line 1861
+    .line 1964
     .local v0, "objCampaignGallery":Lcom/bzbs/bean/CampaignGallery;
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
@@ -198,7 +198,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0202cb
+    const v2, 0x7f0202cd
 
     invoke-virtual {v1, v2}, Lcom/bumptech/glide/DrawableTypeRequest;->placeholder(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
@@ -214,7 +214,7 @@
 
     invoke-virtual {v1, v2}, Lcom/bumptech/glide/DrawableRequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
 
-    .line 1874
+    .line 1977
     return-void
 .end method
 
@@ -222,7 +222,7 @@
     .registers 4
 
     .prologue
-    .line 1831
+    .line 1934
     invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageAdapter$CampaignImageViewHolder;
 
     move-result-object v0
@@ -236,7 +236,7 @@
     .param p2, "viewType"    # I
 
     .prologue
-    .line 1853
+    .line 1956
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -253,13 +253,13 @@
 
     move-result-object v1
 
-    .line 1854
+    .line 1957
     .local v1, "v":Landroid/view/View;
     new-instance v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageAdapter$CampaignImageViewHolder;
 
     invoke-direct {v0, p0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageAdapter$CampaignImageViewHolder;-><init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageAdapter;Landroid/view/View;)V
 
-    .line 1855
+    .line 1958
     .local v0, "pvh":Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageAdapter$CampaignImageViewHolder;
     return-object v0
 .end method

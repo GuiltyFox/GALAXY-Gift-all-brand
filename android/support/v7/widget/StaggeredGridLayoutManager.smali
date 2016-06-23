@@ -7008,7 +7008,7 @@
 
     .line 2180
     :cond_20
-    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v4
 
@@ -7107,7 +7107,7 @@
     .local v7, "view":Landroid/view/View;
     if-eqz v7, :cond_6d
 
-    if-ne v7, p1, :cond_7
+    if-ne v7, v0, :cond_7
 
     .line 2206
     .end local v7    # "view":Landroid/view/View;
@@ -7140,7 +7140,7 @@
     .restart local v7    # "view":Landroid/view/View;
     if-eqz v7, :cond_85
 
-    if-ne v7, p1, :cond_7
+    if-ne v7, v0, :cond_7
 
     .line 2207
     :cond_85
@@ -7183,7 +7183,7 @@
     .restart local v7    # "view":Landroid/view/View;
     if-eqz v7, :cond_9e
 
-    if-ne v7, p1, :cond_7
+    if-ne v7, v0, :cond_7
 
     .line 2214
     :cond_9e

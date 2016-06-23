@@ -27,7 +27,7 @@
     const/16 v5, 0x8
 
     .line 47
-    const v4, 0x7f100102
+    const v4, 0x7f100103
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/CampaignReviewRatingActivity;->findViewById(I)Landroid/view/View;
 
@@ -44,7 +44,7 @@
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 50
-    const v4, 0x7f100111
+    const v4, 0x7f100112
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/CampaignReviewRatingActivity;->findViewById(I)Landroid/view/View;
 
@@ -54,7 +54,7 @@
 
     .line 51
     .local v1, "layoutRootRatingLow":Landroid/widget/LinearLayout;
-    const v4, 0x7f10010e
+    const v4, 0x7f10010f
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/CampaignReviewRatingActivity;->findViewById(I)Landroid/view/View;
 
@@ -70,7 +70,7 @@
     invoke-virtual {v0, v5}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     .line 56
-    const v4, 0x7f100109
+    const v4, 0x7f10010a
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/CampaignReviewRatingActivity;->findViewById(I)Landroid/view/View;
 

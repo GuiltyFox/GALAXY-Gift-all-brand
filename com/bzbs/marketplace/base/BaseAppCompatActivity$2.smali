@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->showToast(Ljava/lang/String;)V
+    value = Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,19 +20,19 @@
 # instance fields
 .field final synthetic this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-.field final synthetic val$msg:Ljava/lang/String;
+.field final synthetic val$savedInstanceState:Landroid/os/Bundle;
 
 
 # direct methods
-.method constructor <init>(Lcom/bzbs/marketplace/base/BaseAppCompatActivity;Ljava/lang/String;)V
+.method constructor <init>(Lcom/bzbs/marketplace/base/BaseAppCompatActivity;Landroid/os/Bundle;)V
     .registers 3
     .param p1, "this$0"    # Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     .prologue
-    .line 278
+    .line 199
     iput-object p1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$2;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    iput-object p2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$2;->val$msg:Ljava/lang/String;
+    iput-object p2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$2;->val$savedInstanceState:Landroid/os/Bundle;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,28 +42,22 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .registers 2
 
     .prologue
-    .line 281
-    iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$2;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+    .line 202
+    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$2;->val$savedInstanceState:Landroid/os/Bundle;
 
-    invoke-virtual {v1}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getApplicationContext()Landroid/content/Context;
+    if-nez v0, :cond_b
 
-    move-result-object v1
+    .line 203
+    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$2;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$2;->val$msg:Ljava/lang/String;
+    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->mActivity:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const/4 v3, 0x0
+    invoke-static {v0}, Lcom/bzbs/marketplace/sticker/StickerUtil;->loadStickerSet(Landroid/content/Context;)V
 
-    invoke-static {v1, v2, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    move-result-object v0
-
-    .line 282
-    .local v0, "toast":Landroid/widget/Toast;
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
-
-    .line 283
+    .line 205
+    :cond_b
     return-void
 .end method

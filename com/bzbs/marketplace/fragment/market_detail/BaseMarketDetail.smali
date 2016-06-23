@@ -30,19 +30,19 @@
 
 .field contentCondition:Landroid/widget/RelativeLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005e9
+        value = 0x7f100608
     .end annotation
 .end field
 
 .field contentDetail:Landroid/widget/RelativeLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005e8
+        value = 0x7f100607
     .end annotation
 .end field
 
 .field public contentViewPager:Landroid/widget/RelativeLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005ca
+        value = 0x7f1005e9
     .end annotation
 .end field
 
@@ -50,13 +50,13 @@
 
 .field public imageLike:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005cf
+        value = 0x7f1005ee
     .end annotation
 .end field
 
 .field public indicatorViewPager:Lme/relex/circleindicator/CircleIndicator;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005cb
+        value = 0x7f1005ea
     .end annotation
 .end field
 
@@ -66,19 +66,19 @@
 
 .field public layoutComment:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005cc
+        value = 0x7f1005eb
     .end annotation
 .end field
 
 .field public layoutLike:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005ce
+        value = 0x7f1005ed
     .end annotation
 .end field
 
 .field public layoutShared:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005d1
+        value = 0x7f1005f0
     .end annotation
 .end field
 
@@ -99,43 +99,43 @@
 
 .field public textViewComment:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005cd
+        value = 0x7f1005ec
     .end annotation
 .end field
 
 .field textViewCondition:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005ec
+        value = 0x7f10060b
     .end annotation
 .end field
 
 .field textViewDetail:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005eb
+        value = 0x7f10060a
     .end annotation
 .end field
 
 .field public textViewLike:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005d0
+        value = 0x7f1005ef
     .end annotation
 .end field
 
 .field public textViewTitle:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005d2
+        value = 0x7f1005f1
     .end annotation
 .end field
 
 .field vShadow:Landroid/view/View;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005ea
+        value = 0x7f100609
     .end annotation
 .end field
 
 .field public viewPager:Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10020b
+        value = 0x7f100214
     .end annotation
 .end field
 
@@ -277,14 +277,14 @@
     .param p1, "VISIBLE"    # Z
 
     .prologue
-    .line 370
+    .line 374
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mActivity:Landroid/app/Activity;
 
     instance-of v0, v0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;
 
     if-eqz v0, :cond_10
 
-    .line 371
+    .line 375
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mActivity:Landroid/app/Activity;
 
     check-cast v0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;
@@ -296,11 +296,11 @@
     :goto_d
     invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->setProgressVisibility(I)V
 
-    .line 373
+    .line 377
     :cond_10
     return-void
 
-    .line 371
+    .line 375
     :cond_11
     const/16 v1, 0x8
 
@@ -313,7 +313,7 @@
     .registers 4
 
     .prologue
-    .line 313
+    .line 316
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->itemMarketDetail:Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
 
     invoke-virtual {v0}, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->isLike()Z
@@ -322,14 +322,14 @@
 
     if-eqz v0, :cond_37
 
-    .line 314
+    .line 317
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->imageLike:Landroid/widget/ImageView;
 
-    const v1, 0x7f020296
+    const v1, 0x7f020297
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 319
+    .line 322
     :goto_10
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->textViewLike:Landroid/widget/TextView;
 
@@ -365,14 +365,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 320
+    .line 323
     return-void
 
-    .line 316
+    .line 319
     :cond_37
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->imageLike:Landroid/widget/ImageView;
 
-    const v1, 0x7f020299
+    const v1, 0x7f02029a
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -484,12 +484,12 @@
     .registers 5
 
     .prologue
-    .line 206
+    .line 208
     const/4 v1, 0x1
 
     invoke-direct {p0, v1}, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->loadProgress(Z)V
 
-    .line 207
+    .line 209
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mActivity:Landroid/app/Activity;
 
     iget-object v2, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->idCampaign:Ljava/lang/String;
@@ -504,7 +504,7 @@
 
     move-result-object v0
 
-    .line 208
+    .line 210
     .local v0, "url":Ljava/lang/String;
     const-string/jumbo v1, "loadData"
 
@@ -528,7 +528,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 209
+    .line 211
     new-instance v1, Lcom/bzbs/marketplace/asynctask/marketplace/MarketPlaceDetailAsynctask;
 
     iget-object v2, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mActivity:Landroid/app/Activity;
@@ -565,7 +565,7 @@
 
     iput-object v1, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->asynctask:Lcom/bzbs/marketplace/asynctask/marketplace/MarketPlaceDetailAsynctask;
 
-    .line 210
+    .line 212
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->asynctask:Lcom/bzbs/marketplace/asynctask/marketplace/MarketPlaceDetailAsynctask;
 
     new-instance v2, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail$1;
@@ -574,7 +574,7 @@
 
     invoke-virtual {v1, v2}, Lcom/bzbs/marketplace/asynctask/marketplace/MarketPlaceDetailAsynctask;->excuteModel(Lcom/bzbs/marketplace/asynctask/marketplace/MarketPlaceDetailAsynctask$CallbackModel;)V
 
-    .line 247
+    .line 249
     return-void
 .end method
 
@@ -583,24 +583,24 @@
     .param p1, "v"    # Landroid/view/View;
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f1005cc
+            0x7f1005eb
         }
     .end annotation
 
     .prologue
     const/4 v7, 0x0
 
-    .line 325
+    .line 328
     iget-object v3, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->itemMarketDetail:Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
 
     if-nez v3, :cond_6
 
-    .line 354
+    .line 358
     :cond_5
     :goto_5
     return-void
 
-    .line 328
+    .line 331
     :cond_6
     iget-object v3, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mActivity:Landroid/app/Activity;
 
@@ -612,7 +612,7 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 329
+    .line 332
     .local v0, "cm":Landroid/net/ConnectivityManager;
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
@@ -620,10 +620,10 @@
 
     if-nez v3, :cond_24
 
-    .line 330
+    .line 333
     iget-object v3, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mActivity:Landroid/app/Activity;
 
-    const v4, 0x7f09024a
+    const v4, 0x7f09024b
 
     invoke-virtual {p0, v4}, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->getString(I)Ljava/lang/String;
 
@@ -633,8 +633,13 @@
 
     goto :goto_5
 
-    .line 334
+    .line 337
     :cond_24
+    iget-object v3, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->itemMarketDetail:Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
+
+    if-eqz v3, :cond_55
+
+    .line 338
     const-string/jumbo v3, "BZB Campaign Details"
 
     const-string/jumbo v4, "Click Comment"
@@ -675,14 +680,15 @@
 
     invoke-static {v3, v4, v5}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 336
+    .line 340
+    :cond_55
     iget-object v3, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mActivity:Landroid/app/Activity;
 
     invoke-static {v3}, Lcom/bzbs/data/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 338
+    .line 342
     .local v2, "token":Ljava/lang/String;
     invoke-static {}, Lcom/bzbs/util/BBUtil;->IsSamsungMobile()Z
 
@@ -690,44 +696,8 @@
 
     if-eqz v3, :cond_5
 
-    .line 341
-    if-nez v2, :cond_7b
-
-    .line 342
-    new-instance v3, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail$UserLoginListener;
-
-    invoke-direct {v3, p0, v7}, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail$UserLoginListener;-><init>(Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail$1;)V
-
-    invoke-static {v3}, Lcom/bzbs/event/LoginEvents;->addLoginListener(Lcom/bzbs/event/LoginEvents$LoginListener;)V
-
-    .line 343
-    iget-object v4, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mActivity:Landroid/app/Activity;
-
-    iget-object v5, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mHandler:Landroid/os/Handler;
-
-    iget-object v3, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mActivity:Landroid/app/Activity;
-
-    check-cast v3, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
-
-    iget-object v3, v3, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->callbackManager:Lcom/facebook/CallbackManager;
-
-    const-string/jumbo v6, "BZB Campaign Details"
-
-    const-string/jumbo v7, "market_like"
-
-    invoke-static {v4, v5, v3, v6, v7}, Lcom/samsung/privilege/util/DialogLoginGift;->showDialogLogin(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_5
-
     .line 345
-    :cond_7b
-    const-string/jumbo v3, ""
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_a1
+    if-nez v2, :cond_7f
 
     .line 346
     new-instance v3, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail$UserLoginListener;
@@ -753,10 +723,46 @@
 
     invoke-static {v4, v5, v3, v6, v7}, Lcom/samsung/privilege/util/DialogLoginGift;->showDialogLogin(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_5
+    goto :goto_5
+
+    .line 349
+    :cond_7f
+    const-string/jumbo v3, ""
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_a5
+
+    .line 350
+    new-instance v3, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail$UserLoginListener;
+
+    invoke-direct {v3, p0, v7}, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail$UserLoginListener;-><init>(Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail$1;)V
+
+    invoke-static {v3}, Lcom/bzbs/event/LoginEvents;->addLoginListener(Lcom/bzbs/event/LoginEvents$LoginListener;)V
 
     .line 351
-    :cond_a1
+    iget-object v4, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mActivity:Landroid/app/Activity;
+
+    iget-object v5, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mHandler:Landroid/os/Handler;
+
+    iget-object v3, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mActivity:Landroid/app/Activity;
+
+    check-cast v3, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+
+    iget-object v3, v3, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->callbackManager:Lcom/facebook/CallbackManager;
+
+    const-string/jumbo v6, "BZB Campaign Details"
+
+    const-string/jumbo v7, "market_like"
+
+    invoke-static {v4, v5, v3, v6, v7}, Lcom/samsung/privilege/util/DialogLoginGift;->showDialogLogin(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_5
+
+    .line 355
+    :cond_a5
     new-instance v1, Landroid/content/Intent;
 
     iget-object v3, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mActivity:Landroid/app/Activity;
@@ -765,7 +771,7 @@
 
     invoke-direct {v1, v3, v4}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 352
+    .line 356
     .local v1, "i":Landroid/content/Intent;
     const-string/jumbo v3, "ReviewActivity::Data"
 
@@ -777,7 +783,7 @@
 
     invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 353
+    .line 357
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->startActivity(Landroid/content/Intent;)V
 
     goto/16 :goto_5
@@ -787,20 +793,20 @@
     .registers 2
 
     .prologue
-    .line 364
+    .line 368
     invoke-super {p0}, Lcom/bzbs/marketplace/base/BaseFragment;->onDestroyView()V
 
-    .line 365
+    .line 369
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->asynctask:Lcom/bzbs/marketplace/asynctask/marketplace/MarketPlaceDetailAsynctask;
 
     if-eqz v0, :cond_c
 
-    .line 366
+    .line 370
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->asynctask:Lcom/bzbs/marketplace/asynctask/marketplace/MarketPlaceDetailAsynctask;
 
     invoke-virtual {v0}, Lcom/bzbs/marketplace/asynctask/marketplace/MarketPlaceDetailAsynctask;->onCancel()V
 
-    .line 367
+    .line 371
     :cond_c
     return-void
 .end method
@@ -812,10 +818,10 @@
     .registers 1
 
     .prologue
-    .line 358
+    .line 362
     invoke-super {p0}, Lcom/bzbs/marketplace/base/BaseFragment;->onResume()V
 
-    .line 360
+    .line 364
     return-void
 .end method
 
@@ -824,8 +830,8 @@
     .param p1, "v"    # Landroid/view/View;
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f1005e8,
-            0x7f1005e9
+            0x7f100607,
+            0x7f100608
         }
     .end annotation
 
@@ -851,9 +857,9 @@
 
     move-result v0
 
-    const v1, 0x7f1005e8
+    const v1, 0x7f100607
 
-    if-ne v0, v1, :cond_59
+    if-ne v0, v1, :cond_5d
 
     .line 167
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->contentDetail:Landroid/widget/RelativeLayout;
@@ -876,6 +882,11 @@
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 172
+    iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->itemMarketDetail:Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
+
+    if-eqz v0, :cond_5c
+
+    .line 173
     const-string/jumbo v0, "BZB Campaign Details"
 
     const-string/jumbo v1, "Click Details"
@@ -916,42 +927,47 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 182
-    :cond_58
-    :goto_58
+    .line 184
+    :cond_5c
+    :goto_5c
     return-void
 
-    .line 174
-    :cond_59
+    .line 175
+    :cond_5d
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
 
-    const v1, 0x7f1005e9
+    const v1, 0x7f100608
 
-    if-ne v0, v1, :cond_58
+    if-ne v0, v1, :cond_5c
 
-    .line 175
+    .line 176
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->contentCondition:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout;->setSelected(Z)V
 
-    .line 176
+    .line 177
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->vShadow:Landroid/view/View;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setSelected(Z)V
 
-    .line 177
+    .line 178
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->textViewDetail:Landroid/widget/TextView;
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 178
+    .line 179
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->textViewCondition:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 180
+    .line 181
+    iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->itemMarketDetail:Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
+
+    if-eqz v0, :cond_5c
+
+    .line 182
     const-string/jumbo v0, "BZB Campaign Details"
 
     const-string/jumbo v1, "Click Conditions"
@@ -992,7 +1008,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_58
+    goto :goto_5c
 .end method
 
 .method public sendLike(Landroid/view/View;)V
@@ -1000,24 +1016,24 @@
     .param p1, "v"    # Landroid/view/View;
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f1005ce
+            0x7f1005ed
         }
     .end annotation
 
     .prologue
     const/4 v8, 0x0
 
-    .line 252
+    .line 254
     iget-object v4, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->itemMarketDetail:Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
 
     if-nez v4, :cond_6
 
-    .line 308
+    .line 311
     :cond_5
     :goto_5
     return-void
 
-    .line 255
+    .line 257
     :cond_6
     invoke-static {}, Lcom/bzbs/util/BBUtil;->IsSamsungMobile()Z
 
@@ -1025,7 +1041,7 @@
 
     if-eqz v4, :cond_5
 
-    .line 258
+    .line 260
     iget-object v4, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mActivity:Landroid/app/Activity;
 
     const-string/jumbo v5, "connectivity"
@@ -1036,7 +1052,7 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 259
+    .line 261
     .local v0, "cm":Landroid/net/ConnectivityManager;
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
@@ -1044,10 +1060,10 @@
 
     if-nez v4, :cond_2a
 
-    .line 260
+    .line 262
     iget-object v4, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mActivity:Landroid/app/Activity;
 
-    const v5, 0x7f09024a
+    const v5, 0x7f09024b
 
     invoke-virtual {p0, v5}, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->getString(I)Ljava/lang/String;
 
@@ -1057,8 +1073,13 @@
 
     goto :goto_5
 
-    .line 264
+    .line 266
     :cond_2a
+    iget-object v4, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->itemMarketDetail:Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
+
+    if-eqz v4, :cond_5b
+
+    .line 267
     const-string/jumbo v4, "BZB Campaign Details"
 
     const-string/jumbo v5, "Click Like"
@@ -1099,16 +1120,17 @@
 
     invoke-static {v4, v5, v6}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 266
+    .line 269
+    :cond_5b
     iget-object v4, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mActivity:Landroid/app/Activity;
 
     invoke-static {v4}, Lcom/bzbs/data/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 267
+    .line 270
     .local v2, "token":Ljava/lang/String;
-    if-eqz v2, :cond_cd
+    if-eqz v2, :cond_d1
 
     const-string/jumbo v4, ""
 
@@ -1116,9 +1138,9 @@
 
     move-result v4
 
-    if-nez v4, :cond_cd
+    if-nez v4, :cond_d1
 
-    .line 269
+    .line 272
     iget-object v4, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->itemMarketDetail:Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
 
     invoke-virtual {v4}, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->getID()Ljava/lang/String;
@@ -1135,11 +1157,11 @@
 
     move-result-object v3
 
-    .line 271
+    .line 274
     .local v3, "url":Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 272
+    .line 275
     .local v1, "isLike":Z
     iget-object v4, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->itemMarketDetail:Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
 
@@ -1147,12 +1169,12 @@
 
     move-result v4
 
-    if-nez v4, :cond_b4
+    if-nez v4, :cond_b8
 
-    .line 273
+    .line 276
     const/4 v1, 0x1
 
-    .line 274
+    .line 277
     iget-object v4, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->itemMarketDetail:Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
 
     iget-object v5, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->itemMarketDetail:Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
@@ -1173,22 +1195,22 @@
 
     invoke-virtual {v4, v5}, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->setPeopleLike(Ljava/lang/String;)V
 
-    .line 279
-    :goto_97
+    .line 282
+    :goto_9b
     iget-object v4, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->itemMarketDetail:Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
 
     invoke-virtual {v4, v1}, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->setIsLike(Z)V
 
-    .line 281
+    .line 284
     new-instance v5, Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;
 
     iget-object v6, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mActivity:Landroid/app/Activity;
 
-    if-eqz v1, :cond_ca
+    if-eqz v1, :cond_ce
 
     sget-object v4, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->POST:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
-    :goto_a4
+    :goto_a8
     invoke-direct {v5, v6, v3, v8, v4}, Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;-><init>(Landroid/app/Activity;Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/bzbs/marketplace/asynctask/http/HttpMethod;)V
 
     new-instance v4, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail$2;
@@ -1197,13 +1219,13 @@
 
     invoke-virtual {v5, v4}, Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;->excute(Lcom/bzbs/marketplace/asynctask/http/CallbackHttpAsyncTask;)V
 
-    .line 303
+    .line 306
     invoke-virtual {p0}, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->checkLike()V
 
     goto/16 :goto_5
 
-    .line 276
-    :cond_b4
+    .line 279
+    :cond_b8
     iget-object v4, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->itemMarketDetail:Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
 
     iget-object v5, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->itemMarketDetail:Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
@@ -1224,25 +1246,25 @@
 
     invoke-virtual {v4, v5}, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->setPeopleLike(Ljava/lang/String;)V
 
-    goto :goto_97
+    goto :goto_9b
 
-    .line 281
-    :cond_ca
+    .line 284
+    :cond_ce
     sget-object v4, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->DELETE:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
-    goto :goto_a4
+    goto :goto_a8
 
-    .line 305
+    .line 308
     .end local v1    # "isLike":Z
     .end local v3    # "url":Ljava/lang/String;
-    :cond_cd
+    :cond_d1
     new-instance v4, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail$UserLoginListener;
 
     invoke-direct {v4, p0, v8}, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail$UserLoginListener;-><init>(Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail$1;)V
 
     invoke-static {v4}, Lcom/bzbs/event/LoginEvents;->addLoginListener(Lcom/bzbs/event/LoginEvents$LoginListener;)V
 
-    .line 306
+    .line 309
     iget-object v5, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mActivity:Landroid/app/Activity;
 
     iget-object v6, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->mHandler:Landroid/os/Handler;
@@ -1266,17 +1288,17 @@
     .registers 5
 
     .prologue
-    .line 185
+    .line 187
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->listPicture:Ljava/util/ArrayList;
 
     if-nez v0, :cond_5
 
-    .line 203
+    .line 205
     :cond_4
     :goto_4
     return-void
 
-    .line 188
+    .line 190
     :cond_5
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->viewPager:Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;
 
@@ -1286,7 +1308,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 192
+    .line 194
     new-instance v0, Lcom/bzbs/marketplace/adapter/pager/MarketPlaceDetailImagePagerAdapter;
 
     invoke-virtual {p0}, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
@@ -1299,38 +1321,38 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->marketPlaceViewPager:Lcom/bzbs/marketplace/adapter/pager/MarketPlaceDetailImagePagerAdapter;
 
-    .line 194
+    .line 196
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->viewPager:Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;
 
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->marketPlaceViewPager:Lcom/bzbs/marketplace/adapter/pager/MarketPlaceDetailImagePagerAdapter;
 
     invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->setAdapter(Landroid/support/v4/view/PagerAdapter;)V
 
-    .line 195
+    .line 197
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->viewPager:Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;
 
     const-wide/16 v2, 0x7d0
 
     invoke-virtual {v0, v2, v3}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->setInterval(J)V
 
-    .line 196
+    .line 198
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->viewPager:Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;
 
     invoke-virtual {v0}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->startAutoScroll()V
 
-    .line 197
+    .line 199
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->indicatorViewPager:Lme/relex/circleindicator/CircleIndicator;
 
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->viewPager:Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;
 
     invoke-virtual {v0, v1}, Lme/relex/circleindicator/CircleIndicator;->setViewPager(Landroid/support/v4/view/ViewPager;)V
 
-    .line 199
+    .line 201
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->viewPager:Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/util/ScrollViewPagerHorizontal;->setAutoScrollViewPager(Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;)V
 
-    .line 201
+    .line 203
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->listPicture:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1341,7 +1363,7 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 202
+    .line 204
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->indicatorViewPager:Lme/relex/circleindicator/CircleIndicator;
 
     const/4 v1, 0x4
@@ -1487,7 +1509,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v2, 0x7f090262
+    const v2, 0x7f090263
 
     invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->getString(I)Ljava/lang/String;
 

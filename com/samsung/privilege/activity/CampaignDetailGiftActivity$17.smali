@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 1523
+    .line 1625
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$SimpleOnItemTouchListener;-><init>()V
@@ -40,22 +40,22 @@
     .param p2, "e"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 1527
+    .line 1629
     :try_start_0
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->gTimerPager:Ljava/util/Timer;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1700(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Ljava/util/Timer;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1900(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Ljava/util/Timer;
 
     move-result-object v0
 
     if-eqz v0, :cond_11
 
-    .line 1528
+    .line 1630
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$17;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->gTimerPager:Ljava/util/Timer;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1700(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Ljava/util/Timer;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1900(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Ljava/util/Timer;
 
     move-result-object v0
 
@@ -63,14 +63,14 @@
     :try_end_11
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_11} :catch_13
 
-    .line 1533
+    .line 1635
     :cond_11
     :goto_11
     const/4 v0, 0x0
 
     return v0
 
-    .line 1530
+    .line 1632
     :catch_13
     move-exception v0
 

@@ -19,7 +19,7 @@
     .registers 1
 
     .prologue
-    .line 8567
+    .line 8554
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,10 +38,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 8617
+    .line 8604
     invoke-virtual {p1, v0, v0, v0, v0}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 8618
+    .line 8605
     return-void
 .end method
 
@@ -53,7 +53,7 @@
     .param p4, "state"    # Landroid/support/v7/widget/RecyclerView$State;
 
     .prologue
-    .line 8641
+    .line 8628
     invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -66,7 +66,7 @@
 
     invoke-virtual {p0, p1, v0, p3}, Landroid/support/v7/widget/RecyclerView$ItemDecoration;->getItemOffsets(Landroid/graphics/Rect;ILandroid/support/v7/widget/RecyclerView;)V
 
-    .line 8643
+    .line 8630
     return-void
 .end method
 
@@ -78,7 +78,7 @@
     .end annotation
 
     .prologue
-    .line 8587
+    .line 8574
     return-void
 .end method
 
@@ -89,10 +89,10 @@
     .param p3, "state"    # Landroid/support/v7/widget/RecyclerView$State;
 
     .prologue
-    .line 8578
+    .line 8565
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/widget/RecyclerView$ItemDecoration;->onDraw(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;)V
 
-    .line 8579
+    .line 8566
     return-void
 .end method
 
@@ -104,7 +104,7 @@
     .end annotation
 
     .prologue
-    .line 8608
+    .line 8595
     return-void
 .end method
 
@@ -115,9 +115,9 @@
     .param p3, "state"    # Landroid/support/v7/widget/RecyclerView$State;
 
     .prologue
-    .line 8599
+    .line 8586
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/widget/RecyclerView$ItemDecoration;->onDrawOver(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;)V
 
-    .line 8600
+    .line 8587
     return-void
 .end method

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->doMyAccount(Landroid/view/View;)V
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->doNotification(Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 1787
+    .line 1785
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$26;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,28 +38,21 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .registers 3
 
     .prologue
-    .line 1790
-    new-instance v0, Landroid/content/Intent;
+    .line 1788
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$26;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$26;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    invoke-virtual {v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
+    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->mHandler:Landroid/os/Handler;
+    invoke-static {v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$900(Lcom/samsung/privilege/activity/MainPagerActivity;)Landroid/os/Handler;
 
     move-result-object v1
 
-    const-class v2, Lcom/samsung/privilege/activity/ProfileActivity;
+    invoke-static {v0, v1}, Lcom/samsung/privilege/util/DialogNotification;->showDialogNotification(Landroid/content/Context;Landroid/os/Handler;)V
 
-    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 1791
-    .local v0, "intent":Landroid/content/Intent;
-    iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$26;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
-
-    invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->startActivity(Landroid/content/Intent;)V
-
-    .line 1792
+    .line 1789
     return-void
 .end method

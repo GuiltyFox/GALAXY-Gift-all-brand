@@ -20,13 +20,13 @@
 
 .field btnAds:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005f6
+        value = 0x7f100615
     .end annotation
 .end field
 
 .field btnError:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005f3
+        value = 0x7f100612
     .end annotation
 .end field
 
@@ -40,25 +40,25 @@
 
 .field mainDlPb1:Landroid/widget/ProgressBar;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005f7
+        value = 0x7f100616
     .end annotation
 .end field
 
 .field textViewPoint:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005d6
+        value = 0x7f1005f5
     .end annotation
 .end field
 
 .field textViewSubtitle:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005f5
+        value = 0x7f100614
     .end annotation
 .end field
 
 .field tvPercentLoader:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001fe
+        value = 0x7f100207
     .end annotation
 .end field
 
@@ -66,7 +66,7 @@
 
 .field viewShadow:Landroid/view/View;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005f4
+        value = 0x7f100613
     .end annotation
 .end field
 
@@ -666,7 +666,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f090383
+    const v9, 0x7f090384
 
     invoke-virtual {v8, v9}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -796,7 +796,8 @@
     invoke-direct {v3, v12}, Lcom/bzbs/util/DeviceHelper;-><init>(Landroid/content/Context;)V
 
     .line 203
-    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
+    .local v3, "deviceHelper":Lcom/bzbs/util/DeviceHelper;
+    invoke-virtual {v3}, Lcom/bzbs/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
 
     move-result-object v4
 
@@ -1007,7 +1008,7 @@
 
     .line 222
     .local v2, "builder":Landroid/support/v7/app/AlertDialog$Builder;
-    const v12, 0x7f090140
+    const v12, 0x7f090141
 
     invoke-virtual {p0, v12}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->getString(I)Ljava/lang/String;
 
@@ -1023,7 +1024,7 @@
 
     move-result-object v12
 
-    const v13, 0x7f090333
+    const v13, 0x7f090334
 
     invoke-virtual {p0, v13}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->getString(I)Ljava/lang/String;
 
@@ -1037,7 +1038,7 @@
 
     move-result-object v12
 
-    const v13, 0x7f090324
+    const v13, 0x7f090325
 
     .line 229
     invoke-virtual {p0, v13}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->getString(I)Ljava/lang/String;
@@ -1284,7 +1285,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v3, 0x7f0900b3
+    const v3, 0x7f0900b4
 
     invoke-virtual {p0, v3}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->getString(I)Ljava/lang/String;
 
@@ -1411,7 +1412,7 @@
     .line 158
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->btnError:Landroid/widget/Button;
 
-    const v2, 0x7f09036d
+    const v2, 0x7f09036e
 
     invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->getString(I)Ljava/lang/String;
 
@@ -1440,7 +1441,7 @@
     .line 115
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->btnAds:Landroid/widget/Button;
 
-    const v2, 0x7f0900ad
+    const v2, 0x7f0900ae
 
     invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->getString(I)Ljava/lang/String;
 
@@ -1464,7 +1465,7 @@
     :cond_ff
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->textViewPoint:Landroid/widget/TextView;
 
-    const v2, 0x7f0900b4
+    const v2, 0x7f0900b5
 
     invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->getString(I)Ljava/lang/String;
 
@@ -1668,24 +1669,24 @@
     .param p3, "data"    # Landroid/content/Intent;
 
     .prologue
-    .line 578
+    .line 583
     invoke-super {p0, p1, p2, p3}, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 579
+    .line 584
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->mActivity:Landroid/app/Activity;
 
     instance-of v0, v0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;
 
     if-eqz v0, :cond_10
 
-    .line 580
+    .line 585
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->mActivity:Landroid/app/Activity;
 
     check-cast v0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;
 
     invoke-virtual {v0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->getPoints()V
 
-    .line 581
+    .line 586
     :cond_10
     return-void
 .end method
@@ -1723,7 +1724,7 @@
     .param p1, "v"    # Landroid/view/View;
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f1005f6
+            0x7f100615
         }
     .end annotation
 

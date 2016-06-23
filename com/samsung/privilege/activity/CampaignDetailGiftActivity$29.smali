@@ -29,7 +29,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 2860
+    .line 2976
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$29;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$29;->val$dialogInfo:Landroid/app/Dialog;
@@ -46,32 +46,32 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 2862
+    .line 2978
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$29;->val$dialogInfo:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 2863
+    .line 2979
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$29;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     const/4 v1, 0x0
 
     # setter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->doRedeeming:Z
-    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$2202(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Z)Z
+    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$802(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Z)Z
 
-    .line 2864
+    .line 2980
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$29;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$29;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->doRedeeming:Z
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$2200(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Z
+    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$800(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Z
 
     move-result v1
 
     # invokes: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->setRedeemButtonColor(Z)V
-    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$2300(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Z)V
+    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$2400(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Z)V
 
-    .line 2865
+    .line 2981
     return-void
 .end method

@@ -31,10 +31,10 @@
     .registers 1
 
     .prologue
-    .line 10971
+    .line 10982
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 10972
+    .line 10983
     return-void
 .end method
 
@@ -45,7 +45,7 @@
     .param p1, "holder"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     .prologue
-    .line 10982
+    .line 10993
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;->setFrom(Landroid/support/v7/widget/RecyclerView$ViewHolder;I)Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
@@ -61,10 +61,10 @@
     .param p2, "flags"    # I
 
     .prologue
-    .line 10997
+    .line 11008
     iget-object v0, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    .line 10998
+    .line 11009
     .local v0, "view":Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getLeft()I
 
@@ -72,27 +72,27 @@
 
     iput v1, p0, Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;->left:I
 
-    .line 10999
+    .line 11010
     invoke-virtual {v0}, Landroid/view/View;->getTop()I
 
     move-result v1
 
     iput v1, p0, Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;->top:I
 
-    .line 11000
+    .line 11011
     invoke-virtual {v0}, Landroid/view/View;->getRight()I
 
     move-result v1
 
     iput v1, p0, Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;->right:I
 
-    .line 11001
+    .line 11012
     invoke-virtual {v0}, Landroid/view/View;->getBottom()I
 
     move-result v1
 
     iput v1, p0, Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;->bottom:I
 
-    .line 11002
+    .line 11013
     return-object p0
 .end method

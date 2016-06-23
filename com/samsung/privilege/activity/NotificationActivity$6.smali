@@ -91,7 +91,7 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_2d
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_2d} :catch_45
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_2d} :catch_53
 
     .line 232
     .end local v1    # "response_text":Ljava/lang/String;
@@ -113,7 +113,21 @@
 
     invoke-virtual {v2}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 235
+    .line 236
+    iget-object v2, p0, Lcom/samsung/privilege/activity/NotificationActivity$6;->this$0:Lcom/samsung/privilege/activity/NotificationActivity;
+
+    # getter for: Lcom/samsung/privilege/activity/NotificationActivity;->mHandler:Landroid/os/Handler;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/NotificationActivity;->access$1400(Lcom/samsung/privilege/activity/NotificationActivity;)Landroid/os/Handler;
+
+    move-result-object v2
+
+    new-instance v3, Lcom/samsung/privilege/activity/NotificationActivity$6$2;
+
+    invoke-direct {v3, p0}, Lcom/samsung/privilege/activity/NotificationActivity$6$2;-><init>(Lcom/samsung/privilege/activity/NotificationActivity$6;)V
+
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 244
     iget-object v2, p0, Lcom/samsung/privilege/activity/NotificationActivity$6;->this$0:Lcom/samsung/privilege/activity/NotificationActivity;
 
     const/4 v3, 0x0
@@ -121,11 +135,11 @@
     # setter for: Lcom/samsung/privilege/activity/NotificationActivity;->loading:Z
     invoke-static {v2, v3}, Lcom/samsung/privilege/activity/NotificationActivity;->access$502(Lcom/samsung/privilege/activity/NotificationActivity;Z)Z
 
-    .line 236
+    .line 245
     return-void
 
     .line 228
-    :catch_45
+    :catch_53
     move-exception v0
 
     .line 229

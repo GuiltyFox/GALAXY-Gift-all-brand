@@ -221,7 +221,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f070001
+    const v2, 0x7f070006
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/analytics/GoogleAnalytics;->newTracker(I)Lcom/google/android/gms/analytics/Tracker;
 

@@ -114,7 +114,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->mHandler:Landroid/os/Handler;
 
     .line 72
-    const v0, 0x7f090262
+    const v0, 0x7f090263
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getString(I)Ljava/lang/String;
 
@@ -296,7 +296,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100173
+    const v1, 0x7f100175
 
     iget-object v2, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->fragment:Landroid/support/v4/app/Fragment;
 
@@ -360,10 +360,10 @@
     .registers 4
 
     .prologue
-    .line 195
+    .line 200
     invoke-super {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->onResume()V
 
-    .line 196
+    .line 201
     const-string/jumbo v1, "connectivity"
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -372,7 +372,7 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 197
+    .line 202
     .local v0, "cm":Landroid/net/ConnectivityManager;
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
@@ -380,10 +380,10 @@
 
     if-nez v1, :cond_1e
 
-    .line 198
+    .line 203
     iget-object v1, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->mActivity:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v2, 0x7f09024a
+    const v2, 0x7f09024b
 
     invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getString(I)Ljava/lang/String;
 
@@ -391,7 +391,7 @@
 
     invoke-static {v1, v2}, Lcom/bzbs/util/DialogUtil;->showDialogError(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 200
+    .line 205
     :cond_1e
     return-void
 .end method

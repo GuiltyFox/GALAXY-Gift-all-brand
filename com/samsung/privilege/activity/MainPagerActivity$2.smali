@@ -3,12 +3,12 @@
 .source "MainPagerActivity.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/support/v4/widget/DrawerLayout$DrawerListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->showToast(Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->onCreate(Landroid/os/Bundle;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,19 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-.field final synthetic val$msg:Ljava/lang/String;
-
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;Ljava/lang/String;)V
-    .registers 3
+.method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;)V
+    .registers 2
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 285
+    .line 274
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$2;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
-
-    iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$2;->val$msg:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,25 +37,44 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 5
+.method public onDrawerClosed(Landroid/view/View;)V
+    .registers 2
+    .param p1, "drawerView"    # Landroid/view/View;
 
     .prologue
     .line 288
-    iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$2;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    return-void
+.end method
 
-    iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$2;->val$msg:Ljava/lang/String;
+.method public onDrawerOpened(Landroid/view/View;)V
+    .registers 3
+    .param p1, "drawerView"    # Landroid/view/View;
 
-    const/4 v3, 0x0
+    .prologue
+    .line 282
+    const-string/jumbo v0, "Menu"
 
-    invoke-static {v1, v2, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {v0}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsScreen(Ljava/lang/String;)V
 
-    move-result-object v0
+    .line 283
+    return-void
+.end method
 
-    .line 289
-    .local v0, "toast":Landroid/widget/Toast;
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+.method public onDrawerSlide(Landroid/view/View;F)V
+    .registers 3
+    .param p1, "drawerView"    # Landroid/view/View;
+    .param p2, "slideOffset"    # F
 
-    .line 290
+    .prologue
+    .line 278
+    return-void
+.end method
+
+.method public onDrawerStateChanged(I)V
+    .registers 2
+    .param p1, "newState"    # I
+
+    .prologue
+    .line 293
     return-void
 .end method

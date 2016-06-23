@@ -327,7 +327,7 @@
 
     .prologue
     .line 114
-    const v1, 0x7f100106
+    const v1, 0x7f100107
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/NotificationActivity;->findViewById(I)Landroid/view/View;
 
@@ -361,7 +361,7 @@
 
     .prologue
     .line 104
-    const v1, 0x7f100106
+    const v1, 0x7f100107
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/NotificationActivity;->findViewById(I)Landroid/view/View;
 
@@ -386,7 +386,7 @@
 
     .prologue
     .line 96
-    const v0, 0x7f100175
+    const v0, 0x7f100177
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/NotificationActivity;->findViewById(I)Landroid/view/View;
 
@@ -433,7 +433,7 @@
 
     if-ne v4, v7, :cond_6
 
-    .line 238
+    .line 247
     :goto_5
     return-void
 
@@ -441,7 +441,7 @@
     :cond_6
     const-string/jumbo v4, ""
 
-    const v5, 0x7f09026e
+    const v5, 0x7f09026f
 
     invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/NotificationActivity;->getString(I)Ljava/lang/String;
 
@@ -668,7 +668,7 @@
 
     .prologue
     .line 140
-    const v1, 0x7f100106
+    const v1, 0x7f100107
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/NotificationActivity;->findViewById(I)Landroid/view/View;
 

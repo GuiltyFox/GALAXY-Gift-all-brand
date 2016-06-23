@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 552
+    .line 575
     new-instance v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     const-string/jumbo v1, "NONE"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->NONE:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
-    .line 553
+    .line 576
     new-instance v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     const-string/jumbo v1, "POST_PHOTO"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->POST_PHOTO:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
-    .line 554
+    .line 577
     new-instance v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     const-string/jumbo v1, "POST_STATUS_UPDATE"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->POST_STATUS_UPDATE:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
-    .line 551
+    .line 574
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
@@ -102,7 +102,7 @@
     .end annotation
 
     .prologue
-    .line 551
+    .line 574
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -113,7 +113,7 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 551
+    .line 574
     const-class v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -129,7 +129,7 @@
     .registers 1
 
     .prologue
-    .line 551
+    .line 574
     sget-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->$VALUES:[Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     invoke-virtual {v0}, [Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->clone()Ljava/lang/Object;

@@ -225,21 +225,21 @@
     .prologue
     const/4 v9, 0x1
 
-    .line 740
+    .line 745
     if-eqz p5, :cond_49
 
-    .line 741
+    .line 746
     const/4 v6, 0x0
 
-    .line 742
+    .line 747
     .local v6, "start":I
     move v1, p3
 
-    .line 743
+    .line 748
     .local v1, "end":I
     const/4 v0, 0x1
 
-    .line 749
+    .line 754
     .local v0, "diff":I
     :goto_6
     iget v8, p0, Landroid/support/v7/widget/GridLayoutManager;->mOrientation:I
@@ -252,16 +252,16 @@
 
     if-eqz v8, :cond_4e
 
-    .line 750
+    .line 755
     iget v8, p0, Landroid/support/v7/widget/GridLayoutManager;->mSpanCount:I
 
     add-int/lit8 v4, v8, -0x1
 
-    .line 751
+    .line 756
     .local v4, "span":I
     const/4 v5, -0x1
 
-    .line 756
+    .line 761
     .local v5, "spanDiff":I
     :goto_15
     move v2, v6
@@ -270,12 +270,12 @@
     :goto_16
     if-eq v2, v1, :cond_55
 
-    .line 757
+    .line 762
     iget-object v8, p0, Landroid/support/v7/widget/GridLayoutManager;->mSet:[Landroid/view/View;
 
     aget-object v7, v8, v2
 
-    .line 758
+    .line 763
     .local v7, "view":Landroid/view/View;
     invoke-virtual {v7}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -283,7 +283,7 @@
 
     check-cast v3, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
 
-    .line 759
+    .line 764
     .local v3, "params":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
     invoke-virtual {p0, v7}, Landroid/support/v7/widget/GridLayoutManager;->getPosition(Landroid/view/View;)I
 
@@ -296,7 +296,7 @@
     # setter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanSize:I
     invoke-static {v3, v8}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$102(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;I)I
 
-    .line 760
+    .line 765
     const/4 v8, -0x1
 
     if-ne v5, v8, :cond_51
@@ -308,7 +308,7 @@
 
     if-le v8, v9, :cond_51
 
-    .line 761
+    .line 766
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanSize:I
     invoke-static {v3}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$100(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
 
@@ -321,7 +321,7 @@
     # setter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
     invoke-static {v3, v8}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$002(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;I)I
 
-    .line 765
+    .line 770
     :goto_41
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanSize:I
     invoke-static {v3}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$100(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
@@ -332,12 +332,12 @@
 
     add-int/2addr v4, v8
 
-    .line 756
+    .line 761
     add-int/2addr v2, v0
 
     goto :goto_16
 
-    .line 745
+    .line 750
     .end local v0    # "diff":I
     .end local v1    # "end":I
     .end local v2    # "i":I
@@ -349,29 +349,29 @@
     :cond_49
     add-int/lit8 v6, p3, -0x1
 
-    .line 746
+    .line 751
     .restart local v6    # "start":I
     const/4 v1, -0x1
 
-    .line 747
+    .line 752
     .restart local v1    # "end":I
     const/4 v0, -0x1
 
     .restart local v0    # "diff":I
     goto :goto_6
 
-    .line 753
+    .line 758
     :cond_4e
     const/4 v4, 0x0
 
-    .line 754
+    .line 759
     .restart local v4    # "span":I
     const/4 v5, 0x1
 
     .restart local v5    # "spanDiff":I
     goto :goto_15
 
-    .line 763
+    .line 768
     .restart local v2    # "i":I
     .restart local v3    # "params":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
     .restart local v7    # "view":Landroid/view/View;
@@ -381,7 +381,7 @@
 
     goto :goto_41
 
-    .line 767
+    .line 772
     .end local v3    # "params":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
     .end local v7    # "view":Landroid/view/View;
     :cond_55
@@ -998,7 +998,7 @@
     .param p2, "currentOtherDirSize"    # I
 
     .prologue
-    .line 695
+    .line 700
     iget v1, p0, Landroid/support/v7/widget/GridLayoutManager;->mSpanCount:I
 
     int-to-float v1, v1
@@ -1009,7 +1009,7 @@
 
     move-result v0
 
-    .line 697
+    .line 702
     .local v0, "contentSize":I
     invoke-static {v0, p2}, Ljava/lang/Math;->max(II)I
 
@@ -1017,7 +1017,7 @@
 
     invoke-direct {p0, v1}, Landroid/support/v7/widget/GridLayoutManager;->calculateItemBorders(I)V
 
-    .line 698
+    .line 703
     return-void
 .end method
 
@@ -1030,19 +1030,19 @@
     .param p5, "alreadyMeasured"    # Z
 
     .prologue
-    .line 702
+    .line 707
     iget-object v2, p0, Landroid/support/v7/widget/GridLayoutManager;->mDecorInsets:Landroid/graphics/Rect;
 
     invoke-virtual {p0, p1, v2}, Landroid/support/v7/widget/GridLayoutManager;->calculateItemDecorationsForChild(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 703
+    .line 708
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;
 
-    .line 704
+    .line 709
     .local v0, "lp":Landroid/support/v7/widget/RecyclerView$LayoutParams;
     if-nez p4, :cond_12
 
@@ -1052,7 +1052,7 @@
 
     if-ne v2, v3, :cond_24
 
-    .line 705
+    .line 710
     :cond_12
     iget v2, v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;->leftMargin:I
 
@@ -1074,7 +1074,7 @@
 
     move-result p2
 
-    .line 708
+    .line 713
     :cond_24
     if-nez p4, :cond_2a
 
@@ -1082,7 +1082,7 @@
 
     if-nez v2, :cond_3c
 
-    .line 709
+    .line 714
     :cond_2a
     iget v2, v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;->topMargin:I
 
@@ -1104,28 +1104,28 @@
 
     move-result p3
 
-    .line 713
+    .line 718
     :cond_3c
     if-eqz p5, :cond_48
 
-    .line 714
+    .line 719
     invoke-virtual {p0, p1, p2, p3, v0}, Landroid/support/v7/widget/GridLayoutManager;->shouldReMeasureChild(Landroid/view/View;IILandroid/support/v7/widget/RecyclerView$LayoutParams;)Z
 
     move-result v1
 
-    .line 718
+    .line 723
     .local v1, "measure":Z
     :goto_42
     if-eqz v1, :cond_47
 
-    .line 719
+    .line 724
     invoke-virtual {p1, p2, p3}, Landroid/view/View;->measure(II)V
 
-    .line 722
+    .line 727
     :cond_47
     return-void
 
-    .line 716
+    .line 721
     .end local v1    # "measure":Z
     :cond_48
     invoke-virtual {p0, p1, p2, p3, v0}, Landroid/support/v7/widget/GridLayoutManager;->shouldMeasureChild(Landroid/view/View;IILandroid/support/v7/widget/RecyclerView$LayoutParams;)Z
@@ -1198,31 +1198,31 @@
 .end method
 
 .method private updateSpecWithExtra(III)I
-    .registers 6
+    .registers 7
     .param p1, "spec"    # I
     .param p2, "startInset"    # I
     .param p3, "endInset"    # I
 
     .prologue
-    .line 725
+    .line 730
     if-nez p2, :cond_5
 
     if-nez p3, :cond_5
 
-    .line 733
+    .line 738
     .end local p1    # "spec":I
     :cond_4
     :goto_4
     return p1
 
-    .line 728
+    .line 733
     .restart local p1    # "spec":I
     :cond_5
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v0
 
-    .line 729
+    .line 734
     .local v0, "mode":I
     const/high16 v1, -0x80000000
 
@@ -1232,15 +1232,21 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 730
+    .line 735
     :cond_11
+    const/4 v1, 0x0
+
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
+    move-result v2
+
+    sub-int/2addr v2, p2
+
+    sub-int/2addr v2, p3
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
+
     move-result v1
-
-    sub-int/2addr v1, p2
-
-    sub-int/2addr v1, p3
 
     invoke-static {v1, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -1610,7 +1616,7 @@
     .registers 2
 
     .prologue
-    .line 776
+    .line 781
     iget v0, p0, Landroid/support/v7/widget/GridLayoutManager;->mSpanCount:I
 
     return v0
@@ -1627,7 +1633,7 @@
 .end method
 
 .method layoutChunk(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/RecyclerView$State;Landroid/support/v7/widget/LinearLayoutManager$LayoutState;Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;)V
-    .registers 48
+    .registers 49
     .param p1, "recycler"    # Landroid/support/v7/widget/RecyclerView$Recycler;
     .param p2, "state"    # Landroid/support/v7/widget/RecyclerView$State;
     .param p3, "layoutState"    # Landroid/support/v7/widget/LinearLayoutManager$LayoutState;
@@ -1641,20 +1647,20 @@
 
     invoke-virtual {v4}, Landroid/support/v7/widget/OrientationHelper;->getModeInOther()I
 
-    move-result v34
+    move-result v35
 
     .line 498
-    .local v34, "otherDirSpecMode":I
+    .local v35, "otherDirSpecMode":I
     const/high16 v4, 0x40000000
 
-    move/from16 v0, v34
+    move/from16 v0, v35
 
     if-eq v0, v4, :cond_c0
 
-    const/16 v26, 0x1
+    const/16 v27, 0x1
 
     .line 499
-    .local v26, "flexibleInOtherDir":Z
+    .local v27, "flexibleInOtherDir":Z
     :goto_10
     invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/GridLayoutManager;->getChildCount()I
 
@@ -1670,12 +1676,12 @@
 
     iget v5, v0, Landroid/support/v7/widget/GridLayoutManager;->mSpanCount:I
 
-    aget v25, v4, v5
+    aget v26, v4, v5
 
     .line 503
-    .local v25, "currentOtherDirSize":I
+    .local v26, "currentOtherDirSize":I
     :goto_20
-    if-eqz v26, :cond_25
+    if-eqz v27, :cond_25
 
     .line 504
     invoke-direct/range {p0 .. p0}, Landroid/support/v7/widget/GridLayoutManager;->updateMeasurements()V
@@ -1707,10 +1713,10 @@
 
     iget v0, v0, Landroid/support/v7/widget/GridLayoutManager;->mSpanCount:I
 
-    move/from16 v38, v0
+    move/from16 v39, v0
 
     .line 511
-    .local v38, "remainingSpan":I
+    .local v39, "remainingSpan":I
     if-nez v9, :cond_55
 
     .line 512
@@ -1726,10 +1732,10 @@
 
     invoke-direct {v0, v1, v2, v4}, Landroid/support/v7/widget/GridLayoutManager;->getSpanIndex(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/RecyclerView$State;I)I
 
-    move-result v28
+    move-result v29
 
     .line 513
-    .local v28, "itemSpanIndex":I
+    .local v29, "itemSpanIndex":I
     move-object/from16 v0, p3
 
     iget v4, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
@@ -1742,15 +1748,15 @@
 
     invoke-direct {v0, v1, v2, v4}, Landroid/support/v7/widget/GridLayoutManager;->getSpanSize(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/RecyclerView$State;I)I
 
-    move-result v29
+    move-result v30
 
     .line 514
-    .local v29, "itemSpanSize":I
-    add-int v38, v28, v29
+    .local v30, "itemSpanSize":I
+    add-int v39, v29, v30
 
     .line 516
-    .end local v28    # "itemSpanIndex":I
-    .end local v29    # "itemSpanSize":I
+    .end local v29    # "itemSpanIndex":I
+    .end local v30    # "itemSpanSize":I
     :cond_55
     :goto_55
     move-object/from16 v0, p0
@@ -1769,36 +1775,36 @@
 
     if-eqz v4, :cond_cf
 
-    if-lez v38, :cond_cf
+    if-lez v39, :cond_cf
 
     .line 517
     move-object/from16 v0, p3
 
     iget v0, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mCurrentPosition:I
 
-    move/from16 v37, v0
+    move/from16 v38, v0
 
     .line 518
-    .local v37, "pos":I
+    .local v38, "pos":I
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
     move-object/from16 v2, p2
 
-    move/from16 v3, v37
+    move/from16 v3, v38
 
     invoke-direct {v0, v1, v2, v3}, Landroid/support/v7/widget/GridLayoutManager;->getSpanSize(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/RecyclerView$State;I)I
 
-    move-result v41
+    move-result v42
 
     .line 519
-    .local v41, "spanSize":I
+    .local v42, "spanSize":I
     move-object/from16 v0, p0
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mSpanCount:I
 
-    move/from16 v0, v41
+    move/from16 v0, v42
 
     if-le v0, v4, :cond_cb
 
@@ -1815,7 +1821,7 @@
 
     move-result-object v5
 
-    move/from16 v0, v37
+    move/from16 v0, v38
 
     invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1827,7 +1833,7 @@
 
     move-result-object v5
 
-    move/from16 v0, v41
+    move/from16 v0, v42
 
     invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1865,25 +1871,25 @@
     .end local v7    # "count":I
     .end local v8    # "consumedSpanCount":I
     .end local v9    # "layingOutInPrimaryDirection":Z
-    .end local v25    # "currentOtherDirSize":I
-    .end local v26    # "flexibleInOtherDir":Z
-    .end local v37    # "pos":I
-    .end local v38    # "remainingSpan":I
-    .end local v41    # "spanSize":I
+    .end local v26    # "currentOtherDirSize":I
+    .end local v27    # "flexibleInOtherDir":Z
+    .end local v38    # "pos":I
+    .end local v39    # "remainingSpan":I
+    .end local v42    # "spanSize":I
     :cond_c0
-    const/16 v26, 0x0
+    const/16 v27, 0x0
 
     goto/16 :goto_10
 
     .line 499
-    .restart local v26    # "flexibleInOtherDir":Z
+    .restart local v27    # "flexibleInOtherDir":Z
     :cond_c4
-    const/16 v25, 0x0
+    const/16 v26, 0x0
 
     goto/16 :goto_20
 
     .line 506
-    .restart local v25    # "currentOtherDirSize":I
+    .restart local v26    # "currentOtherDirSize":I
     :cond_c8
     const/4 v9, 0x0
 
@@ -1893,18 +1899,18 @@
     .restart local v7    # "count":I
     .restart local v8    # "consumedSpanCount":I
     .restart local v9    # "layingOutInPrimaryDirection":Z
-    .restart local v37    # "pos":I
-    .restart local v38    # "remainingSpan":I
-    .restart local v41    # "spanSize":I
+    .restart local v38    # "pos":I
+    .restart local v39    # "remainingSpan":I
+    .restart local v42    # "spanSize":I
     :cond_cb
-    sub-int v38, v38, v41
+    sub-int v39, v39, v42
 
     .line 525
-    if-gez v38, :cond_d7
+    if-gez v39, :cond_d7
 
     .line 537
-    .end local v37    # "pos":I
-    .end local v41    # "spanSize":I
+    .end local v38    # "pos":I
+    .end local v42    # "spanSize":I
     :cond_cf
     if-nez v7, :cond_ed
 
@@ -1915,13 +1921,13 @@
 
     iput-boolean v4, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mFinished:Z
 
-    .line 682
+    .line 687
     :goto_d6
     return-void
 
     .line 528
-    .restart local v37    # "pos":I
-    .restart local v41    # "spanSize":I
+    .restart local v38    # "pos":I
+    .restart local v42    # "spanSize":I
     :cond_d7
     move-object/from16 v0, p3
 
@@ -1936,7 +1942,7 @@
     if-eqz v11, :cond_cf
 
     .line 532
-    add-int v8, v8, v41
+    add-int v8, v8, v42
 
     .line 533
     move-object/from16 v0, p0
@@ -1953,16 +1959,16 @@
 
     .line 542
     .end local v11    # "view":Landroid/view/View;
-    .end local v37    # "pos":I
-    .end local v41    # "spanSize":I
+    .end local v38    # "pos":I
+    .end local v42    # "spanSize":I
     :cond_ed
-    const/16 v32, 0x0
-
-    .line 543
-    .local v32, "maxSize":I
     const/16 v33, 0x0
 
-    .local v33, "maxSizeInOther":F
+    .line 543
+    .local v33, "maxSize":I
+    const/16 v34, 0x0
+
+    .local v34, "maxSizeInOther":F
     move-object/from16 v4, p0
 
     move-object/from16 v5, p1
@@ -1973,20 +1979,20 @@
     invoke-direct/range {v4 .. v9}, Landroid/support/v7/widget/GridLayoutManager;->assignSpans(Landroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/RecyclerView$State;IIZ)V
 
     .line 547
-    const/16 v27, 0x0
+    const/16 v28, 0x0
 
-    .local v27, "i":I
+    .local v28, "i":I
     :goto_fc
-    move/from16 v0, v27
+    move/from16 v0, v28
 
-    if-ge v0, v7, :cond_1d4
+    if-ge v0, v7, :cond_1e9
 
     .line 548
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mSet:[Landroid/view/View;
 
-    aget-object v11, v4, v27
+    aget-object v11, v4, v28
 
     .line 549
     .restart local v11    # "view":Landroid/view/View;
@@ -1994,10 +2000,10 @@
 
     iget-object v4, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mScrapList:Ljava/util/List;
 
-    if-nez v4, :cond_1aa
+    if-nez v4, :cond_1b1
 
     .line 550
-    if-eqz v9, :cond_1a2
+    if-eqz v9, :cond_1a9
 
     .line 551
     move-object/from16 v0, p0
@@ -2008,23 +2014,23 @@
     :goto_113
     invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v31
+    move-result-object v32
 
-    check-cast v31, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
+    check-cast v32, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
 
     .line 564
-    .local v31, "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
+    .local v32, "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mCachedBorders:[I
 
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
-    invoke-static/range {v31 .. v31}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
+    invoke-static/range {v32 .. v32}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
 
     move-result v5
 
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanSize:I
-    invoke-static/range {v31 .. v31}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$100(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
+    invoke-static/range {v32 .. v32}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$100(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
 
     move-result v6
 
@@ -2037,7 +2043,7 @@
     iget-object v5, v0, Landroid/support/v7/widget/GridLayoutManager;->mCachedBorders:[I
 
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
-    invoke-static/range {v31 .. v31}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
+    invoke-static/range {v32 .. v32}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
 
     move-result v6
 
@@ -2051,16 +2057,16 @@
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mOrientation:I
 
-    if-nez v4, :cond_1bb
+    if-nez v4, :cond_1c2
 
-    move-object/from16 v0, v31
+    move-object/from16 v0, v32
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->height:I
 
     :goto_13f
     const/4 v10, 0x0
 
-    move/from16 v0, v34
+    move/from16 v0, v35
 
     invoke-static {v5, v0, v6, v4, v10}, Landroid/support/v7/widget/GridLayoutManager;->getChildMeasureSpec(IIIIZ)I
 
@@ -2090,22 +2096,22 @@
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mOrientation:I
 
-    const/4 v14, 0x1
+    const/4 v15, 0x1
 
-    if-ne v4, v14, :cond_1c0
+    if-ne v4, v15, :cond_1c8
 
-    move-object/from16 v0, v31
+    move-object/from16 v0, v32
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->height:I
 
     :goto_162
-    const/4 v14, 0x1
+    const/4 v15, 0x1
 
-    invoke-static {v5, v6, v10, v4, v14}, Landroid/support/v7/widget/GridLayoutManager;->getChildMeasureSpec(IIIIZ)I
+    invoke-static {v5, v6, v10, v4, v15}, Landroid/support/v7/widget/GridLayoutManager;->getChildMeasureSpec(IIIIZ)I
 
     move-result v13
 
-    .line 571
+    .line 572
     .local v13, "mainSpec":I
     move-object/from16 v0, p0
 
@@ -2113,40 +2119,51 @@
 
     const/4 v5, 0x1
 
-    if-ne v4, v5, :cond_1c5
+    if-ne v4, v5, :cond_1cf
 
-    .line 572
-    const/4 v14, 0x0
+    .line 574
+    move-object/from16 v0, v32
 
+    iget v4, v0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->height:I
+
+    const/4 v5, -0x1
+
+    if-ne v4, v5, :cond_1cd
+
+    const/4 v14, 0x1
+
+    .line 575
+    .local v14, "applyInsets":Z
+    :goto_176
     const/4 v15, 0x0
 
     move-object/from16 v10, p0
 
     invoke-direct/range {v10 .. v15}, Landroid/support/v7/widget/GridLayoutManager;->measureChildWithDecorationsAndMargin(Landroid/view/View;IIZZ)V
 
-    .line 576
-    :goto_175
+    .line 581
+    :goto_17c
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v4, v11}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedMeasurement(Landroid/view/View;)I
 
-    move-result v40
+    move-result v41
 
-    .line 577
-    .local v40, "size":I
-    move/from16 v0, v40
+    .line 582
+    .local v41, "size":I
+    move/from16 v0, v41
 
-    move/from16 v1, v32
+    move/from16 v1, v33
 
-    if-le v0, v1, :cond_185
+    if-le v0, v1, :cond_18c
 
-    .line 578
-    move/from16 v32, v40
+    .line 583
+    move/from16 v33, v41
 
-    .line 580
-    :cond_185
+    .line 585
+    :cond_18c
     const/high16 v4, 0x3f800000
 
     move-object/from16 v0, p0
@@ -2162,36 +2179,37 @@
     mul-float/2addr v4, v5
 
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanSize:I
-    invoke-static/range {v31 .. v31}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$100(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
+    invoke-static/range {v32 .. v32}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$100(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
 
     move-result v5
 
     int-to-float v5, v5
 
-    div-float v35, v4, v5
+    div-float v36, v4, v5
 
-    .line 582
-    .local v35, "otherSize":F
-    cmpl-float v4, v35, v33
+    .line 587
+    .local v36, "otherSize":F
+    cmpl-float v4, v36, v34
 
-    if-lez v4, :cond_19e
+    if-lez v4, :cond_1a5
 
-    .line 583
-    move/from16 v33, v35
+    .line 588
+    move/from16 v34, v36
 
     .line 547
-    :cond_19e
-    add-int/lit8 v27, v27, 0x1
+    :cond_1a5
+    add-int/lit8 v28, v28, 0x1
 
     goto/16 :goto_fc
 
     .line 553
     .end local v12    # "spec":I
     .end local v13    # "mainSpec":I
-    .end local v31    # "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
-    .end local v35    # "otherSize":F
-    .end local v40    # "size":I
-    :cond_1a2
+    .end local v14    # "applyInsets":Z
+    .end local v32    # "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
+    .end local v36    # "otherSize":F
+    .end local v41    # "size":I
+    :cond_1a9
     const/4 v4, 0x0
 
     move-object/from16 v0, p0
@@ -2201,8 +2219,8 @@
     goto/16 :goto_113
 
     .line 556
-    :cond_1aa
-    if-eqz v9, :cond_1b3
+    :cond_1b1
+    if-eqz v9, :cond_1ba
 
     .line 557
     move-object/from16 v0, p0
@@ -2212,7 +2230,7 @@
     goto/16 :goto_113
 
     .line 559
-    :cond_1b3
+    :cond_1ba
     const/4 v4, 0x0
 
     move-object/from16 v0, p0
@@ -2222,18 +2240,18 @@
     goto/16 :goto_113
 
     .line 564
-    .restart local v31    # "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
-    :cond_1bb
-    move-object/from16 v0, v31
+    .restart local v32    # "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
+    :cond_1c2
+    move-object/from16 v0, v32
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->width:I
 
-    goto :goto_13f
+    goto/16 :goto_13f
 
     .line 568
     .restart local v12    # "spec":I
-    :cond_1c0
-    move-object/from16 v0, v31
+    :cond_1c8
+    move-object/from16 v0, v32
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->width:I
 
@@ -2241,79 +2259,105 @@
 
     .line 574
     .restart local v13    # "mainSpec":I
-    :cond_1c5
-    const/16 v18, 0x0
+    :cond_1cd
+    const/4 v14, 0x0
 
-    const/16 v19, 0x0
+    goto :goto_176
 
-    move-object/from16 v14, p0
+    .line 578
+    :cond_1cf
+    move-object/from16 v0, v32
 
-    move-object v15, v11
+    iget v4, v0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->width:I
 
-    move/from16 v16, v13
+    const/4 v5, -0x1
 
-    move/from16 v17, v12
+    if-ne v4, v5, :cond_1e7
 
-    invoke-direct/range {v14 .. v19}, Landroid/support/v7/widget/GridLayoutManager;->measureChildWithDecorationsAndMargin(Landroid/view/View;IIZZ)V
+    const/4 v14, 0x1
 
-    goto :goto_175
+    .line 579
+    .restart local v14    # "applyInsets":Z
+    :goto_1d7
+    const/16 v20, 0x0
 
-    .line 586
+    move-object/from16 v15, p0
+
+    move-object/from16 v16, v11
+
+    move/from16 v17, v13
+
+    move/from16 v18, v12
+
+    move/from16 v19, v14
+
+    invoke-direct/range {v15 .. v20}, Landroid/support/v7/widget/GridLayoutManager;->measureChildWithDecorationsAndMargin(Landroid/view/View;IIZZ)V
+
+    goto :goto_17c
+
+    .line 578
+    .end local v14    # "applyInsets":Z
+    :cond_1e7
+    const/4 v14, 0x0
+
+    goto :goto_1d7
+
+    .line 591
     .end local v11    # "view":Landroid/view/View;
     .end local v12    # "spec":I
     .end local v13    # "mainSpec":I
-    .end local v31    # "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
-    :cond_1d4
-    if-eqz v26, :cond_27b
+    .end local v32    # "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
+    :cond_1e9
+    if-eqz v27, :cond_29a
 
-    .line 588
+    .line 593
     move-object/from16 v0, p0
 
-    move/from16 v1, v33
+    move/from16 v1, v34
 
-    move/from16 v2, v25
+    move/from16 v2, v26
 
     invoke-direct {v0, v1, v2}, Landroid/support/v7/widget/GridLayoutManager;->guessMeasurement(FI)V
 
-    .line 590
-    const/16 v32, 0x0
+    .line 595
+    const/16 v33, 0x0
 
-    .line 591
-    const/16 v27, 0x0
+    .line 596
+    const/16 v28, 0x0
 
-    :goto_1e3
-    move/from16 v0, v27
+    :goto_1f8
+    move/from16 v0, v28
 
-    if-ge v0, v7, :cond_27b
+    if-ge v0, v7, :cond_29a
 
-    .line 592
+    .line 597
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mSet:[Landroid/view/View;
 
-    aget-object v11, v4, v27
+    aget-object v11, v4, v28
 
-    .line 593
+    .line 598
     .restart local v11    # "view":Landroid/view/View;
     invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v31
+    move-result-object v32
 
-    check-cast v31, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
+    check-cast v32, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
 
-    .line 594
-    .restart local v31    # "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
+    .line 599
+    .restart local v32    # "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mCachedBorders:[I
 
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
-    invoke-static/range {v31 .. v31}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
+    invoke-static/range {v32 .. v32}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
 
     move-result v5
 
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanSize:I
-    invoke-static/range {v31 .. v31}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$100(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
+    invoke-static/range {v32 .. v32}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$100(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
 
     move-result v6
 
@@ -2326,7 +2370,7 @@
     iget-object v5, v0, Landroid/support/v7/widget/GridLayoutManager;->mCachedBorders:[I
 
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
-    invoke-static/range {v31 .. v31}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
+    invoke-static/range {v32 .. v32}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
 
     move-result v6
 
@@ -2342,20 +2386,20 @@
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mOrientation:I
 
-    if-nez v4, :cond_262
+    if-nez v4, :cond_280
 
-    move-object/from16 v0, v31
+    move-object/from16 v0, v32
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->height:I
 
-    :goto_21b
-    const/4 v14, 0x0
+    :goto_230
+    const/4 v15, 0x0
 
-    invoke-static {v5, v6, v10, v4, v14}, Landroid/support/v7/widget/GridLayoutManager;->getChildMeasureSpec(IIIIZ)I
+    invoke-static {v5, v6, v10, v4, v15}, Landroid/support/v7/widget/GridLayoutManager;->getChildMeasureSpec(IIIIZ)I
 
     move-result v12
 
-    .line 597
+    .line 602
     .restart local v12    # "spec":I
     move-object/from16 v0, p0
 
@@ -2379,22 +2423,22 @@
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mOrientation:I
 
-    const/4 v14, 0x1
+    const/4 v15, 0x1
 
-    if-ne v4, v14, :cond_267
+    if-ne v4, v15, :cond_285
 
-    move-object/from16 v0, v31
+    move-object/from16 v0, v32
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->height:I
 
-    :goto_23c
-    const/4 v14, 0x1
+    :goto_251
+    const/4 v15, 0x1
 
-    invoke-static {v5, v6, v10, v4, v14}, Landroid/support/v7/widget/GridLayoutManager;->getChildMeasureSpec(IIIIZ)I
+    invoke-static {v5, v6, v10, v4, v15}, Landroid/support/v7/widget/GridLayoutManager;->getChildMeasureSpec(IIIIZ)I
 
     move-result v13
 
-    .line 600
+    .line 605
     .restart local v13    # "mainSpec":I
     move-object/from16 v0, p0
 
@@ -2402,114 +2446,120 @@
 
     const/4 v5, 0x1
 
-    if-ne v4, v5, :cond_26c
+    if-ne v4, v5, :cond_28a
 
-    .line 601
-    const/4 v14, 0x0
+    .line 606
+    const/16 v19, 0x0
 
-    const/4 v15, 0x1
+    const/16 v20, 0x1
 
-    move-object/from16 v10, p0
+    move-object/from16 v15, p0
 
-    invoke-direct/range {v10 .. v15}, Landroid/support/v7/widget/GridLayoutManager;->measureChildWithDecorationsAndMargin(Landroid/view/View;IIZZ)V
+    move-object/from16 v16, v11
 
-    .line 605
-    :goto_24f
+    move/from16 v17, v12
+
+    move/from16 v18, v13
+
+    invoke-direct/range {v15 .. v20}, Landroid/support/v7/widget/GridLayoutManager;->measureChildWithDecorationsAndMargin(Landroid/view/View;IIZZ)V
+
+    .line 610
+    :goto_26c
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
 
     invoke-virtual {v4, v11}, Landroid/support/v7/widget/OrientationHelper;->getDecoratedMeasurement(Landroid/view/View;)I
 
-    move-result v40
+    move-result v41
 
-    .line 606
-    .restart local v40    # "size":I
-    move/from16 v0, v40
+    .line 611
+    .restart local v41    # "size":I
+    move/from16 v0, v41
 
-    move/from16 v1, v32
+    move/from16 v1, v33
 
-    if-le v0, v1, :cond_25f
+    if-le v0, v1, :cond_27c
 
-    .line 607
-    move/from16 v32, v40
+    .line 612
+    move/from16 v33, v41
 
-    .line 591
-    :cond_25f
-    add-int/lit8 v27, v27, 0x1
+    .line 596
+    :cond_27c
+    add-int/lit8 v28, v28, 0x1
 
-    goto :goto_1e3
+    goto/16 :goto_1f8
 
-    .line 594
+    .line 599
     .end local v12    # "spec":I
     .end local v13    # "mainSpec":I
-    .end local v40    # "size":I
-    :cond_262
-    move-object/from16 v0, v31
+    .end local v41    # "size":I
+    :cond_280
+    move-object/from16 v0, v32
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->width:I
 
-    goto :goto_21b
+    goto :goto_230
 
-    .line 597
+    .line 602
     .restart local v12    # "spec":I
-    :cond_267
-    move-object/from16 v0, v31
+    :cond_285
+    move-object/from16 v0, v32
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->width:I
 
-    goto :goto_23c
+    goto :goto_251
 
-    .line 603
+    .line 608
     .restart local v13    # "mainSpec":I
-    :cond_26c
-    const/16 v18, 0x0
+    :cond_28a
+    const/16 v19, 0x0
 
-    const/16 v19, 0x1
+    const/16 v20, 0x1
 
-    move-object/from16 v14, p0
+    move-object/from16 v15, p0
 
-    move-object v15, v11
+    move-object/from16 v16, v11
 
-    move/from16 v16, v13
+    move/from16 v17, v13
 
-    move/from16 v17, v12
+    move/from16 v18, v12
 
-    invoke-direct/range {v14 .. v19}, Landroid/support/v7/widget/GridLayoutManager;->measureChildWithDecorationsAndMargin(Landroid/view/View;IIZZ)V
+    invoke-direct/range {v15 .. v20}, Landroid/support/v7/widget/GridLayoutManager;->measureChildWithDecorationsAndMargin(Landroid/view/View;IIZZ)V
 
-    goto :goto_24f
+    goto :goto_26c
 
-    .line 613
+    .line 618
     .end local v11    # "view":Landroid/view/View;
     .end local v12    # "spec":I
     .end local v13    # "mainSpec":I
-    .end local v31    # "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
-    :cond_27b
+    .end local v32    # "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
+    :cond_29a
     const/high16 v4, 0x40000000
 
-    move/from16 v0, v32
+    move/from16 v0, v33
 
     invoke-static {v0, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    move-result v17
+    move-result v18
 
-    .line 615
-    .local v17, "maxMeasureSpec":I
-    const/16 v27, 0x0
+    .line 620
+    .local v18, "maxMeasureSpec":I
+    const/16 v28, 0x0
 
-    :goto_285
-    move/from16 v0, v27
+    :goto_2a4
+    move/from16 v0, v28
 
-    if-ge v0, v7, :cond_2f7
+    if-ge v0, v7, :cond_317
 
-    .line 616
+    .line 621
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mSet:[Landroid/view/View;
 
-    aget-object v11, v4, v27
+    aget-object v11, v4, v28
 
-    .line 617
+    .line 622
     .restart local v11    # "view":Landroid/view/View;
     move-object/from16 v0, p0
 
@@ -2519,30 +2569,30 @@
 
     move-result v4
 
-    move/from16 v0, v32
+    move/from16 v0, v33
 
-    if-eq v4, v0, :cond_2e1
+    if-eq v4, v0, :cond_301
 
-    .line 618
+    .line 623
     invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v31
+    move-result-object v32
 
-    check-cast v31, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
+    check-cast v32, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
 
-    .line 619
-    .restart local v31    # "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
+    .line 624
+    .restart local v32    # "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mCachedBorders:[I
 
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
-    invoke-static/range {v31 .. v31}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
+    invoke-static/range {v32 .. v32}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
 
     move-result v5
 
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanSize:I
-    invoke-static/range {v31 .. v31}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$100(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
+    invoke-static/range {v32 .. v32}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$100(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
 
     move-result v6
 
@@ -2555,7 +2605,7 @@
     iget-object v5, v0, Landroid/support/v7/widget/GridLayoutManager;->mCachedBorders:[I
 
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
-    invoke-static/range {v31 .. v31}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
+    invoke-static/range {v32 .. v32}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
 
     move-result v6
 
@@ -2571,20 +2621,20 @@
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mOrientation:I
 
-    if-nez v4, :cond_2e4
+    if-nez v4, :cond_304
 
-    move-object/from16 v0, v31
+    move-object/from16 v0, v32
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->height:I
 
-    :goto_2c9
-    const/4 v14, 0x0
+    :goto_2e8
+    const/4 v15, 0x0
 
-    invoke-static {v5, v6, v10, v4, v14}, Landroid/support/v7/widget/GridLayoutManager;->getChildMeasureSpec(IIIIZ)I
+    invoke-static {v5, v6, v10, v4, v15}, Landroid/support/v7/widget/GridLayoutManager;->getChildMeasureSpec(IIIIZ)I
 
     move-result v12
 
-    .line 622
+    .line 627
     .restart local v12    # "spec":I
     move-object/from16 v0, p0
 
@@ -2592,42 +2642,9 @@
 
     const/4 v5, 0x1
 
-    if-ne v4, v5, :cond_2e9
+    if-ne v4, v5, :cond_309
 
-    .line 623
-    const/16 v18, 0x1
-
-    const/16 v19, 0x1
-
-    move-object/from16 v14, p0
-
-    move-object v15, v11
-
-    move/from16 v16, v12
-
-    invoke-direct/range {v14 .. v19}, Landroid/support/v7/widget/GridLayoutManager;->measureChildWithDecorationsAndMargin(Landroid/view/View;IIZZ)V
-
-    .line 615
-    .end local v12    # "spec":I
-    .end local v31    # "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
-    :cond_2e1
-    :goto_2e1
-    add-int/lit8 v27, v27, 0x1
-
-    goto :goto_285
-
-    .line 619
-    .restart local v31    # "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
-    :cond_2e4
-    move-object/from16 v0, v31
-
-    iget v4, v0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->width:I
-
-    goto :goto_2c9
-
-    .line 625
-    .restart local v12    # "spec":I
-    :cond_2e9
+    .line 628
     const/16 v19, 0x1
 
     const/16 v20, 0x1
@@ -2636,106 +2653,139 @@
 
     move-object/from16 v16, v11
 
-    move/from16 v18, v12
+    move/from16 v17, v12
 
     invoke-direct/range {v15 .. v20}, Landroid/support/v7/widget/GridLayoutManager;->measureChildWithDecorationsAndMargin(Landroid/view/View;IIZZ)V
 
-    goto :goto_2e1
+    .line 620
+    .end local v12    # "spec":I
+    .end local v32    # "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
+    :cond_301
+    :goto_301
+    add-int/lit8 v28, v28, 0x1
+
+    goto :goto_2a4
+
+    .line 624
+    .restart local v32    # "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
+    :cond_304
+    move-object/from16 v0, v32
+
+    iget v4, v0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->width:I
+
+    goto :goto_2e8
 
     .line 630
+    .restart local v12    # "spec":I
+    :cond_309
+    const/16 v20, 0x1
+
+    const/16 v21, 0x1
+
+    move-object/from16 v16, p0
+
+    move-object/from16 v17, v11
+
+    move/from16 v19, v12
+
+    invoke-direct/range {v16 .. v21}, Landroid/support/v7/widget/GridLayoutManager;->measureChildWithDecorationsAndMargin(Landroid/view/View;IIZZ)V
+
+    goto :goto_301
+
+    .line 635
     .end local v11    # "view":Landroid/view/View;
     .end local v12    # "spec":I
-    .end local v31    # "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
-    :cond_2f7
-    move/from16 v0, v32
+    .end local v32    # "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
+    :cond_317
+    move/from16 v0, v33
 
     move-object/from16 v1, p4
 
     iput v0, v1, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mConsumed:I
 
-    .line 632
-    const/16 v30, 0x0
+    .line 637
+    const/16 v31, 0x0
 
-    .local v30, "left":I
-    const/16 v39, 0x0
+    .local v31, "left":I
+    const/16 v40, 0x0
 
-    .local v39, "right":I
-    const/16 v42, 0x0
+    .local v40, "right":I
+    const/16 v43, 0x0
 
-    .local v42, "top":I
-    const/16 v24, 0x0
+    .local v43, "top":I
+    const/16 v25, 0x0
 
-    .line 633
-    .local v24, "bottom":I
+    .line 638
+    .local v25, "bottom":I
     move-object/from16 v0, p0
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mOrientation:I
 
     const/4 v5, 0x1
 
-    if-ne v4, v5, :cond_3a3
+    if-ne v4, v5, :cond_3c3
 
-    .line 634
+    .line 639
     move-object/from16 v0, p3
 
     iget v4, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mLayoutDirection:I
 
     const/4 v5, -0x1
 
-    if-ne v4, v5, :cond_399
+    if-ne v4, v5, :cond_3b9
 
-    .line 635
+    .line 640
     move-object/from16 v0, p3
 
     iget v0, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
-    move/from16 v24, v0
+    move/from16 v25, v0
 
-    .line 636
-    sub-int v42, v24, v32
+    .line 641
+    sub-int v43, v25, v33
 
-    .line 650
-    :goto_31b
-    const/16 v27, 0x0
+    .line 655
+    :goto_33b
+    const/16 v28, 0x0
 
-    :goto_31d
-    move/from16 v0, v27
+    :goto_33d
+    move/from16 v0, v28
 
-    if-ge v0, v7, :cond_3f5
+    if-ge v0, v7, :cond_415
 
-    .line 651
+    .line 656
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mSet:[Landroid/view/View;
 
-    aget-object v11, v4, v27
+    aget-object v11, v4, v28
 
-    .line 652
+    .line 657
     .restart local v11    # "view":Landroid/view/View;
     invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v36
+    move-result-object v37
 
-    check-cast v36, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
+    check-cast v37, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
 
-    .line 653
-    .local v36, "params":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
+    .line 658
+    .local v37, "params":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
     move-object/from16 v0, p0
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mOrientation:I
 
     const/4 v5, 0x1
 
-    if-ne v4, v5, :cond_3d9
+    if-ne v4, v5, :cond_3f9
 
-    .line 654
+    .line 659
     invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/GridLayoutManager;->isLayoutRTL()Z
 
     move-result v4
 
-    if-eqz v4, :cond_3be
+    if-eqz v4, :cond_3de
 
-    .line 655
+    .line 660
     invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/GridLayoutManager;->getPaddingLeft()I
 
     move-result v4
@@ -2745,12 +2795,12 @@
     iget-object v5, v0, Landroid/support/v7/widget/GridLayoutManager;->mCachedBorders:[I
 
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
-    invoke-static/range {v36 .. v36}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
+    invoke-static/range {v37 .. v37}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
 
     move-result v6
 
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanSize:I
-    invoke-static/range {v36 .. v36}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$100(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
+    invoke-static/range {v37 .. v37}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$100(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
 
     move-result v10
 
@@ -2758,9 +2808,9 @@
 
     aget v5, v5, v6
 
-    add-int v39, v4, v5
+    add-int v40, v4, v5
 
-    .line 656
+    .line 661
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
@@ -2769,63 +2819,63 @@
 
     move-result v4
 
-    sub-int v30, v39, v4
+    sub-int v31, v40, v4
 
-    .line 667
-    :goto_359
-    move-object/from16 v0, v36
+    .line 672
+    :goto_379
+    move-object/from16 v0, v37
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->leftMargin:I
 
-    add-int v20, v30, v4
+    add-int v21, v31, v4
 
-    move-object/from16 v0, v36
+    move-object/from16 v0, v37
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->topMargin:I
 
-    add-int v21, v42, v4
+    add-int v22, v43, v4
 
-    move-object/from16 v0, v36
+    move-object/from16 v0, v37
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->rightMargin:I
 
-    sub-int v22, v39, v4
+    sub-int v23, v40, v4
 
-    move-object/from16 v0, v36
+    move-object/from16 v0, v37
 
     iget v4, v0, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->bottomMargin:I
 
-    sub-int v23, v24, v4
+    sub-int v24, v25, v4
 
-    move-object/from16 v18, p0
+    move-object/from16 v19, p0
 
-    move-object/from16 v19, v11
+    move-object/from16 v20, v11
 
-    invoke-virtual/range {v18 .. v23}, Landroid/support/v7/widget/GridLayoutManager;->layoutDecorated(Landroid/view/View;IIII)V
+    invoke-virtual/range {v19 .. v24}, Landroid/support/v7/widget/GridLayoutManager;->layoutDecorated(Landroid/view/View;IIII)V
 
-    .line 676
-    invoke-virtual/range {v36 .. v36}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->isItemRemoved()Z
-
-    move-result v4
-
-    if-nez v4, :cond_384
-
-    invoke-virtual/range {v36 .. v36}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->isItemChanged()Z
+    .line 681
+    invoke-virtual/range {v37 .. v37}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->isItemRemoved()Z
 
     move-result v4
 
-    if-eqz v4, :cond_389
+    if-nez v4, :cond_3a4
 
-    .line 677
-    :cond_384
+    invoke-virtual/range {v37 .. v37}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->isItemChanged()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_3a9
+
+    .line 682
+    :cond_3a4
     const/4 v4, 0x1
 
     move-object/from16 v0, p4
 
     iput-boolean v4, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mIgnoreConsumed:Z
 
-    .line 679
-    :cond_389
+    .line 684
+    :cond_3a9
     move-object/from16 v0, p4
 
     iget-boolean v4, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mFocusable:Z
@@ -2840,65 +2890,65 @@
 
     iput-boolean v4, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mFocusable:Z
 
-    .line 650
-    add-int/lit8 v27, v27, 0x1
+    .line 655
+    add-int/lit8 v28, v28, 0x1
 
-    goto :goto_31d
+    goto :goto_33d
 
-    .line 638
+    .line 643
     .end local v11    # "view":Landroid/view/View;
-    .end local v36    # "params":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
-    :cond_399
+    .end local v37    # "params":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
+    :cond_3b9
     move-object/from16 v0, p3
 
     iget v0, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
-    move/from16 v42, v0
+    move/from16 v43, v0
 
-    .line 639
-    add-int v24, v42, v32
+    .line 644
+    add-int v25, v43, v33
 
-    goto/16 :goto_31b
+    goto/16 :goto_33b
 
-    .line 642
-    :cond_3a3
+    .line 647
+    :cond_3c3
     move-object/from16 v0, p3
 
     iget v4, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mLayoutDirection:I
 
     const/4 v5, -0x1
 
-    if-ne v4, v5, :cond_3b4
+    if-ne v4, v5, :cond_3d4
 
-    .line 643
+    .line 648
     move-object/from16 v0, p3
 
     iget v0, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
-    move/from16 v39, v0
+    move/from16 v40, v0
 
-    .line 644
-    sub-int v30, v39, v32
+    .line 649
+    sub-int v31, v40, v33
 
-    goto/16 :goto_31b
+    goto/16 :goto_33b
 
-    .line 646
-    :cond_3b4
+    .line 651
+    :cond_3d4
     move-object/from16 v0, p3
 
     iget v0, v0, Landroid/support/v7/widget/LinearLayoutManager$LayoutState;->mOffset:I
 
-    move/from16 v30, v0
+    move/from16 v31, v0
 
-    .line 647
-    add-int v39, v30, v32
+    .line 652
+    add-int v40, v31, v33
 
-    goto/16 :goto_31b
+    goto/16 :goto_33b
 
-    .line 658
+    .line 663
     .restart local v11    # "view":Landroid/view/View;
-    .restart local v36    # "params":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
-    :cond_3be
+    .restart local v37    # "params":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
+    :cond_3de
     invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/GridLayoutManager;->getPaddingLeft()I
 
     move-result v4
@@ -2908,15 +2958,15 @@
     iget-object v5, v0, Landroid/support/v7/widget/GridLayoutManager;->mCachedBorders:[I
 
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
-    invoke-static/range {v36 .. v36}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
+    invoke-static/range {v37 .. v37}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
 
     move-result v6
 
     aget v5, v5, v6
 
-    add-int v30, v4, v5
+    add-int v31, v4, v5
 
-    .line 659
+    .line 664
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
@@ -2925,12 +2975,12 @@
 
     move-result v4
 
-    add-int v39, v30, v4
+    add-int v40, v31, v4
 
-    goto :goto_359
+    goto :goto_379
 
-    .line 662
-    :cond_3d9
+    .line 667
+    :cond_3f9
     invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/GridLayoutManager;->getPaddingTop()I
 
     move-result v4
@@ -2940,15 +2990,15 @@
     iget-object v5, v0, Landroid/support/v7/widget/GridLayoutManager;->mCachedBorders:[I
 
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
-    invoke-static/range {v36 .. v36}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
+    invoke-static/range {v37 .. v37}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
 
     move-result v6
 
     aget v5, v5, v6
 
-    add-int v42, v4, v5
+    add-int v43, v4, v5
 
-    .line 663
+    .line 668
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mOrientationHelper:Landroid/support/v7/widget/OrientationHelper;
@@ -2957,14 +3007,14 @@
 
     move-result v4
 
-    add-int v24, v42, v4
+    add-int v25, v43, v4
 
-    goto/16 :goto_359
+    goto/16 :goto_379
 
-    .line 681
+    .line 686
     .end local v11    # "view":Landroid/view/View;
-    .end local v36    # "params":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
-    :cond_3f5
+    .end local v37    # "params":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
+    :cond_415
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/support/v7/widget/GridLayoutManager;->mSet:[Landroid/view/View;
@@ -3022,24 +3072,24 @@
     .param p4, "state"    # Landroid/support/v7/widget/RecyclerView$State;
 
     .prologue
-    .line 973
+    .line 978
     invoke-virtual/range {p0 .. p1}, Landroid/support/v7/widget/GridLayoutManager;->findContainingItemView(Landroid/view/View;)Landroid/view/View;
 
     move-result-object v17
 
-    .line 974
+    .line 979
     .local v17, "prevFocusedChild":Landroid/view/View;
     if-nez v17, :cond_8
 
-    .line 975
+    .line 980
     const/4 v4, 0x0
 
-    .line 1039
+    .line 1044
     :cond_7
     :goto_7
     return-object v4
 
-    .line 977
+    .line 982
     :cond_8
     invoke-virtual/range {v17 .. v17}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -3047,14 +3097,14 @@
 
     check-cast v12, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
 
-    .line 978
+    .line 983
     .local v12, "lp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
     invoke-static {v12}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
 
     move-result v19
 
-    .line 979
+    .line 984
     .local v19, "prevSpanStart":I
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
     invoke-static {v12}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
@@ -3068,22 +3118,22 @@
 
     add-int v18, v25, v26
 
-    .line 980
+    .line 985
     .local v18, "prevSpanEnd":I
     invoke-super/range {p0 .. p4}, Landroid/support/v7/widget/LinearLayoutManager;->onFocusSearchFailed(Landroid/view/View;ILandroid/support/v7/widget/RecyclerView$Recycler;Landroid/support/v7/widget/RecyclerView$State;)Landroid/view/View;
 
     move-result-object v21
 
-    .line 981
+    .line 986
     .local v21, "view":Landroid/view/View;
     if-nez v21, :cond_24
 
-    .line 982
+    .line 987
     const/4 v4, 0x0
 
     goto :goto_7
 
-    .line 986
+    .line 991
     :cond_24
     move-object/from16 v0, p0
 
@@ -3093,7 +3143,7 @@
 
     move-result v10
 
-    .line 987
+    .line 992
     .local v10, "layoutDir":I
     const/16 v25, 0x1
 
@@ -3118,27 +3168,27 @@
 
     const/4 v2, 0x1
 
-    .line 989
+    .line 994
     .local v2, "ascend":Z
     :goto_41
     if-eqz v2, :cond_7d
 
-    .line 990
+    .line 995
     invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/GridLayoutManager;->getChildCount()I
 
     move-result v25
 
     add-int/lit8 v20, v25, -0x1
 
-    .line 991
+    .line 996
     .local v20, "start":I
     const/4 v9, -0x1
 
-    .line 992
+    .line 997
     .local v9, "inc":I
     const/4 v11, -0x1
 
-    .line 998
+    .line 1003
     .local v11, "limit":I
     :goto_4b
     move-object/from16 v0, p0
@@ -3163,20 +3213,20 @@
 
     const/16 v16, 0x1
 
-    .line 999
+    .line 1004
     .local v16, "preferLastSpan":Z
     :goto_61
     const/16 v22, 0x0
 
-    .line 1000
+    .line 1005
     .local v22, "weakCandidate":Landroid/view/View;
     const/16 v24, -0x1
 
-    .line 1001
+    .line 1006
     .local v24, "weakCandidateSpanIndex":I
     const/16 v23, 0x0
 
-    .line 1003
+    .line 1008
     .local v23, "weakCandidateOverlap":I
     move/from16 v8, v20
 
@@ -3184,14 +3234,14 @@
     :goto_69
     if-eq v8, v11, :cond_75
 
-    .line 1004
+    .line 1009
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v8}, Landroid/support/v7/widget/GridLayoutManager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 1005
+    .line 1010
     .local v4, "candidate":Landroid/view/View;
     move-object/from16 v0, v17
 
@@ -3201,10 +3251,10 @@
     :cond_75
     move-object/from16 v4, v22
 
-    .line 1039
+    .line 1044
     goto :goto_7
 
-    .line 987
+    .line 992
     .end local v2    # "ascend":Z
     .end local v8    # "i":I
     .end local v9    # "inc":I
@@ -3224,16 +3274,16 @@
 
     goto :goto_41
 
-    .line 994
+    .line 999
     .restart local v2    # "ascend":Z
     :cond_7d
     const/16 v20, 0x0
 
-    .line 995
+    .line 1000
     .restart local v20    # "start":I
     const/4 v9, 0x1
 
-    .line 996
+    .line 1001
     .restart local v9    # "inc":I
     invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/GridLayoutManager;->getChildCount()I
 
@@ -3242,13 +3292,13 @@
     .restart local v11    # "limit":I
     goto :goto_4b
 
-    .line 998
+    .line 1003
     :cond_85
     const/16 v16, 0x0
 
     goto :goto_61
 
-    .line 1008
+    .line 1013
     .restart local v4    # "candidate":Landroid/view/View;
     .restart local v8    # "i":I
     .restart local v16    # "preferLastSpan":Z
@@ -3262,14 +3312,14 @@
 
     if-nez v25, :cond_90
 
-    .line 1003
+    .line 1008
     :cond_8e
     :goto_8e
     add-int/2addr v8, v9
 
     goto :goto_69
 
-    .line 1011
+    .line 1016
     :cond_90
     invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -3277,14 +3327,14 @@
 
     check-cast v6, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
 
-    .line 1012
+    .line 1017
     .local v6, "candidateLp":Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
     invoke-static {v6}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
 
     move-result v7
 
-    .line 1013
+    .line 1018
     .local v7, "candidateStart":I
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
     invoke-static {v6}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
@@ -3298,7 +3348,7 @@
 
     add-int v5, v25, v26
 
-    .line 1014
+    .line 1019
     .local v5, "candidateEnd":I
     move/from16 v0, v19
 
@@ -3308,32 +3358,32 @@
 
     if-eq v5, v0, :cond_7
 
-    .line 1017
+    .line 1022
     :cond_ac
     const/4 v3, 0x0
 
-    .line 1018
+    .line 1023
     .local v3, "assignAsWeek":Z
     if-nez v22, :cond_c7
 
-    .line 1019
+    .line 1024
     const/4 v3, 0x1
 
-    .line 1032
+    .line 1037
     :cond_b0
     :goto_b0
     if-eqz v3, :cond_8e
 
-    .line 1033
+    .line 1038
     move-object/from16 v22, v4
 
-    .line 1034
+    .line 1039
     # getter for: Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->mSpanIndex:I
     invoke-static {v6}, Landroid/support/v7/widget/GridLayoutManager$LayoutParams;->access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
 
     move-result v24
 
-    .line 1035
+    .line 1040
     move/from16 v0, v18
 
     invoke-static {v5, v0}, Ljava/lang/Math;->min(II)I
@@ -3350,7 +3400,7 @@
 
     goto :goto_8e
 
-    .line 1021
+    .line 1026
     :cond_c7
     move/from16 v0, v19
 
@@ -3358,7 +3408,7 @@
 
     move-result v13
 
-    .line 1022
+    .line 1027
     .local v13, "maxStart":I
     move/from16 v0, v18
 
@@ -3366,22 +3416,22 @@
 
     move-result v14
 
-    .line 1023
+    .line 1028
     .local v14, "minEnd":I
     sub-int v15, v14, v13
 
-    .line 1024
+    .line 1029
     .local v15, "overlap":I
     move/from16 v0, v23
 
     if-le v15, v0, :cond_db
 
-    .line 1025
+    .line 1030
     const/4 v3, 0x1
 
     goto :goto_b0
 
-    .line 1026
+    .line 1031
     :cond_db
     move/from16 v0, v23
 
@@ -3400,12 +3450,12 @@
 
     if-ne v0, v1, :cond_b0
 
-    .line 1028
+    .line 1033
     const/4 v3, 0x1
 
     goto :goto_b0
 
-    .line 1026
+    .line 1031
     :cond_ed
     const/16 v25, 0x0
 
@@ -3858,23 +3908,23 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 789
+    .line 794
     iget v0, p0, Landroid/support/v7/widget/GridLayoutManager;->mSpanCount:I
 
     if-ne p1, v0, :cond_6
 
-    .line 799
+    .line 804
     :goto_5
     return-void
 
-    .line 792
+    .line 797
     :cond_6
     iput-boolean v1, p0, Landroid/support/v7/widget/GridLayoutManager;->mPendingSpanCountChange:Z
 
-    .line 793
+    .line 798
     if-ge p1, v1, :cond_24
 
-    .line 794
+    .line 799
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3899,11 +3949,11 @@
 
     throw v0
 
-    .line 797
+    .line 802
     :cond_24
     iput p1, p0, Landroid/support/v7/widget/GridLayoutManager;->mSpanCount:I
 
-    .line 798
+    .line 803
     iget-object v0, p0, Landroid/support/v7/widget/GridLayoutManager;->mSpanSizeLookup:Landroid/support/v7/widget/GridLayoutManager$SpanSizeLookup;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/GridLayoutManager$SpanSizeLookup;->invalidateSpanIndexCache()V
@@ -3954,7 +4004,7 @@
     .registers 2
 
     .prologue
-    .line 1044
+    .line 1049
     iget-object v0, p0, Landroid/support/v7/widget/GridLayoutManager;->mPendingSavedState:Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     if-nez v0, :cond_a

@@ -27,7 +27,7 @@
     sput-object v0, Lcom/bzbs/data/UserLogin;->PREF_KEY_NOTCLEAR:Ljava/lang/String;
 
     .line 28
-    const-string/jumbo v0, "(nong.annything){100002093463942},(Buzzebees App){100004153410428},(Kieak Kitti){100002510990024},(anchalikaa){539831171},(vee.vin.12){100006407738570},(Mew Jaa){100006291181618},(Varin Singh){1751247024},(miewdivasang){1084857009},(Ann Sopawan){1495332876},(MaleePrincess Pattama){682916828},(Pat PK){100001080248961},(\ufffd\u787a\ufffd\u04b9 \ufffd\ufffd\ufffd){100003759290285},(Pongsak Meedanpai){100000537824053},(Tavatchai Chalaem){100000595721795},(AobBee Ba){100003939262095},(Dev Suwit){100003763346702},(Aob Zaa){1270290084},(Ba Be Boon){100000457725713},(Bajarabhat Boonsukkerd){100003907882009},(IBaas Yo FuNe){1073075453},(BaasCartel Dna){100000205187418},(Michael Chen){713132344},(Isis Scrubb){100004734994762},(Lee Tok Yo){100003809100483},(Iconcepts Iconcepts){100004925317433}"
+    const-string/jumbo v0, "(nong.annything){100002093463942},(Buzzebees App){100004153410428},(Kieak Kitti){100002510990024},(anchalikaa){539831171},(miewdivasang){1084857009},(Ann Sopawan){1495332876},(MaleePrincess Pattama){682916828},(Pat PK){100001080248961},(Pongsak Meedanpai){100000537824053},(Dev Suwit){100003763346702},(Aob Zaa){1270290084},(IBaas Yo FuNe){1073075453},(Michael Chen){713132344},(Isis Scrubb){100004734994762},(Pupe Monpeera){600156041},(Kik){711052733},(Max){100001501983286},(admin facebook){100000122640577}"
 
     sput-object v0, Lcom/bzbs/data/UserLogin;->ID_ADMIN:Ljava/lang/String;
 
@@ -52,14 +52,14 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 610
+    .line 630
     sget-object v6, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     invoke-virtual {p0, v6, v8}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v4
 
-    .line 611
+    .line 631
     .local v4, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v6, "MessageGCM"
 
@@ -69,7 +69,7 @@
 
     move-result-object v5
 
-    .line 612
+    .line 632
     .local v5, "str_MessageGCM":Ljava/lang/String;
     if-eqz v5, :cond_44
 
@@ -81,7 +81,7 @@
 
     if-nez v6, :cond_44
 
-    .line 614
+    .line 634
     :try_start_1c
     invoke-static {v5}, Lcom/bzbs/util/ObjectSerializer;->deserialize(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -91,25 +91,25 @@
     :try_end_22
     .catch Ljava/lang/Exception; {:try_start_1c .. :try_end_22} :catch_3d
 
-    .line 622
+    .line 642
     .local v0, "arrayMessageGCM":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessageGCM;>;"
     :goto_22
     invoke-virtual {v0, v8, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 625
+    .line 645
     sget-object v6, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     invoke-virtual {p0, v6, v8}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v3
 
-    .line 626
+    .line 646
     .local v3, "prefs":Landroid/content/SharedPreferences;
     invoke-interface {v3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v2
 
-    .line 628
+    .line 648
     .local v2, "editor":Landroid/content/SharedPreferences$Editor;
     :try_start_2f
     const-string/jumbo v6, "MessageGCM"
@@ -122,31 +122,31 @@
     :try_end_39
     .catch Ljava/lang/Exception; {:try_start_2f .. :try_end_39} :catch_4a
 
-    .line 632
+    .line 652
     :goto_39
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 633
+    .line 653
     return-void
 
-    .line 615
+    .line 635
     .end local v0    # "arrayMessageGCM":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessageGCM;>;"
     .end local v2    # "editor":Landroid/content/SharedPreferences$Editor;
     .end local v3    # "prefs":Landroid/content/SharedPreferences;
     :catch_3d
     move-exception v1
 
-    .line 616
+    .line 636
     .local v1, "e":Ljava/lang/Exception;
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 617
+    .line 637
     .restart local v0    # "arrayMessageGCM":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessageGCM;>;"
     goto :goto_22
 
-    .line 619
+    .line 639
     .end local v0    # "arrayMessageGCM":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessageGCM;>;"
     .end local v1    # "e":Ljava/lang/Exception;
     :cond_44
@@ -157,13 +157,13 @@
     .restart local v0    # "arrayMessageGCM":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessageGCM;>;"
     goto :goto_22
 
-    .line 629
+    .line 649
     .restart local v2    # "editor":Landroid/content/SharedPreferences$Editor;
     .restart local v3    # "prefs":Landroid/content/SharedPreferences;
     :catch_4a
     move-exception v1
 
-    .line 630
+    .line 650
     .restart local v1    # "e":Ljava/lang/Exception;
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
@@ -178,14 +178,14 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 548
+    .line 568
     sget-object v6, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     invoke-virtual {p0, v6, v8}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v4
 
-    .line 549
+    .line 569
     .local v4, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v6, "QueueMessagePopup"
 
@@ -195,7 +195,7 @@
 
     move-result-object v5
 
-    .line 550
+    .line 570
     .local v5, "str_QueueMessagePopup":Ljava/lang/String;
     if-eqz v5, :cond_44
 
@@ -207,7 +207,7 @@
 
     if-nez v6, :cond_44
 
-    .line 552
+    .line 572
     :try_start_1c
     invoke-static {v5}, Lcom/bzbs/util/ObjectSerializer;->deserialize(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -217,25 +217,25 @@
     :try_end_22
     .catch Ljava/lang/Exception; {:try_start_1c .. :try_end_22} :catch_3d
 
-    .line 560
+    .line 580
     .local v0, "arrayMessagePopup":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessagePopup;>;"
     :goto_22
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 563
+    .line 583
     sget-object v6, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     invoke-virtual {p0, v6, v8}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v3
 
-    .line 564
+    .line 584
     .local v3, "prefs":Landroid/content/SharedPreferences;
     invoke-interface {v3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v2
 
-    .line 566
+    .line 586
     .local v2, "editor":Landroid/content/SharedPreferences$Editor;
     :try_start_2f
     const-string/jumbo v6, "QueueMessagePopup"
@@ -248,31 +248,31 @@
     :try_end_39
     .catch Ljava/lang/Exception; {:try_start_2f .. :try_end_39} :catch_4a
 
-    .line 570
+    .line 590
     :goto_39
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 571
+    .line 591
     return-void
 
-    .line 553
+    .line 573
     .end local v0    # "arrayMessagePopup":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessagePopup;>;"
     .end local v2    # "editor":Landroid/content/SharedPreferences$Editor;
     .end local v3    # "prefs":Landroid/content/SharedPreferences;
     :catch_3d
     move-exception v1
 
-    .line 554
+    .line 574
     .local v1, "e":Ljava/lang/Exception;
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 555
+    .line 575
     .restart local v0    # "arrayMessagePopup":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessagePopup;>;"
     goto :goto_22
 
-    .line 557
+    .line 577
     .end local v0    # "arrayMessagePopup":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessagePopup;>;"
     .end local v1    # "e":Ljava/lang/Exception;
     :cond_44
@@ -283,13 +283,13 @@
     .restart local v0    # "arrayMessagePopup":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessagePopup;>;"
     goto :goto_22
 
-    .line 567
+    .line 587
     .restart local v2    # "editor":Landroid/content/SharedPreferences$Editor;
     .restart local v3    # "prefs":Landroid/content/SharedPreferences;
     :catch_4a
     move-exception v1
 
-    .line 568
+    .line 588
     .restart local v1    # "e":Ljava/lang/Exception;
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
@@ -301,7 +301,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 672
+    .line 692
     sget-object v2, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v3, 0x0
@@ -310,20 +310,20 @@
 
     move-result-object v1
 
-    .line 673
+    .line 693
     .local v1, "savedSession":Landroid/content/SharedPreferences;
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 674
+    .line 694
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->clear()Landroid/content/SharedPreferences$Editor;
 
-    .line 675
+    .line 695
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 676
+    .line 696
     return-void
 .end method
 
@@ -332,7 +332,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 679
+    .line 699
     const-string/jumbo v2, "GIFTDATA"
 
     const/4 v3, 0x0
@@ -341,20 +341,20 @@
 
     move-result-object v1
 
-    .line 680
+    .line 700
     .local v1, "savedSession":Landroid/content/SharedPreferences;
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 681
+    .line 701
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->clear()Landroid/content/SharedPreferences$Editor;
 
-    .line 682
+    .line 702
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 683
+    .line 703
     return-void
 .end method
 
@@ -363,7 +363,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 214
+    .line 234
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -372,7 +372,7 @@
 
     move-result-object v0
 
-    .line 215
+    .line 235
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "Address"
 
@@ -394,7 +394,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 139
+    .line 159
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -403,7 +403,7 @@
 
     move-result-object v0
 
-    .line 140
+    .line 160
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "TokenBuzzeBees"
 
@@ -432,7 +432,7 @@
     .end annotation
 
     .prologue
-    .line 638
+    .line 658
     sget-object v4, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v5, 0x0
@@ -441,7 +441,7 @@
 
     move-result-object v2
 
-    .line 639
+    .line 659
     .local v2, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v4, "MessageGCM"
 
@@ -451,7 +451,7 @@
 
     move-result-object v3
 
-    .line 640
+    .line 660
     .local v3, "str_MessageGCM":Ljava/lang/String;
     if-eqz v3, :cond_2a
 
@@ -463,7 +463,7 @@
 
     if-nez v4, :cond_2a
 
-    .line 642
+    .line 662
     :try_start_1c
     invoke-static {v3}, Lcom/bzbs/util/ObjectSerializer;->deserialize(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -473,27 +473,27 @@
     :try_end_22
     .catch Ljava/lang/Exception; {:try_start_1c .. :try_end_22} :catch_23
 
-    .line 650
+    .line 670
     .local v0, "arrayMessageGCM":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessageGCM;>;"
     :goto_22
     return-object v0
 
-    .line 643
+    .line 663
     .end local v0    # "arrayMessageGCM":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessageGCM;>;"
     :catch_23
     move-exception v1
 
-    .line 644
+    .line 664
     .local v1, "e":Ljava/lang/Exception;
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 645
+    .line 665
     .restart local v0    # "arrayMessageGCM":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessageGCM;>;"
     goto :goto_22
 
-    .line 647
+    .line 667
     .end local v0    # "arrayMessageGCM":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessageGCM;>;"
     .end local v1    # "e":Ljava/lang/Exception;
     :cond_2a
@@ -514,14 +514,14 @@
 
     const/4 v9, 0x0
 
-    .line 576
+    .line 596
     sget-object v8, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     invoke-virtual {p0, v8, v9}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v5
 
-    .line 577
+    .line 597
     .local v5, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v8, "QueueMessagePopup"
 
@@ -531,7 +531,7 @@
 
     move-result-object v6
 
-    .line 578
+    .line 598
     .local v6, "str_QueueMessagePopup":Ljava/lang/String;
     if-eqz v6, :cond_50
 
@@ -543,7 +543,7 @@
 
     if-nez v8, :cond_50
 
-    .line 580
+    .line 600
     :try_start_1d
     invoke-static {v6}, Lcom/bzbs/util/ObjectSerializer;->deserialize(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -553,7 +553,7 @@
     :try_end_23
     .catch Ljava/lang/Exception; {:try_start_1d .. :try_end_23} :catch_49
 
-    .line 588
+    .line 608
     .local v0, "arrayMessagePopup":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessagePopup;>;"
     :goto_23
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -562,7 +562,7 @@
 
     if-lez v8, :cond_59
 
-    .line 590
+    .line 610
     const/4 v8, 0x0
 
     :try_start_2a
@@ -572,7 +572,7 @@
 
     check-cast v3, Lcom/bzbs/bean/MessagePopup;
 
-    .line 593
+    .line 613
     .local v3, "objMessagePopup":Lcom/bzbs/bean/MessagePopup;
     sget-object v8, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
@@ -582,13 +582,13 @@
 
     move-result-object v4
 
-    .line 594
+    .line 614
     .local v4, "prefs":Landroid/content/SharedPreferences;
     invoke-interface {v4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v2
 
-    .line 595
+    .line 615
     .local v2, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v8, "QueueMessagePopup"
 
@@ -598,34 +598,34 @@
 
     invoke-interface {v2, v8, v9}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 596
+    .line 616
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->commit()Z
     :try_end_48
     .catch Ljava/lang/Exception; {:try_start_2a .. :try_end_48} :catch_56
 
-    .line 603
+    .line 623
     .end local v2    # "editor":Landroid/content/SharedPreferences$Editor;
     .end local v3    # "objMessagePopup":Lcom/bzbs/bean/MessagePopup;
     .end local v4    # "prefs":Landroid/content/SharedPreferences;
     :goto_48
     return-object v3
 
-    .line 581
+    .line 601
     .end local v0    # "arrayMessagePopup":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessagePopup;>;"
     :catch_49
     move-exception v1
 
-    .line 582
+    .line 602
     .local v1, "e":Ljava/lang/Exception;
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 583
+    .line 603
     .restart local v0    # "arrayMessagePopup":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessagePopup;>;"
     goto :goto_23
 
-    .line 585
+    .line 605
     .end local v0    # "arrayMessagePopup":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessagePopup;>;"
     .end local v1    # "e":Ljava/lang/Exception;
     :cond_50
@@ -636,21 +636,21 @@
     .restart local v0    # "arrayMessagePopup":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/bean/MessagePopup;>;"
     goto :goto_23
 
-    .line 599
+    .line 619
     :catch_56
     move-exception v1
 
     .restart local v1    # "e":Ljava/lang/Exception;
     move-object v3, v7
 
-    .line 600
+    .line 620
     goto :goto_48
 
     .end local v1    # "e":Ljava/lang/Exception;
     :cond_59
     move-object v3, v7
 
-    .line 603
+    .line 623
     goto :goto_48
 .end method
 
@@ -660,7 +660,7 @@
     .param p1, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 526
+    .line 546
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -669,7 +669,7 @@
 
     move-result-object v0
 
-    .line 527
+    .line 547
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -703,7 +703,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 476
+    .line 496
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -712,7 +712,7 @@
 
     move-result-object v0
 
-    .line 477
+    .line 497
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "CategoryConfig"
 
@@ -730,7 +730,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 203
+    .line 223
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -739,7 +739,7 @@
 
     move-result-object v0
 
-    .line 204
+    .line 224
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "DisplayName"
 
@@ -757,7 +757,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 170
+    .line 190
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -766,7 +766,7 @@
 
     move-result-object v0
 
-    .line 171
+    .line 191
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "FacebookUID"
 
@@ -784,7 +784,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 181
+    .line 201
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -793,7 +793,7 @@
 
     move-result-object v0
 
-    .line 182
+    .line 202
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "FirstName"
 
@@ -811,7 +811,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 266
+    .line 286
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -820,7 +820,7 @@
 
     move-result-object v0
 
-    .line 267
+    .line 287
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "GCM_ID"
 
@@ -840,14 +840,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 335
+    .line 355
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_NOTCLEAR:Ljava/lang/String;
 
     invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 336
+    .line 356
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "IsAcceptTerm"
 
@@ -865,14 +865,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 365
+    .line 385
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 366
+    .line 386
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "IsAllowUse"
 
@@ -965,14 +965,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 375
+    .line 395
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 376
+    .line 396
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "IsHasNewVersion"
 
@@ -1040,14 +1040,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 466
+    .line 486
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_NOTCLEAR:Ljava/lang/String;
 
     invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 467
+    .line 487
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "IsNFCWarning"
 
@@ -1063,7 +1063,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 256
+    .line 276
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -1072,7 +1072,7 @@
 
     move-result-object v0
 
-    .line 257
+    .line 277
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "IsNotificationOn"
 
@@ -1092,14 +1092,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 345
+    .line 365
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_NOTCLEAR:Ljava/lang/String;
 
     invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 346
+    .line 366
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "IsPlayingIntro"
 
@@ -1117,14 +1117,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 316
+    .line 336
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 317
+    .line 337
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "IsPremium"
 
@@ -1142,14 +1142,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 406
+    .line 426
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 407
+    .line 427
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "IsShowShoppingBasket"
 
@@ -1167,14 +1167,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 396
+    .line 416
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 397
+    .line 417
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "IsTokenNeedLogout"
 
@@ -1192,14 +1192,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 456
+    .line 476
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 457
+    .line 477
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "IsshowDialogHasNewVersion"
 
@@ -1215,7 +1215,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 192
+    .line 212
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -1224,7 +1224,7 @@
 
     move-result-object v0
 
-    .line 193
+    .line 213
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "LastName"
 
@@ -1243,7 +1243,7 @@
     .param p1, "campaignId"    # Ljava/lang/String;
 
     .prologue
-    .line 486
+    .line 506
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -1252,7 +1252,7 @@
 
     move-result-object v0
 
-    .line 487
+    .line 507
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1287,7 +1287,7 @@
     .param p1, "campaignId"    # Ljava/lang/String;
 
     .prologue
-    .line 496
+    .line 516
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -1296,7 +1296,7 @@
 
     move-result-object v0
 
-    .line 497
+    .line 517
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1330,7 +1330,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 446
+    .line 466
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -1339,7 +1339,7 @@
 
     move-result-object v0
 
-    .line 447
+    .line 467
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "LastResumeTime"
 
@@ -1357,7 +1357,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 276
+    .line 296
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -1366,7 +1366,7 @@
 
     move-result-object v0
 
-    .line 277
+    .line 297
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "LastUpdateDevice"
 
@@ -1384,7 +1384,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 225
+    .line 245
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -1393,7 +1393,7 @@
 
     move-result-object v0
 
-    .line 227
+    .line 247
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK_BY_CARRIER(Landroid/content/Context;)Ljava/lang/String;
 
@@ -1407,7 +1407,7 @@
 
     if-eqz v1, :cond_43
 
-    .line 228
+    .line 248
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v1
@@ -1432,7 +1432,7 @@
 
     if-eqz v1, :cond_38
 
-    .line 229
+    .line 249
     const-string/jumbo v1, "Locale"
 
     const-string/jumbo v2, "1054"
@@ -1441,11 +1441,11 @@
 
     move-result-object v1
 
-    .line 246
+    .line 266
     :goto_37
     return-object v1
 
-    .line 231
+    .line 251
     :cond_38
     const-string/jumbo v1, "Locale"
 
@@ -1457,7 +1457,7 @@
 
     goto :goto_37
 
-    .line 233
+    .line 253
     :cond_43
     invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK_BY_CARRIER(Landroid/content/Context;)Ljava/lang/String;
 
@@ -1471,7 +1471,7 @@
 
     if-eqz v1, :cond_7f
 
-    .line 234
+    .line 254
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v1
@@ -1496,7 +1496,7 @@
 
     if-eqz v1, :cond_74
 
-    .line 235
+    .line 255
     const-string/jumbo v1, "Locale"
 
     const-string/jumbo v2, "1033"
@@ -1507,7 +1507,7 @@
 
     goto :goto_37
 
-    .line 237
+    .line 257
     :cond_74
     const-string/jumbo v1, "Locale"
 
@@ -1519,7 +1519,7 @@
 
     goto :goto_37
 
-    .line 239
+    .line 259
     :cond_7f
     invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK_BY_CARRIER(Landroid/content/Context;)Ljava/lang/String;
 
@@ -1533,7 +1533,7 @@
 
     if-eqz v1, :cond_bc
 
-    .line 240
+    .line 260
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v1
@@ -1558,7 +1558,7 @@
 
     if-eqz v1, :cond_b0
 
-    .line 241
+    .line 261
     const-string/jumbo v1, "Locale"
 
     const-string/jumbo v2, "1033"
@@ -1569,7 +1569,7 @@
 
     goto :goto_37
 
-    .line 243
+    .line 263
     :cond_b0
     const-string/jumbo v1, "Locale"
 
@@ -1581,7 +1581,7 @@
 
     goto/16 :goto_37
 
-    .line 246
+    .line 266
     :cond_bc
     const-string/jumbo v1, "Locale"
 
@@ -1601,14 +1601,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 355
+    .line 375
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 356
+    .line 376
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "MenuBuzzebeesVisible"
 
@@ -1624,7 +1624,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 150
+    .line 170
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -1633,7 +1633,7 @@
 
     move-result-object v0
 
-    .line 151
+    .line 171
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "ModeLoginString"
 
@@ -1653,14 +1653,14 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 654
+    .line 674
     sget-object v2, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     invoke-virtual {p0, v2, v3}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v1
 
-    .line 655
+    .line 675
     .local v1, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v2, "NotificationUnReadCount"
 
@@ -1668,14 +1668,14 @@
 
     move-result v0
 
-    .line 656
+    .line 676
     .local v0, "count":I
     if-gez v0, :cond_11
 
-    .line 657
+    .line 677
     const/4 v0, 0x0
 
-    .line 659
+    .line 679
     :cond_11
     return v0
 .end method
@@ -1685,7 +1685,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 296
+    .line 316
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -1694,7 +1694,7 @@
 
     move-result-object v0
 
-    .line 297
+    .line 317
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "Points"
 
@@ -1712,7 +1712,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 306
+    .line 326
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -1721,7 +1721,7 @@
 
     move-result-object v0
 
-    .line 307
+    .line 327
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "Rank"
 
@@ -1739,7 +1739,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 416
+    .line 436
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -1748,7 +1748,7 @@
 
     move-result-object v0
 
-    .line 417
+    .line 437
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "ShowMyGiftOn"
 
@@ -1766,7 +1766,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 385
+    .line 405
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -1775,7 +1775,7 @@
 
     move-result-object v0
 
-    .line 386
+    .line 406
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "sticker_order"
 
@@ -1905,7 +1905,7 @@
     goto :goto_3f
 .end method
 
-.method public static GetTokenWallet(Landroid/content/Context;)Ljava/lang/String;
+.method public static GetTokenBuzzeBeesSkip(Landroid/content/Context;)Ljava/lang/String;
     .registers 4
     .param p0, "appContext"    # Landroid/content/Context;
 
@@ -1920,6 +1920,33 @@
     move-result-object v0
 
     .line 122
+    .local v0, "savedSession":Landroid/content/SharedPreferences;
+    const-string/jumbo v1, "TokenBuzzeBeesSkip"
+
+    const-string/jumbo v2, ""
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    return-object v1
+.end method
+
+.method public static GetTokenWallet(Landroid/content/Context;)Ljava/lang/String;
+    .registers 4
+    .param p0, "appContext"    # Landroid/content/Context;
+
+    .prologue
+    .line 141
+    sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    .line 142
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "TokenWallet"
 
@@ -1937,7 +1964,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 286
+    .line 306
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -1946,7 +1973,7 @@
 
     move-result-object v0
 
-    .line 287
+    .line 307
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "UserCarrier"
 
@@ -1964,7 +1991,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 160
+    .line 180
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -1973,9 +2000,36 @@
 
     move-result-object v0
 
-    .line 161
+    .line 181
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     const-string/jumbo v1, "userId"
+
+    const-string/jumbo v2, ""
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    return-object v1
+.end method
+
+.method public static GetUserUUID(Landroid/content/Context;)Ljava/lang/String;
+    .registers 4
+    .param p0, "appContext"    # Landroid/content/Context;
+
+    .prologue
+    .line 131
+    sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    .line 132
+    .local v0, "savedSession":Landroid/content/SharedPreferences;
+    const-string/jumbo v1, "UserUUID"
 
     const-string/jumbo v2, ""
 
@@ -1994,14 +2048,14 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 516
+    .line 536
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     invoke-virtual {p0, v1, v3}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 517
+    .line 537
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2034,7 +2088,7 @@
     .param p1, "issuer"    # Ljava/lang/String;
 
     .prologue
-    .line 536
+    .line 556
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -2043,7 +2097,7 @@
 
     move-result-object v0
 
-    .line 537
+    .line 557
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2078,7 +2132,7 @@
     .param p1, "issuer"    # Ljava/lang/String;
 
     .prologue
-    .line 506
+    .line 526
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -2087,7 +2141,7 @@
 
     move-result-object v0
 
-    .line 507
+    .line 527
     .local v0, "savedSession":Landroid/content/SharedPreferences;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2197,27 +2251,27 @@
     .param p1, "isAutoLoginFB"    # Z
 
     .prologue
-    .line 703
+    .line 723
     invoke-static {p0}, Lcom/bzbs/util/LocalFileHelper;->clearPostAsyncFile(Landroid/content/Context;)V
 
-    .line 704
+    .line 724
     invoke-static {p0}, Lcom/bzbs/util/LocalFileHelper;->clearCatchFile(Landroid/content/Context;)V
 
-    .line 705
+    .line 725
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v2
 
     invoke-static {v2}, Lcom/bzbs/data/UserLogin;->ClearPreferencesFromCurrentBuzzeBeesToken(Landroid/content/Context;)V
 
-    .line 706
+    .line 726
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v2
 
     invoke-static {v2}, Lcom/bzbs/data/UserLogin;->ClearPreferencesGIFTDATA(Landroid/content/Context;)V
 
-    .line 707
+    .line 727
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v2
@@ -2230,18 +2284,18 @@
 
     check-cast v1, Landroid/app/NotificationManager;
 
-    .line 708
+    .line 728
     .local v1, "nMgr":Landroid/app/NotificationManager;
     invoke-virtual {v1}, Landroid/app/NotificationManager;->cancelAll()V
 
-    .line 710
+    .line 730
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v2
 
     invoke-static {v2}, Lcom/bzbs/util/GCMUtil;->unRegisterGCM(Landroid/content/Context;)V
 
-    .line 720
+    .line 740
     :try_start_2b
     invoke-static {}, Lcom/facebook/login/LoginManager;->getInstance()Lcom/facebook/login/LoginManager;
 
@@ -2251,7 +2305,7 @@
     :try_end_32
     .catch Ljava/lang/Exception; {:try_start_2b .. :try_end_32} :catch_46
 
-    .line 728
+    .line 748
     :goto_32
     new-instance v0, Landroid/content/Intent;
 
@@ -2263,19 +2317,19 @@
 
     invoke-direct {v0, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 729
+    .line 749
     .local v0, "intent":Landroid/content/Intent;
     const/high16 v2, 0x4000000
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 730
+    .line 750
     invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 731
+    .line 751
     return-void
 
-    .line 721
+    .line 741
     .end local v0    # "intent":Landroid/content/Intent;
     :catch_46
     move-exception v2
@@ -2288,19 +2342,19 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 686
+    .line 706
     invoke-static {p0}, Lcom/bzbs/util/LocalFileHelper;->clearPostAsyncFile(Landroid/content/Context;)V
 
-    .line 687
+    .line 707
     invoke-static {p0}, Lcom/bzbs/util/LocalFileHelper;->clearCatchFile(Landroid/content/Context;)V
 
-    .line 688
+    .line 708
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->ClearPreferencesFromCurrentBuzzeBeesToken(Landroid/content/Context;)V
 
-    .line 689
+    .line 709
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->ClearPreferencesGIFTDATA(Landroid/content/Context;)V
 
-    .line 690
+    .line 710
     const-string/jumbo v1, "notification"
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -2309,14 +2363,14 @@
 
     check-cast v0, Landroid/app/NotificationManager;
 
-    .line 691
+    .line 711
     .local v0, "nMgr":Landroid/app/NotificationManager;
     invoke-virtual {v0}, Landroid/app/NotificationManager;->cancelAll()V
 
-    .line 693
+    .line 713
     invoke-static {p0}, Lcom/bzbs/util/GCMUtil;->unRegisterGCM(Landroid/content/Context;)V
 
-    .line 696
+    .line 716
     :try_start_1b
     invoke-static {}, Lcom/facebook/login/LoginManager;->getInstance()Lcom/facebook/login/LoginManager;
 
@@ -2326,11 +2380,11 @@
     :try_end_22
     .catch Ljava/lang/Exception; {:try_start_1b .. :try_end_22} :catch_23
 
-    .line 700
+    .line 720
     :goto_22
     return-void
 
-    .line 697
+    .line 717
     :catch_23
     move-exception v1
 
@@ -2343,7 +2397,7 @@
     .param p1, "address"    # Ljava/lang/String;
 
     .prologue
-    .line 219
+    .line 239
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -2356,13 +2410,13 @@
 
     move-result-object v0
 
-    .line 220
+    .line 240
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "Address"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 221
+    .line 241
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -2376,7 +2430,7 @@
     .param p1, "adsId"    # Ljava/lang/String;
 
     .prologue
-    .line 144
+    .line 164
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -2389,13 +2443,13 @@
 
     move-result-object v0
 
-    .line 145
+    .line 165
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "AdsId"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 146
+    .line 166
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -2410,7 +2464,7 @@
     .param p2, "time_sec"    # J
 
     .prologue
-    .line 530
+    .line 550
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -2423,7 +2477,7 @@
 
     move-result-object v0
 
-    .line 531
+    .line 551
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2445,7 +2499,7 @@
 
     invoke-interface {v0, v1, p2, p3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    .line 532
+    .line 552
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -2459,7 +2513,7 @@
     .param p1, "categoryConfig"    # Ljava/lang/String;
 
     .prologue
-    .line 480
+    .line 500
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -2472,13 +2526,13 @@
 
     move-result-object v0
 
-    .line 481
+    .line 501
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "CategoryConfig"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 482
+    .line 502
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -2492,7 +2546,7 @@
     .param p1, "DisplayName"    # Ljava/lang/String;
 
     .prologue
-    .line 208
+    .line 228
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -2505,13 +2559,13 @@
 
     move-result-object v0
 
-    .line 209
+    .line 229
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "DisplayName"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 210
+    .line 230
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -2525,7 +2579,7 @@
     .param p1, "uid"    # Ljava/lang/String;
 
     .prologue
-    .line 175
+    .line 195
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -2538,13 +2592,13 @@
 
     move-result-object v0
 
-    .line 176
+    .line 196
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "FacebookUID"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 177
+    .line 197
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -2558,7 +2612,7 @@
     .param p1, "FirstName"    # Ljava/lang/String;
 
     .prologue
-    .line 186
+    .line 206
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -2571,13 +2625,13 @@
 
     move-result-object v0
 
-    .line 187
+    .line 207
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "FirstName"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 188
+    .line 208
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -2591,7 +2645,7 @@
     .param p1, "gcm_id"    # Ljava/lang/String;
 
     .prologue
-    .line 270
+    .line 290
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -2604,13 +2658,13 @@
 
     move-result-object v0
 
-    .line 271
+    .line 291
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "GCM_ID"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 272
+    .line 292
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -2624,7 +2678,7 @@
     .param p1, "is_accept_term"    # Z
 
     .prologue
-    .line 339
+    .line 359
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_NOTCLEAR:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -2637,13 +2691,13 @@
 
     move-result-object v0
 
-    .line 340
+    .line 360
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "IsAcceptTerm"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 341
+    .line 361
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -2657,7 +2711,7 @@
     .param p1, "is_allow_use"    # Z
 
     .prologue
-    .line 369
+    .line 389
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -2670,13 +2724,13 @@
 
     move-result-object v0
 
-    .line 370
+    .line 390
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "IsAllowUse"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 371
+    .line 391
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -2789,7 +2843,7 @@
     .param p1, "is_has_new_version"    # Z
 
     .prologue
-    .line 379
+    .line 399
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -2802,13 +2856,13 @@
 
     move-result-object v0
 
-    .line 380
+    .line 400
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "IsHasNewVersion"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 381
+    .line 401
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -2888,7 +2942,7 @@
     .param p1, "isWarn"    # Z
 
     .prologue
-    .line 470
+    .line 490
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_NOTCLEAR:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -2901,13 +2955,13 @@
 
     move-result-object v0
 
-    .line 471
+    .line 491
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "IsNFCWarning"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 472
+    .line 492
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -2921,7 +2975,7 @@
     .param p1, "isOn"    # Z
 
     .prologue
-    .line 260
+    .line 280
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -2934,13 +2988,13 @@
 
     move-result-object v0
 
-    .line 261
+    .line 281
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "IsNotificationOn"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 262
+    .line 282
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -2954,7 +3008,7 @@
     .param p1, "is_playing_intro"    # Z
 
     .prologue
-    .line 349
+    .line 369
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_NOTCLEAR:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -2967,13 +3021,13 @@
 
     move-result-object v0
 
-    .line 350
+    .line 370
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "IsPlayingIntro"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 351
+    .line 371
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -2987,12 +3041,12 @@
     .param p1, "is_premium"    # Z
 
     .prologue
-    .line 320
+    .line 340
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetIsPremium(Landroid/content/Context;)Z
 
     move-result v1
 
-    .line 322
+    .line 342
     .local v1, "oldValue":Z
     sget-object v3, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
@@ -3006,32 +3060,32 @@
 
     move-result-object v0
 
-    .line 323
+    .line 343
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v3, "IsPremium"
 
     invoke-interface {v0, v3, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 324
+    .line 344
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v2
 
-    .line 326
+    .line 346
     .local v2, "result":Z
     if-eq v1, p1, :cond_27
 
-    .line 327
+    .line 347
     const-string/jumbo v3, "UserLogin"
 
     const-string/jumbo v4, "PostEvents.onPremiumChanged();"
 
     invoke-static {v3, v4}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 328
+    .line 348
     invoke-static {}, Lcom/bzbs/event/PostEvents;->onPremiumChanged()V
 
-    .line 331
+    .line 351
     :cond_27
     return v2
 .end method
@@ -3042,7 +3096,7 @@
     .param p1, "is_show_shopping_basket"    # Z
 
     .prologue
-    .line 410
+    .line 430
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -3055,13 +3109,13 @@
 
     move-result-object v0
 
-    .line 411
+    .line 431
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "IsShowShoppingBasket"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 412
+    .line 432
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -3075,7 +3129,7 @@
     .param p1, "is_token_need_logout"    # Z
 
     .prologue
-    .line 400
+    .line 420
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -3088,13 +3142,13 @@
 
     move-result-object v0
 
-    .line 401
+    .line 421
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "IsTokenNeedLogout"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 402
+    .line 422
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -3108,7 +3162,7 @@
     .param p1, "isShow"    # Z
 
     .prologue
-    .line 460
+    .line 480
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -3121,13 +3175,13 @@
 
     move-result-object v0
 
-    .line 461
+    .line 481
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "IsshowDialogHasNewVersion"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 462
+    .line 482
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -3141,7 +3195,7 @@
     .param p1, "LastName"    # Ljava/lang/String;
 
     .prologue
-    .line 197
+    .line 217
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -3154,13 +3208,13 @@
 
     move-result-object v0
 
-    .line 198
+    .line 218
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "LastName"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 199
+    .line 219
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -3175,7 +3229,7 @@
     .param p2, "code"    # Ljava/lang/String;
 
     .prologue
-    .line 490
+    .line 510
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -3188,7 +3242,7 @@
 
     move-result-object v0
 
-    .line 491
+    .line 511
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -3210,7 +3264,7 @@
 
     invoke-interface {v0, v1, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 492
+    .line 512
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -3225,7 +3279,7 @@
     .param p2, "pmsg"    # Ljava/lang/String;
 
     .prologue
-    .line 500
+    .line 520
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -3238,7 +3292,7 @@
 
     move-result-object v0
 
-    .line 501
+    .line 521
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -3260,7 +3314,7 @@
 
     invoke-interface {v0, v1, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 502
+    .line 522
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -3274,7 +3328,7 @@
     .param p1, "pLastResumeTime"    # J
 
     .prologue
-    .line 450
+    .line 470
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -3287,13 +3341,13 @@
 
     move-result-object v0
 
-    .line 451
+    .line 471
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "LastResumeTime"
 
     invoke-interface {v0, v1, p1, p2}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    .line 452
+    .line 472
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -3305,178 +3359,6 @@
     .registers 5
     .param p0, "appContext"    # Landroid/content/Context;
     .param p1, "data"    # Ljava/lang/String;
-
-    .prologue
-    .line 280
-    sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    .line 281
-    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
-    const-string/jumbo v1, "LastUpdateDevice"
-
-    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    .line 282
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    move-result v1
-
-    return v1
-.end method
-
-.method public static SetLocale(Landroid/content/Context;Ljava/lang/String;)Z
-    .registers 5
-    .param p0, "appContext"    # Landroid/content/Context;
-    .param p1, "locale"    # Ljava/lang/String;
-
-    .prologue
-    .line 250
-    sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    .line 251
-    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
-    const-string/jumbo v1, "Locale"
-
-    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    .line 252
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    move-result v1
-
-    return v1
-.end method
-
-.method public static SetMenuBuzzebeesVisible(Landroid/content/Context;Z)Z
-    .registers 5
-    .param p0, "appContext"    # Landroid/content/Context;
-    .param p1, "isVisible"    # Z
-
-    .prologue
-    .line 359
-    sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    .line 360
-    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
-    const-string/jumbo v1, "MenuBuzzebeesVisible"
-
-    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
-
-    .line 361
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    move-result v1
-
-    return v1
-.end method
-
-.method public static SetModeLogin(Landroid/content/Context;Ljava/lang/String;)Z
-    .registers 5
-    .param p0, "appContext"    # Landroid/content/Context;
-    .param p1, "mode"    # Ljava/lang/String;
-
-    .prologue
-    .line 154
-    sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    .line 155
-    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
-    const-string/jumbo v1, "ModeLoginString"
-
-    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    .line 156
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    move-result v1
-
-    return v1
-.end method
-
-.method public static SetNotificationUnReadCount(Landroid/content/Context;I)Z
-    .registers 5
-    .param p0, "appContext"    # Landroid/content/Context;
-    .param p1, "count"    # I
-
-    .prologue
-    .line 662
-    if-gez p1, :cond_3
-
-    .line 663
-    const/4 p1, 0x0
-
-    .line 666
-    :cond_3
-    sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    .line 667
-    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
-    const-string/jumbo v1, "NotificationUnReadCount"
-
-    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    .line 668
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    move-result v1
-
-    return v1
-.end method
-
-.method public static SetPoints(Landroid/content/Context;J)Z
-    .registers 6
-    .param p0, "appContext"    # Landroid/content/Context;
-    .param p1, "points"    # J
 
     .prologue
     .line 300
@@ -3494,11 +3376,183 @@
 
     .line 301
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
+    const-string/jumbo v1, "LastUpdateDevice"
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 302
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    move-result v1
+
+    return v1
+.end method
+
+.method public static SetLocale(Landroid/content/Context;Ljava/lang/String;)Z
+    .registers 5
+    .param p0, "appContext"    # Landroid/content/Context;
+    .param p1, "locale"    # Ljava/lang/String;
+
+    .prologue
+    .line 270
+    sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    .line 271
+    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
+    const-string/jumbo v1, "Locale"
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 272
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    move-result v1
+
+    return v1
+.end method
+
+.method public static SetMenuBuzzebeesVisible(Landroid/content/Context;Z)Z
+    .registers 5
+    .param p0, "appContext"    # Landroid/content/Context;
+    .param p1, "isVisible"    # Z
+
+    .prologue
+    .line 379
+    sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    .line 380
+    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
+    const-string/jumbo v1, "MenuBuzzebeesVisible"
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    .line 381
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    move-result v1
+
+    return v1
+.end method
+
+.method public static SetModeLogin(Landroid/content/Context;Ljava/lang/String;)Z
+    .registers 5
+    .param p0, "appContext"    # Landroid/content/Context;
+    .param p1, "mode"    # Ljava/lang/String;
+
+    .prologue
+    .line 174
+    sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    .line 175
+    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
+    const-string/jumbo v1, "ModeLoginString"
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 176
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    move-result v1
+
+    return v1
+.end method
+
+.method public static SetNotificationUnReadCount(Landroid/content/Context;I)Z
+    .registers 5
+    .param p0, "appContext"    # Landroid/content/Context;
+    .param p1, "count"    # I
+
+    .prologue
+    .line 682
+    if-gez p1, :cond_3
+
+    .line 683
+    const/4 p1, 0x0
+
+    .line 686
+    :cond_3
+    sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    .line 687
+    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
+    const-string/jumbo v1, "NotificationUnReadCount"
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    .line 688
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    move-result v1
+
+    return v1
+.end method
+
+.method public static SetPoints(Landroid/content/Context;J)Z
+    .registers 6
+    .param p0, "appContext"    # Landroid/content/Context;
+    .param p1, "points"    # J
+
+    .prologue
+    .line 320
+    sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    .line 321
+    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "Points"
 
     invoke-interface {v0, v1, p1, p2}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    .line 302
+    .line 322
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -3512,7 +3566,7 @@
     .param p1, "rank"    # Ljava/lang/String;
 
     .prologue
-    .line 310
+    .line 330
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -3525,13 +3579,13 @@
 
     move-result-object v0
 
-    .line 311
+    .line 331
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "Rank"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 312
+    .line 332
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -3545,7 +3599,7 @@
     .param p1, "strShowMyGiftOn"    # Ljava/lang/String;
 
     .prologue
-    .line 420
+    .line 440
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -3558,13 +3612,13 @@
 
     move-result-object v0
 
-    .line 421
+    .line 441
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "ShowMyGiftOn"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 422
+    .line 442
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -3578,7 +3632,7 @@
     .param p1, "sticker_order"    # Ljava/lang/String;
 
     .prologue
-    .line 390
+    .line 410
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -3591,13 +3645,13 @@
 
     move-result-object v0
 
-    .line 391
+    .line 411
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "sticker_order"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 392
+    .line 412
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -3638,7 +3692,7 @@
     return v1
 .end method
 
-.method public static SetTokenWallet(Landroid/content/Context;Ljava/lang/String;)Z
+.method public static SetTokenBuzzeBeesSkip(Landroid/content/Context;Ljava/lang/String;)Z
     .registers 5
     .param p0, "appContext"    # Landroid/content/Context;
     .param p1, "token"    # Ljava/lang/String;
@@ -3659,11 +3713,44 @@
 
     .line 126
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
-    const-string/jumbo v1, "TokenWallet"
+    const-string/jumbo v1, "TokenBuzzeBeesSkip"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     .line 127
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    move-result v1
+
+    return v1
+.end method
+
+.method public static SetTokenWallet(Landroid/content/Context;Ljava/lang/String;)Z
+    .registers 5
+    .param p0, "appContext"    # Landroid/content/Context;
+    .param p1, "token"    # Ljava/lang/String;
+
+    .prologue
+    .line 145
+    sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    .line 146
+    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
+    const-string/jumbo v1, "TokenWallet"
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 147
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -3677,7 +3764,7 @@
     .param p1, "carrier"    # Ljava/lang/String;
 
     .prologue
-    .line 290
+    .line 310
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -3690,13 +3777,13 @@
 
     move-result-object v0
 
-    .line 291
+    .line 311
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "UserCarrier"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 292
+    .line 312
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -3710,7 +3797,7 @@
     .param p1, "pStrUserId"    # Ljava/lang/String;
 
     .prologue
-    .line 164
+    .line 184
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -3723,13 +3810,46 @@
 
     move-result-object v0
 
-    .line 165
+    .line 185
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string/jumbo v1, "userId"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 166
+    .line 186
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    move-result v1
+
+    return v1
+.end method
+
+.method public static SetUserUUID(Landroid/content/Context;Ljava/lang/String;)Z
+    .registers 5
+    .param p0, "appContext"    # Landroid/content/Context;
+    .param p1, "uuid"    # Ljava/lang/String;
+
+    .prologue
+    .line 135
+    sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    .line 136
+    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
+    const-string/jumbo v1, "UserUUID"
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 137
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -3742,56 +3862,6 @@
     .param p0, "appContext"    # Landroid/content/Context;
     .param p1, "issuer"    # Ljava/lang/String;
     .param p2, "active"    # Z
-
-    .prologue
-    .line 520
-    sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    .line 521
-    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "WalletActive_"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1, p2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
-
-    .line 522
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    move-result v1
-
-    return v1
-.end method
-
-.method public static SetWalletAmount(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
-    .registers 6
-    .param p0, "appContext"    # Landroid/content/Context;
-    .param p1, "issuer"    # Ljava/lang/String;
-    .param p2, "amount_string"    # Ljava/lang/String;
 
     .prologue
     .line 540
@@ -3813,6 +3883,56 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
+    const-string/jumbo v2, "WalletActive_"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1, p2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    .line 542
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    move-result v1
+
+    return v1
+.end method
+
+.method public static SetWalletAmount(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
+    .registers 6
+    .param p0, "appContext"    # Landroid/content/Context;
+    .param p1, "issuer"    # Ljava/lang/String;
+    .param p2, "amount_string"    # Ljava/lang/String;
+
+    .prologue
+    .line 560
+    sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    .line 561
+    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     const-string/jumbo v2, "WalletAmount_"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -3829,7 +3949,7 @@
 
     invoke-interface {v0, v1, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 542
+    .line 562
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -3844,7 +3964,7 @@
     .param p2, "cardId"    # Ljava/lang/String;
 
     .prologue
-    .line 510
+    .line 530
     sget-object v1, Lcom/bzbs/data/UserLogin;->PREF_KEY_USERLOGIN:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -3857,7 +3977,7 @@
 
     move-result-object v0
 
-    .line 511
+    .line 531
     .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -3879,7 +3999,7 @@
 
     invoke-interface {v0, v1, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 512
+    .line 532
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v1
@@ -3894,7 +4014,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 131
+    .line 151
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
@@ -3907,7 +4027,7 @@
 
     if-eqz v1, :cond_19
 
-    .line 132
+    .line 152
     const-string/jumbo v1, "\u0e01\u0e23\u0e38\u0e13\u0e32\u0e25\u0e47\u0e2d\u0e04\u0e2d\u0e34\u0e19\u0e40\u0e02\u0e49\u0e32\u0e2a\u0e39\u0e48\u0e23\u0e30\u0e1a\u0e1a"
 
     invoke-static {p0, v1, v0}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
@@ -3916,10 +4036,10 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 133
+    .line 153
     const/4 v0, 0x1
 
-    .line 135
+    .line 155
     :cond_19
     return v0
 .end method

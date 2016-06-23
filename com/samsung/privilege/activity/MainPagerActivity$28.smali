@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->doRequestHelp(Landroid/view/View;)V
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->doMyAccount(Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 1833
+    .line 1900
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$28;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .registers 4
 
     .prologue
-    .line 1836
+    .line 1903
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$28;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
@@ -50,16 +50,16 @@
 
     move-result-object v1
 
-    const-class v2, Lcom/samsung/privilege/activity/RequestHelpActivity;
+    const-class v2, Lcom/samsung/privilege/activity/ProfileActivity;
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1837
+    .line 1904
     .local v0, "intent":Landroid/content/Intent;
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$28;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 1838
+    .line 1905
     return-void
 .end method

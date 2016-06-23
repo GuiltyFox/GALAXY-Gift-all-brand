@@ -100,7 +100,7 @@
     invoke-direct {p0}, Lcom/samsung/privilege/activity/PointStatementActivity;->initialParam()V
 
     .line 33
-    const v1, 0x7f100178
+    const v1, 0x7f10017a
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/PointStatementActivity;->findViewById(I)Landroid/view/View;
 
@@ -272,7 +272,7 @@
 
     .line 112
     :pswitch_1d
-    const v2, 0x7f100178
+    const v2, 0x7f10017a
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/PointStatementActivity;->findViewById(I)Landroid/view/View;
 

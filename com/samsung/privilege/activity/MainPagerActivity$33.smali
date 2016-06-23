@@ -3,12 +3,12 @@
 .source "MainPagerActivity.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->closeDrawerRunnable()Ljava/lang/Runnable;
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->showDialogSignOut(Ljava/lang/String;Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,19 @@
 # instance fields
 .field final synthetic this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
+.field final synthetic val$dialogSerial:Landroid/app/Dialog;
+
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;)V
-    .registers 2
+.method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;Landroid/app/Dialog;)V
+    .registers 3
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 1933
+    .line 2024
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$33;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$33;->val$dialogSerial:Landroid/app/Dialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,27 +41,16 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 4
+.method public onClick(Landroid/view/View;)V
+    .registers 3
+    .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 1936
-    iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$33;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 2026
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$33;->val$dialogSerial:Landroid/app/Dialog;
 
-    const v2, 0x7f100169
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/widget/DrawerLayout;
-
-    .line 1937
-    .local v0, "drawer_layout":Landroid/support/v4/widget/DrawerLayout;
-    const/4 v1, 0x3
-
-    invoke-virtual {v0, v1}, Landroid/support/v4/widget/DrawerLayout;->closeDrawer(I)V
-
-    .line 1938
+    .line 2027
     return-void
 .end method

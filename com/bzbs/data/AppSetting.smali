@@ -32,7 +32,11 @@
 
 .field public static AUTH_BUZZEBEES_PREFIX_THAI:Ljava/lang/String; = null
 
-.field public static CAT_PREMIUM_THAI:I = 0x0
+.field public static BEACON_TIMEOUT_DEFAULT:I = 0x0
+
+.field public static CAT_WINNER:I = 0x0
+
+.field public static CAT_WINNER_CONFIG:Ljava/lang/String; = null
 
 .field public static COLOR_BLACK:I = 0x0
 
@@ -68,21 +72,17 @@
 
 .field public static EMAIL_PROBLEM_THAI:Ljava/lang/String; = null
 
-.field public static GA_TRACKING_ID_CAMB:Ljava/lang/String; = null
-
-.field public static GA_TRACKING_ID_LAOS:Ljava/lang/String; = null
-
-.field public static GA_TRACKING_ID_MYAN:Ljava/lang/String; = null
-
-.field public static GA_TRACKING_ID_THAI:Ljava/lang/String; = null
-
 .field public static final IMEI_INVALID:Ljava/lang/String; = "004999010640000"
 
 .field public static IS_AUTO_GOTO_HISTORY:Z = false
 
-.field public static final IS_DISPLAY_LOG:Z = true
+.field public static final IS_DISPLAY_LOG:Z = false
+
+.field public static IS_PRODUCTION:Z = false
 
 .field public static IS_SERVER_PRODUCTION:Z = false
+
+.field public static MISC_URL_BUZZEBEES:Ljava/lang/String; = null
 
 .field public static MODE_DEBUG_MEM:Z = false
 
@@ -126,6 +126,10 @@
 .field public static SPONSOR_ID_THAI:Ljava/lang/String;
 
 .field public static SPONSOR_PAGES:Ljava/lang/String;
+
+.field public static URL_MY_POINT_EN:Ljava/lang/String;
+
+.field public static URL_MY_POINT_TH:Ljava/lang/String;
 
 .field public static UriPlayStore:Ljava/lang/String;
 
@@ -174,9 +178,11 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .registers 6
 
     .prologue
+    const/16 v5, 0x3c
+
     const/16 v1, 0xff
 
     const/4 v4, 0x1
@@ -243,251 +249,255 @@
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->UriPlayStoreGift:Ljava/lang/String;
 
-    .line 305
+    .line 303
+    sput-boolean v4, Lcom/bzbs/data/AppSetting;->IS_PRODUCTION:Z
+
+    .line 304
     const-string/jumbo v0, "android_gift"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->AUTH_BUZZEBEES_PREFIX_THAI:Ljava/lang/String;
 
-    .line 306
+    .line 305
     const-string/jumbo v0, "android_gift_laos"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->AUTH_BUZZEBEES_PREFIX_LAOS:Ljava/lang/String;
 
-    .line 307
+    .line 306
     const-string/jumbo v0, "android_gift_cambodia"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->AUTH_BUZZEBEES_PREFIX_CAMB:Ljava/lang/String;
 
-    .line 308
+    .line 307
     const-string/jumbo v0, "android_gift_myanmar"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->AUTH_BUZZEBEES_PREFIX_MYAN:Ljava/lang/String;
 
-    .line 313
+    .line 312
     const-string/jumbo v0, "70"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->SPONSOR_ID_THAI:Ljava/lang/String;
 
-    .line 314
+    .line 313
     const-string/jumbo v0, "5605"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->SPONSOR_ID_LAOS:Ljava/lang/String;
 
-    .line 315
+    .line 314
     const-string/jumbo v0, "5606"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->SPONSOR_ID_CAMB:Ljava/lang/String;
 
-    .line 316
+    .line 315
     const-string/jumbo v0, "6363"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->SPONSOR_ID_MYAN:Ljava/lang/String;
 
-    .line 317
+    .line 316
     const-string/jumbo v0, "samsunggift"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->DASHBOARD_KEY_THAI:Ljava/lang/String;
 
-    .line 318
+    .line 317
     const-string/jumbo v0, "samsunggift_laos"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->DASHBOARD_KEY_LAOS:Ljava/lang/String;
 
-    .line 319
+    .line 318
     const-string/jumbo v0, "samsunggift_cambodia"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->DASHBOARD_KEY_CAMB:Ljava/lang/String;
 
-    .line 320
+    .line 319
     const-string/jumbo v0, "samsunggift_myanmar"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->DASHBOARD_KEY_MYAN:Ljava/lang/String;
 
-    .line 321
+    .line 320
     const-string/jumbo v0, "123844944339"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->NOTIFICATION_ID_THAI:Ljava/lang/String;
 
-    .line 322
+    .line 321
     const-string/jumbo v0, "956853005078"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->NOTIFICATION_ID_LAOS:Ljava/lang/String;
 
-    .line 323
+    .line 322
     const-string/jumbo v0, "899168542020"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->NOTIFICATION_ID_CAMB:Ljava/lang/String;
 
-    .line 324
+    .line 323
     const-string/jumbo v0, "228227059976"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->NOTIFICATION_ID_MYAN:Ljava/lang/String;
 
-    .line 325
-    const-string/jumbo v0, "UA-42649771-1"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->GA_TRACKING_ID_THAI:Ljava/lang/String;
-
-    .line 326
-    const-string/jumbo v0, "UA-54263353-1"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->GA_TRACKING_ID_LAOS:Ljava/lang/String;
-
-    .line 327
-    const-string/jumbo v0, "UA-54268660-1"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->GA_TRACKING_ID_CAMB:Ljava/lang/String;
-
     .line 328
-    const-string/jumbo v0, "UA-59571626-1"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->GA_TRACKING_ID_MYAN:Ljava/lang/String;
-
-    .line 329
     const-string/jumbo v0, "samsungthailandapps@gmail.com"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->EMAIL_PROBLEM_THAI:Ljava/lang/String;
 
-    .line 330
+    .line 329
     const-string/jumbo v0, "galaxylaosclub@gmail.com"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->EMAIL_PROBLEM_LAOS:Ljava/lang/String;
 
-    .line 331
+    .line 330
     const-string/jumbo v0, "samsungthailandapps@gmail.com"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->EMAIL_PROBLEM_CAMB:Ljava/lang/String;
 
-    .line 332
+    .line 331
     const-string/jumbo v0, "samsungmyanmarapps@gmail.com"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->EMAIL_PROBLEM_MYAN:Ljava/lang/String;
 
-    .line 333
+    .line 332
     const-string/jumbo v0, "galaxygiftthailand@gmail.com"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->EMAIL_PARTNER_THAI:Ljava/lang/String;
 
-    .line 334
+    .line 333
     const-string/jumbo v0, "galaxylaosclub@gmail.com"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->EMAIL_PARTNER_LAOS:Ljava/lang/String;
 
-    .line 335
+    .line 334
     const-string/jumbo v0, "galaxygiftthailand@gmail.com"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->EMAIL_PARTNER_CAMB:Ljava/lang/String;
 
-    .line 336
+    .line 335
     const-string/jumbo v0, "galaxygiftmyanmar@gmail.com"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->EMAIL_PARTNER_MYAN:Ljava/lang/String;
 
     .line 338
-    const/16 v0, 0x53d
+    const-string/jumbo v0, "campaign_gift"
 
-    sput v0, Lcom/bzbs/data/AppSetting;->CAT_PREMIUM_THAI:I
+    sput-object v0, Lcom/bzbs/data/AppSetting;->CAT_WINNER_CONFIG:Ljava/lang/String;
 
-    .line 341
+    .line 339
+    const/16 v0, 0x9e
+
+    sput v0, Lcom/bzbs/data/AppSetting;->CAT_WINNER:I
+
+    .line 342
     const-string/jumbo v0, "https://api.buzzebees.com/"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
 
-    .line 342
+    .line 343
     const-string/jumbo v0, "http://buzzebees.blob.core.windows.net/"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->API_URL_BZBS_BLOB:Ljava/lang/String;
 
-    .line 343
+    .line 344
     const-string/jumbo v0, "https://www.buzzebees.com/"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->WEB_URL_BUZZEBEES:Ljava/lang/String;
 
-    .line 344
+    .line 345
+    const-string/jumbo v0, "https://misc.buzzebees.com/"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->MISC_URL_BUZZEBEES:Ljava/lang/String;
+
+    .line 346
     const-string/jumbo v0, "http://prd-api-ewallet.cloudapp.net/"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->API_URL_WALLET:Ljava/lang/String;
 
-    .line 345
+    .line 347
+    const-string/jumbo v0, "https://misc.buzzebees.com/gift/point_eng.html"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->URL_MY_POINT_EN:Ljava/lang/String;
+
+    .line 348
+    const-string/jumbo v0, "https://misc.buzzebees.com/gift/point_th.html"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->URL_MY_POINT_TH:Ljava/lang/String;
+
+    .line 349
     const/16 v0, 0x3840
 
     sput v0, Lcom/bzbs/data/AppSetting;->RESUME_TIME:I
 
     .line 350
-    sput-boolean v4, Lcom/bzbs/data/AppSetting;->CONFIG_PAGER_KEEP_MEMORY_ALL:Z
+    sput v5, Lcom/bzbs/data/AppSetting;->BEACON_TIMEOUT_DEFAULT:I
 
-    .line 414
+    .line 355
+    sput-boolean v3, Lcom/bzbs/data/AppSetting;->CONFIG_PAGER_KEEP_MEMORY_ALL:Z
+
+    .line 428
     const-string/jumbo v0, "GalaxyGift"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->PATH_ROOT_BUZZEBEES:Ljava/lang/String;
 
-    .line 456
+    .line 470
     const-string/jumbo v0, "com.samsung.privilege"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->UriPlayStore:Ljava/lang/String;
 
-    .line 459
+    .line 473
     sput v3, Lcom/bzbs/data/AppSetting;->WEB_IMAGE_CACHE_MEMORY:I
 
-    .line 460
+    .line 474
     sput v3, Lcom/bzbs/data/AppSetting;->WEB_IMAGE_RETRY_NUMBER:I
 
-    .line 461
+    .line 475
     const/16 v0, 0x1388
 
     sput v0, Lcom/bzbs/data/AppSetting;->WEB_IMAGE_CONNECT_TIMEOUT:I
 
-    .line 462
+    .line 476
     const/16 v0, 0x2710
 
     sput v0, Lcom/bzbs/data/AppSetting;->WEB_IMAGE_READ_TIMEOUT:I
 
-    .line 463
+    .line 477
     sput v4, Lcom/bzbs/data/AppSetting;->WEB_IMAGE_SAMPLE_SIZE:I
 
-    .line 464
+    .line 478
     const/16 v0, 0x200
 
     sput v0, Lcom/bzbs/data/AppSetting;->WEB_IMAGE_TEMP_STORAGE:I
 
-    .line 465
-    const/16 v0, 0x3c
+    .line 479
+    sput v5, Lcom/bzbs/data/AppSetting;->WEB_IMAGE_SAVE_QUALITY:I
 
-    sput v0, Lcom/bzbs/data/AppSetting;->WEB_IMAGE_SAVE_QUALITY:I
-
-    .line 467
+    .line 481
     sput v3, Lcom/bzbs/data/AppSetting;->WALL_QUERY_OLD:I
 
-    .line 468
+    .line 482
     sput v3, Lcom/bzbs/data/AppSetting;->WALL_IMAGE_FADEIN:I
 
-    .line 469
+    .line 483
     const/16 v0, 0x19
 
     sput v0, Lcom/bzbs/data/AppSetting;->WALL_MEM_CACHE_SIZE:I
 
-    .line 470
+    .line 484
     const/16 v0, 0x32
 
     sput v0, Lcom/bzbs/data/AppSetting;->WALL_DISK_CACHE_SIZE:I
 
-    .line 472
+    .line 486
     const-wide/16 v0, 0x0
 
     sput-wide v0, Lcom/bzbs/data/AppSetting;->wall_last_created_time:J
 
-    .line 476
+    .line 490
     sput-boolean v3, Lcom/bzbs/data/AppSetting;->MODE_DEBUG_MEM:Z
 
-    .line 477
+    .line 491
     sput-boolean v4, Lcom/bzbs/data/AppSetting;->MODE_IMAGE_ROUNDED:Z
 
-    .line 479
+    .line 493
     const/16 v0, 0x1e
 
     sput v0, Lcom/bzbs/data/AppSetting;->gIntDifferenceInXMoreThanInY:I
 
-    .line 512
+    .line 526
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/String;
@@ -508,7 +518,7 @@
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->Permissons_BzBs_Read:[Ljava/lang/String;
 
-    .line 538
+    .line 552
     sget-object v0, Lcom/bzbs/data/AppSetting;->Permissons_BzBs_Read:[Ljava/lang/String;
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -517,13 +527,13 @@
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->Permissons_BzBs_Read_List:Ljava/util/List;
 
-    .line 541
+    .line 555
     sput v3, Lcom/bzbs/data/AppSetting;->screenWidth:I
 
-    .line 542
+    .line 556
     sput v3, Lcom/bzbs/data/AppSetting;->screenHeight:I
 
-    .line 544
+    .line 558
     sput v3, Lcom/bzbs/data/AppSetting;->dpi:I
 
     return-void
@@ -544,7 +554,7 @@
     .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
-    .line 417
+    .line 431
     const-string/jumbo v1, "mounted"
 
     invoke-static {}, Landroid/os/Environment;->getExternalStorageState()Ljava/lang/String;
@@ -572,12 +582,12 @@
 
     move-result-object v0
 
-    .line 418
+    .line 432
     .local v0, "androidPath":Ljava/lang/String;
     :goto_1b
     return-object v0
 
-    .line 417
+    .line 431
     .end local v0    # "androidPath":Ljava/lang/String;
     :cond_1c
     invoke-virtual {p0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
@@ -1780,76 +1790,6 @@
     goto :goto_11
 .end method
 
-.method public static GA_TRACKING_ID(Landroid/content/Context;)Ljava/lang/String;
-    .registers 3
-    .param p0, "appContext"    # Landroid/content/Context;
-
-    .prologue
-    .line 238
-    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "768830479847872"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    .line 239
-    sget-object v0, Lcom/bzbs/data/AppSetting;->GA_TRACKING_ID_LAOS:Ljava/lang/String;
-
-    .line 245
-    :goto_f
-    return-object v0
-
-    .line 240
-    :cond_10
-    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "1525635597652592"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_20
-
-    .line 241
-    sget-object v0, Lcom/bzbs/data/AppSetting;->GA_TRACKING_ID_CAMB:Ljava/lang/String;
-
-    goto :goto_f
-
-    .line 242
-    :cond_20
-    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "517155661760483"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_30
-
-    .line 243
-    sget-object v0, Lcom/bzbs/data/AppSetting;->GA_TRACKING_ID_MYAN:Ljava/lang/String;
-
-    goto :goto_f
-
-    .line 245
-    :cond_30
-    sget-object v0, Lcom/bzbs/data/AppSetting;->GA_TRACKING_ID_THAI:Ljava/lang/String;
-
-    goto :goto_f
-.end method
-
 .method public static GetIsAutoLogin(Landroid/content/Context;)Z
     .registers 5
     .param p0, "context"    # Landroid/content/Context;
@@ -1889,72 +1829,72 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 548
+    .line 562
     sget-object v0, Lcom/bzbs/data/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
 
     sput-object v0, Lcom/bzbs/lib/survey/LibConst;->API_URL_BUZZEBEES:Ljava/lang/String;
 
-    .line 549
+    .line 563
     sget-object v0, Lcom/bzbs/data/AppSetting;->API_URL_BZBS_BLOB:Ljava/lang/String;
 
     sput-object v0, Lcom/bzbs/lib/survey/LibConst;->API_URL_BZBS_BLOB:Ljava/lang/String;
 
-    .line 550
+    .line 564
     invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->SetAppId(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 551
+    .line 565
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->SetTokenBuzzeBees(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 552
+    .line 566
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetUserId(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->SetUserId(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 553
+    .line 567
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetFacebookUID(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->SetFacebookUID(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 554
+    .line 568
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetPoints(Landroid/content/Context;)J
 
     move-result-wide v0
 
     invoke-static {p0, v0, v1}, Lcom/bzbs/lib/survey/LibUserLogin;->SetPoints(Landroid/content/Context;J)Z
 
-    .line 555
+    .line 569
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->SetLocale(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 557
+    .line 571
     invoke-static {p0, v2}, Lcom/bzbs/lib/survey/LibUserLogin;->SetIsShowConditionInMarket(Landroid/content/Context;Z)Z
 
-    .line 558
+    .line 572
     invoke-static {p0, v2}, Lcom/bzbs/lib/survey/LibUserLogin;->SetIsShowUseDialogInMarket(Landroid/content/Context;Z)Z
 
-    .line 559
+    .line 573
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetIsShowShoppingBasket(Landroid/content/Context;)Z
 
     move-result v0
 
     invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->SetIsShowShoppingBasket(Landroid/content/Context;Z)Z
 
-    .line 560
+    .line 574
     return-void
 .end method
 
@@ -2170,23 +2110,23 @@
     .end annotation
 
     .prologue
-    .line 443
+    .line 457
     invoke-static {}, Lcom/bzbs/util/VersionUtils;->hasFroyo()Z
 
     move-result v1
 
     if-eqz v1, :cond_b
 
-    .line 444
+    .line 458
     invoke-virtual {p0}, Landroid/content/Context;->getExternalCacheDir()Ljava/io/File;
 
     move-result-object v1
 
-    .line 449
+    .line 463
     :goto_a
     return-object v1
 
-    .line 448
+    .line 462
     :cond_b
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2216,7 +2156,7 @@
 
     move-result-object v0
 
-    .line 449
+    .line 463
     .local v0, "cacheDir":Ljava/lang/String;
     new-instance v1, Ljava/io/File;
 
@@ -2256,19 +2196,19 @@
     .end annotation
 
     .prologue
-    .line 429
+    .line 443
     invoke-static {}, Lcom/bzbs/util/VersionUtils;->hasGingerbread()Z
 
     move-result v0
 
     if-eqz v0, :cond_b
 
-    .line 430
+    .line 444
     invoke-static {}, Landroid/os/Environment;->isExternalStorageRemovable()Z
 
     move-result v0
 
-    .line 432
+    .line 446
     :goto_a
     return v0
 

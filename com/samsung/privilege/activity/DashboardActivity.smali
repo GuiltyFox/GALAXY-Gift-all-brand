@@ -80,7 +80,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f10015c
+    const v2, 0x7f10015d
 
     invoke-virtual {v1, v2, v0}, Landroid/support/v4/app/FragmentTransaction;->replace(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
 
@@ -99,10 +99,10 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 107
+    .line 112
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardActivity;->finish()V
 
-    .line 108
+    .line 113
     return-void
 .end method
 
@@ -160,7 +160,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/DashboardActivity;->callbackManager:Lcom/facebook/CallbackManager;
 
     .line 31
-    const v0, 0x7f10015c
+    const v0, 0x7f10015d
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/DashboardActivity;->findViewById(I)Landroid/view/View;
 

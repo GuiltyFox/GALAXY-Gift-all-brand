@@ -15,6 +15,9 @@
 
 
 # virtual methods
+.method public abstract onAuthenOTPSuccess(Ljava/lang/String;)V
+.end method
+
 .method public abstract onLoginDeviceSuccess(Ljava/lang/String;)V
 .end method
 

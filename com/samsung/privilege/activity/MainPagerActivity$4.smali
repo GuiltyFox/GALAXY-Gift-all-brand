@@ -3,12 +3,12 @@
 .source "MainPagerActivity.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->showDialogExit(Ljava/lang/String;Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->showToast(Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,19 @@
 # instance fields
 .field final synthetic this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
+.field final synthetic val$msg:Ljava/lang/String;
+
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;)V
-    .registers 2
+.method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;Ljava/lang/String;)V
+    .registers 3
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 364
+    .line 359
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$4;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$4;->val$msg:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,112 +41,25 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 9
-    .param p1, "p_dialog"    # Landroid/content/DialogInterface;
-    .param p2, "id"    # I
+.method public run()V
+    .registers 5
 
     .prologue
-    .line 366
-    invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
+    .line 362
+    iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$4;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    .line 369
-    :try_start_3
-    new-instance v1, Landroid/content/Intent;
+    iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$4;->val$msg:Ljava/lang/String;
 
-    const-string/jumbo v4, "android.intent.action.MAIN"
+    const/4 v3, 0x0
 
-    invoke-direct {v1, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-static {v1, v2, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
-    .line 370
-    .local v1, "intent":Landroid/content/Intent;
-    const-string/jumbo v4, "android.intent.category.HOME"
+    move-result-object v0
 
-    invoke-virtual {v1, v4}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
+    .line 363
+    .local v0, "toast":Landroid/widget/Toast;
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 371
-    const/high16 v4, 0x10000000
-
-    invoke-virtual {v1, v4}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
-
-    .line 372
-    iget-object v4, p0, Lcom/samsung/privilege/activity/MainPagerActivity$4;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
-
-    invoke-virtual {v4, v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->startActivity(Landroid/content/Intent;)V
-    :try_end_1b
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_23
-
-    .line 383
-    :goto_1b
-    :try_start_1b
-    invoke-static {}, Landroid/os/Process;->myPid()I
-
-    move-result v2
-
-    .line 384
-    .local v2, "pid":I
-    invoke-static {v2}, Landroid/os/Process;->killProcess(I)V
-    :try_end_22
-    .catch Ljava/lang/Exception; {:try_start_1b .. :try_end_22} :catch_49
-
-    .line 388
-    .end local v2    # "pid":I
-    :goto_22
+    .line 364
     return-void
-
-    .line 373
-    .end local v1    # "intent":Landroid/content/Intent;
-    :catch_23
-    move-exception v0
-
-    .line 374
-    .local v0, "e":Ljava/lang/Exception;
-    const-string/jumbo v4, "content://someURI"
-
-    invoke-static {v4}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v3
-
-    .line 375
-    .local v3, "uri":Landroid/net/Uri;
-    new-instance v1, Landroid/content/Intent;
-
-    const/4 v4, 0x0
-
-    invoke-direct {v1, v4, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
-
-    .line 376
-    .restart local v1    # "intent":Landroid/content/Intent;
-    const-string/jumbo v4, "exit_app"
-
-    const/4 v5, 0x1
-
-    invoke-virtual {v1, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 377
-    const/high16 v4, 0x14000000
-
-    invoke-virtual {v1, v4}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    .line 378
-    iget-object v4, p0, Lcom/samsung/privilege/activity/MainPagerActivity$4;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
-
-    const/4 v5, -0x1
-
-    invoke-virtual {v4, v5, v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->setResult(ILandroid/content/Intent;)V
-
-    .line 379
-    iget-object v4, p0, Lcom/samsung/privilege/activity/MainPagerActivity$4;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
-
-    invoke-virtual {v4}, Lcom/samsung/privilege/activity/MainPagerActivity;->finish()V
-
-    goto :goto_1b
-
-    .line 385
-    .end local v0    # "e":Ljava/lang/Exception;
-    .end local v3    # "uri":Landroid/net/Uri;
-    :catch_49
-    move-exception v4
-
-    goto :goto_22
 .end method

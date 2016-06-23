@@ -60,7 +60,7 @@
     .registers 2
 
     .prologue
-    .line 303
+    .line 309
     new-instance v0, Landroid/support/v4/util/Pools$SimplePool;
 
     const/16 v1, 0x14
@@ -76,10 +76,10 @@
     .registers 1
 
     .prologue
-    .line 305
+    .line 311
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 306
+    .line 312
     return-void
 .end method
 
@@ -87,7 +87,7 @@
     .registers 1
 
     .prologue
-    .line 322
+    .line 328
     :cond_0
     sget-object v0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->sPool:Landroid/support/v4/util/Pools$Pool;
 
@@ -97,7 +97,7 @@
 
     if-nez v0, :cond_0
 
-    .line 323
+    .line 329
     return-void
 .end method
 
@@ -105,7 +105,7 @@
     .registers 2
 
     .prologue
-    .line 309
+    .line 315
     sget-object v1, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->sPool:Landroid/support/v4/util/Pools$Pool;
 
     invoke-interface {v1}, Landroid/support/v4/util/Pools$Pool;->acquire()Ljava/lang/Object;
@@ -114,7 +114,7 @@
 
     check-cast v0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;
 
-    .line 310
+    .line 316
     .local v0, "record":Landroid/support/v7/widget/ViewInfoStore$InfoRecord;
     if-nez v0, :cond_f
 
@@ -134,22 +134,22 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 314
+    .line 320
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->flags:I
 
-    .line 315
+    .line 321
     iput-object v1, p0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->preInfo:Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
 
-    .line 316
+    .line 322
     iput-object v1, p0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->postInfo:Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
 
-    .line 317
+    .line 323
     sget-object v0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->sPool:Landroid/support/v4/util/Pools$Pool;
 
     invoke-interface {v0, p0}, Landroid/support/v4/util/Pools$Pool;->release(Ljava/lang/Object;)Z
 
-    .line 318
+    .line 324
     return-void
 .end method

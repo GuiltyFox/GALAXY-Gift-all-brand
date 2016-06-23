@@ -91,7 +91,19 @@
     .line 76
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/menu/MarketPlaceMenuModel;->id:Ljava/lang/String;
 
+    if-nez v0, :cond_a
+
+    const-string/jumbo v0, ""
+
+    iput-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/menu/MarketPlaceMenuModel;->id:Ljava/lang/String;
+
+    :goto_9
     return-object v0
+
+    :cond_a
+    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/menu/MarketPlaceMenuModel;->id:Ljava/lang/String;
+
+    goto :goto_9
 .end method
 
 .method public getImage_url()Ljava/lang/String;

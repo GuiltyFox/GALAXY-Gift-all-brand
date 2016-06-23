@@ -69,7 +69,7 @@
 
     iput-object v0, p0, Landroid/support/v7/widget/ViewInfoStore;->mOldChangedHolders:Landroid/support/v4/util/LongSparseArray;
 
-    .line 288
+    .line 294
     return-void
 .end method
 
@@ -476,10 +476,10 @@
     .registers 1
 
     .prologue
-    .line 271
+    .line 277
     invoke-static {}, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->drainCache()V
 
-    .line 272
+    .line 278
     return-void
 .end method
 
@@ -488,10 +488,10 @@
     .param p1, "viewHolder"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     .prologue
-    .line 275
+    .line 281
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/ViewInfoStore;->removeFromDisappearedInLayout(Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
 
-    .line 276
+    .line 282
     return-void
 .end method
 
@@ -545,7 +545,7 @@
 
     .local v0, "index":I
     :goto_8
-    if-ltz v0, :cond_7a
+    if-ltz v0, :cond_82
 
     .line 224
     iget-object v3, p0, Landroid/support/v7/widget/ViewInfoStore;->mLayoutHolderMap:Landroid/support/v4/util/ArrayMap;
@@ -579,7 +579,7 @@
     .line 228
     invoke-interface {p1, v2}, Landroid/support/v7/widget/ViewInfoStore$ProcessCallback;->unused(Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
 
-    .line 249
+    .line 255
     :cond_24
     :goto_24
     invoke-static {v1}, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->recycle(Landroid/support/v7/widget/ViewInfoStore$InfoRecord;)V
@@ -595,9 +595,20 @@
 
     and-int/lit8 v3, v3, 0x1
 
-    if-eqz v3, :cond_38
+    if-eqz v3, :cond_40
 
     .line 231
+    iget-object v3, v1, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->preInfo:Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+
+    if-nez v3, :cond_38
+
+    .line 234
+    invoke-interface {p1, v2}, Landroid/support/v7/widget/ViewInfoStore$ProcessCallback;->unused(Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
+
+    goto :goto_24
+
+    .line 236
+    :cond_38
     iget-object v3, v1, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->preInfo:Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
 
     iget-object v4, v1, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->postInfo:Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
@@ -606,17 +617,17 @@
 
     goto :goto_24
 
-    .line 232
-    :cond_38
+    .line 238
+    :cond_40
     iget v3, v1, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->flags:I
 
     and-int/lit8 v3, v3, 0xe
 
     const/16 v4, 0xe
 
-    if-ne v3, v4, :cond_48
+    if-ne v3, v4, :cond_50
 
-    .line 234
+    .line 240
     iget-object v3, v1, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->preInfo:Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
 
     iget-object v4, v1, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->postInfo:Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
@@ -625,17 +636,17 @@
 
     goto :goto_24
 
-    .line 235
-    :cond_48
+    .line 241
+    :cond_50
     iget v3, v1, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->flags:I
 
     and-int/lit8 v3, v3, 0xc
 
     const/16 v4, 0xc
 
-    if-ne v3, v4, :cond_58
+    if-ne v3, v4, :cond_60
 
-    .line 237
+    .line 243
     iget-object v3, v1, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->preInfo:Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
 
     iget-object v4, v1, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->postInfo:Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
@@ -644,15 +655,15 @@
 
     goto :goto_24
 
-    .line 238
-    :cond_58
+    .line 244
+    :cond_60
     iget v3, v1, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->flags:I
 
     and-int/lit8 v3, v3, 0x4
 
-    if-eqz v3, :cond_65
+    if-eqz v3, :cond_6d
 
-    .line 240
+    .line 246
     iget-object v3, v1, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->preInfo:Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
 
     const/4 v4, 0x0
@@ -661,15 +672,15 @@
 
     goto :goto_24
 
-    .line 241
-    :cond_65
+    .line 247
+    :cond_6d
     iget v3, v1, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->flags:I
 
     and-int/lit8 v3, v3, 0x8
 
-    if-eqz v3, :cond_73
+    if-eqz v3, :cond_7b
 
-    .line 243
+    .line 249
     iget-object v3, v1, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->preInfo:Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
 
     iget-object v4, v1, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->postInfo:Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
@@ -678,8 +689,8 @@
 
     goto :goto_24
 
-    .line 244
-    :cond_73
+    .line 250
+    :cond_7b
     iget v3, v1, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->flags:I
 
     and-int/lit8 v3, v3, 0x2
@@ -688,10 +699,10 @@
 
     goto :goto_24
 
-    .line 251
+    .line 257
     .end local v1    # "record":Landroid/support/v7/widget/ViewInfoStore$InfoRecord;
     .end local v2    # "viewHolder":Landroid/support/v7/widget/RecyclerView$ViewHolder;
-    :cond_7a
+    :cond_82
     return-void
 .end method
 
@@ -733,7 +744,7 @@
     .param p1, "holder"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     .prologue
-    .line 258
+    .line 264
     iget-object v2, p0, Landroid/support/v7/widget/ViewInfoStore;->mOldChangedHolders:Landroid/support/v4/util/LongSparseArray;
 
     invoke-virtual {v2}, Landroid/support/v4/util/LongSparseArray;->size()I
@@ -746,7 +757,7 @@
     :goto_8
     if-ltz v0, :cond_17
 
-    .line 259
+    .line 265
     iget-object v2, p0, Landroid/support/v7/widget/ViewInfoStore;->mOldChangedHolders:Landroid/support/v4/util/LongSparseArray;
 
     invoke-virtual {v2, v0}, Landroid/support/v4/util/LongSparseArray;->valueAt(I)Ljava/lang/Object;
@@ -755,12 +766,12 @@
 
     if-ne p1, v2, :cond_25
 
-    .line 260
+    .line 266
     iget-object v2, p0, Landroid/support/v7/widget/ViewInfoStore;->mOldChangedHolders:Landroid/support/v4/util/LongSparseArray;
 
     invoke-virtual {v2, v0}, Landroid/support/v4/util/LongSparseArray;->removeAt(I)V
 
-    .line 264
+    .line 270
     :cond_17
     iget-object v2, p0, Landroid/support/v7/widget/ViewInfoStore;->mLayoutHolderMap:Landroid/support/v4/util/ArrayMap;
 
@@ -770,18 +781,18 @@
 
     check-cast v1, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;
 
-    .line 265
+    .line 271
     .local v1, "info":Landroid/support/v7/widget/ViewInfoStore$InfoRecord;
     if-eqz v1, :cond_24
 
-    .line 266
+    .line 272
     invoke-static {v1}, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->recycle(Landroid/support/v7/widget/ViewInfoStore$InfoRecord;)V
 
-    .line 268
+    .line 274
     :cond_24
     return-void
 
-    .line 258
+    .line 264
     .end local v1    # "info":Landroid/support/v7/widget/ViewInfoStore$InfoRecord;
     :cond_25
     add-int/lit8 v0, v0, -0x1

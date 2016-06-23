@@ -188,7 +188,7 @@
     .param p2, "nfcResult"    # Lcom/bzbs/bean/NFCResult;
 
     .prologue
-    const v5, 0x7f090243
+    const v5, 0x7f090244
 
     .line 473
     iget-object v3, p1, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
@@ -1932,7 +1932,7 @@
     iput-object v1, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->callbackManager:Lcom/facebook/CallbackManager;
 
     .line 79
-    const v1, 0x7f1001b7
+    const v1, 0x7f1001bf
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/QRLandingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1998,7 +1998,7 @@
     if-lez v0, :cond_14d
 
     .line 411
-    const v0, 0x7f090247
+    const v0, 0x7f090248
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getString(I)Ljava/lang/String;
 

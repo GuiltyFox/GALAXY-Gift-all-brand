@@ -59,12 +59,12 @@
 
     .line 51
     .local v3, "dialogBadge":Landroid/app/Dialog;
-    const v14, 0x7f040157
+    const v14, 0x7f040162
 
     invoke-virtual {v3, v14}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 53
-    const v14, 0x7f100665
+    const v14, 0x7f100682
 
     invoke-virtual {v3, v14}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -74,7 +74,7 @@
 
     .line 54
     .local v7, "layoutMarketRoot":Landroid/widget/RelativeLayout;
-    const v14, 0x7f100660
+    const v14, 0x7f10067d
 
     invoke-virtual {v3, v14}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -84,7 +84,7 @@
 
     .line 55
     .local v6, "ivBadge":Landroid/widget/ImageView;
-    const v14, 0x7f1001de
+    const v14, 0x7f1001e7
 
     invoke-virtual {v3, v14}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -94,7 +94,7 @@
 
     .line 56
     .local v9, "tvBadgeName":Landroid/widget/TextView;
-    const v14, 0x7f100661
+    const v14, 0x7f10067e
 
     invoke-virtual {v3, v14}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -104,7 +104,7 @@
 
     .line 57
     .local v8, "tvBadgeLevel":Landroid/widget/TextView;
-    const v14, 0x7f100662
+    const v14, 0x7f10067f
 
     invoke-virtual {v3, v14}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -114,7 +114,7 @@
 
     .line 58
     .local v13, "tvYouEarned":Landroid/widget/TextView;
-    const v14, 0x7f100666
+    const v14, 0x7f100683
 
     invoke-virtual {v3, v14}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -124,7 +124,7 @@
 
     .line 59
     .local v11, "tvMarket":Landroid/widget/TextView;
-    const v14, 0x7f1002ae
+    const v14, 0x7f1002b7
 
     invoke-virtual {v3, v14}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -134,7 +134,7 @@
 
     .line 60
     .local v12, "tvPoint":Landroid/widget/TextView;
-    const v14, 0x7f100156
+    const v14, 0x7f100157
 
     invoke-virtual {v3, v14}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 

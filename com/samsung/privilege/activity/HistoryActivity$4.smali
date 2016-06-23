@@ -80,7 +80,7 @@
 
     move-object/from16 v25, v0
 
-    const v26, 0x7f09024a
+    const v26, 0x7f09024b
 
     invoke-virtual/range {v25 .. v26}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -284,7 +284,7 @@
 
     move-object/from16 v24, v0
 
-    const v25, 0x7f090383
+    const v25, 0x7f090384
 
     invoke-virtual/range {v24 .. v25}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -301,7 +301,7 @@
 
     move-object/from16 v24, v0
 
-    const v25, 0x7f090309
+    const v25, 0x7f09030a
 
     invoke-virtual/range {v24 .. v25}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -325,7 +325,7 @@
 
     move-object/from16 v25, v0
 
-    const v26, 0x7f090316
+    const v26, 0x7f090317
 
     invoke-virtual/range {v25 .. v26}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -349,7 +349,7 @@
 
     move-object/from16 v25, v0
 
-    const v26, 0x7f090327
+    const v26, 0x7f090328
 
     .line 184
     invoke-virtual/range {v25 .. v26}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
@@ -531,7 +531,7 @@
 
     move-object/from16 v27, v0
 
-    const v28, 0x7f09026e
+    const v28, 0x7f09026f
 
     invoke-virtual/range {v27 .. v28}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -891,7 +891,7 @@
 
     move-object/from16 v24, v0
 
-    const v25, 0x7f090383
+    const v25, 0x7f090384
 
     invoke-virtual/range {v24 .. v25}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -924,7 +924,7 @@
 
     move-object/from16 v25, v0
 
-    const v26, 0x7f090316
+    const v26, 0x7f090317
 
     invoke-virtual/range {v25 .. v26}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -948,7 +948,7 @@
 
     move-object/from16 v25, v0
 
-    const v26, 0x7f090327
+    const v26, 0x7f090328
 
     .line 243
     invoke-virtual/range {v25 .. v26}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
@@ -1115,7 +1115,7 @@
 
     move-object/from16 v25, v0
 
-    const v26, 0x7f0900aa
+    const v26, 0x7f0900ab
 
     invoke-virtual/range {v25 .. v26}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -1161,7 +1161,7 @@
 
     move-object/from16 v25, v0
 
-    const v26, 0x7f0900ab
+    const v26, 0x7f0900ac
 
     invoke-virtual/range {v25 .. v26}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -1197,7 +1197,7 @@
 
     move-object/from16 v25, v0
 
-    const v26, 0x7f0900ac
+    const v26, 0x7f0900ad
 
     invoke-virtual/range {v25 .. v26}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -1219,7 +1219,7 @@
 
     move-object/from16 v24, v0
 
-    const v25, 0x7f090342
+    const v25, 0x7f090343
 
     invoke-virtual/range {v24 .. v25}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -1233,7 +1233,7 @@
 
     move-object/from16 v24, v0
 
-    const v25, 0x7f0900f1
+    const v25, 0x7f0900f2
 
     invoke-virtual/range {v24 .. v25}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 

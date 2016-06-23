@@ -258,7 +258,7 @@
 
     invoke-direct/range {v22 .. v22}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v23, "samsung"
+    sget-object v23, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
     invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -270,7 +270,7 @@
 
     move-result-object v22
 
-    const-string v23, "GT-I9100"
+    sget-object v23, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
     invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

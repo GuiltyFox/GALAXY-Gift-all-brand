@@ -214,19 +214,19 @@
     .line 35
     .end local v0    # "bundle":Landroid/os/Bundle;
     :pswitch_84
-    new-instance v2, Lcom/bzbs/marketplace/fragment/MarketPlaceDashboardFragment;
+    new-instance v2, Lcom/bzbs/marketplace/fragment/DashboardFragment;
 
-    invoke-direct {v2}, Lcom/bzbs/marketplace/fragment/MarketPlaceDashboardFragment;-><init>()V
+    invoke-direct {v2}, Lcom/bzbs/marketplace/fragment/DashboardFragment;-><init>()V
 
     .line 36
-    .local v2, "fm01":Lcom/bzbs/marketplace/fragment/MarketPlaceDashboardFragment;
+    .local v2, "fm01":Lcom/bzbs/marketplace/fragment/DashboardFragment;
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     .line 37
     .restart local v0    # "bundle":Landroid/os/Bundle;
-    invoke-virtual {v2, v0}, Lcom/bzbs/marketplace/fragment/MarketPlaceDashboardFragment;->setArguments(Landroid/os/Bundle;)V
+    invoke-virtual {v2, v0}, Lcom/bzbs/marketplace/fragment/DashboardFragment;->setArguments(Landroid/os/Bundle;)V
 
     goto :goto_83
 

@@ -1,14 +1,11 @@
 .class Lcom/samsung/privilege/activity/MainPagerActivity$36;
-.super Ljava/lang/Object;
+.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
 .source "MainPagerActivity.java"
-
-# interfaces
-.implements Landroid/support/v4/view/ViewPager$OnPageChangeListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->processJsonCategory(Ljava/lang/String;Z)V
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->loadCampaignCategory()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,437 +17,359 @@
 # instance fields
 .field final synthetic this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-.field final synthetic val$listCats:Ljava/util/ArrayList;
-
-.field final synthetic val$viewPagerTab:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
+.field final synthetic val$startTime:J
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;Ljava/util/ArrayList;Lcom/ogaclejapan/smarttablayout/SmartTabLayout;)V
+.method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;J)V
     .registers 4
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 2220
+    .line 2083
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->val$listCats:Ljava/util/ArrayList;
+    iput-wide p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->val$startTime:J
 
-    iput-object p3, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->val$viewPagerTab:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onPageScrollStateChanged(I)V
-    .registers 2
-    .param p1, "state"    # I
+.method public onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
+    .registers 15
+    .param p1, "statusCode"    # I
+    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
+    .param p3, "responseBody"    # [B
+    .param p4, "error"    # Ljava/lang/Throwable;
 
     .prologue
-    .line 2285
-    return-void
-.end method
+    .line 2127
+    :try_start_0
+    new-instance v4, Ljava/util/Date;
 
-.method public onPageScrolled(IFI)V
-    .registers 4
-    .param p1, "position"    # I
-    .param p2, "positionOffset"    # F
-    .param p3, "positionOffsetPixels"    # I
+    invoke-direct {v4}, Ljava/util/Date;-><init>()V
 
-    .prologue
-    .line 2224
-    return-void
-.end method
+    invoke-virtual {v4}, Ljava/util/Date;->getTime()J
 
-.method public onPageSelected(I)V
-    .registers 13
-    .param p1, "position"    # I
+    move-result-wide v2
 
-    .prologue
-    const v10, 0x7f10065e
+    .line 2128
+    .local v2, "endTime":J
+    const-string/jumbo v4, "MainPager"
 
-    const v9, 0x7f100102
+    const-string/jumbo v5, "loadPager"
 
-    .line 2228
-    iget-object v7, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    const-string/jumbo v6, "Failure"
 
-    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->gPreviousSelectedTab:Landroid/view/View;
-    invoke-static {v7}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$1500(Lcom/samsung/privilege/activity/MainPagerActivity;)Landroid/view/View;
+    iget-wide v8, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->val$startTime:J
 
-    move-result-object v7
+    sub-long v8, v2, v8
 
-    if-eqz v7, :cond_6d
+    invoke-static {v4, v5, v6, v8, v9}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsTiming(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
+    :try_end_19
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_19} :catch_6b
 
-    .line 2229
-    iget-object v7, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 2134
+    .end local v2    # "endTime":J
+    :goto_19
+    :try_start_19
+    new-instance v1, Ljava/lang/String;
 
-    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->gPreviousSelectedTab:Landroid/view/View;
-    invoke-static {v7}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$1500(Lcom/samsung/privilege/activity/MainPagerActivity;)Landroid/view/View;
+    invoke-direct {v1, p3}, Ljava/lang/String;-><init>([B)V
 
-    move-result-object v7
+    .line 2135
+    .local v1, "response_text":Ljava/lang/String;
+    iget-object v4, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    invoke-virtual {v7, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/widget/ImageView;
-
-    .line 2230
-    .local v2, "imageIconPrevious":Landroid/widget/ImageView;
-    iget-object v7, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->gPreviousSelectedTab:Landroid/view/View;
-    invoke-static {v7}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$1500(Lcom/samsung/privilege/activity/MainPagerActivity;)Landroid/view/View;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/widget/TextView;
-
-    .line 2231
-    .local v5, "textTitlePrevious":Landroid/widget/TextView;
-    sget v7, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->gScreenWidth:I
-
-    div-int/lit8 v7, v7, 0x4
-
-    invoke-virtual {v5, v7}, Landroid/widget/TextView;->setMinWidth(I)V
-
-    .line 2232
-    const-string/jumbo v7, "#7ed1f3"
-
-    invoke-static {v7}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v7
-
-    invoke-virtual {v5, v7}, Landroid/widget/TextView;->setTextColor(I)V
-
-    .line 2240
-    iget-object v7, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->val$listCats:Ljava/util/ArrayList;
-
-    iget-object v8, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->gPreviousSelectedIndex:I
-    invoke-static {v8}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$1600(Lcom/samsung/privilege/activity/MainPagerActivity;)I
-
-    move-result v8
-
-    invoke-virtual {v7, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/bzbs/bean/CampaignCategory;
-
-    .line 2242
-    .local v3, "objCat":Lcom/bzbs/bean/CampaignCategory;
-    iget-object v7, v3, Lcom/bzbs/bean/CampaignCategory;->image_url_inactive:Ljava/lang/String;
-
-    if-eqz v7, :cond_e7
-
-    iget-object v7, v3, Lcom/bzbs/bean/CampaignCategory;->image_url_inactive:Ljava/lang/String;
-
-    const-string/jumbo v8, ""
-
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_e7
-
-    .line 2243
-    iget-object v7, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
-
-    invoke-static {v7}, Lcom/bumptech/glide/Glide;->with(Landroid/support/v4/app/FragmentActivity;)Lcom/bumptech/glide/RequestManager;
-
-    move-result-object v7
-
-    iget-object v8, v3, Lcom/bzbs/bean/CampaignCategory;->image_url_inactive:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Lcom/bumptech/glide/RequestManager;->load(Ljava/lang/String;)Lcom/bumptech/glide/DrawableTypeRequest;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lcom/bumptech/glide/DrawableTypeRequest;->fitCenter()Lcom/bumptech/glide/DrawableRequestBuilder;
-
-    move-result-object v7
-
-    sget-object v8, Lcom/bumptech/glide/load/engine/DiskCacheStrategy;->ALL:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
-
-    invoke-virtual {v7, v8}, Lcom/bumptech/glide/DrawableRequestBuilder;->diskCacheStrategy(Lcom/bumptech/glide/load/engine/DiskCacheStrategy;)Lcom/bumptech/glide/DrawableRequestBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v2}, Lcom/bumptech/glide/DrawableRequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
-
-    .line 2250
-    .end local v2    # "imageIconPrevious":Landroid/widget/ImageView;
-    .end local v3    # "objCat":Lcom/bzbs/bean/CampaignCategory;
-    .end local v5    # "textTitlePrevious":Landroid/widget/TextView;
-    :cond_6d
-    :goto_6d
-    iget-object v7, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->val$viewPagerTab:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
-
-    invoke-virtual {v7, p1}, Lcom/ogaclejapan/smarttablayout/SmartTabLayout;->getTabAt(I)Landroid/view/View;
-
-    move-result-object v6
-
-    .line 2251
-    .local v6, "view":Landroid/view/View;
-    invoke-virtual {v6, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/ImageView;
-
-    .line 2252
-    .local v1, "imageIcon":Landroid/widget/ImageView;
-    invoke-virtual {v6, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->TAG:Ljava/lang/String;
+    invoke-static {v4}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$200(Lcom/samsung/privilege/activity/MainPagerActivity;)Ljava/lang/String;
 
     move-result-object v4
 
-    check-cast v4, Landroid/widget/TextView;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    .line 2253
-    .local v4, "textTitle":Landroid/widget/TextView;
-    sget v7, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->gScreenWidth:I
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    div-int/lit8 v7, v7, 0x4
+    const-string/jumbo v6, "(loadCampaignCategory|onFailure)response_code="
 
-    invoke-virtual {v4, v7}, Landroid/widget/TextView;->setMinWidth(I)V
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2255
-    const-string/jumbo v7, "#ffffff"
+    move-result-object v5
 
-    invoke-static {v7}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result v7
+    move-result-object v5
 
-    invoke-virtual {v4, v7}, Landroid/widget/TextView;->setTextColor(I)V
+    const-string/jumbo v6, ",response="
 
-    .line 2267
-    iget-object v7, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->val$listCats:Ljava/util/ArrayList;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move-result-object v5
 
-    move-result-object v3
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    check-cast v3, Lcom/bzbs/bean/CampaignCategory;
+    move-result-object v5
 
-    .line 2269
-    .restart local v3    # "objCat":Lcom/bzbs/bean/CampaignCategory;
-    iget-object v7, v3, Lcom/bzbs/bean/CampaignCategory;->image_url_active:Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    if-eqz v7, :cond_123
+    move-result-object v5
 
-    iget-object v7, v3, Lcom/bzbs/bean/CampaignCategory;->image_url_active:Ljava/lang/String;
+    invoke-static {v4, v5}, Lcom/bzbs/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_46
+    .catch Ljava/lang/Exception; {:try_start_19 .. :try_end_46} :catch_4c
 
-    const-string/jumbo v8, ""
+    .line 2140
+    .end local v1    # "response_text":Ljava/lang/String;
+    :goto_46
+    iget-object v4, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {v4, p1, p2, p3, p4}, Lcom/bzbs/util/DialogUtil;->showDialogHttpFailure(Landroid/content/Context;I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
 
-    move-result v7
-
-    if-nez v7, :cond_123
-
-    .line 2270
-    iget-object v7, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
-
-    invoke-static {v7}, Lcom/bumptech/glide/Glide;->with(Landroid/support/v4/app/FragmentActivity;)Lcom/bumptech/glide/RequestManager;
-
-    move-result-object v7
-
-    iget-object v8, v3, Lcom/bzbs/bean/CampaignCategory;->image_url_active:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Lcom/bumptech/glide/RequestManager;->load(Ljava/lang/String;)Lcom/bumptech/glide/DrawableTypeRequest;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lcom/bumptech/glide/DrawableTypeRequest;->fitCenter()Lcom/bumptech/glide/DrawableRequestBuilder;
-
-    move-result-object v7
-
-    sget-object v8, Lcom/bumptech/glide/load/engine/DiskCacheStrategy;->ALL:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
-
-    invoke-virtual {v7, v8}, Lcom/bumptech/glide/DrawableRequestBuilder;->diskCacheStrategy(Lcom/bumptech/glide/load/engine/DiskCacheStrategy;)Lcom/bumptech/glide/DrawableRequestBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v1}, Lcom/bumptech/glide/DrawableRequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
-
-    .line 2276
-    :goto_c0
-    const-string/jumbo v7, "Main Page"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v9, "Scroll Bar Category "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    iget-object v9, v3, Lcom/bzbs/bean/CampaignCategory;->name_en:Ljava/lang/String;
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsEvent(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 2278
-    iget-object v7, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
-
-    # setter for: Lcom/samsung/privilege/activity/MainPagerActivity;->gPreviousSelectedTab:Landroid/view/View;
-    invoke-static {v7, v6}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$1502(Lcom/samsung/privilege/activity/MainPagerActivity;Landroid/view/View;)Landroid/view/View;
-
-    .line 2279
-    iget-object v7, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
-
-    # setter for: Lcom/samsung/privilege/activity/MainPagerActivity;->gPreviousSelectedIndex:I
-    invoke-static {v7, p1}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$1602(Lcom/samsung/privilege/activity/MainPagerActivity;I)I
-
-    .line 2280
+    .line 2141
     return-void
 
-    .line 2245
-    .end local v1    # "imageIcon":Landroid/widget/ImageView;
-    .end local v4    # "textTitle":Landroid/widget/TextView;
-    .end local v6    # "view":Landroid/view/View;
-    .restart local v2    # "imageIconPrevious":Landroid/widget/ImageView;
-    .restart local v5    # "textTitlePrevious":Landroid/widget/TextView;
-    :cond_e7
-    new-instance v7, Ljava/lang/StringBuilder;
+    .line 2136
+    :catch_4c
+    move-exception v0
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    .line 2137
+    .local v0, "e":Ljava/lang/Exception;
+    iget-object v4, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    sget-object v8, Lcom/bzbs/data/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
+    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->TAG:Ljava/lang/String;
+    invoke-static {v4}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$200(Lcom/samsung/privilege/activity/MainPagerActivity;)Ljava/lang/String;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v4
 
-    move-result-object v7
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    const-string/jumbo v8, "api/campaigncat/"
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string/jumbo v6, "(loadCampaignCategory|onFailure)response_code="
 
-    move-result-object v7
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v8, v3, Lcom/bzbs/bean/CampaignCategory;->cat:I
+    move-result-object v5
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v5
 
-    const-string/jumbo v8, "_inactive/picture"
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v5
 
-    move-result-object v7
+    invoke-static {v4, v5}, Lcom/bzbs/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    goto :goto_46
+
+    .line 2129
+    .end local v0    # "e":Ljava/lang/Exception;
+    :catch_6b
+    move-exception v4
+
+    goto :goto_19
+.end method
+
+.method public onSuccess(I[Lcz/msebera/android/httpclient/Header;[B)V
+    .registers 14
+    .param p1, "statusCode"    # I
+    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
+    .param p3, "responseBody"    # [B
+
+    .prologue
+    .line 2087
+    :try_start_0
+    new-instance v5, Ljava/util/Date;
+
+    invoke-direct {v5}, Ljava/util/Date;-><init>()V
+
+    invoke-virtual {v5}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v2
+
+    .line 2088
+    .local v2, "endTime":J
+    const-string/jumbo v5, "MainPager"
+
+    const-string/jumbo v6, "loadPager"
+
+    const-string/jumbo v7, "Success"
+
+    iget-wide v8, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->val$startTime:J
+
+    sub-long v8, v2, v8
+
+    invoke-static {v5, v6, v7, v8, v9}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsTiming(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
+    :try_end_19
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_19} :catch_a9
+
+    .line 2093
+    .end local v2    # "endTime":J
+    :goto_19
+    new-instance v4, Ljava/lang/String;
+
+    invoke-direct {v4, p3}, Ljava/lang/String;-><init>([B)V
+
+    .line 2096
+    .local v4, "response_text":Ljava/lang/String;
+    iget-object v5, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->TAG:Ljava/lang/String;
+    invoke-static {v5}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$200(Lcom/samsung/privilege/activity/MainPagerActivity;)Ljava/lang/String;
+
+    move-result-object v5
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "(loadCampaignCategory|onComplete)response_code="
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string/jumbo v7, ",response="
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 2099
+    :try_start_46
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v6, "cache_category_gift_"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    invoke-virtual {v6}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v6
+
+    invoke-static {v6}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string/jumbo v6, "_"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    invoke-virtual {v6}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v6
+
+    invoke-static {v6}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2246
-    .local v0, "cat_img_url":Ljava/lang/String;
-    iget-object v7, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 2100
+    .local v0, "cacheName":Ljava/lang/String;
+    iget-object v5, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    invoke-static {v7}, Lcom/bumptech/glide/Glide;->with(Landroid/support/v4/app/FragmentActivity;)Lcom/bumptech/glide/RequestManager;
+    invoke-virtual {v5}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-virtual {v7, v0}, Lcom/bumptech/glide/RequestManager;->load(Ljava/lang/String;)Lcom/bumptech/glide/DrawableTypeRequest;
+    invoke-static {v0, v5}, Lcom/bzbs/util/LocalFileHelper;->readCatchFromSD(Ljava/lang/String;Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-virtual {v7}, Lcom/bumptech/glide/DrawableTypeRequest;->fitCenter()Lcom/bumptech/glide/DrawableRequestBuilder;
+    .line 2101
+    .local v1, "catch_category":Ljava/lang/String;
+    if-eqz v1, :cond_9e
 
-    move-result-object v7
+    const-string/jumbo v5, ""
 
-    sget-object v8, Lcom/bumptech/glide/load/engine/DiskCacheStrategy;->ALL:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
+    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v7, v8}, Lcom/bumptech/glide/DrawableRequestBuilder;->diskCacheStrategy(Lcom/bumptech/glide/load/engine/DiskCacheStrategy;)Lcom/bumptech/glide/DrawableRequestBuilder;
+    move-result v5
 
-    move-result-object v7
+    if-nez v5, :cond_9e
 
-    invoke-virtual {v7, v2}, Lcom/bumptech/glide/DrawableRequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
+    .line 2102
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    goto/16 :goto_6d
+    move-result-object v5
 
-    .line 2272
-    .end local v0    # "cat_img_url":Ljava/lang/String;
-    .end local v2    # "imageIconPrevious":Landroid/widget/ImageView;
-    .end local v5    # "textTitlePrevious":Landroid/widget/TextView;
-    .restart local v1    # "imageIcon":Landroid/widget/ImageView;
-    .restart local v4    # "textTitle":Landroid/widget/TextView;
-    .restart local v6    # "view":Landroid/view/View;
-    :cond_123
-    new-instance v7, Ljava/lang/StringBuilder;
+    invoke-virtual {v4}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v6
 
-    sget-object v8, Lcom/bzbs/data/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :try_end_99
+    .catch Ljava/lang/Exception; {:try_start_46 .. :try_end_99} :catch_9d
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v5
 
-    move-result-object v7
+    if-eqz v5, :cond_9e
 
-    const-string/jumbo v8, "api/campaigncat/"
+    .line 2122
+    .end local v0    # "cacheName":Ljava/lang/String;
+    .end local v1    # "catch_category":Ljava/lang/String;
+    :goto_9c
+    return-void
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 2106
+    :catch_9d
+    move-exception v5
 
-    move-result-object v7
+    .line 2110
+    :cond_9e
+    iget-object v5, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    iget v8, v3, Lcom/bzbs/bean/CampaignCategory;->cat:I
+    new-instance v6, Lcom/samsung/privilege/activity/MainPagerActivity$36$1;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-direct {v6, p0, v4}, Lcom/samsung/privilege/activity/MainPagerActivity$36$1;-><init>(Lcom/samsung/privilege/activity/MainPagerActivity$36;Ljava/lang/String;)V
 
-    move-result-object v7
+    invoke-virtual {v5, v6}, Lcom/samsung/privilege/activity/MainPagerActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    const-string/jumbo v8, "_active/picture"
+    goto :goto_9c
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 2089
+    .end local v4    # "response_text":Ljava/lang/String;
+    :catch_a9
+    move-exception v5
 
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 2273
-    .restart local v0    # "cat_img_url":Ljava/lang/String;
-    iget-object v7, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
-
-    invoke-static {v7}, Lcom/bumptech/glide/Glide;->with(Landroid/support/v4/app/FragmentActivity;)Lcom/bumptech/glide/RequestManager;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v0}, Lcom/bumptech/glide/RequestManager;->load(Ljava/lang/String;)Lcom/bumptech/glide/DrawableTypeRequest;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lcom/bumptech/glide/DrawableTypeRequest;->fitCenter()Lcom/bumptech/glide/DrawableRequestBuilder;
-
-    move-result-object v7
-
-    sget-object v8, Lcom/bumptech/glide/load/engine/DiskCacheStrategy;->ALL:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
-
-    invoke-virtual {v7, v8}, Lcom/bumptech/glide/DrawableRequestBuilder;->diskCacheStrategy(Lcom/bumptech/glide/load/engine/DiskCacheStrategy;)Lcom/bumptech/glide/DrawableRequestBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v1}, Lcom/bumptech/glide/DrawableRequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
-
-    goto/16 :goto_c0
+    goto/16 :goto_19
 .end method

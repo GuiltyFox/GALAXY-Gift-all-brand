@@ -15,7 +15,7 @@
 
 
 # static fields
-.field public static final zxing_preferences:I = 0x7f070005
+.field public static final zxing_preferences:I = 0x7f07000c
 
 
 # direct methods

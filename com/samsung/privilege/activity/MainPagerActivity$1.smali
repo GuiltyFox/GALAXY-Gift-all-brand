@@ -29,7 +29,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 188
+    .line 192
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->val$paramMessageGCM:Lcom/bzbs/bean/MessageGCM;
@@ -45,7 +45,7 @@
     .registers 4
 
     .prologue
-    .line 190
+    .line 194
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->val$paramMessageGCM:Lcom/bzbs/bean/MessageGCM;
 
     iget-object v0, v0, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
@@ -58,7 +58,7 @@
 
     if-eqz v0, :cond_2c
 
-    .line 191
+    .line 195
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
@@ -79,7 +79,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->SetNotificationUnReadCount(Landroid/content/Context;I)Z
 
-    .line 192
+    .line 196
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->val$paramMessageGCM:Lcom/bzbs/bean/MessageGCM;
@@ -88,12 +88,12 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/DialogUtil;->showDialogMessage(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 196
+    .line 200
     :cond_2b
     :goto_2b
     return-void
 
-    .line 193
+    .line 197
     :cond_2c
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->val$paramMessageGCM:Lcom/bzbs/bean/MessageGCM;
 
@@ -107,7 +107,7 @@
 
     if-eqz v0, :cond_2b
 
-    .line 194
+    .line 198
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     const-string/jumbo v1, "Power Buy"

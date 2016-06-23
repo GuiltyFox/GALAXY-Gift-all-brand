@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 446
+    .line 498
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$3;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,10 +41,10 @@
     .registers 8
 
     .prologue
-    .line 450
+    .line 502
     const/4 v0, 0x0
 
-    .line 451
+    .line 503
     .local v0, "need_to_refresh":Z
     :try_start_1
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$3;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -57,7 +57,7 @@
 
     check-cast v1, Landroid/widget/ScrollView;
 
-    .line 452
+    .line 504
     .local v1, "scrollRoot":Landroid/widget/ScrollView;
     invoke-virtual {v1}, Landroid/widget/ScrollView;->getVisibility()I
 
@@ -67,16 +67,16 @@
 
     if-ne v2, v3, :cond_15
 
-    .line 453
+    .line 505
     const/4 v0, 0x1
 
-    .line 456
+    .line 508
     :cond_15
     const/4 v2, 0x1
 
     if-ne v0, v2, :cond_2b
 
-    .line 457
+    .line 509
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$3;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$3;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -102,13 +102,13 @@
     :try_end_2b
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_2b} :catch_2c
 
-    .line 462
+    .line 514
     .end local v1    # "scrollRoot":Landroid/widget/ScrollView;
     :cond_2b
     :goto_2b
     return-void
 
-    .line 459
+    .line 511
     :catch_2c
     move-exception v2
 

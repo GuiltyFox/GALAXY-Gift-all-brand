@@ -42,7 +42,7 @@
     .registers 2
 
     .prologue
-    .line 32
+    .line 33
     new-instance v0, Ljava/text/DecimalFormat;
 
     const-string/jumbo v1, "#,###,###.##"
@@ -51,7 +51,7 @@
 
     sput-object v0, Lcom/samsung/privilege/GalaxyGift;->formatter:Ljava/text/DecimalFormat;
 
-    .line 39
+    .line 40
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -65,67 +65,106 @@
     .registers 1
 
     .prologue
-    .line 27
+    .line 28
     invoke-direct {p0}, Landroid/support/multidex/MultiDexApplication;-><init>()V
 
     return-void
 .end method
 
 .method public static declared-synchronized getDefaultTracker(Landroid/content/Context;)Lcom/google/android/gms/analytics/Tracker;
-    .registers 6
+    .registers 7
     .param p0, "mContext"    # Landroid/content/Context;
 
     .prologue
-    .line 83
+    const/4 v5, 0x1
+
+    .line 84
     const-class v3, Lcom/samsung/privilege/GalaxyGift;
 
     monitor-enter v3
 
-    :try_start_3
+    :try_start_4
     sget-object v2, Lcom/samsung/privilege/GalaxyGift;->mTracker:Lcom/google/android/gms/analytics/Tracker;
-    :try_end_5
-    .catchall {:try_start_3 .. :try_end_5} :catchall_21
+    :try_end_6
+    .catchall {:try_start_4 .. :try_end_6} :catchall_3e
 
-    if-nez v2, :cond_13
+    if-nez v2, :cond_26
 
-    .line 85
-    :try_start_7
+    .line 86
+    :try_start_8
     invoke-static {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->getInstance(Landroid/content/Context;)Lcom/google/android/gms/analytics/GoogleAnalytics;
 
     move-result-object v0
 
-    .line 87
+    .line 88
     .local v0, "analytics":Lcom/google/android/gms/analytics/GoogleAnalytics;
-    const/high16 v2, 0x7f070000
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK_BY_CARRIER(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string/jumbo v4, "402705486466922"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_41
+
+    .line 89
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->IS_PRODUCTION:Z
+
+    if-ne v2, v5, :cond_2a
+
+    .line 90
+    const v2, 0x7f070009
 
     invoke-virtual {v0, v2}, Lcom/google/android/gms/analytics/GoogleAnalytics;->newTracker(I)Lcom/google/android/gms/analytics/Tracker;
 
     move-result-object v2
 
     sput-object v2, Lcom/samsung/privilege/GalaxyGift;->mTracker:Lcom/google/android/gms/analytics/Tracker;
-    :try_end_13
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_13} :catch_17
-    .catchall {:try_start_7 .. :try_end_13} :catchall_21
+    :try_end_26
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_26} :catch_34
+    .catchall {:try_start_8 .. :try_end_26} :catchall_3e
 
-    .line 92
+    .line 123
     .end local v0    # "analytics":Lcom/google/android/gms/analytics/GoogleAnalytics;
-    :cond_13
-    :try_start_13
+    :cond_26
+    :goto_26
+    :try_start_26
     sget-object v2, Lcom/samsung/privilege/GalaxyGift;->mTracker:Lcom/google/android/gms/analytics/Tracker;
-    :try_end_15
-    .catchall {:try_start_13 .. :try_end_15} :catchall_21
+    :try_end_28
+    .catchall {:try_start_26 .. :try_end_28} :catchall_3e
 
     monitor-exit v3
 
     return-object v2
 
-    .line 88
-    :catch_17
+    .line 92
+    .restart local v0    # "analytics":Lcom/google/android/gms/analytics/GoogleAnalytics;
+    :cond_2a
+    const v2, 0x7f07000a
+
+    :try_start_2d
+    invoke-virtual {v0, v2}, Lcom/google/android/gms/analytics/GoogleAnalytics;->newTracker(I)Lcom/google/android/gms/analytics/Tracker;
+
+    move-result-object v2
+
+    sput-object v2, Lcom/samsung/privilege/GalaxyGift;->mTracker:Lcom/google/android/gms/analytics/Tracker;
+    :try_end_33
+    .catch Ljava/lang/Exception; {:try_start_2d .. :try_end_33} :catch_34
+    .catchall {:try_start_2d .. :try_end_33} :catchall_3e
+
+    goto :goto_26
+
+    .line 119
+    .end local v0    # "analytics":Lcom/google/android/gms/analytics/GoogleAnalytics;
+    :catch_34
     move-exception v1
 
-    .line 89
+    .line 120
     .local v1, "e":Ljava/lang/Exception;
-    :try_start_18
+    :try_start_35
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string/jumbo v4, "init context not null"
@@ -133,17 +172,177 @@
     invoke-direct {v2, v4}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v2
-    :try_end_21
-    .catchall {:try_start_18 .. :try_end_21} :catchall_21
+    :try_end_3e
+    .catchall {:try_start_35 .. :try_end_3e} :catchall_3e
 
-    .line 83
+    .line 84
     .end local v1    # "e":Ljava/lang/Exception;
-    :catchall_21
+    :catchall_3e
     move-exception v2
 
     monitor-exit v3
 
     throw v2
+
+    .line 94
+    .restart local v0    # "analytics":Lcom/google/android/gms/analytics/GoogleAnalytics;
+    :cond_41
+    :try_start_41
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK_BY_CARRIER(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string/jumbo v4, "768830479847872"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_66
+
+    .line 95
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->IS_PRODUCTION:Z
+
+    if-ne v2, v5, :cond_5c
+
+    .line 96
+    const v2, 0x7f070002
+
+    invoke-virtual {v0, v2}, Lcom/google/android/gms/analytics/GoogleAnalytics;->newTracker(I)Lcom/google/android/gms/analytics/Tracker;
+
+    move-result-object v2
+
+    sput-object v2, Lcom/samsung/privilege/GalaxyGift;->mTracker:Lcom/google/android/gms/analytics/Tracker;
+
+    goto :goto_26
+
+    .line 98
+    :cond_5c
+    const v2, 0x7f070003
+
+    invoke-virtual {v0, v2}, Lcom/google/android/gms/analytics/GoogleAnalytics;->newTracker(I)Lcom/google/android/gms/analytics/Tracker;
+
+    move-result-object v2
+
+    sput-object v2, Lcom/samsung/privilege/GalaxyGift;->mTracker:Lcom/google/android/gms/analytics/Tracker;
+
+    goto :goto_26
+
+    .line 100
+    :cond_66
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK_BY_CARRIER(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string/jumbo v4, "517155661760483"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_8b
+
+    .line 101
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->IS_PRODUCTION:Z
+
+    if-ne v2, v5, :cond_81
+
+    .line 102
+    const v2, 0x7f070004
+
+    invoke-virtual {v0, v2}, Lcom/google/android/gms/analytics/GoogleAnalytics;->newTracker(I)Lcom/google/android/gms/analytics/Tracker;
+
+    move-result-object v2
+
+    sput-object v2, Lcom/samsung/privilege/GalaxyGift;->mTracker:Lcom/google/android/gms/analytics/Tracker;
+
+    goto :goto_26
+
+    .line 104
+    :cond_81
+    const v2, 0x7f070005
+
+    invoke-virtual {v0, v2}, Lcom/google/android/gms/analytics/GoogleAnalytics;->newTracker(I)Lcom/google/android/gms/analytics/Tracker;
+
+    move-result-object v2
+
+    sput-object v2, Lcom/samsung/privilege/GalaxyGift;->mTracker:Lcom/google/android/gms/analytics/Tracker;
+
+    goto :goto_26
+
+    .line 106
+    :cond_8b
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK_BY_CARRIER(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string/jumbo v4, "1525635597652592"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_b0
+
+    .line 107
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->IS_PRODUCTION:Z
+
+    if-ne v2, v5, :cond_a5
+
+    .line 108
+    const/high16 v2, 0x7f070000
+
+    invoke-virtual {v0, v2}, Lcom/google/android/gms/analytics/GoogleAnalytics;->newTracker(I)Lcom/google/android/gms/analytics/Tracker;
+
+    move-result-object v2
+
+    sput-object v2, Lcom/samsung/privilege/GalaxyGift;->mTracker:Lcom/google/android/gms/analytics/Tracker;
+
+    goto :goto_26
+
+    .line 110
+    :cond_a5
+    const v2, 0x7f070001
+
+    invoke-virtual {v0, v2}, Lcom/google/android/gms/analytics/GoogleAnalytics;->newTracker(I)Lcom/google/android/gms/analytics/Tracker;
+
+    move-result-object v2
+
+    sput-object v2, Lcom/samsung/privilege/GalaxyGift;->mTracker:Lcom/google/android/gms/analytics/Tracker;
+
+    goto/16 :goto_26
+
+    .line 113
+    :cond_b0
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->IS_PRODUCTION:Z
+
+    if-ne v2, v5, :cond_bf
+
+    .line 114
+    const v2, 0x7f070009
+
+    invoke-virtual {v0, v2}, Lcom/google/android/gms/analytics/GoogleAnalytics;->newTracker(I)Lcom/google/android/gms/analytics/Tracker;
+
+    move-result-object v2
+
+    sput-object v2, Lcom/samsung/privilege/GalaxyGift;->mTracker:Lcom/google/android/gms/analytics/Tracker;
+
+    goto/16 :goto_26
+
+    .line 116
+    :cond_bf
+    const v2, 0x7f07000a
+
+    invoke-virtual {v0, v2}, Lcom/google/android/gms/analytics/GoogleAnalytics;->newTracker(I)Lcom/google/android/gms/analytics/Tracker;
+
+    move-result-object v2
+
+    sput-object v2, Lcom/samsung/privilege/GalaxyGift;->mTracker:Lcom/google/android/gms/analytics/Tracker;
+    :try_end_c8
+    .catch Ljava/lang/Exception; {:try_start_41 .. :try_end_c8} :catch_34
+    .catchall {:try_start_41 .. :try_end_c8} :catchall_3e
+
+    goto/16 :goto_26
 .end method
 
 .method public static getDualCache()Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache;
@@ -159,7 +358,7 @@
     .end annotation
 
     .prologue
-    .line 72
+    .line 73
     sget-object v0, Lcom/samsung/privilege/GalaxyGift;->mCache:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache;
 
     return-object v0
@@ -169,7 +368,7 @@
     .registers 3
 
     .prologue
-    .line 78
+    .line 79
     const-class v2, Lcom/samsung/privilege/GalaxyGift;
 
     monitor-enter v2
@@ -179,7 +378,7 @@
 
     move-result-object v0
 
-    .line 79
+    .line 80
     .local v0, "analyticsTrackers":Lcom/samsung/privilege/service/AnalyticsTrackers;
     sget-object v1, Lcom/samsung/privilege/service/AnalyticsTrackers$Target;->APP:Lcom/samsung/privilege/service/AnalyticsTrackers$Target;
 
@@ -193,7 +392,7 @@
 
     return-object v1
 
-    .line 78
+    .line 79
     :catchall_f
     move-exception v1
 
@@ -208,10 +407,10 @@
     .prologue
     const v2, 0x61a8000
 
-    .line 68
+    .line 69
     new-instance v0, Lcom/bzbs/marketplace/util/CacheLibs;
 
-    const v1, 0x7f090383
+    const v1, 0x7f090384
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/GalaxyGift;->getString(I)Ljava/lang/String;
 
@@ -225,7 +424,7 @@
 
     sput-object v0, Lcom/samsung/privilege/GalaxyGift;->mCache:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache;
 
-    .line 69
+    .line 70
     return-void
 .end method
 
@@ -235,7 +434,7 @@
     .param p1, "action"    # Ljava/lang/String;
 
     .prologue
-    .line 163
+    .line 194
     :try_start_0
     sget-object v1, Lcom/samsung/privilege/GalaxyGift;->mContext:Landroid/content/Context;
 
@@ -247,25 +446,25 @@
 
     invoke-direct {v2}, Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;-><init>()V
 
-    .line 164
+    .line 195
     invoke-virtual {v2, p0}, Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;->setCategory(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;
 
     move-result-object v2
 
-    .line 165
+    .line 196
     invoke-virtual {v2, p1}, Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;->setAction(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;
 
     move-result-object v2
 
-    .line 166
+    .line 197
     invoke-virtual {v2}, Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;->build()Ljava/util/Map;
 
     move-result-object v2
 
-    .line 163
+    .line 194
     invoke-virtual {v1, v2}, Lcom/google/android/gms/analytics/Tracker;->send(Ljava/util/Map;)V
 
-    .line 168
+    .line 199
     const-string/jumbo v1, "GAAnalytics"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -300,15 +499,15 @@
     :try_end_3f
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_3f} :catch_40
 
-    .line 172
+    .line 203
     :goto_3f
     return-void
 
-    .line 169
+    .line 200
     :catch_40
     move-exception v0
 
-    .line 170
+    .line 201
     .local v0, "ex":Ljava/lang/Exception;
     const-string/jumbo v1, "GAAnalytics"
 
@@ -366,7 +565,7 @@
     .param p2, "label"    # Ljava/lang/String;
 
     .prologue
-    .line 149
+    .line 180
     :try_start_0
     sget-object v1, Lcom/samsung/privilege/GalaxyGift;->mContext:Landroid/content/Context;
 
@@ -378,30 +577,30 @@
 
     invoke-direct {v2}, Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;-><init>()V
 
-    .line 150
+    .line 181
     invoke-virtual {v2, p0}, Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;->setCategory(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;
 
     move-result-object v2
 
-    .line 151
+    .line 182
     invoke-virtual {v2, p1}, Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;->setAction(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;
 
     move-result-object v2
 
-    .line 152
+    .line 183
     invoke-virtual {v2, p2}, Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;->setLabel(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;
 
     move-result-object v2
 
-    .line 153
+    .line 184
     invoke-virtual {v2}, Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;->build()Ljava/util/Map;
 
     move-result-object v2
 
-    .line 149
+    .line 180
     invoke-virtual {v1, v2}, Lcom/google/android/gms/analytics/Tracker;->send(Ljava/util/Map;)V
 
-    .line 155
+    .line 186
     const-string/jumbo v1, "GAAnalytics"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -446,15 +645,15 @@
     :try_end_4e
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_4e} :catch_4f
 
-    .line 159
+    .line 190
     :goto_4e
     return-void
 
-    .line 156
+    .line 187
     :catch_4f
     move-exception v0
 
-    .line 157
+    .line 188
     .local v0, "ex":Ljava/lang/Exception;
     const-string/jumbo v1, "GAAnalytics"
 
@@ -523,7 +722,7 @@
     .param p3, "value"    # Ljava/lang/Long;
 
     .prologue
-    .line 134
+    .line 165
     :try_start_0
     sget-object v1, Lcom/samsung/privilege/GalaxyGift;->mContext:Landroid/content/Context;
 
@@ -535,22 +734,22 @@
 
     invoke-direct {v2}, Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;-><init>()V
 
-    .line 135
+    .line 166
     invoke-virtual {v2, p0}, Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;->setCategory(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;
 
     move-result-object v2
 
-    .line 136
+    .line 167
     invoke-virtual {v2, p1}, Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;->setAction(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;
 
     move-result-object v2
 
-    .line 137
+    .line 168
     invoke-virtual {v2, p2}, Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;->setLabel(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;
 
     move-result-object v2
 
-    .line 138
+    .line 169
     invoke-virtual {p3}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v4
@@ -559,15 +758,15 @@
 
     move-result-object v2
 
-    .line 139
+    .line 170
     invoke-virtual {v2}, Lcom/google/android/gms/analytics/HitBuilders$EventBuilder;->build()Ljava/util/Map;
 
     move-result-object v2
 
-    .line 134
+    .line 165
     invoke-virtual {v1, v2}, Lcom/google/android/gms/analytics/Tracker;->send(Ljava/util/Map;)V
 
-    .line 141
+    .line 172
     const-string/jumbo v1, "GAAnalytics"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -622,15 +821,15 @@
     :try_end_61
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_61} :catch_62
 
-    .line 145
+    .line 176
     :goto_61
     return-void
 
-    .line 142
+    .line 173
     :catch_62
     move-exception v0
 
-    .line 143
+    .line 174
     .local v0, "ex":Ljava/lang/Exception;
     const-string/jumbo v1, "GAAnalytics"
 
@@ -706,7 +905,7 @@
     .param p0, "screen"    # Ljava/lang/String;
 
     .prologue
-    .line 176
+    .line 207
     :try_start_0
     sget-object v2, Lcom/samsung/privilege/GalaxyGift;->mContext:Landroid/content/Context;
 
@@ -714,11 +913,11 @@
 
     move-result-object v1
 
-    .line 177
+    .line 208
     .local v1, "t":Lcom/google/android/gms/analytics/Tracker;
     invoke-virtual {v1, p0}, Lcom/google/android/gms/analytics/Tracker;->setScreenName(Ljava/lang/String;)V
 
-    .line 178
+    .line 209
     new-instance v2, Lcom/google/android/gms/analytics/HitBuilders$AppViewBuilder;
 
     invoke-direct {v2}, Lcom/google/android/gms/analytics/HitBuilders$AppViewBuilder;-><init>()V
@@ -729,7 +928,7 @@
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/analytics/Tracker;->send(Ljava/util/Map;)V
 
-    .line 180
+    .line 211
     const-string/jumbo v2, "GAAnalytics"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -754,16 +953,16 @@
     :try_end_2f
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_2f} :catch_30
 
-    .line 184
+    .line 215
     .end local v1    # "t":Lcom/google/android/gms/analytics/Tracker;
     :goto_2f
     return-void
 
-    .line 181
+    .line 212
     :catch_30
     move-exception v0
 
-    .line 182
+    .line 213
     .local v0, "ex":Ljava/lang/Exception;
     const-string/jumbo v2, "GAAnalytics"
 
@@ -812,7 +1011,7 @@
     .param p3, "spent_time"    # J
 
     .prologue
-    .line 188
+    .line 219
     :try_start_0
     sget-object v1, Lcom/samsung/privilege/GalaxyGift;->mContext:Landroid/content/Context;
 
@@ -824,35 +1023,35 @@
 
     invoke-direct {v2}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;-><init>()V
 
-    .line 189
+    .line 220
     invoke-virtual {v2, p0}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;->setCategory(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;
 
     move-result-object v2
 
-    .line 190
+    .line 221
     invoke-virtual {v2, p3, p4}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;->setValue(J)Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;
 
     move-result-object v2
 
-    .line 191
+    .line 222
     invoke-virtual {v2, p1}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;->setVariable(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;
 
     move-result-object v2
 
-    .line 192
+    .line 223
     invoke-virtual {v2, p2}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;->setLabel(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;
 
     move-result-object v2
 
-    .line 193
+    .line 224
     invoke-virtual {v2}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;->build()Ljava/util/Map;
 
     move-result-object v2
 
-    .line 188
+    .line 219
     invoke-virtual {v1, v2}, Lcom/google/android/gms/analytics/Tracker;->send(Ljava/util/Map;)V
 
-    .line 195
+    .line 226
     const-string/jumbo v1, "GAAnalytics"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -907,15 +1106,15 @@
     :try_end_5d
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_5d} :catch_5e
 
-    .line 199
+    .line 230
     :goto_5d
     return-void
 
-    .line 196
+    .line 227
     :catch_5e
     move-exception v0
 
-    .line 197
+    .line 228
     .local v0, "ex":Ljava/lang/Exception;
     const-string/jumbo v1, "GAAnalytics"
 
@@ -992,47 +1191,47 @@
     .registers 3
 
     .prologue
-    .line 44
+    .line 45
     invoke-super {p0}, Landroid/support/multidex/MultiDexApplication;->onCreate()V
 
-    .line 45
+    .line 46
     sput-object p0, Lcom/samsung/privilege/GalaxyGift;->application:Landroid/app/Application;
 
-    .line 48
+    .line 49
     invoke-virtual {p0}, Lcom/samsung/privilege/GalaxyGift;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     invoke-static {v0}, Lcom/facebook/FacebookSdk;->sdkInitialize(Landroid/content/Context;)V
 
-    .line 51
+    .line 52
     new-instance v0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;
 
     invoke-direct {v0}, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;-><init>()V
 
     const-string/jumbo v1, "fonts/kit55p.ttf"
 
-    .line 52
+    .line 53
     invoke-virtual {v0, v1}, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->setDefaultFontPath(Ljava/lang/String;)Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;
 
     move-result-object v0
 
     const v1, 0x7f010037
 
-    .line 53
+    .line 54
     invoke-virtual {v0, v1}, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->setFontAttrId(I)Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;
 
     move-result-object v0
 
-    .line 54
+    .line 55
     invoke-virtual {v0}, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->build()Luk/co/chrisjenx/calligraphy/CalligraphyConfig;
 
     move-result-object v0
 
-    .line 51
+    .line 52
     invoke-static {v0}, Luk/co/chrisjenx/calligraphy/CalligraphyConfig;->initDefault(Luk/co/chrisjenx/calligraphy/CalligraphyConfig;)V
 
-    .line 57
+    .line 58
     invoke-virtual {p0}, Lcom/samsung/privilege/GalaxyGift;->getAssets()Landroid/content/res/AssetManager;
 
     move-result-object v0
@@ -1045,18 +1244,18 @@
 
     sput-object v0, Lcom/samsung/privilege/GalaxyGift;->fontBold:Landroid/graphics/Typeface;
 
-    .line 59
+    .line 60
     invoke-direct {p0}, Lcom/samsung/privilege/GalaxyGift;->initCache()V
 
-    .line 62
+    .line 63
     sput-object p0, Lcom/samsung/privilege/GalaxyGift;->mContext:Landroid/content/Context;
 
-    .line 63
+    .line 64
     sget-object v0, Lcom/samsung/privilege/GalaxyGift;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/samsung/privilege/GalaxyGift;->getDefaultTracker(Landroid/content/Context;)Lcom/google/android/gms/analytics/Tracker;
 
-    .line 65
+    .line 66
     return-void
 .end method
 
@@ -1065,15 +1264,15 @@
     .param p1, "e"    # Ljava/lang/Exception;
 
     .prologue
-    .line 111
+    .line 142
     if-eqz p1, :cond_2d
 
-    .line 112
+    .line 143
     invoke-static {}, Lcom/samsung/privilege/GalaxyGift;->getGoogleAnalyticsTracker()Lcom/google/android/gms/analytics/Tracker;
 
     move-result-object v0
 
-    .line 114
+    .line 145
     .local v0, "t":Lcom/google/android/gms/analytics/Tracker;
     new-instance v1, Lcom/google/android/gms/analytics/HitBuilders$ExceptionBuilder;
 
@@ -1085,7 +1284,7 @@
 
     invoke-direct {v2, p0, v3}, Lcom/google/android/gms/analytics/StandardExceptionParser;-><init>(Landroid/content/Context;Ljava/util/Collection;)V
 
-    .line 117
+    .line 148
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v3
@@ -1098,27 +1297,27 @@
 
     move-result-object v2
 
-    .line 115
+    .line 146
     invoke-virtual {v1, v2}, Lcom/google/android/gms/analytics/HitBuilders$ExceptionBuilder;->setDescription(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$ExceptionBuilder;
 
     move-result-object v1
 
     const/4 v2, 0x0
 
-    .line 118
+    .line 149
     invoke-virtual {v1, v2}, Lcom/google/android/gms/analytics/HitBuilders$ExceptionBuilder;->setFatal(Z)Lcom/google/android/gms/analytics/HitBuilders$ExceptionBuilder;
 
     move-result-object v1
 
-    .line 119
+    .line 150
     invoke-virtual {v1}, Lcom/google/android/gms/analytics/HitBuilders$ExceptionBuilder;->build()Ljava/util/Map;
 
     move-result-object v1
 
-    .line 114
+    .line 145
     invoke-virtual {v0, v1}, Lcom/google/android/gms/analytics/Tracker;->send(Ljava/util/Map;)V
 
-    .line 122
+    .line 153
     .end local v0    # "t":Lcom/google/android/gms/analytics/Tracker;
     :cond_2d
     return-void

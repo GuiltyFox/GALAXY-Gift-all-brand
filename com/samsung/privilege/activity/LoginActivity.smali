@@ -355,7 +355,8 @@
     invoke-direct {v7, v14}, Lcom/bzbs/util/DeviceHelper;-><init>(Landroid/content/Context;)V
 
     .line 222
-    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
+    .local v7, "deviceHelper":Lcom/bzbs/util/DeviceHelper;
+    invoke-virtual {v7}, Lcom/bzbs/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
 
     move-result-object v8
 
@@ -453,7 +454,7 @@
 
     move-result-object v14
 
-    const-string v15, "GT-I9100"
+    sget-object v15, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1185,7 +1186,7 @@
     .local v0, "client":Lcom/loopj/android/http/AsyncHttpClient;
     const-string/jumbo v5, ""
 
-    const v6, 0x7f09026e
+    const v6, 0x7f09026f
 
     invoke-virtual {p0, v6}, Lcom/samsung/privilege/activity/LoginActivity;->getString(I)Ljava/lang/String;
 
@@ -1369,7 +1370,7 @@
     :cond_f
     const-string/jumbo v4, ""
 
-    const v5, 0x7f09026e
+    const v5, 0x7f09026f
 
     invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/LoginActivity;->getString(I)Ljava/lang/String;
 
@@ -1612,7 +1613,7 @@
     iput-object v2, p0, Lcom/samsung/privilege/activity/LoginActivity;->mHandler:Landroid/os/Handler;
 
     .line 87
-    const v2, 0x7f100164
+    const v2, 0x7f100165
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/LoginActivity;->findViewById(I)Landroid/view/View;
 
@@ -1643,7 +1644,7 @@
 
     .line 94
     :goto_52
-    const v2, 0x7f100165
+    const v2, 0x7f100166
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/LoginActivity;->findViewById(I)Landroid/view/View;
 
@@ -1674,7 +1675,7 @@
 
     .line 101
     :goto_6f
-    const v2, 0x7f100167
+    const v2, 0x7f100168
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/LoginActivity;->findViewById(I)Landroid/view/View;
 

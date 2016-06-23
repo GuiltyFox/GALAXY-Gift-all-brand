@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 1603
+    .line 1686
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$22;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 1606
+    .line 1689
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$22;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
@@ -53,7 +53,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "1109"
+    const-string/jumbo v1, "1054"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -61,15 +61,15 @@
 
     if-nez v0, :cond_1b
 
-    .line 1609
+    .line 1692
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$22;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    const-string/jumbo v1, "1109"
+    const-string/jumbo v1, "1054"
 
     # invokes: Lcom/samsung/privilege/activity/MainPagerActivity;->saveLanguageToServer(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$1000(Lcom/samsung/privilege/activity/MainPagerActivity;Ljava/lang/String;)V
 
-    .line 1611
+    .line 1694
     :cond_1b
     return-void
 .end method

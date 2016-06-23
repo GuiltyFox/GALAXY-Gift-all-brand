@@ -1,14 +1,11 @@
 .class Lcom/samsung/privilege/activity/MainPagerActivity$25;
-.super Ljava/lang/Object;
+.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
 .source "MainPagerActivity.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->doScanQRCode(Landroid/view/View;)V
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->saveLanguageToServer(Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,101 +24,158 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 1724
+    .line 1741
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$25;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .registers 7
+.method public onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
+    .registers 6
+    .param p1, "statusCode"    # I
+    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
+    .param p3, "responseBody"    # [B
+    .param p4, "error"    # Ljava/lang/Throwable;
 
     .prologue
-    .line 1731
-    :try_start_0
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 1765
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$25;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    const/16 v3, 0x17
+    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->gDialog:Landroid/app/ProgressDialog;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$300(Lcom/samsung/privilege/activity/MainPagerActivity;)Landroid/app/ProgressDialog;
 
-    if-lt v2, v3, :cond_32
+    move-result-object v0
 
-    .line 1732
-    iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$25;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    const-string/jumbo v3, "android.permission.CAMERA"
+    .line 1766
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$25;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/MainPagerActivity;->checkSelfPermission(Ljava/lang/String;)I
+    # invokes: Lcom/samsung/privilege/activity/MainPagerActivity;->restartActivity()V
+    invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$1100(Lcom/samsung/privilege/activity/MainPagerActivity;)V
 
-    move-result v1
+    .line 1767
+    return-void
+.end method
 
-    .line 1733
-    .local v1, "hasPermissionCamera":I
-    if-eqz v1, :cond_22
+.method public onSuccess(I[Lcz/msebera/android/httpclient/Header;[B)V
+    .registers 10
+    .param p1, "statusCode"    # I
+    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
+    .param p3, "responseBody"    # [B
+
+    .prologue
+    .line 1744
+    new-instance v2, Ljava/lang/String;
+
+    invoke-direct {v2, p3}, Ljava/lang/String;-><init>([B)V
 
     .line 1745
-    iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$25;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .local v2, "response_text":Ljava/lang/String;
+    iget-object v3, p0, Lcom/samsung/privilege/activity/MainPagerActivity$25;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    const/4 v3, 0x1
+    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->TAG:Ljava/lang/String;
+    invoke-static {v3}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$200(Lcom/samsung/privilege/activity/MainPagerActivity;)Ljava/lang/String;
 
-    new-array v3, v3, [Ljava/lang/String;
+    move-result-object v3
 
-    const/4 v4, 0x0
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string/jumbo v5, "android.permission.CAMERA"
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    aput-object v5, v3, v4
+    const-string/jumbo v5, "(saveLanguageToServer|onComplete)response_code="
 
-    const/16 v4, 0x64
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3, v4}, Lcom/samsung/privilege/activity/MainPagerActivity;->requestPermissions([Ljava/lang/String;I)V
+    move-result-object v4
 
-    .line 1755
-    .end local v1    # "hasPermissionCamera":I
-    :goto_21
-    return-void
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string/jumbo v5, ",response="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1747
-    .restart local v1    # "hasPermissionCamera":I
-    :cond_22
-    iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$25;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    iget-object v3, p0, Lcom/samsung/privilege/activity/MainPagerActivity$25;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    # invokes: Lcom/samsung/privilege/activity/MainPagerActivity;->requestOpenQR()V
-    invoke-static {v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$1200(Lcom/samsung/privilege/activity/MainPagerActivity;)V
-    :try_end_27
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_27} :catch_28
+    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->gDialog:Landroid/app/ProgressDialog;
+    invoke-static {v3}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$300(Lcom/samsung/privilege/activity/MainPagerActivity;)Landroid/app/ProgressDialog;
 
-    goto :goto_21
+    move-result-object v3
 
-    .line 1752
-    .end local v1    # "hasPermissionCamera":I
-    :catch_28
-    move-exception v0
-
-    .line 1753
-    .local v0, "ex":Ljava/lang/Exception;
-    iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$25;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
-
-    const-string/jumbo v3, "Can not open QRCode Scanner!"
-
-    # invokes: Lcom/samsung/privilege/activity/MainPagerActivity;->showToast(Ljava/lang/String;)V
-    invoke-static {v2, v3}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$1300(Lcom/samsung/privilege/activity/MainPagerActivity;Ljava/lang/String;)V
-
-    goto :goto_21
+    invoke-virtual {v3}, Landroid/app/ProgressDialog;->dismiss()V
 
     .line 1750
-    .end local v0    # "ex":Ljava/lang/Exception;
-    :cond_32
-    :try_start_32
-    iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$25;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    :try_start_36
+    new-instance v0, Lorg/json/JSONObject;
 
-    # invokes: Lcom/samsung/privilege/activity/MainPagerActivity;->requestOpenQR()V
-    invoke-static {v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$1200(Lcom/samsung/privilege/activity/MainPagerActivity;)V
-    :try_end_37
-    .catch Ljava/lang/Exception; {:try_start_32 .. :try_end_37} :catch_28
+    invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    goto :goto_21
+    .line 1751
+    .local v0, "jsonRoot":Lorg/json/JSONObject;
+    const-string/jumbo v3, "Token"
+
+    invoke-static {v0, v3}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 1752
+    .local v1, "newTokenBzBs":Ljava/lang/String;
+    if-eqz v1, :cond_56
+
+    const-string/jumbo v3, ""
+
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_56
+
+    .line 1753
+    iget-object v3, p0, Lcom/samsung/privilege/activity/MainPagerActivity$25;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    invoke-virtual {v3}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-static {v3, v1}, Lcom/bzbs/data/UserLogin;->SetTokenBuzzeBees(Landroid/content/Context;Ljava/lang/String;)Z
+    :try_end_56
+    .catch Ljava/lang/Exception; {:try_start_36 .. :try_end_56} :catch_5c
+
+    .line 1759
+    .end local v0    # "jsonRoot":Lorg/json/JSONObject;
+    .end local v1    # "newTokenBzBs":Ljava/lang/String;
+    :cond_56
+    :goto_56
+    iget-object v3, p0, Lcom/samsung/privilege/activity/MainPagerActivity$25;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    # invokes: Lcom/samsung/privilege/activity/MainPagerActivity;->restartActivity()V
+    invoke-static {v3}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$1100(Lcom/samsung/privilege/activity/MainPagerActivity;)V
+
+    .line 1760
+    return-void
+
+    .line 1755
+    :catch_5c
+    move-exception v3
+
+    goto :goto_56
 .end method

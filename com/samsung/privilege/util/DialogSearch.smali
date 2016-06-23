@@ -285,7 +285,7 @@
     .param p3, "skip"    # I
 
     .prologue
-    .line 200
+    .line 201
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -306,7 +306,7 @@
 
     move-result-object v3
 
-    .line 201
+    .line 202
     .local v3, "url":Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -330,7 +330,7 @@
 
     move-result-object v3
 
-    .line 202
+    .line 203
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -357,7 +357,7 @@
 
     move-result-object v3
 
-    .line 203
+    .line 204
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -376,12 +376,12 @@
 
     move-result-object v3
 
-    .line 204
+    .line 205
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 205
+    .line 206
     .local v2, "token":Ljava/lang/String;
     if-eqz v2, :cond_85
 
@@ -393,7 +393,7 @@
 
     if-nez v4, :cond_85
 
-    .line 206
+    .line 207
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -416,11 +416,11 @@
 
     move-result-object v3
 
-    .line 208
+    .line 209
     :cond_85
     if-lez p3, :cond_9f
 
-    .line 209
+    .line 210
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -443,13 +443,13 @@
 
     move-result-object v3
 
-    .line 212
+    .line 213
     :cond_9f
     new-instance v1, Lcom/loopj/android/http/RequestParams;
 
     invoke-direct {v1}, Lcom/loopj/android/http/RequestParams;-><init>()V
 
-    .line 213
+    .line 214
     .local v1, "params":Lcom/loopj/android/http/RequestParams;
     const-string/jumbo v4, "app_id"
 
@@ -459,12 +459,12 @@
 
     invoke-virtual {v1, v4, v5}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 215
+    .line 216
     new-instance v0, Lcom/loopj/android/http/AsyncHttpClient;
 
     invoke-direct {v0}, Lcom/loopj/android/http/AsyncHttpClient;-><init>()V
 
-    .line 216
+    .line 217
     .local v0, "client":Lcom/loopj/android/http/AsyncHttpClient;
     sget-object v4, Lcom/samsung/privilege/util/DialogSearch;->TAG:Ljava/lang/String;
 
@@ -488,14 +488,14 @@
 
     invoke-static {v4, v5}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 217
+    .line 218
     new-instance v4, Lcom/samsung/privilege/util/DialogSearch$5;
 
     invoke-direct {v4, p1, p3, p0}, Lcom/samsung/privilege/util/DialogSearch$5;-><init>(Landroid/os/Handler;ILandroid/content/Context;)V
 
     invoke-virtual {v0, p0, v3, v4}, Lcom/loopj/android/http/AsyncHttpClient;->get(Landroid/content/Context;Ljava/lang/String;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
 
-    .line 265
+    .line 266
     return-void
 .end method
 
@@ -551,7 +551,7 @@
     .line 90
     sget-object v5, Lcom/samsung/privilege/util/DialogSearch;->gDialogSearch:Landroid/app/Dialog;
 
-    const v6, 0x7f040113
+    const v6, 0x7f040117
 
     invoke-virtual {v5, v6}, Landroid/app/Dialog;->setContentView(I)V
 
@@ -583,7 +583,7 @@
     .line 95
     sget-object v5, Lcom/samsung/privilege/util/DialogSearch;->gDialogSearch:Landroid/app/Dialog;
 
-    const v6, 0x7f10012c
+    const v6, 0x7f10012d
 
     invoke-virtual {v5, v6}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -602,7 +602,7 @@
     .line 119
     sget-object v5, Lcom/samsung/privilege/util/DialogSearch;->gDialogSearch:Landroid/app/Dialog;
 
-    const v6, 0x7f1005a3
+    const v6, 0x7f1005b3
 
     invoke-virtual {v5, v6}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -659,10 +659,10 @@
 
     invoke-virtual {v5, v6}, Landroid/support/v7/widget/RecyclerView;->addOnItemTouchListener(Landroid/support/v7/widget/RecyclerView$OnItemTouchListener;)V
 
-    .line 176
+    .line 177
     sget-object v5, Lcom/samsung/privilege/util/DialogSearch;->gDialogSearch:Landroid/app/Dialog;
 
-    const v6, 0x7f100578
+    const v6, 0x7f100588
 
     invoke-virtual {v5, v6}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -670,7 +670,7 @@
 
     check-cast v4, Landroid/widget/RelativeLayout;
 
-    .line 177
+    .line 178
     .local v4, "layoutHeaderArrow":Landroid/widget/RelativeLayout;
     new-instance v5, Lcom/samsung/privilege/util/DialogSearch$4;
 
@@ -678,10 +678,10 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 184
+    .line 185
     sget-object v5, Lcom/samsung/privilege/util/DialogSearch;->gDialogSearch:Landroid/app/Dialog;
 
-    const v6, 0x7f100579
+    const v6, 0x7f100589
 
     invoke-virtual {v5, v6}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -689,7 +689,7 @@
 
     check-cast v3, Landroid/widget/ImageView;
 
-    .line 185
+    .line 186
     .local v3, "imageHeaderArrow":Landroid/widget/ImageView;
     sget-object v5, Lcom/samsung/privilege/util/DialogSearch;->gActivityContext:Landroid/content/Context;
 
@@ -699,14 +699,14 @@
 
     move-result-object v1
 
-    .line 186
+    .line 187
     .local v1, "animRotateDownToRight":Landroid/view/animation/Animation;
     invoke-virtual {v1, v9}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
-    .line 187
+    .line 188
     invoke-virtual {v3, v1}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 189
+    .line 190
     sget-object v5, Lcom/samsung/privilege/util/DialogSearch;->gDialogSearch:Landroid/app/Dialog;
 
     invoke-virtual {v5}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
@@ -717,13 +717,13 @@
 
     move-result-object v0
 
-    .line 190
+    .line 191
     .local v0, "WMLP":Landroid/view/WindowManager$LayoutParams;
     const/16 v5, 0x11
 
     iput v5, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 191
+    .line 192
     sget-object v5, Lcom/samsung/privilege/util/DialogSearch;->gDialogSearch:Landroid/app/Dialog;
 
     invoke-virtual {v5}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
@@ -732,17 +732,17 @@
 
     invoke-virtual {v5, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 193
+    .line 194
     sget-object v5, Lcom/samsung/privilege/util/DialogSearch;->gDialogSearch:Landroid/app/Dialog;
 
     invoke-virtual {v5}, Landroid/app/Dialog;->show()V
 
-    .line 195
+    .line 196
     const-string/jumbo v5, "Search"
 
     invoke-static {v5}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsScreen(Ljava/lang/String;)V
 
-    .line 197
+    .line 198
     .end local v0    # "WMLP":Landroid/view/WindowManager$LayoutParams;
     .end local v1    # "animRotateDownToRight":Landroid/view/animation/Animation;
     .end local v2    # "editKeyword":Landroid/widget/EditText;

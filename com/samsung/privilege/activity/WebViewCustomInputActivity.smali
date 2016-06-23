@@ -115,7 +115,7 @@
 
     const-string/jumbo v5, "{uuid}"
 
-    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/bzbs/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
 
     move-result-object v6
 
@@ -1008,7 +1008,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 133
-    const v4, 0x7f04015c
+    const v4, 0x7f040167
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->setContentView(I)V
 
@@ -1023,7 +1023,7 @@
     invoke-direct {p0}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->initialParam()V
 
     .line 138
-    const v4, 0x7f1001f0
+    const v4, 0x7f1001f9
 
     :try_start_18
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->findViewById(I)Landroid/view/View;
@@ -1068,7 +1068,7 @@
     .end local v2    # "tvPageHeader":Landroid/widget/TextView;
     :cond_37
     :goto_37
-    const v4, 0x7f1004ae
+    const v4, 0x7f1004b7
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->findViewById(I)Landroid/view/View;
 
@@ -1161,7 +1161,7 @@
     if-lez v4, :cond_a1
 
     .line 251
-    const v4, 0x7f100162
+    const v4, 0x7f100163
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->findViewById(I)Landroid/view/View;
 
@@ -1300,7 +1300,7 @@
     if-ne v0, v4, :cond_5a
 
     .line 293
-    const v3, 0x7f100178
+    const v3, 0x7f10017a
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->findViewById(I)Landroid/view/View;
 

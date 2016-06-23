@@ -1198,7 +1198,7 @@
     .restart local v5    # "b":Landroid/graphics/Bitmap;
     const/16 v21, 0x0
 
-    const v22, 0x7f09043c
+    const v22, 0x7f09043d
 
     move-object/from16 v0, p0
 
@@ -1456,7 +1456,7 @@
     if-eqz v2, :cond_23
 
     .line 659
-    const v2, 0x7f090421
+    const v2, 0x7f090422
 
     invoke-virtual {p0, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1484,7 +1484,7 @@
     .line 662
     .restart local v1    # "state":Ljava/lang/String;
     :cond_23
-    const v2, 0x7f0903fb
+    const v2, 0x7f0903fc
 
     invoke-virtual {p0, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1500,7 +1500,7 @@
     if-ge p1, v2, :cond_18
 
     .line 666
-    const v2, 0x7f0903fc
+    const v2, 0x7f0903fd
 
     invoke-virtual {p0, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1557,7 +1557,7 @@
     .param p1, "icicle"    # Landroid/os/Bundle;
 
     .prologue
-    const v10, 0x7f1004b2
+    const v10, 0x7f1004bb
 
     const/4 v9, 0x1
 
@@ -1572,12 +1572,12 @@
     iput-object v7, p0, Lcom/samsung/privilege/control/imagecropper/CropImage;->mContentResolver:Landroid/content/ContentResolver;
 
     .line 114
-    const v7, 0x7f0400d0
+    const v7, 0x7f0400d2
 
     invoke-virtual {p0, v7}, Lcom/samsung/privilege/control/imagecropper/CropImage;->setContentView(I)V
 
     .line 120
-    const v7, 0x7f1004b0
+    const v7, 0x7f1004b9
 
     :try_start_16
     invoke-virtual {p0, v7}, Lcom/samsung/privilege/control/imagecropper/CropImage;->findViewById(I)Landroid/view/View;
@@ -1588,7 +1588,7 @@
 
     .line 121
     .local v6, "txtHeadbar":Landroid/widget/TextView;
-    const v7, 0x7f1004b2
+    const v7, 0x7f1004bb
 
     invoke-virtual {p0, v7}, Lcom/samsung/privilege/control/imagecropper/CropImage;->findViewById(I)Landroid/view/View;
 
@@ -1868,7 +1868,7 @@
     invoke-virtual {v7, v8}, Landroid/view/Window;->addFlags(I)V
 
     .line 185
-    const v7, 0x7f1004af
+    const v7, 0x7f1004b8
 
     invoke-virtual {p0, v7}, Lcom/samsung/privilege/control/imagecropper/CropImage;->findViewById(I)Landroid/view/View;
 
@@ -1901,7 +1901,7 @@
     invoke-virtual {v7, v8}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 222
-    const v7, 0x7f1004b4
+    const v7, 0x7f1004bd
 
     invoke-virtual {p0, v7}, Lcom/samsung/privilege/control/imagecropper/CropImage;->findViewById(I)Landroid/view/View;
 
@@ -1914,7 +1914,7 @@
     invoke-virtual {v7, v8}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 232
-    const v7, 0x7f1004b5
+    const v7, 0x7f1004be
 
     invoke-virtual {p0, v7}, Lcom/samsung/privilege/control/imagecropper/CropImage;->findViewById(I)Landroid/view/View;
 

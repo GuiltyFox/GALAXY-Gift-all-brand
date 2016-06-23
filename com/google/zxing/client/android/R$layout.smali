@@ -15,11 +15,11 @@
 
 
 # static fields
-.field public static final zxing_capture:I = 0x7f04015f
+.field public static final zxing_capture:I = 0x7f04016a
 
-.field public static final zxing_encode:I = 0x7f040160
+.field public static final zxing_encode:I = 0x7f04016b
 
-.field public static final zxing_help:I = 0x7f040161
+.field public static final zxing_help:I = 0x7f04016c
 
 
 # direct methods

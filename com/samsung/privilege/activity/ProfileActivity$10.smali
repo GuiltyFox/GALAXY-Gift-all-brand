@@ -31,7 +31,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/ProfileActivity;
 
     .prologue
-    .line 384
+    .line 405
     iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->val$textLanguageThai:Landroid/widget/TextView;
@@ -50,12 +50,12 @@
     .param p1, "on"    # Z
 
     .prologue
-    .line 387
+    .line 408
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_1c
 
-    .line 388
+    .line 409
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->val$textLanguageThai:Landroid/widget/TextView;
 
     const-string/jumbo v1, "#2ba9e3"
@@ -66,7 +66,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 389
+    .line 410
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->val$textLanguageEN:Landroid/widget/TextView;
 
     const-string/jumbo v1, "#ebebeb"
@@ -77,11 +77,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 394
+    .line 415
     :goto_1b
     return-void
 
-    .line 391
+    .line 412
     :cond_1c
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->val$textLanguageThai:Landroid/widget/TextView;
 
@@ -93,7 +93,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 392
+    .line 413
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->val$textLanguageEN:Landroid/widget/TextView;
 
     const-string/jumbo v1, "#2ba9e3"

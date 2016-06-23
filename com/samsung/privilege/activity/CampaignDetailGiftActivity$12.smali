@@ -29,7 +29,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 1022
+    .line 1112
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$12;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$12;->val$textBranchesDetail:Landroid/widget/TextView;
@@ -45,7 +45,7 @@
     .registers 4
 
     .prologue
-    .line 1025
+    .line 1115
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$12;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     const v2, 0x7f1000ea
@@ -56,7 +56,7 @@
 
     check-cast v0, Landroid/widget/RelativeLayout;
 
-    .line 1027
+    .line 1117
     .local v0, "layoutBranchesSeeMore":Landroid/widget/RelativeLayout;
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$12;->val$textBranchesDetail:Landroid/widget/TextView;
 
@@ -68,16 +68,16 @@
 
     if-le v1, v2, :cond_19
 
-    .line 1028
+    .line 1118
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 1032
+    .line 1122
     :goto_18
     return-void
 
-    .line 1030
+    .line 1120
     :cond_19
     const/16 v1, 0x8
 

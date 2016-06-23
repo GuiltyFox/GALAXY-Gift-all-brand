@@ -29,37 +29,37 @@
 
 .field btnAddPicture:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100618
+        value = 0x7f100636
     .end annotation
 .end field
 
 .field btnAddSticker:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10061b
+        value = 0x7f100639
     .end annotation
 .end field
 
 .field contentImagePost:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10060c
+        value = 0x7f10062a
     .end annotation
 .end field
 
 .field contentPager:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10061c
+        value = 0x7f10063a
     .end annotation
 .end field
 
 .field contentPost:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10060a
+        value = 0x7f100628
     .end annotation
 .end field
 
 .field edtTextComment:Landroid/widget/EditText;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10060f
+        value = 0x7f10062d
     .end annotation
 .end field
 
@@ -73,7 +73,7 @@
 
 .field imagePost:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10060d
+        value = 0x7f10062b
     .end annotation
 .end field
 
@@ -113,7 +113,7 @@
 
 .field listViewHorizontal:Lit/sephiroth/android/library/widget/HListView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10061d
+        value = 0x7f10063b
     .end annotation
 .end field
 
@@ -121,7 +121,7 @@
 
 .field mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005fb
+        value = 0x7f1005e0
     .end annotation
 .end field
 
@@ -131,19 +131,19 @@
 
 .field pvLinearDeterminate:Lcom/rey/material/widget/ProgressView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10060b
+        value = 0x7f100629
     .end annotation
 .end field
 
 .field recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100619
+        value = 0x7f100637
     .end annotation
 .end field
 
 .field recyclerView:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100609
+        value = 0x7f100627
     .end annotation
 .end field
 
@@ -161,7 +161,7 @@
 
 .field tvNoData:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10061a
+        value = 0x7f100638
     .end annotation
 .end field
 
@@ -169,7 +169,7 @@
 
 .field viewPager:Landroid/support/v4/view/ViewPager;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10020b
+        value = 0x7f100214
     .end annotation
 .end field
 
@@ -718,7 +718,7 @@
     .registers 3
 
     .prologue
-    .line 677
+    .line 682
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->mActivity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->getCurrentFocus()Landroid/view/View;
@@ -729,7 +729,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/marketplace/util/KeyboardStatus;->hideKeyboard(Landroid/view/View;Landroid/app/Activity;)V
 
-    .line 678
+    .line 683
     return-void
 .end method
 
@@ -743,7 +743,7 @@
 
     const/4 v1, 0x0
 
-    .line 666
+    .line 671
     iget-object v2, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v2}, Landroid/support/v7/widget/RecyclerView;->getVisibility()I
@@ -760,28 +760,28 @@
 
     if-nez v2, :cond_27
 
-    .line 667
+    .line 672
     :cond_14
     iget-object v2, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v2, v3}, Landroid/support/v7/widget/RecyclerView;->setVisibility(I)V
 
-    .line 668
+    .line 673
     iget-object v2, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->contentPager:Landroid/widget/LinearLayout;
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 669
+    .line 674
     invoke-direct {p0, v1}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->selectPick(I)V
 
-    .line 670
+    .line 675
     iget-object v2, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     invoke-virtual {v2, v0}, Landroid/support/v4/widget/SwipeRefreshLayout;->setEnabled(Z)V
 
     move v0, v1
 
-    .line 673
+    .line 678
     :cond_27
     return v0
 .end method
@@ -1182,7 +1182,7 @@
     :cond_ce
     iget-object v4, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->mActivity:Landroid/app/Activity;
 
-    const v5, 0x7f09036b
+    const v5, 0x7f09036c
 
     invoke-virtual {p0, v5}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->getString(I)Ljava/lang/String;
 
@@ -1230,14 +1230,14 @@
     .param p1, "VISIBLE"    # Z
 
     .prologue
-    .line 728
+    .line 733
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->mActivity:Landroid/app/Activity;
 
     instance-of v0, v0, Lcom/bzbs/marketplace/activity/ReviewActivity;
 
     if-eqz v0, :cond_10
 
-    .line 729
+    .line 734
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->mActivity:Landroid/app/Activity;
 
     check-cast v0, Lcom/bzbs/marketplace/activity/ReviewActivity;
@@ -1249,11 +1249,11 @@
     :goto_d
     invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/activity/ReviewActivity;->setProgressVisibility(I)V
 
-    .line 731
+    .line 736
     :cond_10
     return-void
 
-    .line 729
+    .line 734
     :cond_11
     const/16 v1, 0x8
 
@@ -1391,14 +1391,14 @@
     .param p1, "select"    # I
 
     .prologue
-    .line 602
+    .line 607
     packed-switch p1, :pswitch_data_12
 
-    .line 611
+    .line 616
     :pswitch_3
     if-eqz p1, :cond_10
 
-    .line 612
+    .line 617
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->mActivity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->getCurrentFocus()Landroid/view/View;
@@ -1409,11 +1409,11 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/marketplace/util/KeyboardStatus;->hideKeyboard(Landroid/view/View;Landroid/app/Activity;)V
 
-    .line 614
+    .line 619
     :cond_10
     return-void
 
-    .line 602
+    .line 607
     nop
 
     :pswitch_data_12
@@ -1729,21 +1729,21 @@
     .registers 5
 
     .prologue
-    .line 618
+    .line 623
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->contentPager:Landroid/widget/LinearLayout;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 619
+    .line 624
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setVisibility(I)V
 
-    .line 620
+    .line 625
     new-instance v0, Lcom/bzbs/marketplace/adapter/ReviewPickAdapter;
 
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->mActivity:Landroid/app/Activity;
@@ -1752,7 +1752,7 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->reviewPickAdapter:Lcom/bzbs/marketplace/adapter/ReviewPickAdapter;
 
-    .line 621
+    .line 626
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
 
     new-instance v1, Landroid/support/v7/widget/GridLayoutManager;
@@ -1765,14 +1765,14 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setLayoutManager(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
 
-    .line 622
+    .line 627
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->reviewPickAdapter:Lcom/bzbs/marketplace/adapter/ReviewPickAdapter;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setAdapter(Landroid/support/v7/widget/RecyclerView$Adapter;)V
 
-    .line 624
+    .line 629
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->reviewPickAdapter:Lcom/bzbs/marketplace/adapter/ReviewPickAdapter;
 
     new-instance v1, Lcom/bzbs/marketplace/fragment/ReviewFragment$10;
@@ -1781,7 +1781,7 @@
 
     invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/adapter/ReviewPickAdapter;->setOnTabItemListener(Lcom/bzbs/marketplace/listener/OnTabItemListener;)V
 
-    .line 662
+    .line 667
     return-void
 .end method
 
@@ -1789,21 +1789,21 @@
     .registers 4
 
     .prologue
-    .line 557
+    .line 562
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->contentPager:Landroid/widget/LinearLayout;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 558
+    .line 563
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setVisibility(I)V
 
-    .line 560
+    .line 565
     new-instance v0, Lcom/google/gson/Gson;
 
     invoke-direct {v0}, Lcom/google/gson/Gson;-><init>()V
@@ -1818,12 +1818,12 @@
 
     invoke-direct {v2, p0}, Lcom/bzbs/marketplace/fragment/ReviewFragment$7;-><init>(Lcom/bzbs/marketplace/fragment/ReviewFragment;)V
 
-    .line 561
+    .line 566
     invoke-virtual {v2}, Lcom/bzbs/marketplace/fragment/ReviewFragment$7;->getType()Ljava/lang/reflect/Type;
 
     move-result-object v2
 
-    .line 560
+    .line 565
     invoke-virtual {v0, v1, v2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
 
     move-result-object v0
@@ -1832,7 +1832,7 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->listSticker:Ljava/util/ArrayList;
 
-    .line 563
+    .line 568
     new-instance v0, Lcom/bzbs/marketplace/adapter/pager/StickerPagerAdapter;
 
     invoke-virtual {p0}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
@@ -1845,7 +1845,7 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->stickerPagerAdapter:Lcom/bzbs/marketplace/adapter/pager/StickerPagerAdapter;
 
-    .line 564
+    .line 569
     new-instance v0, Lcom/bzbs/marketplace/adapter/IndicatorDrawerAdapter;
 
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->mActivity:Landroid/app/Activity;
@@ -1856,28 +1856,28 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->indicatorDrawerAdapter:Lcom/bzbs/marketplace/adapter/IndicatorDrawerAdapter;
 
-    .line 566
+    .line 571
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->viewPager:Landroid/support/v4/view/ViewPager;
 
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->stickerPagerAdapter:Lcom/bzbs/marketplace/adapter/pager/StickerPagerAdapter;
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->setAdapter(Landroid/support/v4/view/PagerAdapter;)V
 
-    .line 567
+    .line 572
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->listViewHorizontal:Lit/sephiroth/android/library/widget/HListView;
 
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->indicatorDrawerAdapter:Lcom/bzbs/marketplace/adapter/IndicatorDrawerAdapter;
 
     invoke-virtual {v0, v1}, Lit/sephiroth/android/library/widget/HListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 568
+    .line 573
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->listViewHorizontal:Lit/sephiroth/android/library/widget/HListView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lit/sephiroth/android/library/widget/HListView;->setSmoothScrollbarEnabled(Z)V
 
-    .line 570
+    .line 575
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->viewPager:Landroid/support/v4/view/ViewPager;
 
     new-instance v1, Lcom/bzbs/marketplace/fragment/ReviewFragment$8;
@@ -1886,7 +1886,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 
-    .line 586
+    .line 591
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->listViewHorizontal:Lit/sephiroth/android/library/widget/HListView;
 
     new-instance v1, Lcom/bzbs/marketplace/fragment/ReviewFragment$9;
@@ -1895,7 +1895,7 @@
 
     invoke-virtual {v0, v1}, Lit/sephiroth/android/library/widget/HListView;->setOnItemClickListener(Lit/sephiroth/android/library/widget/AdapterView$OnItemClickListener;)V
 
-    .line 595
+    .line 600
     return-void
 .end method
 
@@ -1955,7 +1955,7 @@
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
     .line 157
-    const v0, 0x7f040132
+    const v0, 0x7f04013d
 
     return v0
 .end method
@@ -2007,8 +2007,8 @@
     .param p1, "v"    # Landroid/view/View;
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f100618,
-            0x7f10061b
+            0x7f100636,
+            0x7f100639
         }
     .end annotation
 
@@ -2017,52 +2017,52 @@
 
     const/4 v1, 0x0
 
-    .line 539
+    .line 544
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     invoke-virtual {v0, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->setEnabled(Z)V
 
-    .line 541
+    .line 546
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_22
 
-    .line 553
+    .line 558
     :goto_e
     :pswitch_e
     return-void
 
-    .line 543
+    .line 548
     :pswitch_f
     iput-boolean v2, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->isPickImage:Z
 
-    .line 544
+    .line 549
     invoke-direct {p0}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->showPickPicture()V
 
-    .line 545
+    .line 550
     invoke-direct {p0, v2}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->selectPick(I)V
 
     goto :goto_e
 
-    .line 548
+    .line 553
     :pswitch_18
     iput-boolean v1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->isPickImage:Z
 
-    .line 549
+    .line 554
     invoke-direct {p0}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->showPickSticker()V
 
-    .line 550
+    .line 555
     const/4 v0, 0x2
 
     invoke-direct {p0, v0}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->selectPick(I)V
 
     goto :goto_e
 
-    .line 541
+    .line 546
     :pswitch_data_22
-    .packed-switch 0x7f100618
+    .packed-switch 0x7f100636
         :pswitch_f
         :pswitch_e
         :pswitch_e
@@ -2075,7 +2075,7 @@
     .param p1, "v"    # Landroid/view/View;
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f10060e
+            0x7f10062c
         }
     .end annotation
 
@@ -2096,7 +2096,7 @@
     .param p1, "v"    # Landroid/view/View;
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f1003cc
+            0x7f1003d5
         }
     .end annotation
 
@@ -2123,7 +2123,7 @@
     .line 394
     iget-object v2, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->mActivity:Landroid/app/Activity;
 
-    const v3, 0x7f09024a
+    const v3, 0x7f09024b
 
     invoke-virtual {p0, v3}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->getString(I)Ljava/lang/String;
 
@@ -2219,31 +2219,31 @@
     .registers 2
 
     .prologue
-    .line 720
+    .line 725
     invoke-super {p0}, Lcom/bzbs/marketplace/base/BaseFragment;->onDestroyView()V
 
-    .line 721
+    .line 726
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->httpAsynctask:Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;
 
     if-eqz v0, :cond_c
 
-    .line 722
+    .line 727
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->httpAsynctask:Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;
 
     invoke-virtual {v0}, Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;->onCancel()V
 
-    .line 723
+    .line 728
     :cond_c
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->asynctask:Lcom/bzbs/marketplace/asynctask/review/ReviewAsynctask;
 
     if-eqz v0, :cond_15
 
-    .line 724
+    .line 729
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->asynctask:Lcom/bzbs/marketplace/asynctask/review/ReviewAsynctask;
 
     invoke-virtual {v0}, Lcom/bzbs/marketplace/asynctask/review/ReviewAsynctask;->onCancel()V
 
-    .line 725
+    .line 730
     :cond_15
     return-void
 .end method
@@ -2252,13 +2252,13 @@
     .registers 1
 
     .prologue
-    .line 689
+    .line 694
     invoke-super {p0}, Lcom/bzbs/marketplace/base/BaseFragment;->onPause()V
 
-    .line 690
+    .line 695
     invoke-static {}, Lcom/bzbs/marketplace/util/StickerEvents;->clearPostListener()V
 
-    .line 691
+    .line 696
     return-void
 .end method
 
@@ -2266,10 +2266,10 @@
     .registers 3
 
     .prologue
-    .line 683
+    .line 688
     invoke-super {p0}, Lcom/bzbs/marketplace/base/BaseFragment;->onResume()V
 
-    .line 684
+    .line 689
     new-instance v0, Lcom/bzbs/marketplace/fragment/ReviewFragment$CheckListener;
 
     const/4 v1, 0x0
@@ -2278,6 +2278,6 @@
 
     invoke-static {v0}, Lcom/bzbs/marketplace/util/StickerEvents;->addListener(Lcom/bzbs/marketplace/util/StickerEvents$EventsListener;)V
 
-    .line 685
+    .line 690
     return-void
 .end method

@@ -57,7 +57,13 @@
     .registers 5
     .param p1, "viewHolder"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
     .param p2, "info"    # Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+        .annotation build Landroid/support/annotation/NonNull;
+        .end annotation
+    .end param
     .param p3, "postInfo"    # Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
+        .annotation build Landroid/support/annotation/Nullable;
+        .end annotation
+    .end param
 
     .prologue
     .line 421

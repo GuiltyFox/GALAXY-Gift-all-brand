@@ -3,12 +3,12 @@
 .source "MainPagerActivity.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->showDialogTerm(Landroid/content/Context;)V
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->onResume()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,23 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-.field final synthetic val$activityContext:Landroid/content/Context;
-
-.field final synthetic val$dialogTerm:Landroid/app/Dialog;
-
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;Landroid/app/Dialog;Landroid/content/Context;)V
-    .registers 4
+.method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;)V
+    .registers 2
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 804
+    .line 736
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$8;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
-
-    iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$8;->val$dialogTerm:Landroid/app/Dialog;
-
-    iput-object p3, p0, Lcom/samsung/privilege/activity/MainPagerActivity$8;->val$activityContext:Landroid/content/Context;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,23 +37,71 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 4
-    .param p1, "view"    # Landroid/view/View;
+.method public run()V
+    .registers 3
 
     .prologue
-    .line 806
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$8;->val$dialogTerm:Landroid/app/Dialog;
+    .line 740
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
+    .line 741
+    .local v0, "need_to_refresh":Z
+    :try_start_1
+    iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$8;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    .line 808
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$8;->val$activityContext:Landroid/content/Context;
+    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->gAdapter:Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;
+    invoke-static {v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$600(Lcom/samsung/privilege/activity/MainPagerActivity;)Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;
 
-    const/4 v1, 0x0
+    move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->Logout(Landroid/content/Context;Z)V
+    if-eqz v1, :cond_1f
 
-    .line 809
+    .line 742
+    iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$8;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->gAdapter:Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;
+    invoke-static {v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$600(Lcom/samsung/privilege/activity/MainPagerActivity;)Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;->getCount()I
+
+    move-result v1
+
+    if-nez v1, :cond_16
+
+    .line 743
+    const/4 v0, 0x1
+
+    .line 749
+    :cond_16
+    :goto_16
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_1e
+
+    .line 750
+    iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$8;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    # invokes: Lcom/samsung/privilege/activity/MainPagerActivity;->checkCacheAndLoadNew()V
+    invoke-static {v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$700(Lcom/samsung/privilege/activity/MainPagerActivity;)V
+    :try_end_1e
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1e} :catch_21
+
+    .line 755
+    :cond_1e
+    :goto_1e
     return-void
+
+    .line 746
+    :cond_1f
+    const/4 v0, 0x1
+
+    goto :goto_16
+
+    .line 752
+    :catch_21
+    move-exception v1
+
+    goto :goto_1e
 .end method

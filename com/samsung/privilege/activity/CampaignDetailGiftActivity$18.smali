@@ -30,7 +30,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 2075
+    .line 2189
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->val$imageLike:Landroid/widget/ImageView;
@@ -54,17 +54,15 @@
     .param p4, "error"    # Ljava/lang/Throwable;
 
     .prologue
-    .line 2102
+    .line 2216
     new-instance v0, Ljava/lang/String;
 
     invoke-direct {v0, p3}, Ljava/lang/String;-><init>([B)V
 
-    .line 2103
+    .line 2217
     .local v0, "response_text":Ljava/lang/String;
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->TAG:Ljava/lang/String;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Ljava/lang/String;
+    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000()Ljava/lang/String;
 
     move-result-object v1
 
@@ -98,19 +96,19 @@
 
     invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2105
+    .line 2219
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     const-string/jumbo v2, "UNLIKE Fail!!!"
 
     # invokes: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->showToast(Ljava/lang/String;)V
-    invoke-static {v1, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$2100(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$2300(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;)V
 
-    .line 2107
+    .line 2221
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->mHandler:Landroid/os/Handler;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$900(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
+    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
 
     move-result-object v1
 
@@ -120,7 +118,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 2114
+    .line 2228
     return-void
 .end method
 
@@ -131,17 +129,15 @@
     .param p3, "responseBody"    # [B
 
     .prologue
-    .line 2078
+    .line 2192
     new-instance v0, Ljava/lang/String;
 
     invoke-direct {v0, p3}, Ljava/lang/String;-><init>([B)V
 
-    .line 2079
+    .line 2193
     .local v0, "response_text":Ljava/lang/String;
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->TAG:Ljava/lang/String;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Ljava/lang/String;
+    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000()Ljava/lang/String;
 
     move-result-object v1
 
@@ -175,11 +171,11 @@
 
     invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2081
+    .line 2195
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->mHandler:Landroid/os/Handler;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$900(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
+    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
 
     move-result-object v1
 
@@ -189,12 +185,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 2097
+    .line 2211
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     # invokes: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getPoints()V
     invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$300(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)V
 
-    .line 2098
+    .line 2212
     return-void
 .end method

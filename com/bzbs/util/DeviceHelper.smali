@@ -267,7 +267,7 @@
     .prologue
     .line 156
     :try_start_0
-    const-string v1, "samsung"
+    sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_2} :catch_3
 
@@ -292,7 +292,7 @@
     .prologue
     .line 148
     :try_start_0
-    const-string v1, "GT-I9100"
+    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_2} :catch_3
 
@@ -368,7 +368,8 @@
     check-cast v1, Landroid/telephony/TelephonyManager;
 
     .line 45
-    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
+    .local v1, "telManager":Landroid/telephony/TelephonyManager;
+    invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
     :try_end_e
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_e} :catch_10
 

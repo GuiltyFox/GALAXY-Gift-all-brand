@@ -29,7 +29,7 @@
     .param p1, "this$0"    # Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     .prologue
-    .line 89
+    .line 98
     iput-object p1, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$1;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     iput-object p2, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$1;->val$savedInstanceState:Landroid/os/Bundle;
@@ -45,12 +45,12 @@
     .registers 2
 
     .prologue
-    .line 92
+    .line 101
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$1;->val$savedInstanceState:Landroid/os/Bundle;
 
     if-nez v0, :cond_d
 
-    .line 93
+    .line 102
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$1;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     # getter for: Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->mActivity:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
@@ -60,7 +60,7 @@
 
     invoke-static {v0}, Lcom/bzbs/marketplace/sticker/StickerUtil;->loadStickerSet(Landroid/content/Context;)V
 
-    .line 95
+    .line 104
     :cond_d
     return-void
 .end method

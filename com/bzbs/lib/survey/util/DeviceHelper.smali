@@ -159,7 +159,7 @@
 
     .prologue
     .line 124
-    const-string v0, "samsung"
+    sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -169,7 +169,7 @@
 
     .prologue
     .line 120
-    const-string v0, "GT-I9100"
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -218,7 +218,8 @@
     check-cast v0, Landroid/telephony/TelephonyManager;
 
     .line 47
-    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
+    .local v0, "telManager":Landroid/telephony/TelephonyManager;
+    invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
 
     move-result-object v1
 

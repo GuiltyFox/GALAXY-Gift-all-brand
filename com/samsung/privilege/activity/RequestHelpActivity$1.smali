@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/RequestHelpActivity;
 
     .prologue
-    .line 133
+    .line 135
     iput-object p1, p0, Lcom/samsung/privilege/activity/RequestHelpActivity$1;->this$0:Lcom/samsung/privilege/activity/RequestHelpActivity;
 
     invoke-direct {p0}, Lcom/bzbs/marketplace/asynctask/http/CallbackHttpAsyncTask;-><init>()V
@@ -42,7 +42,7 @@
     .param p4, "e"    # Ljava/lang/Throwable;
 
     .prologue
-    .line 146
+    .line 148
     return-void
 .end method
 
@@ -53,14 +53,14 @@
     .param p3, "responseBody"    # [B
 
     .prologue
-    .line 136
+    .line 138
     const/16 v1, 0xc8
 
     if-ne p1, v1, :cond_3f
 
     if-eqz p3, :cond_3f
 
-    .line 137
+    .line 139
     new-instance v1, Lcom/google/gson/Gson;
 
     invoke-direct {v1}, Lcom/google/gson/Gson;-><init>()V
@@ -77,7 +77,7 @@
 
     check-cast v0, Lcom/bzbs/marketplace/model/CodeModel;
 
-    .line 138
+    .line 140
     .local v0, "code":Lcom/bzbs/marketplace/model/CodeModel;
     iget-object v1, p0, Lcom/samsung/privilege/activity/RequestHelpActivity$1;->this$0:Lcom/samsung/privilege/activity/RequestHelpActivity;
 
@@ -107,7 +107,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 139
+    .line 141
     iget-object v1, p0, Lcom/samsung/privilege/activity/RequestHelpActivity$1;->this$0:Lcom/samsung/privilege/activity/RequestHelpActivity;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/RequestHelpActivity;->contentCode:Landroid/widget/LinearLayout;
@@ -116,7 +116,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 141
+    .line 143
     .end local v0    # "code":Lcom/bzbs/marketplace/model/CodeModel;
     :cond_3f
     return-void

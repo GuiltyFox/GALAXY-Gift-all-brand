@@ -106,7 +106,7 @@
 
     const-string/jumbo v1, "BaseMarketDetail::Layout"
 
-    const v2, 0x7f040127
+    const v2, 0x7f040131
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
@@ -130,7 +130,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100173
+    const v1, 0x7f100175
 
     iget-object v2, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->fragment:Landroid/support/v4/app/Fragment;
 
@@ -158,7 +158,7 @@
 
     const-string/jumbo v1, "BaseMarketDetail::Layout"
 
-    const v2, 0x7f040126
+    const v2, 0x7f040130
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
@@ -493,7 +493,7 @@
     .line 76
     iget-object v1, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->mActivity:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v2, 0x7f09024a
+    const v2, 0x7f09024b
 
     invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->getString(I)Ljava/lang/String;
 

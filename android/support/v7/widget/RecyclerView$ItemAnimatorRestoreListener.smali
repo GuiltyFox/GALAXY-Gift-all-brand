@@ -26,7 +26,7 @@
     .registers 2
 
     .prologue
-    .line 10261
+    .line 10248
     iput-object p1, p0, Landroid/support/v7/widget/RecyclerView$ItemAnimatorRestoreListener;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .param p2, "x1"    # Landroid/support/v7/widget/RecyclerView$1;
 
     .prologue
-    .line 10261
+    .line 10248
     invoke-direct {p0, p1}, Landroid/support/v7/widget/RecyclerView$ItemAnimatorRestoreListener;-><init>(Landroid/support/v7/widget/RecyclerView;)V
 
     return-void
@@ -55,12 +55,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 10265
+    .line 10252
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/support/v7/widget/RecyclerView$ViewHolder;->setIsRecyclable(Z)V
 
-    .line 10266
+    .line 10253
     iget-object v0, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->mShadowedHolder:Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     if-eqz v0, :cond_f
@@ -69,28 +69,28 @@
 
     if-nez v0, :cond_f
 
-    .line 10267
+    .line 10254
     iput-object v1, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->mShadowedHolder:Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
-    .line 10271
+    .line 10258
     :cond_f
     iput-object v1, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->mShadowingHolder:Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
-    .line 10272
+    .line 10259
     # invokes: Landroid/support/v7/widget/RecyclerView$ViewHolder;->shouldBeKeptAsChild()Z
-    invoke-static {p1}, Landroid/support/v7/widget/RecyclerView$ViewHolder;->access$6400(Landroid/support/v7/widget/RecyclerView$ViewHolder;)Z
+    invoke-static {p1}, Landroid/support/v7/widget/RecyclerView$ViewHolder;->access$6300(Landroid/support/v7/widget/RecyclerView$ViewHolder;)Z
 
     move-result v0
 
     if-nez v0, :cond_2f
 
-    .line 10273
+    .line 10260
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$ItemAnimatorRestoreListener;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v1, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     # invokes: Landroid/support/v7/widget/RecyclerView;->removeAnimatingView(Landroid/view/View;)Z
-    invoke-static {v0, v1}, Landroid/support/v7/widget/RecyclerView;->access$6500(Landroid/support/v7/widget/RecyclerView;Landroid/view/View;)Z
+    invoke-static {v0, v1}, Landroid/support/v7/widget/RecyclerView;->access$6400(Landroid/support/v7/widget/RecyclerView;Landroid/view/View;)Z
 
     move-result v0
 
@@ -102,7 +102,7 @@
 
     if-eqz v0, :cond_2f
 
-    .line 10274
+    .line 10261
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$ItemAnimatorRestoreListener;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v1, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
@@ -111,7 +111,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v7/widget/RecyclerView;->removeDetachedView(Landroid/view/View;Z)V
 
-    .line 10277
+    .line 10264
     :cond_2f
     return-void
 .end method

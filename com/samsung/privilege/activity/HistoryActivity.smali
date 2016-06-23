@@ -405,7 +405,7 @@
 
     .prologue
     .line 122
-    const v1, 0x7f100106
+    const v1, 0x7f100107
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/HistoryActivity;->findViewById(I)Landroid/view/View;
 
@@ -546,7 +546,7 @@
     .local v0, "client":Lcom/loopj/android/http/AsyncHttpClient;
     const-string/jumbo v3, ""
 
-    const v4, 0x7f09026e
+    const v4, 0x7f09026f
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -677,7 +677,7 @@
     .local v0, "client":Lcom/loopj/android/http/AsyncHttpClient;
     const-string/jumbo v3, ""
 
-    const v4, 0x7f09026e
+    const v4, 0x7f09026f
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -806,7 +806,7 @@
     .local v0, "client":Lcom/loopj/android/http/AsyncHttpClient;
     const-string/jumbo v3, ""
 
-    const v4, 0x7f09026e
+    const v4, 0x7f09026f
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -873,7 +873,7 @@
     .local v0, "deviceHelper":Lcom/bzbs/util/DeviceHelper;
     const-string/jumbo v3, "<deviceId>"
 
-    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/bzbs/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
 
     move-result-object v4
 
@@ -1102,7 +1102,7 @@
 
     .prologue
     .line 110
-    const v0, 0x7f10014c
+    const v0, 0x7f10014d
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->findViewById(I)Landroid/view/View;
 
@@ -1149,7 +1149,7 @@
 
     if-ne v4, v7, :cond_6
 
-    .line 807
+    .line 816
     :goto_5
     return-void
 
@@ -1157,7 +1157,7 @@
     :cond_6
     const-string/jumbo v4, ""
 
-    const v5, 0x7f09026e
+    const v5, 0x7f09026f
 
     invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 

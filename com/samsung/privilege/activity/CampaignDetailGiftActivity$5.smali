@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 592
+    .line 666
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$5;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 595
+    .line 669
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$5;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-virtual {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getApplicationContext()Landroid/content/Context;
@@ -53,7 +53,7 @@
 
     move-result-object v0
 
-    .line 596
+    .line 670
     .local v0, "tokenBzBs":Ljava/lang/String;
     if-eqz v0, :cond_16
 
@@ -65,25 +65,25 @@
 
     if-nez v1, :cond_16
 
-    .line 601
+    .line 675
     :goto_15
     return-void
 
-    .line 599
+    .line 673
     :cond_16
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$5;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$5;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->mHandler:Landroid/os/Handler;
-    invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$900(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
 
     move-result-object v2
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$5;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->callbackManager:Lcom/facebook/CallbackManager;
-    invoke-static {v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/facebook/CallbackManager;
+    invoke-static {v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1100(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/facebook/CallbackManager;
 
     move-result-object v3
 

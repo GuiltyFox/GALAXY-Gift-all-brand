@@ -1,11 +1,14 @@
 .class Lcom/bzbs/marketplace/base/BaseAppCompatActivity$8;
-.super Lcom/bzbs/marketplace/asynctask/http/CallbackHttpAsyncTask;
+.super Ljava/lang/Object;
 .source "BaseAppCompatActivity.java"
+
+# interfaces
+.implements Landroid/location/LocationListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->callCountCart(Z)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,77 +20,75 @@
 # instance fields
 .field final synthetic this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-.field final synthetic val$visible:Z
-
 
 # direct methods
-.method constructor <init>(Lcom/bzbs/marketplace/base/BaseAppCompatActivity;Z)V
-    .registers 3
+.method constructor <init>(Lcom/bzbs/marketplace/base/BaseAppCompatActivity;)V
+    .registers 2
     .param p1, "this$0"    # Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     .prologue
-    .line 657
+    .line 661
     iput-object p1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$8;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    iput-boolean p2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$8;->val$visible:Z
-
-    invoke-direct {p0}, Lcom/bzbs/marketplace/asynctask/http/CallbackHttpAsyncTask;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
-    .registers 5
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "errorResponse"    # [B
-    .param p4, "e"    # Ljava/lang/Throwable;
+.method public onLocationChanged(Landroid/location/Location;)V
+    .registers 6
+    .param p1, "loc"    # Landroid/location/Location;
 
     .prologue
-    .line 668
+    .line 663
+    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$8;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+
+    invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
+
+    move-result-wide v2
+
+    iput-wide v2, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->lat:D
+
+    .line 664
+    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$8;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+
+    invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
+
+    move-result-wide v2
+
+    iput-wide v2, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->lng:D
+
+    .line 665
     return-void
 .end method
 
-.method public onSuccess(I[Lcz/msebera/android/httpclient/Header;[B)V
-    .registers 9
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBody"    # [B
+.method public onProviderDisabled(Ljava/lang/String;)V
+    .registers 2
+    .param p1, "provider"    # Ljava/lang/String;
 
     .prologue
-    .line 660
-    new-instance v1, Ljava/lang/String;
+    .line 674
+    return-void
+.end method
 
-    invoke-direct {v1, p3}, Ljava/lang/String;-><init>([B)V
+.method public onProviderEnabled(Ljava/lang/String;)V
+    .registers 2
+    .param p1, "provider"    # Ljava/lang/String;
 
-    .line 661
-    .local v1, "result":Ljava/lang/String;
-    new-instance v2, Lcom/google/gson/Gson;
+    .prologue
+    .line 671
+    return-void
+.end method
 
-    invoke-direct {v2}, Lcom/google/gson/Gson;-><init>()V
+.method public onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
+    .registers 4
+    .param p1, "provider"    # Ljava/lang/String;
+    .param p2, "status"    # I
+    .param p3, "extras"    # Landroid/os/Bundle;
 
-    const-class v3, Lcom/bzbs/marketplace/model/marketplace/list/AddCartModel;
-
-    invoke-virtual {v2, v1, v3}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/bzbs/marketplace/model/marketplace/list/AddCartModel;
-
-    .line 662
-    .local v0, "cartModel":Lcom/bzbs/marketplace/model/marketplace/list/AddCartModel;
-    iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$8;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
-
-    iget-boolean v3, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$8;->val$visible:Z
-
-    invoke-virtual {v0}, Lcom/bzbs/marketplace/model/marketplace/list/AddCartModel;->getCart_count()I
-
-    move-result v4
-
-    invoke-virtual {v2, v3, v4}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->setBtnBasket(ZI)V
-
-    .line 663
+    .prologue
+    .line 668
     return-void
 .end method

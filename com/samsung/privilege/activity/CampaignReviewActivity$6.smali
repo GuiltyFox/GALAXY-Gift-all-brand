@@ -108,7 +108,21 @@
 
     invoke-virtual {v1}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 415
+    .line 416
+    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$6;->this$0:Lcom/samsung/privilege/activity/CampaignReviewActivity;
+
+    # getter for: Lcom/samsung/privilege/activity/CampaignReviewActivity;->mHandler:Landroid/os/Handler;
+    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignReviewActivity;->access$1000(Lcom/samsung/privilege/activity/CampaignReviewActivity;)Landroid/os/Handler;
+
+    move-result-object v1
+
+    new-instance v2, Lcom/samsung/privilege/activity/CampaignReviewActivity$6$2;
+
+    invoke-direct {v2, p0}, Lcom/samsung/privilege/activity/CampaignReviewActivity$6$2;-><init>(Lcom/samsung/privilege/activity/CampaignReviewActivity$6;)V
+
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 424
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$6;->this$0:Lcom/samsung/privilege/activity/CampaignReviewActivity;
 
     const/4 v2, 0x0
@@ -116,7 +130,7 @@
     # setter for: Lcom/samsung/privilege/activity/CampaignReviewActivity;->loading:Z
     invoke-static {v1, v2}, Lcom/samsung/privilege/activity/CampaignReviewActivity;->access$402(Lcom/samsung/privilege/activity/CampaignReviewActivity;Z)Z
 
-    .line 416
+    .line 425
     return-void
 .end method
 

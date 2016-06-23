@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/AboutUsActivity;
 
     .prologue
-    .line 210
+    .line 211
     iput-object p1, p0, Lcom/samsung/privilege/activity/AboutUsActivity$4;->this$0:Lcom/samsung/privilege/activity/AboutUsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,9 +43,9 @@
     .param p2, "which"    # I
 
     .prologue
-    .line 213
+    .line 214
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 214
+    .line 215
     return-void
 .end method

@@ -76,6 +76,43 @@
     return-void
 .end method
 
+.method public static onAuthenOTPSuccess(Ljava/lang/String;)V
+    .registers 4
+    .param p0, "action"    # Ljava/lang/String;
+
+    .prologue
+    .line 34
+    sget-object v1, Lcom/bzbs/event/LoginEvents;->mLoginListeners:Ljava/util/LinkedList;
+
+    invoke-virtual {v1}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_6
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_16
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/bzbs/event/LoginEvents$LoginListener;
+
+    .line 35
+    .local v0, "listener":Lcom/bzbs/event/LoginEvents$LoginListener;
+    invoke-interface {v0, p0}, Lcom/bzbs/event/LoginEvents$LoginListener;->onAuthenOTPSuccess(Ljava/lang/String;)V
+
+    goto :goto_6
+
+    .line 37
+    .end local v0    # "listener":Lcom/bzbs/event/LoginEvents$LoginListener;
+    :cond_16
+    return-void
+.end method
+
 .method public static onLoginDeviceSuccess(Ljava/lang/String;)V
     .registers 4
     .param p0, "action"    # Ljava/lang/String;

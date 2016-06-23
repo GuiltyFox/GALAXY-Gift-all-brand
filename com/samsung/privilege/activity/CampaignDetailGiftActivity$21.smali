@@ -29,7 +29,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 2291
+    .line 2405
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$21;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$21;->val$dialog:Landroid/app/Dialog;
@@ -46,18 +46,18 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 2293
+    .line 2407
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$21;->val$dialog:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 2294
+    .line 2408
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$21;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->doRedeem(Landroid/view/View;)V
 
-    .line 2295
+    .line 2409
     return-void
 .end method

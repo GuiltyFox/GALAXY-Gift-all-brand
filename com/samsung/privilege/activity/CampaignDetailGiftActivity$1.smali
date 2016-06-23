@@ -26,7 +26,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 299
+    .line 298
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$1;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iput-wide p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$1;->val$startTime:J
@@ -46,7 +46,7 @@
     .param p4, "error"    # Ljava/lang/Throwable;
 
     .prologue
-    .line 322
+    .line 321
     :try_start_0
     new-instance v12, Ljava/util/Date;
 
@@ -56,7 +56,7 @@
 
     move-result-wide v4
 
-    .line 323
+    .line 322
     .local v4, "endTime":J
     const-string/jumbo v12, "Campaign"
 
@@ -76,14 +76,14 @@
 
     invoke-static {v12, v13, v14, v0, v1}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsTiming(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
     :try_end_1f
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1f} :catch_f7
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1f} :catch_ef
 
-    .line 328
+    .line 327
     .end local v4    # "endTime":J
     :goto_1f
     const-string/jumbo v10, ""
 
-    .line 330
+    .line 329
     .local v10, "response_text":Ljava/lang/String;
     :try_start_22
     new-instance v11, Ljava/lang/String;
@@ -92,18 +92,14 @@
 
     invoke-direct {v11, v0}, Ljava/lang/String;-><init>([B)V
     :try_end_29
-    .catch Ljava/lang/Exception; {:try_start_22 .. :try_end_29} :catch_ad
+    .catch Ljava/lang/Exception; {:try_start_22 .. :try_end_29} :catch_a9
 
-    .line 331
+    .line 330
     .end local v10    # "response_text":Ljava/lang/String;
     .local v11, "response_text":Ljava/lang/String;
     :try_start_29
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$1;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->TAG:Ljava/lang/String;
-    invoke-static {v12}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Ljava/lang/String;
+    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000()Ljava/lang/String;
 
     move-result-object v12
 
@@ -138,15 +134,15 @@
     move-result-object v13
 
     invoke-static {v12, v13}, Lcom/bzbs/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_55
-    .catch Ljava/lang/Exception; {:try_start_29 .. :try_end_55} :catch_f4
+    :try_end_51
+    .catch Ljava/lang/Exception; {:try_start_29 .. :try_end_51} :catch_ec
 
     move-object v10, v11
 
-    .line 336
+    .line 335
     .end local v11    # "response_text":Ljava/lang/String;
     .restart local v10    # "response_text":Ljava/lang/String;
-    :goto_56
+    :goto_52
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$1;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -158,13 +154,13 @@
 
     invoke-virtual {v12}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 339
-    :try_start_61
+    .line 338
+    :try_start_5d
     new-instance v8, Lorg/json/JSONObject;
 
     invoke-direct {v8, v10}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 340
+    .line 339
     .local v8, "json_result":Lorg/json/JSONObject;
     const-string/jumbo v12, "error"
 
@@ -172,7 +168,7 @@
 
     move-result-object v7
 
-    .line 341
+    .line 340
     .local v7, "json_error":Lorg/json/JSONObject;
     const-string/jumbo v12, "id"
 
@@ -180,7 +176,7 @@
 
     move-result-object v6
 
-    .line 342
+    .line 341
     .local v6, "id":Ljava/lang/String;
     const-string/jumbo v12, "message"
 
@@ -188,7 +184,7 @@
 
     move-result-object v9
 
-    .line 343
+    .line 342
     .local v9, "message":Ljava/lang/String;
     const-string/jumbo v12, "1411"
 
@@ -196,9 +192,9 @@
 
     move-result v12
 
-    if-eqz v12, :cond_ec
+    if-eqz v12, :cond_e4
 
-    .line 344
+    .line 343
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$1;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -217,9 +213,9 @@
 
     move-result v12
 
-    if-eqz v12, :cond_d0
+    if-eqz v12, :cond_c8
 
-    .line 345
+    .line 344
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$1;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -228,7 +224,7 @@
 
     iget-object v13, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$1;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const v14, 0x7f09031d
+    const v14, 0x7f09031e
 
     invoke-virtual {v13, v14}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -237,30 +233,26 @@
     const/4 v14, 0x0
 
     invoke-static {v12, v13, v14}, Lcom/bzbs/util/DialogUtil;->showDialogConfirmLoginFacebook(Landroid/content/Context;Ljava/lang/String;Z)V
-    :try_end_ac
-    .catch Ljava/lang/Exception; {:try_start_61 .. :try_end_ac} :catch_d8
+    :try_end_a8
+    .catch Ljava/lang/Exception; {:try_start_5d .. :try_end_a8} :catch_d0
 
-    .line 356
+    .line 355
     .end local v6    # "id":Ljava/lang/String;
     .end local v7    # "json_error":Lorg/json/JSONObject;
     .end local v8    # "json_result":Lorg/json/JSONObject;
-    :goto_ac
+    :goto_a8
     return-void
 
-    .line 332
+    .line 331
     .end local v9    # "message":Ljava/lang/String;
-    :catch_ad
+    :catch_a9
     move-exception v3
 
-    .line 333
+    .line 332
     .local v3, "ex":Ljava/lang/Exception;
-    :goto_ae
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$1;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
+    :goto_aa
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->TAG:Ljava/lang/String;
-    invoke-static {v12}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Ljava/lang/String;
+    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000()Ljava/lang/String;
 
     move-result-object v12
 
@@ -286,47 +278,47 @@
 
     invoke-static {v12, v13}, Lcom/bzbs/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_56
+    goto :goto_52
 
-    .line 347
+    .line 346
     .end local v3    # "ex":Ljava/lang/Exception;
     .restart local v6    # "id":Ljava/lang/String;
     .restart local v7    # "json_error":Lorg/json/JSONObject;
     .restart local v8    # "json_result":Lorg/json/JSONObject;
     .restart local v9    # "message":Ljava/lang/String;
-    :cond_d0
-    :try_start_d0
+    :cond_c8
+    :try_start_c8
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$1;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v12, v9}, Lcom/bzbs/util/DialogUtil;->showDialogError(Landroid/content/Context;Ljava/lang/String;)V
-    :try_end_d7
-    .catch Ljava/lang/Exception; {:try_start_d0 .. :try_end_d7} :catch_d8
+    :try_end_cf
+    .catch Ljava/lang/Exception; {:try_start_c8 .. :try_end_cf} :catch_d0
 
-    goto :goto_ac
+    goto :goto_a8
 
-    .line 352
+    .line 351
     .end local v6    # "id":Ljava/lang/String;
     .end local v7    # "json_error":Lorg/json/JSONObject;
     .end local v8    # "json_result":Lorg/json/JSONObject;
     .end local v9    # "message":Ljava/lang/String;
-    :catch_d8
+    :catch_d0
     move-exception v2
 
-    .line 353
+    .line 352
     .local v2, "e":Ljava/lang/Exception;
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$1;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const v13, 0x7f0900ce
+    const v13, 0x7f0900cf
 
     invoke-virtual {v12, v13}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 354
+    .line 353
     .restart local v9    # "message":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -334,44 +326,44 @@
 
     invoke-static {v12, v9}, Lcom/bzbs/util/DialogUtil;->showDialogError(Landroid/content/Context;Ljava/lang/String;)V
 
-    goto :goto_ac
+    goto :goto_a8
 
-    .line 350
+    .line 349
     .end local v2    # "e":Ljava/lang/Exception;
     .restart local v6    # "id":Ljava/lang/String;
     .restart local v7    # "json_error":Lorg/json/JSONObject;
     .restart local v8    # "json_result":Lorg/json/JSONObject;
-    :cond_ec
-    :try_start_ec
+    :cond_e4
+    :try_start_e4
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$1;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v12, v9}, Lcom/bzbs/util/DialogUtil;->showDialogError(Landroid/content/Context;Ljava/lang/String;)V
-    :try_end_f3
-    .catch Ljava/lang/Exception; {:try_start_ec .. :try_end_f3} :catch_d8
+    :try_end_eb
+    .catch Ljava/lang/Exception; {:try_start_e4 .. :try_end_eb} :catch_d0
 
-    goto :goto_ac
+    goto :goto_a8
 
-    .line 332
+    .line 331
     .end local v6    # "id":Ljava/lang/String;
     .end local v7    # "json_error":Lorg/json/JSONObject;
     .end local v8    # "json_result":Lorg/json/JSONObject;
     .end local v9    # "message":Ljava/lang/String;
     .end local v10    # "response_text":Ljava/lang/String;
     .restart local v11    # "response_text":Ljava/lang/String;
-    :catch_f4
+    :catch_ec
     move-exception v3
 
     move-object v10, v11
 
     .end local v11    # "response_text":Ljava/lang/String;
     .restart local v10    # "response_text":Ljava/lang/String;
-    goto :goto_ae
+    goto :goto_aa
 
-    .line 324
+    .line 323
     .end local v10    # "response_text":Ljava/lang/String;
-    :catch_f7
+    :catch_ef
     move-exception v12
 
     goto/16 :goto_1f
@@ -384,7 +376,7 @@
     .param p3, "responseBody"    # [B
 
     .prologue
-    .line 303
+    .line 302
     :try_start_0
     new-instance v3, Ljava/util/Date;
 
@@ -394,7 +386,7 @@
 
     move-result-wide v0
 
-    .line 304
+    .line 303
     .local v0, "endTime":J
     const-string/jumbo v3, "Campaign"
 
@@ -408,21 +400,19 @@
 
     invoke-static {v3, v4, v5, v6, v7}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsTiming(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
     :try_end_19
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_19} :catch_5c
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_19} :catch_5a
 
-    .line 309
+    .line 308
     .end local v0    # "endTime":J
     :goto_19
     new-instance v2, Ljava/lang/String;
 
     invoke-direct {v2, p3}, Ljava/lang/String;-><init>([B)V
 
-    .line 310
+    .line 309
     .local v2, "response_text":Ljava/lang/String;
-    iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$1;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->TAG:Ljava/lang/String;
-    invoke-static {v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Ljava/lang/String;
+    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000()Ljava/lang/String;
 
     move-result-object v3
 
@@ -456,7 +446,7 @@
 
     invoke-static {v3, v4}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 312
+    .line 311
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$1;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->gDialog:Landroid/app/ProgressDialog;
@@ -466,7 +456,7 @@
 
     invoke-virtual {v3}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 314
+    .line 313
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$1;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     const/4 v4, 0x1
@@ -476,18 +466,18 @@
     # invokes: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->processJsonRedeem(Ljava/lang/String;ZZ)V
     invoke-static {v3, v2, v4, v5}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$200(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;ZZ)V
 
-    .line 316
+    .line 315
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$1;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     # invokes: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getPoints()V
     invoke-static {v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$300(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)V
 
-    .line 317
+    .line 316
     return-void
 
-    .line 305
+    .line 304
     .end local v2    # "response_text":Ljava/lang/String;
-    :catch_5c
+    :catch_5a
     move-exception v3
 
     goto :goto_19

@@ -897,7 +897,7 @@
     invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 40
-    const v7, 0x7f04004f
+    const v7, 0x7f040050
 
     invoke-virtual {p0, v7}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->setContentView(I)V
 
@@ -907,7 +907,7 @@
     invoke-virtual {p0, v7, v8}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->overridePendingTransition(II)V
 
     .line 43
-    const v7, 0x7f1001c7
+    const v7, 0x7f1001cf
 
     invoke-virtual {p0, v7}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -917,7 +917,7 @@
 
     .line 44
     .local v4, "tvTransactionID":Landroid/widget/TextView;
-    const v7, 0x7f1001c9
+    const v7, 0x7f1001d1
 
     invoke-virtual {p0, v7}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -927,7 +927,7 @@
 
     .line 45
     .local v5, "tvTransactionMsg":Landroid/widget/TextView;
-    const v7, 0x7f10013d
+    const v7, 0x7f10013e
 
     invoke-virtual {p0, v7}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -938,7 +938,7 @@
     iput-object v7, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->contentCode:Landroid/widget/RelativeLayout;
 
     .line 46
-    const v7, 0x7f100159
+    const v7, 0x7f10015a
 
     invoke-virtual {p0, v7}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -949,7 +949,7 @@
     iput-object v7, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->imgBarcode:Landroid/widget/ImageView;
 
     .line 47
-    const v7, 0x7f1001ca
+    const v7, 0x7f1001d2
 
     invoke-virtual {p0, v7}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -959,7 +959,7 @@
 
     .line 48
     .local v0, "btnOK":Landroid/widget/Button;
-    const v7, 0x7f1001c8
+    const v7, 0x7f1001d0
 
     invoke-virtual {p0, v7}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 

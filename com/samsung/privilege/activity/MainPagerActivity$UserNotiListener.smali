@@ -26,7 +26,7 @@
     .registers 2
 
     .prologue
-    .line 1284
+    .line 1389
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserNotiListener;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .param p2, "x1"    # Lcom/samsung/privilege/activity/MainPagerActivity$1;
 
     .prologue
-    .line 1284
+    .line 1389
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/MainPagerActivity$UserNotiListener;-><init>(Lcom/samsung/privilege/activity/MainPagerActivity;)V
 
     return-void
@@ -52,7 +52,7 @@
     .registers 3
 
     .prologue
-    .line 1297
+    .line 1402
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserNotiListener;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->mHandler:Landroid/os/Handler;
@@ -66,7 +66,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1303
+    .line 1408
     return-void
 .end method
 
@@ -75,7 +75,7 @@
     .param p1, "message"    # Ljava/lang/String;
 
     .prologue
-    .line 1287
+    .line 1392
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserNotiListener;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->mHandler:Landroid/os/Handler;
@@ -89,6 +89,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1293
+    .line 1398
     return-void
 .end method

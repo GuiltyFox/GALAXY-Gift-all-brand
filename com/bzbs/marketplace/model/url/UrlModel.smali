@@ -77,12 +77,12 @@
     .param p0, "token"    # Ljava/lang/String;
 
     .prologue
-    .line 254
+    .line 260
     new-instance v0, Ljava/util/Date;
 
     invoke-direct {v0}, Ljava/util/Date;-><init>()V
 
-    .line 255
+    .line 261
     .local v0, "date":Ljava/util/Date;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -126,7 +126,7 @@
 
     move-result-object v1
 
-    .line 258
+    .line 264
     .local v1, "url":Ljava/lang/String;
     invoke-static {v1}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
@@ -134,12 +134,12 @@
 
     const-string/jumbo v3, "token"
 
-    .line 259
+    .line 265
     invoke-virtual {v2, v3, p0}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v2
 
-    .line 260
+    .line 266
     invoke-virtual {v2}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v2
@@ -152,7 +152,7 @@
     .param p0, "campaignId"    # Ljava/lang/String;
 
     .prologue
-    .line 242
+    .line 248
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -173,7 +173,7 @@
 
     move-result-object v0
 
-    .line 244
+    .line 250
     .local v0, "url":Ljava/lang/String;
     invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
@@ -181,12 +181,12 @@
 
     const-string/jumbo v2, "campaign_id"
 
-    .line 245
+    .line 251
     invoke-virtual {v1, v2, p0}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
-    .line 246
+    .line 252
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1
@@ -247,7 +247,7 @@
     .param p1, "tokenId"    # Ljava/lang/String;
 
     .prologue
-    .line 82
+    .line 88
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -268,7 +268,7 @@
 
     move-result-object v0
 
-    .line 83
+    .line 89
     .local v0, "url":Ljava/lang/String;
     invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
@@ -276,19 +276,19 @@
 
     const-string/jumbo v2, "id"
 
-    .line 84
+    .line 90
     invoke-virtual {v1, v2, p0}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "token"
 
-    .line 85
+    .line 91
     invoke-virtual {v1, v2, p1}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
-    .line 86
+    .line 92
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1
@@ -300,7 +300,7 @@
     .registers 2
 
     .prologue
-    .line 271
+    .line 277
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -329,7 +329,7 @@
     .param p0, "token"    # Ljava/lang/String;
 
     .prologue
-    .line 250
+    .line 256
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -397,6 +397,50 @@
     move-result-object v1
 
     .line 78
+    invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
+
+    move-result-object v1
+
+    return-object v1
+.end method
+
+.method public static getUrlDashboardCustom(Ljava/lang/String;)Ljava/lang/String;
+    .registers 4
+    .param p0, "appName"    # Ljava/lang/String;
+
+    .prologue
+    .line 82
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v2, Lcom/bzbs/data/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "api/dashboard/"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 83
+    .local v0, "url":Ljava/lang/String;
+    invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
+
+    move-result-object v1
+
+    .line 84
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1
@@ -516,7 +560,7 @@
     .param p1, "tokenBuzz"    # Ljava/lang/String;
 
     .prologue
-    .line 141
+    .line 147
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -537,7 +581,7 @@
 
     move-result-object v0
 
-    .line 142
+    .line 148
     .local v0, "url":Ljava/lang/String;
     invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
@@ -545,19 +589,19 @@
 
     const-string/jumbo v2, "campaign"
 
-    .line 143
+    .line 149
     invoke-virtual {v1, v2, p0}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "token"
 
-    .line 144
+    .line 150
     invoke-virtual {v1, v2, p1}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
-    .line 145
+    .line 151
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1
@@ -572,7 +616,7 @@
     .param p2, "token"    # Ljava/lang/String;
 
     .prologue
-    .line 133
+    .line 139
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -601,7 +645,7 @@
 
     move-result-object v0
 
-    .line 134
+    .line 140
     .local v0, "url":Ljava/lang/String;
     invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
@@ -609,19 +653,19 @@
 
     const-string/jumbo v2, "campaign"
 
-    .line 135
+    .line 141
     invoke-virtual {v1, v2, p1}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "token"
 
-    .line 136
+    .line 142
     invoke-virtual {v1, v2, p2}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
-    .line 137
+    .line 143
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1
@@ -640,7 +684,7 @@
     .param p6, "keyword"    # Ljava/lang/String;
 
     .prologue
-    .line 90
+    .line 96
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -669,7 +713,7 @@
 
     move-result-object v0
 
-    .line 92
+    .line 98
     .local v0, "url":Ljava/lang/String;
     const-string/jumbo v1, ""
 
@@ -679,7 +723,7 @@
 
     if-nez v1, :cond_3b
 
-    .line 93
+    .line 99
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -698,14 +742,14 @@
 
     move-result-object v0
 
-    .line 95
+    .line 101
     :cond_3b
     if-nez p6, :cond_40
 
-    .line 96
+    .line 102
     const-string/jumbo p6, ""
 
-    .line 99
+    .line 105
     :cond_40
     const-string/jumbo v1, " "
 
@@ -715,7 +759,7 @@
 
     move-result-object p6
 
-    .line 101
+    .line 107
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -734,54 +778,54 @@
 
     move-result-object v0
 
-    .line 102
+    .line 108
     invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "token"
 
-    .line 103
+    .line 109
     invoke-virtual {v1, v2, p1}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "device_app_id"
 
-    .line 104
+    .line 110
     invoke-virtual {v1, v2, p2}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "cate"
 
-    .line 105
+    .line 111
     invoke-virtual {v1, v2, p3}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "config"
 
-    .line 106
+    .line 112
     invoke-virtual {v1, v2, p4}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "skip"
 
-    .line 107
+    .line 113
     invoke-virtual {v1, v2, p5}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "keyword"
 
-    .line 108
+    .line 114
     invoke-virtual {v1, v2, p6}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
-    .line 109
+    .line 115
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1
@@ -795,7 +839,7 @@
     .param p1, "appIdFacebook"    # Ljava/lang/String;
 
     .prologue
-    .line 113
+    .line 119
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -816,7 +860,7 @@
 
     move-result-object v0
 
-    .line 114
+    .line 120
     .local v0, "url":Ljava/lang/String;
     invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
@@ -824,19 +868,19 @@
 
     const-string/jumbo v2, "config"
 
-    .line 115
+    .line 121
     invoke-virtual {v1, v2, p0}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "device_app_id"
 
-    .line 116
+    .line 122
     invoke-virtual {v1, v2, p1}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
-    .line 117
+    .line 123
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1
@@ -851,7 +895,7 @@
     .param p2, "appIdFacebook"    # Ljava/lang/String;
 
     .prologue
-    .line 121
+    .line 127
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -872,7 +916,7 @@
 
     move-result-object v0
 
-    .line 122
+    .line 128
     .local v0, "url":Ljava/lang/String;
     invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
@@ -880,26 +924,26 @@
 
     const-string/jumbo v2, "token"
 
-    .line 123
+    .line 129
     invoke-virtual {v1, v2, p0}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "config"
 
-    .line 124
+    .line 130
     invoke-virtual {v1, v2, p1}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "device_app_id"
 
-    .line 125
+    .line 131
     invoke-virtual {v1, v2, p2}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
-    .line 126
+    .line 132
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1
@@ -912,7 +956,7 @@
     .param p0, "token"    # Ljava/lang/String;
 
     .prologue
-    .line 216
+    .line 222
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -933,7 +977,7 @@
 
     move-result-object v0
 
-    .line 218
+    .line 224
     .local v0, "url":Ljava/lang/String;
     invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
@@ -941,12 +985,12 @@
 
     const-string/jumbo v2, "token"
 
-    .line 219
+    .line 225
     invoke-virtual {v1, v2, p0}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
-    .line 220
+    .line 226
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1
@@ -959,7 +1003,7 @@
     .param p0, "token"    # Ljava/lang/String;
 
     .prologue
-    .line 233
+    .line 239
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -980,7 +1024,7 @@
 
     move-result-object v0
 
-    .line 235
+    .line 241
     .local v0, "url":Ljava/lang/String;
     invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
@@ -988,12 +1032,12 @@
 
     const-string/jumbo v2, "token"
 
-    .line 236
+    .line 242
     invoke-virtual {v1, v2, p0}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
-    .line 237
+    .line 243
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1
@@ -1009,7 +1053,7 @@
     .param p3, "page"    # I
 
     .prologue
-    .line 156
+    .line 162
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1030,7 +1074,7 @@
 
     move-result-object v0
 
-    .line 157
+    .line 163
     .local v0, "url":Ljava/lang/String;
     invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
@@ -1038,14 +1082,14 @@
 
     const-string/jumbo v2, "token"
 
-    .line 158
+    .line 164
     invoke-virtual {v1, v2, p1}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "device_app_id"
 
-    .line 159
+    .line 165
     invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v3
@@ -1056,14 +1100,14 @@
 
     const-string/jumbo v2, "config"
 
-    .line 160
+    .line 166
     invoke-virtual {v1, v2, p2}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "page"
 
-    .line 161
+    .line 167
     invoke-static {p3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v3
@@ -1072,7 +1116,7 @@
 
     move-result-object v1
 
-    .line 162
+    .line 168
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1
@@ -1087,7 +1131,7 @@
     .param p2, "rowKey"    # Ljava/lang/String;
 
     .prologue
-    .line 174
+    .line 180
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1108,11 +1152,11 @@
 
     move-result-object v0
 
-    .line 176
+    .line 182
     .local v0, "url":Ljava/lang/String;
     if-eqz p2, :cond_2c
 
-    .line 177
+    .line 183
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1131,14 +1175,14 @@
 
     move-result-object v0
 
-    .line 179
+    .line 185
     :cond_2c
     if-nez p2, :cond_31
 
-    .line 180
+    .line 186
     const-string/jumbo p2, ""
 
-    .line 182
+    .line 188
     :cond_31
     invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
@@ -1146,26 +1190,26 @@
 
     const-string/jumbo v2, "token"
 
-    .line 183
+    .line 189
     invoke-virtual {v1, v2, p0}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "keyBuzz"
 
-    .line 184
+    .line 190
     invoke-virtual {v1, v2, p1}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "rowKey"
 
-    .line 185
+    .line 191
     invoke-virtual {v1, v2, p2}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
-    .line 186
+    .line 192
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1
@@ -1180,7 +1224,7 @@
     .param p2, "rowKey"    # Ljava/lang/String;
 
     .prologue
-    .line 275
+    .line 281
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1201,11 +1245,11 @@
 
     move-result-object v0
 
-    .line 276
+    .line 282
     .local v0, "url":Ljava/lang/String;
     if-eqz p2, :cond_2c
 
-    .line 277
+    .line 283
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1224,14 +1268,14 @@
 
     move-result-object v0
 
-    .line 279
+    .line 285
     :cond_2c
     if-nez p2, :cond_31
 
-    .line 280
+    .line 286
     const-string/jumbo p2, ""
 
-    .line 282
+    .line 288
     :cond_31
     invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
@@ -1239,26 +1283,26 @@
 
     const-string/jumbo v2, "token"
 
-    .line 283
+    .line 289
     invoke-virtual {v1, v2, p0}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "user_id"
 
-    .line 284
+    .line 290
     invoke-virtual {v1, v2, p1}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "rowKey"
 
-    .line 285
+    .line 291
     invoke-virtual {v1, v2, p2}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
-    .line 286
+    .line 292
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1
@@ -1273,7 +1317,7 @@
     .param p2, "rowKey"    # Ljava/lang/String;
 
     .prologue
-    .line 190
+    .line 196
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1294,11 +1338,11 @@
 
     move-result-object v0
 
-    .line 192
+    .line 198
     .local v0, "url":Ljava/lang/String;
     if-eqz p2, :cond_2c
 
-    .line 193
+    .line 199
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1317,14 +1361,14 @@
 
     move-result-object v0
 
-    .line 195
+    .line 201
     :cond_2c
     if-nez p2, :cond_31
 
-    .line 196
+    .line 202
     const-string/jumbo p2, ""
 
-    .line 198
+    .line 204
     :cond_31
     invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
@@ -1332,26 +1376,26 @@
 
     const-string/jumbo v2, "token"
 
-    .line 199
+    .line 205
     invoke-virtual {v1, v2, p0}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "id"
 
-    .line 200
+    .line 206
     invoke-virtual {v1, v2, p1}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "rowKey"
 
-    .line 201
+    .line 207
     invoke-virtual {v1, v2, p2}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
-    .line 202
+    .line 208
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1
@@ -1364,7 +1408,7 @@
     .param p0, "id"    # Ljava/lang/String;
 
     .prologue
-    .line 207
+    .line 213
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1385,7 +1429,7 @@
 
     move-result-object v0
 
-    .line 209
+    .line 215
     .local v0, "url":Ljava/lang/String;
     invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
@@ -1393,12 +1437,12 @@
 
     const-string/jumbo v2, "id"
 
-    .line 210
+    .line 216
     invoke-virtual {v1, v2, p0}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
-    .line 211
+    .line 217
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1
@@ -1412,7 +1456,7 @@
     .param p1, "keyBuzz"    # Ljava/lang/String;
 
     .prologue
-    .line 166
+    .line 172
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1433,7 +1477,7 @@
 
     move-result-object v0
 
-    .line 167
+    .line 173
     .local v0, "url":Ljava/lang/String;
     invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
@@ -1441,19 +1485,19 @@
 
     const-string/jumbo v2, "token"
 
-    .line 168
+    .line 174
     invoke-virtual {v1, v2, p0}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "keyBuzz"
 
-    .line 169
+    .line 175
     invoke-virtual {v1, v2, p1}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
-    .line 170
+    .line 176
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1
@@ -1467,7 +1511,7 @@
     .param p1, "campaignId"    # Ljava/lang/String;
 
     .prologue
-    .line 224
+    .line 230
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1488,7 +1532,7 @@
 
     move-result-object v0
 
-    .line 226
+    .line 232
     .local v0, "url":Ljava/lang/String;
     invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
@@ -1496,19 +1540,19 @@
 
     const-string/jumbo v2, "post_id"
 
-    .line 227
+    .line 233
     invoke-virtual {v1, v2, p0}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
     const-string/jumbo v2, "campaign_id"
 
-    .line 228
+    .line 234
     invoke-virtual {v1, v2, p1}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
-    .line 229
+    .line 235
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1
@@ -1521,7 +1565,7 @@
     .param p0, "tokenBuzz"    # Ljava/lang/String;
 
     .prologue
-    .line 149
+    .line 155
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1542,7 +1586,7 @@
 
     move-result-object v0
 
-    .line 150
+    .line 156
     .local v0, "url":Ljava/lang/String;
     invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
@@ -1550,12 +1594,12 @@
 
     const-string/jumbo v2, "token"
 
-    .line 151
+    .line 157
     invoke-virtual {v1, v2, p0}, Lcom/bzbs/marketplace/util/Phrase;->put(Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
     move-result-object v1
 
-    .line 152
+    .line 158
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1
@@ -1615,7 +1659,7 @@
     .param p0, "mActivity"    # Landroid/app/Activity;
 
     .prologue
-    .line 264
+    .line 270
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1636,7 +1680,7 @@
 
     move-result-object v0
 
-    .line 265
+    .line 271
     .local v0, "url":Ljava/lang/String;
     invoke-static {v0}, Lcom/bzbs/marketplace/util/Phrase;->init(Ljava/lang/String;)Lcom/bzbs/marketplace/util/Phrase;
 
@@ -1644,7 +1688,7 @@
 
     const-string/jumbo v2, "token"
 
-    .line 266
+    .line 272
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v3
@@ -1653,7 +1697,7 @@
 
     move-result-object v1
 
-    .line 267
+    .line 273
     invoke-virtual {v1}, Lcom/bzbs/marketplace/util/Phrase;->commit()Ljava/lang/String;
 
     move-result-object v1

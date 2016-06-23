@@ -18,19 +18,19 @@
 
 .field btnAddPicture:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100618
+        value = 0x7f100636
     .end annotation
 .end field
 
 .field contentImagePost:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10060c
+        value = 0x7f10062a
     .end annotation
 .end field
 
 .field edtTextComment:Landroid/widget/EditText;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10060f
+        value = 0x7f10062d
     .end annotation
 .end field
 
@@ -42,7 +42,7 @@
 
 .field imagePost:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10060d
+        value = 0x7f10062b
     .end annotation
 .end field
 
@@ -69,7 +69,7 @@
 
 .field mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005fb
+        value = 0x7f1005e0
     .end annotation
 .end field
 
@@ -77,19 +77,19 @@
 
 .field pvLinearDeterminate:Lcom/rey/material/widget/ProgressView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10060b
+        value = 0x7f100629
     .end annotation
 .end field
 
 .field recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100619
+        value = 0x7f100637
     .end annotation
 .end field
 
 .field recyclerView:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100609
+        value = 0x7f100627
     .end annotation
 .end field
 
@@ -103,7 +103,7 @@
 
 .field tvResult:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005fe
+        value = 0x7f10061c
     .end annotation
 .end field
 
@@ -794,7 +794,8 @@
     invoke-direct {v1, v11}, Lcom/bzbs/util/DeviceHelper;-><init>(Landroid/content/Context;)V
 
     .line 360
-    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
+    .local v1, "deviceHelper":Lcom/bzbs/util/DeviceHelper;
+    invoke-virtual {v1}, Lcom/bzbs/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
 
     move-result-object v2
 
@@ -808,7 +809,7 @@
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v12, "samsung"
+    sget-object v12, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -820,7 +821,7 @@
 
     move-result-object v11
 
-    const-string v12, "GT-I9100"
+    sget-object v12, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1735,7 +1736,7 @@
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
     .line 127
-    const v0, 0x7f040130
+    const v0, 0x7f04013b
 
     return v0
 .end method
@@ -1787,7 +1788,7 @@
     .param p1, "v"    # Landroid/view/View;
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f100618
+            0x7f100636
         }
     .end annotation
 
@@ -1816,8 +1817,8 @@
     .param p1, "v"    # Landroid/view/View;
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f10060e,
-            0x7f1003cc
+            0x7f10062c,
+            0x7f1003d5
         }
     .end annotation
 
@@ -1831,7 +1832,7 @@
 
     move-result v1
 
-    const v2, 0x7f10060e
+    const v2, 0x7f10062c
 
     if-ne v1, v2, :cond_f
 
@@ -1866,7 +1867,7 @@
     .line 347
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->mActivity:Landroid/app/Activity;
 
-    const v2, 0x7f09024a
+    const v2, 0x7f09024b
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->getString(I)Ljava/lang/String;
 

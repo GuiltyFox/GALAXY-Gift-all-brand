@@ -26,7 +26,7 @@
     .registers 7
 
     .prologue
-    const v5, 0x7f100173
+    const v5, 0x7f100175
 
     .line 61
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ReplyActivity;->getIntent()Landroid/content/Intent;
@@ -184,7 +184,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100173
+    const v1, 0x7f100175
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/ReplyActivity;->fragment:Landroid/support/v4/app/Fragment;
 
@@ -280,7 +280,7 @@
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ReplyActivity;->setHideSearch()V
 
     .line 53
-    const v0, 0x7f0901c8
+    const v0, 0x7f0901c9
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ReplyActivity;->getString(I)Ljava/lang/String;
 

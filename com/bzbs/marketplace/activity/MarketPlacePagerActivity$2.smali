@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     .prologue
-    .line 115
+    .line 124
     iput-object p1, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$2;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,10 +41,10 @@
     .registers 3
 
     .prologue
-    .line 119
+    .line 128
     const/4 v0, 0x0
 
-    .line 120
+    .line 129
     .local v0, "need_to_refresh":Z
     :try_start_1
     iget-object v1, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$2;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
@@ -56,7 +56,7 @@
 
     if-eqz v1, :cond_1e
 
-    .line 121
+    .line 130
     iget-object v1, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$2;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     # getter for: Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->adapter:Lcom/bzbs/marketplace/adapter/pager/MarketPlaceMenuAdapterPager;
@@ -70,15 +70,15 @@
 
     if-nez v1, :cond_16
 
-    .line 122
+    .line 131
     const/4 v0, 0x1
 
-    .line 128
+    .line 137
     :cond_16
     :goto_16
     if-eqz v0, :cond_1d
 
-    .line 129
+    .line 138
     iget-object v1, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$2;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     # invokes: Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->loadData()V
@@ -86,18 +86,18 @@
     :try_end_1d
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1d} :catch_20
 
-    .line 134
+    .line 143
     :cond_1d
     :goto_1d
     return-void
 
-    .line 125
+    .line 134
     :cond_1e
     const/4 v0, 0x1
 
     goto :goto_16
 
-    .line 131
+    .line 140
     :catch_20
     move-exception v1
 

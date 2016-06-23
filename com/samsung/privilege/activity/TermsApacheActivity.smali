@@ -34,7 +34,7 @@
 
     .prologue
     .line 40
-    const v5, 0x7f1001c5
+    const v5, 0x7f1001cd
 
     invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/TermsApacheActivity;->findViewById(I)Landroid/view/View;
 
@@ -51,7 +51,7 @@
 
     .line 50
     .local v3, "res":Landroid/content/res/Resources;
-    const v5, 0x7f080002
+    const v5, 0x7f080001
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
 

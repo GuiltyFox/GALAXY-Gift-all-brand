@@ -3,12 +3,12 @@
 .source "BaseAppCompatActivity.java"
 
 # interfaces
-.implements Lcom/facebook/FacebookCallback;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->onShared(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/bzbs/marketplace/listener/OnShareSuccessListener;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,37 +16,19 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/facebook/FacebookCallback",
-        "<",
-        "Lcom/facebook/share/Sharer$Result;",
-        ">;"
-    }
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-.field final synthetic val$id:Ljava/lang/String;
-
-.field final synthetic val$onShareSuccessListener:Lcom/bzbs/marketplace/listener/OnShareSuccessListener;
-
 
 # direct methods
-.method constructor <init>(Lcom/bzbs/marketplace/base/BaseAppCompatActivity;Ljava/lang/String;Lcom/bzbs/marketplace/listener/OnShareSuccessListener;)V
-    .registers 4
+.method constructor <init>(Lcom/bzbs/marketplace/base/BaseAppCompatActivity;)V
+    .registers 2
     .param p1, "this$0"    # Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     .prologue
-    .line 573
+    .line 548
     iput-object p1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
-
-    iput-object p2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->val$id:Ljava/lang/String;
-
-    iput-object p3, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->val$onShareSuccessListener:Lcom/bzbs/marketplace/listener/OnShareSuccessListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -55,73 +37,102 @@
 
 
 # virtual methods
-.method public onCancel()V
-    .registers 3
+.method public onClick(Landroid/view/View;)V
+    .registers 7
+    .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 582
-    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+    .line 551
+    iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    # getter for: Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->TAG:Ljava/lang/String;
-    invoke-static {v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->access$000(Lcom/bzbs/marketplace/base/BaseAppCompatActivity;)Ljava/lang/String;
+    iget-object v2, v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->btnBasket:Landroid/widget/ImageView;
 
-    move-result-object v0
+    if-eq p1, v2, :cond_c
 
-    const-string/jumbo v1, "shareDialog:= onCancel"
+    iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    iget-object v2, v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->layoutBasket:Landroid/widget/RelativeLayout;
 
-    .line 583
-    return-void
-.end method
+    if-ne p1, v2, :cond_56
 
-.method public onError(Lcom/facebook/FacebookException;)V
-    .registers 4
-    .param p1, "e"    # Lcom/facebook/FacebookException;
+    .line 553
+    :cond_c
+    iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    .prologue
-    .line 587
-    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+    iget-object v2, v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->mActivity:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    # getter for: Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->TAG:Ljava/lang/String;
-    invoke-static {v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->access$000(Lcom/bzbs/marketplace/base/BaseAppCompatActivity;)Ljava/lang/String;
+    instance-of v2, v2, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;
 
-    move-result-object v0
+    if-eqz v2, :cond_20
 
-    const-string/jumbo v1, "shareDialog:= onError"
+    .line 555
+    const-string/jumbo v2, "BZB Campaign Details"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const-string/jumbo v3, "Click Shopping Cart"
 
-    .line 588
-    return-void
-.end method
+    const-string/jumbo v4, ""
 
-.method public onSuccess(Lcom/facebook/share/Sharer$Result;)V
-    .registers 5
-    .param p1, "result"    # Lcom/facebook/share/Sharer$Result;
+    invoke-static {v2, v3, v4}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .prologue
-    .line 577
-    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+    .line 558
+    :cond_20
+    iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->val$id:Ljava/lang/String;
+    iget-object v2, v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->mActivity:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->val$onShareSuccessListener:Lcom/bzbs/marketplace/listener/OnShareSuccessListener;
+    instance-of v2, v2, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
-    invoke-virtual {v0, v1, v2}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->onSharedSuccess(Ljava/lang/String;Lcom/bzbs/marketplace/listener/OnShareSuccessListener;)V
+    if-eqz v2, :cond_34
 
-    .line 578
-    return-void
-.end method
+    .line 559
+    const-string/jumbo v2, "BZB Marketplace"
 
-.method public bridge synthetic onSuccess(Ljava/lang/Object;)V
-    .registers 2
+    const-string/jumbo v3, "Click Shopping Cart"
 
-    .prologue
-    .line 573
-    check-cast p1, Lcom/facebook/share/Sharer$Result;
+    const-string/jumbo v4, ""
 
-    invoke-virtual {p0, p1}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->onSuccess(Lcom/facebook/share/Sharer$Result;)V
+    invoke-static {v2, v3, v4}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 564
+    :cond_34
+    iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+
+    iget-object v2, v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->mActivity:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+
+    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->GetTokenBuzzeBeesForBuyPoint(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/bzbs/marketplace/model/url/UrlModel;->getUrlBasketToolbar(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 566
+    .local v1, "url":Ljava/lang/String;
+    new-instance v0, Landroid/content/Intent;
+
+    iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+
+    iget-object v2, v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->mActivity:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+
+    const-class v3, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;
+
+    invoke-direct {v0, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 567
+    .local v0, "intent":Landroid/content/Intent;
+    const-string/jumbo v2, "url"
+
+    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 568
+    iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+
+    invoke-virtual {v2, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->startActivity(Landroid/content/Intent;)V
+
+    .line 570
+    .end local v0    # "intent":Landroid/content/Intent;
+    .end local v1    # "url":Ljava/lang/String;
+    :cond_56
     return-void
 .end method

@@ -68,7 +68,7 @@
 
     iget-object v4, p0, Lcom/samsung/privilege/activity/HistoryEWalletListActivity$4;->this$0:Lcom/samsung/privilege/activity/HistoryEWalletListActivity;
 
-    const v5, 0x7f09024a
+    const v5, 0x7f09024b
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/HistoryEWalletListActivity;->getString(I)Ljava/lang/String;
 

@@ -62,7 +62,7 @@
 
     .line 288
     .local v1, "dialogConfirm":Landroid/app/Dialog;
-    const v9, 0x7f040106
+    const v9, 0x7f040109
 
     invoke-virtual {v1, v9}, Landroid/app/Dialog;->setContentView(I)V
 
@@ -77,7 +77,7 @@
 
     .line 291
     .local v5, "tvHeader":Landroid/widget/TextView;
-    const v9, 0x7f100151
+    const v9, 0x7f100152
 
     invoke-virtual {v1, v9}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -87,7 +87,7 @@
 
     .line 292
     .local v6, "tvMessage":Landroid/widget/TextView;
-    const v9, 0x7f10054a
+    const v9, 0x7f100559
 
     invoke-virtual {v1, v9}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -97,7 +97,7 @@
 
     .line 293
     .local v4, "imgOk":Landroid/widget/ImageView;
-    const v9, 0x7f100524
+    const v9, 0x7f100534
 
     invoke-virtual {v1, v9}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -107,7 +107,7 @@
 
     .line 294
     .local v8, "tvOk":Landroid/widget/TextView;
-    const v9, 0x7f10054b
+    const v9, 0x7f10055a
 
     invoke-virtual {v1, v9}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -117,7 +117,7 @@
 
     .line 295
     .local v3, "imgNo":Landroid/widget/ImageView;
-    const v9, 0x7f10054c
+    const v9, 0x7f10055b
 
     invoke-virtual {v1, v9}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -189,7 +189,7 @@
     if-ne p2, v9, :cond_88
 
     .line 311
-    const v9, 0x7f09031b
+    const v9, 0x7f09031c
 
     invoke-virtual {p0, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -267,12 +267,12 @@
 
     .line 199
     .local v9, "dialogSerial":Landroid/app/Dialog;
-    const v3, 0x7f0400fc
+    const v3, 0x7f0400ff
 
     invoke-virtual {v9, v3}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 201
-    const v3, 0x7f100162
+    const v3, 0x7f100163
 
     invoke-virtual {v9, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -282,7 +282,7 @@
 
     .line 202
     .local v16, "layoutHeader":Landroid/widget/RelativeLayout;
-    const v3, 0x7f100239
+    const v3, 0x7f100242
 
     invoke-virtual {v9, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -292,7 +292,7 @@
 
     .line 203
     .local v12, "imgCampaign":Landroid/widget/ImageView;
-    const v3, 0x7f100252
+    const v3, 0x7f10025b
 
     invoke-virtual {v9, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -302,7 +302,7 @@
 
     .line 204
     .local v18, "tvCampaign":Landroid/widget/TextView;
-    const v3, 0x7f100268
+    const v3, 0x7f100271
 
     invoke-virtual {v9, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -312,7 +312,7 @@
 
     .line 205
     .local v2, "webPrivilegeMessage":Landroid/webkit/WebView;
-    const v3, 0x7f100259
+    const v3, 0x7f100262
 
     invoke-virtual {v9, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -322,7 +322,7 @@
 
     .line 206
     .local v13, "imgClose":Landroid/widget/ImageView;
-    const v3, 0x7f100529
+    const v3, 0x7f100539
 
     invoke-virtual {v9, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -332,7 +332,7 @@
 
     .line 207
     .local v14, "imgContinue":Landroid/widget/ImageView;
-    const v3, 0x7f100156
+    const v3, 0x7f100157
 
     invoke-virtual {v9, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -342,7 +342,7 @@
 
     .line 208
     .local v19, "tvClose":Landroid/widget/TextView;
-    const v3, 0x7f10052a
+    const v3, 0x7f10053a
 
     invoke-virtual {v9, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -706,12 +706,12 @@
 
     .line 93
     .local v1, "dialogSerial":Landroid/app/Dialog;
-    const v4, 0x7f040108
+    const v4, 0x7f04010b
 
     invoke-virtual {v1, v4}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 95
-    const v4, 0x7f100151
+    const v4, 0x7f100152
 
     invoke-virtual {v1, v4}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -724,7 +724,7 @@
     invoke-virtual {v3, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 99
-    const v4, 0x7f100155
+    const v4, 0x7f100156
 
     invoke-virtual {v1, v4}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -986,14 +986,14 @@
 
     .line 156
     :cond_9e
-    const v21, 0x7f040108
+    const v21, 0x7f04010b
 
     move/from16 v0, v21
 
     invoke-virtual {v5, v0}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 158
-    const v21, 0x7f100151
+    const v21, 0x7f100152
 
     move/from16 v0, v21
 
@@ -1017,7 +1017,7 @@
     if-ne v14, v0, :cond_d9
 
     .line 162
-    const v21, 0x7f100156
+    const v21, 0x7f100157
 
     move/from16 v0, v21
 
@@ -1029,7 +1029,7 @@
 
     .line 163
     .local v19, "tvClose":Landroid/widget/TextView;
-    const v21, 0x7f0901e0
+    const v21, 0x7f0901e1
 
     move-object/from16 v0, p0
 
@@ -1052,7 +1052,7 @@
 
     .line 167
     .local v15, "need_logout_final":Z
-    const v21, 0x7f100155
+    const v21, 0x7f100156
 
     move/from16 v0, v21
 
@@ -1159,7 +1159,7 @@
     if-nez v21, :cond_12f
 
     .line 139
-    const v21, 0x7f09020b
+    const v21, 0x7f09020c
 
     move-object/from16 v0, p0
 
@@ -1259,12 +1259,12 @@
 
     .line 41
     .local v1, "dialogSerial":Landroid/app/Dialog;
-    const v4, 0x7f040108
+    const v4, 0x7f04010b
 
     invoke-virtual {v1, v4}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 43
-    const v4, 0x7f100151
+    const v4, 0x7f100152
 
     invoke-virtual {v1, v4}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -1277,7 +1277,7 @@
     invoke-virtual {v3, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 47
-    const v4, 0x7f100155
+    const v4, 0x7f100156
 
     invoke-virtual {v1, v4}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -1354,7 +1354,7 @@
 
     .line 66
     .local v1, "dialogSerial":Landroid/app/Dialog;
-    const v5, 0x7f040109
+    const v5, 0x7f04010c
 
     invoke-virtual {v1, v5}, Landroid/app/Dialog;->setContentView(I)V
 
@@ -1369,7 +1369,7 @@
 
     .line 69
     .local v3, "tvHeader":Landroid/widget/TextView;
-    const v5, 0x7f100151
+    const v5, 0x7f100152
 
     invoke-virtual {v1, v5}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -1385,7 +1385,7 @@
     invoke-virtual {v4, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 74
-    const v5, 0x7f100155
+    const v5, 0x7f100156
 
     invoke-virtual {v1, v5}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 

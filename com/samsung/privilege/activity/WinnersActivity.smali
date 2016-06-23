@@ -6,7 +6,7 @@
 # instance fields
 .field containerWinner:Landroid/widget/FrameLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001cb
+        value = 0x7f1001d4
     .end annotation
 .end field
 
@@ -56,7 +56,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1001cb
+    const v1, 0x7f1001d4
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/WinnersActivity;->fragment:Landroid/support/v4/app/Fragment;
 
@@ -93,7 +93,7 @@
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WinnersActivity;->setActionBarIcon(I)V
 
     .line 33
-    const v0, 0x7f090208
+    const v0, 0x7f090209
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WinnersActivity;->getString(I)Ljava/lang/String;
 
@@ -125,7 +125,7 @@
 
     .prologue
     .line 24
-    const v0, 0x7f040051
+    const v0, 0x7f040053
 
     return v0
 .end method
@@ -157,7 +157,7 @@
     .line 62
     iget-object v1, p0, Lcom/samsung/privilege/activity/WinnersActivity;->mActivity:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v2, 0x7f09024a
+    const v2, 0x7f09024b
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/WinnersActivity;->getString(I)Ljava/lang/String;
 

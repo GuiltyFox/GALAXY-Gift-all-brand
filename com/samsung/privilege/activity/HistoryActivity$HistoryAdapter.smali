@@ -59,16 +59,16 @@
     .end annotation
 
     .prologue
-    .line 813
+    .line 822
     .local p2, "persons":Ljava/util/List;, "Ljava/util/List<Lcom/bzbs/bean/Purchasing;>;"
     iput-object p1, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;->this$0:Lcom/samsung/privilege/activity/HistoryActivity;
 
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$Adapter;-><init>()V
 
-    .line 814
+    .line 823
     iput-object p2, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;->histories:Ljava/util/List;
 
-    .line 815
+    .line 824
     return-void
 .end method
 
@@ -87,13 +87,13 @@
     .end annotation
 
     .prologue
-    .line 826
+    .line 835
     .local p1, "new_items":Ljava/util/List;, "Ljava/util/List<Lcom/bzbs/bean/Purchasing;>;"
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;->histories:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 827
+    .line 836
     return-void
 .end method
 
@@ -102,7 +102,7 @@
     .param p1, "position"    # I
 
     .prologue
-    .line 819
+    .line 828
     :try_start_0
     iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;->histories:Ljava/util/List;
 
@@ -114,15 +114,15 @@
     :try_end_8
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_8} :catch_9
 
-    .line 821
+    .line 830
     :goto_8
     return-object v1
 
-    .line 820
+    .line 829
     :catch_9
     move-exception v0
 
-    .line 821
+    .line 830
     .local v0, "ex":Ljava/lang/Exception;
     const/4 v1, 0x0
 
@@ -133,7 +133,7 @@
     .registers 2
 
     .prologue
-    .line 871
+    .line 880
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;->histories:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -148,10 +148,10 @@
     .param p1, "recyclerView"    # Landroid/support/v7/widget/RecyclerView;
 
     .prologue
-    .line 876
+    .line 885
     invoke-super {p0, p1}, Landroid/support/v7/widget/RecyclerView$Adapter;->onAttachedToRecyclerView(Landroid/support/v7/widget/RecyclerView;)V
 
-    .line 877
+    .line 886
     return-void
 .end method
 
@@ -159,7 +159,7 @@
     .registers 3
 
     .prologue
-    .line 809
+    .line 818
     check-cast p1, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;
 
     invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;->onBindViewHolder(Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;I)V
@@ -173,13 +173,13 @@
     .param p2, "position"    # I
 
     .prologue
-    .line 838
+    .line 847
     iget-object v4, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;->this$0:Lcom/samsung/privilege/activity/HistoryActivity;
 
     # setter for: Lcom/samsung/privilege/activity/HistoryActivity;->pastVisiblesItems:I
     invoke-static {v4, p2}, Lcom/samsung/privilege/activity/HistoryActivity;->access$602(Lcom/samsung/privilege/activity/HistoryActivity;I)I
 
-    .line 839
+    .line 848
     iget-object v4, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;->histories:Ljava/util/List;
 
     invoke-interface {v4, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -188,7 +188,7 @@
 
     check-cast v1, Lcom/bzbs/bean/Purchasing;
 
-    .line 841
+    .line 850
     .local v1, "history":Lcom/bzbs/bean/Purchasing;
     iget-object v4, p1, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;->textAgency:Landroid/widget/TextView;
 
@@ -196,14 +196,14 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 842
+    .line 851
     iget-object v4, p1, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;->textName:Landroid/widget/TextView;
 
     iget-object v5, v1, Lcom/bzbs/bean/Purchasing;->Name:Ljava/lang/String;
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 843
+    .line 852
     iget-wide v4, v1, Lcom/bzbs/bean/Purchasing;->PointPerUnit:J
 
     const-wide/16 v6, 0x2
@@ -212,7 +212,7 @@
 
     if-ltz v4, :cond_de
 
-    .line 844
+    .line 853
     iget-object v4, p1, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;->textPoint:Landroid/widget/TextView;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -233,7 +233,7 @@
 
     iget-object v6, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;->this$0:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v7, 0x7f09032e
+    const v7, 0x7f09032f
 
     invoke-virtual {v6, v7}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -249,7 +249,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 849
+    .line 858
     :goto_4b
     iget-object v4, v1, Lcom/bzbs/bean/Purchasing;->Type:Ljava/lang/String;
 
@@ -261,21 +261,21 @@
 
     if-eqz v4, :cond_112
 
-    .line 850
+    .line 859
     iget-boolean v4, v1, Lcom/bzbs/bean/Purchasing;->IsUsed:Z
 
     const/4 v5, 0x1
 
     if-ne v4, v5, :cond_108
 
-    .line 851
+    .line 860
     iget-object v4, p1, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;->ivUseStatus:Landroid/widget/ImageView;
 
-    const v5, 0x7f020365
+    const v5, 0x7f020367
 
     invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 855
+    .line 864
     :goto_63
     iget-object v4, p1, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;->ivUseStatus:Landroid/widget/ImageView;
 
@@ -283,19 +283,19 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 860
+    .line 869
     :goto_69
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 861
+    .line 870
     .local v0, "cal":Ljava/util/Calendar;
     invoke-virtual {v0}, Ljava/util/Calendar;->getTimeZone()Ljava/util/TimeZone;
 
     move-result-object v3
 
-    .line 863
+    .line 872
     .local v3, "tz":Ljava/util/TimeZone;
     new-instance v4, Ljava/text/SimpleDateFormat;
 
@@ -337,7 +337,7 @@
 
     move-result-object v2
 
-    .line 864
+    .line 873
     .local v2, "strRedeemDate":Ljava/lang/String;
     iget-object v4, p1, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;->textRedeemDate:Landroid/widget/TextView;
 
@@ -347,7 +347,7 @@
 
     iget-object v6, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;->this$0:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v7, 0x7f0901a3
+    const v7, 0x7f0901a4
 
     invoke-virtual {v6, v7}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -373,7 +373,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 866
+    .line 875
     iget-object v4, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;->this$0:Lcom/samsung/privilege/activity/HistoryActivity;
 
     invoke-static {v4}, Lcom/bumptech/glide/Glide;->with(Landroid/support/v4/app/FragmentActivity;)Lcom/bumptech/glide/RequestManager;
@@ -386,7 +386,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0202cb
+    const v5, 0x7f0202cd
 
     invoke-virtual {v4, v5}, Lcom/bumptech/glide/DrawableTypeRequest;->placeholder(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
@@ -402,10 +402,10 @@
 
     invoke-virtual {v4, v5}, Lcom/bumptech/glide/DrawableRequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
 
-    .line 867
+    .line 876
     return-void
 
-    .line 846
+    .line 855
     .end local v0    # "cal":Ljava/util/Calendar;
     .end local v2    # "strRedeemDate":Ljava/lang/String;
     .end local v3    # "tz":Ljava/util/TimeZone;
@@ -430,7 +430,7 @@
 
     iget-object v6, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;->this$0:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v7, 0x7f090329
+    const v7, 0x7f09032a
 
     invoke-virtual {v6, v7}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -448,17 +448,17 @@
 
     goto/16 :goto_4b
 
-    .line 853
+    .line 862
     :cond_108
     iget-object v4, p1, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;->ivUseStatus:Landroid/widget/ImageView;
 
-    const v5, 0x7f020307
+    const v5, 0x7f020309
 
     invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setImageResource(I)V
 
     goto/16 :goto_63
 
-    .line 857
+    .line 866
     :cond_112
     iget-object v4, p1, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;->ivUseStatus:Landroid/widget/ImageView;
 
@@ -473,7 +473,7 @@
     .registers 4
 
     .prologue
-    .line 809
+    .line 818
     invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;
 
     move-result-object v0
@@ -487,7 +487,7 @@
     .param p2, "viewType"    # I
 
     .prologue
-    .line 831
+    .line 840
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -504,13 +504,13 @@
 
     move-result-object v1
 
-    .line 832
+    .line 841
     .local v1, "v":Landroid/view/View;
     new-instance v0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;
 
     invoke-direct {v0, p0, v1}, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;-><init>(Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;Landroid/view/View;)V
 
-    .line 833
+    .line 842
     .local v0, "pvh":Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;
     return-object v0
 .end method

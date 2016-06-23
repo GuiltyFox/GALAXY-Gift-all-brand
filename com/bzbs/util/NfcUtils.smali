@@ -110,7 +110,7 @@
     .param p1, "objActivityContext"    # Landroid/content/Context;
 
     .prologue
-    .line 324
+    .line 325
     :try_start_0
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -122,22 +122,22 @@
 
     move-result-object v0
 
-    .line 325
+    .line 326
     .local v0, "LaunchApp":Landroid/content/Intent;
     invoke-virtual {p1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_d
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_d} :catch_e
 
-    .line 333
+    .line 334
     .end local v0    # "LaunchApp":Landroid/content/Intent;
     :goto_d
     return-void
 
-    .line 326
+    .line 327
     :catch_e
     move-exception v2
 
-    .line 328
+    .line 329
     .local v2, "ex":Ljava/lang/Exception;
     :try_start_f
     new-instance v3, Landroid/content/Intent;
@@ -176,11 +176,11 @@
 
     goto :goto_d
 
-    .line 329
+    .line 330
     :catch_35
     move-exception v1
 
-    .line 330
+    .line 331
     .local v1, "anfe":Landroid/content/ActivityNotFoundException;
     new-instance v3, Landroid/content/Intent;
 
@@ -223,7 +223,7 @@
     .param p1, "objActivityContext"    # Landroid/content/Context;
 
     .prologue
-    .line 337
+    .line 338
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "android.intent.action.VIEW"
@@ -238,7 +238,7 @@
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 338
+    .line 339
     return-void
 .end method
 
@@ -257,21 +257,26 @@
 
     .line 317
     .local v0, "intent":Landroid/content/Intent;
+    const/high16 v1, 0x40000000
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    .line 318
     const-string/jumbo v1, "campaign_id"
 
     iget v2, p0, Lcom/bzbs/bean/NFCTag;->ReDeem_CampaignID:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 318
+    .line 319
     const-string/jumbo v1, "nfc_tag"
 
     invoke-virtual {v0, v1, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 319
+    .line 320
     invoke-virtual {p1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 320
+    .line 321
     return-void
 .end method
 
@@ -593,14 +598,14 @@
     .param p2, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 341
+    .line 342
     new-instance v0, Lcom/bzbs/util/NfcUtils$2;
 
     invoke-direct {v0, p0, p2}, Lcom/bzbs/util/NfcUtils$2;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 348
+    .line 349
     return-void
 .end method
 

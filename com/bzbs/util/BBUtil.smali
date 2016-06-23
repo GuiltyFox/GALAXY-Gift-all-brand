@@ -1065,7 +1065,7 @@
     .prologue
     .line 490
     :try_start_0
-    const-string v1, "samsung"
+    sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
     .line 491
     .local v1, "MANUFACTURER":Ljava/lang/String;
@@ -1103,7 +1103,7 @@
     .line 498
     .end local v3    # "isCheckSamsung":Z
     :cond_15
-    const-string v0, "samsung"
+    sget-object v0, Landroid/os/Build;->BRAND:Ljava/lang/String;
 
     .line 499
     .local v0, "BRAND":Ljava/lang/String;
@@ -2815,7 +2815,7 @@
     if-ne v8, v14, :cond_3a
 
     .line 609
-    const v14, 0x7f090251
+    const v14, 0x7f090252
 
     move-object/from16 v0, p0
 
@@ -2847,7 +2847,7 @@
 
     move-result-object v14
 
-    const v15, 0x7f090252
+    const v15, 0x7f090253
 
     move-object/from16 v0, p0
 
@@ -2894,7 +2894,7 @@
     if-ne v8, v14, :cond_81
 
     .line 616
-    const v14, 0x7f090253
+    const v14, 0x7f090254
 
     move-object/from16 v0, p0
 
@@ -2924,7 +2924,7 @@
 
     move-result-object v14
 
-    const v15, 0x7f090254
+    const v15, 0x7f090255
 
     move-object/from16 v0, p0
 
@@ -2971,7 +2971,7 @@
     if-ne v8, v14, :cond_c9
 
     .line 623
-    const v14, 0x7f090255
+    const v14, 0x7f090256
 
     move-object/from16 v0, p0
 
@@ -3001,7 +3001,7 @@
 
     move-result-object v14
 
-    const v15, 0x7f090256
+    const v15, 0x7f090257
 
     move-object/from16 v0, p0
 
@@ -3035,7 +3035,7 @@
     if-ne v8, v14, :cond_104
 
     .line 630
-    const v14, 0x7f090257
+    const v14, 0x7f090258
 
     move-object/from16 v0, p0
 
@@ -3074,7 +3074,7 @@
 
     move-result-object v14
 
-    const v15, 0x7f090258
+    const v15, 0x7f090259
 
     move-object/from16 v0, p0
 

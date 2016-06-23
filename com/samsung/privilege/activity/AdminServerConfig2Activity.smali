@@ -47,7 +47,7 @@
 
     .prologue
     .line 38
-    const v0, 0x7f1001ce
+    const v0, 0x7f1001d7
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -60,7 +60,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 39
-    const v0, 0x7f1001cf
+    const v0, 0x7f1001d8
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -73,7 +73,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 40
-    const v0, 0x7f1001d0
+    const v0, 0x7f1001d9
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -86,7 +86,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 41
-    const v0, 0x7f1001d1
+    const v0, 0x7f1001da
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -99,7 +99,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 42
-    const v0, 0x7f1001d2
+    const v0, 0x7f1001db
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -118,7 +118,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 47
-    const v0, 0x7f1001d3
+    const v0, 0x7f1001dc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -131,7 +131,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 48
-    const v0, 0x7f1001d4
+    const v0, 0x7f1001dd
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -144,7 +144,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 50
-    const v0, 0x7f1001d5
+    const v0, 0x7f1001de
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -157,7 +157,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 51
-    const v0, 0x7f1001d6
+    const v0, 0x7f1001df
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -170,7 +170,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 52
-    const v0, 0x7f1001d7
+    const v0, 0x7f1001e0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -183,7 +183,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 54
-    const v0, 0x7f1001d8
+    const v0, 0x7f1001e1
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -192,45 +192,6 @@
     check-cast v0, Landroid/widget/EditText;
 
     sget-object v1, Lcom/bzbs/data/AppSetting;->NOTIFICATION_ID_MYAN:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
-
-    .line 56
-    const v0, 0x7f1001d9
-
-    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/EditText;
-
-    sget-object v1, Lcom/bzbs/data/AppSetting;->GA_TRACKING_ID_THAI:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
-
-    .line 57
-    const v0, 0x7f1001da
-
-    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/EditText;
-
-    sget-object v1, Lcom/bzbs/data/AppSetting;->GA_TRACKING_ID_LAOS:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
-
-    .line 59
-    const v0, 0x7f1001db
-
-    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/EditText;
-
-    sget-object v1, Lcom/bzbs/data/AppSetting;->GA_TRACKING_ID_MYAN:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
@@ -264,7 +225,7 @@
 
     .prologue
     .line 66
-    const v0, 0x7f1001ce
+    const v0, 0x7f1001d7
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -277,7 +238,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 67
-    const v0, 0x7f1001cf
+    const v0, 0x7f1001d8
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -290,7 +251,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 68
-    const v0, 0x7f1001d0
+    const v0, 0x7f1001d9
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -303,7 +264,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 69
-    const v0, 0x7f1001d1
+    const v0, 0x7f1001da
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -316,7 +277,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 75
-    const v0, 0x7f1001d3
+    const v0, 0x7f1001dc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -329,7 +290,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 76
-    const v0, 0x7f1001d4
+    const v0, 0x7f1001dd
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -342,7 +303,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 78
-    const v0, 0x7f1001d5
+    const v0, 0x7f1001de
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -355,7 +316,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 79
-    const v0, 0x7f1001d6
+    const v0, 0x7f1001df
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -368,7 +329,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 80
-    const v0, 0x7f1001d7
+    const v0, 0x7f1001e0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -381,7 +342,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 82
-    const v0, 0x7f1001d8
+    const v0, 0x7f1001e1
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -394,7 +355,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 84
-    const v0, 0x7f1001d9
+    const v0, 0x7f1001e2
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -407,7 +368,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 85
-    const v0, 0x7f1001da
+    const v0, 0x7f1001e3
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -420,7 +381,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 87
-    const v0, 0x7f1001db
+    const v0, 0x7f1001e4
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -442,7 +403,7 @@
 
     .prologue
     .line 94
-    const v0, 0x7f1001ce
+    const v0, 0x7f1001d7
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -455,7 +416,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 95
-    const v0, 0x7f1001cf
+    const v0, 0x7f1001d8
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -468,7 +429,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 96
-    const v0, 0x7f1001d0
+    const v0, 0x7f1001d9
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -481,7 +442,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 97
-    const v0, 0x7f1001d1
+    const v0, 0x7f1001da
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -494,7 +455,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 103
-    const v0, 0x7f1001d3
+    const v0, 0x7f1001dc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -507,7 +468,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 104
-    const v0, 0x7f1001d4
+    const v0, 0x7f1001dd
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -520,7 +481,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 106
-    const v0, 0x7f1001d5
+    const v0, 0x7f1001de
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -533,7 +494,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 107
-    const v0, 0x7f1001d6
+    const v0, 0x7f1001df
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -546,7 +507,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 108
-    const v0, 0x7f1001d7
+    const v0, 0x7f1001e0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -559,7 +520,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 110
-    const v0, 0x7f1001d8
+    const v0, 0x7f1001e1
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -572,7 +533,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 112
-    const v0, 0x7f1001d9
+    const v0, 0x7f1001e2
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -585,7 +546,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 113
-    const v0, 0x7f1001da
+    const v0, 0x7f1001e3
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -598,7 +559,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 115
-    const v0, 0x7f1001db
+    const v0, 0x7f1001e4
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -631,7 +592,7 @@
     invoke-virtual {v1, v3}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     .line 124
-    const v3, 0x7f1001ce
+    const v3, 0x7f1001d7
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -705,7 +666,7 @@
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->requestWindowFeature(I)Z
 
     .line 25
-    const v0, 0x7f040052
+    const v0, 0x7f040054
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->setContentView(I)V
 

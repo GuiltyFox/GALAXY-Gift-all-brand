@@ -1016,7 +1016,7 @@
 
     .line 150
     .local v1, "dialogMessage":Landroid/app/Dialog;
-    const v7, 0x7f040108
+    const v7, 0x7f04010b
 
     invoke-virtual {v1, v7}, Landroid/app/Dialog;->setContentView(I)V
 
@@ -1031,7 +1031,7 @@
 
     .line 153
     .local v5, "tvHeader":Landroid/widget/TextView;
-    const v7, 0x7f100151
+    const v7, 0x7f100152
 
     invoke-virtual {v1, v7}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -1041,7 +1041,7 @@
 
     .line 154
     .local v6, "tvMessage":Landroid/widget/TextView;
-    const v7, 0x7f100259
+    const v7, 0x7f100262
 
     invoke-virtual {v1, v7}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -1051,7 +1051,7 @@
 
     .line 155
     .local v3, "imgClose":Landroid/widget/ImageView;
-    const v7, 0x7f100156
+    const v7, 0x7f100157
 
     invoke-virtual {v1, v7}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 

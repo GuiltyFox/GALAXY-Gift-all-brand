@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->showDialogPointTransfer(Landroid/content/Context;Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->showDialogConfirmLoginFacebook(Landroid/content/Context;Ljava/lang/String;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,7 +20,7 @@
 # instance fields
 .field final synthetic this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-.field final synthetic val$dialogPoint:Landroid/app/Dialog;
+.field final synthetic val$dialogConfirm:Landroid/app/Dialog;
 
 
 # direct methods
@@ -29,10 +29,10 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 902
+    .line 960
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$13;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$13;->val$dialogPoint:Landroid/app/Dialog;
+    iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$13;->val$dialogConfirm:Landroid/app/Dialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,23 +46,23 @@
     .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 904
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$13;->val$dialogPoint:Landroid/app/Dialog;
+    .line 962
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$13;->val$dialogConfirm:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 906
+    .line 964
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$13;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/samsung/privilege/activity/MainPagerActivity;->gIsShowingMessage:Z
 
-    .line 907
+    .line 965
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$13;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->checkAndShowDialogMessagePopup()V
 
-    .line 908
+    .line 966
     return-void
 .end method

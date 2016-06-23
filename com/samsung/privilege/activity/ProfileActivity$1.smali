@@ -29,7 +29,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/ProfileActivity;
 
     .prologue
-    .line 215
+    .line 236
     iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$1;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$1;->val$msg:Ljava/lang/String;
@@ -45,7 +45,7 @@
     .registers 5
 
     .prologue
-    .line 218
+    .line 239
     iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$1;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/ProfileActivity$1;->val$msg:Ljava/lang/String;
@@ -56,10 +56,10 @@
 
     move-result-object v0
 
-    .line 219
+    .line 240
     .local v0, "toast":Landroid/widget/Toast;
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 220
+    .line 241
     return-void
 .end method

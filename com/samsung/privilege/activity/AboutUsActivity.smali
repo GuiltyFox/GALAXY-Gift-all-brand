@@ -30,12 +30,12 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/AboutUsActivity;->TAG:Ljava/lang/String;
 
-    .line 252
+    .line 253
     const-string/jumbo v0, "1212312121"
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/AboutUsActivity;->strAdmin:Ljava/lang/String;
 
-    .line 253
+    .line 254
     const-string/jumbo v0, ""
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/AboutUsActivity;->strClick:Ljava/lang/String;
@@ -858,7 +858,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 280
+    .line 281
     const v0, 0x7f1000b9
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AboutUsActivity;->findViewById(I)Landroid/view/View;
@@ -867,7 +867,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 281
+    .line 282
     const v0, 0x7f1000ba
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AboutUsActivity;->findViewById(I)Landroid/view/View;
@@ -876,7 +876,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 282
+    .line 283
     const v0, 0x7f1000bb
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AboutUsActivity;->findViewById(I)Landroid/view/View;
@@ -885,7 +885,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 283
+    .line 284
     const v0, 0x7f1000bc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AboutUsActivity;->findViewById(I)Landroid/view/View;
@@ -894,7 +894,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 284
+    .line 285
     return-void
 .end method
 
@@ -903,7 +903,7 @@
     .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 287
+    .line 288
     iget-object v0, p0, Lcom/samsung/privilege/activity/AboutUsActivity;->gHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/samsung/privilege/activity/AboutUsActivity$5;
@@ -912,7 +912,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 294
+    .line 295
     return-void
 .end method
 
@@ -957,7 +957,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/support/v7/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/support/v7/app/AlertDialog$Builder;
 
-    .line 210
+    .line 211
     const-string/jumbo v2, "Cancel"
 
     new-instance v3, Lcom/samsung/privilege/activity/AboutUsActivity$4;
@@ -966,10 +966,10 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/support/v7/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/support/v7/app/AlertDialog$Builder;
 
-    .line 217
+    .line 218
     invoke-virtual {v0}, Landroid/support/v7/app/AlertDialog$Builder;->show()Landroid/support/v7/app/AlertDialog;
 
-    .line 218
+    .line 219
     return-void
 .end method
 
@@ -1014,7 +1014,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 256
+    .line 257
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1037,7 +1037,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/AboutUsActivity;->strClick:Ljava/lang/String;
 
-    .line 257
+    .line 258
     iget-object v0, p0, Lcom/samsung/privilege/activity/AboutUsActivity;->strClick:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/AboutUsActivity;->strAdmin:Ljava/lang/String;
@@ -1048,10 +1048,10 @@
 
     if-eqz v0, :cond_25
 
-    .line 258
+    .line 259
     invoke-direct {p0}, Lcom/samsung/privilege/activity/AboutUsActivity;->showAdmin()V
 
-    .line 260
+    .line 261
     :cond_25
     iget-object v0, p0, Lcom/samsung/privilege/activity/AboutUsActivity;->TAG:Ljava/lang/String;
 
@@ -1077,7 +1077,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 261
+    .line 262
     return-void
 .end method
 
@@ -1086,7 +1086,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 264
+    .line 265
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1109,7 +1109,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/AboutUsActivity;->strClick:Ljava/lang/String;
 
-    .line 265
+    .line 266
     iget-object v0, p0, Lcom/samsung/privilege/activity/AboutUsActivity;->strClick:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/AboutUsActivity;->strAdmin:Ljava/lang/String;
@@ -1120,10 +1120,10 @@
 
     if-eqz v0, :cond_25
 
-    .line 266
+    .line 267
     invoke-direct {p0}, Lcom/samsung/privilege/activity/AboutUsActivity;->showAdmin()V
 
-    .line 268
+    .line 269
     :cond_25
     iget-object v0, p0, Lcom/samsung/privilege/activity/AboutUsActivity;->TAG:Ljava/lang/String;
 
@@ -1149,7 +1149,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 269
+    .line 270
     return-void
 .end method
 
@@ -1158,7 +1158,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 272
+    .line 273
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1181,7 +1181,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/AboutUsActivity;->strClick:Ljava/lang/String;
 
-    .line 273
+    .line 274
     iget-object v0, p0, Lcom/samsung/privilege/activity/AboutUsActivity;->strClick:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/AboutUsActivity;->strAdmin:Ljava/lang/String;
@@ -1192,10 +1192,10 @@
 
     if-eqz v0, :cond_25
 
-    .line 274
+    .line 275
     invoke-direct {p0}, Lcom/samsung/privilege/activity/AboutUsActivity;->showAdmin()V
 
-    .line 276
+    .line 277
     :cond_25
     iget-object v0, p0, Lcom/samsung/privilege/activity/AboutUsActivity;->TAG:Ljava/lang/String;
 
@@ -1221,7 +1221,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 277
+    .line 278
     return-void
 .end method
 
@@ -1230,7 +1230,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 244
+    .line 245
     new-instance v0, Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/AboutUsActivity;->getApplicationContext()Landroid/content/Context;
@@ -1241,11 +1241,11 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 245
+    .line 246
     .local v0, "intent":Landroid/content/Intent;
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AboutUsActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 246
+    .line 247
     return-void
 .end method
 
@@ -1254,7 +1254,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 226
+    .line 227
     const-string/jumbo v4, "connectivity"
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/AboutUsActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1263,7 +1263,7 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 227
+    .line 228
     .local v0, "cm":Landroid/net/ConnectivityManager;
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
@@ -1271,8 +1271,8 @@
 
     if-nez v4, :cond_1a
 
-    .line 228
-    const v4, 0x7f09024a
+    .line 229
+    const v4, 0x7f09024b
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/AboutUsActivity;->getString(I)Ljava/lang/String;
 
@@ -1280,12 +1280,12 @@
 
     invoke-static {p0, v4}, Lcom/bzbs/util/DialogUtil;->showDialogError(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 241
+    .line 242
     :cond_19
     :goto_19
     return-void
 
-    .line 232
+    .line 233
     :cond_1a
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/AboutUsActivity;->getApplicationContext()Landroid/content/Context;
 
@@ -1295,7 +1295,7 @@
 
     move-result-object v2
 
-    .line 233
+    .line 234
     .local v2, "tokenBzBs":Ljava/lang/String;
     if-eqz v2, :cond_19
 
@@ -1307,7 +1307,7 @@
 
     if-nez v4, :cond_19
 
-    .line 234
+    .line 235
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -1332,7 +1332,7 @@
 
     move-result-object v3
 
-    .line 236
+    .line 237
     .local v3, "url":Ljava/lang/String;
     new-instance v1, Landroid/content/Intent;
 
@@ -1344,20 +1344,20 @@
 
     invoke-direct {v1, v4, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 237
+    .line 238
     .local v1, "intent":Landroid/content/Intent;
     const-string/jumbo v4, "url"
 
     invoke-virtual {v1, v4, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 238
+    .line 239
     const-string/jumbo v4, "enable_webview_back"
 
     const/4 v5, 0x1
 
     invoke-virtual {v1, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 239
+    .line 240
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/AboutUsActivity;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_19
@@ -1368,7 +1368,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 297
+    .line 298
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/AboutUsActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1385,12 +1385,12 @@
 
     if-eqz v0, :cond_12
 
-    .line 304
+    .line 305
     :cond_11
     :goto_11
     return-void
 
-    .line 300
+    .line 301
     :cond_12
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/AboutUsActivity;->getApplicationContext()Landroid/content/Context;
 
@@ -1412,7 +1412,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 221
+    .line 222
     new-instance v0, Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/AboutUsActivity;->getApplicationContext()Landroid/content/Context;
@@ -1423,11 +1423,11 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 222
+    .line 223
     .local v0, "intent":Landroid/content/Intent;
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AboutUsActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 223
+    .line 224
     return-void
 .end method
 
@@ -1436,12 +1436,12 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 249
+    .line 250
     iget-object v0, p0, Lcom/samsung/privilege/activity/AboutUsActivity;->gHandler:Landroid/os/Handler;
 
     invoke-static {p0, v0}, Lcom/samsung/privilege/util/DialogWelcome;->showDialogWelcome(Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 250
+    .line 251
     return-void
 .end method
 

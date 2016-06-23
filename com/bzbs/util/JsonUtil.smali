@@ -22,7 +22,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 92
+    .line 104
     :try_start_1
     invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -48,7 +48,7 @@
 
     if-eqz v4, :cond_22
 
-    .line 93
+    .line 105
     :cond_1b
     new-instance v1, Ljava/math/BigDecimal;
 
@@ -56,19 +56,19 @@
 
     invoke-direct {v1, v4}, Ljava/math/BigDecimal;-><init>(I)V
 
-    .line 103
+    .line 115
     .local v1, "sPrice":Ljava/math/BigDecimal;
     :goto_21
     return-object v1
 
-    .line 96
+    .line 108
     .end local v1    # "sPrice":Ljava/math/BigDecimal;
     :cond_22
     invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 97
+    .line 109
     .local v2, "temp":Ljava/lang/String;
     const-string/jumbo v4, ","
 
@@ -78,7 +78,7 @@
 
     move-result-object v3
 
-    .line 98
+    .line 110
     .local v3, "temp2":Ljava/lang/String;
     new-instance v1, Ljava/math/BigDecimal;
 
@@ -86,24 +86,24 @@
     :try_end_35
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_35} :catch_36
 
-    .line 99
+    .line 111
     .restart local v1    # "sPrice":Ljava/math/BigDecimal;
     goto :goto_21
 
-    .line 101
+    .line 113
     .end local v1    # "sPrice":Ljava/math/BigDecimal;
     .end local v2    # "temp":Ljava/lang/String;
     .end local v3    # "temp2":Ljava/lang/String;
     :catch_36
     move-exception v0
 
-    .line 102
+    .line 114
     .local v0, "e":Lorg/json/JSONException;
     new-instance v1, Ljava/math/BigDecimal;
 
     invoke-direct {v1, v6}, Ljava/math/BigDecimal;-><init>(I)V
 
-    .line 103
+    .line 115
     .restart local v1    # "sPrice":Ljava/math/BigDecimal;
     goto :goto_21
 .end method
@@ -116,7 +116,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 60
+    .line 72
     :try_start_1
     invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -142,7 +142,7 @@
 
     if-eqz v2, :cond_21
 
-    .line 61
+    .line 73
     :cond_1b
     const/4 v2, 0x0
 
@@ -150,17 +150,17 @@
 
     move-result-object v2
 
-    .line 74
+    .line 86
     :goto_20
     return-object v2
 
-    .line 65
+    .line 77
     :cond_21
     invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 66
+    .line 78
     .local v1, "value":Ljava/lang/String;
     invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -186,7 +186,7 @@
 
     if-eqz v2, :cond_45
 
-    .line 67
+    .line 79
     :cond_3f
     const/4 v2, 0x1
 
@@ -196,7 +196,7 @@
 
     goto :goto_20
 
-    .line 69
+    .line 81
     :cond_45
     const/4 v2, 0x0
 
@@ -208,12 +208,12 @@
 
     goto :goto_20
 
-    .line 73
+    .line 85
     .end local v1    # "value":Ljava/lang/String;
     :catch_4b
     move-exception v0
 
-    .line 74
+    .line 86
     .local v0, "e":Lorg/json/JSONException;
     invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -230,7 +230,7 @@
     .prologue
     const-wide/16 v2, 0x0
 
-    .line 80
+    .line 92
     :try_start_2
     invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -256,12 +256,12 @@
 
     if-eqz v1, :cond_1d
 
-    .line 86
+    .line 98
     :cond_1c
     :goto_1c
     return-wide v2
 
-    .line 83
+    .line 95
     :cond_1d
     invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getDouble(Ljava/lang/String;)D
     :try_end_20
@@ -271,11 +271,11 @@
 
     goto :goto_1c
 
-    .line 85
+    .line 97
     :catch_22
     move-exception v0
 
-    .line 86
+    .line 98
     .local v0, "e":Lorg/json/JSONException;
     goto :goto_1c
 .end method
@@ -338,6 +338,65 @@
     goto :goto_1b
 .end method
 
+.method public static getInt(Lorg/json/JSONObject;Ljava/lang/String;I)I
+    .registers 6
+    .param p0, "jsonObject"    # Lorg/json/JSONObject;
+    .param p1, "key"    # Ljava/lang/String;
+    .param p2, "value_default"    # I
+
+    .prologue
+    .line 36
+    :try_start_0
+    invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ""
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1a
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "null"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1b
+
+    .line 42
+    .end local p2    # "value_default":I
+    :cond_1a
+    :goto_1a
+    return p2
+
+    .line 39
+    .restart local p2    # "value_default":I
+    :cond_1b
+    invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+    :try_end_1e
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_1e} :catch_20
+
+    move-result p2
+
+    goto :goto_1a
+
+    .line 41
+    :catch_20
+    move-exception v0
+
+    .line 42
+    .local v0, "e":Lorg/json/JSONException;
+    goto :goto_1a
+.end method
+
 .method public static getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
     .registers 7
     .param p0, "jsonObject"    # Lorg/json/JSONObject;
@@ -346,7 +405,7 @@
     .prologue
     const-wide/16 v2, 0x0
 
-    .line 36
+    .line 48
     :try_start_2
     invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -372,12 +431,12 @@
 
     if-eqz v1, :cond_1d
 
-    .line 42
+    .line 54
     :cond_1c
     :goto_1c
     return-wide v2
 
-    .line 39
+    .line 51
     :cond_1d
     invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
     :try_end_20
@@ -387,11 +446,11 @@
 
     goto :goto_1c
 
-    .line 41
+    .line 53
     :catch_22
     move-exception v0
 
-    .line 42
+    .line 54
     .local v0, "e":Lorg/json/JSONException;
     goto :goto_1c
 .end method
@@ -404,7 +463,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 48
+    .line 60
     :try_start_1
     invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -430,12 +489,12 @@
 
     if-eqz v2, :cond_1c
 
-    .line 54
+    .line 66
     :cond_1b
     :goto_1b
     return-object v1
 
-    .line 51
+    .line 63
     :cond_1c
     invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
 
@@ -449,11 +508,11 @@
 
     goto :goto_1b
 
-    .line 53
+    .line 65
     :catch_25
     move-exception v0
 
-    .line 54
+    .line 66
     .local v0, "e":Lorg/json/JSONException;
     goto :goto_1b
 .end method

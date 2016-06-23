@@ -31,7 +31,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/ProfileActivity;
 
     .prologue
-    .line 402
+    .line 423
     iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$11;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$11;->val$textNotificationON:Landroid/widget/TextView;
@@ -50,12 +50,12 @@
     .param p1, "on"    # Z
 
     .prologue
-    .line 405
+    .line 426
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_1c
 
-    .line 406
+    .line 427
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$11;->val$textNotificationON:Landroid/widget/TextView;
 
     const-string/jumbo v1, "#2ba9e3"
@@ -66,7 +66,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 407
+    .line 428
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$11;->val$textNotificationOFF:Landroid/widget/TextView;
 
     const-string/jumbo v1, "#ebebeb"
@@ -77,11 +77,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 412
+    .line 433
     :goto_1b
     return-void
 
-    .line 409
+    .line 430
     :cond_1c
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$11;->val$textNotificationON:Landroid/widget/TextView;
 
@@ -93,7 +93,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 410
+    .line 431
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$11;->val$textNotificationOFF:Landroid/widget/TextView;
 
     const-string/jumbo v1, "#2ba9e3"

@@ -122,7 +122,7 @@
     .line 164
     iget-object v5, p0, Lcom/samsung/privilege/activity/QRLandingActivity$1;->this$0:Lcom/samsung/privilege/activity/QRLandingActivity;
 
-    const v6, 0x7f090241
+    const v6, 0x7f090242
 
     invoke-virtual {v5, v6}, Lcom/samsung/privilege/activity/QRLandingActivity;->getString(I)Ljava/lang/String;
 

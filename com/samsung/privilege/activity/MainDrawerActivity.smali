@@ -50,7 +50,7 @@
 
     .prologue
     .line 105
-    const v0, 0x7f090383
+    const v0, 0x7f090384
 
     const/4 v1, 0x0
 
@@ -143,7 +143,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->mPlanetTitles:[Ljava/lang/String;
 
     .line 32
-    const v0, 0x7f100169
+    const v0, 0x7f10016a
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/MainDrawerActivity;->findViewById(I)Landroid/view/View;
 
@@ -154,7 +154,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->mDrawerLayout:Landroid/support/v4/widget/DrawerLayout;
 
     .line 33
-    const v0, 0x7f10016b
+    const v0, 0x7f10016c
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/MainDrawerActivity;->findViewById(I)Landroid/view/View;
 

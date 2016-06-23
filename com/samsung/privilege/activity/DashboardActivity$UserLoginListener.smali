@@ -48,6 +48,15 @@
 
 
 # virtual methods
+.method public onAuthenOTPSuccess(Ljava/lang/String;)V
+    .registers 2
+    .param p1, "action"    # Ljava/lang/String;
+
+    .prologue
+    .line 108
+    return-void
+.end method
+
 .method public onLoginDeviceSuccess(Ljava/lang/String;)V
     .registers 4
     .param p1, "action"    # Ljava/lang/String;

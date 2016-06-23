@@ -19,7 +19,7 @@
     .registers 1
 
     .prologue
-    .line 9471
+    .line 9458
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,7 +31,7 @@
     .registers 1
 
     .prologue
-    .line 9474
+    .line 9461
     return-void
 .end method
 
@@ -41,7 +41,7 @@
     .param p2, "itemCount"    # I
 
     .prologue
-    .line 9478
+    .line 9465
     return-void
 .end method
 
@@ -52,10 +52,10 @@
     .param p3, "payload"    # Ljava/lang/Object;
 
     .prologue
-    .line 9483
+    .line 9470
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/widget/RecyclerView$AdapterDataObserver;->onItemRangeChanged(II)V
 
-    .line 9484
+    .line 9471
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .param p2, "itemCount"    # I
 
     .prologue
-    .line 9488
+    .line 9475
     return-void
 .end method
 
@@ -76,7 +76,7 @@
     .param p3, "itemCount"    # I
 
     .prologue
-    .line 9496
+    .line 9483
     return-void
 .end method
 
@@ -86,6 +86,6 @@
     .param p2, "itemCount"    # I
 
     .prologue
-    .line 9492
+    .line 9479
     return-void
 .end method

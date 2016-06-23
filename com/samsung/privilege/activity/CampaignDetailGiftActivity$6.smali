@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 605
+    .line 679
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$6;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,12 +43,12 @@
     .param p2, "position"    # I
 
     .prologue
-    .line 609
+    .line 683
     :try_start_0
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$6;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->mCampaignRelatedAdapter:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter;
-    invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1100(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1200(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter;
 
     move-result-object v2
 
@@ -56,7 +56,7 @@
 
     move-result-object v0
 
-    .line 611
+    .line 689
     .local v0, "campaign":Lcom/bzbs/bean/Campaign;
     new-instance v1, Landroid/content/Intent;
 
@@ -70,8 +70,13 @@
 
     invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 612
+    .line 690
     .local v1, "intent":Landroid/content/Intent;
+    const/high16 v2, 0x40000000
+
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    .line 691
     const-string/jumbo v2, "campaign_id"
 
     iget-object v3, v0, Lcom/bzbs/bean/Campaign;->ID:Ljava/lang/String;
@@ -82,12 +87,31 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 613
+    .line 692
+    const-string/jumbo v2, "campaign_history"
+
+    iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$6;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$6;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->paramCampaignID:I
+    invoke-static {v4}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$500(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)I
+
+    move-result v4
+
+    # invokes: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->appendCampaignHistory(I)Ljava/util/ArrayList;
+    invoke-static {v3, v4}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1300(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;I)Ljava/util/ArrayList;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+
+    .line 693
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$6;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-virtual {v2, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 615
+    .line 702
     const-string/jumbo v2, "Gift Campaign Details"
 
     const-string/jumbo v3, "Click Relate Deal"
@@ -119,18 +143,18 @@
     move-result-object v4
 
     invoke-static {v2, v3, v4}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_4d
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_4d} :catch_4e
+    :try_end_64
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_64} :catch_65
 
-    .line 619
+    .line 706
     .end local v0    # "campaign":Lcom/bzbs/bean/Campaign;
     .end local v1    # "intent":Landroid/content/Intent;
-    :goto_4d
+    :goto_64
     return-void
 
-    .line 616
-    :catch_4e
+    .line 703
+    :catch_65
     move-exception v2
 
-    goto :goto_4d
+    goto :goto_64
 .end method

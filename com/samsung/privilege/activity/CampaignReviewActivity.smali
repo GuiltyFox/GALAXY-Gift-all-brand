@@ -343,7 +343,7 @@
 
     .prologue
     .line 119
-    const v1, 0x7f100106
+    const v1, 0x7f100107
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/CampaignReviewActivity;->findViewById(I)Landroid/view/View;
 
@@ -481,7 +481,7 @@
     .local v0, "client":Lcom/loopj/android/http/AsyncHttpClient;
     const-string/jumbo v3, ""
 
-    const v4, 0x7f09026e
+    const v4, 0x7f09026f
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/CampaignReviewActivity;->getString(I)Ljava/lang/String;
 
@@ -546,7 +546,7 @@
     .local v0, "deviceHelper":Lcom/bzbs/util/DeviceHelper;
     const-string/jumbo v3, "<deviceId>"
 
-    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/bzbs/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
 
     move-result-object v4
 
@@ -775,7 +775,7 @@
 
     .prologue
     .line 111
-    const v0, 0x7f100107
+    const v0, 0x7f100108
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CampaignReviewActivity;->findViewById(I)Landroid/view/View;
 
@@ -845,7 +845,7 @@
 
     if-ne v4, v7, :cond_6
 
-    .line 418
+    .line 427
     :goto_5
     return-void
 
@@ -853,7 +853,7 @@
     :cond_6
     const-string/jumbo v4, ""
 
-    const v5, 0x7f09026e
+    const v5, 0x7f09026f
 
     invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/CampaignReviewActivity;->getString(I)Ljava/lang/String;
 
@@ -1088,10 +1088,10 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 744
+    .line 753
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/CampaignReviewActivity;->finish()V
 
-    .line 745
+    .line 754
     return-void
 .end method
 
@@ -1100,7 +1100,7 @@
     .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 752
+    .line 761
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/CampaignReviewActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v0
@@ -1109,7 +1109,7 @@
 
     invoke-static {p0, v0, v1}, Lcom/bzbs/marketplace/dialog/util/DialogUtils;->getDialogReviewGift(Landroid/app/Activity;Landroid/support/v4/app/FragmentManager;Lcom/bzbs/bean/Campaign;)V
 
-    .line 753
+    .line 762
     return-void
 .end method
 

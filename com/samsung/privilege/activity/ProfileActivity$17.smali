@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/ProfileActivity;->processJsonCategoryConfig(Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/activity/ProfileActivity;->processJsonCategory(Ljava/lang/String;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -31,7 +31,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/ProfileActivity;
 
     .prologue
-    .line 956
+    .line 993
     iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$17;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$17;->val$textCategoryOff:Landroid/widget/TextView;
@@ -50,12 +50,12 @@
     .param p1, "on"    # Z
 
     .prologue
-    .line 959
+    .line 996
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_1c
 
-    .line 960
+    .line 997
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$17;->val$textCategoryOff:Landroid/widget/TextView;
 
     const-string/jumbo v1, "#ebebeb"
@@ -66,7 +66,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 961
+    .line 998
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$17;->val$textCategoryOn:Landroid/widget/TextView;
 
     const-string/jumbo v1, "#2ba9e3"
@@ -77,11 +77,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 966
+    .line 1003
     :goto_1b
     return-void
 
-    .line 963
+    .line 1000
     :cond_1c
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$17;->val$textCategoryOff:Landroid/widget/TextView;
 
@@ -93,7 +93,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 964
+    .line 1001
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$17;->val$textCategoryOn:Landroid/widget/TextView;
 
     const-string/jumbo v1, "#ebebeb"

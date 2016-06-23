@@ -95,7 +95,7 @@
     .line 53
     const-string/jumbo v6, ""
 
-    const v7, 0x7f09026e
+    const v7, 0x7f09026f
 
     invoke-virtual {p0, v7}, Lcom/samsung/privilege/activity/CampaignSearchActivity;->getString(I)Ljava/lang/String;
 
@@ -162,7 +162,7 @@
     .end local v3    # "mMessageView":Landroid/widget/TextView;
     :cond_3c
     :goto_3c
-    const v6, 0x7f10012c
+    const v6, 0x7f10012d
 
     invoke-virtual {p0, v6}, Lcom/samsung/privilege/activity/CampaignSearchActivity;->findViewById(I)Landroid/view/View;
 

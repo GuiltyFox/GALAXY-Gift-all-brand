@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->doHistory(Landroid/view/View;)V
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->doScanQRCode(Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 1810
+    .line 1837
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$27;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,28 +38,90 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .registers 7
 
     .prologue
-    .line 1813
-    new-instance v0, Landroid/content/Intent;
+    .line 1844
+    :try_start_0
+    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$27;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    const/16 v3, 0x17
 
-    invoke-virtual {v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
+    if-lt v2, v3, :cond_32
 
-    move-result-object v1
+    .line 1845
+    iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$27;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    const-class v2, Lcom/samsung/privilege/activity/HistoryActivity;
+    const-string/jumbo v3, "android.permission.CAMERA"
 
-    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/MainPagerActivity;->checkSelfPermission(Ljava/lang/String;)I
 
-    .line 1814
-    .local v0, "intent":Landroid/content/Intent;
-    iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$27;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    move-result v1
 
-    invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->startActivity(Landroid/content/Intent;)V
+    .line 1846
+    .local v1, "hasPermissionCamera":I
+    if-eqz v1, :cond_22
 
-    .line 1815
+    .line 1858
+    iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$27;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    const/4 v3, 0x1
+
+    new-array v3, v3, [Ljava/lang/String;
+
+    const/4 v4, 0x0
+
+    const-string/jumbo v5, "android.permission.CAMERA"
+
+    aput-object v5, v3, v4
+
+    const/16 v4, 0xc8
+
+    invoke-virtual {v2, v3, v4}, Lcom/samsung/privilege/activity/MainPagerActivity;->requestPermissions([Ljava/lang/String;I)V
+
+    .line 1868
+    .end local v1    # "hasPermissionCamera":I
+    :goto_21
     return-void
+
+    .line 1860
+    .restart local v1    # "hasPermissionCamera":I
+    :cond_22
+    iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$27;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    # invokes: Lcom/samsung/privilege/activity/MainPagerActivity;->requestOpenQR()V
+    invoke-static {v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$1200(Lcom/samsung/privilege/activity/MainPagerActivity;)V
+    :try_end_27
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_27} :catch_28
+
+    goto :goto_21
+
+    .line 1865
+    .end local v1    # "hasPermissionCamera":I
+    :catch_28
+    move-exception v0
+
+    .line 1866
+    .local v0, "ex":Ljava/lang/Exception;
+    iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$27;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    const-string/jumbo v3, "Can not open QRCode Scanner!"
+
+    # invokes: Lcom/samsung/privilege/activity/MainPagerActivity;->showToast(Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$1300(Lcom/samsung/privilege/activity/MainPagerActivity;Ljava/lang/String;)V
+
+    goto :goto_21
+
+    .line 1863
+    .end local v0    # "ex":Ljava/lang/Exception;
+    :cond_32
+    :try_start_32
+    iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$27;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    # invokes: Lcom/samsung/privilege/activity/MainPagerActivity;->requestOpenQR()V
+    invoke-static {v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$1200(Lcom/samsung/privilege/activity/MainPagerActivity;)V
+    :try_end_37
+    .catch Ljava/lang/Exception; {:try_start_32 .. :try_end_37} :catch_28
+
+    goto :goto_21
 .end method

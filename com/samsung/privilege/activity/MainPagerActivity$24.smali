@@ -3,12 +3,12 @@
 .source "MainPagerActivity.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->doNotification(Landroid/view/View;)V
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->doChangeLanguage(Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 1680
+    .line 1708
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$24;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,22 +37,39 @@
 
 
 # virtual methods
-.method public run()V
-    .registers 3
+.method public onClick(Landroid/view/View;)V
+    .registers 4
+    .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 1683
+    .line 1711
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$24;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$24;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
 
-    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->mHandler:Landroid/os/Handler;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$900(Lcom/samsung/privilege/activity/MainPagerActivity;)Landroid/os/Handler;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lcom/samsung/privilege/util/DialogNotification;->showDialogNotification(Landroid/content/Context;Landroid/os/Handler;)V
+    move-result-object v0
 
-    .line 1684
+    const-string/jumbo v1, "1109"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1b
+
+    .line 1714
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$24;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    const-string/jumbo v1, "1109"
+
+    # invokes: Lcom/samsung/privilege/activity/MainPagerActivity;->saveLanguageToServer(Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$1000(Lcom/samsung/privilege/activity/MainPagerActivity;Ljava/lang/String;)V
+
+    .line 1716
+    :cond_1b
     return-void
 .end method

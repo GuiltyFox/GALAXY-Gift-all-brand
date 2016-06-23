@@ -27,10 +27,10 @@
     .end param
 
     .prologue
-    .line 51
+    .line 53
     invoke-direct {p0, p1, p2}, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;-><init>(Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;Landroid/content/res/Resources;)V
 
-    .line 52
+    .line 54
     return-void
 .end method
 
@@ -44,7 +44,7 @@
     .end param
 
     .prologue
-    .line 56
+    .line 58
     new-instance v0, Landroid/support/v4/graphics/drawable/DrawableWrapperKitKat;
 
     invoke-direct {v0, p0, p1}, Landroid/support/v4/graphics/drawable/DrawableWrapperKitKat;-><init>(Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;Landroid/content/res/Resources;)V

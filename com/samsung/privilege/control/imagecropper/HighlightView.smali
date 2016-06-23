@@ -210,7 +210,7 @@
     iput-object v1, p0, Lcom/samsung/privilege/control/imagecropper/HighlightView;->mResizeDrawableHeight:Landroid/graphics/drawable/Drawable;
 
     .line 61
-    const v1, 0x7f0202d7
+    const v1, 0x7f0202d9
 
     .line 62
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;

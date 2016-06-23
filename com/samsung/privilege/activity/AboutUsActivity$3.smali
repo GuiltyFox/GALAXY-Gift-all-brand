@@ -60,7 +60,7 @@
 
     .line 203
     .local v1, "result":Ljava/lang/String;
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_36
 
     const-string/jumbo v2, ""
 
@@ -68,7 +68,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_31
+    if-nez v2, :cond_36
 
     .line 204
     new-instance v0, Landroid/content/Intent;
@@ -85,6 +85,11 @@
 
     .line 205
     .local v0, "intent":Landroid/content/Intent;
+    const/high16 v2, 0x40000000
+
+    invoke-virtual {v0, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    .line 206
     const-string/jumbo v2, "campaign_id"
 
     invoke-static {v1}, Lcom/bzbs/util/BBUtil;->CTypeInteger(Ljava/lang/String;)Ljava/lang/Integer;
@@ -93,13 +98,13 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 206
+    .line 207
     iget-object v2, p0, Lcom/samsung/privilege/activity/AboutUsActivity$3;->this$0:Lcom/samsung/privilege/activity/AboutUsActivity;
 
     invoke-virtual {v2, v0}, Lcom/samsung/privilege/activity/AboutUsActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 208
+    .line 209
     .end local v0    # "intent":Landroid/content/Intent;
-    :cond_31
+    :cond_36
     return-void
 .end method

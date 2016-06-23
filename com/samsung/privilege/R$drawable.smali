@@ -1297,473 +1297,477 @@
 
 .field public static final icon_arrow_back2:I = 0x7f020280
 
-.field public static final icon_arrow_blue_down:I = 0x7f020281
+.field public static final icon_arrow_blue:I = 0x7f020281
 
-.field public static final icon_arrow_down:I = 0x7f020282
+.field public static final icon_arrow_blue_down:I = 0x7f020282
 
-.field public static final icon_arrow_left_gray_gift:I = 0x7f020283
+.field public static final icon_arrow_down:I = 0x7f020283
 
-.field public static final icon_arrow_next:I = 0x7f020284
+.field public static final icon_arrow_left_gray_gift:I = 0x7f020284
 
-.field public static final icon_arrow_option:I = 0x7f020285
+.field public static final icon_arrow_next:I = 0x7f020285
 
-.field public static final icon_arrow_right_white:I = 0x7f020286
+.field public static final icon_arrow_option:I = 0x7f020286
 
-.field public static final icon_barcode:I = 0x7f020287
+.field public static final icon_arrow_right_white:I = 0x7f020287
 
-.field public static final icon_beacon:I = 0x7f020288
+.field public static final icon_barcode:I = 0x7f020288
 
-.field public static final icon_calendar:I = 0x7f020289
+.field public static final icon_beacon:I = 0x7f020289
 
-.field public static final icon_code:I = 0x7f02028a
+.field public static final icon_calendar:I = 0x7f02028a
 
-.field public static final icon_fb_profile:I = 0x7f02028b
+.field public static final icon_code:I = 0x7f02028b
 
-.field public static final icon_flag_thai_2x:I = 0x7f02028c
+.field public static final icon_fb_profile:I = 0x7f02028c
 
-.field public static final icon_flag_uk_2x:I = 0x7f02028d
+.field public static final icon_flag_thai_2x:I = 0x7f02028d
 
-.field public static final icon_galaxy_gift:I = 0x7f02028e
+.field public static final icon_flag_uk_2x:I = 0x7f02028e
 
-.field public static final icon_galaxy_gift_96:I = 0x7f02028f
+.field public static final icon_galaxy_gift:I = 0x7f02028f
 
-.field public static final icon_gender:I = 0x7f020290
+.field public static final icon_galaxy_gift_96:I = 0x7f020290
 
-.field public static final icon_header_back:I = 0x7f020291
+.field public static final icon_gender:I = 0x7f020291
 
-.field public static final icon_hot_privilege_active:I = 0x7f020292
+.field public static final icon_header_back:I = 0x7f020292
 
-.field public static final icon_hot_privilege_inactive:I = 0x7f020293
+.field public static final icon_hot_privilege_active:I = 0x7f020293
 
-.field public static final icon_info:I = 0x7f020294
+.field public static final icon_hot_privilege_inactive:I = 0x7f020294
 
-.field public static final icon_key_lock:I = 0x7f020295
+.field public static final icon_info:I = 0x7f020295
 
-.field public static final icon_like_active:I = 0x7f020296
+.field public static final icon_key_lock:I = 0x7f020296
 
-.field public static final icon_like_blue:I = 0x7f020297
+.field public static final icon_like_active:I = 0x7f020297
 
-.field public static final icon_like_gray:I = 0x7f020298
+.field public static final icon_like_blue:I = 0x7f020298
 
-.field public static final icon_like_inactive:I = 0x7f020299
+.field public static final icon_like_gray:I = 0x7f020299
 
-.field public static final icon_like_review_01:I = 0x7f02029a
+.field public static final icon_like_inactive:I = 0x7f02029a
 
-.field public static final icon_logout:I = 0x7f02029b
+.field public static final icon_like_review_01:I = 0x7f02029b
 
-.field public static final icon_marketplace_active:I = 0x7f02029c
+.field public static final icon_logout:I = 0x7f02029c
 
-.field public static final icon_menu_hamberger:I = 0x7f02029d
+.field public static final icon_marketplace_active:I = 0x7f02029d
 
-.field public static final icon_message:I = 0x7f02029e
+.field public static final icon_menu_hamberger:I = 0x7f02029e
 
-.field public static final icon_noti_black:I = 0x7f02029f
+.field public static final icon_message:I = 0x7f02029f
 
-.field public static final icon_noti_gift:I = 0x7f0202a0
+.field public static final icon_noti_black:I = 0x7f0202a0
 
-.field public static final icon_noti_message:I = 0x7f0202a1
+.field public static final icon_noti_gift:I = 0x7f0202a1
 
-.field public static final icon_noti_red:I = 0x7f0202a2
+.field public static final icon_noti_message:I = 0x7f0202a2
 
-.field public static final icon_noti_white:I = 0x7f0202a3
+.field public static final icon_noti_red:I = 0x7f0202a3
 
-.field public static final icon_pager_blue:I = 0x7f0202a4
+.field public static final icon_noti_white:I = 0x7f0202a4
 
-.field public static final icon_pager_gray:I = 0x7f0202a5
+.field public static final icon_pager_blue:I = 0x7f0202a5
 
-.field public static final icon_pay_success:I = 0x7f0202a6
+.field public static final icon_pager_gray:I = 0x7f0202a6
 
-.field public static final icon_points_white:I = 0x7f0202a7
+.field public static final icon_pay_success:I = 0x7f0202a7
 
-.field public static final icon_qrcode:I = 0x7f0202a8
+.field public static final icon_points_white:I = 0x7f0202a8
 
-.field public static final icon_qrcodelanding:I = 0x7f0202a9
+.field public static final icon_qrcode:I = 0x7f0202a9
 
-.field public static final icon_question:I = 0x7f0202aa
+.field public static final icon_qrcodelanding:I = 0x7f0202aa
 
-.field public static final icon_ratting_gray_32:I = 0x7f0202ab
+.field public static final icon_question:I = 0x7f0202ab
 
-.field public static final icon_ratting_half_32_01:I = 0x7f0202ac
+.field public static final icon_ratting_gray_32:I = 0x7f0202ac
 
-.field public static final icon_ratting_half_32_02:I = 0x7f0202ad
+.field public static final icon_ratting_half_32_01:I = 0x7f0202ad
 
-.field public static final icon_ratting_half_32_03:I = 0x7f0202ae
+.field public static final icon_ratting_half_32_02:I = 0x7f0202ae
 
-.field public static final icon_ratting_half_32_04:I = 0x7f0202af
+.field public static final icon_ratting_half_32_03:I = 0x7f0202af
 
-.field public static final icon_ratting_half_32_05:I = 0x7f0202b0
+.field public static final icon_ratting_half_32_04:I = 0x7f0202b0
 
-.field public static final icon_ratting_half_32_06:I = 0x7f0202b1
+.field public static final icon_ratting_half_32_05:I = 0x7f0202b1
 
-.field public static final icon_ratting_half_32_07:I = 0x7f0202b2
+.field public static final icon_ratting_half_32_06:I = 0x7f0202b2
 
-.field public static final icon_ratting_half_32_08:I = 0x7f0202b3
+.field public static final icon_ratting_half_32_07:I = 0x7f0202b3
 
-.field public static final icon_ratting_half_32_09:I = 0x7f0202b4
+.field public static final icon_ratting_half_32_08:I = 0x7f0202b4
 
-.field public static final icon_ratting_star_gray:I = 0x7f0202b5
+.field public static final icon_ratting_half_32_09:I = 0x7f0202b5
 
-.field public static final icon_ratting_star_yellow:I = 0x7f0202b6
+.field public static final icon_ratting_star_gray:I = 0x7f0202b6
 
-.field public static final icon_ratting_yellow_32:I = 0x7f0202b7
+.field public static final icon_ratting_star_yellow:I = 0x7f0202b7
 
-.field public static final icon_requesthelp_header:I = 0x7f0202b8
+.field public static final icon_ratting_yellow_32:I = 0x7f0202b8
 
-.field public static final icon_rotate_left:I = 0x7f0202b9
+.field public static final icon_requesthelp_header:I = 0x7f0202b9
 
-.field public static final icon_rotate_right:I = 0x7f0202ba
+.field public static final icon_rotate_left:I = 0x7f0202ba
 
-.field public static final icon_search_black:I = 0x7f0202bb
+.field public static final icon_rotate_right:I = 0x7f0202bb
 
-.field public static final icon_share:I = 0x7f0202bc
+.field public static final icon_search_black:I = 0x7f0202bc
 
-.field public static final icon_share_blue:I = 0x7f0202bd
+.field public static final icon_share:I = 0x7f0202bd
 
-.field public static final icon_star_yellow:I = 0x7f0202be
+.field public static final icon_share_blue:I = 0x7f0202be
 
-.field public static final icon_time_a:I = 0x7f0202bf
+.field public static final icon_star_yellow:I = 0x7f0202bf
 
-.field public static final icon_time_b:I = 0x7f0202c0
+.field public static final icon_time_a:I = 0x7f0202c0
 
-.field public static final icon_wallet_history:I = 0x7f0202c1
+.field public static final icon_time_b:I = 0x7f0202c1
 
-.field public static final image_1200x800:I = 0x7f0202c2
+.field public static final icon_wallet_history:I = 0x7f0202c2
 
-.field public static final image_240x160:I = 0x7f0202c3
+.field public static final image_1200x800:I = 0x7f0202c3
 
-.field public static final image_480x320:I = 0x7f0202c4
+.field public static final image_240x160:I = 0x7f0202c4
 
-.field public static final image_default:I = 0x7f0202c5
+.field public static final image_360x240:I = 0x7f0202c5
 
-.field public static final image_galaxy_gift_login:I = 0x7f0202c6
+.field public static final image_480x320:I = 0x7f0202c6
 
-.field public static final image_gift_box_point_blink:I = 0x7f0202c7
+.field public static final image_default:I = 0x7f0202c7
 
-.field public static final image_gift_loading_1200x800:I = 0x7f0202c8
+.field public static final image_galaxy_gift_login:I = 0x7f0202c8
 
-.field public static final image_gift_loading_240x160:I = 0x7f0202c9
+.field public static final image_gift_box_point_blink:I = 0x7f0202c9
 
-.field public static final image_gift_loading_600x150:I = 0x7f0202ca
+.field public static final image_gift_loading_1200x800:I = 0x7f0202ca
 
-.field public static final image_gift_loading_600x400:I = 0x7f0202cb
+.field public static final image_gift_loading_240x160:I = 0x7f0202cb
 
-.field public static final image_loading_1200x300:I = 0x7f0202cc
+.field public static final image_gift_loading_600x150:I = 0x7f0202cc
 
-.field public static final image_loading_600x150:I = 0x7f0202cd
+.field public static final image_gift_loading_600x400:I = 0x7f0202cd
 
-.field public static final image_loading_600x400:I = 0x7f0202ce
+.field public static final image_loading_1200x300:I = 0x7f0202ce
 
-.field public static final image_power_by_bzbs_login:I = 0x7f0202cf
+.field public static final image_loading_600x150:I = 0x7f0202cf
 
-.field public static final image_premium:I = 0x7f0202d0
+.field public static final image_loading_600x400:I = 0x7f0202d0
 
-.field public static final image_profile_circle_white:I = 0x7f0202d1
+.field public static final image_power_by_bzbs_login:I = 0x7f0202d1
 
-.field public static final image_scale_600x150:I = 0x7f020368
+.field public static final image_premium:I = 0x7f0202d2
 
-.field public static final image_scale_600x400:I = 0x7f020369
+.field public static final image_profile_circle_white:I = 0x7f0202d3
 
-.field public static final image_shadow:I = 0x7f0202d2
+.field public static final image_scale_600x150:I = 0x7f02036a
 
-.field public static final image_shadow_mypoint:I = 0x7f0202d3
+.field public static final image_scale_600x400:I = 0x7f02036b
 
-.field public static final image_splash:I = 0x7f0202d4
+.field public static final image_shadow:I = 0x7f0202d4
 
-.field public static final image_temp_600x400:I = 0x7f0202d5
+.field public static final image_shadow_mypoint:I = 0x7f0202d5
 
-.field public static final image_temp_600x800:I = 0x7f0202d6
+.field public static final image_splash:I = 0x7f0202d6
 
-.field public static final indicator_autocrop:I = 0x7f0202d7
+.field public static final image_temp_600x400:I = 0x7f0202d7
 
-.field public static final like_48:I = 0x7f0202d8
+.field public static final image_temp_600x800:I = 0x7f0202d8
 
-.field public static final like_b_48:I = 0x7f0202d9
+.field public static final indicator_autocrop:I = 0x7f0202d9
 
-.field public static final line_dot:I = 0x7f0202da
+.field public static final like_48:I = 0x7f0202da
 
-.field public static final line_dot_horz:I = 0x7f0202db
+.field public static final like_b_48:I = 0x7f0202db
 
-.field public static final line_dot_horz_repeat:I = 0x7f0202dc
+.field public static final line_dot:I = 0x7f0202dc
 
-.field public static final listitem_bg_header:I = 0x7f0202dd
+.field public static final line_dot_horz:I = 0x7f0202dd
 
-.field public static final logo:I = 0x7f0202de
+.field public static final line_dot_horz_repeat:I = 0x7f0202de
 
-.field public static final logo_app:I = 0x7f0202df
+.field public static final listitem_bg_header:I = 0x7f0202df
 
-.field public static final logo_gift_big:I = 0x7f0202e0
+.field public static final logo:I = 0x7f0202e0
 
-.field public static final logo_header:I = 0x7f0202e1
+.field public static final logo_app:I = 0x7f0202e1
 
-.field public static final menu_about_black:I = 0x7f0202e2
+.field public static final logo_gift_big:I = 0x7f0202e2
 
-.field public static final menu_about_blue:I = 0x7f0202e3
+.field public static final logo_header:I = 0x7f0202e3
 
-.field public static final menu_account_black:I = 0x7f0202e4
+.field public static final menu_about_black:I = 0x7f0202e4
 
-.field public static final menu_account_blue:I = 0x7f0202e5
+.field public static final menu_about_blue:I = 0x7f0202e5
 
-.field public static final menu_help_black:I = 0x7f0202e6
+.field public static final menu_account_black:I = 0x7f0202e6
 
-.field public static final menu_help_blue:I = 0x7f0202e7
+.field public static final menu_account_blue:I = 0x7f0202e7
 
-.field public static final menu_history_black:I = 0x7f0202e8
+.field public static final menu_help_black:I = 0x7f0202e8
 
-.field public static final menu_history_blue:I = 0x7f0202e9
+.field public static final menu_help_blue:I = 0x7f0202e9
 
-.field public static final menu_history_white:I = 0x7f0202ea
+.field public static final menu_history_black:I = 0x7f0202ea
 
-.field public static final menu_icon_about:I = 0x7f0202eb
+.field public static final menu_history_blue:I = 0x7f0202eb
 
-.field public static final menu_icon_account:I = 0x7f0202ec
+.field public static final menu_history_white:I = 0x7f0202ec
 
-.field public static final menu_icon_help:I = 0x7f0202ed
+.field public static final menu_icon_about:I = 0x7f0202ed
 
-.field public static final menu_icon_history:I = 0x7f0202ee
+.field public static final menu_icon_account:I = 0x7f0202ee
 
-.field public static final menu_icon_logout:I = 0x7f0202ef
+.field public static final menu_icon_help:I = 0x7f0202ef
 
-.field public static final menu_icon_luckydraw:I = 0x7f0202f0
+.field public static final menu_icon_history:I = 0x7f0202f0
 
-.field public static final menu_icon_market:I = 0x7f0202f1
+.field public static final menu_icon_logout:I = 0x7f0202f1
 
-.field public static final menu_icon_qr:I = 0x7f0202f2
+.field public static final menu_icon_luckydraw:I = 0x7f0202f2
 
-.field public static final menu_logout_black:I = 0x7f0202f3
+.field public static final menu_icon_market:I = 0x7f0202f3
 
-.field public static final menu_logout_blue:I = 0x7f0202f4
+.field public static final menu_icon_qr:I = 0x7f0202f4
 
-.field public static final menu_luckydraw_black:I = 0x7f0202f5
+.field public static final menu_logout_black:I = 0x7f0202f5
 
-.field public static final menu_luckydraw_blue:I = 0x7f0202f6
+.field public static final menu_logout_blue:I = 0x7f0202f6
 
-.field public static final menu_market_black:I = 0x7f0202f7
+.field public static final menu_luckydraw_black:I = 0x7f0202f7
 
-.field public static final menu_market_blue:I = 0x7f0202f8
+.field public static final menu_luckydraw_blue:I = 0x7f0202f8
 
-.field public static final menu_qr_black:I = 0x7f0202f9
+.field public static final menu_market_black:I = 0x7f0202f9
 
-.field public static final menu_qr_blue:I = 0x7f0202fa
+.field public static final menu_market_blue:I = 0x7f0202fa
 
-.field public static final messenger_bubble_large_blue:I = 0x7f0202fb
+.field public static final menu_qr_black:I = 0x7f0202fb
 
-.field public static final messenger_bubble_large_white:I = 0x7f0202fc
+.field public static final menu_qr_blue:I = 0x7f0202fc
 
-.field public static final messenger_bubble_small_blue:I = 0x7f0202fd
+.field public static final messenger_bubble_large_blue:I = 0x7f0202fd
 
-.field public static final messenger_bubble_small_white:I = 0x7f0202fe
+.field public static final messenger_bubble_large_white:I = 0x7f0202fe
 
-.field public static final messenger_button_blue_bg_round:I = 0x7f0202ff
+.field public static final messenger_bubble_small_blue:I = 0x7f0202ff
 
-.field public static final messenger_button_blue_bg_selector:I = 0x7f020300
+.field public static final messenger_bubble_small_white:I = 0x7f020300
 
-.field public static final messenger_button_send_round_shadow:I = 0x7f020301
+.field public static final messenger_button_blue_bg_round:I = 0x7f020301
 
-.field public static final messenger_button_white_bg_round:I = 0x7f020302
+.field public static final messenger_button_blue_bg_selector:I = 0x7f020302
 
-.field public static final messenger_button_white_bg_selector:I = 0x7f020303
+.field public static final messenger_button_send_round_shadow:I = 0x7f020303
 
-.field public static final notification_template_icon_bg:I = 0x7f02036a
+.field public static final messenger_button_white_bg_round:I = 0x7f020304
 
-.field public static final pager_down:I = 0x7f020304
+.field public static final messenger_button_white_bg_selector:I = 0x7f020305
 
-.field public static final pager_next:I = 0x7f020305
+.field public static final notification_template_icon_bg:I = 0x7f02036c
 
-.field public static final pager_prev:I = 0x7f020306
+.field public static final pager_down:I = 0x7f020306
 
-.field public static final paid32:I = 0x7f020307
+.field public static final pager_next:I = 0x7f020307
 
-.field public static final pixel100:I = 0x7f020308
+.field public static final pager_prev:I = 0x7f020308
 
-.field public static final play_button:I = 0x7f020309
+.field public static final paid32:I = 0x7f020309
 
-.field public static final point_0:I = 0x7f02030a
+.field public static final pixel100:I = 0x7f02030a
 
-.field public static final point_0_gift:I = 0x7f02030b
+.field public static final play_button:I = 0x7f02030b
 
-.field public static final point_1:I = 0x7f02030c
+.field public static final point_0:I = 0x7f02030c
 
-.field public static final point_1_gift:I = 0x7f02030d
+.field public static final point_0_gift:I = 0x7f02030d
 
-.field public static final point_2:I = 0x7f02030e
+.field public static final point_1:I = 0x7f02030e
 
-.field public static final point_2_gift:I = 0x7f02030f
+.field public static final point_1_gift:I = 0x7f02030f
 
-.field public static final point_3:I = 0x7f020310
+.field public static final point_2:I = 0x7f020310
 
-.field public static final point_3_gift:I = 0x7f020311
+.field public static final point_2_gift:I = 0x7f020311
 
-.field public static final point_4:I = 0x7f020312
+.field public static final point_3:I = 0x7f020312
 
-.field public static final point_4_gift:I = 0x7f020313
+.field public static final point_3_gift:I = 0x7f020313
 
-.field public static final point_5:I = 0x7f020314
+.field public static final point_4:I = 0x7f020314
 
-.field public static final point_5_gift:I = 0x7f020315
+.field public static final point_4_gift:I = 0x7f020315
 
-.field public static final point_6:I = 0x7f020316
+.field public static final point_5:I = 0x7f020316
 
-.field public static final point_6_gift:I = 0x7f020317
+.field public static final point_5_gift:I = 0x7f020317
 
-.field public static final point_7:I = 0x7f020318
+.field public static final point_6:I = 0x7f020318
 
-.field public static final point_7_gift:I = 0x7f020319
+.field public static final point_6_gift:I = 0x7f020319
 
-.field public static final point_8:I = 0x7f02031a
+.field public static final point_7:I = 0x7f02031a
 
-.field public static final point_8_gift:I = 0x7f02031b
+.field public static final point_7_gift:I = 0x7f02031b
 
-.field public static final point_9:I = 0x7f02031c
+.field public static final point_8:I = 0x7f02031c
 
-.field public static final point_9_gift:I = 0x7f02031d
+.field public static final point_8_gift:I = 0x7f02031d
 
-.field public static final popup_background_dark:I = 0x7f02031e
+.field public static final point_9:I = 0x7f02031e
 
-.field public static final popupmypoint_en:I = 0x7f02031f
+.field public static final point_9_gift:I = 0x7f02031f
 
-.field public static final popupmypoint_th:I = 0x7f020320
+.field public static final popup_background_dark:I = 0x7f020320
 
-.field public static final power_by_buzzebees_orange:I = 0x7f020321
+.field public static final popupmypoint_en:I = 0x7f020321
 
-.field public static final power_by_buzzebees_white:I = 0x7f020322
+.field public static final popupmypoint_th:I = 0x7f020322
 
-.field public static final power_bzbs:I = 0x7f020323
+.field public static final power_by_buzzebees_orange:I = 0x7f020323
 
-.field public static final powerby_sidebar:I = 0x7f020324
+.field public static final power_by_buzzebees_white:I = 0x7f020324
 
-.field public static final progress_loader_wallet:I = 0x7f020325
+.field public static final power_bzbs:I = 0x7f020325
 
-.field public static final qrcode2x:I = 0x7f020326
+.field public static final powerby_sidebar:I = 0x7f020326
 
-.field public static final qt_bzbs1:I = 0x7f020327
+.field public static final progress_loader_wallet:I = 0x7f020327
 
-.field public static final qt_bzbs2:I = 0x7f020328
+.field public static final qrcode2x:I = 0x7f020328
 
-.field public static final qt_bzbs3:I = 0x7f020329
+.field public static final qt_bzbs1:I = 0x7f020329
 
-.field public static final qt_bzbs4:I = 0x7f02032a
+.field public static final qt_bzbs2:I = 0x7f02032a
 
-.field public static final qt_img_1:I = 0x7f02032b
+.field public static final qt_bzbs3:I = 0x7f02032b
 
-.field public static final qt_img_2:I = 0x7f02032c
+.field public static final qt_bzbs4:I = 0x7f02032c
 
-.field public static final radius_black_dark:I = 0x7f02032d
+.field public static final qt_img_1:I = 0x7f02032d
 
-.field public static final radius_black_gray:I = 0x7f02032e
+.field public static final qt_img_2:I = 0x7f02032e
 
-.field public static final radius_black_light:I = 0x7f02032f
+.field public static final radius_black_dark:I = 0x7f02032f
 
-.field public static final rating_display:I = 0x7f020330
+.field public static final radius_black_gray:I = 0x7f020330
 
-.field public static final rating_display2:I = 0x7f020331
+.field public static final radius_black_light:I = 0x7f020331
 
-.field public static final ratingbar_yellow:I = 0x7f020332
+.field public static final rating_display:I = 0x7f020332
 
-.field public static final rounded_circle:I = 0x7f020333
+.field public static final rating_display2:I = 0x7f020333
 
-.field public static final rounded_circle_selected:I = 0x7f020334
+.field public static final ratingbar_yellow:I = 0x7f020334
 
-.field public static final rounded_circle_white_light:I = 0x7f020335
+.field public static final rounded_circle:I = 0x7f020335
 
-.field public static final selector_image:I = 0x7f020336
+.field public static final rounded_circle_selected:I = 0x7f020336
 
-.field public static final shape_bg_header:I = 0x7f020337
+.field public static final rounded_circle_white_light:I = 0x7f020337
 
-.field public static final style_button:I = 0x7f020338
+.field public static final selector_image:I = 0x7f020338
 
-.field public static final style_button_dialog:I = 0x7f020339
+.field public static final shape_bg_header:I = 0x7f020339
 
-.field public static final style_button_dialog_gradient:I = 0x7f02033a
+.field public static final style_button:I = 0x7f02033a
 
-.field public static final style_button_drawer:I = 0x7f02033b
+.field public static final style_button_dialog:I = 0x7f02033b
 
-.field public static final style_button_drawer_normal:I = 0x7f02033c
+.field public static final style_button_dialog_gradient:I = 0x7f02033c
 
-.field public static final style_button_drawer_pressed:I = 0x7f02033d
+.field public static final style_button_drawer:I = 0x7f02033d
 
-.field public static final style_button_gradient:I = 0x7f02033e
+.field public static final style_button_drawer_normal:I = 0x7f02033e
 
-.field public static final style_button_icon:I = 0x7f02033f
+.field public static final style_button_drawer_pressed:I = 0x7f02033f
 
-.field public static final style_button_icon_normal:I = 0x7f020340
+.field public static final style_button_gradient:I = 0x7f020340
 
-.field public static final style_button_icon_pressed:I = 0x7f020341
+.field public static final style_button_icon:I = 0x7f020341
 
-.field public static final style_button_otp_blue:I = 0x7f020342
+.field public static final style_button_icon_normal:I = 0x7f020342
 
-.field public static final style_button_otp_blue_normal:I = 0x7f020343
+.field public static final style_button_icon_pressed:I = 0x7f020343
 
-.field public static final style_button_otp_blue_pressed:I = 0x7f020344
+.field public static final style_button_otp_blue:I = 0x7f020344
 
-.field public static final style_button_otp_gray:I = 0x7f020345
+.field public static final style_button_otp_blue_normal:I = 0x7f020345
 
-.field public static final style_button_otp_gray_normal:I = 0x7f020346
+.field public static final style_button_otp_blue_pressed:I = 0x7f020346
 
-.field public static final style_button_otp_gray_pressed:I = 0x7f020347
+.field public static final style_button_otp_gray:I = 0x7f020347
 
-.field public static final style_button_premium:I = 0x7f020348
+.field public static final style_button_otp_gray_normal:I = 0x7f020348
 
-.field public static final style_button_premium_normal:I = 0x7f020349
+.field public static final style_button_otp_gray_pressed:I = 0x7f020349
 
-.field public static final style_button_premium_pressed:I = 0x7f02034a
+.field public static final style_button_premium:I = 0x7f02034a
 
-.field public static final style_button_serial:I = 0x7f02034b
+.field public static final style_button_premium_normal:I = 0x7f02034b
 
-.field public static final style_button_serial_normal:I = 0x7f02034c
+.field public static final style_button_premium_pressed:I = 0x7f02034c
 
-.field public static final style_button_serial_pressed:I = 0x7f02034d
+.field public static final style_button_serial:I = 0x7f02034d
 
-.field public static final style_button_wallet:I = 0x7f02034e
+.field public static final style_button_serial_normal:I = 0x7f02034e
 
-.field public static final style_clickable_blue:I = 0x7f02034f
+.field public static final style_button_serial_pressed:I = 0x7f02034f
 
-.field public static final style_clickable_blue_normal:I = 0x7f020350
+.field public static final style_button_wallet:I = 0x7f020350
 
-.field public static final style_clickable_blue_pressed:I = 0x7f020351
+.field public static final style_clickable_blue:I = 0x7f020351
 
-.field public static final style_clickable_white:I = 0x7f020352
+.field public static final style_clickable_blue_normal:I = 0x7f020352
 
-.field public static final style_clickable_white_normal:I = 0x7f020353
+.field public static final style_clickable_blue_pressed:I = 0x7f020353
 
-.field public static final style_clickable_white_pressed:I = 0x7f020354
+.field public static final style_clickable_white:I = 0x7f020354
 
-.field public static final style_servey_field_row:I = 0x7f020355
+.field public static final style_clickable_white_normal:I = 0x7f020355
 
-.field public static final style_survey_edittext:I = 0x7f020356
+.field public static final style_clickable_white_pressed:I = 0x7f020356
 
-.field public static final t1_1:I = 0x7f020357
+.field public static final style_servey_field_row:I = 0x7f020357
 
-.field public static final tab_blue_white:I = 0x7f020358
+.field public static final style_survey_edittext:I = 0x7f020358
 
-.field public static final tab_shadowfrombottom:I = 0x7f020359
+.field public static final t1_1:I = 0x7f020359
 
-.field public static final tab_shadowfromrightleft:I = 0x7f02035a
+.field public static final tab_blue_white:I = 0x7f02035a
 
-.field public static final text_galaxy_gift:I = 0x7f02035b
+.field public static final tab_shadowfrombottom:I = 0x7f02035b
 
-.field public static final tm_bzbs_back_page_header:I = 0x7f02035c
+.field public static final tab_shadowfromrightleft:I = 0x7f02035c
 
-.field public static final tm_smsg_back_border_slide:I = 0x7f02035d
+.field public static final text_galaxy_gift:I = 0x7f02035d
 
-.field public static final tm_smsg_back_bule_caption:I = 0x7f02035e
+.field public static final tm_bzbs_back_page_header:I = 0x7f02035e
 
-.field public static final tm_smsg_back_page_header:I = 0x7f02035f
+.field public static final tm_smsg_back_border_slide:I = 0x7f02035f
 
-.field public static final tm_smsg_header_dotted1:I = 0x7f020360
+.field public static final tm_smsg_back_bule_caption:I = 0x7f020360
 
-.field public static final tm_smsg_header_dotted2:I = 0x7f020361
+.field public static final tm_smsg_back_page_header:I = 0x7f020361
 
-.field public static final tm_smsg_icon_comment_01:I = 0x7f020362
+.field public static final tm_smsg_header_dotted1:I = 0x7f020362
 
-.field public static final tm_smsg_icon_comment_02:I = 0x7f020363
+.field public static final tm_smsg_header_dotted2:I = 0x7f020363
 
-.field public static final tran:I = 0x7f020364
+.field public static final tm_smsg_icon_comment_01:I = 0x7f020364
 
-.field public static final used32:I = 0x7f020365
+.field public static final tm_smsg_icon_comment_02:I = 0x7f020365
 
-.field public static final webview_notification:I = 0x7f020366
+.field public static final tran:I = 0x7f020366
 
-.field public static final white_radius:I = 0x7f020367
+.field public static final used32:I = 0x7f020367
+
+.field public static final webview_notification:I = 0x7f020368
+
+.field public static final white_radius:I = 0x7f020369
 
 
 # direct methods
