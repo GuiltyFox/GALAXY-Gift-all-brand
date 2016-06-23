@@ -517,7 +517,7 @@
     .line 1294
     .local v3, "is_show_mygift":Z
     :try_start_1
-    sget-object v5, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v5, "GT-I9100"
 
     .line 1295
     .local v5, "my_model":Ljava/lang/String;

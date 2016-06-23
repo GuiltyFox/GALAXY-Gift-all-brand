@@ -1900,7 +1900,7 @@
     .local v0, "deviceHelper":Lcom/bzbs/util/DeviceHelper;
     const-string/jumbo v3, "<deviceId>"
 
-    invoke-virtual {v0}, Lcom/bzbs/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
+    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
 
     move-result-object v4
 
@@ -2332,7 +2332,7 @@
     .local v4, "deviceHelper":Lcom/bzbs/util/DeviceHelper;
     const-string/jumbo v8, "<deviceId>"
 
-    invoke-virtual {v4}, Lcom/bzbs/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
+    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
 
     move-result-object v9
 

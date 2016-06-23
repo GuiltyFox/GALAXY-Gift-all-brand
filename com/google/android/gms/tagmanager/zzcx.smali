@@ -49,7 +49,7 @@
 
     move-result-object v4
 
-    sget-object v5, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v5, "GT-I9100"
 
     sget-object v6, Landroid/os/Build;->ID:Ljava/lang/String;
 

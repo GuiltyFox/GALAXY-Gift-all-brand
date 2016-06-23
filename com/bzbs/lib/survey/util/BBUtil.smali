@@ -1502,7 +1502,7 @@
     .line 407
     .local v3, "isCheckSamsung":Z
     :try_start_1
-    sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+    const-string v1, "samsung"
 
     .line 408
     .local v1, "MANUFACTURER":Ljava/lang/String;
@@ -1538,7 +1538,7 @@
 
     .line 415
     :cond_16
-    sget-object v0, Landroid/os/Build;->BRAND:Ljava/lang/String;
+    const-string v0, "samsung"
 
     .line 416
     .local v0, "BRAND":Ljava/lang/String;

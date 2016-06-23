@@ -59,9 +59,9 @@
         }
     .end annotation
 
-    sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+    const-string v1, "samsung"
 
-    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v0, "GT-I9100"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 

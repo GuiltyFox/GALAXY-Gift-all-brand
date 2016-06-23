@@ -871,7 +871,7 @@
     .local v0, "deviceHelper":Lcom/bzbs/util/DeviceHelper;
     const-string/jumbo v4, "<deviceId>"
 
-    invoke-virtual {v0}, Lcom/bzbs/util/DeviceHelper;->getDeviceId()Ljava/lang/String;
+    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
 
     move-result-object v5
 

@@ -62,7 +62,7 @@
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v7, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+    const-string v7, "samsung"
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -74,7 +74,7 @@
 
     move-result-object v6
 
-    sget-object v7, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v7, "GT-I9100"
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

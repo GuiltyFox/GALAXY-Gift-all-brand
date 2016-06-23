@@ -2726,7 +2726,7 @@
     .end local v30    # "profile_source":Ljava/lang/String;
     :goto_aa
     :try_start_aa
-    sget-object v29, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v29, "GT-I9100"
 
     .line 1147
     .local v29, "platform":Ljava/lang/String;

@@ -267,7 +267,7 @@
     .prologue
     .line 156
     :try_start_0
-    sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+    const-string v1, "samsung"
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_2} :catch_3
 
@@ -292,7 +292,7 @@
     .prologue
     .line 148
     :try_start_0
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v1, "GT-I9100"
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_2} :catch_3
 
